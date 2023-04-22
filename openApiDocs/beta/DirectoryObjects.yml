@@ -488,7 +488,7 @@ paths:
       tags:
         - directoryObjects.Functions
       summary: Invoke function delta
-      operationId: directoryObject_deltum
+      operationId: directoryObject_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'

@@ -1710,7 +1710,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendar.calendarView.exceptionOccurrence.instance_deltum
+      operationId: group.calendar.calendarView.exceptionOccurrence.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -2319,7 +2319,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendar.calendarView.exceptionOccurrence_deltum
+      operationId: group.calendar.calendarView.exceptionOccurrence_delta
       parameters:
         - name: group-id
           in: path
@@ -3098,7 +3098,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendar.calendarView.instance.exceptionOccurrence_deltum
+      operationId: group.calendar.calendarView.instance.exceptionOccurrence_delta
       parameters:
         - name: group-id
           in: path
@@ -3707,7 +3707,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendar.calendarView.instance_deltum
+      operationId: group.calendar.calendarView.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -4252,7 +4252,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendar.calendarView_deltum
+      operationId: group.calendar.calendarView_delta
       parameters:
         - name: group-id
           in: path
@@ -5072,7 +5072,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendar.event.exceptionOccurrence.instance_deltum
+      operationId: group.calendar.event.exceptionOccurrence.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -5681,7 +5681,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendar.event.exceptionOccurrence_deltum
+      operationId: group.calendar.event.exceptionOccurrence_delta
       parameters:
         - name: group-id
           in: path
@@ -6460,7 +6460,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendar.event.instance.exceptionOccurrence_deltum
+      operationId: group.calendar.event.instance.exceptionOccurrence_delta
       parameters:
         - name: group-id
           in: path
@@ -7069,7 +7069,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendar.event.instance_deltum
+      operationId: group.calendar.event.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -7614,7 +7614,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendar.event_deltum
+      operationId: group.calendar.event_delta
       parameters:
         - name: group-id
           in: path
@@ -8551,7 +8551,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendarView.exceptionOccurrence.instance_deltum
+      operationId: group.calendarView.exceptionOccurrence.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -9160,7 +9160,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendarView.exceptionOccurrence_deltum
+      operationId: group.calendarView.exceptionOccurrence_delta
       parameters:
         - name: group-id
           in: path
@@ -9939,7 +9939,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendarView.instance.exceptionOccurrence_deltum
+      operationId: group.calendarView.instance.exceptionOccurrence_delta
       parameters:
         - name: group-id
           in: path
@@ -10548,7 +10548,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendarView.instance_deltum
+      operationId: group.calendarView.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -11093,7 +11093,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.calendarView_deltum
+      operationId: group.calendarView_delta
       parameters:
         - name: group-id
           in: path
@@ -17238,7 +17238,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.drive.item_deltum
+      operationId: group.drive.item_delta
       parameters:
         - name: group-id
           in: path
@@ -17443,7 +17443,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.drive.item_deltum
+      operationId: group.drive.item_delta
       parameters:
         - name: group-id
           in: path
@@ -19435,7 +19435,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.drive.list.item_deltum
+      operationId: group.drive.list.item_delta
       parameters:
         - name: group-id
           in: path
@@ -19559,7 +19559,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.drive.list.item_deltum
+      operationId: group.drive.list.item_delta
       parameters:
         - name: group-id
           in: path
@@ -20859,7 +20859,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.drive.root_deltum
+      operationId: group.drive.root_delta
       parameters:
         - name: group-id
           in: path
@@ -21056,7 +21056,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.drive.root_deltum
+      operationId: group.drive.root_delta
       parameters:
         - name: group-id
           in: path
@@ -23051,7 +23051,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.event.exceptionOccurrence.instance_deltum
+      operationId: group.event.exceptionOccurrence.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -23660,7 +23660,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.event.exceptionOccurrence_deltum
+      operationId: group.event.exceptionOccurrence_delta
       parameters:
         - name: group-id
           in: path
@@ -24439,7 +24439,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.event.instance.exceptionOccurrence_deltum
+      operationId: group.event.instance.exceptionOccurrence_delta
       parameters:
         - name: group-id
           in: path
@@ -25048,7 +25048,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.event.instance_deltum
+      operationId: group.event.instance_delta
       parameters:
         - name: group-id
           in: path
@@ -25593,7 +25593,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: group.event_deltum
+      operationId: group.event_delta
       parameters:
         - name: group-id
           in: path
@@ -33634,7 +33634,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.permissionGrant_deltum
+      operationId: group.permissionGrant_delta
       parameters:
         - name: group-id
           in: path
@@ -34221,7 +34221,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.planner.plan.bucket.task_deltum
+      operationId: group.planner.plan.bucket.task_delta
       parameters:
         - name: group-id
           in: path
@@ -34382,7 +34382,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.planner.plan.bucket_deltum
+      operationId: group.planner.plan.bucket_delta
       parameters:
         - name: group-id
           in: path
@@ -34475,7 +34475,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.planner.plan.task_deltum
+      operationId: group.planner.plan.task_delta
       parameters:
         - name: group-id
           in: path
@@ -34628,7 +34628,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.planner.plan_deltum
+      operationId: group.planner.plan_delta
       parameters:
         - name: group-id
           in: path
@@ -37169,7 +37169,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.site.list.item_deltum
+      operationId: group.site.list.item_delta
       parameters:
         - name: group-id
           in: path
@@ -37301,7 +37301,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.site.list.item_deltum
+      operationId: group.site.list.item_delta
       parameters:
         - name: group-id
           in: path
@@ -40061,7 +40061,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.site_deltum
+      operationId: group.site_delta
       parameters:
         - name: group-id
           in: path
@@ -40712,7 +40712,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.team.channel.message.reply_deltum
+      operationId: group.team.channel.message.reply_delta
       parameters:
         - name: group-id
           in: path
@@ -40871,7 +40871,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.team.channel.message_deltum
+      operationId: group.team.channel.message_delta
       parameters:
         - name: group-id
           in: path
@@ -42046,7 +42046,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.team.permissionGrant_deltum
+      operationId: group.team.permissionGrant_delta
       parameters:
         - name: group-id
           in: path
@@ -42665,7 +42665,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.team.primaryChannel.message.reply_deltum
+      operationId: group.team.primaryChannel.message.reply_delta
       parameters:
         - name: group-id
           in: path
@@ -42816,7 +42816,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group.team.primaryChannel.message_deltum
+      operationId: group.team.primaryChannel.message_delta
       parameters:
         - name: group-id
           in: path
@@ -49604,7 +49604,7 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      operationId: group_deltum
+      operationId: group_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'

@@ -3366,7 +3366,7 @@ paths:
       tags:
         - applications.Functions
       summary: Invoke function delta
-      operationId: application_deltum
+      operationId: application_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10875,7 +10875,7 @@ paths:
       tags:
         - servicePrincipals.Functions
       summary: Invoke function delta
-      operationId: servicePrincipal_deltum
+      operationId: servicePrincipal_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'

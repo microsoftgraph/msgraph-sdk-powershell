@@ -4460,7 +4460,7 @@ paths:
       tags:
         - planner.Functions
       summary: Invoke function delta
-      operationId: planner.bucket.task_deltum
+      operationId: planner.bucket.task_delta
       parameters:
         - name: plannerBucket-id
           in: path
@@ -4619,7 +4619,7 @@ paths:
       tags:
         - planner.Functions
       summary: Invoke function delta
-      operationId: planner.bucket_deltum
+      operationId: planner.bucket_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6278,7 +6278,7 @@ paths:
       tags:
         - planner.Functions
       summary: Invoke function delta
-      operationId: planner.plan.bucket.task_deltum
+      operationId: planner.plan.bucket.task_delta
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6453,7 +6453,7 @@ paths:
       tags:
         - planner.Functions
       summary: Invoke function delta
-      operationId: planner.plan.bucket_deltum
+      operationId: planner.plan.bucket_delta
       parameters:
         - name: plannerPlan-id
           in: path
@@ -7608,7 +7608,7 @@ paths:
       tags:
         - planner.Functions
       summary: Invoke function delta
-      operationId: planner.plan.task_deltum
+      operationId: planner.plan.task_delta
       parameters:
         - name: plannerPlan-id
           in: path
@@ -7767,7 +7767,7 @@ paths:
       tags:
         - planner.Functions
       summary: Invoke function delta
-      operationId: planner.plan_deltum
+      operationId: planner.plan_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -9349,7 +9349,7 @@ paths:
       tags:
         - planner.Functions
       summary: Invoke function delta
-      operationId: planner.task_deltum
+      operationId: planner.task_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'

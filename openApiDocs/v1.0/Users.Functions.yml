@@ -128,7 +128,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView.instance_deltum
+      operationId: user.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -338,7 +338,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView_deltum
+      operationId: user.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -540,7 +540,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event.instance_deltum
+      operationId: user.calendar.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -750,7 +750,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event_deltum
+      operationId: user.calendar.event_delta
       parameters:
         - name: user-id
           in: path
@@ -1002,7 +1002,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.calendarView.instance_deltum
+      operationId: user.calendarGroup.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -1228,7 +1228,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.calendarView_deltum
+      operationId: user.calendarGroup.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -1446,7 +1446,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.event.instance_deltum
+      operationId: user.calendarGroup.calendar.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -1672,7 +1672,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarGroup.calendar.event_deltum
+      operationId: user.calendarGroup.calendar.event_delta
       parameters:
         - name: user-id
           in: path
@@ -1956,7 +1956,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView.instance_deltum
+      operationId: user.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -2174,7 +2174,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.calendarView_deltum
+      operationId: user.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -2384,7 +2384,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event.instance_deltum
+      operationId: user.calendar.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -2602,7 +2602,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendar.event_deltum
+      operationId: user.calendar.event_delta
       parameters:
         - name: user-id
           in: path
@@ -2870,7 +2870,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarView.instance_deltum
+      operationId: user.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -3080,7 +3080,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.calendarView_deltum
+      operationId: user.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -3278,7 +3278,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.chat.message.reply_deltum
+      operationId: user.chat.message.reply_delta
       parameters:
         - name: user-id
           in: path
@@ -3434,7 +3434,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.chat.message_deltum
+      operationId: user.chat.message_delta
       parameters:
         - name: user-id
           in: path
@@ -3723,7 +3723,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: user.contactFolder.childFolder.contact_deltum
+      operationId: user.contactFolder.childFolder.contact_delta
       parameters:
         - name: user-id
           in: path
@@ -3930,7 +3930,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
-      operationId: user.contactFolder.childFolder_deltum
+      operationId: user.contactFolder.childFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -4024,7 +4024,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: user.contactFolder.contact_deltum
+      operationId: user.contactFolder.contact_delta
       parameters:
         - name: user-id
           in: path
@@ -4223,7 +4223,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
-      operationId: user.contactFolder_deltum
+      operationId: user.contactFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -4309,7 +4309,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: user.contact_deltum
+      operationId: user.contact_delta
       parameters:
         - name: user-id
           in: path
@@ -4746,7 +4746,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.drive.item_deltum
+      operationId: user.drive.item_delta
       parameters:
         - name: user-id
           in: path
@@ -4943,7 +4943,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.drive.item_deltum
+      operationId: user.drive.item_delta
       parameters:
         - name: user-id
           in: path
@@ -6776,7 +6776,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.drive.root_deltum
+      operationId: user.drive.root_delta
       parameters:
         - name: user-id
           in: path
@@ -6965,7 +6965,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.drive.root_deltum
+      operationId: user.drive.root_delta
       parameters:
         - name: user-id
           in: path
@@ -7594,7 +7594,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.event.instance_deltum
+      operationId: user.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -7804,7 +7804,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: user.event_deltum
+      operationId: user.event_delta
       parameters:
         - name: user-id
           in: path
@@ -8002,7 +8002,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.joinedTeam.channel.message.reply_deltum
+      operationId: user.joinedTeam.channel.message.reply_delta
       parameters:
         - name: user-id
           in: path
@@ -8166,7 +8166,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.joinedTeam.channel.message_deltum
+      operationId: user.joinedTeam.channel.message_delta
       parameters:
         - name: user-id
           in: path
@@ -8538,7 +8538,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.joinedTeam.primaryChannel.message.reply_deltum
+      operationId: user.joinedTeam.primaryChannel.message.reply_delta
       parameters:
         - name: user-id
           in: path
@@ -8694,7 +8694,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.joinedTeam.primaryChannel.message_deltum
+      operationId: user.joinedTeam.primaryChannel.message_delta
       parameters:
         - name: user-id
           in: path
@@ -9046,7 +9046,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: user.mailFolder.childFolder.message_deltum
+      operationId: user.mailFolder.childFolder.message_delta
       parameters:
         - name: user-id
           in: path
@@ -9232,7 +9232,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
-      operationId: user.mailFolder.childFolder_deltum
+      operationId: user.mailFolder.childFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -9339,7 +9339,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: user.mailFolder.message_deltum
+      operationId: user.mailFolder.message_delta
       parameters:
         - name: user-id
           in: path
@@ -9517,7 +9517,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
-      operationId: user.mailFolder_deltum
+      operationId: user.mailFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -9616,7 +9616,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: user.message_deltum
+      operationId: user.message_delta
       parameters:
         - name: user-id
           in: path
@@ -10438,7 +10438,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.todo.list.task_deltum
+      operationId: user.todo.list.task_delta
       parameters:
         - name: user-id
           in: path
@@ -10568,7 +10568,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user.todo.list_deltum
+      operationId: user.todo.list_delta
       parameters:
         - name: user-id
           in: path
@@ -10654,7 +10654,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: user_deltum
+      operationId: user_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
