@@ -3515,7 +3515,7 @@ paths:
       tags:
         - chats.Functions
       summary: Invoke function delta
-      operationId: chat.message.reply_deltum
+      operationId: chat.message.reply_delta
       parameters:
         - name: chat-id
           in: path
@@ -3685,7 +3685,7 @@ paths:
       tags:
         - chats.Functions
       summary: Invoke function delta
-      operationId: chat.message_deltum
+      operationId: chat.message_delta
       parameters:
         - name: chat-id
           in: path
@@ -19774,7 +19774,7 @@ paths:
       tags:
         - teams.Functions
       summary: Invoke function delta
-      operationId: team.channel.message.reply_deltum
+      operationId: team.channel.message.reply_delta
       parameters:
         - name: team-id
           in: path
@@ -19960,7 +19960,7 @@ paths:
       tags:
         - teams.Functions
       summary: Invoke function delta
-      operationId: team.channel.message_deltum
+      operationId: team.channel.message_delta
       parameters:
         - name: team-id
           in: path
@@ -25443,7 +25443,7 @@ paths:
       tags:
         - teams.Functions
       summary: Invoke function delta
-      operationId: team.primaryChannel.message.reply_deltum
+      operationId: team.primaryChannel.message.reply_delta
       parameters:
         - name: team-id
           in: path
@@ -25613,7 +25613,7 @@ paths:
       tags:
         - teams.Functions
       summary: Invoke function delta
-      operationId: team.primaryChannel.message_deltum
+      operationId: team.primaryChannel.message_delta
       parameters:
         - name: team-id
           in: path
@@ -33297,7 +33297,7 @@ paths:
       tags:
         - teamwork.Functions
       summary: Invoke function delta
-      operationId: teamwork.deletedTeam.channel.message.reply_deltum
+      operationId: teamwork.deletedTeam.channel.message.reply_delta
       parameters:
         - name: deletedTeam-id
           in: path
@@ -33483,7 +33483,7 @@ paths:
       tags:
         - teamwork.Functions
       summary: Invoke function delta
-      operationId: teamwork.deletedTeam.channel.message_deltum
+      operationId: teamwork.deletedTeam.channel.message_delta
       parameters:
         - name: deletedTeam-id
           in: path

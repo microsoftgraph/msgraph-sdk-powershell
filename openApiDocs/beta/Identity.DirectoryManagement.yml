@@ -2364,7 +2364,7 @@ paths:
       tags:
         - administrativeUnits.Functions
       summary: Invoke function delta
-      operationId: administrativeUnit_deltum
+      operationId: administrativeUnit_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4985,7 +4985,7 @@ paths:
       tags:
         - contacts.Functions
       summary: Invoke function delta
-      operationId: contact_deltum
+      operationId: contact_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -5704,7 +5704,7 @@ paths:
       tags:
         - contracts.Functions
       summary: Invoke function delta
-      operationId: contract_deltum
+      operationId: contract_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10070,7 +10070,7 @@ paths:
       tags:
         - devices.Functions
       summary: Invoke function delta
-      operationId: device_deltum
+      operationId: device_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12783,7 +12783,7 @@ paths:
       tags:
         - directory.Functions
       summary: Invoke function delta
-      operationId: directory.administrativeUnit_deltum
+      operationId: directory.administrativeUnit_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -14394,7 +14394,7 @@ paths:
       tags:
         - directory.Functions
       summary: Invoke function delta
-      operationId: directory.deletedItem_deltum
+      operationId: directory.deletedItem_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -15258,7 +15258,7 @@ paths:
       tags:
         - directory.Functions
       summary: Invoke function delta
-      operationId: directory.featureRolloutPolicy.appliesTo_deltum
+      operationId: directory.featureRolloutPolicy.appliesTo_delta
       parameters:
         - name: featureRolloutPolicy-id
           in: path
@@ -19822,7 +19822,7 @@ paths:
       tags:
         - directoryRoles.Functions
       summary: Invoke function delta
-      operationId: directoryRole_deltum
+      operationId: directoryRole_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -20493,7 +20493,7 @@ paths:
       tags:
         - directoryRoleTemplates.Functions
       summary: Invoke function delta
-      operationId: directoryRoleTemplate_deltum
+      operationId: directoryRoleTemplate_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -21158,7 +21158,7 @@ paths:
       tags:
         - directorySettingTemplates.Functions
       summary: Invoke function delta
-      operationId: directorySettingTemplate_deltum
+      operationId: directorySettingTemplate_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'

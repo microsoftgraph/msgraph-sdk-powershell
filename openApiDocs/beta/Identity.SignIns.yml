@@ -14527,7 +14527,7 @@ paths:
       tags:
         - oauth2PermissionGrants.Functions
       summary: Invoke function delta
-      operationId: oauth2PermissionGrant_deltum
+      operationId: oauth2PermissionGrant_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -19196,7 +19196,7 @@ paths:
       tags:
         - policies.Functions
       summary: Invoke function delta
-      operationId: policy.featureRolloutPolicy.appliesTo_deltum
+      operationId: policy.featureRolloutPolicy.appliesTo_delta
       parameters:
         - name: featureRolloutPolicy-id
           in: path

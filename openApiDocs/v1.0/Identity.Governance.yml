@@ -14293,7 +14293,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function delta
-      operationId: identityGovernance.entitlementManagement.connectedOrganization.externalSponsor_deltum
+      operationId: identityGovernance.entitlementManagement.connectedOrganization.externalSponsor_delta
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -14774,7 +14774,7 @@ paths:
       tags:
         - identityGovernance.Functions
       summary: Invoke function delta
-      operationId: identityGovernance.entitlementManagement.connectedOrganization.internalSponsor_deltum
+      operationId: identityGovernance.entitlementManagement.connectedOrganization.internalSponsor_delta
       parameters:
         - name: connectedOrganization-id
           in: path

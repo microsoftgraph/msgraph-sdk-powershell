@@ -56124,7 +56124,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function delta
-      operationId: site.list.item_deltum
+      operationId: site.list.item_delta
       parameters:
         - name: site-id
           in: path
@@ -56248,7 +56248,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function delta
-      operationId: site.list.item_deltum
+      operationId: site.list.item_delta
       parameters:
         - name: site-id
           in: path
@@ -79887,7 +79887,7 @@ paths:
       tags:
         - sites.Functions
       summary: Invoke function delta
-      operationId: site_deltum
+      operationId: site_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'

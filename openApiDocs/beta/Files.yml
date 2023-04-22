@@ -6685,7 +6685,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function delta
-      operationId: drive.item_deltum
+      operationId: drive.item_delta
       parameters:
         - name: drive-id
           in: path
@@ -6882,7 +6882,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function delta
-      operationId: drive.item_deltum
+      operationId: drive.item_delta
       parameters:
         - name: drive-id
           in: path
@@ -15031,7 +15031,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function delta
-      operationId: drive.list.item_deltum
+      operationId: drive.list.item_delta
       parameters:
         - name: drive-id
           in: path
@@ -15147,7 +15147,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function delta
-      operationId: drive.list.item_deltum
+      operationId: drive.list.item_delta
       parameters:
         - name: drive-id
           in: path
@@ -20543,7 +20543,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function delta
-      operationId: drive.root_deltum
+      operationId: drive.root_delta
       parameters:
         - name: drive-id
           in: path
@@ -20732,7 +20732,7 @@ paths:
       tags:
         - drives.Functions
       summary: Invoke function delta
-      operationId: drive.root_deltum
+      operationId: drive.root_delta
       parameters:
         - name: drive-id
           in: path
@@ -50873,7 +50873,7 @@ paths:
       tags:
         - shares.Functions
       summary: Invoke function delta
-      operationId: share.list.item_deltum
+      operationId: share.list.item_delta
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -50989,7 +50989,7 @@ paths:
       tags:
         - shares.Functions
       summary: Invoke function delta
-      operationId: share.list.item_deltum
+      operationId: share.list.item_delta
       parameters:
         - name: sharedDriveItem-id
           in: path

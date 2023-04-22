@@ -619,7 +619,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.class.assignmentCategory_deltum
+      operationId: education.class.assignmentCategory_delta
       parameters:
         - name: educationClass-id
           in: path
@@ -1438,7 +1438,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.class.assignment.category_deltum
+      operationId: education.class.assignment.category_delta
       parameters:
         - name: educationClass-id
           in: path
@@ -3874,7 +3874,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.class.assignment_deltum
+      operationId: education.class.assignment_delta
       parameters:
         - name: educationClass-id
           in: path
@@ -5276,7 +5276,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.class_deltum
+      operationId: education.class_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6042,7 +6042,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.me.assignment.category_deltum
+      operationId: education.me.assignment.category_delta
       parameters:
         - name: educationAssignment-id
           in: path
@@ -8110,7 +8110,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.me.assignment_deltum
+      operationId: education.me.assignment_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10467,7 +10467,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.school_deltum
+      operationId: education.school_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -12328,7 +12328,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.user.assignment.category_deltum
+      operationId: education.user.assignment.category_delta
       parameters:
         - name: educationUser-id
           in: path
@@ -14764,7 +14764,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.user.assignment_deltum
+      operationId: education.user.assignment_delta
       parameters:
         - name: educationUser-id
           in: path
@@ -16262,7 +16262,7 @@ paths:
       tags:
         - education.Functions
       summary: Invoke function delta
-      operationId: education.user_deltum
+      operationId: education.user_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
