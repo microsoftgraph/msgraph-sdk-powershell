@@ -17,6 +17,13 @@ require:
 
 ``` yaml
 directive:
+  - where:
+      parameter-name: Period
+    set:
+      completer:
+        name: Period Completer
+        description: Gets the list of Period values.
+        script: "'D7', 'D30', 'D90', 'D180'"
 # Remove invalid paths.
   - remove-path-by-operation: auditLog\.auditLogRoot.*|report.reportRoot.*|(auditLog|report)_(Create|Delete|Update).*
 # Remove cmdlets
