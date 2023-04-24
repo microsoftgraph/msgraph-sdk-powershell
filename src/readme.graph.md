@@ -492,6 +492,11 @@ directive:
   - from: openapi-document
     where: $..paths.*[?(/(.*_GetCount)/gmi.exec(@.operationId))]..parameters[?(@.name === "ConsistencyLevel")]
     transform: $['required'] = true
+# Fix binary response definition for AutoREST to generate -OutFile parameter.
+  - from: openapi-document
+    where: $..paths..responses['2XX'].content['application/octet-stream'].schema
+    transform: >-
+      if ($.type === 'object') { $['format'] = "binary" }
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
