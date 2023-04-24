@@ -23,6 +23,7 @@ Describe "New-MgApplicationOwnerByRef" {
         $CreateExpandedParameterSet.Parameters.Name | Should -Contain OdataId
         $CreateExpandedParameterSet.Parameters.Name | Should -Contain AdditionalProperties
         $CreateExpandedParameterSet.Parameters.Name | Should -Not -Contain BodyParameter
+        $NewMgApplicationOwnerByRef.Parameters.OdataId.ParameterSets.CreateExpanded.IsMandatory  | Should -be $true
     }
 
     It 'Should have Create parameterSet' {
@@ -45,5 +46,6 @@ Describe "New-MgApplicationOwnerByRef" {
         $CreateViaIdentityExpandedParameterSet.Parameters.Name | Should -Contain OdataId
         $CreateViaIdentityExpandedParameterSet.Parameters.Name | Should -Contain AdditionalProperties
         $CreateViaIdentityExpandedParameterSet.Parameters.Name | Should -Not -Contain BodyParameter
+        $NewMgApplicationOwnerByRef.Parameters.OdataId.ParameterSets.CreateViaIdentityExpanded.IsMandatory  | Should -be $true
     }
 }
