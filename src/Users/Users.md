@@ -24,4 +24,10 @@ directive:
       verb: New
       subject: ^UserLicenseDetail$
     remove: true
+  - where:
+      verb: Get
+      subject: ^(UserTodo)$
+      variant: List
+    set:
+      subject: $1List
 ```

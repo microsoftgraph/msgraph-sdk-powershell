@@ -27,26 +27,50 @@ directive:
   - where:
       verb: Get
       subject: ^Site$
-      variant: ^List1$
+      variant: ^Get1$|^GetViaIdentity1$|^List2$
     set:
       subject: SubSite
   - where:
       verb: Get
-      subject: ^(Site)OnenoteNotebook(RecentNotebook$)
+      subject: ^SiteCount$
+      variant: ^Get$|^GetViaIdentity$
     set:
-      subject: $1$2
+      subject: SubSiteCount
+  - where:
+      verb: Get
+      subject: ^(Site)$
+      variant: ^List1$
+    set:
+      subject: $1List
   - where:
       verb: Get
       subject: ^GroupSite$
-      variant: ^Get1$|^GetViaIdentity1$|^List1$
+      variant: ^Get1$|^GetViaIdentity1$|^List2$
     set:
       subject: GroupSubSite
+  - where:
+      verb: Get
+      subject: ^GroupSiteCount$
+      variant: ^Get$|^GetViaIdentity$
+    set:
+      subject: GroupSubSiteCount
+  - where:
+      verb: Get
+      subject: ^(GroupSite)$
+      variant: ^List1$
+    set:
+      subject: $1List
   - where:
       verb: Get
       subject: ^(Group|Site|GroupSite)(Drive)$
       variant: ^Get$|^GetViaIdentity$
     set:
       subject: $1Default$2
+  - where:
+      verb: Get
+      subject: ^(Site)OnenoteNotebook(RecentNotebook$)
+    set:
+      subject: $1$2
 # Rename cmdlets that call onenotePatchContent action.
   - where:
       verb: Update

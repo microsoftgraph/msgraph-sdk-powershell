@@ -36,13 +36,19 @@ directive:
       subject: ^TopReport$
     set:
       verb: Get
-      subject: ReportManagedDeviceEnrollmentTopFailures
+      subject: ReportManagedDeviceEnrollmentTopFailure
   - where:
       verb: Invoke
-      subject: ^(Device|Detail)Report(.*)$
+      subject: ^(Device)Report(.*)$
     set:
       verb: Get
       subject: Report$1$2
+  - where:
+      verb: Invoke
+      subject: ^(Detail)Report(.*)$
+    set:
+      verb: Get
+      subject: Report$2$1
   - where:
       verb: Invoke
       subject: ^(Managed)Report(.*)$

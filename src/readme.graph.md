@@ -485,7 +485,7 @@ directive:
     set:
       subject: $1TermsOfUse$2
   - where:
-      subject: (\w*[a-z]|^)MethodSm([^s]\w*|$)
+      subject: (\w*[a-z]|^)MethodSm([A-Z]\w*|$)
     set:
       subject: $1MethodSms$2
   - where:

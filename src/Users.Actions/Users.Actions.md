@@ -91,12 +91,4 @@ directive:
       subject: ^Cloud(UserManagedDevice)$
     set:
       subject: Reprovision$1CloudPc
-  - where:
-      subject: ^(UserAuthenticationMethod)SmSign$
-    set:
-      subject: $1SmsSignIn
-  - where:
-      subject: ^(UserSign)$
-    set:
-      subject: $1InSession
 ```
