@@ -1,19 +1,21 @@
-namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
+﻿namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
 {
+    using Microsoft.Graph.Beta.PowerShell.Models;
     using Microsoft.Graph.Beta.PowerShell.Models.TeamsInternal;
     using Microsoft.Graph.Beta.PowerShell.TeamsInternal;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using static Microsoft.Graph.Beta.PowerShell.Runtime.Extensions;
 
     /// <summary>
-    /// Delete PreApproval policy associated with a Teams App.
+    /// Set Team RSC configuration -> enabled, enabled with preapprovals, disabled.
     /// </summary>
-    [global::System.Management.Automation.Cmdlet(global::System.Management.Automation.VerbsCommon.Remove, @"MgBetaTeamAppPreApproval_Delete", SupportsShouldProcess = true)]
+    [global::System.Management.Automation.Cmdlet(global::System.Management.Automation.VerbsCommon.Set, @"MgBetaTeamRscConfiguration_Update", SupportsShouldProcess = true)]
     [global::System.Management.Automation.OutputType(typeof(bool))]
-    [global::Microsoft.Graph.Beta.PowerShell.Description(@"Delete Preapproval policy associated with a Teams App.")]
+    [global::Microsoft.Graph.Beta.PowerShell.Description(@"Update Team RSC configuration for tenant.")]
     [global::Microsoft.Graph.Beta.PowerShell.Generated]
-    public partial class RemoveMgBetaTeamAppPreApproval_Delete : global::System.Management.Automation.PSCmdlet,
+    public partial class SetMgBetaTeamRscConfiguration_Update : global::System.Management.Automation.PSCmdlet,
         Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener
     {
         /// <summary>A copy of the Invocation Info (necessary to allow asJob to clone this cmdlet)</summary>
@@ -24,28 +26,33 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         /// </summary>
         private global::System.Threading.CancellationTokenSource _cancellationTokenSource = new global::System.Threading.CancellationTokenSource();
 
+        [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Additional Parameters")]
+        public global::System.Collections.Hashtable AdditionalProperties { get; set; } = new System.Collections.Hashtable();
+
         /// <summary>Wait for .NET debugger to attach</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
         [global::Microsoft.Graph.Beta.PowerShell.Category(global::Microsoft.Graph.Beta.PowerShell.ParameterCategory.Runtime)]
         public global::System.Management.Automation.SwitchParameter Break { get; set; }
 
-        /// <summary>Backing field for <see cref="TeamsAppId" /> property.</summary>
-        private string _teamsAppId;
+        /// <summary>The reference to the client API class.</summary>
+        public Microsoft.Graph.Beta.PowerShell.Teams Client => Microsoft.Graph.Beta.PowerShell.Module.Instance.ClientAPI;
 
         /// <summary>
-        /// Gets or sets the Teams App Id.
+        /// Backing field for <see cref="MicrosoftGraphRscConfigurationState" /> property.
         /// </summary>
-        [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "key: id of Teams App")]
+        private MicrosoftGraphRscConfigurationState _state;
+
+        /// <summary>
+        /// Rsc Configuration State.
+        /// </summary>
+        [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Rsc Configuration State.")]
         [Microsoft.Graph.Beta.PowerShell.Runtime.Info(
         Required = true,
         ReadOnly = false,
-        Description = @"key: id of Teams App",
-        SerializedName = @"teamsAppId",
-        PossibleTypes = new[] { typeof(string) })]
-        public string TeamsAppId { get => this._teamsAppId; set => this._teamsAppId = value; }
-
-        /// <summary>The reference to the client API class.</summary>
-        public Microsoft.Graph.Beta.PowerShell.Teams Client => Microsoft.Graph.Beta.PowerShell.Module.Instance.ClientAPI;
+        Description = @"Rsc Configuration State.",
+        SerializedName = @"rscConfigurationState",
+        PossibleTypes = new[] { typeof(MicrosoftGraphRscConfigurationState) })]
+        public MicrosoftGraphRscConfigurationState State { get => this._state; set => this._state = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -90,16 +97,6 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Use the default credentials for the proxy")]
         [global::Microsoft.Graph.Beta.PowerShell.Category(global::Microsoft.Graph.Beta.PowerShell.ParameterCategory.Runtime)]
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
-
-        /// <summary>
-        /// <c>overrideOnDefault</c> will be called before the regular onDefault has been processed, allowing customization of what
-        /// happens on that response. Implement this method in a partial class to enable this behavior
-        /// </summary>
-        /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="response">the body result as a <see cref="Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError">Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError</see>
-        /// from the remote call</param>
-        /// <param name="returnNow">/// Determines if the rest of the onDefault method should be processed, or if the method should
-        /// return immediately (set to true to skip further processing )</param>
 
         partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow);
 
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
             try
             {
                 // work
-                if (ShouldProcess("Delete Teams App Pre Approval."))
+                if (ShouldProcess("Update Team RSC Configuration"))
                 {
                     using (var asyncCommandRuntime = new Microsoft.Graph.Beta.PowerShell.Runtime.PowerShell.AsyncCommandRuntime(this, ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token))
                     {
@@ -247,60 +244,103 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                 {
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                    // Get the Teams App
-                    Models.IMicrosoftGraphTeamsApp teamsApp = await this.Client.GetTeamsApp(
-                            this.TeamsAppId,
-                            this,
-                            Pipeline);
-
-                    WriteVerbose($"Found Teams App with Id: '{teamsApp.Id}'");
-
-                    Models.IMicrosoftGraphTeamsAppDefinition publishedAppDefinition =
-                        teamsApp?.AppDefinitions?.SingleOrDefault(a => string.Equals(a.PublishingState, "published", StringComparison.OrdinalIgnoreCase));
-                    if (publishedAppDefinition == null)
-                    {
-                        throw new MGTeamsInternalException(
-                            MGTeamsInternalErrorType.ResourceNotFound,
-                            $"Published App Definition was not found for Teams App with Id: '{teamsApp.Id}'.");
-                    }
-
-                    if (string.IsNullOrEmpty(publishedAppDefinition.AzureAdAppId))
-                    {
-                        throw new MGTeamsInternalException(
-                            MGTeamsInternalErrorType.RequiredPropertyNotFound,
-                            $"Teams App with Id: '{teamsApp.Id}' does not have a valid AAd App Id.");
-                    }
-
-                    WriteVerbose($"Found published Teams App Definition with AzureAdAppId: '{publishedAppDefinition.AzureAdAppId}'");
+                    MGTeamsInternalAuthorizationPolicy authorizationPolicy = await this.Client.GetAuthorizationPolicy(eventListener: this, sender: Pipeline);
+                    WriteVerbose($"PermissionGrantPolicies currently assigned to default user role: '{string.Join(", ", authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned)}'.");
 
                     if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                    Models.IMicrosoftGraphEntity servicePrincipal = await this.Client.GetServicePrincipal(
-                            publishedAppDefinition.AzureAdAppId,
-                            this,
-                            Pipeline);
+                    MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingsCollection =
+                        await this.Client.GetTenantConsentSettings(eventListener: this, sender: Pipeline);
+                    WriteVerbose($"PermissionGrantPolicies currently assigned to default user role: '{string.Join(", ", authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned)}'.");
 
-                    WriteVerbose($"Found service principal with Id: '{servicePrincipal.Id}'");
+                    if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                    // Validate no policies associated with sp
-                    MGTeamsInternalPermissionGrantPreApprovalPolicyCollection policiesAssociatedWithServicePrincipal =
-                        await this.Client.GetPermissionGrantPreApprovalPoliciesAssociatedWithServicePrincipal(
-                            servicePrincipal.Id,
-                            this,
-                            Pipeline);
-
-                    foreach (MGTeamsInternalPermissionGrantPreApprovalPolicy preApprovalPolicy in policiesAssociatedWithServicePrincipal.Value)
+                    if (this.State == MicrosoftGraphRscConfigurationState.Disabled)
                     {
-                        await this.Client.RemoveAssociationBetweenServicePrincipalAndPreapprovalPolicy(
-                            servicePrincipal.Id,
-                            preApprovalPolicy.Id,
-                            this,
-                            Pipeline);
+                        // Disable group consent setting.
+                        await this.AddOrUpdateGroupConsentSettings(
+                            tenantConsentSettingsCollection,
+                            isGroupSpecificConsentEnabled: false);
 
-                        await this.Client.RemovePermissionGrantPreApprovalPolicy(
-                            preApprovalPolicy.Id,
-                            this,
-                            Pipeline);
+                        WriteVerbose($"Disabled Team RSC Teams setting.");
+
+                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+
+                        // Disable preapproval configs.
+                        if (authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval, StringComparer.OrdinalIgnoreCase))
+                        {
+                            IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Except(
+                                new string[] { RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval },
+                                StringComparer.OrdinalIgnoreCase);
+                            await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
+                                updatedPermissionGrantPolicies,
+                                this,
+                                Pipeline);
+
+                            WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
+                        }
+
+                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+                    }
+                    else if (this.State == MicrosoftGraphRscConfigurationState.EnabledForPreApprovedAppsOnly)
+                    {
+                        // Disable group consent setting.
+                        await this.AddOrUpdateGroupConsentSettings(
+                            tenantConsentSettingsCollection,
+                            isGroupSpecificConsentEnabled: false);
+
+                        WriteVerbose($"Disabled Chat RSC Teams setting.");
+
+                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+
+                        // Enable preapproval configs.
+                        if (!authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval, StringComparer.OrdinalIgnoreCase))
+                        {
+                            IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Union(
+                                new string[] { RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval },
+                                StringComparer.OrdinalIgnoreCase);
+                            await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
+                                updatedPermissionGrantPolicies,
+                                this,
+                                Pipeline);
+
+                            WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
+                        }
+
+                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+                    }
+                    else if (this.State == MicrosoftGraphRscConfigurationState.EnabledForAllApps)
+                    {
+                        // Disable preapproval configs.
+                        if (authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval, StringComparer.OrdinalIgnoreCase))
+                        {
+                            IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Except(
+                                new string[] { RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForTeamRscPreApproval },
+                                StringComparer.OrdinalIgnoreCase);
+                            await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
+                                updatedPermissionGrantPolicies,
+                                this,
+                                Pipeline);
+
+                            WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
+                        }
+
+                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+
+                        // Enable group consent setting.
+                        await this.AddOrUpdateGroupConsentSettings(
+                            tenantConsentSettingsCollection,
+                            isGroupSpecificConsentEnabled: true);
+
+                        WriteVerbose($"Enabled Chat RSC Teams setting.");
+
+                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+                    }
+                    else
+                    {
+                        throw new MGTeamsInternalException(
+                            MGTeamsInternalErrorType.UnsupportedScenario,
+                            $"'{this.State}' is not supported.");
                     }
 
                     this.WriteObject(true);
@@ -313,7 +353,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                         ex,
                         new
                         {
-                            TeamsAppId = this.TeamsAppId,
+                            State = this.State
                         },
                         errorRecord => WriteError(errorRecord),
                         this);
@@ -327,12 +367,66 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
             }
         }
 
-        /// <summary>
-        /// Intializes a new instance of the <see cref="RemoveMgBetaTeamAppPreApproval_Delete" /> cmdlet class.
-        /// </summary>
-        public RemoveMgBetaTeamAppPreApproval_Delete()
+        private async System.Threading.Tasks.Task AddOrUpdateGroupConsentSettings(
+            MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingsCollection,
+            bool isGroupSpecificConsentEnabled)
         {
+            if (tenantConsentSettingsCollection?.Value == null)
+            {
+                throw new MGTeamsInternalException(
+                    MGTeamsInternalErrorType.ResourceNotFound,
+                    "Tenant consent settings were not found.");
+            }
 
+            MGTeamsInternalTenantConsentSettings groupConsentSettings = tenantConsentSettingsCollection.Value
+                .SingleOrDefault(v =>
+                    string.Equals(
+                        v.TemplateId,
+                        RscConfigurationConverter.GroupConsentSettingsTemplateId,
+                        StringComparison.OrdinalIgnoreCase));
+
+            if (groupConsentSettings == null)
+            {
+                // Settings need to be initialized. The default values are sourced from Azure defaults.
+                await this.Client.CreateGroupConsentSettings(
+                    new MGTeamsInternalTenantConsentSettingValue[]
+                    {
+                        new MGTeamsInternalTenantConsentSettingValue(RscConfigurationConverter.EnableGroupSpecificConsentKey, isGroupSpecificConsentEnabled.ToString()),
+                        new MGTeamsInternalTenantConsentSettingValue("BlockUserConsentForRiskyApps", true.ToString()),
+                        new MGTeamsInternalTenantConsentSettingValue("EnableAdminConsentRequests", false.ToString()),
+                        new MGTeamsInternalTenantConsentSettingValue("ConstrainGroupSpecificConsentToMembersOfGroupId", "")
+                    },
+                    eventListener: this,
+                    sender: Pipeline);
+            }
+            else
+            {
+                // Modify only the group consent setting.
+                MGTeamsInternalTenantConsentSettingValue isGroupConsentEnabledSettingValue = groupConsentSettings.Values.Single(
+                        v => string.Equals(v.Name, RscConfigurationConverter.EnableGroupSpecificConsentKey, StringComparison.OrdinalIgnoreCase));
+                if (!string.Equals(isGroupConsentEnabledSettingValue.Value, isGroupSpecificConsentEnabled.ToString(), StringComparison.OrdinalIgnoreCase))
+                {
+                    // Preserve existing values except for group consent setting.
+                    MGTeamsInternalTenantConsentSettingValue[] updatedValues =
+                        groupConsentSettings.Values
+                        .Where(v => !string.Equals(v.Name, RscConfigurationConverter.EnableGroupSpecificConsentKey, StringComparison.OrdinalIgnoreCase))
+                        .Union(new MGTeamsInternalTenantConsentSettingValue[]
+                        {
+                            new MGTeamsInternalTenantConsentSettingValue(RscConfigurationConverter.EnableGroupSpecificConsentKey, isGroupSpecificConsentEnabled.ToString())
+                        })
+                        .ToArray();
+
+                    await this.Client.UpdateGroupConsentSettings(
+                        groupConsentSettings.Id,
+                        groupConsentSettings.Values,
+                        eventListener: this,
+                        sender: Pipeline);
+                }
+                else
+                {
+                    WriteVerbose($"Group consent setting is already set to '{isGroupSpecificConsentEnabled}'.");
+                }
+            }
         }
 
         /// <summary>Interrupts currently running code within the command.</summary>
@@ -340,6 +434,14 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         {
             ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Cancel();
             base.StopProcessing();
+        }
+
+        /// <summary>
+        /// Intializes a new instance of the <see cref="SetMgBetaTeamRscConfiguration_Update" /> cmdlet class.
+        /// </summary>
+        public SetMgBetaTeamRscConfiguration_Update()
+        {
+
         }
     }
 }

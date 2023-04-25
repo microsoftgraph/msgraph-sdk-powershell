@@ -302,6 +302,174 @@ namespace Microsoft.Graph.Beta.PowerShell
         }
 
         /// <summary>
+        /// Get teams app settings.
+        /// </summary>
+        /// <param name="teamsAppId">The teams app id.</param>
+        /// <param name="eventListener">The event listener.</param>
+        /// <param name="sender">Http Request sender.</param>
+        /// <returns>Teams app.</returns>
+        public async System.Threading.Tasks.Task<Models.IMicrosoftGraphTeamsAppSettings> GetTeamsAppSettings(
+            Runtime.IEventListener eventListener,
+            Runtime.ISendAsync sender)
+        {
+            // Constant Parameters
+            using (NoSynchronizationContext)
+            {
+                GetTeamsAppSettingsRequest request = new GetTeamsAppSettingsRequest();
+
+                return await this.ExecuteHttpRequestAsync(
+                    request,
+                    json => Models.MicrosoftGraphTeamsAppSettings.FromJson(json),
+                    eventListener,
+                    sender);
+            }
+        }
+
+        /// <summary>
+        /// Update Teams App Settings.
+        /// </summary>
+        /// <param name="isChatResourceSpecificConsentEnabled">Is chat RSC enabled.</param>
+        /// <param name="eventListener">The event listener.</param>
+        /// <param name="sender">The http request sender.</param>
+        internal async System.Threading.Tasks.Task UpdateTeamsAppSettings(
+            bool isChatResourceSpecificConsentEnabled,
+            Runtime.IEventListener eventListener,
+            Runtime.ISendAsync sender)
+        {
+            // Constant Parameters
+            using (NoSynchronizationContext)
+            {
+                UpdateTeamsAppSettingsRequest request =
+                    new UpdateTeamsAppSettingsRequest(isChatResourceSpecificConsentEnabled);
+
+                await this.ExecuteHttpRequestAsync<MGTeamsInternalGenericEmptyResponse>(
+                    request,
+                    outputConverter: null,
+                    eventListener: eventListener,
+                    sender: sender);
+            }
+        }
+
+        /// <summary>
+        /// Get sensitivity labels visible to current caller.
+        /// </summary>
+        /// <param name="eventListener">The event listener.</param>
+        /// <param name="sender">The http request sender.</param>
+        /// <returns>Sensitivity label collection.</returns>
+        internal async System.Threading.Tasks.Task<MGTeamsInternalAuthorizationPolicy> GetAuthorizationPolicy(
+            Runtime.IEventListener eventListener,
+            Runtime.ISendAsync sender)
+        {
+            // Constant Parameters
+            using (NoSynchronizationContext)
+            {
+                GetAuthorizationPolicyRequest request =
+                    new GetAuthorizationPolicyRequest();
+
+                return await this.ExecuteHttpRequestAsync(
+                    request,
+                    json => MGTeamsInternalAuthorizationPolicy.FromJson(json),
+                    eventListener,
+                    sender);
+            }
+        }
+
+        /// <summary>
+        /// Get sensitivity labels visible to current caller.
+        /// </summary>
+        /// <param name="eventListener">The event listener.</param>
+        /// <param name="sender">The http request sender.</param>
+        /// <returns>Sensitivity label collection.</returns>
+        internal async System.Threading.Tasks.Task UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
+            IEnumerable<string> permissionGrantPolicies,
+            Runtime.IEventListener eventListener,
+            Runtime.ISendAsync sender)
+        {
+            // Constant Parameters
+            using (NoSynchronizationContext)
+            {
+                UpdateDefaultUserRolePermissionGrantPoliciesAssignedRequest request =
+                    new UpdateDefaultUserRolePermissionGrantPoliciesAssignedRequest(permissionGrantPolicies);
+
+                await this.ExecuteHttpRequestAsync<MGTeamsInternalGenericEmptyResponse>(
+                    request,
+                    outputConverter: null,
+                    eventListener: eventListener,
+                    sender: sender);
+            }
+        }
+
+        /// <summary>
+        /// Get teams app settings.
+        /// </summary>
+        /// <param name="teamsAppId">The teams app id.</param>
+        /// <param name="eventListener">The event listener.</param>
+        /// <param name="sender">Http Request sender.</param>
+        /// <returns>Teams app.</returns>
+        internal async System.Threading.Tasks.Task<MGTeamsInternalTenantConsentSettingsCollection> GetTenantConsentSettings(
+            Runtime.IEventListener eventListener,
+            Runtime.ISendAsync sender)
+        {
+            // Constant Parameters
+            using (NoSynchronizationContext)
+            {
+                GetTenantConsentSettingsCollectionRequest request = new GetTenantConsentSettingsCollectionRequest();
+
+                return await this.ExecuteHttpRequestAsync(
+                    request,
+                    json => MGTeamsInternalTenantConsentSettingsCollection.FromJson(json),
+                    eventListener,
+                    sender);
+            }
+        }
+
+        /// <summary>
+        /// Create group consent settings.
+        /// </summary>
+        /// <param name="groupConsentSettingValues">The group consent setting value.</param>
+        internal async System.Threading.Tasks.Task CreateGroupConsentSettings(
+            MGTeamsInternalTenantConsentSettingValue[] groupConsentSettingValues,
+            Runtime.IEventListener eventListener,
+            Runtime.ISendAsync sender)
+        {
+            // Constant Parameters
+            using (NoSynchronizationContext)
+            {
+                CreateGroupConsentSettingsRequest request = new CreateGroupConsentSettingsRequest(groupConsentSettingValues);
+
+                await this.ExecuteHttpRequestAsync<MGTeamsInternalGenericEmptyResponse>(
+                    request,
+                    outputConverter: null,
+                    eventListener: eventListener,
+                    sender: sender);
+            }
+        }
+        /// <summary>
+        /// Update group consent settings.
+        /// </summary>
+        /// <param name="settingId">The setting Id.</param>
+        /// <param name="groupConsentSettingValues">The group consent setting value.</param>
+        internal async System.Threading.Tasks.Task UpdateGroupConsentSettings(
+            string settingId,
+            MGTeamsInternalTenantConsentSettingValue[] groupConsentSettingValues,
+            Runtime.IEventListener eventListener,
+            Runtime.ISendAsync sender)
+        {
+            using (NoSynchronizationContext)
+            {
+                UpdateGroupConsentSettingsRequest request = new UpdateGroupConsentSettingsRequest(
+                    settingId,
+                    groupConsentSettingValues);
+
+                await this.ExecuteHttpRequestAsync<MGTeamsInternalGenericEmptyResponse>(
+                    request,
+                    outputConverter: null,
+                    eventListener: eventListener,
+                    sender: sender);
+            }
+        }
+
+        /// <summary>
         /// Execute HTTP request.
         /// </summary>
         /// <typeparam name="T">The type of the response object.</typeparam>
