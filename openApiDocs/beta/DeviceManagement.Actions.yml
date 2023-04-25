@@ -11,7 +11,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createToken
-      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles_createToken
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_createToken
       parameters:
         - name: androidDeviceOwnerEnrollmentProfile-id
           in: path
@@ -47,7 +47,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeToken
-      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfiles_revokeToken
+      operationId: deviceManagement.androidDeviceOwnerEnrollmentProfile_revokeToken
       parameters:
         - name: androidDeviceOwnerEnrollmentProfile-id
           in: path
@@ -68,7 +68,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createToken
-      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfiles_createToken
+      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfile_createToken
       parameters:
         - name: androidForWorkEnrollmentProfile-id
           in: path
@@ -104,7 +104,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeToken
-      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfiles_revokeToken
+      operationId: deviceManagement.androidGraphFPreWorkEnrollmentProfile_revokeToken
       parameters:
         - name: androidForWorkEnrollmentProfile-id
           in: path
@@ -125,7 +125,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action completeSignup
-      operationId: deviceManagement.androidGraphFPreWorkSettings_completeSignup
+      operationId: deviceManagement.androidGraphFPreWorkSetting_completeSignup
       requestBody:
         description: Action parameters
         content:
@@ -150,7 +150,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestSignupUrl
-      operationId: deviceManagement.androidGraphFPreWorkSettings_requestSignupUrl
+      operationId: deviceManagement.androidGraphFPreWorkSetting_requestSignupUrl
       requestBody:
         description: Action parameters
         content:
@@ -185,7 +185,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncApps
-      operationId: deviceManagement.androidGraphFPreWorkSettings_syncApps
+      operationId: deviceManagement.androidGraphFPreWorkSetting_syncApp
       responses:
         2XX:
           description: Success
@@ -197,7 +197,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unbind
-      operationId: deviceManagement.androidGraphFPreWorkSettings_unbind
+      operationId: deviceManagement.androidGraphFPreWorkSetting_unbind
       responses:
         2XX:
           description: Success
@@ -209,7 +209,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action addApps
-      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_addApps
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_addApp
       requestBody:
         description: Action parameters
         content:
@@ -236,7 +236,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action approveApps
-      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_approveApps
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_approveApp
       requestBody:
         description: Action parameters
         content:
@@ -266,7 +266,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action completeSignup
-      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_completeSignup
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_completeSignup
       requestBody:
         description: Action parameters
         content:
@@ -292,7 +292,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action createGooglePlayWebToken
       description: Generates a web token that is used in an embeddable component.
-      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_createGooglePlayWebToken
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_createGooglePlayWebToken
       requestBody:
         description: Action parameters
         content:
@@ -327,7 +327,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestSignupUrl
-      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_requestSignupUrl
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_requestSignupUrl
       requestBody:
         description: Action parameters
         content:
@@ -363,7 +363,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action setAndroidDeviceOwnerFullyManagedEnrollmentState
       description: Sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
-      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_setAndroidDeviceOwnerFullyManagedEnrollmentState
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_setAndroidDeviceOwnerFullyManagedEnrollmentState
       requestBody:
         description: Action parameters
         content:
@@ -388,7 +388,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncApps
-      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_syncApps
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_syncApp
       responses:
         2XX:
           description: Success
@@ -400,7 +400,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unbind
-      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_unbind
+      operationId: deviceManagement.androidManagedStoreAccountEnterpriseSetting_unbind
       responses:
         2XX:
           description: Success
@@ -435,7 +435,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setPriority
-      operationId: deviceManagement.appleUserInitiatedEnrollmentProfiles_setPriority
+      operationId: deviceManagement.appleUserInitiatedEnrollmentProfile_setPriority
       parameters:
         - name: appleUserInitiatedEnrollmentProfile-id
           in: path
@@ -471,7 +471,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enable
-      operationId: deviceManagement.assignmentFilters_enable
+      operationId: deviceManagement.assignmentFilter_enable
       requestBody:
         description: Action parameters
         content:
@@ -496,7 +496,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action validateFilter
-      operationId: deviceManagement.assignmentFilters_validateFilter
+      operationId: deviceManagement.assignmentFilter_validateFilter
       requestBody:
         description: Action parameters
         content:
@@ -524,7 +524,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getHealthMetrics
-      operationId: deviceManagement.certificateConnectorDetails_getHealthMetrics
+      operationId: deviceManagement.certificateConnectorDetail_getHealthMetric
       parameters:
         - name: certificateConnectorDetails-id
           in: path
@@ -577,7 +577,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getHealthMetricTimeSeries
-      operationId: deviceManagement.certificateConnectorDetails_getHealthMetricTimeSeries
+      operationId: deviceManagement.certificateConnectorDetail_getHealthMetricTimeSeries
       parameters:
         - name: certificateConnectorDetails-id
           in: path
@@ -627,7 +627,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action connect
-      operationId: deviceManagement.chromeOSOnboardingSettings_connect
+      operationId: deviceManagement.chromeOSOnboardingSetting_connect
       requestBody:
         description: Action parameters
         content:
@@ -659,7 +659,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disconnect
-      operationId: deviceManagement.chromeOSOnboardingSettings_disconnect
+      operationId: deviceManagement.chromeOSOnboardingSetting_disconnect
       responses:
         2XX:
           description: Success
@@ -675,7 +675,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDownloadUrl
-      operationId: deviceManagement.comanagedDevices.logCollectionRequests_createDownloadUrl
+      operationId: deviceManagement.comanagedDevice.logCollectionRequest_createDownloadUrl
       parameters:
         - name: managedDevice-id
           in: path
@@ -715,7 +715,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action activateDeviceEsim
       description: Activate eSIM on the device.
-      operationId: deviceManagement.comanagedDevices_activateDeviceEsim
+      operationId: deviceManagement.comanagedDevice_activateDeviceEsim
       parameters:
         - name: managedDevice-id
           in: path
@@ -750,7 +750,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
       description: Bypass activation lock
-      operationId: deviceManagement.comanagedDevices_bypassActivationLock
+      operationId: deviceManagement.comanagedDevice_bypassActivationLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -772,7 +772,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
       description: Clean Windows device
-      operationId: deviceManagement.comanagedDevices_cleanWindowsDevice
+      operationId: deviceManagement.comanagedDevice_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -806,7 +806,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.comanagedDevices_createDeviceLogCollectionRequest
+      operationId: deviceManagement.comanagedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: managedDevice-id
           in: path
@@ -844,7 +844,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action createRemoteHelpSession
       description: Remote help - Create session with a specific device
-      operationId: deviceManagement.comanagedDevices_createRemoteHelpSession
+      operationId: deviceManagement.comanagedDevice_createRemoteHelpSession
       parameters:
         - name: managedDevice-id
           in: path
@@ -883,7 +883,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
       description: Delete user from shared Apple device
-      operationId: deviceManagement.comanagedDevices_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.comanagedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -917,7 +917,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deprovision
-      operationId: deviceManagement.comanagedDevices_deprovision
+      operationId: deviceManagement.comanagedDevice_deprovision
       parameters:
         - name: managedDevice-id
           in: path
@@ -950,7 +950,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disable
-      operationId: deviceManagement.comanagedDevices_disable
+      operationId: deviceManagement.comanagedDevice_disable
       parameters:
         - name: managedDevice-id
           in: path
@@ -972,7 +972,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
       description: Disable lost mode
-      operationId: deviceManagement.comanagedDevices_disableLostMode
+      operationId: deviceManagement.comanagedDevice_disableLostMode
       parameters:
         - name: managedDevice-id
           in: path
@@ -994,7 +994,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
       description: Enable lost mode
-      operationId: deviceManagement.comanagedDevices_enableLostMode
+      operationId: deviceManagement.comanagedDevice_enableLostMode
       parameters:
         - name: managedDevice-id
           in: path
@@ -1035,7 +1035,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action endRemoteHelpSession
       description: 'Remote help - End ACS session, Pubsub session and delete Remote help session'
-      operationId: deviceManagement.comanagedDevices_endRemoteHelpSession
+      operationId: deviceManagement.comanagedDevice_endRemoteHelpSession
       parameters:
         - name: managedDevice-id
           in: path
@@ -1070,7 +1070,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action enrollNowAction
       description: Trigger comanagement enrollment action on ConfigurationManager client
-      operationId: deviceManagement.comanagedDevices_enrollNowAction
+      operationId: deviceManagement.comanagedDevice_enrollNowAction
       parameters:
         - name: managedDevice-id
           in: path
@@ -1092,7 +1092,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action initiateMobileDeviceManagementKeyRecovery
       description: Perform MDM key recovery and TPM attestation
-      operationId: deviceManagement.comanagedDevices_initiateMobileDeviceManagementKeyRecovery
+      operationId: deviceManagement.comanagedDevice_initiateMobileDeviceManagementKeyRecovery
       parameters:
         - name: managedDevice-id
           in: path
@@ -1114,7 +1114,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action initiateOnDemandProactiveRemediation
       description: Perform On Demand Proactive Remediation
-      operationId: deviceManagement.comanagedDevices_initiateOnDemandProactiveRemediation
+      operationId: deviceManagement.comanagedDevice_initiateOnDemandProactiveRemediation
       parameters:
         - name: managedDevice-id
           in: path
@@ -1148,7 +1148,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
       description: Locate a device
-      operationId: deviceManagement.comanagedDevices_locateDevice
+      operationId: deviceManagement.comanagedDevice_locateDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -1170,7 +1170,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
       description: Logout shared Apple device active user
-      operationId: deviceManagement.comanagedDevices_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.comanagedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
           in: path
@@ -1191,7 +1191,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.comanagedDevices_overrideComplianceState
+      operationId: deviceManagement.comanagedDevice_overrideComplianceState
       parameters:
         - name: managedDevice-id
           in: path
@@ -1228,7 +1228,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
       description: Play lost mode sound
-      operationId: deviceManagement.comanagedDevices_playLostModeSound
+      operationId: deviceManagement.comanagedDevice_playLostModeSound
       parameters:
         - name: managedDevice-id
           in: path
@@ -1263,7 +1263,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
       description: Reboot device
-      operationId: deviceManagement.comanagedDevices_rebootNow
+      operationId: deviceManagement.comanagedDevice_rebootNow
       parameters:
         - name: managedDevice-id
           in: path
@@ -1285,7 +1285,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
       description: Recover passcode
-      operationId: deviceManagement.comanagedDevices_recoverPasscode
+      operationId: deviceManagement.comanagedDevice_recoverPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -1306,7 +1306,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reenable
-      operationId: deviceManagement.comanagedDevices_reenable
+      operationId: deviceManagement.comanagedDevice_reenable
       parameters:
         - name: managedDevice-id
           in: path
@@ -1328,7 +1328,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       description: Remote lock
-      operationId: deviceManagement.comanagedDevices_remoteLock
+      operationId: deviceManagement.comanagedDevice_remoteLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -1350,7 +1350,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
       description: Remove device from Device Firmware Configuration Interface management
-      operationId: deviceManagement.comanagedDevices_removeDeviceFirmwareConfigurationInterfaceManagement
+      operationId: deviceManagement.comanagedDevice_removeDeviceFirmwareConfigurationInterfaceManagement
       parameters:
         - name: managedDevice-id
           in: path
@@ -1375,7 +1375,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0
-      operationId: deviceManagement.comanagedDevices_reprovisionCloudPc
+      operationId: deviceManagement.comanagedDevice_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
           in: path
@@ -1397,7 +1397,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
       description: Request remote assistance
-      operationId: deviceManagement.comanagedDevices_requestRemoteAssistance
+      operationId: deviceManagement.comanagedDevice_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
           in: path
@@ -1419,7 +1419,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteHelpSessionAccess
       description: Remote help - Request Remote help session access permission for an existing session
-      operationId: deviceManagement.comanagedDevices_requestRemoteHelpSessionAccess
+      operationId: deviceManagement.comanagedDevice_requestRemoteHelpSessionAccess
       parameters:
         - name: managedDevice-id
           in: path
@@ -1461,7 +1461,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
       description: Reset passcode
-      operationId: deviceManagement.comanagedDevices_resetPasscode
+      operationId: deviceManagement.comanagedDevice_resetPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -1486,7 +1486,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
-      operationId: deviceManagement.comanagedDevices_resizeCloudPc
+      operationId: deviceManagement.comanagedDevice_resizeCloudPc
       parameters:
         - name: managedDevice-id
           in: path
@@ -1524,7 +1524,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
-      operationId: deviceManagement.comanagedDevices_restoreCloudPc
+      operationId: deviceManagement.comanagedDevice_restoreCloudPc
       parameters:
         - name: managedDevice-id
           in: path
@@ -1559,7 +1559,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action retire
       description: Retire a device
-      operationId: deviceManagement.comanagedDevices_retire
+      operationId: deviceManagement.comanagedDevice_retire
       parameters:
         - name: managedDevice-id
           in: path
@@ -1581,7 +1581,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
       description: Revoke all Apple Vpp licenses for a device
-      operationId: deviceManagement.comanagedDevices_revokeAppleVppLicenses
+      operationId: deviceManagement.comanagedDevice_revokeAppleVppLicense
       parameters:
         - name: managedDevice-id
           in: path
@@ -1603,7 +1603,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
       description: Rotate BitLockerKeys
-      operationId: deviceManagement.comanagedDevices_rotateBitLockerKeys
+      operationId: deviceManagement.comanagedDevice_rotateBitLockerKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -1624,7 +1624,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.comanagedDevices_rotateFileVaultKey
+      operationId: deviceManagement.comanagedDevice_rotateFileVaultKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -1646,7 +1646,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action rotateLocalAdminPassword
       description: Initiates a manual rotation for the local admin password on the device
-      operationId: deviceManagement.comanagedDevices_rotateLocalAdminPassword
+      operationId: deviceManagement.comanagedDevice_rotateLocalAdminPassword
       parameters:
         - name: managedDevice-id
           in: path
@@ -1667,7 +1667,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.comanagedDevices_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.comanagedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: managedDevice-id
           in: path
@@ -1706,7 +1706,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
-      operationId: deviceManagement.comanagedDevices_setCloudPcReviewStatus
+      operationId: deviceManagement.comanagedDevice_setCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
           in: path
@@ -1740,7 +1740,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
       description: Set device name of the device.
-      operationId: deviceManagement.comanagedDevices_setDeviceName
+      operationId: deviceManagement.comanagedDevice_setDeviceName
       parameters:
         - name: managedDevice-id
           in: path
@@ -1775,7 +1775,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action shutDown
       description: Shut down device
-      operationId: deviceManagement.comanagedDevices_shutDown
+      operationId: deviceManagement.comanagedDevice_shutDown
       parameters:
         - name: managedDevice-id
           in: path
@@ -1796,7 +1796,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.comanagedDevices_syncDevice
+      operationId: deviceManagement.comanagedDevice_syncDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -1818,7 +1818,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
       description: Trigger action on ConfigurationManager client
-      operationId: deviceManagement.comanagedDevices_triggerConfigurationManagerAction
+      operationId: deviceManagement.comanagedDevice_triggerConfigurationManagerAction
       parameters:
         - name: managedDevice-id
           in: path
@@ -1851,7 +1851,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.comanagedDevices_updateWindowsDeviceAccount
+      operationId: deviceManagement.comanagedDevice_updateWindowsDeviceAccount
       parameters:
         - name: managedDevice-id
           in: path
@@ -1884,7 +1884,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.comanagedDevices_windowsDefenderScan
+      operationId: deviceManagement.comanagedDevice_windowsDefenderScan
       parameters:
         - name: managedDevice-id
           in: path
@@ -1918,7 +1918,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.comanagedDevices_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.comanagedDevice_windowsDefenderUpdateSignature
       parameters:
         - name: managedDevice-id
           in: path
@@ -1940,7 +1940,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action wipe
       description: Wipe a device
-      operationId: deviceManagement.comanagedDevices_wipe
+      operationId: deviceManagement.comanagedDevice_wipe
       parameters:
         - name: managedDevice-id
           in: path
@@ -1994,7 +1994,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
-      operationId: deviceManagement.comanagedDevices_bulkReprovisionCloudPc
+      operationId: deviceManagement.comanagedDevice_bulkReprovisionCloudPc
       requestBody:
         description: Action parameters
         content:
@@ -2029,7 +2029,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0
-      operationId: deviceManagement.comanagedDevices_bulkRestoreCloudPc
+      operationId: deviceManagement.comanagedDevice_bulkRestoreCloudPc
       requestBody:
         description: Action parameters
         content:
@@ -2071,7 +2071,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
-      operationId: deviceManagement.comanagedDevices_bulkSetCloudPcReviewStatus
+      operationId: deviceManagement.comanagedDevice_bulkSetCloudPcReviewStatus
       requestBody:
         description: Action parameters
         content:
@@ -2104,7 +2104,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action downloadAppDiagnostics
-      operationId: deviceManagement.comanagedDevices_downloadAppDiagnostics
+      operationId: deviceManagement.comanagedDevice_downloadAppDiagnostic
       requestBody:
         description: Action parameters
         content:
@@ -2139,7 +2139,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action executeAction
-      operationId: deviceManagement.comanagedDevices_executeAction
+      operationId: deviceManagement.comanagedDevice_executeAction
       requestBody:
         description: Action parameters
         content:
@@ -2202,7 +2202,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action moveDevicesToOU
-      operationId: deviceManagement.comanagedDevices_moveDevicesToOU
+      operationId: deviceManagement.comanagedDevice_moveDevicesToOU
       requestBody:
         description: Action parameters
         content:
@@ -2233,7 +2233,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.compliancePolicies_assign
+      operationId: deviceManagement.compliancePolicy_assign
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path
@@ -2286,7 +2286,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setScheduledActions
-      operationId: deviceManagement.compliancePolicies_setScheduledActions
+      operationId: deviceManagement.compliancePolicy_setScheduledAction
       parameters:
         - name: deviceManagementCompliancePolicy-id
           in: path
@@ -2339,7 +2339,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.configurationPolicies_assign
+      operationId: deviceManagement.configurationPolicy_assign
       parameters:
         - name: deviceManagementConfigurationPolicy-id
           in: path
@@ -2392,7 +2392,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createCopy
-      operationId: deviceManagement.configurationPolicies_createCopy
+      operationId: deviceManagement.configurationPolicy_createCopy
       parameters:
         - name: deviceManagementConfigurationPolicy-id
           in: path
@@ -2433,7 +2433,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reorder
-      operationId: deviceManagement.configurationPolicies_reorder
+      operationId: deviceManagement.configurationPolicy_reorder
       parameters:
         - name: deviceManagementConfigurationPolicy-id
           in: path
@@ -2469,7 +2469,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action consentToDataSharing
-      operationId: deviceManagement.dataSharingConsents_consentToDataSharing
+      operationId: deviceManagement.dataSharingConsent_consentToDataSharing
       parameters:
         - name: dataSharingConsent-id
           in: path
@@ -2494,7 +2494,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDefaultProfile
-      operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles_setDefaultProfile
+      operationId: deviceManagement.depOnboardingSetting.enrollmentProfile_setDefaultProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2523,7 +2523,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProfileAssignment
-      operationId: deviceManagement.depOnboardingSettings.enrollmentProfiles_updateDeviceProfileAssignment
+      operationId: deviceManagement.depOnboardingSetting.enrollmentProfile_updateDeviceProfileAssignment
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2567,7 +2567,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action importAppleDeviceIdentityList
-      operationId: deviceManagement.depOnboardingSettings.importedAppleDeviceIdentities_importAppleDeviceIdentityList
+      operationId: deviceManagement.depOnboardingSetting.importedAppleDeviceIdentity_importAppleDeviceIdentityList
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2624,7 +2624,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action generateEncryptionPublicKey
       description: Generate a public key to use to encrypt the Apple device enrollment program token
-      operationId: deviceManagement.depOnboardingSettings_generateEncryptionPublicKey
+      operationId: deviceManagement.depOnboardingSetting_generateEncryptionPublicKey
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2655,7 +2655,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shareForSchoolDataSyncService
-      operationId: deviceManagement.depOnboardingSettings_shareGraphFPreSchoolDataSyncService
+      operationId: deviceManagement.depOnboardingSetting_shareGraphFPreSchoolDataSyncService
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2677,7 +2677,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action syncWithAppleDeviceEnrollmentProgram
       description: Synchronizes between Apple Device Enrollment Program and Intune
-      operationId: deviceManagement.depOnboardingSettings_syncGraphWPreAppleDeviceEnrollmentProgram
+      operationId: deviceManagement.depOnboardingSetting_syncGraphWPreAppleDeviceEnrollmentProgram
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2698,7 +2698,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unshareForSchoolDataSyncService
-      operationId: deviceManagement.depOnboardingSettings_unshareGraphFPreSchoolDataSyncService
+      operationId: deviceManagement.depOnboardingSetting_unshareGraphFPreSchoolDataSyncService
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2720,7 +2720,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action uploadDepToken
       description: Uploads a new Device Enrollment Program token
-      operationId: deviceManagement.depOnboardingSettings_uploadDepToken
+      operationId: deviceManagement.depOnboardingSetting_uploadDepToken
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2757,7 +2757,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceCompliancePolicies_assign
+      operationId: deviceManagement.deviceCompliancePolicy_assign
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2810,7 +2810,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action scheduleActionsForRules
-      operationId: deviceManagement.deviceCompliancePolicies_scheduleActionsGraphFPreRules
+      operationId: deviceManagement.deviceCompliancePolicy_scheduleActionsGraphFPreRule
       parameters:
         - name: deviceCompliancePolicy-id
           in: path
@@ -2845,7 +2845,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getNoncompliantDevicesToRetire
-      operationId: deviceManagement.deviceCompliancePolicies_getNoncompliantDevicesToRetire
+      operationId: deviceManagement.deviceCompliancePolicy_getNoncompliantDevicesToRetire
       requestBody:
         description: Action parameters
         content:
@@ -2917,7 +2917,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action hasPayloadLinks
-      operationId: deviceManagement.deviceCompliancePolicies_hasPayloadLinks
+      operationId: deviceManagement.deviceCompliancePolicy_hasPayloadLink
       requestBody:
         description: Action parameters
         content:
@@ -2961,7 +2961,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action refreshDeviceComplianceReportSummarization
-      operationId: deviceManagement.deviceCompliancePolicies_refreshDeviceComplianceReportSummarization
+      operationId: deviceManagement.deviceCompliancePolicy_refreshDeviceComplianceReportSummarization
       responses:
         2XX:
           description: Success
@@ -2973,7 +2973,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setScheduledRetireState
-      operationId: deviceManagement.deviceCompliancePolicies_setScheduledRetireState
+      operationId: deviceManagement.deviceCompliancePolicy_setScheduledRetireState
       requestBody:
         description: Action parameters
         content:
@@ -3006,7 +3006,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action validateComplianceScript
-      operationId: deviceManagement.deviceCompliancePolicies_validateComplianceScript
+      operationId: deviceManagement.deviceCompliancePolicy_validateComplianceScript
       requestBody:
         description: Action parameters
         content:
@@ -3034,7 +3034,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceComplianceScripts_assign
+      operationId: deviceManagement.deviceComplianceScript_assign
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -3069,7 +3069,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceConfigurations_assign
+      operationId: deviceManagement.deviceConfiguration_assign
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -3126,7 +3126,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignedAccessMultiModeProfiles
-      operationId: deviceManagement.deviceConfigurations_assignedAccessMultiModeProfiles
+      operationId: deviceManagement.deviceConfiguration_assignedAccessMultiModeProfile
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -3161,7 +3161,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsPrivacyAccessControls
-      operationId: deviceManagement.deviceConfigurations_windowsPrivacyAccessControls
+      operationId: deviceManagement.deviceConfiguration_windowsPrivacyAccessControl
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -3196,7 +3196,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getTargetedUsersAndDevices
-      operationId: deviceManagement.deviceConfigurations_getTargetedUsersAndDevices
+      operationId: deviceManagement.deviceConfiguration_getTargetedUsersAndDevice
       requestBody:
         description: Action parameters
         content:
@@ -3240,7 +3240,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action hasPayloadLinks
-      operationId: deviceManagement.deviceConfigurations_hasPayloadLinks
+      operationId: deviceManagement.deviceConfiguration_hasPayloadLink
       requestBody:
         description: Action parameters
         content:
@@ -3284,7 +3284,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceCustomAttributeShellScripts_assign
+      operationId: deviceManagement.deviceCustomAttributeShellScript_assign
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3323,7 +3323,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceEnrollmentConfigurations_assign
+      operationId: deviceManagement.deviceEnrollmentConfiguration_assign
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -3358,7 +3358,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setPriority
-      operationId: deviceManagement.deviceEnrollmentConfigurations_setPriority
+      operationId: deviceManagement.deviceEnrollmentConfiguration_setPriority
       parameters:
         - name: deviceEnrollmentConfiguration-id
           in: path
@@ -3394,7 +3394,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createEnrollmentNotificationConfiguration
-      operationId: deviceManagement.deviceEnrollmentConfigurations_createEnrollmentNotificationConfiguration
+      operationId: deviceManagement.deviceEnrollmentConfiguration_createEnrollmentNotificationConfiguration
       requestBody:
         description: Action parameters
         content:
@@ -3420,7 +3420,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action hasPayloadLinks
-      operationId: deviceManagement.deviceEnrollmentConfigurations_hasPayloadLinks
+      operationId: deviceManagement.deviceEnrollmentConfiguration_hasPayloadLink
       requestBody:
         description: Action parameters
         content:
@@ -3464,7 +3464,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceHealthScripts_assign
+      operationId: deviceManagement.deviceHealthScript_assign
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -3500,7 +3500,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action getGlobalScriptHighestAvailableVersion
       description: Update the Proprietary Device Health Script
-      operationId: deviceManagement.deviceHealthScripts_getGlobalScriptHighestAvailableVersion
+      operationId: deviceManagement.deviceHealthScript_getGlobalScriptHighestAvailableVersion
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -3532,7 +3532,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action updateGlobalScript
       description: Update the Proprietary Device Health Script
-      operationId: deviceManagement.deviceHealthScripts_updateGlobalScript
+      operationId: deviceManagement.deviceHealthScript_updateGlobalScript
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -3576,7 +3576,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableGlobalScripts
-      operationId: deviceManagement.deviceHealthScripts_enableGlobalScripts
+      operationId: deviceManagement.deviceHealthScript_enableGlobalScript
       responses:
         2XX:
           description: Success
@@ -3588,7 +3588,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action terminate
-      operationId: deviceManagement.deviceManagementPartners_terminate
+      operationId: deviceManagement.deviceManagementPartner_terminate
       parameters:
         - name: deviceManagementPartner-id
           in: path
@@ -3609,7 +3609,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceManagementScripts_assign
+      operationId: deviceManagement.deviceManagementScript_assign
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -3648,7 +3648,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action hasPayloadLinks
-      operationId: deviceManagement.deviceManagementScripts_hasPayloadLinks
+      operationId: deviceManagement.deviceManagementScript_hasPayloadLink
       requestBody:
         description: Action parameters
         content:
@@ -3692,7 +3692,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceShellScripts_assign
+      operationId: deviceManagement.deviceShellScript_assign
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -3731,7 +3731,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.embeddedSIMActivationCodePools_assign
+      operationId: deviceManagement.embeddedSIMActivationCodePool_assign
       parameters:
         - name: embeddedSIMActivationCodePool-id
           in: path
@@ -3784,7 +3784,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sync
-      operationId: deviceManagement.exchangeConnectors_sync
+      operationId: deviceManagement.exchangeConnector_sync
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
@@ -3817,7 +3817,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.groupPolicyConfigurations_assign
+      operationId: deviceManagement.groupPolicyConfiguration_assign
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -3870,7 +3870,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDefinitionValues
-      operationId: deviceManagement.groupPolicyConfigurations_updateDefinitionValues
+      operationId: deviceManagement.groupPolicyConfiguration_updateDefinitionValue
       parameters:
         - name: groupPolicyConfiguration-id
           in: path
@@ -3914,7 +3914,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateScopeTags
-      operationId: deviceManagement.groupPolicyMigrationReports_updateScopeTags
+      operationId: deviceManagement.groupPolicyMigrationReport_updateScopeTag
       parameters:
         - name: groupPolicyMigrationReport-id
           in: path
@@ -3960,7 +3960,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createMigrationReport
-      operationId: deviceManagement.groupPolicyMigrationReports_createMigrationReport
+      operationId: deviceManagement.groupPolicyMigrationReport_createMigrationReport
       requestBody:
         description: Action parameters
         content:
@@ -3994,7 +3994,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action addLanguageFiles
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_addLanguageFiles
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_addLanguageFile
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -4029,7 +4029,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remove
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_remove
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_remove
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -4050,7 +4050,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action removeLanguageFiles
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_removeLanguageFiles
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_removeLanguageFile
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -4085,7 +4085,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateLanguageFiles
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_updateLanguageFiles
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_updateLanguageFile
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -4120,7 +4120,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action uploadNewVersion
-      operationId: deviceManagement.groupPolicyUploadedDefinitionFiles_uploadNewVersion
+      operationId: deviceManagement.groupPolicyUploadedDefinitionFile_uploadNewVersion
       parameters:
         - name: groupPolicyUploadedDefinitionFile-id
           in: path
@@ -4158,7 +4158,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action importDeviceIdentityList
-      operationId: deviceManagement.importedDeviceIdentities_importDeviceIdentityList
+      operationId: deviceManagement.importedDeviceIdentity_importDeviceIdentityList
       requestBody:
         description: Action parameters
         content:
@@ -4205,7 +4205,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action searchExistingIdentities
-      operationId: deviceManagement.importedDeviceIdentities_searchExistingIdentities
+      operationId: deviceManagement.importedDeviceIdentity_searchExistingIdentity
       requestBody:
         description: Action parameters
         content:
@@ -4249,7 +4249,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action import
-      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentities_import
+      operationId: deviceManagement.importedWindowsAutopilotDeviceIdentity_import
       requestBody:
         description: Action parameters
         content:
@@ -4293,7 +4293,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.intents_assign
+      operationId: deviceManagement.intent_assign
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -4328,7 +4328,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createCopy
-      operationId: deviceManagement.intents_createCopy
+      operationId: deviceManagement.intent_createCopy
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -4369,7 +4369,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action migrateToTemplate
-      operationId: deviceManagement.intents_migrateToTemplate
+      operationId: deviceManagement.intent_migrateToTemplate
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -4406,7 +4406,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateSettings
-      operationId: deviceManagement.intents_updateSettings
+      operationId: deviceManagement.intent_updateSetting
       parameters:
         - name: deviceManagementIntent-id
           in: path
@@ -4441,7 +4441,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.intuneBrandingProfiles_assign
+      operationId: deviceManagement.intuneBrandingProfile_assign
       parameters:
         - name: intuneBrandingProfile-id
           in: path
@@ -4476,7 +4476,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDownloadUrl
-      operationId: deviceManagement.managedDevices.logCollectionRequests_createDownloadUrl
+      operationId: deviceManagement.managedDevice.logCollectionRequest_createDownloadUrl
       parameters:
         - name: managedDevice-id
           in: path
@@ -4516,7 +4516,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action activateDeviceEsim
       description: Activate eSIM on the device.
-      operationId: deviceManagement.managedDevices_activateDeviceEsim
+      operationId: deviceManagement.managedDevice_activateDeviceEsim
       parameters:
         - name: managedDevice-id
           in: path
@@ -4551,7 +4551,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
       description: Bypass activation lock
-      operationId: deviceManagement.managedDevices_bypassActivationLock
+      operationId: deviceManagement.managedDevice_bypassActivationLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -4573,7 +4573,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
       description: Clean Windows device
-      operationId: deviceManagement.managedDevices_cleanWindowsDevice
+      operationId: deviceManagement.managedDevice_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -4607,7 +4607,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDeviceLogCollectionRequest
-      operationId: deviceManagement.managedDevices_createDeviceLogCollectionRequest
+      operationId: deviceManagement.managedDevice_createDeviceLogCollectionRequest
       parameters:
         - name: managedDevice-id
           in: path
@@ -4645,7 +4645,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action createRemoteHelpSession
       description: Remote help - Create session with a specific device
-      operationId: deviceManagement.managedDevices_createRemoteHelpSession
+      operationId: deviceManagement.managedDevice_createRemoteHelpSession
       parameters:
         - name: managedDevice-id
           in: path
@@ -4684,7 +4684,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
       description: Delete user from shared Apple device
-      operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
+      operationId: deviceManagement.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -4718,7 +4718,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deprovision
-      operationId: deviceManagement.managedDevices_deprovision
+      operationId: deviceManagement.managedDevice_deprovision
       parameters:
         - name: managedDevice-id
           in: path
@@ -4751,7 +4751,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disable
-      operationId: deviceManagement.managedDevices_disable
+      operationId: deviceManagement.managedDevice_disable
       parameters:
         - name: managedDevice-id
           in: path
@@ -4773,7 +4773,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
       description: Disable lost mode
-      operationId: deviceManagement.managedDevices_disableLostMode
+      operationId: deviceManagement.managedDevice_disableLostMode
       parameters:
         - name: managedDevice-id
           in: path
@@ -4795,7 +4795,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
       description: Enable lost mode
-      operationId: deviceManagement.managedDevices_enableLostMode
+      operationId: deviceManagement.managedDevice_enableLostMode
       parameters:
         - name: managedDevice-id
           in: path
@@ -4836,7 +4836,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action endRemoteHelpSession
       description: 'Remote help - End ACS session, Pubsub session and delete Remote help session'
-      operationId: deviceManagement.managedDevices_endRemoteHelpSession
+      operationId: deviceManagement.managedDevice_endRemoteHelpSession
       parameters:
         - name: managedDevice-id
           in: path
@@ -4871,7 +4871,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action enrollNowAction
       description: Trigger comanagement enrollment action on ConfigurationManager client
-      operationId: deviceManagement.managedDevices_enrollNowAction
+      operationId: deviceManagement.managedDevice_enrollNowAction
       parameters:
         - name: managedDevice-id
           in: path
@@ -4893,7 +4893,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action initiateMobileDeviceManagementKeyRecovery
       description: Perform MDM key recovery and TPM attestation
-      operationId: deviceManagement.managedDevices_initiateMobileDeviceManagementKeyRecovery
+      operationId: deviceManagement.managedDevice_initiateMobileDeviceManagementKeyRecovery
       parameters:
         - name: managedDevice-id
           in: path
@@ -4915,7 +4915,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action initiateOnDemandProactiveRemediation
       description: Perform On Demand Proactive Remediation
-      operationId: deviceManagement.managedDevices_initiateOnDemandProactiveRemediation
+      operationId: deviceManagement.managedDevice_initiateOnDemandProactiveRemediation
       parameters:
         - name: managedDevice-id
           in: path
@@ -4949,7 +4949,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
       description: Locate a device
-      operationId: deviceManagement.managedDevices_locateDevice
+      operationId: deviceManagement.managedDevice_locateDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -4971,7 +4971,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
       description: Logout shared Apple device active user
-      operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
+      operationId: deviceManagement.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
           in: path
@@ -4992,7 +4992,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action overrideComplianceState
-      operationId: deviceManagement.managedDevices_overrideComplianceState
+      operationId: deviceManagement.managedDevice_overrideComplianceState
       parameters:
         - name: managedDevice-id
           in: path
@@ -5029,7 +5029,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
       description: Play lost mode sound
-      operationId: deviceManagement.managedDevices_playLostModeSound
+      operationId: deviceManagement.managedDevice_playLostModeSound
       parameters:
         - name: managedDevice-id
           in: path
@@ -5064,7 +5064,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
       description: Reboot device
-      operationId: deviceManagement.managedDevices_rebootNow
+      operationId: deviceManagement.managedDevice_rebootNow
       parameters:
         - name: managedDevice-id
           in: path
@@ -5086,7 +5086,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
       description: Recover passcode
-      operationId: deviceManagement.managedDevices_recoverPasscode
+      operationId: deviceManagement.managedDevice_recoverPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -5107,7 +5107,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reenable
-      operationId: deviceManagement.managedDevices_reenable
+      operationId: deviceManagement.managedDevice_reenable
       parameters:
         - name: managedDevice-id
           in: path
@@ -5129,7 +5129,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       description: Remote lock
-      operationId: deviceManagement.managedDevices_remoteLock
+      operationId: deviceManagement.managedDevice_remoteLock
       parameters:
         - name: managedDevice-id
           in: path
@@ -5151,7 +5151,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action removeDeviceFirmwareConfigurationInterfaceManagement
       description: Remove device from Device Firmware Configuration Interface management
-      operationId: deviceManagement.managedDevices_removeDeviceFirmwareConfigurationInterfaceManagement
+      operationId: deviceManagement.managedDevice_removeDeviceFirmwareConfigurationInterfaceManagement
       parameters:
         - name: managedDevice-id
           in: path
@@ -5176,7 +5176,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0
-      operationId: deviceManagement.managedDevices_reprovisionCloudPc
+      operationId: deviceManagement.managedDevice_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
           in: path
@@ -5198,7 +5198,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
       description: Request remote assistance
-      operationId: deviceManagement.managedDevices_requestRemoteAssistance
+      operationId: deviceManagement.managedDevice_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
           in: path
@@ -5220,7 +5220,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteHelpSessionAccess
       description: Remote help - Request Remote help session access permission for an existing session
-      operationId: deviceManagement.managedDevices_requestRemoteHelpSessionAccess
+      operationId: deviceManagement.managedDevice_requestRemoteHelpSessionAccess
       parameters:
         - name: managedDevice-id
           in: path
@@ -5262,7 +5262,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
       description: Reset passcode
-      operationId: deviceManagement.managedDevices_resetPasscode
+      operationId: deviceManagement.managedDevice_resetPasscode
       parameters:
         - name: managedDevice-id
           in: path
@@ -5287,7 +5287,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
-      operationId: deviceManagement.managedDevices_resizeCloudPc
+      operationId: deviceManagement.managedDevice_resizeCloudPc
       parameters:
         - name: managedDevice-id
           in: path
@@ -5325,7 +5325,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
-      operationId: deviceManagement.managedDevices_restoreCloudPc
+      operationId: deviceManagement.managedDevice_restoreCloudPc
       parameters:
         - name: managedDevice-id
           in: path
@@ -5360,7 +5360,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action retire
       description: Retire a device
-      operationId: deviceManagement.managedDevices_retire
+      operationId: deviceManagement.managedDevice_retire
       parameters:
         - name: managedDevice-id
           in: path
@@ -5382,7 +5382,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
       description: Revoke all Apple Vpp licenses for a device
-      operationId: deviceManagement.managedDevices_revokeAppleVppLicenses
+      operationId: deviceManagement.managedDevice_revokeAppleVppLicense
       parameters:
         - name: managedDevice-id
           in: path
@@ -5404,7 +5404,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
       description: Rotate BitLockerKeys
-      operationId: deviceManagement.managedDevices_rotateBitLockerKeys
+      operationId: deviceManagement.managedDevice_rotateBitLockerKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -5425,7 +5425,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateFileVaultKey
-      operationId: deviceManagement.managedDevices_rotateFileVaultKey
+      operationId: deviceManagement.managedDevice_rotateFileVaultKey
       parameters:
         - name: managedDevice-id
           in: path
@@ -5447,7 +5447,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action rotateLocalAdminPassword
       description: Initiates a manual rotation for the local admin password on the device
-      operationId: deviceManagement.managedDevices_rotateLocalAdminPassword
+      operationId: deviceManagement.managedDevice_rotateLocalAdminPassword
       parameters:
         - name: managedDevice-id
           in: path
@@ -5468,7 +5468,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendCustomNotificationToCompanyPortal
-      operationId: deviceManagement.managedDevices_sendCustomNotificationToCompanyPortal
+      operationId: deviceManagement.managedDevice_sendCustomNotificationToCompanyPortal
       parameters:
         - name: managedDevice-id
           in: path
@@ -5507,7 +5507,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
-      operationId: deviceManagement.managedDevices_setCloudPcReviewStatus
+      operationId: deviceManagement.managedDevice_setCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
           in: path
@@ -5541,7 +5541,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
       description: Set device name of the device.
-      operationId: deviceManagement.managedDevices_setDeviceName
+      operationId: deviceManagement.managedDevice_setDeviceName
       parameters:
         - name: managedDevice-id
           in: path
@@ -5576,7 +5576,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action shutDown
       description: Shut down device
-      operationId: deviceManagement.managedDevices_shutDown
+      operationId: deviceManagement.managedDevice_shutDown
       parameters:
         - name: managedDevice-id
           in: path
@@ -5597,7 +5597,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.managedDevices_syncDevice
+      operationId: deviceManagement.managedDevice_syncDevice
       parameters:
         - name: managedDevice-id
           in: path
@@ -5619,7 +5619,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
       description: Trigger action on ConfigurationManager client
-      operationId: deviceManagement.managedDevices_triggerConfigurationManagerAction
+      operationId: deviceManagement.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: managedDevice-id
           in: path
@@ -5652,7 +5652,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.managedDevices_updateWindowsDeviceAccount
+      operationId: deviceManagement.managedDevice_updateWindowsDeviceAccount
       parameters:
         - name: managedDevice-id
           in: path
@@ -5685,7 +5685,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.managedDevices_windowsDefenderScan
+      operationId: deviceManagement.managedDevice_windowsDefenderScan
       parameters:
         - name: managedDevice-id
           in: path
@@ -5719,7 +5719,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.managedDevices_windowsDefenderUpdateSignatures
+      operationId: deviceManagement.managedDevice_windowsDefenderUpdateSignature
       parameters:
         - name: managedDevice-id
           in: path
@@ -5741,7 +5741,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action wipe
       description: Wipe a device
-      operationId: deviceManagement.managedDevices_wipe
+      operationId: deviceManagement.managedDevice_wipe
       parameters:
         - name: managedDevice-id
           in: path
@@ -5795,7 +5795,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
-      operationId: deviceManagement.managedDevices_bulkReprovisionCloudPc
+      operationId: deviceManagement.managedDevice_bulkReprovisionCloudPc
       requestBody:
         description: Action parameters
         content:
@@ -5830,7 +5830,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0
-      operationId: deviceManagement.managedDevices_bulkRestoreCloudPc
+      operationId: deviceManagement.managedDevice_bulkRestoreCloudPc
       requestBody:
         description: Action parameters
         content:
@@ -5872,7 +5872,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
-      operationId: deviceManagement.managedDevices_bulkSetCloudPcReviewStatus
+      operationId: deviceManagement.managedDevice_bulkSetCloudPcReviewStatus
       requestBody:
         description: Action parameters
         content:
@@ -5905,7 +5905,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action downloadAppDiagnostics
-      operationId: deviceManagement.managedDevices_downloadAppDiagnostics
+      operationId: deviceManagement.managedDevice_downloadAppDiagnostic
       requestBody:
         description: Action parameters
         content:
@@ -5940,7 +5940,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action executeAction
-      operationId: deviceManagement.managedDevices_executeAction
+      operationId: deviceManagement.managedDevice_executeAction
       requestBody:
         description: Action parameters
         content:
@@ -6003,7 +6003,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action moveDevicesToOU
-      operationId: deviceManagement.managedDevices_moveDevicesToOU
+      operationId: deviceManagement.managedDevice_moveDevicesToOU
       requestBody:
         description: Action parameters
         content:
@@ -6059,7 +6059,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action enableUnlicensedAdminstrators
       description: 'Upon enabling, users assigned as administrators via Role Assignment Memberships will no longer require an assigned Intune license. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators will continue to function as-is in that transitive memberships apply and are not subject to the 350 member limit.'
-      operationId: deviceManagement_enableUnlicensedAdminstrators
+      operationId: deviceManagement_enableUnlicensedAdminstrator
       responses:
         2XX:
           description: Success
@@ -6106,7 +6106,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getAssignmentFiltersStatusDetails
-      operationId: deviceManagement_getAssignmentFiltersStatusDetails
+      operationId: deviceManagement_getAssignmentFiltersStatusDetail
       requestBody:
         description: Action parameters
         content:
@@ -6191,7 +6191,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDownloadUrl
-      operationId: deviceManagement.microsoftTunnelServerLogCollectionResponses_createDownloadUrl
+      operationId: deviceManagement.microsoftTunnelServerLogCollectionResponse_createDownloadUrl
       parameters:
         - name: microsoftTunnelServerLogCollectionResponse-id
           in: path
@@ -6222,7 +6222,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action generateDownloadUrl
-      operationId: deviceManagement.microsoftTunnelServerLogCollectionResponses_generateDownloadUrl
+      operationId: deviceManagement.microsoftTunnelServerLogCollectionResponse_generateDownloadUrl
       parameters:
         - name: microsoftTunnelServerLogCollectionResponse-id
           in: path
@@ -6253,7 +6253,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestUpgrade
-      operationId: deviceManagement.microsoftTunnelSites_requestUpgrade
+      operationId: deviceManagement.microsoftTunnelSite_requestUpgrade
       parameters:
         - name: microsoftTunnelSite-id
           in: path
@@ -6274,7 +6274,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createServerLogCollectionRequest
-      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelServers_createServerLogCollectionRequest
+      operationId: deviceManagement.microsoftTunnelSite.microsoftTunnelServer_createServerLogCollectionRequest
       parameters:
         - name: microsoftTunnelSite-id
           in: path
@@ -6325,7 +6325,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action generateServerLogCollectionRequest
-      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelServers_generateServerLogCollectionRequest
+      operationId: deviceManagement.microsoftTunnelSite.microsoftTunnelServer_generateServerLogCollectionRequest
       parameters:
         - name: microsoftTunnelSite-id
           in: path
@@ -6376,7 +6376,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getHealthMetrics
-      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelServers_getHealthMetrics
+      operationId: deviceManagement.microsoftTunnelSite.microsoftTunnelServer_getHealthMetric
       parameters:
         - name: microsoftTunnelSite-id
           in: path
@@ -6437,7 +6437,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getHealthMetricTimeSeries
-      operationId: deviceManagement.microsoftTunnelSites.microsoftTunnelServers_getHealthMetricTimeSeries
+      operationId: deviceManagement.microsoftTunnelSite.microsoftTunnelServer_getHealthMetricTimeSeries
       parameters:
         - name: microsoftTunnelSite-id
           in: path
@@ -6504,7 +6504,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createDownloadUrl
-      operationId: deviceManagement.mobileAppTroubleshootingEvents.appLogCollectionRequests_createDownloadUrl
+      operationId: deviceManagement.mobileAppTroubleshootingEvent.appLogCollectionRequest_createDownloadUrl
       parameters:
         - name: mobileAppTroubleshootingEvent-id
           in: path
@@ -6541,7 +6541,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-setportalnotificationassent?view=graph-rest-1.0
-      operationId: deviceManagement.monitoring.alertRecords_setPortalNotificationAsSent
+      operationId: deviceManagement.monitoring.alertRecord_setPortalNotificationAsSent
       parameters:
         - name: alertRecord-id
           in: path
@@ -6563,7 +6563,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
       description: Sends test message using the specified notificationMessageTemplate in the default locale
-      operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
+      operationId: deviceManagement.notificationMessageTemplate_sendTestMessage
       parameters:
         - name: notificationMessageTemplate-id
           in: path
@@ -6627,7 +6627,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
       description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-      operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
+      operationId: deviceManagement.remoteAssistancePartner_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -6649,7 +6649,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action disconnect
       description: A request to remove the active TeamViewer connector
-      operationId: deviceManagement.remoteAssistancePartners_disconnect
+      operationId: deviceManagement.remoteAssistancePartner_disconnect
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -6670,7 +6670,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getActiveMalwareReport
-      operationId: deviceManagement.reports_getActiveMalwareReport
+      operationId: deviceManagement.report_getActiveMalwareReport
       requestBody:
         description: Action parameters
         content:
@@ -6742,7 +6742,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getActiveMalwareSummaryReport
-      operationId: deviceManagement.reports_getActiveMalwareSummaryReport
+      operationId: deviceManagement.report_getActiveMalwareSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -6814,7 +6814,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getAllCertificatesReport
-      operationId: deviceManagement.reports_getAllCertificatesReport
+      operationId: deviceManagement.report_getAllCertificatesReport
       requestBody:
         description: Action parameters
         content:
@@ -6886,7 +6886,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getAppsInstallSummaryReport
-      operationId: deviceManagement.reports_getAppsInstallSummaryReport
+      operationId: deviceManagement.report_getAppsInstallSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -6958,7 +6958,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getAppStatusOverviewReport
-      operationId: deviceManagement.reports_getAppStatusOverviewReport
+      operationId: deviceManagement.report_getAppStatusOverviewReport
       requestBody:
         description: Action parameters
         content:
@@ -7030,7 +7030,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getCachedReport
-      operationId: deviceManagement.reports_getCachedReport
+      operationId: deviceManagement.report_getCachedReport
       requestBody:
         description: Action parameters
         content:
@@ -7096,7 +7096,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getCertificatesReport
-      operationId: deviceManagement.reports_getCertificatesReport
+      operationId: deviceManagement.report_getCertificatesReport
       requestBody:
         description: Action parameters
         content:
@@ -7168,7 +7168,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getCompliancePoliciesReportForDevice
-      operationId: deviceManagement.reports_getCompliancePoliciesReportGraphFPreDevice
+      operationId: deviceManagement.report_getCompliancePoliciesReportGraphFPreDevice
       requestBody:
         description: Action parameters
         content:
@@ -7240,7 +7240,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getCompliancePolicyDevicesReport
-      operationId: deviceManagement.reports_getCompliancePolicyDevicesReport
+      operationId: deviceManagement.report_getCompliancePolicyDevicesReport
       requestBody:
         description: Action parameters
         content:
@@ -7312,7 +7312,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getCompliancePolicyDeviceSummaryReport
-      operationId: deviceManagement.reports_getCompliancePolicyDeviceSummaryReport
+      operationId: deviceManagement.report_getCompliancePolicyDeviceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -7384,7 +7384,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getCompliancePolicyNonComplianceReport
-      operationId: deviceManagement.reports_getCompliancePolicyNonComplianceReport
+      operationId: deviceManagement.report_getCompliancePolicyNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -7456,7 +7456,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getCompliancePolicyNonComplianceSummaryReport
-      operationId: deviceManagement.reports_getCompliancePolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getCompliancePolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -7528,7 +7528,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getComplianceSettingDetailsReport
-      operationId: deviceManagement.reports_getComplianceSettingDetailsReport
+      operationId: deviceManagement.report_getComplianceSettingDetailsReport
       requestBody:
         description: Action parameters
         content:
@@ -7600,7 +7600,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getComplianceSettingNonComplianceReport
-      operationId: deviceManagement.reports_getComplianceSettingNonComplianceReport
+      operationId: deviceManagement.report_getComplianceSettingNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -7672,7 +7672,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getComplianceSettingsReport
-      operationId: deviceManagement.reports_getComplianceSettingsReport
+      operationId: deviceManagement.report_getComplianceSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -7744,7 +7744,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigManagerDevicePolicyStatusReport
-      operationId: deviceManagement.reports_getConfigManagerDevicePolicyStatusReport
+      operationId: deviceManagement.report_getConfigManagerDevicePolicyStatusReport
       requestBody:
         description: Action parameters
         content:
@@ -7816,7 +7816,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationPoliciesReportForDevice
-      operationId: deviceManagement.reports_getConfigurationPoliciesReportGraphFPreDevice
+      operationId: deviceManagement.report_getConfigurationPoliciesReportGraphFPreDevice
       requestBody:
         description: Action parameters
         content:
@@ -7888,7 +7888,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationPolicyDevicesReport
-      operationId: deviceManagement.reports_getConfigurationPolicyDevicesReport
+      operationId: deviceManagement.report_getConfigurationPolicyDevicesReport
       requestBody:
         description: Action parameters
         content:
@@ -7960,7 +7960,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationPolicyDeviceSummaryReport
-      operationId: deviceManagement.reports_getConfigurationPolicyDeviceSummaryReport
+      operationId: deviceManagement.report_getConfigurationPolicyDeviceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -8032,7 +8032,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationPolicyNonComplianceReport
-      operationId: deviceManagement.reports_getConfigurationPolicyNonComplianceReport
+      operationId: deviceManagement.report_getConfigurationPolicyNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -8104,7 +8104,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationPolicyNonComplianceSummaryReport
-      operationId: deviceManagement.reports_getConfigurationPolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getConfigurationPolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -8176,7 +8176,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationPolicySettingsDeviceSummaryReport
-      operationId: deviceManagement.reports_getConfigurationPolicySettingsDeviceSummaryReport
+      operationId: deviceManagement.report_getConfigurationPolicySettingsDeviceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -8248,7 +8248,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationSettingDetailsReport
-      operationId: deviceManagement.reports_getConfigurationSettingDetailsReport
+      operationId: deviceManagement.report_getConfigurationSettingDetailsReport
       requestBody:
         description: Action parameters
         content:
@@ -8320,7 +8320,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationSettingNonComplianceReport
-      operationId: deviceManagement.reports_getConfigurationSettingNonComplianceReport
+      operationId: deviceManagement.report_getConfigurationSettingNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -8392,7 +8392,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getConfigurationSettingsReport
-      operationId: deviceManagement.reports_getConfigurationSettingsReport
+      operationId: deviceManagement.report_getConfigurationSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -8464,7 +8464,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDeviceConfigurationPolicySettingsSummaryReport
-      operationId: deviceManagement.reports_getDeviceConfigurationPolicySettingsSummaryReport
+      operationId: deviceManagement.report_getDeviceConfigurationPolicySettingsSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -8536,7 +8536,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDeviceConfigurationPolicyStatusSummary
-      operationId: deviceManagement.reports_getDeviceConfigurationPolicyStatusSummary
+      operationId: deviceManagement.report_getDeviceConfigurationPolicyStatusSummary
       requestBody:
         description: Action parameters
         content:
@@ -8608,7 +8608,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDeviceInstallStatusReport
-      operationId: deviceManagement.reports_getDeviceInstallStatusReport
+      operationId: deviceManagement.report_getDeviceInstallStatusReport
       requestBody:
         description: Action parameters
         content:
@@ -8680,7 +8680,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDeviceManagementIntentPerSettingContributingProfiles
-      operationId: deviceManagement.reports_getDeviceManagementIntentPerSettingContributingProfiles
+      operationId: deviceManagement.report_getDeviceManagementIntentPerSettingContributingProfile
       requestBody:
         description: Action parameters
         content:
@@ -8752,7 +8752,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDeviceManagementIntentSettingsReport
-      operationId: deviceManagement.reports_getDeviceManagementIntentSettingsReport
+      operationId: deviceManagement.report_getDeviceManagementIntentSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -8824,7 +8824,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDeviceNonComplianceReport
-      operationId: deviceManagement.reports_getDeviceNonComplianceReport
+      operationId: deviceManagement.report_getDeviceNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -8896,7 +8896,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDevicePoliciesComplianceReport
-      operationId: deviceManagement.reports_getDevicePoliciesComplianceReport
+      operationId: deviceManagement.report_getDevicePoliciesComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -8965,7 +8965,76 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDevicePolicySettingsComplianceReport
-      operationId: deviceManagement.reports_getDevicePolicySettingsComplianceReport
+      operationId: deviceManagement.report_getDevicePolicySettingsComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDevicesStatusByPolicyPlatformComplianceReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getDevicesStatusByPolicyPlatformComplianceReport
+      operationId: deviceManagement.report_getDevicesStatusGraphBPrePolicyPlatformComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -9034,7 +9103,283 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDevicesStatusBySettingReport
-      operationId: deviceManagement.reports_getDevicesStatusGraphBPreSettingReport
+      operationId: deviceManagement.report_getDevicesStatusGraphBPreSettingReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDeviceStatusByCompliacePolicyReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getDeviceStatusByCompliacePolicyReport
+      operationId: deviceManagement.report_getDeviceStatusGraphBPreCompliacePolicyReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDeviceStatusByCompliancePolicySettingReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getDeviceStatusByCompliancePolicySettingReport
+      operationId: deviceManagement.report_getDeviceStatusGraphBPreCompliancePolicySettingReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDeviceStatusSummaryByCompliacePolicyReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getDeviceStatusSummaryByCompliacePolicyReport
+      operationId: deviceManagement.report_getDeviceStatusSummaryGraphBPreCompliacePolicyReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDeviceStatusSummaryByCompliancePolicySettingsReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getDeviceStatusSummaryByCompliancePolicySettingsReport
+      operationId: deviceManagement.report_getDeviceStatusSummaryGraphBPreCompliancePolicySettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -9103,7 +9448,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDevicesWithoutCompliancePolicyReport
-      operationId: deviceManagement.reports_getDevicesWithoutCompliancePolicyReport
+      operationId: deviceManagement.report_getDevicesWithoutCompliancePolicyReport
       requestBody:
         description: Action parameters
         content:
@@ -9175,7 +9520,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getEncryptionReportForDevices
-      operationId: deviceManagement.reports_getEncryptionReportGraphFPreDevices
+      operationId: deviceManagement.report_getEncryptionReportGraphFPreDevice
       requestBody:
         description: Action parameters
         content:
@@ -9247,7 +9592,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getEnrollmentConfigurationPoliciesByDevice
-      operationId: deviceManagement.reports_getEnrollmentConfigurationPoliciesGraphBPreDevice
+      operationId: deviceManagement.report_getEnrollmentConfigurationPoliciesGraphBPreDevice
       requestBody:
         description: Action parameters
         content:
@@ -9316,7 +9661,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getFailedMobileAppsReport
-      operationId: deviceManagement.reports_getFailedMobileAppsReport
+      operationId: deviceManagement.report_getFailedMobileAppsReport
       requestBody:
         description: Action parameters
         content:
@@ -9388,7 +9733,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getFailedMobileAppsSummaryReport
-      operationId: deviceManagement.reports_getFailedMobileAppsSummaryReport
+      operationId: deviceManagement.report_getFailedMobileAppsSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -9460,7 +9805,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getGroupPolicySettingsDeviceSettingsReport
-      operationId: deviceManagement.reports_getGroupPolicySettingsDeviceSettingsReport
+      operationId: deviceManagement.report_getGroupPolicySettingsDeviceSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -9532,7 +9877,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getHistoricalReport
-      operationId: deviceManagement.reports_getHistoricalReport
+      operationId: deviceManagement.report_getHistoricalReport
       requestBody:
         description: Action parameters
         content:
@@ -9601,7 +9946,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getMalwareSummaryReport
-      operationId: deviceManagement.reports_getMalwareSummaryReport
+      operationId: deviceManagement.report_getMalwareSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -9673,7 +10018,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getMobileApplicationManagementAppConfigurationReport
-      operationId: deviceManagement.reports_getMobileApplicationManagementAppConfigurationReport
+      operationId: deviceManagement.report_getMobileApplicationManagementAppConfigurationReport
       requestBody:
         description: Action parameters
         content:
@@ -9745,7 +10090,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getMobileApplicationManagementAppRegistrationSummaryReport
-      operationId: deviceManagement.reports_getMobileApplicationManagementAppRegistrationSummaryReport
+      operationId: deviceManagement.report_getMobileApplicationManagementAppRegistrationSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -9817,7 +10162,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getNoncompliantDevicesAndSettingsReport
-      operationId: deviceManagement.reports_getNoncompliantDevicesAndSettingsReport
+      operationId: deviceManagement.report_getNoncompliantDevicesAndSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -9889,7 +10234,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getPolicyNonComplianceMetadata
-      operationId: deviceManagement.reports_getPolicyNonComplianceMetadata
+      operationId: deviceManagement.report_getPolicyNonComplianceMetadata
       requestBody:
         description: Action parameters
         content:
@@ -9961,7 +10306,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getPolicyNonComplianceReport
-      operationId: deviceManagement.reports_getPolicyNonComplianceReport
+      operationId: deviceManagement.report_getPolicyNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -10033,7 +10378,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getPolicyNonComplianceSummaryReport
-      operationId: deviceManagement.reports_getPolicyNonComplianceSummaryReport
+      operationId: deviceManagement.report_getPolicyNonComplianceSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -10105,7 +10450,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getQuietTimePolicyUsersReport
-      operationId: deviceManagement.reports_getQuietTimePolicyUsersReport
+      operationId: deviceManagement.report_getQuietTimePolicyUsersReport
       requestBody:
         description: Action parameters
         content:
@@ -10180,7 +10525,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getQuietTimePolicyUserSummaryReport
-      operationId: deviceManagement.reports_getQuietTimePolicyUserSummaryReport
+      operationId: deviceManagement.report_getQuietTimePolicyUserSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -10252,7 +10597,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getRelatedAppsStatusReport
-      operationId: deviceManagement.reports_getRelatedAppsStatusReport
+      operationId: deviceManagement.report_getRelatedAppsStatusReport
       requestBody:
         description: Action parameters
         content:
@@ -10324,7 +10669,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getRemoteAssistanceSessionsReport
-      operationId: deviceManagement.reports_getRemoteAssistanceSessionsReport
+      operationId: deviceManagement.report_getRemoteAssistanceSessionsReport
       requestBody:
         description: Action parameters
         content:
@@ -10396,7 +10741,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getReportFilters
-      operationId: deviceManagement.reports_getReportFilters
+      operationId: deviceManagement.report_getReportFilter
       requestBody:
         description: Action parameters
         content:
@@ -10468,7 +10813,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getSettingNonComplianceReport
-      operationId: deviceManagement.reports_getSettingNonComplianceReport
+      operationId: deviceManagement.report_getSettingNonComplianceReport
       requestBody:
         description: Action parameters
         content:
@@ -10540,7 +10885,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getUnhealthyDefenderAgentsReport
-      operationId: deviceManagement.reports_getUnhealthyDefenderAgentsReport
+      operationId: deviceManagement.report_getUnhealthyDefenderAgentsReport
       requestBody:
         description: Action parameters
         content:
@@ -10612,7 +10957,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getUnhealthyFirewallReport
-      operationId: deviceManagement.reports_getUnhealthyFirewallReport
+      operationId: deviceManagement.report_getUnhealthyFirewallReport
       requestBody:
         description: Action parameters
         content:
@@ -10684,7 +11029,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getUnhealthyFirewallSummaryReport
-      operationId: deviceManagement.reports_getUnhealthyFirewallSummaryReport
+      operationId: deviceManagement.report_getUnhealthyFirewallSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -10756,7 +11101,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getUserInstallStatusReport
-      operationId: deviceManagement.reports_getUserInstallStatusReport
+      operationId: deviceManagement.report_getUserInstallStatusReport
       requestBody:
         description: Action parameters
         content:
@@ -10828,7 +11173,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
-      operationId: deviceManagement.reports_getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
+      operationId: deviceManagement.report_getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport
       requestBody:
         description: Action parameters
         content:
@@ -10900,7 +11245,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getWindowsQualityUpdateAlertSummaryReport
-      operationId: deviceManagement.reports_getWindowsQualityUpdateAlertSummaryReport
+      operationId: deviceManagement.report_getWindowsQualityUpdateAlertSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -10972,7 +11317,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getWindowsUpdateAlertsPerPolicyPerDeviceReport
-      operationId: deviceManagement.reports_getWindowsUpdateAlertsPerPolicyPerDeviceReport
+      operationId: deviceManagement.report_getWindowsUpdateAlertsPerPolicyPerDeviceReport
       requestBody:
         description: Action parameters
         content:
@@ -11044,7 +11389,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getWindowsUpdateAlertSummaryReport
-      operationId: deviceManagement.reports_getWindowsUpdateAlertSummaryReport
+      operationId: deviceManagement.report_getWindowsUpdateAlertSummaryReport
       requestBody:
         description: Action parameters
         content:
@@ -11116,7 +11461,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getZebraFotaDeploymentReport
-      operationId: deviceManagement.reports_getZebraFotaDeploymentReport
+      operationId: deviceManagement.report_getZebraFotaDeploymentReport
       requestBody:
         description: Action parameters
         content:
@@ -11186,7 +11531,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.resourceAccessProfiles_assign
+      operationId: deviceManagement.resourceAccessProfile_assign
       parameters:
         - name: deviceManagementResourceAccessProfileBase-id
           in: path
@@ -11239,7 +11584,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action queryByPlatformType
-      operationId: deviceManagement.resourceAccessProfiles_queryGraphBPrePlatformType
+      operationId: deviceManagement.resourceAccessProfile_queryGraphBPrePlatformType
       requestBody:
         description: Action parameters
         content:
@@ -11281,7 +11626,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action clone
-      operationId: deviceManagement.reusablePolicySettings_clone
+      operationId: deviceManagement.reusablePolicySetting_clone
       parameters:
         - name: deviceManagementReusablePolicySetting-id
           in: path
@@ -11306,7 +11651,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.reusablePolicySettings.referencingConfigurationPolicies_assign
+      operationId: deviceManagement.reusablePolicySetting.referencingConfigurationPolicy_assign
       parameters:
         - name: deviceManagementReusablePolicySetting-id
           in: path
@@ -11367,7 +11712,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createCopy
-      operationId: deviceManagement.reusablePolicySettings.referencingConfigurationPolicies_createCopy
+      operationId: deviceManagement.reusablePolicySetting.referencingConfigurationPolicy_createCopy
       parameters:
         - name: deviceManagementReusablePolicySetting-id
           in: path
@@ -11416,7 +11761,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reorder
-      operationId: deviceManagement.reusablePolicySettings.referencingConfigurationPolicies_reorder
+      operationId: deviceManagement.reusablePolicySetting.referencingConfigurationPolicy_reorder
       parameters:
         - name: deviceManagementReusablePolicySetting-id
           in: path
@@ -11460,7 +11805,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.roleScopeTags_assign
+      operationId: deviceManagement.roleScopeTag_assign
       parameters:
         - name: roleScopeTag-id
           in: path
@@ -11513,7 +11858,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getRoleScopeTagsById
-      operationId: deviceManagement.roleScopeTags_getRoleScopeTagsGraphBPreId
+      operationId: deviceManagement.roleScopeTag_getRoleScopeTagsGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -11558,7 +11903,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createInstance
-      operationId: deviceManagement.templates_createInstance
+      operationId: deviceManagement.template_createInstance
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -11608,7 +11953,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createInstance
-      operationId: deviceManagement.templates.migratableTo_createInstance
+      operationId: deviceManagement.template.migratableTo_createInstance
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -11666,7 +12011,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action importOffice365DeviceConfigurationPolicies
-      operationId: deviceManagement.templates.migratableTo_importOffice365DeviceConfigurationPolicies
+      operationId: deviceManagement.template.migratableTo_importOffice365DeviceConfigurationPolicy
       parameters:
         - name: deviceManagementTemplate-id
           in: path
@@ -11705,7 +12050,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action importOffice365DeviceConfigurationPolicies
-      operationId: deviceManagement.templates_importOffice365DeviceConfigurationPolicies
+      operationId: deviceManagement.template_importOffice365DeviceConfigurationPolicy
       responses:
         2XX:
           description: Success
@@ -11790,7 +12135,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerDeviceScopeAction
-      operationId: deviceManagement.userExperienceAnalyticsDeviceScopes_triggerDeviceScopeAction
+      operationId: deviceManagement.userExperienceAnalyticsDeviceScope_triggerDeviceScopeAction
       parameters:
         - name: userExperienceAnalyticsDeviceScope-id
           in: path
@@ -11833,7 +12178,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_changeUserAccountType
+      operationId: deviceManagement.virtualEndpoint.cloudPC_changeUserAccountType
       parameters:
         - name: cloudPC-id
           in: path
@@ -11870,7 +12215,57 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_endGracePeriod
+      operationId: deviceManagement.virtualEndpoint.cloudPC_endGracePeriod
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: The unique identifier of cloudPC
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.powerOff':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action powerOff
+      description: 'Power off a Windows 365 Frontline Cloud PC. This action supports Microsoft Endpoint Manager (MEM) admin scenarios.  After a Windows 365 Frontline Cloud PC is powered off, it is de-allocated, and licenses are revoked immediately. Only IT admin users can perform this action. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-poweroff?view=graph-rest-1.0
+      operationId: deviceManagement.virtualEndpoint.cloudPC_powerOff
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: The unique identifier of cloudPC
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.powerOn':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action powerOn
+      description: 'Power on a Windows 365 Frontline Cloud PC. This action supports Microsoft Endpoint Manager (MEM) admin scenarios.  After a Windows 365 Frontline Cloud PC is powered on, it is allocated to a user, and licenses are assigned immediately. Only IT admin users can perform this action. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-poweron?view=graph-rest-1.0
+      operationId: deviceManagement.virtualEndpoint.cloudPC_powerOn
       parameters:
         - name: cloudPC-id
           in: path
@@ -11895,7 +12290,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_reboot
+      operationId: deviceManagement.virtualEndpoint.cloudPC_reboot
       parameters:
         - name: cloudPC-id
           in: path
@@ -11920,7 +12315,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_rename
+      operationId: deviceManagement.virtualEndpoint.cloudPC_rename
       parameters:
         - name: cloudPC-id
           in: path
@@ -11958,7 +12353,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_reprovision
+      operationId: deviceManagement.virtualEndpoint.cloudPC_reprovision
       parameters:
         - name: cloudPC-id
           in: path
@@ -11997,7 +12392,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_restore
+      operationId: deviceManagement.virtualEndpoint.cloudPC_restore
       parameters:
         - name: cloudPC-id
           in: path
@@ -12035,7 +12430,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_retryPartnerAgentInstallation
+      operationId: deviceManagement.virtualEndpoint.cloudPC_retryPartnerAgentInstallation
       parameters:
         - name: cloudPC-id
           in: path
@@ -12056,7 +12451,11 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action start
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_start
+      description: 'Start a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-start?view=graph-rest-1.0
+      operationId: deviceManagement.virtualEndpoint.cloudPC_start
       parameters:
         - name: cloudPC-id
           in: path
@@ -12077,7 +12476,11 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action stop
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_stop
+      description: 'Stop a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudpc-stop?view=graph-rest-1.0
+      operationId: deviceManagement.virtualEndpoint.cloudPC_stop
       parameters:
         - name: cloudPC-id
           in: path
@@ -12102,7 +12505,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.cloudPCs_troubleshoot
+      operationId: deviceManagement.virtualEndpoint.cloudPC_troubleshoot
       parameters:
         - name: cloudPC-id
           in: path
@@ -12118,6 +12521,100 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/virtualEndpoint/cloudPCs/microsoft.graph.bulkResize:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkResize
+      operationId: deviceManagement.virtualEndpoint.cloudPC_bulkResize
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceManagement/virtualEndpoint/cloudPCs/microsoft.graph.validateBulkResize:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action validateBulkResize
+      operationId: deviceManagement.virtualEndpoint.cloudPC_validateBulkResize
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcResizeValidationResult'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImage-id}/microsoft.graph.reupload':
     post:
       tags:
@@ -12127,7 +12624,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.deviceImages_reupload
+      operationId: deviceManagement.virtualEndpoint.deviceImage_reupload
       parameters:
         - name: cloudPcDeviceImage-id
           in: path
@@ -12152,7 +12649,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.onPremisesConnections_runHealthChecks
+      operationId: deviceManagement.virtualEndpoint.onPremisesConnection_runHealthCheck
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
@@ -12177,7 +12674,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-updateaddomainpassword?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.onPremisesConnections_updateAdDomainPassword
+      operationId: deviceManagement.virtualEndpoint.onPremisesConnection_updateAdDomainPassword
       parameters:
         - name: cloudPcOnPremisesConnection-id
           in: path
@@ -12211,7 +12708,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action apply
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies_apply
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_apply
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -12236,7 +12733,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies_assign
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_assign
       parameters:
         - name: cloudPcProvisioningPolicy-id
           in: path
@@ -12271,7 +12768,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action applyConfig
-      operationId: deviceManagement.virtualEndpoint.provisioningPolicies_applyConfig
+      operationId: deviceManagement.virtualEndpoint.provisioningPolicy_applyConfig
       requestBody:
         description: Action parameters
         content:
@@ -12302,7 +12799,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcreports-getdailyaggregatedremoteconnectionreports?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.reports_getDailyAggregatedRemoteConnectionReports
+      operationId: deviceManagement.virtualEndpoint.report_getDailyAggregatedRemoteConnectionReport
       requestBody:
         description: Action parameters
         content:
@@ -12372,7 +12869,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.reports_getRemoteConnectionHistoricalReports
+      operationId: deviceManagement.virtualEndpoint.report_getRemoteConnectionHistoricalReport
       requestBody:
         description: Action parameters
         content:
@@ -12442,7 +12939,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.reports_getSharedUseLicenseUsageReport
+      operationId: deviceManagement.virtualEndpoint.report_getSharedUseLicenseUsageReport
       requestBody:
         description: Action parameters
         content:
@@ -12514,7 +13011,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcreports-gettotalaggregatedremoteconnectionreports?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.reports_getTotalAggregatedRemoteConnectionReports
+      operationId: deviceManagement.virtualEndpoint.report_getTotalAggregatedRemoteConnectionReport
       requestBody:
         description: Action parameters
         content:
@@ -12584,7 +13081,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0
-      operationId: deviceManagement.virtualEndpoint.userSettings_assign
+      operationId: deviceManagement.virtualEndpoint.userSetting_assign
       parameters:
         - name: cloudPcUserSetting-id
           in: path
@@ -12620,7 +13117,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action assignResourceAccountToDevice
       description: Assigns resource account to Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_assignResourceAccountToDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_assignResourceAccountToDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -12669,7 +13166,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
       description: Assigns user to Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_assignUserToDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -12715,7 +13212,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action unassignResourceAccountFromDevice
       description: Unassigns the resource account from an Autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_unassignResourceAccountFromDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_unassignResourceAccountFromDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -12745,7 +13242,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
       description: Unassigns the user from an Autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_unassignUserFromDevice
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -12775,7 +13272,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
       description: Updates properties on Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_updateDeviceProperties
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile.assignedDevice_updateDeviceProperty
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -12835,7 +13332,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_assign
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_assign
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -12871,7 +13368,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action hasPayloadLinks
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles_hasPayloadLinks
+      operationId: deviceManagement.windowsAutopilotDeploymentProfile_hasPayloadLink
       requestBody:
         description: Action parameters
         content:
@@ -12916,7 +13413,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action assignResourceAccountToDevice
       description: Assigns resource account to Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignResourceAccountToDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_assignResourceAccountToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -12957,7 +13454,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
       description: Assigns user to Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -12995,7 +13492,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action unassignResourceAccountFromDevice
       description: Unassigns the resource account from an Autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignResourceAccountFromDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_unassignResourceAccountFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -13017,7 +13514,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
       description: Unassigns the user from an Autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -13039,7 +13536,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
       description: Updates properties on Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
+      operationId: deviceManagement.windowsAutopilotDeviceIdentity_updateDeviceProperty
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -13092,7 +13589,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action sync
       description: 'Initiates a sync of all AutoPilot registered devices from Store for Business and other portals. If the sync successful, this action returns a 204 No Content response code. If a sync is already in progress, the action returns a 409 Conflict response code.  If this sync action is called within 10 minutes of the previous sync, the action returns a 429 Too Many Requests response code.'
-      operationId: deviceManagement.windowsAutopilotSettings_sync
+      operationId: deviceManagement.windowsAutopilotSetting_sync
       responses:
         2XX:
           description: Success
@@ -13104,7 +13601,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.windowsDriverUpdateProfiles_assign
+      operationId: deviceManagement.windowsDriverUpdateProfile_assign
       parameters:
         - name: windowsDriverUpdateProfile-id
           in: path
@@ -13139,7 +13636,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action executeAction
-      operationId: deviceManagement.windowsDriverUpdateProfiles_executeAction
+      operationId: deviceManagement.windowsDriverUpdateProfile_executeAction
       parameters:
         - name: windowsDriverUpdateProfile-id
           in: path
@@ -13187,7 +13684,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action syncInventory
       description: Sync the driver inventory of a WindowsDriverUpdateProfile.
-      operationId: deviceManagement.windowsDriverUpdateProfiles_syncInventory
+      operationId: deviceManagement.windowsDriverUpdateProfile_syncInventory
       parameters:
         - name: windowsDriverUpdateProfile-id
           in: path
@@ -13208,7 +13705,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_assign
+      operationId: deviceManagement.windowsFeatureUpdateProfile_assign
       parameters:
         - name: windowsFeatureUpdateProfile-id
           in: path
@@ -13243,7 +13740,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.windowsQualityUpdateProfiles_assign
+      operationId: deviceManagement.windowsQualityUpdateProfile_assign
       parameters:
         - name: windowsQualityUpdateProfile-id
           in: path
@@ -13278,7 +13775,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action approveFotaApps
-      operationId: deviceManagement.zebraFotaConnector_approveFotaApps
+      operationId: deviceManagement.zebraFotaConnector_approveFotaApp
       responses:
         2XX:
           description: Success
@@ -13344,7 +13841,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action hasActiveDeployments
-      operationId: deviceManagement.zebraFotaConnector_hasActiveDeployments
+      operationId: deviceManagement.zebraFotaConnector_hasActiveDeployment
       responses:
         2XX:
           description: Success
@@ -13366,7 +13863,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cancel
-      operationId: deviceManagement.zebraFotaDeployments_cancel
+      operationId: deviceManagement.zebraFotaDeployment_cancel
       parameters:
         - name: zebraFotaDeployment-id
           in: path
@@ -14668,6 +15165,10 @@ components:
             isAssigned:
               type: boolean
               description: Signifies whether or not the intent is assigned to users
+            isMigratingToConfigurationPolicy:
+              type: boolean
+              description: Signifies whether or not the intent is being migrated to the configurationPolicies endpoint
+              nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -15132,6 +15633,51 @@ components:
         - windows11
         - unknownFutureValue
       type: string
+    microsoft.graph.cloudPcRemoteActionResult:
+      title: cloudPcRemoteActionResult
+      type: object
+      properties:
+        actionName:
+          type: string
+          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.'
+          nullable: true
+        actionState:
+          $ref: '#/components/schemas/microsoft.graph.actionState'
+        cloudPcId:
+          type: string
+          description: The ID of the Cloud PC device on which the remote action is performed. Read-only.
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
+          format: date-time
+          nullable: true
+        managedDeviceId:
+          type: string
+          description: The ID of the Intune managed device on which the remote action is performed. Read-only.
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
+          format: date-time
+          nullable: true
+        statusDetails:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcResizeValidationResult:
+      title: cloudPcResizeValidationResult
+      type: object
+      properties:
+        cloudPcId:
+          type: string
+          nullable: true
+        validationResult:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcResizeValidationCode'
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcProvisioningPolicyAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15293,6 +15839,9 @@ components:
         - androidWorkProfile
         - unknown
         - androidAOSP
+        - androidMobileApplicationManagement
+        - iOSMobileApplicationManagement
+        - unknownFutureValue
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -15329,6 +15878,15 @@ components:
           - value: androidAOSP
             description: Android AOSP.
             name: androidAOSP
+          - value: androidMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for android devices.
+            name: androidMobileApplicationManagement
+          - value: iOSMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for iOS devices
+            name: iOSMobileApplicationManagement
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use
+            name: unknownFutureValue
     microsoft.graph.deviceLogCollectionTemplateType:
       title: deviceLogCollectionTemplateType
       enum:
@@ -15629,7 +16187,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
-              description: List of related Setting Definitions
+              description: List of related Setting Definitions. This property is read-only.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -16576,6 +17134,47 @@ components:
           - value: unknownFutureValue
             description: Placeholder value for future expansion.
             name: unknownFutureValue
+    microsoft.graph.actionState:
+      title: actionState
+      enum:
+        - none
+        - pending
+        - canceled
+        - active
+        - done
+        - failed
+        - notSupported
+      type: string
+    microsoft.graph.cloudPcStatusDetails:
+      title: cloudPcStatusDetails
+      type: object
+      properties:
+        additionalInformation:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: Any additional information about the Cloud PC status.
+        code:
+          type: string
+          description: The code associated with the Cloud PC status.
+          nullable: true
+        message:
+          type: string
+          description: The status message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcResizeValidationCode:
+      title: cloudPcResizeValidationCode
+      enum:
+        - success
+        - cloudPcNotFound
+        - operationConflict
+        - operationNotSupported
+        - targetLicenseHasAssigned
+        - internalServerError
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcManagementAssignmentTarget:
       title: cloudPcManagementAssignmentTarget
       type: object
@@ -16834,6 +17433,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -19042,6 +19645,23 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -19159,6 +19779,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcPartnerAgentInstallResult'
               description: The results of every partner agent's installation status on Cloud PC.
+            powerState:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcPowerState'
             provisioningPolicyId:
               type: string
               description: The provisioning policy ID of the Cloud PC.
@@ -19390,7 +20012,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity''s tags property.Supports $filter (eq, not, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -20273,6 +20895,10 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -23359,40 +23985,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.cloudPcRemoteActionResult:
-      title: cloudPcRemoteActionResult
-      type: object
-      properties:
-        actionName:
-          type: string
-          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.'
-          nullable: true
-        actionState:
-          $ref: '#/components/schemas/microsoft.graph.actionState'
-        cloudPcId:
-          type: string
-          description: The ID of the Cloud PC device on which the remote action is performed. Read-only.
-          nullable: true
-        lastUpdatedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
-          format: date-time
-          nullable: true
-        managedDeviceId:
-          type: string
-          description: The ID of the Intune managed device on which the remote action is performed. Read-only.
-          nullable: true
-        startDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
-          format: date-time
-          nullable: true
-        statusDetails:
-          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
-      additionalProperties:
-        type: object
     microsoft.graph.cloudPcPartnerAgentInstallResult:
       title: cloudPcPartnerAgentInstallResult
       type: object
@@ -23411,6 +24003,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcPowerState:
+      title: cloudPcPowerState
+      enum:
+        - running
+        - poweredOff
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcProvisioningType:
       title: cloudPcProvisioningType
       enum:
@@ -23439,26 +24038,9 @@ components:
         - restoring
         - pendingProvision
         - unknownFutureValue
+        - movingRegion
+        - resizePendingLicense
       type: string
-    microsoft.graph.cloudPcStatusDetails:
-      title: cloudPcStatusDetails
-      type: object
-      properties:
-        additionalInformation:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
-          description: Any additional information about the Cloud PC status.
-        code:
-          type: string
-          description: The code associated with the Cloud PC status.
-          nullable: true
-        message:
-          type: string
-          description: The status message.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.usageRightState:
       title: usageRightState
       enum:
@@ -23862,12 +24444,14 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: Denotes whether the policy is enabled.
             restrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Collection of application and service principals to which a policy is applied.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -25203,6 +25787,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -29214,6 +29800,11 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            metadataContent:
+              type: string
+              description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              format: base64url
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -29533,6 +30124,8 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -30134,11 +30727,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -30156,6 +30751,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeCards:
               type: array
@@ -30172,6 +30768,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -30490,17 +31087,6 @@ components:
         - unavailable
         - unknownFutureValue
       type: string
-    microsoft.graph.actionState:
-      title: actionState
-      enum:
-        - none
-        - pending
-        - canceled
-        - active
-        - done
-        - failed
-        - notSupported
-      type: string
     microsoft.graph.cloudPcPartnerAgentInstallStatus:
       title: cloudPcPartnerAgentInstallStatus
       enum:
@@ -30708,11 +31294,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -32044,6 +32630,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.subscription:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32974,7 +33583,7 @@ components:
           description: 'Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.'
         autoApplyDecisionsEnabled:
           type: boolean
-          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
+          description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         decisionHistoriesForReviewersEnabled:
           type: boolean
           description: 'Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).'
@@ -32985,7 +33594,7 @@ components:
           nullable: true
         defaultDecisionEnabled:
           type: boolean
-          description: Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
+          description: 'Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.'
         instanceDurationInDays:
           maximum: 2147483647
           minimum: -2147483648
@@ -34153,23 +34762,28 @@ components:
       properties:
         nextInSeriesTaskId:
           type: string
+          description: 'The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.'
           nullable: true
         occurrenceId:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.'
           format: int32
         previousInSeriesTaskId:
           type: string
+          description: The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
           nullable: true
         recurrenceStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
         schedule:
           $ref: '#/components/schemas/microsoft.graph.plannerRecurrenceSchedule'
         seriesId:
           type: string
+          description: The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
       additionalProperties:
         type: object
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
@@ -35005,6 +35619,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+          description: A collection of resource-specific permissions.
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -35037,6 +35662,8 @@ components:
           properties:
             allowedInstallationScopes:
               $ref: '#/components/schemas/microsoft.graph.teamsAppInstallationScopes'
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             azureADAppId:
               type: string
               description: The WebApplicationInfo.Id from the Teams app manifest.
@@ -36997,6 +37624,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -37964,6 +38614,7 @@ components:
         nextOccurrenceDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The next date for this schedule. When a new task is instantiated to continue the recurrence series, this date is used for the dueDateTime of the new plannerTask. Auto-generated by the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
         pattern:
@@ -37971,6 +38622,7 @@ components:
         patternStartDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The start date for the recurrence pattern. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -38257,6 +38909,18 @@ components:
         - emailUser
         - azureCommunicationServicesUser
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
+          description: The name of the resource-specific permission.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -38273,6 +38937,14 @@ components:
         - personal
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppPublishingState:
       title: teamsAppPublishingState
       enum:
@@ -38667,15 +39339,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -40056,11 +40728,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
           nullable: true
         value:
           type: integer
-          description: Value.
+          description: Total number of synchronized objects.
           format: int64
       additionalProperties:
         type: object
@@ -40068,9 +40740,13 @@ components:
       title: synchronizationRule
       type: object
       properties:
+        containerFilter:
+          $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
           description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+        groupFilter:
+          $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
           type: string
           description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
@@ -40332,6 +41008,15 @@ components:
               description: Indicates if the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.security.behaviorDuringRetentionPeriod:
+      title: behaviorDuringRetentionPeriod
+      enum:
+        - doNotRetain
+        - retain
+        - retainAsRecord
+        - retainAsRegulatoryRecord
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessAction:
       title: accessAction
       type: object
@@ -40474,6 +41159,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -40723,15 +41415,15 @@ components:
       properties:
         code:
           type: string
-          description: The error code.
+          description: 'The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.'
           nullable: true
         message:
           type: string
-          description: The error message.
+          description: 'The error message. For example, Policy permitting auto-redemption of invitations not configured.'
           nullable: true
         tenantActionable:
           type: boolean
-          description: The action to take to resolve the error.
+          description: 'The action to take to resolve the error. For example, false.'
       additionalProperties:
         type: object
     microsoft.graph.synchronizationTaskExecutionResult:
@@ -40753,6 +41445,28 @@ components:
         - TooManyDeletes
         - IngestionInterrupted
       type: string
+    microsoft.graph.containerFilter:
+      title: containerFilter
+      type: object
+      properties:
+        includedContainers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupFilter:
+      title: groupFilter
+      type: object
+      properties:
+        includedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyStringValuePair:
       title: stringKeyStringValuePair
       type: object

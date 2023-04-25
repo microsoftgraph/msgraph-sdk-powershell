@@ -17,19 +17,17 @@ require:
 
 ``` yaml
 directive:
-# Remove invalid paths.
-  - remove-path-by-operation: onPremisesPublishingProfiles\.(connectors\.memberOf_.*|connectors_GetMemberOf|connectorGroups\.members_.*|connectorGroups_(Get|Create|Update|Delete)Members)
   - where:
       verb: Test
-      subject: (Application|ServicePrincipal)SynchronizationJobCredentials
+      subject: (Application|ServicePrincipal)SynchronizationJobCredential
       variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
     remove: true
   - where:
       subject: (ServicePrincipal)FederatedIdentityCredential.*
     remove: true
-# Singularize credentials.
+# Rename cmdlets with duplicates in their name.
   - where:
-      subject: (.*)(FederatedIdentityCredential)s(.*)
+      subject: ^(OnPremisePublishingProfile)(\1)+
     set:
-      subject: $1$2$3
+      subject: $1
 ```

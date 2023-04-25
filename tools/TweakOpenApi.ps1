@@ -17,6 +17,10 @@ $prepositionReplacements = @{
     For  = "GraphFPre"
     Of   = "GraphOPre"
 }
+
+$wordReplacements = @{
+    Deltum = "delta"
+}
 $targetOperationIdRegex = [Regex]::new("([a-z*])($($prepositionReplacements.Keys -join "|"))([A-Z*]|$)", "Compiled")
 $stopwatch = [system.diagnostics.stopwatch]::StartNew()
 # Tweak prepositions in operationIds to byPass https://github.com/Azure/autorest.powershell/issues/795.
@@ -24,15 +28,25 @@ Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
     $filePath = $_.FullName
     $modified = $false
     $updatedContent = Get-Content $filePath | ForEach-Object {
-        if ($_.contains("operationId:") -and ($targetOperationIdRegex.Match($_)).Success) {
+        if ($_.contains("operationId:")) {
             $operationId = $_
-            $prepositionReplacements.Keys | ForEach-Object {
-                # Replace prepositions with replacement word.
-                #e.g., 'applications_GetCreatedOnBehalfOfByRef' will be renamed to 'applications_GetCreatedOnBehalfGraphOPreGraphBPreRef'.
-                $operationId = ($operationId -creplace $_, $prepositionReplacements[$_])
-                $modified = $true
+            $wordReplacements.Keys | ForEach-Object {
+                if ($operationId.EndsWith($_, "CurrentCultureIgnoreCase")) {
+                    $operationId = ($operationId -replace $_, $wordReplacements[$_])
+                    $modified = $true
+                    Write-Debug "$_ -> $operationId".Trim()
+                }
             }
-            Write-Debug "$_ -> $operationId".Trim()
+
+            if (($targetOperationIdRegex.Match($_)).Success) {
+                $prepositionReplacements.Keys | ForEach-Object {
+                    # Replace prepositions with replacement word.
+                    #e.g., 'applications_GetCreatedOnBehalfOfByRef' will be renamed to 'applications_GetCreatedOnBehalfGraphOPreGraphBPreRef'.
+                    $operationId = ($operationId -creplace $_, $prepositionReplacements[$_])
+                    $modified = $true
+                    Write-Debug "$_ -> $operationId".Trim()
+                }
+            }
             return $operationId
         }
 

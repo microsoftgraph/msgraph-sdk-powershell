@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove paths that are too long.
-  - remove-path-by-operation: ^deviceAppManagement.wdacSupplementalPolicies.deviceStatuses.*$|^deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice|^deviceAppManagement.mobileApps.userStatuses.deviceStatuses.app.microsoft.graph.iosVppApp_.*$|^deviceAppManagement.managedAppRegistrations.(appliedPolicies|Intendedpolicies).microsoft.graph.*_.*$
+  - remove-path-by-operation: ^deviceAppManagement.wdacSupplementalPolicy.deviceStatus.*$|^deviceManagement.deviceHealthScript.deviceRunState.managedDevice_deleteUserFromSharedAppleDevice|^deviceAppManagement.mobileApp.userStatus.deviceStatus.app.microsoft.graph.iosVppApp_.*$|^deviceAppManagement.managedAppRegistration.(appliedPolicy|Intendedpolicy).microsoft.graph.*_.*$
 # Rename cmdlets with duplicates in their name.
   - where:
       subject: ^(DeviceAppManagement)(\1)+
@@ -56,4 +56,17 @@ directive:
       parameter-name: Count1
     set:
       parameter-name: ItemCount
+# Alias DeviceAppManagement* cmdlets to DeviceAppMgt*.
+  - where:
+      subject: ^(DeviceAppManagement)(.*)
+    set:
+      subject: DeviceAppMgt$2
+  - where:
+      subject: ^DeviceAppMgt.*
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^(DeviceAppMgt)(.*)
+    set:
+      subject: DeviceAppManagement$2
 ```

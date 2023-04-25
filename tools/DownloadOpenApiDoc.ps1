@@ -5,6 +5,7 @@ Param(
     [string] $OpenApiDocOutput,
     [string] $GraphVersion,
     [switch] $ForceRefresh,
+    [switch] $SingularizeOperationIds,
     [int] $RequestCount = 1
 )
 
@@ -16,6 +17,9 @@ $OpenApiBaseUrl = "https://graphexplorerapi.azurewebsites.net"
 $OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}&title=$ModuleName&openapiversion=3&style=Powershell&fileName=powershell_v2&graphVersion=$GraphVersion" -f $ModuleRegex)
 if ($ForceRefresh.IsPresent) {
     $OpenApiServiceUrl = "$OpenApiServiceUrl&forceRefresh=true"
+}
+if ($SingularizeOperationIds.IsPresent) {
+    $OpenApiServiceUrl = "$OpenApiServiceUrl&singularizeOperationIds=true"
 }
 Write-Debug "[$RequestCount] Downloading OpenAPI doc for '$ModuleName' module: $OpenApiServiceUrl"
 $Retries = 3

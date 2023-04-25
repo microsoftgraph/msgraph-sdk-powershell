@@ -11,7 +11,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Get entities from directoryObjects
-      operationId: directoryObjects.directoryObject_ListDirectoryObject
+      operationId: directoryObject_ListDirectoryObject
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -81,7 +81,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Add new entity to directoryObjects
-      operationId: directoryObjects.directoryObject_CreateDirectoryObject
+      operationId: directoryObject_CreateDirectoryObject
       requestBody:
         description: New entity
         content:
@@ -108,7 +108,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-get?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject_GetDirectoryObject
+      operationId: directoryObject_GetDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -157,7 +157,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Update entity in directoryObjects
-      operationId: directoryObjects.directoryObject_UpdateDirectoryObject
+      operationId: directoryObject_UpdateDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -176,7 +176,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -192,7 +192,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-delete?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject_DeleteDirectoryObject
+      operationId: directoryObject_DeleteDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -223,7 +223,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
-      operationId: directoryObjects_checkMemberGroups
+      operationId: directoryObject_checkMemberGroup
       parameters:
         - name: directoryObject-id
           in: path
@@ -275,7 +275,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directoryObjects_checkMemberObjects
+      operationId: directoryObject_checkMemberObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -331,7 +331,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
-      operationId: directoryObjects_getMemberGroups
+      operationId: directoryObject_getMemberGroup
       parameters:
         - name: directoryObject-id
           in: path
@@ -387,7 +387,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
-      operationId: directoryObjects_getMemberObjects
+      operationId: directoryObject_getMemberObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -443,7 +443,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
-      operationId: directoryObjects_restore
+      operationId: directoryObject_restore
       parameters:
         - name: directoryObject-id
           in: path
@@ -463,12 +463,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directoryObjects/$count:
+    get:
+      tags:
+        - directoryObjects.directoryObject
+      summary: Get the number of the resource
+      operationId: directoryObject_GetCount
+      parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directoryObjects/microsoft.graph.delta():
     get:
       tags:
         - directoryObjects.Functions
       summary: Invoke function delta
-      operationId: directoryObjects_delta
+      operationId: directoryObject_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -539,7 +563,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
-      operationId: directoryObjects_getAvailableExtensionProperties
+      operationId: directoryObject_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
         content:
@@ -587,7 +611,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
-      operationId: directoryObjects_getGraphBPreIds
+      operationId: directoryObject_getGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -640,7 +664,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
-      operationId: directoryObjects_validateProperties
+      operationId: directoryObject_validateProperty
       requestBody:
         description: Action parameters
         content:
@@ -745,6 +769,9 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -799,6 +826,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
   parameters:
     top:
       name: $top

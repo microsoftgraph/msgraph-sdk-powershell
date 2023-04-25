@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/schemaextension-list?view=graph-rest-1.0
-      operationId: schemaExtensions.schemaExtension_ListSchemaExtension
+      operationId: schemaExtension_ListSchemaExtension
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -91,7 +91,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/schemaextension-post-schemaextensions?view=graph-rest-1.0
-      operationId: schemaExtensions.schemaExtension_CreateSchemaExtension
+      operationId: schemaExtension_CreateSchemaExtension
       requestBody:
         description: New entity
         content:
@@ -118,7 +118,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/schemaextension-get?view=graph-rest-1.0
-      operationId: schemaExtensions.schemaExtension_GetSchemaExtension
+      operationId: schemaExtension_GetSchemaExtension
       parameters:
         - name: schemaExtension-id
           in: path
@@ -175,7 +175,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/schemaextension-update?view=graph-rest-1.0
-      operationId: schemaExtensions.schemaExtension_UpdateSchemaExtension
+      operationId: schemaExtension_UpdateSchemaExtension
       parameters:
         - name: schemaExtension-id
           in: path
@@ -194,7 +194,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -210,7 +210,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/schemaextension-delete?view=graph-rest-1.0
-      operationId: schemaExtensions.schemaExtension_DeleteSchemaExtension
+      operationId: schemaExtension_DeleteSchemaExtension
       parameters:
         - name: schemaExtension-id
           in: path
@@ -232,6 +232,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /schemaExtensions/$count:
+    get:
+      tags:
+        - schemaExtensions.schemaExtension
+      summary: Get the number of the resource
+      operationId: schemaExtension_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.schemaExtension:
@@ -307,6 +321,9 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -361,6 +378,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
   parameters:
     top:
       name: $top

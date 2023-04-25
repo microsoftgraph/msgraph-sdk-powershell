@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: .*exceptionOccurrences.*|users\.joinedGroups.*|users\.joinedTeams.*|users\.onenote\..*.parent.*|users.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups.section.*|.*\.sections\.pages.*|users\.calendar\.events\..*|users\.calendarGroups\.calendars|users\.calendars\.events\..*|users\.events\.calendar\..*|users\.pendingAccessReviewInstances\.stages\.decisions.*|users\.pendingAccessReviewInstances(\.decisions|\.stages\.decisions)\.instance.*
+  - remove-path-by-operation: .*exceptionOccurrence.*|user\.joinedGroup.*|user\.joinedTeam.*|user\.onenote\..*.parent.*|user.*\.calendarView.*|.*\.notebook\.section.*|.*\.sectionGroup.section.*|.*\.section\.page.*|user\.calendar\.event\..*|user\.calendarGroup\.calendar|user\.calendar\.event\..*|user\.event\.calendar\..*|user\.pendingAccessReviewInstance\.stage\.decision.*|user\.pendingAccessReviewInstance(\.decision|\.stage\.decision)\.instance.*
 # Rename cmdlets.
   - where:
       verb: Get
