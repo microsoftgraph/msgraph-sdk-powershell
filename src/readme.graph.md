@@ -432,6 +432,11 @@ directive:
       subject: ^(Office)(Configuration)(ClientConfiguration.*)
     set:
       subject: $1$3
+  - where:
+      verb: Invoke
+      subject: ^Link(.*)HasPayload$
+    set:
+      subject: Has$1PayloadLink
 # Remove *AvailableExtensionProperty commands except those bound to DirectoryObject.
   - where:
       subject: ^(?!DirectoryObject).*AvailableExtensionProperty$
@@ -492,6 +497,10 @@ directive:
       subject: (\w*[a-z]|^)PassiveDn([^s]\w*|$)
     set:
       subject: $1PassiveDns$2
+  - where:
+      subject: (\w*[a-z]|^)UsageRight([^s]\w*|$)
+    set:
+      subject: $1UsageRights$2
 # Modify OpenAPI documents to correct AutoREST.PowerShell limitations.
 # Change content-type from text/plain to application/json. AutoREST does not support non-json content types.
 # See https://github.com/Azure/autorest.powershell/issues/206.

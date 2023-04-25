@@ -20,6 +20,8 @@ $prepositionReplacements = @{
 
 $wordReplacements = @{
     Deltum = "delta"
+    Quotum = "quota"
+    Statistic = "statistics"
 }
 $targetOperationIdRegex = [Regex]::new("([a-z*])($($prepositionReplacements.Keys -join "|"))([A-Z*]|$)", "Compiled")
 $stopwatch = [system.diagnostics.stopwatch]::StartNew()

@@ -32,4 +32,7 @@ directive:
       verb: Remove|Update
       subject: ^(Chat|TeamChannel|TeamPrimaryChannel)MessageHostedContent$
     remove: true
+  - where:
+      subject: (.*)TeamworkTeamTemplateDefinitionTeamDefinition([A-Z]*)$
+    remove: true
 ```
