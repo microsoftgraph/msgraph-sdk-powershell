@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: groups\.sites_.*Onenote$|groups\.sites\.onenote.*$|.*\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|sites\..*_(Create|Get|Update|Delete)Activities$|sites\..*\.activities.*|^sites_(remove|add)$|^.*sites\.(.*_.*SourceColumn|contentTypes_.*(Base|BaseTypes|ColumnPositions)|.*_(Get|Create|Update|Delete)Activities|.*\.activities.*|termStore_ListSets|termStore\.groups\.sets(\.children.*|_.*ParentGroup|\.relations_.*|\.terms\.relations_.*|\.terms\.children.*|\.terms_.*Set)|termStore\.sets(\.children.*|_.*ParentGroup|\.parentGroup.*|\.relations.*|\.terms\.children.*|\.terms\.relations.*|\.terms_.*Set))$
+  - remove-path-by-operation: group\.site_.*Onenote$|group\.site\.onenote.*$|.*\.onenote\..*\.parent.*|.*\.notebook\.section.*|.*\.sectionGroup\.section.*|.*\.section\.page.*|site\..*_(Create|Get|Update|Delete)Activity$|site\..*\.activity.*|^site_(remove|add)$|^.*site\.(.*_.*SourceColumn|contentType_.*(Base|BaseType|ColumnPosition)|.*_(Get|Create|Update|Delete)Activity|.*\.activity.*
 # Remove cmdlets
   - where:
       verb: Remove|New
@@ -27,26 +27,50 @@ directive:
   - where:
       verb: Get
       subject: ^Site$
-      variant: ^List1$
+      variant: ^Get1$|^GetViaIdentity1$|^List2$
     set:
       subject: SubSite
   - where:
       verb: Get
-      subject: ^(Site)OnenoteNotebook(RecentNotebook$)
+      subject: ^SiteCount$
+      variant: ^Get$|^GetViaIdentity$
     set:
-      subject: $1$2
+      subject: SubSiteCount
+  - where:
+      verb: Get
+      subject: ^(Site)$
+      variant: ^List1$
+    set:
+      subject: $1List
   - where:
       verb: Get
       subject: ^GroupSite$
-      variant: ^Get1$|^GetViaIdentity1$|^List1$
+      variant: ^Get1$|^GetViaIdentity1$|^List2$
     set:
       subject: GroupSubSite
+  - where:
+      verb: Get
+      subject: ^GroupSiteCount$
+      variant: ^Get$|^GetViaIdentity$
+    set:
+      subject: GroupSubSiteCount
+  - where:
+      verb: Get
+      subject: ^(GroupSite)$
+      variant: ^List1$
+    set:
+      subject: $1List
   - where:
       verb: Get
       subject: ^(Group|Site|GroupSite)(Drive)$
       variant: ^Get$|^GetViaIdentity$
     set:
       subject: $1Default$2
+  - where:
+      verb: Get
+      subject: ^(Site)OnenoteNotebook(RecentNotebook$)
+    set:
+      subject: $1$2
 # Rename cmdlets that call onenotePatchContent action.
   - where:
       verb: Update

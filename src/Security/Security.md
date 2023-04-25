@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^security(.cases.ediscoveryCases.noncustodialDataSources_.*DataSource)$
+  - remove-path-by-operation: ^security(.case.ediscoveryCase.noncustodialDataSource_.*DataSource)$
 # Remove cmdlets
   - where:
       verb: Get|Update
@@ -41,4 +41,10 @@ directive:
       variant: Update1|UpdateExpanded1
     set:
       subject: $1Multiple
+  - where:
+      verb: Get
+      subject: ^(SecurityAlert)$
+      variant: Get1
+    set:
+      subject: $1V2Count
 ```

@@ -262,7 +262,7 @@
                 try
                 {
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletBeforeAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-                    await this.Client.GroupsCreateMembersGraphBPreRef(GroupId, BodyParameter, onNoContent, onDefault, this, Pipeline);
+                    await this.Client.GroupCreateMemberGraphBPreRef(GroupId, BodyParameter, onNoContent, onDefault, this, Pipeline);
                     await ((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletAfterAPICall); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
                 catch (Microsoft.Graph.Beta.PowerShell.Runtime.UndeclaredResponseException urexception)

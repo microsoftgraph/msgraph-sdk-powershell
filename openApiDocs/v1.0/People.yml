@@ -11,7 +11,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get insights from users
-      operationId: users_GetInsights
+      operationId: user_GetInsight
       parameters:
         - name: user-id
           in: path
@@ -65,7 +65,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property insights in users
-      operationId: users_UpdateInsights
+      operationId: user_UpdateInsight
       parameters:
         - name: user-id
           in: path
@@ -84,7 +84,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -96,7 +96,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property insights for users
-      operationId: users_DeleteInsights
+      operationId: user_DeleteInsight
       parameters:
         - name: user-id
           in: path
@@ -124,7 +124,7 @@ paths:
         - users.officeGraphInsights
       summary: Get shared from users
       description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
-      operationId: users.insights_ListShared
+      operationId: user.insight_ListShared
       parameters:
         - name: user-id
           in: path
@@ -205,7 +205,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to shared for users
-      operationId: users.insights_CreateShared
+      operationId: user.insight_CreateShared
       parameters:
         - name: user-id
           in: path
@@ -238,7 +238,7 @@ paths:
         - users.officeGraphInsights
       summary: Get shared from users
       description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
-      operationId: users.insights_GetShared
+      operationId: user.insight_GetShared
       parameters:
         - name: user-id
           in: path
@@ -302,7 +302,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property shared in users
-      operationId: users.insights_UpdateShared
+      operationId: user.insight_UpdateShared
       parameters:
         - name: user-id
           in: path
@@ -329,7 +329,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -341,7 +341,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property shared for users
-      operationId: users.insights_DeleteShared
+      operationId: user.insight_DeleteShared
       parameters:
         - name: user-id
           in: path
@@ -376,7 +376,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get lastSharedMethod from users
-      operationId: users.insights.shared_GetLastSharedMethod
+      operationId: user.insight.shared_GetLastSharedMethod
       parameters:
         - name: user-id
           in: path
@@ -434,7 +434,7 @@ paths:
         - users.officeGraphInsights
       summary: Get resource from users
       description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
-      operationId: users.insights.shared_GetResource
+      operationId: user.insight.shared_GetResource
       parameters:
         - name: user-id
           in: path
@@ -486,13 +486,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/insights/shared/$count':
+    get:
+      tags:
+        - users.officeGraphInsights
+      summary: Get the number of the resource
+      operationId: user.insight.shared_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/insights/trending':
     get:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
       description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
-      operationId: users.insights_ListTrending
+      operationId: user.insight_ListTrending
       parameters:
         - name: user-id
           in: path
@@ -571,7 +593,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to trending for users
-      operationId: users.insights_CreateTrending
+      operationId: user.insight_CreateTrending
       parameters:
         - name: user-id
           in: path
@@ -604,7 +626,7 @@ paths:
         - users.officeGraphInsights
       summary: Get trending from users
       description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
-      operationId: users.insights_GetTrending
+      operationId: user.insight_GetTrending
       parameters:
         - name: user-id
           in: path
@@ -666,7 +688,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property trending in users
-      operationId: users.insights_UpdateTrending
+      operationId: user.insight_UpdateTrending
       parameters:
         - name: user-id
           in: path
@@ -693,7 +715,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -705,7 +727,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property trending for users
-      operationId: users.insights_DeleteTrending
+      operationId: user.insight_DeleteTrending
       parameters:
         - name: user-id
           in: path
@@ -741,7 +763,7 @@ paths:
         - users.officeGraphInsights
       summary: Get resource from users
       description: Used for navigating to the trending document.
-      operationId: users.insights.trending_GetResource
+      operationId: user.insight.trending_GetResource
       parameters:
         - name: user-id
           in: path
@@ -793,6 +815,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/insights/trending/$count':
+    get:
+      tags:
+        - users.officeGraphInsights
+      summary: Get the number of the resource
+      operationId: user.insight.trending_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/insights/used':
     get:
       tags:
@@ -802,7 +846,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/insights-list-used?view=graph-rest-1.0
-      operationId: users.insights_ListUsed
+      operationId: user.insight_ListUsed
       parameters:
         - name: user-id
           in: path
@@ -878,7 +922,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to used for users
-      operationId: users.insights_CreateUsed
+      operationId: user.insight_CreateUsed
       parameters:
         - name: user-id
           in: path
@@ -911,7 +955,7 @@ paths:
         - users.officeGraphInsights
       summary: Get used from users
       description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
-      operationId: users.insights_GetUsed
+      operationId: user.insight_GetUsed
       parameters:
         - name: user-id
           in: path
@@ -972,7 +1016,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property used in users
-      operationId: users.insights_UpdateUsed
+      operationId: user.insight_UpdateUsed
       parameters:
         - name: user-id
           in: path
@@ -999,7 +1043,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1011,7 +1055,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property used for users
-      operationId: users.insights_DeleteUsed
+      operationId: user.insight_DeleteUsed
       parameters:
         - name: user-id
           in: path
@@ -1047,7 +1091,7 @@ paths:
         - users.officeGraphInsights
       summary: Get resource from users
       description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
-      operationId: users.insights.used_GetResource
+      operationId: user.insight.used_GetResource
       parameters:
         - name: user-id
           in: path
@@ -1099,6 +1143,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/insights/used/$count':
+    get:
+      tags:
+        - users.officeGraphInsights
+      summary: Get the number of the resource
+      operationId: user.insight.used_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/people':
     get:
       tags:
@@ -1108,7 +1174,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
-      operationId: users_ListPeople
+      operationId: user_ListPerson
       parameters:
         - name: user-id
           in: path
@@ -1220,7 +1286,7 @@ paths:
         - users.person
       summary: Get people from users
       description: People that are relevant to the user. Read-only. Nullable.
-      operationId: users_GetPeople
+      operationId: user_GetPerson
       parameters:
         - name: user-id
           in: path
@@ -1279,6 +1345,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/people/$count':
+    get:
+      tags:
+        - users.person
+      summary: Get the number of the resource
+      operationId: user.person_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.officeGraphInsights:
@@ -1686,6 +1774,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.trendingCollectionResponse:
       title: Collection of trending
       type: object
@@ -1906,6 +1997,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.sharedInsightCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.trendingCollectionResponse:
       description: Retrieved collection
       content:

@@ -17,8 +17,13 @@ require:
 
 ``` yaml
 directive:
-  - remove-path-by-operation: groups\.groupLifecyclePolicies_.*$|groups_(Get|Create|Update|Delete)GroupLifecyclePolicies$|groups\.team.*$|users\.joinedGroups.*$|groups\.sites\.onenote.*$|.*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|.*\.calendar\.events\..*$|.*\.events\..*$
-# Remove duplicates.
+  - remove-path-by-operation: group\.groupLifecyclePolicy_.*$|group_(Get|Create|Update|Delete)GroupLifecyclePolicies$|group\.team.*$|user\.joinedGroup.*$|group\.site\.onenote.*$|.*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebook\.section.*|.*\.sectionGroup\.section.*|.*\.section\.page.*|.*\.calendar\.event\..*$|.*\.event\..*$
+  - where:
+      verb: Get
+      subject: ^(GroupLifecyclePolicy)$
+      variant: ^List$
+    set:
+      subject: $1ByGroup
   - where:
       subject: ^(GroupLifecyclePolicy)(\1)+
     set:

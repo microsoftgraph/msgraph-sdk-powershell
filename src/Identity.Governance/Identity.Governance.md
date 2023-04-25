@@ -17,7 +17,7 @@ require:
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)|^identityGovernance\.accessReviews\.definitions\.instances\.decisions\.instance(\.|_).*|^identityGovernance\.accessReviews\.definitions\.instances(\.stages\.decisions.*)$|^privilegedAccess.roleAssignmentRequests.(resource|roleDefinition).*$|^privilegedAccess.roleAssignments.(resource|roleDefinition).*$|^privilegedAccess.roleDefinitions.(resource|roleSetting).*$|^privilegedAccess.roleSettings.(resource|roleDefinition).*$|(^agreements.|^identityGovernance.termsGraphOPreUse.agreements.).*files.*$|^identityGovernance_.*LifecycleWorkflows|^identityGovernance\.lifecycleWorkflows\.deletedItems\.workflows\..*|^identityGovernance\.lifecycleWorkflows\.workflows\.runs\.userProcessingResults\.taskProcessingResults.*|^identityGovernance\.lifecycleWorkflows\.workflows\.userProcessingResults\.taskProcessingResults.*|^identityGovernance_.*RoleManagementAlerts$
+  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScope|\.accessPackageResourceRoleScope.*|\.accessPackageAssignmentPolicy\..*|\.accessPackageAssignmentRequest\..*|\.accessPackageAssignmentResourceRole\..*|\.accessPackageAssignment\..*|\.accessPackageCatalog\..*|\.accessPackageResourceRequest\..*|\.accessPackageResource\..*|\.accessPackage\..*)|^identityGovernance\.accessReview\.definition\.instance\.decision\.instance(\.|_).*|^identityGovernance\.accessReview\.definition\.instance\.stage\.decision\..*$|^privilegedAccess.roleAssignmentRequest.(resource|roleDefinition).*$|^privilegedAccess.roleAssignment.(resource|roleDefinition).*$|^privilegedAccess.roleDefinition.(resource|roleSetting).*$|^privilegedAccess.roleSetting.(resource|roleDefinition).*$|^identityGovernance_.*LifecycleWorkflow|^identityGovernance\.lifecycleWorkflow\.deletedItem\.(workflow|run|userProcessingResult)\..*|^identityGovernance\.lifecycleWorkflow\.workflow\.run\.userProcessingResult\.taskProcessingResult.*|^identityGovernance\.lifecycleWorkflow\.workflow\.userProcessingResult\.taskProcessingResult.*|^identityGovernance_.*RoleManagementAlert$|^identityGovernance\.roleManagementAlert_refresh$
 # Remove cmdlets
   - where:
       verb: Get|Remove|Set
@@ -263,6 +263,11 @@ directive:
   - where:
       verb: New|Remove|Update
       subject: ^(.*)EntitlementManagementConnectedOrganization(Internal|External)Sponsor$
+    remove: true
+  - where:
+      verb: Get|New|Remove|Update|Remove|Set
+      subject: ^(.*)AgreementFile$
+      variant: (.*\d)
     remove: true
 # Rename cmdlets with duplicates in their name.
   - where:

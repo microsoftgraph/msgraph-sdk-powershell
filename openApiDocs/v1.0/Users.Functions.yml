@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/projectrome-get-recent-activities?view=graph-rest-1.0
-      operationId: users.activities_recent
+      operationId: user.activity_recent
       parameters:
         - name: user-id
           in: path
@@ -128,7 +128,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendar.calendarView.instances_delta
+      operationId: user.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -338,7 +338,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendar.calendarView_delta
+      operationId: user.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -540,7 +540,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendar.events.instances_delta
+      operationId: user.calendar.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -750,7 +750,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendar.events_delta
+      operationId: user.calendar.event_delta
       parameters:
         - name: user-id
           in: path
@@ -948,7 +948,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendar_allowedCalendarSharingRoles
+      operationId: user.calendar_allowedCalendarSharingRole
       parameters:
         - name: user-id
           in: path
@@ -1002,7 +1002,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView.instances_delta
+      operationId: user.calendarGroup.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -1228,7 +1228,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.calendarView_delta
+      operationId: user.calendarGroup.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -1446,7 +1446,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events.instances_delta
+      operationId: user.calendarGroup.calendar.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -1672,7 +1672,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendarGroups.calendars.events_delta
+      operationId: user.calendarGroup.calendar.event_delta
       parameters:
         - name: user-id
           in: path
@@ -1886,7 +1886,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendarGroups.calendars_allowedCalendarSharingRoles
+      operationId: user.calendarGroup.calendar_allowedCalendarSharingRole
       parameters:
         - name: user-id
           in: path
@@ -1956,7 +1956,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendars.calendarView.instances_delta
+      operationId: user.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -2174,7 +2174,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendars.calendarView_delta
+      operationId: user.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -2384,7 +2384,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendars.events.instances_delta
+      operationId: user.calendar.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -2602,7 +2602,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendars.events_delta
+      operationId: user.calendar.event_delta
       parameters:
         - name: user-id
           in: path
@@ -2808,7 +2808,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendars_allowedCalendarSharingRoles
+      operationId: user.calendar_allowedCalendarSharingRole
       parameters:
         - name: user-id
           in: path
@@ -2870,7 +2870,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendarView.instances_delta
+      operationId: user.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -3080,7 +3080,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.calendarView_delta
+      operationId: user.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -3278,7 +3278,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.chats.messages.replies_delta
+      operationId: user.chat.message.reply_delta
       parameters:
         - name: user-id
           in: path
@@ -3334,6 +3334,7 @@ paths:
                 - lastModifiedDateTime
                 - locale
                 - mentions
+                - messageHistory
                 - messageType
                 - policyViolation
                 - reactions
@@ -3384,6 +3385,8 @@ paths:
                 - locale desc
                 - mentions
                 - mentions desc
+                - messageHistory
+                - messageHistory desc
                 - messageType
                 - messageType desc
                 - policyViolation
@@ -3431,7 +3434,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.chats.messages_delta
+      operationId: user.chat.message_delta
       parameters:
         - name: user-id
           in: path
@@ -3479,6 +3482,7 @@ paths:
                 - lastModifiedDateTime
                 - locale
                 - mentions
+                - messageHistory
                 - messageType
                 - policyViolation
                 - reactions
@@ -3529,6 +3533,8 @@ paths:
                 - locale desc
                 - mentions
                 - mentions desc
+                - messageHistory
+                - messageHistory desc
                 - messageType
                 - messageType desc
                 - policyViolation
@@ -3576,7 +3582,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllMessages
-      operationId: users.chats_getAllMessages
+      operationId: user.chat_getAllMessage
       parameters:
         - name: user-id
           in: path
@@ -3616,6 +3622,7 @@ paths:
                 - lastModifiedDateTime
                 - locale
                 - mentions
+                - messageHistory
                 - messageType
                 - policyViolation
                 - reactions
@@ -3666,6 +3673,8 @@ paths:
                 - locale desc
                 - mentions
                 - mentions desc
+                - messageHistory
+                - messageHistory desc
                 - messageType
                 - messageType desc
                 - policyViolation
@@ -3714,7 +3723,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: users.contactFolders.childFolders.contacts_delta
+      operationId: user.contactFolder.childFolder.contact_delta
       parameters:
         - name: user-id
           in: path
@@ -3921,7 +3930,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
-      operationId: users.contactFolders.childFolders_delta
+      operationId: user.contactFolder.childFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -4015,7 +4024,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: users.contactFolders.contacts_delta
+      operationId: user.contactFolder.contact_delta
       parameters:
         - name: user-id
           in: path
@@ -4214,7 +4223,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
-      operationId: users.contactFolders_delta
+      operationId: user.contactFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -4300,7 +4309,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
-      operationId: users.contacts_delta
+      operationId: user.contact_delta
       parameters:
         - name: user-id
           in: path
@@ -4487,7 +4496,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items.listItem_getActivitiesGraphBPreInterval
+      operationId: user.drive.item.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -4600,7 +4609,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items.listItem_getActivitiesGraphBPreInterval
+      operationId: user.drive.item.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -4737,7 +4746,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.drives.items_delta
+      operationId: user.drive.item_delta
       parameters:
         - name: user-id
           in: path
@@ -4934,7 +4943,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.drives.items_delta
+      operationId: user.drive.item_delta
       parameters:
         - name: user-id
           in: path
@@ -5139,7 +5148,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items_getActivitiesGraphBPreInterval
+      operationId: user.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -5252,7 +5261,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items_getActivitiesGraphBPreInterval
+      operationId: user.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -5389,7 +5398,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
-      operationId: users.drives.items_search
+      operationId: user.drive.item_search
       parameters:
         - name: user-id
           in: path
@@ -5591,7 +5600,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function isPublished
-      operationId: users.drives.list.contentTypes_isPublished
+      operationId: user.drive.list.contentType_isPublished
       parameters:
         - name: user-id
           in: path
@@ -5638,7 +5647,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getCompatibleHubContentTypes
-      operationId: users.drives.list.contentTypes_getCompatibleHubContentTypes
+      operationId: user.drive.list.contentType_getCompatibleHubContentType
       parameters:
         - name: user-id
           in: path
@@ -5762,7 +5771,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.list.items_getActivitiesGraphBPreInterval
+      operationId: user.drive.list.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -5875,7 +5884,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.list.items_getActivitiesGraphBPreInterval
+      operationId: user.drive.list.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -6012,7 +6021,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function recent
-      operationId: users.drives_recent
+      operationId: user.drive_recent
       parameters:
         - name: user-id
           in: path
@@ -6183,7 +6192,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
-      operationId: users.drives_search
+      operationId: user.drive_search
       parameters:
         - name: user-id
           in: path
@@ -6362,7 +6371,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function sharedWithMe
-      operationId: users.drives_sharedGraphWPreMe
+      operationId: user.drive_sharedGraphWPreMe
       parameters:
         - name: user-id
           in: path
@@ -6533,7 +6542,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root.listItem_getActivitiesGraphBPreInterval
+      operationId: user.drive.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -6638,7 +6647,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root.listItem_getActivitiesGraphBPreInterval
+      operationId: user.drive.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -6767,7 +6776,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.drives.root_delta
+      operationId: user.drive.root_delta
       parameters:
         - name: user-id
           in: path
@@ -6956,7 +6965,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.drives.root_delta
+      operationId: user.drive.root_delta
       parameters:
         - name: user-id
           in: path
@@ -7153,7 +7162,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root_getActivitiesGraphBPreInterval
+      operationId: user.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -7258,7 +7267,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root_getActivitiesGraphBPreInterval
+      operationId: user.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -7387,7 +7396,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
-      operationId: users.drives.root_search
+      operationId: user.drive.root_search
       parameters:
         - name: user-id
           in: path
@@ -7585,7 +7594,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.events.instances_delta
+      operationId: user.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -7795,7 +7804,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
-      operationId: users.events_delta
+      operationId: user.event_delta
       parameters:
         - name: user-id
           in: path
@@ -7993,7 +8002,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.joinedTeams.channels.messages.replies_delta
+      operationId: user.joinedTeam.channel.message.reply_delta
       parameters:
         - name: user-id
           in: path
@@ -8057,6 +8066,7 @@ paths:
                 - lastModifiedDateTime
                 - locale
                 - mentions
+                - messageHistory
                 - messageType
                 - policyViolation
                 - reactions
@@ -8107,6 +8117,8 @@ paths:
                 - locale desc
                 - mentions
                 - mentions desc
+                - messageHistory
+                - messageHistory desc
                 - messageType
                 - messageType desc
                 - policyViolation
@@ -8154,7 +8166,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.joinedTeams.channels.messages_delta
+      operationId: user.joinedTeam.channel.message_delta
       parameters:
         - name: user-id
           in: path
@@ -8210,6 +8222,7 @@ paths:
                 - lastModifiedDateTime
                 - locale
                 - mentions
+                - messageHistory
                 - messageType
                 - policyViolation
                 - reactions
@@ -8260,6 +8273,8 @@ paths:
                 - locale desc
                 - mentions
                 - mentions desc
+                - messageHistory
+                - messageHistory desc
                 - messageType
                 - messageType desc
                 - policyViolation
@@ -8307,7 +8322,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function doesUserHaveAccess
-      operationId: users.joinedTeams.channels_doesUserHaveAccess
+      operationId: user.joinedTeam.channel_doesUserHaveAccess
       parameters:
         - name: user-id
           in: path
@@ -8378,7 +8393,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllMessages
-      operationId: users.joinedTeams.channels_getAllMessages
+      operationId: user.joinedTeam.channel_getAllMessage
       parameters:
         - name: user-id
           in: path
@@ -8426,6 +8441,7 @@ paths:
                 - lastModifiedDateTime
                 - locale
                 - mentions
+                - messageHistory
                 - messageType
                 - policyViolation
                 - reactions
@@ -8476,6 +8492,8 @@ paths:
                 - locale desc
                 - mentions
                 - mentions desc
+                - messageHistory
+                - messageHistory desc
                 - messageType
                 - messageType desc
                 - policyViolation
@@ -8520,7 +8538,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.joinedTeams.primaryChannel.messages.replies_delta
+      operationId: user.joinedTeam.primaryChannel.message.reply_delta
       parameters:
         - name: user-id
           in: path
@@ -8576,6 +8594,7 @@ paths:
                 - lastModifiedDateTime
                 - locale
                 - mentions
+                - messageHistory
                 - messageType
                 - policyViolation
                 - reactions
@@ -8626,6 +8645,8 @@ paths:
                 - locale desc
                 - mentions
                 - mentions desc
+                - messageHistory
+                - messageHistory desc
                 - messageType
                 - messageType desc
                 - policyViolation
@@ -8673,7 +8694,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.joinedTeams.primaryChannel.messages_delta
+      operationId: user.joinedTeam.primaryChannel.message_delta
       parameters:
         - name: user-id
           in: path
@@ -8721,6 +8742,7 @@ paths:
                 - lastModifiedDateTime
                 - locale
                 - mentions
+                - messageHistory
                 - messageType
                 - policyViolation
                 - reactions
@@ -8771,6 +8793,8 @@ paths:
                 - locale desc
                 - mentions
                 - mentions desc
+                - messageHistory
+                - messageHistory desc
                 - messageType
                 - messageType desc
                 - policyViolation
@@ -8818,7 +8842,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function doesUserHaveAccess
-      operationId: users.joinedTeams.primaryChannel_doesUserHaveAccess
+      operationId: user.joinedTeam.primaryChannel_doesUserHaveAccess
       parameters:
         - name: user-id
           in: path
@@ -8881,7 +8905,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllMessages
-      operationId: users.joinedTeams_getAllMessages
+      operationId: user.joinedTeam_getAllMessage
       parameters:
         - name: user-id
           in: path
@@ -8921,6 +8945,7 @@ paths:
                 - lastModifiedDateTime
                 - locale
                 - mentions
+                - messageHistory
                 - messageType
                 - policyViolation
                 - reactions
@@ -8971,6 +8996,8 @@ paths:
                 - locale desc
                 - mentions
                 - mentions desc
+                - messageHistory
+                - messageHistory desc
                 - messageType
                 - messageType desc
                 - policyViolation
@@ -9019,7 +9046,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders.messages_delta
+      operationId: user.mailFolder.childFolder.message_delta
       parameters:
         - name: user-id
           in: path
@@ -9205,7 +9232,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
-      operationId: users.mailFolders.childFolders_delta
+      operationId: user.mailFolder.childFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -9312,7 +9339,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: users.mailFolders.messages_delta
+      operationId: user.mailFolder.message_delta
       parameters:
         - name: user-id
           in: path
@@ -9490,7 +9517,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
-      operationId: users.mailFolders_delta
+      operationId: user.mailFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -9589,7 +9616,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
-      operationId: users.messages_delta
+      operationId: user.message_delta
       parameters:
         - name: user-id
           in: path
@@ -9755,7 +9782,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function exportDeviceAndAppManagementData
-      operationId: users_exportDeviceAndAppManagementData
+      operationId: user_exportDeviceAndAppManagementData
       parameters:
         - name: user-id
           in: path
@@ -9776,7 +9803,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function exportDeviceAndAppManagementData
-      operationId: users_exportDeviceAndAppManagementData
+      operationId: user_exportDeviceAndAppManagementData
       parameters:
         - name: user-id
           in: path
@@ -9818,7 +9845,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedAppDiagnosticStatuses
       description: Gets diagnostics validation status for a given user.
-      operationId: users_getManagedAppDiagnosticStatuses
+      operationId: user_getManagedAppDiagnosticStatus
       parameters:
         - name: user-id
           in: path
@@ -9848,7 +9875,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedAppPolicies
       description: Gets app restrictions for a given user.
-      operationId: users_getManagedAppPolicies
+      operationId: user_getManagedAppPolicy
       parameters:
         - name: user-id
           in: path
@@ -9918,7 +9945,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedDevicesWithAppFailures
       description: Retrieves the list of devices with failed apps
-      operationId: users_getManagedDevicesGraphWPreAppFailures
+      operationId: user_getManagedDevicesGraphWPreAppFailure
       parameters:
         - name: user-id
           in: path
@@ -9947,7 +9974,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function reminderView
-      operationId: users_reminderView
+      operationId: user_reminderView
       parameters:
         - name: user-id
           in: path
@@ -9991,7 +10018,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.notebooks.sectionGroups.sections.pages_preview
+      operationId: user.onenote.notebook.sectionGroup.section.page_preview
       parameters:
         - name: user-id
           in: path
@@ -10048,7 +10075,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.notebooks.sections.pages_preview
+      operationId: user.onenote.notebook.section.page_preview
       parameters:
         - name: user-id
           in: path
@@ -10097,7 +10124,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getRecentNotebooks
-      operationId: users.onenote.notebooks_getRecentNotebooks
+      operationId: user.onenote.notebook_getRecentNotebook
       parameters:
         - name: user-id
           in: path
@@ -10148,7 +10175,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.pages_preview
+      operationId: user.onenote.page_preview
       parameters:
         - name: user-id
           in: path
@@ -10181,7 +10208,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.sectionGroups.sections.pages_preview
+      operationId: user.onenote.sectionGroup.section.page_preview
       parameters:
         - name: user-id
           in: path
@@ -10230,7 +10257,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.sections.pages_preview
+      operationId: user.onenote.section.page_preview
       parameters:
         - name: user-id
           in: path
@@ -10275,7 +10302,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
-      operationId: users.outlook_supportedLanguages
+      operationId: user.outlook_supportedLanguage
       parameters:
         - name: user-id
           in: path
@@ -10318,7 +10345,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedTimeZones
-      operationId: users.outlook_supportedTimeZones
+      operationId: user.outlook_supportedTimeZone
       parameters:
         - name: user-id
           in: path
@@ -10361,7 +10388,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedTimeZones
-      operationId: users.outlook_supportedTimeZones
+      operationId: user.outlook_supportedTimeZone
       parameters:
         - name: user-id
           in: path
@@ -10411,7 +10438,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.todo.lists.tasks_delta
+      operationId: user.todo.list.task_delta
       parameters:
         - name: user-id
           in: path
@@ -10541,7 +10568,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.todo.lists_delta
+      operationId: user.todo.list_delta
       parameters:
         - name: user-id
           in: path
@@ -10627,7 +10654,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users_delta
+      operationId: user_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10646,6 +10673,7 @@ paths:
               enum:
                 - id
                 - deletedDateTime
+                - signInActivity
                 - accountEnabled
                 - ageGroup
                 - assignedLicenses
@@ -10780,6 +10808,8 @@ paths:
                 - id desc
                 - deletedDateTime
                 - deletedDateTime desc
+                - signInActivity
+                - signInActivity desc
                 - accountEnabled
                 - accountEnabled desc
                 - ageGroup
@@ -11240,6 +11270,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
               description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.'
+            messageHistory:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             policyViolation:
@@ -12073,6 +12107,8 @@ components:
         - title: user
           type: object
           properties:
+            signInActivity:
+              $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
               description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
@@ -13142,6 +13178,20 @@ components:
           type: string
           description: 'String used to represent the mention. For example, a user''s display name, a team name.'
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageHistoryItem:
+      title: chatMessageHistoryItem
+      type: object
+      properties:
+        actions:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageActions'
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        reaction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
       additionalProperties:
         type: object
     microsoft.graph.chatMessageType:
@@ -14509,15 +14559,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -14547,6 +14597,32 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.signInActivity:
+      title: signInActivity
+      type: object
+      properties:
+        lastNonInteractiveSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastNonInteractiveSignInRequestId:
+          type: string
+          description: Request identifier of the last non-interactive sign-in performed by this user.
+          nullable: true
+        lastSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastSignInRequestId:
+          type: string
+          description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.assignedLicense:
       title: assignedLicense
       type: object
@@ -15822,6 +15898,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             attendanceReports:
               type: array
               items:
@@ -16482,6 +16560,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentity'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageActions:
+      title: chatMessageActions
+      enum:
+        - reactionAdded
+        - reactionRemoved
+        - actionUndefined
+        - unknownFutureValue
+      type: string
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -19055,6 +19141,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20085,11 +20185,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
