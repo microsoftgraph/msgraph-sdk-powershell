@@ -10,11 +10,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List contactFolders
-      description: Get the contact folder collection in the default Contacts folder of the signed-in user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
+      summary: Get contactFolders from users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_ListContactFolders
       parameters:
         - name: user-id
@@ -64,6 +61,22 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           $ref: '#/components/responses/microsoft.graph.contactFolderCollectionResponse'
@@ -76,11 +89,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create ContactFolder
-      description: Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
+      summary: Create new navigation property to contactFolders for users
       operationId: users_CreateContactFolders
       parameters:
         - name: user-id
@@ -150,6 +159,22 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Retrieved navigation property
@@ -191,7 +216,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -237,11 +262,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List childFolders
-      description: Get a collection of child folders under the specified contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
+      summary: Get childFolders from users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_ListChildFolders
       parameters:
         - name: user-id
@@ -327,11 +349,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create ContactFolder
-      description: Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
+      summary: Create new navigation property to childFolders for users
       operationId: users.contactFolders_CreateChildFolders
       parameters:
         - name: user-id
@@ -482,7 +500,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -536,11 +554,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List contacts
-      description: 'Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_ListContacts
       parameters:
         - name: user-id
@@ -739,11 +754,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create contact
-      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: users.contactFolders.childFolders_CreateContacts
       parameters:
         - name: user-id
@@ -953,7 +964,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1293,7 +1304,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1359,6 +1370,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/extensions/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.childFolders.contacts.extensions_GetCount-5b30
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contactFolder-id1
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -1646,7 +1702,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1712,6 +1768,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.childFolders.contacts.multiValueExtendedProperties_GetCount-8515
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contactFolder-id1
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/photo':
     get:
       tags:
@@ -1823,7 +1925,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2220,7 +2322,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2286,6 +2388,89 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.childFolders.contacts.singleValueExtendedProperties_GetCount-2359
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contactFolder-id1
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.childFolders.contacts_GetCount-6cbe
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contactFolder-id1
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/multiValueExtendedProperties':
     get:
       tags:
@@ -2541,7 +2726,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2599,6 +2784,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.childFolders.multiValueExtendedProperties_GetCount-554c
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contactFolder-id1
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/singleValueExtendedProperties':
     get:
       tags:
@@ -2854,7 +3077,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2912,15 +3135,79 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.childFolders.singleValueExtendedProperties_GetCount-0e56
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contactFolder-id1
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.childFolders_GetCount-9149
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts':
     get:
       tags:
         - users.contactFolder
-      summary: List contacts
-      description: 'Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_ListContacts
       parameters:
         - name: user-id
@@ -3111,11 +3398,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create contact
-      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: users.contactFolders_CreateContacts
       parameters:
         - name: user-id
@@ -3301,7 +3584,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3601,7 +3884,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3659,6 +3942,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.contacts.extensions_GetCount-8e14
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -3914,7 +4234,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3972,6 +4292,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.contacts.multiValueExtendedProperties_GetCount-3ab0
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/photo':
     get:
       tags:
@@ -4067,7 +4425,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4416,7 +4774,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4474,6 +4832,73 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.contacts.singleValueExtendedProperties_GetCount-8723
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.contacts_GetCount-5cc4
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -4697,7 +5122,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4747,6 +5172,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.multiValueExtendedProperties_GetCount-cdaf
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -4970,7 +5425,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5020,15 +5475,63 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders.singleValueExtendedProperties_GetCount-e4df
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contactFolder-id
+          in: path
+          description: The unique identifier of contactFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contactFolder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/contactFolders/$count':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get the number of the resource
+      operationId: users.contactFolders_GetCount-72bb
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contacts':
     get:
       tags:
         - users.contact
-      summary: List contacts
-      description: 'Get a contact collection from the default contacts folder of the signed-in user. There are two scenarios where an app can get contacts in another user''s contact folder:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The user's contacts. Read-only. Nullable.
       operationId: users_ListContacts
       parameters:
         - name: user-id
@@ -5184,6 +5687,22 @@ paths:
                 - photo
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           $ref: '#/components/responses/microsoft.graph.contactCollectionResponse'
@@ -5196,11 +5715,7 @@ paths:
     post:
       tags:
         - users.contact
-      summary: Create contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: users_CreateContacts
       parameters:
         - name: user-id
@@ -5305,6 +5820,22 @@ paths:
                 - photo
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
       responses:
         2XX:
           description: Retrieved navigation property
@@ -5346,7 +5877,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5606,7 +6137,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5656,6 +6187,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contacts/{contact-id}/extensions/$count':
+    get:
+      tags:
+        - users.contact
+      summary: Get the number of the resource
+      operationId: users.contacts.extensions_GetCount-e5d6
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contacts/{contact-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -5879,7 +6439,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5929,6 +6489,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contacts/{contact-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.contact
+      summary: Get the number of the resource
+      operationId: users.contacts.multiValueExtendedProperties_GetCount-b8ff
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/contacts/{contact-id}/photo':
     get:
       tags:
@@ -6008,7 +6598,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6309,7 +6899,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6359,6 +6949,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/contacts/{contact-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.contact
+      summary: Get the number of the resource
+      operationId: users.contacts.singleValueExtendedProperties_GetCount-5fe7
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: contact-id
+          in: path
+          description: The unique identifier of contact
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contact
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/contacts/$count':
+    get:
+      tags:
+        - users.contact
+      summary: Get the number of the resource
+      operationId: users.contacts_GetCount-4943
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.contactFolder:
@@ -6731,6 +7373,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
       title: Collection of multiValueLegacyExtendedProperty
       type: object
@@ -6823,6 +7468,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.extensionCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
       description: Retrieved collection
       content:

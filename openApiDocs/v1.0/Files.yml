@@ -10,8 +10,7 @@ paths:
     get:
       tags:
         - drives.drive
-      summary: Get Drive
-      description: 'Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.'
+      summary: Get entities from drives
       operationId: drives.drive_ListDrive
       parameters:
         - $ref: '#/components/parameters/top'
@@ -149,11 +148,7 @@ paths:
     get:
       tags:
         - drives.drive
-      summary: Get Drive
-      description: 'Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-get?view=graph-rest-1.0
+      summary: Get entity from drives by key
       operationId: drives.drive_GetDrive
       parameters:
         - name: drive-id
@@ -251,7 +246,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -691,9 +686,35 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/bundles/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.bundles_GetCount-c935
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/following':
     get:
       tags:
@@ -1066,9 +1087,35 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/following/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.following_GetCount-16f3
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items':
     get:
       tags:
@@ -1428,7 +1475,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1565,7 +1612,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1936,7 +1983,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2253,7 +2300,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2539,9 +2586,81 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.items.analytics.itemActivityStats.activities_GetCount-7511
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.items.analytics.itemActivityStats_GetCount-f4fa
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/analytics/lastSevenDays':
     get:
       tags:
@@ -3056,9 +3175,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/items/{driveItem-id}/children/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.items.children_GetCount-17b0
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/content':
     get:
       tags:
@@ -3128,6 +3281,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3245,7 +3402,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3613,7 +3770,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3704,6 +3861,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/listItem/documentSetVersions/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.items.listItem.documentSetVersions_GetCount-178a
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/listItem/driveItem':
     get:
       tags:
@@ -3884,6 +4071,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3980,7 +4171,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4494,7 +4685,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4649,7 +4840,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4740,6 +4931,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/listItem/versions/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.items.listItem.versions_GetCount-888d
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.checkin':
     post:
       tags:
@@ -6377,7 +6598,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6505,6 +6726,36 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/drives/{drive-id}/items/{driveItem-id}/permissions/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.items.permissions_GetCount-d367
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/subscriptions':
     get:
       tags:
@@ -6780,7 +7031,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6867,6 +7118,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/subscriptions/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.items.subscriptions_GetCount-f848
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/thumbnails':
     get:
       tags:
@@ -7105,7 +7386,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7155,6 +7436,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/items/{driveItem-id}/thumbnails/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.items.thumbnails_GetCount-50f0
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/items/{driveItem-id}/versions':
     get:
       tags:
@@ -7397,7 +7708,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7535,6 +7846,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7579,6 +7894,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/items/{driveItem-id}/versions/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.items.versions_GetCount-6d7a
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/drives/{drive-id}/items/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.items_GetCount-9c16
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/list':
     get:
       tags:
@@ -7681,7 +8048,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8037,7 +8404,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8170,6 +8537,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/columns/$count':
+    get:
+      tags:
+        - drives.list
+      summary: Get the number of the resource
+      operationId: drives.list.columns_GetCount-5e2e
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/list/contentTypes':
     get:
       tags:
@@ -8436,7 +8825,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8777,6 +9166,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes/$count':
+    get:
+      tags:
+        - drives.list
+      summary: Get the number of the resource
+      operationId: drives.list.contentTypes.baseTypes_GetCount-95ae
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/list/contentTypes/{contentType-id}/columnLinks':
     get:
       tags:
@@ -9000,7 +9419,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9050,6 +9469,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/contentTypes/{contentType-id}/columnLinks/$count':
+    get:
+      tags:
+        - drives.list
+      summary: Get the number of the resource
+      operationId: drives.list.contentTypes.columnLinks_GetCount-e5f5
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions':
     get:
       tags:
@@ -9319,6 +9768,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions/$count':
+    get:
+      tags:
+        - drives.list
+      summary: Get the number of the resource
+      operationId: drives.list.contentTypes.columnPositions_GetCount-6cb6
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/list/contentTypes/{contentType-id}/columns':
     get:
       tags:
@@ -9673,7 +10152,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9822,6 +10301,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/$count':
+    get:
+      tags:
+        - drives.list
+      summary: Get the number of the resource
+      operationId: drives.list.contentTypes.columns_GetCount-4b13
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites':
     post:
       tags:
@@ -10026,6 +10535,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/list/contentTypes/$count':
+    get:
+      tags:
+        - drives.list
+      summary: Get the number of the resource
+      operationId: drives.list.contentTypes_GetCount-5838
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/list/contentTypes/microsoft.graph.addCopy':
     post:
       tags:
@@ -10570,7 +11101,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10938,7 +11469,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11029,6 +11560,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/list/items/{listItem-id}/documentSetVersions/$count':
+    get:
+      tags:
+        - drives.list
+      summary: Get the number of the resource
+      operationId: drives.list.items.documentSetVersions_GetCount-7796
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/list/items/{listItem-id}/driveItem':
     get:
       tags:
@@ -11209,6 +11770,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11305,7 +11870,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11819,7 +12384,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11974,7 +12539,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12065,6 +12630,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/list/items/{listItem-id}/versions/$count':
+    get:
+      tags:
+        - drives.list
+      summary: Get the number of the resource
+      operationId: drives.list.items.versions_GetCount-c6e1
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/drives/{drive-id}/list/items/$count':
+    get:
+      tags:
+        - drives.list
+      summary: Get the number of the resource
+      operationId: drives.list.items_GetCount-e46a
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/list/operations':
     get:
       tags:
@@ -12288,7 +12905,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12330,6 +12947,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/list/operations/$count':
+    get:
+      tags:
+        - drives.list
+      summary: Get the number of the resource
+      operationId: drives.list.operations_GetCount-e8e7
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/list/subscriptions':
     get:
       tags:
@@ -12573,7 +13212,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12644,6 +13283,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/list/subscriptions/$count':
+    get:
+      tags:
+        - drives.list
+      summary: Get the number of the resource
+      operationId: drives.list.subscriptions_GetCount-59f5
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/microsoft.graph.recent()':
     get:
       tags:
@@ -13270,7 +13931,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13383,7 +14044,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13706,7 +14367,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13983,7 +14644,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14237,9 +14898,65 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.root.analytics.itemActivityStats.activities_GetCount-053a
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/drives/{drive-id}/root/analytics/itemActivityStats/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.root.analytics.itemActivityStats_GetCount-741b
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/analytics/lastSevenDays':
     get:
       tags:
@@ -14706,9 +15423,35 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/root/children/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.root.children_GetCount-ab86
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/content':
     get:
       tags:
@@ -14765,6 +15508,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14866,7 +15613,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15186,7 +15933,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15261,6 +16008,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/listItem/documentSetVersions/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.root.listItem.documentSetVersions_GetCount-21ba
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/listItem/driveItem':
     get:
       tags:
@@ -15417,6 +16186,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15497,7 +16270,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -15955,7 +16728,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16086,7 +16859,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -16161,6 +16934,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/listItem/versions/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.root.listItem.versions_GetCount-bb80
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/microsoft.graph.checkin':
     post:
       tags:
@@ -17638,7 +18433,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -17750,6 +18545,28 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/drives/{drive-id}/root/permissions/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.root.permissions_GetCount-f1f3
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/subscriptions':
     get:
       tags:
@@ -17993,7 +18810,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18064,6 +18881,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/subscriptions/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.root.subscriptions_GetCount-e7a9
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/thumbnails':
     get:
       tags:
@@ -18270,7 +19109,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18312,6 +19151,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/root/thumbnails/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.root.thumbnails_GetCount-7516
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/root/versions':
     get:
       tags:
@@ -18522,7 +19383,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -18636,6 +19497,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -18672,6 +19537,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/root/versions/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.root.versions_GetCount-ccdc
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/drives/{drive-id}/special':
     get:
       tags:
@@ -19038,18 +19925,55 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/drives/{drive-id}/special/$count':
+    get:
+      tags:
+        - drives.driveItem
+      summary: Get the number of the resource
+      operationId: drives.special_GetCount-6a2e
+      parameters:
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /drives/$count:
+    get:
+      tags:
+        - drives.drive
+      summary: Get the number of the resource
+      operationId: drives_GetCount-7027
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drive':
     get:
       tags:
         - groups.drive
-      summary: Get Drive
-      description: 'Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-get?view=graph-rest-1.0
+      summary: Get drive from groups
+      description: The group's default drive. Read-only.
       operationId: groups_GetDrive
       parameters:
         - name: group-id
@@ -19128,11 +20052,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List available drives
-      description: 'Retrieve the list of Drive resources available for a target User, Group, or Site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-list?view=graph-rest-1.0
+      summary: Get drives from groups
+      description: The group's drives. Read-only.
       operationId: groups_ListDrives
       parameters:
         - name: group-id
@@ -19402,7 +20323,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -19890,9 +20811,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/bundles/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.bundles_GetCount-28a6
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/following':
     get:
       tags:
@@ -20297,9 +21252,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/following/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.following_GetCount-e8fe
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items':
     get:
       tags:
@@ -20691,7 +21680,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -20852,7 +21841,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21271,7 +22260,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21628,7 +22617,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -21946,9 +22935,97 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.items.analytics.itemActivityStats.activities_GetCount-6005
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.items.analytics.itemActivityStats_GetCount-a7d9
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/analytics/lastSevenDays':
     get:
       tags:
@@ -22511,9 +23588,51 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/children/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.items.children_GetCount-0c67
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/content':
     get:
       tags:
@@ -22599,6 +23718,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -22732,7 +23855,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -23148,7 +24271,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -23206,6 +24329,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/documentSetVersions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.items.listItem.documentSetVersions_GetCount-72aa
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/driveItem':
     get:
       tags:
@@ -23410,6 +24571,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -23522,7 +24687,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -23842,7 +25007,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -24021,7 +25186,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -24079,6 +25244,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/listItem/versions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.items.listItem.versions_GetCount-0c9a
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/permissions':
     get:
       tags:
@@ -24377,7 +25580,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -24435,6 +25638,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/permissions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.items.permissions_GetCount-74d8
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/subscriptions':
     get:
       tags:
@@ -24742,7 +25983,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -24800,6 +26041,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/subscriptions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.items.subscriptions_GetCount-8836
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/thumbnails':
     get:
       tags:
@@ -25070,7 +26349,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -25128,6 +26407,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/thumbnails/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.items.thumbnails_GetCount-cb34
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/versions':
     get:
       tags:
@@ -25402,7 +26719,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -25564,9 +26881,81 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/versions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.items.versions_GetCount-2875
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/drives/{drive-id}/items/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.items_GetCount-7592
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/list':
     get:
       tags:
@@ -25685,7 +27074,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26081,7 +27470,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26230,6 +27619,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/list/columns/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.list.columns_GetCount-2425
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/list/contentTypes':
     get:
       tags:
@@ -26528,7 +27947,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -26901,6 +28320,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.list.contentTypes.baseTypes_GetCount-d26d
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columnLinks':
     get:
       tags:
@@ -27156,7 +28613,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -27214,6 +28671,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columnLinks/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.list.contentTypes.columnLinks_GetCount-a907
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions':
     get:
       tags:
@@ -27499,6 +28994,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.list.contentTypes.columnPositions_GetCount-afc8
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columns':
     get:
       tags:
@@ -27885,7 +29418,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -28050,6 +29583,74 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.list.contentTypes.columns_GetCount-b3a1
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/drives/{drive-id}/list/contentTypes/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.list.contentTypes_GetCount-8bf9
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/list/drive':
     get:
       tags:
@@ -28436,7 +30037,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -28852,7 +30453,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -28910,6 +30511,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/documentSetVersions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.list.items.documentSetVersions_GetCount-bd89
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/driveItem':
     get:
       tags:
@@ -29114,6 +30753,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -29226,7 +30869,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -29546,7 +31189,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -29725,7 +31368,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -29783,6 +31426,74 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/list/items/{listItem-id}/versions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.list.items.versions_GetCount-f9c0
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/drives/{drive-id}/list/items/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.list.items_GetCount-7fec
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/list/operations':
     get:
       tags:
@@ -30038,7 +31749,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -30088,6 +31799,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/list/operations/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.list.operations_GetCount-92c4
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/list/subscriptions':
     get:
       tags:
@@ -30363,7 +32104,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -30413,6 +32154,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/list/subscriptions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.list.subscriptions_GetCount-9095
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root':
     get:
       tags:
@@ -30558,7 +32329,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -30695,7 +32466,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -31066,7 +32837,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -31383,7 +33154,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -31669,9 +33440,81 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.root.analytics.itemActivityStats.activities_GetCount-b028
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/drives/{drive-id}/root/analytics/itemActivityStats/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.root.analytics.itemActivityStats_GetCount-2450
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/analytics/lastSevenDays':
     get:
       tags:
@@ -32186,9 +34029,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/root/children/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.root.children_GetCount-7689
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/content':
     get:
       tags:
@@ -32261,6 +34138,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -32378,7 +34259,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -32746,7 +34627,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -32796,6 +34677,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/root/listItem/documentSetVersions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.root.listItem.documentSetVersions_GetCount-f120
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/listItem/driveItem':
     get:
       tags:
@@ -32976,6 +34887,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -33072,7 +34987,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -33352,7 +35267,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -33507,7 +35422,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -33557,6 +35472,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/root/listItem/versions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.root.listItem.versions_GetCount-e0d5
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/permissions':
     get:
       tags:
@@ -33823,7 +35768,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -33873,6 +35818,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/root/permissions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.root.permissions_GetCount-8955
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/subscriptions':
     get:
       tags:
@@ -34148,7 +36123,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -34198,6 +36173,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/root/subscriptions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.root.subscriptions_GetCount-9ae0
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/thumbnails':
     get:
       tags:
@@ -34436,7 +36441,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -34486,6 +36491,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/root/thumbnails/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.root.thumbnails_GetCount-6a47
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/root/versions':
     get:
       tags:
@@ -34728,7 +36763,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -34866,9 +36901,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/root/versions/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.root.versions_GetCount-084b
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/special':
     get:
       tags:
@@ -35267,9 +37336,65 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/drives/{drive-id}/special/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives.special_GetCount-fe58
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/drives/$count':
+    get:
+      tags:
+        - groups.drive
+      summary: Get the number of the resource
+      operationId: groups.drives_GetCount-9ca4
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /shares:
     get:
       tags:
@@ -35503,7 +37628,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -35699,6 +37824,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -36068,9 +38197,35 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/items/$count':
+    get:
+      tags:
+        - shares.driveItem
+      summary: Get the number of the resource
+      operationId: shares.items_GetCount-245c
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list':
     get:
       tags:
@@ -36173,7 +38328,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -36529,7 +38684,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -36662,6 +38817,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/columns/$count':
+    get:
+      tags:
+        - shares.list
+      summary: Get the number of the resource
+      operationId: shares.list.columns_GetCount-b936
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list/contentTypes':
     get:
       tags:
@@ -36928,7 +39105,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -37269,6 +39446,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/baseTypes/$count':
+    get:
+      tags:
+        - shares.list
+      summary: Get the number of the resource
+      operationId: shares.list.contentTypes.baseTypes_GetCount-f23a
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnLinks':
     get:
       tags:
@@ -37492,7 +39699,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -37542,6 +39749,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnLinks/$count':
+    get:
+      tags:
+        - shares.list
+      summary: Get the number of the resource
+      operationId: shares.list.contentTypes.columnLinks_GetCount-a211
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnPositions':
     get:
       tags:
@@ -37811,6 +40048,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnPositions/$count':
+    get:
+      tags:
+        - shares.list
+      summary: Get the number of the resource
+      operationId: shares.list.contentTypes.columnPositions_GetCount-1b55
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns':
     get:
       tags:
@@ -38165,7 +40432,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -38314,6 +40581,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns/$count':
+    get:
+      tags:
+        - shares.list
+      summary: Get the number of the resource
+      operationId: shares.list.contentTypes.columns_GetCount-db38
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites':
     post:
       tags:
@@ -38518,6 +40815,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/shares/{sharedDriveItem-id}/list/contentTypes/$count':
+    get:
+      tags:
+        - shares.list
+      summary: Get the number of the resource
+      operationId: shares.list.contentTypes_GetCount-70f5
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list/contentTypes/microsoft.graph.addCopy':
     post:
       tags:
@@ -39062,7 +41381,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -39430,7 +41749,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -39521,6 +41840,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/shares/{sharedDriveItem-id}/list/items/{listItem-id}/documentSetVersions/$count':
+    get:
+      tags:
+        - shares.list
+      summary: Get the number of the resource
+      operationId: shares.list.items.documentSetVersions_GetCount-172d
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list/items/{listItem-id}/driveItem':
     get:
       tags:
@@ -39701,6 +42050,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -39797,7 +42150,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -40311,7 +42664,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -40466,7 +42819,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -40557,6 +42910,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/shares/{sharedDriveItem-id}/list/items/{listItem-id}/versions/$count':
+    get:
+      tags:
+        - shares.list
+      summary: Get the number of the resource
+      operationId: shares.list.items.versions_GetCount-0c45
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/shares/{sharedDriveItem-id}/list/items/$count':
+    get:
+      tags:
+        - shares.list
+      summary: Get the number of the resource
+      operationId: shares.list.items_GetCount-311c
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list/operations':
     get:
       tags:
@@ -40780,7 +43185,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -40822,6 +43227,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/shares/{sharedDriveItem-id}/list/operations/$count':
+    get:
+      tags:
+        - shares.list
+      summary: Get the number of the resource
+      operationId: shares.list.operations_GetCount-5f90
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list/subscriptions':
     get:
       tags:
@@ -41065,7 +43492,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -41136,6 +43563,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/shares/{sharedDriveItem-id}/list/subscriptions/$count':
+    get:
+      tags:
+        - shares.list
+      summary: Get the number of the resource
+      operationId: shares.list.subscriptions_GetCount-4363
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/listItem':
     get:
       tags:
@@ -41234,7 +43683,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -41554,7 +44003,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -41629,6 +44078,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/shares/{sharedDriveItem-id}/listItem/documentSetVersions/$count':
+    get:
+      tags:
+        - shares.listItem
+      summary: Get the number of the resource
+      operationId: shares.listItem.documentSetVersions_GetCount-ab4d
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/listItem/driveItem':
     get:
       tags:
@@ -41785,6 +44256,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -41865,7 +44340,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -42323,7 +44798,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -42454,7 +44929,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -42529,6 +45004,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/shares/{sharedDriveItem-id}/listItem/versions/$count':
+    get:
+      tags:
+        - shares.listItem
+      summary: Get the number of the resource
+      operationId: shares.listItem.versions_GetCount-eca0
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: The unique identifier of sharedDriveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/permission':
     get:
       tags:
@@ -42613,7 +45110,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -42865,6 +45362,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42964,6 +45465,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /shares/$count:
+    get:
+      tags:
+        - shares.sharedDriveItem
+      summary: Get the number of the resource
+      operationId: shares_GetCount-778c
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drive':
     get:
       tags:
@@ -43325,7 +45840,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -43813,9 +46328,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/bundles/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.bundles_GetCount-992d
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/following':
     get:
       tags:
@@ -44220,9 +46769,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/following/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.following_GetCount-30e4
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items':
     get:
       tags:
@@ -44614,7 +47197,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -44775,7 +47358,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -45194,7 +47777,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -45551,7 +48134,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -45869,9 +48452,97 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.items.analytics.itemActivityStats.activities_GetCount-4a47
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/itemActivityStats/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.items.analytics.itemActivityStats_GetCount-0af4
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/analytics/lastSevenDays':
     get:
       tags:
@@ -46434,9 +49105,51 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/children/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.items.children_GetCount-ee69
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/content':
     get:
       tags:
@@ -46522,6 +49235,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -46655,7 +49372,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -47071,7 +49788,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -47129,6 +49846,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/documentSetVersions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.items.listItem.documentSetVersions_GetCount-bdee
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/driveItem':
     get:
       tags:
@@ -47333,6 +50088,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -47445,7 +50204,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -47765,7 +50524,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -47944,7 +50703,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -48002,6 +50761,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/listItem/versions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.items.listItem.versions_GetCount-ddf2
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/permissions':
     get:
       tags:
@@ -48300,7 +51097,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -48358,6 +51155,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/permissions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.items.permissions_GetCount-2394
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/subscriptions':
     get:
       tags:
@@ -48665,7 +51500,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -48723,6 +51558,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/subscriptions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.items.subscriptions_GetCount-edff
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/thumbnails':
     get:
       tags:
@@ -48993,7 +51866,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -49051,6 +51924,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/thumbnails/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.items.thumbnails_GetCount-49f9
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/versions':
     get:
       tags:
@@ -49325,7 +52236,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -49487,9 +52398,81 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/versions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.items.versions_GetCount-1a95
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/drives/{drive-id}/items/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.items_GetCount-ce31
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/list':
     get:
       tags:
@@ -49608,7 +52591,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -50004,7 +52987,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -50153,6 +53136,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/list/columns/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.list.columns_GetCount-e477
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/list/contentTypes':
     get:
       tags:
@@ -50451,7 +53464,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -50824,6 +53837,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.list.contentTypes.baseTypes_GetCount-504c
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columnLinks':
     get:
       tags:
@@ -51079,7 +54130,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -51137,6 +54188,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columnLinks/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.list.contentTypes.columnLinks_GetCount-8101
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions':
     get:
       tags:
@@ -51422,6 +54511,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.list.contentTypes.columnPositions_GetCount-6c44
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columns':
     get:
       tags:
@@ -51808,7 +54935,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -51973,6 +55100,74 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.list.contentTypes.columns_GetCount-a9f8
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: contentType-id
+          in: path
+          description: The unique identifier of contentType
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: contentType
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/drives/{drive-id}/list/contentTypes/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.list.contentTypes_GetCount-7413
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/list/drive':
     get:
       tags:
@@ -52359,7 +55554,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -52775,7 +55970,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -52833,6 +56028,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/documentSetVersions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.list.items.documentSetVersions_GetCount-0a94
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/driveItem':
     get:
       tags:
@@ -53037,6 +56270,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -53149,7 +56386,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -53469,7 +56706,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -53648,7 +56885,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -53706,6 +56943,74 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/list/items/{listItem-id}/versions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.list.items.versions_GetCount-d78b
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: The unique identifier of listItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/drives/{drive-id}/list/items/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.list.items_GetCount-a69a
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/list/operations':
     get:
       tags:
@@ -53961,7 +57266,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -54011,6 +57316,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/list/operations/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.list.operations_GetCount-9ad3
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/list/subscriptions':
     get:
       tags:
@@ -54286,7 +57621,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -54336,6 +57671,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/list/subscriptions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.list.subscriptions_GetCount-565b
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root':
     get:
       tags:
@@ -54481,7 +57846,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -54618,7 +57983,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -54989,7 +58354,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -55306,7 +58671,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -55592,9 +58957,81 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/{itemActivityStat-id}/activities/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.root.analytics.itemActivityStats.activities_GetCount-e2e9
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: itemActivityStat-id
+          in: path
+          description: The unique identifier of itemActivityStat
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: itemActivityStat
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/drives/{drive-id}/root/analytics/itemActivityStats/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.root.analytics.itemActivityStats_GetCount-8e07
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/analytics/lastSevenDays':
     get:
       tags:
@@ -56109,9 +59546,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/root/children/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.root.children_GetCount-9b83
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/content':
     get:
       tags:
@@ -56184,6 +59655,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -56301,7 +59776,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -56669,7 +60144,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -56719,6 +60194,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/root/listItem/documentSetVersions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.root.listItem.documentSetVersions_GetCount-f25f
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/listItem/driveItem':
     get:
       tags:
@@ -56899,6 +60404,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -56995,7 +60504,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -57275,7 +60784,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -57430,7 +60939,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -57480,6 +60989,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/root/listItem/versions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.root.listItem.versions_GetCount-0b7b
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/permissions':
     get:
       tags:
@@ -57746,7 +61285,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -57796,6 +61335,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/root/permissions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.root.permissions_GetCount-76d4
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/subscriptions':
     get:
       tags:
@@ -58071,7 +61640,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -58121,6 +61690,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/root/subscriptions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.root.subscriptions_GetCount-3455
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/thumbnails':
     get:
       tags:
@@ -58359,7 +61958,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -58409,6 +62008,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/root/thumbnails/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.root.thumbnails_GetCount-fc22
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/root/versions':
     get:
       tags:
@@ -58651,7 +62280,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -58789,9 +62418,43 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItemVersion'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/root/versions/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.root.versions_GetCount-ae33
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/drives/{drive-id}/special':
     get:
       tags:
@@ -59190,9 +62853,65 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.driveItem'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/drives/{drive-id}/special/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives.special_GetCount-0749
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/drives/$count':
+    get:
+      tags:
+        - users.drive
+      summary: Get the number of the resource
+      operationId: users.drives_GetCount-7cd7
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.drive:
@@ -61516,6 +65235,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.itemActivityStatCollectionResponse:
       title: Collection of itemActivityStat
       type: object
@@ -61704,6 +65426,8 @@ components:
         - title: user
           type: object
           properties:
+            signInActivity:
+              $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
               description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
@@ -62951,6 +66675,32 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.signInActivity:
+      title: signInActivity
+      type: object
+      properties:
+        lastNonInteractiveSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastNonInteractiveSignInRequestId:
+          type: string
+          description: Request identifier of the last non-interactive sign-in performed by this user.
+          nullable: true
+        lastSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastSignInRequestId:
+          type: string
+          description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.assignedLicense:
       title: assignedLicense
       type: object
@@ -64750,6 +68500,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             attendanceReports:
               type: array
               items:
@@ -67223,6 +70975,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -67611,6 +71377,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
               description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.'
+            messageHistory:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             policyViolation:
@@ -68323,11 +72093,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -69997,6 +73769,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.chatMessageHistoryItem:
+      title: chatMessageHistoryItem
+      type: object
+      properties:
+        actions:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageActions'
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        reaction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
       type: object
@@ -71140,6 +74926,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentity'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageActions:
+      title: chatMessageActions
+      enum:
+        - reactionAdded
+        - reactionRemoved
+        - actionUndefined
+        - unknownFutureValue
+      type: string
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -71490,15 +75284,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -71717,6 +75511,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.driveItemCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.itemActivityStatCollectionResponse:
       description: Retrieved collection
       content:

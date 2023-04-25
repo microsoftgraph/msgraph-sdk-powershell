@@ -70,7 +70,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -294,7 +294,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -328,6 +328,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/auditEvents/$count:
+    get:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Get the number of the resource
+      operationId: deviceManagement.auditEvents_GetCount-7cd0
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/complianceManagementPartners:
     get:
       tags:
@@ -518,7 +532,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -552,6 +566,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/complianceManagementPartners/$count:
+    get:
+      tags:
+        - deviceManagement.complianceManagementPartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.complianceManagementPartners_GetCount-eeb1
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/deviceManagementPartners:
     get:
       tags:
@@ -742,7 +770,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -776,6 +804,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/deviceManagementPartners/$count:
+    get:
+      tags:
+        - deviceManagement.deviceManagementPartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.deviceManagementPartners_GetCount-6f25
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/exchangeConnectors:
     get:
       tags:
@@ -966,7 +1008,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1000,6 +1042,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/exchangeConnectors/$count:
+    get:
+      tags:
+        - deviceManagement.deviceManagementExchangeConnector
+      summary: Get the number of the resource
+      operationId: deviceManagement.exchangeConnectors_GetCount-7e43
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/iosUpdateStatuses:
     get:
       tags:
@@ -1198,7 +1254,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1232,6 +1288,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/iosUpdateStatuses/$count:
+    get:
+      tags:
+        - deviceManagement.iosUpdateDeviceStatus
+      summary: Get the number of the resource
+      operationId: deviceManagement.iosUpdateStatuses_GetCount-c734
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/mobileThreatDefenseConnectors:
     get:
       tags:
@@ -1446,7 +1516,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1480,6 +1550,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/mobileThreatDefenseConnectors/$count:
+    get:
+      tags:
+        - deviceManagement.mobileThreatDefenseConnector
+      summary: Get the number of the resource
+      operationId: deviceManagement.mobileThreatDefenseConnectors_GetCount-7a2a
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/remoteAssistancePartners:
     get:
       tags:
@@ -1650,7 +1734,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1684,6 +1768,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/remoteAssistancePartners/$count:
+    get:
+      tags:
+        - deviceManagement.remoteAssistancePartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.remoteAssistancePartners_GetCount-427d
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/resourceOperations:
     get:
       tags:
@@ -1850,7 +1948,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1884,6 +1982,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/resourceOperations/$count:
+    get:
+      tags:
+        - deviceManagement.resourceOperation
+      summary: Get the number of the resource
+      operationId: deviceManagement.resourceOperations_GetCount-db11
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/roleAssignments:
     get:
       tags:
@@ -2058,7 +2170,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2092,6 +2204,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/roleAssignments/$count:
+    get:
+      tags:
+        - deviceManagement.deviceAndAppManagementRoleAssignment
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleAssignments_GetCount-13e6
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/roleDefinitions:
     get:
       tags:
@@ -2266,7 +2392,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2503,7 +2629,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2609,6 +2735,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/roleDefinitions/{roleDefinition-id}/roleAssignments/$count':
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleDefinitions.roleAssignments_GetCount-3dca
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: The unique identifier of roleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/roleDefinitions/$count:
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleDefinitions_GetCount-031b
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/telecomExpenseManagementPartners:
     get:
       tags:
@@ -2783,7 +2945,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2817,6 +2979,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/telecomExpenseManagementPartners/$count:
+    get:
+      tags:
+        - deviceManagement.telecomExpenseManagementPartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.telecomExpenseManagementPartners_GetCount-5ee8
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/termsAndConditions:
     get:
       tags:
@@ -3011,7 +3187,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3252,7 +3428,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3364,6 +3540,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/acceptanceStatuses/$count':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get the number of the resource
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetCount-d4f9
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: The unique identifier of termsAndConditions
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/termsAndConditions/{termsAndConditions-id}/assignments':
     get:
       tags:
@@ -3555,7 +3753,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3597,6 +3795,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get the number of the resource
+      operationId: deviceManagement.termsAndConditions.assignments_GetCount-0a20
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: The unique identifier of termsAndConditions
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/termsAndConditions/$count:
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get the number of the resource
+      operationId: deviceManagement.termsAndConditions_GetCount-b2c0
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.applePushNotificationCertificate:
@@ -4502,6 +4736,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.complianceManagementPartnerCollectionResponse:
       title: Collection of complianceManagementPartner
       type: object
@@ -4776,6 +5013,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.auditEventCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.complianceManagementPartnerCollectionResponse:
       description: Retrieved collection
       content:

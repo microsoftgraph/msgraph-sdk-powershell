@@ -90,7 +90,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -128,11 +128,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List notebooks
-      description: Retrieve a list of notebook objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
+      summary: Get notebooks from groups
+      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: groups.onenote_ListNotebooks
       parameters:
         - name: group-id
@@ -237,11 +234,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create notebook
-      description: Create a new OneNote notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
+      summary: Create new navigation property to notebooks for groups
       operationId: groups.onenote_CreateNotebooks
       parameters:
         - name: group-id
@@ -374,7 +367,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -420,11 +413,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in the notebook. Read-only. Nullable.
       operationId: groups.onenote.notebooks_ListSectionGroups
       parameters:
         - name: group-id
@@ -529,11 +519,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create sectionGroup
-      description: Create a new section group in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
+      summary: Create new navigation property to sectionGroups for groups
       operationId: groups.onenote.notebooks_CreateSectionGroups
       parameters:
         - name: group-id
@@ -690,7 +676,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -908,11 +894,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in the section. Read-only. Nullable.
       operationId: groups.onenote.notebooks.sectionGroups_ListSectionGroups
       parameters:
         - name: group-id
@@ -1112,15 +1095,50 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sectionGroups.sectionGroups_GetCount-e27e
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
         - groups.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in the section group. Read-only. Nullable.
       operationId: groups.onenote.notebooks.sectionGroups_ListSections
       parameters:
         - name: group-id
@@ -1234,11 +1252,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create section
-      description: Create a new section in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for groups
       operationId: groups.onenote.notebooks.sectionGroups_CreateSections
       parameters:
         - name: group-id
@@ -1418,7 +1432,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1811,7 +1825,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1994,6 +2008,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2192,6 +2210,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sectionGroups.sections.pages_GetCount-6db1
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -2372,15 +2436,80 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sectionGroups.sections_GetCount-abc0
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sectionGroups_GetCount-e27e
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections':
     get:
       tags:
         - groups.onenote
-      summary: List sections
-      description: Retrieve a list of section objects from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in the notebook. Read-only. Nullable.
       operationId: groups.onenote.notebooks_ListSections
       parameters:
         - name: group-id
@@ -2486,11 +2615,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create section
-      description: Create a new section in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for groups
       operationId: groups.onenote.notebooks_CreateSections
       parameters:
         - name: group-id
@@ -2646,7 +2771,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2999,7 +3124,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3158,6 +3283,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3340,6 +3469,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sections.pages_GetCount-9305
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -3504,6 +3671,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/notebooks/{notebook-id}/sections/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks.sections_GetCount-8678
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/notebooks/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.notebooks_GetCount-4d2a
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/operations':
     get:
       tags:
@@ -3719,7 +3938,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3761,6 +3980,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/operations/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.operations_GetCount-b2ab
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/pages':
     get:
       tags:
@@ -4000,7 +4241,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4111,6 +4352,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4261,6 +4506,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/pages/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.pages_GetCount-8bf6
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/resources':
     get:
       tags:
@@ -4460,7 +4727,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4569,18 +4836,41 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/resources/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.resources_GetCount-b07f
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sectionGroups':
     get:
       tags:
         - groups.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of sectionGroup objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: groups.onenote_ListSectionGroups
       parameters:
         - name: group-id
@@ -4810,7 +5100,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5004,11 +5294,8 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from groups
+      description: The section groups in the section. Read-only. Nullable.
       operationId: groups.onenote.sectionGroups_ListSectionGroups
       parameters:
         - name: group-id
@@ -5192,15 +5479,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sectionGroups.sectionGroups_GetCount-17b9
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
         - groups.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in the section group. Read-only. Nullable.
       operationId: groups.onenote.sectionGroups_ListSections
       parameters:
         - name: group-id
@@ -5306,11 +5620,7 @@ paths:
     post:
       tags:
         - groups.onenote
-      summary: Create section
-      description: Create a new section in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for groups
       operationId: groups.onenote.sectionGroups_CreateSections
       parameters:
         - name: group-id
@@ -5466,7 +5776,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5819,7 +6129,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5978,6 +6288,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6160,6 +6474,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sectionGroups.sections.pages_GetCount-110b
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -6324,15 +6676,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sectionGroups.sections_GetCount-4d99
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/onenote/sectionGroups/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sectionGroups_GetCount-17b9
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sections':
     get:
       tags:
         - groups.onenote
-      summary: List sections
-      description: Retrieve a list of section objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
+      summary: Get sections from groups
+      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: groups.onenote_ListSections
       parameters:
         - name: group-id
@@ -6562,7 +6963,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6875,7 +7276,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7010,6 +7411,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7176,6 +7581,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sections.pages_GetCount-375d
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/onenote/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -7324,6 +7759,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/onenote/sections/$count':
+    get:
+      tags:
+        - groups.onenote
+      summary: Get the number of the resource
+      operationId: groups.onenote.sections_GetCount-0122
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote':
     get:
       tags:
@@ -7408,7 +7865,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7446,11 +7903,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List notebooks
-      description: Retrieve a list of notebook objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
+      summary: Get notebooks from sites
+      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: sites.onenote_ListNotebooks
       parameters:
         - name: site-id
@@ -7555,11 +8009,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create notebook
-      description: Create a new OneNote notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
+      summary: Create new navigation property to notebooks for sites
       operationId: sites.onenote_CreateNotebooks
       parameters:
         - name: site-id
@@ -7692,7 +8142,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7738,11 +8188,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from sites
+      description: The section groups in the notebook. Read-only. Nullable.
       operationId: sites.onenote.notebooks_ListSectionGroups
       parameters:
         - name: site-id
@@ -7847,11 +8294,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create sectionGroup
-      description: Create a new section group in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
+      summary: Create new navigation property to sectionGroups for sites
       operationId: sites.onenote.notebooks_CreateSectionGroups
       parameters:
         - name: site-id
@@ -8008,7 +8451,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8226,11 +8669,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from sites
+      description: The section groups in the section. Read-only. Nullable.
       operationId: sites.onenote.notebooks.sectionGroups_ListSectionGroups
       parameters:
         - name: site-id
@@ -8430,15 +8870,50 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sectionGroups.sectionGroups_GetCount-52f9
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
         - sites.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from sites
+      description: The sections in the section group. Read-only. Nullable.
       operationId: sites.onenote.notebooks.sectionGroups_ListSections
       parameters:
         - name: site-id
@@ -8552,11 +9027,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create section
-      description: Create a new section in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for sites
       operationId: sites.onenote.notebooks.sectionGroups_CreateSections
       parameters:
         - name: site-id
@@ -8736,7 +9207,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9129,7 +9600,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9312,6 +9783,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9510,6 +9985,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sectionGroups.sections.pages_GetCount-56bb
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -9690,15 +10211,80 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sectionGroups.sections_GetCount-26e6
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sectionGroups_GetCount-52f9
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections':
     get:
       tags:
         - sites.onenote
-      summary: List sections
-      description: Retrieve a list of section objects from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
+      summary: Get sections from sites
+      description: The sections in the notebook. Read-only. Nullable.
       operationId: sites.onenote.notebooks_ListSections
       parameters:
         - name: site-id
@@ -9804,11 +10390,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create section
-      description: Create a new section in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for sites
       operationId: sites.onenote.notebooks_CreateSections
       parameters:
         - name: site-id
@@ -9964,7 +10546,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10317,7 +10899,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10476,6 +11058,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -10658,6 +11244,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sections.pages_GetCount-9b53
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -10822,6 +11446,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/notebooks/{notebook-id}/sections/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks.sections_GetCount-6101
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/notebooks/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.notebooks_GetCount-fb6b
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/operations':
     get:
       tags:
@@ -11037,7 +11713,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11079,6 +11755,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/operations/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.operations_GetCount-eadd
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/pages':
     get:
       tags:
@@ -11318,7 +12016,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11429,6 +12127,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11579,6 +12281,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/pages/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.pages_GetCount-bfb1
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/resources':
     get:
       tags:
@@ -11778,7 +12502,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11887,18 +12611,41 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/resources/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.resources_GetCount-476e
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/sectionGroups':
     get:
       tags:
         - sites.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of sectionGroup objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from sites
+      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: sites.onenote_ListSectionGroups
       parameters:
         - name: site-id
@@ -12128,7 +12875,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -12322,11 +13069,8 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from sites
+      description: The section groups in the section. Read-only. Nullable.
       operationId: sites.onenote.sectionGroups_ListSectionGroups
       parameters:
         - name: site-id
@@ -12510,15 +13254,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sectionGroups.sectionGroups_GetCount-2fdb
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
         - sites.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from sites
+      description: The sections in the section group. Read-only. Nullable.
       operationId: sites.onenote.sectionGroups_ListSections
       parameters:
         - name: site-id
@@ -12624,11 +13395,7 @@ paths:
     post:
       tags:
         - sites.onenote
-      summary: Create section
-      description: Create a new section in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for sites
       operationId: sites.onenote.sectionGroups_CreateSections
       parameters:
         - name: site-id
@@ -12784,7 +13551,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13137,7 +13904,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -13296,6 +14063,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13478,6 +14249,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sectionGroups.sections.pages_GetCount-9ecc
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -13642,15 +14451,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sectionGroups.sections_GetCount-2fbc
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/sites/{site-id}/onenote/sectionGroups/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sectionGroups_GetCount-2fdb
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/sections':
     get:
       tags:
         - sites.onenote
-      summary: List sections
-      description: Retrieve a list of section objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
+      summary: Get sections from sites
+      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: sites.onenote_ListSections
       parameters:
         - name: site-id
@@ -13880,7 +14738,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14193,7 +15051,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -14328,6 +15186,10 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -14494,6 +15356,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sections.pages_GetCount-a33a
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/onenote/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -14642,6 +15534,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/sites/{site-id}/onenote/sections/$count':
+    get:
+      tags:
+        - sites.onenote
+      summary: Get the number of the resource
+      operationId: sites.onenote.sections_GetCount-5061
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/onenote':
     get:
       tags:
@@ -14702,6 +15616,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenote'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -14726,13 +15646,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenote'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -14759,16 +15685,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks':
     get:
       tags:
         - users.onenote
-      summary: List notebooks
-      description: Retrieve a list of notebook objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0
+      summary: Get notebooks from users
+      description: The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
       operationId: users.onenote_ListNotebooks
       parameters:
         - name: user-id
@@ -14866,6 +15795,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.notebookCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -14873,11 +15808,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create notebook
-      description: Create a new OneNote notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0
+      summary: Create new navigation property to notebooks for users
       operationId: users.onenote_CreateNotebooks
       parameters:
         - name: user-id
@@ -14904,6 +15835,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}':
     get:
@@ -14978,6 +15915,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -15010,13 +15953,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -15051,16 +16000,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups':
     get:
       tags:
         - users.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from users
+      description: The section groups in the notebook. Read-only. Nullable.
       operationId: users.onenote.notebooks_ListSectionGroups
       parameters:
         - name: user-id
@@ -15158,6 +16110,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.sectionGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15165,11 +16123,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create sectionGroup
-      description: Create a new section group in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-post-sectiongroups?view=graph-rest-1.0
+      summary: Create new navigation property to sectionGroups for users
       operationId: users.onenote.notebooks_CreateSectionGroups
       parameters:
         - name: user-id
@@ -15204,6 +16158,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}':
     get:
@@ -15286,6 +16246,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -15326,13 +16292,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -15375,6 +16347,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentNotebook':
     get:
@@ -15457,6 +16435,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/parentSectionGroup':
     get:
@@ -15539,16 +16523,19 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups':
     get:
       tags:
         - users.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from users
+      description: The section groups in the section. Read-only. Nullable.
       operationId: users.onenote.notebooks.sectionGroups_ListSectionGroups
       parameters:
         - name: user-id
@@ -15654,6 +16641,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.sectionGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15747,16 +16740,63 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sectionGroups.sectionGroups_GetCount-2e9f
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
         - users.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from users
+      description: The sections in the section group. Read-only. Nullable.
       operationId: users.onenote.notebooks.sectionGroups_ListSections
       parameters:
         - name: user-id
@@ -15863,6 +16903,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onenoteSectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15870,11 +16916,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create section
-      description: Create a new section in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for users
       operationId: users.onenote.notebooks.sectionGroups_CreateSections
       parameters:
         - name: user-id
@@ -15917,6 +16959,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}':
     get:
@@ -16006,6 +17054,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -16054,13 +17108,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -16111,6 +17171,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages':
     get:
@@ -16236,6 +17302,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onenotePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -16294,6 +17366,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}':
     get:
@@ -16391,6 +17469,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -16447,13 +17531,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -16512,6 +17602,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
     get:
@@ -16571,6 +17667,12 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -16630,8 +17732,18 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
@@ -16730,6 +17842,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection':
     get:
@@ -16827,7 +17945,65 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sectionGroups.sections.pages_GetCount-a323
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -16917,6 +18093,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup':
     get:
@@ -17007,16 +18189,99 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sectionGroups.sections_GetCount-2e73
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sectionGroups/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sectionGroups_GetCount-2e9f
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections':
     get:
       tags:
         - users.onenote
-      summary: List sections
-      description: Retrieve a list of section objects from the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-list-sections?view=graph-rest-1.0
+      summary: Get sections from users
+      description: The sections in the notebook. Read-only. Nullable.
       operationId: users.onenote.notebooks_ListSections
       parameters:
         - name: user-id
@@ -17115,6 +18380,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onenoteSectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -17122,11 +18393,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create section
-      description: Create a new section in the specified notebook.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for users
       operationId: users.onenote.notebooks_CreateSections
       parameters:
         - name: user-id
@@ -17161,6 +18428,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}':
     get:
@@ -17242,6 +18515,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -17282,13 +18561,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -17331,6 +18616,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages':
     get:
@@ -17448,6 +18739,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onenotePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -17498,6 +18795,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}':
     get:
@@ -17587,6 +18890,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -17635,13 +18944,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -17692,6 +19007,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
     get:
@@ -17743,6 +19064,12 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -17794,8 +19121,18 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
@@ -17886,6 +19223,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection':
     get:
@@ -17975,7 +19318,57 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sections.pages_GetCount-c5e5
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -18057,6 +19450,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/{onenoteSection-id}/parentSectionGroup':
     get:
@@ -18139,7 +19538,77 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/notebooks/{notebook-id}/sections/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks.sections_GetCount-2f79
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: notebook-id
+          in: path
+          description: The unique identifier of notebook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: notebook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+  '/users/{user-id}/onenote/notebooks/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.notebooks_GetCount-af06
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/operations':
     get:
       tags:
@@ -18224,6 +19693,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onenoteOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -18258,6 +19733,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/operations/{onenoteOperation-id}':
     get:
@@ -18323,6 +19804,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -18355,13 +19842,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteOperation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -18396,7 +19889,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/operations/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.operations_GetCount-adfa
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/pages':
     get:
       tags:
@@ -18497,6 +20024,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onenotePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -18531,6 +20064,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/pages/{onenotePage-id}':
     get:
@@ -18604,6 +20143,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -18636,13 +20181,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -18677,6 +20228,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/pages/{onenotePage-id}/content':
     get:
@@ -18712,6 +20269,12 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -18747,8 +20310,18 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook':
     get:
@@ -18823,6 +20396,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection':
     get:
@@ -18896,7 +20475,41 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/pages/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.pages_GetCount-b080
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/resources':
     get:
       tags:
@@ -18969,6 +20582,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onenoteResourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -19003,6 +20622,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/resources/{onenoteResource-id}':
     get:
@@ -19064,6 +20689,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -19096,13 +20727,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -19137,6 +20774,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/resources/{onenoteResource-id}/content':
     get:
@@ -19171,6 +20814,12 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -19205,18 +20854,53 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenoteResource'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/resources/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.resources_GetCount-dba6
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/sectionGroups':
     get:
       tags:
         - users.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of sectionGroup objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from users
+      description: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: users.onenote_ListSectionGroups
       parameters:
         - name: user-id
@@ -19306,6 +20990,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.sectionGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -19340,6 +21030,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}':
     get:
@@ -19414,6 +21110,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -19446,13 +21148,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -19487,6 +21195,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook':
     get:
@@ -19561,6 +21275,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentSectionGroup':
     get:
@@ -19635,16 +21355,19 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups':
     get:
       tags:
         - users.onenote
-      summary: List sectionGroups
-      description: Retrieve a list of section groups from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0
+      summary: Get sectionGroups from users
+      description: The section groups in the section. Read-only. Nullable.
       operationId: users.onenote.sectionGroups_ListSectionGroups
       parameters:
         - name: user-id
@@ -19742,6 +21465,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.sectionGroupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -19827,16 +21556,55 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sectionGroups/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sectionGroups.sectionGroups_GetCount-497a
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections':
     get:
       tags:
         - users.onenote
-      summary: List sections
-      description: Retrieve a list of onenoteSection objects from the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0
+      summary: Get sections from users
+      description: The sections in the section group. Read-only. Nullable.
       operationId: users.onenote.sectionGroups_ListSections
       parameters:
         - name: user-id
@@ -19935,6 +21703,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onenoteSectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -19942,11 +21716,7 @@ paths:
     post:
       tags:
         - users.onenote
-      summary: Create section
-      description: Create a new section in the specified section group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0
+      summary: Create new navigation property to sections for users
       operationId: users.onenote.sectionGroups_CreateSections
       parameters:
         - name: user-id
@@ -19981,6 +21751,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}':
     get:
@@ -20062,6 +21838,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -20102,13 +21884,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -20151,6 +21939,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages':
     get:
@@ -20268,6 +22062,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onenotePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -20318,6 +22118,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}':
     get:
@@ -20407,6 +22213,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -20455,13 +22267,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -20512,6 +22330,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
     get:
@@ -20563,6 +22387,12 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -20614,8 +22444,18 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
@@ -20706,6 +22546,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection':
     get:
@@ -20795,7 +22641,57 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sectionGroups.sections.pages_GetCount-dfde
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -20877,6 +22773,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/parentSectionGroup':
     get:
@@ -20959,16 +22861,83 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sectionGroups.sections_GetCount-6826
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sectionGroup-id
+          in: path
+          description: The unique identifier of sectionGroup
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sectionGroup
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+  '/users/{user-id}/onenote/sectionGroups/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sectionGroups_GetCount-497a
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/sections':
     get:
       tags:
         - users.onenote
-      summary: List sections
-      description: Retrieve a list of section objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onenote-list-sections?view=graph-rest-1.0
+      summary: Get sections from users
+      description: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
       operationId: users.onenote_ListSections
       parameters:
         - name: user-id
@@ -21059,6 +23028,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onenoteSectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -21093,6 +23068,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sections/{onenoteSection-id}':
     get:
@@ -21166,6 +23147,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -21198,13 +23185,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -21239,6 +23232,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages':
     get:
@@ -21348,6 +23347,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onenotePageCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -21390,6 +23395,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}':
     get:
@@ -21471,6 +23482,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -21511,13 +23528,19 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -21560,6 +23583,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/content':
     get:
@@ -21603,6 +23632,12 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -21646,8 +23681,18 @@ paths:
       responses:
         2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onenotePage'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentNotebook':
     get:
@@ -21730,6 +23775,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/{onenotePage-id}/parentSection':
     get:
@@ -21811,7 +23862,49 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onenoteSection'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sections/{onenoteSection-id}/pages/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sections.pages_GetCount-17eb
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onenoteSection-id
+          in: path
+          description: The unique identifier of onenoteSection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onenoteSection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/parentNotebook':
     get:
       tags:
@@ -21885,6 +23978,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.notebook'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onenote/sections/{onenoteSection-id}/parentSectionGroup':
     get:
@@ -21959,7 +24058,41 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.sectionGroup'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/onenote/sections/$count':
+    get:
+      tags:
+        - users.onenote
+      summary: Get the number of the resource
+      operationId: users.onenote.sections_GetCount-8b0b
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
 components:
   schemas:
     microsoft.graph.onenote:
@@ -22361,6 +24494,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.onenoteSectionCollectionResponse:
       title: Collection of onenoteSection
       type: object
@@ -22470,11 +24606,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -22517,6 +24653,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.sectionGroupCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.onenoteSectionCollectionResponse:
       description: Retrieved collection
       content:

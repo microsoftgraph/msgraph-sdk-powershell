@@ -93,7 +93,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -431,7 +431,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -660,7 +660,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -702,6 +702,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/androidManagedAppProtections/{androidManagedAppProtection-id}/apps/$count':
+    get:
+      tags:
+        - deviceAppManagement.androidManagedAppProtection
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.androidManagedAppProtections.apps_GetCount-6de4
+      parameters:
+        - name: androidManagedAppProtection-id
+          in: path
+          description: The unique identifier of androidManagedAppProtection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: androidManagedAppProtection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/androidManagedAppProtections/{androidManagedAppProtection-id}/deploymentSummary':
     get:
       tags:
@@ -780,7 +802,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -814,6 +836,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceAppManagement/androidManagedAppProtections/$count:
+    get:
+      tags:
+        - deviceAppManagement.androidManagedAppProtection
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.androidManagedAppProtections_GetCount-dc72
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/defaultManagedAppProtections:
     get:
       tags:
@@ -1144,7 +1180,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1373,7 +1409,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1415,6 +1451,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/defaultManagedAppProtections/{defaultManagedAppProtection-id}/apps/$count':
+    get:
+      tags:
+        - deviceAppManagement.defaultManagedAppProtection
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.defaultManagedAppProtections.apps_GetCount-9a28
+      parameters:
+        - name: defaultManagedAppProtection-id
+          in: path
+          description: The unique identifier of defaultManagedAppProtection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: defaultManagedAppProtection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/defaultManagedAppProtections/{defaultManagedAppProtection-id}/deploymentSummary':
     get:
       tags:
@@ -1493,7 +1551,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1527,6 +1585,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceAppManagement/defaultManagedAppProtections/$count:
+    get:
+      tags:
+        - deviceAppManagement.defaultManagedAppProtection
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.defaultManagedAppProtections_GetCount-9b85
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/iosManagedAppProtections:
     get:
       tags:
@@ -1845,7 +1917,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2074,7 +2146,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2116,6 +2188,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection-id}/apps/$count':
+    get:
+      tags:
+        - deviceAppManagement.iosManagedAppProtection
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.iosManagedAppProtections.apps_GetCount-33d5
+      parameters:
+        - name: iosManagedAppProtection-id
+          in: path
+          description: The unique identifier of iosManagedAppProtection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: iosManagedAppProtection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection-id}/deploymentSummary':
     get:
       tags:
@@ -2194,7 +2288,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2228,6 +2322,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceAppManagement/iosManagedAppProtections/$count:
+    get:
+      tags:
+        - deviceAppManagement.iosManagedAppProtection
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.iosManagedAppProtections_GetCount-dcdc
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/managedAppPolicies:
     get:
       tags:
@@ -2402,7 +2510,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2471,6 +2579,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceAppManagement/managedAppPolicies/$count:
+    get:
+      tags:
+        - deviceAppManagement.managedAppPolicy
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.managedAppPolicies_GetCount-b24d
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/managedAppRegistrations:
     get:
       tags:
@@ -2685,7 +2807,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2926,7 +3048,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3011,6 +3133,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/$count':
+    get:
+      tags:
+        - deviceAppManagement.managedAppRegistration
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.managedAppRegistrations.appliedPolicies_GetCount-91f5
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: The unique identifier of managedAppRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies':
     get:
       tags:
@@ -3218,7 +3362,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3303,6 +3447,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/$count':
+    get:
+      tags:
+        - deviceAppManagement.managedAppRegistration
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.managedAppRegistrations.intendedPolicies_GetCount-edb3
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: The unique identifier of managedAppRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/operations':
     get:
       tags:
@@ -3506,7 +3672,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3548,6 +3714,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/operations/$count':
+    get:
+      tags:
+        - deviceAppManagement.managedAppRegistration
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.managedAppRegistrations.operations_GetCount-3c0f
+      parameters:
+        - name: managedAppRegistration-id
+          in: path
+          description: The unique identifier of managedAppRegistration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedAppRegistration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceAppManagement/managedAppRegistrations/$count:
+    get:
+      tags:
+        - deviceAppManagement.managedAppRegistration
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.managedAppRegistrations_GetCount-e04a
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/managedAppRegistrations/microsoft.graph.getUserIdsWithFlaggedAppRegistration():
     get:
       tags:
@@ -3746,7 +3948,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3780,6 +3982,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceAppManagement/managedAppStatuses/$count:
+    get:
+      tags:
+        - deviceAppManagement.managedAppStatus
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.managedAppStatuses_GetCount-1655
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/managedEBooks:
     get:
       tags:
@@ -3986,7 +4202,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4215,7 +4431,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4257,6 +4473,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/managedEBooks/{managedEBook-id}/assignments/$count':
+    get:
+      tags:
+        - deviceAppManagement.managedEBook
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.managedEBooks.assignments_GetCount-b034
+      parameters:
+        - name: managedEBook-id
+          in: path
+          description: The unique identifier of managedEBook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedEBook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/managedEBooks/{managedEBook-id}/deviceStates':
     get:
       tags:
@@ -4476,7 +4714,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4518,6 +4756,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/managedEBooks/{managedEBook-id}/deviceStates/$count':
+    get:
+      tags:
+        - deviceAppManagement.managedEBook
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.managedEBooks.deviceStates_GetCount-6c04
+      parameters:
+        - name: managedEBook-id
+          in: path
+          description: The unique identifier of managedEBook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedEBook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/managedEBooks/{managedEBook-id}/installSummary':
     get:
       tags:
@@ -4597,7 +4857,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4873,7 +5133,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5166,7 +5426,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5216,6 +5476,72 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/managedEBooks/{managedEBook-id}/userStateSummary/{userInstallStateSummary-id}/deviceStates/$count':
+    get:
+      tags:
+        - deviceAppManagement.managedEBook
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.managedEBooks.userStateSummary.deviceStates_GetCount-a97e
+      parameters:
+        - name: managedEBook-id
+          in: path
+          description: The unique identifier of managedEBook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedEBook
+        - name: userInstallStateSummary-id
+          in: path
+          description: The unique identifier of userInstallStateSummary
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userInstallStateSummary
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/deviceAppManagement/managedEBooks/{managedEBook-id}/userStateSummary/$count':
+    get:
+      tags:
+        - deviceAppManagement.managedEBook
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.managedEBooks.userStateSummary_GetCount-862d
+      parameters:
+        - name: managedEBook-id
+          in: path
+          description: The unique identifier of managedEBook
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedEBook
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceAppManagement/managedEBooks/$count:
+    get:
+      tags:
+        - deviceAppManagement.managedEBook
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.managedEBooks_GetCount-72ff
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/mdmWindowsInformationProtectionPolicies:
     get:
       tags:
@@ -5490,7 +5816,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5524,6 +5850,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceAppManagement/mdmWindowsInformationProtectionPolicies/$count:
+    get:
+      tags:
+        - deviceAppManagement.mdmWindowsInformationProtectionPolicy
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.mdmWindowsInformationProtectionPolicies_GetCount-a680
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/microsoft.graph.syncMicrosoftStoreForBusinessApps:
     post:
       tags:
@@ -5699,7 +6039,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5733,6 +6073,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceAppManagement/mobileAppCategories/$count:
+    get:
+      tags:
+        - deviceAppManagement.mobileAppCategory
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.mobileAppCategories_GetCount-03a0
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/mobileAppConfigurations:
     get:
       tags:
@@ -5931,7 +6285,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6156,7 +6510,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6198,6 +6552,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/assignments/$count':
+    get:
+      tags:
+        - deviceAppManagement.managedDeviceMobileAppConfiguration
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.mobileAppConfigurations.assignments_GetCount-24db
+      parameters:
+        - name: managedDeviceMobileAppConfiguration-id
+          in: path
+          description: The unique identifier of managedDeviceMobileAppConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfiguration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/deviceStatuses':
     get:
       tags:
@@ -6413,7 +6789,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6455,6 +6831,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/deviceStatuses/$count':
+    get:
+      tags:
+        - deviceAppManagement.managedDeviceMobileAppConfiguration
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.mobileAppConfigurations.deviceStatuses_GetCount-812c
+      parameters:
+        - name: managedDeviceMobileAppConfiguration-id
+          in: path
+          description: The unique identifier of managedDeviceMobileAppConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfiguration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/deviceStatusSummary':
     get:
       tags:
@@ -6535,7 +6933,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6811,7 +7209,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6853,6 +7251,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/userStatuses/$count':
+    get:
+      tags:
+        - deviceAppManagement.managedDeviceMobileAppConfiguration
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.mobileAppConfigurations.userStatuses_GetCount-b4b1
+      parameters:
+        - name: managedDeviceMobileAppConfiguration-id
+          in: path
+          description: The unique identifier of managedDeviceMobileAppConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDeviceMobileAppConfiguration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration-id}/userStatusSummary':
     get:
       tags:
@@ -6933,7 +7353,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6967,6 +7387,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceAppManagement/mobileAppConfigurations/$count:
+    get:
+      tags:
+        - deviceAppManagement.managedDeviceMobileAppConfiguration
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.mobileAppConfigurations_GetCount-15a7
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/mobileApps:
     get:
       tags:
@@ -7181,7 +7615,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7414,7 +7848,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7456,6 +7890,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/mobileApps/{mobileApp-id}/assignments/$count':
+    get:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.mobileApps.assignments_GetCount-493c
+      parameters:
+        - name: mobileApp-id
+          in: path
+          description: The unique identifier of mobileApp
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileApp
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/mobileApps/{mobileApp-id}/categories':
     get:
       tags:
@@ -7589,6 +8045,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/mobileApps/{mobileApp-id}/categories/$count':
+    get:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.mobileApps.categories_GetCount-6d0e
+      parameters:
+        - name: mobileApp-id
+          in: path
+          description: The unique identifier of mobileApp
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileApp
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.assign':
     post:
       tags:
@@ -7624,6 +8102,378 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.managedMobileLobApp':
+    get:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
+      operationId: deviceAppManagement.GetMobileApps_AsManagedMobileLobApp
+      parameters:
+        - name: mobileApp-id
+          in: path
+          description: The unique identifier of mobileApp
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileApp
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - developer
+                - displayName
+                - informationUrl
+                - isFeatured
+                - largeIcon
+                - lastModifiedDateTime
+                - notes
+                - owner
+                - privacyInformationUrl
+                - publisher
+                - publishingState
+                - assignments
+                - categories
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignments
+                - categories
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedMobileLobApp'
+        default:
+          $ref: '#/components/responses/error'
+  '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.mobileLobApp':
+    get:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Get the item of type microsoft.graph.mobileApp as microsoft.graph.mobileLobApp
+      operationId: deviceAppManagement.GetMobileApps_AsMobileLobApp
+      parameters:
+        - name: mobileApp-id
+          in: path
+          description: The unique identifier of mobileApp
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileApp
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - developer
+                - displayName
+                - informationUrl
+                - isFeatured
+                - largeIcon
+                - lastModifiedDateTime
+                - notes
+                - owner
+                - privacyInformationUrl
+                - publisher
+                - publishingState
+                - assignments
+                - categories
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignments
+                - categories
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileLobApp'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceAppManagement/mobileApps/$count:
+    get:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.mobileApps_GetCount-dcef
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceAppManagement/mobileApps/microsoft.graph.managedMobileLobApp:
+    get:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Get the items of type microsoft.graph.managedMobileLobApp in the microsoft.graph.mobileApp collection
+      operationId: deviceAppManagement.ListMobileApps_AsManagedMobileLobApp
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - developer
+                - developer desc
+                - displayName
+                - displayName desc
+                - informationUrl
+                - informationUrl desc
+                - isFeatured
+                - isFeatured desc
+                - largeIcon
+                - largeIcon desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - notes
+                - notes desc
+                - owner
+                - owner desc
+                - privacyInformationUrl
+                - privacyInformationUrl desc
+                - publisher
+                - publisher desc
+                - publishingState
+                - publishingState desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - developer
+                - displayName
+                - informationUrl
+                - isFeatured
+                - largeIcon
+                - lastModifiedDateTime
+                - notes
+                - owner
+                - privacyInformationUrl
+                - publisher
+                - publishingState
+                - assignments
+                - categories
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignments
+                - categories
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.managedMobileLobAppCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceAppManagement/mobileApps/microsoft.graph.managedMobileLobApp/$count:
+    get:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.ListMobileApps.GetCount_AsManagedMobileLobApp-469d
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceAppManagement/mobileApps/microsoft.graph.mobileLobApp:
+    get:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Get the items of type microsoft.graph.mobileLobApp in the microsoft.graph.mobileApp collection
+      operationId: deviceAppManagement.ListMobileApps_AsMobileLobApp
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - developer
+                - developer desc
+                - displayName
+                - displayName desc
+                - informationUrl
+                - informationUrl desc
+                - isFeatured
+                - isFeatured desc
+                - largeIcon
+                - largeIcon desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - notes
+                - notes desc
+                - owner
+                - owner desc
+                - privacyInformationUrl
+                - privacyInformationUrl desc
+                - publisher
+                - publisher desc
+                - publishingState
+                - publishingState desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - developer
+                - displayName
+                - informationUrl
+                - isFeatured
+                - largeIcon
+                - lastModifiedDateTime
+                - notes
+                - owner
+                - privacyInformationUrl
+                - publisher
+                - publishingState
+                - assignments
+                - categories
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignments
+                - categories
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.mobileLobAppCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /deviceAppManagement/mobileApps/microsoft.graph.mobileLobApp/$count:
+    get:
+      tags:
+        - deviceAppManagement.mobileApp
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.ListMobileApps.GetCount_AsMobileLobApp-6840
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/targetedManagedAppConfigurations:
     get:
       tags:
@@ -7822,7 +8672,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8051,7 +8901,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8093,6 +8943,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/apps/$count':
+    get:
+      tags:
+        - deviceAppManagement.targetedManagedAppConfiguration
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.targetedManagedAppConfigurations.apps_GetCount-0ba7
+      parameters:
+        - name: targetedManagedAppConfiguration-id
+          in: path
+          description: The unique identifier of targetedManagedAppConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedManagedAppConfiguration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/assignments':
     get:
       tags:
@@ -8284,7 +9156,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8326,6 +9198,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/assignments/$count':
+    get:
+      tags:
+        - deviceAppManagement.targetedManagedAppConfiguration
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.targetedManagedAppConfigurations.assignments_GetCount-5948
+      parameters:
+        - name: targetedManagedAppConfiguration-id
+          in: path
+          description: The unique identifier of targetedManagedAppConfiguration
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: targetedManagedAppConfiguration
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration-id}/deploymentSummary':
     get:
       tags:
@@ -8404,7 +9298,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8510,6 +9404,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceAppManagement/targetedManagedAppConfigurations/$count:
+    get:
+      tags:
+        - deviceAppManagement.targetedManagedAppConfiguration
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.targetedManagedAppConfigurations_GetCount-8d50
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/vppTokens:
     get:
       tags:
@@ -8708,7 +9616,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8768,6 +9676,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceAppManagement/vppTokens/$count:
+    get:
+      tags:
+        - deviceAppManagement.vppToken
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.vppTokens_GetCount-d643
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceAppManagement/windowsInformationProtectionPolicies:
     get:
       tags:
@@ -9090,7 +10012,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9124,6 +10046,20 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceAppManagement/windowsInformationProtectionPolicies/$count:
+    get:
+      tags:
+        - deviceAppManagement.windowsInformationProtectionPolicy
+      summary: Get the number of the resource
+      operationId: deviceAppManagement.windowsInformationProtectionPolicies_GetCount-b909
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/deviceManagementTroubleshootingEvents':
     get:
       tags:
@@ -9319,7 +10255,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9361,6 +10297,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/deviceManagementTroubleshootingEvents/$count':
+    get:
+      tags:
+        - users.deviceManagementTroubleshootingEvent
+      summary: Get the number of the resource
+      operationId: users.deviceManagementTroubleshootingEvents_GetCount-3623
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/managedAppRegistrations':
     get:
       tags:
@@ -9546,6 +10504,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/managedAppRegistrations/$count':
+    get:
+      tags:
+        - users.managedAppRegistration
+      summary: Get the number of the resource
+      operationId: users.managedAppRegistrations_GetCount-9add
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/managedDevices':
     get:
       tags:
@@ -9961,7 +10941,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10094,7 +11074,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10379,7 +11359,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10429,6 +11409,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/managedDevices/{managedDevice-id}/deviceCompliancePolicyStates/$count':
+    get:
+      tags:
+        - users.managedDevice
+      summary: Get the number of the resource
+      operationId: users.managedDevices.deviceCompliancePolicyStates_GetCount-51d2
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/managedDevices/{managedDevice-id}/deviceConfigurationStates':
     get:
       tags:
@@ -10672,7 +11682,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10722,6 +11732,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/managedDevices/{managedDevice-id}/deviceConfigurationStates/$count':
+    get:
+      tags:
+        - users.managedDevice
+      summary: Get the number of the resource
+      operationId: users.managedDevices.deviceConfigurationStates_GetCount-44c9
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/managedDevices/{managedDevice-id}/users':
     get:
       tags:
@@ -10765,6 +11805,8 @@ paths:
                 - id desc
                 - deletedDateTime
                 - deletedDateTime desc
+                - signInActivity
+                - signInActivity desc
                 - accountEnabled
                 - accountEnabled desc
                 - ageGroup
@@ -10924,6 +11966,7 @@ paths:
               enum:
                 - id
                 - deletedDateTime
+                - signInActivity
                 - accountEnabled
                 - ageGroup
                 - assignedLicenses
@@ -11111,6 +12154,28 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/managedDevices/$count':
+    get:
+      tags:
+        - users.managedDevice
+      summary: Get the number of the resource
+      operationId: users.managedDevices_GetCount-9db6
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.deviceAppManagement:
@@ -12107,6 +13172,60 @@ components:
           additionalProperties:
             type: object
           description: A class containing the properties used for Group Assignment of a Mobile App.
+    microsoft.graph.managedMobileLobApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.managedApp'
+        - title: managedMobileLobApp
+          type: object
+          properties:
+            committedContentVersion:
+              type: string
+              description: The internal committed content version.
+              nullable: true
+            fileName:
+              type: string
+              description: The name of the main Lob application file.
+              nullable: true
+            size:
+              type: integer
+              description: 'The total size, including all uploaded files.'
+              format: int64
+            contentVersions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppContent'
+              description: The list of content versions for this app.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: An abstract base class containing properties for all managed mobile line of business apps.
+    microsoft.graph.mobileLobApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.mobileApp'
+        - title: mobileLobApp
+          type: object
+          properties:
+            committedContentVersion:
+              type: string
+              description: The internal committed content version.
+              nullable: true
+            fileName:
+              type: string
+              description: The name of the main Lob application file.
+              nullable: true
+            size:
+              type: integer
+              description: 'The total size, including all uploaded files.'
+              format: int64
+            contentVersions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppContent'
+              description: The list of content versions for this app.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: An abstract base class containing properties for all mobile line of business apps.
     microsoft.graph.targetedManagedAppConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.managedAppConfiguration'
@@ -13094,6 +14213,42 @@ components:
       additionalProperties:
         type: object
       description: Abstract class to contain properties used to assign a mobile app to a group.
+    microsoft.graph.managedApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.mobileApp'
+        - title: managedApp
+          type: object
+          properties:
+            appAvailability:
+              $ref: '#/components/schemas/microsoft.graph.managedAppAvailability'
+            version:
+              type: string
+              description: The Application's version.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Abstract class that contains properties and inherited properties for apps that you can manage with an Intune app protection policy.
+    microsoft.graph.mobileAppContent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: mobileAppContent
+          type: object
+          properties:
+            containedApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mobileContainedApp'
+              description: The collection of contained apps in a MobileLobApp acting as a package.
+              x-ms-navigationProperty: true
+            files:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.mobileAppContentFile'
+              description: The list of files for this app content version.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Contains content properties for a specific app version. Each mobileAppContent can have multiple mobileAppContentFile.
     microsoft.graph.managedAppConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.managedAppPolicy'
@@ -13757,6 +14912,8 @@ components:
         - title: user
           type: object
           properties:
+            signInActivity:
+              $ref: '#/components/schemas/microsoft.graph.signInActivity'
             accountEnabled:
               type: boolean
               description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).'
@@ -14477,6 +15634,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.defaultManagedAppProtectionCollectionResponse:
       title: Collection of defaultManagedAppProtection
       type: object
@@ -14706,6 +15866,32 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.mobileAppAssignment'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedMobileLobAppCollectionResponse:
+      title: Collection of managedMobileLobApp
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedMobileLobApp'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.mobileLobAppCollectionResponse:
+      title: Collection of mobileLobApp
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mobileLobApp'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -15080,6 +16266,77 @@ components:
           additionalProperties:
             type: object
           description: Windows Information Protection AppLocker File
+    microsoft.graph.managedAppAvailability:
+      title: managedAppAvailability
+      enum:
+        - global
+        - lineOfBusiness
+      type: string
+      description: A managed (MAM) application's availability.
+      x-ms-enum:
+        name: managedAppAvailability
+        modelAsString: false
+        values:
+          - value: global
+            description: A globally available app to all tenants.
+            name: global
+          - value: lineOfBusiness
+            description: A line of business apps private to an organization.
+            name: lineOfBusiness
+    microsoft.graph.mobileContainedApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: mobileContainedApp
+          type: object
+          additionalProperties:
+            type: object
+          description: An abstract class that represents a contained app in a mobileApp acting as a package.
+    microsoft.graph.mobileAppContentFile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: mobileAppContentFile
+          type: object
+          properties:
+            azureStorageUri:
+              type: string
+              description: The Azure Storage URI.
+              nullable: true
+            azureStorageUriExpirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time the Azure storage Uri expires.
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The time the file was created.
+              format: date-time
+            isCommitted:
+              type: boolean
+              description: A value indicating whether the file is committed.
+            manifest:
+              type: string
+              description: The manifest information.
+              format: base64url
+              nullable: true
+            name:
+              type: string
+              description: the file name.
+              nullable: true
+            size:
+              type: integer
+              description: The size of the file prior to encryption.
+              format: int64
+            sizeEncrypted:
+              type: integer
+              description: The size of the file after encryption.
+              format: int64
+            uploadState:
+              $ref: '#/components/schemas/microsoft.graph.mobileAppContentFileUploadState'
+          additionalProperties:
+            type: object
+          description: Contains properties for a single installer file that is associated with a given mobileAppContent version.
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -15131,6 +16388,32 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.signInActivity:
+      title: signInActivity
+      type: object
+      properties:
+        lastNonInteractiveSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastNonInteractiveSignInRequestId:
+          type: string
+          description: Request identifier of the last non-interactive sign-in performed by this user.
+          nullable: true
+        lastSignInDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          format: date-time
+          nullable: true
+        lastSignInRequestId:
+          type: string
+          description: Request identifier of the last interactive sign-in performed by this user.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.assignedLicense:
       title: assignedLicense
       type: object
@@ -16749,6 +18032,8 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            watermarkProtection:
+              $ref: '#/components/schemas/microsoft.graph.watermarkProtectionValues'
             attendanceReports:
               type: array
               items:
@@ -17109,6 +18394,27 @@ components:
       additionalProperties:
         type: object
       description: Proxied Domain
+    microsoft.graph.mobileAppContentFileUploadState:
+      title: mobileAppContentFileUploadState
+      enum:
+        - success
+        - transientError
+        - error
+        - unknown
+        - azureStorageUriRequestSuccess
+        - azureStorageUriRequestPending
+        - azureStorageUriRequestFailed
+        - azureStorageUriRequestTimedOut
+        - azureStorageUriRenewalSuccess
+        - azureStorageUriRenewalPending
+        - azureStorageUriRenewalFailed
+        - azureStorageUriRenewalTimedOut
+        - commitFileSuccess
+        - commitFilePending
+        - commitFileFailed
+        - commitFileTimedOut
+      type: string
+      description: Contains properties for upload request states.
     microsoft.graph.automaticRepliesSetting:
       title: automaticRepliesSetting
       type: object
@@ -19003,6 +20309,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.watermarkProtectionValues:
+      title: watermarkProtectionValues
+      type: object
+      properties:
+        isEnabledForContentSharing:
+          type: boolean
+          description: Indicates whether to apply a watermark to any shared content.
+          nullable: true
+        isEnabledForVideo:
+          type: boolean
+          description: Indicates whether to apply a watermark to everyone's video feed.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.meetingAttendanceReport:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -19421,6 +20741,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
               description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.'
+            messageHistory:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             policyViolation:
@@ -20133,11 +21457,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -21351,7 +22677,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -22606,7 +23932,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -22830,6 +24156,20 @@ components:
           type: string
           description: 'String used to represent the mention. For example, a user''s display name, a team name.'
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageHistoryItem:
+      title: chatMessageHistoryItem
+      type: object
+      properties:
+        actions:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageActions'
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        reaction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
       additionalProperties:
         type: object
     microsoft.graph.chatMessagePolicyViolation:
@@ -24343,6 +25683,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentity'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageActions:
+      title: chatMessageActions
+      enum:
+        - reactionAdded
+        - reactionRemoved
+        - actionUndefined
+        - unknownFutureValue
+      type: string
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:
@@ -24693,15 +26041,15 @@ components:
           properties:
             applicationName:
               type: string
-              description: Field indicating the app name of the source that is sending the linkedResource.
+              description: The app name of the source that sends the linkedResource.
               nullable: true
             displayName:
               type: string
-              description: Field indicating the title of the linkedResource.
+              description: The title of the linkedResource.
               nullable: true
             externalId:
               type: string
-              description: Id of the object that is associated with this task on the third-party/partner system.
+              description: ID of the object that is associated with this task on the third-party/partner system.
               nullable: true
             webUrl:
               type: string
@@ -25515,6 +26863,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.managedMobileAppCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.defaultManagedAppProtectionCollectionResponse:
       description: Retrieved collection
       content:
@@ -25623,6 +26977,18 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.mobileAppAssignmentCollectionResponse'
+    microsoft.graph.managedMobileLobAppCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedMobileLobAppCollectionResponse'
+    microsoft.graph.mobileLobAppCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.mobileLobAppCollectionResponse'
     microsoft.graph.targetedManagedAppConfigurationCollectionResponse:
       description: Retrieved collection
       content:

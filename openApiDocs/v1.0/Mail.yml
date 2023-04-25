@@ -68,7 +68,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -80,11 +80,8 @@ paths:
     get:
       tags:
         - users.inferenceClassification
-      summary: List overrides
-      description: 'Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0
+      summary: Get overrides from users
+      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: users.inferenceClassification_ListOverrides
       parameters:
         - name: user-id
@@ -142,11 +139,7 @@ paths:
     post:
       tags:
         - users.inferenceClassification
-      summary: Create inferenceClassificationOverride
-      description: "Create an override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classified\nas specified in the override. **Note**"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0
+      summary: Create new navigation property to overrides for users
       operationId: users.inferenceClassification_CreateOverrides
       parameters:
         - name: user-id
@@ -253,7 +246,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -295,15 +288,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/inferenceClassification/overrides/$count':
+    get:
+      tags:
+        - users.inferenceClassification
+      summary: Get the number of the resource
+      operationId: users.inferenceClassification.overrides_GetCount-f355
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders':
     get:
       tags:
         - users.mailFolder
-      summary: List mailFolders
-      description: 'Get the mail folder collection directly under the root folder of the signed-in user. The returned collection includes any mail search folders directly under the root. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0
+      summary: Get mailFolders from users
+      description: The user's mail folders. Read-only. Nullable.
       operationId: users_ListMailFolders
       parameters:
         - name: user-id
@@ -314,6 +325,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: includeHiddenFolders
+          in: query
+          description: Include Hidden Folders
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -395,11 +413,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create MailFolder
-      description: 'Use this API to create a new mail folder in the root folder of the user''s mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-1.0
+      summary: Create new navigation property to mailFolders for users
       operationId: users_CreateMailFolders
       parameters:
         - name: user-id
@@ -451,6 +465,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: mailFolder
+        - name: includeHiddenFolders
+          in: query
+          description: Include Hidden Folders
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -532,7 +553,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -578,11 +599,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List childFolders
-      description: "Get the folder collection under the specified folder. You can use the `.../me/mailFolders` shortcut to get the top-level \nfolder collection and navigate to another folder. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0
+      summary: Get childFolders from users
+      description: The collection of child folders in the mailFolder.
       operationId: users.mailFolders_ListChildFolders
       parameters:
         - name: user-id
@@ -682,11 +700,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create child folder
-      description: 'Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
+      summary: Create new navigation property to childFolders for users
       operationId: users.mailFolders_CreateChildFolders
       parameters:
         - name: user-id
@@ -843,7 +857,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -897,11 +911,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List rules
-      description: Get all the messageRule objects defined for the user's inbox.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
+      summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders.childFolders_ListMessageRules
       parameters:
         - name: user-id
@@ -993,11 +1004,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create rule
-      description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
+      summary: Create new navigation property to messageRules for users
       operationId: users.mailFolders.childFolders_CreateMessageRules
       parameters:
         - name: user-id
@@ -1158,7 +1165,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1216,15 +1223,49 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messageRules/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.childFolders.messageRules_GetCount-22e6
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: mailFolder-id1
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages':
     get:
       tags:
         - users.mailFolder
-      summary: List messages
-      description: 'Get all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+      summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders.childFolders_ListMessages
       parameters:
         - name: user-id
@@ -1403,11 +1444,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create message in a mailfolder
-      description: Use this API to create a new Message in a mailfolder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: users.mailFolders.childFolders_CreateMessages
       parameters:
         - name: user-id
@@ -1610,7 +1647,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1673,9 +1710,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_GetMessagesContent
       parameters:
         - name: user-id
@@ -1777,11 +1811,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List attachments
-      description: Retrieve a list of attachment objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.childFolders.messages_ListAttachments
       parameters:
         - name: user-id
@@ -1884,11 +1915,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Add attachment
-      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can \nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: users.mailFolders.childFolders.messages_CreateAttachments
       parameters:
         - name: user-id
@@ -2085,6 +2112,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/attachments/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.childFolders.messages.attachments_GetCount-5ef0
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: mailFolder-id1
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/extensions':
     get:
       tags:
@@ -2178,11 +2250,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: users.mailFolders.childFolders.messages_CreateExtensions
       parameters:
         - name: user-id
@@ -2371,7 +2439,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2437,6 +2505,51 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/extensions/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.childFolders.messages.extensions_GetCount-1433
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: mailFolder-id1
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -2724,7 +2837,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2790,6 +2903,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.childFolders.messages.multiValueExtendedProperties_GetCount-6e3a
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: mailFolder-id1
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -3077,7 +3236,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3143,6 +3302,90 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.childFolders.messages.singleValueExtendedProperties_GetCount-226e
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: mailFolder-id1
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.childFolders.messages_GetCount-a576
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: mailFolder-id1
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/multiValueExtendedProperties':
     get:
       tags:
@@ -3398,7 +3641,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3456,6 +3699,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.childFolders.multiValueExtendedProperties_GetCount-ad30
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: mailFolder-id1
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/singleValueExtendedProperties':
     get:
       tags:
@@ -3711,7 +3992,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3769,15 +4050,79 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.childFolders.singleValueExtendedProperties_GetCount-5b79
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: mailFolder-id1
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.childFolders_GetCount-d2d8
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules':
     get:
       tags:
         - users.mailFolder
-      summary: List rules
-      description: Get all the messageRule objects defined for the user's inbox.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
+      summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: users.mailFolders_ListMessageRules
       parameters:
         - name: user-id
@@ -3861,11 +4206,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create rule
-      description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
+      summary: Create new navigation property to messageRules for users
       operationId: users.mailFolders_CreateMessageRules
       parameters:
         - name: user-id
@@ -4002,7 +4343,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4052,15 +4393,41 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.messageRules_GetCount-f330
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages':
     get:
       tags:
         - users.mailFolder
-      summary: List messages
-      description: 'Get all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+      summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders_ListMessages
       parameters:
         - name: user-id
@@ -4231,11 +4598,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create message in a mailfolder
-      description: Use this API to create a new Message in a mailfolder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: users.mailFolders_CreateMessages
       parameters:
         - name: user-id
@@ -4414,7 +4777,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4469,9 +4832,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: users.mailFolders_GetMessagesContent
       parameters:
         - name: user-id
@@ -4557,11 +4917,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List attachments
-      description: Retrieve a list of attachment objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.messages_ListAttachments
       parameters:
         - name: user-id
@@ -4656,11 +5013,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Add attachment
-      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can \nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: users.mailFolders.messages_CreateAttachments
       parameters:
         - name: user-id
@@ -4833,6 +5186,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.messages.attachments_GetCount-3c73
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions':
     get:
       tags:
@@ -4918,11 +5308,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: users.mailFolders.messages_CreateExtensions
       parameters:
         - name: user-id
@@ -5087,7 +5473,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5145,6 +5531,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.messages.extensions_GetCount-651d
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -5400,7 +5823,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5458,6 +5881,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.messages.multiValueExtendedProperties_GetCount-e825
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -5713,7 +6174,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5771,6 +6232,74 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.messages.singleValueExtendedProperties_GetCount-c30f
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/mailFolders/{mailFolder-id}/messages/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.messages_GetCount-9534
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -5994,7 +6523,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6044,6 +6573,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.multiValueExtendedProperties_GetCount-0976
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -6267,7 +6826,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6317,15 +6876,63 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders.singleValueExtendedProperties_GetCount-8fea
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: mailFolder-id
+          in: path
+          description: The unique identifier of mailFolder
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mailFolder
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/mailFolders/$count':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get the number of the resource
+      operationId: users.mailFolders_GetCount-7dc9
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/messages':
     get:
       tags:
         - users.message
-      summary: List messages
-      description: 'Get the messages in the signed-in user''s mailbox (including the Deleted Items and Clutter folders). Depending on the page size and mailbox data, getting messages from a mailbox can incur multiple requests. The default page size is 10 messages. Use `$top` to customize the page size, within the range of 1 and 1000. To improve the operation response time, use `$select` to specify the exact properties you need; see example 1 below. Fine-tune the values for `$select` and `$top`, especially when you must use a larger page size, as returning a page with hundreds of messages each with a full response payload may trigger the gateway timeout (HTTP 504). To get the next page of messages, simply apply the entire URL returned in `@odata.nextLink` to the next get-messages request. This URL includes any query parameters you may have specified in the initial request.  Do not try to extract the `$skip` value from the `@odata.nextLink` URL to manipulate responses. This API uses the `$skip` value to keep count of all the items it has gone through in the user''s mailbox to return a page of message-type items. It''s therefore possible that even in the initial response, the `$skip` value is larger than the page size. For more information, see Paging Microsoft Graph data in your app. Currently, this operation returns message bodies in only HTML format. There are two scenarios where an app can get messages in another user''s mail folder:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
+      summary: Get messages from users
+      description: The messages in a mailbox or folder. Read-only. Nullable.
       operationId: users_ListMessages
       parameters:
         - name: user-id
@@ -6336,6 +6943,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
+        - name: includeHiddenMessages
+          in: query
+          description: Include Hidden Messages
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -6488,11 +7102,7 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create message
-      description: "Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:\n- Include an attachment to the **message**.\n- Update the draft later to add content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: users_CreateMessages
       parameters:
         - name: user-id
@@ -6544,6 +7154,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
+        - name: includeHiddenMessages
+          in: query
+          description: Include Hidden Messages
+          style: form
+          explode: false
+          schema:
+            type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -6647,7 +7264,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6694,9 +7311,6 @@ paths:
       tags:
         - users.message
       summary: Get media content for the navigation property messages from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: users_GetMessagesContent
       parameters:
         - name: user-id
@@ -6766,11 +7380,8 @@ paths:
     get:
       tags:
         - users.message
-      summary: List attachments
-      description: Retrieve a list of attachment objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.messages_ListAttachments
       parameters:
         - name: user-id
@@ -6857,11 +7468,7 @@ paths:
     post:
       tags:
         - users.message
-      summary: Add attachment
-      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can \nadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: users.messages_CreateAttachments
       parameters:
         - name: user-id
@@ -7010,6 +7617,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/messages/{message-id}/attachments/$count':
+    get:
+      tags:
+        - users.message
+      summary: Get the number of the resource
+      operationId: users.messages.attachments_GetCount-a586
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/messages/{message-id}/extensions':
     get:
       tags:
@@ -7087,11 +7723,7 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: users.messages_CreateExtensions
       parameters:
         - name: user-id
@@ -7232,7 +7864,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7282,6 +7914,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/messages/{message-id}/extensions/$count':
+    get:
+      tags:
+        - users.message
+      summary: Get the number of the resource
+      operationId: users.messages.extensions_GetCount-5628
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/messages/{message-id}/multiValueExtendedProperties':
     get:
       tags:
@@ -7505,7 +8166,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7555,6 +8216,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/messages/{message-id}/multiValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.message
+      summary: Get the number of the resource
+      operationId: users.messages.multiValueExtendedProperties_GetCount-3c2b
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/messages/{message-id}/singleValueExtendedProperties':
     get:
       tags:
@@ -7778,7 +8469,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7828,6 +8519,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/messages/{message-id}/singleValueExtendedProperties/$count':
+    get:
+      tags:
+        - users.message
+      summary: Get the number of the resource
+      operationId: users.messages.singleValueExtendedProperties_GetCount-c9c6
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: message-id
+          in: path
+          description: The unique identifier of message
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: message
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/messages/$count':
+    get:
+      tags:
+        - users.message
+      summary: Get the number of the resource
+      operationId: users.messages_GetCount-0f52
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.inferenceClassification:
@@ -8470,6 +9213,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.mailFolderCollectionResponse:
       title: Collection of mailFolder
       type: object
@@ -8684,6 +9430,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverrideCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.mailFolderCollectionResponse:
       description: Retrieved collection
       content:
