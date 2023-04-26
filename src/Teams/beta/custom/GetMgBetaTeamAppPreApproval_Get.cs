@@ -361,8 +361,8 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
             if (string.IsNullOrWhiteSpace(this.TeamsAppId))
             {
                 throw new MGTeamsInternalException(
-                        MGTeamsInternalErrorType.InvalidCmdletInput,
-                        $"'{nameof(this.TeamsAppId)}' cannot be empty.");
+                    MGTeamsInternalErrorType.InvalidCmdletInput,
+                    $"'{nameof(this.TeamsAppId)}' cannot be empty.");
             }
         }
     }

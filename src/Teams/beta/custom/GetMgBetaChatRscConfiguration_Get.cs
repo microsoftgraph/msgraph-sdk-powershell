@@ -1,19 +1,17 @@
-namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
+﻿namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
 {
     using Microsoft.Graph.Beta.PowerShell.Models.TeamsInternal;
     using Microsoft.Graph.Beta.PowerShell.TeamsInternal;
-    using System;
-    using System.Linq;
     using static Microsoft.Graph.Beta.PowerShell.Runtime.Extensions;
 
     /// <summary>
-    /// Delete PreApproval policy associated with a Teams App.
+    /// Get Preapproval policy associated with a Teams App.
     /// </summary>
-    [global::System.Management.Automation.Cmdlet(global::System.Management.Automation.VerbsCommon.Remove, @"MgBetaTeamAppPreApproval_Delete", SupportsShouldProcess = true)]
-    [global::System.Management.Automation.OutputType(typeof(bool))]
-    [global::Microsoft.Graph.Beta.PowerShell.Description(@"Delete Preapproval policy associated with a Teams App.")]
+    [global::System.Management.Automation.Cmdlet(global::System.Management.Automation.VerbsCommon.Get, @"MgBetaChatRscConfiguration_Get")]
+    [global::System.Management.Automation.OutputType(typeof(Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphRscConfiguration))]
+    [global::Microsoft.Graph.Beta.PowerShell.Description(@"Get chat RSC configuration for tenant.")]
     [global::Microsoft.Graph.Beta.PowerShell.Generated]
-    public partial class RemoveMgBetaTeamAppPreApproval_Delete : global::System.Management.Automation.PSCmdlet,
+    public partial class GetMgBetaChatRscConfiguration_Get : global::System.Management.Automation.PSCmdlet,
         Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener
     {
         /// <summary>A copy of the Invocation Info (necessary to allow asJob to clone this cmdlet)</summary>
@@ -28,21 +26,6 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
         [global::Microsoft.Graph.Beta.PowerShell.Category(global::Microsoft.Graph.Beta.PowerShell.ParameterCategory.Runtime)]
         public global::System.Management.Automation.SwitchParameter Break { get; set; }
-
-        /// <summary>Backing field for <see cref="TeamsAppId" /> property.</summary>
-        private string _teamsAppId;
-
-        /// <summary>
-        /// Gets or sets the Teams App Id.
-        /// </summary>
-        [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "key: id of Teams App")]
-        [Microsoft.Graph.Beta.PowerShell.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
-        Description = @"key: id of Teams App",
-        SerializedName = @"teamsAppId",
-        PossibleTypes = new[] { typeof(string) })]
-        public string TeamsAppId { get => this._teamsAppId; set => this._teamsAppId = value; }
 
         /// <summary>The reference to the client API class.</summary>
         public Microsoft.Graph.Beta.PowerShell.Teams Client => Microsoft.Graph.Beta.PowerShell.Module.Instance.ClientAPI;
@@ -104,14 +87,16 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow);
 
         /// <summary>
-        /// <c>overrideOnNoContent</c> will be called before the regular onNoContent has been processed, allowing customization of
-        /// what happens on that response. Implement this method in a partial class to enable this behavior
+        /// <c>overrideOnOk</c> will be called before the regular onOk has been processed, allowing customization of what happens
+        /// on that response. Implement this method in a partial class to enable this behavior
         /// </summary>
         /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="returnNow">/// Determines if the rest of the onNoContent method should be processed, or if the method should
-        /// return immediately (set to true to skip further processing )</param>
+        /// <param name="response">the body result as a <see cref="Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDevice">Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDevice</see>
+        /// from the remote call</param>
+        /// <param name="returnNow">/// Determines if the rest of the onOk method should be processed, or if the method should return
+        /// immediately (set to true to skip further processing )</param>
 
-        partial void overrideOnNoContent(global::System.Net.Http.HttpResponseMessage responseMessage, ref global::System.Threading.Tasks.Task<bool> returnNow);
+        partial void overrideOnOk(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphTeamworkDevice> response, ref global::System.Threading.Tasks.Task<bool> returnNow);
 
         /// <summary>
         /// (overrides the default BeginProcessing method in global::System.Management.Automation.PSCmdlet)
@@ -130,6 +115,14 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
         protected override void EndProcessing()
         {
             ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletEndProcessing).Wait(); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+        }
+
+        /// <summary>
+        /// Intializes a new instance of the <see cref="GetMgBetaChatRscConfiguration_Get" /> cmdlet class.
+        /// </summary>
+        public GetMgBetaChatRscConfiguration_Get()
+        {
+
         }
 
         /// <summary>Handles/Dispatches events during the call to the REST service.</summary>
@@ -193,12 +186,9 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
             try
             {
                 // work
-                if (ShouldProcess("Delete Teams App Pre Approval."))
+                using (var asyncCommandRuntime = new Microsoft.Graph.Beta.PowerShell.Runtime.PowerShell.AsyncCommandRuntime(this, ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token))
                 {
-                    using (var asyncCommandRuntime = new Microsoft.Graph.Beta.PowerShell.Runtime.PowerShell.AsyncCommandRuntime(this, ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token))
-                    {
-                        asyncCommandRuntime.Wait(ProcessRecordAsync(), ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token);
-                    }
+                    asyncCommandRuntime.Wait(ProcessRecordAsync(), ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token);
                 }
             }
             catch (global::System.AggregateException aggregateException)
@@ -247,63 +237,25 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                 {
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletBeforeAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                    // Get the Teams App
-                    Models.IMicrosoftGraphTeamsApp teamsApp = await this.Client.GetTeamsApp(
-                            this.TeamsAppId,
-                            this,
-                            Pipeline);
+                    // Get Teams App Settings
+                    Models.IMicrosoftGraphTeamsAppSettings teamsAppSettings = await this.Client.GetTeamsAppSettings(this, Pipeline);
 
-                    WriteVerbose($"Found Teams App with Id: '{teamsApp.Id}'");
-
-                    Models.IMicrosoftGraphTeamsAppDefinition publishedAppDefinition =
-                        teamsApp?.AppDefinitions?.SingleOrDefault(a => string.Equals(a.PublishingState, "published", StringComparison.OrdinalIgnoreCase));
-                    if (publishedAppDefinition == null)
-                    {
-                        throw new MGTeamsInternalException(
-                            MGTeamsInternalErrorType.ResourceNotFound,
-                            $"Published App Definition was not found for Teams App with Id: '{teamsApp.Id}'.");
-                    }
-
-                    if (string.IsNullOrEmpty(publishedAppDefinition.AzureAdAppId))
-                    {
-                        throw new MGTeamsInternalException(
-                            MGTeamsInternalErrorType.RequiredPropertyNotFound,
-                            $"Teams App with Id: '{teamsApp.Id}' does not have a valid AAd App Id.");
-                    }
-
-                    WriteVerbose($"Found published Teams App Definition with AzureAdAppId: '{publishedAppDefinition.AzureAdAppId}'");
+                    WriteVerbose($"Fetched Teams App Settings for tenant.");
 
                     if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                    Models.IMicrosoftGraphEntity servicePrincipal = await this.Client.GetServicePrincipal(
-                            publishedAppDefinition.AzureAdAppId,
-                            this,
-                            Pipeline);
+                    // Get authorization policy
+                    MGTeamsInternalAuthorizationPolicy authorizationPolicy = await this.Client.GetAuthorizationPolicy(this, Pipeline);
 
-                    WriteVerbose($"Found service principal with Id: '{servicePrincipal.Id}'");
+                    WriteVerbose($"Fetched authorization policy for tenant.");
 
-                    // Validate no policies associated with sp
-                    MGTeamsInternalPermissionGrantPreApprovalPolicyCollection policiesAssociatedWithServicePrincipal =
-                        await this.Client.GetPermissionGrantPreApprovalPoliciesAssociatedWithServicePrincipal(
-                            servicePrincipal.Id,
-                            this,
-                            Pipeline);
+                    if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                    foreach (MGTeamsInternalPermissionGrantPreApprovalPolicy preApprovalPolicy in policiesAssociatedWithServicePrincipal.Value)
-                    {
-                        await this.Client.RemoveAssociationBetweenServicePrincipalAndPreapprovalPolicy(
-                            servicePrincipal.Id,
-                            preApprovalPolicy.Id,
-                            this,
-                            Pipeline);
+                    RscConfigurationSynthesizer rscConfigurationConverter = new RscConfigurationSynthesizer();
+                    Models.IMicrosoftGraphRscConfiguration microsoftGraphRscConfiguration =
+                        rscConfigurationConverter.ConvertToChatRscConfiguration(teamsAppSettings, authorizationPolicy, this);
 
-                        await this.Client.RemovePermissionGrantPreApprovalPolicy(
-                            preApprovalPolicy.Id,
-                            this,
-                            Pipeline);
-                    }
-
-                    this.WriteObject(true);
+                    WriteObject(microsoftGraphRscConfiguration);
 
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletAfterAPICall); if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                 }
@@ -313,7 +265,6 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                         ex,
                         new
                         {
-                            TeamsAppId = this.TeamsAppId,
                         },
                         errorRecord => WriteError(errorRecord),
                         this);
@@ -325,14 +276,6 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
                     await ((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Signal(Microsoft.Graph.Beta.PowerShell.Runtime.Events.CmdletProcessRecordAsyncEnd);
                 }
             }
-        }
-
-        /// <summary>
-        /// Intializes a new instance of the <see cref="RemoveMgBetaTeamAppPreApproval_Delete" /> cmdlet class.
-        /// </summary>
-        public RemoveMgBetaTeamAppPreApproval_Delete()
-        {
-
         }
 
         /// <summary>Interrupts currently running code within the command.</summary>
