@@ -742,11 +742,11 @@ paths:
     patch:
       tags:
         - groups.group
-      summary: Add members
-      description: Add a member to a security or Microsoft 365 group through the **members** navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+      summary: Update group
+      description: Update the properties of a group object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-update?view=graph-rest-1.0
       operationId: group_UpdateGroup
       parameters:
         - name: group-id
@@ -808,11 +808,8 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: List acceptedSenders
-      description: "Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).\nMake sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
+      summary: Get acceptedSenders from groups
+      description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
       operationId: group_ListAcceptedSender
       parameters:
         - name: group-id
@@ -931,11 +928,8 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: List acceptedSenders
-      description: "Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).\nMake sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0
+      summary: Get ref of acceptedSenders from groups
+      description: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
       operationId: group_ListAcceptedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -1001,10 +995,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.calendar.calendarView.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -1050,10 +1040,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.calendar.calendarView.instance.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -1107,10 +1093,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: group.calendar.calendarView.instance_accept
       parameters:
         - name: group-id
@@ -1165,10 +1147,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: group.calendar.calendarView.instance_cancel
       parameters:
         - name: group-id
@@ -1219,10 +1197,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: group.calendar.calendarView.instance_decline
       parameters:
         - name: group-id
@@ -1279,10 +1253,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: group.calendar.calendarView.instance_dismissReminder
       parameters:
         - name: group-id
@@ -1320,10 +1290,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: group.calendar.calendarView.instance_forward
       parameters:
         - name: group-id
@@ -1378,10 +1344,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: group.calendar.calendarView.instance_snoozeReminder
       parameters:
         - name: group-id
@@ -1431,10 +1393,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: group.calendar.calendarView.instance_tentativelyAccept
       parameters:
         - name: group-id
@@ -1491,10 +1449,6 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: group.calendar.calendarView.instance_delta
       parameters:
         - name: group-id
@@ -1701,10 +1655,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: group.calendar.calendarView_accept
       parameters:
         - name: group-id
@@ -1751,10 +1701,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: group.calendar.calendarView_cancel
       parameters:
         - name: group-id
@@ -1797,10 +1743,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: group.calendar.calendarView_decline
       parameters:
         - name: group-id
@@ -1849,10 +1791,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: group.calendar.calendarView_dismissReminder
       parameters:
         - name: group-id
@@ -1882,10 +1820,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: group.calendar.calendarView_forward
       parameters:
         - name: group-id
@@ -1932,10 +1866,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: group.calendar.calendarView_snoozeReminder
       parameters:
         - name: group-id
@@ -1977,10 +1907,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: group.calendar.calendarView_tentativelyAccept
       parameters:
         - name: group-id
@@ -2029,10 +1955,6 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: group.calendar.calendarView_delta
       parameters:
         - name: group-id
@@ -2231,10 +2153,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.calendar.event.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -2280,10 +2198,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.calendar.event.instance.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -2337,10 +2251,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: group.calendar.event.instance_accept
       parameters:
         - name: group-id
@@ -2395,10 +2305,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: group.calendar.event.instance_cancel
       parameters:
         - name: group-id
@@ -2449,10 +2355,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: group.calendar.event.instance_decline
       parameters:
         - name: group-id
@@ -2509,10 +2411,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: group.calendar.event.instance_dismissReminder
       parameters:
         - name: group-id
@@ -2550,10 +2448,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: group.calendar.event.instance_forward
       parameters:
         - name: group-id
@@ -2608,10 +2502,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: group.calendar.event.instance_snoozeReminder
       parameters:
         - name: group-id
@@ -2661,10 +2551,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: group.calendar.event.instance_tentativelyAccept
       parameters:
         - name: group-id
@@ -2721,10 +2607,6 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: group.calendar.event.instance_delta
       parameters:
         - name: group-id
@@ -2931,10 +2813,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: group.calendar.event_accept
       parameters:
         - name: group-id
@@ -2981,10 +2859,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: group.calendar.event_cancel
       parameters:
         - name: group-id
@@ -3027,10 +2901,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: group.calendar.event_decline
       parameters:
         - name: group-id
@@ -3079,10 +2949,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: group.calendar.event_dismissReminder
       parameters:
         - name: group-id
@@ -3112,10 +2978,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: group.calendar.event_forward
       parameters:
         - name: group-id
@@ -3162,10 +3024,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: group.calendar.event_snoozeReminder
       parameters:
         - name: group-id
@@ -3207,10 +3065,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: group.calendar.event_tentativelyAccept
       parameters:
         - name: group-id
@@ -3259,10 +3113,6 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: group.calendar.event_delta
       parameters:
         - name: group-id
@@ -3511,10 +3361,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getSchedule
-      description: 'Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
       operationId: group.calendar_getSchedule
       parameters:
         - name: group-id
@@ -3578,10 +3424,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.calendarView.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -3627,10 +3469,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.calendarView.instance.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -3684,10 +3522,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: group.calendarView.instance_accept
       parameters:
         - name: group-id
@@ -3742,10 +3576,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: group.calendarView.instance_cancel
       parameters:
         - name: group-id
@@ -3796,10 +3626,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: group.calendarView.instance_decline
       parameters:
         - name: group-id
@@ -3856,10 +3682,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: group.calendarView.instance_dismissReminder
       parameters:
         - name: group-id
@@ -3897,10 +3719,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: group.calendarView.instance_forward
       parameters:
         - name: group-id
@@ -3955,10 +3773,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: group.calendarView.instance_snoozeReminder
       parameters:
         - name: group-id
@@ -4008,10 +3822,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: group.calendarView.instance_tentativelyAccept
       parameters:
         - name: group-id
@@ -4068,10 +3878,6 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: group.calendarView.instance_delta
       parameters:
         - name: group-id
@@ -4278,10 +4084,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: group.calendarView_accept
       parameters:
         - name: group-id
@@ -4328,10 +4130,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: group.calendarView_cancel
       parameters:
         - name: group-id
@@ -4374,10 +4172,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: group.calendarView_decline
       parameters:
         - name: group-id
@@ -4426,10 +4220,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: group.calendarView_dismissReminder
       parameters:
         - name: group-id
@@ -4459,10 +4249,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: group.calendarView_forward
       parameters:
         - name: group-id
@@ -4509,10 +4295,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: group.calendarView_snoozeReminder
       parameters:
         - name: group-id
@@ -4554,10 +4336,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: group.calendarView_tentativelyAccept
       parameters:
         - name: group-id
@@ -4606,10 +4384,6 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: group.calendarView_delta
       parameters:
         - name: group-id
@@ -4807,11 +4581,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List conversations
-      description: Retrieve the list of conversations in this group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-conversations?view=graph-rest-1.0
+      summary: Get conversations from groups
+      description: The group's conversations.
       operationId: group_ListConversation
       parameters:
         - name: group-id
@@ -4880,11 +4651,7 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to conversations for groups
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -5002,11 +4769,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List threads
-      description: 'Get all the threads in a group conversation. Note: You can also get all the threads of a group.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-1.0
+      summary: Get threads from groups
+      description: A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
       operationId: group.conversation_ListThread
       parameters:
         - name: group-id
@@ -5104,11 +4868,7 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create thread
-      description: "Create a new thread in the specified conversation.  A thread and post are created as specified. Use reply thread to further post \nto that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversation-post-threads?view=graph-rest-1.0
+      summary: Create new navigation property to threads for groups
       operationId: group.conversation_CreateThread
       parameters:
         - name: group-id
@@ -5314,10 +5074,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -5366,11 +5122,7 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+      summary: Get posts from groups
       operationId: group.conversation.thread_ListPost
       parameters:
         - name: group-id
@@ -5592,11 +5344,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to a post.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: Read-only. Nullable. Supports $expand.
       operationId: group.conversation.thread.post_ListAttachment
       parameters:
         - name: group-id
@@ -5946,10 +5695,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.conversation.thread.post.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -6499,11 +6244,8 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to a post.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: Read-only. Nullable. Supports $expand.
       operationId: group.conversation.thread.post.inReplyTo_ListAttachment
       parameters:
         - name: group-id
@@ -6853,10 +6595,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.conversation.thread.post.inReplyTo.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -7311,10 +7049,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "Forward a post to a recipient. You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation. "
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
       operationId: group.conversation.thread.post.inReplyTo_forward
       parameters:
         - name: group-id
@@ -7377,10 +7111,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.conversation.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -8236,10 +7966,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "Forward a post to a recipient. You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation. "
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
       operationId: group.conversation.thread.post_forward
       parameters:
         - name: group-id
@@ -8302,10 +8028,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.conversation.thread.post_reply
       parameters:
         - name: group-id
@@ -9300,10 +9022,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: group.drive.item.listItem.documentSetVersion_restore
       parameters:
         - name: group-id
@@ -9599,10 +9317,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: group.drive.item.listItem.version_restoreVersion
       parameters:
         - name: group-id
@@ -9648,10 +9362,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkin
-      description: 'Check in a checked out **driveItem** resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: group.drive.item_checkin
       parameters:
         - name: group-id
@@ -9705,10 +9415,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkout
-      description: 'Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: group.drive.item_checkout
       parameters:
         - name: group-id
@@ -9746,10 +9452,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copy
-      description: 'Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
       operationId: group.drive.item_copy
       parameters:
         - name: group-id
@@ -9806,10 +9508,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createLink
-      description: "You can use **createLink** action to share a DriveItem via a sharing link. The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: group.drive.item_createLink
       parameters:
         - name: group-id
@@ -9881,10 +9579,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: "Create an upload session to allow your app to upload files up to the maximum file size.\nAn upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress. To upload a file using an upload session, there are two steps:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createuploadsession?view=graph-rest-1.0
       operationId: group.drive.item_createUploadSession
       parameters:
         - name: group-id
@@ -10340,10 +10034,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action follow
-      description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: group.drive.item_follow
       parameters:
         - name: group-id
@@ -10635,10 +10325,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action invite
-      description: "Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][]."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: group.drive.item_invite
       parameters:
         - name: group-id
@@ -10792,10 +10478,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restore
-      description: 'Restore a driveItem that has been deleted and is currently in the recycle bin. **NOTE**: This functionality is currently only available for OneDrive Personal.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: group.drive.item_restore
       parameters:
         - name: group-id
@@ -11054,10 +10736,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unfollow
-      description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: group.drive.item_unfollow
       parameters:
         - name: group-id
@@ -11147,10 +10825,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: group.drive.item.permission_grant
       parameters:
         - name: group-id
@@ -11278,10 +10952,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: group.drive.item.version_restoreVersion
       parameters:
         - name: group-id
@@ -11327,10 +10997,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action associateWithHubSites
-      description: 'Associate a published [content type][contentType] present in a content type hub with a list of hub sites.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
       operationId: group.drive.list.contentType_associateGraphWPreHubSite
       parameters:
         - name: group-id
@@ -11386,10 +11052,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToDefaultContentLocation
-      description: 'Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
       operationId: group.drive.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: group-id
@@ -11489,10 +11151,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action publish
-      description: 'Publishes a [contentType][] present in the content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
       operationId: group.drive.list.contentType_publish
       parameters:
         - name: group-id
@@ -11530,10 +11188,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unpublish
-      description: 'Unpublish a [contentType][] from a content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
       operationId: group.drive.list.contentType_unpublish
       parameters:
         - name: group-id
@@ -11571,10 +11225,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addCopy
-      description: 'Add a copy of a [content type][contentType] from a [site][site] to a [list][list].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
       operationId: group.drive.list.contentType_addCopy
       parameters:
         - name: group-id
@@ -11620,10 +11270,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addCopyFromContentTypeHub
-      description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
       operationId: group.drive.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: group-id
@@ -11793,10 +11439,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: group.drive.list.item.documentSetVersion_restore
       parameters:
         - name: group-id
@@ -12092,10 +11734,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: group.drive.list.item.version_restoreVersion
       parameters:
         - name: group-id
@@ -12699,10 +12337,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: group.drive.root.listItem.documentSetVersion_restore
       parameters:
         - name: group-id
@@ -12974,10 +12608,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: group.drive.root.listItem.version_restoreVersion
       parameters:
         - name: group-id
@@ -13015,10 +12645,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkin
-      description: 'Check in a checked out **driveItem** resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: group.drive.root_checkin
       parameters:
         - name: group-id
@@ -13064,10 +12690,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkout
-      description: 'Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: group.drive.root_checkout
       parameters:
         - name: group-id
@@ -13097,10 +12719,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copy
-      description: 'Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
       operationId: group.drive.root_copy
       parameters:
         - name: group-id
@@ -13149,10 +12767,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createLink
-      description: "You can use **createLink** action to share a DriveItem via a sharing link. The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: group.drive.root_createLink
       parameters:
         - name: group-id
@@ -13216,10 +12830,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: "Create an upload session to allow your app to upload files up to the maximum file size.\nAn upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress. To upload a file using an upload session, there are two steps:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createuploadsession?view=graph-rest-1.0
       operationId: group.drive.root_createUploadSession
       parameters:
         - name: group-id
@@ -13651,10 +13261,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action follow
-      description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: group.drive.root_follow
       parameters:
         - name: group-id
@@ -13922,10 +13528,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action invite
-      description: "Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][]."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: group.drive.root_invite
       parameters:
         - name: group-id
@@ -14063,10 +13665,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restore
-      description: 'Restore a driveItem that has been deleted and is currently in the recycle bin. **NOTE**: This functionality is currently only available for OneDrive Personal.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: group.drive.root_restore
       parameters:
         - name: group-id
@@ -14309,10 +13907,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unfollow
-      description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: group.drive.root_unfollow
       parameters:
         - name: group-id
@@ -14386,10 +13980,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: group.drive.root.permission_grant
       parameters:
         - name: group-id
@@ -14501,10 +14091,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: group.drive.root.version_restoreVersion
       parameters:
         - name: group-id
@@ -14542,10 +14128,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.event.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -14591,10 +14173,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.event.instance.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -14648,10 +14226,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: group.event.instance_accept
       parameters:
         - name: group-id
@@ -14706,10 +14280,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: group.event.instance_cancel
       parameters:
         - name: group-id
@@ -14760,10 +14330,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: group.event.instance_decline
       parameters:
         - name: group-id
@@ -14820,10 +14386,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: group.event.instance_dismissReminder
       parameters:
         - name: group-id
@@ -14861,10 +14423,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: group.event.instance_forward
       parameters:
         - name: group-id
@@ -14919,10 +14477,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: group.event.instance_snoozeReminder
       parameters:
         - name: group-id
@@ -14972,10 +14526,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: group.event.instance_tentativelyAccept
       parameters:
         - name: group-id
@@ -15032,10 +14582,6 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: group.event.instance_delta
       parameters:
         - name: group-id
@@ -15242,10 +14788,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: group.event_accept
       parameters:
         - name: group-id
@@ -15292,10 +14834,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: group.event_cancel
       parameters:
         - name: group-id
@@ -15338,10 +14876,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: group.event_decline
       parameters:
         - name: group-id
@@ -15390,10 +14924,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: group.event_dismissReminder
       parameters:
         - name: group-id
@@ -15423,10 +14953,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: group.event_forward
       parameters:
         - name: group-id
@@ -15473,10 +14999,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: group.event_snoozeReminder
       parameters:
         - name: group-id
@@ -15518,10 +15040,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: group.event_tentativelyAccept
       parameters:
         - name: group-id
@@ -15570,10 +15088,6 @@ paths:
       tags:
         - groups.Functions
       summary: Invoke function delta
-      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
       operationId: group.event_delta
       parameters:
         - name: group-id
@@ -16022,11 +15536,8 @@ paths:
     get:
       tags:
         - groups.groupLifecyclePolicy
-      summary: List groupLifecyclePolicies
-      description: Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-grouplifecyclepolicies?view=graph-rest-1.0
+      summary: Get groupLifecyclePolicies from groups
+      description: The collection of lifecycle policies for this group. Read-only. Nullable.
       operationId: group_ListGroupLifecyclePolicy
       parameters:
         - name: group-id
@@ -16392,9 +15903,6 @@ paths:
         - groups.directoryObject
       summary: Get memberOf from groups
       description: 'Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0
       operationId: group_ListMemberGraphOPre
       parameters:
         - name: group-id
@@ -16930,9 +16438,6 @@ paths:
         - groups.directoryObject
       summary: Get members from groups
       description: 'The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
       operationId: group_ListMember
       parameters:
         - name: group-id
@@ -17489,9 +16994,6 @@ paths:
         - groups.directoryObject
       summary: Get ref of members from groups
       description: 'The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0
       operationId: group_ListMemberGraphBPreRef
       parameters:
         - name: group-id
@@ -19471,10 +18973,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addFavorite
-      description: Add the group to the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-addfavorite?view=graph-rest-1.0
       operationId: group_addFavorite
       parameters:
         - name: group-id
@@ -19496,10 +18994,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action assignLicense
-      description: 'Add or remove licenses on the group. Licenses assigned to the group will be assigned to all users in the group. To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory. To get the subscriptions available in the directory, perform a GET subscribedSkus request.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-assignlicense?view=graph-rest-1.0
       operationId: group_assignLicense
       parameters:
         - name: group-id
@@ -19584,10 +19078,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: group_checkMemberGroup
       parameters:
         - name: group-id
@@ -19692,10 +19182,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: group_getMemberGroup
       parameters:
         - name: group-id
@@ -19748,10 +19234,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getMemberObjects
-      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
       operationId: group_getMemberObject
       parameters:
         - name: group-id
@@ -19804,10 +19286,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action removeFavorite
-      description: Remove the group from the list of the current user's favorite groups. Supported for Microsoft 365 groups only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-removefavorite?view=graph-rest-1.0
       operationId: group_removeFavorite
       parameters:
         - name: group-id
@@ -19829,10 +19307,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action renew
-      description: 'Renews a group''s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-renew?view=graph-rest-1.0
       operationId: group_renew
       parameters:
         - name: group-id
@@ -19854,10 +19328,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action resetUnseenCount
-      description: Reset the unseenCount of all the posts that the current user has not seen since their last visit. Supported for Microsoft 365 groups only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-resetunseencount?view=graph-rest-1.0
       operationId: group_resetUnseenCount
       parameters:
         - name: group-id
@@ -19879,10 +19349,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: group_restore
       parameters:
         - name: group-id
@@ -19908,10 +19374,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action subscribeByMail
-      description: 'Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group. Supported for Microsoft 365 groups only.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-subscribebymail?view=graph-rest-1.0
       operationId: group_subscribeGraphBPreMail
       parameters:
         - name: group-id
@@ -19933,10 +19395,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unsubscribeByMail
-      description: 'Calling this method will prevent the current user from receiving email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-unsubscribebymail?view=graph-rest-1.0
       operationId: group_unsubscribeGraphBPreMail
       parameters:
         - name: group-id
@@ -19958,10 +19416,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action validateProperties
-      description: 'Validate that a Microsoft 365 group''s display name or mail nickname complies with naming policies. Clients can use this API to determine whether a display name or mail nickname is valid before trying to update a Microsoft 365 group. To validate the properties before creating a group, use the directoryobject:validateProperties function. The following policy validations are performed for the display name and mail nickname properties: This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-validateproperties?view=graph-rest-1.0
       operationId: group_validateProperty
       parameters:
         - name: group-id
@@ -20004,10 +19458,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0
       operationId: group.onenote.notebook_copyNotebook
       parameters:
         - name: group-id
@@ -20066,10 +19516,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: group.onenote.notebook.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
@@ -20144,10 +19590,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: group.onenote.notebook.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -20222,10 +19664,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: group.onenote.notebook.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
@@ -20429,10 +19867,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: group.onenote.notebook.section_copyToNotebook
       parameters:
         - name: group-id
@@ -20499,10 +19933,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: group.onenote.notebook.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -20569,10 +19999,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: group.onenote.notebook.section.page_copyToSection
       parameters:
         - name: group-id
@@ -20752,10 +20178,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getNotebookFromWebUrl
-      description: 'Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0
       operationId: group.onenote.notebook_getNotebookFromWebUrl
       parameters:
         - name: group-id
@@ -20845,10 +20267,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: group.onenote.page_copyToSection
       parameters:
         - name: group-id
@@ -20980,10 +20398,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: group.onenote.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
@@ -21050,10 +20464,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: group.onenote.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -21120,10 +20530,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: group.onenote.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
@@ -21303,10 +20709,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: group.onenote.section_copyToNotebook
       parameters:
         - name: group-id
@@ -21365,10 +20767,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: group.onenote.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -21427,10 +20825,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: group.onenote.section.page_copyToSection
       parameters:
         - name: group-id
@@ -21587,9 +20981,6 @@ paths:
         - groups.directoryObject
       summary: Get owners from groups
       description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0
       operationId: group_ListOwner
       parameters:
         - name: group-id
@@ -22146,9 +21537,6 @@ paths:
         - groups.directoryObject
       summary: Get ref of owners from groups
       description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0
       operationId: group_ListOwnerGraphBPreRef
       parameters:
         - name: group-id
@@ -22884,11 +22272,8 @@ paths:
     get:
       tags:
         - groups.resourceSpecificPermissionGrant
-      summary: List permissionGrants of a group
-      description: 'List all resource-specific permission grants on the group. This list specifies the Azure AD apps that have access to the **group**, along with the corresponding kind of resource-specific access that each app has.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-permissiongrants?view=graph-rest-1.0
+      summary: Get permissionGrants from groups
+      description: The permission that has been granted for a group to a specific application. Supports $expand.
       operationId: group_ListPermissionGrant
       parameters:
         - name: group-id
@@ -23141,10 +22526,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: group.permissionGrant_checkMemberGroup
       parameters:
         - name: group-id
@@ -23265,10 +22646,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: group.permissionGrant_getMemberGroup
       parameters:
         - name: group-id
@@ -23329,10 +22706,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getMemberObjects
-      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
       operationId: group.permissionGrant_getMemberObject
       parameters:
         - name: group-id
@@ -23393,10 +22766,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: group.permissionGrant_restore
       parameters:
         - name: group-id
@@ -23527,10 +22896,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
       operationId: group.permissionGrant_getAvailableExtensionProperty
       parameters:
         - name: group-id
@@ -23584,10 +22949,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: group.permissionGrant_getGraphBPreId
       parameters:
         - name: group-id
@@ -23646,10 +23007,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: group.permissionGrant_validateProperty
       parameters:
         - name: group-id
@@ -23845,11 +23202,8 @@ paths:
     get:
       tags:
         - groups.profilePhoto
-      summary: List photos
-      description: Retrieve a list of profilePhoto objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
+      summary: Get photos from groups
+      description: The profile photos owned by the group. Read-only. Nullable.
       operationId: group_ListPhoto
       parameters:
         - name: group-id
@@ -23957,9 +23311,6 @@ paths:
       tags:
         - groups.profilePhoto
       summary: Get media content for the navigation property photos from groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0
       operationId: group_GetPhotosContent
       parameters:
         - name: group-id
@@ -24050,11 +23401,8 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: List rejectedSenders
-      description: 'Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
+      summary: Get rejectedSenders from groups
+      description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
       operationId: group_ListRejectedSender
       parameters:
         - name: group-id
@@ -24173,11 +23521,8 @@ paths:
     get:
       tags:
         - groups.directoryObject
-      summary: List rejectedSenders
-      description: 'Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-rejectedsenders?view=graph-rest-1.0
+      summary: Get ref of rejectedSenders from groups
+      description: The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
       operationId: group_ListRejectedSenderGraphBPreRef
       parameters:
         - name: group-id
@@ -24242,11 +23587,8 @@ paths:
     get:
       tags:
         - groups.groupSetting
-      summary: List settings
-      description: Retrieve a list of tenant-level or group-specific group settings objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0
+      summary: Get settings from groups
+      description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
       operationId: group_ListSetting
       parameters:
         - name: group-id
@@ -24320,11 +23662,7 @@ paths:
     post:
       tags:
         - groups.groupSetting
-      summary: Create settings
-      description: 'Create a new setting based on the templates available in groupSettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named `Group.Unified` can be used to configure tenant-wide Microsoft 365 group settings, while the template named `Group.Unified.Guest` can be used to configure group-specific settings.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0
+      summary: Create new navigation property to settings for groups
       operationId: group_CreateSetting
       parameters:
         - name: group-id
@@ -24513,10 +23851,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action associateWithHubSites
-      description: 'Associate a published [content type][contentType] present in a content type hub with a list of hub sites.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
       operationId: group.site.contentType_associateGraphWPreHubSite
       parameters:
         - name: group-id
@@ -24572,10 +23906,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToDefaultContentLocation
-      description: 'Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
       operationId: group.site.contentType_copyToDefaultContentLocation
       parameters:
         - name: group-id
@@ -24675,10 +24005,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action publish
-      description: 'Publishes a [contentType][] present in the content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
       operationId: group.site.contentType_publish
       parameters:
         - name: group-id
@@ -24716,10 +24042,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unpublish
-      description: 'Unpublish a [contentType][] from a content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
       operationId: group.site.contentType_unpublish
       parameters:
         - name: group-id
@@ -24757,10 +24079,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addCopy
-      description: 'Add a copy of a [content type][contentType] from a [site][site] to a [list][list].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
       operationId: group.site.contentType_addCopy
       parameters:
         - name: group-id
@@ -24806,10 +24124,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addCopyFromContentTypeHub
-      description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
       operationId: group.site.contentType_addCopyFromContentTypeHub
       parameters:
         - name: group-id
@@ -24979,10 +24293,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action associateWithHubSites
-      description: 'Associate a published [content type][contentType] present in a content type hub with a list of hub sites.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
       operationId: group.site.list.contentType_associateGraphWPreHubSite
       parameters:
         - name: group-id
@@ -25046,10 +24356,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToDefaultContentLocation
-      description: 'Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
       operationId: group.site.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: group-id
@@ -25165,10 +24471,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action publish
-      description: 'Publishes a [contentType][] present in the content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
       operationId: group.site.list.contentType_publish
       parameters:
         - name: group-id
@@ -25214,10 +24516,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unpublish
-      description: 'Unpublish a [contentType][] from a content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
       operationId: group.site.list.contentType_unpublish
       parameters:
         - name: group-id
@@ -25263,10 +24561,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addCopy
-      description: 'Add a copy of a [content type][contentType] from a [site][site] to a [list][list].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
       operationId: group.site.list.contentType_addCopy
       parameters:
         - name: group-id
@@ -25320,10 +24614,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action addCopyFromContentTypeHub
-      description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
       operationId: group.site.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: group-id
@@ -25509,10 +24799,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: group.site.list.item.documentSetVersion_restore
       parameters:
         - name: group-id
@@ -25832,10 +25118,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: group.site.list.item.version_restoreVersion
       parameters:
         - name: group-id
@@ -26340,10 +25622,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0
       operationId: group.site.onenote.notebook_copyNotebook
       parameters:
         - name: group-id
@@ -26410,10 +25688,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: group.site.onenote.notebook.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
@@ -26496,10 +25770,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: group.site.onenote.notebook.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -26582,10 +25852,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: group.site.onenote.notebook.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
@@ -26813,10 +26079,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: group.site.onenote.notebook.section_copyToNotebook
       parameters:
         - name: group-id
@@ -26891,10 +26153,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: group.site.onenote.notebook.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -26969,10 +26227,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: group.site.onenote.notebook.section.page_copyToSection
       parameters:
         - name: group-id
@@ -27176,10 +26430,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getNotebookFromWebUrl
-      description: 'Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0
       operationId: group.site.onenote.notebook_getNotebookFromWebUrl
       parameters:
         - name: group-id
@@ -27285,10 +26535,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: group.site.onenote.page_copyToSection
       parameters:
         - name: group-id
@@ -27444,10 +26690,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: group.site.onenote.sectionGroup.section_copyToNotebook
       parameters:
         - name: group-id
@@ -27522,10 +26764,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: group.site.onenote.sectionGroup.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -27600,10 +26838,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: group.site.onenote.sectionGroup.section.page_copyToSection
       parameters:
         - name: group-id
@@ -27807,10 +27041,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: group.site.onenote.section_copyToNotebook
       parameters:
         - name: group-id
@@ -27877,10 +27107,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: group.site.onenote.section_copyToSectionGroup
       parameters:
         - name: group-id
@@ -27947,10 +27173,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: group.site.onenote.section.page_copyToSection
       parameters:
         - name: group-id
@@ -28130,10 +27352,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: group.site.permission_grant
       parameters:
         - name: group-id
@@ -28208,10 +27426,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action add
-      description: Follow a user's site or multiple sites.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
       operationId: group.site_add
       parameters:
         - name: group-id
@@ -28265,10 +27479,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action remove
-      description: Unfollow a user's site or multiple sites.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0
       operationId: group.site_remove
       parameters:
         - name: group-id
@@ -28322,10 +27532,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: group.team.channel.member_add
       parameters:
         - name: group-id
@@ -28854,10 +28060,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing `migration mode` from a channel in a team. `Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: group.team.channel_completeMigration
       parameters:
         - name: group-id
@@ -28950,10 +28152,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: group.team.channel_provisionEmail
       parameters:
         - name: group-id
@@ -28987,10 +28185,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action removeEmail
-      description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: group.team.channel_removeEmail
       parameters:
         - name: group-id
@@ -29157,10 +28351,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action upgrade
-      description: Upgrade an app installation within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
       operationId: group.team.installedApp_upgrade
       parameters:
         - name: group-id
@@ -29190,10 +28380,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: group.team.member_add
       parameters:
         - name: group-id
@@ -29246,10 +28432,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action archive
-      description: "Archive the specified team. \nWhen a team is archived, users can no longer send or like messages on any channel in the team, edit the team's name, description, or other settings, or in general make most changes to the team.\nMembership changes to the team continue to be allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which may occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
       operationId: group.team_archive
       parameters:
         - name: group-id
@@ -29285,10 +28467,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action clone
-      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state \n-- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen. \n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation to see if it's 'running' or 'succeeded' or 'failed'. \nYou should continue to GET until the status is not 'running'. \nThe recommended delay between GETs is 5 seconds."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
       operationId: group.team_clone
       parameters:
         - name: group-id
@@ -29336,10 +28514,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing `migration mode` from a team. `Migration mode` is a special state where certain operations are barred, like message POST and membership operations during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-completemigration?view=graph-rest-1.0
       operationId: group.team_completeMigration
       parameters:
         - name: group-id
@@ -29361,10 +28535,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action sendActivityNotification
-      description: "Send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
       operationId: group.team_sendActivityNotification
       parameters:
         - name: group-id
@@ -29413,10 +28583,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action unarchive
-      description: 'Restore an archived team. This restores users'' ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
       operationId: group.team_unarchive
       parameters:
         - name: group-id
@@ -29438,10 +28604,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: group.team.primaryChannel.member_add
       parameters:
         - name: group-id
@@ -29914,10 +29076,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing `migration mode` from a channel in a team. `Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: group.team.primaryChannel_completeMigration
       parameters:
         - name: group-id
@@ -29994,10 +29152,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: group.team.primaryChannel_provisionEmail
       parameters:
         - name: group-id
@@ -30023,10 +29177,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action removeEmail
-      description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: group.team.primaryChannel_removeEmail
       parameters:
         - name: group-id
@@ -30048,10 +29198,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action share
-      description: "Share a schedule time range with schedule members.\nMake the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.\nEach shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable by only managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The **notifyTeam** parameter further specifies which employees can view the item."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
       operationId: group.team.schedule_share
       parameters:
         - name: group-id
@@ -30096,11 +29242,8 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List threads
-      description: Get all the threads of a group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-threads?view=graph-rest-1.0
+      summary: Get threads from groups
+      description: The group's conversation threads. Nullable.
       operationId: group_ListThread
       parameters:
         - name: group-id
@@ -30177,11 +29320,7 @@ paths:
     post:
       tags:
         - groups.conversationThread
-      summary: Create conversation thread
-      description: "Start a new group conversation by first creating a thread. A new conversation, conversation thread, and post are created in the group.\nUse reply thread or reply post to further post to that thread. Note: You can also start a new thread in an existing conversation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-threads?view=graph-rest-1.0
+      summary: Create new navigation property to threads for groups
       operationId: group_CreateThread
       parameters:
         - name: group-id
@@ -30342,10 +29481,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -30386,11 +29521,7 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List posts
-      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
+      summary: Get posts from groups
       operationId: group.thread_ListPost
       parameters:
         - name: group-id
@@ -30596,11 +29727,8 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to a post.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: Read-only. Nullable. Supports $expand.
       operationId: group.thread.post_ListAttachment
       parameters:
         - name: group-id
@@ -30910,10 +30038,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.thread.post.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -31399,11 +30523,8 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to a post.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: Read-only. Nullable. Supports $expand.
       operationId: group.thread.post.inReplyTo_ListAttachment
       parameters:
         - name: group-id
@@ -31713,10 +30834,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: group.thread.post.inReplyTo.attachment_createUploadSession
       parameters:
         - name: group-id
@@ -32115,10 +31232,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "Forward a post to a recipient. You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation. "
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
       operationId: group.thread.post.inReplyTo_forward
       parameters:
         - name: group-id
@@ -32173,10 +31286,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -32928,10 +32037,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action forward
-      description: "Forward a post to a recipient. You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation. "
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-forward?view=graph-rest-1.0
       operationId: group.thread.post_forward
       parameters:
         - name: group-id
@@ -32986,10 +32091,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.thread.post_reply
       parameters:
         - name: group-id
@@ -33792,9 +32893,6 @@ paths:
         - groups.directoryObject
       summary: Get transitiveMemberOf from groups
       description: 'The groups that a group is a member of, either directly and through nested membership. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0
       operationId: group_ListTransitiveMemberGraphOPre
       parameters:
         - name: group-id
@@ -34330,9 +33428,6 @@ paths:
         - groups.directoryObject
       summary: Get transitiveMembers from groups
       description: The direct and transitive members of a group. Nullable.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0
       operationId: group_ListTransitiveMember
       parameters:
         - name: group-id
@@ -35807,10 +34902,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
       operationId: group_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
@@ -35855,10 +34946,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: group_getGraphBPreId
       requestBody:
         description: Action parameters
@@ -35908,10 +34995,6 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: group_validateProperty
       requestBody:
         description: Action parameters
@@ -37519,7 +36602,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -37677,7 +36760,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -37878,7 +36961,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             replyUrls:
               type: array
@@ -37903,7 +36986,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -40493,7 +39576,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.

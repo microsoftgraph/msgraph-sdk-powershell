@@ -76,11 +76,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: List connections
-      description: Retrieve a list of externalConnections.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
+      summary: Get connections from external
       operationId: external_ListConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -177,11 +173,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create connection
-      description: Create a new externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
+      summary: Create new navigation property to connections for external
       operationId: external_CreateConnection
       requestBody:
         description: New navigation property
@@ -403,11 +395,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalGroup
-      description: Create a new externalGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
+      summary: Create new navigation property to groups for external
       operationId: external.connection_CreateGroup
       parameters:
         - name: externalConnection-id
@@ -650,11 +638,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalGroupMember
-      description: Create a new externalGroupMember object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for external
       operationId: external.connection.group_CreateMember
       parameters:
         - name: externalConnection-id
@@ -1863,12 +1847,8 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connectionQuota
-      description: Retrieve the properties and relationships of a connectionQuota object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-1.0
-      operationId: external.connection_GetQuotum
+      summary: Get quota from external
+      operationId: external.connection_Getquota
       parameters:
         - name: externalConnection-id
           in: path
@@ -1917,7 +1897,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Update the navigation property quota in external
-      operationId: external.connection_UpdateQuotum
+      operationId: external.connection_Updatequota
       parameters:
         - name: externalConnection-id
           in: path
@@ -1948,7 +1928,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Delete navigation property quota for external
-      operationId: external.connection_DeleteQuotum
+      operationId: external.connection_Deletequota
       parameters:
         - name: externalConnection-id
           in: path
@@ -1974,11 +1954,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get schema
-      description: Retrieve the properties of a schema for an externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
+      summary: Get schema from external
       operationId: external.connection_GetSchema
       parameters:
         - name: externalConnection-id
@@ -2028,11 +2004,7 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update schema
-      description: Update the properties of a schema for an externalConnection.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0
+      summary: Update the navigation property schema in external
       operationId: external.connection_UpdateSchema
       parameters:
         - name: externalConnection-id
@@ -2161,11 +2133,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List industryDataConnectors
-      description: Get the industryDataConnector resources from the **dataConnector** navigation property.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
+      summary: Get dataConnectors from external
+      description: Set of connectors for importing data from source systems.
       operationId: external.industryData_ListDataConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2227,11 +2196,7 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create azureDataLakeConnector
-      description: Create a new azureDataLakeConnector object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0
+      summary: Create new navigation property to dataConnectors for external
       operationId: external.industryData_CreateDataConnector
       requestBody:
         description: New navigation property
@@ -2365,10 +2330,6 @@ paths:
       tags:
         - external.Actions
       summary: Invoke action validate
-      description: Perform validations applicable for the specific instance of the data connector.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0
       operationId: external.industryData.dataConnector_validate
       parameters:
         - name: industryDataConnector-id
@@ -2456,11 +2417,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List inboundFileFlows
-      description: Get a list of the inboundFileFlow objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
+      summary: Get inboundFlows from external
+      description: Set of data import flow activities to bring data into the canonical store via a connector.
       operationId: external.industryData_ListInboundFlow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2536,11 +2494,7 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create inboundFileFlow
-      description: 'Create a new inboundFileFlow object. The following prerequisite resources are required when you create an **inboundFileFlow**:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
+      summary: Create new navigation property to inboundFlows for external
       operationId: external.industryData_CreateInboundFlow
       requestBody:
         description: New navigation property
@@ -2800,11 +2754,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List fileValidateOperations
-      description: Get a list of long-running file validation operations and their statuses.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-1.0
+      summary: Get operations from external
+      description: Set of ephemeral operations that the system runs currently. Read-only.
       operationId: external.industryData_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3025,11 +2976,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List referenceDefinitions
-      description: Get a list of the referenceDefinition objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0
+      summary: Get referenceDefinitions from external
+      description: Set of user modifiable system picker types.
       operationId: external.industryData_ListReferenceDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3258,11 +3206,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List roleGroups
-      description: Get a list of the roleGroup objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0
+      summary: Get roleGroups from external
+      description: Set of groups of individual roles that makes role-based admin simpler.
       operationId: external.industryData_ListRoleGroup
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3471,11 +3416,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List industryDataRuns
-      description: Get a list of the industryDataRun objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-1.0
+      summary: Get runs from external
+      description: Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
       operationId: external.industryData_ListRun
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3831,7 +3773,7 @@ paths:
       tags:
         - external.Functions
       summary: Invoke function getStatistics
-      operationId: external.industryData.run_getStatistic
+      operationId: external.industryData.run_getstatistics
       parameters:
         - name: industryDataRun-id
           in: path
@@ -3870,7 +3812,7 @@ paths:
       tags:
         - external.Functions
       summary: Invoke function getStatistics
-      operationId: external.industryData.run_getStatistic
+      operationId: external.industryData.run_getstatistics
       responses:
         2XX:
           description: Success
@@ -3885,11 +3827,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List sourceSystemDefinitions
-      description: Get a list of the sourceSystemDefinition objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-list?view=graph-rest-1.0
+      summary: Get sourceSystems from external
+      description: Set of source definitions that represents real-world external systems.
       operationId: external.industryData_ListSourceSystem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3955,11 +3894,7 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create sourceSystemDefinition
-      description: Create a new sourceSystemDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-sourcesystemdefinition-post?view=graph-rest-1.0
+      summary: Create new navigation property to sourceSystems for external
       operationId: external.industryData_CreateSourceSystem
       requestBody:
         description: New navigation property
@@ -4106,11 +4041,8 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List yearTimePeriodDefinitions
-      description: Get a list of the yearTimePeriodDefinition objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-1.0
+      summary: Get years from external
+      description: Set of years represented in the system.
       operationId: external.industryData_ListYear
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4179,11 +4111,7 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create yearTimePeriodDefinition
-      description: Create a new yearTimePeriodDefinition object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-1.0
+      summary: Create new navigation property to years for external
       operationId: external.industryData_CreateYear
       requestBody:
         description: New navigation property
@@ -4400,11 +4328,8 @@ paths:
     get:
       tags:
         - search.acronym
-      summary: List acronyms
-      description: Get a list of the acronym objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-list-acronyms?view=graph-rest-1.0
+      summary: Get acronyms from search
+      description: Administrative answer in Microsoft Search results to define common acronyms in a organization.
       operationId: search_ListAcronym
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4482,11 +4407,7 @@ paths:
     post:
       tags:
         - search.acronym
-      summary: Create acronym
-      description: Create a new acronym object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-post-acronyms?view=graph-rest-1.0
+      summary: Create new navigation property to acronyms for search
       operationId: search_CreateAcronym
       requestBody:
         description: New navigation property
@@ -4637,11 +4558,8 @@ paths:
     get:
       tags:
         - search.bookmark
-      summary: List bookmarks
-      description: Get a list of bookmark objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0
+      summary: Get bookmarks from search
+      description: Administrative answer in Microsoft Search results for common search queries in an organization.
       operationId: search_ListBookmark
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4746,11 +4664,7 @@ paths:
     post:
       tags:
         - search.bookmark
-      summary: Create bookmark
-      description: Create a new bookmark object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0
+      summary: Create new navigation property to bookmarks for search
       operationId: search_CreateBookmark
       requestBody:
         description: New navigation property
@@ -4911,10 +4825,6 @@ paths:
       tags:
         - search.Actions
       summary: Invoke action query
-      description: Run a specified search query. Search results are provided in the response.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-query?view=graph-rest-1.0
       operationId: search_query
       requestBody:
         description: Action parameters
@@ -4957,11 +4867,8 @@ paths:
     get:
       tags:
         - search.qna
-      summary: List qnas
-      description: Get a list of the qna objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-list-qnas?view=graph-rest-1.0
+      summary: Get qnas from search
+      description: Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
       operationId: search_ListQna
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5060,11 +4967,7 @@ paths:
     post:
       tags:
         - search.qna
-      summary: Create qna
-      description: Create a new qna object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/search-searchentity-post-qnas?view=graph-rest-1.0
+      summary: Create new navigation property to qnas for search
       operationId: search_CreateQna
       requestBody:
         description: New navigation property

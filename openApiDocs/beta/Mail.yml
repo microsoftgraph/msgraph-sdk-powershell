@@ -92,11 +92,8 @@ paths:
     get:
       tags:
         - users.inferenceClassification
-      summary: List overrides
-      description: 'Get the Focused Inbox overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0
+      summary: Get overrides from users
+      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: user.inferenceClassification_ListOverride
       parameters:
         - name: user-id
@@ -160,11 +157,7 @@ paths:
     post:
       tags:
         - users.inferenceClassification
-      summary: Create inferenceClassificationOverride
-      description: "Create a focused Inbox override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classified\nas specified in the override."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0
+      summary: Create new navigation property to overrides for users
       operationId: user.inferenceClassification_CreateOverride
       parameters:
         - name: user-id
@@ -370,9 +363,6 @@ paths:
         - users.mailFolder
       summary: Get mailFolders from users
       description: The user's mail folders. Read-only. Nullable.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-mailfolders?view=graph-rest-1.0
       operationId: user_ListMailFolder
       parameters:
         - name: user-id
@@ -482,11 +472,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create MailFolder
-      description: 'Use this API to create a new mail folder in the root folder of the user''s mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-mailfolders?view=graph-rest-1.0
+      summary: Create new navigation property to mailFolders for users
       operationId: user_CreateMailFolder
       parameters:
         - name: user-id
@@ -699,11 +685,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List childFolders
-      description: "Get the folder collection under the specified folder. You can use the `.../me/mailFolders` shortcut to get the top-level\nfolder collection and navigate to another folder. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0
+      summary: Get childFolders from users
+      description: The collection of child folders in the mailFolder.
       operationId: user.mailFolder_ListChildFolder
       parameters:
         - name: user-id
@@ -814,11 +797,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create child folder
-      description: 'Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0
+      summary: Create new navigation property to childFolders for users
       operationId: user.mailFolder_CreateChildFolder
       parameters:
         - name: user-id
@@ -1056,11 +1035,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List rules
-      description: Get all the messageRule objects defined for the user's inbox.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
+      summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: user.mailFolder.childFolder_ListMessageRule
       parameters:
         - name: user-id
@@ -1158,11 +1134,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create rule
-      description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
+      summary: Create new navigation property to messageRules for users
       operationId: user.mailFolder.childFolder_CreateMessageRule
       parameters:
         - name: user-id
@@ -1452,11 +1424,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List messages
-      description: 'List all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+      summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: user.mailFolder.childFolder_ListMessage
       parameters:
         - name: user-id
@@ -1652,11 +1621,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create Message
-      description: Use this API to create a new Message in a mailfolder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: user.mailFolder.childFolder_CreateMessage
       parameters:
         - name: user-id
@@ -1951,9 +1916,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder_GetMessagesContent
       parameters:
         - name: user-id
@@ -2067,11 +2029,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List attachments
-      description: Retrieve a list of attachment objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: user.mailFolder.childFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -2180,11 +2139,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Add attachment
-      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.mailFolder.childFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -2549,11 +2504,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create openTypeExtension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.mailFolder.childFolder.message_CreateExtension
       parameters:
         - name: user-id
@@ -5191,11 +5142,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List rules
-      description: Get all the messageRule objects defined for the user's inbox.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messagerules?view=graph-rest-1.0
+      summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
       operationId: user.mailFolder_ListMessageRule
       parameters:
         - name: user-id
@@ -5285,11 +5233,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create rule
-      description: Create a messageRule object by specifying a set of conditions and actions.  Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messagerules?view=graph-rest-1.0
+      summary: Create new navigation property to messageRules for users
       operationId: user.mailFolder_CreateMessageRule
       parameters:
         - name: user-id
@@ -5539,11 +5483,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List messages
-      description: 'List all the messages in the specified user''s mailbox, or those messages in a specified folder in the mailbox.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
+      summary: Get messages from users
+      description: The collection of messages in the mailFolder.
       operationId: user.mailFolder_ListMessage
       parameters:
         - name: user-id
@@ -5731,11 +5672,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create Message
-      description: Use this API to create a new Message in a mailfolder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: user.mailFolder_CreateMessage
       parameters:
         - name: user-id
@@ -5998,9 +5935,6 @@ paths:
       tags:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0
       operationId: user.mailFolder_GetMessagesContent
       parameters:
         - name: user-id
@@ -6098,11 +6032,8 @@ paths:
     get:
       tags:
         - users.mailFolder
-      summary: List attachments
-      description: Retrieve a list of attachment objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: user.mailFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -6203,11 +6134,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Add attachment
-      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.mailFolder.message_CreateAttachment
       parameters:
         - name: user-id
@@ -6532,11 +6459,7 @@ paths:
     post:
       tags:
         - users.mailFolder
-      summary: Create openTypeExtension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.mailFolder.message_CreateExtension
       parameters:
         - name: user-id
@@ -8864,9 +8787,6 @@ paths:
         - users.message
       summary: Get messages from users
       description: The messages in a mailbox or folder. Read-only. Nullable.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: user_ListMessage
       parameters:
         - name: user-id
@@ -9053,11 +8973,7 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create Message
-      description: "Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:\n- Include an attachment.\n- Use a mention to call out another user in the new message.\n- Update the draft later to add content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single action, or create a draft to forward, to reply or to reply-all to an existing message."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: user_CreateMessage
       parameters:
         - name: user-id
@@ -9295,9 +9211,6 @@ paths:
       tags:
         - users.message
       summary: Get media content for the navigation property messages from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-messages?view=graph-rest-1.0
       operationId: user_GetMessagesContent
       parameters:
         - name: user-id
@@ -9379,11 +9292,8 @@ paths:
     get:
       tags:
         - users.message
-      summary: List attachments
-      description: Retrieve a list of attachment objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: user.message_ListAttachment
       parameters:
         - name: user-id
@@ -9476,11 +9386,7 @@ paths:
     post:
       tags:
         - users.message
-      summary: Add attachment
-      description: "Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.  You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.message_CreateAttachment
       parameters:
         - name: user-id
@@ -9765,11 +9671,7 @@ paths:
     post:
       tags:
         - users.message
-      summary: Create openTypeExtension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.message_CreateExtension
       parameters:
         - name: user-id

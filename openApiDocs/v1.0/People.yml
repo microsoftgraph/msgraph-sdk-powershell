@@ -841,11 +841,8 @@ paths:
     get:
       tags:
         - users.officeGraphInsights
-      summary: List used
-      description: "Calculate and list the documents that a user has viewed or modified.  For the signed-in user:\n- This method includes documents that the user has modified; see example 1. \n- Using an `$orderby` query parameter on the **lastAccessedDateTime** property returns the most recently viewed documents that the user might or might not not have modified; see example 2. For other users, this method includes only documents that the user has modified."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/insights-list-used?view=graph-rest-1.0
+      summary: Get used from users
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: user.insight_ListUsed
       parameters:
         - name: user-id
@@ -1169,11 +1166,8 @@ paths:
     get:
       tags:
         - users.person
-      summary: List people
-      description: 'Retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user''s communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Use the People API to get information about the people most relevant to you.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
+      summary: Get people from users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: user_ListPerson
       parameters:
         - name: user-id

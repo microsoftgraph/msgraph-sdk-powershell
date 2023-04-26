@@ -81,6 +81,7 @@ paths:
                 - configurationSettings
                 - reusablePolicySettings
                 - reusableSettings
+                - templateInsights
                 - templateSettings
                 - complianceManagementPartners
                 - conditionalAccessSettings
@@ -109,8 +110,6 @@ paths:
                 - managedDeviceOverview
                 - managedDevices
                 - mobileAppTroubleshootingEvents
-                - oemWarrantyInformationOnboarding
-                - privilegeManagementElevations
                 - remoteActionAudits
                 - tenantAttachRBAC
                 - userExperienceAnalyticsAnomaly
@@ -253,6 +252,7 @@ paths:
                 - configurationSettings
                 - reusablePolicySettings
                 - reusableSettings
+                - templateInsights
                 - templateSettings
                 - complianceManagementPartners
                 - conditionalAccessSettings
@@ -281,8 +281,6 @@ paths:
                 - managedDeviceOverview
                 - managedDevices
                 - mobileAppTroubleshootingEvents
-                - oemWarrantyInformationOnboarding
-                - privilegeManagementElevations
                 - remoteActionAudits
                 - tenantAttachRBAC
                 - userExperienceAnalyticsAnomaly
@@ -1384,6 +1382,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - assignmentFilterManagementType
+                - assignmentFilterManagementType desc
                 - createdDateTime
                 - createdDateTime desc
                 - description
@@ -1412,6 +1412,7 @@ paths:
             items:
               enum:
                 - id
+                - assignmentFilterManagementType
                 - createdDateTime
                 - description
                 - displayName
@@ -1491,6 +1492,7 @@ paths:
             items:
               enum:
                 - id
+                - assignmentFilterManagementType
                 - createdDateTime
                 - description
                 - displayName
@@ -5662,6 +5664,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -5738,6 +5741,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -31135,6 +31139,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -31211,6 +31216,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -33051,6 +33057,8 @@ paths:
                 - troubleshootingErrorDetails desc
                 - applicationId
                 - applicationId desc
+                - deviceId
+                - deviceId desc
                 - history
                 - history desc
                 - managedDeviceIdentifier
@@ -33075,6 +33083,7 @@ paths:
                 - eventName
                 - troubleshootingErrorDetails
                 - applicationId
+                - deviceId
                 - history
                 - managedDeviceIdentifier
                 - userId
@@ -33157,6 +33166,7 @@ paths:
                 - eventName
                 - troubleshootingErrorDetails
                 - applicationId
+                - deviceId
                 - history
                 - managedDeviceIdentifier
                 - userId
@@ -49482,6 +49492,12 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
               description: List of all reusable settings
               x-ms-navigationProperty: true
+            templateInsights:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementTemplateInsightsDefinition'
+              description: List of setting insights in a template
+              x-ms-navigationProperty: true
             templateSettings:
               type: array
               items:
@@ -49633,18 +49649,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppTroubleshootingEvent'
               description: The collection property of MobileAppTroubleshootingEvent.
-              x-ms-navigationProperty: true
-            oemWarrantyInformationOnboarding:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.oemWarrantyInformationOnboarding'
-              description: List of OEM Warranty Statuses
-              x-ms-navigationProperty: true
-            privilegeManagementElevations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.privilegeManagementElevation'
-              description: The endpoint privilege management elevation event entity contains elevation details.
               x-ms-navigationProperty: true
             remoteActionAudits:
               type: array
@@ -50425,28 +50429,30 @@ components:
         - title: deviceAndAppManagementAssignmentFilter
           type: object
           properties:
+            assignmentFilterManagementType:
+              $ref: '#/components/schemas/microsoft.graph.assignmentFilterManagementType'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Creation time of the Assignment Filter.
+              description: 'The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
             description:
               type: string
-              description: Description of the Assignment Filter.
+              description: Optional description of the Assignment Filter.
               nullable: true
             displayName:
               type: string
-              description: DisplayName of the Assignment Filter.
+              description: The name of the Assignment Filter.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Last modified time of the Assignment Filter.
+              description: 'Last modified time of the Assignment Filter. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
             payloads:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.payloadByFilter'
-              description: Associated assignments for a specific filter
+              description: Indicates associated assignments for a specific filter.
             platform:
               $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
             roleScopeTags:
@@ -50454,10 +50460,10 @@ components:
               items:
                 type: string
                 nullable: true
-              description: RoleScopeTags of the Assignment Filter.
+              description: Indicates role scope tags assigned for the assignment filter.
             rule:
               type: string
-              description: Rule definition of the Assignment Filter.
+              description: Rule definition of the assignment filter.
           additionalProperties:
             type: object
           description: A class containing the properties used for Assignment Filter.
@@ -50554,7 +50560,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -50591,7 +50597,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -50614,7 +50620,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -50656,7 +50662,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -50688,7 +50694,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -50706,7 +50712,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -50714,7 +50720,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -50754,7 +50760,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -50777,7 +50783,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -50795,7 +50801,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -50848,7 +50854,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -50881,14 +50887,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -54532,6 +54538,10 @@ components:
               type: string
               description: Intune application identifier.
               nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
+              nullable: true
             history:
               type: array
               items:
@@ -58072,7 +58082,7 @@ components:
           properties:
             categoryDescription:
               type: string
-              description: Description of the category header
+              description: Description of the category header in policy summary.
               nullable: true
             childCategoryIds:
               type: array
@@ -58082,15 +58092,15 @@ components:
               description: List of child ids of the category.
             description:
               type: string
-              description: Description of the item
+              description: 'Description of the category. For example: Display'
               nullable: true
             displayName:
               type: string
-              description: Display name of the item
+              description: 'Name of the category. For example: Device Lock'
               nullable: true
             helpText:
               type: string
-              description: Help text of the item
+              description: Help text of the category. Give more details of the category.
               nullable: true
             name:
               type: string
@@ -58098,7 +58108,7 @@ components:
               nullable: true
             parentCategoryId:
               type: string
-              description: Parent id of the category.
+              description: 'Direct parent id of the category. If the category is the root, the parent id is same as its id.'
               nullable: true
             platforms:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPlatforms'
@@ -58167,6 +58177,20 @@ components:
           additionalProperties:
             type: object
           description: Graph model for a reusable setting
+    microsoft.graph.deviceManagementTemplateInsightsDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementTemplateInsightsDefinition
+          type: object
+          properties:
+            settingInsights:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementSettingInsightsDefinition'
+              description: Setting insights in a template
+          additionalProperties:
+            type: object
+          description: template insights definition
     microsoft.graph.complianceManagementPartner:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -58777,100 +58801,6 @@ components:
           additionalProperties:
             type: object
           description: Represents a custom attribute script for macOS.
-    microsoft.graph.oemWarrantyInformationOnboarding:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: oemWarrantyInformationOnboarding
-          type: object
-          properties:
-            available:
-              type: boolean
-              description: Specifies whether warranty API is available. This property is read-only.
-              readOnly: true
-            enabled:
-              type: boolean
-              description: Specifies whether warranty query is enabled for given OEM. This property is read-only.
-              readOnly: true
-            oemName:
-              type: string
-              description: OEM name. This property is read-only.
-              nullable: true
-              readOnly: true
-          additionalProperties:
-            type: object
-          description: Warranty status entity for a given OEM
-    microsoft.graph.privilegeManagementElevation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: privilegeManagementElevation
-          type: object
-          properties:
-            certificatePayload:
-              type: string
-              description: 'The certificate payload of the application. This is computed by hashing the certificate information on the client. Example: `32c220482c68413fbf8290e3b1e49b0a85901cfcd62ab0738760568a2a6e8a50`'
-              nullable: true
-            companyName:
-              type: string
-              description: 'The company name of the application. This value is set by the creator of the application. Example: `Microsoft Corporation`'
-              nullable: true
-            deviceId:
-              type: string
-              description: 'The Intune deviceId. Unique identifier for the managed device. Example: `92ce5047-9553-4731-817f-9b401a999a1b`'
-              nullable: true
-            deviceName:
-              type: string
-              description: 'The name associated with the device in the intune database. Example: `JOHNDOE-LAPTOP`.'
-              nullable: true
-            elevationType:
-              $ref: '#/components/schemas/microsoft.graph.privilegeManagementElevationType'
-            eventDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date and time when the application was elevated. Example:`2014-01-01T00:00:00Z`
-              format: date-time
-            fileDescription:
-              type: string
-              description: 'The file description of the application. This value is set by the creator of the application. Example: `Editor of multiple coding languages.`'
-              nullable: true
-            filePath:
-              type: string
-              description: 'The full file path of the application including the filename and file extension. Example: `C:\Program Files\vscode.exe`'
-              nullable: true
-            fileVersion:
-              type: string
-              description: 'The version of the application. This value is set by the creator of the application. Example: `6.2211.1035.1000`'
-              nullable: true
-            hash:
-              type: string
-              description: 'The sha256 hash of the application. Example: `32c220482c68413fbf8290e3b1e49b0a85901cfcd62ab0738760568a2a6e8a57`'
-              nullable: true
-            internalName:
-              type: string
-              description: 'The internal name of the application. This value is set by the creator of the application. Example: `VS code`'
-              nullable: true
-            justification:
-              type: string
-              description: 'The justification to elevate the application. This is an input by the user when the privilegeManagementElevationType is of type userConfirmedElevation or support approved elevation. This will be null in all other scenarios. The length is capped at 256 char, enforced on the client side. Example: `To install debug tool.`.'
-              nullable: true
-            productName:
-              type: string
-              description: 'The product name of the application. This value is set by the creator of the application. Example: `Visual Studio`'
-              nullable: true
-            result:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: 'The result of the elevation action with 0 being success, and everything else being exit code if the elevation was unsuccessful. The value will always be 0 on all unmanaged elevation. Example: `0`. Valid values 0 to 2147483647'
-              format: int32
-            upn:
-              type: string
-              description: 'The User Principal Name of the user who performed the elevation. Example: `john@domain.com`'
-              nullable: true
-            userType:
-              $ref: '#/components/schemas/microsoft.graph.privilegeManagementEndUserType'
-          additionalProperties:
-            type: object
-          description: The endpoint privilege management elevation result entity representing a single elevation action on a client device.
     microsoft.graph.tenantAttachRBAC:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -59352,6 +59282,12 @@ components:
             displayName:
               type: string
               description: A human readable name of the deployment.
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of Scope Tags for this Entity instance
           additionalProperties:
             type: object
           description: 'The Zebra FOTA deployment entity that describes settings, deployment device groups required to create a FOTA deployment, and deployment status.'
@@ -60723,6 +60659,27 @@ components:
       additionalProperties:
         type: object
       description: Single configuration item inside an Android application's custom configuration schema.
+    microsoft.graph.assignmentFilterManagementType:
+      title: assignmentFilterManagementType
+      enum:
+        - devices
+        - apps
+        - unknownFutureValue
+      type: string
+      description: Supported filter management types whether its devices or apps.
+      x-ms-enum:
+        name: assignmentFilterManagementType
+        modelAsString: false
+        values:
+          - value: devices
+            description: Indicates when filter is supported based on device properties. This is the default value when management type resolution fails.
+            name: devices
+          - value: apps
+            description: Indicates when filter is supported based on app properties.
+            name: apps
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.payloadByFilter:
       title: payloadByFilter
       type: object
@@ -62577,6 +62534,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.detectedAppPlatformType:
@@ -63570,28 +63529,28 @@ components:
         modelAsString: false
         values:
           - value: none
-            description: None.
+            description: Default. No platform type specified.
             name: none
           - value: android
-            description: Android.
+            description: Settings for Android platform.
             name: android
           - value: iOS
-            description: iOS.
+            description: Settings for iOS platform.
             name: iOS
           - value: macOS
-            description: MacOS.
+            description: Settings for MacOS platform.
             name: macOS
           - value: windows10X
             description: Windows 10 X.
             name: windows10X
           - value: windows10
-            description: Windows 10.
+            description: Settings for Windows 10 platform.
             name: windows10
           - value: linux
-            description: Linux.
+            description: Settings for Linux platform.
             name: linux
           - value: unknownFutureValue
-            description: Sentinel member for cases where the client cannot handle the new enum values.
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.deviceManagementConfigurationTechnologies:
       title: deviceManagementConfigurationTechnologies
@@ -63614,28 +63573,28 @@ components:
         modelAsString: false
         values:
           - value: none
-            description: Setting cannot be deployed through any channel
+            description: Default. Setting cannot be deployed through any channel.
             name: none
           - value: mdm
-            description: Setting can be deployed through the MDM channel
+            description: Setting can be deployed through the MDM channel.
             name: mdm
           - value: windows10XManagement
             description: Setting can be deployed through the Windows10XManagement channel
             name: windows10XManagement
           - value: configManager
-            description: Setting can be deployed through the ConfigManager channel
+            description: Setting can be deployed through the ConfigManager channel.
             name: configManager
           - value: appleRemoteManagement
-            description: Setting can be deployed through the AppleRemoteManagement channel
+            description: Setting can be deployed through the AppleRemoteManagement channel.
             name: appleRemoteManagement
           - value: microsoftSense
-            description: Setting can be deployed through the SENSE agent channel
+            description: Setting can be deployed through the SENSE agent channel.
             name: microsoftSense
           - value: exchangeOnline
-            description: Setting can be deployed through the Exchange Online agent channel
+            description: Setting can be deployed through the Exchange Online agent channel.
             name: exchangeOnline
           - value: linuxMdm
-            description: Setting can be deployed through the Linux Mdm channel
+            description: Setting can be deployed through the Linux Mdm channel.
             name: linuxMdm
           - value: enrollment
             description: Setting can be deployed through device enrollment.
@@ -63782,7 +63741,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
           nullable: true
       additionalProperties:
         type: object
@@ -63793,6 +63752,7 @@ components:
         - none
         - configuration
         - compliance
+        - unknownFutureValue
       type: string
       description: Supported setting types
       x-ms-enum:
@@ -63800,14 +63760,17 @@ components:
         modelAsString: false
         values:
           - value: none
-            description: No setting type specified
+            description: Default. No setting type specified.
             name: none
           - value: configuration
-            description: Configuration setting
+            description: Configuration setting type.
             name: configuration
           - value: compliance
-            description: Compliance setting
+            description: Compliance setting type.
             name: compliance
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementConfigurationControlType:
       title: deviceManagementConfigurationControlType
       enum:
@@ -63818,6 +63781,7 @@ components:
         - toggle
         - multiheaderGrid
         - contextPane
+        - unknownFutureValue
       type: string
       description: Setting control type representation in the UX
       x-ms-enum:
@@ -63825,32 +63789,36 @@ components:
         modelAsString: false
         values:
           - value: default
-            description: Don’t override default
+            description: Default. UX uses default UX element base on setting type for the setting.
             name: default
           - value: dropdown
-            description: Display Choice in dropdown
+            description: Display the setting in dropdown box.
             name: dropdown
           - value: smallTextBox
-            description: Display text input in small text input
+            description: Display text input in small text input.
             name: smallTextBox
           - value: largeTextBox
-            description: Display text input in large text input
+            description: Display text input in large text input.
             name: largeTextBox
           - value: toggle
-            description: Allow for toggle control type
+            description: Allow for toggle control type.
             name: toggle
           - value: multiheaderGrid
-            description: Allow for multiheader grid control type
+            description: Allow for multiheader grid control type.
             name: multiheaderGrid
           - value: contextPane
-            description: Allow for context pane control type
+            description: Allow for context pane control type.
             name: contextPane
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementConfigurationSettingVisibility:
       title: deviceManagementConfigurationSettingVisibility
       enum:
         - none
         - settingsCatalog
         - template
+        - unknownFutureValue
       type: string
       description: Supported setting types
       x-ms-enum:
@@ -63858,14 +63826,17 @@ components:
         modelAsString: false
         values:
           - value: none
-            description: Not visible
+            description: Default. Not visible.
             name: none
           - value: settingsCatalog
-            description: Visible to setting catalog UX
+            description: Visible to setting catalog policy type.
             name: settingsCatalog
           - value: template
-            description: Visible to template
+            description: Visible to template policy type.
             name: template
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementPriorityMetaData:
       title: deviceManagementPriorityMetaData
       type: object
@@ -68759,6 +68730,19 @@ components:
           - value: inactive
             description: No recent activity for the Ndes connector
             name: inactive
+    microsoft.graph.deviceManagementSettingInsightsDefinition:
+      title: deviceManagementSettingInsightsDefinition
+      type: object
+      properties:
+        settingDefinitionId:
+          type: string
+          description: Setting definition id that is being referred to a setting.
+          nullable: true
+        settingInsight:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingValue'
+      additionalProperties:
+        type: object
+      description: Setting Insights
     microsoft.graph.complianceManagementPartnerAssignment:
       title: complianceManagementPartnerAssignment
       type: object
@@ -69159,68 +69143,6 @@ components:
           - value: dateTime
             description: Indicates the value for a custom attribute script is a date conforming to ISO 8601.
             name: dateTime
-    microsoft.graph.privilegeManagementElevationType:
-      title: privilegeManagementElevationType
-      enum:
-        - undetermined
-        - unmanagedElevation
-        - zeroTouchElevation
-        - userConfirmedElevation
-        - supportApprovedElevation
-        - unknownFutureValue
-      type: string
-      description: Indicates the type of elevation occured
-      x-ms-enum:
-        name: privilegeManagementElevationType
-        modelAsString: false
-        values:
-          - value: undetermined
-            description: Default. If the type was unknown on the client for some reasons.
-            name: undetermined
-          - value: unmanagedElevation
-            description: 'The elevation was done without any use of endpoint privilege management. For example: the administrator on a client machine elevated an application with their admin right.'
-            name: unmanagedElevation
-          - value: zeroTouchElevation
-            description: The elevation was done using the endpoint privilege management zero touch elevation policy.
-            name: zeroTouchElevation
-          - value: userConfirmedElevation
-            description: The elevation was done using the endpoint privilege management user confirmed elevation policy.
-            name: userConfirmedElevation
-          - value: supportApprovedElevation
-            description: The elevation was done using the endpoint privilege management support approved elevation policy.
-            name: supportApprovedElevation
-          - value: unknownFutureValue
-            description: Evolvable enumeration sentinel value. Do not use.
-            name: unknownFutureValue
-    microsoft.graph.privilegeManagementEndUserType:
-      title: privilegeManagementEndUserType
-      enum:
-        - undetermined
-        - azureAd
-        - hybrid
-        - local
-        - unknownFutureValue
-      type: string
-      description: The type of user account on Windows that was used to performed the elevation.
-      x-ms-enum:
-        name: privilegeManagementEndUserType
-        modelAsString: false
-        values:
-          - value: undetermined
-            description: Default. Unable to determine the login type of the user.
-            name: undetermined
-          - value: azureAd
-            description: The user who performed the elevation logged in using an Azure Active Directory (Azure AD) account.
-            name: azureAd
-          - value: hybrid
-            description: The user who performed the elevation logged in using Hybrid Azure AD joined account.
-            name: hybrid
-          - value: local
-            description: The user who performed the elevation logged in using a Windows local account.
-            name: local
-          - value: unknownFutureValue
-            description: Evolvable emuneration sentinel value. Do not use.
-            name: unknownFutureValue
     microsoft.graph.appleOwnerTypeEnrollmentType:
       title: appleOwnerTypeEnrollmentType
       type: object
@@ -69465,9 +69387,6 @@ components:
             registrationDisabled:
               type: boolean
               description: Indicates if registration is disabled
-            requestRequiresNetworkTether:
-              type: boolean
-              description: Indicates if the device is network-tethered to run the command
             setPrimarySetupAccountAsRegularUser:
               type: boolean
               description: Indicates whether Setup Assistant will set the account as a regular user
@@ -69925,6 +69844,8 @@ components:
       title: androidFotaDeploymentAssignment
       type: object
       properties:
+        assignmentTarget:
+          $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
         displayName:
           type: string
           description: The display name of the Azure AD security group used for the assignment.
@@ -71775,7 +71696,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -71808,7 +71729,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -74246,7 +74167,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -74436,6 +74357,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -74743,6 +74666,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -75561,6 +75497,15 @@ components:
       additionalProperties:
         type: object
       description: A class containing the properties for Audit Property.
+    microsoft.graph.deviceManagementConfigurationSettingValue:
+      title: deviceManagementConfigurationSettingValue
+      type: object
+      properties:
+        settingValueTemplateReference:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingValueTemplateReference'
+      additionalProperties:
+        type: object
+      description: Setting value
     microsoft.graph.deviceManagementExchangeAccessRuleType:
       title: deviceManagementExchangeAccessRuleType
       enum:
@@ -75758,15 +75703,17 @@ components:
         - standard
       type: string
     microsoft.graph.androidFotaDeploymentAssignmentTarget:
-      title: androidFotaDeploymentAssignmentTarget
-      type: object
-      properties:
-        groupId:
-          type: string
-          description: AAD Group Id.
-      additionalProperties:
-        type: object
-      description: The AAD Group we are deploying firmware updates to
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+        - title: androidFotaDeploymentAssignmentTarget
+          type: object
+          properties:
+            groupId:
+              type: string
+              description: AAD Group Id.
+          additionalProperties:
+            type: object
+          description: The AAD Group we are deploying firmware updates to
     microsoft.graph.zebraFotaNetworkType:
       title: zebraFotaNetworkType
       enum:
@@ -80693,6 +80640,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -81683,6 +81640,43 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
@@ -81901,6 +81895,19 @@ components:
         - sharedUseLicenseUsageRealTimeReport
         - unknownFutureValue
       type: string
+    microsoft.graph.deviceManagementConfigurationSettingValueTemplateReference:
+      title: deviceManagementConfigurationSettingValueTemplateReference
+      type: object
+      properties:
+        settingValueTemplateId:
+          type: string
+          description: Setting value template id
+        useTemplateDefault:
+          type: boolean
+          description: Indicates whether to update policy setting value to match template setting default value
+      additionalProperties:
+        type: object
+      description: Setting value template reference information
     microsoft.graph.externalAudienceScope:
       title: externalAudienceScope
       enum:
@@ -82231,11 +82238,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -83646,7 +83653,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -86496,6 +86503,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcConnectivityEventResult:
       title: cloudPcConnectivityEventResult
       enum:

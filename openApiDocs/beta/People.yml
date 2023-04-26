@@ -139,7 +139,7 @@ paths:
         - users.userAnalytics
       summary: Get activityStatistics from users
       description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-      operationId: user.analytic_ListActivityStatistic
+      operationId: user.analytic_ListActivitystatistics
       parameters:
         - name: user-id
           in: path
@@ -225,7 +225,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Create new navigation property to activityStatistics for users
-      operationId: user.analytic_CreateActivityStatistic
+      operationId: user.analytic_CreateActivitystatistics
       parameters:
         - name: user-id
           in: path
@@ -264,7 +264,7 @@ paths:
         - users.userAnalytics
       summary: Get activityStatistics from users
       description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
-      operationId: user.analytic_GetActivityStatistic
+      operationId: user.analytic_GetActivitystatistics
       parameters:
         - name: user-id
           in: path
@@ -331,7 +331,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Update the navigation property activityStatistics in users
-      operationId: user.analytic_UpdateActivityStatistic
+      operationId: user.analytic_UpdateActivitystatistics
       parameters:
         - name: user-id
           in: path
@@ -376,7 +376,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Delete navigation property activityStatistics for users
-      operationId: user.analytic_DeleteActivityStatistic
+      operationId: user.analytic_DeleteActivitystatistics
       parameters:
         - name: user-id
           in: path
@@ -444,11 +444,8 @@ paths:
     get:
       tags:
         - users.person
-      summary: List people
-      description: 'Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user''s communication and collaboration patterns, and business relationships.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
+      summary: Get people from users
+      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: user_ListPerson
       parameters:
         - name: user-id
@@ -668,11 +665,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: Get profile
-      description: 'Retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-get?view=graph-rest-1.0
+      summary: Get profile from users
+      description: Represents properties that are descriptive of a user in a tenant.
       operationId: user_GetProfile
       parameters:
         - name: user-id
@@ -801,11 +795,7 @@ paths:
     delete:
       tags:
         - users.profile
-      summary: Delete profile
-      description: Deletes a profile object from a user's account.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-delete?view=graph-rest-1.0
+      summary: Delete navigation property profile for users
       operationId: user_DeleteProfile
       parameters:
         - name: user-id
@@ -838,11 +828,7 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List accounts
-      description: Retrieves properties related to the user's accounts from the profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-1.0
+      summary: Get account from users
       operationId: user.profile_ListAccount
       parameters:
         - name: user-id
@@ -949,11 +935,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create account
-      description: Create a new userAccountInformation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-accounts?view=graph-rest-1.0
+      summary: Create new navigation property to account for users
       operationId: user.profile_CreateAccount
       parameters:
         - name: user-id
@@ -1179,11 +1161,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List addresses
-      description: Get the itemAddress resources from the **addresses** navigation property.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-1.0
+      summary: Get addresses from users
+      description: Represents details of addresses associated with the user.
       operationId: user.profile_ListAddress
       parameters:
         - name: user-id
@@ -1287,11 +1266,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create addresses
-      description: Create a new itemAddress object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-addresses?view=graph-rest-1.0
+      summary: Create new navigation property to addresses for users
       operationId: user.profile_CreateAddress
       parameters:
         - name: user-id
@@ -1517,11 +1492,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List anniversaries
-      description: Retrieve a list of personAnniversary objects for the given user from their profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0
+      summary: Get anniversaries from users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: user.profile_ListAnniversary
       parameters:
         - name: user-id
@@ -1625,11 +1597,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personAnniversary
-      description: Use this API to create a new personAnniversary object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0
+      summary: Create new navigation property to anniversaries for users
       operationId: user.profile_CreateAnniversary
       parameters:
         - name: user-id
@@ -1855,11 +1823,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List awards
-      description: Retrieve a list of personAward objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-awards?view=graph-rest-1.0
+      summary: Get awards from users
+      description: Represents the details of awards or honors associated with a person.
       operationId: user.profile_ListAward
       parameters:
         - name: user-id
@@ -1972,11 +1937,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personAward
-      description: Create a new personAward object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-awards?view=graph-rest-1.0
+      summary: Create new navigation property to awards for users
       operationId: user.profile_CreateAward
       parameters:
         - name: user-id
@@ -2205,11 +2166,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List certifications
-      description: Retrieve a list of personCertification objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-1.0
+      summary: Get certifications from users
+      description: Represents the details of certifications associated with a person.
       operationId: user.profile_ListCertification
       parameters:
         - name: user-id
@@ -2334,11 +2292,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personCertification
-      description: Create a new personCertification object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-certifications?view=graph-rest-1.0
+      summary: Create new navigation property to certifications for users
       operationId: user.profile_CreateCertification
       parameters:
         - name: user-id
@@ -2571,11 +2525,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List educationalActivities
-      description: Retrieve a list of educationalActivity objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-1.0
+      summary: Get educationalActivities from users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: user.profile_ListEducationalActivity
       parameters:
         - name: user-id
@@ -2685,11 +2636,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create educationalActivity
-      description: Create a new educationalActivity in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-educationalactivities?view=graph-rest-1.0
+      summary: Create new navigation property to educationalActivities for users
       operationId: user.profile_CreateEducationalActivity
       parameters:
         - name: user-id
@@ -2917,11 +2864,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List emails
-      description: Retrieve a list of itemEmail objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-emails?view=graph-rest-1.0
+      summary: Get emails from users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: user.profile_ListEmail
       parameters:
         - name: user-id
@@ -3025,11 +2969,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemEmail
-      description: Create a new itemEmail object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-emails?view=graph-rest-1.0
+      summary: Create new navigation property to emails for users
       operationId: user.profile_CreateEmail
       parameters:
         - name: user-id
@@ -3255,11 +3195,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List interests
-      description: Retrieve a list of personInterest objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-interests?view=graph-rest-1.0
+      summary: Get interests from users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: user.profile_ListInterest
       parameters:
         - name: user-id
@@ -3372,11 +3309,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personInterest
-      description: Create a new personInterest.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-interests?view=graph-rest-1.0
+      summary: Create new navigation property to interests for users
       operationId: user.profile_CreateInterest
       parameters:
         - name: user-id
@@ -3605,11 +3538,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List languages
-      description: Retrieve a list of languageProficiency objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-languages?view=graph-rest-1.0
+      summary: Get languages from users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: user.profile_ListLanguage
       parameters:
         - name: user-id
@@ -3725,11 +3655,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create languageProficiency
-      description: Use this API to create a new languageProficiency object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-languages?view=graph-rest-1.0
+      summary: Create new navigation property to languages for users
       operationId: user.profile_CreateLanguage
       parameters:
         - name: user-id
@@ -3959,11 +3885,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List names
-      description: Retrieve a list of personName objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-names?view=graph-rest-1.0
+      summary: Get names from users
+      description: Represents the names a user has added to their profile.
       operationId: user.profile_ListName
       parameters:
         - name: user-id
@@ -4091,11 +4014,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personName
-      description: Use this API to create a new personName object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-names?view=graph-rest-1.0
+      summary: Create new navigation property to names for users
       operationId: user.profile_CreateName
       parameters:
         - name: user-id
@@ -4329,11 +4248,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List notes
-      description: Retrieve a list of personAnnotation objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-notes?view=graph-rest-1.0
+      summary: Get notes from users
+      description: Represents notes that a user has added to their profile.
       operationId: user.profile_ListNote
       parameters:
         - name: user-id
@@ -4437,11 +4353,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personAnnotation
-      description: Create a new personAnnotation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-notes?view=graph-rest-1.0
+      summary: Create new navigation property to notes for users
       operationId: user.profile_CreateNote
       parameters:
         - name: user-id
@@ -4667,11 +4579,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List patents
-      description: Retrieve a list of itemPatent objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-patents?view=graph-rest-1.0
+      summary: Get patents from users
+      description: Represents patents that a user has added to their profile.
       operationId: user.profile_ListPatent
       parameters:
         - name: user-id
@@ -4787,11 +4696,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemPatent
-      description: Create a new itemPatent object within a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-patents?view=graph-rest-1.0
+      summary: Create new navigation property to patents for users
       operationId: user.profile_CreatePatent
       parameters:
         - name: user-id
@@ -5021,11 +4926,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List phones
-      description: Retrieve a list of itemPhone objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-phones?view=graph-rest-1.0
+      summary: Get phones from users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: user.profile_ListPhone
       parameters:
         - name: user-id
@@ -5129,11 +5031,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemPhoneNumber
-      description: Use this API to create a new itemPhone object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-phones?view=graph-rest-1.0
+      summary: Create new navigation property to phones for users
       operationId: user.profile_CreatePhone
       parameters:
         - name: user-id
@@ -5359,11 +5257,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List positions
-      description: Retrieve a list of workPosition objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-positions?view=graph-rest-1.0
+      summary: Get positions from users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: user.profile_ListPosition
       parameters:
         - name: user-id
@@ -5473,11 +5368,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create workPosition
-      description: Use this API to create a new workPosition in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-positions?view=graph-rest-1.0
+      summary: Create new navigation property to positions for users
       operationId: user.profile_CreatePosition
       parameters:
         - name: user-id
@@ -5705,11 +5596,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List projects
-      description: Retrieve a list of projectParticipation objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-projects?view=graph-rest-1.0
+      summary: Get projects from users
+      description: Represents detailed information about projects associated with a user.
       operationId: user.profile_ListProject
       parameters:
         - name: user-id
@@ -5828,11 +5716,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create projectParticipation
-      description: Use this API to create a new projectParticipation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-projects?view=graph-rest-1.0
+      summary: Create new navigation property to projects for users
       operationId: user.profile_CreateProject
       parameters:
         - name: user-id
@@ -6063,11 +5947,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List publications
-      description: Retrieve a list of itemPublication objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-publications?view=graph-rest-1.0
+      summary: Get publications from users
+      description: Represents details of any publications a user has added to their profile.
       operationId: user.profile_ListPublication
       parameters:
         - name: user-id
@@ -6180,11 +6061,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemPublication
-      description: Create a new itemPublication object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-publications?view=graph-rest-1.0
+      summary: Create new navigation property to publications for users
       operationId: user.profile_CreatePublication
       parameters:
         - name: user-id
@@ -6413,11 +6290,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List skills
-      description: Retrieve a list of skillProficiency objects in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-skills?view=graph-rest-1.0
+      summary: Get skills from users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: user.profile_ListSkill
       parameters:
         - name: user-id
@@ -6530,11 +6404,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create skillProficiency
-      description: Use this API to create a new skillProficiency object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-skills?view=graph-rest-1.0
+      summary: Create new navigation property to skills for users
       operationId: user.profile_CreateSkill
       parameters:
         - name: user-id
@@ -6763,11 +6633,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List webAccounts
-      description: Retrieve a list of webAccounts objects from the user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-1.0
+      summary: Get webAccounts from users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: user.profile_ListWebAccount
       parameters:
         - name: user-id
@@ -6880,11 +6747,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create webAccount
-      description: Create a new webAccount object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-webaccounts?view=graph-rest-1.0
+      summary: Create new navigation property to webAccounts for users
       operationId: user.profile_CreateWebAccount
       parameters:
         - name: user-id
@@ -7113,11 +6976,8 @@ paths:
     get:
       tags:
         - users.profile
-      summary: List websites
-      description: Retrieve a list of personWebsite objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-websites?view=graph-rest-1.0
+      summary: Get websites from users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: user.profile_ListWebsite
       parameters:
         - name: user-id
@@ -7227,11 +7087,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personWebsite
-      description: Create a new personWebsite object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-websites?view=graph-rest-1.0
+      summary: Create new navigation property to websites for users
       operationId: user.profile_CreateWebsite
       parameters:
         - name: user-id

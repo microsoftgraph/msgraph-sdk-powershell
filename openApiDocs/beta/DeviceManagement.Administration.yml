@@ -13731,11 +13731,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List auditEvents
-      description: List all the cloudPcAuditEvent objects for the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-1.0
+      summary: Get auditEvents from deviceManagement
+      description: Cloud PC audit event.
       operationId: deviceManagement.virtualEndpoint_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13980,11 +13977,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List cloudPCs
-      description: List the cloudPC devices in a tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-cloudpcs?view=graph-rest-1.0
+      summary: Get cloudPCs from deviceManagement
+      description: Cloud managed virtual desktops.
       operationId: deviceManagement.virtualEndpoint_ListCloudPC
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14285,11 +14279,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcCrossCloudGovernmentOrganizationMapping
-      description: Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-1.0
+      summary: Get crossCloudGovernmentOrganizationMapping from deviceManagement
+      description: Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
       operationId: deviceManagement.virtualEndpoint_GetCrossCloudGovernmentOrganizationMapping
       parameters:
         - name: $select
@@ -14371,11 +14362,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List deviceImages
-      description: List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0
+      summary: Get deviceImages from deviceManagement
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListDeviceImage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14462,11 +14450,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcDeviceImage
-      description: Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0
+      summary: Create new navigation property to deviceImages for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateDeviceImage
       requestBody:
         description: New navigation property
@@ -14620,11 +14604,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List cloudPcExternalPartnerSettings
-      description: Get a list of the cloudPcExternalPartnerSetting objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-1.0
+      summary: Get externalPartnerSettings from deviceManagement
+      description: The external partner settings on a Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListExternalPartnerSetting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14696,11 +14677,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcExternalPartnerSetting
-      description: Create a new cloudPcExternalPartnerSetting object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-1.0
+      summary: Create new navigation property to externalPartnerSettings for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateExternalPartnerSetting
       requestBody:
         description: New navigation property
@@ -14849,11 +14826,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List galleryImages
-      description: List the properties and relationships of the cloudPcGalleryImage objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-1.0
+      summary: Get galleryImages from deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListGalleryImage
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15102,11 +15076,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List onPremisesConnections
-      description: List properties and relationships of the cloudPcOnPremisesConnection objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0
+      summary: Get onPremisesConnections from deviceManagement
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_ListOnPremisesConnection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15214,11 +15185,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcOnPremisesConnection
-      description: Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0
+      summary: Create new navigation property to onPremisesConnections for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateOnPremisesConnection
       requestBody:
         description: New navigation property
@@ -15379,11 +15346,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Get cloudPcOrganizationSettings
-      description: Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one **cloudPcOrganizationSettings** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcorganizationsettings-get?view=graph-rest-1.0
+      summary: Get organizationSettings from deviceManagement
+      description: The Cloud PC organization settings for a tenant.
       operationId: deviceManagement.virtualEndpoint_GetOrganizationSetting
       parameters:
         - name: $select
@@ -15428,11 +15392,7 @@ paths:
     patch:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Update cloudPcOrganizationSettings
-      description: Update the properties of the cloudPcOrganizationSettings object in a tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-1.0
+      summary: Update the navigation property organizationSettings in deviceManagement
       operationId: deviceManagement.virtualEndpoint_UpdateOrganizationSetting
       requestBody:
         description: New navigation property values
@@ -15473,11 +15433,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List provisioningPolicies
-      description: List properties and relationships of the cloudPcProvisioningPolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-1.0
+      summary: Get provisioningPolicies from deviceManagement
+      description: Cloud PC provisioning policy.
       operationId: deviceManagement.virtualEndpoint_ListProvisioningPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15590,11 +15547,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcProvisioningPolicy
-      description: Create a new cloudPcProvisioningPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-1.0
+      summary: Create new navigation property to provisioningPolicies for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateProvisioningPolicy
       requestBody:
         description: New navigation property
@@ -16339,6 +16292,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -16415,6 +16369,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -16619,6 +16574,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -16695,6 +16651,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -17086,11 +17043,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcExportJob
-      description: 'Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report. Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource. When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-1.0
+      summary: Create new navigation property to exportJobs for deviceManagement
       operationId: deviceManagement.virtualEndpoint.report_CreateExportJob
       requestBody:
         description: New navigation property
@@ -17242,11 +17195,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List servicePlans
-      description: 'List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-serviceplans?view=graph-rest-1.0
+      summary: Get servicePlans from deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_ListServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17479,11 +17429,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List cloudPcSharedUseServicePlans
-      description: Get a list of the cloudPcSharedUseServicePlan objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-1.0
+      summary: Get sharedUseServicePlans from deviceManagement
+      description: Cloud PC shared-use service plans.
       operationId: deviceManagement.virtualEndpoint_ListSharedUseServicePlan
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17696,11 +17643,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List snapshots
-      description: Get a list of cloudPcSnapshot objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-1.0
+      summary: Get snapshots from deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_ListSnapshot
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17925,11 +17869,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List supportedRegions
-      description: List the supported regions that are available for creating Cloud PC connections.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-1.0
+      summary: Get supportedRegions from deviceManagement
+      description: Cloud PC supported regions.
       operationId: deviceManagement.virtualEndpoint_ListSupportedRegion
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18146,11 +18087,8 @@ paths:
     get:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: List userSettings
-      description: Retrieve a list of cloudPcUserSetting objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-1.0
+      summary: Get userSettings from deviceManagement
+      description: Cloud PC user settings.
       operationId: deviceManagement.virtualEndpoint_ListUserSetting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18227,11 +18165,7 @@ paths:
     post:
       tags:
         - deviceManagement.virtualEndpoint
-      summary: Create cloudPcUserSetting
-      description: Create a new cloudPcUserSetting object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-1.0
+      summary: Create new navigation property to userSettings for deviceManagement
       operationId: deviceManagement.virtualEndpoint_CreateUserSetting
       requestBody:
         description: New navigation property
@@ -21545,6 +21479,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.mailboxSettings:
@@ -24123,7 +24059,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -24156,7 +24092,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -25989,7 +25925,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -26026,7 +25962,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -26049,7 +25985,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -26091,7 +26027,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -26123,7 +26059,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -26141,7 +26077,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -26149,7 +26085,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -26189,7 +26125,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -26212,7 +26148,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -26230,7 +26166,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -26283,7 +26219,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -26316,14 +26252,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -26573,6 +26509,10 @@ components:
             applicationId:
               type: string
               description: Intune application identifier.
+              nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
               nullable: true
             history:
               type: array
@@ -27123,7 +27063,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -27313,6 +27253,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -27620,6 +27562,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -34544,6 +34499,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -35534,6 +35499,43 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.externalAudienceScope:
       title: externalAudienceScope
       enum:
@@ -35959,11 +35961,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -37379,7 +37381,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -41068,6 +41070,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code

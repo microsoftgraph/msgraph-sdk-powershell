@@ -288,11 +288,8 @@ paths:
     get:
       tags:
         - drives.itemActivityOLD
-      summary: List activities (preview)
-      description: List the recent activities that took place on an item or under a hierarchy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/activities-list?view=graph-rest-1.0
+      summary: Get activities from drives
+      description: The list of recent activities that took place under this drive.
       operationId: drive_ListActivity
       parameters:
         - name: drive-id
@@ -839,11 +836,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List bundles
-      description: 'Get a list of all the [bundles][bundle] in a user''s drive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bundle-list?view=graph-rest-1.0
+      summary: Get bundles from drives
+      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: drive_ListBundle
       parameters:
         - name: drive-id
@@ -1038,9 +1032,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Create new navigation property to bundles for drives
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-post-bundles?view=graph-rest-1.0
       operationId: drive_CreateBundle
       parameters:
         - name: drive-id
@@ -1191,9 +1182,6 @@ paths:
         - drives.driveItem
       summary: Get content for the navigation property bundles from drives
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bundle-list?view=graph-rest-1.0
       operationId: drive_GetBundlesContent
       parameters:
         - name: drive-id
@@ -1290,11 +1278,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List followed items
-      description: "List the items that have been followed by the signed in user.\nThis collection includes items that are in the user's drive as well as items they have access to from other drives."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-list-following?view=graph-rest-1.0
+      summary: Get following from drives
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: drive_ListFollowing
       parameters:
         - name: drive-id
@@ -1608,9 +1593,6 @@ paths:
         - drives.driveItem
       summary: Get content for the navigation property following from drives
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-list-following?view=graph-rest-1.0
       operationId: drive_GetFollowingContent
       parameters:
         - name: drive-id
@@ -2315,11 +2297,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: Get analytics
-      description: "Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemanalytics-get?view=graph-rest-1.0
+      summary: Get analytics from drives
+      description: Analytics about the view activities that took place on this item.
       operationId: drive.item_GetAnalytic
       parameters:
         - name: drive-id
@@ -3532,11 +3511,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List children of a driveItem
-      description: Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
+      summary: Get children from drives
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: drive.item_ListChild
       parameters:
         - name: drive-id
@@ -3739,9 +3715,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Create new navigation property to children for drives
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-post-children?view=graph-rest-1.0
       operationId: drive.item_CreateChild
       parameters:
         - name: drive-id
@@ -3908,9 +3881,6 @@ paths:
         - drives.driveItem
       summary: Get content for the navigation property children from drives
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
       operationId: drive.item_GetChildrenContent
       parameters:
         - name: drive-id
@@ -4958,11 +4928,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from drives
+      description: Version information for a document set version created by a user.
       operationId: drive.item.listItem_ListDocumentSetVersion
       parameters:
         - name: drive-id
@@ -5061,11 +5028,7 @@ paths:
     post:
       tags:
         - drives.driveItem
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for drives
       operationId: drive.item.listItem_CreateDocumentSetVersion
       parameters:
         - name: drive-id
@@ -5271,10 +5234,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: drive.item.listItem.documentSetVersion_restore
       parameters:
         - name: drive-id
@@ -5591,11 +5550,7 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: Update an item in a list
-      description: 'Update the properties on a **[listItem][]**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in drives
       operationId: drive.item.listItem_UpdateField
       parameters:
         - name: drive-id
@@ -5670,10 +5625,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action createLink
-      description: "Create a sharing link for a listItem. The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link. **listItem** resources inherit sharing permissions from the list the item resides in."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-createlink?view=graph-rest-1.0
       operationId: drive.item.listItem_createLink
       parameters:
         - name: drive-id
@@ -6426,10 +6377,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action checkin
-      description: 'Check in a checked out **driveItem** resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: drive.item_checkin
       parameters:
         - name: drive-id
@@ -6475,10 +6422,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action checkout
-      description: 'Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: drive.item_checkout
       parameters:
         - name: drive-id
@@ -6508,10 +6451,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action copy
-      description: 'Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
       operationId: drive.item_copy
       parameters:
         - name: drive-id
@@ -6560,10 +6499,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action createLink
-      description: "You can use **createLink** action to share a driveItem via a sharing link. The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: drive.item_createLink
       parameters:
         - name: drive-id
@@ -6636,10 +6571,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session to allow your app to upload files up to the maximum file size. An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress. To upload a file using an upload session:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createuploadsession?view=graph-rest-1.0
       operationId: drive.item_createUploadSession
       parameters:
         - name: drive-id
@@ -7120,10 +7051,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action follow
-      description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: drive.item_follow
       parameters:
         - name: drive-id
@@ -7286,10 +7213,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action invite
-      description: "Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: drive.item_invite
       parameters:
         - name: drive-id
@@ -7438,10 +7361,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action restore
-      description: 'Restore a driveItem that has been deleted and is currently in the recycle bin. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: drive.item_restore
       parameters:
         - name: drive-id
@@ -7692,10 +7611,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action unfollow
-      description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: drive.item_unfollow
       parameters:
         - name: drive-id
@@ -7768,11 +7683,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List sharing permissions on a driveItem
-      description: List the effective sharing permissions on a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from drives
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: drive.item_ListPermission
       parameters:
         - name: drive-id
@@ -8085,10 +7997,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: drive.item.permission_grant
       parameters:
         - name: drive-id
@@ -8163,10 +8071,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action revokeGrants
-      description: 'Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-1.0
       operationId: drive.item.permission_revokeGrant
       parameters:
         - name: drive-id
@@ -8782,11 +8686,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List thumbnails for a DriveItem
-      description: "Retrieve a collection of ThumbnailSet resources for a DriveItem resource. A DriveItem can be represented by zero or more ThumbnailSet resources.\nEach **thumbnailSet** can have one or more **thumbnail** objects, which are images that represent the item.\nFor example, a **thumbnailSet** may include **thumbnail** objects, such as common ones including `small`, `medium`, or `large`. There are many ways to work with thumbnails on OneDrive.\nHere are the most common ones:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-thumbnails?view=graph-rest-1.0
+      summary: Get thumbnails from drives
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: drive.item_ListThumbnail
       parameters:
         - name: drive-id
@@ -9100,11 +9001,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List versions of a driveItem
-      description: "OneDrive and SharePoint can be configured to retain the history for files.\nDepending on the service and configuration, a new version can be created for each edit, each time the file is saved, manually, or never. Previous versions of a document may be retained for a finite period of time depending on admin settings which may be unique per user or location."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
+      summary: Get versions from drives
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: drive.item_ListVersion
       parameters:
         - name: drive-id
@@ -9393,9 +9291,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property versions from drives
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
       operationId: drive.item_GetVersionsContent
       parameters:
         - name: drive-id
@@ -9486,10 +9381,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: drive.item.version_restoreVersion
       parameters:
         - name: drive-id
@@ -9827,11 +9718,7 @@ paths:
     get:
       tags:
         - drives.list
-      summary: List columns in a list
-      description: 'Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0
+      summary: Get columns from drives
       operationId: drive.list_ListColumn
       parameters:
         - name: drive-id
@@ -9991,11 +9878,7 @@ paths:
     post:
       tags:
         - drives.list
-      summary: Create columnDefinition
-      description: 'Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for drives
       operationId: drive.list_CreateColumn
       parameters:
         - name: drive-id
@@ -10303,11 +10186,7 @@ paths:
     get:
       tags:
         - drives.list
-      summary: List contentTypes in a list
-      description: 'Get the collection of [contentType][contentType] resources in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0
+      summary: Get contentTypes from drives
       operationId: drive.list_ListContentType
       parameters:
         - name: drive-id
@@ -11541,11 +11420,8 @@ paths:
     get:
       tags:
         - drives.list
-      summary: List columns in a content type
-      description: 'Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [content type][contentType].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0
+      summary: Get columns from drives
+      description: The collection of column definitions for this contentType.
       operationId: drive.list.contentType_ListColumn
       parameters:
         - name: drive-id
@@ -11713,11 +11589,7 @@ paths:
     post:
       tags:
         - drives.list
-      summary: Create columnDefinition for a content type
-      description: 'Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for drives
       operationId: drive.list.contentType_CreateColumn
       parameters:
         - name: drive-id
@@ -12075,10 +11947,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action associateWithHubSites
-      description: 'Associate a [content type][contentType] with a list of hub sites.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
       operationId: drive.list.contentType_associateGraphWPreHubSite
       parameters:
         - name: drive-id
@@ -12126,10 +11994,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action copyToDefaultContentLocation
-      description: 'Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
       operationId: drive.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: drive-id
@@ -12213,10 +12077,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action publish
-      description: 'Publishes a [contentType][] present in a content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
       operationId: drive.list.contentType_publish
       parameters:
         - name: drive-id
@@ -12246,10 +12106,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action unpublish
-      description: 'Unpublish a [contentType][] from a content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
       operationId: drive.list.contentType_unpublish
       parameters:
         - name: drive-id
@@ -12301,10 +12157,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action addCopy
-      description: 'Add a copy of a [content type][contentType] from a [site][site] to a [list][list].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
       operationId: drive.list.contentType_addCopy
       parameters:
         - name: drive-id
@@ -12342,10 +12194,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action addCopyFromContentTypeHub
-      description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
       operationId: drive.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: drive-id
@@ -12580,11 +12428,8 @@ paths:
     get:
       tags:
         - drives.list
-      summary: Enumerate items in a list
-      description: 'Get the collection of [items][item] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0
+      summary: Get items from drives
+      description: All items contained in the list.
       operationId: drive.list_ListItem
       parameters:
         - name: drive-id
@@ -12701,11 +12546,7 @@ paths:
     post:
       tags:
         - drives.list
-      summary: Create a new item in a list
-      description: 'Create a new [listItem][] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0
+      summary: Create new navigation property to items for drives
       operationId: drive.list_CreateItem
       parameters:
         - name: drive-id
@@ -13588,11 +13429,8 @@ paths:
     get:
       tags:
         - drives.list
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from drives
+      description: Version information for a document set version created by a user.
       operationId: drive.list.item_ListDocumentSetVersion
       parameters:
         - name: drive-id
@@ -13691,11 +13529,7 @@ paths:
     post:
       tags:
         - drives.list
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for drives
       operationId: drive.list.item_CreateDocumentSetVersion
       parameters:
         - name: drive-id
@@ -13901,10 +13735,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: drive.list.item.documentSetVersion_restore
       parameters:
         - name: drive-id
@@ -14221,11 +14051,7 @@ paths:
     patch:
       tags:
         - drives.list
-      summary: Update an item in a list
-      description: 'Update the properties on a **[listItem][]**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in drives
       operationId: drive.list.item_UpdateField
       parameters:
         - name: drive-id
@@ -14300,10 +14126,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action createLink
-      description: "Create a sharing link for a listItem. The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link. **listItem** resources inherit sharing permissions from the list the item resides in."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-createlink?view=graph-rest-1.0
       operationId: drive.list.item_createLink
       parameters:
         - name: drive-id
@@ -16418,11 +16240,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: Get driveItem
-      description: Retrieve the metadata for a driveItem in a drive by file system path or ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0
+      summary: Get root from drives
+      description: The root folder of the drive. Read-only.
       operationId: drive_GetRoot
       parameters:
         - name: drive-id
@@ -16754,11 +16573,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: Get analytics
-      description: "Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemanalytics-get?view=graph-rest-1.0
+      summary: Get analytics from drives
+      description: Analytics about the view activities that took place on this item.
       operationId: drive.root_GetAnalytic
       parameters:
         - name: drive-id
@@ -17811,11 +17627,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List children of a driveItem
-      description: Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
+      summary: Get children from drives
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: drive.root_ListChild
       parameters:
         - name: drive-id
@@ -18010,9 +17823,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Create new navigation property to children for drives
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-post-children?view=graph-rest-1.0
       operationId: drive.root_CreateChild
       parameters:
         - name: drive-id
@@ -18163,9 +17973,6 @@ paths:
         - drives.driveItem
       summary: Get content for the navigation property children from drives
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
       operationId: drive.root_GetChildrenContent
       parameters:
         - name: drive-id
@@ -18264,9 +18071,6 @@ paths:
         - drives.driveItem
       summary: Get content for the navigation property root from drives
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0
       operationId: drive_GetRootContent
       parameters:
         - name: drive-id
@@ -19064,11 +18868,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from drives
+      description: Version information for a document set version created by a user.
       operationId: drive.root.listItem_ListDocumentSetVersion
       parameters:
         - name: drive-id
@@ -19159,11 +18960,7 @@ paths:
     post:
       tags:
         - drives.driveItem
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for drives
       operationId: drive.root.listItem_CreateDocumentSetVersion
       parameters:
         - name: drive-id
@@ -19337,10 +19134,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: drive.root.listItem.documentSetVersion_restore
       parameters:
         - name: drive-id
@@ -19609,11 +19402,7 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: Update an item in a list
-      description: 'Update the properties on a **[listItem][]**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in drives
       operationId: drive.root.listItem_UpdateField
       parameters:
         - name: drive-id
@@ -19672,10 +19461,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action createLink
-      description: "Create a sharing link for a listItem. The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link. **listItem** resources inherit sharing permissions from the list the item resides in."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-createlink?view=graph-rest-1.0
       operationId: drive.root.listItem_createLink
       parameters:
         - name: drive-id
@@ -20324,10 +20109,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action checkin
-      description: 'Check in a checked out **driveItem** resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: drive.root_checkin
       parameters:
         - name: drive-id
@@ -20365,10 +20146,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action checkout
-      description: 'Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: drive.root_checkout
       parameters:
         - name: drive-id
@@ -20390,10 +20167,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action copy
-      description: 'Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
       operationId: drive.root_copy
       parameters:
         - name: drive-id
@@ -20434,10 +20207,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action createLink
-      description: "You can use **createLink** action to share a driveItem via a sharing link. The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: drive.root_createLink
       parameters:
         - name: drive-id
@@ -20502,10 +20271,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session to allow your app to upload files up to the maximum file size. An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress. To upload a file using an upload session:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createuploadsession?view=graph-rest-1.0
       operationId: drive.root_createUploadSession
       parameters:
         - name: drive-id
@@ -20954,10 +20719,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action follow
-      description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: drive.root_follow
       parameters:
         - name: drive-id
@@ -21104,10 +20865,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action invite
-      description: "Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: drive.root_invite
       parameters:
         - name: drive-id
@@ -21240,10 +20997,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action restore
-      description: 'Restore a driveItem that has been deleted and is currently in the recycle bin. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: drive.root_restore
       parameters:
         - name: drive-id
@@ -21478,10 +21231,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action unfollow
-      description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: drive.root_unfollow
       parameters:
         - name: drive-id
@@ -21538,11 +21287,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List sharing permissions on a driveItem
-      description: List the effective sharing permissions on a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from drives
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: drive.root_ListPermission
       parameters:
         - name: drive-id
@@ -21815,10 +21561,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: drive.root.permission_grant
       parameters:
         - name: drive-id
@@ -21885,10 +21627,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action revokeGrants
-      description: 'Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-1.0
       operationId: drive.root.permission_revokeGrant
       parameters:
         - name: drive-id
@@ -22408,11 +22146,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List thumbnails for a DriveItem
-      description: "Retrieve a collection of ThumbnailSet resources for a DriveItem resource. A DriveItem can be represented by zero or more ThumbnailSet resources.\nEach **thumbnailSet** can have one or more **thumbnail** objects, which are images that represent the item.\nFor example, a **thumbnailSet** may include **thumbnail** objects, such as common ones including `small`, `medium`, or `large`. There are many ways to work with thumbnails on OneDrive.\nHere are the most common ones:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-thumbnails?view=graph-rest-1.0
+      summary: Get thumbnails from drives
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: drive.root_ListThumbnail
       parameters:
         - name: drive-id
@@ -22678,11 +22413,8 @@ paths:
     get:
       tags:
         - drives.driveItem
-      summary: List versions of a driveItem
-      description: "OneDrive and SharePoint can be configured to retain the history for files.\nDepending on the service and configuration, a new version can be created for each edit, each time the file is saved, manually, or never. Previous versions of a document may be retained for a finite period of time depending on admin settings which may be unique per user or location."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
+      summary: Get versions from drives
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: drive.root_ListVersion
       parameters:
         - name: drive-id
@@ -22931,9 +22663,6 @@ paths:
       tags:
         - drives.driveItem
       summary: Get content for the navigation property versions from drives
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
       operationId: drive.root_GetVersionsContent
       parameters:
         - name: drive-id
@@ -23008,10 +22737,6 @@ paths:
       tags:
         - drives.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: drive.root.version_restoreVersion
       parameters:
         - name: drive-id
@@ -23890,11 +23615,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List activities (preview)
-      description: List the recent activities that took place on an item or under a hierarchy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/activities-list?view=graph-rest-1.0
+      summary: Get activities from groups
+      description: The list of recent activities that took place under this drive.
       operationId: group.drive_ListActivity
       parameters:
         - name: group-id
@@ -24521,11 +24243,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List bundles
-      description: 'Get a list of all the [bundles][bundle] in a user''s drive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bundle-list?view=graph-rest-1.0
+      summary: Get bundles from groups
+      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: group.drive_ListBundle
       parameters:
         - name: group-id
@@ -24728,9 +24447,6 @@ paths:
       tags:
         - groups.drive
       summary: Create new navigation property to bundles for groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-post-bundles?view=graph-rest-1.0
       operationId: group.drive_CreateBundle
       parameters:
         - name: group-id
@@ -24897,9 +24613,6 @@ paths:
         - groups.drive
       summary: Get content for the navigation property bundles from groups
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bundle-list?view=graph-rest-1.0
       operationId: group.drive_GetBundlesContent
       parameters:
         - name: group-id
@@ -25020,11 +24733,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List followed items
-      description: "List the items that have been followed by the signed in user.\nThis collection includes items that are in the user's drive as well as items they have access to from other drives."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-list-following?view=graph-rest-1.0
+      summary: Get following from groups
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: group.drive_ListFollowing
       parameters:
         - name: group-id
@@ -25354,9 +25064,6 @@ paths:
         - groups.drive
       summary: Get content for the navigation property following from groups
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-list-following?view=graph-rest-1.0
       operationId: group.drive_GetFollowingContent
       parameters:
         - name: group-id
@@ -26149,11 +25856,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: Get analytics
-      description: "Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemanalytics-get?view=graph-rest-1.0
+      summary: Get analytics from groups
+      description: Analytics about the view activities that took place on this item.
       operationId: group.drive.item_GetAnalytic
       parameters:
         - name: group-id
@@ -27526,11 +27230,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List children of a driveItem
-      description: Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
+      summary: Get children from groups
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: group.drive.item_ListChild
       parameters:
         - name: group-id
@@ -27741,9 +27442,6 @@ paths:
       tags:
         - groups.drive
       summary: Create new navigation property to children for groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-post-children?view=graph-rest-1.0
       operationId: group.drive.item_CreateChild
       parameters:
         - name: group-id
@@ -27926,9 +27624,6 @@ paths:
         - groups.drive
       summary: Get content for the navigation property children from groups
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
       operationId: group.drive.item_GetChildrenContent
       parameters:
         - name: group-id
@@ -29128,11 +28823,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from groups
+      description: Version information for a document set version created by a user.
       operationId: group.drive.item.listItem_ListDocumentSetVersion
       parameters:
         - name: group-id
@@ -29239,11 +28931,7 @@ paths:
     post:
       tags:
         - groups.drive
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for groups
       operationId: group.drive.item.listItem_CreateDocumentSetVersion
       parameters:
         - name: group-id
@@ -29800,11 +29488,7 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: Update an item in a list
-      description: 'Update the properties on a **[listItem][]**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in groups
       operationId: group.drive.item.listItem_UpdateField
       parameters:
         - name: group-id
@@ -30436,11 +30120,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List sharing permissions on a driveItem
-      description: List the effective sharing permissions on a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: group.drive.item_ListPermission
       parameters:
         - name: group-id
@@ -31396,11 +31077,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List thumbnails for a DriveItem
-      description: "Retrieve a collection of ThumbnailSet resources for a DriveItem resource. A DriveItem can be represented by zero or more ThumbnailSet resources.\nEach **thumbnailSet** can have one or more **thumbnail** objects, which are images that represent the item.\nFor example, a **thumbnailSet** may include **thumbnail** objects, such as common ones including `small`, `medium`, or `large`. There are many ways to work with thumbnails on OneDrive.\nHere are the most common ones:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-thumbnails?view=graph-rest-1.0
+      summary: Get thumbnails from groups
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: group.drive.item_ListThumbnail
       parameters:
         - name: group-id
@@ -31762,11 +31440,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List versions of a driveItem
-      description: "OneDrive and SharePoint can be configured to retain the history for files.\nDepending on the service and configuration, a new version can be created for each edit, each time the file is saved, manually, or never. Previous versions of a document may be retained for a finite period of time depending on admin settings which may be unique per user or location."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
+      summary: Get versions from groups
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: group.drive.item_ListVersion
       parameters:
         - name: group-id
@@ -32095,9 +31770,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property versions from groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
       operationId: group.drive.item_GetVersionsContent
       parameters:
         - name: group-id
@@ -32560,11 +32232,7 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List columns in a list
-      description: 'Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0
+      summary: Get columns from groups
       operationId: group.drive.list_ListColumn
       parameters:
         - name: group-id
@@ -32732,11 +32400,7 @@ paths:
     post:
       tags:
         - groups.drive
-      summary: Create columnDefinition
-      description: 'Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for groups
       operationId: group.drive.list_CreateColumn
       parameters:
         - name: group-id
@@ -33092,11 +32756,7 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List contentTypes in a list
-      description: 'Get the collection of [contentType][contentType] resources in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0
+      summary: Get contentTypes from groups
       operationId: group.drive.list_ListContentType
       parameters:
         - name: group-id
@@ -34474,11 +34134,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List columns in a content type
-      description: 'Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [content type][contentType].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0
+      summary: Get columns from groups
+      description: The collection of column definitions for this contentType.
       operationId: group.drive.list.contentType_ListColumn
       parameters:
         - name: group-id
@@ -34654,11 +34311,7 @@ paths:
     post:
       tags:
         - groups.drive
-      summary: Create columnDefinition for a content type
-      description: 'Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for groups
       operationId: group.drive.list.contentType_CreateColumn
       parameters:
         - name: group-id
@@ -35183,11 +34836,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: Enumerate items in a list
-      description: 'Get the collection of [items][item] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0
+      summary: Get items from groups
+      description: All items contained in the list.
       operationId: group.drive.list_ListItem
       parameters:
         - name: group-id
@@ -35312,11 +34962,7 @@ paths:
     post:
       tags:
         - groups.drive
-      summary: Create a new item in a list
-      description: 'Create a new [listItem][] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0
+      summary: Create new navigation property to items for groups
       operationId: group.drive.list_CreateItem
       parameters:
         - name: group-id
@@ -36319,11 +35965,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from groups
+      description: Version information for a document set version created by a user.
       operationId: group.drive.list.item_ListDocumentSetVersion
       parameters:
         - name: group-id
@@ -36430,11 +36073,7 @@ paths:
     post:
       tags:
         - groups.drive
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for groups
       operationId: group.drive.list.item_CreateDocumentSetVersion
       parameters:
         - name: group-id
@@ -36991,11 +36630,7 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: Update an item in a list
-      description: 'Update the properties on a **[listItem][]**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in groups
       operationId: group.drive.list.item_UpdateField
       parameters:
         - name: group-id
@@ -38351,11 +37986,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: Get driveItem
-      description: Retrieve the metadata for a driveItem in a drive by file system path or ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0
+      summary: Get root from groups
+      description: The root folder of the drive. Read-only.
       operationId: group.drive_GetRoot
       parameters:
         - name: group-id
@@ -38735,11 +38367,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: Get analytics
-      description: "Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemanalytics-get?view=graph-rest-1.0
+      summary: Get analytics from groups
+      description: Analytics about the view activities that took place on this item.
       operationId: group.drive.root_GetAnalytic
       parameters:
         - name: group-id
@@ -39952,11 +39581,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List children of a driveItem
-      description: Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
+      summary: Get children from groups
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: group.drive.root_ListChild
       parameters:
         - name: group-id
@@ -40159,9 +39785,6 @@ paths:
       tags:
         - groups.drive
       summary: Create new navigation property to children for groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-post-children?view=graph-rest-1.0
       operationId: group.drive.root_CreateChild
       parameters:
         - name: group-id
@@ -40328,9 +39951,6 @@ paths:
         - groups.drive
       summary: Get content for the navigation property children from groups
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
       operationId: group.drive.root_GetChildrenContent
       parameters:
         - name: group-id
@@ -40453,9 +40073,6 @@ paths:
         - groups.drive
       summary: Get content for the navigation property root from groups
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0
       operationId: group.drive_GetRootContent
       parameters:
         - name: group-id
@@ -41381,11 +40998,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from groups
+      description: Version information for a document set version created by a user.
       operationId: group.drive.root.listItem_ListDocumentSetVersion
       parameters:
         - name: group-id
@@ -41484,11 +41098,7 @@ paths:
     post:
       tags:
         - groups.drive
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for groups
       operationId: group.drive.root.listItem_CreateDocumentSetVersion
       parameters:
         - name: group-id
@@ -41973,11 +41583,7 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: Update an item in a list
-      description: 'Update the properties on a **[listItem][]**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in groups
       operationId: group.drive.root.listItem_UpdateField
       parameters:
         - name: group-id
@@ -42521,11 +42127,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List sharing permissions on a driveItem
-      description: List the effective sharing permissions on a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from groups
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: group.drive.root_ListPermission
       parameters:
         - name: group-id
@@ -43361,11 +42964,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List thumbnails for a DriveItem
-      description: "Retrieve a collection of ThumbnailSet resources for a DriveItem resource. A DriveItem can be represented by zero or more ThumbnailSet resources.\nEach **thumbnailSet** can have one or more **thumbnail** objects, which are images that represent the item.\nFor example, a **thumbnailSet** may include **thumbnail** objects, such as common ones including `small`, `medium`, or `large`. There are many ways to work with thumbnails on OneDrive.\nHere are the most common ones:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-thumbnails?view=graph-rest-1.0
+      summary: Get thumbnails from groups
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: group.drive.root_ListThumbnail
       parameters:
         - name: group-id
@@ -43679,11 +43279,8 @@ paths:
     get:
       tags:
         - groups.drive
-      summary: List versions of a driveItem
-      description: "OneDrive and SharePoint can be configured to retain the history for files.\nDepending on the service and configuration, a new version can be created for each edit, each time the file is saved, manually, or never. Previous versions of a document may be retained for a finite period of time depending on admin settings which may be unique per user or location."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
+      summary: Get versions from groups
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: group.drive.root_ListVersion
       parameters:
         - name: group-id
@@ -43972,9 +43569,6 @@ paths:
       tags:
         - groups.drive
       summary: Get content for the navigation property versions from groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
       operationId: group.drive.root_GetVersionsContent
       parameters:
         - name: group-id
@@ -44834,11 +44428,8 @@ paths:
     get:
       tags:
         - shares.driveItem
-      summary: Accessing shared DriveItems
-      description: 'Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/shares-get?view=graph-rest-1.0
+      summary: Get driveItem from shares
+      description: Used to access the underlying driveItem
       operationId: share_GetDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -44948,9 +44539,6 @@ paths:
         - shares.driveItem
       summary: Get content for the navigation property driveItem from shares
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/shares-get?view=graph-rest-1.0
       operationId: share_GetDriveItemContent
       parameters:
         - name: sharedDriveItem-id
@@ -45669,11 +45257,7 @@ paths:
     get:
       tags:
         - shares.list
-      summary: List columns in a list
-      description: 'Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0
+      summary: Get columns from shares
       operationId: share.list_ListColumn
       parameters:
         - name: sharedDriveItem-id
@@ -45833,11 +45417,7 @@ paths:
     post:
       tags:
         - shares.list
-      summary: Create columnDefinition
-      description: 'Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for shares
       operationId: share.list_CreateColumn
       parameters:
         - name: sharedDriveItem-id
@@ -46145,11 +45725,7 @@ paths:
     get:
       tags:
         - shares.list
-      summary: List contentTypes in a list
-      description: 'Get the collection of [contentType][contentType] resources in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0
+      summary: Get contentTypes from shares
       operationId: share.list_ListContentType
       parameters:
         - name: sharedDriveItem-id
@@ -47383,11 +46959,8 @@ paths:
     get:
       tags:
         - shares.list
-      summary: List columns in a content type
-      description: 'Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [content type][contentType].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0
+      summary: Get columns from shares
+      description: The collection of column definitions for this contentType.
       operationId: share.list.contentType_ListColumn
       parameters:
         - name: sharedDriveItem-id
@@ -47555,11 +47128,7 @@ paths:
     post:
       tags:
         - shares.list
-      summary: Create columnDefinition for a content type
-      description: 'Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for shares
       operationId: share.list.contentType_CreateColumn
       parameters:
         - name: sharedDriveItem-id
@@ -47917,10 +47486,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action associateWithHubSites
-      description: 'Associate a [content type][contentType] with a list of hub sites.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
       operationId: share.list.contentType_associateGraphWPreHubSite
       parameters:
         - name: sharedDriveItem-id
@@ -47968,10 +47533,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action copyToDefaultContentLocation
-      description: 'Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
       operationId: share.list.contentType_copyToDefaultContentLocation
       parameters:
         - name: sharedDriveItem-id
@@ -48055,10 +47616,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action publish
-      description: 'Publishes a [contentType][] present in a content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
       operationId: share.list.contentType_publish
       parameters:
         - name: sharedDriveItem-id
@@ -48088,10 +47645,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action unpublish
-      description: 'Unpublish a [contentType][] from a content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
       operationId: share.list.contentType_unpublish
       parameters:
         - name: sharedDriveItem-id
@@ -48143,10 +47696,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action addCopy
-      description: 'Add a copy of a [content type][contentType] from a [site][site] to a [list][list].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
       operationId: share.list.contentType_addCopy
       parameters:
         - name: sharedDriveItem-id
@@ -48184,10 +47733,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action addCopyFromContentTypeHub
-      description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
       operationId: share.list.contentType_addCopyFromContentTypeHub
       parameters:
         - name: sharedDriveItem-id
@@ -48422,11 +47967,8 @@ paths:
     get:
       tags:
         - shares.list
-      summary: Enumerate items in a list
-      description: 'Get the collection of [items][item] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0
+      summary: Get items from shares
+      description: All items contained in the list.
       operationId: share.list_ListItem
       parameters:
         - name: sharedDriveItem-id
@@ -48543,11 +48085,7 @@ paths:
     post:
       tags:
         - shares.list
-      summary: Create a new item in a list
-      description: 'Create a new [listItem][] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0
+      summary: Create new navigation property to items for shares
       operationId: share.list_CreateItem
       parameters:
         - name: sharedDriveItem-id
@@ -49430,11 +48968,8 @@ paths:
     get:
       tags:
         - shares.list
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from shares
+      description: Version information for a document set version created by a user.
       operationId: share.list.item_ListDocumentSetVersion
       parameters:
         - name: sharedDriveItem-id
@@ -49533,11 +49068,7 @@ paths:
     post:
       tags:
         - shares.list
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for shares
       operationId: share.list.item_CreateDocumentSetVersion
       parameters:
         - name: sharedDriveItem-id
@@ -49743,10 +49274,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: share.list.item.documentSetVersion_restore
       parameters:
         - name: sharedDriveItem-id
@@ -50063,11 +49590,7 @@ paths:
     patch:
       tags:
         - shares.list
-      summary: Update an item in a list
-      description: 'Update the properties on a **[listItem][]**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in shares
       operationId: share.list.item_UpdateField
       parameters:
         - name: sharedDriveItem-id
@@ -50142,10 +49665,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action createLink
-      description: "Create a sharing link for a listItem. The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link. **listItem** resources inherit sharing permissions from the list the item resides in."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-createlink?view=graph-rest-1.0
       operationId: share.list.item_createLink
       parameters:
         - name: sharedDriveItem-id
@@ -52478,11 +51997,8 @@ paths:
     get:
       tags:
         - shares.listItem
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from shares
+      description: Version information for a document set version created by a user.
       operationId: share.listItem_ListDocumentSetVersion
       parameters:
         - name: sharedDriveItem-id
@@ -52573,11 +52089,7 @@ paths:
     post:
       tags:
         - shares.listItem
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for shares
       operationId: share.listItem_CreateDocumentSetVersion
       parameters:
         - name: sharedDriveItem-id
@@ -52751,10 +52263,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: share.listItem.documentSetVersion_restore
       parameters:
         - name: sharedDriveItem-id
@@ -53023,11 +52531,7 @@ paths:
     patch:
       tags:
         - shares.listItem
-      summary: Update an item in a list
-      description: 'Update the properties on a **[listItem][]**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in shares
       operationId: share.listItem_UpdateField
       parameters:
         - name: sharedDriveItem-id
@@ -53086,10 +52590,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action createLink
-      description: "Create a sharing link for a listItem. The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link. **listItem** resources inherit sharing permissions from the list the item resides in."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-createlink?view=graph-rest-1.0
       operationId: share.listItem_createLink
       parameters:
         - name: sharedDriveItem-id
@@ -53817,10 +53317,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: share.permission_grant
       parameters:
         - name: sharedDriveItem-id
@@ -53879,10 +53375,6 @@ paths:
       tags:
         - shares.Actions
       summary: Invoke action revokeGrants
-      description: 'Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-1.0
       operationId: share.permission_revokeGrant
       parameters:
         - name: sharedDriveItem-id
@@ -54202,11 +53694,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: Get Drive
-      description: 'Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-get?view=graph-rest-1.0
+      summary: Get drive from users
+      description: The user's OneDrive. Read-only.
       operationId: user_GetDrive
       parameters:
         - name: user-id
@@ -54293,11 +53782,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List available drives
-      description: 'Retrieve the list of Drive resources available for a target User, Group, or Site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-list?view=graph-rest-1.0
+      summary: Get drives from users
+      description: A collection of drives available for this user. Read-only.
       operationId: user_ListDrive
       parameters:
         - name: user-id
@@ -54647,11 +54133,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List activities (preview)
-      description: List the recent activities that took place on an item or under a hierarchy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/activities-list?view=graph-rest-1.0
+      summary: Get activities from users
+      description: The list of recent activities that took place under this drive.
       operationId: user.drive_ListActivity
       parameters:
         - name: user-id
@@ -55338,11 +54821,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List bundles
-      description: 'Get a list of all the [bundles][bundle] in a user''s drive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bundle-list?view=graph-rest-1.0
+      summary: Get bundles from users
+      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
       operationId: user.drive_ListBundle
       parameters:
         - name: user-id
@@ -55551,9 +55031,6 @@ paths:
       tags:
         - users.drive
       summary: Create new navigation property to bundles for users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-post-bundles?view=graph-rest-1.0
       operationId: user.drive_CreateBundle
       parameters:
         - name: user-id
@@ -55732,9 +55209,6 @@ paths:
         - users.drive
       summary: Get content for the navigation property bundles from users
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bundle-list?view=graph-rest-1.0
       operationId: user.drive_GetBundlesContent
       parameters:
         - name: user-id
@@ -55873,11 +55347,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List followed items
-      description: "List the items that have been followed by the signed in user.\nThis collection includes items that are in the user's drive as well as items they have access to from other drives."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-list-following?view=graph-rest-1.0
+      summary: Get following from users
+      description: The list of items the user is following. Only in OneDrive for Business.
       operationId: user.drive_ListFollowing
       parameters:
         - name: user-id
@@ -56219,9 +55690,6 @@ paths:
         - users.drive
       summary: Get content for the navigation property following from users
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/drive-list-following?view=graph-rest-1.0
       operationId: user.drive_GetFollowingContent
       parameters:
         - name: user-id
@@ -57080,11 +56548,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: Get analytics
-      description: "Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemanalytics-get?view=graph-rest-1.0
+      summary: Get analytics from users
+      description: Analytics about the view activities that took place on this item.
       operationId: user.drive.item_GetAnalytic
       parameters:
         - name: user-id
@@ -58577,11 +58042,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List children of a driveItem
-      description: Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
+      summary: Get children from users
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: user.drive.item_ListChild
       parameters:
         - name: user-id
@@ -58798,9 +58260,6 @@ paths:
       tags:
         - users.drive
       summary: Create new navigation property to children for users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-post-children?view=graph-rest-1.0
       operationId: user.drive.item_CreateChild
       parameters:
         - name: user-id
@@ -58995,9 +58454,6 @@ paths:
         - users.drive
       summary: Get content for the navigation property children from users
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
       operationId: user.drive.item_GetChildrenContent
       parameters:
         - name: user-id
@@ -60311,11 +59767,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from users
+      description: Version information for a document set version created by a user.
       operationId: user.drive.item.listItem_ListDocumentSetVersion
       parameters:
         - name: user-id
@@ -60428,11 +59881,7 @@ paths:
     post:
       tags:
         - users.drive
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for users
       operationId: user.drive.item.listItem_CreateDocumentSetVersion
       parameters:
         - name: user-id
@@ -61043,11 +60492,7 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: Update an item in a list
-      description: 'Update the properties on a **[listItem][]**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in users
       operationId: user.drive.item.listItem_UpdateField
       parameters:
         - name: user-id
@@ -61745,11 +61190,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List sharing permissions on a driveItem
-      description: List the effective sharing permissions on a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from users
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: user.drive.item_ListPermission
       parameters:
         - name: user-id
@@ -62795,11 +62237,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List thumbnails for a DriveItem
-      description: "Retrieve a collection of ThumbnailSet resources for a DriveItem resource. A DriveItem can be represented by zero or more ThumbnailSet resources.\nEach **thumbnailSet** can have one or more **thumbnail** objects, which are images that represent the item.\nFor example, a **thumbnailSet** may include **thumbnail** objects, such as common ones including `small`, `medium`, or `large`. There are many ways to work with thumbnails on OneDrive.\nHere are the most common ones:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-thumbnails?view=graph-rest-1.0
+      summary: Get thumbnails from users
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: user.drive.item_ListThumbnail
       parameters:
         - name: user-id
@@ -63197,11 +62636,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List versions of a driveItem
-      description: "OneDrive and SharePoint can be configured to retain the history for files.\nDepending on the service and configuration, a new version can be created for each edit, each time the file is saved, manually, or never. Previous versions of a document may be retained for a finite period of time depending on admin settings which may be unique per user or location."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
+      summary: Get versions from users
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: user.drive.item_ListVersion
       parameters:
         - name: user-id
@@ -63560,9 +62996,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property versions from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
       operationId: user.drive.item_GetVersionsContent
       parameters:
         - name: user-id
@@ -64079,11 +63512,7 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List columns in a list
-      description: 'Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-list-columns?view=graph-rest-1.0
+      summary: Get columns from users
       operationId: user.drive.list_ListColumn
       parameters:
         - name: user-id
@@ -64257,11 +63686,7 @@ paths:
     post:
       tags:
         - users.drive
-      summary: Create columnDefinition
-      description: 'Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for users
       operationId: user.drive.list_CreateColumn
       parameters:
         - name: user-id
@@ -64653,11 +64078,7 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List contentTypes in a list
-      description: 'Get the collection of [contentType][contentType] resources in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0
+      summary: Get contentTypes from users
       operationId: user.drive.list_ListContentType
       parameters:
         - name: user-id
@@ -66143,11 +65564,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List columns in a content type
-      description: 'Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [content type][contentType].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0
+      summary: Get columns from users
+      description: The collection of column definitions for this contentType.
       operationId: user.drive.list.contentType_ListColumn
       parameters:
         - name: user-id
@@ -66329,11 +65747,7 @@ paths:
     post:
       tags:
         - users.drive
-      summary: Create columnDefinition for a content type
-      description: 'Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0
+      summary: Create new navigation property to columns for users
       operationId: user.drive.list.contentType_CreateColumn
       parameters:
         - name: user-id
@@ -66906,11 +66320,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: Enumerate items in a list
-      description: 'Get the collection of [items][item] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0
+      summary: Get items from users
+      description: All items contained in the list.
       operationId: user.drive.list_ListItem
       parameters:
         - name: user-id
@@ -67041,11 +66452,7 @@ paths:
     post:
       tags:
         - users.drive
-      summary: Create a new item in a list
-      description: 'Create a new [listItem][] in a [list][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0
+      summary: Create new navigation property to items for users
       operationId: user.drive.list_CreateItem
       parameters:
         - name: user-id
@@ -68138,11 +67545,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from users
+      description: Version information for a document set version created by a user.
       operationId: user.drive.list.item_ListDocumentSetVersion
       parameters:
         - name: user-id
@@ -68255,11 +67659,7 @@ paths:
     post:
       tags:
         - users.drive
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for users
       operationId: user.drive.list.item_CreateDocumentSetVersion
       parameters:
         - name: user-id
@@ -68870,11 +68270,7 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: Update an item in a list
-      description: 'Update the properties on a **[listItem][]**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in users
       operationId: user.drive.list.item_UpdateField
       parameters:
         - name: user-id
@@ -70374,11 +69770,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: Get driveItem
-      description: Retrieve the metadata for a driveItem in a drive by file system path or ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0
+      summary: Get root from users
+      description: The root folder of the drive. Read-only.
       operationId: user.drive_GetRoot
       parameters:
         - name: user-id
@@ -70794,11 +70187,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: Get analytics
-      description: "Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/itemanalytics-get?view=graph-rest-1.0
+      summary: Get analytics from users
+      description: Analytics about the view activities that took place on this item.
       operationId: user.drive.root_GetAnalytic
       parameters:
         - name: user-id
@@ -72131,11 +71521,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List children of a driveItem
-      description: Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
+      summary: Get children from users
+      description: Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
       operationId: user.drive.root_ListChild
       parameters:
         - name: user-id
@@ -72344,9 +71731,6 @@ paths:
       tags:
         - users.drive
       summary: Create new navigation property to children for users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-post-children?view=graph-rest-1.0
       operationId: user.drive.root_CreateChild
       parameters:
         - name: user-id
@@ -72525,9 +71909,6 @@ paths:
         - users.drive
       summary: Get content for the navigation property children from users
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0
       operationId: user.drive.root_GetChildrenContent
       parameters:
         - name: user-id
@@ -72668,9 +72049,6 @@ paths:
         - users.drive
       summary: Get content for the navigation property root from users
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0
       operationId: user.drive_GetRootContent
       parameters:
         - name: user-id
@@ -73692,11 +73070,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List documentSetVersions
-      description: Get a list of the versions of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-list-documentsetversions?view=graph-rest-1.0
+      summary: Get documentSetVersions from users
+      description: Version information for a document set version created by a user.
       operationId: user.drive.root.listItem_ListDocumentSetVersion
       parameters:
         - name: user-id
@@ -73801,11 +73176,7 @@ paths:
     post:
       tags:
         - users.drive
-      summary: Create documentSetVersion
-      description: Create a new version of a document set item in a list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-post-documentsetversions?view=graph-rest-1.0
+      summary: Create new navigation property to documentSetVersions for users
       operationId: user.drive.root.listItem_CreateDocumentSetVersion
       parameters:
         - name: user-id
@@ -74344,11 +73715,7 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: Update an item in a list
-      description: 'Update the properties on a **[listItem][]**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0
+      summary: Update the navigation property fields in users
       operationId: user.drive.root.listItem_UpdateField
       parameters:
         - name: user-id
@@ -74958,11 +74325,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List sharing permissions on a driveItem
-      description: List the effective sharing permissions on a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-permissions?view=graph-rest-1.0
+      summary: Get permissions from users
+      description: The set of permissions for the item. Read-only. Nullable.
       operationId: user.drive.root_ListPermission
       parameters:
         - name: user-id
@@ -75888,11 +75252,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List thumbnails for a DriveItem
-      description: "Retrieve a collection of ThumbnailSet resources for a DriveItem resource. A DriveItem can be represented by zero or more ThumbnailSet resources.\nEach **thumbnailSet** can have one or more **thumbnail** objects, which are images that represent the item.\nFor example, a **thumbnailSet** may include **thumbnail** objects, such as common ones including `small`, `medium`, or `large`. There are many ways to work with thumbnails on OneDrive.\nHere are the most common ones:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-thumbnails?view=graph-rest-1.0
+      summary: Get thumbnails from users
+      description: 'Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.'
       operationId: user.drive.root_ListThumbnail
       parameters:
         - name: user-id
@@ -76242,11 +75603,8 @@ paths:
     get:
       tags:
         - users.drive
-      summary: List versions of a driveItem
-      description: "OneDrive and SharePoint can be configured to retain the history for files.\nDepending on the service and configuration, a new version can be created for each edit, each time the file is saved, manually, or never. Previous versions of a document may be retained for a finite period of time depending on admin settings which may be unique per user or location."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
+      summary: Get versions from users
+      description: 'The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.'
       operationId: user.drive.root_ListVersion
       parameters:
         - name: user-id
@@ -76565,9 +75923,6 @@ paths:
       tags:
         - users.drive
       summary: Get content for the navigation property versions from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0
       operationId: user.drive.root_GetVersionsContent
       parameters:
         - name: user-id
@@ -77822,7 +77177,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -80676,6 +80031,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.identity:
@@ -82369,7 +81726,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -82402,7 +81759,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -84089,7 +83446,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -84126,7 +83483,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -84149,7 +83506,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -84191,7 +83548,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -84223,7 +83580,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -84241,7 +83598,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -84249,7 +83606,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -84289,7 +83646,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -84312,7 +83669,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -84330,7 +83687,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -84383,7 +83740,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -84416,14 +83773,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -84673,6 +84030,10 @@ components:
             applicationId:
               type: string
               description: Intune application identifier.
+              nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
               nullable: true
             history:
               type: array
@@ -85179,7 +84540,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -85369,6 +84730,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -85679,6 +85042,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.mediaSourceContentCategory:
       title: mediaSourceContentCategory
       enum:
@@ -85899,11 +85275,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -91548,6 +90924,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -92506,6 +91892,43 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
     microsoft.graph.workbookFilter:
@@ -96637,6 +96060,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object

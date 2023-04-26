@@ -82,11 +82,7 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List classes
-      description: 'Retrieve a list of all class objects. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationroot-list-classes?view=graph-rest-1.0
+      summary: Get classes from education
       operationId: education_ListClass
       parameters:
         - $ref: '#/components/parameters/top'
@@ -195,11 +191,7 @@ paths:
     post:
       tags:
         - education.educationClass
-      summary: Create educationClass
-      description: "Create a new class. This will also create a universal group. When you use this API to create a class, it will add special properties to the group, which will\nadd features such as assignments and special handling within Microsoft Teams when teams are created using the group. Please note that this API only creates the universal group and does not create a team. Microsoft Teams provides a user interface for teachers to create teams for their own classes using the groups created by this API."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationroot-post-classes?view=graph-rest-1.0
+      summary: Create new navigation property to classes for education
       operationId: education_CreateClass
       requestBody:
         description: New navigation property
@@ -356,11 +348,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List assignmentCategories
-      description: Retrieve a list of educationCategory objects. Only teachers can perform this operation.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationclass-list-categories?view=graph-rest-1.0
+      summary: Get assignmentCategories from education
+      description: All categories associated with this class. Nullable.
       operationId: education.class_ListAssignmentCategory
       parameters:
         - name: educationClass-id
@@ -428,11 +417,7 @@ paths:
     post:
       tags:
         - education.educationClass
-      summary: Create educationCategory
-      description: Creates a new educationCategory on an educationClass. Only teachers can perform this operation.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationclass-post-category?view=graph-rest-1.0
+      summary: Create new navigation property to assignmentCategories for education
       operationId: education.class_CreateAssignmentCategory
       parameters:
         - name: educationClass-id
@@ -693,11 +678,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: Get educationAssignmentDefaults
-      description: Read the properties and relationships of an educationAssignmentDefaults object.  These are the class-level assignment defaults respected by new assignments created in the class. Callers can continue to specify custom values on each **assignment** creation if they don't want the default behaviors. Only teachers can perform this operation.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignmentdefaults-get?view=graph-rest-1.0
+      summary: Get assignmentDefaults from education
+      description: Specifies class-level defaults respected by new assignments created in the class.
       operationId: education.class_GetAssignmentDefault
       parameters:
         - name: educationClass-id
@@ -749,11 +731,7 @@ paths:
     patch:
       tags:
         - education.educationClass
-      summary: Update educationAssignmentDefaults
-      description: Update the properties of an educationAssignmentDefaults object. Only teachers can update these settings.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignmentdefaults-update?view=graph-rest-1.0
+      summary: Update the navigation property assignmentDefaults in education
       operationId: education.class_UpdateAssignmentDefault
       parameters:
         - name: educationClass-id
@@ -811,11 +789,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List class assignments
-      description: 'Retrieve a list of assignment objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application executing with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationclass-list-assignments?view=graph-rest-1.0
+      summary: Get assignments from education
+      description: All assignments associated with this class. Nullable.
       operationId: education.class_ListAssignment
       parameters:
         - name: educationClass-id
@@ -954,11 +929,7 @@ paths:
     post:
       tags:
         - education.educationClass
-      summary: Create educationAssignment
-      description: 'Create a new assignment. Only teachers in a class can create an assignment. Assignments start in the Draft state, which means that students will not see the assignment until publication.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationclass-post-assignments?view=graph-rest-1.0
+      summary: Create new navigation property to assignments for education
       operationId: education.class_CreateAssignment
       parameters:
         - name: educationClass-id
@@ -1151,11 +1122,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
+      summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.class.assignment_ListCategory
       parameters:
         - name: educationClass-id
@@ -1351,11 +1319,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
+      summary: Get ref of categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.class.assignment_ListCategoryGraphBPreRef
       parameters:
         - name: educationClass-id
@@ -1516,15 +1481,77 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.activate':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action activate
+      operationId: education.class.assignment_activate
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.deactivate':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action deactivate
+      operationId: education.class.assignment_deactivate
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: The unique identifier of educationClass
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
         - education.Actions
       summary: Invoke action publish
-      description: 'Change the state of an educationAssignment from its original `draft` status to the `published` status.  You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.  Only a teacher in the class can make this call. When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects. When you call this API, educationSubmission objects are created and the assignment appears in the student''s list. The state of the **assignment** goes back to `draft` if there is any backend failure during publish process. To update the properties of a published **assignment**, see update an assignment. To update the properties of a published assignment, see update an assignment.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-1.0
       operationId: education.class.assignment_publish
       parameters:
         - name: educationClass-id
@@ -1558,10 +1585,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action setUpFeedbackResourcesFolder
-      description: Create a SharePoint folder to upload feedback files for a given educationSubmission. Only teachers can perform this operation. The teacher determines the resources to upload in the feedback resources folder of a submission.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-setupfeedbackresourcesfolder?view=graph-rest-1.0
       operationId: education.class.assignment_setUpFeedbackResourcesFolder
       parameters:
         - name: educationClass-id
@@ -1595,10 +1618,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action setUpResourcesFolder
-      description: Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-1.0
       operationId: education.class.assignment_setUpResourcesFolder
       parameters:
         - name: educationClass-id
@@ -1631,11 +1650,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List assignment resources
-      description: 'Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0
+      summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.class.assignment_ListResource
       parameters:
         - name: educationClass-id
@@ -1714,11 +1730,7 @@ paths:
     post:
       tags:
         - education.educationClass
-      summary: Create educationAssignmentResource
-      description: 'Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0
+      summary: Create new navigation property to resources for education
       operationId: education.class.assignment_CreateResource
       parameters:
         - name: educationClass-id
@@ -1945,11 +1957,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: Get educationRubric attached to educationAssignment
-      description: 'Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
+      summary: Get rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.class.assignment_GetRubric
       parameters:
         - name: educationClass-id
@@ -2088,11 +2097,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: Get educationRubric attached to educationAssignment
-      description: 'Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
+      summary: Get ref of rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.class.assignment_GetRubricGraphBPreRef
       parameters:
         - name: educationClass-id
@@ -2189,11 +2195,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List submissions
-      description: 'List all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the **submissions**, a student can only get **submissions** that they are associated with. Provide the header `Prefer: include-unknown-enum-members` to properly list **submissions** with the `reassigned` status. For details, see the examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
+      summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.class.assignment_ListSubmission
       parameters:
         - name: educationClass-id
@@ -2522,10 +2525,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action reassign
-      description: 'Reassign the submission to the student with feedback for review. Only teachers can perform this action.  Include the `Prefer: include-unknown-enum-members` header when you call this method; otherwise, a reassigned submission will be treated as a returned submission. This means that the `reassigned` status will be mapped to the `returned` status, and **reassignedDateTime** and **reassignedBy** properties will be mapped to **returnedDateTime** and **returnedBy** respectively. If the header `Prefer: include-unknown-enum-members` is provided, a reassigned submission retains the `reassigned` status. For details, see the examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-reassign?view=graph-rest-1.0
       operationId: education.class.assignment.submission_reassign
       parameters:
         - name: educationClass-id
@@ -2567,10 +2566,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action return
-      description: Make the grade and feedback associated with this submission available to the student. This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-1.0
       operationId: education.class.assignment.submission_return
       parameters:
         - name: educationClass-id
@@ -2612,10 +2607,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action setUpResourcesFolder
-      description: 'Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission. Only teachers and students can perform this operation. Note that files must be located in this folder in order to be added as resources. Only a student in the class can determine what files to upload in a given submission-level resource folder. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-setupresourcesfolder?view=graph-rest-1.0
       operationId: education.class.assignment.submission_setUpResourcesFolder
       parameters:
         - name: educationClass-id
@@ -2657,10 +2648,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action submit
-      description: 'Indicate that a student is done with the work and is ready to hand in the assignment. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from `working` to `submitted`. During the submit process, all the resources are copied to the **submittedResources** bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-submit?view=graph-rest-1.0
       operationId: education.class.assignment.submission_submit
       parameters:
         - name: educationClass-id
@@ -2702,10 +2689,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action unsubmit
-      description: 'Indicate that a student wants to work on the submitted assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-unsubmit?view=graph-rest-1.0
       operationId: education.class.assignment.submission_unsubmit
       parameters:
         - name: educationClass-id
@@ -2746,11 +2729,7 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List outcomes
-      description: 'Retrieve a list of educationOutcome objects.  There are four types of outcomes: **educationPointsOutcome**, **educationFeedbackOutcome**, **educationRubricOutcome**, and **educationFeedbackResourceOutcome**. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) will have an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) will have both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), will have an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, will have an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource will have an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, **points** and **publishedPoints**, **feedback** and **publishedFeedback**. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-1.0
+      summary: Get outcomes from education
       operationId: education.class.assignment.submission_ListOutcome
       parameters:
         - name: educationClass-id
@@ -2837,11 +2816,7 @@ paths:
     post:
       tags:
         - education.educationClass
-      summary: Create educationFeedbackResourceOutcome
-      description: 'Create a new feedback resource for a submission. Only a teacher can perform this operation. To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment. If the file doesn''t exist or is not in that folder, the `POST` request will fail.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationfeedbackresourceoutcome-post-outcomes?view=graph-rest-1.0
+      summary: Create new navigation property to outcomes for education
       operationId: education.class.assignment.submission_CreateOutcome
       parameters:
         - name: educationClass-id
@@ -3107,11 +3082,7 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List submission resources
-      description: 'List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The **submittedResources** are the resources that have officially been submitted to be graded.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0
+      summary: Get resources from education
       operationId: education.class.assignment.submission_ListResource
       parameters:
         - name: educationClass-id
@@ -3198,11 +3169,7 @@ paths:
     post:
       tags:
         - education.educationClass
-      summary: Create educationSubmissionResource
-      description: 'Add a educationSubmissionResource to a submission resource list. Only teachers and students can perform this operation. The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`. To create a new file-based resource, upload the file to the resources folder associated with the submission. If the file doesn''t exist or is not in that folder, the POST request will fail.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-post-resources?view=graph-rest-1.0
+      summary: Create new navigation property to resources for education
       operationId: education.class.assignment.submission_CreateResource
       parameters:
         - name: educationClass-id
@@ -4015,11 +3982,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: Get educationAssignmentSettings
-      description: Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignmentsettings-get?view=graph-rest-1.0
+      summary: Get assignmentSettings from education
+      description: Specifies class-level assignments settings.
       operationId: education.class_GetAssignmentSetting
       parameters:
         - name: educationClass-id
@@ -4068,11 +4032,7 @@ paths:
     patch:
       tags:
         - education.educationClass
-      summary: Update educationAssignmentSettings
-      description: Update the properties of an educationAssignmentSettings object. Only Teachers can update these settings.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignmentsettings-update?view=graph-rest-1.0
+      summary: Update the navigation property assignmentSettings in education
       operationId: education.class_UpdateAssignmentSetting
       parameters:
         - name: educationClass-id
@@ -4130,11 +4090,7 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: Get group
-      description: Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationclass-get-group?view=graph-rest-1.0
+      summary: Get group from education
       operationId: education.class_GetGroup
       parameters:
         - name: educationClass-id
@@ -4291,11 +4247,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List members
-      description: 'Retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0
+      summary: Get members from education
+      description: All users in the class. Nullable.
       operationId: education.class_ListMember
       parameters:
         - name: educationClass-id
@@ -4533,11 +4486,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List members
-      description: 'Retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0
+      summary: Get ref of members from education
+      description: All users in the class. Nullable.
       operationId: education.class_ListMemberGraphBPreRef
       parameters:
         - name: educationClass-id
@@ -4665,11 +4615,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List schools
-      description: Retrieve a list of schools in which the class is taught.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationclass-list-schools?view=graph-rest-1.0
+      summary: Get schools from education
+      description: All schools that this class is associated with. Nullable.
       operationId: education.class_ListSchool
       parameters:
         - name: educationClass-id
@@ -4887,11 +4834,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List teachers
-      description: Retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0
+      summary: Get teachers from education
+      description: All teachers in the class. Nullable.
       operationId: education.class_ListTeacher
       parameters:
         - name: educationClass-id
@@ -5129,11 +5073,8 @@ paths:
     get:
       tags:
         - education.educationClass
-      summary: List teachers
-      description: Retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0
+      summary: Get ref of teachers from education
+      description: All teachers in the class. Nullable.
       operationId: education.class_ListTeacherGraphBPreRef
       parameters:
         - name: educationClass-id
@@ -5508,11 +5449,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List assignments of a user
-      description: 'Returns a list of assignments assigned to a user for all classes. Only teachers, students, and applications with application permissions can perform this operation. This utility namespace allows a caller to find all the assignments belonging to a student or a teacher in a single call rather than having to request assignments from each class. The assignment list contains what is needed to get the detailed information for the assignment from within the class namespace. All other operations on the assignment should use the class namespace.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-list-assignments?view=graph-rest-1.0
+      summary: Get assignments from education
+      description: List of assignments for the user. Nullable.
       operationId: education.me_ListAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5803,11 +5741,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
+      summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.me.assignment_ListCategory
       parameters:
         - name: educationAssignment-id
@@ -5971,11 +5906,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
+      summary: Get ref of categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.me.assignment_ListCategoryGraphBPreRef
       parameters:
         - name: educationAssignment-id
@@ -6112,15 +6044,61 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/education/me/assignments/{educationAssignment-id}/microsoft.graph.activate':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action activate
+      operationId: education.me.assignment_activate
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/education/me/assignments/{educationAssignment-id}/microsoft.graph.deactivate':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action deactivate
+      operationId: education.me.assignment_deactivate
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/education/me/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
         - education.Actions
       summary: Invoke action publish
-      description: 'Change the state of an educationAssignment from its original `draft` status to the `published` status.  You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.  Only a teacher in the class can make this call. When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects. When you call this API, educationSubmission objects are created and the assignment appears in the student''s list. The state of the **assignment** goes back to `draft` if there is any backend failure during publish process. To update the properties of a published **assignment**, see update an assignment. To update the properties of a published assignment, see update an assignment.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-1.0
       operationId: education.me.assignment_publish
       parameters:
         - name: educationAssignment-id
@@ -6146,10 +6124,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action setUpFeedbackResourcesFolder
-      description: Create a SharePoint folder to upload feedback files for a given educationSubmission. Only teachers can perform this operation. The teacher determines the resources to upload in the feedback resources folder of a submission.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-setupfeedbackresourcesfolder?view=graph-rest-1.0
       operationId: education.me.assignment_setUpFeedbackResourcesFolder
       parameters:
         - name: educationAssignment-id
@@ -6175,10 +6149,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action setUpResourcesFolder
-      description: Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-1.0
       operationId: education.me.assignment_setUpResourcesFolder
       parameters:
         - name: educationAssignment-id
@@ -6203,11 +6173,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List assignment resources
-      description: 'Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0
+      summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.me.assignment_ListResource
       parameters:
         - name: educationAssignment-id
@@ -6278,11 +6245,7 @@ paths:
     post:
       tags:
         - education.educationUser
-      summary: Create educationAssignmentResource
-      description: 'Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0
+      summary: Create new navigation property to resources for education
       operationId: education.me.assignment_CreateResource
       parameters:
         - name: educationAssignment-id
@@ -6469,11 +6432,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: Get educationRubric attached to educationAssignment
-      description: 'Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
+      summary: Get rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.me.assignment_GetRubric
       parameters:
         - name: educationAssignment-id
@@ -6588,11 +6548,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: Get educationRubric attached to educationAssignment
-      description: 'Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
+      summary: Get ref of rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.me.assignment_GetRubricGraphBPreRef
       parameters:
         - name: educationAssignment-id
@@ -6665,11 +6622,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List submissions
-      description: 'List all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the **submissions**, a student can only get **submissions** that they are associated with. Provide the header `Prefer: include-unknown-enum-members` to properly list **submissions** with the `reassigned` status. For details, see the examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
+      summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.me.assignment_ListSubmission
       parameters:
         - name: educationAssignment-id
@@ -6958,10 +6912,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action reassign
-      description: 'Reassign the submission to the student with feedback for review. Only teachers can perform this action.  Include the `Prefer: include-unknown-enum-members` header when you call this method; otherwise, a reassigned submission will be treated as a returned submission. This means that the `reassigned` status will be mapped to the `returned` status, and **reassignedDateTime** and **reassignedBy** properties will be mapped to **returnedDateTime** and **returnedBy** respectively. If the header `Prefer: include-unknown-enum-members` is provided, a reassigned submission retains the `reassigned` status. For details, see the examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-reassign?view=graph-rest-1.0
       operationId: education.me.assignment.submission_reassign
       parameters:
         - name: educationAssignment-id
@@ -6995,10 +6945,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action return
-      description: Make the grade and feedback associated with this submission available to the student. This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-1.0
       operationId: education.me.assignment.submission_return
       parameters:
         - name: educationAssignment-id
@@ -7032,10 +6978,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action setUpResourcesFolder
-      description: 'Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission. Only teachers and students can perform this operation. Note that files must be located in this folder in order to be added as resources. Only a student in the class can determine what files to upload in a given submission-level resource folder. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-setupresourcesfolder?view=graph-rest-1.0
       operationId: education.me.assignment.submission_setUpResourcesFolder
       parameters:
         - name: educationAssignment-id
@@ -7069,10 +7011,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action submit
-      description: 'Indicate that a student is done with the work and is ready to hand in the assignment. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from `working` to `submitted`. During the submit process, all the resources are copied to the **submittedResources** bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-submit?view=graph-rest-1.0
       operationId: education.me.assignment.submission_submit
       parameters:
         - name: educationAssignment-id
@@ -7106,10 +7044,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action unsubmit
-      description: 'Indicate that a student wants to work on the submitted assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-unsubmit?view=graph-rest-1.0
       operationId: education.me.assignment.submission_unsubmit
       parameters:
         - name: educationAssignment-id
@@ -7142,11 +7076,7 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List outcomes
-      description: 'Retrieve a list of educationOutcome objects.  There are four types of outcomes: **educationPointsOutcome**, **educationFeedbackOutcome**, **educationRubricOutcome**, and **educationFeedbackResourceOutcome**. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) will have an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) will have both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), will have an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, will have an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource will have an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, **points** and **publishedPoints**, **feedback** and **publishedFeedback**. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-1.0
+      summary: Get outcomes from education
       operationId: education.me.assignment.submission_ListOutcome
       parameters:
         - name: educationAssignment-id
@@ -7225,11 +7155,7 @@ paths:
     post:
       tags:
         - education.educationUser
-      summary: Create educationFeedbackResourceOutcome
-      description: 'Create a new feedback resource for a submission. Only a teacher can perform this operation. To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment. If the file doesn''t exist or is not in that folder, the `POST` request will fail.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationfeedbackresourceoutcome-post-outcomes?view=graph-rest-1.0
+      summary: Create new navigation property to outcomes for education
       operationId: education.me.assignment.submission_CreateOutcome
       parameters:
         - name: educationAssignment-id
@@ -7455,11 +7381,7 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List submission resources
-      description: 'List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The **submittedResources** are the resources that have officially been submitted to be graded.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0
+      summary: Get resources from education
       operationId: education.me.assignment.submission_ListResource
       parameters:
         - name: educationAssignment-id
@@ -7538,11 +7460,7 @@ paths:
     post:
       tags:
         - education.educationUser
-      summary: Create educationSubmissionResource
-      description: 'Add a educationSubmissionResource to a submission resource list. Only teachers and students can perform this operation. The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`. To create a new file-based resource, upload the file to the resources folder associated with the submission. If the file doesn''t exist or is not in that folder, the POST request will fail.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-post-resources?view=graph-rest-1.0
+      summary: Create new navigation property to resources for education
       operationId: education.me.assignment.submission_CreateResource
       parameters:
         - name: educationAssignment-id
@@ -8243,11 +8161,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List classes
-      description: Retrieve a collection of educationClass resources.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-list-classes?view=graph-rest-1.0
+      summary: Get classes from education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.me_ListClass
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8449,11 +8364,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List rubrics
-      description: Retrieve a list of educationRubric objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-list-rubrics?view=graph-rest-1.0
+      summary: Get rubrics from education
+      description: 'When set, the grading rubric attached to the assignment.'
       operationId: education.me_ListRubric
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8537,11 +8449,7 @@ paths:
     post:
       tags:
         - education.educationUser
-      summary: Create educationRubric
-      description: Create a new educationRubric object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-post-rubrics?view=graph-rest-1.0
+      summary: Create new navigation property to rubrics for education
       operationId: education.me_CreateRubric
       requestBody:
         description: New navigation property
@@ -8694,11 +8602,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List schools
-      description: Retrieve a list of schools for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-list-schools?view=graph-rest-1.0
+      summary: Get schools from education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.me_ListSchool
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9095,11 +9000,7 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: Get user
-      description: Retrieve the simple directory **user** that corresponds to this **educationUser**.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0
+      summary: Get user from education
       operationId: education.me_GetUser
       parameters:
         - name: $select
@@ -9259,6 +9160,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -9335,6 +9237,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -9439,11 +9342,7 @@ paths:
     get:
       tags:
         - education.educationSchool
-      summary: List educationSchools
-      description: Retrieve a list of all school objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationroot-list-schools?view=graph-rest-1.0
+      summary: Get schools from education
       operationId: education_ListSchool
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9551,11 +9450,7 @@ paths:
     post:
       tags:
         - education.educationSchool
-      summary: Create educationSchool
-      description: Create a school.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationroot-post-schools?view=graph-rest-1.0
+      summary: Create new navigation property to schools for education
       operationId: education_CreateSchool
       requestBody:
         description: New navigation property
@@ -9705,11 +9600,7 @@ paths:
     get:
       tags:
         - education.educationSchool
-      summary: Get administrativeUnit
-      description: Retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationschool-get-administrativeUnit?view=graph-rest-1.0
+      summary: Get administrativeUnit from education
       operationId: education.school_GetAdministrativeUnit
       parameters:
         - name: educationSchool-id
@@ -9800,11 +9691,8 @@ paths:
     get:
       tags:
         - education.educationSchool
-      summary: List educationClasses
-      description: Retrieve a list of classes owned by a school.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
+      summary: Get classes from education
+      description: Classes taught at the school. Nullable.
       operationId: education.school_ListClass
       parameters:
         - name: educationSchool-id
@@ -9986,11 +9874,8 @@ paths:
     get:
       tags:
         - education.educationSchool
-      summary: List educationClasses
-      description: Retrieve a list of classes owned by a school.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0
+      summary: Get ref of classes from education
+      description: Classes taught at the school. Nullable.
       operationId: education.school_ListClassGraphBPreRef
       parameters:
         - name: educationSchool-id
@@ -10078,11 +9963,8 @@ paths:
     get:
       tags:
         - education.educationSchool
-      summary: List educationUsers
-      description: Retrieve a list of users at a school.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0
+      summary: Get users from education
+      description: Users in the school. Nullable.
       operationId: education.school_ListUser
       parameters:
         - name: educationSchool-id
@@ -10320,11 +10202,8 @@ paths:
     get:
       tags:
         - education.educationSchool
-      summary: List educationUsers
-      description: Retrieve a list of users at a school.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0
+      summary: Get ref of users from education
+      description: Users in the school. Nullable.
       operationId: education.school_ListUserGraphBPreRef
       parameters:
         - name: educationSchool-id
@@ -10578,11 +10457,7 @@ paths:
     get:
       tags:
         - education.educationSynchronizationProfile
-      summary: List educationSynchronizationProfiles
-      description: Retrieve the collection of school data synchronization profiles in the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsynchronizationprofile-list?view=graph-rest-1.0
+      summary: Get synchronizationProfiles from education
       operationId: education_ListSynchronizationProfile
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10804,11 +10679,8 @@ paths:
     get:
       tags:
         - education.educationSynchronizationProfile
-      summary: Get educationSynchronizationErrors
-      description: Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-1.0
+      summary: Get errors from education
+      description: All errors associated with this synchronization profile.
       operationId: education.synchronizationProfile_ListError
       parameters:
         - name: educationSynchronizationProfile-id
@@ -11083,10 +10955,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action pause
-      description: Pause the sync of a specific school data synchronization profile in the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsynchronizationprofile-pause?view=graph-rest-1.0
       operationId: education.synchronizationProfile_pause
       parameters:
         - name: educationSynchronizationProfile-id
@@ -11108,10 +10976,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action reset
-      description: Reset the sync of a specific school data synchronization profile in the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsynchronizationprofile-reset?view=graph-rest-1.0
       operationId: education.synchronizationProfile_reset
       parameters:
         - name: educationSynchronizationProfile-id
@@ -11133,10 +10997,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action resume
-      description: Resume the sync of a specific school data synchronization profile in the tenant.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsynchronizationprofile-resume?view=graph-rest-1.0
       operationId: education.synchronizationProfile_resume
       parameters:
         - name: educationSynchronizationProfile-id
@@ -11158,10 +11018,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action start
-      description: 'Verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization will start on the profile. Otherwise, the response will contain errors and warnings. If the response contains errors, the synchronization will not start. If the response contains only warnings, synchronization will start.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-1.0
       operationId: education.synchronizationProfile_start
       parameters:
         - name: educationSynchronizationProfile-id
@@ -11230,11 +11086,8 @@ paths:
     get:
       tags:
         - education.educationSynchronizationProfile
-      summary: Get the status of an educationSynchronizationProfile
-      description: Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsynchronizationprofilestatus-get?view=graph-rest-1.0
+      summary: Get profileStatus from education
+      description: The synchronization status.
       operationId: education.synchronizationProfile_GetProfileStatus
       parameters:
         - name: educationSynchronizationProfile-id
@@ -11359,11 +11212,7 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List users
-      description: Retrieve a list of user objects. These user objects will include education-specific properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationroot-list-users?view=graph-rest-1.0
+      summary: Get users from education
       operationId: education_ListUser
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11528,11 +11377,7 @@ paths:
     post:
       tags:
         - education.educationUser
-      summary: Create educationUser
-      description: Create a new user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationroot-post-users?view=graph-rest-1.0
+      summary: Create new navigation property to users for education
       operationId: education_CreateUser
       requestBody:
         description: New navigation property
@@ -11705,11 +11550,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List assignments of a user
-      description: 'Returns a list of assignments assigned to a user for all classes. Only teachers, students, and applications with application permissions can perform this operation. This utility namespace allows a caller to find all the assignments belonging to a student or a teacher in a single call rather than having to request assignments from each class. The assignment list contains what is needed to get the detailed information for the assignment from within the class namespace. All other operations on the assignment should use the class namespace.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-list-assignments?view=graph-rest-1.0
+      summary: Get assignments from education
+      description: List of assignments for the user. Nullable.
       operationId: education.user_ListAssignment
       parameters:
         - name: educationUser-id
@@ -12041,11 +11883,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
+      summary: Get categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.user.assignment_ListCategory
       parameters:
         - name: educationUser-id
@@ -12241,11 +12080,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List categories
-      description: 'List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
+      summary: Get ref of categories from education
+      description: 'When set, enables users to easily find assignments of a given type.  Read-only. Nullable.'
       operationId: education.user.assignment_ListCategoryGraphBPreRef
       parameters:
         - name: educationUser-id
@@ -12406,15 +12242,77 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.activate':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action activate
+      operationId: education.user.assignment_activate
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.deactivate':
+    post:
+      tags:
+        - education.Actions
+      summary: Invoke action deactivate
+      operationId: education.user.assignment_deactivate
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: The unique identifier of educationUser
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: The unique identifier of educationAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
         - education.Actions
       summary: Invoke action publish
-      description: 'Change the state of an educationAssignment from its original `draft` status to the `published` status.  You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.  Only a teacher in the class can make this call. When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects. When you call this API, educationSubmission objects are created and the assignment appears in the student''s list. The state of the **assignment** goes back to `draft` if there is any backend failure during publish process. To update the properties of a published **assignment**, see update an assignment. To update the properties of a published assignment, see update an assignment.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-publish?view=graph-rest-1.0
       operationId: education.user.assignment_publish
       parameters:
         - name: educationUser-id
@@ -12448,10 +12346,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action setUpFeedbackResourcesFolder
-      description: Create a SharePoint folder to upload feedback files for a given educationSubmission. Only teachers can perform this operation. The teacher determines the resources to upload in the feedback resources folder of a submission.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-setupfeedbackresourcesfolder?view=graph-rest-1.0
       operationId: education.user.assignment_setUpFeedbackResourcesFolder
       parameters:
         - name: educationUser-id
@@ -12485,10 +12379,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action setUpResourcesFolder
-      description: Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment's folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-1.0
       operationId: education.user.assignment_setUpResourcesFolder
       parameters:
         - name: educationUser-id
@@ -12521,11 +12411,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List assignment resources
-      description: 'Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0
+      summary: Get resources from education
+      description: Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
       operationId: education.user.assignment_ListResource
       parameters:
         - name: educationUser-id
@@ -12604,11 +12491,7 @@ paths:
     post:
       tags:
         - education.educationUser
-      summary: Create educationAssignmentResource
-      description: 'Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0
+      summary: Create new navigation property to resources for education
       operationId: education.user.assignment_CreateResource
       parameters:
         - name: educationUser-id
@@ -12835,11 +12718,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: Get educationRubric attached to educationAssignment
-      description: 'Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
+      summary: Get rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.user.assignment_GetRubric
       parameters:
         - name: educationUser-id
@@ -12978,11 +12858,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: Get educationRubric attached to educationAssignment
-      description: 'Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0
+      summary: Get ref of rubric from education
+      description: 'When set, the grading rubric attached to this assignment.'
       operationId: education.user.assignment_GetRubricGraphBPreRef
       parameters:
         - name: educationUser-id
@@ -13079,11 +12956,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List submissions
-      description: 'List all the submissions associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application with application permissions can get all the **submissions**, a student can only get **submissions** that they are associated with. Provide the header `Prefer: include-unknown-enum-members` to properly list **submissions** with the `reassigned` status. For details, see the examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationassignment-list-submissions?view=graph-rest-1.0
+      summary: Get submissions from education
+      description: 'Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.'
       operationId: education.user.assignment_ListSubmission
       parameters:
         - name: educationUser-id
@@ -13412,10 +13286,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action reassign
-      description: 'Reassign the submission to the student with feedback for review. Only teachers can perform this action.  Include the `Prefer: include-unknown-enum-members` header when you call this method; otherwise, a reassigned submission will be treated as a returned submission. This means that the `reassigned` status will be mapped to the `returned` status, and **reassignedDateTime** and **reassignedBy** properties will be mapped to **returnedDateTime** and **returnedBy** respectively. If the header `Prefer: include-unknown-enum-members` is provided, a reassigned submission retains the `reassigned` status. For details, see the examples section.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-reassign?view=graph-rest-1.0
       operationId: education.user.assignment.submission_reassign
       parameters:
         - name: educationUser-id
@@ -13457,10 +13327,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action return
-      description: Make the grade and feedback associated with this submission available to the student. This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-1.0
       operationId: education.user.assignment.submission_return
       parameters:
         - name: educationUser-id
@@ -13502,10 +13368,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action setUpResourcesFolder
-      description: 'Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission. Only teachers and students can perform this operation. Note that files must be located in this folder in order to be added as resources. Only a student in the class can determine what files to upload in a given submission-level resource folder. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-setupresourcesfolder?view=graph-rest-1.0
       operationId: education.user.assignment.submission_setUpResourcesFolder
       parameters:
         - name: educationUser-id
@@ -13547,10 +13409,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action submit
-      description: 'Indicate that a student is done with the work and is ready to hand in the assignment. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from `working` to `submitted`. During the submit process, all the resources are copied to the **submittedResources** bucket. The teacher will be looking at the submitted resources list for grading. A teacher can also submit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-submit?view=graph-rest-1.0
       operationId: education.user.assignment.submission_submit
       parameters:
         - name: educationUser-id
@@ -13592,10 +13450,6 @@ paths:
       tags:
         - education.Actions
       summary: Invoke action unsubmit
-      description: 'Indicate that a student wants to work on the submitted assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student''s assignment on their behalf.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-unsubmit?view=graph-rest-1.0
       operationId: education.user.assignment.submission_unsubmit
       parameters:
         - name: educationUser-id
@@ -13636,11 +13490,7 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List outcomes
-      description: 'Retrieve a list of educationOutcome objects.  There are four types of outcomes: **educationPointsOutcome**, **educationFeedbackOutcome**, **educationRubricOutcome**, and **educationFeedbackResourceOutcome**. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) will have an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) will have both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), will have an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, will have an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource will have an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, **points** and **publishedPoints**, **feedback** and **publishedFeedback**. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-list-outcomes?view=graph-rest-1.0
+      summary: Get outcomes from education
       operationId: education.user.assignment.submission_ListOutcome
       parameters:
         - name: educationUser-id
@@ -13727,11 +13577,7 @@ paths:
     post:
       tags:
         - education.educationUser
-      summary: Create educationFeedbackResourceOutcome
-      description: 'Create a new feedback resource for a submission. Only a teacher can perform this operation. To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment. If the file doesn''t exist or is not in that folder, the `POST` request will fail.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationfeedbackresourceoutcome-post-outcomes?view=graph-rest-1.0
+      summary: Create new navigation property to outcomes for education
       operationId: education.user.assignment.submission_CreateOutcome
       parameters:
         - name: educationUser-id
@@ -13997,11 +13843,7 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List submission resources
-      description: 'List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The **submittedResources** are the resources that have officially been submitted to be graded.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-list-resources?view=graph-rest-1.0
+      summary: Get resources from education
       operationId: education.user.assignment.submission_ListResource
       parameters:
         - name: educationUser-id
@@ -14088,11 +13930,7 @@ paths:
     post:
       tags:
         - education.educationUser
-      summary: Create educationSubmissionResource
-      description: 'Add a educationSubmissionResource to a submission resource list. Only teachers and students can perform this operation. The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`. To create a new file-based resource, upload the file to the resources folder associated with the submission. If the file doesn''t exist or is not in that folder, the POST request will fail.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationsubmission-post-resources?view=graph-rest-1.0
+      summary: Create new navigation property to resources for education
       operationId: education.user.assignment.submission_CreateResource
       parameters:
         - name: educationUser-id
@@ -14905,11 +14743,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List classes
-      description: Retrieve a collection of educationClass resources.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-list-classes?view=graph-rest-1.0
+      summary: Get classes from education
+      description: Classes to which the user belongs. Nullable.
       operationId: education.user_ListClass
       parameters:
         - name: educationUser-id
@@ -15135,11 +14970,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List rubrics
-      description: Retrieve a list of educationRubric objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-list-rubrics?view=graph-rest-1.0
+      summary: Get rubrics from education
+      description: 'When set, the grading rubric attached to the assignment.'
       operationId: education.user_ListRubric
       parameters:
         - name: educationUser-id
@@ -15231,11 +15063,7 @@ paths:
     post:
       tags:
         - education.educationUser
-      summary: Create educationRubric
-      description: Create a new educationRubric object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-post-rubrics?view=graph-rest-1.0
+      summary: Create new navigation property to rubrics for education
       operationId: education.user_CreateRubric
       parameters:
         - name: educationUser-id
@@ -15429,11 +15257,8 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: List schools
-      description: Retrieve a list of schools for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-list-schools?view=graph-rest-1.0
+      summary: Get schools from education
+      description: Schools to which the user belongs. Nullable.
       operationId: education.user_ListSchool
       parameters:
         - name: educationUser-id
@@ -15878,11 +15703,7 @@ paths:
     get:
       tags:
         - education.educationUser
-      summary: Get user
-      description: Retrieve the simple directory **user** that corresponds to this **educationUser**.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0
+      summary: Get user from education
       operationId: education.user_GetUser
       parameters:
         - name: educationUser-id
@@ -16050,6 +15871,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -16126,6 +15948,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -18093,6 +17916,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.mailboxSettings:
@@ -18415,6 +18240,7 @@ components:
         - published
         - assigned
         - unknownFutureValue
+        - inactive
       type: string
     microsoft.graph.educationResource:
       title: educationResource
@@ -20153,7 +19979,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -20186,7 +20012,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -21199,7 +21025,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -21236,7 +21062,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -21259,7 +21085,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -21301,7 +21127,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -21333,7 +21159,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -21351,7 +21177,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -21359,7 +21185,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -21399,7 +21225,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -21422,7 +21248,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -21440,7 +21266,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -21493,7 +21319,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -21526,14 +21352,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -21783,6 +21609,10 @@ components:
             applicationId:
               type: string
               description: Intune application identifier.
+              nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
               nullable: true
             history:
               type: array
@@ -22267,7 +22097,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -22457,6 +22287,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -22636,6 +22468,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -29494,6 +29339,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -29995,6 +29850,43 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
     microsoft.graph.externalAudienceScope:
@@ -30951,7 +30843,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -32698,11 +32590,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -35473,6 +35365,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
