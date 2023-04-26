@@ -514,6 +514,19 @@ directive:
                 }
             }
           }
+# Mark '@odata.id' as required properties for /$ref.
+  - from: 'openapi-document'
+    where: $.components.schemas.ReferenceCreate
+    transform: $['required'] = ['@odata.id']
+  - from: 'openapi-document'
+    where: $.components.schemas.ReferenceCreate..properties['@odata.id']
+    transform: $['description'] = 'The entity reference URL of the resource. For example, https://graph.microsoft.com/v1.0/directoryObjects/{id}.'
+  - from: 'openapi-document'
+    where: $.components.schemas.ReferenceUpdate
+    transform: $['required'] = ['@odata.id']
+  - from: 'openapi-document'
+    where: $.components.schemas.ReferenceUpdate..properties['@odata.id']
+    transform: $['description'] = 'The entity reference URL of the resource. For example, https://graph.microsoft.com/v1.0/directoryObjects/{id}.'
 # Mark consistency level parameter as required for /$count paths when header is present.
   - from: openapi-document
     where: $..paths.*[?(/(.*_GetCount)/gmi.exec(@.operationId))]..parameters[?(@.name === "ConsistencyLevel")]
