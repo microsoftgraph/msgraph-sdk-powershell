@@ -1,11 +1,11 @@
 ﻿namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
 {
-    using Microsoft.Graph.Beta.PowerShell.Models;
-    using Microsoft.Graph.Beta.PowerShell.Models.TeamsInternal;
-    using Microsoft.Graph.Beta.PowerShell.TeamsInternal;
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Microsoft.Graph.Beta.PowerShell.Models;
+    using Microsoft.Graph.Beta.PowerShell.Models.TeamsInternal;
+    using Microsoft.Graph.Beta.PowerShell.TeamsInternal;
     using static Microsoft.Graph.Beta.PowerShell.Runtime.Extensions;
 
     /// <summary>
@@ -247,7 +247,7 @@
                     MGTeamsInternalAuthorizationPolicy authorizationPolicy = await this.Client.GetAuthorizationPolicy(eventListener: this, sender: Pipeline);
                     WriteVerbose($"PermissionGrantPolicies currently assigned to default user role: '{string.Join(", ", authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned)}'.");
 
-                    if (this.State == MicrosoftGraphRscConfigurationState.Disabled)
+                    if (this.State == MicrosoftGraphRscConfigurationState.DisabledForAllApps)
                     {
                         // Disable chat RSC Teams Setting.
                         await this.Client.UpdateTeamsAppSettings(
@@ -260,10 +260,10 @@
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
                         // Disable preapproval configs.
-                        if (authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval, StringComparer.OrdinalIgnoreCase))
+                        if (authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval, StringComparer.OrdinalIgnoreCase))
                         {
                             IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Except(
-                                new string[] { RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval },
+                                new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval },
                                 StringComparer.OrdinalIgnoreCase);
                             await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
                                 updatedPermissionGrantPolicies,
@@ -277,6 +277,22 @@
                     }
                     else if (this.State == MicrosoftGraphRscConfigurationState.EnabledForPreApprovedAppsOnly)
                     {
+                        // Enable preapproval configs.
+                        if (!authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval, StringComparer.OrdinalIgnoreCase))
+                        {
+                            IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Union(
+                                new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval },
+                                StringComparer.OrdinalIgnoreCase);
+                            await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
+                                updatedPermissionGrantPolicies,
+                                this,
+                                Pipeline);
+
+                            WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
+                        }
+
+                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+
                         // Disable chat RSC Teams Setting.
                         await this.Client.UpdateTeamsAppSettings(
                             isChatResourceSpecificConsentEnabled: false,
@@ -286,41 +302,9 @@
                         WriteVerbose($"Disabled Chat RSC Teams setting.");
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-
-                        // Enable preapproval configs.
-                        if (!authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval, StringComparer.OrdinalIgnoreCase))
-                        {
-                            IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Union(
-                                new string[] { RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval },
-                                StringComparer.OrdinalIgnoreCase);
-                            await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
-                                updatedPermissionGrantPolicies,
-                                this,
-                                Pipeline);
-
-                            WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
-                        }
-
-                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                     }
                     else if (this.State == MicrosoftGraphRscConfigurationState.EnabledForAllApps)
                     {
-                        // Disable preapproval configs.
-                        if (authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval, StringComparer.OrdinalIgnoreCase))
-                        {
-                            IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Except(
-                                new string[] { RscConfigurationConverter.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval },
-                                StringComparer.OrdinalIgnoreCase);
-                            await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
-                                updatedPermissionGrantPolicies,
-                                this,
-                                Pipeline);
-
-                            WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
-                        }
-
-                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
-
                         // Enable chat RSC Teams Setting.
                         await this.Client.UpdateTeamsAppSettings(
                             isChatResourceSpecificConsentEnabled: true,
@@ -328,6 +312,22 @@
                             sender: Pipeline);
 
                         WriteVerbose($"Enabled Chat RSC Teams setting.");
+
+                        if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
+
+                        // Disable preapproval configs.
+                        if (authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Contains(RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval, StringComparer.OrdinalIgnoreCase))
+                        {
+                            IEnumerable<string> updatedPermissionGrantPolicies = authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned.Except(
+                                new string[] { RscConfigurationSynthesizer.MicrosoftCreatedPermissionGrantPolicyForChatRscPreApproval },
+                                StringComparer.OrdinalIgnoreCase);
+                            await this.Client.UpdateDefaultUserRolePermissionGrantPoliciesAssigned(
+                                updatedPermissionGrantPolicies,
+                                this,
+                                Pipeline);
+
+                            WriteVerbose($"Updated permission grant policies assigned to default user role: '{string.Join(", ", updatedPermissionGrantPolicies)}'.");
+                        }
 
                         if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
                     }

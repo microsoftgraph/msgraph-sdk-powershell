@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Models
         /// <summary>
         /// Disabled for tenant.
         /// </summary>
-        Disabled,
+        DisabledForAllApps,
 
         /// <summary>
         /// Enabled only for pre-approved apps.

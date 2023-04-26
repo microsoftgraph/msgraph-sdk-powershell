@@ -45,7 +45,7 @@
         /// <returns>The body.</returns>
         protected override string GetBodyAsString()
         {
-            return new MGTeamsInternalTenantConsentSettings("dffd5d46-495d-40a9-8e21-954ff55e198a", groupConsentSettingValues).ToJson();
+            return new MGTeamsInternalTenantConsentSettings(RscConfigurationSynthesizer.GroupConsentSettingsTemplateId, groupConsentSettingValues).ToJson();
         }
     }
 }

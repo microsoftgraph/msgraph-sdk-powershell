@@ -444,6 +444,7 @@ namespace Microsoft.Graph.Beta.PowerShell
                     sender: sender);
             }
         }
+
         /// <summary>
         /// Update group consent settings.
         /// </summary>
@@ -466,6 +467,29 @@ namespace Microsoft.Graph.Beta.PowerShell
                     outputConverter: null,
                     eventListener: eventListener,
                     sender: sender);
+            }
+        }
+
+        /// <summary>
+        /// Get group consent setting template.
+        /// </summary>
+        /// <param name="eventListener">The event listener.</param>
+        /// <param name="sender">Http Request sender.</param>
+        /// <returns>Teams app.</returns>
+        internal async System.Threading.Tasks.Task<MGTeamsInternalDirectorySettingTemplate> GetGroupConsentSettingsTemplate(
+            Runtime.IEventListener eventListener,
+            Runtime.ISendAsync sender)
+        {
+            // Constant Parameters
+            using (NoSynchronizationContext)
+            {
+                GetGroupConsentSettingsTemplateRequest request = new GetGroupConsentSettingsTemplateRequest();
+
+                return await this.ExecuteHttpRequestAsync(
+                    request,
+                    json => MGTeamsInternalDirectorySettingTemplate.FromJson(json),
+                    eventListener,
+                    sender);
             }
         }
 

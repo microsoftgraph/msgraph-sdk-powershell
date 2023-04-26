@@ -2,8 +2,6 @@
 {
     using Microsoft.Graph.Beta.PowerShell.Models.TeamsInternal;
     using Microsoft.Graph.Beta.PowerShell.TeamsInternal;
-    using System;
-    using System.Linq;
     using static Microsoft.Graph.Beta.PowerShell.Runtime.Extensions;
 
     /// <summary>
@@ -253,7 +251,7 @@
 
                     if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 
-                    RscConfigurationConverter rscConfigurationConverter = new RscConfigurationConverter();
+                    RscConfigurationSynthesizer rscConfigurationConverter = new RscConfigurationSynthesizer();
                     Models.IMicrosoftGraphRscConfiguration microsoftGraphRscConfiguration =
                         rscConfigurationConverter.ConvertToTeamRscConfiguration(tenantConsentSettingCollection, authorizationPolicy, this);
 
