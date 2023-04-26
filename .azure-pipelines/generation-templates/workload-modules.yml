@@ -21,14 +21,15 @@ steps:
       script: |
         . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -EnableSigning:$${{ parameters.Sign }} -Build -ExcludeExampleTemplates -ExcludeNotesSection
 
-  - task: PowerShell@2
-    displayName: Test Workload Modules
-    enabled: false
-    inputs:
-      targetType: inline
-      pwsh: true
-      script: |
-        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Test
+  - ${{ if eq(parameters.Test, true) }}:
+    - task: PowerShell@2
+      displayName: Test Workload Modules
+      enabled: true
+      inputs:
+        targetType: inline
+        pwsh: true
+        script: |
+          . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Test
 
   - ${{ if eq(parameters.Sign, true) }}:
       - template: ../common-templates/esrp/strongname.yml
