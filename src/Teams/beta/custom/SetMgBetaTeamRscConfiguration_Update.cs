@@ -251,7 +251,6 @@
 
                     MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingsCollection =
                         await this.Client.GetTenantConsentSettings(eventListener: this, sender: Pipeline);
-                    WriteVerbose($"PermissionGrantPolicies currently assigned to default user role: '{string.Join(", ", authorizationPolicy.DefaultUserRolePermissions.PermissionGrantPoliciesAssigned)}'.");
 
                     if (((Microsoft.Graph.Beta.PowerShell.Runtime.IEventListener)this).Token.IsCancellationRequested) { return; }
 

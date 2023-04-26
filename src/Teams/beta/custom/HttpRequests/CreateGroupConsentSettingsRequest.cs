@@ -36,7 +36,7 @@
         /// <returns>string containing the base url.</returns>
         protected override string GetBaseUrl()
         {
-            return $"https://graph.microsoft.com/beta/policies/permissionGrantPreApprovalPolicies";
+            return $"https://graph.microsoft.com/beta/settings";
         }
 
         /// <summary>

@@ -33,9 +33,9 @@ namespace Microsoft.Graph.Beta.PowerShell.Models.TeamsInternal
         /// <summary>
         /// Initializes a new instance of the <see cref="MGTeamsInternalSettingTemplateValue"/> class.
         /// </summary>
-        internal MGTeamsInternalSettingTemplateValue(string name, string value)
+        internal MGTeamsInternalSettingTemplateValue(string name, string defaultValue)
         {
-            this.SetProperties(name, value);
+            this.SetProperties(name, defaultValue);
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Models.TeamsInternal
 
             if (this.DefaultValue != null)
             {
-                jsonObject.Add("defaultValue", (Microsoft.Graph.Beta.PowerShell.Runtime.Json.JsonNode)new Microsoft.Graph.Beta.PowerShell.Runtime.Json.JsonString(this.Value));
+                jsonObject.Add("defaultValue", (Microsoft.Graph.Beta.PowerShell.Runtime.Json.JsonNode)new Microsoft.Graph.Beta.PowerShell.Runtime.Json.JsonString(this.DefaultValue));
             }
 
             return jsonObject;
