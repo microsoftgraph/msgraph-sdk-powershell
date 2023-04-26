@@ -1405,6 +1405,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"
     },
+    "/groups/{group-id}/microsoft.graph.retryServiceProvisioning": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Groups.yml"
+    },
     "/groups/{group-id}/microsoft.graph.subscribeByMail": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Groups.yml"

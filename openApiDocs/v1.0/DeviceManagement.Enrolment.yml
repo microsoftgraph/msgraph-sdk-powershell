@@ -1587,11 +1587,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1671,11 +1668,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create unifiedRoleAssignment
-      description: Create a new unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.directory_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -2081,11 +2074,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleInstances
-      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.directory_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2497,11 +2487,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleRequests
-      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.directory_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2618,11 +2605,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleAssignmentScheduleRequests
-      description: "In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:\n+ Request active and persistent role assignments for a principal, with or without expiry dates.\n+ Activate, deactivate, extend, or renew an eligible role assignment for a principal. To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignmentScheduleRequests for roleManagement
       operationId: roleManagement.directory_CreateRoleAssignmentScheduleRequests
       requestBody:
         description: New navigation property
@@ -2948,10 +2931,6 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days. After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_cancel
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -3276,11 +3255,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentSchedules
-      description: Get the schedules for active role assignment operations.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
+      summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.directory_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3701,11 +3677,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3788,11 +3761,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleDefinitions
-      description: Create a new custom unifiedRoleDefinition object. This feature requires an Azure AD Premium P1 or P2 license.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.directory_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -4189,11 +4158,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleInstances
-      description: Get the instances of role eligibilities.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.directory_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4520,11 +4486,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleRequests
-      description: 'In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.directory_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4639,11 +4602,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleEligibilityScheduleRequest
-      description: 'In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleEligibilityScheduleRequests for roleManagement
       operationId: roleManagement.directory_CreateRoleEligibilityScheduleRequests
       requestBody:
         description: New navigation property
@@ -4899,10 +4858,6 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is `Granted` and have the system automatically delete the cancelled request after 30 days. After calling this action, the **status** of the cancelled **unifiedRoleEligibilityScheduleRequest** changes to `Revoked`.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_cancel
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -5223,11 +5178,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilitySchedules
-      description: Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0
+      summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.directory_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6101,11 +6053,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6185,11 +6134,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create unifiedRoleAssignment
-      description: Create a new unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -6595,11 +6540,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleInstances
-      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleInstances from roleManagement
+      description: Instances for active role assignments.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7011,11 +6953,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleRequests
-      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleRequests from roleManagement
+      description: Requests for active role assignments to principals through PIM.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7132,11 +7071,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleAssignmentScheduleRequests
-      description: "In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:\n+ Request active and persistent role assignments for a principal, with or without expiry dates.\n+ Activate, deactivate, extend, or renew an eligible role assignment for a principal. To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignmentScheduleRequests for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleAssignmentScheduleRequests
       requestBody:
         description: New navigation property
@@ -7462,10 +7397,6 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days. After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_cancel
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -7790,11 +7721,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentSchedules
-      description: Get the schedules for active role assignment operations.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
+      summary: Get roleAssignmentSchedules from roleManagement
+      description: Schedules for active role assignment operations.
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8215,11 +8143,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for the provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8302,11 +8227,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleDefinitions
-      description: Create a new custom unifiedRoleDefinition object. This feature requires an Azure AD Premium P1 or P2 license.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -8703,11 +8624,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleInstances
-      description: Get the instances of role eligibilities.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleInstances from roleManagement
+      description: Instances for role eligibility requests.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9034,11 +8952,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleRequests
-      description: 'In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleRequests from roleManagement
+      description: Requests for role eligibilities for principals through PIM.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9153,11 +9068,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleEligibilityScheduleRequest
-      description: 'In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleEligibilityScheduleRequests for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleEligibilityScheduleRequests
       requestBody:
         description: New navigation property
@@ -9413,10 +9324,6 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is `Granted` and have the system automatically delete the cancelled request after 30 days. After calling this action, the **status** of the cancelled **unifiedRoleEligibilityScheduleRequest** changes to `Revoked`.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_cancel
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -9737,11 +9644,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilitySchedules
-      description: Get the unifiedRoleEligibilitySchedule resources from the roleEligibilitySchedules navigation property.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0
+      summary: Get roleEligibilitySchedules from roleManagement
+      description: Schedules for role eligibility operations.
       operationId: roleManagement.entitlementManagement_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'

@@ -838,45 +838,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.createRemoteHelpSession':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action createRemoteHelpSession
-      description: Remote help - Create session with a specific device
-      operationId: deviceManagement.comanagedDevices_createRemoteHelpSession
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: The unique identifier of managedDevice
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                sessionType:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.createRemoteHelpSessionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice':
     post:
       tags:
@@ -1018,41 +979,6 @@ paths:
                   type: string
                   nullable: true
                 footer:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.endRemoteHelpSession':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action endRemoteHelpSession
-      description: 'Remote help - End ACS session, Pubsub session and delete Remote help session'
-      operationId: deviceManagement.comanagedDevices_endRemoteHelpSession
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: The unique identifier of managedDevice
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                sessionKey:
                   type: string
                   nullable: true
               additionalProperties:
@@ -1371,10 +1297,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovisionCloudPc
-      description: Reprovision a Cloud PC with an Intune managed device ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
@@ -1413,48 +1335,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.requestRemoteHelpSessionAccess':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action requestRemoteHelpSessionAccess
-      description: Remote help - Request Remote help session access permission for an existing session
-      operationId: deviceManagement.comanagedDevices_requestRemoteHelpSessionAccess
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: The unique identifier of managedDevice
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                sessionKey:
-                  type: string
-                  nullable: true
-                pubSubConnectionId:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.requestRemoteHelpSessionAccessResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.resetPasscode':
     post:
       tags:
@@ -1482,10 +1362,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resizeCloudPc
-      description: Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_resizeCloudPc
       parameters:
         - name: managedDevice-id
@@ -1520,10 +1396,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action restoreCloudPc
-      description: Restore a Cloud PC device to a previous state with an Intune managed device ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_restoreCloudPc
       parameters:
         - name: managedDevice-id
@@ -1702,10 +1574,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setCloudPcReviewStatus
-      description: 'Set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_setCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
@@ -1968,6 +1836,8 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                obliterationBehavior:
+                  $ref: '#/components/schemas/microsoft.graph.obliterationBehavior'
                 persistEsimDataPlan:
                   type: boolean
                   default: false
@@ -1990,10 +1860,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkReprovisionCloudPc
-      description: Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_bulkReprovisionCloudPc
       requestBody:
         description: Action parameters
@@ -2025,10 +1891,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkRestoreCloudPc
-      description: Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_bulkRestoreCloudPc
       requestBody:
         description: Action parameters
@@ -2067,10 +1929,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkSetCloudPcReviewStatus
-      description: Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.comanagedDevices_bulkSetCloudPcReviewStatus
       requestBody:
         description: Action parameters
@@ -4639,45 +4497,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.createRemoteHelpSession':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action createRemoteHelpSession
-      description: Remote help - Create session with a specific device
-      operationId: deviceManagement.managedDevices_createRemoteHelpSession
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: The unique identifier of managedDevice
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                sessionType:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.createRemoteHelpSessionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.deleteUserFromSharedAppleDevice':
     post:
       tags:
@@ -4819,41 +4638,6 @@ paths:
                   type: string
                   nullable: true
                 footer:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.endRemoteHelpSession':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action endRemoteHelpSession
-      description: 'Remote help - End ACS session, Pubsub session and delete Remote help session'
-      operationId: deviceManagement.managedDevices_endRemoteHelpSession
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: The unique identifier of managedDevice
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                sessionKey:
                   type: string
                   nullable: true
               additionalProperties:
@@ -5172,10 +4956,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovisionCloudPc
-      description: Reprovision a Cloud PC with an Intune managed device ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
@@ -5214,48 +4994,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.requestRemoteHelpSessionAccess':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action requestRemoteHelpSessionAccess
-      description: Remote help - Request Remote help session access permission for an existing session
-      operationId: deviceManagement.managedDevices_requestRemoteHelpSessionAccess
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: The unique identifier of managedDevice
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                sessionKey:
-                  type: string
-                  nullable: true
-                pubSubConnectionId:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.requestRemoteHelpSessionAccessResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.resetPasscode':
     post:
       tags:
@@ -5283,10 +5021,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resizeCloudPc
-      description: Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_resizeCloudPc
       parameters:
         - name: managedDevice-id
@@ -5321,10 +5055,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action restoreCloudPc
-      description: Restore a Cloud PC device to a previous state with an Intune managed device ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_restoreCloudPc
       parameters:
         - name: managedDevice-id
@@ -5503,10 +5233,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setCloudPcReviewStatus
-      description: 'Set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-setcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_setCloudPcReviewStatus
       parameters:
         - name: managedDevice-id
@@ -5769,6 +5495,8 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                obliterationBehavior:
+                  $ref: '#/components/schemas/microsoft.graph.obliterationBehavior'
                 persistEsimDataPlan:
                   type: boolean
                   default: false
@@ -5791,10 +5519,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkReprovisionCloudPc
-      description: Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_bulkReprovisionCloudPc
       requestBody:
         description: Action parameters
@@ -5826,10 +5550,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkRestoreCloudPc
-      description: Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_bulkRestoreCloudPc
       requestBody:
         description: Action parameters
@@ -5868,10 +5588,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bulkSetCloudPcReviewStatus
-      description: Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0
       operationId: deviceManagement.managedDevices_bulkSetCloudPcReviewStatus
       requestBody:
         description: Action parameters
@@ -6537,10 +6253,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setPortalNotificationAsSent
-      description: 'Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the **isPortalNotificationSent** property of the portal notification to `true`.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/devicemanagement-alertrecord-setportalnotificationassent?view=graph-rest-1.0
       operationId: deviceManagement.monitoring.alertRecords_setPortalNotificationAsSent
       parameters:
         - name: alertRecord-id
@@ -6573,48 +6285,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding-id}/microsoft.graph.disable':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action disable
-      operationId: deviceManagement.oemWarrantyInformationOnboarding_disable
-      parameters:
-        - name: oemWarrantyInformationOnboarding-id
-          in: path
-          description: The unique identifier of oemWarrantyInformationOnboarding
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: oemWarrantyInformationOnboarding
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding-id}/microsoft.graph.enable':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action enable
-      operationId: deviceManagement.oemWarrantyInformationOnboarding_enable
-      parameters:
-        - name: oemWarrantyInformationOnboarding-id
-          in: path
-          description: The unique identifier of oemWarrantyInformationOnboarding
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: oemWarrantyInformationOnboarding
       responses:
         '204':
           description: Success
@@ -12174,10 +11844,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action changeUserAccountType
-      description: Change the account type of the user on a specific Cloud PC.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_changeUserAccountType
       parameters:
         - name: cloudPC-id
@@ -12211,10 +11877,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action endGracePeriod
-      description: End the grace period for a specific Cloud PC. The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned. It allows users to access Cloud PCs for up to seven days before de-provisioning occurs. Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-endgraceperiod?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_endGracePeriod
       parameters:
         - name: cloudPC-id
@@ -12278,10 +11940,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reboot
-      description: Reboot a specific Cloud PC.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_reboot
       parameters:
         - name: cloudPC-id
@@ -12303,10 +11961,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rename
-      description: Rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_rename
       parameters:
         - name: cloudPC-id
@@ -12341,10 +11995,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovision
-      description: Reprovision a specific Cloud PC.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_reprovision
       parameters:
         - name: cloudPC-id
@@ -12380,10 +12030,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action restore
-      description: Restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_restore
       parameters:
         - name: cloudPC-id
@@ -12418,10 +12064,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retryPartnerAgentInstallation
-      description: Retry installation for the partner agents which failed to install on the Cloud PC. Service side will check which agent installation failed firstly and retry.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_retryPartnerAgentInstallation
       parameters:
         - name: cloudPC-id
@@ -12485,10 +12127,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action troubleshoot
-      description: Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.cloudPCs_troubleshoot
       parameters:
         - name: cloudPC-id
@@ -12604,10 +12242,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reupload
-      description: Reupload a cloudPcDeviceImage object that failed to upload.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcdeviceimage-reupload?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.deviceImages_reupload
       parameters:
         - name: cloudPcDeviceImage-id
@@ -12629,10 +12263,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action runHealthChecks
-      description: Run health checks on the cloudPcOnPremisesConnection object. This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-runhealthcheck?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.onPremisesConnections_runHealthChecks
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12654,10 +12284,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateAdDomainPassword
-      description: Update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpconpremisesconnection-updateaddomainpassword?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.onPremisesConnections_updateAdDomainPassword
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12713,10 +12339,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      description: Assign cloudPcProvisioningPolicy to user groups.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.provisioningPolicies_assign
       parameters:
         - name: cloudPcProvisioningPolicy-id
@@ -12779,10 +12401,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getDailyAggregatedRemoteConnectionReports
-      description: 'Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcreports-getdailyaggregatedremoteconnectionreports?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.reports_getDailyAggregatedRemoteConnectionReports
       requestBody:
         description: Action parameters
@@ -12849,10 +12467,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getRemoteConnectionHistoricalReports
-      description: Get the remote connection history records of a Cloud PC during a given period.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.reports_getRemoteConnectionHistoricalReports
       requestBody:
         description: Action parameters
@@ -12919,10 +12533,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getSharedUseLicenseUsageReport
-      description: 'Get a usage report on shared-use licenses, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcreports-getshareduselicenseusagereport?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.reports_getSharedUseLicenseUsageReport
       requestBody:
         description: Action parameters
@@ -12991,10 +12601,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getTotalAggregatedRemoteConnectionReports
-      description: Get the total aggregated remote connection usage of a Cloud PC during a given time span.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcreports-gettotalaggregatedremoteconnectionreports?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.reports_getTotalAggregatedRemoteConnectionReports
       requestBody:
         description: Action parameters
@@ -13061,10 +12667,6 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      description: Assign a cloudPcUserSetting to user groups.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0
       operationId: deviceManagement.virtualEndpoint.userSettings_assign
       parameters:
         - name: cloudPcUserSetting-id
@@ -13881,28 +13483,30 @@ components:
         - title: deviceAndAppManagementAssignmentFilter
           type: object
           properties:
+            assignmentFilterManagementType:
+              $ref: '#/components/schemas/microsoft.graph.assignmentFilterManagementType'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Creation time of the Assignment Filter.
+              description: 'The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z''.'
               format: date-time
             description:
               type: string
-              description: Description of the Assignment Filter.
+              description: Optional description of the Assignment Filter.
               nullable: true
             displayName:
               type: string
-              description: DisplayName of the Assignment Filter.
+              description: The name of the Assignment Filter.
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Last modified time of the Assignment Filter.
+              description: 'Last modified time of the Assignment Filter. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
               format: date-time
             payloads:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.payloadByFilter'
-              description: Associated assignments for a specific filter
+              description: Indicates associated assignments for a specific filter.
             platform:
               $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
             roleScopeTags:
@@ -13910,10 +13514,10 @@ components:
               items:
                 type: string
                 nullable: true
-              description: RoleScopeTags of the Assignment Filter.
+              description: Indicates role scope tags assigned for the assignment filter.
             rule:
               type: string
-              description: Rule definition of the Assignment Filter.
+              description: Rule definition of the assignment filter.
           additionalProperties:
             type: object
           description: A class containing the properties used for Assignment Filter.
@@ -14083,16 +13687,6 @@ components:
           additionalProperties:
             type: object
           description: Windows Log Collection request entity.
-    microsoft.graph.createRemoteHelpSessionResponse:
-      title: createRemoteHelpSessionResponse
-      type: object
-      properties:
-        sessionKey:
-          type: string
-          description: The unique identifier for a session
-      additionalProperties:
-        type: object
-      description: Remote help - response we provide back to the helper after successfully creating an ACS session
     microsoft.graph.administratorConfiguredDeviceComplianceState:
       title: administratorConfiguredDeviceComplianceState
       enum:
@@ -14110,22 +13704,6 @@ components:
           - value: nonCompliant
             description: Set compliance to nonCompliant
             name: nonCompliant
-    microsoft.graph.requestRemoteHelpSessionAccessResponse:
-      title: requestRemoteHelpSessionAccessResponse
-      type: object
-      properties:
-        pubSubEncryption:
-          type: string
-          description: AES encryption Initialization Vector for encrypting client messages sent to PubSub
-        pubSubEncryptionKey:
-          type: string
-          description: The unique identifier for encrypting client messages sent to PubSub
-        sessionKey:
-          type: string
-          description: The unique identifier for a session
-      additionalProperties:
-        type: object
-      description: Remote help - response we provide back to the helper after getting response from pubSub
     microsoft.graph.cloudPcReviewStatus:
       title: cloudPcReviewStatus
       type: object
@@ -14206,6 +13784,35 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.obliterationBehavior:
+      title: obliterationBehavior
+      enum:
+        - default
+        - doNotObliterate
+        - obliterateWithWarning
+        - always
+        - unknownFutureValue
+      type: string
+      description: 'In macOS 12 and later, this command uses Erase All Content and Settings (EACS) on Mac computers with the Apple M1 chip or the Apple T2 Security Chip. On those devices, if EACS can’t run, the device can use obliteration (macOS 11.x behavior). This key has no effect on machines prior to the T2 chip. Upon receiving this command, the device performs preflight checks to determine if the device is in a state that allows EACS. The ObliterationBehavior value defines the device''s fallback behavior.'
+      x-ms-enum:
+        name: obliterationBehavior
+        modelAsString: false
+        values:
+          - value: default
+            description: 'Default. If Erase All Content and Settings (EACS) preflight fails, the device responds to the server with an Error status and then attempts to erase itself. If EACS preflight succeeds but EACS fails, then the device attempts to erase itself.'
+            name: default
+          - value: doNotObliterate
+            description: 'If Erase All Content and Settings (EACS) preflight fails, the device responds to the server with an Error status and doesn’t attempt to erase itself. If EACS preflight succeeds but EACS fails, then the device doesn’t attempt to erase itself.'
+            name: doNotObliterate
+          - value: obliterateWithWarning
+            description: 'If Erase All Content and Settings (EACS) preflight fails, the device responds with an Acknowledged status and then attempts to erase itself. If EACS preflight succeeds but EACS fails, then the device attempts to erase itself.'
+            name: obliterateWithWarning
+          - value: always
+            description: The system doesn’t attempt Erase All Content and Settings (EACS). T2 and later devices always obliterate.
+            name: always
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.cloudPcBulkRemoteActionResult:
       title: cloudPcBulkRemoteActionResult
       type: object
@@ -15791,6 +15398,27 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.assignmentFilterManagementType:
+      title: assignmentFilterManagementType
+      enum:
+        - devices
+        - apps
+        - unknownFutureValue
+      type: string
+      description: Supported filter management types whether its devices or apps.
+      x-ms-enum:
+        name: assignmentFilterManagementType
+        modelAsString: false
+        values:
+          - value: devices
+            description: Indicates when filter is supported based on device properties. This is the default value when management type resolution fails.
+            name: devices
+          - value: apps
+            description: Indicates when filter is supported based on app properties.
+            name: apps
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.payloadByFilter:
       title: payloadByFilter
       type: object
@@ -16047,28 +15675,28 @@ components:
         modelAsString: false
         values:
           - value: none
-            description: None.
+            description: Default. No platform type specified.
             name: none
           - value: android
-            description: Android.
+            description: Settings for Android platform.
             name: android
           - value: iOS
-            description: iOS.
+            description: Settings for iOS platform.
             name: iOS
           - value: macOS
-            description: MacOS.
+            description: Settings for MacOS platform.
             name: macOS
           - value: windows10X
             description: Windows 10 X.
             name: windows10X
           - value: windows10
-            description: Windows 10.
+            description: Settings for Windows 10 platform.
             name: windows10
           - value: linux
-            description: Linux.
+            description: Settings for Linux platform.
             name: linux
           - value: unknownFutureValue
-            description: Sentinel member for cases where the client cannot handle the new enum values.
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.deviceManagementPriorityMetaData:
       title: deviceManagementPriorityMetaData
@@ -16104,28 +15732,28 @@ components:
         modelAsString: false
         values:
           - value: none
-            description: Setting cannot be deployed through any channel
+            description: Default. Setting cannot be deployed through any channel.
             name: none
           - value: mdm
-            description: Setting can be deployed through the MDM channel
+            description: Setting can be deployed through the MDM channel.
             name: mdm
           - value: windows10XManagement
             description: Setting can be deployed through the Windows10XManagement channel
             name: windows10XManagement
           - value: configManager
-            description: Setting can be deployed through the ConfigManager channel
+            description: Setting can be deployed through the ConfigManager channel.
             name: configManager
           - value: appleRemoteManagement
-            description: Setting can be deployed through the AppleRemoteManagement channel
+            description: Setting can be deployed through the AppleRemoteManagement channel.
             name: appleRemoteManagement
           - value: microsoftSense
-            description: Setting can be deployed through the SENSE agent channel
+            description: Setting can be deployed through the SENSE agent channel.
             name: microsoftSense
           - value: exchangeOnline
-            description: Setting can be deployed through the Exchange Online agent channel
+            description: Setting can be deployed through the Exchange Online agent channel.
             name: exchangeOnline
           - value: linuxMdm
-            description: Setting can be deployed through the Linux Mdm channel
+            description: Setting can be deployed through the Linux Mdm channel.
             name: linuxMdm
           - value: enrollment
             description: Setting can be deployed through device enrollment.
@@ -17417,6 +17045,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -17811,6 +17443,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.ODataErrors.ODataError:
@@ -19625,6 +19259,23 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.mailboxSettings:
       title: mailboxSettings
       type: object
@@ -19936,7 +19587,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -19969,7 +19620,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -20858,6 +20509,10 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -21745,7 +21400,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -21782,7 +21437,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -21805,7 +21460,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -21847,7 +21502,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -21879,7 +21534,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -21897,7 +21552,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -21905,7 +21560,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -21945,7 +21600,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -21968,7 +21623,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -21986,7 +21641,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -22039,7 +21694,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -22072,14 +21727,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -22329,6 +21984,10 @@ components:
             applicationId:
               type: string
               description: Intune application identifier.
+              nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
               nullable: true
             history:
               type: array
@@ -22879,7 +22538,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -23069,6 +22728,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -23379,6 +23040,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -23453,7 +23127,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
           nullable: true
       additionalProperties:
         type: object
@@ -23464,6 +23138,7 @@ components:
         - none
         - configuration
         - compliance
+        - unknownFutureValue
       type: string
       description: Supported setting types
       x-ms-enum:
@@ -23471,14 +23146,17 @@ components:
         modelAsString: false
         values:
           - value: none
-            description: No setting type specified
+            description: Default. No setting type specified.
             name: none
           - value: configuration
-            description: Configuration setting
+            description: Configuration setting type.
             name: configuration
           - value: compliance
-            description: Compliance setting
+            description: Compliance setting type.
             name: compliance
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementConfigurationControlType:
       title: deviceManagementConfigurationControlType
       enum:
@@ -23489,6 +23167,7 @@ components:
         - toggle
         - multiheaderGrid
         - contextPane
+        - unknownFutureValue
       type: string
       description: Setting control type representation in the UX
       x-ms-enum:
@@ -23496,32 +23175,36 @@ components:
         modelAsString: false
         values:
           - value: default
-            description: Don’t override default
+            description: Default. UX uses default UX element base on setting type for the setting.
             name: default
           - value: dropdown
-            description: Display Choice in dropdown
+            description: Display the setting in dropdown box.
             name: dropdown
           - value: smallTextBox
-            description: Display text input in small text input
+            description: Display text input in small text input.
             name: smallTextBox
           - value: largeTextBox
-            description: Display text input in large text input
+            description: Display text input in large text input.
             name: largeTextBox
           - value: toggle
-            description: Allow for toggle control type
+            description: Allow for toggle control type.
             name: toggle
           - value: multiheaderGrid
-            description: Allow for multiheader grid control type
+            description: Allow for multiheader grid control type.
             name: multiheaderGrid
           - value: contextPane
-            description: Allow for context pane control type
+            description: Allow for context pane control type.
             name: contextPane
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.deviceManagementConfigurationSettingVisibility:
       title: deviceManagementConfigurationSettingVisibility
       enum:
         - none
         - settingsCatalog
         - template
+        - unknownFutureValue
       type: string
       description: Supported setting types
       x-ms-enum:
@@ -23529,14 +23212,17 @@ components:
         modelAsString: false
         values:
           - value: none
-            description: Not visible
+            description: Default. Not visible.
             name: none
           - value: settingsCatalog
-            description: Visible to setting catalog UX
+            description: Visible to setting catalog policy type.
             name: settingsCatalog
           - value: template
-            description: Visible to template
+            description: Visible to template policy type.
             name: template
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.windows10DeviceModeType:
       title: windows10DeviceModeType
       enum:
@@ -24403,12 +24089,14 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: Denotes whether the policy is enabled.
             restrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Collection of application and service principals to which a policy is applied.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -24565,11 +24253,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -25744,6 +25432,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -29792,6 +29482,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -30682,11 +30382,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -30704,6 +30406,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeCards:
               type: array
@@ -30720,6 +30423,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -30776,6 +30480,43 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
     microsoft.graph.ODataErrors.ErrorDetails:
@@ -31245,11 +30986,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -32581,6 +32322,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.subscription:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32637,7 +32401,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -36284,6 +36048,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.printerCapabilities:
       title: printerCapabilities
       type: object
@@ -37552,6 +37324,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -40645,9 +40440,13 @@ components:
       title: synchronizationRule
       type: object
       properties:
+        containerFilter:
+          $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
           description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+        groupFilter:
+          $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
           type: string
           description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
@@ -40909,6 +40708,15 @@ components:
               description: Indicates if the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.security.behaviorDuringRetentionPeriod:
+      title: behaviorDuringRetentionPeriod
+      enum:
+        - doNotRetain
+        - retain
+        - retainAsRecord
+        - retainAsRegulatoryRecord
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessAction:
       title: accessAction
       type: object
@@ -41337,6 +41145,28 @@ components:
         - TooManyDeletes
         - IngestionInterrupted
       type: string
+    microsoft.graph.containerFilter:
+      title: containerFilter
+      type: object
+      properties:
+        includedContainers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupFilter:
+      title: groupFilter
+      type: object
+      properties:
+        includedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyStringValuePair:
       title: stringKeyStringValuePair
       type: object

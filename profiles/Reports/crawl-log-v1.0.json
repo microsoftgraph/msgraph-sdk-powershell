@@ -361,6 +361,26 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Reports.yml"
     },
+    "/reports/microsoft.graph.getTeamsTeamActivityCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsTeamActivityDetail(date={date})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsTeamActivityDetail(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsTeamActivityDistributionCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
+    "/reports/microsoft.graph.getTeamsTeamCounts(period='{period}')": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Reports.yml"
+    },
     "/reports/microsoft.graph.getTeamsUserActivityCounts(period='{period}')": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Reports.yml"
