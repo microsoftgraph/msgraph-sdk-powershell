@@ -8,8 +8,7 @@ schema: 2.0.0
 # Confirm-MgRiskyUserCompromised
 
 ## SYNOPSIS
-Confirm one or more riskyUser objects as compromised.
-This action sets the targeted user's risk level to high.
+Invoke action confirmCompromised
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Confirm-MgRiskyUserCompromised
 ```
 
 ## DESCRIPTION
-Confirm one or more riskyUser objects as compromised.
-This action sets the targeted user's risk level to high.
+Invoke action confirmCompromised
 
 ## EXAMPLES
 

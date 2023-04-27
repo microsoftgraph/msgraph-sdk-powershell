@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgContactManager
 
 ## SYNOPSIS
-Get the contact's manager
+The user or contact that is this contact's manager.
+Read-only.
+Supports $expand and $filter (eq) by id.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgContactManager -InputObject <IIdentityDirectoryManagementIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get the contact's manager
+The user or contact that is this contact's manager.
+Read-only.
+Supports $expand and $filter (eq) by id.
 
 ## EXAMPLES
 

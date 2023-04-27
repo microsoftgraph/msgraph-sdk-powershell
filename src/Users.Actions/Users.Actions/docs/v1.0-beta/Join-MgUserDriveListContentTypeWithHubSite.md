@@ -8,7 +8,7 @@ schema: 2.0.0
 # Join-MgUserDriveListContentTypeWithHubSite
 
 ## SYNOPSIS
-Associate a [content type][contentType] with a list of hub sites.
+Invoke action associateWithHubSites
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Join-MgUserDriveListContentTypeWithHubSite -InputObject <IUsersActionsIdentity>
 ```
 
 ## DESCRIPTION
-Associate a [content type][contentType] with a list of hub sites.
+Invoke action associateWithHubSites
 
 ## EXAMPLES
 

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgUserMailFolderMessageDelta
 
 ## SYNOPSIS
-Get a set of messages that have been added, deleted, or updated in a specified folder.
-A **delta** function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages).
-This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.
+Invoke function delta
 
 ## SYNTAX
 
@@ -29,9 +27,7 @@ Get-MgUserMailFolderMessageDelta -InputObject <IUsersFunctionsIdentity> [-Count]
 ```
 
 ## DESCRIPTION
-Get a set of messages that have been added, deleted, or updated in a specified folder.
-A **delta** function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages).
-This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.
+Invoke function delta
 
 ## EXAMPLES
 
@@ -278,12 +274,12 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[On <String>]`: Usage: on='{on}'
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PlannerBucketId <String>]`: The unique identifier of plannerBucket
   - `[PlannerPlanId <String>]`: The unique identifier of plannerPlan
   - `[Q <String>]`: Usage: q='{q}'
   - `[RoomList <String>]`: Usage: RoomList='{RoomList}'
   - `[ServicePlanId <String>]`: Usage: servicePlanId='{servicePlanId}'
-  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[StartDateTime <String>]`: Usage: StartDateTime='{StartDateTime}'
   - `[StartDateTime1 <String>]`: Usage: startDateTime='{startDateTime}'

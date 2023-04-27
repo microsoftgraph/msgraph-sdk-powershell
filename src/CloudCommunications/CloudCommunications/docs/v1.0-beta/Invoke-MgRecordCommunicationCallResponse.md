@@ -8,12 +8,7 @@ schema: 2.0.0
 # Invoke-MgRecordCommunicationCallResponse
 
 ## SYNOPSIS
-Record a short audio response from the caller.
-A bot can use this to capture a voice response from a caller after they are prompted for a response.
-For more information about how to handle operations, see commsOperation This action is not intended to record the entire call.
-The maximum length of recording is 2 minutes.
-The recording is not saved permanently by the by the Cloud Communications Platform and is discarded shortly after the call ends.
-The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
+Invoke action recordResponse
 
 ## SYNTAX
 
@@ -50,12 +45,7 @@ Invoke-MgRecordCommunicationCallResponse -InputObject <ICloudCommunicationsIdent
 ```
 
 ## DESCRIPTION
-Record a short audio response from the caller.
-A bot can use this to capture a voice response from a caller after they are prompted for a response.
-For more information about how to handle operations, see commsOperation This action is not intended to record the entire call.
-The maximum length of recording is 2 minutes.
-The recording is not saved permanently by the by the Cloud Communications Platform and is discarded shortly after the call ends.
-The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
+Invoke action recordResponse
 
 ## EXAMPLES
 

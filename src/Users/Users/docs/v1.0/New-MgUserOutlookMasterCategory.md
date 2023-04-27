@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserOutlookMasterCategory
 
 ## SYNOPSIS
-Create an outlookCategory object in the user's master list of categories.
+Create new navigation property to masterCategories for users
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ New-MgUserOutlookMasterCategory -InputObject <IUsersIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Create an outlookCategory object in the user's master list of categories.
+Create new navigation property to masterCategories for users
 
 ## EXAMPLES
 

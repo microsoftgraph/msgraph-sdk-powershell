@@ -12,14 +12,14 @@ Invoke function filterByCurrentUser
 
 ## SYNTAX
 
-### Filter1 (Default)
+### Filter (Default)
 ```
 Invoke-MgFilterEntitlementManagementAccessPackageByCurrentUser -On <String> [-Count] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
  [<CommonParameters>]
 ```
 
-### FilterViaIdentity1
+### FilterViaIdentity
 ```
 Invoke-MgFilterEntitlementManagementAccessPackageByCurrentUser -InputObject <IIdentityGovernanceIdentity>
  [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
@@ -69,7 +69,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: FilterViaIdentity1
+Parameter Sets: FilterViaIdentity
 Aliases:
 
 Required: True
@@ -84,7 +84,7 @@ Usage: on='{on}'
 
 ```yaml
 Type: System.String
-Parameter Sets: Filter1
+Parameter Sets: Filter
 Aliases:
 
 Required: True

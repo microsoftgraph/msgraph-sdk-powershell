@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserOutlookTaskFolder
 
 ## SYNOPSIS
-Create a task folder in the default task group (`My Tasks`) of the user's mailbox.
+Create new navigation property to taskFolders for users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserOutlookTaskFolder -InputObject <IUsersIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Create a task folder in the default task group (`My Tasks`) of the user's mailbox.
+Create new navigation property to taskFolders for users
 
 ## EXAMPLES
 

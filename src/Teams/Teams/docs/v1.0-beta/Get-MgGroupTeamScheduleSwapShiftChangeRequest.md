@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamScheduleSwapShiftChangeRequest
 
 ## SYNOPSIS
-Get swapShiftsChangeRequests from groups
+The swap requests for shifts in the schedule.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupTeamScheduleSwapShiftChangeRequest -InputObject <ITeamsIdentity> [-Ex
 ```
 
 ## DESCRIPTION
-Get swapShiftsChangeRequests from groups
+The swap requests for shifts in the schedule.
 
 ## EXAMPLES
 

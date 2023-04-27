@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSearchAcronym
 
 ## SYNOPSIS
-Create a new acronym object.
+Create new navigation property to acronyms for search
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgSearchAcronym -BodyParameter <IMicrosoftGraphSearchAcronym> [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Create a new acronym object.
+Create new navigation property to acronyms for search
 
 ## EXAMPLES
 

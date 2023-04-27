@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgEducationClassAssignmentCategory
 
 ## SYNOPSIS
-Creates a new educationCategory on an educationClass.
-Only teachers can perform this operation.
+Create new navigation property to assignmentCategories for education
 
 ## SYNTAX
 
@@ -63,8 +62,7 @@ New-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Creates a new educationCategory on an educationClass.
-Only teachers can perform this operation.
+Create new navigation property to assignmentCategories for education
 
 ## EXAMPLES
 

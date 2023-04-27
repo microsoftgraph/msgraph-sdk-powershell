@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrolment
-Module Guid: edf821c2-b986-4387-b35d-ba6886ca9da4
+Module Guid: 380dbb7f-08bc-4220-9fd8-280c3506c4b3
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.enrolment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -319,7 +319,7 @@ Create new navigation property to resourceNamespaces for roleManagement
 Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleAssignment](New-MgRoleManagementDirectoryRoleAssignment.md)
-Create a new unifiedRoleAssignment object.
+Create new navigation property to roleAssignments for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleAssignmentSchedule](New-MgRoleManagementDirectoryRoleAssignmentSchedule.md)
 Create new navigation property to roleAssignmentSchedules for roleManagement
@@ -328,13 +328,10 @@ Create new navigation property to roleAssignmentSchedules for roleManagement
 Create new navigation property to roleAssignmentScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
-In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:\n+ Request active and persistent role assignments for a principal, with or without expiry dates.\n+ Activate, deactivate, extend, or renew an eligible role assignment for a principal.
-To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
-See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
+Create new navigation property to roleAssignmentScheduleRequests for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleDefinition](New-MgRoleManagementDirectoryRoleDefinition.md)
-Create a new custom unifiedRoleDefinition object.
-This feature requires an Azure AD Premium P1 or P2 license.
+Create new navigation property to roleDefinitions for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -346,8 +343,7 @@ Create new navigation property to roleEligibilitySchedules for roleManagement
 Create new navigation property to roleEligibilityScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
-In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object.
-This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
+Create new navigation property to roleEligibilityScheduleRequests for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementResourceNamespace](New-MgRoleManagementEntitlementManagementResourceNamespace.md)
 Create new navigation property to resourceNamespaces for roleManagement
@@ -356,7 +352,7 @@ Create new navigation property to resourceNamespaces for roleManagement
 Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignment](New-MgRoleManagementEntitlementManagementRoleAssignment.md)
-Create a new unifiedRoleAssignment object.
+Create new navigation property to roleAssignments for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignmentSchedule](New-MgRoleManagementEntitlementManagementRoleAssignmentSchedule.md)
 Create new navigation property to roleAssignmentSchedules for roleManagement
@@ -365,13 +361,10 @@ Create new navigation property to roleAssignmentSchedules for roleManagement
 Create new navigation property to roleAssignmentScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
-In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:\n+ Request active and persistent role assignments for a principal, with or without expiry dates.\n+ Activate, deactivate, extend, or renew an eligible role assignment for a principal.
-To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
-See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
+Create new navigation property to roleAssignmentScheduleRequests for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleDefinition](New-MgRoleManagementEntitlementManagementRoleDefinition.md)
-Create a new custom unifiedRoleDefinition object.
-This feature requires an Azure AD Premium P1 or P2 license.
+Create new navigation property to roleDefinitions for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -383,8 +376,7 @@ Create new navigation property to roleEligibilitySchedules for roleManagement
 Create new navigation property to roleEligibilityScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
-In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object.
-This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
+Create new navigation property to roleEligibilityScheduleRequests for roleManagement
 
 ### [Remove-MgDeviceManagementConditionalAccessSetting](Remove-MgDeviceManagementConditionalAccessSetting.md)
 Delete navigation property conditionalAccessSettings for deviceManagement
@@ -480,20 +472,16 @@ Delete navigation property roleEligibilityScheduleInstances for roleManagement
 Delete navigation property roleEligibilityScheduleRequests for roleManagement
 
 ### [Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
-Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
-After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
+Invoke action cancel
 
 ### [Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
-Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is `Granted` and have the system automatically delete the cancelled request after 30 days.
-After calling this action, the **status** of the cancelled **unifiedRoleEligibilityScheduleRequest** changes to `Revoked`.
+Invoke action cancel
 
 ### [Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
-Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
-After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
+Invoke action cancel
 
 ### [Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
-Immediately cancel a unifiedRoleEligibilityScheduleRequest object whose status is `Granted` and have the system automatically delete the cancelled request after 30 days.
-After calling this action, the **status** of the cancelled **unifiedRoleEligibilityScheduleRequest** changes to `Revoked`.
+Invoke action cancel
 
 ### [Update-MgDeviceManagementConditionalAccessSetting](Update-MgDeviceManagementConditionalAccessSetting.md)
 Update the navigation property conditionalAccessSettings in deviceManagement

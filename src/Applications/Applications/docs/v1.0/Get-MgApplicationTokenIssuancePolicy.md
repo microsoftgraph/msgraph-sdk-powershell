@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationTokenIssuancePolicy
 
 ## SYNOPSIS
-List the tokenIssuancePolicy objects that are assigned to an application.
+Get tokenIssuancePolicies from applications
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgApplicationTokenIssuancePolicy -ApplicationId <String> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-List the tokenIssuancePolicy objects that are assigned to an application.
+Get tokenIssuancePolicies from applications
 
 ## EXAMPLES
 

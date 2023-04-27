@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgSecurityLabelRetentionLabel
 
 ## SYNOPSIS
-Create a new retentionLabel object.
-To create a disposition review stage, include the **actionAfterRetentionPeriod** property in the request body with one of the possible values specified.
+Create new navigation property to retentionLabels for security
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ New-MgSecurityLabelRetentionLabel -BodyParameter <IMicrosoftGraphSecurityRetenti
 ```
 
 ## DESCRIPTION
-Create a new retentionLabel object.
-To create a disposition review stage, include the **actionAfterRetentionPeriod** property in the request body with one of the possible values specified.
+Create new navigation property to retentionLabels for security
 
 ## EXAMPLES
 

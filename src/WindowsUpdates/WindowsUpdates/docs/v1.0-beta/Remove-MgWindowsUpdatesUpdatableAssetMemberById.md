@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgWindowsUpdatesUpdatableAssetMemberById
 
 ## SYNOPSIS
-Remove members of the same type from an updatableAssetGroup.
-You can also use the method removeMembers to remove members.
+Invoke action removeMembersById
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Remove-MgWindowsUpdatesUpdatableAssetMemberById -InputObject <IWindowsUpdatesIde
 ```
 
 ## DESCRIPTION
-Remove members of the same type from an updatableAssetGroup.
-You can also use the method removeMembers to remove members.
+Invoke action removeMembersById
 
 ## EXAMPLES
 

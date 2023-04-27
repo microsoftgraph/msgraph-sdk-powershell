@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport
 
 ## SYNOPSIS
-Get the total aggregated remote connection usage of a Cloud PC during a given time span.
+Invoke action getTotalAggregatedRemoteConnectionReports
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport
 ```
 
 ## DESCRIPTION
-Get the total aggregated remote connection usage of a Cloud PC during a given time span.
+Invoke action getTotalAggregatedRemoteConnectionReports
 
 ## EXAMPLES
 

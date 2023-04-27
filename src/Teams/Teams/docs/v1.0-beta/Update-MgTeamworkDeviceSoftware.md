@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgTeamworkDeviceSoftware
 
 ## SYNOPSIS
-Update the software for a Microsoft Teams-enabled device.
-This API triggers a long-running operation.
+Invoke action updateSoftware
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Update-MgTeamworkDeviceSoftware -InputObject <ITeamsIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Update the software for a Microsoft Teams-enabled device.
-This API triggers a long-running operation.
+Invoke action updateSoftware
 
 ## EXAMPLES
 

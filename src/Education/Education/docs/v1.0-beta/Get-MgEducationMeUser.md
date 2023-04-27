@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationMeUser
 
 ## SYNOPSIS
-Retrieve the simple directory **user** that corresponds to this **educationUser**.
+Get user from education
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgEducationMeUser [-ExpandProperty <String[]>] [-Property <String[]>] [<Comm
 ```
 
 ## DESCRIPTION
-Retrieve the simple directory **user** that corresponds to this **educationUser**.
+Get user from education
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityTiIndicator
 
 ## SYNOPSIS
-Create a new tiIndicator object.
+Create new navigation property to tiIndicators for security
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ New-MgSecurityTiIndicator -BodyParameter <IMicrosoftGraphTiIndicator> [-Confirm]
 ```
 
 ## DESCRIPTION
-Create a new tiIndicator object.
+Create new navigation property to tiIndicators for security
 
 ## EXAMPLES
 

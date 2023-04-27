@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgPrivilegedApprovalRoleInfoSetting
 
 ## SYNOPSIS
-Update the role settings for the given role setting.
-A privilegedRoleSettings object will be returned.
+Update the navigation property settings in privilegedApproval
 
 ## SYNTAX
 
@@ -45,8 +44,7 @@ Update-MgPrivilegedApprovalRoleInfoSetting -InputObject <IIdentityGovernanceIden
 ```
 
 ## DESCRIPTION
-Update the role settings for the given role setting.
-A privilegedRoleSettings object will be returned.
+Update the navigation property settings in privilegedApproval
 
 ## EXAMPLES
 

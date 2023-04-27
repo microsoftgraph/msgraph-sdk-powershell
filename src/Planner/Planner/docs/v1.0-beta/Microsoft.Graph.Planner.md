@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Planner
-Module Guid: fc46c77a-4762-4cec-948a-dfb322a680f6
+Module Guid: c6a4aef1-e61e-41e9-9892-28901a618d7f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -22,13 +22,19 @@ Nullable.
 Returns the plannerPlans owned by the group.
 
 ### [Get-MgGroupPlannerPlanBucket](Get-MgGroupPlannerPlanBucket.md)
-Retrieve a list of plannerBucket objects contained by a plannerPlan object.
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupPlannerPlanDetail](Get-MgGroupPlannerPlanDetail.md)
-Retrieve the properties and relationships of a **plannerPlanDetails** object.
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupPlannerPlanTask](Get-MgGroupPlannerPlanTask.md)
-Retrieve a list of plannerTask objects associated with a plannerPlan object.
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgPlanner](Get-MgPlanner.md)
 Get planner
@@ -42,7 +48,9 @@ Returns a collection of the specified buckets
 Invoke function delta
 
 ### [Get-MgPlannerBucketTask](Get-MgPlannerBucketTask.md)
-Retrieve a list of plannerTask objects associated to a plannerBucket object.
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Get-MgPlannerPlan](Get-MgPlannerPlan.md)
 Read-only.
@@ -50,16 +58,22 @@ Nullable.
 Returns a collection of the specified plans
 
 ### [Get-MgPlannerPlanBucket](Get-MgPlannerPlanBucket.md)
-Retrieve a list of plannerBucket objects contained by a plannerPlan object.
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgPlannerPlanDelta](Get-MgPlannerPlanDelta.md)
 Invoke function delta
 
 ### [Get-MgPlannerPlanDetail](Get-MgPlannerPlanDetail.md)
-Retrieve the properties and relationships of a **plannerPlanDetails** object.
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgPlannerPlanTask](Get-MgPlannerPlanTask.md)
-Retrieve a list of plannerTask objects associated with a plannerPlan object.
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgPlannerRoster](Get-MgPlannerRoster.md)
 Read-only.
@@ -78,23 +92,32 @@ Nullable.
 Returns a collection of the specified tasks
 
 ### [Get-MgPlannerTaskAssignedToTaskBoardFormat](Get-MgPlannerTaskAssignedToTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Get-MgPlannerTaskBucketTaskBoardFormat](Get-MgPlannerTaskBucketTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Get-MgPlannerTaskDelta](Get-MgPlannerTaskDelta.md)
 Invoke function delta
 
 ### [Get-MgPlannerTaskDetail](Get-MgPlannerTaskDetail.md)
-Retrieve the properties and relationships of a **plannerTaskDetails** object.
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Get-MgPlannerTaskProgressTaskBoardFormat](Get-MgPlannerTaskProgressTaskBoardFormat.md)
-Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Get-MgUserPlanner](Get-MgUserPlanner.md)
-Retrieve the properties and relationships of a plannerUser object.
-The returned properties include the user's favorite plans and recently viewed plans.
+Selective Planner services available to the user.
+Read-only.
+Nullable.
 
 ### [Get-MgUserPlannerFavoritePlan](Get-MgUserPlannerFavoritePlan.md)
 Read-only.
@@ -102,7 +125,7 @@ Nullable.
 Returns the plannerPlans that the user marked as favorites.
 
 ### [Get-MgUserPlannerPlan](Get-MgUserPlannerPlan.md)
-Retrieve a list of **plannerplan** objects shared with a user object.
+Get plans from users
 
 ### [Get-MgUserPlannerRecentPlan](Get-MgUserPlannerRecentPlan.md)
 Read-only.
@@ -115,22 +138,24 @@ Nullable.
 Returns the plannerPlans contained by the plannerRosters the user is a member.
 
 ### [Get-MgUserPlannerTask](Get-MgUserPlannerTask.md)
-Retrieve a list of **plannertask** objects assigned to a User.
+Read-only.
+Nullable.
+Returns the plannerTasks assigned to the user.
 
 ### [New-MgPlannerBucket](New-MgPlannerBucket.md)
-Create a new plannerBucket object.
+Create new navigation property to buckets for planner
 
 ### [New-MgPlannerPlan](New-MgPlannerPlan.md)
-Create a new **plannerPlan**.
+Create new navigation property to plans for planner
 
 ### [New-MgPlannerRoster](New-MgPlannerRoster.md)
-Create a new plannerRoster object.
+Create new navigation property to rosters for planner
 
 ### [New-MgPlannerRosterMember](New-MgPlannerRosterMember.md)
-Add a member to the plannerRoster object.
+Create new navigation property to members for planner
 
 ### [New-MgPlannerTask](New-MgPlannerTask.md)
-Create a new **plannerTask**.
+Create new navigation property to tasks for planner
 
 ### [Remove-MgGroupPlannerPlanDetail](Remove-MgGroupPlannerPlanDetail.md)
 Delete navigation property details for groups

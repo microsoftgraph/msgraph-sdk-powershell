@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSiteContentTypeColumn
 
 ## SYNOPSIS
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for sites
 
 ## SYNTAX
 
@@ -59,7 +59,7 @@ New-MgSiteContentTypeColumn -InputObject <ISitesIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for sites
 
 ## EXAMPLES
 
@@ -903,6 +903,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

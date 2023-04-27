@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgGroupDriveItemLink
 
 ## SYNOPSIS
-You can use **createLink** action to share a driveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
-DriveItem resources inherit sharing permissions from their ancestors.
+Invoke action createLink
 
 ## SYNTAX
 
@@ -45,9 +43,7 @@ New-MgGroupDriveItemLink -InputObject <IGroupsIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-You can use **createLink** action to share a driveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
-DriveItem resources inherit sharing permissions from their ancestors.
+Invoke action createLink
 
 ## EXAMPLES
 
@@ -350,6 +346,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgSiteOnenoteSectionGroupSection
 
 ## SYNOPSIS
-Retrieve a list of onenoteSection objects from the specified section group.
+The sections in the section group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +21,9 @@ Get-MgSiteOnenoteSectionGroupSection -SectionGroupId <String> -SiteId <String> [
 ```
 
 ## DESCRIPTION
-Retrieve a list of onenoteSection objects from the specified section group.
+The sections in the section group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

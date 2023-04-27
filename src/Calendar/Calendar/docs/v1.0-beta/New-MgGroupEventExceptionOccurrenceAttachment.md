@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgGroupEventExceptionOccurrenceAttachment
 
 ## SYNOPSIS
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Create new navigation property to attachments for groups
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ New-MgGroupEventExceptionOccurrenceAttachment -InputObject <ICalendarIdentity>
 ```
 
 ## DESCRIPTION
-Use this API to add an attachment to an existing event.
-This operation limits the size of the attachment you can add to under 3 MB.
-If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+Create new navigation property to attachments for groups
 
 ## EXAMPLES
 

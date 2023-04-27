@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPlannerPlan
 
 ## SYNOPSIS
-Create a new **plannerPlan**.
+Create new navigation property to plans for planner
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgPlannerPlan -BodyParameter <IMicrosoftGraphPlannerPlan1> [-Confirm] [-What
 ```
 
 ## DESCRIPTION
-Create a new **plannerPlan**.
+Create new navigation property to plans for planner
 
 ## EXAMPLES
 

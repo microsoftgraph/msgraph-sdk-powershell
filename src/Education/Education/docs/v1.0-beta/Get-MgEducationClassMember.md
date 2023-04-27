@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgEducationClassMember
 
 ## SYNOPSIS
-Retrieves the teachers and students for a class.
-Note that if the delegated token is used, members can only be seen by other members of the class.
+All users in the class.
+Nullable.
 
 ## SYNTAX
 
@@ -20,8 +20,8 @@ Get-MgEducationClassMember -EducationClassId <String> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Retrieves the teachers and students for a class.
-Note that if the delegated token is used, members can only be seen by other members of the class.
+All users in the class.
+Nullable.
 
 ## EXAMPLES
 

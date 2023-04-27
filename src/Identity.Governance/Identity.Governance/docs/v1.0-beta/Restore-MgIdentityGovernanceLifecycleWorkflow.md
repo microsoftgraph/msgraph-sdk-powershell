@@ -8,8 +8,7 @@ schema: 2.0.0
 # Restore-MgIdentityGovernanceLifecycleWorkflow
 
 ## SYNOPSIS
-Restore a workflow that has been deleted.
-You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
+Invoke action restore
 
 ## SYNTAX
 
@@ -25,8 +24,7 @@ Restore-MgIdentityGovernanceLifecycleWorkflow -InputObject <IIdentityGovernanceI
 ```
 
 ## DESCRIPTION
-Restore a workflow that has been deleted.
-You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
+Invoke action restore
 
 ## EXAMPLES
 

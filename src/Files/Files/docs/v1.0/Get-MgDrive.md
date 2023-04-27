@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgDrive
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+Get entity from drives by key
 
 ## SYNTAX
 
@@ -32,8 +31,7 @@ Get-MgDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[]>] [-Propert
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+Get entity from drives by key
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgServicePrincipalPasswordSingleSignOnCredentials
 
 ## SYNOPSIS
-Update single sign-on credentials using a password for a user or group.
+Invoke action updatePasswordSingleSignOnCredentials
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgServicePrincipalPasswordSingleSignOnCredentials -InputObject <IApplicat
 ```
 
 ## DESCRIPTION
-Update single sign-on credentials using a password for a user or group.
+Invoke action updatePasswordSingleSignOnCredentials
 
 ## EXAMPLES
 

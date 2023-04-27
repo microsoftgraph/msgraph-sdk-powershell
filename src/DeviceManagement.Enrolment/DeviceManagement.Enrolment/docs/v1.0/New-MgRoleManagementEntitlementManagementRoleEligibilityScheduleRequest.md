@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest
 
 ## SYNOPSIS
-In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object.
-This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
+Create new navigation property to roleEligibilityScheduleRequests for roleManagement
 
 ## SYNTAX
 
@@ -35,8 +34,7 @@ New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest
 ```
 
 ## DESCRIPTION
-In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object.
-This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
+Create new navigation property to roleEligibilityScheduleRequests for roleManagement
 
 ## EXAMPLES
 

@@ -8,10 +8,7 @@ schema: 2.0.0
 # Set-MgGroupLicense
 
 ## SYNOPSIS
-Add or remove licenses on the group.
-Licenses assigned to the group will be assigned to all users in the group.
-To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
-To get the subscriptions available in the directory, perform a GET subscribedSkus request.
+Invoke action assignLicense
 
 ## SYNTAX
 
@@ -44,10 +41,7 @@ Set-MgGroupLicense -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashta
 ```
 
 ## DESCRIPTION
-Add or remove licenses on the group.
-Licenses assigned to the group will be assigned to all users in the group.
-To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
-To get the subscriptions available in the directory, perform a GET subscribedSkus request.
+Invoke action assignLicense
 
 ## EXAMPLES
 
@@ -272,6 +266,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

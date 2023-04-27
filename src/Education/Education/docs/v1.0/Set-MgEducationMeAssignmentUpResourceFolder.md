@@ -8,28 +8,24 @@ schema: 2.0.0
 # Set-MgEducationMeAssignmentUpResourceFolder
 
 ## SYNOPSIS
-Create a SharePoint folder to upload files for a given educationAssignment.
-Only teachers can perform this operation.
-The teacher determines the resources to upload in the assignment's folder.
+Invoke action setUpResourcesFolder
 
 ## SYNTAX
 
-### Set (Default)
+### Set1 (Default)
 ```
 Set-MgEducationMeAssignmentUpResourceFolder -EducationAssignmentId <String> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### SetViaIdentity1
 ```
 Set-MgEducationMeAssignmentUpResourceFolder -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create a SharePoint folder to upload files for a given educationAssignment.
-Only teachers can perform this operation.
-The teacher determines the resources to upload in the assignment's folder.
+Invoke action setUpResourcesFolder
 
 ## EXAMPLES
 
@@ -40,7 +36,7 @@ The unique identifier of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Set
+Parameter Sets: Set1
 Aliases:
 
 Required: True
@@ -56,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: SetViaIdentity
+Parameter Sets: SetViaIdentity1
 Aliases:
 
 Required: True

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Move-MgCommunicationCall
 
 ## SYNOPSIS
-Transfer an active peer-to-peer call or group call.
-A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made.
-This is opposed to transfering the call directly.
+Invoke action transfer
 
 ## SYNTAX
 
@@ -43,9 +41,7 @@ Move-MgCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Transfer an active peer-to-peer call or group call.
-A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made.
-This is opposed to transfering the call directly.
+Invoke action transfer
 
 ## EXAMPLES
 

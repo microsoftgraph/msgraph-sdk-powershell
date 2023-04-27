@@ -12,13 +12,13 @@ Get catalog from identityGovernance
 
 ## SYNTAX
 
-### Get2 (Default)
+### Get (Default)
 ```
 Get-MgEntitlementManagementAccessPackageCatalog -AccessPackageId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity
 ```
 Get-MgEntitlementManagementAccessPackageCatalog -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
@@ -36,7 +36,7 @@ The unique identifier of accessPackage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: GetViaIdentity2
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True

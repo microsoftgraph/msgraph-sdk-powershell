@@ -8,9 +8,7 @@ schema: 2.0.0
 # Invoke-MgForwardGroupCalendarEvent
 
 ## SYNOPSIS
-This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
-This convenience is not available when forwarding from an Outlook.com account.
+Invoke action forward
 
 ## SYNTAX
 
@@ -43,9 +41,7 @@ Invoke-MgForwardGroupCalendarEvent -InputObject <IGroupsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
-This convenience is not available when forwarding from an Outlook.com account.
+Invoke action forward
 
 ## EXAMPLES
 
@@ -277,6 +273,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

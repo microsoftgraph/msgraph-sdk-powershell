@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTeamScheduleTimeOffReason
 
 ## SYNOPSIS
-Create a new timeOffReason.
+Create new navigation property to timeOffReasons for teams
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgTeamScheduleTimeOffReason -InputObject <ITeamsIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Create a new timeOffReason.
+Create new navigation property to timeOffReasons for teams
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgChatTab
 
 ## SYNOPSIS
-Add (pin) a tab to the specified chat.
-\nThe corresponding app must already be installed in the chat.
+Create new navigation property to tabs for chats
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ New-MgChatTab -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
 ```
 
 ## DESCRIPTION
-Add (pin) a tab to the specified chat.
-\nThe corresponding app must already be installed in the chat.
+Create new navigation property to tabs for chats
 
 ## EXAMPLES
 

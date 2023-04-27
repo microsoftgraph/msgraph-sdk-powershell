@@ -8,7 +8,7 @@ schema: 2.0.0
 # Test-MgExternalIndustryDataConnector
 
 ## SYNOPSIS
-Perform validations applicable for the specific instance of the data connector.
+Invoke action validate
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Test-MgExternalIndustryDataConnector -InputObject <ISearchIdentity> [-PassThru] 
 ```
 
 ## DESCRIPTION
-Perform validations applicable for the specific instance of the data connector.
+Invoke action validate
 
 ## EXAMPLES
 

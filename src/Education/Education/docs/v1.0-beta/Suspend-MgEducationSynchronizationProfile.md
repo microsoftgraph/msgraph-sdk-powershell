@@ -8,7 +8,7 @@ schema: 2.0.0
 # Suspend-MgEducationSynchronizationProfile
 
 ## SYNOPSIS
-Pause the sync of a specific school data synchronization profile in the tenant.
+Invoke action pause
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Suspend-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Pa
 ```
 
 ## DESCRIPTION
-Pause the sync of a specific school data synchronization profile in the tenant.
+Invoke action pause
 
 ## EXAMPLES
 

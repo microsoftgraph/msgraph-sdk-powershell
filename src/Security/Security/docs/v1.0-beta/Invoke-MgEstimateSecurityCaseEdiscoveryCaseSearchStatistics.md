@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics
 
 ## SYNOPSIS
-Run an estimate of the number of emails and documents in the eDiscovery search.
-To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
+Invoke action estimateStatistics
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics -InputObject <ISecur
 ```
 
 ## DESCRIPTION
-Run an estimate of the number of emails and documents in the eDiscovery search.
-To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
+Invoke action estimateStatistics
 
 ## EXAMPLES
 

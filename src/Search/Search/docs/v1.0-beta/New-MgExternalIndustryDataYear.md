@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgExternalIndustryDataYear
 
 ## SYNOPSIS
-Create a new yearTimePeriodDefinition object.
+Create new navigation property to years for external
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgExternalIndustryDataYear -BodyParameter <IMicrosoftGraphIndustryDataYearTi
 ```
 
 ## DESCRIPTION
-Create a new yearTimePeriodDefinition object.
+Create new navigation property to years for external
 
 ## EXAMPLES
 

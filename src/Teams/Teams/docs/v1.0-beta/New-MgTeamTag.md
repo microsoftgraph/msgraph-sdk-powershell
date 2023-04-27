@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTeamTag
 
 ## SYNOPSIS
-Create a standard tag for members in the team.
+Create new navigation property to tags for teams
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgTeamTag -InputObject <ITeamsIdentity> [-TeamId <String>] [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Create a standard tag for members in the team.
+Create new navigation property to tags for teams
 
 ## EXAMPLES
 

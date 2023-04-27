@@ -8,7 +8,7 @@ schema: 2.0.0
 # Publish-MgUserDriveListContentType
 
 ## SYNOPSIS
-Publishes a [contentType][] present in a content type hub site.
+Invoke action publish
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Publish-MgUserDriveListContentType -InputObject <IUsersActionsIdentity> [-PassTh
 ```
 
 ## DESCRIPTION
-Publishes a [contentType][] present in a content type hub site.
+Invoke action publish
 
 ## EXAMPLES
 

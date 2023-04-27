@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityCaseEdiscoveryCaseCustodianIndex
 
 ## SYNOPSIS
-Trigger an indexOperation to make a custodian and associated sources searchable.
+Invoke action updateIndex
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Update-MgSecurityCaseEdiscoveryCaseCustodianIndex -InputObject <ISecurityIdentit
 ```
 
 ## DESCRIPTION
-Trigger an indexOperation to make a custodian and associated sources searchable.
+Invoke action updateIndex
 
 ## EXAMPLES
 

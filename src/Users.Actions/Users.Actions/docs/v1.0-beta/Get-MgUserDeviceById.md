@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgUserDeviceById
 
 ## SYNOPSIS
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Get-MgUserDeviceById -InputObject <IUsersActionsIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ## EXAMPLES
 

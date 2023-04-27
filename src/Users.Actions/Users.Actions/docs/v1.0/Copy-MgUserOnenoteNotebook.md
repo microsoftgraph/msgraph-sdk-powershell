@@ -8,7 +8,7 @@ schema: 2.0.0
 # Copy-MgUserOnenoteNotebook
 
 ## SYNOPSIS
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyNotebook
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Copy-MgUserOnenoteNotebook -InputObject <IUsersActionsIdentity> [-AdditionalProp
 ```
 
 ## DESCRIPTION
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyNotebook
 
 ## EXAMPLES
 

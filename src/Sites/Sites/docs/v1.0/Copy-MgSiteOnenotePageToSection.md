@@ -8,8 +8,7 @@ schema: 2.0.0
 # Copy-MgSiteOnenotePageToSection
 
 ## SYNOPSIS
-Copy a page to a specific section.
-For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToSection
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Copy-MgSiteOnenotePageToSection -InputObject <ISitesIdentity> [-SiteId <String>]
 ```
 
 ## DESCRIPTION
-Copy a page to a specific section.
-For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToSection
 
 ## EXAMPLES
 
@@ -281,6 +279,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

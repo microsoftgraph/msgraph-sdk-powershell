@@ -8,9 +8,7 @@ schema: 2.0.0
 # Invoke-MgSupportedUserOutlookLanguage
 
 ## SYNOPSIS
-Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server.
-When setting up an Outlook client, the user selects the preferred language from this supported list.
-You can subsequently get the preferred language by \ngetting the user's mailbox settings.
+Invoke function supportedLanguages
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Invoke-MgSupportedUserOutlookLanguage -InputObject <IUsersFunctionsIdentity> [-C
 ```
 
 ## DESCRIPTION
-Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server.
-When setting up an Outlook client, the user selects the preferred language from this supported list.
-You can subsequently get the preferred language by \ngetting the user's mailbox settings.
+Invoke function supportedLanguages
 
 ## EXAMPLES
 
@@ -195,12 +191,12 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[On <String>]`: Usage: on='{on}'
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PlannerBucketId <String>]`: The unique identifier of plannerBucket
   - `[PlannerPlanId <String>]`: The unique identifier of plannerPlan
   - `[Q <String>]`: Usage: q='{q}'
   - `[RoomList <String>]`: Usage: RoomList='{RoomList}'
   - `[ServicePlanId <String>]`: Usage: servicePlanId='{servicePlanId}'
-  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[StartDateTime <String>]`: Usage: StartDateTime='{StartDateTime}'
   - `[StartDateTime1 <String>]`: Usage: startDateTime='{startDateTime}'

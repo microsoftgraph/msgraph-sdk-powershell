@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy
 
 ## SYNOPSIS
-Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
+Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy
 ```
 
 ## DESCRIPTION
-Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
+Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
 
 ## EXAMPLES
 

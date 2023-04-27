@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
 
 ## SYNOPSIS
-Update the allowedCombinations property of an authenticationStrengthPolicy object.
-To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.
+Invoke action updateAllowedCombinations
 
 ## SYNTAX
 
@@ -44,8 +43,7 @@ Update-MgIdentityConditionalAccessAuthenticationStrengthPolicyAllowedCombination
 ```
 
 ## DESCRIPTION
-Update the allowedCombinations property of an authenticationStrengthPolicy object.
-To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.
+Invoke action updateAllowedCombinations
 
 ## EXAMPLES
 
@@ -222,6 +220,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

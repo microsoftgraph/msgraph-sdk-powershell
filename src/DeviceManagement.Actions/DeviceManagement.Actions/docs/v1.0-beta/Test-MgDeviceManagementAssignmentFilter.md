@@ -136,34 +136,36 @@ BODYPARAMETER <IPaths1Y9WuhoDevicemanagementAssignmentfiltersMicrosoftGraphValid
   - `[DeviceAndAppManagementAssignmentFilter <IMicrosoftGraphDeviceAndAppManagementAssignmentFilter>]`: A class containing the properties used for Assignment Filter.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: Creation time of the Assignment Filter.
-    - `[Description <String>]`: Description of the Assignment Filter.
-    - `[DisplayName <String>]`: DisplayName of the Assignment Filter.
-    - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the Assignment Filter.
-    - `[Payloads <IMicrosoftGraphPayloadByFilter[]>]`: Associated assignments for a specific filter
+    - `[AssignmentFilterManagementType <AssignmentFilterManagementType?>]`: Supported filter management types whether its devices or apps.
+    - `[CreatedDateTime <DateTime?>]`: The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+    - `[Description <String>]`: Optional description of the Assignment Filter.
+    - `[DisplayName <String>]`: The name of the Assignment Filter.
+    - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the Assignment Filter. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[Payloads <IMicrosoftGraphPayloadByFilter[]>]`: Indicates associated assignments for a specific filter.
       - `[AssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
       - `[GroupId <String>]`: The Azure AD security group ID
       - `[PayloadId <String>]`: The policy identifier
       - `[PayloadType <AssociatedAssignmentPayloadType?>]`: This enum represents associated assignment payload type
     - `[Platform <DevicePlatformType?>]`: Supported platform types.
-    - `[RoleScopeTags <String[]>]`: RoleScopeTags of the Assignment Filter.
-    - `[Rule <String>]`: Rule definition of the Assignment Filter.
+    - `[RoleScopeTags <String[]>]`: Indicates role scope tags assigned for the assignment filter.
+    - `[Rule <String>]`: Rule definition of the assignment filter.
 
 DEVICEANDAPPMANAGEMENTASSIGNMENTFILTER <IMicrosoftGraphDeviceAndAppManagementAssignmentFilter>: A class containing the properties used for Assignment Filter.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: Creation time of the Assignment Filter.
-  - `[Description <String>]`: Description of the Assignment Filter.
-  - `[DisplayName <String>]`: DisplayName of the Assignment Filter.
-  - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the Assignment Filter.
-  - `[Payloads <IMicrosoftGraphPayloadByFilter[]>]`: Associated assignments for a specific filter
+  - `[AssignmentFilterManagementType <AssignmentFilterManagementType?>]`: Supported filter management types whether its devices or apps.
+  - `[CreatedDateTime <DateTime?>]`: The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+  - `[Description <String>]`: Optional description of the Assignment Filter.
+  - `[DisplayName <String>]`: The name of the Assignment Filter.
+  - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the Assignment Filter. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[Payloads <IMicrosoftGraphPayloadByFilter[]>]`: Indicates associated assignments for a specific filter.
     - `[AssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
     - `[GroupId <String>]`: The Azure AD security group ID
     - `[PayloadId <String>]`: The policy identifier
     - `[PayloadType <AssociatedAssignmentPayloadType?>]`: This enum represents associated assignment payload type
   - `[Platform <DevicePlatformType?>]`: Supported platform types.
-  - `[RoleScopeTags <String[]>]`: RoleScopeTags of the Assignment Filter.
-  - `[Rule <String>]`: Rule definition of the Assignment Filter.
+  - `[RoleScopeTags <String[]>]`: Indicates role scope tags assigned for the assignment filter.
+  - `[Rule <String>]`: Rule definition of the assignment filter.
 
 ## RELATED LINKS
 

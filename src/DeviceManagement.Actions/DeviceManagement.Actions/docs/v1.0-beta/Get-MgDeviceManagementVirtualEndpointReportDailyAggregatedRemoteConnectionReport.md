@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport
 
 ## SYNOPSIS
-Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
+Invoke action getDailyAggregatedRemoteConnectionReports
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport
 ```
 
 ## DESCRIPTION
-Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
+Invoke action getDailyAggregatedRemoteConnectionReports
 
 ## EXAMPLES
 

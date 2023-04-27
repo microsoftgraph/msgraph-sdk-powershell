@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyHomeRealmDiscoveryPolicy
 
 ## SYNOPSIS
-Create a new homeRealmDiscoveryPolicy object.
+Create new navigation property to homeRealmDiscoveryPolicies for policies
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgPolicyHomeRealmDiscoveryPolicy -BodyParameter <Hashtable> [-Confirm] [-Wha
 ```
 
 ## DESCRIPTION
-Create a new homeRealmDiscoveryPolicy object.
+Create new navigation property to homeRealmDiscoveryPolicies for policies
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyAccessReviewPolicy
 
 ## SYNOPSIS
-Read the properties and relationships of an accessReviewPolicy object.
+The policy that contains directory-level access review settings.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgPolicyAccessReviewPolicy [-ExpandProperty <String[]>] [-Property <String[]
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an accessReviewPolicy object.
+The policy that contains directory-level access review settings.
 
 ## EXAMPLES
 

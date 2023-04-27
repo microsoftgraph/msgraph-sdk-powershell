@@ -8,10 +8,7 @@ schema: 2.0.0
 # New-MgServicePrincipalAppRoleAssignedTo
 
 ## SYNOPSIS
-Assign an app role for a resource service principal, to a user, group, or client service principal.
-App roles that are assigned to service principals are also known as application permissions.
-Application permissions can be granted directly with app role assignments, or through a consent experience.
-To grant an app role assignment, you need three identifiers:
+Create new navigation property to appRoleAssignedTo for servicePrincipals
 
 ## SYNTAX
 
@@ -45,10 +42,7 @@ New-MgServicePrincipalAppRoleAssignedTo -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Assign an app role for a resource service principal, to a user, group, or client service principal.
-App roles that are assigned to service principals are also known as application permissions.
-Application permissions can be granted directly with app role assignments, or through a consent experience.
-To grant an app role assignment, you need three identifiers:
+Create new navigation property to appRoleAssignedTo for servicePrincipals
 
 ## EXAMPLES
 

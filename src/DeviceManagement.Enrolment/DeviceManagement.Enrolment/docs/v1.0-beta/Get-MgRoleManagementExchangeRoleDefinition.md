@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementExchangeRoleDefinition
 
 ## SYNOPSIS
-Get roleDefinitions from roleManagement
+The roles allowed by RBAC providers and the permissions assigned to the roles.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgRoleManagementExchangeRoleDefinition -InputObject <IDeviceManagementEnrolm
 ```
 
 ## DESCRIPTION
-Get roleDefinitions from roleManagement
+The roles allowed by RBAC providers and the permissions assigned to the roles.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBookingBusinessStaffMember
 
 ## SYNOPSIS
-Create a new staff member in the specified bookingBusiness.
+Create new navigation property to staffMembers for bookingBusinesses
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgBookingBusinessStaffMember -InputObject <IBookingsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Create a new staff member in the specified bookingBusiness.
+Create new navigation property to staffMembers for bookingBusinesses
 
 ## EXAMPLES
 

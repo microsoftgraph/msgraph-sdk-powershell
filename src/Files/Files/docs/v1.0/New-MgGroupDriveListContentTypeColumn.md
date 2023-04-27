@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupDriveListContentTypeColumn
 
 ## SYNOPSIS
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for groups
 
 ## SYNTAX
 
@@ -59,7 +59,7 @@ New-MgGroupDriveListContentTypeColumn -InputObject <IFilesIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for groups
 
 ## EXAMPLES
 

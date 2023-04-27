@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserTeamworkInstalledAppChat
 
 ## SYNOPSIS
-Retrieve the chat of the specified user and Teams app.
+The chat between the user and Teams app.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserTeamworkInstalledAppChat -InputObject <ITeamsIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Retrieve the chat of the specified user and Teams app.
+The chat between the user and Teams app.
 
 ## EXAMPLES
 

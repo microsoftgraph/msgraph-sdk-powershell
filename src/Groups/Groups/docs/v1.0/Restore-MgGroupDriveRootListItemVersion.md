@@ -8,8 +8,7 @@ schema: 2.0.0
 # Restore-MgGroupDriveRootListItemVersion
 
 ## SYNOPSIS
-Restore a previous version of a ListItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
+Invoke action restoreVersion
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Restore-MgGroupDriveRootListItemVersion -InputObject <IGroupsIdentity> [-PassThr
 ```
 
 ## DESCRIPTION
-Restore a previous version of a ListItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
+Invoke action restoreVersion
 
 ## EXAMPLES
 
@@ -177,6 +175,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

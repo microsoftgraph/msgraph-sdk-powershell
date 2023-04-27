@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgIdentityGovernanceLifecycleWorkflowSetting
 
 ## SYNOPSIS
-Update the properties of a lifecycleManagementSettings object.
+Update the navigation property settings in identityGovernance
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Update-MgIdentityGovernanceLifecycleWorkflowSetting
 ```
 
 ## DESCRIPTION
-Update the properties of a lifecycleManagementSettings object.
+Update the navigation property settings in identityGovernance
 
 ## EXAMPLES
 

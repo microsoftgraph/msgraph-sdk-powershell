@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgAppCatalogTeamAppDefinitionColorIcon
 
 ## SYNOPSIS
-Retrieve a Teams app icon associated with a specific definition of an app.
+The color version of the Teams app's icon.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgAppCatalogTeamAppDefinitionColorIcon -InputObject <ITeamsIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Retrieve a Teams app icon associated with a specific definition of an app.
+The color version of the Teams app's icon.
 
 ## EXAMPLES
 

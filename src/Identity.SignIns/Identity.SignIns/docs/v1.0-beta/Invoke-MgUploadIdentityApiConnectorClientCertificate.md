@@ -8,9 +8,7 @@ schema: 2.0.0
 # Invoke-MgUploadIdentityApiConnectorClientCertificate
 
 ## SYNOPSIS
-Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
-The input is a base-64 encoded value of the PKCS 12 certificate contents.
-This method returns an apiConnector.
+Invoke action uploadClientCertificate
 
 ## SYNTAX
 
@@ -43,9 +41,7 @@ Invoke-MgUploadIdentityApiConnectorClientCertificate -InputObject <IIdentitySign
 ```
 
 ## DESCRIPTION
-Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration.
-The input is a base-64 encoded value of the PKCS 12 certificate contents.
-This method returns an apiConnector.
+Invoke action uploadClientCertificate
 
 ## EXAMPLES
 
@@ -251,6 +247,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

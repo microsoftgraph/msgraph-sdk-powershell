@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserPlannerTask
 
 ## SYNOPSIS
-Retrieve a list of **plannertask** objects assigned to a User.
+Read-only.
+Nullable.
+Returns the plannerPlans shared with the user.
 
 ## SYNTAX
 
@@ -19,7 +21,9 @@ Get-MgUserPlannerTask -UserId <String> [-ExpandProperty <String[]>] [-Filter <St
 ```
 
 ## DESCRIPTION
-Retrieve a list of **plannertask** objects assigned to a User.
+Read-only.
+Nullable.
+Returns the plannerPlans shared with the user.
 
 ## EXAMPLES
 

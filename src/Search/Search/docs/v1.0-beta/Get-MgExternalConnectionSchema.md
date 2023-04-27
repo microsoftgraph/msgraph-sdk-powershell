@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgExternalConnectionSchema
 
 ## SYNOPSIS
-Retrieve the properties of a schema for an externalConnection.
+Get schema from external
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgExternalConnectionSchema -InputObject <ISearchIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-Retrieve the properties of a schema for an externalConnection.
+Get schema from external
 
 ## EXAMPLES
 

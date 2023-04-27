@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgUnfavoriteServiceAnnouncementMessage
 
 ## SYNOPSIS
-Remove the favorite status of serviceUpdateMessages for the signed in user.
+Invoke action unfavorite
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Invoke-MgUnfavoriteServiceAnnouncementMessage
 ```
 
 ## DESCRIPTION
-Remove the favorite status of serviceUpdateMessages for the signed in user.
+Invoke action unfavorite
 
 ## EXAMPLES
 

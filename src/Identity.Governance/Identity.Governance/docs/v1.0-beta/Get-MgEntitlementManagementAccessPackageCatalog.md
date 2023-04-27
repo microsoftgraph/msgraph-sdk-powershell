@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageCatalog
 
 ## SYNOPSIS
-A container of access packages.
+Get accessPackageCatalog from identityGovernance
 
 ## SYNTAX
 
@@ -18,13 +18,13 @@ Get-MgEntitlementManagementAccessPackageCatalog [-ExpandProperty <String[]>] [-P
  [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
-### Get
+### Get2
 ```
-Get-MgEntitlementManagementAccessPackageCatalog -AccessPackageCatalogId <String> [-ExpandProperty <String[]>]
+Get-MgEntitlementManagementAccessPackageCatalog -AccessPackageId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity2
 ```
 Get-MgEntitlementManagementAccessPackageCatalog -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
@@ -50,7 +50,7 @@ Get-MgEntitlementManagementAccessPackageCatalog -DisplayNameEq <String> [-Expand
 ```
 
 ## DESCRIPTION
-A container of access packages.
+Get accessPackageCatalog from identityGovernance
 
 ## EXAMPLES
 
@@ -104,12 +104,12 @@ This command returns the access package catalogs that meet the defined filter.
 
 ## PARAMETERS
 
-### -AccessPackageCatalogId
-The unique identifier of accessPackageCatalog
+### -AccessPackageId
+The unique identifier of accessPackage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get2
 Aliases:
 
 Required: True
@@ -216,7 +216,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity2
 Aliases:
 
 Required: True

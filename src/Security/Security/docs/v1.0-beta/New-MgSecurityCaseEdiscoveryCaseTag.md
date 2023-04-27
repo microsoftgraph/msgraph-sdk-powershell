@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityCaseEdiscoveryCaseTag
 
 ## SYNOPSIS
-Create a new ediscoveryReviewTag object.
+Create new navigation property to tags for security
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgSecurityCaseEdiscoveryCaseTag -InputObject <ISecurityIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Create a new ediscoveryReviewTag object.
+Create new navigation property to tags for security
 
 ## EXAMPLES
 

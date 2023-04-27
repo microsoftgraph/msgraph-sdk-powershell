@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSearchQna
 
 ## SYNOPSIS
-Create a new qna object.
+Create new navigation property to qnas for search
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgSearchQna -BodyParameter <IMicrosoftGraphSearchQna> [-Confirm] [-WhatIf] [
 ```
 
 ## DESCRIPTION
-Create a new qna object.
+Create new navigation property to qnas for search
 
 ## EXAMPLES
 

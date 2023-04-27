@@ -8,10 +8,7 @@ schema: 2.0.0
 # Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage
 
 ## SYNOPSIS
-Stop an access review stage that is `inProgress`.
-After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
-If there are subsequent stages that depend on the completed stage, the next stage will be created.
-The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
+Invoke action stop
 
 ## SYNTAX
 
@@ -29,10 +26,7 @@ Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage -InputObject <IIden
 ```
 
 ## DESCRIPTION
-Stop an access review stage that is `inProgress`.
-After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
-If there are subsequent stages that depend on the completed stage, the next stage will be created.
-The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
+Invoke action stop
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyCrossTenantAccessPolicyDefault
 
 ## SYNOPSIS
-Update the default configuration of a cross-tenant access policy.
+Update the navigation property default in policies
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Update-MgPolicyCrossTenantAccessPolicyDefault
 ```
 
 ## DESCRIPTION
-Update the default configuration of a cross-tenant access policy.
+Update the navigation property default in policies
 
 ## EXAMPLES
 

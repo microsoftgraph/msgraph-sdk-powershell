@@ -8,7 +8,7 @@ schema: 2.0.0
 # Copy-MgUserMailFolderMessage
 
 ## SYNOPSIS
-Copy a message to a folder within the user's mailbox.
+Invoke action copy
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Copy-MgUserMailFolderMessage -InputObject <IUsersActionsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Copy a message to a folder within the user's mailbox.
+Invoke action copy
 
 ## EXAMPLES
 

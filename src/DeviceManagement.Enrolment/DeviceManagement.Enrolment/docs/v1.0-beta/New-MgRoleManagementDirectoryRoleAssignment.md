@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgRoleManagementDirectoryRoleAssignment
 
 ## SYNOPSIS
-Create a new unifiedRoleAssignment object.
+Create new navigation property to roleAssignments for roleManagement
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgRoleManagementDirectoryRoleAssignment -BodyParameter <IMicrosoftGraphUnifi
 ```
 
 ## DESCRIPTION
-Create a new unifiedRoleAssignment object.
+Create new navigation property to roleAssignments for roleManagement
 
 ## EXAMPLES
 

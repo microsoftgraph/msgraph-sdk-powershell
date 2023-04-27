@@ -8,16 +8,7 @@ schema: 2.0.0
 # Test-MgPolicyFeatureRolloutPolicyApplyToProperty
 
 ## SYNOPSIS
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
-To validate the properties of an existing group, use the group: validateProperties function.
-The following policy validations are performed for the display name and mail nickname properties:\n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate that the mail nickname is unique This API only returns the first validation failure that is encountered.
-If the properties fail multiple validations, only the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
-To learn more about configuring naming policies, see Configure naming policy.
+Invoke action validateProperties
 
 ## SYNTAX
 
@@ -50,16 +41,7 @@ Test-MgPolicyFeatureRolloutPolicyApplyToProperty -InputObject <IIdentitySignInsI
 ```
 
 ## DESCRIPTION
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
-To validate the properties of an existing group, use the group: validateProperties function.
-The following policy validations are performed for the display name and mail nickname properties:\n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate that the mail nickname is unique This API only returns the first validation failure that is encountered.
-If the properties fail multiple validations, only the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
-To learn more about configuring naming policies, see Configure naming policy.
+Invoke action validateProperties
 
 ## EXAMPLES
 
@@ -317,6 +299,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

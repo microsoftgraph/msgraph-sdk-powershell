@@ -8,7 +8,7 @@ schema: 2.0.0
 # Send-MgIdentityGovernanceAccessReviewDecisionInstanceReminder
 
 ## SYNOPSIS
-Send a reminder to the reviewers of a currently active accessReviewInstance.
+Invoke action sendReminder
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Send-MgIdentityGovernanceAccessReviewDecisionInstanceReminder -InputObject <IIde
 ```
 
 ## DESCRIPTION
-Send a reminder to the reviewers of a currently active accessReviewInstance.
+Invoke action sendReminder
 
 ## EXAMPLES
 

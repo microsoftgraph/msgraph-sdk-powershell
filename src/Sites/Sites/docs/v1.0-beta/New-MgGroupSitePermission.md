@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupSitePermission
 
 ## SYNOPSIS
-Create a new permission object on a site.
+Create new navigation property to permissions for groups
 
 ## SYNTAX
 
@@ -49,7 +49,7 @@ New-MgGroupSitePermission -InputObject <ISitesIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Create a new permission object on a site.
+Create new navigation property to permissions for groups
 
 ## EXAMPLES
 
@@ -530,6 +530,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

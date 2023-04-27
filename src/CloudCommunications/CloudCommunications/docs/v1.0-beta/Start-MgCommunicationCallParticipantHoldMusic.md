@@ -8,7 +8,7 @@ schema: 2.0.0
 # Start-MgCommunicationCallParticipantHoldMusic
 
 ## SYNOPSIS
-Put a participant on hold and play music in the background.
+Invoke action startHoldMusic
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Start-MgCommunicationCallParticipantHoldMusic -InputObject <ICloudCommunications
 ```
 
 ## DESCRIPTION
-Put a participant on hold and play music in the background.
+Invoke action startHoldMusic
 
 ## EXAMPLES
 

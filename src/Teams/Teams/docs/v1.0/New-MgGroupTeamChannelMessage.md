@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupTeamChannelMessage
 
 ## SYNOPSIS
-Send a new chatMessage in the specified channel.
+Create new navigation property to messages for groups
 
 ## SYNTAX
 
@@ -20,8 +20,8 @@ New-MgGroupTeamChannelMessage -ChannelId <String> -GroupId <String> [-Additional
  [-DeletedDateTime <DateTime>] [-Etag <String>] [-EventDetail <Hashtable>] [-From <Hashtable>]
  [-HostedContents <IMicrosoftGraphChatMessageHostedContent[]>] [-Id <String>] [-Importance <String>]
  [-LastEditedDateTime <DateTime>] [-LastModifiedDateTime <DateTime>] [-Locale <String>]
- [-Mentions <IMicrosoftGraphChatMessageMention[]>] [-MessageType <String>]
- [-PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]
+ [-Mentions <IMicrosoftGraphChatMessageMention[]>] [-MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]
+ [-MessageType <String>] [-PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]
  [-Reactions <IMicrosoftGraphChatMessageReaction[]>] [-Replies <IMicrosoftGraphChatMessage[]>]
  [-ReplyToId <String>] [-Subject <String>] [-Summary <String>] [-WebUrl <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -47,15 +47,15 @@ New-MgGroupTeamChannelMessage -InputObject <ITeamsIdentity> [-AdditionalProperti
  [-DeletedDateTime <DateTime>] [-Etag <String>] [-EventDetail <Hashtable>] [-From <Hashtable>]
  [-HostedContents <IMicrosoftGraphChatMessageHostedContent[]>] [-Id <String>] [-Importance <String>]
  [-LastEditedDateTime <DateTime>] [-LastModifiedDateTime <DateTime>] [-Locale <String>]
- [-Mentions <IMicrosoftGraphChatMessageMention[]>] [-MessageType <String>]
- [-PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]
+ [-Mentions <IMicrosoftGraphChatMessageMention[]>] [-MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]
+ [-MessageType <String>] [-PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]
  [-Reactions <IMicrosoftGraphChatMessageReaction[]>] [-Replies <IMicrosoftGraphChatMessage[]>]
  [-ReplyToId <String>] [-Subject <String>] [-Summary <String>] [-WebUrl <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Send a new chatMessage in the specified channel.
+Create new navigation property to messages for groups
 
 ## EXAMPLES
 
@@ -414,6 +414,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MessageHistory
+.
+To construct, please use Get-Help -Online and see NOTES section for MESSAGEHISTORY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHistoryItem[]
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MessageType
 chatMessageType
 
@@ -663,6 +679,18 @@ BODYPARAMETER <IMicrosoftGraphChatMessage>: chatMessage
         - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
         - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
+  - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+    - `[Actions <String>]`: chatMessageActions
+    - `[ModifiedDateTime <DateTime?>]`: 
+    - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+      - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Application <IMicrosoftGraphIdentity>]`: identity
+        - `[Device <IMicrosoftGraphIdentity>]`: identity
+        - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[MessageType <String>]`: chatMessageType
   - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -676,13 +704,6 @@ BODYPARAMETER <IMicrosoftGraphChatMessage>: chatMessage
     - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
     - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
   - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
-    - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Application <IMicrosoftGraphIdentity>]`: identity
-      - `[Device <IMicrosoftGraphIdentity>]`: identity
-      - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
   - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
   - `[Subject <String>]`: The subject of the chat message, in plaintext.
@@ -754,6 +775,22 @@ MENTIONS <IMicrosoftGraphChatMessageMention[]>: List of entities mentioned in th
       - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
       - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
+
+MESSAGEHISTORY <IMicrosoftGraphChatMessageHistoryItem[]>: .
+  - `[Actions <String>]`: chatMessageActions
+  - `[ModifiedDateTime <DateTime?>]`: 
+  - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+    - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Application <IMicrosoftGraphIdentity>]`: identity
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
+      - `[Device <IMicrosoftGraphIdentity>]`: identity
+      - `[User <IMicrosoftGraphIdentity>]`: identity
 
 POLICYVIOLATION <IMicrosoftGraphChatMessagePolicyViolation>: chatMessagePolicyViolation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -832,6 +869,18 @@ REPLIES <IMicrosoftGraphChatMessage[]>: Replies for a specified message. Support
         - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
         - `[Id <String>]`: Unique identifier for the identity.
         - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
+  - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+    - `[Actions <String>]`: chatMessageActions
+    - `[ModifiedDateTime <DateTime?>]`: 
+    - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
+      - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Application <IMicrosoftGraphIdentity>]`: identity
+        - `[Device <IMicrosoftGraphIdentity>]`: identity
+        - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[MessageType <String>]`: chatMessageType
   - `[PolicyViolation <IMicrosoftGraphChatMessagePolicyViolation>]`: chatMessagePolicyViolation
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -845,13 +894,6 @@ REPLIES <IMicrosoftGraphChatMessage[]>: Replies for a specified message. Support
     - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
     - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
   - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[ReactionType <String>]`: Supported values are like, angry, sad, laugh, heart, surprised.
-    - `[User <IMicrosoftGraphChatMessageReactionIdentitySet>]`: chatMessageReactionIdentitySet
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Application <IMicrosoftGraphIdentity>]`: identity
-      - `[Device <IMicrosoftGraphIdentity>]`: identity
-      - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
   - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
   - `[Subject <String>]`: The subject of the chat message, in plaintext.

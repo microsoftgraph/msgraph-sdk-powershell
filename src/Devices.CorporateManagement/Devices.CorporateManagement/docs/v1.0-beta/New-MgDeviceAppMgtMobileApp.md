@@ -73,6 +73,9 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 An abstract class containing the base properties for Intune mobile apps.
+Note: Listing mobile apps with `$expand=assignments` has been deprecated.
+Instead get the list of apps without the `$expand` query on `assignments`.
+Then, perform the expansion on individual applications.
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -227,6 +230,7 @@ Accept wildcard characters: False
 
 ### -InstallSummary
 Contains properties for the installation summary of a mobile app.
+This will be deprecated starting May, 2023 (Intune Release 2305).
 To construct, please use Get-Help -Online and see NOTES section for INSTALLSUMMARY properties and create a hash table.
 
 ```yaml
@@ -534,7 +538,7 @@ ASSIGNMENTS <IMicrosoftGraphMobileAppAssignment1[]>: The list of group assignmen
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
     - `[DeviceAndAppManagementAssignmentFilterType <DeviceAndAppManagementAssignmentFilterType?>]`: Represents type of the assignment filter.
 
-BODYPARAMETER <IMicrosoftGraphMobileApp1>: An abstract class containing the base properties for Intune mobile apps.
+BODYPARAMETER <IMicrosoftGraphMobileApp1>: An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Assignments <IMicrosoftGraphMobileAppAssignment1[]>]`: The list of group assignments for this mobile app.
@@ -558,7 +562,7 @@ BODYPARAMETER <IMicrosoftGraphMobileApp1>: An abstract class containing the base
   - `[Developer <String>]`: The developer of the app.
   - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The list of installation states for this mobile app.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps.
+    - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
     - `[DeviceId <String>]`: Device ID
     - `[DeviceName <String>]`: Device name
     - `[DisplayVersion <String>]`: Human readable version of the application
@@ -573,7 +577,7 @@ BODYPARAMETER <IMicrosoftGraphMobileApp1>: An abstract class containing the base
     - `[UserPrincipalName <String>]`: User Principal Name
   - `[DisplayName <String>]`: The admin provided or imported title of the app.
   - `[InformationUrl <String>]`: The more information Url.
-  - `[InstallSummary <IMicrosoftGraphMobileAppInstallSummary>]`: Contains properties for the installation summary of a mobile app.
+  - `[InstallSummary <IMicrosoftGraphMobileAppInstallSummary>]`: Contains properties for the installation summary of a mobile app. This will be deprecated starting May, 2023 (Intune Release 2305).
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this app.
@@ -611,7 +615,7 @@ BODYPARAMETER <IMicrosoftGraphMobileApp1>: An abstract class containing the base
   - `[UploadState <Int32?>]`: The upload state.
   - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps.
+    - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
     - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The install state of the app on devices.
     - `[FailedDeviceCount <Int32?>]`: Failed Device Count.
     - `[InstalledDeviceCount <Int32?>]`: Installed Device Count.
@@ -626,7 +630,7 @@ CATEGORIES <IMicrosoftGraphMobileAppCategory[]>: The list of categories for this
 
 DEVICESTATUSES <IMicrosoftGraphMobileAppInstallStatus[]>: The list of installation states for this mobile app.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps.
+  - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Assignments <IMicrosoftGraphMobileAppAssignment1[]>]`: The list of group assignments for this mobile app.
@@ -651,7 +655,7 @@ DEVICESTATUSES <IMicrosoftGraphMobileAppInstallStatus[]>: The list of installati
     - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The list of installation states for this mobile app.
     - `[DisplayName <String>]`: The admin provided or imported title of the app.
     - `[InformationUrl <String>]`: The more information Url.
-    - `[InstallSummary <IMicrosoftGraphMobileAppInstallSummary>]`: Contains properties for the installation summary of a mobile app.
+    - `[InstallSummary <IMicrosoftGraphMobileAppInstallSummary>]`: Contains properties for the installation summary of a mobile app. This will be deprecated starting May, 2023 (Intune Release 2305).
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this app.
@@ -689,7 +693,7 @@ DEVICESTATUSES <IMicrosoftGraphMobileAppInstallStatus[]>: The list of installati
     - `[UploadState <Int32?>]`: The upload state.
     - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps.
+      - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
       - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The install state of the app on devices.
       - `[FailedDeviceCount <Int32?>]`: Failed Device Count.
       - `[InstalledDeviceCount <Int32?>]`: Installed Device Count.
@@ -709,7 +713,7 @@ DEVICESTATUSES <IMicrosoftGraphMobileAppInstallStatus[]>: The list of installati
   - `[UserName <String>]`: Device User Name
   - `[UserPrincipalName <String>]`: User Principal Name
 
-INSTALLSUMMARY <IMicrosoftGraphMobileAppInstallSummary>: Contains properties for the installation summary of a mobile app.
+INSTALLSUMMARY <IMicrosoftGraphMobileAppInstallSummary>: Contains properties for the installation summary of a mobile app. This will be deprecated starting May, 2023 (Intune Release 2305).
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this app.
@@ -738,7 +742,7 @@ RELATIONSHIPS <IMicrosoftGraphMobileAppRelationship[]>: List of relationships fo
 
 USERSTATUSES <IMicrosoftGraphUserAppInstallStatus[]>: The list of installation states for this mobile app.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps.
+  - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Assignments <IMicrosoftGraphMobileAppAssignment1[]>]`: The list of group assignments for this mobile app.
@@ -762,7 +766,7 @@ USERSTATUSES <IMicrosoftGraphUserAppInstallStatus[]>: The list of installation s
     - `[Developer <String>]`: The developer of the app.
     - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The list of installation states for this mobile app.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps.
+      - `[App <IMicrosoftGraphMobileApp1>]`: An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
       - `[DeviceId <String>]`: Device ID
       - `[DeviceName <String>]`: Device name
       - `[DisplayVersion <String>]`: Human readable version of the application
@@ -777,7 +781,7 @@ USERSTATUSES <IMicrosoftGraphUserAppInstallStatus[]>: The list of installation s
       - `[UserPrincipalName <String>]`: User Principal Name
     - `[DisplayName <String>]`: The admin provided or imported title of the app.
     - `[InformationUrl <String>]`: The more information Url.
-    - `[InstallSummary <IMicrosoftGraphMobileAppInstallSummary>]`: Contains properties for the installation summary of a mobile app.
+    - `[InstallSummary <IMicrosoftGraphMobileAppInstallSummary>]`: Contains properties for the installation summary of a mobile app. This will be deprecated starting May, 2023 (Intune Release 2305).
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this app.

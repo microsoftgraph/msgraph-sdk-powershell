@@ -8,8 +8,7 @@ schema: 2.0.0
 # Move-MgUserMailFolderMessage
 
 ## SYNOPSIS
-Move a message to another folder within the specified user's mailbox.
-This creates a new copy of the message in the destination folder and removes the original message.
+Invoke action move
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Move-MgUserMailFolderMessage -InputObject <IUsersActionsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Move a message to another folder within the specified user's mailbox.
-This creates a new copy of the message in the destination folder and removes the original message.
+Invoke action move
 
 ## EXAMPLES
 

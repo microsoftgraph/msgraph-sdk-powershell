@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage
 
 ## SYNOPSIS
-Reupload a cloudPcDeviceImage object that failed to upload.
+Invoke action reupload
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Reupload a cloudPcDeviceImage object that failed to upload.
+Invoke action reupload
 
 ## EXAMPLES
 
@@ -181,7 +181,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

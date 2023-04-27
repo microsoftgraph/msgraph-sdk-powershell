@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgDriveRootListItemDocumentSetVersion
 
 ## SYNOPSIS
-Restore a document set version.
+Invoke action restore
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Restore-MgDriveRootListItemDocumentSetVersion -InputObject <IFilesIdentity> [-Pa
 ```
 
 ## DESCRIPTION
-Restore a document set version.
+Invoke action restore
 
 ## EXAMPLES
 

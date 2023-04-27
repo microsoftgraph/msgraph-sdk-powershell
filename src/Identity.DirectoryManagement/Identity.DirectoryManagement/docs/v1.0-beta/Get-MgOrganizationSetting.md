@@ -8,11 +8,8 @@ schema: 2.0.0
 # Get-MgOrganizationSetting
 
 ## SYNOPSIS
-Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**.
-This operation does not return insightsSettings.
-Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights.
-This operation does not return microsoftApplicationDataAccessSettings.
-To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
+Retrieve the properties and relationships of organizationSettings object.
+Nullable.
 
 ## SYNTAX
 
@@ -29,11 +26,8 @@ Get-MgOrganizationSetting -InputObject <IIdentityDirectoryManagementIdentity> [-
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**.
-This operation does not return insightsSettings.
-Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights.
-This operation does not return microsoftApplicationDataAccessSettings.
-To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
+Retrieve the properties and relationships of organizationSettings object.
+Nullable.
 
 ## EXAMPLES
 

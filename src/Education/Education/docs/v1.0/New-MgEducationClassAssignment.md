@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgEducationClassAssignment
 
 ## SYNOPSIS
-Create a new assignment.
-Only teachers in a class can create an assignment.
-Assignments start in the Draft state, which means that students will not see the assignment until publication.
+Create new navigation property to assignments for education
 
 ## SYNTAX
 
@@ -55,9 +53,7 @@ New-MgEducationClassAssignment -InputObject <IEducationIdentity> [-AddedStudentA
 ```
 
 ## DESCRIPTION
-Create a new assignment.
-Only teachers in a class can create an assignment.
-Assignments start in the Draft state, which means that students will not see the assignment until publication.
+Create new navigation property to assignments for education
 
 ## EXAMPLES
 
@@ -443,7 +439,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-educationAssignmentStatus
+.
 
 ```yaml
 Type: System.String
@@ -588,7 +584,7 @@ BODYPARAMETER <IMicrosoftGraphEducationAssignment1>: educationAssignment
       - `[DisplayName <String>]`: The name of this rubric quality.
       - `[QualityId <String>]`: The ID of this resource.
       - `[Weight <Single?>]`: If present, a numerical weight for this quality.  Weights must add up to 100.
-  - `[Status <String>]`: educationAssignmentStatus
+  - `[Status <String>]`: 
   - `[Submissions <IMicrosoftGraphEducationSubmission1[]>]`: Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Outcomes <IMicrosoftGraphEducationOutcome[]>]`: 

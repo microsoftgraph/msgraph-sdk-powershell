@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgUserContactFolderChildFolder
 
 ## SYNOPSIS
-Create a new contactFolder as a child of a specified folder.
-You can also create a new contactFolder under the user's default contact folder.
+Create new navigation property to childFolders for users
 
 ## SYNTAX
 
@@ -48,8 +47,7 @@ New-MgUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity>
 ```
 
 ## DESCRIPTION
-Create a new contactFolder as a child of a specified folder.
-You can also create a new contactFolder under the user's default contact folder.
+Create new navigation property to childFolders for users
 
 ## EXAMPLES
 

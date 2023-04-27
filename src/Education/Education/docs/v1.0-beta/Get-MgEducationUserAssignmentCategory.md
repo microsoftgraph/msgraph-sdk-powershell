@@ -8,8 +8,9 @@ schema: 2.0.0
 # Get-MgEducationUserAssignmentCategory
 
 ## SYNOPSIS
-List all the categories associated with an assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -20,8 +21,9 @@ Get-MgEducationUserAssignmentCategory -EducationAssignmentId <String> -Education
 ```
 
 ## DESCRIPTION
-List all the categories associated with an assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

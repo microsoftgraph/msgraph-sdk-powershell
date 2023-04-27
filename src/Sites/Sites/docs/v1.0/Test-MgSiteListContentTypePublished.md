@@ -12,13 +12,13 @@ Invoke function isPublished
 
 ## SYNTAX
 
-### Is1 (Default)
+### Is (Default)
 ```
 Test-MgSiteListContentTypePublished -ContentTypeId <String> -ListId <String> -SiteId <String>
  [<CommonParameters>]
 ```
 
-### IsViaIdentity1
+### IsViaIdentity
 ```
 Test-MgSiteListContentTypePublished -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
@@ -35,7 +35,7 @@ The unique identifier of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Is1
+Parameter Sets: Is
 Aliases:
 
 Required: True
@@ -51,7 +51,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: IsViaIdentity1
+Parameter Sets: IsViaIdentity
 Aliases:
 
 Required: True
@@ -66,7 +66,7 @@ The unique identifier of list
 
 ```yaml
 Type: System.String
-Parameter Sets: Is1
+Parameter Sets: Is
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ The unique identifier of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Is1
+Parameter Sets: Is
 Aliases:
 
 Required: True
@@ -129,6 +129,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSearchBookmark
 
 ## SYNOPSIS
-Create a new bookmark object.
+Create new navigation property to bookmarks for search
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgSearchBookmark -BodyParameter <IMicrosoftGraphSearchBookmark> [-Confirm] [
 ```
 
 ## DESCRIPTION
-Create a new bookmark object.
+Create new navigation property to bookmarks for search
 
 ## EXAMPLES
 

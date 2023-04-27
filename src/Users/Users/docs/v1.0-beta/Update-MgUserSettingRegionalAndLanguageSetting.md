@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserSettingRegionalAndLanguageSetting
 
 ## SYNOPSIS
-Update some or all of the properties of a regionalAndLanguageSettings object.
+Update the navigation property regionalAndLanguageSettings in users
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ Update-MgUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity>
 ```
 
 ## DESCRIPTION
-Update some or all of the properties of a regionalAndLanguageSettings object.
+Update the navigation property regionalAndLanguageSettings in users
 
 ## EXAMPLES
 

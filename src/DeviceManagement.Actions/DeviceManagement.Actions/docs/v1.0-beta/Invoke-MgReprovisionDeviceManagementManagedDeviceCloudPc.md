@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc
 
 ## SYNOPSIS
-Reprovision a Cloud PC with an Intune managed device ID.
+Invoke action reprovisionCloudPc
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc -InputObject <IDeviceMa
 ```
 
 ## DESCRIPTION
-Reprovision a Cloud PC with an Intune managed device ID.
+Invoke action reprovisionCloudPc
 
 ## EXAMPLES
 
@@ -183,7 +183,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

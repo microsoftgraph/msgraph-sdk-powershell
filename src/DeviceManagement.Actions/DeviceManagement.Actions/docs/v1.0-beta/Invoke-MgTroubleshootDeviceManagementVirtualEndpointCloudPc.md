@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc
 
 ## SYNOPSIS
-Troubleshoot a specific Cloud PC.
-Use this API to check the health status of the Cloud PC and the session host.
+Invoke action troubleshoot
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc -InputObject <IDevic
 ```
 
 ## DESCRIPTION
-Troubleshoot a specific Cloud PC.
-Use this API to check the health status of the Cloud PC and the session host.
+Invoke action troubleshoot
 
 ## EXAMPLES
 
@@ -183,7 +181,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

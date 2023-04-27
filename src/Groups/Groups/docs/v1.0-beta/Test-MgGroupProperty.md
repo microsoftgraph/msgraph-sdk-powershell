@@ -8,12 +8,7 @@ schema: 2.0.0
 # Test-MgGroupProperty
 
 ## SYNOPSIS
-Validate if a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use the API to determine if a display name or mail nickname is valid before trying to **update** a Microsoft 365 group.
-For validating properties before creating a group, use the validateProperties function for directory objects.
-The following validations are performed for the display name and mail nickname properties: This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ## SYNTAX
 
@@ -45,12 +40,7 @@ Test-MgGroupProperty -InputObject <IGroupsIdentity> [-AdditionalProperties <Hash
 ```
 
 ## DESCRIPTION
-Validate if a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use the API to determine if a display name or mail nickname is valid before trying to **update** a Microsoft 365 group.
-For validating properties before creating a group, use the validateProperties function for directory objects.
-The following validations are performed for the display name and mail nickname properties: This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ## EXAMPLES
 
@@ -268,6 +258,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

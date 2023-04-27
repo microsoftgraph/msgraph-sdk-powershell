@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgOrganizationSettingMicrosoftApplicationDataAccess
 
 ## SYNOPSIS
-Get the _settings_ in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+Get microsoftApplicationDataAccess from organization
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgOrganizationSettingMicrosoftApplicationDataAccess -InputObject <IIdentityD
 ```
 
 ## DESCRIPTION
-Get the _settings_ in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+Get microsoftApplicationDataAccess from organization
 
 ## EXAMPLES
 

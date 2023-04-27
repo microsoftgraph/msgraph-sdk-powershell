@@ -8,8 +8,7 @@ schema: 2.0.0
 # Add-MgChatMember
 
 ## SYNOPSIS
-Add multiple members in a single request to a team.
-The response provides details about which memberships could and couldn't be created.
+Invoke action add
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Add-MgChatMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable
 ```
 
 ## DESCRIPTION
-Add multiple members in a single request to a team.
-The response provides details about which memberships could and couldn't be created.
+Invoke action add
 
 ## EXAMPLES
 

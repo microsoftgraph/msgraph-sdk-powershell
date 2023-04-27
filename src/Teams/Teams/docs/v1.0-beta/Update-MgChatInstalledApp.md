@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgChatInstalledApp
 
 ## SYNOPSIS
-Upgrade an app installation within a chat.
+Invoke action upgrade
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgChatInstalledApp -InputObject <ITeamsIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Upgrade an app installation within a chat.
+Invoke action upgrade
 
 ## EXAMPLES
 

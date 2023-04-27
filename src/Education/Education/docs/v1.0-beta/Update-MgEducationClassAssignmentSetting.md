@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgEducationClassAssignmentSetting
 
 ## SYNOPSIS
-Update the properties of an educationAssignmentSettings object.
-Only Teachers can update these settings.
+Update the navigation property assignmentSettings in education
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Update-MgEducationClassAssignmentSetting -InputObject <IEducationIdentity> [-Add
 ```
 
 ## DESCRIPTION
-Update the properties of an educationAssignmentSettings object.
-Only Teachers can update these settings.
+Update the navigation property assignmentSettings in education
 
 ## EXAMPLES
 

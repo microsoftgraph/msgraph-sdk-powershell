@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserOutlookTaskGroupTaskFolder
 
 ## SYNOPSIS
-Create an Outlook task folder under a specified outlookTaskGroup.
+Create new navigation property to taskFolders for users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserOutlookTaskGroupTaskFolder -InputObject <IUsersIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Create an Outlook task folder under a specified outlookTaskGroup.
+Create new navigation property to taskFolders for users
 
 ## EXAMPLES
 

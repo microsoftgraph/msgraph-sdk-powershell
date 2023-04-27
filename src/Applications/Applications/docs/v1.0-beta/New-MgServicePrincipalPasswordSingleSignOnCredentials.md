@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgServicePrincipalPasswordSingleSignOnCredentials
 
 ## SYNOPSIS
-Create single sign-on credentials using a password for a user or group.
+Invoke action createPasswordSingleSignOnCredentials
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgServicePrincipalPasswordSingleSignOnCredentials -InputObject <IApplication
 ```
 
 ## DESCRIPTION
-Create single sign-on credentials using a password for a user or group.
+Invoke action createPasswordSingleSignOnCredentials
 
 ## EXAMPLES
 

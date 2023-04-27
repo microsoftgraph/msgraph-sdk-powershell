@@ -8,8 +8,7 @@ schema: 2.0.0
 # Enable-MgUserAuthenticationPhoneMethodSmSign
 
 ## SYNOPSIS
-Enable SMS sign-in for an existing `mobile` phone number registered to a user.
-To be successfully enabled:
+Invoke action enableSmsSignIn
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Enable-MgUserAuthenticationPhoneMethodSmSign -InputObject <IUsersActionsIdentity
 ```
 
 ## DESCRIPTION
-Enable SMS sign-in for an existing `mobile` phone number registered to a user.
-To be successfully enabled:
+Invoke action enableSmsSignIn
 
 ## EXAMPLES
 

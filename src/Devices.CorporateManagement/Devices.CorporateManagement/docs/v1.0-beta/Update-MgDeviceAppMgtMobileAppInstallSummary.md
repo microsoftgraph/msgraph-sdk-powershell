@@ -67,6 +67,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 Contains properties for the installation summary of a mobile app.
+This will be deprecated starting May, 2023 (Intune Release 2305).
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -348,7 +349,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphMobileAppInstallSummary>: Contains properties for the installation summary of a mobile app.
+BODYPARAMETER <IMicrosoftGraphMobileAppInstallSummary>: Contains properties for the installation summary of a mobile app. This will be deprecated starting May, 2023 (Intune Release 2305).
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[FailedDeviceCount <Int32?>]`: Number of Devices that have failed to install this app.
@@ -407,8 +408,6 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[MobileAppProvisioningConfigGroupAssignmentId <String>]`: The unique identifier of mobileAppProvisioningConfigGroupAssignment
   - `[MobileAppRelationshipId <String>]`: The unique identifier of mobileAppRelationship
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
-  - `[OfficeClientConfigurationAssignmentId <String>]`: The unique identifier of officeClientConfigurationAssignment
-  - `[OfficeClientConfigurationId <String>]`: The unique identifier of officeClientConfiguration
   - `[PolicyId <String>]`: Property in multi-part unique identifier of deviceHealthScriptPolicyState
   - `[PolicySetAssignmentId <String>]`: The unique identifier of policySetAssignment
   - `[PolicySetId <String>]`: The unique identifier of policySet

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Join-MgDriveListContentTypeWithHubSite
 
 ## SYNOPSIS
-Associate a [content type][contentType] with a list of hub sites.
+Invoke action associateWithHubSites
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Join-MgDriveListContentTypeWithHubSite -InputObject <IFilesIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Associate a [content type][contentType] with a list of hub sites.
+Invoke action associateWithHubSites
 
 ## EXAMPLES
 

@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgOrganizationSettingPersonInsight
 
 ## SYNOPSIS
-Get the properties of an insightsSettings object for displaying or returning people insights in an organization.
-To learn how to customize privacy for people insights in an organization, see Customize people insights privacy.
+Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.
+List peopleInsights returns the settings to display or return people insights in an organization.
 
 ## SYNTAX
 
@@ -26,8 +26,8 @@ Get-MgOrganizationSettingPersonInsight -InputObject <IIdentityDirectoryManagemen
 ```
 
 ## DESCRIPTION
-Get the properties of an insightsSettings object for displaying or returning people insights in an organization.
-To learn how to customize privacy for people insights in an organization, see Customize people insights privacy.
+Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.
+List peopleInsights returns the settings to display or return people insights in an organization.
 
 ## EXAMPLES
 

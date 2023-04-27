@@ -8,7 +8,7 @@ schema: 2.0.0
 # Copy-MgGroupOnenoteSectionToSectionGroup
 
 ## SYNOPSIS
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToSectionGroup
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Copy-MgGroupOnenoteSectionToSectionGroup -InputObject <IGroupsIdentity> [-GroupI
 ```
 
 ## DESCRIPTION
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToSectionGroup
 
 ## EXAMPLES
 
@@ -295,6 +295,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

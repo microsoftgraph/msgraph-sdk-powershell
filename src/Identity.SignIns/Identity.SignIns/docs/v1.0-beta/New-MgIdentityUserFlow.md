@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityUserFlow
 
 ## SYNOPSIS
-Create a new userFlow object.
+Create new navigation property to userFlows for identity
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgIdentityUserFlow -BodyParameter <IMicrosoftGraphIdentityUserFlow> [-Confir
 ```
 
 ## DESCRIPTION
-Create a new userFlow object.
+Create new navigation property to userFlows for identity
 
 ## EXAMPLES
 

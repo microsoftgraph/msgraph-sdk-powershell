@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTeamTagMember
 
 ## SYNOPSIS
-Create a new teamworkTagMember object in a team.
+Create new navigation property to members for teams
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ New-MgTeamTagMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashta
 ```
 
 ## DESCRIPTION
-Create a new teamworkTagMember object in a team.
+Create new navigation property to members for teams
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Reset-MgComplianceEdiscoveryCaseSettingToDefault
 
 ## SYNOPSIS
-Reset a caseSettings object to the default values.
+Invoke action resetToDefault
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Reset-MgComplianceEdiscoveryCaseSettingToDefault -InputObject <IComplianceIdenti
 ```
 
 ## DESCRIPTION
-Reset a caseSettings object to the default values.
+Invoke action resetToDefault
 
 ## EXAMPLES
 

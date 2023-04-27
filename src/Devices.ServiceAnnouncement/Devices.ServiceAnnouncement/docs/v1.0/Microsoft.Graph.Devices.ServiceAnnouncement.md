@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.ServiceAnnouncement
-Module Guid: 10adfc2c-a875-4f99-8cf6-8ba20e483f02
+Module Guid: 87e13c02-95ae-4b6a-ae21-0f9fc6a22dc7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.serviceannouncement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -36,16 +36,16 @@ The zip file that contains all attachments for a message.
 The attachment content.
 
 ### [Invoke-MgArchiveServiceAnnouncementMessage](Invoke-MgArchiveServiceAnnouncementMessage.md)
-Archive a list of serviceUpdateMessages for the signed in user.
+Invoke action archive
 
 ### [Invoke-MgFavoriteServiceAnnouncementMessage](Invoke-MgFavoriteServiceAnnouncementMessage.md)
-Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+Invoke action favorite
 
 ### [Invoke-MgMarkServiceAnnouncementMessageRead](Invoke-MgMarkServiceAnnouncementMessageRead.md)
-Mark a list of serviceUpdateMessages as **read** for the signed in user.
+Invoke action markRead
 
 ### [Invoke-MgMarkServiceAnnouncementMessageUnread](Invoke-MgMarkServiceAnnouncementMessageUnread.md)
-Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+Invoke action markUnread
 
 ### [Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident](Invoke-MgReportServiceAnnouncementHealthOverviewIssueIncident.md)
 Invoke function incidentReport
@@ -54,10 +54,10 @@ Invoke function incidentReport
 Invoke function incidentReport
 
 ### [Invoke-MgUnarchiveServiceAnnouncementMessage](Invoke-MgUnarchiveServiceAnnouncementMessage.md)
-Unarchive a list of serviceUpdateMessages for the signed in user.
+Invoke action unarchive
 
 ### [Invoke-MgUnfavoriteServiceAnnouncementMessage](Invoke-MgUnfavoriteServiceAnnouncementMessage.md)
-Remove the favorite status of serviceUpdateMessages for the signed in user.
+Invoke action unfavorite
 
 ### [New-MgServiceAnnouncementHealthOverview](New-MgServiceAnnouncementHealthOverview.md)
 Create new navigation property to healthOverviews for admin

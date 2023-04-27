@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgReportCredentialUserRegistrationCount
 
 ## SYNOPSIS
-Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+Invoke function getCredentialUserRegistrationCount
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgReportCredentialUserRegistrationCount [-Count] [-Filter <String>] [-Proper
 ```
 
 ## DESCRIPTION
-Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+Invoke function getCredentialUserRegistrationCount
 
 ## EXAMPLES
 

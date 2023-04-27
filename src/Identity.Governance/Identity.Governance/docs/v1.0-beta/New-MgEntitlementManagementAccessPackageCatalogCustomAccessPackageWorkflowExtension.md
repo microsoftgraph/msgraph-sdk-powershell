@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension
 
 ## SYNOPSIS
-Create a new customAccessPackageWorkflowExtension object and add it to an existing accessPackageCatalog object.
+Create new navigation property to customAccessPackageWorkflowExtensions for identityGovernance
 
 ## SYNTAX
 
@@ -48,7 +48,7 @@ New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtens
 ```
 
 ## DESCRIPTION
-Create a new customAccessPackageWorkflowExtension object and add it to an existing accessPackageCatalog object.
+Create new navigation property to customAccessPackageWorkflowExtensions for identityGovernance
 
 ## EXAMPLES
 

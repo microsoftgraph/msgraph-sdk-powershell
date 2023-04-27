@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgGroupSiteListItemDocumentSetVersion
 
 ## SYNOPSIS
-Restore a document set version.
+Invoke action restore
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Restore-MgGroupSiteListItemDocumentSetVersion -InputObject <IGroupsIdentity> [-P
 ```
 
 ## DESCRIPTION
-Restore a document set version.
+Invoke action restore
 
 ## EXAMPLES
 
@@ -205,6 +205,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

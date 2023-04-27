@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyIdentitySecurityDefaultEnforcementPolicy
 
 ## SYNOPSIS
-Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
+The policy that represents the security defaults that protect against common attacks.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgPolicyIdentitySecurityDefaultEnforcementPolicy [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
+The policy that represents the security defaults that protect against common attacks.
 
 ## EXAMPLES
 

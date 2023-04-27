@@ -8,7 +8,7 @@ schema: 2.0.0
 # Stop-MgPrivilegedRoleAssignmentRequest
 
 ## SYNOPSIS
-Cancel a privilegedRoleAssignmentRequest.
+Invoke action cancel
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Stop-MgPrivilegedRoleAssignmentRequest -InputObject <IIdentityGovernanceIdentity
 ```
 
 ## DESCRIPTION
-Cancel a privilegedRoleAssignmentRequest.
+Invoke action cancel
 
 ## EXAMPLES
 

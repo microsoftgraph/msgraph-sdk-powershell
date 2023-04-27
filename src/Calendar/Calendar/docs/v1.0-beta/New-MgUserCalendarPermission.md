@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserCalendarPermission
 
 ## SYNOPSIS
-Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
+Create new navigation property to calendarPermissions for users
 
 ## SYNTAX
 
@@ -65,7 +65,7 @@ New-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
+Create new navigation property to calendarPermissions for users
 
 ## EXAMPLES
 

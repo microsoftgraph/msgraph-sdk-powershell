@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: 0c5aacc6-ac91-49d4-97e6-f2576ae94e14
+Module Guid: c474d448-0566-4cb5-abe1-a65b7db9fbd3
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -137,30 +137,22 @@ The collection of single-value extended properties defined for the message.
 Nullable.
 
 ### [New-MgUserInferenceClassificationOverride](New-MgUserInferenceClassificationOverride.md)
-Create a focused Inbox override for a sender identified by an SMTP address.
-Future messages from that SMTP address will be consistently classified\nas specified in the override.
+Create new navigation property to overrides for users
 
 ### [New-MgUserMailFolder](New-MgUserMailFolder.md)
-Use this API to create a new mail folder in the root folder of the user's mailbox.
-If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+Create new navigation property to mailFolders for users
 
 ### [New-MgUserMailFolderChildFolder](New-MgUserMailFolderChildFolder.md)
-Use this API to create a new child mailFolder.
-If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+Create new navigation property to childFolders for users
 
 ### [New-MgUserMailFolderChildFolderMessage](New-MgUserMailFolderChildFolderMessage.md)
-Use this API to create a new Message in a mailfolder.
+Create new navigation property to messages for users
 
 ### [New-MgUserMailFolderChildFolderMessageAttachment](New-MgUserMailFolderChildFolderMessageAttachment.md)
-Use this API to add an attachment to a message.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
+Create new navigation property to attachments for users
 
 ### [New-MgUserMailFolderChildFolderMessageExtension](New-MgUserMailFolderChildFolderMessageExtension.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Create new navigation property to extensions for users
 
 ### [New-MgUserMailFolderChildFolderMessageMention](New-MgUserMailFolderChildFolderMessageMention.md)
 Create new navigation property to mentions for users
@@ -181,18 +173,13 @@ Create new navigation property to multiValueExtendedProperties for users
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserMailFolderMessage](New-MgUserMailFolderMessage.md)
-Use this API to create a new Message in a mailfolder.
+Create new navigation property to messages for users
 
 ### [New-MgUserMailFolderMessageAttachment](New-MgUserMailFolderMessageAttachment.md)
-Use this API to add an attachment to a message.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
+Create new navigation property to attachments for users
 
 ### [New-MgUserMailFolderMessageExtension](New-MgUserMailFolderMessageExtension.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Create new navigation property to extensions for users
 
 ### [New-MgUserMailFolderMessageMention](New-MgUserMailFolderMessageMention.md)
 Create new navigation property to mentions for users
@@ -213,21 +200,13 @@ Create new navigation property to multiValueExtendedProperties for users
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserMessage](New-MgUserMessage.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Create new navigation property to messages for users
 
 ### [New-MgUserMessageAttachment](New-MgUserMessageAttachment.md)
-Use this API to add an attachment to a message.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
-You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
+Create new navigation property to attachments for users
 
 ### [New-MgUserMessageExtension](New-MgUserMessageExtension.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Create new navigation property to extensions for users
 
 ### [New-MgUserMessageMention](New-MgUserMessageMention.md)
 Create new navigation property to mentions for users

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgSoftTeamChannelMessageDelete
 
 ## SYNOPSIS
-Delete a single chatMessage or a chat message reply in a channel or a chat.
+Invoke action softDelete
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgSoftTeamChannelMessageDelete -InputObject <ITeamsIdentity> [-PassThru] 
 ```
 
 ## DESCRIPTION
-Delete a single chatMessage or a chat message reply in a channel or a chat.
+Invoke action softDelete
 
 ## EXAMPLES
 

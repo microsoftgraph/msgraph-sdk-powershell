@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserOnenoteSectionGroupSection
 
 ## SYNOPSIS
-Create a new onenoteSection in the specified section group.
+Create new navigation property to sections for users
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ New-MgUserOnenoteSectionGroupSection -InputObject <INotesIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Create a new onenoteSection in the specified section group.
+Create new navigation property to sections for users
 
 ## EXAMPLES
 

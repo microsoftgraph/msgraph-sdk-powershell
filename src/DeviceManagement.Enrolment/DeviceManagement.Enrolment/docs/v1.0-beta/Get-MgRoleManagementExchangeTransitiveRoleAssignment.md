@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementExchangeTransitiveRoleAssignment
 
 ## SYNOPSIS
-Get transitiveRoleAssignments from roleManagement
+Resource to grant access to users or groups that are transitive.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgRoleManagementExchangeTransitiveRoleAssignment -InputObject <IDeviceManage
 ```
 
 ## DESCRIPTION
-Get transitiveRoleAssignments from roleManagement
+Resource to grant access to users or groups that are transitive.
 
 ## EXAMPLES
 

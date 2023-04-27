@@ -8,8 +8,7 @@ schema: 2.0.0
 # Add-MgUserPendingAccessReviewInstanceDecision
 
 ## SYNOPSIS
-Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
-The status of the accessReviewInstance must be `Completed` to call this method.
+Invoke action applyDecisions
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Add-MgUserPendingAccessReviewInstanceDecision -InputObject <IUsersActionsIdentit
 ```
 
 ## DESCRIPTION
-Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
-The status of the accessReviewInstance must be `Completed` to call this method.
+Invoke action applyDecisions
 
 ## EXAMPLES
 

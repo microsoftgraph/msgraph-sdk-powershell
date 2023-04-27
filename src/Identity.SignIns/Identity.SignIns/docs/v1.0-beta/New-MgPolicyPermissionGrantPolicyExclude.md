@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgPolicyPermissionGrantPolicyExclude
 
 ## SYNOPSIS
-Add conditions under which a permission grant event is *excluded* in a permission grant policy.
-You do this by adding a permissionGrantConditionSet to the **excludes** collection of a  permissionGrantPolicy.
+Create new navigation property to excludes for policies
 
 ## SYNTAX
 
@@ -46,8 +45,7 @@ New-MgPolicyPermissionGrantPolicyExclude -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Add conditions under which a permission grant event is *excluded* in a permission grant policy.
-You do this by adding a permissionGrantConditionSet to the **excludes** collection of a  permissionGrantPolicy.
+Create new navigation property to excludes for policies
 
 ## EXAMPLES
 
@@ -402,6 +400,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

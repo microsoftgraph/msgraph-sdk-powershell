@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgDirectoryAdministrativeUnitMemberByRef
 
 ## SYNOPSIS
-Use this API to add a member (user, group, or device) to an administrative unit or to create a new group within an administrative unit.
-All group types can be created within an administrative unit.
-**Note:** Currently, it's only possible to add one member at a time to an administrative unit.`
+Create new navigation property ref to members for directory
 
 ## SYNTAX
 
@@ -39,9 +37,7 @@ New-MgDirectoryAdministrativeUnitMemberByRef -InputObject <IIdentityDirectoryMan
 ```
 
 ## DESCRIPTION
-Use this API to add a member (user, group, or device) to an administrative unit or to create a new group within an administrative unit.
-All group types can be created within an administrative unit.
-**Note:** Currently, it's only possible to add one member at a time to an administrative unit.`
+Create new navigation property ref to members for directory
 
 ## EXAMPLES
 

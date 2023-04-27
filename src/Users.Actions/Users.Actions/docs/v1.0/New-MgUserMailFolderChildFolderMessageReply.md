@@ -8,12 +8,7 @@ schema: 2.0.0
 # New-MgUserMailFolderChildFolderMessageReply
 
 ## SYNOPSIS
-Create a draft to reply to the sender of a message in either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If **replyTo** is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in **replyTo**, and not the recipients in **from**.\n- You can update the draft later to add reply content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-Send the draft message in a subsequent operation.
-Alternatively, reply to a message in a single operation.
+Invoke action createReply
 
 ## SYNTAX
 
@@ -47,12 +42,7 @@ New-MgUserMailFolderChildFolderMessageReply -InputObject <IUsersActionsIdentity>
 ```
 
 ## DESCRIPTION
-Create a draft to reply to the sender of a message in either JSON or MIME format.
-When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter.
-Specifying both will return an HTTP 400 Bad Request error.\n- If **replyTo** is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in **replyTo**, and not the recipients in **from**.\n- You can update the draft later to add reply content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content.
-Send the draft message in a subsequent operation.
-Alternatively, reply to a message in a single operation.
+Invoke action createReply
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgMuteAllCommunicationCallParticipant
 
 ## SYNOPSIS
-Mute all participants in the call.
+Invoke action muteAll
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Invoke-MgMuteAllCommunicationCallParticipant -InputObject <ICloudCommunicationsI
 ```
 
 ## DESCRIPTION
-Mute all participants in the call.
+Invoke action muteAll
 
 ## EXAMPLES
 

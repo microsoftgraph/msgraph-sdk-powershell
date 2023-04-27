@@ -446,7 +446,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-educationAssignmentStatus
+.
 
 ```yaml
 Type: System.String
@@ -591,7 +591,7 @@ BODYPARAMETER <IMicrosoftGraphEducationAssignment1>: educationAssignment
       - `[DisplayName <String>]`: The name of this rubric quality.
       - `[QualityId <String>]`: The ID of this resource.
       - `[Weight <Single?>]`: If present, a numerical weight for this quality.  Weights must add up to 100.
-  - `[Status <String>]`: educationAssignmentStatus
+  - `[Status <String>]`: 
   - `[Submissions <IMicrosoftGraphEducationSubmission1[]>]`: Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Outcomes <IMicrosoftGraphEducationOutcome[]>]`: 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgCommunicationPresenceByUserId
 
 ## SYNOPSIS
-Get the presence information for multiple users.
+Invoke action getPresencesByUserId
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgCommunicationPresenceByUserId
 ```
 
 ## DESCRIPTION
-Get the presence information for multiple users.
+Invoke action getPresencesByUserId
 
 ## EXAMPLES
 

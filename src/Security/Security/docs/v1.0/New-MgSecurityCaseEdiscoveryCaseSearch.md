@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityCaseEdiscoveryCaseSearch
 
 ## SYNOPSIS
-Create a new ediscoverySearch object.
+Create new navigation property to searches for security
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ New-MgSecurityCaseEdiscoveryCaseSearch -InputObject <ISecurityIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Create a new ediscoverySearch object.
+Create new navigation property to searches for security
 
 ## EXAMPLES
 

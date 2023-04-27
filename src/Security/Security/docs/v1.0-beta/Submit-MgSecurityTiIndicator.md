@@ -8,7 +8,7 @@ schema: 2.0.0
 # Submit-MgSecurityTiIndicator
 
 ## SYNOPSIS
-Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+Invoke action submitTiIndicators
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Submit-MgSecurityTiIndicator
 ```
 
 ## DESCRIPTION
-Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+Invoke action submitTiIndicators
 
 ## EXAMPLES
 

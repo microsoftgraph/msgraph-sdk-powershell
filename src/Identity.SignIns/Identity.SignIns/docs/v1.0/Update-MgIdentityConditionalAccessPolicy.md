@@ -396,6 +396,19 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy>: conditionalAccessPolicy
   - `[DisplayName <String>]`: Specifies a display name for the conditionalAccessPolicy object.
   - `[GrantControls <IMicrosoftGraphConditionalAccessGrantControls>]`: conditionalAccessGrantControls
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AuthenticationStrength <IMicrosoftGraphAuthenticationStrengthPolicy>]`: authenticationStrengthPolicy
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AllowedCombinations <String[]>]`: A collection of authentication method modes that are required be used to satify this authentication strength.
+      - `[CombinationConfigurations <IMicrosoftGraphAuthenticationCombinationConfiguration[]>]`: Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[AppliesToCombinations <String[]>]`: Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
+      - `[CreatedDateTime <DateTime?>]`: The datetime when this policy was created.
+      - `[Description <String>]`: The human-readable description of this policy.
+      - `[DisplayName <String>]`: The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
+      - `[ModifiedDateTime <DateTime?>]`: The datetime when this policy was last modified.
+      - `[PolicyType <String>]`: authenticationStrengthPolicyType
+      - `[RequirementsSatisfied <String>]`: authenticationStrengthRequirements
     - `[BuiltInControls <String[]>]`: List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
     - `[CustomAuthenticationFactors <String[]>]`: List of custom controls IDs required by the policy. For more information, see Custom controls.
     - `[Operator <String>]`: Defines the relationship of the grant controls. Possible values: AND, OR.
@@ -472,6 +485,19 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet>: conditionalAccessCond
 
 GRANTCONTROLS <IMicrosoftGraphConditionalAccessGrantControls>: conditionalAccessGrantControls
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AuthenticationStrength <IMicrosoftGraphAuthenticationStrengthPolicy>]`: authenticationStrengthPolicy
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AllowedCombinations <String[]>]`: A collection of authentication method modes that are required be used to satify this authentication strength.
+    - `[CombinationConfigurations <IMicrosoftGraphAuthenticationCombinationConfiguration[]>]`: Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AppliesToCombinations <String[]>]`: Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
+    - `[CreatedDateTime <DateTime?>]`: The datetime when this policy was created.
+    - `[Description <String>]`: The human-readable description of this policy.
+    - `[DisplayName <String>]`: The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
+    - `[ModifiedDateTime <DateTime?>]`: The datetime when this policy was last modified.
+    - `[PolicyType <String>]`: authenticationStrengthPolicyType
+    - `[RequirementsSatisfied <String>]`: authenticationStrengthRequirements
   - `[BuiltInControls <String[]>]`: List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
   - `[CustomAuthenticationFactors <String[]>]`: List of custom controls IDs required by the policy. For more information, see Custom controls.
   - `[Operator <String>]`: Defines the relationship of the grant controls. Possible values: AND, OR.
@@ -514,6 +540,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

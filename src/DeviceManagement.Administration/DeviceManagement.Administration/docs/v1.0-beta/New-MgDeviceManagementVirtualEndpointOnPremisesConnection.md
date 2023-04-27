@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointOnPremisesConnection
 
 ## SYNOPSIS
-Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
+Create new navigation property to onPremisesConnections for deviceManagement
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgDeviceManagementVirtualEndpointOnPremisesConnection
 ```
 
 ## DESCRIPTION
-Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
+Create new navigation property to onPremisesConnections for deviceManagement
 
 ## EXAMPLES
 

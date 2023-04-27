@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgOrganizationBranding
 
 ## SYNOPSIS
-Update the properties of the default branding object specified by the organizationalBranding resource.
+Update the navigation property branding in organization
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgOrganizationBranding -InputObject <IIdentityDirectoryManagementIdentity
 ```
 
 ## DESCRIPTION
-Update the properties of the default branding object specified by the organizationalBranding resource.
+Update the navigation property branding in organization
 
 ## EXAMPLES
 

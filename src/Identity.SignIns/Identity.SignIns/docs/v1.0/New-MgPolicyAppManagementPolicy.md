@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyAppManagementPolicy
 
 ## SYNOPSIS
-Create an appManagementPolicy object.
+Create new navigation property to appManagementPolicies for policies
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgPolicyAppManagementPolicy -BodyParameter <IMicrosoftGraphAppManagementPoli
 ```
 
 ## DESCRIPTION
-Create an appManagementPolicy object.
+Create new navigation property to appManagementPolicies for policies
 
 ## EXAMPLES
 
@@ -49,7 +49,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppliesTo
-.
+Collection of applications and service principals to which the policy is applied.
 To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsEnabled
-.
+Denotes whether the policy is enabled.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -226,7 +226,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-APPLIESTO <IMicrosoftGraphDirectoryObject[]>: .
+APPLIESTO <IMicrosoftGraphDirectoryObject[]>: Collection of applications and service principals to which the policy is applied.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
@@ -236,10 +236,10 @@ BODYPARAMETER <IMicrosoftGraphAppManagementPolicy>: appManagementPolicy
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
+  - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Collection of applications and service principals to which the policy is applied.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[IsEnabled <Boolean?>]`: 
+  - `[IsEnabled <Boolean?>]`: Denotes whether the policy is enabled.
   - `[Restrictions <IMicrosoftGraphAppManagementConfiguration>]`: appManagementConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[KeyCredentials <IMicrosoftGraphKeyCredentialConfiguration[]>]`: Collection of keyCredential restrictions settings to be applied to an application or service principal.

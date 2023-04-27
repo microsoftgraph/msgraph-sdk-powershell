@@ -8,8 +8,7 @@ schema: 2.0.0
 # Test-MgSiteInformationProtectionPolicyLabelRemoval
 
 ## SYNOPSIS
-Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:
+Invoke action evaluateRemoval
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Test-MgSiteInformationProtectionPolicyLabelRemoval -InputObject <ISitesIdentity>
 ```
 
 ## DESCRIPTION
-Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:
+Invoke action evaluateRemoval
 
 ## EXAMPLES
 
@@ -243,6 +241,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

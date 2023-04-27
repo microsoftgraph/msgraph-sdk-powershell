@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDirectoryAdministrativeUnit
 
 ## SYNOPSIS
-Use this API to create a new administrativeUnit.
+Create new navigation property to administrativeUnits for directory
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgDirectoryAdministrativeUnit -BodyParameter <IMicrosoftGraphAdministrativeU
 ```
 
 ## DESCRIPTION
-Use this API to create a new administrativeUnit.
+Create new navigation property to administrativeUnits for directory
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Reset-MgUserPendingAccessReviewInstanceDecision
 
 ## SYNOPSIS
-Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
+Invoke action resetDecisions
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Reset-MgUserPendingAccessReviewInstanceDecision -InputObject <IUsersActionsIdent
 ```
 
 ## DESCRIPTION
-Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
+Invoke action resetDecisions
 
 ## EXAMPLES
 

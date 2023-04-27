@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityTiIndicatorByExternalId
 
 ## SYNOPSIS
-Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.
+Invoke action deleteTiIndicatorsByExternalId
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgSecurityTiIndicatorByExternalId
 ```
 
 ## DESCRIPTION
-Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.
+Invoke action deleteTiIndicatorsByExternalId
 
 ## EXAMPLES
 

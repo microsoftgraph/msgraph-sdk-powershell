@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgOnPremisePublishingProfilePublishedResource
 
 ## SYNOPSIS
-Create a new publishedResource object.
+Create new navigation property to publishedResources for onPremisesPublishingProfiles
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgOnPremisePublishingProfilePublishedResource -InputObject <IApplicationsIde
 ```
 
 ## DESCRIPTION
-Create a new publishedResource object.
+Create new navigation property to publishedResources for onPremisesPublishingProfiles
 
 ## EXAMPLES
 

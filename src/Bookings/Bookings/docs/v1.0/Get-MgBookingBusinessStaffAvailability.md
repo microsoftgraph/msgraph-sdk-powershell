@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBookingBusinessStaffAvailability
 
 ## SYNOPSIS
-Get the availability information of staff members of a Microsoft Bookings calendar.
+Invoke action getStaffAvailability
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Get-MgBookingBusinessStaffAvailability -InputObject <IBookingsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Get the availability information of staff members of a Microsoft Bookings calendar.
+Invoke action getStaffAvailability
 
 ## EXAMPLES
 

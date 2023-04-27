@@ -8,7 +8,7 @@ schema: 2.0.0
 # Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision
 
 ## SYNOPSIS
-Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
+Invoke action resetDecisions
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision -InputObject <I
 ```
 
 ## DESCRIPTION
-Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
+Invoke action resetDecisions
 
 ## EXAMPLES
 

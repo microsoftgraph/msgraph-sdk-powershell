@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyB2CAuthenticationMethodPolicy
 
 ## SYNOPSIS
-Update the properties of a b2cAuthenticationMethodsPolicy object.
+Update the navigation property b2cAuthenticationMethodsPolicy in policies
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgPolicyB2CAuthenticationMethodPolicy -BodyParameter <IMicrosoftGraphB2CA
 ```
 
 ## DESCRIPTION
-Update the properties of a b2cAuthenticationMethodsPolicy object.
+Update the navigation property b2cAuthenticationMethodsPolicy in policies
 
 ## EXAMPLES
 

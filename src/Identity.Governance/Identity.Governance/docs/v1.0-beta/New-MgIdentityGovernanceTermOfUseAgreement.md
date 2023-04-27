@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityGovernanceTermOfUseAgreement
 
 ## SYNOPSIS
-Create a new agreement object.
+Create new navigation property to agreements for identityGovernance
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgIdentityGovernanceTermOfUseAgreement -BodyParameter <IMicrosoftGraphAgreem
 ```
 
 ## DESCRIPTION
-Create a new agreement object.
+Create new navigation property to agreements for identityGovernance
 
 ## EXAMPLES
 

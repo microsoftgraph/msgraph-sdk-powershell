@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgAdministrativeUnitScopedRoleMember
 
 ## SYNOPSIS
-Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
-For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+Create new navigation property to scopedRoleMembers for administrativeUnits
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ New-MgAdministrativeUnitScopedRoleMember -InputObject <IIdentityDirectoryManagem
 ```
 
 ## DESCRIPTION
-Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
-For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+Create new navigation property to scopedRoleMembers for administrativeUnits
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Publish-MgComplianceEdiscoveryCaseNoncustodialDataSource
 
 ## SYNOPSIS
-Releases the non-custodial data source from the case.
+Invoke action release
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Publish-MgComplianceEdiscoveryCaseNoncustodialDataSource -InputObject <IComplian
 ```
 
 ## DESCRIPTION
-Releases the non-custodial data source from the case.
+Invoke action release
 
 ## EXAMPLES
 

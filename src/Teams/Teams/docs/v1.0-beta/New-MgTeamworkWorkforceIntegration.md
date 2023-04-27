@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTeamworkWorkforceIntegration
 
 ## SYNOPSIS
-Create a new workforceIntegration object.
+Create new navigation property to workforceIntegrations for teamwork
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgTeamworkWorkforceIntegration -BodyParameter <IMicrosoftGraphWorkforceInteg
 ```
 
 ## DESCRIPTION
-Create a new workforceIntegration object.
+Create new navigation property to workforceIntegrations for teamwork
 
 ## EXAMPLES
 

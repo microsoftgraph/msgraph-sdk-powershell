@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgCheckinGroupDriveItem
 
 ## SYNOPSIS
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Invoke action checkin
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Invoke-MgCheckinGroupDriveItem -InputObject <IGroupsIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Invoke action checkin
 
 ## EXAMPLES
 
@@ -273,6 +273,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

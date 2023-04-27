@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPlannerBucket
 
 ## SYNOPSIS
-Create a new plannerBucket object.
+Create new navigation property to buckets for planner
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgPlannerBucket -BodyParameter <IMicrosoftGraphPlannerBucket1> [-Confirm] [-
 ```
 
 ## DESCRIPTION
-Create a new plannerBucket object.
+Create new navigation property to buckets for planner
 
 ## EXAMPLES
 

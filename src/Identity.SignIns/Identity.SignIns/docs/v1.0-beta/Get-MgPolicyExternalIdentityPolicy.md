@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyExternalIdentityPolicy
 
 ## SYNOPSIS
-Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
+Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgPolicyExternalIdentityPolicy [-ExpandProperty <String[]>] [-Property <Stri
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
+Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
 
 ## EXAMPLES
 

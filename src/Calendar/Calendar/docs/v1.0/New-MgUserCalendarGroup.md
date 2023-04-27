@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserCalendarGroup
 
 ## SYNOPSIS
-Use this API to create a new CalendarGroup.
+Create new navigation property to calendarGroups for users
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgUserCalendarGroup -InputObject <ICalendarIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Use this API to create a new CalendarGroup.
+Create new navigation property to calendarGroups for users
 
 ## EXAMPLES
 

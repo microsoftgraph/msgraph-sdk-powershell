@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgAcceptUserEvent
 
 ## SYNOPSIS
-Accept the specified event in a user calendar.
+Invoke action accept
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Invoke-MgAcceptUserEvent -InputObject <IUsersActionsIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Accept the specified event in a user calendar.
+Invoke action accept
 
 ## EXAMPLES
 

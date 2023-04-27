@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserTeamworkInstalledApp
 
 ## SYNOPSIS
-Install an app in the personal scope of the specified user.
+Create new navigation property to installedApps for users
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgUserTeamworkInstalledApp -InputObject <ITeamsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Install an app in the personal scope of the specified user.
+Create new navigation property to installedApps for users
 
 ## EXAMPLES
 
@@ -385,7 +385,7 @@ BODYPARAMETER <IMicrosoftGraphUserScopeTeamsAppInstallation1>: userScopeTeamsApp
             - `[Id <String>]`: Unique identifier for the identity.
       - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
         - `[Actions <String>]`: chatMessageActions
-        - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
+        - `[ModifiedDateTime <DateTime?>]`: 
         - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -594,7 +594,7 @@ CHAT <IMicrosoftGraphChat1>: chat
           - `[Id <String>]`: Unique identifier for the identity.
     - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
       - `[Actions <String>]`: chatMessageActions
-      - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
+      - `[ModifiedDateTime <DateTime?>]`: 
       - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z

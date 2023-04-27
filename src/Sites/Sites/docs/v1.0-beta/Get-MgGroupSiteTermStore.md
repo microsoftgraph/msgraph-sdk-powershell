@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupSiteTermStore
 
 ## SYNOPSIS
-Read the properties and relationships of a store object.
+The termStore under this site.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgGroupSiteTermStore -InputObject <ISitesIdentity> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a store object.
+The termStore under this site.
 
 ## EXAMPLES
 
@@ -145,6 +145,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkTeamTemplateDefinitionTeamDefinition
 
 ## SYNOPSIS
-Get the properties of the team associated with a teamTemplateDefinition object.
+Get teamDefinition from teamwork
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgTeamworkTeamTemplateDefinitionTeamDefinition -InputObject <ITeamsIdentity>
 ```
 
 ## DESCRIPTION
-Get the properties of the team associated with a teamTemplateDefinition object.
+Get teamDefinition from teamwork
 
 ## EXAMPLES
 

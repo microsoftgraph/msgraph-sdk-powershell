@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgGroupOnenoteNotebookFromWebUrl
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a notebook object by using its URL path.
-The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
+Invoke action getNotebookFromWebUrl
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Get-MgGroupOnenoteNotebookFromWebUrl -InputObject <IGroupsIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a notebook object by using its URL path.
-The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
+Invoke action getNotebookFromWebUrl
 
 ## EXAMPLES
 
@@ -214,6 +212,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

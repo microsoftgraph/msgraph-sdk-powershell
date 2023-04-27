@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupTeamScheduleSwapShiftChangeRequest
 
 ## SYNOPSIS
-Create an instance of a swapShiftsChangeRequest object.
+Create new navigation property to swapShiftsChangeRequests for groups
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgGroupTeamScheduleSwapShiftChangeRequest -InputObject <ITeamsIdentity>
 ```
 
 ## DESCRIPTION
-Create an instance of a swapShiftsChangeRequest object.
+Create new navigation property to swapShiftsChangeRequests for groups
 
 ## EXAMPLES
 

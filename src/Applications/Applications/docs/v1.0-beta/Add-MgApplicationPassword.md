@@ -8,7 +8,7 @@ schema: 2.0.0
 # Add-MgApplicationPassword
 
 ## SYNOPSIS
-Adds a strong password to an application.
+Invoke action addPassword
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Add-MgApplicationPassword -InputObject <IApplicationsIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Adds a strong password to an application.
+Invoke action addPassword
 
 ## EXAMPLES
 

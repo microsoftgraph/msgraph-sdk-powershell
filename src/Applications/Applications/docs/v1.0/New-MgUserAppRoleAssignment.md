@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgUserAppRoleAssignment
 
 ## SYNOPSIS
-Use this API to assign an app role to a user.
-To grant an app role assignment to a user, you need three identifiers:
+Create new navigation property to appRoleAssignments for users
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ New-MgUserAppRoleAssignment -InputObject <IApplicationsIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Use this API to assign an app role to a user.
-To grant an app role assignment to a user, you need three identifiers:
+Create new navigation property to appRoleAssignments for users
 
 ## EXAMPLES
 

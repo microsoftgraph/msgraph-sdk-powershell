@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgPrivilegedRoleAssignmentRoleInfoSetting
 
 ## SYNOPSIS
-Update the role settings for the given role setting.
-A privilegedRoleSettings object will be returned.
+Update the navigation property settings in privilegedRoleAssignments
 
 ## SYNTAX
 
@@ -46,8 +45,7 @@ Update-MgPrivilegedRoleAssignmentRoleInfoSetting -InputObject <IIdentityGovernan
 ```
 
 ## DESCRIPTION
-Update the role settings for the given role setting.
-A privilegedRoleSettings object will be returned.
+Update the navigation property settings in privilegedRoleAssignments
 
 ## EXAMPLES
 

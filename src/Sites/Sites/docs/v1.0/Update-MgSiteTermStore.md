@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSiteTermStore
 
 ## SYNOPSIS
-Update the properties of a store object.
+Update the navigation property termStore in sites
 
 ## SYNTAX
 
@@ -68,7 +68,7 @@ Update-MgSiteTermStore -InputObject <ISitesIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Update the properties of a store object.
+Update the navigation property termStore in sites
 
 ## EXAMPLES
 
@@ -416,6 +416,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

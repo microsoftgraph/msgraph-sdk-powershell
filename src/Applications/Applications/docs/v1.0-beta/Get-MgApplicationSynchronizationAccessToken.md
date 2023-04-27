@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationSynchronizationAccessToken
 
 ## SYNOPSIS
-Acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
+Invoke action acquireAccessToken
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Get-MgApplicationSynchronizationAccessToken -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
+Invoke action acquireAccessToken
 
 ## EXAMPLES
 

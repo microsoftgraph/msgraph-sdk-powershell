@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgWindowsUpdatesPolicyComplianceChange
 
 ## SYNOPSIS
-Create a new contentApproval object.
+Create new navigation property to complianceChanges for admin
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ New-MgWindowsUpdatesPolicyComplianceChange -InputObject <IWindowsUpdatesIdentity
 ```
 
 ## DESCRIPTION
-Create a new contentApproval object.
+Create new navigation property to complianceChanges for admin
 
 ## EXAMPLES
 

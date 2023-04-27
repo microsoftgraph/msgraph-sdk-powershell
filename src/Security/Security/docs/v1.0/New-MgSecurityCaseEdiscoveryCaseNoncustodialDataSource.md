@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource
 
 ## SYNOPSIS
-Create a new ediscoveryNoncustodialDataSource object.
+Create new navigation property to noncustodialDataSources for security
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -InputObject <ISecurityId
 ```
 
 ## DESCRIPTION
-Create a new ediscoveryNoncustodialDataSource object.
+Create new navigation property to noncustodialDataSources for security
 
 ## EXAMPLES
 

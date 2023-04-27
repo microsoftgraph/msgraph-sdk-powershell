@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBookingBusinessService
 
 ## SYNOPSIS
-Create a new bookingService for the specified bookingBusiness.
+Create new navigation property to services for bookingBusinesses
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ New-MgBookingBusinessService -InputObject <IBookingsIdentity> [-AdditionalInform
 ```
 
 ## DESCRIPTION
-Create a new bookingService for the specified bookingBusiness.
+Create new navigation property to services for bookingBusinesses
 
 ## EXAMPLES
 

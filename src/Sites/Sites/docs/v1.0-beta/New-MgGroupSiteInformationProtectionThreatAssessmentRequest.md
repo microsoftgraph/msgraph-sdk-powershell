@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgGroupSiteInformationProtectionThreatAssessmentRequest
 
 ## SYNOPSIS
-Create a new threat assessment request.
-A threat assessment request can be one of the following types:
+Create new navigation property to threatAssessmentRequests for groups
 
 ## SYNTAX
 
@@ -44,8 +43,7 @@ New-MgGroupSiteInformationProtectionThreatAssessmentRequest -InputObject <ISites
 ```
 
 ## DESCRIPTION
-Create a new threat assessment request.
-A threat assessment request can be one of the following types:
+Create new navigation property to threatAssessmentRequests for groups
 
 ## EXAMPLES
 
@@ -372,6 +370,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

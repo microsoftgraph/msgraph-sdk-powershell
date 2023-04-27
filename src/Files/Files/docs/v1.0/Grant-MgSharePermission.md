@@ -8,7 +8,7 @@ schema: 2.0.0
 # Grant-MgSharePermission
 
 ## SYNOPSIS
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Grant-MgSharePermission -InputObject <IFilesIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ## EXAMPLES
 

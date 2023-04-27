@@ -23,7 +23,8 @@ New-MgOrganization [-AdditionalProperties <Hashtable>] [-AssignedPlans <IMicroso
  [-DirectorySizeQuota <IMicrosoftGraphDirectorySizeQuota>] [-DisplayName <String>]
  [-Extensions <IMicrosoftGraphExtension[]>] [-Id <String>] [-IsMultipleDataLocationsForServicesEnabled]
  [-MarketingNotificationEmails <String[]>] [-MobileDeviceManagementAuthority <MdmAuthority>]
- [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSyncEnabled] [-PartnerTenantType <String>]
+ [-OnPremisesLastSyncDateTime <DateTime>] [-OnPremisesSyncEnabled]
+ [-PartnerInformation <IMicrosoftGraphPartnerInformation>] [-PartnerTenantType <String>]
  [-PostalCode <String>] [-PreferredLanguage <String>] [-PrivacyProfile <IMicrosoftGraphPrivacyProfile>]
  [-ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>] [-SecurityComplianceNotificationMails <String[]>]
  [-SecurityComplianceNotificationPhones <String[]>] [-Settings <IMicrosoftGraphOrganizationSettings>]
@@ -406,6 +407,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PartnerInformation
+partnerInformation
+To construct, please use Get-Help -Online and see NOTES section for PARTNERINFORMATION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPartnerInformation
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PartnerTenantType
 partnerTenantType
 
@@ -769,6 +786,16 @@ BODYPARAMETER <IMicrosoftGraphOrganization>: organization
   - `[MobileDeviceManagementAuthority <MdmAuthority?>]`: Mobile device management authority.
   - `[OnPremisesLastSyncDateTime <DateTime?>]`: The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+  - `[PartnerInformation <IMicrosoftGraphPartnerInformation>]`: partnerInformation
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[CommerceUrl <String>]`: 
+    - `[CompanyName <String>]`: 
+    - `[CompanyType <String>]`: partnerTenantType
+    - `[HelpUrl <String>]`: 
+    - `[PartnerTenantId <String>]`: 
+    - `[SupportEmails <String[]>]`: 
+    - `[SupportTelephones <String[]>]`: 
+    - `[SupportUrl <String>]`: 
   - `[PartnerTenantType <String>]`: partnerTenantType
   - `[PostalCode <String>]`: Postal code of the address for the organization.
   - `[PreferredLanguage <String>]`: The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
@@ -922,6 +949,17 @@ DIRECTORYSIZEQUOTA <IMicrosoftGraphDirectorySizeQuota>: directorySizeQuota
 
 EXTENSIONS <IMicrosoftGraphExtension[]>: The collection of open extensions defined for the organization resource. Nullable.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+
+PARTNERINFORMATION <IMicrosoftGraphPartnerInformation>: partnerInformation
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[CommerceUrl <String>]`: 
+  - `[CompanyName <String>]`: 
+  - `[CompanyType <String>]`: partnerTenantType
+  - `[HelpUrl <String>]`: 
+  - `[PartnerTenantId <String>]`: 
+  - `[SupportEmails <String[]>]`: 
+  - `[SupportTelephones <String[]>]`: 
+  - `[SupportUrl <String>]`: 
 
 PRIVACYPROFILE <IMicrosoftGraphPrivacyProfile>: privacyProfile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

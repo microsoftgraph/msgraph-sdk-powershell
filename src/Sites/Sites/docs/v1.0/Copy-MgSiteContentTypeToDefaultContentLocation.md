@@ -8,8 +8,7 @@ schema: 2.0.0
 # Copy-MgSiteContentTypeToDefaultContentLocation
 
 ## SYNOPSIS
-Copy a file to a default content location in a [content type][contentType].
-The file can then be added as a default file or template via a POST operation.
+Invoke action copyToDefaultContentLocation
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Copy-MgSiteContentTypeToDefaultContentLocation -InputObject <ISitesIdentity>
 ```
 
 ## DESCRIPTION
-Copy a file to a default content location in a [content type][contentType].
-The file can then be added as a default file or template via a POST operation.
+Invoke action copyToDefaultContentLocation
 
 ## EXAMPLES
 
@@ -283,6 +281,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

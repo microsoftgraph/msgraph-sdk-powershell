@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEducationSchoolUserByRef
 
 ## SYNOPSIS
-Get the educationUser resources associated with an educationSchool.
+Users in the school.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgEducationSchoolUserByRef -EducationSchoolId <String> [-Filter <String>] [-
 ```
 
 ## DESCRIPTION
-Get the educationUser resources associated with an educationSchool.
+Users in the school.
+Nullable.
 
 ## EXAMPLES
 

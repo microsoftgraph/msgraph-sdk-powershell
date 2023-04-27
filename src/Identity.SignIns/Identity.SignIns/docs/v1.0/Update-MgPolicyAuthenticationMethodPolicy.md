@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyAuthenticationMethodPolicy
 
 ## SYNOPSIS
-Update the properties of an authenticationMethodsPolicy object.
+Update the navigation property authenticationMethodsPolicy in policies
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ Update-MgPolicyAuthenticationMethodPolicy -BodyParameter <IMicrosoftGraphAuthent
 ```
 
 ## DESCRIPTION
-Update the properties of an authenticationMethodsPolicy object.
+Update the navigation property authenticationMethodsPolicy in policies
 
 ## EXAMPLES
 

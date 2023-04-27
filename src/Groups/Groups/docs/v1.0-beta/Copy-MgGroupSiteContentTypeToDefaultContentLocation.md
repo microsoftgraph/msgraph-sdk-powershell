@@ -8,8 +8,7 @@ schema: 2.0.0
 # Copy-MgGroupSiteContentTypeToDefaultContentLocation
 
 ## SYNOPSIS
-Copy a file to a default content location in a [content type][contentType].
-The file can then be added as a default file or template via a POST operation.
+Invoke action copyToDefaultContentLocation
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Copy-MgGroupSiteContentTypeToDefaultContentLocation -InputObject <IGroupsIdentit
 ```
 
 ## DESCRIPTION
-Copy a file to a default content location in a [content type][contentType].
-The file can then be added as a default file or template via a POST operation.
+Invoke action copyToDefaultContentLocation
 
 ## EXAMPLES
 
@@ -300,6 +298,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

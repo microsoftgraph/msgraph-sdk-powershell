@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeletedTeamChannelFileFolder
 
 ## SYNOPSIS
-Get the metadata for the location where the files of a channel are stored.
+Metadata for the location where the channel's files are stored.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgTeamworkDeletedTeamChannelFileFolder -InputObject <ITeamsIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get the metadata for the location where the files of a channel are stored.
+Metadata for the location where the channel's files are stored.
 
 ## EXAMPLES
 

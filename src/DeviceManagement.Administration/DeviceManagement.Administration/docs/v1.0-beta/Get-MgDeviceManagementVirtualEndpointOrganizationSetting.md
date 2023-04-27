@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointOrganizationSetting
 
 ## SYNOPSIS
-Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant.
-A tenant has only one **cloudPcOrganizationSettings** object.
+The Cloud PC organization settings for a tenant.
 
 ## SYNTAX
 
@@ -19,8 +18,7 @@ Get-MgDeviceManagementVirtualEndpointOrganizationSetting [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant.
-A tenant has only one **cloudPcOrganizationSettings** object.
+The Cloud PC organization settings for a tenant.
 
 ## EXAMPLES
 

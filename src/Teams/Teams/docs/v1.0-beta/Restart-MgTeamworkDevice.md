@@ -8,8 +8,7 @@ schema: 2.0.0
 # Restart-MgTeamworkDevice
 
 ## SYNOPSIS
-Restart the specified Microsoft Teams-enabled device asynchronously.
-A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
+Invoke action restart
 
 ## SYNTAX
 
@@ -24,8 +23,7 @@ Restart-MgTeamworkDevice -InputObject <ITeamsIdentity> [-PassThru] [-Confirm] [-
 ```
 
 ## DESCRIPTION
-Restart the specified Microsoft Teams-enabled device asynchronously.
-A device is restarted after the async operation completes successfully, which might occur subsequent to a response from this API.
+Invoke action restart
 
 ## EXAMPLES
 

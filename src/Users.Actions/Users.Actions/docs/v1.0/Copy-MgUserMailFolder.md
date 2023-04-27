@@ -8,7 +8,7 @@ schema: 2.0.0
 # Copy-MgUserMailFolder
 
 ## SYNOPSIS
-Copy a mailfolder and its contents to another mailfolder.
+Invoke action copy
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Copy-MgUserMailFolder -InputObject <IUsersActionsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Copy a mailfolder and its contents to another mailfolder.
+Invoke action copy
 
 ## EXAMPLES
 

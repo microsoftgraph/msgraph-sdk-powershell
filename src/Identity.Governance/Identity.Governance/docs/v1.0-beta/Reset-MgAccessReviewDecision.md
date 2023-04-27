@@ -8,9 +8,7 @@ schema: 2.0.0
 # Reset-MgAccessReviewDecision
 
 ## SYNOPSIS
-In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.
-The target object can be either a one-time access review, or an instance of a recurring access review.
-Previous decisions are no longer recorded, but reviewers can continue to update decisions.
+Invoke action resetDecisions
 
 ## SYNTAX
 
@@ -26,9 +24,7 @@ Reset-MgAccessReviewDecision -InputObject <IIdentityGovernanceIdentity> [-PassTh
 ```
 
 ## DESCRIPTION
-In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.
-The target object can be either a one-time access review, or an instance of a recurring access review.
-Previous decisions are no longer recorded, but reviewers can continue to update decisions.
+Invoke action resetDecisions
 
 ## EXAMPLES
 

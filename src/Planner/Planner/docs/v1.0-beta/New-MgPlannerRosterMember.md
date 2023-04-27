@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPlannerRosterMember
 
 ## SYNOPSIS
-Add a member to the plannerRoster object.
+Create new navigation property to members for planner
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ New-MgPlannerRosterMember -InputObject <IPlannerIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Add a member to the plannerRoster object.
+Create new navigation property to members for planner
 
 ## EXAMPLES
 

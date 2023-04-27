@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementVirtualEndpointOrganizationSetting
 
 ## SYNOPSIS
-Update the properties of the cloudPcOrganizationSettings object in a tenant.
+Update the navigation property organizationSettings in deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Update-MgDeviceManagementVirtualEndpointOrganizationSetting
 ```
 
 ## DESCRIPTION
-Update the properties of the cloudPcOrganizationSettings object in a tenant.
+Update the navigation property organizationSettings in deviceManagement
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgPrintPrinterFactoryDefault
 
 ## SYNOPSIS
-Restore a printer's default settings to the values specified by the manufacturer.
+Invoke action restoreFactoryDefaults
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Restore-MgPrintPrinterFactoryDefault -InputObject <IDevicesCloudPrintIdentity> [
 ```
 
 ## DESCRIPTION
-Restore a printer's default settings to the values specified by the manufacturer.
+Invoke action restoreFactoryDefaults
 
 ## EXAMPLES
 

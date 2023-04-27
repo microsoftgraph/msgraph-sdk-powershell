@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: 678beb74-3877-4339-bc9b-d8d0febd91bd
+Module Guid: da24b587-bac6-4199-ad63-56890bb0791d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -23,17 +23,15 @@ All categories associated with this class.
 Nullable.
 
 ### [Get-MgEducationClassAssignmentCategoryByRef](Get-MgEducationClassAssignmentCategoryByRef.md)
-List all the categories associated with an assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ### [Get-MgEducationClassAssignmentCategoryDelta](Get-MgEducationClassAssignmentCategoryDelta.md)
 Invoke function delta
 
 ### [Get-MgEducationClassAssignmentDefault](Get-MgEducationClassAssignmentDefault.md)
-Read the properties and relationships of an educationAssignmentDefaults object.
-These are the class-level assignment defaults respected by new assignments created in the class.
-Callers can continue to specify custom values on each **assignment** creation if they don't want the default behaviors.
-Only teachers can perform this operation.
+Specifies class-level defaults respected by new assignments created in the class.
 
 ### [Get-MgEducationClassAssignmentDelta](Get-MgEducationClassAssignmentDelta.md)
 Invoke function delta
@@ -44,16 +42,13 @@ Only teachers can modify this list.
 Nullable.
 
 ### [Get-MgEducationClassAssignmentRubric](Get-MgEducationClassAssignmentRubric.md)
-Get the educationRubric object attached to an educationAssignment, if one exists.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, the grading rubric attached to this assignment.
 
 ### [Get-MgEducationClassAssignmentRubricByRef](Get-MgEducationClassAssignmentRubricByRef.md)
-Get the educationRubric object attached to an educationAssignment, if one exists.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, the grading rubric attached to this assignment.
 
 ### [Get-MgEducationClassAssignmentSetting](Get-MgEducationClassAssignmentSetting.md)
-Read the properties and relationships of an educationAssignmentSettings object.
-Only teachers can perform this operation.
+Specifies class-level assignments settings.
 
 ### [Get-MgEducationClassAssignmentSubmission](Get-MgEducationClassAssignmentSubmission.md)
 Once published, there is a submission object for each student representing their work and grade.
@@ -73,27 +68,27 @@ Get submittedResources from education
 Invoke function delta
 
 ### [Get-MgEducationClassGroup](Get-MgEducationClassGroup.md)
-Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**.
+Get group from education
 
 ### [Get-MgEducationClassMember](Get-MgEducationClassMember.md)
-Retrieves the teachers and students for a class.
-Note that if the delegated token is used, members can only be seen by other members of the class.
+All users in the class.
+Nullable.
 
 ### [Get-MgEducationClassMemberByRef](Get-MgEducationClassMemberByRef.md)
-Retrieves the teachers and students for a class.
-Note that if the delegated token is used, members can only be seen by other members of the class.
+All users in the class.
+Nullable.
 
 ### [Get-MgEducationClassSchool](Get-MgEducationClassSchool.md)
 All schools that this class is associated with.
 Nullable.
 
 ### [Get-MgEducationClassTeacher](Get-MgEducationClassTeacher.md)
-Retrieve a list teachers for a class.
-Delegated tokens must be members of the class to get the teacher list.
+All teachers in the class.
+Nullable.
 
 ### [Get-MgEducationClassTeacherByRef](Get-MgEducationClassTeacherByRef.md)
-Retrieve a list teachers for a class.
-Delegated tokens must be members of the class to get the teacher list.
+All teachers in the class.
+Nullable.
 
 ### [Get-MgEducationMe](Get-MgEducationMe.md)
 Get me from education
@@ -103,12 +98,14 @@ List of assignments for the user.
 Nullable.
 
 ### [Get-MgEducationMeAssignmentCategory](Get-MgEducationMeAssignmentCategory.md)
-List all the categories associated with an assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ### [Get-MgEducationMeAssignmentCategoryByRef](Get-MgEducationMeAssignmentCategoryByRef.md)
-List all the categories associated with an assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ### [Get-MgEducationMeAssignmentCategoryDelta](Get-MgEducationMeAssignmentCategoryDelta.md)
 Invoke function delta
@@ -122,12 +119,10 @@ Only teachers can modify this list.
 Nullable.
 
 ### [Get-MgEducationMeAssignmentRubric](Get-MgEducationMeAssignmentRubric.md)
-Get the educationRubric object attached to an educationAssignment, if one exists.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, the grading rubric attached to this assignment.
 
 ### [Get-MgEducationMeAssignmentRubricByRef](Get-MgEducationMeAssignmentRubricByRef.md)
-Get the educationRubric object attached to an educationAssignment, if one exists.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, the grading rubric attached to this assignment.
 
 ### [Get-MgEducationMeAssignmentSubmission](Get-MgEducationMeAssignmentSubmission.md)
 Once published, there is a submission object for each student representing their work and grade.
@@ -158,7 +153,7 @@ Nullable.
 Classes for which the user is a teacher.
 
 ### [Get-MgEducationMeUser](Get-MgEducationMeUser.md)
-Retrieve the simple directory **user** that corresponds to this **educationUser**.
+Get user from education
 
 ### [Get-MgEducationMeUserMailboxSetting](Get-MgEducationMeUserMailboxSetting.md)
 Settings for the primary mailbox of the signed-in user.
@@ -173,22 +168,26 @@ Get education
 Get schools from education
 
 ### [Get-MgEducationSchoolAdministrativeUnit](Get-MgEducationSchoolAdministrativeUnit.md)
-Retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
+Get administrativeUnit from education
 
 ### [Get-MgEducationSchoolClass](Get-MgEducationSchoolClass.md)
-Retrieve a list of classes owned by a school.
+Classes taught at the school.
+Nullable.
 
 ### [Get-MgEducationSchoolClassByRef](Get-MgEducationSchoolClassByRef.md)
-Retrieve a list of classes owned by a school.
+Classes taught at the school.
+Nullable.
 
 ### [Get-MgEducationSchoolDelta](Get-MgEducationSchoolDelta.md)
 Invoke function delta
 
 ### [Get-MgEducationSchoolUser](Get-MgEducationSchoolUser.md)
-Retrieve a list of users at a school.
+Users in the school.
+Nullable.
 
 ### [Get-MgEducationSchoolUserByRef](Get-MgEducationSchoolUserByRef.md)
-Retrieve a list of users at a school.
+Users in the school.
+Nullable.
 
 ### [Get-MgEducationSynchronizationProfile](Get-MgEducationSynchronizationProfile.md)
 Get synchronizationProfiles from education
@@ -197,8 +196,7 @@ Get synchronizationProfiles from education
 All errors associated with this synchronization profile.
 
 ### [Get-MgEducationSynchronizationProfileStatus](Get-MgEducationSynchronizationProfileStatus.md)
-Get the status of a specific school data synchronization profile in the tenant.
-The response will indicate the status of the sync.
+The synchronization status.
 
 ### [Get-MgEducationUser](Get-MgEducationUser.md)
 Get users from education
@@ -208,12 +206,14 @@ List of assignments for the user.
 Nullable.
 
 ### [Get-MgEducationUserAssignmentCategory](Get-MgEducationUserAssignmentCategory.md)
-List all the categories associated with an assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ### [Get-MgEducationUserAssignmentCategoryByRef](Get-MgEducationUserAssignmentCategoryByRef.md)
-List all the categories associated with an assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ### [Get-MgEducationUserAssignmentCategoryDelta](Get-MgEducationUserAssignmentCategoryDelta.md)
 Invoke function delta
@@ -227,12 +227,10 @@ Only teachers can modify this list.
 Nullable.
 
 ### [Get-MgEducationUserAssignmentRubric](Get-MgEducationUserAssignmentRubric.md)
-Get the educationRubric object attached to an educationAssignment, if one exists.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, the grading rubric attached to this assignment.
 
 ### [Get-MgEducationUserAssignmentRubricByRef](Get-MgEducationUserAssignmentRubricByRef.md)
-Get the educationRubric object attached to an educationAssignment, if one exists.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, the grading rubric attached to this assignment.
 
 ### [Get-MgEducationUserAssignmentSubmission](Get-MgEducationUserAssignmentSubmission.md)
 Once published, there is a submission object for each student representing their work and grade.
@@ -271,83 +269,59 @@ Nullable.
 ### [Get-MgEducationUserTaughtClass](Get-MgEducationUserTaughtClass.md)
 Classes for which the user is a teacher.
 
+### [Initialize-MgEducationClassAssignment](Initialize-MgEducationClassAssignment.md)
+Invoke action activate
+
+### [Initialize-MgEducationMeAssignment](Initialize-MgEducationMeAssignment.md)
+Invoke action activate
+
+### [Initialize-MgEducationUserAssignment](Initialize-MgEducationUserAssignment.md)
+Invoke action activate
+
+### [Invoke-MgDeactivateEducationClassAssignment](Invoke-MgDeactivateEducationClassAssignment.md)
+Invoke action deactivate
+
+### [Invoke-MgDeactivateEducationMeAssignment](Invoke-MgDeactivateEducationMeAssignment.md)
+Invoke action deactivate
+
+### [Invoke-MgDeactivateEducationUserAssignment](Invoke-MgDeactivateEducationUserAssignment.md)
+Invoke action deactivate
+
 ### [Invoke-MgReassignEducationClassAssignmentSubmission](Invoke-MgReassignEducationClassAssignmentSubmission.md)
-Reassign the submission to the student with feedback for review.
-Only teachers can perform this action.
-Include the `Prefer: include-unknown-enum-members` header when you call this method; otherwise, a reassigned submission will be treated as a returned submission.
-This means that the `reassigned` status will be mapped to the `returned` status, and **reassignedDateTime** and **reassignedBy** properties will be mapped to **returnedDateTime** and **returnedBy** respectively.
-If the header `Prefer: include-unknown-enum-members` is provided, a reassigned submission retains the `reassigned` status.
-For details, see the examples section.
+Invoke action reassign
 
 ### [Invoke-MgReassignEducationMeAssignmentSubmission](Invoke-MgReassignEducationMeAssignmentSubmission.md)
-Reassign the submission to the student with feedback for review.
-Only teachers can perform this action.
-Include the `Prefer: include-unknown-enum-members` header when you call this method; otherwise, a reassigned submission will be treated as a returned submission.
-This means that the `reassigned` status will be mapped to the `returned` status, and **reassignedDateTime** and **reassignedBy** properties will be mapped to **returnedDateTime** and **returnedBy** respectively.
-If the header `Prefer: include-unknown-enum-members` is provided, a reassigned submission retains the `reassigned` status.
-For details, see the examples section.
+Invoke action reassign
 
 ### [Invoke-MgReassignEducationUserAssignmentSubmission](Invoke-MgReassignEducationUserAssignmentSubmission.md)
-Reassign the submission to the student with feedback for review.
-Only teachers can perform this action.
-Include the `Prefer: include-unknown-enum-members` header when you call this method; otherwise, a reassigned submission will be treated as a returned submission.
-This means that the `reassigned` status will be mapped to the `returned` status, and **reassignedDateTime** and **reassignedBy** properties will be mapped to **returnedDateTime** and **returnedBy** respectively.
-If the header `Prefer: include-unknown-enum-members` is provided, a reassigned submission retains the `reassigned` status.
-For details, see the examples section.
+Invoke action reassign
 
 ### [Invoke-MgReturnEducationClassAssignmentSubmission](Invoke-MgReturnEducationClassAssignmentSubmission.md)
-Make the grade and feedback associated with this submission available to the student.
-This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done.
-This action can only be done by the teacher.
+Invoke action return
 
 ### [Invoke-MgReturnEducationMeAssignmentSubmission](Invoke-MgReturnEducationMeAssignmentSubmission.md)
-Make the grade and feedback associated with this submission available to the student.
-This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done.
-This action can only be done by the teacher.
+Invoke action return
 
 ### [Invoke-MgReturnEducationUserAssignmentSubmission](Invoke-MgReturnEducationUserAssignmentSubmission.md)
-Make the grade and feedback associated with this submission available to the student.
-This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done.
-This action can only be done by the teacher.
+Invoke action return
 
 ### [Invoke-MgUnsubmitEducationClassAssignmentSubmission](Invoke-MgUnsubmitEducationClassAssignmentSubmission.md)
-Indicate that a student wants to work on the submitted assignment after it was turned in.
-Only teachers, students, and applications with application permissions can perform this operation.
-This method changes the status of the submission from `submitted` to `working`.
-During the submit process, all the resources are copied from **submittedResources** to  **workingResources**.
-The teacher will be looking at the working resources list for grading.
-A teacher can also unsubmit a student's assignment on their behalf.
+Invoke action unsubmit
 
 ### [Invoke-MgUnsubmitEducationMeAssignmentSubmission](Invoke-MgUnsubmitEducationMeAssignmentSubmission.md)
-Indicate that a student wants to work on the submitted assignment after it was turned in.
-Only teachers, students, and applications with application permissions can perform this operation.
-This method changes the status of the submission from `submitted` to `working`.
-During the submit process, all the resources are copied from **submittedResources** to  **workingResources**.
-The teacher will be looking at the working resources list for grading.
-A teacher can also unsubmit a student's assignment on their behalf.
+Invoke action unsubmit
 
 ### [Invoke-MgUnsubmitEducationUserAssignmentSubmission](Invoke-MgUnsubmitEducationUserAssignmentSubmission.md)
-Indicate that a student wants to work on the submitted assignment after it was turned in.
-Only teachers, students, and applications with application permissions can perform this operation.
-This method changes the status of the submission from `submitted` to `working`.
-During the submit process, all the resources are copied from **submittedResources** to  **workingResources**.
-The teacher will be looking at the working resources list for grading.
-A teacher can also unsubmit a student's assignment on their behalf.
+Invoke action unsubmit
 
 ### [Invoke-MgUploadEducationSynchronizationProfileUrl](Invoke-MgUploadEducationSynchronizationProfileUrl.md)
 Invoke function uploadUrl
 
 ### [New-MgEducationClass](New-MgEducationClass.md)
-Create a new class.
-This will also create a universal group.
-When you use this API to create a class, it will add special properties to the group, which will\nadd features such as assignments and special handling within Microsoft Teams when teams are created using the group.
-Please note that this API only creates the universal group and does not create a team.
-Microsoft Teams provides a user interface for teachers to create teams for their own classes using the groups created by this API.
+Create new navigation property to classes for education
 
 ### [New-MgEducationClassAssignment](New-MgEducationClassAssignment.md)
-Create a new assignment.
-Only teachers in a class can create an assignment.
-Assignments start in the Draft state, which means that students will not see the assignment until publication.
+Create new navigation property to assignments for education
 
 ### [New-MgEducationClassAssignmentCategory](New-MgEducationClassAssignmentCategory.md)
 Create new navigation property to categories for education
@@ -356,25 +330,16 @@ Create new navigation property to categories for education
 Create new navigation property ref to categories for education
 
 ### [New-MgEducationClassAssignmentResource](New-MgEducationClassAssignmentResource.md)
-Create an assignment resource.
-Only teachers can perform this operation.
-You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
+Create new navigation property to resources for education
 
 ### [New-MgEducationClassAssignmentSubmission](New-MgEducationClassAssignmentSubmission.md)
 Create new navigation property to submissions for education
 
 ### [New-MgEducationClassAssignmentSubmissionOutcome](New-MgEducationClassAssignmentSubmissionOutcome.md)
-Create a new feedback resource for a submission.
-Only a teacher can perform this operation.
-To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
-If the file doesn't exist or is not in that folder, the `POST` request will fail.
+Create new navigation property to outcomes for education
 
 ### [New-MgEducationClassAssignmentSubmissionResource](New-MgEducationClassAssignmentSubmissionResource.md)
-Add a educationSubmissionResource to a submission resource list.
-Only teachers and students can perform this operation.
-The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`.
-To create a new file-based resource, upload the file to the resources folder associated with the submission.
-If the file doesn't exist or is not in that folder, the POST request will fail.
+Create new navigation property to resources for education
 
 ### [New-MgEducationClassAssignmentSubmissionSubmittedResource](New-MgEducationClassAssignmentSubmissionSubmittedResource.md)
 Create new navigation property to submittedResources for education
@@ -395,34 +360,25 @@ Create new navigation property to categories for education
 Create new navigation property ref to categories for education
 
 ### [New-MgEducationMeAssignmentResource](New-MgEducationMeAssignmentResource.md)
-Create an assignment resource.
-Only teachers can perform this operation.
-You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
+Create new navigation property to resources for education
 
 ### [New-MgEducationMeAssignmentSubmission](New-MgEducationMeAssignmentSubmission.md)
 Create new navigation property to submissions for education
 
 ### [New-MgEducationMeAssignmentSubmissionOutcome](New-MgEducationMeAssignmentSubmissionOutcome.md)
-Create a new feedback resource for a submission.
-Only a teacher can perform this operation.
-To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
-If the file doesn't exist or is not in that folder, the `POST` request will fail.
+Create new navigation property to outcomes for education
 
 ### [New-MgEducationMeAssignmentSubmissionResource](New-MgEducationMeAssignmentSubmissionResource.md)
-Add a educationSubmissionResource to a submission resource list.
-Only teachers and students can perform this operation.
-The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`.
-To create a new file-based resource, upload the file to the resources folder associated with the submission.
-If the file doesn't exist or is not in that folder, the POST request will fail.
+Create new navigation property to resources for education
 
 ### [New-MgEducationMeAssignmentSubmissionSubmittedResource](New-MgEducationMeAssignmentSubmissionSubmittedResource.md)
 Create new navigation property to submittedResources for education
 
 ### [New-MgEducationMeRubric](New-MgEducationMeRubric.md)
-Create a new educationRubric object.
+Create new navigation property to rubrics for education
 
 ### [New-MgEducationSchool](New-MgEducationSchool.md)
-Create a school.
+Create new navigation property to schools for education
 
 ### [New-MgEducationSchoolClassByRef](New-MgEducationSchoolClassByRef.md)
 Create new navigation property ref to classes for education
@@ -437,7 +393,7 @@ Create new navigation property to synchronizationProfiles for education
 Create new navigation property to errors for education
 
 ### [New-MgEducationUser](New-MgEducationUser.md)
-Create a new user.
+Create new navigation property to users for education
 
 ### [New-MgEducationUserAssignment](New-MgEducationUserAssignment.md)
 Create new navigation property to assignments for education
@@ -449,61 +405,31 @@ Create new navigation property to categories for education
 Create new navigation property ref to categories for education
 
 ### [New-MgEducationUserAssignmentResource](New-MgEducationUserAssignmentResource.md)
-Create an assignment resource.
-Only teachers can perform this operation.
-You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
+Create new navigation property to resources for education
 
 ### [New-MgEducationUserAssignmentSubmission](New-MgEducationUserAssignmentSubmission.md)
 Create new navigation property to submissions for education
 
 ### [New-MgEducationUserAssignmentSubmissionOutcome](New-MgEducationUserAssignmentSubmissionOutcome.md)
-Create a new feedback resource for a submission.
-Only a teacher can perform this operation.
-To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment.
-If the file doesn't exist or is not in that folder, the `POST` request will fail.
+Create new navigation property to outcomes for education
 
 ### [New-MgEducationUserAssignmentSubmissionResource](New-MgEducationUserAssignmentSubmissionResource.md)
-Add a educationSubmissionResource to a submission resource list.
-Only teachers and students can perform this operation.
-The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`.
-To create a new file-based resource, upload the file to the resources folder associated with the submission.
-If the file doesn't exist or is not in that folder, the POST request will fail.
+Create new navigation property to resources for education
 
 ### [New-MgEducationUserAssignmentSubmissionSubmittedResource](New-MgEducationUserAssignmentSubmissionSubmittedResource.md)
 Create new navigation property to submittedResources for education
 
 ### [New-MgEducationUserRubric](New-MgEducationUserRubric.md)
-Create a new educationRubric object.
+Create new navigation property to rubrics for education
 
 ### [Publish-MgEducationClassAssignment](Publish-MgEducationClassAssignment.md)
-Change the state of an educationAssignment from its original `draft` status to the `published` status.
-You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.
-Only a teacher in the class can make this call.
-When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects.
-When you call this API, educationSubmission objects are created and the assignment appears in the student's list.
-The state of the **assignment** goes back to `draft` if there is any backend failure during publish process.
-To update the properties of a published **assignment**, see update an assignment.
-To update the properties of a published assignment, see update an assignment.
+Invoke action publish
 
 ### [Publish-MgEducationMeAssignment](Publish-MgEducationMeAssignment.md)
-Change the state of an educationAssignment from its original `draft` status to the `published` status.
-You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.
-Only a teacher in the class can make this call.
-When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects.
-When you call this API, educationSubmission objects are created and the assignment appears in the student's list.
-The state of the **assignment** goes back to `draft` if there is any backend failure during publish process.
-To update the properties of a published **assignment**, see update an assignment.
-To update the properties of a published assignment, see update an assignment.
+Invoke action publish
 
 ### [Publish-MgEducationUserAssignment](Publish-MgEducationUserAssignment.md)
-Change the state of an educationAssignment from its original `draft` status to the `published` status.
-You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.
-Only a teacher in the class can make this call.
-When an **assignment** is in draft status, students will not see the **assignment**, nor will there be any submission objects.
-When you call this API, educationSubmission objects are created and the assignment appears in the student's list.
-The state of the **assignment** goes back to `draft` if there is any backend failure during publish process.
-To update the properties of a published **assignment**, see update an assignment.
-To update the properties of a published assignment, see update an assignment.
+Invoke action publish
 
 ### [Remove-MgEducationClass](Remove-MgEducationClass.md)
 Delete navigation property classes for education
@@ -635,101 +561,61 @@ Delete navigation property submittedResources for education
 Delete navigation property rubrics for education
 
 ### [Reset-MgEducationSynchronizationProfile](Reset-MgEducationSynchronizationProfile.md)
-Reset the sync of a specific school data synchronization profile in the tenant.
+Invoke action reset
 
 ### [Resume-MgEducationSynchronizationProfile](Resume-MgEducationSynchronizationProfile.md)
-Resume the sync of a specific school data synchronization profile in the tenant.
+Invoke action resume
 
 ### [Set-MgEducationClassAssignmentRubricByRef](Set-MgEducationClassAssignmentRubricByRef.md)
 Update the ref of navigation property rubric in education
 
 ### [Set-MgEducationClassAssignmentSubmissionUpResourceFolder](Set-MgEducationClassAssignmentSubmissionUpResourceFolder.md)
-Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission.
-Only teachers and students can perform this operation.
-Note that files must be located in this folder in order to be added as resources.
-Only a student in the class can determine what files to upload in a given submission-level resource folder.
+Invoke action setUpResourcesFolder
 
 ### [Set-MgEducationClassAssignmentUpFeedbackResourceFolder](Set-MgEducationClassAssignmentUpFeedbackResourceFolder.md)
-Create a SharePoint folder to upload feedback files for a given educationSubmission.
-Only teachers can perform this operation.
-The teacher determines the resources to upload in the feedback resources folder of a submission.
+Invoke action setUpFeedbackResourcesFolder
 
 ### [Set-MgEducationClassAssignmentUpResourceFolder](Set-MgEducationClassAssignmentUpResourceFolder.md)
-Create a SharePoint folder to upload files for a given educationAssignment.
-Only teachers can perform this operation.
-The teacher determines the resources to upload in the assignment's folder.
+Invoke action setUpResourcesFolder
 
 ### [Set-MgEducationMeAssignmentRubricByRef](Set-MgEducationMeAssignmentRubricByRef.md)
 Update the ref of navigation property rubric in education
 
 ### [Set-MgEducationMeAssignmentSubmissionUpResourceFolder](Set-MgEducationMeAssignmentSubmissionUpResourceFolder.md)
-Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission.
-Only teachers and students can perform this operation.
-Note that files must be located in this folder in order to be added as resources.
-Only a student in the class can determine what files to upload in a given submission-level resource folder.
+Invoke action setUpResourcesFolder
 
 ### [Set-MgEducationMeAssignmentUpFeedbackResourceFolder](Set-MgEducationMeAssignmentUpFeedbackResourceFolder.md)
-Create a SharePoint folder to upload feedback files for a given educationSubmission.
-Only teachers can perform this operation.
-The teacher determines the resources to upload in the feedback resources folder of a submission.
+Invoke action setUpFeedbackResourcesFolder
 
 ### [Set-MgEducationMeAssignmentUpResourceFolder](Set-MgEducationMeAssignmentUpResourceFolder.md)
-Create a SharePoint folder to upload files for a given educationAssignment.
-Only teachers can perform this operation.
-The teacher determines the resources to upload in the assignment's folder.
+Invoke action setUpResourcesFolder
 
 ### [Set-MgEducationUserAssignmentRubricByRef](Set-MgEducationUserAssignmentRubricByRef.md)
 Update the ref of navigation property rubric in education
 
 ### [Set-MgEducationUserAssignmentSubmissionUpResourceFolder](Set-MgEducationUserAssignmentSubmissionUpResourceFolder.md)
-Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission.
-Only teachers and students can perform this operation.
-Note that files must be located in this folder in order to be added as resources.
-Only a student in the class can determine what files to upload in a given submission-level resource folder.
+Invoke action setUpResourcesFolder
 
 ### [Set-MgEducationUserAssignmentUpFeedbackResourceFolder](Set-MgEducationUserAssignmentUpFeedbackResourceFolder.md)
-Create a SharePoint folder to upload feedback files for a given educationSubmission.
-Only teachers can perform this operation.
-The teacher determines the resources to upload in the feedback resources folder of a submission.
+Invoke action setUpFeedbackResourcesFolder
 
 ### [Set-MgEducationUserAssignmentUpResourceFolder](Set-MgEducationUserAssignmentUpResourceFolder.md)
-Create a SharePoint folder to upload files for a given educationAssignment.
-Only teachers can perform this operation.
-The teacher determines the resources to upload in the assignment's folder.
+Invoke action setUpResourcesFolder
 
 ### [Start-MgEducationSynchronizationProfile](Start-MgEducationSynchronizationProfile.md)
-Verify the files uploaded to a specific school data synchronization profile in the tenant.
-If the verification is successful, synchronization will start on the profile.
-Otherwise, the response will contain errors and warnings.
-If the response contains errors, the synchronization will not start.
-If the response contains only warnings, synchronization will start.
+Invoke action start
 
 ### [Submit-MgEducationClassAssignmentSubmission](Submit-MgEducationClassAssignmentSubmission.md)
-Indicate that a student is done with the work and is ready to hand in the assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
-This method changes the status of the submission from `working` to `submitted`.
-During the submit process, all the resources are copied to the **submittedResources** bucket.
-The teacher will be looking at the submitted resources list for grading.
-A teacher can also submit a student's assignment on their behalf.
+Invoke action submit
 
 ### [Submit-MgEducationMeAssignmentSubmission](Submit-MgEducationMeAssignmentSubmission.md)
-Indicate that a student is done with the work and is ready to hand in the assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
-This method changes the status of the submission from `working` to `submitted`.
-During the submit process, all the resources are copied to the **submittedResources** bucket.
-The teacher will be looking at the submitted resources list for grading.
-A teacher can also submit a student's assignment on their behalf.
+Invoke action submit
 
 ### [Submit-MgEducationUserAssignmentSubmission](Submit-MgEducationUserAssignmentSubmission.md)
-Indicate that a student is done with the work and is ready to hand in the assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
-This method changes the status of the submission from `working` to `submitted`.
-During the submit process, all the resources are copied to the **submittedResources** bucket.
-The teacher will be looking at the submitted resources list for grading.
-A teacher can also submit a student's assignment on their behalf.
+Invoke action submit
 
 ### [Suspend-MgEducationSynchronizationProfile](Suspend-MgEducationSynchronizationProfile.md)
-Pause the sync of a specific school data synchronization profile in the tenant.
+Invoke action pause
 
 ### [Update-MgEducationClass](Update-MgEducationClass.md)
 Update the navigation property classes in education
@@ -741,8 +627,7 @@ Update the navigation property assignments in education
 Update the navigation property assignmentCategories in education
 
 ### [Update-MgEducationClassAssignmentDefault](Update-MgEducationClassAssignmentDefault.md)
-Update the properties of an educationAssignmentDefaults object.
-Only teachers can update these settings.
+Update the navigation property assignmentDefaults in education
 
 ### [Update-MgEducationClassAssignmentResource](Update-MgEducationClassAssignmentResource.md)
 Update the navigation property resources in education
@@ -751,8 +636,7 @@ Update the navigation property resources in education
 Update the navigation property rubric in education
 
 ### [Update-MgEducationClassAssignmentSetting](Update-MgEducationClassAssignmentSetting.md)
-Update the properties of an educationAssignmentSettings object.
-Only Teachers can update these settings.
+Update the navigation property assignmentSettings in education
 
 ### [Update-MgEducationClassAssignmentSubmission](Update-MgEducationClassAssignmentSubmission.md)
 Update the navigation property submissions in education

@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgOrganizationSettingProfileCardProperty
 
 ## SYNOPSIS
-Create a new profileCardProperty for an organization.
-The new property is identified by its **directoryPropertyName** property.
-For more information on adding properties to the profile card for an organization, see customize the profile card.
+Create new navigation property to profileCardProperties for organization
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ New-MgOrganizationSettingProfileCardProperty -InputObject <IIdentityDirectoryMan
 ```
 
 ## DESCRIPTION
-Create a new profileCardProperty for an organization.
-The new property is identified by its **directoryPropertyName** property.
-For more information on adding properties to the profile card for an organization, see customize the profile card.
+Create new navigation property to profileCardProperties for organization
 
 ## EXAMPLES
 

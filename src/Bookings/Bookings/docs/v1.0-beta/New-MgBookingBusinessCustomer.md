@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBookingBusinessCustomer
 
 ## SYNOPSIS
-Create a new bookingCustomer object.
+Create new navigation property to customers for bookingBusinesses
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Create a new bookingCustomer object.
+Create new navigation property to customers for bookingBusinesses
 
 ## EXAMPLES
 

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Invoke-MgMuteCommunicationCall
 
 ## SYNOPSIS
-Allows the application to mute itself.
-This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio.
-For more details about how to handle mute operations, see muteParticipantOperation
+Invoke action mute
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ Invoke-MgMuteCommunicationCall -InputObject <ICloudCommunicationsIdentity> [-Add
 ```
 
 ## DESCRIPTION
-Allows the application to mute itself.
-This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio.
-For more details about how to handle mute operations, see muteParticipantOperation
+Invoke action mute
 
 ## EXAMPLES
 

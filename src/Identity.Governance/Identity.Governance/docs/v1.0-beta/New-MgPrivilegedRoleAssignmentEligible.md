@@ -8,10 +8,7 @@ schema: 2.0.0
 # New-MgPrivilegedRoleAssignmentEligible
 
 ## SYNOPSIS
-Make the role assignment eligible.
-If the role assignment is already eligible before the call, it does nothing.
-If the role assignment is permanent and the requestor is different from the target user, the role assignment will become eligible and the role will be deactivated for the target user.
-If the requestor is the target user and the role is Security Administrator or Privileged Role Administrator, the role will be activated with the default expiration.
+Invoke action makeEligible
 
 ## SYNTAX
 
@@ -28,10 +25,7 @@ New-MgPrivilegedRoleAssignmentEligible -InputObject <IIdentityGovernanceIdentity
 ```
 
 ## DESCRIPTION
-Make the role assignment eligible.
-If the role assignment is already eligible before the call, it does nothing.
-If the role assignment is permanent and the requestor is different from the target user, the role assignment will become eligible and the role will be deactivated for the target user.
-If the requestor is the target user and the role is Security Administrator or Privileged Role Administrator, the role will be activated with the default expiration.
+Invoke action makeEligible
 
 ## EXAMPLES
 

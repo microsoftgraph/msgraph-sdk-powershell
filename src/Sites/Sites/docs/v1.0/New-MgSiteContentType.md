@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSiteContentType
 
 ## SYNOPSIS
-Create a new [contentType][] in a [site][].
+Create new navigation property to contentTypes for sites
 
 ## SYNTAX
 
@@ -50,7 +50,7 @@ New-MgSiteContentType -InputObject <ISitesIdentity> [-AdditionalProperties <Hash
 ```
 
 ## DESCRIPTION
-Create a new [contentType][] in a [site][].
+Create new navigation property to contentTypes for sites
 
 ## EXAMPLES
 
@@ -1528,6 +1528,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem
