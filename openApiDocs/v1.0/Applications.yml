@@ -650,11 +650,8 @@ paths:
     get:
       tags:
         - applications.extensionProperty
-      summary: List extensionProperties (directory extensions)
-      description: 'Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0
+      summary: Get extensionProperties from applications
+      description: 'Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
       operationId: applications_ListExtensionProperties
       parameters:
         - name: application-id
@@ -737,11 +734,7 @@ paths:
     post:
       tags:
         - applications.extensionProperty
-      summary: Create extensionProperty (directory extension)
-      description: 'Create a new directory extension definition, represented by an extensionProperty object.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0
+      summary: Create new navigation property to extensionProperties for applications
       operationId: applications_CreateExtensionProperties
       parameters:
         - name: application-id
@@ -906,11 +899,8 @@ paths:
     get:
       tags:
         - applications.federatedIdentityCredential
-      summary: List federatedIdentityCredentials
-      description: Get a list of the federatedIdentityCredential objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-federatedidentitycredentials?view=graph-rest-1.0
+      summary: Get federatedIdentityCredentials from applications
+      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).'
       operationId: applications_ListFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -990,11 +980,7 @@ paths:
     post:
       tags:
         - applications.federatedIdentityCredential
-      summary: Create federatedIdentityCredential
-      description: 'Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-federatedidentitycredentials?view=graph-rest-1.0
+      summary: Create new navigation property to federatedIdentityCredentials for applications
       operationId: applications_CreateFederatedIdentityCredentials
       parameters:
         - name: application-id
@@ -1362,10 +1348,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action addKey
-      description: 'Add a key credential to an application. This method, along with removeKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  Applications that don’t have any existing valid certificates (no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. You can use the Update application operation to perform an update instead.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-addkey?view=graph-rest-1.0
       operationId: applications_addKey
       parameters:
         - name: application-id
@@ -1407,10 +1389,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action addPassword
-      description: Adds a strong password or secret to an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0
       operationId: applications_addPassword
       parameters:
         - name: application-id
@@ -1448,10 +1426,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: applications_checkMemberGroups
       parameters:
         - name: application-id
@@ -1556,10 +1530,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: applications_getMemberGroups
       parameters:
         - name: application-id
@@ -1612,10 +1582,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getMemberObjects
-      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
       operationId: applications_getMemberObjects
       parameters:
         - name: application-id
@@ -1668,10 +1634,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action removeKey
-      description: 'Remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0
       operationId: applications_removeKey
       parameters:
         - name: application-id
@@ -1709,10 +1671,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action removePassword
-      description: Remove a password from an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-removepassword?view=graph-rest-1.0
       operationId: applications_removePassword
       parameters:
         - name: application-id
@@ -1748,10 +1706,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: applications_restore
       parameters:
         - name: application-id
@@ -1777,10 +1731,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action setVerifiedPublisher
-      description: 'Set the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0
       operationId: applications_setVerifiedPublisher
       parameters:
         - name: application-id
@@ -1814,10 +1764,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action unsetVerifiedPublisher
-      description: 'Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0
       operationId: applications_unsetVerifiedPublisher
       parameters:
         - name: application-id
@@ -1840,9 +1786,6 @@ paths:
         - applications.directoryObject
       summary: Get owners from applications
       description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
       operationId: applications_ListOwners
       parameters:
         - name: application-id
@@ -1964,7 +1907,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
-      operationId: applications.GetOwners_AsAppRoleAssignment
+      operationId: applications_GetOwnersAsAppRoleAssignment
       parameters:
         - name: application-id
           in: path
@@ -2031,7 +1974,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: applications.GetOwners_AsEndpoint
+      operationId: applications_GetOwnersAsEndpoint
       parameters:
         - name: application-id
           in: path
@@ -2098,7 +2041,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: applications.GetOwners_AsServicePrincipal
+      operationId: applications_GetOwnersAsServicePrincipal
       parameters:
         - name: application-id
           in: path
@@ -2165,7 +2108,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: applications.GetOwners_AsUser
+      operationId: applications_GetOwnersAsUser
       parameters:
         - name: application-id
           in: path
@@ -2233,9 +2176,6 @@ paths:
         - applications.directoryObject
       summary: Get ref of owners from applications
       description: 'Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0
       operationId: applications_ListOwnersGraphBPreRef
       parameters:
         - name: application-id
@@ -2312,7 +2252,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
-      operationId: applications.ListOwners_AsAppRoleAssignment
+      operationId: applications_ListOwnersAsAppRoleAssignment
       parameters:
         - name: application-id
           in: path
@@ -2390,7 +2330,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: applications.ListOwners_AsEndpoint
+      operationId: applications_ListOwnersAsEndpoint
       parameters:
         - name: application-id
           in: path
@@ -2468,7 +2408,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: applications.ListOwners_AsServicePrincipal
+      operationId: applications_ListOwnersAsServicePrincipal
       parameters:
         - name: application-id
           in: path
@@ -2546,7 +2486,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: applications.ListOwners_AsUser
+      operationId: applications_ListOwnersAsUser
       parameters:
         - name: application-id
           in: path
@@ -2623,11 +2563,7 @@ paths:
     get:
       tags:
         - applications.tokenIssuancePolicy
-      summary: List assigned tokenIssuancePolicies
-      description: List the tokenIssuancePolicy objects that are assigned to an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
+      summary: Get tokenIssuancePolicies from applications
       operationId: applications_ListTokenIssuancePolicies
       parameters:
         - name: application-id
@@ -2752,11 +2688,7 @@ paths:
     get:
       tags:
         - applications.tokenIssuancePolicy
-      summary: List assigned tokenIssuancePolicies
-      description: List the tokenIssuancePolicy objects that are assigned to an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenissuancepolicies?view=graph-rest-1.0
+      summary: Get ref of tokenIssuancePolicies from applications
       operationId: applications_ListTokenIssuancePoliciesGraphBPreRef
       parameters:
         - name: application-id
@@ -2830,11 +2762,7 @@ paths:
     get:
       tags:
         - applications.tokenLifetimePolicy
-      summary: List assigned tokenLifetimePolicy
-      description: List the tokenLifetimePolicy objects that are assigned to an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
+      summary: Get tokenLifetimePolicies from applications
       operationId: applications_ListTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -2959,11 +2887,7 @@ paths:
     get:
       tags:
         - applications.tokenLifetimePolicy
-      summary: List assigned tokenLifetimePolicy
-      description: List the tokenLifetimePolicy objects that are assigned to an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0
+      summary: Get ref of tokenLifetimePolicies from applications
       operationId: applications_ListTokenLifetimePoliciesGraphBPreRef
       parameters:
         - name: application-id
@@ -3218,10 +3142,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
       operationId: applications_getAvailableExtensionProperties
       requestBody:
         description: Action parameters
@@ -3266,10 +3186,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: applications_getGraphBPreIds
       requestBody:
         description: Action parameters
@@ -3319,10 +3235,6 @@ paths:
       tags:
         - applications.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: applications_validateProperties
       requestBody:
         description: Action parameters
@@ -3506,10 +3418,6 @@ paths:
       tags:
         - applicationTemplates.Actions
       summary: Invoke action instantiate
-      description: 'Add an instance of an application from the Azure AD application gallery into your directory. You can also use this API to instantiate non-gallery apps. Use the following ID for the **applicationTemplate** object: `8adf8e6e-67b2-4cf2-a259-e3dc5476c621`.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0
       operationId: applicationTemplates_instantiate
       parameters:
         - name: applicationTemplate-id
@@ -3549,9 +3457,6 @@ paths:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
       description: Represents the app roles a group has been granted for an application. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-approleassignments?view=graph-rest-1.0
       operationId: groups_ListAppRoleAssignments
       parameters:
         - name: group-id
@@ -3650,11 +3555,7 @@ paths:
     post:
       tags:
         - groups.appRoleAssignment
-      summary: Grant an appRoleAssignment to a group
-      description: 'Use this API to assign an app role to a security group. All direct members of the group will be considered assigned. Security groups with dynamic memberships are supported. To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-approleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to appRoleAssignments for groups
       operationId: groups_CreateAppRoleAssignments
       parameters:
         - name: group-id
@@ -4388,11 +4289,8 @@ paths:
     get:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: List appRoleAssignments granted for a service principal
-      description: 'Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignedto?view=graph-rest-1.0
+      summary: Get appRoleAssignedTo from servicePrincipals
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
       operationId: servicePrincipals_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -4481,11 +4379,7 @@ paths:
     post:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Grant an appRoleAssignment for a service principal
-      description: 'Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0
+      summary: Create new navigation property to appRoleAssignedTo for servicePrincipals
       operationId: servicePrincipals_CreateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -4654,9 +4548,6 @@ paths:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
       description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-approleassignments?view=graph-rest-1.0
       operationId: servicePrincipals_ListAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -4755,11 +4646,7 @@ paths:
     post:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Grant an appRoleAssignment to a service principal
-      description: 'Assign an app role to a client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment to a client service principal, you need three identifiers:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to appRoleAssignments for servicePrincipals
       operationId: servicePrincipals_CreateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -4936,11 +4823,8 @@ paths:
     get:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: List assigned claimsMappingPolicy
-      description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
+      summary: Get claimsMappingPolicies from servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -5065,11 +4949,8 @@ paths:
     get:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: List assigned claimsMappingPolicy
-      description: List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-claimsmappingpolicies?view=graph-rest-1.0
+      summary: Get ref of claimsMappingPolicies from servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListClaimsMappingPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -5273,7 +5154,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: servicePrincipals.GetCreatedObjects_AsServicePrincipal
+      operationId: servicePrincipals_GetCreatedObjectsAsServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5330,7 +5211,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListCreatedObjects_AsServicePrincipal
+      operationId: servicePrincipals_ListCreatedObjectsAsServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5397,11 +5278,7 @@ paths:
     get:
       tags:
         - servicePrincipals.delegatedPermissionClassification
-      summary: List delegatedPermissionClassifications collection of servicePrincipal
-      description: Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0
+      summary: Get delegatedPermissionClassifications from servicePrincipals
       operationId: servicePrincipals_ListDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -5475,11 +5352,7 @@ paths:
     post:
       tags:
         - servicePrincipals.delegatedPermissionClassification
-      summary: Create delegatedPermissionClassification
-      description: Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0
+      summary: Create new navigation property to delegatedPermissionClassifications for servicePrincipals
       operationId: servicePrincipals_CreateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -6132,11 +6005,8 @@ paths:
     get:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: List assigned homeRealmDiscoveryPolicy
-      description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
+      summary: Get homeRealmDiscoveryPolicies from servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -6261,11 +6131,8 @@ paths:
     get:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: List assigned homeRealmDiscoveryPolicy
-      description: List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0
+      summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListHomeRealmDiscoveryPoliciesGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -6341,9 +6208,6 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
       description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-memberof?view=graph-rest-1.0
       operationId: servicePrincipals_ListMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
@@ -6492,7 +6356,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: servicePrincipals.GetMemberOf_AsAdministrativeUnit
+      operationId: servicePrincipals_GetMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6559,7 +6423,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: servicePrincipals.GetMemberOf_AsGroup
+      operationId: servicePrincipals_GetMemberGraphOPreAsGroup
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6626,7 +6490,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListMemberOf_AsAdministrativeUnit
+      operationId: servicePrincipals_ListMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6704,7 +6568,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListMemberOf_AsGroup
+      operationId: servicePrincipals_ListMemberGraphOPreAsGroup
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -6782,10 +6646,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addKey
-      description: 'Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. Update servicePrincipal can be used to perform an update instead.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0
       operationId: servicePrincipals_addKey
       parameters:
         - name: servicePrincipal-id
@@ -6827,10 +6687,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addPassword
-      description: Add a strong password or secret to a servicePrincipal object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0
       operationId: servicePrincipals_addPassword
       parameters:
         - name: servicePrincipal-id
@@ -6868,10 +6724,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action addTokenSigningCertificate
-      description: "Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.  The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: \n+ The keyCredentials object with the following objects:\n    + A private key object with **usage** set to `Sign`.\n    + A public key object with **usage** set to `Verify`.\n+ The passwordCredentials object.  All the objects have the same value of **customKeyIdentifier**. The **passwordCredential** is used to open the PFX file (private key). It and the associated private key object have the same value of **keyId**. When set during creation through the **displayName** property, the subject of the certificate cannot be updated. The **startDateTime** is set to the same time the certificate is created using the action. The **endDateTime** can be up to three years after the certificate is created."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-addtokensigningcertificate?view=graph-rest-1.0
       operationId: servicePrincipals_addTokenSigningCertificate
       parameters:
         - name: servicePrincipal-id
@@ -6915,10 +6767,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: servicePrincipals_checkMemberGroups
       parameters:
         - name: servicePrincipal-id
@@ -7023,10 +6871,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: servicePrincipals_getMemberGroups
       parameters:
         - name: servicePrincipal-id
@@ -7079,10 +6923,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getMemberObjects
-      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
       operationId: servicePrincipals_getMemberObjects
       parameters:
         - name: servicePrincipal-id
@@ -7135,10 +6975,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action removeKey
-      description: 'Remove a key credential from a servicePrincipal. This method along with addKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-removekey?view=graph-rest-1.0
       operationId: servicePrincipals_removeKey
       parameters:
         - name: servicePrincipal-id
@@ -7176,10 +7012,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action removePassword
-      description: Remove a password from a servicePrincipal object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-removepassword?view=graph-rest-1.0
       operationId: servicePrincipals_removePassword
       parameters:
         - name: servicePrincipal-id
@@ -7215,10 +7047,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: servicePrincipals_restore
       parameters:
         - name: servicePrincipal-id
@@ -7243,11 +7071,8 @@ paths:
     get:
       tags:
         - servicePrincipals.oAuth2PermissionGrant
-      summary: List oauth2PermissionGrants
-      description: 'Retrieve a list of oAuth2PermissionGrant entities, representing delegated permissions granted to the service principal (representing the client application) to access an API on behalf of a user.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-oauth2permissiongrants?view=graph-rest-1.0
+      summary: Get oauth2PermissionGrants from servicePrincipals
+      description: Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
       operationId: servicePrincipals_ListOauth2PermissionGrants
       parameters:
         - name: servicePrincipal-id
@@ -7521,7 +7346,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-      operationId: servicePrincipals.GetOwnedObjects_AsApplication
+      operationId: servicePrincipals_GetOwnedObjectsAsApplication
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7578,7 +7403,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
-      operationId: servicePrincipals.GetOwnedObjects_AsAppRoleAssignment
+      operationId: servicePrincipals_GetOwnedObjectsAsAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7635,7 +7460,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: servicePrincipals.GetOwnedObjects_AsEndpoint
+      operationId: servicePrincipals_GetOwnedObjectsAsEndpoint
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7692,7 +7517,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: servicePrincipals.GetOwnedObjects_AsGroup
+      operationId: servicePrincipals_GetOwnedObjectsAsGroup
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7749,7 +7574,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: servicePrincipals.GetOwnedObjects_AsServicePrincipal
+      operationId: servicePrincipals_GetOwnedObjectsAsServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7806,7 +7631,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwnedObjects_AsApplication
+      operationId: servicePrincipals_ListOwnedObjectsAsApplication
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7874,7 +7699,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwnedObjects_AsAppRoleAssignment
+      operationId: servicePrincipals_ListOwnedObjectsAsAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -7942,7 +7767,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwnedObjects_AsEndpoint
+      operationId: servicePrincipals_ListOwnedObjectsAsEndpoint
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -8010,7 +7835,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwnedObjects_AsGroup
+      operationId: servicePrincipals_ListOwnedObjectsAsGroup
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -8078,7 +7903,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwnedObjects_AsServicePrincipal
+      operationId: servicePrincipals_ListOwnedObjectsAsServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -8147,9 +7972,6 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get owners from servicePrincipals
       description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
       operationId: servicePrincipals_ListOwners
       parameters:
         - name: servicePrincipal-id
@@ -8271,7 +8093,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
-      operationId: servicePrincipals.GetOwners_AsAppRoleAssignment
+      operationId: servicePrincipals_GetOwnersAsAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -8338,7 +8160,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: servicePrincipals.GetOwners_AsEndpoint
+      operationId: servicePrincipals_GetOwnersAsEndpoint
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -8405,7 +8227,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: servicePrincipals.GetOwners_AsServicePrincipal
+      operationId: servicePrincipals_GetOwnersAsServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -8472,7 +8294,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: servicePrincipals.GetOwners_AsUser
+      operationId: servicePrincipals_GetOwnersAsUser
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -8540,9 +8362,6 @@ paths:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
       description: 'Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-owners?view=graph-rest-1.0
       operationId: servicePrincipals_ListOwnersGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -8619,7 +8438,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.appRoleAssignment in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwners_AsAppRoleAssignment
+      operationId: servicePrincipals_ListOwnersAsAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -8697,7 +8516,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwners_AsEndpoint
+      operationId: servicePrincipals_ListOwnersAsEndpoint
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -8775,7 +8594,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwners_AsServicePrincipal
+      operationId: servicePrincipals_ListOwnersAsServicePrincipal
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -8853,7 +8672,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListOwners_AsUser
+      operationId: servicePrincipals_ListOwnersAsUser
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -9229,9 +9048,6 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get transitiveMemberOf from servicePrincipals
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/serviceprincipal-list-transitivememberof?view=graph-rest-1.0
       operationId: servicePrincipals_ListTransitiveMemberGraphOPre
       parameters:
         - name: servicePrincipal-id
@@ -9379,7 +9195,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: servicePrincipals.GetTransitiveMemberOf_AsAdministrativeUnit
+      operationId: servicePrincipals_GetTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -9446,7 +9262,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: servicePrincipals.GetTransitiveMemberOf_AsGroup
+      operationId: servicePrincipals_GetTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -9513,7 +9329,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListTransitiveMemberOf_AsAdministrativeUnit
+      operationId: servicePrincipals_ListTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -9591,7 +9407,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: servicePrincipals.ListTransitiveMemberOf_AsGroup
+      operationId: servicePrincipals_ListTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -9851,10 +9667,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
       operationId: servicePrincipals_getAvailableExtensionProperties
       requestBody:
         description: Action parameters
@@ -9899,10 +9711,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: servicePrincipals_getGraphBPreIds
       requestBody:
         description: Action parameters
@@ -9952,10 +9760,6 @@ paths:
       tags:
         - servicePrincipals.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: servicePrincipals_validateProperties
       requestBody:
         description: Action parameters
@@ -9993,9 +9797,6 @@ paths:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
       description: Represents the app roles a user has been granted for an application. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0
       operationId: users_ListAppRoleAssignments
       parameters:
         - name: user-id
@@ -10094,11 +9895,7 @@ paths:
     post:
       tags:
         - users.appRoleAssignment
-      summary: Grant an appRoleAssignment to a user
-      description: 'Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to appRoleAssignments for users
       operationId: users_CreateAppRoleAssignments
       parameters:
         - name: user-id
@@ -10396,7 +10193,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -10781,7 +10578,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             replyUrls:
               type: array
@@ -10806,7 +10603,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -19976,7 +19773,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -21429,7 +21226,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array

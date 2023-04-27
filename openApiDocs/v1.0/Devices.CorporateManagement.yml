@@ -7501,7 +7501,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
-      operationId: deviceAppManagement.GetMobileApps_AsManagedMobileLobApp
+      operationId: deviceAppManagement_GetMobileAppsAsManagedMobileLobApp
       parameters:
         - name: mobileApp-id
           in: path
@@ -7566,7 +7566,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get the item of type microsoft.graph.mobileApp as microsoft.graph.mobileLobApp
-      operationId: deviceAppManagement.GetMobileApps_AsMobileLobApp
+      operationId: deviceAppManagement_GetMobileAppsAsMobileLobApp
       parameters:
         - name: mobileApp-id
           in: path
@@ -7631,7 +7631,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get the items of type microsoft.graph.managedMobileLobApp in the microsoft.graph.mobileApp collection
-      operationId: deviceAppManagement.ListMobileApps_AsManagedMobileLobApp
+      operationId: deviceAppManagement_ListMobileAppsAsManagedMobileLobApp
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7731,7 +7731,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get the items of type microsoft.graph.mobileLobApp in the microsoft.graph.mobileApp collection
-      operationId: deviceAppManagement.ListMobileApps_AsMobileLobApp
+      operationId: deviceAppManagement_ListMobileAppsAsMobileLobApp
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -21770,7 +21770,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -23025,7 +23025,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array

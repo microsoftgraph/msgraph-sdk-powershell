@@ -1862,9 +1862,6 @@ paths:
         - users.device
       summary: Get memberOf from users
       description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
       operationId: users.devices_ListMemberGraphOPre
       parameters:
         - name: user-id
@@ -2041,7 +2038,7 @@ paths:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: users.devices.GetMemberOf_AsAdministrativeUnit
+      operationId: users.devices_GetMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -2122,7 +2119,7 @@ paths:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: users.devices.GetMemberOf_AsGroup
+      operationId: users.devices_GetMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -2203,7 +2200,7 @@ paths:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: users.devices.ListMemberOf_AsAdministrativeUnit
+      operationId: users.devices_ListMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -2295,7 +2292,7 @@ paths:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: users.devices.ListMemberOf_AsGroup
+      operationId: users.devices_ListMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -2387,10 +2384,7 @@ paths:
       tags:
         - users.device
       summary: Get registeredOwners from users
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
+      description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
       operationId: users.devices_ListRegisteredOwners
       parameters:
         - name: user-id
@@ -2540,7 +2534,7 @@ paths:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: users.devices.GetRegisteredOwners_AsEndpoint
+      operationId: users.devices_GetRegisteredOwnersAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -2621,7 +2615,7 @@ paths:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: users.devices.GetRegisteredOwners_AsServicePrincipal
+      operationId: users.devices_GetRegisteredOwnersAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -2702,7 +2696,7 @@ paths:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: users.devices.GetRegisteredOwners_AsUser
+      operationId: users.devices_GetRegisteredOwnersAsUser
       parameters:
         - name: user-id
           in: path
@@ -2783,10 +2777,7 @@ paths:
       tags:
         - users.device
       summary: Get ref of registeredOwners from users
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
+      description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
       operationId: users.devices_ListRegisteredOwnersGraphBPreRef
       parameters:
         - name: user-id
@@ -2891,7 +2882,7 @@ paths:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: users.devices.ListRegisteredOwners_AsEndpoint
+      operationId: users.devices_ListRegisteredOwnersAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -2983,7 +2974,7 @@ paths:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: users.devices.ListRegisteredOwners_AsServicePrincipal
+      operationId: users.devices_ListRegisteredOwnersAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -3075,7 +3066,7 @@ paths:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: users.devices.ListRegisteredOwners_AsUser
+      operationId: users.devices_ListRegisteredOwnersAsUser
       parameters:
         - name: user-id
           in: path
@@ -3168,9 +3159,6 @@ paths:
         - users.device
       summary: Get registeredUsers from users
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: users.devices_ListRegisteredUsers
       parameters:
         - name: user-id
@@ -3320,7 +3308,7 @@ paths:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: users.devices.GetRegisteredUsers_AsEndpoint
+      operationId: users.devices_GetRegisteredUsersAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -3401,7 +3389,7 @@ paths:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: users.devices.GetRegisteredUsers_AsServicePrincipal
+      operationId: users.devices_GetRegisteredUsersAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -3482,7 +3470,7 @@ paths:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: users.devices.GetRegisteredUsers_AsUser
+      operationId: users.devices_GetRegisteredUsersAsUser
       parameters:
         - name: user-id
           in: path
@@ -3564,9 +3552,6 @@ paths:
         - users.device
       summary: Get ref of registeredUsers from users
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: users.devices_ListRegisteredUsersGraphBPreRef
       parameters:
         - name: user-id
@@ -3671,7 +3656,7 @@ paths:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: users.devices.ListRegisteredUsers_AsEndpoint
+      operationId: users.devices_ListRegisteredUsersAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -3763,7 +3748,7 @@ paths:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: users.devices.ListRegisteredUsers_AsServicePrincipal
+      operationId: users.devices_ListRegisteredUsersAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -3855,7 +3840,7 @@ paths:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: users.devices.ListRegisteredUsers_AsUser
+      operationId: users.devices_ListRegisteredUsersAsUser
       parameters:
         - name: user-id
           in: path
@@ -3948,9 +3933,6 @@ paths:
         - users.device
       summary: Get transitiveMemberOf from users
       description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
       operationId: users.devices_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
@@ -4127,7 +4109,7 @@ paths:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: users.devices.GetTransitiveMemberOf_AsAdministrativeUnit
+      operationId: users.devices_GetTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -4208,7 +4190,7 @@ paths:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: users.devices.GetTransitiveMemberOf_AsGroup
+      operationId: users.devices_GetTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -4289,7 +4271,7 @@ paths:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: users.devices.ListTransitiveMemberOf_AsAdministrativeUnit
+      operationId: users.devices_ListTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -4381,7 +4363,7 @@ paths:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: users.devices.ListTransitiveMemberOf_AsGroup
+      operationId: users.devices_ListTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -4472,11 +4454,8 @@ paths:
     get:
       tags:
         - users.device
-      summary: List device usageRights
-      description: Retrieve a list of usageRight objects for a given device.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0
+      summary: Get usageRights from users
+      description: Represents the usage rights a device has been granted.
       operationId: users.devices_ListUsageRights
       parameters:
         - name: user-id
@@ -5056,7 +5035,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -5344,6 +5323,10 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -5689,7 +5672,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -5722,7 +5705,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -6093,6 +6076,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -6487,6 +6474,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.usageRight:
@@ -6721,6 +6710,23 @@ components:
         value:
           type: string
           description: Value of the property causing the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -7826,12 +7832,14 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: Denotes whether the policy is enabled.
             restrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Collection of application and service principals to which a policy is applied.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -9179,7 +9187,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -9216,7 +9224,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -9239,7 +9247,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -9281,7 +9289,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -9313,7 +9321,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -9331,7 +9339,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -9339,7 +9347,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -9379,7 +9387,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -9402,7 +9410,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -9420,7 +9428,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -9473,7 +9481,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -9506,14 +9514,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -9763,6 +9771,10 @@ components:
             applicationId:
               type: string
               description: Intune application identifier.
+              nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
               nullable: true
             history:
               type: array
@@ -10178,6 +10190,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -10357,6 +10371,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -10581,11 +10608,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -11238,6 +11265,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -12375,11 +12404,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -12397,6 +12428,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeCards:
               type: array
@@ -12413,6 +12445,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -12450,11 +12483,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -16835,6 +16868,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -17336,6 +17379,43 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
     microsoft.graph.ODataErrors.MainError:
@@ -18184,6 +18264,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.subscription:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -18240,7 +18343,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -22802,6 +22905,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
@@ -23277,6 +23388,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -24198,9 +24332,13 @@ components:
       title: synchronizationRule
       type: object
       properties:
+        containerFilter:
+          $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
           description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+        groupFilter:
+          $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
           type: string
           description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
@@ -26055,6 +26193,15 @@ components:
               description: Indicates if the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.security.behaviorDuringRetentionPeriod:
+      title: behaviorDuringRetentionPeriod
+      enum:
+        - doNotRetain
+        - retain
+        - retainAsRecord
+        - retainAsRegulatoryRecord
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessAction:
       title: accessAction
       type: object
@@ -26276,6 +26423,28 @@ components:
         - TooManyDeletes
         - IngestionInterrupted
       type: string
+    microsoft.graph.containerFilter:
+      title: containerFilter
+      type: object
+      properties:
+        includedContainers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupFilter:
+      title: groupFilter
+      type: object
+      properties:
+        includedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyStringValuePair:
       title: stringKeyStringValuePair
       type: object

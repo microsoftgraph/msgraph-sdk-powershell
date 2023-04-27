@@ -11,10 +11,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action resetPassword
-      description: 'Reset a user''s password, represented by a password authentication method object. This can only be done by an administrator with appropriate permissions and cannot be performed on a user''s own account. This flow writes the new password to Azure Active Directory and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and will return a **Location** header with a link where the caller can periodically check for the status of the reset operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-1.0
       operationId: users.authentication.methods_resetPassword
       parameters:
         - name: user-id
@@ -61,10 +57,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action disableSmsSignIn
-      description: 'Disable SMS sign-in for an existing `mobile` phone number registered to a user. The number will no longer be available for SMS sign-in, which can prevent your user from signing in.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/phoneauthenticationmethod-disablesmssignin?view=graph-rest-1.0
       operationId: users.authentication.phoneMethods_disableSmsSignIn
       parameters:
         - name: user-id
@@ -94,10 +86,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action enableSmsSignIn
-      description: 'Enable SMS sign-in for an existing `mobile` phone number registered to a user. To be successfully enabled:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/phoneauthenticationmethod-enablesmssignin?view=graph-rest-1.0
       operationId: users.authentication.phoneMethods_enableSmsSignIn
       parameters:
         - name: user-id
@@ -127,10 +115,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendar.calendarView.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -176,10 +160,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -233,10 +213,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances_accept
       parameters:
         - name: user-id
@@ -291,10 +267,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances_cancel
       parameters:
         - name: user-id
@@ -345,10 +317,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances_decline
       parameters:
         - name: user-id
@@ -405,10 +373,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances_dismissReminder
       parameters:
         - name: user-id
@@ -446,10 +410,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances_forward
       parameters:
         - name: user-id
@@ -504,10 +464,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances_snoozeReminder
       parameters:
         - name: user-id
@@ -557,10 +513,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendar.calendarView.instances_tentativelyAccept
       parameters:
         - name: user-id
@@ -617,10 +569,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendar.calendarView_accept
       parameters:
         - name: user-id
@@ -667,10 +615,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendar.calendarView_cancel
       parameters:
         - name: user-id
@@ -713,10 +657,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendar.calendarView_decline
       parameters:
         - name: user-id
@@ -765,10 +705,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendar.calendarView_dismissReminder
       parameters:
         - name: user-id
@@ -798,10 +734,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendar.calendarView_forward
       parameters:
         - name: user-id
@@ -848,10 +780,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendar.calendarView_snoozeReminder
       parameters:
         - name: user-id
@@ -893,10 +821,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendar.calendarView_tentativelyAccept
       parameters:
         - name: user-id
@@ -945,10 +869,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendar.events.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -994,10 +914,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendar.events.instances.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -1051,10 +967,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendar.events.instances_accept
       parameters:
         - name: user-id
@@ -1109,10 +1021,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendar.events.instances_cancel
       parameters:
         - name: user-id
@@ -1163,10 +1071,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendar.events.instances_decline
       parameters:
         - name: user-id
@@ -1223,10 +1127,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendar.events.instances_dismissReminder
       parameters:
         - name: user-id
@@ -1264,10 +1164,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendar.events.instances_forward
       parameters:
         - name: user-id
@@ -1322,10 +1218,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendar.events.instances_snoozeReminder
       parameters:
         - name: user-id
@@ -1375,10 +1267,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendar.events.instances_tentativelyAccept
       parameters:
         - name: user-id
@@ -1435,10 +1323,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendar.events_accept
       parameters:
         - name: user-id
@@ -1485,10 +1369,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendar.events_cancel
       parameters:
         - name: user-id
@@ -1531,10 +1411,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendar.events_decline
       parameters:
         - name: user-id
@@ -1583,10 +1459,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendar.events_dismissReminder
       parameters:
         - name: user-id
@@ -1616,10 +1488,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendar.events_forward
       parameters:
         - name: user-id
@@ -1666,10 +1534,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendar.events_snoozeReminder
       parameters:
         - name: user-id
@@ -1711,10 +1575,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendar.events_tentativelyAccept
       parameters:
         - name: user-id
@@ -1763,10 +1623,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getSchedule
-      description: 'Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
       operationId: users.calendar_getSchedule
       parameters:
         - name: user-id
@@ -1830,10 +1686,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -1895,10 +1747,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -1968,10 +1816,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances_accept
       parameters:
         - name: user-id
@@ -2042,10 +1886,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances_cancel
       parameters:
         - name: user-id
@@ -2112,10 +1952,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances_decline
       parameters:
         - name: user-id
@@ -2188,10 +2024,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances_dismissReminder
       parameters:
         - name: user-id
@@ -2245,10 +2077,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances_forward
       parameters:
         - name: user-id
@@ -2319,10 +2147,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances_snoozeReminder
       parameters:
         - name: user-id
@@ -2388,10 +2212,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView.instances_tentativelyAccept
       parameters:
         - name: user-id
@@ -2464,10 +2284,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView_accept
       parameters:
         - name: user-id
@@ -2530,10 +2346,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView_cancel
       parameters:
         - name: user-id
@@ -2592,10 +2404,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView_decline
       parameters:
         - name: user-id
@@ -2660,10 +2468,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView_dismissReminder
       parameters:
         - name: user-id
@@ -2709,10 +2513,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView_forward
       parameters:
         - name: user-id
@@ -2775,10 +2575,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView_snoozeReminder
       parameters:
         - name: user-id
@@ -2836,10 +2632,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.calendarView_tentativelyAccept
       parameters:
         - name: user-id
@@ -2904,10 +2696,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -2969,10 +2757,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -3042,10 +2826,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances_accept
       parameters:
         - name: user-id
@@ -3116,10 +2896,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances_cancel
       parameters:
         - name: user-id
@@ -3186,10 +2962,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances_decline
       parameters:
         - name: user-id
@@ -3262,10 +3034,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances_dismissReminder
       parameters:
         - name: user-id
@@ -3319,10 +3087,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances_forward
       parameters:
         - name: user-id
@@ -3393,10 +3157,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances_snoozeReminder
       parameters:
         - name: user-id
@@ -3462,10 +3222,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events.instances_tentativelyAccept
       parameters:
         - name: user-id
@@ -3538,10 +3294,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events_accept
       parameters:
         - name: user-id
@@ -3604,10 +3356,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events_cancel
       parameters:
         - name: user-id
@@ -3666,10 +3414,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events_decline
       parameters:
         - name: user-id
@@ -3734,10 +3478,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events_dismissReminder
       parameters:
         - name: user-id
@@ -3783,10 +3523,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events_forward
       parameters:
         - name: user-id
@@ -3849,10 +3585,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events_snoozeReminder
       parameters:
         - name: user-id
@@ -3910,10 +3642,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars.events_tentativelyAccept
       parameters:
         - name: user-id
@@ -3978,10 +3706,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getSchedule
-      description: 'Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
       operationId: users.calendarGroups.calendars_getSchedule
       parameters:
         - name: user-id
@@ -4061,10 +3785,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendars.calendarView.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -4118,10 +3838,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -4183,10 +3899,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances_accept
       parameters:
         - name: user-id
@@ -4249,10 +3961,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances_cancel
       parameters:
         - name: user-id
@@ -4311,10 +4019,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances_decline
       parameters:
         - name: user-id
@@ -4379,10 +4083,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances_dismissReminder
       parameters:
         - name: user-id
@@ -4428,10 +4128,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances_forward
       parameters:
         - name: user-id
@@ -4494,10 +4190,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances_snoozeReminder
       parameters:
         - name: user-id
@@ -4555,10 +4247,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendars.calendarView.instances_tentativelyAccept
       parameters:
         - name: user-id
@@ -4623,10 +4311,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendars.calendarView_accept
       parameters:
         - name: user-id
@@ -4681,10 +4365,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendars.calendarView_cancel
       parameters:
         - name: user-id
@@ -4735,10 +4415,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendars.calendarView_decline
       parameters:
         - name: user-id
@@ -4795,10 +4471,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendars.calendarView_dismissReminder
       parameters:
         - name: user-id
@@ -4836,10 +4508,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendars.calendarView_forward
       parameters:
         - name: user-id
@@ -4894,10 +4562,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendars.calendarView_snoozeReminder
       parameters:
         - name: user-id
@@ -4947,10 +4611,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendars.calendarView_tentativelyAccept
       parameters:
         - name: user-id
@@ -5007,10 +4667,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendars.events.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -5064,10 +4720,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendars.events.instances.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -5129,10 +4781,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendars.events.instances_accept
       parameters:
         - name: user-id
@@ -5195,10 +4843,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendars.events.instances_cancel
       parameters:
         - name: user-id
@@ -5257,10 +4901,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendars.events.instances_decline
       parameters:
         - name: user-id
@@ -5325,10 +4965,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendars.events.instances_dismissReminder
       parameters:
         - name: user-id
@@ -5374,10 +5010,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendars.events.instances_forward
       parameters:
         - name: user-id
@@ -5440,10 +5072,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendars.events.instances_snoozeReminder
       parameters:
         - name: user-id
@@ -5501,10 +5129,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendars.events.instances_tentativelyAccept
       parameters:
         - name: user-id
@@ -5569,10 +5193,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendars.events_accept
       parameters:
         - name: user-id
@@ -5627,10 +5247,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendars.events_cancel
       parameters:
         - name: user-id
@@ -5681,10 +5297,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendars.events_decline
       parameters:
         - name: user-id
@@ -5741,10 +5353,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendars.events_dismissReminder
       parameters:
         - name: user-id
@@ -5782,10 +5390,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendars.events_forward
       parameters:
         - name: user-id
@@ -5840,10 +5444,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendars.events_snoozeReminder
       parameters:
         - name: user-id
@@ -5893,10 +5493,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendars.events_tentativelyAccept
       parameters:
         - name: user-id
@@ -5953,10 +5549,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getSchedule
-      description: 'Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
       operationId: users.calendars_getSchedule
       parameters:
         - name: user-id
@@ -6028,10 +5620,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendarView.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -6077,10 +5665,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.calendarView.instances.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -6134,10 +5718,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendarView.instances_accept
       parameters:
         - name: user-id
@@ -6192,10 +5772,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendarView.instances_cancel
       parameters:
         - name: user-id
@@ -6246,10 +5822,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendarView.instances_decline
       parameters:
         - name: user-id
@@ -6306,10 +5878,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendarView.instances_dismissReminder
       parameters:
         - name: user-id
@@ -6347,10 +5915,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendarView.instances_forward
       parameters:
         - name: user-id
@@ -6405,10 +5969,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendarView.instances_snoozeReminder
       parameters:
         - name: user-id
@@ -6458,10 +6018,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendarView.instances_tentativelyAccept
       parameters:
         - name: user-id
@@ -6518,10 +6074,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.calendarView_accept
       parameters:
         - name: user-id
@@ -6568,10 +6120,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.calendarView_cancel
       parameters:
         - name: user-id
@@ -6614,10 +6162,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.calendarView_decline
       parameters:
         - name: user-id
@@ -6666,10 +6210,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.calendarView_dismissReminder
       parameters:
         - name: user-id
@@ -6699,10 +6239,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.calendarView_forward
       parameters:
         - name: user-id
@@ -6749,10 +6285,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.calendarView_snoozeReminder
       parameters:
         - name: user-id
@@ -6794,10 +6326,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.calendarView_tentativelyAccept
       parameters:
         - name: user-id
@@ -6846,10 +6374,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action upgrade
-      description: Upgrade an app installation within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
       operationId: users.chats.installedApps_upgrade
       parameters:
         - name: user-id
@@ -6887,10 +6411,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: users.chats.members_add
       parameters:
         - name: user-id
@@ -7115,10 +6635,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action hideForUser
-      description: Hide a chat for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-1.0
       operationId: users.chats_hideGraphFPreUser
       parameters:
         - name: user-id
@@ -7160,10 +6676,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action markChatReadForUser
-      description: Mark a chat as read for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-markchatreadforuser?view=graph-rest-1.0
       operationId: users.chats_markChatReadGraphFPreUser
       parameters:
         - name: user-id
@@ -7205,10 +6717,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action markChatUnreadForUser
-      description: Mark a chat as unread for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-1.0
       operationId: users.chats_markChatUnreadGraphFPreUser
       parameters:
         - name: user-id
@@ -7255,10 +6763,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action sendActivityNotification
-      description: 'Send an activity feed notification in scope of a chat. For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-sendactivitynotification?view=graph-rest-1.0
       operationId: users.chats_sendActivityNotification
       parameters:
         - name: user-id
@@ -7315,10 +6819,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action unhideForUser
-      description: Unhide a chat for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0
       operationId: users.chats_unhideGraphFPreUser
       parameters:
         - name: user-id
@@ -7360,10 +6860,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: users.drives.items.listItem.documentSetVersions_restore
       parameters:
         - name: user-id
@@ -7409,10 +6905,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: users.drives.items.listItem.versions_restoreVersion
       parameters:
         - name: user-id
@@ -7458,10 +6950,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkin
-      description: 'Check in a checked out **driveItem** resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: users.drives.items_checkin
       parameters:
         - name: user-id
@@ -7515,10 +7003,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkout
-      description: 'Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: users.drives.items_checkout
       parameters:
         - name: user-id
@@ -7556,10 +7040,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copy
-      description: 'Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
       operationId: users.drives.items_copy
       parameters:
         - name: user-id
@@ -7616,10 +7096,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createLink
-      description: "You can use **createLink** action to share a DriveItem via a sharing link. The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: users.drives.items_createLink
       parameters:
         - name: user-id
@@ -7691,10 +7167,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: "Create an upload session to allow your app to upload files up to the maximum file size.\nAn upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress. To upload a file using an upload session, there are two steps:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createuploadsession?view=graph-rest-1.0
       operationId: users.drives.items_createUploadSession
       parameters:
         - name: user-id
@@ -7748,10 +7220,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action follow
-      description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: users.drives.items_follow
       parameters:
         - name: user-id
@@ -7793,10 +7261,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action invite
-      description: "Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][]."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: users.drives.items_invite
       parameters:
         - name: user-id
@@ -7950,10 +7414,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restore
-      description: 'Restore a driveItem that has been deleted and is currently in the recycle bin. **NOTE**: This functionality is currently only available for OneDrive Personal.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: users.drives.items_restore
       parameters:
         - name: user-id
@@ -8010,10 +7470,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action unfollow
-      description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: users.drives.items_unfollow
       parameters:
         - name: user-id
@@ -8103,10 +7559,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: users.drives.items.permissions_grant
       parameters:
         - name: user-id
@@ -8234,10 +7686,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: users.drives.items.versions_restoreVersion
       parameters:
         - name: user-id
@@ -8283,10 +7731,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action associateWithHubSites
-      description: 'Associate a published [content type][contentType] present in a content type hub with a list of hub sites.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0
       operationId: users.drives.list.contentTypes_associateGraphWPreHubSites
       parameters:
         - name: user-id
@@ -8342,10 +7786,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToDefaultContentLocation
-      description: 'Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0
       operationId: users.drives.list.contentTypes_copyToDefaultContentLocation
       parameters:
         - name: user-id
@@ -8398,10 +7838,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action publish
-      description: 'Publishes a [contentType][] present in the content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
       operationId: users.drives.list.contentTypes_publish
       parameters:
         - name: user-id
@@ -8439,10 +7875,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action unpublish
-      description: 'Unpublish a [contentType][] from a content type hub site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0
       operationId: users.drives.list.contentTypes_unpublish
       parameters:
         - name: user-id
@@ -8480,10 +7912,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action addCopy
-      description: 'Add a copy of a [content type][contentType] from a [site][site] to a [list][list].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0
       operationId: users.drives.list.contentTypes_addCopy
       parameters:
         - name: user-id
@@ -8529,10 +7957,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action addCopyFromContentTypeHub
-      description: 'Add or sync a copy of a published content type from the content type hub to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a ''push everywhere'' to ''pull as needed'' approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contenttype-addcopyfromcontenttypehub?view=graph-rest-1.0
       operationId: users.drives.list.contentTypes_addCopyFromContentTypeHub
       parameters:
         - name: user-id
@@ -8578,10 +8002,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: users.drives.list.items.documentSetVersions_restore
       parameters:
         - name: user-id
@@ -8627,10 +8047,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: users.drives.list.items.versions_restoreVersion
       parameters:
         - name: user-id
@@ -8713,10 +8129,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restore
-      description: Restore a document set version.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/documentsetversion-restore?view=graph-rest-1.0
       operationId: users.drives.root.listItem.documentSetVersions_restore
       parameters:
         - name: user-id
@@ -8754,10 +8166,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0
       operationId: users.drives.root.listItem.versions_restoreVersion
       parameters:
         - name: user-id
@@ -8795,10 +8203,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkin
-      description: 'Check in a checked out **driveItem** resource, which makes the version of the document available to others.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0
       operationId: users.drives.root_checkin
       parameters:
         - name: user-id
@@ -8844,10 +8248,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkout
-      description: 'Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
       operationId: users.drives.root_checkout
       parameters:
         - name: user-id
@@ -8877,10 +8277,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copy
-      description: 'Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0
       operationId: users.drives.root_copy
       parameters:
         - name: user-id
@@ -8929,10 +8325,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createLink
-      description: "You can use **createLink** action to share a DriveItem via a sharing link. The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned. DriveItem resources inherit sharing permissions from their ancestors."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0
       operationId: users.drives.root_createLink
       parameters:
         - name: user-id
@@ -8996,10 +8388,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: "Create an upload session to allow your app to upload files up to the maximum file size.\nAn upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress. To upload a file using an upload session, there are two steps:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-createuploadsession?view=graph-rest-1.0
       operationId: users.drives.root_createUploadSession
       parameters:
         - name: user-id
@@ -9045,10 +8433,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action follow
-      description: Follow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-follow?view=graph-rest-1.0
       operationId: users.drives.root_follow
       parameters:
         - name: user-id
@@ -9082,10 +8466,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action invite
-      description: "Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][]."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0
       operationId: users.drives.root_invite
       parameters:
         - name: user-id
@@ -9223,10 +8603,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restore
-      description: 'Restore a driveItem that has been deleted and is currently in the recycle bin. **NOTE**: This functionality is currently only available for OneDrive Personal.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0
       operationId: users.drives.root_restore
       parameters:
         - name: user-id
@@ -9275,10 +8651,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action unfollow
-      description: Unfollow a driveItem.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-unfollow?view=graph-rest-1.0
       operationId: users.drives.root_unfollow
       parameters:
         - name: user-id
@@ -9352,10 +8724,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action grant
-      description: 'Grant users access to a link represented by a [permission][].'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0
       operationId: users.drives.root.permissions_grant
       parameters:
         - name: user-id
@@ -9467,10 +8835,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restoreVersion
-      description: 'Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitemversion-restore?view=graph-rest-1.0
       operationId: users.drives.root.versions_restoreVersion
       parameters:
         - name: user-id
@@ -9508,10 +8872,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.events.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -9557,10 +8917,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.events.instances.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -9614,10 +8970,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.events.instances_accept
       parameters:
         - name: user-id
@@ -9672,10 +9024,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.events.instances_cancel
       parameters:
         - name: user-id
@@ -9726,10 +9074,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.events.instances_decline
       parameters:
         - name: user-id
@@ -9786,10 +9130,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.events.instances_dismissReminder
       parameters:
         - name: user-id
@@ -9827,10 +9167,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.events.instances_forward
       parameters:
         - name: user-id
@@ -9885,10 +9221,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.events.instances_snoozeReminder
       parameters:
         - name: user-id
@@ -9938,10 +9270,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.events.instances_tentativelyAccept
       parameters:
         - name: user-id
@@ -9998,10 +9326,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action accept
-      description: Accept the specified event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0
       operationId: users.events_accept
       parameters:
         - name: user-id
@@ -10048,10 +9372,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action cancel
-      description: "This action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-cancel?view=graph-rest-1.0
       operationId: users.events_cancel
       parameters:
         - name: user-id
@@ -10094,10 +9414,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action decline
-      description: 'Decline invitation to the specified event in a user calendar. If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
       operationId: users.events_decline
       parameters:
         - name: user-id
@@ -10146,10 +9462,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action dismissReminder
-      description: Dismiss a reminder that has been triggered for an event in a user calendar.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0
       operationId: users.events_dismissReminder
       parameters:
         - name: user-id
@@ -10179,10 +9491,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.  If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
       operationId: users.events_forward
       parameters:
         - name: user-id
@@ -10229,10 +9537,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action snoozeReminder
-      description: Postpone a reminder for an event in a user calendar until a new time.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
       operationId: users.events_snoozeReminder
       parameters:
         - name: user-id
@@ -10274,10 +9578,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action tentativelyAccept
-      description: 'Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
       operationId: users.events_tentativelyAccept
       parameters:
         - name: user-id
@@ -10326,10 +9626,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: users.joinedTeams.channels.members_add
       parameters:
         - name: user-id
@@ -10594,10 +9890,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing `migration mode` from a channel in a team. `Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: users.joinedTeams.channels_completeMigration
       parameters:
         - name: user-id
@@ -10635,10 +9927,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: users.joinedTeams.channels_provisionEmail
       parameters:
         - name: user-id
@@ -10680,10 +9968,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action removeEmail
-      description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: users.joinedTeams.channels_removeEmail
       parameters:
         - name: user-id
@@ -10721,10 +10005,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action upgrade
-      description: Upgrade an app installation within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
       operationId: users.joinedTeams.installedApps_upgrade
       parameters:
         - name: user-id
@@ -10762,10 +10042,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: users.joinedTeams.members_add
       parameters:
         - name: user-id
@@ -10826,10 +10102,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action archive
-      description: "Archive the specified team. \nWhen a team is archived, users can no longer send or like messages on any channel in the team, edit the team's name, description, or other settings, or in general make most changes to the team.\nMembership changes to the team continue to be allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which may occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
       operationId: users.joinedTeams_archive
       parameters:
         - name: user-id
@@ -10873,10 +10145,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action clone
-      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state \n-- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen. \n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation to see if it's 'running' or 'succeeded' or 'failed'. \nYou should continue to GET until the status is not 'running'. \nThe recommended delay between GETs is 5 seconds."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
       operationId: users.joinedTeams_clone
       parameters:
         - name: user-id
@@ -10932,10 +10200,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing `migration mode` from a team. `Migration mode` is a special state where certain operations are barred, like message POST and membership operations during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-completemigration?view=graph-rest-1.0
       operationId: users.joinedTeams_completeMigration
       parameters:
         - name: user-id
@@ -10965,10 +10229,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action sendActivityNotification
-      description: "Send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
       operationId: users.joinedTeams_sendActivityNotification
       parameters:
         - name: user-id
@@ -11025,10 +10285,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action unarchive
-      description: 'Restore an archived team. This restores users'' ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
       operationId: users.joinedTeams_unarchive
       parameters:
         - name: user-id
@@ -11058,10 +10314,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel.members_add
       parameters:
         - name: user-id
@@ -11286,10 +10538,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing `migration mode` from a channel in a team. `Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel_completeMigration
       parameters:
         - name: user-id
@@ -11319,10 +10567,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel_provisionEmail
       parameters:
         - name: user-id
@@ -11356,10 +10600,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action removeEmail
-      description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: users.joinedTeams.primaryChannel_removeEmail
       parameters:
         - name: user-id
@@ -11389,10 +10629,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action share
-      description: "Share a schedule time range with schedule members.\nMake the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.\nEach shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable by only managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The **notifyTeam** parameter further specifies which employees can view the item."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
       operationId: users.joinedTeams.schedule_share
       parameters:
         - name: user-id
@@ -11446,10 +10682,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -11511,10 +10743,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copy
-      description: Copy a message to a folder within the user's mailbox.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_copy
       parameters:
         - name: user-id
@@ -11576,10 +10804,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_createForward
       parameters:
         - name: user-id
@@ -11648,10 +10872,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createReply
-      description: "Create a draft to reply to the sender of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If **replyTo** is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in **replyTo**, and not the recipients in **from**.\n- You can update the draft later to add reply content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply to a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_createReply
       parameters:
         - name: user-id
@@ -11716,10 +10936,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createReplyAll
-      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.  When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the **replyTo** and **toRecipients** properties, and not the recipients in the **from** and **toRecipients** properties. \n- You can update the draft later to add reply content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_createReplyAll
       parameters:
         - name: user-id
@@ -11784,10 +11000,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "Forward a message using either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to forward a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_forward
       parameters:
         - name: user-id
@@ -11852,10 +11064,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action move
-      description: Move a message to another folder within the specified user's mailbox. This creates a new copy of the message in the destination folder and removes the original message.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-move?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_move
       parameters:
         - name: user-id
@@ -11917,10 +11125,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action reply
-      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply to an existing message and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_reply
       parameters:
         - name: user-id
@@ -11981,10 +11185,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action replyAll
-      description: "Reply to all recipients of a message using either JSON or MIME format. When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply-all to a message and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_replyAll
       parameters:
         - name: user-id
@@ -12045,10 +11245,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action send
-      description: 'Send an existing draft message.  The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the **Sent Items** folder. Alternatively, send a new message in a single operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-send?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders.messages_send
       parameters:
         - name: user-id
@@ -12094,10 +11290,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copy
-      description: Copy a mailfolder and its contents to another mailfolder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_copy
       parameters:
         - name: user-id
@@ -12151,10 +11343,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action move
-      description: Move a mailfolder and its contents to another mailfolder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0
       operationId: users.mailFolders.childFolders_move
       parameters:
         - name: user-id
@@ -12208,10 +11396,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.mailFolders.messages.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -12265,10 +11449,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copy
-      description: Copy a message to a folder within the user's mailbox.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0
       operationId: users.mailFolders.messages_copy
       parameters:
         - name: user-id
@@ -12322,10 +11502,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
       operationId: users.mailFolders.messages_createForward
       parameters:
         - name: user-id
@@ -12386,10 +11562,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createReply
-      description: "Create a draft to reply to the sender of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If **replyTo** is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in **replyTo**, and not the recipients in **from**.\n- You can update the draft later to add reply content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply to a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0
       operationId: users.mailFolders.messages_createReply
       parameters:
         - name: user-id
@@ -12446,10 +11618,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createReplyAll
-      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.  When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the **replyTo** and **toRecipients** properties, and not the recipients in the **from** and **toRecipients** properties. \n- You can update the draft later to add reply content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
       operationId: users.mailFolders.messages_createReplyAll
       parameters:
         - name: user-id
@@ -12506,10 +11674,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "Forward a message using either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to forward a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-1.0
       operationId: users.mailFolders.messages_forward
       parameters:
         - name: user-id
@@ -12566,10 +11730,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action move
-      description: Move a message to another folder within the specified user's mailbox. This creates a new copy of the message in the destination folder and removes the original message.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-move?view=graph-rest-1.0
       operationId: users.mailFolders.messages_move
       parameters:
         - name: user-id
@@ -12623,10 +11783,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action reply
-      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply to an existing message and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
       operationId: users.mailFolders.messages_reply
       parameters:
         - name: user-id
@@ -12679,10 +11835,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action replyAll
-      description: "Reply to all recipients of a message using either JSON or MIME format. When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply-all to a message and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0
       operationId: users.mailFolders.messages_replyAll
       parameters:
         - name: user-id
@@ -12735,10 +11887,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action send
-      description: 'Send an existing draft message.  The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the **Sent Items** folder. Alternatively, send a new message in a single operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-send?view=graph-rest-1.0
       operationId: users.mailFolders.messages_send
       parameters:
         - name: user-id
@@ -12776,10 +11924,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copy
-      description: Copy a mailfolder and its contents to another mailfolder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0
       operationId: users.mailFolders_copy
       parameters:
         - name: user-id
@@ -12825,10 +11969,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action move
-      description: Move a mailfolder and its contents to another mailfolder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0
       operationId: users.mailFolders_move
       parameters:
         - name: user-id
@@ -13486,10 +12626,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item. The item can be a message or event. Use this approach to attach a file if the file size is between 3 MB and 150 MB. To attach a file that''s smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.  As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload.  The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-1.0
       operationId: users.messages.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -13535,10 +12671,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copy
-      description: Copy a message to a folder within the user's mailbox.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0
       operationId: users.messages_copy
       parameters:
         - name: user-id
@@ -13584,10 +12716,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createForward
-      description: "Create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.\n- Update the draft later to add content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-createforward?view=graph-rest-1.0
       operationId: users.messages_createForward
       parameters:
         - name: user-id
@@ -13640,10 +12768,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createReply
-      description: "Create a draft to reply to the sender of a message in either JSON or MIME format. When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If **replyTo** is specified in the original message, per Internet Message Format (RFC 2822), you should send the reply to the recipients in **replyTo**, and not the recipients in **from**.\n- You can update the draft later to add reply content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply to a message in a single operation."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-createreply?view=graph-rest-1.0
       operationId: users.messages_createReply
       parameters:
         - name: user-id
@@ -13692,10 +12816,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createReplyAll
-      description: "Create a draft to reply to the sender and all recipients of a message in either JSON or MIME format.  When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), you should send the reply to the recipients in the **replyTo** and **toRecipients** properties, and not the recipients in the **from** and **toRecipients** properties. \n- You can update the draft later to add reply content to the **body** or change other message properties. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, reply-all to a message in a single action."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-createreplyall?view=graph-rest-1.0
       operationId: users.messages_createReplyAll
       parameters:
         - name: user-id
@@ -13744,10 +12864,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action forward
-      description: "Forward a message using either JSON or MIME format. When using JSON format, you can:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to forward a message, and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-forward?view=graph-rest-1.0
       operationId: users.messages_forward
       parameters:
         - name: user-id
@@ -13796,10 +12912,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action move
-      description: Move a message to another folder within the specified user's mailbox. This creates a new copy of the message in the destination folder and removes the original message.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-move?view=graph-rest-1.0
       operationId: users.messages_move
       parameters:
         - name: user-id
@@ -13845,10 +12957,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action reply
-      description: "Reply to the sender of a message using either JSON or MIME format. When using JSON format:\n* Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP `400 Bad Request` error.\n* If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply to an existing message and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-reply?view=graph-rest-1.0
       operationId: users.messages_reply
       parameters:
         - name: user-id
@@ -13893,10 +13001,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action replyAll
-      description: "Reply to all recipients of a message using either JSON or MIME format. When using JSON format:\n- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.\n- If the original message specifies a recipient in the **replyTo** property, per Internet Message Format (RFC 2822), send the reply to the recipients in **replyTo** and not the recipient in the **from** property. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to reply-all to a message and send it later."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-replyall?view=graph-rest-1.0
       operationId: users.messages_replyAll
       parameters:
         - name: user-id
@@ -13941,10 +13045,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action send
-      description: 'Send an existing draft message.  The draft message can be a new message draft, reply draft, reply-all draft, or a forward draft. This method saves the message in the **Sent Items** folder. Alternatively, send a new message in a single operation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-send?view=graph-rest-1.0
       operationId: users.messages_send
       parameters:
         - name: user-id
@@ -13974,9 +13074,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action assignLicense
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0
       operationId: users_assignLicense
       parameters:
         - name: user-id
@@ -14000,10 +13097,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action changePassword
-      description: Enable the user to update their password. Any user can update their password without belonging to any administrator role.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-changepassword?view=graph-rest-1.0
       operationId: users_changePassword
       parameters:
         - name: user-id
@@ -14027,10 +13120,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action checkMemberGroups
-      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
       operationId: users_checkMemberGroups
       parameters:
         - name: user-id
@@ -14135,10 +13224,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action exportPersonalData
-      description: 'Submit a data policy operation request from a company administrator or an application to export an organizational user''s data. This data includes the user''s data stored in OneDrive and their activity reports. For more guidance about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-exportpersonaldata?view=graph-rest-1.0
       operationId: users_exportPersonalData
       parameters:
         - name: user-id
@@ -14162,10 +13247,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action findMeetingTimes
-      description: "Suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters. If **findMeetingTimes** cannot return any meeting suggestions, the response would indicate a reason in the **emptySuggestionsReason** property. \nBased on this value, you can better adjust the parameters and call **findMeetingTimes** again. The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time. In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-findmeetingtimes?view=graph-rest-1.0
       operationId: users_findMeetingTimes
       parameters:
         - name: user-id
@@ -14189,10 +13270,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getMailTips
-      description: "Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a `POST` call to the `getMailTips` action, you can request specific types of MailTips to \nbe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0
       operationId: users_getMailTips
       parameters:
         - name: user-id
@@ -14219,10 +13296,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getMemberGroups
-      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
       operationId: users_getMemberGroups
       parameters:
         - name: user-id
@@ -14275,10 +13348,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getMemberObjects
-      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
       operationId: users_getMemberObjects
       parameters:
         - name: user-id
@@ -14353,10 +13422,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action reprocessLicenseAssignment
-      description: 'Reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory. Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-reprocesslicenseassignment?view=graph-rest-1.0
       operationId: users_reprocessLicenseAssignment
       parameters:
         - name: user-id
@@ -14378,10 +13443,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action restore
-      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
       operationId: users_restore
       parameters:
         - name: user-id
@@ -14428,10 +13489,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action sendMail
-      description: "Send the message specified in the request body using either JSON or MIME format. When using JSON format you can include a file attachment in the same **sendMail** action call. When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-sendmail?view=graph-rest-1.0
       operationId: users_sendMail
       parameters:
         - name: user-id
@@ -14455,10 +13512,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action translateExchangeIds
-      description: Translate identifiers of Outlook-related resources between formats.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
       operationId: users_translateExchangeIds
       parameters:
         - name: user-id
@@ -14509,10 +13562,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0
       operationId: users.onenote.notebooks_copyNotebook
       parameters:
         - name: user-id
@@ -14571,10 +13620,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: users.onenote.notebooks.sectionGroups.sections_copyToNotebook
       parameters:
         - name: user-id
@@ -14649,10 +13694,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: users.onenote.notebooks.sectionGroups.sections_copyToSectionGroup
       parameters:
         - name: user-id
@@ -14727,10 +13768,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: users.onenote.notebooks.sectionGroups.sections.pages_copyToSection
       parameters:
         - name: user-id
@@ -14877,10 +13914,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: users.onenote.notebooks.sections_copyToNotebook
       parameters:
         - name: user-id
@@ -14947,10 +13980,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: users.onenote.notebooks.sections_copyToSectionGroup
       parameters:
         - name: user-id
@@ -15017,10 +14046,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: users.onenote.notebooks.sections.pages_copyToSection
       parameters:
         - name: user-id
@@ -15151,10 +14176,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getNotebookFromWebUrl
-      description: 'Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0
       operationId: users.onenote.notebooks_getNotebookFromWebUrl
       parameters:
         - name: user-id
@@ -15193,10 +14214,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: users.onenote.pages_copyToSection
       parameters:
         - name: user-id
@@ -15295,10 +14312,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: users.onenote.sectionGroups.sections_copyToNotebook
       parameters:
         - name: user-id
@@ -15365,10 +14378,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: users.onenote.sectionGroups.sections_copyToSectionGroup
       parameters:
         - name: user-id
@@ -15435,10 +14444,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: users.onenote.sectionGroups.sections.pages_copyToSection
       parameters:
         - name: user-id
@@ -15569,10 +14574,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToNotebook
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytonotebook?view=graph-rest-1.0
       operationId: users.onenote.sections_copyToNotebook
       parameters:
         - name: user-id
@@ -15631,10 +14632,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToSectionGroup
-      description: 'For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/section-copytosectiongroup?view=graph-rest-1.0
       operationId: users.onenote.sections_copyToSectionGroup
       parameters:
         - name: user-id
@@ -15693,10 +14690,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action copyToSection
-      description: 'Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0
       operationId: users.onenote.sections.pages_copyToSection
       parameters:
         - name: user-id
@@ -15811,10 +14804,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createOrGet
-      description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
       operationId: users.onlineMeetings_createOrGet
       parameters:
         - name: user-id
@@ -15869,10 +14858,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action clearPresence
-      description: 'Clear the application''s presence session for a user. If it is the user''s only presence session, the user''s presence will change to `Offline/Offline`. For details about presences sessions, see presence: setPresence.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
       operationId: users.presence_clearPresence
       parameters:
         - name: user-id
@@ -15907,10 +14892,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action clearUserPreferredPresence
-      description: Clear the preferred availability and activity status for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0
       operationId: users.presence_clearUserPreferredPresence
       parameters:
         - name: user-id
@@ -15932,10 +14913,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action setPresence
-      description: Set the state of a user's presence session as an application.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
       operationId: users.presence_setPresence
       parameters:
         - name: user-id
@@ -15979,10 +14956,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action setUserPreferredPresence
-      description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence shows as the preferred status. Preferred presence takes effect only when at least one presence session exists for the user. Otherwise, the user''s presence shows as `Offline`. A presence session is created as a result of a successful setPresence operation, or if the user is signed in on a Microsoft Teams client. For more details, see presence sessions and time-out and expiration.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
       operationId: users.presence_setUserPreferredPresence
       parameters:
         - name: user-id
@@ -16023,10 +14996,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action sendActivityNotification
-      description: 'Send an activity feed notification to a user. For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userteamwork-sendactivitynotification?view=graph-rest-1.0
       operationId: users.teamwork_sendActivityNotification
       parameters:
         - name: user-id
@@ -16073,10 +15042,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action createUploadSession
-      description: 'Create an upload session to iteratively upload ranges of a file as an attachment to a todoTask. As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries. The request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded. This allows the transfer to be resumed, in case the network connection is dropped during the upload. The following are the steps to attach a file to a Microsoft To Do task using an upload session: For an example that describes the end-to-end attachment process, see attach files to a To Do task.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/taskfileattachment-createuploadsession?view=graph-rest-1.0
       operationId: users.todo.lists.tasks.attachments_createUploadSession
       parameters:
         - name: user-id
@@ -16130,10 +15095,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getAvailableExtensionProperties
-      description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
       operationId: users_getAvailableExtensionProperties
       requestBody:
         description: Action parameters
@@ -16178,10 +15139,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: users_getGraphBPreIds
       requestBody:
         description: Action parameters
@@ -16231,10 +15188,6 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: users_validateProperties
       requestBody:
         description: Action parameters
@@ -18173,7 +17126,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -25305,6 +24258,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
               description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.'
+            messageHistory:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             policyViolation:
@@ -26009,11 +24966,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -27338,7 +26297,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -27552,6 +26511,20 @@ components:
           type: string
           description: 'String used to represent the mention. For example, a user''s display name, a team name.'
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageHistoryItem:
+      title: chatMessageHistoryItem
+      type: object
+      properties:
+        actions:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageActions'
+        modifiedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        reaction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
       additionalProperties:
         type: object
     microsoft.graph.chatMessagePolicyViolation:
@@ -28623,6 +27596,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentity'
           additionalProperties:
             type: object
+    microsoft.graph.chatMessageActions:
+      title: chatMessageActions
+      enum:
+        - reactionAdded
+        - reactionRemoved
+        - actionUndefined
+        - unknownFutureValue
+      type: string
     microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
       title: chatMessagePolicyViolationDlpActionTypes
       enum:

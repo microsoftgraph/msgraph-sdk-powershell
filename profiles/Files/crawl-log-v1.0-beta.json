@@ -281,6 +281,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
+    "/drives/{drive-id}/items/{driveItem-id}/retentionLabel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
     "/drives/{drive-id}/items/{driveItem-id}/subscriptions": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
@@ -765,6 +769,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
+    "/drives/{drive-id}/root/retentionLabel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
     "/drives/{drive-id}/root/subscriptions": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
@@ -1002,6 +1010,10 @@
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
     "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/permissions/{permission-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/items/{driveItem-id}/retentionLabel": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
@@ -1314,6 +1326,10 @@
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
     "/groups/{group-id}/drives/{drive-id}/root/permissions/{permission-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/groups/{group-id}/drives/{drive-id}/root/retentionLabel": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
@@ -1889,6 +1905,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
+    "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/retentionLabel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
     "/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/subscriptions": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
@@ -2198,6 +2218,10 @@
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
     "/users/{user-id}/drives/{drive-id}/root/permissions/{permission-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Files.yml"
+    },
+    "/users/{user-id}/drives/{drive-id}/root/retentionLabel": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Files.yml"
     },
