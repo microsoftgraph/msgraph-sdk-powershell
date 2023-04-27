@@ -57,7 +57,7 @@ Accept wildcard characters: False
 ```
 
 ### -DriveId
-key: id of drive
+The unique identifier of drive
 
 ```yaml
 Type: System.String
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListItemId
-key: id of listItem
+The unique identifier of listItem
 
 ```yaml
 Type: System.String

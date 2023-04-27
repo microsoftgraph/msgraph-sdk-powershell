@@ -8,36 +8,36 @@ schema: 2.0.0
 # New-MgExternalConnectionGroupMember
 
 ## SYNOPSIS
-Create an identity resource for a new member in an externalGroup.
+Create new navigation property to members for external
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgExternalConnectionGroupMember -ExternalConnectionId <String> -ExternalGroupId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgExternalConnectionGroupMember -ExternalConnectionId <String> -ExternalGroupId <String>
  -BodyParameter <IMicrosoftGraphExternalConnectorsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
 New-MgExternalConnectionGroupMember -InputObject <ISearchIdentity>
  -BodyParameter <IMicrosoftGraphExternalConnectorsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgExternalConnectionGroupMember -InputObject <ISearchIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Type <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create an identity resource for a new member in an externalGroup.
+Create new navigation property to members for external
 
 ## EXAMPLES
 
@@ -87,7 +87,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -103,7 +103,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsIdentity
-Parameter Sets: Create1, CreateViaIdentity1
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -114,11 +114,11 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalConnectionId
-key: id of externalConnection
+The unique identifier of externalConnection
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -129,11 +129,11 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalGroupId
-key: id of externalGroup
+The unique identifier of externalGroup
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -149,7 +149,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -165,7 +165,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -180,7 +180,7 @@ identityType
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -249,15 +249,24 @@ BODYPARAMETER <IMicrosoftGraphExternalConnectorsIdentity>: identity
   - `[Type <String>]`: identityType
 
 INPUTOBJECT <ISearchIdentity>: Identity Parameter
-  - `[AcronymId <String>]`: key: id of acronym
-  - `[BookmarkId <String>]`: key: id of bookmark
-  - `[ConnectionOperationId <String>]`: key: id of connectionOperation
-  - `[ExternalActivityId <String>]`: key: id of externalActivity
-  - `[ExternalConnectionId <String>]`: key: id of externalConnection
-  - `[ExternalGroupId <String>]`: key: id of externalGroup
-  - `[ExternalItemId <String>]`: key: id of externalItem
-  - `[IdentityId <String>]`: key: id of identity
-  - `[QnaId <String>]`: key: id of qna
+  - `[AcronymId <String>]`: The unique identifier of acronym
+  - `[BookmarkId <String>]`: The unique identifier of bookmark
+  - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
+  - `[ExternalActivityId <String>]`: The unique identifier of externalActivity
+  - `[ExternalConnectionId <String>]`: The unique identifier of externalConnection
+  - `[ExternalGroupId <String>]`: The unique identifier of externalGroup
+  - `[ExternalItemId <String>]`: The unique identifier of externalItem
+  - `[IdentityId <String>]`: The unique identifier of identity
+  - `[InboundFlowId <String>]`: The unique identifier of inboundFlow
+  - `[IndustryDataConnectorId <String>]`: The unique identifier of industryDataConnector
+  - `[IndustryDataRunActivityId <String>]`: The unique identifier of industryDataRunActivity
+  - `[IndustryDataRunId <String>]`: The unique identifier of industryDataRun
+  - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
+  - `[QnaId <String>]`: The unique identifier of qna
+  - `[ReferenceDefinitionId <String>]`: The unique identifier of referenceDefinition
+  - `[RoleGroupId <String>]`: The unique identifier of roleGroup
+  - `[SourceSystemDefinitionId <String>]`: The unique identifier of sourceSystemDefinition
+  - `[YearTimePeriodDefinitionId <String>]`: The unique identifier of yearTimePeriodDefinition
 
 ## RELATED LINKS
 

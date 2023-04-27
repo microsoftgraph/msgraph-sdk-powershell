@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEducationSchoolClass
 
 ## SYNOPSIS
-Get the educationClass resources owned by an educationSchool.
+Classes taught at the school.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgEducationSchoolClass -EducationSchoolId <String> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Get the educationClass resources owned by an educationSchool.
+Classes taught at the school.
+Nullable.
 
 ## EXAMPLES
 
@@ -66,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationSchoolId
-key: id of educationSchool
+The unique identifier of educationSchool
 
 ```yaml
 Type: System.String

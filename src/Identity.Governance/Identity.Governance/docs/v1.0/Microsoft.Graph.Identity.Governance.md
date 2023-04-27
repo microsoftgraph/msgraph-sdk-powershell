@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 819c49a4-be4a-41dc-8f47-f1c92e98587d
+Module Guid: 13fd1a51-e81c-454c-a598-364d24c3ca5f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,8 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Identity.Governance Cmdlets
 ### [Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
-Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
-The status of the accessReviewInstance must be `Completed` to call this method.
+Invoke action applyDecisions
 
 ### [Get-MgAgreement](Get-MgAgreement.md)
 Get entity from agreements by key
@@ -23,8 +22,7 @@ Read-only.
 Information about acceptances of this agreement.
 
 ### [Get-MgAgreementFile](Get-MgAgreementFile.md)
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Default PDF linked to this agreement.
 
 ### [Get-MgAgreementFileLocalization](Get-MgAgreementFileLocalization.md)
 The localized version of the terms of use agreement files attached to the agreement.
@@ -37,8 +35,7 @@ Customized versions of the terms of use agreement in the Azure AD tenant.
 Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
 
 ### [Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
-In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
-Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
+Invoke action getApplicablePolicyRequirements
 
 ### [Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 A collection of stages in the approval decision.
@@ -47,16 +44,16 @@ A collection of stages in the approval decision.
 Get catalog from identityGovernance
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage](Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage.md)
-Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+The access packages whose assigned users are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
-Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+The access packages whose assigned users are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleGroup](Get-MgEntitlementManagementAccessPackageIncompatibleGroup.md)
-Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+The groups whose members are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](Get-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
-Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+The groups whose members are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleWith](Get-MgEntitlementManagementAccessPackageIncompatibleWith.md)
 The access packages that are incompatible with this package.
@@ -80,7 +77,7 @@ Catalog of the access package containing this policy.
 Read-only.
 
 ### [Get-MgEntitlementManagementAssignmentPolicyQuestion](Get-MgEntitlementManagementAssignmentPolicyQuestion.md)
-Get questions from identityGovernance
+Questions that are posed to the  requestor.
 
 ### [Get-MgEntitlementManagementAssignmentRequest](Get-MgEntitlementManagementAssignmentRequest.md)
 Access package assignment requests created by or on behalf of a subject.
@@ -89,8 +86,7 @@ Access package assignment requests created by or on behalf of a subject.
 A container for access packages.
 
 ### [Get-MgEntitlementManagementCatalogAccessPackageApplicablePolicyRequirement](Get-MgEntitlementManagementCatalogAccessPackageApplicablePolicyRequirement.md)
-In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
-Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
+Invoke action getApplicablePolicyRequirements
 
 ### [Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy](Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy.md)
 Get assignmentPolicies from identityGovernance
@@ -104,19 +100,19 @@ Catalog of the access package containing this policy.
 Read-only.
 
 ### [Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyQuestion](Get-MgEntitlementManagementCatalogAccessPackageAssignmentPolicyQuestion.md)
-Get questions from identityGovernance
+Questions that are posed to the  requestor.
 
 ### [Get-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackage](Get-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackage.md)
-Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+The access packages whose assigned users are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef](Get-MgEntitlementManagementCatalogAccessPackageIncompatibleAccessPackageByRef.md)
-Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+The access packages whose assigned users are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementCatalogAccessPackageIncompatibleGroup](Get-MgEntitlementManagementCatalogAccessPackageIncompatibleGroup.md)
-Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+The groups whose members are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementCatalogAccessPackageIncompatibleGroupByRef](Get-MgEntitlementManagementCatalogAccessPackageIncompatibleGroupByRef.md)
-Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+The groups whose members are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementCatalogAccessPackageIncompatibleWith](Get-MgEntitlementManagementCatalogAccessPackageIncompatibleWith.md)
 The access packages that are incompatible with this package.
@@ -126,39 +122,37 @@ Read-only.
 References to a directory or domain of another organization whose users can request access.
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsor](Get-MgEntitlementManagementConnectedOrganizationExternalSponsor.md)
-Retrieve a list of a connectedOrganization's external sponsors.
-The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+Get externalSponsors from identityGovernance
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorAvailableExtensionProperty](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorAvailableExtensionProperty.md)
-Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
-The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
+Invoke action getAvailableExtensionProperties
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorById](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
-Retrieve a list of a connectedOrganization's external sponsors.
-The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+Get ref of externalSponsors from identityGovernance
+
+### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorDelta](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorDelta.md)
+Invoke function delta
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsor](Get-MgEntitlementManagementConnectedOrganizationInternalSponsor.md)
-Retrieve a list of a connectedOrganization's internal sponsors.
-The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+Get internalSponsors from identityGovernance
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorAvailableExtensionProperty](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorAvailableExtensionProperty.md)
-Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
-The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
+Invoke action getAvailableExtensionProperties
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorById](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
-Retrieve a list of a connectedOrganization's internal sponsors.
-The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+Get ref of internalSponsors from identityGovernance
+
+### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorDelta](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorDelta.md)
+Invoke function delta
 
 ### [Get-MgEntitlementManagementSetting](Get-MgEntitlementManagementSetting.md)
-Retrieve the properties of an entitlementManagementSettings object.
+The settings that control the behavior of Azure AD entitlement management.
 
 ### [Get-MgIdentityGovernanceAccessReviewDefinition](Get-MgIdentityGovernanceAccessReviewDefinition.md)
 Represents the template and scheduling for an access review.
@@ -213,8 +207,7 @@ Represents a tenant's customizable terms of use agreement that's created and man
 Represents the current status of a user's response to a company's customizable terms of use agreement.
 
 ### [Get-MgIdentityGovernanceTermOfUseAgreementFile](Get-MgIdentityGovernanceTermOfUseAgreementFile.md)
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Default PDF linked to this agreement.
 
 ### [Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization](Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization.md)
 The localized version of the terms of use agreement files attached to the agreement.
@@ -229,10 +222,10 @@ Read-only.
 Nullable.
 
 ### [Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation](Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation.md)
-Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed on an accessReviewInstance object for which the calling user is a reviewer.
+Invoke action acceptRecommendations
 
 ### [Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision](Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision.md)
-Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
+Invoke action batchRecordDecisions
 
 ### [Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser](Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
@@ -280,8 +273,7 @@ Create new navigation property to localizations for agreements
 Create new navigation property to versions for agreements
 
 ### [New-MgEntitlementManagementAccessPackage](New-MgEntitlementManagementAccessPackage.md)
-Create a new accessPackage object.
-The access package will be added to an existing accessPackageCatalog.
+Create new navigation property to accessPackages for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageAssignmentApprovalStage](New-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 Create new navigation property to stages for identityGovernance
@@ -296,18 +288,16 @@ Create new navigation property ref to incompatibleGroups for identityGovernance
 Create new navigation property to assignments for identityGovernance
 
 ### [New-MgEntitlementManagementAssignmentPolicy](New-MgEntitlementManagementAssignmentPolicy.md)
-In Azure AD entitlement management, create a new accessPackageAssignmentPolicy object.
-The request will include a reference to the accessPackage that will contain this policy, which must already exist.
+Create new navigation property to assignmentPolicies for identityGovernance
 
 ### [New-MgEntitlementManagementAssignmentPolicyQuestion](New-MgEntitlementManagementAssignmentPolicyQuestion.md)
 Create new navigation property to questions for identityGovernance
 
 ### [New-MgEntitlementManagementAssignmentRequest](New-MgEntitlementManagementAssignmentRequest.md)
-In Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.
-This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
+Create new navigation property to assignmentRequests for identityGovernance
 
 ### [New-MgEntitlementManagementCatalog](New-MgEntitlementManagementCatalog.md)
-Create a new accessPackageCatalog object.
+Create new navigation property to catalogs for identityGovernance
 
 ### [New-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy](New-MgEntitlementManagementCatalogAccessPackageAssignmentPolicy.md)
 Create new navigation property to assignmentPolicies for identityGovernance
@@ -331,7 +321,7 @@ Create new navigation property ref to externalSponsors for identityGovernance
 Create new navigation property ref to internalSponsors for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewDefinition](New-MgIdentityGovernanceAccessReviewDefinition.md)
-Create a new accessReviewScheduleDefinition object.
+Create new navigation property to definitions for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewDefinitionInstance](New-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
 Create new navigation property to instances for identityGovernance
@@ -349,15 +339,13 @@ Create new navigation property to stages for identityGovernance
 Create new navigation property to decisions for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewHistoryDefinition](New-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
-Create a new accessReviewHistoryDefinition object.
+Create new navigation property to historyDefinitions for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
 Create new navigation property to instances for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri](New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri.md)
-Generates a URI for an accessReviewHistoryInstance object the **status** for which is `done`.
-Each URI can be used to retrieve the instance's review history data.
-Each URI is valid for 24 hours and can be retrieved by fetching the **downloadUri** property from the accessReviewHistoryInstance object.
+Invoke action generateDownloadUri
 
 ### [New-MgIdentityGovernanceAppConsentRequest](New-MgIdentityGovernanceAppConsentRequest.md)
 Create new navigation property to appConsentRequests for identityGovernance
@@ -369,7 +357,7 @@ Create new navigation property to userConsentRequests for identityGovernance
 Create new navigation property to stages for identityGovernance
 
 ### [New-MgIdentityGovernanceTermOfUseAgreement](New-MgIdentityGovernanceTermOfUseAgreement.md)
-Create a new agreement object.
+Create new navigation property to agreements for identityGovernance
 
 ### [New-MgIdentityGovernanceTermOfUseAgreementAcceptance](New-MgIdentityGovernanceTermOfUseAgreementAcceptance.md)
 Create new navigation property to agreementAcceptances for identityGovernance
@@ -498,55 +486,31 @@ Delete navigation property localizations for identityGovernance
 Delete navigation property versions for identityGovernance
 
 ### [Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
-Resets all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
+Invoke action resetDecisions
 
 ### [Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder](Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder.md)
-Send a reminder to the reviewers of an active accessReviewInstance.
+Invoke action sendReminder
 
 ### [Set-MgEntitlementManagementAssignmentPolicy](Set-MgEntitlementManagementAssignmentPolicy.md)
 Update the navigation property assignmentPolicies in identityGovernance
 
 ### [Stop-MgEntitlementManagementAssignmentRequest](Stop-MgEntitlementManagementAssignmentRequest.md)
-In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: `accepted`, `pendingApproval`, `pendingNotBefore`, `pendingApprovalEscalated`.
+Invoke action cancel
 
 ### [Stop-MgIdentityGovernanceAccessReviewDefinition](Stop-MgIdentityGovernanceAccessReviewDefinition.md)
 Invoke action stop
 
 ### [Stop-MgIdentityGovernanceAccessReviewDefinitionInstance](Stop-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
-Stop a currently active accessReviewInstance.
-After the access review instance stops, the instance status is marked as `Completed`, the reviewers can no longer give input, and the access review decisions are applied.
-Stopping an instance will not stop future instances.
-To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
+Invoke action stop
 
 ### [Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
-Stop an access review stage that is `inProgress`.
-After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
-If there are subsequent stages that depend on the completed stage, the next stage will be created.
-The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
+Invoke action stop
 
 ### [Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty](Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
-To validate the properties of an existing group, use the group: validateProperties function.
-The following policy validations are performed for the display name and mail nickname properties:\n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate that the mail nickname is unique This API only returns the first validation failure that is encountered.
-If the properties fail multiple validations, only the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
-To learn more about configuring naming policies, see Configure naming policy.
+Invoke action validateProperties
 
 ### [Test-MgEntitlementManagementConnectedOrganizationInternalSponsorProperty](Test-MgEntitlementManagementConnectedOrganizationInternalSponsorProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group.
-To validate the properties of an existing group, use the group: validateProperties function.
-The following policy validations are performed for the display name and mail nickname properties:\n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate that the mail nickname is unique This API only returns the first validation failure that is encountered.
-If the properties fail multiple validations, only the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
-To learn more about configuring naming policies, see Configure naming policy.
+Invoke action validateProperties
 
 ### [Update-MgAgreement](Update-MgAgreement.md)
 Update entity in agreements
@@ -594,7 +558,7 @@ Update the navigation property questions in identityGovernance
 Update the navigation property connectedOrganizations in identityGovernance
 
 ### [Update-MgEntitlementManagementSetting](Update-MgEntitlementManagementSetting.md)
-Update an existing entitlementManagementSettings object to change one or more of its properties.
+Update the navigation property settings in identityGovernance
 
 ### [Update-MgIdentityGovernanceAccessReviewDefinition](Update-MgIdentityGovernanceAccessReviewDefinition.md)
 Update the navigation property definitions in identityGovernance

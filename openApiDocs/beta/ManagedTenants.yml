@@ -26,13 +26,16 @@ paths:
               enum:
                 - id
                 - aggregatedPolicyCompliances
+                - appPerformances
                 - auditEvents
                 - cloudPcConnections
                 - cloudPcDevices
                 - cloudPcsOverview
                 - conditionalAccessPolicyCoverages
                 - credentialUserRegistrationsSummaries
+                - deviceAppPerformances
                 - deviceCompliancePolicySettingStateSummaries
+                - deviceHealthStatuses
                 - managedDeviceCompliances
                 - managedDeviceComplianceTrends
                 - managedTenantAlertLogs
@@ -72,13 +75,16 @@ paths:
               enum:
                 - '*'
                 - aggregatedPolicyCompliances
+                - appPerformances
                 - auditEvents
                 - cloudPcConnections
                 - cloudPcDevices
                 - cloudPcsOverview
                 - conditionalAccessPolicyCoverages
                 - credentialUserRegistrationsSummaries
+                - deviceAppPerformances
                 - deviceCompliancePolicySettingStateSummaries
+                - deviceHealthStatuses
                 - managedDeviceCompliances
                 - managedDeviceComplianceTrends
                 - managedTenantAlertLogs
@@ -156,11 +162,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List aggregatedPolicyCompliances
-      description: Get a list of the aggregatedPolicyCompliance objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-aggregatedpolicycompliances?view=graph-rest-1.0
+      summary: Get aggregatedPolicyCompliances from tenantRelationships
+      description: Aggregate view of device compliance policies across managed tenants.
       operationId: tenantRelationships.managedTenants_ListAggregatedPolicyCompliances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -371,6 +374,228 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: aggregatedPolicyCompliance
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/appPerformances:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get appPerformances from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListAppPerformances
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appFriendlyName
+                - appFriendlyName desc
+                - appName
+                - appName desc
+                - appPublisher
+                - appPublisher desc
+                - lastUpdatedDateTime
+                - lastUpdatedDateTime desc
+                - meanTimeToFailureInMinutes
+                - meanTimeToFailureInMinutes desc
+                - tenantDisplayName
+                - tenantDisplayName desc
+                - tenantId
+                - tenantId desc
+                - totalActiveDeviceCount
+                - totalActiveDeviceCount desc
+                - totalAppCrashCount
+                - totalAppCrashCount desc
+                - totalAppFreezeCount
+                - totalAppFreezeCount desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appFriendlyName
+                - appName
+                - appPublisher
+                - lastUpdatedDateTime
+                - meanTimeToFailureInMinutes
+                - tenantDisplayName
+                - tenantId
+                - totalActiveDeviceCount
+                - totalAppCrashCount
+                - totalAppFreezeCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.appPerformanceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to appPerformances for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateAppPerformances
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.appPerformance'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.appPerformance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/appPerformances/{appPerformance-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get appPerformances from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetAppPerformances
+      parameters:
+        - name: appPerformance-id
+          in: path
+          description: The unique identifier of appPerformance
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appPerformance
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appFriendlyName
+                - appName
+                - appPublisher
+                - lastUpdatedDateTime
+                - meanTimeToFailureInMinutes
+                - tenantDisplayName
+                - tenantId
+                - totalActiveDeviceCount
+                - totalAppCrashCount
+                - totalAppFreezeCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.appPerformance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property appPerformances in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateAppPerformances
+      parameters:
+        - name: appPerformance-id
+          in: path
+          description: The unique identifier of appPerformance
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appPerformance
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.appPerformance'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property appPerformances for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteAppPerformances
+      parameters:
+        - name: appPerformance-id
+          in: path
+          description: The unique identifier of appPerformance
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appPerformance
         - name: If-Match
           in: header
           description: ETag
@@ -623,11 +848,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List cloudPcConnections
-      description: Get a list of the cloudPcConnection objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcconnections?view=graph-rest-1.0
+      summary: Get cloudPcConnections from tenantRelationships
+      description: The collection of cloud PC connections across managed tenants.
       operationId: tenantRelationships.managedTenants_ListCloudPcConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -830,11 +1052,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List cloudPcDevices
-      description: Get a list of the cloudPcDevice objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcdevices?view=graph-rest-1.0
+      summary: Get cloudPcDevices from tenantRelationships
+      description: The collection of cloud PC devices across managed tenants.
       operationId: tenantRelationships.managedTenants_ListCloudPcDevices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1065,11 +1284,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List cloudPcOverviews
-      description: Get a list of the cloudPcOverview objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcsoverview?view=graph-rest-1.0
+      summary: Get cloudPcsOverview from tenantRelationships
+      description: Overview of cloud PC information across managed tenants.
       operationId: tenantRelationships.managedTenants_ListCloudPcsOverview
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1332,11 +1548,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List conditionalAccessPolicyCoverages
-      description: Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list of Azure Active Directory conditional access policy coverage across all tenants that are being managed by the multi-tenant management platform.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-conditionalaccesspolicycoverages?view=graph-rest-1.0
+      summary: Get conditionalAccessPolicyCoverages from tenantRelationships
+      description: Aggregate view of conditional access policy coverage across managed tenants.
       operationId: tenantRelationships.managedTenants_ListConditionalAccessPolicyCoverages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1535,11 +1748,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List credentialUserRegistrationsSummaries
-      description: Get a list of the credentialUserRegistrationsSummary objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-credentialuserregistrationssummaries?view=graph-rest-1.0
+      summary: Get credentialUserRegistrationsSummaries from tenantRelationships
+      description: Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
       operationId: tenantRelationships.managedTenants_ListCredentialUserRegistrationsSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1762,15 +1972,258 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/deviceAppPerformances:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get deviceAppPerformances from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListDeviceAppPerformances
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appFriendlyName
+                - appFriendlyName desc
+                - appName
+                - appName desc
+                - appPublisher
+                - appPublisher desc
+                - appVersion
+                - appVersion desc
+                - deviceId
+                - deviceId desc
+                - deviceManufacturer
+                - deviceManufacturer desc
+                - deviceModel
+                - deviceModel desc
+                - deviceName
+                - deviceName desc
+                - healthStatus
+                - healthStatus desc
+                - isLatestUsedVersion
+                - isLatestUsedVersion desc
+                - isMostUsedVersion
+                - isMostUsedVersion desc
+                - lastUpdatedDateTime
+                - lastUpdatedDateTime desc
+                - tenantDisplayName
+                - tenantDisplayName desc
+                - tenantId
+                - tenantId desc
+                - totalAppCrashCount
+                - totalAppCrashCount desc
+                - totalAppFreezeCount
+                - totalAppFreezeCount desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appFriendlyName
+                - appName
+                - appPublisher
+                - appVersion
+                - deviceId
+                - deviceManufacturer
+                - deviceModel
+                - deviceName
+                - healthStatus
+                - isLatestUsedVersion
+                - isMostUsedVersion
+                - lastUpdatedDateTime
+                - tenantDisplayName
+                - tenantId
+                - totalAppCrashCount
+                - totalAppFreezeCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.deviceAppPerformanceCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to deviceAppPerformances for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateDeviceAppPerformances
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceAppPerformance'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceAppPerformance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/deviceAppPerformances/{deviceAppPerformance-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get deviceAppPerformances from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetDeviceAppPerformances
+      parameters:
+        - name: deviceAppPerformance-id
+          in: path
+          description: The unique identifier of deviceAppPerformance
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceAppPerformance
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appFriendlyName
+                - appName
+                - appPublisher
+                - appVersion
+                - deviceId
+                - deviceManufacturer
+                - deviceModel
+                - deviceName
+                - healthStatus
+                - isLatestUsedVersion
+                - isMostUsedVersion
+                - lastUpdatedDateTime
+                - tenantDisplayName
+                - tenantId
+                - totalAppCrashCount
+                - totalAppFreezeCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceAppPerformance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property deviceAppPerformances in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateDeviceAppPerformances
+      parameters:
+        - name: deviceAppPerformance-id
+          in: path
+          description: The unique identifier of deviceAppPerformance
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceAppPerformance
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceAppPerformance'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property deviceAppPerformances for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteDeviceAppPerformances
+      parameters:
+        - name: deviceAppPerformance-id
+          in: path
+          description: The unique identifier of deviceAppPerformance
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceAppPerformance
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List deviceCompliancePolicySettingStateSummary
-      description: Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-devicecompliancepolicysettingstatesummary?view=graph-rest-1.0
+      summary: Get deviceCompliancePolicySettingStateSummaries from tenantRelationships
+      description: Summary information for device compliance policy setting states across managed tenants.
       operationId: tenantRelationships.managedTenants_ListDeviceCompliancePolicySettingStateSummaries
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2001,15 +2454,254 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /tenantRelationships/managedTenants/deviceHealthStatuses:
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get deviceHealthStatuses from tenantRelationships
+      operationId: tenantRelationships.managedTenants_ListDeviceHealthStatuses
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - blueScreenCount
+                - blueScreenCount desc
+                - bootTotalDurationInSeconds
+                - bootTotalDurationInSeconds desc
+                - deviceId
+                - deviceId desc
+                - deviceMake
+                - deviceMake desc
+                - deviceModel
+                - deviceModel desc
+                - deviceName
+                - deviceName desc
+                - healthStatus
+                - healthStatus desc
+                - lastUpdatedDateTime
+                - lastUpdatedDateTime desc
+                - osVersion
+                - osVersion desc
+                - primaryDiskType
+                - primaryDiskType desc
+                - restartCount
+                - restartCount desc
+                - startupPerformanceScore
+                - startupPerformanceScore desc
+                - tenantDisplayName
+                - tenantDisplayName desc
+                - tenantId
+                - tenantId desc
+                - topProcesses
+                - topProcesses desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - blueScreenCount
+                - bootTotalDurationInSeconds
+                - deviceId
+                - deviceMake
+                - deviceModel
+                - deviceName
+                - healthStatus
+                - lastUpdatedDateTime
+                - osVersion
+                - primaryDiskType
+                - restartCount
+                - startupPerformanceScore
+                - tenantDisplayName
+                - tenantId
+                - topProcesses
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.managedTenants.deviceHealthStatusCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Create new navigation property to deviceHealthStatuses for tenantRelationships
+      operationId: tenantRelationships.managedTenants_CreateDeviceHealthStatuses
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceHealthStatus'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceHealthStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/deviceHealthStatuses/{deviceHealthStatus-id}':
+    get:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Get deviceHealthStatuses from tenantRelationships
+      operationId: tenantRelationships.managedTenants_GetDeviceHealthStatuses
+      parameters:
+        - name: deviceHealthStatus-id
+          in: path
+          description: The unique identifier of deviceHealthStatus
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthStatus
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - blueScreenCount
+                - bootTotalDurationInSeconds
+                - deviceId
+                - deviceMake
+                - deviceModel
+                - deviceName
+                - healthStatus
+                - lastUpdatedDateTime
+                - osVersion
+                - primaryDiskType
+                - restartCount
+                - startupPerformanceScore
+                - tenantDisplayName
+                - tenantId
+                - topProcesses
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceHealthStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Update the navigation property deviceHealthStatuses in tenantRelationships
+      operationId: tenantRelationships.managedTenants_UpdateDeviceHealthStatuses
+      parameters:
+        - name: deviceHealthStatus-id
+          in: path
+          description: The unique identifier of deviceHealthStatus
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthStatus
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceHealthStatus'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - tenantRelationships.managedTenant
+      summary: Delete navigation property deviceHealthStatuses for tenantRelationships
+      operationId: tenantRelationships.managedTenants_DeleteDeviceHealthStatuses
+      parameters:
+        - name: deviceHealthStatus-id
+          in: path
+          description: The unique identifier of deviceHealthStatus
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthStatus
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /tenantRelationships/managedTenants/managedDeviceCompliances:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managedDeviceCompliances
-      description: Get a list of the managedDeviceCompliance objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliances?view=graph-rest-1.0
+      summary: Get managedDeviceCompliances from tenantRelationships
+      description: The collection of compliance for managed devices across managed tenants.
       operationId: tenantRelationships.managedTenants_ListManagedDeviceCompliances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2248,11 +2940,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managedDeviceComplianceTrends
-      description: Get a list of the managedDeviceComplianceTrend objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliancetrends?view=graph-rest-1.0
+      summary: Get managedDeviceComplianceTrends from tenantRelationships
+      description: Trend insights for device compliance across managed tenants.
       operationId: tenantRelationships.managedTenants_ListManagedDeviceComplianceTrends
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5211,11 +5900,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managementActions
-      description: Get a list of the managementAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactions?view=graph-rest-1.0
+      summary: Get managementActions from tenantRelationships
+      description: The collection of baseline management actions across managed tenants.
       operationId: tenantRelationships.managedTenants_ListManagementActions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5422,11 +6108,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managementActionTenantDeploymentStatus
-      description: Get a list of the managementActionTenantDeploymentStatus objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactiontenantdeploymentstatuses?view=graph-rest-1.0
+      summary: Get managementActionTenantDeploymentStatuses from tenantRelationships
+      description: The tenant level status of management actions across managed tenants.
       operationId: tenantRelationships.managedTenants_ListManagementActionTenantDeploymentStatuses
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5621,11 +6304,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managementIntents
-      description: Get a list of the managementIntent objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementintents?view=graph-rest-1.0
+      summary: Get managementIntents from tenantRelationships
+      description: The collection of baseline management intents across managed tenants.
       operationId: tenantRelationships.managedTenants_ListManagementIntents
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6267,8 +6947,14 @@ paths:
                 - managementTemplateCollectionDisplayName desc
                 - managementTemplateCollectionId
                 - managementTemplateCollectionId desc
+                - regressedStepsCount
+                - regressedStepsCount desc
+                - regressedUsersCount
+                - regressedUsersCount desc
                 - tenantId
                 - tenantId desc
+                - unlicensedUsersCount
+                - unlicensedUsersCount desc
               type: string
         - name: $select
           in: query
@@ -6296,7 +6982,10 @@ paths:
                 - lastActionDateTime
                 - managementTemplateCollectionDisplayName
                 - managementTemplateCollectionId
+                - regressedStepsCount
+                - regressedUsersCount
                 - tenantId
+                - unlicensedUsersCount
               type: string
         - name: $expand
           in: query
@@ -6382,7 +7071,10 @@ paths:
                 - lastActionDateTime
                 - managementTemplateCollectionDisplayName
                 - managementTemplateCollectionId
+                - regressedStepsCount
+                - regressedUsersCount
                 - tenantId
+                - unlicensedUsersCount
               type: string
         - name: $expand
           in: query
@@ -6463,11 +7155,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List managementTemplates
-      description: Get a list of the managementTemplate objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-managementtemplates?view=graph-rest-1.0
+      summary: Get managementTemplates from tenantRelationships
+      description: The collection of baseline management templates across managed tenants.
       operationId: tenantRelationships.managedTenants_ListManagementTemplates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8485,11 +9174,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List myRoles
-      description: "Get the roles that a signed-in user has through a delegated relationship across managed tenants. For information on the types of delegated relationships between a Managed Service Provider (MSP) who uses Microsoft 365 Lighthouse, and their business customers with Microsoft 365 Business Premium tenants, see the following articles on the Partner Center:\n- Delegated administration privileges (DAP)\n- Granular delegated admin privileges (GDAP)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-myroles?view=graph-rest-1.0
+      summary: Get myRoles from tenantRelationships
+      description: The collection of role assignments to a signed-in user for a managed tenant.
       operationId: tenantRelationships.managedTenants_ListMyRoles
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8676,11 +9362,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List tenantGroups
-      description: Get a list of the tenantGroup objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantgroups?view=graph-rest-1.0
+      summary: Get tenantGroups from tenantRelationships
+      description: The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
       operationId: tenantRelationships.managedTenants_ListTenantGroups
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8883,11 +9566,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List tenants
-      description: Get a list of the tenant objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenants?view=graph-rest-1.0
+      summary: Get tenants from tenantRelationships
+      description: The collection of tenants associated with the managing entity.
       operationId: tenantRelationships.managedTenants_ListTenants
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9094,11 +9774,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List tenantCustomizedInformation
-      description: Get a list of the tenantCustomizedInformation objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantscustomizedinformation?view=graph-rest-1.0
+      summary: Get tenantsCustomizedInformation from tenantRelationships
+      description: The collection of tenant level customized information across managed tenants.
       operationId: tenantRelationships.managedTenants_ListTenantsCustomizedInformation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9297,11 +9974,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List tenantDetailedInformation
-      description: Get a list of the tenantDetailedInformation objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantsdetailedinformation?view=graph-rest-1.0
+      summary: Get tenantsDetailedInformation from tenantRelationships
+      description: The collection tenant level detailed information across managed tenants.
       operationId: tenantRelationships.managedTenants_ListTenantsDetailedInformation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9524,11 +10198,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List tenantTags
-      description: Get a list of the tenantTag objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-tenanttags?view=graph-rest-1.0
+      summary: Get tenantTags from tenantRelationships
+      description: The collection of tenant tags across managed tenants.
       operationId: tenantRelationships.managedTenants_ListTenantTags
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9609,11 +10280,7 @@ paths:
     post:
       tags:
         - tenantRelationships.managedTenant
-      summary: Create tenantTag
-      description: Create a new tenantTag object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-post-tenanttags?view=graph-rest-1.0
+      summary: Create new navigation property to tenantTags for tenantRelationships
       operationId: tenantRelationships.managedTenants_CreateTenantTags
       requestBody:
         description: New navigation property
@@ -9747,11 +10414,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List windowsDeviceMalwareStates
-      description: Get a list of the windowsDeviceMalwareState objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-windowsdevicemalwarestates?view=graph-rest-1.0
+      summary: Get windowsDeviceMalwareStates from tenantRelationships
+      description: 'The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
       operationId: tenantRelationships.managedTenants_ListWindowsDeviceMalwareStates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9998,11 +10662,8 @@ paths:
     get:
       tags:
         - tenantRelationships.managedTenant
-      summary: List windowsProtectionStates
-      description: Get a list of the windowsProtectionState objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-windowsprotectionstates?view=graph-rest-1.0
+      summary: Get windowsProtectionStates from tenantRelationships
+      description: 'The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.'
       operationId: tenantRelationships.managedTenants_ListWindowsProtectionStates
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10295,6 +10956,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.aggregatedPolicyCompliance'
               description: Aggregate view of device compliance policies across managed tenants.
               x-ms-navigationProperty: true
+            appPerformances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.appPerformance'
+              x-ms-navigationProperty: true
             auditEvents:
               type: array
               items:
@@ -10331,11 +10997,21 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.credentialUserRegistrationsSummary'
               description: Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
               x-ms-navigationProperty: true
+            deviceAppPerformances:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceAppPerformance'
+              x-ms-navigationProperty: true
             deviceCompliancePolicySettingStateSummaries:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary'
               description: Summary information for device compliance policy setting states across managed tenants.
+              x-ms-navigationProperty: true
+            deviceHealthStatuses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceHealthStatus'
               x-ms-navigationProperty: true
             managedDeviceCompliances:
               type: array
@@ -10539,6 +11215,58 @@ components:
             tenantId:
               type: string
               description: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.appPerformance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: appPerformance
+          type: object
+          properties:
+            appFriendlyName:
+              type: string
+              nullable: true
+            appName:
+              type: string
+              nullable: true
+            appPublisher:
+              type: string
+              nullable: true
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            meanTimeToFailureInMinutes:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            tenantDisplayName:
+              type: string
+              nullable: true
+            tenantId:
+              type: string
+              nullable: true
+            totalActiveDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            totalAppCrashCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            totalAppFreezeCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
               nullable: true
           additionalProperties:
             type: object
@@ -10929,6 +11657,76 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.managedTenants.deviceAppPerformance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceAppPerformance
+          type: object
+          properties:
+            appFriendlyName:
+              type: string
+              nullable: true
+            appName:
+              type: string
+              nullable: true
+            appPublisher:
+              type: string
+              nullable: true
+            appVersion:
+              type: string
+              nullable: true
+            deviceId:
+              type: string
+              nullable: true
+            deviceManufacturer:
+              type: string
+              nullable: true
+            deviceModel:
+              type: string
+              nullable: true
+            deviceName:
+              type: string
+              nullable: true
+            healthStatus:
+              type: string
+              nullable: true
+            isLatestUsedVersion:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            isMostUsedVersion:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            tenantDisplayName:
+              type: string
+              nullable: true
+            tenantId:
+              type: string
+              nullable: true
+            totalAppCrashCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            totalAppFreezeCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11006,6 +11804,69 @@ components:
             tenantId:
               type: string
               description: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.deviceHealthStatus:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceHealthStatus
+          type: object
+          properties:
+            blueScreenCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            bootTotalDurationInSeconds:
+              type: number
+              format: double
+              nullable: true
+            deviceId:
+              type: string
+              nullable: true
+            deviceMake:
+              type: string
+              nullable: true
+            deviceModel:
+              type: string
+              nullable: true
+            deviceName:
+              type: string
+              nullable: true
+            healthStatus:
+              type: string
+              nullable: true
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            osVersion:
+              type: string
+              nullable: true
+            primaryDiskType:
+              type: string
+              nullable: true
+            restartCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            startupPerformanceScore:
+              type: number
+              format: double
+              nullable: true
+            tenantDisplayName:
+              type: string
+              nullable: true
+            tenantId:
+              type: string
+              nullable: true
+            topProcesses:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -11708,8 +12569,26 @@ components:
             managementTemplateCollectionId:
               type: string
               nullable: true
+            regressedStepsCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            regressedUsersCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
             tenantId:
               type: string
+              nullable: true
+            unlicensedUsersCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
               nullable: true
           additionalProperties:
             type: object
@@ -12318,6 +13197,11 @@ components:
           description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
+    ReferenceNumeric:
+      enum:
+        - '-INF'
+        - INF
+        - NaN
     microsoft.graph.managedTenants.alertLogContent:
       title: alertLogContent
       type: object
@@ -12725,6 +13609,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.managedTenants.appPerformanceCollectionResponse:
+      title: Collection of appPerformance
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.appPerformance'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.managedTenants.auditEventCollectionResponse:
       title: Collection of auditEvent
       type: object
@@ -12803,6 +13700,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.managedTenants.deviceAppPerformanceCollectionResponse:
+      title: Collection of deviceAppPerformance
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceAppPerformance'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummaryCollectionResponse:
       title: Collection of deviceCompliancePolicySettingStateSummary
       type: object
@@ -12811,6 +13721,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummary'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.deviceHealthStatusCollectionResponse:
+      title: Collection of deviceHealthStatus
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceHealthStatus'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -13410,6 +14333,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.managedTenants.aggregatedPolicyComplianceCollectionResponse'
+    microsoft.graph.managedTenants.appPerformanceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.appPerformanceCollectionResponse'
     microsoft.graph.managedTenants.auditEventCollectionResponse:
       description: Retrieved collection
       content:
@@ -13446,12 +14375,24 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.managedTenants.credentialUserRegistrationsSummaryCollectionResponse'
+    microsoft.graph.managedTenants.deviceAppPerformanceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceAppPerformanceCollectionResponse'
     microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummaryCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceCompliancePolicySettingStateSummaryCollectionResponse'
+    microsoft.graph.managedTenants.deviceHealthStatusCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.deviceHealthStatusCollectionResponse'
     microsoft.graph.managedTenants.managedDeviceComplianceCollectionResponse:
       description: Retrieved collection
       content:

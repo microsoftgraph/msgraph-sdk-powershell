@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationTokenLifetimePolicy
 
 ## SYNOPSIS
-List the tokenLifetimePolicy objects that are assigned to an application.
+Get tokenLifetimePolicies from applications
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgApplicationTokenLifetimePolicy -ApplicationId <String> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-List the tokenLifetimePolicy objects that are assigned to an application.
+Get tokenLifetimePolicies from applications
 
 ## EXAMPLES
 
@@ -50,7 +50,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationId
-key: id of application
+The unique identifier of application
 
 ```yaml
 Type: System.String

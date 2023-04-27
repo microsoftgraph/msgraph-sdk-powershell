@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgUnarchiveServiceAnnouncementMessage
 
 ## SYNOPSIS
-Unarchive a list of serviceUpdateMessages for the signed in user.
+Invoke action unarchive
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Invoke-MgUnarchiveServiceAnnouncementMessage
 ```
 
 ## DESCRIPTION
-Unarchive a list of serviceUpdateMessages for the signed in user.
+Invoke action unarchive
 
 ## EXAMPLES
 

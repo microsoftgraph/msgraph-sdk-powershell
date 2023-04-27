@@ -8,10 +8,7 @@ schema: 2.0.0
 # Update-MgWindowsUpdatesDeploymentAudience
 
 ## SYNOPSIS
-Update the members and exclusions collections of a deploymentAudience.
-Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object, if it does not already exist.
-If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset.
-If all **updatableAsset** objects are the same type, you can also use the method updateAudienceById to update the **deploymentAudience**.
+Invoke action updateAudience
 
 ## SYNTAX
 
@@ -50,10 +47,7 @@ Update-MgWindowsUpdatesDeploymentAudience -InputObject <IWindowsUpdatesIdentity>
 ```
 
 ## DESCRIPTION
-Update the members and exclusions collections of a deploymentAudience.
-Adding an azureADDevice to the members or exclusions collections of a deployment audience automatically creates an Azure AD device object, if it does not already exist.
-If the same updatableAsset gets included in the **exclusions** and **members** collections of a **deploymentAudience**, deployment will not apply to that asset.
-If all **updatableAsset** objects are the same type, you can also use the method updateAudienceById to update the **deploymentAudience**.
+Invoke action updateAudience
 
 ## EXAMPLES
 
@@ -158,7 +152,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeploymentId
-key: id of deployment
+The unique identifier of deployment
 
 ```yaml
 Type: System.String
@@ -305,12 +299,12 @@ BODYPARAMETER <IPathsGxoqhAdminWindowsUpdatesDeploymentsDeploymentIdAudienceMicr
   - `[RemoveMembers <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>]`: 
 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
-  - `[CatalogEntryId <String>]`: key: id of catalogEntry
-  - `[ComplianceChangeId <String>]`: key: id of complianceChange
-  - `[DeploymentId <String>]`: key: id of deployment
-  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
-  - `[UpdatableAssetId <String>]`: key: id of updatableAsset
-  - `[UpdatePolicyId <String>]`: key: id of updatePolicy
+  - `[CatalogEntryId <String>]`: The unique identifier of catalogEntry
+  - `[ComplianceChangeId <String>]`: The unique identifier of complianceChange
+  - `[DeploymentId <String>]`: The unique identifier of deployment
+  - `[ResourceConnectionId <String>]`: The unique identifier of resourceConnection
+  - `[UpdatableAssetId <String>]`: The unique identifier of updatableAsset
+  - `[UpdatePolicyId <String>]`: The unique identifier of updatePolicy
 
 REMOVEEXCLUSIONS <IMicrosoftGraphWindowsUpdatesUpdatableAsset[]>: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.

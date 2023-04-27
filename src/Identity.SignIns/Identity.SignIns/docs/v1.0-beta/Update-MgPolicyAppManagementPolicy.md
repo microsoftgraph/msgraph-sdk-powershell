@@ -24,13 +24,13 @@ Update-MgPolicyAppManagementPolicy -AppManagementPolicyId <String> [-AdditionalP
 ### Update
 ```
 Update-MgPolicyAppManagementPolicy -AppManagementPolicyId <String>
- -BodyParameter <IMicrosoftGraphAppManagementPolicy> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAppManagementPolicy1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgPolicyAppManagementPolicy -InputObject <IIdentitySignInsIdentity>
- -BodyParameter <IMicrosoftGraphAppManagementPolicy> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAppManagementPolicy1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppliesTo
-.
+Collection of application and service principals to which a policy is applied.
 To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppManagementPolicyId
-key: id of appManagementPolicy
+The unique identifier of appManagementPolicy
 
 ```yaml
 Type: System.String
@@ -100,7 +100,7 @@ appManagementPolicy
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsEnabled
-.
+Denotes whether the policy is enabled.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -275,7 +275,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppManagementPolicy1
 
 ## OUTPUTS
 
@@ -290,20 +290,20 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-APPLIESTO <IMicrosoftGraphDirectoryObject[]>: .
+APPLIESTO <IMicrosoftGraphDirectoryObject[]>: Collection of application and service principals to which a policy is applied.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
-BODYPARAMETER <IMicrosoftGraphAppManagementPolicy>: appManagementPolicy
+BODYPARAMETER <IMicrosoftGraphAppManagementPolicy1>: appManagementPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
+  - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Collection of application and service principals to which a policy is applied.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[IsEnabled <Boolean?>]`: 
+  - `[IsEnabled <Boolean?>]`: Denotes whether the policy is enabled.
   - `[Restrictions <IMicrosoftGraphAppManagementConfiguration>]`: appManagementConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[KeyCredentials <IMicrosoftGraphKeyCredentialConfiguration[]>]`: Collection of keyCredential restrictions settings to be applied to an application or service principal.
@@ -312,82 +312,83 @@ BODYPARAMETER <IMicrosoftGraphAppManagementPolicy>: appManagementPolicy
       - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
     - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
       - `[MaxLifetime <TimeSpan?>]`: 
-      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
       - `[RestrictionType <String>]`: appCredentialRestrictionType
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
-  - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
-  - `[AppManagementPolicyId <String>]`: key: id of appManagementPolicy
-  - `[AuthenticationCombinationConfigurationId <String>]`: key: id of authenticationCombinationConfiguration
-  - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
-  - `[AuthenticationEventListenerId <String>]`: key: id of authenticationEventListener
-  - `[AuthenticationMethodConfigurationId <String>]`: key: id of authenticationMethodConfiguration
-  - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[AuthenticationMethodModeDetailId <String>]`: key: id of authenticationMethodModeDetail
+  - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
+  - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
+  - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
+  - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
+  - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
+  - `[AuthenticationMethodConfigurationId <String>]`: The unique identifier of authenticationMethodConfiguration
+  - `[AuthenticationMethodId <String>]`: The unique identifier of authenticationMethod
+  - `[AuthenticationMethodModeDetailId <String>]`: The unique identifier of authenticationMethodModeDetail
   - `[AuthenticationMethodModes <String[]>]`: Usage: authenticationMethodModes={authenticationMethodModes}
-  - `[AuthenticationStrengthPolicyId <String>]`: key: id of authenticationStrengthPolicy
-  - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
-  - `[B2CIdentityUserFlowId <String>]`: key: id of b2cIdentityUserFlow
-  - `[B2XIdentityUserFlowId <String>]`: key: id of b2xIdentityUserFlow
-  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
-  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
-  - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
-  - `[ConditionalAccessTemplateId <String>]`: key: id of conditionalAccessTemplate
-  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
-  - `[CustomAuthenticationExtensionId <String>]`: key: id of customAuthenticationExtension
-  - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
-  - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
-  - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
-  - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
-  - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
-  - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
-  - `[IdentityApiConnectorId <String>]`: key: id of identityApiConnector
-  - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
-  - `[IdentityProviderId <String>]`: key: id of identityProvider
-  - `[IdentityUserFlowAttributeAssignmentId <String>]`: key: id of identityUserFlowAttributeAssignment
-  - `[IdentityUserFlowAttributeId <String>]`: key: id of identityUserFlowAttribute
-  - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
-  - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
-  - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
-  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
-  - `[MobilityManagementPolicyId <String>]`: key: id of mobilityManagementPolicy
-  - `[NamedLocationId <String>]`: key: id of namedLocation
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
-  - `[OrganizationId <String>]`: key: id of organization
-  - `[PasswordAuthenticationMethodId <String>]`: key: id of passwordAuthenticationMethod
-  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
-  - `[PermissionGrantConditionSetId <String>]`: key: id of permissionGrantConditionSet
-  - `[PermissionGrantPolicyId <String>]`: key: id of permissionGrantPolicy
-  - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
-  - `[RiskDetectionId <String>]`: key: id of riskDetection
-  - `[RiskyServicePrincipalHistoryItemId <String>]`: key: id of riskyServicePrincipalHistoryItem
-  - `[RiskyServicePrincipalId <String>]`: key: id of riskyServicePrincipal
-  - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
-  - `[RiskyUserId <String>]`: key: id of riskyUser
-  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
-  - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
-  - `[ServicePrincipalCreationConditionSetId <String>]`: key: id of servicePrincipalCreationConditionSet
-  - `[ServicePrincipalCreationPolicyId <String>]`: key: id of servicePrincipalCreationPolicy
-  - `[ServicePrincipalRiskDetectionId <String>]`: key: id of servicePrincipalRiskDetection
-  - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
-  - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
-  - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
-  - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
-  - `[TrustFrameworkKeySetId <String>]`: key: id of trustFrameworkKeySet
-  - `[TrustFrameworkPolicyId <String>]`: key: id of trustFrameworkPolicy
-  - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
-  - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
-  - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
-  - `[UserFlowLanguageConfigurationId <String>]`: key: id of userFlowLanguageConfiguration
-  - `[UserFlowLanguagePageId <String>]`: key: id of userFlowLanguagePage
-  - `[UserId <String>]`: key: id of user
-  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
+  - `[AuthenticationStrengthPolicyId <String>]`: The unique identifier of authenticationStrengthPolicy
+  - `[AuthorizationPolicyId <String>]`: The unique identifier of authorizationPolicy
+  - `[B2CIdentityUserFlowId <String>]`: The unique identifier of b2cIdentityUserFlow
+  - `[B2XIdentityUserFlowId <String>]`: The unique identifier of b2xIdentityUserFlow
+  - `[BitlockerRecoveryKeyId <String>]`: The unique identifier of bitlockerRecoveryKey
+  - `[CertificateBasedAuthConfigurationId <String>]`: The unique identifier of certificateBasedAuthConfiguration
+  - `[ClaimsMappingPolicyId <String>]`: The unique identifier of claimsMappingPolicy
+  - `[ConditionalAccessPolicyId <String>]`: The unique identifier of conditionalAccessPolicy
+  - `[ConditionalAccessTemplateId <String>]`: The unique identifier of conditionalAccessTemplate
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: The unique identifier of crossTenantAccessPolicyConfigurationPartner
+  - `[CustomAuthenticationExtensionId <String>]`: The unique identifier of customAuthenticationExtension
+  - `[DataLossPreventionPolicyId <String>]`: The unique identifier of dataLossPreventionPolicy
+  - `[DataPolicyOperationId <String>]`: The unique identifier of dataPolicyOperation
+  - `[DefaultUserRoleOverrideId <String>]`: The unique identifier of defaultUserRoleOverride
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[EmailAuthenticationMethodId <String>]`: The unique identifier of emailAuthenticationMethod
+  - `[FeatureRolloutPolicyId <String>]`: The unique identifier of featureRolloutPolicy
+  - `[Fido2AuthenticationMethodId <String>]`: The unique identifier of fido2AuthenticationMethod
+  - `[GroupId <String>]`: The unique identifier of group
+  - `[HomeRealmDiscoveryPolicyId <String>]`: The unique identifier of homeRealmDiscoveryPolicy
+  - `[IdentityApiConnectorId <String>]`: The unique identifier of identityApiConnector
+  - `[IdentityProviderBaseId <String>]`: The unique identifier of identityProviderBase
+  - `[IdentityProviderId <String>]`: The unique identifier of identityProvider
+  - `[IdentityUserFlowAttributeAssignmentId <String>]`: The unique identifier of identityUserFlowAttributeAssignment
+  - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
+  - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
+  - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
+  - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
+  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
+  - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy
+  - `[NamedLocationId <String>]`: The unique identifier of namedLocation
+  - `[OAuth2PermissionGrantId <String>]`: The unique identifier of oAuth2PermissionGrant
+  - `[OrganizationId <String>]`: The unique identifier of organization
+  - `[PasswordAuthenticationMethodId <String>]`: The unique identifier of passwordAuthenticationMethod
+  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of passwordlessMicrosoftAuthenticatorAuthenticationMethod
+  - `[PermissionGrantConditionSetId <String>]`: The unique identifier of permissionGrantConditionSet
+  - `[PermissionGrantPolicyId <String>]`: The unique identifier of permissionGrantPolicy
+  - `[PhoneAuthenticationMethodId <String>]`: The unique identifier of phoneAuthenticationMethod
+  - `[RiskDetectionId <String>]`: The unique identifier of riskDetection
+  - `[RiskyServicePrincipalHistoryItemId <String>]`: The unique identifier of riskyServicePrincipalHistoryItem
+  - `[RiskyServicePrincipalId <String>]`: The unique identifier of riskyServicePrincipal
+  - `[RiskyUserHistoryItemId <String>]`: The unique identifier of riskyUserHistoryItem
+  - `[RiskyUserId <String>]`: The unique identifier of riskyUser
+  - `[SensitivityLabelId <String>]`: The unique identifier of sensitivityLabel
+  - `[SensitivityLabelId1 <String>]`: The unique identifier of sensitivityLabel
+  - `[ServicePrincipalCreationConditionSetId <String>]`: The unique identifier of servicePrincipalCreationConditionSet
+  - `[ServicePrincipalCreationPolicyId <String>]`: The unique identifier of servicePrincipalCreationPolicy
+  - `[ServicePrincipalRiskDetectionId <String>]`: The unique identifier of servicePrincipalRiskDetection
+  - `[SoftwareOathAuthenticationMethodId <String>]`: The unique identifier of softwareOathAuthenticationMethod
+  - `[TemporaryAccessPassAuthenticationMethodId <String>]`: The unique identifier of temporaryAccessPassAuthenticationMethod
+  - `[ThreatAssessmentRequestId <String>]`: The unique identifier of threatAssessmentRequest
+  - `[ThreatAssessmentResultId <String>]`: The unique identifier of threatAssessmentResult
+  - `[TokenIssuancePolicyId <String>]`: The unique identifier of tokenIssuancePolicy
+  - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
+  - `[TrustFrameworkKeySetId <String>]`: The unique identifier of trustFrameworkKeySet
+  - `[TrustFrameworkPolicyId <String>]`: The unique identifier of trustFrameworkPolicy
+  - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: The unique identifier of unifiedRoleManagementPolicyAssignment
+  - `[UnifiedRoleManagementPolicyId <String>]`: The unique identifier of unifiedRoleManagementPolicy
+  - `[UnifiedRoleManagementPolicyRuleId <String>]`: The unique identifier of unifiedRoleManagementPolicyRule
+  - `[UserFlowLanguageConfigurationId <String>]`: The unique identifier of userFlowLanguageConfiguration
+  - `[UserFlowLanguagePageId <String>]`: The unique identifier of userFlowLanguagePage
+  - `[UserId <String>]`: The unique identifier of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: The unique identifier of windowsHelloForBusinessAuthenticationMethod
 
 RESTRICTIONS <IMicrosoftGraphAppManagementConfiguration>: appManagementConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -397,7 +398,7 @@ RESTRICTIONS <IMicrosoftGraphAppManagementConfiguration>: appManagementConfigura
     - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
   - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
     - `[MaxLifetime <TimeSpan?>]`: 
-    - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
+    - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
     - `[RestrictionType <String>]`: appCredentialRestrictionType
 
 ## RELATED LINKS

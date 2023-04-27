@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -MicrosoftTunnelServerId
-key: id of microsoftTunnelServer
+The unique identifier of microsoftTunnelServer
 
 ```yaml
 Type: System.String
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -MicrosoftTunnelSiteId
-key: id of microsoftTunnelSite
+The unique identifier of microsoftTunnelSite
 
 ```yaml
 Type: System.String
@@ -199,58 +199,57 @@ BODYPARAMETER <IPaths12U8BljDevicemanagementMicrosofttunnelsitesMicrosofttunnels
   - `[MetricNames <String[]>]`: 
 
 INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
-  - `[AlertRecordId <String>]`: key: id of alertRecord
-  - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile
-  - `[AndroidForWorkEnrollmentProfileId <String>]`: key: id of androidForWorkEnrollmentProfile
-  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[AppleUserInitiatedEnrollmentProfileId <String>]`: key: id of appleUserInitiatedEnrollmentProfile
-  - `[CertificateConnectorDetailsId <String>]`: key: id of certificateConnectorDetails
-  - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
-  - `[CloudPcId <String>]`: key: id of cloudPC
-  - `[CloudPcOnPremisesConnectionId <String>]`: key: id of cloudPcOnPremisesConnection
-  - `[CloudPcProvisioningPolicyId <String>]`: key: id of cloudPcProvisioningPolicy
-  - `[CloudPcUserSettingId <String>]`: key: id of cloudPcUserSetting
-  - `[DataSharingConsentId <String>]`: key: id of dataSharingConsent
-  - `[DepOnboardingSettingId <String>]`: key: id of depOnboardingSetting
-  - `[DeviceCompliancePolicyId <String>]`: key: id of deviceCompliancePolicy
-  - `[DeviceComplianceScriptId <String>]`: key: id of deviceComplianceScript
-  - `[DeviceConfigurationId <String>]`: key: id of deviceConfiguration
-  - `[DeviceCustomAttributeShellScriptId <String>]`: key: id of deviceCustomAttributeShellScript
-  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceHealthScriptId <String>]`: key: id of deviceHealthScript
-  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
-  - `[DeviceManagementCompliancePolicyId <String>]`: key: id of deviceManagementCompliancePolicy
-  - `[DeviceManagementConfigurationPolicyId <String>]`: key: id of deviceManagementConfigurationPolicy
-  - `[DeviceManagementExchangeConnectorId <String>]`: key: id of deviceManagementExchangeConnector
-  - `[DeviceManagementIntentId <String>]`: key: id of deviceManagementIntent
-  - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
-  - `[DeviceManagementResourceAccessProfileBaseId <String>]`: key: id of deviceManagementResourceAccessProfileBase
-  - `[DeviceManagementReusablePolicySettingId <String>]`: key: id of deviceManagementReusablePolicySetting
-  - `[DeviceManagementScriptId <String>]`: key: id of deviceManagementScript
-  - `[DeviceManagementTemplateId <String>]`: key: id of deviceManagementTemplate
-  - `[DeviceManagementTemplateId1 <String>]`: key: id of deviceManagementTemplate
-  - `[DeviceShellScriptId <String>]`: key: id of deviceShellScript
-  - `[EmbeddedSimActivationCodePoolId <String>]`: key: id of embeddedSIMActivationCodePool
-  - `[EnrollmentProfileId <String>]`: key: id of enrollmentProfile
-  - `[GroupPolicyConfigurationId <String>]`: key: id of groupPolicyConfiguration
-  - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport
-  - `[GroupPolicyUploadedDefinitionFileId <String>]`: key: id of groupPolicyUploadedDefinitionFile
-  - `[IntuneBrandingProfileId <String>]`: key: id of intuneBrandingProfile
-  - `[ManagedDeviceId <String>]`: key: id of managedDevice
-  - `[MicrosoftTunnelServerId <String>]`: key: id of microsoftTunnelServer
-  - `[MicrosoftTunnelServerLogCollectionResponseId <String>]`: key: id of microsoftTunnelServerLogCollectionResponse
-  - `[MicrosoftTunnelSiteId <String>]`: key: id of microsoftTunnelSite
-  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
-  - `[NotificationMessageTemplateId <String>]`: key: id of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: key: id of oemWarrantyInformationOnboarding
-  - `[RemoteAssistancePartnerId <String>]`: key: id of remoteAssistancePartner
-  - `[RoleScopeTagId <String>]`: key: id of roleScopeTag
-  - `[WindowsAutopilotDeploymentProfileId <String>]`: key: id of windowsAutopilotDeploymentProfile
-  - `[WindowsAutopilotDeviceIdentityId <String>]`: key: id of windowsAutopilotDeviceIdentity
-  - `[WindowsDriverUpdateProfileId <String>]`: key: id of windowsDriverUpdateProfile
-  - `[WindowsFeatureUpdateProfileId <String>]`: key: id of windowsFeatureUpdateProfile
-  - `[WindowsQualityUpdateProfileId <String>]`: key: id of windowsQualityUpdateProfile
-  - `[ZebraFotaDeploymentId <String>]`: key: id of zebraFotaDeployment
+  - `[AlertRecordId <String>]`: The unique identifier of alertRecord
+  - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: The unique identifier of androidDeviceOwnerEnrollmentProfile
+  - `[AndroidForWorkEnrollmentProfileId <String>]`: The unique identifier of androidForWorkEnrollmentProfile
+  - `[AppLogCollectionRequestId <String>]`: The unique identifier of appLogCollectionRequest
+  - `[AppleUserInitiatedEnrollmentProfileId <String>]`: The unique identifier of appleUserInitiatedEnrollmentProfile
+  - `[CertificateConnectorDetailsId <String>]`: The unique identifier of certificateConnectorDetails
+  - `[CloudPcDeviceImageId <String>]`: The unique identifier of cloudPcDeviceImage
+  - `[CloudPcId <String>]`: The unique identifier of cloudPC
+  - `[CloudPcOnPremisesConnectionId <String>]`: The unique identifier of cloudPcOnPremisesConnection
+  - `[CloudPcProvisioningPolicyId <String>]`: The unique identifier of cloudPcProvisioningPolicy
+  - `[CloudPcUserSettingId <String>]`: The unique identifier of cloudPcUserSetting
+  - `[DataSharingConsentId <String>]`: The unique identifier of dataSharingConsent
+  - `[DepOnboardingSettingId <String>]`: The unique identifier of depOnboardingSetting
+  - `[DeviceCompliancePolicyId <String>]`: The unique identifier of deviceCompliancePolicy
+  - `[DeviceComplianceScriptId <String>]`: The unique identifier of deviceComplianceScript
+  - `[DeviceConfigurationId <String>]`: The unique identifier of deviceConfiguration
+  - `[DeviceCustomAttributeShellScriptId <String>]`: The unique identifier of deviceCustomAttributeShellScript
+  - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
+  - `[DeviceHealthScriptId <String>]`: The unique identifier of deviceHealthScript
+  - `[DeviceLogCollectionResponseId <String>]`: The unique identifier of deviceLogCollectionResponse
+  - `[DeviceManagementCompliancePolicyId <String>]`: The unique identifier of deviceManagementCompliancePolicy
+  - `[DeviceManagementConfigurationPolicyId <String>]`: The unique identifier of deviceManagementConfigurationPolicy
+  - `[DeviceManagementExchangeConnectorId <String>]`: The unique identifier of deviceManagementExchangeConnector
+  - `[DeviceManagementIntentId <String>]`: The unique identifier of deviceManagementIntent
+  - `[DeviceManagementPartnerId <String>]`: The unique identifier of deviceManagementPartner
+  - `[DeviceManagementResourceAccessProfileBaseId <String>]`: The unique identifier of deviceManagementResourceAccessProfileBase
+  - `[DeviceManagementReusablePolicySettingId <String>]`: The unique identifier of deviceManagementReusablePolicySetting
+  - `[DeviceManagementScriptId <String>]`: The unique identifier of deviceManagementScript
+  - `[DeviceManagementTemplateId <String>]`: The unique identifier of deviceManagementTemplate
+  - `[DeviceManagementTemplateId1 <String>]`: The unique identifier of deviceManagementTemplate
+  - `[DeviceShellScriptId <String>]`: The unique identifier of deviceShellScript
+  - `[EmbeddedSimActivationCodePoolId <String>]`: The unique identifier of embeddedSIMActivationCodePool
+  - `[EnrollmentProfileId <String>]`: The unique identifier of enrollmentProfile
+  - `[GroupPolicyConfigurationId <String>]`: The unique identifier of groupPolicyConfiguration
+  - `[GroupPolicyMigrationReportId <String>]`: The unique identifier of groupPolicyMigrationReport
+  - `[GroupPolicyUploadedDefinitionFileId <String>]`: The unique identifier of groupPolicyUploadedDefinitionFile
+  - `[IntuneBrandingProfileId <String>]`: The unique identifier of intuneBrandingProfile
+  - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
+  - `[MicrosoftTunnelServerId <String>]`: The unique identifier of microsoftTunnelServer
+  - `[MicrosoftTunnelServerLogCollectionResponseId <String>]`: The unique identifier of microsoftTunnelServerLogCollectionResponse
+  - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
+  - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
+  - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
+  - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
+  - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
+  - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile
+  - `[WindowsAutopilotDeviceIdentityId <String>]`: The unique identifier of windowsAutopilotDeviceIdentity
+  - `[WindowsDriverUpdateProfileId <String>]`: The unique identifier of windowsDriverUpdateProfile
+  - `[WindowsFeatureUpdateProfileId <String>]`: The unique identifier of windowsFeatureUpdateProfile
+  - `[WindowsQualityUpdateProfileId <String>]`: The unique identifier of windowsQualityUpdateProfile
+  - `[ZebraFotaDeploymentId <String>]`: The unique identifier of zebraFotaDeployment
 
 ## RELATED LINKS
 

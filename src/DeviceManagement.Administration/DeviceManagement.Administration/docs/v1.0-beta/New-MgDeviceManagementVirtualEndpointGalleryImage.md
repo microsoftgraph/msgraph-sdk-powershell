@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ### -EndDate
 The date in which this image is no longer within long-term support.
-The Cloud PC will continue to provide short-term support.
+The Cloud PC continues to provide short-term support.
 Read-only.
 
 ```yaml
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 
 ### -Offer
 The offer name of the gallery image.
-This value will be passed to Azure to get the image resource.
+This value is passed to Azure to get the image resource.
 Read-only.
 
 ```yaml
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 
 ### -Publisher
 The publisher name of the gallery image.
-This value will be passed to Azure to get the image resource.
+This value is passed to Azure to get the image resource.
 Read-only.
 
 ```yaml
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 
 ### -Sku
 The SKU name of the gallery image.
-This value will be passed to Azure to get the image resource.
+This value is passed to Azure to get the image resource.
 Read-only.
 
 ```yaml
@@ -333,14 +333,14 @@ BODYPARAMETER <IMicrosoftGraphCloudPcGalleryImage>: cloudPcGalleryImage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The official display name of the gallery image. Read-only.
-  - `[EndDate <DateTime?>]`: The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
+  - `[EndDate <DateTime?>]`: The date in which this image is no longer within long-term support. The Cloud PC continues to provide short-term support. Read-only.
   - `[ExpirationDate <DateTime?>]`: The date when the image is no longer available. Read-only.
-  - `[Offer <String>]`: The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+  - `[Offer <String>]`: The offer name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
   - `[OfferDisplayName <String>]`: The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.
-  - `[Publisher <String>]`: The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+  - `[Publisher <String>]`: The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
   - `[RecommendedSku <String>]`: Recommended Cloud PC SKU for this gallery image. Read-only.
   - `[SizeInGb <Int32?>]`: The size of this image in gigabytes. Read-only.
-  - `[Sku <String>]`: The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+  - `[Sku <String>]`: The SKU name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
   - `[SkuDisplayName <String>]`: The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.
   - `[StartDate <DateTime?>]`: The date when the image becomes available. Read-only.
   - `[Status <String>]`: cloudPcGalleryImageStatus

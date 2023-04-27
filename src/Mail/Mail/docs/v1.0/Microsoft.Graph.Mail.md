@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: 8177c3d3-3dd5-4e94-906b-25ae790a92c2
+Module Guid: c474d448-0566-4cb5-abe1-a65b7db9fbd3
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -119,37 +119,28 @@ The collection of single-value extended properties defined for the message.
 Nullable.
 
 ### [New-MgUserInferenceClassificationOverride](New-MgUserInferenceClassificationOverride.md)
-Create an override for a sender identified by an SMTP address.
-Future messages from that SMTP address will be consistently classified\nas specified in the override.
-**Note**
+Create new navigation property to overrides for users
 
 ### [New-MgUserMailFolder](New-MgUserMailFolder.md)
-Use this API to create a new mail folder in the root folder of the user's mailbox.
-If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+Create new navigation property to mailFolders for users
 
 ### [New-MgUserMailFolderChildFolder](New-MgUserMailFolderChildFolder.md)
-Use this API to create a new child mailFolder.
-If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+Create new navigation property to childFolders for users
 
 ### [New-MgUserMailFolderChildFolderMessage](New-MgUserMailFolderChildFolderMessage.md)
-Use this API to create a new Message in a mailfolder.
+Create new navigation property to messages for users
 
 ### [New-MgUserMailFolderChildFolderMessageAttachment](New-MgUserMailFolderChildFolderMessageAttachment.md)
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Create new navigation property to attachments for users
 
 ### [New-MgUserMailFolderChildFolderMessageExtension](New-MgUserMailFolderChildFolderMessageExtension.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Create new navigation property to extensions for users
 
 ### [New-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty](New-MgUserMailFolderChildFolderMessageMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
 ### [New-MgUserMailFolderChildFolderMessageRule](New-MgUserMailFolderChildFolderMessageRule.md)
-Create a messageRule object by specifying a set of conditions and actions.
-Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+Create new navigation property to messageRules for users
 
 ### [New-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty](New-MgUserMailFolderChildFolderMessageSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
@@ -161,24 +152,19 @@ Create new navigation property to multiValueExtendedProperties for users
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserMailFolderMessage](New-MgUserMailFolderMessage.md)
-Use this API to create a new Message in a mailfolder.
+Create new navigation property to messages for users
 
 ### [New-MgUserMailFolderMessageAttachment](New-MgUserMailFolderMessageAttachment.md)
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Create new navigation property to attachments for users
 
 ### [New-MgUserMailFolderMessageExtension](New-MgUserMailFolderMessageExtension.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Create new navigation property to extensions for users
 
 ### [New-MgUserMailFolderMessageMultiValueExtendedProperty](New-MgUserMailFolderMessageMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
 
 ### [New-MgUserMailFolderMessageRule](New-MgUserMailFolderMessageRule.md)
-Create a messageRule object by specifying a set of conditions and actions.
-Outlook carries out those actions if an incoming message in the user's Inbox meets the specified conditions.
+Create new navigation property to messageRules for users
 
 ### [New-MgUserMailFolderMessageSingleValueExtendedProperty](New-MgUserMailFolderMessageSingleValueExtendedProperty.md)
 Create new navigation property to singleValueExtendedProperties for users
@@ -190,22 +176,13 @@ Create new navigation property to multiValueExtendedProperties for users
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserMessage](New-MgUserMessage.md)
-Create a draft of a new message in either JSON or MIME format.
-When using JSON format, you can:\n- Include an attachment to the **message**.\n- Update the draft later to add content to the **body** or change other message properties.
-When using MIME format:\n- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.\n- /* Add any attachments and S/MIME properties to the MIME content.
-By default, this operation saves the draft in the Drafts folder.
-Send the draft message in a subsequent operation.
-Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
+Create new navigation property to messages for users
 
 ### [New-MgUserMessageAttachment](New-MgUserMessageAttachment.md)
-Use this API to create a new Attachment.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Create new navigation property to attachments for users
 
 ### [New-MgUserMessageExtension](New-MgUserMessageExtension.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Create new navigation property to extensions for users
 
 ### [New-MgUserMessageMultiValueExtendedProperty](New-MgUserMessageMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users

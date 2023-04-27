@@ -43,7 +43,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectorId
-key: id of connector
+The unique identifier of connector
 
 ```yaml
 Type: System.String
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnPremisesPublishingProfileId
-key: id of onPremisesPublishingProfile
+The unique identifier of onPremisesPublishingProfile
 
 ```yaml
 Type: System.String

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityThreatSubmissionEmailThreat
 
 ## SYNOPSIS
-Create a new emailThreatSubmission object.
+Create new navigation property to emailThreats for security
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ New-MgSecurityThreatSubmissionEmailThreat -BodyParameter <IMicrosoftGraphSecurit
 ```
 
 ## DESCRIPTION
-Create a new emailThreatSubmission object.
+Create new navigation property to emailThreats for security
 
 ## EXAMPLES
 

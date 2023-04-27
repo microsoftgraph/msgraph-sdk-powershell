@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileCertification
 
 ## SYNOPSIS
-Create a new personCertification object in a user's profile.
+Create new navigation property to certifications for users
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgUserProfileCertification -InputObject <IPeopleIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Create a new personCertification object in a user's profile.
+Create new navigation property to certifications for users
 
 ## EXAMPLES
 
@@ -393,7 +393,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -524,31 +524,31 @@ INFERENCE <IMicrosoftGraphInferenceData>: inferenceData
   - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
 
 INPUTOBJECT <IPeopleIdentity>: Identity Parameter
-  - `[ActivityStatisticsId <String>]`: key: id of activityStatistics
-  - `[EducationalActivityId <String>]`: key: id of educationalActivity
-  - `[ItemAddressId <String>]`: key: id of itemAddress
-  - `[ItemEmailId <String>]`: key: id of itemEmail
-  - `[ItemPatentId <String>]`: key: id of itemPatent
-  - `[ItemPhoneId <String>]`: key: id of itemPhone
-  - `[ItemPublicationId <String>]`: key: id of itemPublication
-  - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnnotationId <String>]`: key: id of personAnnotation
-  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
-  - `[PersonAwardId <String>]`: key: id of personAward
-  - `[PersonCertificationId <String>]`: key: id of personCertification
-  - `[PersonId <String>]`: key: id of person
-  - `[PersonInterestId <String>]`: key: id of personInterest
-  - `[PersonNameId <String>]`: key: id of personName
-  - `[PersonWebsiteId <String>]`: key: id of personWebsite
-  - `[ProjectParticipationId <String>]`: key: id of projectParticipation
-  - `[SharedInsightId <String>]`: key: id of sharedInsight
-  - `[SkillProficiencyId <String>]`: key: id of skillProficiency
-  - `[TrendingId <String>]`: key: id of trending
-  - `[UsedInsightId <String>]`: key: id of usedInsight
-  - `[UserAccountInformationId <String>]`: key: id of userAccountInformation
-  - `[UserId <String>]`: key: id of user
-  - `[WebAccountId <String>]`: key: id of webAccount
-  - `[WorkPositionId <String>]`: key: id of workPosition
+  - `[ActivityStatisticsId <String>]`: The unique identifier of activityStatistics
+  - `[EducationalActivityId <String>]`: The unique identifier of educationalActivity
+  - `[ItemAddressId <String>]`: The unique identifier of itemAddress
+  - `[ItemEmailId <String>]`: The unique identifier of itemEmail
+  - `[ItemPatentId <String>]`: The unique identifier of itemPatent
+  - `[ItemPhoneId <String>]`: The unique identifier of itemPhone
+  - `[ItemPublicationId <String>]`: The unique identifier of itemPublication
+  - `[LanguageProficiencyId <String>]`: The unique identifier of languageProficiency
+  - `[PersonAnnotationId <String>]`: The unique identifier of personAnnotation
+  - `[PersonAnnualEventId <String>]`: The unique identifier of personAnnualEvent
+  - `[PersonAwardId <String>]`: The unique identifier of personAward
+  - `[PersonCertificationId <String>]`: The unique identifier of personCertification
+  - `[PersonId <String>]`: The unique identifier of person
+  - `[PersonInterestId <String>]`: The unique identifier of personInterest
+  - `[PersonNameId <String>]`: The unique identifier of personName
+  - `[PersonWebsiteId <String>]`: The unique identifier of personWebsite
+  - `[ProjectParticipationId <String>]`: The unique identifier of projectParticipation
+  - `[SharedInsightId <String>]`: The unique identifier of sharedInsight
+  - `[SkillProficiencyId <String>]`: The unique identifier of skillProficiency
+  - `[TrendingId <String>]`: The unique identifier of trending
+  - `[UsedInsightId <String>]`: The unique identifier of usedInsight
+  - `[UserAccountInformationId <String>]`: The unique identifier of userAccountInformation
+  - `[UserId <String>]`: The unique identifier of user
+  - `[WebAccountId <String>]`: The unique identifier of webAccount
+  - `[WorkPositionId <String>]`: The unique identifier of workPosition
 
 LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

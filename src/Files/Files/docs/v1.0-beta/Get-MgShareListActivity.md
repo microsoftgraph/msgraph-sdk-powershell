@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -SharedDriveItemId
-key: id of sharedDriveItem
+The unique identifier of sharedDriveItem
 
 ```yaml
 Type: System.String

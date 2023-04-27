@@ -10,11 +10,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List contactFolders
-      description: Get the contact folder collection in the default Contacts folder of the signed-in user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
+      summary: Get contactFolders from users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_ListContactFolders
       parameters:
         - name: user-id
@@ -64,6 +61,22 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.contactFolderCollectionResponse'
@@ -76,11 +89,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create ContactFolder
-      description: Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
+      summary: Create new navigation property to contactFolders for users
       operationId: users_CreateContactFolders
       parameters:
         - name: user-id
@@ -145,6 +154,22 @@ paths:
                 - id
                 - displayName
                 - parentFolderId
+                - childFolders
+                - contacts
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - childFolders
                 - contacts
                 - multiValueExtendedProperties
@@ -233,11 +258,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List childFolders
-      description: Get a collection of child folders under the specified contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
+      summary: Get childFolders from users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_ListChildFolders
       parameters:
         - name: user-id
@@ -323,11 +345,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create ContactFolder
-      description: Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
+      summary: Create new navigation property to childFolders for users
       operationId: users.contactFolders_CreateChildFolders
       parameters:
         - name: user-id
@@ -528,11 +546,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List contacts
-      description: 'Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders.childFolders_ListContacts
       parameters:
         - name: user-id
@@ -731,11 +746,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create contact
-      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: users.contactFolders.childFolders_CreateContacts
       parameters:
         - name: user-id
@@ -2880,11 +2891,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List contacts
-      description: 'Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_ListContacts
       parameters:
         - name: user-id
@@ -3075,11 +3083,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create contact
-      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: users.contactFolders_CreateContacts
       parameters:
         - name: user-id
@@ -4960,11 +4964,8 @@ paths:
     get:
       tags:
         - users.contact
-      summary: List contacts
-      description: 'Get a contact collection from the default contacts folder of the signed-in user. There are two scenarios where an app can get contacts in another user''s contact folder:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The user's contacts. Read-only. Nullable.
       operationId: users_ListContacts
       parameters:
         - name: user-id
@@ -5120,6 +5121,22 @@ paths:
                 - photo
                 - singleValueExtendedProperties
               type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
       responses:
         '200':
           $ref: '#/components/responses/microsoft.graph.contactCollectionResponse'
@@ -5132,11 +5149,7 @@ paths:
     post:
       tags:
         - users.contact
-      summary: Create contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: users_CreateContacts
       parameters:
         - name: user-id
@@ -5236,6 +5249,22 @@ paths:
                 - yomiCompanyName
                 - yomiGivenName
                 - yomiSurname
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
                 - extensions
                 - multiValueExtendedProperties
                 - photo

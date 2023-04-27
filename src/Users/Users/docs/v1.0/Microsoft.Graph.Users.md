@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: a3004618-00ab-4401-b90e-066f3f72ef11
+Module Guid: 8b847fe7-8661-473c-9611-2d588b0e89db
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -19,11 +19,20 @@ Directory objects that were created by the user.
 Read-only.
 Nullable.
 
+### [Get-MgUserCreatedObjectAsServicePrincipal](Get-MgUserCreatedObjectAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
 ### [Get-MgUserDirectReport](Get-MgUserDirectReport.md)
 The users and contacts that report to the user.
 (The users and contacts that have their manager property set to this user.) Read-only.
 Nullable.
 Supports $expand.
+
+### [Get-MgUserDirectReportAsOrgContact](Get-MgUserDirectReportAsOrgContact.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Get-MgUserDirectReportAsUser](Get-MgUserDirectReportAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgUserExtension](Get-MgUserExtension.md)
 The collection of open extensions defined for the user.
@@ -36,18 +45,28 @@ A collection of this user's license details.
 Read-only.
 
 ### [Get-MgUserManager](Get-MgUserManager.md)
-Returns the user or organizational contact assigned as the user's manager.
-Optionally, you can expand the manager's chain up to the root node.
+The user or contact that is this user's manager.
+Read-only.
+(HTTP Methods: GET, PUT, DELETE.).
+Supports $expand.
 
 ### [Get-MgUserManagerByRef](Get-MgUserManagerByRef.md)
-Returns the user or organizational contact assigned as the user's manager.
-Optionally, you can expand the manager's chain up to the root node.
+The user or contact that is this user's manager.
+Read-only.
+(HTTP Methods: GET, PUT, DELETE.).
+Supports $expand.
 
 ### [Get-MgUserMemberOf](Get-MgUserMemberOf.md)
 The groups and directory roles that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.
+
+### [Get-MgUserMemberOfAsAdministrativeUnit](Get-MgUserMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgUserMemberOfAsGroup](Get-MgUserMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgUserOauth2PermissionGrant](Get-MgUserOauth2PermissionGrant.md)
 Get oauth2PermissionGrants from users
@@ -61,11 +80,29 @@ Read-only.
 Nullable.
 Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
+### [Get-MgUserOwnedDeviceAsAppRoleAssignment](Get-MgUserOwnedDeviceAsAppRoleAssignment.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
+
+### [Get-MgUserOwnedDeviceAsDevice](Get-MgUserOwnedDeviceAsDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Get-MgUserOwnedDeviceAsEndpoint](Get-MgUserOwnedDeviceAsEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
 ### [Get-MgUserOwnedObject](Get-MgUserOwnedObject.md)
 Directory objects that are owned by the user.
 Read-only.
 Nullable.
 Supports $expand.
+
+### [Get-MgUserOwnedObjectAsApplication](Get-MgUserOwnedObjectAsApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Get-MgUserOwnedObjectAsGroup](Get-MgUserOwnedObjectAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Get-MgUserOwnedObjectAsServicePrincipal](Get-MgUserOwnedObjectAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
 
 ### [Get-MgUserPhoto](Get-MgUserPhoto.md)
 The user's profile photo.
@@ -80,11 +117,20 @@ Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgUserRegisteredDeviceAsAppRoleAssignment](Get-MgUserRegisteredDeviceAsAppRoleAssignment.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
+
+### [Get-MgUserRegisteredDeviceAsDevice](Get-MgUserRegisteredDeviceAsDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Get-MgUserRegisteredDeviceAsEndpoint](Get-MgUserRegisteredDeviceAsEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
 ### [Get-MgUserSetting](Get-MgUserSetting.md)
 Get settings from users
 
 ### [Get-MgUserSettingShiftPreference](Get-MgUserSettingShiftPreference.md)
-Retrieve the properties and relationships of a shiftPreferences object by ID.
+Get shiftPreferences from users
 
 ### [Get-MgUserTodoList](Get-MgUserTodoList.md)
 The task lists in the users mailbox.
@@ -124,6 +170,12 @@ A collection of resources linked to the task.
 The groups, including nested groups, and directory roles that a user is a member of.
 Nullable.
 
+### [Get-MgUserTransitiveMemberOfAsAdministrativeUnit](Get-MgUserTransitiveMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgUserTransitiveMemberOfAsGroup](Get-MgUserTransitiveMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
 ### [New-MgUser](New-MgUser.md)
 Create a new user.\nThe request body contains the user to create.
 At a minimum, you must specify the required properties for the user.
@@ -133,21 +185,19 @@ You can optionally specify any other writable properties.
 Create new navigation property to extensions for users
 
 ### [New-MgUserOutlookMasterCategory](New-MgUserOutlookMasterCategory.md)
-Create an outlookCategory object in the user's master list of categories.
+Create new navigation property to masterCategories for users
 
 ### [New-MgUserTodoList](New-MgUserTodoList.md)
-Create a new lists object.
+Create new navigation property to lists for users
 
 ### [New-MgUserTodoListExtension](New-MgUserTodoListExtension.md)
 Create new navigation property to extensions for users
 
 ### [New-MgUserTodoListTask](New-MgUserTodoListTask.md)
-Create a new task object in a specified todoTaskList.
+Create new navigation property to tasks for users
 
 ### [New-MgUserTodoListTaskAttachment](New-MgUserTodoListTaskAttachment.md)
-Add a new taskFileAttachment object to a todoTask.
-This operation limits the size of the attachment you can add to under 3 MB.
-If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
+Create new navigation property to attachments for users
 
 ### [New-MgUserTodoListTaskChecklistItem](New-MgUserTodoListTaskChecklistItem.md)
 Create new navigation property to checklistItems for users
@@ -156,9 +206,7 @@ Create new navigation property to checklistItems for users
 Create new navigation property to extensions for users
 
 ### [New-MgUserTodoListTaskLinkedResource](New-MgUserTodoListTaskLinkedResource.md)
-Create a linkedResource object to associate a specified task with an item in a partner application.
-For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association.
-You can also create a **linkedResource** object while creating a task.
+Create new navigation property to linkedResources for users
 
 ### [Remove-MgUser](Remove-MgUser.md)
 Delete user.
@@ -177,6 +225,9 @@ Delete ref of navigation property manager for users
 
 ### [Remove-MgUserOutlookMasterCategory](Remove-MgUserOutlookMasterCategory.md)
 Delete navigation property masterCategories for users
+
+### [Remove-MgUserPhoto](Remove-MgUserPhoto.md)
+Delete navigation property photo for users
 
 ### [Remove-MgUserSetting](Remove-MgUserSetting.md)
 Delete navigation property settings for users
@@ -241,7 +292,7 @@ Update the navigation property photo in users
 Update the navigation property settings in users
 
 ### [Update-MgUserSettingShiftPreference](Update-MgUserSettingShiftPreference.md)
-Update the properties and relationships of a shiftPreferences object.
+Update the navigation property shiftPreferences in users
 
 ### [Update-MgUserTodoList](Update-MgUserTodoList.md)
 Update the navigation property lists in users

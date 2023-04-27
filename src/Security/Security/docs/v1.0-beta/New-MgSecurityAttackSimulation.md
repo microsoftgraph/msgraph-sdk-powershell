@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityAttackSimulation
 
 ## SYNOPSIS
-Create an attack simulation campaign for a tenant.
+Create new navigation property to simulations for security
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ New-MgSecurityAttackSimulation -BodyParameter <IMicrosoftGraphSimulation1> [-Con
 ```
 
 ## DESCRIPTION
-Create an attack simulation campaign for a tenant.
+Create new navigation property to simulations for security
 
 ## EXAMPLES
 

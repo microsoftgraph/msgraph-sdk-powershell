@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBookingBusinessService
 
 ## SYNOPSIS
-Create a new bookingService for the specified bookingBusiness.
+Create new navigation property to services for bookingBusinesses
 
 ## SYNTAX
 
@@ -51,7 +51,7 @@ New-MgBookingBusinessService -InputObject <IBookingsIdentity> [-AdditionalInform
 ```
 
 ## DESCRIPTION
-Create a new bookingService for the specified bookingBusiness.
+Create new navigation property to services for bookingBusinesses
 
 ## EXAMPLES
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -BookingBusinessId
-key: id of bookingBusiness
+The unique identifier of bookingBusiness
 
 ```yaml
 Type: System.String
@@ -663,18 +663,18 @@ DEFAULTREMINDERS <IMicrosoftGraphBookingReminder1[]>: The default set of reminde
   - `[Recipients <String>]`: 
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
-  - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
-  - `[BookingBusinessId <String>]`: key: id of bookingBusiness
-  - `[BookingCurrencyId <String>]`: key: id of bookingCurrency
-  - `[BookingCustomQuestionId <String>]`: key: id of bookingCustomQuestion
-  - `[BookingCustomerBaseId <String>]`: key: id of bookingCustomerBase
-  - `[BookingCustomerId <String>]`: key: id of bookingCustomer
-  - `[BookingServiceId <String>]`: key: id of bookingService
-  - `[BookingStaffMemberBaseId <String>]`: key: id of bookingStaffMemberBase
-  - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
-  - `[BusinessScenarioId <String>]`: key: id of businessScenario
-  - `[BusinessScenarioTaskId <String>]`: key: id of businessScenarioTask
-  - `[PlannerPlanConfigurationLocalizationId <String>]`: key: id of plannerPlanConfigurationLocalization
+  - `[BookingAppointmentId <String>]`: The unique identifier of bookingAppointment
+  - `[BookingBusinessId <String>]`: The unique identifier of bookingBusiness
+  - `[BookingCurrencyId <String>]`: The unique identifier of bookingCurrency
+  - `[BookingCustomQuestionId <String>]`: The unique identifier of bookingCustomQuestion
+  - `[BookingCustomerBaseId <String>]`: The unique identifier of bookingCustomerBase
+  - `[BookingCustomerId <String>]`: The unique identifier of bookingCustomer
+  - `[BookingServiceId <String>]`: The unique identifier of bookingService
+  - `[BookingStaffMemberBaseId <String>]`: The unique identifier of bookingStaffMemberBase
+  - `[BookingStaffMemberId <String>]`: The unique identifier of bookingStaffMember
+  - `[BusinessScenarioId <String>]`: The unique identifier of businessScenario
+  - `[BusinessScenarioTaskId <String>]`: The unique identifier of businessScenarioTask
+  - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
 
 SCHEDULINGPOLICY <IMicrosoftGraphBookingSchedulingPolicy>: This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

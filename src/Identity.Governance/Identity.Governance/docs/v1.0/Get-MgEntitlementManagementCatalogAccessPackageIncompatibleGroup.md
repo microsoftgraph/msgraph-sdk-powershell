@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementCatalogAccessPackageIncompatibleGroup
 
 ## SYNOPSIS
-Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+The groups whose members are ineligible to be assigned this access package.
 
 ## SYNTAX
 
@@ -20,7 +20,7 @@ Get-MgEntitlementManagementCatalogAccessPackageIncompatibleGroup -AccessPackageC
 ```
 
 ## DESCRIPTION
-Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+The groups whose members are ineligible to be assigned this access package.
 
 ## EXAMPLES
 
@@ -38,7 +38,7 @@ To learn about permissions for this resource, see the [permissions reference](/g
 ## PARAMETERS
 
 ### -AccessPackageCatalogId
-key: id of accessPackageCatalog
+The unique identifier of accessPackageCatalog
 
 ```yaml
 Type: System.String
@@ -53,7 +53,7 @@ Accept wildcard characters: False
 ```
 
 ### -AccessPackageId
-key: id of accessPackage
+The unique identifier of accessPackage
 
 ```yaml
 Type: System.String

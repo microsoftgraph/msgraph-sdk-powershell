@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgRoleManagementDirectoryRoleDefinition
 
 ## SYNOPSIS
-Create a new custom unifiedRoleDefinition object.
-This feature requires an Azure AD Premium P1 or P2 license.
+Create new navigation property to roleDefinitions for roleManagement
 
 ## SYNTAX
 
@@ -29,8 +28,7 @@ New-MgRoleManagementDirectoryRoleDefinition -BodyParameter <IMicrosoftGraphUnifi
 ```
 
 ## DESCRIPTION
-Create a new custom unifiedRoleDefinition object.
-This feature requires an Azure AD Premium P1 or P2 license.
+Create new navigation property to roleDefinitions for roleManagement
 
 ## EXAMPLES
 

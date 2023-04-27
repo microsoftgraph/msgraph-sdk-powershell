@@ -109,6 +109,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
+    "/planner/buckets/{plannerBucket-id}/tasks/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Planner.yml"
+    },
+    "/planner/buckets/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Planner.yml"
+    },
     "/planner/plans": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
@@ -149,6 +157,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
+    "/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/buckets/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Planner.yml"
+    },
     "/planner/plans/{plannerPlan-id}/details": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
@@ -174,6 +190,14 @@
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
     "/planner/plans/{plannerPlan-id}/tasks/{plannerTask-id}/progressTaskBoardFormat": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Planner.yml"
+    },
+    "/planner/plans/{plannerPlan-id}/tasks/microsoft.graph.delta()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Planner.yml"
+    },
+    "/planner/plans/microsoft.graph.delta()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
@@ -222,6 +246,10 @@
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
     "/planner/tasks/{plannerTask-id}/progressTaskBoardFormat": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Planner.yml"
+    },
+    "/planner/tasks/microsoft.graph.delta()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },

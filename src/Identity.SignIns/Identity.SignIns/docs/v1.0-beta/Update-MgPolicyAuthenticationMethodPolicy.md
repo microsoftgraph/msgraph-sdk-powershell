@@ -8,17 +8,18 @@ schema: 2.0.0
 # Update-MgPolicyAuthenticationMethodPolicy
 
 ## SYNOPSIS
-Update the properties of an authenticationMethodsPolicy object.
+Update the navigation property authenticationMethodsPolicy in policies
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgPolicyAuthenticationMethodPolicy [-AdditionalProperties <Hashtable>]
- [-AuthenticationMethodConfigurations <IMicrosoftGraphAuthenticationMethodConfiguration1[]>]
+ [-AuthenticationMethodConfigurations <IMicrosoftGraphAuthenticationMethodConfiguration[]>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
  [-PolicyMigrationState <String>] [-PolicyVersion <String>] [-ReconfirmationInDays <Int32>]
- [-RegistrationEnforcement <IMicrosoftGraphRegistrationEnforcement>] [-PassThru] [-Confirm] [-WhatIf]
+ [-RegistrationEnforcement <IMicrosoftGraphRegistrationEnforcement>]
+ [-SystemCredentialPreferences <IMicrosoftGraphSystemCredentialPreferences>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -29,7 +30,7 @@ Update-MgPolicyAuthenticationMethodPolicy -BodyParameter <IMicrosoftGraphAuthent
 ```
 
 ## DESCRIPTION
-Update the properties of an authenticationMethodsPolicy object.
+Update the navigation property authenticationMethodsPolicy in policies
 
 ## EXAMPLES
 
@@ -82,7 +83,7 @@ Automatically expanded on GET /policies/authenticationMethodsPolicy.
 To construct, please use Get-Help -Online and see NOTES section for AUTHENTICATIONMETHODCONFIGURATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodConfiguration1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationMethodConfiguration[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -246,6 +247,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SystemCredentialPreferences
+systemCredentialPreferences
+To construct, please use Get-Help -Online and see NOTES section for SYSTEMCREDENTIALPREFERENCES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSystemCredentialPreferences
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -297,7 +314,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-AUTHENTICATIONMETHODCONFIGURATIONS <IMicrosoftGraphAuthenticationMethodConfiguration1[]>: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+AUTHENTICATIONMETHODCONFIGURATIONS <IMicrosoftGraphAuthenticationMethodConfiguration[]>: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Groups of users that are excluded from a policy.
     - `[Id <String>]`: The object identifier of an Azure Active Directory user or group.
@@ -307,7 +324,7 @@ AUTHENTICATIONMETHODCONFIGURATIONS <IMicrosoftGraphAuthenticationMethodConfigura
 BODYPARAMETER <IMicrosoftGraphAuthenticationMethodsPolicy1>: authenticationMethodsPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AuthenticationMethodConfigurations <IMicrosoftGraphAuthenticationMethodConfiguration1[]>]`: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+  - `[AuthenticationMethodConfigurations <IMicrosoftGraphAuthenticationMethodConfiguration[]>]`: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Groups of users that are excluded from a policy.
       - `[Id <String>]`: The object identifier of an Azure Active Directory user or group.
@@ -330,6 +347,13 @@ BODYPARAMETER <IMicrosoftGraphAuthenticationMethodsPolicy1>: authenticationMetho
         - `[TargetedAuthenticationMethod <String>]`: The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
       - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
       - `[State <String>]`: advancedConfigState
+  - `[SystemCredentialPreferences <IMicrosoftGraphSystemCredentialPreferences>]`: systemCredentialPreferences
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Users and groups excluded from the preferred authentication method experience of the system.
+    - `[IncludeTargets <IMicrosoftGraphIncludeTarget[]>]`: Users and groups included in the preferred authentication method experience of the system.
+      - `[Id <String>]`: The ID of the entity targeted.
+      - `[TargetType <String>]`: authenticationMethodTargetType
+    - `[State <String>]`: advancedConfigState
 
 REGISTRATIONENFORCEMENT <IMicrosoftGraphRegistrationEnforcement>: registrationEnforcement
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -344,6 +368,16 @@ REGISTRATIONENFORCEMENT <IMicrosoftGraphRegistrationEnforcement>: registrationEn
       - `[TargetedAuthenticationMethod <String>]`: The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
     - `[SnoozeDurationInDays <Int32?>]`: Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
     - `[State <String>]`: advancedConfigState
+
+SYSTEMCREDENTIALPREFERENCES <IMicrosoftGraphSystemCredentialPreferences>: systemCredentialPreferences
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[ExcludeTargets <IMicrosoftGraphExcludeTarget[]>]`: Users and groups excluded from the preferred authentication method experience of the system.
+    - `[Id <String>]`: The object identifier of an Azure Active Directory user or group.
+    - `[TargetType <String>]`: authenticationMethodTargetType
+  - `[IncludeTargets <IMicrosoftGraphIncludeTarget[]>]`: Users and groups included in the preferred authentication method experience of the system.
+    - `[Id <String>]`: The ID of the entity targeted.
+    - `[TargetType <String>]`: authenticationMethodTargetType
+  - `[State <String>]`: advancedConfigState
 
 ## RELATED LINKS
 

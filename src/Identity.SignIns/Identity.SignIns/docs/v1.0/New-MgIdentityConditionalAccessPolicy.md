@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityConditionalAccessPolicy
 
 ## SYNOPSIS
-Create a new conditionalAccessPolicy.
+Create new navigation property to policies for identity
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgIdentityConditionalAccessPolicy -BodyParameter <IMicrosoftGraphConditional
 ```
 
 ## DESCRIPTION
-Create a new conditionalAccessPolicy.
+Create new navigation property to policies for identity
 
 ## EXAMPLES
 
@@ -391,16 +391,36 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy>: conditionalAccessPolicy
     - `[Users <IMicrosoftGraphConditionalAccessUsers>]`: conditionalAccessUsers
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExcludeGroups <String[]>]`: Group IDs excluded from scope of policy.
+      - `[ExcludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[ExternalTenants <IMicrosoftGraphConditionalAccessExternalTenants>]`: conditionalAccessExternalTenants
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[MembershipKind <String>]`: conditionalAccessExternalTenantsMembershipKind
+        - `[GuestOrExternalUserTypes <String>]`: conditionalAccessGuestOrExternalUserTypes
       - `[ExcludeRoles <String[]>]`: Role IDs excluded from scope of policy.
       - `[ExcludeUsers <String[]>]`: User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
-      - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded, or All.
-      - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded, or All.
-      - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
+      - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded.
+      - `[IncludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
+      - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded.
+      - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
   - `[Description <String>]`: 
   - `[DisplayName <String>]`: Specifies a display name for the conditionalAccessPolicy object.
   - `[GrantControls <IMicrosoftGraphConditionalAccessGrantControls>]`: conditionalAccessGrantControls
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[AuthenticationStrength <IMicrosoftGraphAuthenticationStrengthPolicy>]`: authenticationStrengthPolicy
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AllowedCombinations <String[]>]`: A collection of authentication method modes that are required be used to satify this authentication strength.
+      - `[CombinationConfigurations <IMicrosoftGraphAuthenticationCombinationConfiguration[]>]`: Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[AppliesToCombinations <String[]>]`: Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
+      - `[CreatedDateTime <DateTime?>]`: The datetime when this policy was created.
+      - `[Description <String>]`: The human-readable description of this policy.
+      - `[DisplayName <String>]`: The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
+      - `[ModifiedDateTime <DateTime?>]`: The datetime when this policy was last modified.
+      - `[PolicyType <String>]`: authenticationStrengthPolicyType
+      - `[RequirementsSatisfied <String>]`: authenticationStrengthRequirements
     - `[BuiltInControls <String[]>]`: List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
     - `[CustomAuthenticationFactors <String[]>]`: List of custom controls IDs required by the policy. For more information, see Custom controls.
     - `[Operator <String>]`: Defines the relationship of the grant controls. Possible values: AND, OR.
@@ -462,14 +482,34 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet>: conditionalAccessCond
   - `[Users <IMicrosoftGraphConditionalAccessUsers>]`: conditionalAccessUsers
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ExcludeGroups <String[]>]`: Group IDs excluded from scope of policy.
+    - `[ExcludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[ExternalTenants <IMicrosoftGraphConditionalAccessExternalTenants>]`: conditionalAccessExternalTenants
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[MembershipKind <String>]`: conditionalAccessExternalTenantsMembershipKind
+      - `[GuestOrExternalUserTypes <String>]`: conditionalAccessGuestOrExternalUserTypes
     - `[ExcludeRoles <String[]>]`: Role IDs excluded from scope of policy.
     - `[ExcludeUsers <String[]>]`: User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
-    - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded, or All.
-    - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded, or All.
-    - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
+    - `[IncludeGroups <String[]>]`: Group IDs in scope of policy unless explicitly excluded.
+    - `[IncludeGuestsOrExternalUsers <IMicrosoftGraphConditionalAccessGuestsOrExternalUsers>]`: conditionalAccessGuestsOrExternalUsers
+    - `[IncludeRoles <String[]>]`: Role IDs in scope of policy unless explicitly excluded.
+    - `[IncludeUsers <String[]>]`: User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.
 
 GRANTCONTROLS <IMicrosoftGraphConditionalAccessGrantControls>: conditionalAccessGrantControls
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[AuthenticationStrength <IMicrosoftGraphAuthenticationStrengthPolicy>]`: authenticationStrengthPolicy
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AllowedCombinations <String[]>]`: A collection of authentication method modes that are required be used to satify this authentication strength.
+    - `[CombinationConfigurations <IMicrosoftGraphAuthenticationCombinationConfiguration[]>]`: Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AppliesToCombinations <String[]>]`: Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
+    - `[CreatedDateTime <DateTime?>]`: The datetime when this policy was created.
+    - `[Description <String>]`: The human-readable description of this policy.
+    - `[DisplayName <String>]`: The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
+    - `[ModifiedDateTime <DateTime?>]`: The datetime when this policy was last modified.
+    - `[PolicyType <String>]`: authenticationStrengthPolicyType
+    - `[RequirementsSatisfied <String>]`: authenticationStrengthRequirements
   - `[BuiltInControls <String[]>]`: List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
   - `[CustomAuthenticationFactors <String[]>]`: List of custom controls IDs required by the policy. For more information, see Custom controls.
   - `[Operator <String>]`: Defines the relationship of the grant controls. Possible values: AND, OR.

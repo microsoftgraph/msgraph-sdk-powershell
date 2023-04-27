@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.ManagedTenants
-Module Guid: 47a7cb02-9ab2-44e7-b1ea-6bf091e9ac89
+Module Guid: 42c6d4a4-7863-4c50-b156-4acd5db95a5d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants
 Help Version: 1.0.0.0
 Locale: en-US
@@ -50,6 +50,9 @@ Get managedTenantApiNotifications from tenantRelationships
 ### [Get-MgTenantRelationshipManagedTenantApiNotificationAlert](Get-MgTenantRelationshipManagedTenantApiNotificationAlert.md)
 Get alert from tenantRelationships
 
+### [Get-MgTenantRelationshipManagedTenantAppPerformance](Get-MgTenantRelationshipManagedTenantAppPerformance.md)
+Get appPerformances from tenantRelationships
+
 ### [Get-MgTenantRelationshipManagedTenantAuditEvent](Get-MgTenantRelationshipManagedTenantAuditEvent.md)
 The collection of audit events across managed tenants.
 
@@ -74,8 +77,14 @@ The collection of tenant level customized information across managed tenants.
 ### [Get-MgTenantRelationshipManagedTenantDetailedInformation](Get-MgTenantRelationshipManagedTenantDetailedInformation.md)
 The collection tenant level detailed information across managed tenants.
 
+### [Get-MgTenantRelationshipManagedTenantDeviceAppPerformance](Get-MgTenantRelationshipManagedTenantDeviceAppPerformance.md)
+Get deviceAppPerformances from tenantRelationships
+
 ### [Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Get-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Summary information for device compliance policy setting states across managed tenants.
+
+### [Get-MgTenantRelationshipManagedTenantDeviceHealthStatuses](Get-MgTenantRelationshipManagedTenantDeviceHealthStatuses.md)
+Get deviceHealthStatuses from tenantRelationships
 
 ### [Get-MgTenantRelationshipManagedTenantEmailNotification](Get-MgTenantRelationshipManagedTenantEmailNotification.md)
 Get managedTenantEmailNotifications from tenantRelationships
@@ -176,6 +185,9 @@ Create new navigation property to managedTenantAlertRuleDefinitions for tenantRe
 ### [New-MgTenantRelationshipManagedTenantApiNotification](New-MgTenantRelationshipManagedTenantApiNotification.md)
 Create new navigation property to managedTenantApiNotifications for tenantRelationships
 
+### [New-MgTenantRelationshipManagedTenantAppPerformance](New-MgTenantRelationshipManagedTenantAppPerformance.md)
+Create new navigation property to appPerformances for tenantRelationships
+
 ### [New-MgTenantRelationshipManagedTenantAuditEvent](New-MgTenantRelationshipManagedTenantAuditEvent.md)
 Create new navigation property to auditEvents for tenantRelationships
 
@@ -200,8 +212,14 @@ Create new navigation property to tenantsCustomizedInformation for tenantRelatio
 ### [New-MgTenantRelationshipManagedTenantDetailedInformation](New-MgTenantRelationshipManagedTenantDetailedInformation.md)
 Create new navigation property to tenantsDetailedInformation for tenantRelationships
 
+### [New-MgTenantRelationshipManagedTenantDeviceAppPerformance](New-MgTenantRelationshipManagedTenantDeviceAppPerformance.md)
+Create new navigation property to deviceAppPerformances for tenantRelationships
+
 ### [New-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](New-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Create new navigation property to deviceCompliancePolicySettingStateSummaries for tenantRelationships
+
+### [New-MgTenantRelationshipManagedTenantDeviceHealthStatuses](New-MgTenantRelationshipManagedTenantDeviceHealthStatuses.md)
+Create new navigation property to deviceHealthStatuses for tenantRelationships
 
 ### [New-MgTenantRelationshipManagedTenantEmailNotification](New-MgTenantRelationshipManagedTenantEmailNotification.md)
 Create new navigation property to managedTenantEmailNotifications for tenantRelationships
@@ -249,7 +267,7 @@ Create new navigation property to deployments for tenantRelationships
 Create new navigation property to myRoles for tenantRelationships
 
 ### [New-MgTenantRelationshipManagedTenantTag](New-MgTenantRelationshipManagedTenantTag.md)
-Create a new tenantTag object.
+Create new navigation property to tenantTags for tenantRelationships
 
 ### [New-MgTenantRelationshipManagedTenantTicketingEndpoint](New-MgTenantRelationshipManagedTenantTicketingEndpoint.md)
 Create new navigation property to managedTenantTicketingEndpoints for tenantRelationships
@@ -281,6 +299,9 @@ Delete navigation property managedTenantAlertRuleDefinitions for tenantRelations
 ### [Remove-MgTenantRelationshipManagedTenantApiNotification](Remove-MgTenantRelationshipManagedTenantApiNotification.md)
 Delete navigation property managedTenantApiNotifications for tenantRelationships
 
+### [Remove-MgTenantRelationshipManagedTenantAppPerformance](Remove-MgTenantRelationshipManagedTenantAppPerformance.md)
+Delete navigation property appPerformances for tenantRelationships
+
 ### [Remove-MgTenantRelationshipManagedTenantAuditEvent](Remove-MgTenantRelationshipManagedTenantAuditEvent.md)
 Delete navigation property auditEvents for tenantRelationships
 
@@ -305,8 +326,14 @@ Delete navigation property tenantsCustomizedInformation for tenantRelationships
 ### [Remove-MgTenantRelationshipManagedTenantDetailedInformation](Remove-MgTenantRelationshipManagedTenantDetailedInformation.md)
 Delete navigation property tenantsDetailedInformation for tenantRelationships
 
+### [Remove-MgTenantRelationshipManagedTenantDeviceAppPerformance](Remove-MgTenantRelationshipManagedTenantDeviceAppPerformance.md)
+Delete navigation property deviceAppPerformances for tenantRelationships
+
 ### [Remove-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Remove-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Delete navigation property deviceCompliancePolicySettingStateSummaries for tenantRelationships
+
+### [Remove-MgTenantRelationshipManagedTenantDeviceHealthStatuses](Remove-MgTenantRelationshipManagedTenantDeviceHealthStatuses.md)
+Delete navigation property deviceHealthStatuses for tenantRelationships
 
 ### [Remove-MgTenantRelationshipManagedTenantEmailNotification](Remove-MgTenantRelationshipManagedTenantEmailNotification.md)
 Delete navigation property managedTenantEmailNotifications for tenantRelationships
@@ -386,6 +413,9 @@ Update the navigation property managedTenantAlertRuleDefinitions in tenantRelati
 ### [Update-MgTenantRelationshipManagedTenantApiNotification](Update-MgTenantRelationshipManagedTenantApiNotification.md)
 Update the navigation property managedTenantApiNotifications in tenantRelationships
 
+### [Update-MgTenantRelationshipManagedTenantAppPerformance](Update-MgTenantRelationshipManagedTenantAppPerformance.md)
+Update the navigation property appPerformances in tenantRelationships
+
 ### [Update-MgTenantRelationshipManagedTenantAuditEvent](Update-MgTenantRelationshipManagedTenantAuditEvent.md)
 Update the navigation property auditEvents in tenantRelationships
 
@@ -410,8 +440,14 @@ Update the navigation property tenantsCustomizedInformation in tenantRelationshi
 ### [Update-MgTenantRelationshipManagedTenantDetailedInformation](Update-MgTenantRelationshipManagedTenantDetailedInformation.md)
 Update the navigation property tenantsDetailedInformation in tenantRelationships
 
+### [Update-MgTenantRelationshipManagedTenantDeviceAppPerformance](Update-MgTenantRelationshipManagedTenantDeviceAppPerformance.md)
+Update the navigation property deviceAppPerformances in tenantRelationships
+
 ### [Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary](Update-MgTenantRelationshipManagedTenantDeviceCompliancePolicySettingStateSummary.md)
 Update the navigation property deviceCompliancePolicySettingStateSummaries in tenantRelationships
+
+### [Update-MgTenantRelationshipManagedTenantDeviceHealthStatuses](Update-MgTenantRelationshipManagedTenantDeviceHealthStatuses.md)
+Update the navigation property deviceHealthStatuses in tenantRelationships
 
 ### [Update-MgTenantRelationshipManagedTenantEmailNotification](Update-MgTenantRelationshipManagedTenantEmailNotification.md)
 Update the navigation property managedTenantEmailNotifications in tenantRelationships

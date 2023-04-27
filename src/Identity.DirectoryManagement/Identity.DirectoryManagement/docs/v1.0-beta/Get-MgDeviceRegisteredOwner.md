@@ -10,7 +10,6 @@ schema: 2.0.0
 ## SYNOPSIS
 The user that cloud joined the device or registered their personal device.
 The registered owner is set at the time of registration.
-Currently, there can be only one owner.
 Read-only.
 Nullable.
 Supports $expand.
@@ -26,7 +25,6 @@ Get-MgDeviceRegisteredOwner -DeviceId <String> [-ExpandProperty <String[]>] [-Fi
 ## DESCRIPTION
 The user that cloud joined the device or registered their personal device.
 The registered owner is set at the time of registration.
-Currently, there can be only one owner.
 Read-only.
 Nullable.
 Supports $expand.
@@ -92,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceId
-key: id of device
+The unique identifier of device
 
 ```yaml
 Type: System.String

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyAuthorizationPolicy
 
 ## SYNOPSIS
-Update the properties of an authorizationPolicy object.
+Update the navigation property authorizationPolicy in policies
 
 ## SYNTAX
 
@@ -16,7 +16,7 @@ Update the properties of an authorizationPolicy object.
 ```
 Update-MgPolicyAuthorizationPolicy [-AdditionalProperties <Hashtable>]
  [-AllowedToSignUpEmailBasedSubscriptions] [-AllowedToUseSspr] [-AllowEmailVerifiedUsersToJoinOrganization]
- [-AllowInvitesFrom <String>] [-BlockMsolPowerShell]
+ [-AllowInvitesFrom <String>] [-AllowUserConsentForRiskyApps] [-BlockMsolPowerShell]
  [-DefaultUserRolePermissions <IMicrosoftGraphDefaultUserRolePermissions>] [-DeletedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-GuestUserRoleId <String>] [-Id <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -29,7 +29,7 @@ Update-MgPolicyAuthorizationPolicy -BodyParameter <IMicrosoftGraphAuthorizationP
 ```
 
 ## DESCRIPTION
-Update the properties of an authorizationPolicy object.
+Update the navigation property authorizationPolicy in policies
 
 ## EXAMPLES
 
@@ -100,6 +100,21 @@ allowInvitesFrom
 
 ```yaml
 Type: System.String
+Parameter Sets: UpdateExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowUserConsentForRiskyApps
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: UpdateExpanded1
 Aliases:
 
@@ -313,6 +328,7 @@ BODYPARAMETER <IMicrosoftGraphAuthorizationPolicy>: authorizationPolicy
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AllowEmailVerifiedUsersToJoinOrganization <Boolean?>]`: Indicates whether a user can join the tenant by email validation.
   - `[AllowInvitesFrom <String>]`: allowInvitesFrom
+  - `[AllowUserConsentForRiskyApps <Boolean?>]`: 
   - `[AllowedToSignUpEmailBasedSubscriptions <Boolean?>]`: Indicates whether users can sign up for email based subscriptions.
   - `[AllowedToUseSspr <Boolean?>]`: Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
   - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
@@ -320,6 +336,7 @@ BODYPARAMETER <IMicrosoftGraphAuthorizationPolicy>: authorizationPolicy
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedToCreateApps <Boolean?>]`: Indicates whether the default user role can create applications.
     - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups.
+    - `[AllowedToReadBitlockerKeysForOwnedDevice <Boolean?>]`: Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
     - `[AllowedToReadOtherUsers <Boolean?>]`: Indicates whether the default user role can read other users.
     - `[PermissionGrantPoliciesAssigned <String[]>]`: Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
   - `[GuestUserRoleId <String>]`: Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
@@ -328,6 +345,7 @@ DEFAULTUSERROLEPERMISSIONS <IMicrosoftGraphDefaultUserRolePermissions>: defaultU
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedToCreateApps <Boolean?>]`: Indicates whether the default user role can create applications.
   - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups.
+  - `[AllowedToReadBitlockerKeysForOwnedDevice <Boolean?>]`: Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
   - `[AllowedToReadOtherUsers <Boolean?>]`: Indicates whether the default user role can read other users.
   - `[PermissionGrantPoliciesAssigned <String[]>]`: Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
 

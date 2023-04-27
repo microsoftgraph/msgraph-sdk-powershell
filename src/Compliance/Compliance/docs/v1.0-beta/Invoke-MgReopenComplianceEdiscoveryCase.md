@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgReopenComplianceEdiscoveryCase
 
 ## SYNOPSIS
-Reopen an eDiscovery case that was closed.
-For details, see Reopen a closed case.
+Invoke action reopen
 
 ## SYNTAX
 
@@ -25,8 +24,7 @@ Invoke-MgReopenComplianceEdiscoveryCase -InputObject <IComplianceIdentity> [-Pas
 ```
 
 ## DESCRIPTION
-Reopen an eDiscovery case that was closed.
-For details, see Reopen a closed case.
+Invoke action reopen
 
 ## EXAMPLES
 
@@ -42,7 +40,7 @@ To learn about permissions for this resource, see the [permissions reference](/g
 ## PARAMETERS
 
 ### -CaseId
-key: id of case
+The unique identifier of case
 
 ```yaml
 Type: System.String
@@ -139,20 +137,20 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IComplianceIdentity>: Identity Parameter
-  - `[CaseId <String>]`: key: id of case
-  - `[CaseOperationId <String>]`: key: id of caseOperation
-  - `[CustodianId <String>]`: key: id of custodian
-  - `[DataSourceId <String>]`: key: id of dataSource
-  - `[LegalHoldId <String>]`: key: id of legalHold
-  - `[NoncustodialDataSourceId <String>]`: key: id of noncustodialDataSource
-  - `[ReviewSetId <String>]`: key: id of reviewSet
-  - `[ReviewSetQueryId <String>]`: key: id of reviewSetQuery
-  - `[SiteSourceId <String>]`: key: id of siteSource
-  - `[SourceCollectionId <String>]`: key: id of sourceCollection
-  - `[TagId <String>]`: key: id of tag
-  - `[TagId1 <String>]`: key: id of tag
-  - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
-  - `[UserSourceId <String>]`: key: id of userSource
+  - `[CaseId <String>]`: The unique identifier of case
+  - `[CaseOperationId <String>]`: The unique identifier of caseOperation
+  - `[CustodianId <String>]`: The unique identifier of custodian
+  - `[DataSourceId <String>]`: The unique identifier of dataSource
+  - `[LegalHoldId <String>]`: The unique identifier of legalHold
+  - `[NoncustodialDataSourceId <String>]`: The unique identifier of noncustodialDataSource
+  - `[ReviewSetId <String>]`: The unique identifier of reviewSet
+  - `[ReviewSetQueryId <String>]`: The unique identifier of reviewSetQuery
+  - `[SiteSourceId <String>]`: The unique identifier of siteSource
+  - `[SourceCollectionId <String>]`: The unique identifier of sourceCollection
+  - `[TagId <String>]`: The unique identifier of tag
+  - `[TagId1 <String>]`: The unique identifier of tag
+  - `[UnifiedGroupSourceId <String>]`: The unique identifier of unifiedGroupSource
+  - `[UserSourceId <String>]`: The unique identifier of userSource
 
 ## RELATED LINKS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: 0b30ee40-14fc-4ef3-a51b-73a7d5c11861
+Module Guid: 6fddcf7f-e8e5-4d63-ab8b-b854e4c5ab49
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -41,10 +41,54 @@ Represents an identity used to identify who is responsible for the activity.
 Get operations from external
 
 ### [Get-MgExternalConnectionQuota](Get-MgExternalConnectionQuota.md)
-Retrieve the properties and relationships of a connectionQuota object.
+Get quota from external
 
 ### [Get-MgExternalConnectionSchema](Get-MgExternalConnectionSchema.md)
-Retrieve the properties of a schema for an externalConnection.
+Get schema from external
+
+### [Get-MgExternalIndustryData](Get-MgExternalIndustryData.md)
+Get industryData from external
+
+### [Get-MgExternalIndustryDataConnector](Get-MgExternalIndustryDataConnector.md)
+Set of connectors for importing data from source systems.
+
+### [Get-MgExternalIndustryDataConnectorSourceSystem](Get-MgExternalIndustryDataConnectorSourceSystem.md)
+The sourceSystemDefinition this connector is connected to.
+
+### [Get-MgExternalIndustryDataInboundFlow](Get-MgExternalIndustryDataInboundFlow.md)
+Set of data import flow activities to bring data into the canonical store via a connector.
+
+### [Get-MgExternalIndustryDataInboundFlowDataConnector](Get-MgExternalIndustryDataInboundFlowDataConnector.md)
+The data connector in the context of which this flow pulls in data from a source system.
+
+### [Get-MgExternalIndustryDataInboundFlowYear](Get-MgExternalIndustryDataInboundFlowYear.md)
+The year that the data brought in via this flow applies to.
+
+### [Get-MgExternalIndustryDataOperation](Get-MgExternalIndustryDataOperation.md)
+Set of ephemeral operations that the system runs currently.
+Read-only.
+
+### [Get-MgExternalIndustryDataReferenceDefinition](Get-MgExternalIndustryDataReferenceDefinition.md)
+Set of user modifiable system picker types.
+
+### [Get-MgExternalIndustryDataRoleGroup](Get-MgExternalIndustryDataRoleGroup.md)
+Set of groups of individual roles that makes role-based admin simpler.
+
+### [Get-MgExternalIndustryDataRun](Get-MgExternalIndustryDataRun.md)
+Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system.
+Read-only.
+
+### [Get-MgExternalIndustryDataRunActivity](Get-MgExternalIndustryDataRunActivity.md)
+The set of activities performed during the run.
+
+### [Get-MgExternalIndustryDataRunStatistics](Get-MgExternalIndustryDataRunStatistics.md)
+Invoke function getStatistics
+
+### [Get-MgExternalIndustryDataSourceSystem](Get-MgExternalIndustryDataSourceSystem.md)
+Set of source definitions that represents real-world external systems.
+
+### [Get-MgExternalIndustryDataYear](Get-MgExternalIndustryDataYear.md)
+Set of years represented in the system.
 
 ### [Get-MgSearchAcronym](Get-MgSearchAcronym.md)
 Administrative answer in Microsoft Search results to define common acronyms in a organization.
@@ -59,17 +103,16 @@ Get search
 Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 
 ### [Invoke-MgQuerySearch](Invoke-MgQuerySearch.md)
-Run a specified search query.
-Search results are provided in the response.
+Invoke action query
 
 ### [New-MgExternalConnection](New-MgExternalConnection.md)
-Create a new externalConnection.
+Create new navigation property to connections for external
 
 ### [New-MgExternalConnectionGroup](New-MgExternalConnectionGroup.md)
-Create a new externalGroup object.
+Create new navigation property to groups for external
 
 ### [New-MgExternalConnectionGroupMember](New-MgExternalConnectionGroupMember.md)
-Create a new externalGroupMember object.
+Create new navigation property to members for external
 
 ### [New-MgExternalConnectionItem](New-MgExternalConnectionItem.md)
 Create new navigation property to items for external
@@ -80,14 +123,35 @@ Create new navigation property to activities for external
 ### [New-MgExternalConnectionOperation](New-MgExternalConnectionOperation.md)
 Create new navigation property to operations for external
 
+### [New-MgExternalIndustryDataConnector](New-MgExternalIndustryDataConnector.md)
+Create new navigation property to dataConnectors for external
+
+### [New-MgExternalIndustryDataInboundFlow](New-MgExternalIndustryDataInboundFlow.md)
+Create new navigation property to inboundFlows for external
+
+### [New-MgExternalIndustryDataOperation](New-MgExternalIndustryDataOperation.md)
+Create new navigation property to operations for external
+
+### [New-MgExternalIndustryDataReferenceDefinition](New-MgExternalIndustryDataReferenceDefinition.md)
+Create new navigation property to referenceDefinitions for external
+
+### [New-MgExternalIndustryDataRoleGroup](New-MgExternalIndustryDataRoleGroup.md)
+Create new navigation property to roleGroups for external
+
+### [New-MgExternalIndustryDataSourceSystem](New-MgExternalIndustryDataSourceSystem.md)
+Create new navigation property to sourceSystems for external
+
+### [New-MgExternalIndustryDataYear](New-MgExternalIndustryDataYear.md)
+Create new navigation property to years for external
+
 ### [New-MgSearchAcronym](New-MgSearchAcronym.md)
-Create a new acronym object.
+Create new navigation property to acronyms for search
 
 ### [New-MgSearchBookmark](New-MgSearchBookmark.md)
-Create a new bookmark object.
+Create new navigation property to bookmarks for search
 
 ### [New-MgSearchQna](New-MgSearchQna.md)
-Create a new qna object.
+Create new navigation property to qnas for search
 
 ### [Remove-MgExternalConnection](Remove-MgExternalConnection.md)
 Delete navigation property connections for external
@@ -113,6 +177,27 @@ Delete navigation property quota for external
 ### [Remove-MgExternalConnectionSchema](Remove-MgExternalConnectionSchema.md)
 Delete navigation property schema for external
 
+### [Remove-MgExternalIndustryDataConnector](Remove-MgExternalIndustryDataConnector.md)
+Delete navigation property dataConnectors for external
+
+### [Remove-MgExternalIndustryDataInboundFlow](Remove-MgExternalIndustryDataInboundFlow.md)
+Delete navigation property inboundFlows for external
+
+### [Remove-MgExternalIndustryDataOperation](Remove-MgExternalIndustryDataOperation.md)
+Delete navigation property operations for external
+
+### [Remove-MgExternalIndustryDataReferenceDefinition](Remove-MgExternalIndustryDataReferenceDefinition.md)
+Delete navigation property referenceDefinitions for external
+
+### [Remove-MgExternalIndustryDataRoleGroup](Remove-MgExternalIndustryDataRoleGroup.md)
+Delete navigation property roleGroups for external
+
+### [Remove-MgExternalIndustryDataSourceSystem](Remove-MgExternalIndustryDataSourceSystem.md)
+Delete navigation property sourceSystems for external
+
+### [Remove-MgExternalIndustryDataYear](Remove-MgExternalIndustryDataYear.md)
+Delete navigation property years for external
+
 ### [Remove-MgSearchAcronym](Remove-MgSearchAcronym.md)
 Delete navigation property acronyms for search
 
@@ -121,6 +206,12 @@ Delete navigation property bookmarks for search
 
 ### [Remove-MgSearchQna](Remove-MgSearchQna.md)
 Delete navigation property qnas for search
+
+### [Set-MgExternalConnectionItem](Set-MgExternalConnectionItem.md)
+Update the navigation property items in external
+
+### [Test-MgExternalIndustryDataConnector](Test-MgExternalIndustryDataConnector.md)
+Invoke action validate
 
 ### [Update-MgExternal](Update-MgExternal.md)
 Update external
@@ -134,9 +225,6 @@ Update the navigation property groups in external
 ### [Update-MgExternalConnectionGroupMember](Update-MgExternalConnectionGroupMember.md)
 Update the navigation property members in external
 
-### [Update-MgExternalConnectionItem](Update-MgExternalConnectionItem.md)
-Update the navigation property items in external
-
 ### [Update-MgExternalConnectionItemActivity](Update-MgExternalConnectionItemActivity.md)
 Update the navigation property activities in external
 
@@ -147,7 +235,28 @@ Update the navigation property operations in external
 Update the navigation property quota in external
 
 ### [Update-MgExternalConnectionSchema](Update-MgExternalConnectionSchema.md)
-Update the properties of a schema for an externalConnection.
+Update the navigation property schema in external
+
+### [Update-MgExternalIndustryDataConnector](Update-MgExternalIndustryDataConnector.md)
+Update the navigation property dataConnectors in external
+
+### [Update-MgExternalIndustryDataInboundFlow](Update-MgExternalIndustryDataInboundFlow.md)
+Update the navigation property inboundFlows in external
+
+### [Update-MgExternalIndustryDataOperation](Update-MgExternalIndustryDataOperation.md)
+Update the navigation property operations in external
+
+### [Update-MgExternalIndustryDataReferenceDefinition](Update-MgExternalIndustryDataReferenceDefinition.md)
+Update the navigation property referenceDefinitions in external
+
+### [Update-MgExternalIndustryDataRoleGroup](Update-MgExternalIndustryDataRoleGroup.md)
+Update the navigation property roleGroups in external
+
+### [Update-MgExternalIndustryDataSourceSystem](Update-MgExternalIndustryDataSourceSystem.md)
+Update the navigation property sourceSystems in external
+
+### [Update-MgExternalIndustryDataYear](Update-MgExternalIndustryDataYear.md)
+Update the navigation property years in external
 
 ### [Update-MgSearchAcronym](Update-MgSearchAcronym.md)
 Update the navigation property acronyms in search

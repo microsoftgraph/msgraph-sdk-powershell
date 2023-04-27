@@ -15,6 +15,7 @@ Update the navigation property entitlementManagement in roleManagement
 ### UpdateExpanded1 (Default)
 ```
 Update-MgRoleManagementEntitlementManagement [-AdditionalProperties <Hashtable>] [-Id <String>]
+ [-ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]
  [-RoleAssignments <IMicrosoftGraphUnifiedRoleAssignment[]>]
  [-RoleAssignmentScheduleInstances <IMicrosoftGraphUnifiedRoleAssignmentScheduleInstance[]>]
  [-RoleAssignmentScheduleRequests <IMicrosoftGraphUnifiedRoleAssignmentScheduleRequest[]>]
@@ -92,6 +93,22 @@ Returns true when the command succeeds
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceNamespaces
+.
+To construct, please use Get-Help -Online and see NOTES section for RESOURCENAMESPACES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace[]
+Parameter Sets: UpdateExpanded1
 Aliases:
 
 Required: False
@@ -283,6 +300,17 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphRbacApplication1>: rbacApplication
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Name <String>]`: 
+    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[ActionVerb <String>]`: 
+      - `[AuthenticationContextId <String>]`: 
+      - `[Description <String>]`: 
+      - `[IsAuthenticationContextSettable <Boolean?>]`: 
+      - `[Name <String>]`: 
+      - `[ResourceScopeId <String>]`: 
   - `[RoleAssignmentScheduleInstances <IMicrosoftGraphUnifiedRoleAssignmentScheduleInstance[]>]`: Instances for active role assignments.
     - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -466,6 +494,18 @@ BODYPARAMETER <IMicrosoftGraphRbacApplication1>: rbacApplication
     - `[TargetScheduleId <String>]`: Identifier of the schedule object that's linked to the eligibility request. Supports $filter (eq, ne).
     - `[TicketInfo <IMicrosoftGraphTicketInfo>]`: ticketInfo
   - `[RoleEligibilitySchedules <IMicrosoftGraphUnifiedRoleEligibilitySchedule[]>]`: Schedules for role eligibility operations.
+
+RESOURCENAMESPACES <IMicrosoftGraphUnifiedRbacResourceNamespace[]>: .
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Name <String>]`: 
+  - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[ActionVerb <String>]`: 
+    - `[AuthenticationContextId <String>]`: 
+    - `[Description <String>]`: 
+    - `[IsAuthenticationContextSettable <Boolean?>]`: 
+    - `[Name <String>]`: 
+    - `[ResourceScopeId <String>]`: 
 
 ROLEASSIGNMENTS <IMicrosoftGraphUnifiedRoleAssignment[]>: Resource to grant access to users or groups.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.

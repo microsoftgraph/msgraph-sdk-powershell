@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: 0b30ee40-14fc-4ef3-a51b-73a7d5c11861
+Module Guid: 6fddcf7f-e8e5-4d63-ab8b-b854e4c5ab49
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -31,7 +31,7 @@ Get items from external
 Get operations from external
 
 ### [Get-MgExternalConnectionSchema](Get-MgExternalConnectionSchema.md)
-Read the properties and relationships of a schema object.
+Get schema from external
 
 ### [Get-MgSearchEntity](Get-MgSearchEntity.md)
 Get search
@@ -40,13 +40,13 @@ Get search
 Invoke action query
 
 ### [New-MgExternalConnection](New-MgExternalConnection.md)
-Create a new externalConnection object.
+Create new navigation property to connections for external
 
 ### [New-MgExternalConnectionGroup](New-MgExternalConnectionGroup.md)
-Create a new externalGroup object.
+Create new navigation property to groups for external
 
 ### [New-MgExternalConnectionGroupMember](New-MgExternalConnectionGroupMember.md)
-Create an identity resource for a new member in an externalGroup.
+Create new navigation property to members for external
 
 ### [New-MgExternalConnectionItem](New-MgExternalConnectionItem.md)
 Create new navigation property to items for external
@@ -72,6 +72,9 @@ Delete navigation property operations for external
 ### [Remove-MgExternalConnectionSchema](Remove-MgExternalConnectionSchema.md)
 Delete navigation property schema for external
 
+### [Set-MgExternalConnectionItem](Set-MgExternalConnectionItem.md)
+Update the navigation property items in external
+
 ### [Update-MgExternal](Update-MgExternal.md)
 Update external
 
@@ -83,9 +86,6 @@ Update the navigation property groups in external
 
 ### [Update-MgExternalConnectionGroupMember](Update-MgExternalConnectionGroupMember.md)
 Update the navigation property members in external
-
-### [Update-MgExternalConnectionItem](Update-MgExternalConnectionItem.md)
-Update the navigation property items in external
 
 ### [Update-MgExternalConnectionOperation](Update-MgExternalConnectionOperation.md)
 Update the navigation property operations in external

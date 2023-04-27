@@ -8,9 +8,8 @@ schema: 2.0.0
 # Get-MgGroupAcceptedSenderByRef
 
 ## SYNOPSIS
-Get a list of users or groups that are in the accepted-senders list for this group.
-Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).
-Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+The list of users or groups that are allowed to create post's or calendar events in this group.
+If this list is non-empty then only users or groups listed here are allowed to post.
 
 ## SYNTAX
 
@@ -20,9 +19,8 @@ Get-MgGroupAcceptedSenderByRef -GroupId <String> [-Filter <String>] [-Skip <Int3
 ```
 
 ## DESCRIPTION
-Get a list of users or groups that are in the accepted-senders list for this group.
-Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).
-Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+The list of users or groups that are allowed to create post's or calendar events in this group.
+If this list is non-empty then only users or groups listed here are allowed to post.
 
 ## EXAMPLES
 
@@ -86,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupId
-key: id of group
+The unique identifier of group
 
 ```yaml
 Type: System.String

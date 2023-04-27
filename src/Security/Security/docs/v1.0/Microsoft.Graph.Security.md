@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 81b10cc5-55bd-4d74-b961-37560f368cdf
+Module Guid: a07b2393-a9b3-4931-ac77-a1bc423871cf
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,33 +12,28 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Security Cmdlets
 ### [Add-MgSecurityCaseEdiscoveryCaseCustodianHold](Add-MgSecurityCaseEdiscoveryCaseCustodianHold.md)
-Start the process of applying hold on eDiscovery custodians.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
-The location provides a URL that will return an eDiscoveryHoldOperation object.
+Invoke action applyHold
 
 ### [Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Add-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
-Start the process of applying hold on eDiscovery non-custodial data sources.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
-The location provides a URL that will return an eDiscoveryHoldOperation object.
+Invoke action applyHold
 
 ### [Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag](Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag.md)
-Apply tags to files in an eDiscovery review set.
-For details, see Tag documents in a review set in eDiscovery.
+Invoke action applyTags
 
 ### [Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet](Add-MgSecurityCaseEdiscoveryCaseReviewSetToReviewSet.md)
-Start the process of adding a collection from Microsoft 365 services to a review set.
-After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers.
-The location provides a URL that will return a Add to review set operation.
+Invoke action addToReviewSet
 
 ### [Clear-MgSecurityCaseEdiscoveryCaseSearchData](Clear-MgSecurityCaseEdiscoveryCaseSearchData.md)
 Invoke action purgeData
 
 ### [Close-MgSecurityCaseEdiscoveryCase](Close-MgSecurityCaseEdiscoveryCase.md)
-Close an eDiscovery case.
-For details, see Close a case.
+Invoke action close
 
 ### [Get-MgSecurityAlert](Get-MgSecurityAlert.md)
 Get alerts from security
+
+### [Get-MgSecurityAlertV2](Get-MgSecurityAlertV2.md)
+A collection of alerts in Microsoft 365 Defender.
 
 ### [Get-MgSecurityAttackSimulation](Get-MgSecurityAttackSimulation.md)
 Get attackSimulation from security
@@ -59,7 +54,7 @@ Get ediscoveryCases from security
 Returns a list of case ediscoveryCustodian objects for this case.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation](Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation.md)
-Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
+Operation entity that represents the latest indexing for the custodian.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](Get-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Data source entity for SharePoint sites associated with the custodian.
@@ -105,13 +100,13 @@ Adds the results of the eDiscovery search to the specified reviewSet.
 Custodian sources that are included in the eDiscovery search.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation](Get-MgSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation.md)
-Get the last  ediscoveryEstimateOperation objects and their properties.
+The last estimate operation associated with the eDiscovery search.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource](Get-MgSecurityCaseEdiscoveryCaseSearchNoncustodialSource.md)
 noncustodialDataSource sources that are included in the eDiscovery search
 
 ### [Get-MgSecurityCaseEdiscoveryCaseSetting](Get-MgSecurityCaseEdiscoveryCaseSetting.md)
-Read the properties and relationships of an ediscoveryCaseSettings object.
+Returns a list of eDIscoverySettings objects in the case.
 
 ### [Get-MgSecurityCaseEdiscoveryCaseTag](Get-MgSecurityCaseEdiscoveryCaseTag.md)
 Returns a list of ediscoveryReviewTag objects associated to this case.
@@ -135,23 +130,38 @@ Get secureScores from security
 ### [Get-MgSecuritySecureScoreControlProfile](Get-MgSecuritySecureScoreControlProfile.md)
 Get secureScoreControlProfiles from security
 
+### [Get-MgSecurityTrigger](Get-MgSecurityTrigger.md)
+Get triggers from security
+
+### [Get-MgSecurityTriggerRetentionEvent](Get-MgSecurityTriggerRetentionEvent.md)
+Get retentionEvents from security
+
+### [Get-MgSecurityTriggerRetentionEventType](Get-MgSecurityTriggerRetentionEventType.md)
+Specifies the event that will start the retention period for labels that use this event type when an event is created.
+
+### [Get-MgSecurityTriggerType](Get-MgSecurityTriggerType.md)
+Get triggerTypes from security
+
+### [Get-MgSecurityTriggerTypeRetentionEventType](Get-MgSecurityTriggerTypeRetentionEventType.md)
+Get retentionEventTypes from security
+
 ### [Initialize-MgSecurityCaseEdiscoveryCaseCustodian](Initialize-MgSecurityCaseEdiscoveryCaseCustodian.md)
-Activate a custodian that has been released from a case to make them part of the case again.
-For details, see Manage custodians in an eDiscovery (Premium) case.
+Invoke action activate
 
 ### [Invoke-MgAsSecurityCaseEdiscoveryCaseTagHierarchy](Invoke-MgAsSecurityCaseEdiscoveryCaseTagHierarchy.md)
 Invoke function asHierarchy
 
 ### [Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics](Invoke-MgEstimateSecurityCaseEdiscoveryCaseSearchStatistics.md)
-Run an estimate of the number of emails and documents in the eDiscovery search.
-To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).
+Invoke action estimateStatistics
 
 ### [Invoke-MgReopenSecurityCaseEdiscoveryCase](Invoke-MgReopenSecurityCaseEdiscoveryCase.md)
-Reopen an eDiscovery case that was closed.
-For details, see Reopen a closed case.
+Invoke action reopen
 
 ### [New-MgSecurityAlert](New-MgSecurityAlert.md)
 Create new navigation property to alerts for security
+
+### [New-MgSecurityAlertV2](New-MgSecurityAlertV2.md)
+Create new navigation property to alerts_v2 for security
 
 ### [New-MgSecurityAttackSimulation](New-MgSecurityAttackSimulation.md)
 Create new navigation property to simulations for security
@@ -163,40 +173,40 @@ Create new navigation property to simulationAutomations for security
 Create new navigation property to runs for security
 
 ### [New-MgSecurityCaseEdiscoveryCase](New-MgSecurityCaseEdiscoveryCase.md)
-Create a new ediscoveryCase object.
+Create new navigation property to ediscoveryCases for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseCustodian](New-MgSecurityCaseEdiscoveryCaseCustodian.md)
-Create a new ediscoveryCustodian object.\nAfter the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
+Create new navigation property to custodians for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](New-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
-Create a new siteSource object associated with an eDiscovery custodian.
+Create new navigation property to siteSources for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource](New-MgSecurityCaseEdiscoveryCaseCustodianUnifiedGroupSource.md)
-Create a new unifiedGroupSource object associated with an eDiscovery custodian.
+Create new navigation property to unifiedGroupSources for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseCustodianUserSource](New-MgSecurityCaseEdiscoveryCaseCustodianUserSource.md)
-Create a new userSource object associated with an eDiscovery custodian.
+Create new navigation property to userSources for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource](New-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
-Create a new ediscoveryNoncustodialDataSource object.
+Create new navigation property to noncustodialDataSources for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseOperation](New-MgSecurityCaseEdiscoveryCaseOperation.md)
 Create new navigation property to operations for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseReviewSet](New-MgSecurityCaseEdiscoveryCaseReviewSet.md)
-Create a new ediscoveryReviewSet object.
+Create new navigation property to reviewSets for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseReviewSetQuery](New-MgSecurityCaseEdiscoveryCaseReviewSetQuery.md)
-Create a new ediscoveryReviewSetQuery object.
+Create new navigation property to queries for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseSearch](New-MgSecurityCaseEdiscoveryCaseSearch.md)
-Create a new ediscoverySearch object.
+Create new navigation property to searches for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource](New-MgSecurityCaseEdiscoveryCaseSearchAdditionalSource.md)
-Create a new additional source associated with an eDiscovery search.
+Create new navigation property to additionalSources for security
 
 ### [New-MgSecurityCaseEdiscoveryCaseTag](New-MgSecurityCaseEdiscoveryCaseTag.md)
-Create a new ediscoveryReviewTag object.
+Create new navigation property to tags for security
 
 ### [New-MgSecurityIncident](New-MgSecurityIncident.md)
 Create new navigation property to incidents for security
@@ -207,12 +217,20 @@ Create new navigation property to secureScores for security
 ### [New-MgSecuritySecureScoreControlProfile](New-MgSecuritySecureScoreControlProfile.md)
 Create new navigation property to secureScoreControlProfiles for security
 
+### [New-MgSecurityTriggerRetentionEvent](New-MgSecurityTriggerRetentionEvent.md)
+Create new navigation property to retentionEvents for security
+
+### [New-MgSecurityTriggerTypeRetentionEventType](New-MgSecurityTriggerTypeRetentionEventType.md)
+Create new navigation property to retentionEventTypes for security
+
 ### [Publish-MgSecurityCaseEdiscoveryCaseCustodian](Publish-MgSecurityCaseEdiscoveryCaseCustodian.md)
-Release a custodian from a case.
-For details, see Release a custodian from a case.
+Invoke action release
 
 ### [Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource](Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource.md)
-Release the non-custodial data source from the case.
+Invoke action release
+
+### [Remove-MgSecurityAlertV2](Remove-MgSecurityAlertV2.md)
+Delete navigation property alerts_v2 for security
 
 ### [Remove-MgSecurityAttackSimulation](Remove-MgSecurityAttackSimulation.md)
 Delete navigation property attackSimulation for security
@@ -233,9 +251,7 @@ Delete navigation property ediscoveryCases for security
 Delete navigation property custodians for security
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseCustodianHold](Remove-MgSecurityCaseEdiscoveryCaseCustodianHold.md)
-Start the process of removing hold from eDiscovery custodians.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
-The location provides a URL that will return an eDiscoveryHoldOperation object.
+Invoke action removeHold
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](Remove-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Delete navigation property siteSources for security
@@ -250,9 +266,7 @@ Delete navigation property userSources for security
 Delete navigation property noncustodialDataSources for security
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold](Remove-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceHold.md)
-Start the process of removing hold from eDiscovery non-custodial data sources.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
-The location provides a URL that will return an eDiscoveryHoldOperation object.
+Invoke action removeHold
 
 ### [Remove-MgSecurityCaseEdiscoveryCaseOperation](Remove-MgSecurityCaseEdiscoveryCaseOperation.md)
 Delete navigation property operations for security
@@ -284,14 +298,29 @@ Delete navigation property secureScores for security
 ### [Remove-MgSecuritySecureScoreControlProfile](Remove-MgSecuritySecureScoreControlProfile.md)
 Delete navigation property secureScoreControlProfiles for security
 
+### [Remove-MgSecurityTrigger](Remove-MgSecurityTrigger.md)
+Delete navigation property triggers for security
+
+### [Remove-MgSecurityTriggerRetentionEvent](Remove-MgSecurityTriggerRetentionEvent.md)
+Delete navigation property retentionEvents for security
+
+### [Remove-MgSecurityTriggerType](Remove-MgSecurityTriggerType.md)
+Delete navigation property triggerTypes for security
+
+### [Remove-MgSecurityTriggerTypeRetentionEventType](Remove-MgSecurityTriggerTypeRetentionEventType.md)
+Delete navigation property retentionEventTypes for security
+
 ### [Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault](Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault.md)
-Reset a caseSettings object to the default values.
+Invoke action resetToDefault
 
 ### [Start-MgSecurityHuntingQuery](Start-MgSecurityHuntingQuery.md)
 Invoke action runHuntingQuery
 
 ### [Update-MgSecurityAlert](Update-MgSecurityAlert.md)
 Update the navigation property alerts in security
+
+### [Update-MgSecurityAlertV2](Update-MgSecurityAlertV2.md)
+Update the navigation property alerts_v2 in security
 
 ### [Update-MgSecurityAttackSimulationAutomation](Update-MgSecurityAttackSimulationAutomation.md)
 Update the navigation property simulationAutomations in security
@@ -309,7 +338,7 @@ Update the navigation property ediscoveryCases in security
 Update the navigation property custodians in security
 
 ### [Update-MgSecurityCaseEdiscoveryCaseCustodianIndex](Update-MgSecurityCaseEdiscoveryCaseCustodianIndex.md)
-Trigger an indexOperation to make a custodian and associated sources searchable.
+Invoke action updateIndex
 
 ### [Update-MgSecurityCaseEdiscoveryCaseCustodianSiteSource](Update-MgSecurityCaseEdiscoveryCaseCustodianSiteSource.md)
 Update the navigation property siteSources in security
@@ -324,7 +353,7 @@ Update the navigation property userSources in security
 Update the navigation property noncustodialDataSources in security
 
 ### [Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex](Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex.md)
-Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
+Invoke action updateIndex
 
 ### [Update-MgSecurityCaseEdiscoveryCaseOperation](Update-MgSecurityCaseEdiscoveryCaseOperation.md)
 Update the navigation property operations in security
@@ -342,7 +371,7 @@ Update the navigation property searches in security
 Update the navigation property additionalSources in security
 
 ### [Update-MgSecurityCaseEdiscoveryCaseSetting](Update-MgSecurityCaseEdiscoveryCaseSetting.md)
-Update the properties of an ediscoveryCaseSettings object.
+Update the navigation property settings in security
 
 ### [Update-MgSecurityCaseEdiscoveryCaseTag](Update-MgSecurityCaseEdiscoveryCaseTag.md)
 Update the navigation property tags in security
@@ -355,4 +384,16 @@ Update the navigation property secureScores in security
 
 ### [Update-MgSecuritySecureScoreControlProfile](Update-MgSecuritySecureScoreControlProfile.md)
 Update the navigation property secureScoreControlProfiles in security
+
+### [Update-MgSecurityTrigger](Update-MgSecurityTrigger.md)
+Update the navigation property triggers in security
+
+### [Update-MgSecurityTriggerRetentionEvent](Update-MgSecurityTriggerRetentionEvent.md)
+Update the navigation property retentionEvents in security
+
+### [Update-MgSecurityTriggerType](Update-MgSecurityTriggerType.md)
+Update the navigation property triggerTypes in security
+
+### [Update-MgSecurityTriggerTypeRetentionEventType](Update-MgSecurityTriggerTypeRetentionEventType.md)
+Update the navigation property retentionEventTypes in security
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgApplicationTokenIssuancePolicyByRef
 
 ## SYNOPSIS
-List the tokenIssuancePolicy objects that are assigned to an application.
+Get ref of tokenIssuancePolicies from applications
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgApplicationTokenIssuancePolicyByRef -ApplicationId <String> [-Filter <Stri
 ```
 
 ## DESCRIPTION
-List the tokenIssuancePolicy objects that are assigned to an application.
+Get ref of tokenIssuancePolicies from applications
 
 ## EXAMPLES
 
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationId
-key: id of application
+The unique identifier of application
 
 ```yaml
 Type: System.String

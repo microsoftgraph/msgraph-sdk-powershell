@@ -8,18 +8,17 @@ schema: 2.0.0
 # Invoke-MgQuerySearch
 
 ## SYNOPSIS
-Run a specified search query.
-Search results are provided in the response.
+Invoke action query
 
 ## SYNTAX
 
-### QueryExpanded (Default)
+### QueryExpanded1 (Default)
 ```
-Invoke-MgQuerySearch [-AdditionalProperties <Hashtable>] [-Requests <IMicrosoftGraphSearchRequest[]>]
+Invoke-MgQuerySearch [-AdditionalProperties <Hashtable>] [-Requests <IMicrosoftGraphSearchRequest1[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Query
+### Query1
 ```
 Invoke-MgQuerySearch
  -BodyParameter <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema> [-Confirm]
@@ -27,8 +26,7 @@ Invoke-MgQuerySearch
 ```
 
 ## DESCRIPTION
-Run a specified search query.
-Search results are provided in the response.
+Invoke action query
 
 ## EXAMPLES
 
@@ -69,7 +67,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: QueryExpanded
+Parameter Sets: QueryExpanded1
 Aliases:
 
 Required: False
@@ -85,7 +83,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Query
+Parameter Sets: Query1
 Aliases:
 
 Required: True
@@ -100,8 +98,8 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for REQUESTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchRequest[]
-Parameter Sets: QueryExpanded
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchRequest1[]
+Parameter Sets: QueryExpanded1
 Aliases:
 
 Required: False
@@ -151,7 +149,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchResponse
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchResponse1
 
 ## NOTES
 
@@ -164,7 +162,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Requests <IMicrosoftGraphSearchRequest[]>]`: 
+  - `[Requests <IMicrosoftGraphSearchRequest1[]>]`: 
     - `[AggregationFilters <String[]>]`: Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
     - `[Aggregations <IMicrosoftGraphAggregationOption[]>]`: Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
       - `[BucketDefinition <IMicrosoftGraphBucketAggregationDefinition>]`: bucketAggregationDefinition
@@ -208,7 +206,7 @@ BODYPARAMETER <IPaths1Kd2XrlSearchMicrosoftGraphQueryPostRequestbodyContentAppli
     - `[StoredFields <String[]>]`: 
     - `[TrimDuplicates <Boolean?>]`: Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
 
-REQUESTS <IMicrosoftGraphSearchRequest[]>: .
+REQUESTS <IMicrosoftGraphSearchRequest1[]>: .
   - `[AggregationFilters <String[]>]`: Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
   - `[Aggregations <IMicrosoftGraphAggregationOption[]>]`: Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
     - `[BucketDefinition <IMicrosoftGraphBucketAggregationDefinition>]`: bucketAggregationDefinition

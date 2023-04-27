@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgServicePrincipalClaimMappingPolicy
 
 ## SYNOPSIS
-List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+The claimsMappingPolicies assigned to this service principal.
+Supports $expand.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgServicePrincipalClaimMappingPolicy -ServicePrincipalId <String> [-ExpandPr
 ```
 
 ## DESCRIPTION
-List the claimsMappingPolicy objects that are assigned to a servicePrincipal.
+The claimsMappingPolicies assigned to this service principal.
+Supports $expand.
 
 ## EXAMPLES
 
@@ -141,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalId
-key: id of servicePrincipal
+The unique identifier of servicePrincipal
 
 ```yaml
 Type: System.String

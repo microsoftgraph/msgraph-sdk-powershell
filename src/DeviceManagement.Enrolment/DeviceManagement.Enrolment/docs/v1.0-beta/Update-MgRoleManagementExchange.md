@@ -15,7 +15,7 @@ Update the navigation property exchange in roleManagement
 ### UpdateExpanded (Default)
 ```
 Update-MgRoleManagementExchange [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]
+ [-ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace1[]>]
  [-RoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]
  [-RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>]
  [-TransitiveRoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -98,11 +98,11 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceNamespaces
-.
+Resource that represents a collection of related actions.
 To construct, please use Get-Help -Online and see NOTES section for RESOURCENAMESPACES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace1[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleAssignments
-.
+Resource to grant access to users or groups.
 To construct, please use Get-Help -Online and see NOTES section for ROLEASSIGNMENTS properties and create a hash table.
 
 ```yaml
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoleDefinitions
-.
+The roles allowed by RBAC providers and the permissions assigned to the roles.
 To construct, please use Get-Help -Online and see NOTES section for ROLEDEFINITIONS properties and create a hash table.
 
 ```yaml
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -TransitiveRoleAssignments
-.
+Resource to grant access to users or groups that are transitive.
 To construct, please use Get-Help -Online and see NOTES section for TRANSITIVEROLEASSIGNMENTS properties and create a hash table.
 
 ```yaml
@@ -215,10 +215,10 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphUnifiedRbacApplication>: unifiedRbacApplication
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace1[]>]`: Resource that represents a collection of related actions.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: Operations that an authorized principal are allowed to perform.
+    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction1[]>]`: Operations that an authorized principal are allowed to perform.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
       - `[AuthenticationContextId <String>]`: 
@@ -232,7 +232,7 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRbacApplication>: unifiedRbacApplication
         - `[Scope <String>]`: 
         - `[Type <String>]`: 
       - `[ResourceScopeId <String>]`: Not implemented.
-  - `[RoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: 
+  - `[RoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: Resource to grant access to users or groups.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -253,6 +253,7 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRbacApplication>: unifiedRbacApplication
     - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
       - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
       - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
       - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -266,13 +267,13 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRbacApplication>: unifiedRbacApplication
       - `[TemplateId <String>]`: Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
       - `[Version <String>]`: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
     - `[RoleDefinitionId <String>]`: Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq operator only).
-  - `[RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>]`: 
-  - `[TransitiveRoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: 
+  - `[RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>]`: The roles allowed by RBAC providers and the permissions assigned to the roles.
+  - `[TransitiveRoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: Resource to grant access to users or groups that are transitive.
 
-RESOURCENAMESPACES <IMicrosoftGraphUnifiedRbacResourceNamespace[]>: .
+RESOURCENAMESPACES <IMicrosoftGraphUnifiedRbacResourceNamespace1[]>: Resource that represents a collection of related actions.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Name <String>]`: Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-  - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: Operations that an authorized principal are allowed to perform.
+  - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction1[]>]`: Operations that an authorized principal are allowed to perform.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
     - `[AuthenticationContextId <String>]`: 
@@ -287,7 +288,7 @@ RESOURCENAMESPACES <IMicrosoftGraphUnifiedRbacResourceNamespace[]>: .
       - `[Type <String>]`: 
     - `[ResourceScopeId <String>]`: Not implemented.
 
-ROLEASSIGNMENTS <IMicrosoftGraphUnifiedRoleAssignment1[]>: .
+ROLEASSIGNMENTS <IMicrosoftGraphUnifiedRoleAssignment1[]>: Resource to grant access to users or groups.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -308,6 +309,7 @@ ROLEASSIGNMENTS <IMicrosoftGraphUnifiedRoleAssignment1[]>: .
   - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
     - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
     - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
     - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -322,8 +324,9 @@ ROLEASSIGNMENTS <IMicrosoftGraphUnifiedRoleAssignment1[]>: .
     - `[Version <String>]`: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
   - `[RoleDefinitionId <String>]`: Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq operator only).
 
-ROLEDEFINITIONS <IMicrosoftGraphUnifiedRoleDefinition[]>: .
+ROLEDEFINITIONS <IMicrosoftGraphUnifiedRoleDefinition[]>: The roles allowed by RBAC providers and the permissions assigned to the roles.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
   - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
   - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
   - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -337,7 +340,7 @@ ROLEDEFINITIONS <IMicrosoftGraphUnifiedRoleDefinition[]>: .
   - `[TemplateId <String>]`: Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
   - `[Version <String>]`: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
 
-TRANSITIVEROLEASSIGNMENTS <IMicrosoftGraphUnifiedRoleAssignment1[]>: .
+TRANSITIVEROLEASSIGNMENTS <IMicrosoftGraphUnifiedRoleAssignment1[]>: Resource to grant access to users or groups that are transitive.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -358,6 +361,7 @@ TRANSITIVEROLEASSIGNMENTS <IMicrosoftGraphUnifiedRoleAssignment1[]>: .
   - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
     - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
     - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
     - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.

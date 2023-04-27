@@ -40,7 +40,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^security(_.*Alerts_v2|.cases.ediscoveryCases.noncustodialDataSources_.*DataSource)$
+  - remove-path-by-operation: ^security(.cases.ediscoveryCases.noncustodialDataSources_.*DataSource)$
 # Remove cmdlets
   - where:
       verb: Get|Update
@@ -60,7 +60,7 @@ directive:
   - where:
       verb: Update
       subject: ^(SecurityAlert)$
-      variant: Update2|UpdateExpanded2
+      variant: Update1|UpdateExpanded1
     set:
       subject: $1Multiple
   - where:
@@ -73,6 +73,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.24.0
+module-version: 1.27.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

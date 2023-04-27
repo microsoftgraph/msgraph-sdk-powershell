@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -ListItemId
-key: id of listItem
+The unique identifier of listItem
 
 ```yaml
 Type: System.String
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -SharedDriveItemId
-key: id of sharedDriveItem
+The unique identifier of sharedDriveItem
 
 ```yaml
 Type: System.String

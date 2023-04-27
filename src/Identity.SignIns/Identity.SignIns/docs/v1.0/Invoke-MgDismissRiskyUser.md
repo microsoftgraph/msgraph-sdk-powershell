@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgDismissRiskyUser
 
 ## SYNOPSIS
-Dismiss the risk of one or more riskyUser objects.
-This action sets the targeted user's risk level to none.
+Invoke action dismiss
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Invoke-MgDismissRiskyUser
 ```
 
 ## DESCRIPTION
-Dismiss the risk of one or more riskyUser objects.
-This action sets the targeted user's risk level to none.
+Invoke action dismiss
 
 ## EXAMPLES
 

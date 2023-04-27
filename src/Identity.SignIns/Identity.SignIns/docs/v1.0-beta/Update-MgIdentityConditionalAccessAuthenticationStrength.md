@@ -24,7 +24,7 @@ Update-MgIdentityConditionalAccessAuthenticationStrength [-AdditionalProperties 
 ### Update
 ```
 Update-MgIdentityConditionalAccessAuthenticationStrength
- -BodyParameter <IMicrosoftGraphAuthenticationStrengthRoot> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphAuthenticationStrengthRoot1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -86,7 +86,7 @@ authenticationStrengthRoot
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot1
 Parameter Sets: Update
 Aliases:
 
@@ -195,7 +195,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot1
 
 ## OUTPUTS
 
@@ -215,7 +215,7 @@ AUTHENTICATIONMETHODMODES <IMicrosoftGraphAuthenticationMethodModeDetail[]>: Nam
   - `[AuthenticationMethod <String>]`: baseAuthenticationMethod
   - `[DisplayName <String>]`: The display name of this mode
 
-BODYPARAMETER <IMicrosoftGraphAuthenticationStrengthRoot>: authenticationStrengthRoot
+BODYPARAMETER <IMicrosoftGraphAuthenticationStrengthRoot1>: authenticationStrengthRoot
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AuthenticationCombinations <String[]>]`: A collection of all valid authentication method combinations in the system.

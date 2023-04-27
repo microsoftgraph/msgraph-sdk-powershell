@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-Module Guid: 3c129bed-cc65-4447-ae79-06de0d6b8d33
+Module Guid: f098a3fe-dc90-4b00-8ca6-034c5caa9ed2
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -59,9 +59,6 @@ Invoke function getNonCompliantSettings
 ### [Get-MgDeviceManagementComanagedDeviceOemWarranty](Get-MgDeviceManagementComanagedDeviceOemWarranty.md)
 Invoke function getOemWarranty
 
-### [Get-MgDeviceManagementComanagedDeviceRemoteHelpSession](Get-MgDeviceManagementComanagedDeviceRemoteHelpSession.md)
-Invoke function retrieveRemoteHelpSession
-
 ### [Get-MgDeviceManagementComanagedDeviceSummary](Get-MgDeviceManagementComanagedDeviceSummary.md)
 Invoke function getComanagedDevicesSummary
 
@@ -95,6 +92,9 @@ Invoke function getRemediationSummary
 ### [Get-MgDeviceManagementEffectivePermission](Get-MgDeviceManagementEffectivePermission.md)
 Invoke function getEffectivePermissions
 
+### [Get-MgDeviceManagementIntentCustomizedSetting](Get-MgDeviceManagementIntentCustomizedSetting.md)
+Invoke function getCustomizedSettings
+
 ### [Get-MgDeviceManagementManagedDeviceCloudPcRemoteActionResult](Get-MgDeviceManagementManagedDeviceCloudPcRemoteActionResult.md)
 Invoke function getCloudPcRemoteActionResults
 
@@ -109,9 +109,6 @@ Invoke function getNonCompliantSettings
 
 ### [Get-MgDeviceManagementManagedDeviceOemWarranty](Get-MgDeviceManagementManagedDeviceOemWarranty.md)
 Invoke function getOemWarranty
-
-### [Get-MgDeviceManagementManagedDeviceRemoteHelpSession](Get-MgDeviceManagementManagedDeviceRemoteHelpSession.md)
-Invoke function retrieveRemoteHelpSession
 
 ### [Get-MgDeviceManagementMonitoringAlertRecordPortalNotification](Get-MgDeviceManagementMonitoringAlertRecordPortalNotification.md)
 Invoke function getPortalNotifications
@@ -139,6 +136,9 @@ Invoke function getCloudPcConnectivityHistory
 
 ### [Get-MgDeviceManagementVirtualEndpointCloudPcLaunchInfo](Get-MgDeviceManagementVirtualEndpointCloudPcLaunchInfo.md)
 Invoke function getCloudPcLaunchInfo
+
+### [Get-MgDeviceManagementVirtualEndpointCloudPcProvisionedCloudPC](Get-MgDeviceManagementVirtualEndpointCloudPcProvisionedCloudPC.md)
+Invoke function getProvisionedCloudPCs
 
 ### [Get-MgDeviceManagementVirtualEndpointCloudPcShiftWorkCloudPcAccessState](Get-MgDeviceManagementVirtualEndpointCloudPcShiftWorkCloudPcAccessState.md)
 Invoke function getShiftWorkCloudPcAccessState

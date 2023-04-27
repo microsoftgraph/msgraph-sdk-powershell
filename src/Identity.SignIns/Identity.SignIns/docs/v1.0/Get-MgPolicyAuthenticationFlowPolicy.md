@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyAuthenticationFlowPolicy
 
 ## SYNOPSIS
-Read the properties and relationships of an authenticationFlowsPolicy object.
+The policy configuration of the self-service sign-up experience of external users.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgPolicyAuthenticationFlowPolicy [-ExpandProperty <String[]>] [-Property <St
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an authenticationFlowsPolicy object.
+The policy configuration of the self-service sign-up experience of external users.
 
 ## EXAMPLES
 

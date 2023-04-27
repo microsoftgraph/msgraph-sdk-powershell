@@ -65,7 +65,8 @@ Accept wildcard characters: False
 ```
 
 ### -ContentInputFile
-Input File for Content (The Windows Enterprise Code-Signing Certificate in the raw data format.)
+Input File for Content (The Windows Enterprise Code-Signing Certificate in the raw data format.
+Set to null once certificate has been uploaded and other properties have been populated.)
 
 ```yaml
 Type: System.String
@@ -80,7 +81,10 @@ Accept wildcard characters: False
 ```
 
 ### -ExpirationDateTime
-The Cert Expiration Date.
+The cert expiration date and time (using ISO 8601 format, in UTC time).
+Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response.
+Supports: $filter, $select, $top, $OrderBy, $skip.
+$Search is not supported.
 
 ```yaml
 Type: System.DateTime
@@ -111,7 +115,11 @@ Accept wildcard characters: False
 ```
 
 ### -Issuer
-The Issuer value for the cert.
+The issuer value for the cert.
+This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU).
+Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response.
+Supports: $filter, $select, $top, $OrderBy, $skip.
+$Search is not supported.
 
 ```yaml
 Type: System.String
@@ -126,7 +134,11 @@ Accept wildcard characters: False
 ```
 
 ### -IssuerName
-The Issuer Name for the cert.
+The issuer name for the cert.
+This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU).
+Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response.
+Supports: $filter, $select, $top, $OrderBy, $skip.
+$Search is not supported.
 
 ```yaml
 Type: System.String
@@ -156,7 +168,11 @@ Accept wildcard characters: False
 ```
 
 ### -Subject
-The Subject Value for the cert.
+The subject value for the cert.
+This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU).
+Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response.
+Supports: $filter, $select, $top, $OrderBy, $skip.
+$Search is not supported.
 
 ```yaml
 Type: System.String
@@ -171,7 +187,11 @@ Accept wildcard characters: False
 ```
 
 ### -SubjectName
-The Subject Name for the cert.
+The subject name for the cert.
+This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU).
+Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response.
+Supports: $filter, $select, $top, $OrderBy, $skip.
+$Search is not supported.
 
 ```yaml
 Type: System.String
@@ -186,7 +206,10 @@ Accept wildcard characters: False
 ```
 
 ### -UploadDateTime
-The date time of CodeSigning Cert when it is uploaded.
+The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time).
+Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response.
+Supports: $filter, $select, $top, $OrderBy, $skip.
+$Search is not supported.
 
 ```yaml
 Type: System.DateTime
@@ -256,14 +279,14 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphEnterpriseCodeSigningCertificate>: enterpriseCodeSigningCertificate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Content <Byte[]>]`: The Windows Enterprise Code-Signing Certificate in the raw data format.
-  - `[ExpirationDateTime <DateTime?>]`: The Cert Expiration Date.
-  - `[Issuer <String>]`: The Issuer value for the cert.
-  - `[IssuerName <String>]`: The Issuer Name for the cert.
+  - `[Content <Byte[]>]`: The Windows Enterprise Code-Signing Certificate in the raw data format. Set to null once certificate has been uploaded and other properties have been populated.
+  - `[ExpirationDateTime <DateTime?>]`: The cert expiration date and time (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+  - `[Issuer <String>]`: The issuer value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+  - `[IssuerName <String>]`: The issuer name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
   - `[Status <String>]`: certificateStatus
-  - `[Subject <String>]`: The Subject Value for the cert.
-  - `[SubjectName <String>]`: The Subject Name for the cert.
-  - `[UploadDateTime <DateTime?>]`: The date time of CodeSigning Cert when it is uploaded.
+  - `[Subject <String>]`: The subject value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+  - `[SubjectName <String>]`: The subject name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
+  - `[UploadDateTime <DateTime?>]`: The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
 
 ## RELATED LINKS
 

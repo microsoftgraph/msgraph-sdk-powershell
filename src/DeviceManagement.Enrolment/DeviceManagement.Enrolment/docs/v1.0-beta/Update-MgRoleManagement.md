@@ -216,10 +216,10 @@ BODYPARAMETER <IMicrosoftGraphRoleManagement1>: roleManagement
   - `[CloudPc <IMicrosoftGraphRbacApplicationMultiple>]`: rbacApplicationMultiple
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+    - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace1[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Name <String>]`: Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-      - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: Operations that an authorized principal are allowed to perform.
+      - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction1[]>]`: Operations that an authorized principal are allowed to perform.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
         - `[AuthenticationContextId <String>]`: 
@@ -252,6 +252,7 @@ BODYPARAMETER <IMicrosoftGraphRoleManagement1>: roleManagement
       - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
         - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
         - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
         - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -270,7 +271,7 @@ BODYPARAMETER <IMicrosoftGraphRoleManagement1>: roleManagement
   - `[Directory <IMicrosoftGraphRbacApplication>]`: rbacApplication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+    - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace1[]>]`: 
     - `[RoleAssignmentApprovals <IMicrosoftGraphApproval[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Steps <IMicrosoftGraphApprovalStep[]>]`: 
@@ -451,18 +452,18 @@ BODYPARAMETER <IMicrosoftGraphRoleManagement1>: roleManagement
   - `[Exchange <IMicrosoftGraphUnifiedRbacApplication>]`: unifiedRbacApplication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
-    - `[RoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: 
-    - `[RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>]`: 
-    - `[TransitiveRoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: 
+    - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace1[]>]`: Resource that represents a collection of related actions.
+    - `[RoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: Resource to grant access to users or groups.
+    - `[RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>]`: The roles allowed by RBAC providers and the permissions assigned to the roles.
+    - `[TransitiveRoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: Resource to grant access to users or groups that are transitive.
 
 CLOUDPC <IMicrosoftGraphRbacApplicationMultiple>: rbacApplicationMultiple
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace1[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: Operations that an authorized principal are allowed to perform.
+    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction1[]>]`: Operations that an authorized principal are allowed to perform.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
       - `[AuthenticationContextId <String>]`: 
@@ -495,6 +496,7 @@ CLOUDPC <IMicrosoftGraphRbacApplicationMultiple>: rbacApplicationMultiple
     - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
       - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
       - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
       - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -513,10 +515,10 @@ CLOUDPC <IMicrosoftGraphRbacApplicationMultiple>: rbacApplicationMultiple
 DEVICEMANAGEMENT <IMicrosoftGraphRbacApplicationMultiple>: rbacApplicationMultiple
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace1[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: Operations that an authorized principal are allowed to perform.
+    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction1[]>]`: Operations that an authorized principal are allowed to perform.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
       - `[AuthenticationContextId <String>]`: 
@@ -549,6 +551,7 @@ DEVICEMANAGEMENT <IMicrosoftGraphRbacApplicationMultiple>: rbacApplicationMultip
     - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
       - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
       - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
       - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -567,10 +570,10 @@ DEVICEMANAGEMENT <IMicrosoftGraphRbacApplicationMultiple>: rbacApplicationMultip
 DIRECTORY <IMicrosoftGraphRbacApplication>: rbacApplication
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace1[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: Operations that an authorized principal are allowed to perform.
+    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction1[]>]`: Operations that an authorized principal are allowed to perform.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
       - `[AuthenticationContextId <String>]`: 
@@ -615,6 +618,7 @@ DIRECTORY <IMicrosoftGraphRbacApplication>: rbacApplication
     - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
       - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
       - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
       - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -785,10 +789,10 @@ DIRECTORY <IMicrosoftGraphRbacApplication>: rbacApplication
 ENTITLEMENTMANAGEMENT <IMicrosoftGraphRbacApplication>: rbacApplication
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace1[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: Operations that an authorized principal are allowed to perform.
+    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction1[]>]`: Operations that an authorized principal are allowed to perform.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
       - `[AuthenticationContextId <String>]`: 
@@ -833,6 +837,7 @@ ENTITLEMENTMANAGEMENT <IMicrosoftGraphRbacApplication>: rbacApplication
     - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
       - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
       - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
       - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -1003,10 +1008,10 @@ ENTITLEMENTMANAGEMENT <IMicrosoftGraphRbacApplication>: rbacApplication
 EXCHANGE <IMicrosoftGraphUnifiedRbacApplication>: unifiedRbacApplication
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace[]>]`: 
+  - `[ResourceNamespaces <IMicrosoftGraphUnifiedRbacResourceNamespace1[]>]`: Resource that represents a collection of related actions.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[Name <String>]`: Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: Operations that an authorized principal are allowed to perform.
+    - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction1[]>]`: Operations that an authorized principal are allowed to perform.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
       - `[AuthenticationContextId <String>]`: 
@@ -1020,7 +1025,7 @@ EXCHANGE <IMicrosoftGraphUnifiedRbacApplication>: unifiedRbacApplication
         - `[Scope <String>]`: 
         - `[Type <String>]`: 
       - `[ResourceScopeId <String>]`: Not implemented.
-  - `[RoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: 
+  - `[RoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: Resource to grant access to users or groups.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AppScope <IMicrosoftGraphAppScope>]`: appScope
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1041,6 +1046,7 @@ EXCHANGE <IMicrosoftGraphUnifiedRbacApplication>: unifiedRbacApplication
     - `[RoleDefinition <IMicrosoftGraphUnifiedRoleDefinition>]`: unifiedRoleDefinition
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AllowedPrincipalTypes <String>]`: allowedRolePrincipalTypes
       - `[Description <String>]`: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
       - `[DisplayName <String>]`: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
       - `[InheritsPermissionsFrom <IMicrosoftGraphUnifiedRoleDefinition[]>]`: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
@@ -1054,8 +1060,8 @@ EXCHANGE <IMicrosoftGraphUnifiedRbacApplication>: unifiedRbacApplication
       - `[TemplateId <String>]`: Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
       - `[Version <String>]`: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
     - `[RoleDefinitionId <String>]`: Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq operator only).
-  - `[RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>]`: 
-  - `[TransitiveRoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: 
+  - `[RoleDefinitions <IMicrosoftGraphUnifiedRoleDefinition[]>]`: The roles allowed by RBAC providers and the permissions assigned to the roles.
+  - `[TransitiveRoleAssignments <IMicrosoftGraphUnifiedRoleAssignment1[]>]`: Resource to grant access to users or groups that are transitive.
 
 ## RELATED LINKS
 

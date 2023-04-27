@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc
 
 ## SYNOPSIS
-Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
+Invoke action bulkRestoreCloudPc
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc
 ```
 
 ## DESCRIPTION
-Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
+Invoke action bulkRestoreCloudPc
 
 ## EXAMPLES
 

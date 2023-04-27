@@ -8,8 +8,9 @@ schema: 2.0.0
 # Get-MgEducationMeAssignmentCategoryByRef
 
 ## SYNOPSIS
-List all the categories associated with an assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -20,8 +21,9 @@ Get-MgEducationMeAssignmentCategoryByRef -EducationAssignmentId <String> [-Filte
 ```
 
 ## DESCRIPTION
-List all the categories associated with an assignment.
-Only teachers, students, and applications with application permissions can perform this operation.
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -59,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationAssignmentId
-key: id of educationAssignment
+The unique identifier of educationAssignment
 
 ```yaml
 Type: System.String

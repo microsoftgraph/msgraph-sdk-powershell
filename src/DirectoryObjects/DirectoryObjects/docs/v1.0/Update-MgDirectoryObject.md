@@ -41,6 +41,17 @@ Update entity in directoryObjects
 
 ## EXAMPLES
 
+### Example 1: Code snippet
+```powershell
+Import-Module Microsoft.Graph.DirectoryObjects
+
+Remove-MgDirectoryObject -DirectoryObjectId $directoryObjectId
+```
+
+This example shows how to use the Update-MgDirectoryObject Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -91,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -DirectoryObjectId
-key: id of directoryObject
+The unique identifier of directoryObject
 
 ```yaml
 Type: System.String
@@ -211,7 +222,7 @@ BODYPARAMETER <IMicrosoftGraphDirectoryObject>: directoryObject
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 INPUTOBJECT <IDirectoryObjectsIdentity>: Identity Parameter
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
 
 ## RELATED LINKS
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgPlannerPlanBucket
 
 ## SYNOPSIS
-Retrieve a list of plannerBucket objects contained by a plannerPlan object.
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +21,9 @@ Get-MgPlannerPlanBucket -PlannerPlanId <String> [-ExpandProperty <String[]>] [-F
 ```
 
 ## DESCRIPTION
-Retrieve a list of plannerBucket objects contained by a plannerPlan object.
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -111,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -PlannerPlanId
-key: id of plannerPlan
+The unique identifier of plannerPlan
 
 ```yaml
 Type: System.String

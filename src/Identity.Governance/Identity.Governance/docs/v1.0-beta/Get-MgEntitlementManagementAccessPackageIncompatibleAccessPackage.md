@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage
 
 ## SYNOPSIS
-Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+The  access packages whose assigned users are ineligible to be assigned this access package.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage -AccessPackage
 ```
 
 ## DESCRIPTION
-Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+The  access packages whose assigned users are ineligible to be assigned this access package.
 
 ## EXAMPLES
 
@@ -35,7 +35,7 @@ To learn about permissions for this resource, see the [permissions reference](/g
 ## PARAMETERS
 
 ### -AccessPackageId
-key: id of accessPackage
+The unique identifier of accessPackage
 
 ```yaml
 Type: System.String

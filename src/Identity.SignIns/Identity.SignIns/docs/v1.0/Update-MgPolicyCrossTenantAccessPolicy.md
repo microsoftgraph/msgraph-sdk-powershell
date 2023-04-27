@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyCrossTenantAccessPolicy
 
 ## SYNOPSIS
-Update the properties of a cross-tenant access policy.
+Update the navigation property crossTenantAccessPolicy in policies
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Update-MgPolicyCrossTenantAccessPolicy -BodyParameter <IMicrosoftGraphCrossTenan
 ```
 
 ## DESCRIPTION
-Update the properties of a cross-tenant access policy.
+Update the navigation property crossTenantAccessPolicy in policies
 
 ## EXAMPLES
 
@@ -62,7 +62,9 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedCloudEndpoints
-.
+Used to specify which Microsoft clouds an organization would like to collaborate with.
+By default, this value is empty.
+Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
 
 ```yaml
 Type: System.String[]
@@ -260,7 +262,7 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicy>: crossTenantAccessPolicy
   - `[DisplayName <String>]`: Display name for this policy. Required.
   - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AllowedCloudEndpoints <String[]>]`: 
+  - `[AllowedCloudEndpoints <String[]>]`: Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
   - `[Default <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault>]`: crossTenantAccessPolicyConfigurationDefault
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.

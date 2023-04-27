@@ -15,13 +15,13 @@ Create new navigation property to resourceNamespaces for roleManagement
 ### CreateExpanded (Default)
 ```
 New-MgRoleManagementCloudPcResourceNamespace [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-Name <String>] [-ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>] [-Confirm] [-WhatIf]
+ [-Name <String>] [-ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction1[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgRoleManagementCloudPcResourceNamespace -BodyParameter <IMicrosoftGraphUnifiedRbacResourceNamespace>
+New-MgRoleManagementCloudPcResourceNamespace -BodyParameter <IMicrosoftGraphUnifiedRbacResourceNamespace1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ unifiedRbacResourceNamespace
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace1
 Parameter Sets: Create
 Aliases:
 
@@ -102,7 +102,7 @@ Operations that an authorized principal are allowed to perform.
 To construct, please use Get-Help -Online and see NOTES section for RESOURCEACTIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceAction[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceAction1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -149,11 +149,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnifiedRbacResourceNamespace1
 
 ## NOTES
 
@@ -164,11 +164,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphUnifiedRbacResourceNamespace>: unifiedRbacResourceNamespace
+BODYPARAMETER <IMicrosoftGraphUnifiedRbacResourceNamespace1>: unifiedRbacResourceNamespace
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Name <String>]`: Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
-  - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction[]>]`: Operations that an authorized principal are allowed to perform.
+  - `[ResourceActions <IMicrosoftGraphUnifiedRbacResourceAction1[]>]`: Operations that an authorized principal are allowed to perform.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
     - `[AuthenticationContextId <String>]`: 
@@ -183,7 +183,7 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRbacResourceNamespace>: unifiedRbacResource
       - `[Type <String>]`: 
     - `[ResourceScopeId <String>]`: Not implemented.
 
-RESOURCEACTIONS <IMicrosoftGraphUnifiedRbacResourceAction[]>: Operations that an authorized principal are allowed to perform.
+RESOURCEACTIONS <IMicrosoftGraphUnifiedRbacResourceAction1[]>: Operations that an authorized principal are allowed to perform.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
   - `[AuthenticationContextId <String>]`: 

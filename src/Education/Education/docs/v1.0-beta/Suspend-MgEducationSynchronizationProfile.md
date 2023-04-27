@@ -8,7 +8,7 @@ schema: 2.0.0
 # Suspend-MgEducationSynchronizationProfile
 
 ## SYNOPSIS
-Pause the sync of a specific school data synchronization profile in the tenant.
+Invoke action pause
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Suspend-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Pa
 ```
 
 ## DESCRIPTION
-Pause the sync of a specific school data synchronization profile in the tenant.
+Invoke action pause
 
 ## EXAMPLES
 
@@ -41,7 +41,7 @@ To learn about permissions for this resource, see the [permissions reference](/g
 ## PARAMETERS
 
 ### -EducationSynchronizationProfileId
-key: id of educationSynchronizationProfile
+The unique identifier of educationSynchronizationProfile
 
 ```yaml
 Type: System.String
@@ -138,18 +138,18 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
-  - `[EducationAssignmentId <String>]`: key: id of educationAssignment
-  - `[EducationAssignmentResourceId <String>]`: key: id of educationAssignmentResource
-  - `[EducationCategoryId <String>]`: key: id of educationCategory
-  - `[EducationClassId <String>]`: key: id of educationClass
-  - `[EducationOutcomeId <String>]`: key: id of educationOutcome
-  - `[EducationRubricId <String>]`: key: id of educationRubric
-  - `[EducationSchoolId <String>]`: key: id of educationSchool
-  - `[EducationSubmissionId <String>]`: key: id of educationSubmission
-  - `[EducationSubmissionResourceId <String>]`: key: id of educationSubmissionResource
-  - `[EducationSynchronizationErrorId <String>]`: key: id of educationSynchronizationError
-  - `[EducationSynchronizationProfileId <String>]`: key: id of educationSynchronizationProfile
-  - `[EducationUserId <String>]`: key: id of educationUser
+  - `[EducationAssignmentId <String>]`: The unique identifier of educationAssignment
+  - `[EducationAssignmentResourceId <String>]`: The unique identifier of educationAssignmentResource
+  - `[EducationCategoryId <String>]`: The unique identifier of educationCategory
+  - `[EducationClassId <String>]`: The unique identifier of educationClass
+  - `[EducationOutcomeId <String>]`: The unique identifier of educationOutcome
+  - `[EducationRubricId <String>]`: The unique identifier of educationRubric
+  - `[EducationSchoolId <String>]`: The unique identifier of educationSchool
+  - `[EducationSubmissionId <String>]`: The unique identifier of educationSubmission
+  - `[EducationSubmissionResourceId <String>]`: The unique identifier of educationSubmissionResource
+  - `[EducationSynchronizationErrorId <String>]`: The unique identifier of educationSynchronizationError
+  - `[EducationSynchronizationProfileId <String>]`: The unique identifier of educationSynchronizationProfile
+  - `[EducationUserId <String>]`: The unique identifier of educationUser
 
 ## RELATED LINKS
 

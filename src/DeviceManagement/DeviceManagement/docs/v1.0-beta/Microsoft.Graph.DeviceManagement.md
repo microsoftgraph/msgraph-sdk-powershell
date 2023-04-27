@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement
-Module Guid: 1b323c59-edc4-429b-a45a-92532273061a
+Module Guid: 27f641ee-ea1a-4572-af9c-09f9d81c2ba9
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -672,6 +672,9 @@ Create new navigation property to deviceCompliancePolicyStates for deviceManagem
 ### [New-MgDeviceManagementComanagedDeviceConfigurationState](New-MgDeviceManagementComanagedDeviceConfigurationState.md)
 Create new navigation property to deviceConfigurationStates for deviceManagement
 
+### [New-MgDeviceManagementComanagedDeviceHealthScriptState](New-MgDeviceManagementComanagedDeviceHealthScriptState.md)
+Create new navigation property to deviceHealthScriptStates for deviceManagement
+
 ### [New-MgDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState](New-MgDeviceManagementComanagedDeviceManagedDeviceMobileAppConfigurationState.md)
 Create new navigation property to managedDeviceMobileAppConfigurationStates for deviceManagement
 
@@ -878,6 +881,9 @@ Create new navigation property to deviceConfigurationStates for deviceManagement
 
 ### [New-MgDeviceManagementManagedDeviceEncryptionState](New-MgDeviceManagementManagedDeviceEncryptionState.md)
 Create new navigation property to managedDeviceEncryptionStates for deviceManagement
+
+### [New-MgDeviceManagementManagedDeviceHealthScriptState](New-MgDeviceManagementManagedDeviceHealthScriptState.md)
+Create new navigation property to deviceHealthScriptStates for deviceManagement
 
 ### [New-MgDeviceManagementManagedDeviceMobileAppConfigurationState](New-MgDeviceManagementManagedDeviceMobileAppConfigurationState.md)
 Create new navigation property to managedDeviceMobileAppConfigurationStates for deviceManagement
@@ -1152,6 +1158,9 @@ Delete navigation property deviceCompliancePolicyStates for deviceManagement
 ### [Remove-MgDeviceManagementComanagedDeviceConfigurationState](Remove-MgDeviceManagementComanagedDeviceConfigurationState.md)
 Delete navigation property deviceConfigurationStates for deviceManagement
 
+### [Remove-MgDeviceManagementComanagedDeviceHealthScriptState](Remove-MgDeviceManagementComanagedDeviceHealthScriptState.md)
+Delete navigation property deviceHealthScriptStates for deviceManagement
+
 ### [Remove-MgDeviceManagementComanagedDeviceLogCollectionRequest](Remove-MgDeviceManagementComanagedDeviceLogCollectionRequest.md)
 Delete navigation property logCollectionRequests for deviceManagement
 
@@ -1397,6 +1406,9 @@ Delete navigation property deviceConfigurationStates for deviceManagement
 
 ### [Remove-MgDeviceManagementManagedDeviceEncryptionState](Remove-MgDeviceManagementManagedDeviceEncryptionState.md)
 Delete navigation property managedDeviceEncryptionStates for deviceManagement
+
+### [Remove-MgDeviceManagementManagedDeviceHealthScriptState](Remove-MgDeviceManagementManagedDeviceHealthScriptState.md)
+Delete navigation property deviceHealthScriptStates for deviceManagement
 
 ### [Remove-MgDeviceManagementManagedDeviceLogCollectionRequest](Remove-MgDeviceManagementManagedDeviceLogCollectionRequest.md)
 Delete navigation property logCollectionRequests for deviceManagement
@@ -1695,6 +1707,9 @@ Update the navigation property deviceCompliancePolicyStates in deviceManagement
 ### [Update-MgDeviceManagementComanagedDeviceConfigurationState](Update-MgDeviceManagementComanagedDeviceConfigurationState.md)
 Update the navigation property deviceConfigurationStates in deviceManagement
 
+### [Update-MgDeviceManagementComanagedDeviceHealthScriptState](Update-MgDeviceManagementComanagedDeviceHealthScriptState.md)
+Update the navigation property deviceHealthScriptStates in deviceManagement
+
 ### [Update-MgDeviceManagementComanagedDeviceLogCollectionRequest](Update-MgDeviceManagementComanagedDeviceLogCollectionRequest.md)
 Update the navigation property logCollectionRequests in deviceManagement
 
@@ -1940,6 +1955,9 @@ Update the navigation property deviceConfigurationStates in deviceManagement
 
 ### [Update-MgDeviceManagementManagedDeviceEncryptionState](Update-MgDeviceManagementManagedDeviceEncryptionState.md)
 Update the navigation property managedDeviceEncryptionStates in deviceManagement
+
+### [Update-MgDeviceManagementManagedDeviceHealthScriptState](Update-MgDeviceManagementManagedDeviceHealthScriptState.md)
+Update the navigation property deviceHealthScriptStates in deviceManagement
 
 ### [Update-MgDeviceManagementManagedDeviceLogCollectionRequest](Update-MgDeviceManagementManagedDeviceLogCollectionRequest.md)
 Update the navigation property logCollectionRequests in deviceManagement

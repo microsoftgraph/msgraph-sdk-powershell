@@ -15,8 +15,9 @@ Create new navigation property to servicePlans for deviceManagement
 ### CreateExpanded (Default)
 ```
 New-MgDeviceManagementVirtualEndpointServicePlan [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
- [-Id <String>] [-RamInGb <Int32>] [-StorageInGb <Int32>] [-SupportedSolution <String>] [-Type <String>]
- [-UserProfileInGb <Int32>] [-VCpuCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-ProvisioningType <String>] [-RamInGb <Int32>] [-StorageInGb <Int32>]
+ [-SupportedSolution <String>] [-Type <String>] [-UserProfileInGb <Int32>] [-VCpuCount <Int32>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -82,6 +83,21 @@ Accept wildcard characters: False
 ### -Id
 The unique idenfier for an entity.
 Read-only.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProvisioningType
+cloudPcProvisioningType
 
 ```yaml
 Type: System.String
@@ -244,6 +260,7 @@ BODYPARAMETER <IMicrosoftGraphCloudPcServicePlan>: cloudPcServicePlan
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The name for the service plan. Read-only.
+  - `[ProvisioningType <String>]`: cloudPcProvisioningType
   - `[RamInGb <Int32?>]`: The size of the RAM in GB. Read-only.
   - `[StorageInGb <Int32?>]`: The size of the OS Disk in GB. Read-only.
   - `[SupportedSolution <String>]`: cloudPcManagementService

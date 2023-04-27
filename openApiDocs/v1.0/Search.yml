@@ -70,11 +70,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: List externalConnections
-      description: Get a list of the externalConnection objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-1.0
+      summary: Get connections from external
       operationId: external_ListConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -151,11 +147,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalConnection
-      description: Create a new externalConnection object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-1.0
+      summary: Create new navigation property to connections for external
       operationId: external_CreateConnections
       requestBody:
         description: New navigation property
@@ -365,11 +357,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create externalGroup
-      description: Create a new externalGroup object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-1.0
+      summary: Create new navigation property to groups for external
       operationId: external.connections_CreateGroups
       parameters:
         - name: externalConnection-id
@@ -608,11 +596,7 @@ paths:
     post:
       tags:
         - external.externalConnection
-      summary: Create identity
-      description: Create an identity resource for a new member in an externalGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for external
       operationId: external.connections.groups_CreateMembers
       parameters:
         - name: externalConnection-id
@@ -966,11 +950,11 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+    put:
       tags:
         - external.externalConnection
       summary: Update the navigation property items in external
-      operationId: external.connections_UpdateItems
+      operationId: external.connections_SetItems
       parameters:
         - name: externalConnection-id
           in: path
@@ -1270,11 +1254,7 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get schema
-      description: Read the properties and relationships of a schema object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0
+      summary: Get schema from external
       operationId: external.connections_GetSchema
       parameters:
         - name: externalConnection-id
@@ -1868,6 +1848,10 @@ components:
         queryString:
           type: string
           description: The search query containing the search terms. Required.
+        queryTemplate:
+          type: string
+          description: Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.searchAlterationOptions:

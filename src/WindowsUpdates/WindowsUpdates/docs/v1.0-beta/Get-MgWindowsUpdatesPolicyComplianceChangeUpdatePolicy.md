@@ -32,7 +32,7 @@ The policy this compliance change is a member of.
 ## PARAMETERS
 
 ### -ComplianceChangeId
-key: id of complianceChange
+The unique identifier of complianceChange
 
 ```yaml
 Type: System.String
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -UpdatePolicyId
-key: id of updatePolicy
+The unique identifier of updatePolicy
 
 ```yaml
 Type: System.String
@@ -130,12 +130,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
-  - `[CatalogEntryId <String>]`: key: id of catalogEntry
-  - `[ComplianceChangeId <String>]`: key: id of complianceChange
-  - `[DeploymentId <String>]`: key: id of deployment
-  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
-  - `[UpdatableAssetId <String>]`: key: id of updatableAsset
-  - `[UpdatePolicyId <String>]`: key: id of updatePolicy
+  - `[CatalogEntryId <String>]`: The unique identifier of catalogEntry
+  - `[ComplianceChangeId <String>]`: The unique identifier of complianceChange
+  - `[DeploymentId <String>]`: The unique identifier of deployment
+  - `[ResourceConnectionId <String>]`: The unique identifier of resourceConnection
+  - `[UpdatableAssetId <String>]`: The unique identifier of updatableAsset
+  - `[UpdatePolicyId <String>]`: The unique identifier of updatePolicy
 
 ## RELATED LINKS
 

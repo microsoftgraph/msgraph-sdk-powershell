@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgIdentityGovernanceAccessReviewPolicy
 
 ## SYNOPSIS
-Update the properties of an accessReviewPolicy object.
+Update the navigation property policy in identityGovernance
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgIdentityGovernanceAccessReviewPolicy -BodyParameter <IMicrosoftGraphAcc
 ```
 
 ## DESCRIPTION
-Update the properties of an accessReviewPolicy object.
+Update the navigation property policy in identityGovernance
 
 ## EXAMPLES
 

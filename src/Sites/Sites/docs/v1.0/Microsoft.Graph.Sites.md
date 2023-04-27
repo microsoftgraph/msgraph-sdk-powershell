@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: 28f7db46-fb13-4be9-a641-57351816bd4c
+Module Guid: 32b612a3-e399-45fc-af65-cdc500c35f54
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,43 +12,34 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Sites Cmdlets
 ### [Add-MgSiteContentTypeCopy](Add-MgSiteContentTypeCopy.md)
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Invoke action addCopy
 
 ### [Add-MgSiteContentTypeCopyFromContentTypeHub](Add-MgSiteContentTypeCopyFromContentTypeHub.md)
-Add or sync a copy of a published content type from the content type hub to a target site or a list.
-This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
-The method allows users to pull content types directly from the content type hub to a site or list.
-For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+Invoke action addCopyFromContentTypeHub
 
 ### [Add-MgSiteListContentTypeCopy](Add-MgSiteListContentTypeCopy.md)
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Invoke action addCopy
 
 ### [Add-MgSiteListContentTypeCopyFromContentTypeHub](Add-MgSiteListContentTypeCopyFromContentTypeHub.md)
-Add or sync a copy of a published content type from the content type hub to a target site or a list.
-This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
-The method allows users to pull content types directly from the content type hub to a site or list.
-For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+Invoke action addCopyFromContentTypeHub
 
 ### [Copy-MgSiteContentTypeToDefaultContentLocation](Copy-MgSiteContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a [content type][contentType].
-The file can then be added as a default file or template via a POST operation.
+Invoke action copyToDefaultContentLocation
 
 ### [Copy-MgSiteListContentTypeToDefaultContentLocation](Copy-MgSiteListContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a [content type][contentType].
-The file can then be added as a default file or template via a POST operation.
+Invoke action copyToDefaultContentLocation
 
 ### [Copy-MgSiteOnenoteNotebook](Copy-MgSiteOnenoteNotebook.md)
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyNotebook
 
 ### [Copy-MgSiteOnenotePageToSection](Copy-MgSiteOnenotePageToSection.md)
-Copy a page to a specific section.
-For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToSection
 
 ### [Copy-MgSiteOnenoteSectionToNotebook](Copy-MgSiteOnenoteSectionToNotebook.md)
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToNotebook
 
 ### [Copy-MgSiteOnenoteSectionToSectionGroup](Copy-MgSiteOnenoteSectionToSectionGroup.md)
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToSectionGroup
 
 ### [Get-MgGroupSite](Get-MgGroupSite.md)
 The list of SharePoint sites in this group.
@@ -56,6 +47,18 @@ Access the default site with /sites/root.
 
 ### [Get-MgGroupSiteAnalytic](Get-MgGroupSiteAnalytic.md)
 Analytics about the view activities that took place in this site.
+
+### [Get-MgGroupSiteAnalyticItemActivityStat](Get-MgGroupSiteAnalyticItemActivityStat.md)
+Get itemActivityStats from groups
+
+### [Get-MgGroupSiteAnalyticItemActivityStatActivity](Get-MgGroupSiteAnalyticItemActivityStatActivity.md)
+Exposes the itemActivities represented in this itemActivityStat resource.
+
+### [Get-MgGroupSiteAnalyticLastSevenDay](Get-MgGroupSiteAnalyticLastSevenDay.md)
+Get lastSevenDays from groups
+
+### [Get-MgGroupSiteAnalyticTime](Get-MgGroupSiteAnalyticTime.md)
+Get allTime from groups
 
 ### [Get-MgGroupSiteColumn](Get-MgGroupSiteColumn.md)
 The collection of column definitions reusable across lists under this site.
@@ -70,8 +73,7 @@ The collection of column definitions for this contentType.
 The collection of columns that are required by this content type.
 
 ### [Get-MgGroupSiteDrive](Get-MgGroupSiteDrive.md)
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+The default drive (document library) for this site.
 
 ### [Get-MgGroupSiteExternalColumn](Get-MgGroupSiteExternalColumn.md)
 Get externalColumns from groups
@@ -146,7 +148,7 @@ The permissions associated with the site.
 Nullable.
 
 ### [Get-MgGroupSiteTermStore](Get-MgGroupSiteTermStore.md)
-Read the properties and relationships of a store object.
+The default termStore under this site.
 
 ### [Get-MgGroupSiteTermStoreGroup](Get-MgGroupSiteTermStoreGroup.md)
 Collection of all groups available in the term store.
@@ -413,6 +415,18 @@ Invoke function getActivitiesByInterval
 ### [Get-MgSiteAnalytic](Get-MgSiteAnalytic.md)
 Analytics about the view activities that took place in this site.
 
+### [Get-MgSiteAnalyticItemActivityStat](Get-MgSiteAnalyticItemActivityStat.md)
+Get itemActivityStats from sites
+
+### [Get-MgSiteAnalyticItemActivityStatActivity](Get-MgSiteAnalyticItemActivityStatActivity.md)
+Exposes the itemActivities represented in this itemActivityStat resource.
+
+### [Get-MgSiteAnalyticLastSevenDay](Get-MgSiteAnalyticLastSevenDay.md)
+Get lastSevenDays from sites
+
+### [Get-MgSiteAnalyticTime](Get-MgSiteAnalyticTime.md)
+Get allTime from sites
+
 ### [Get-MgSiteApplicableContentTypeForList](Get-MgSiteApplicableContentTypeForList.md)
 Invoke function getApplicableContentTypesForList
 
@@ -435,8 +449,7 @@ The collection of columns that are required by this content type.
 Invoke function getCompatibleHubContentTypes
 
 ### [Get-MgSiteDefaultDrive](Get-MgSiteDefaultDrive.md)
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+The default drive (document library) for this site.
 
 ### [Get-MgSiteDrive](Get-MgSiteDrive.md)
 The collection of drives (document libraries) under this site.
@@ -509,8 +522,7 @@ The collection of long-running operations on the list.
 The set of subscriptions on the list.
 
 ### [Get-MgSiteOnenoteNotebookFromWebUrl](Get-MgSiteOnenoteNotebookFromWebUrl.md)
-Retrieve the properties and relationships of a notebook object by using its URL path.
-The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
+Invoke action getNotebookFromWebUrl
 
 ### [Get-MgSitePermission](Get-MgSitePermission.md)
 The permissions associated with the site.
@@ -520,7 +532,7 @@ Nullable.
 Invoke function getRecentNotebooks
 
 ### [Get-MgSiteTermStore](Get-MgSiteTermStore.md)
-Read the properties and relationships of a store object.
+The default termStore under this site.
 
 ### [Get-MgSiteTermStoreGroup](Get-MgSiteTermStoreGroup.md)
 Collection of all groups available in the term store.
@@ -782,7 +794,7 @@ The collection of the sub-sites under this site.
 Get followedSites from users
 
 ### [Grant-MgSitePermission](Grant-MgSitePermission.md)
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ### [Invoke-MgPreviewSiteOnenotePage](Invoke-MgPreviewSiteOnenotePage.md)
 Invoke function preview
@@ -791,43 +803,46 @@ Invoke function preview
 Invoke action reauthorize
 
 ### [Join-MgSiteContentTypeWithHubSite](Join-MgSiteContentTypeWithHubSite.md)
-Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+Invoke action associateWithHubSites
 
 ### [Join-MgSiteListContentTypeWithHubSite](Join-MgSiteListContentTypeWithHubSite.md)
-Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+Invoke action associateWithHubSites
+
+### [New-MgGroupSiteAnalyticItemActivityStat](New-MgGroupSiteAnalyticItemActivityStat.md)
+Create new navigation property to itemActivityStats for groups
 
 ### [New-MgGroupSiteColumn](New-MgGroupSiteColumn.md)
-Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for groups
 
 ### [New-MgGroupSiteContentType](New-MgGroupSiteContentType.md)
-Create a new [contentType][] in a [site][].
+Create new navigation property to contentTypes for groups
 
 ### [New-MgGroupSiteContentTypeColumn](New-MgGroupSiteContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for groups
 
 ### [New-MgGroupSiteContentTypeColumnLink](New-MgGroupSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
 ### [New-MgGroupSiteList](New-MgGroupSiteList.md)
-Create a new [list][] in a [site][].
+Create new navigation property to lists for groups
 
 ### [New-MgGroupSiteListColumn](New-MgGroupSiteListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for groups
 
 ### [New-MgGroupSiteListContentType](New-MgGroupSiteListContentType.md)
 Create new navigation property to contentTypes for groups
 
 ### [New-MgGroupSiteListContentTypeColumn](New-MgGroupSiteListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for groups
 
 ### [New-MgGroupSiteListContentTypeColumnLink](New-MgGroupSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
 ### [New-MgGroupSiteListItem](New-MgGroupSiteListItem.md)
-Create a new [listItem][] in a [list][].
+Create new navigation property to items for groups
 
 ### [New-MgGroupSiteListItemDocumentSetVersion](New-MgGroupSiteListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for groups
 
 ### [New-MgGroupSiteListItemVersion](New-MgGroupSiteListItemVersion.md)
 Create new navigation property to versions for groups
@@ -842,19 +857,19 @@ Create new navigation property to subscriptions for groups
 Create new navigation property to operations for groups
 
 ### [New-MgGroupSitePermission](New-MgGroupSitePermission.md)
-Create a new permission object on a site.
+Create new navigation property to permissions for groups
 
 ### [New-MgGroupSiteTermStore](New-MgGroupSiteTermStore.md)
 Create new navigation property to termStores for groups
 
 ### [New-MgGroupSiteTermStoreGroup](New-MgGroupSiteTermStoreGroup.md)
-Create a new group object in a term store.
+Create new navigation property to groups for groups
 
 ### [New-MgGroupSiteTermStoreGroupSet](New-MgGroupSiteTermStoreGroupSet.md)
 Create new navigation property to sets for groups
 
 ### [New-MgGroupSiteTermStoreGroupSetChild](New-MgGroupSiteTermStoreGroupSetChild.md)
-Create a new term object.
+Create new navigation property to children for groups
 
 ### [New-MgGroupSiteTermStoreGroupSetChildRelation](New-MgGroupSiteTermStoreGroupSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -878,7 +893,7 @@ Create new navigation property to relations for groups
 Create new navigation property to sets for groups
 
 ### [New-MgGroupSiteTermStoreSetChild](New-MgGroupSiteTermStoreSetChild.md)
-Create a new term object.
+Create new navigation property to children for groups
 
 ### [New-MgGroupSiteTermStoreSetChildRelation](New-MgGroupSiteTermStoreSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -887,7 +902,7 @@ Create new navigation property to relations for groups
 Create new navigation property to sets for groups
 
 ### [New-MgGroupSiteTermStoreSetParentGroupSetChild](New-MgGroupSiteTermStoreSetParentGroupSetChild.md)
-Create a new term object.
+Create new navigation property to children for groups
 
 ### [New-MgGroupSiteTermStoreSetParentGroupSetChildRelation](New-MgGroupSiteTermStoreSetParentGroupSetChildRelation.md)
 Create new navigation property to relations for groups
@@ -922,38 +937,41 @@ Create new navigation property to relations for groups
 ### [New-MgGroupSiteTermStoreSetTermRelation](New-MgGroupSiteTermStoreSetTermRelation.md)
 Create new navigation property to relations for groups
 
+### [New-MgSiteAnalyticItemActivityStat](New-MgSiteAnalyticItemActivityStat.md)
+Create new navigation property to itemActivityStats for sites
+
 ### [New-MgSiteColumn](New-MgSiteColumn.md)
-Create a column for a [site][site] with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for sites
 
 ### [New-MgSiteContentType](New-MgSiteContentType.md)
-Create a new [contentType][] in a [site][].
+Create new navigation property to contentTypes for sites
 
 ### [New-MgSiteContentTypeColumn](New-MgSiteContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for sites
 
 ### [New-MgSiteContentTypeColumnLink](New-MgSiteContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
 ### [New-MgSiteList](New-MgSiteList.md)
-Create a new [list][] in a [site][].
+Create new navigation property to lists for sites
 
 ### [New-MgSiteListColumn](New-MgSiteListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for sites
 
 ### [New-MgSiteListContentType](New-MgSiteListContentType.md)
 Create new navigation property to contentTypes for sites
 
 ### [New-MgSiteListContentTypeColumn](New-MgSiteListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for sites
 
 ### [New-MgSiteListContentTypeColumnLink](New-MgSiteListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for sites
 
 ### [New-MgSiteListItem](New-MgSiteListItem.md)
-Create a new [listItem][] in a [list][].
+Create new navigation property to items for sites
 
 ### [New-MgSiteListItemDocumentSetVersion](New-MgSiteListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for sites
 
 ### [New-MgSiteListItemVersion](New-MgSiteListItemVersion.md)
 Create new navigation property to versions for sites
@@ -965,19 +983,19 @@ Create new navigation property to operations for sites
 Create new navigation property to subscriptions for sites
 
 ### [New-MgSitePermission](New-MgSitePermission.md)
-Create a new permission object on a site.
+Create new navigation property to permissions for sites
 
 ### [New-MgSiteTermStore](New-MgSiteTermStore.md)
 Create new navigation property to termStores for sites
 
 ### [New-MgSiteTermStoreGroup](New-MgSiteTermStoreGroup.md)
-Create a new group object in a term store.
+Create new navigation property to groups for sites
 
 ### [New-MgSiteTermStoreGroupSet](New-MgSiteTermStoreGroupSet.md)
 Create new navigation property to sets for sites
 
 ### [New-MgSiteTermStoreGroupSetChild](New-MgSiteTermStoreGroupSetChild.md)
-Create a new term object.
+Create new navigation property to children for sites
 
 ### [New-MgSiteTermStoreGroupSetChildRelation](New-MgSiteTermStoreGroupSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -1001,7 +1019,7 @@ Create new navigation property to relations for sites
 Create new navigation property to sets for sites
 
 ### [New-MgSiteTermStoreSetChild](New-MgSiteTermStoreSetChild.md)
-Create a new term object.
+Create new navigation property to children for sites
 
 ### [New-MgSiteTermStoreSetChildRelation](New-MgSiteTermStoreSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -1010,7 +1028,7 @@ Create new navigation property to relations for sites
 Create new navigation property to sets for sites
 
 ### [New-MgSiteTermStoreSetParentGroupSetChild](New-MgSiteTermStoreSetParentGroupSetChild.md)
-Create a new term object.
+Create new navigation property to children for sites
 
 ### [New-MgSiteTermStoreSetParentGroupSetChildRelation](New-MgSiteTermStoreSetParentGroupSetChildRelation.md)
 Create new navigation property to relations for sites
@@ -1046,10 +1064,16 @@ Create new navigation property to relations for sites
 Create new navigation property to relations for sites
 
 ### [Publish-MgSiteContentType](Publish-MgSiteContentType.md)
-Publishes a [contentType][] present in the content type hub site.
+Invoke action publish
 
 ### [Publish-MgSiteListContentType](Publish-MgSiteListContentType.md)
-Publishes a [contentType][] present in the content type hub site.
+Invoke action publish
+
+### [Remove-MgGroupSiteAnalytic](Remove-MgGroupSiteAnalytic.md)
+Delete navigation property analytics for groups
+
+### [Remove-MgGroupSiteAnalyticItemActivityStat](Remove-MgGroupSiteAnalyticItemActivityStat.md)
+Delete navigation property itemActivityStats for groups
 
 ### [Remove-MgGroupSiteColumn](Remove-MgGroupSiteColumn.md)
 Delete navigation property columns for groups
@@ -1189,6 +1213,12 @@ Delete navigation property relations for groups
 ### [Remove-MgGroupSiteTermStoreSetTermRelation](Remove-MgGroupSiteTermStoreSetTermRelation.md)
 Delete navigation property relations for groups
 
+### [Remove-MgSiteAnalytic](Remove-MgSiteAnalytic.md)
+Delete navigation property analytics for sites
+
+### [Remove-MgSiteAnalyticItemActivityStat](Remove-MgSiteAnalyticItemActivityStat.md)
+Delete navigation property itemActivityStats for sites
+
 ### [Remove-MgSiteColumn](Remove-MgSiteColumn.md)
 Delete navigation property columns for sites
 
@@ -1325,11 +1355,10 @@ Delete navigation property relations for sites
 Delete navigation property relations for sites
 
 ### [Restore-MgSiteListItemDocumentSetVersion](Restore-MgSiteListItemDocumentSetVersion.md)
-Restore a document set version.
+Invoke action restore
 
 ### [Restore-MgSiteListItemVersion](Restore-MgSiteListItemVersion.md)
-Restore a previous version of a ListItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
+Invoke action restoreVersion
 
 ### [Set-MgGroupSiteListItemDriveItemContent](Set-MgGroupSiteListItemDriveItemContent.md)
 The content stream, if the item represents a file.
@@ -1344,13 +1373,19 @@ Invoke function isPublished
 Invoke function isPublished
 
 ### [Unpublish-MgSiteContentType](Unpublish-MgSiteContentType.md)
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ### [Unpublish-MgSiteListContentType](Unpublish-MgSiteListContentType.md)
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ### [Update-MgGroupSite](Update-MgGroupSite.md)
 Update the navigation property sites in groups
+
+### [Update-MgGroupSiteAnalytic](Update-MgGroupSiteAnalytic.md)
+Update the navigation property analytics in groups
+
+### [Update-MgGroupSiteAnalyticItemActivityStat](Update-MgGroupSiteAnalyticItemActivityStat.md)
+Update the navigation property itemActivityStats in groups
 
 ### [Update-MgGroupSiteColumn](Update-MgGroupSiteColumn.md)
 Update the navigation property columns in groups
@@ -1386,7 +1421,7 @@ Update the navigation property items in groups
 Update the navigation property documentSetVersions in groups
 
 ### [Update-MgGroupSiteListItemField](Update-MgGroupSiteListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in groups
 
 ### [Update-MgGroupSiteListItemVersion](Update-MgGroupSiteListItemVersion.md)
 Update the navigation property versions in groups
@@ -1407,7 +1442,7 @@ Update the navigation property operations in groups
 Update the navigation property permissions in groups
 
 ### [Update-MgGroupSiteTermStore](Update-MgGroupSiteTermStore.md)
-Update the properties of a store object.
+Update the navigation property termStore in groups
 
 ### [Update-MgGroupSiteTermStoreGroup](Update-MgGroupSiteTermStoreGroup.md)
 Update the navigation property groups in groups
@@ -1493,6 +1528,12 @@ Update the navigation property relations in groups
 ### [Update-MgSite](Update-MgSite.md)
 Update entity in sites
 
+### [Update-MgSiteAnalytic](Update-MgSiteAnalytic.md)
+Update the navigation property analytics in sites
+
+### [Update-MgSiteAnalyticItemActivityStat](Update-MgSiteAnalyticItemActivityStat.md)
+Update the navigation property itemActivityStats in sites
+
 ### [Update-MgSiteColumn](Update-MgSiteColumn.md)
 Update the navigation property columns in sites
 
@@ -1527,7 +1568,7 @@ Update the navigation property items in sites
 Update the navigation property documentSetVersions in sites
 
 ### [Update-MgSiteListItemField](Update-MgSiteListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in sites
 
 ### [Update-MgSiteListItemVersion](Update-MgSiteListItemVersion.md)
 Update the navigation property versions in sites
@@ -1548,7 +1589,7 @@ Invoke action onenotePatchContent
 Update the navigation property permissions in sites
 
 ### [Update-MgSiteTermStore](Update-MgSiteTermStore.md)
-Update the properties of a store object.
+Update the navigation property termStore in sites
 
 ### [Update-MgSiteTermStoreGroup](Update-MgSiteTermStoreGroup.md)
 Update the navigation property groups in sites

@@ -1992,7 +1992,6 @@ paths:
                 - primaryAccountFullName
                 - primaryAccountUserName
                 - registrationDisabled
-                - requestRequiresNetworkTether
                 - setPrimarySetupAccountAsRegularUser
                 - skipPrimarySetupAccountCreation
                 - zoomDisabled
@@ -5953,11 +5952,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6338,11 +6334,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.cloudPC_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6428,11 +6420,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.cloudPC_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -7086,6 +7074,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7123,11 +7112,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.cloudPC_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7147,6 +7132,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -7175,6 +7162,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7210,11 +7198,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.cloudPC_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -7259,6 +7243,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7378,6 +7363,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -7406,6 +7393,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -7504,6 +7492,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -8122,11 +8111,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -8507,11 +8493,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Get unifiedRoleAssignmentMultiple
-      description: "Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.deviceManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8597,11 +8579,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.deviceManagement_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -9255,6 +9233,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9292,11 +9271,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.deviceManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9316,6 +9291,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -9344,6 +9321,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9379,11 +9357,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.deviceManagement_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -9428,6 +9402,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9547,6 +9522,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -9575,6 +9552,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -9673,6 +9651,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -10304,11 +10283,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List resourceNamespaces
-      description: Get a list of the unifiedRbacResourceNamespace objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-resourcenamespaces?view=graph-rest-1.0
+      summary: Get resourceNamespaces from roleManagement
       operationId: roleManagement.directory_ListResourceNamespaces
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10540,11 +10515,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.directory.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -11111,11 +11083,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List approvalSteps
-      description: 'In Azure AD entitlement management, lists the approvalStep objects associated with an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/approval-list-steps?view=graph-rest-1.0
+      summary: Get steps from roleManagement
       operationId: roleManagement.directory.roleAssignmentApprovals_ListSteps
       parameters:
         - name: approval-id
@@ -11435,11 +11403,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.directory_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11525,11 +11489,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create unifiedRoleAssignment
-      description: Create a new unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.directory_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -11899,6 +11859,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -11936,11 +11897,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleInstances
-      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleInstances from roleManagement
       operationId: roleManagement.directory_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12351,11 +12308,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleRequests
-      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleRequests from roleManagement
       operationId: roleManagement.directory_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12472,11 +12425,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleAssignmentScheduleRequests
-      description: 'Create a new unifiedRoleAssignmentScheduleRequest object. This operation allows both admins and users to add, remove, extend, or renew assignments. To run this request, the calling user must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignmentScheduleRequests for roleManagement
       operationId: roleManagement.directory_CreateRoleAssignmentScheduleRequests
       requestBody:
         description: New navigation property
@@ -12801,10 +12750,6 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days. After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_cancel
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -12899,6 +12844,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -13129,11 +13075,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentSchedules
-      description: Get the schedules for active role assignment operations.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
+      summary: Get roleAssignmentSchedules from roleManagement
       operationId: roleManagement.directory_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13553,11 +13495,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.directory_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13577,6 +13515,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -13605,6 +13545,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -13640,11 +13581,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.directory_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -13689,6 +13626,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -13808,6 +13746,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -13836,6 +13776,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -13934,6 +13875,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -14236,11 +14178,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleInstancess
-      description: Get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleInstances from roleManagement
       operationId: roleManagement.directory_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14566,11 +14504,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleRequests
-      description: Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleRequests from roleManagement
       operationId: roleManagement.directory_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14685,11 +14619,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleEligibilityScheduleRequests
-      description: 'Create a new unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleEligibilityScheduleRequests for roleManagement
       operationId: roleManagement.directory_CreateRoleEligibilityScheduleRequests
       requestBody:
         description: New navigation property
@@ -14944,10 +14874,6 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days. After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_cancel
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -15042,6 +14968,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -15268,11 +15195,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilitySchedules
-      description: Get a list of the unifiedRoleEligibilitySchedule objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0
+      summary: Get roleEligibilitySchedules from roleManagement
       operationId: roleManagement.directory_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15612,11 +15535,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List transitiveRoleAssignment
-      description: 'Get the list of direct and transitive unifiedRoleAssignment objects for a specific principal. For example, if a user is assigned an Azure AD role through group membership, the role assignment is transitive, and this request will list the group''s ID as the **principalId**. Results can also be filtered by the **roleDefinitionId** and **directoryScopeId**. Supported only for directory (Azure AD) provider. For more information, see Use Azure AD groups to manage role assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-transitiveroleassignments?view=graph-rest-1.0
+      summary: Get transitiveRoleAssignments from roleManagement
       operationId: roleManagement.directory_ListTransitiveRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16072,6 +15991,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -16439,11 +16359,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List resourceNamespaces
-      description: Get a list of the unifiedRbacResourceNamespace objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-resourcenamespaces?view=graph-rest-1.0
+      summary: Get resourceNamespaces from roleManagement
       operationId: roleManagement.entitlementManagement_ListResourceNamespaces
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16675,11 +16591,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.entitlementManagement.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -17246,11 +17159,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List approvalSteps
-      description: 'In Azure AD entitlement management, lists the approvalStep objects associated with an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/approval-list-steps?view=graph-rest-1.0
+      summary: Get steps from roleManagement
       operationId: roleManagement.entitlementManagement.roleAssignmentApprovals_ListSteps
       parameters:
         - name: approval-id
@@ -17570,11 +17479,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List unifiedRoleAssignments
-      description: "Get a list of unifiedRoleAssignment objects for the provider. The following RBAC providers are currently supported:\n- directory (Azure AD)\n- entitlement management (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.entitlementManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17660,11 +17565,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create unifiedRoleAssignment
-      description: Create a new unifiedRoleAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -18034,6 +17935,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -18071,11 +17973,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleInstances
-      description: 'Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleInstances from roleManagement
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18486,11 +18384,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentScheduleRequests
-      description: 'Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Get roleAssignmentScheduleRequests from roleManagement
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18607,11 +18501,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleAssignmentScheduleRequests
-      description: 'Create a new unifiedRoleAssignmentScheduleRequest object. This operation allows both admins and users to add, remove, extend, or renew assignments. To run this request, the calling user must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignmentScheduleRequests for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleAssignmentScheduleRequests
       requestBody:
         description: New navigation property
@@ -18936,10 +18826,6 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days. After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_cancel
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -19034,6 +18920,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -19264,11 +19151,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleAssignmentSchedules
-      description: Get the schedules for active role assignment operations.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
+      summary: Get roleAssignmentSchedules from roleManagement
       operationId: roleManagement.entitlementManagement_ListRoleAssignmentSchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19688,11 +19571,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.entitlementManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19712,6 +19591,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -19740,6 +19621,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -19775,11 +19657,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -19824,6 +19702,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -19943,6 +19822,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -19971,6 +19852,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -20069,6 +19951,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -20371,11 +20254,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleInstancess
-      description: Get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleInstances from roleManagement
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleInstances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20701,11 +20580,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilityScheduleRequests
-      description: Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Get roleEligibilityScheduleRequests from roleManagement
       operationId: roleManagement.entitlementManagement_ListRoleEligibilityScheduleRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20820,11 +20695,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplication
-      summary: Create roleEligibilityScheduleRequests
-      description: 'Create a new unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0
+      summary: Create new navigation property to roleEligibilityScheduleRequests for roleManagement
       operationId: roleManagement.entitlementManagement_CreateRoleEligibilityScheduleRequests
       requestBody:
         description: New navigation property
@@ -21079,10 +20950,6 @@ paths:
       tags:
         - roleManagement.Actions
       summary: Invoke action cancel
-      description: 'Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days. After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_cancel
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -21177,6 +21044,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -21403,11 +21271,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List roleEligibilitySchedules
-      description: Get a list of the unifiedRoleEligibilitySchedule objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-1.0
+      summary: Get roleEligibilitySchedules from roleManagement
       operationId: roleManagement.entitlementManagement_ListRoleEligibilitySchedules
       parameters:
         - $ref: '#/components/parameters/top'
@@ -21747,11 +21611,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplication
-      summary: List transitiveRoleAssignment
-      description: 'Get the list of direct and transitive unifiedRoleAssignment objects for a specific principal. For example, if a user is assigned an Azure AD role through group membership, the role assignment is transitive, and this request will list the group''s ID as the **principalId**. Results can also be filtered by the **roleDefinitionId** and **directoryScopeId**. Supported only for directory (Azure AD) provider. For more information, see Use Azure AD groups to manage role assignments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-transitiveroleassignments?view=graph-rest-1.0
+      summary: Get transitiveRoleAssignments from roleManagement
       operationId: roleManagement.entitlementManagement_ListTransitiveRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -22207,6 +22067,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -22330,6 +22191,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get resourceNamespaces from roleManagement
+      description: Resource that represents a collection of related actions.
       operationId: roleManagement.exchange_ListResourceNamespaces
       parameters:
         - $ref: '#/components/parameters/top'
@@ -22415,6 +22277,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get resourceNamespaces from roleManagement
+      description: Resource that represents a collection of related actions.
       operationId: roleManagement.exchange_GetResourceNamespaces
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -22561,11 +22424,8 @@ paths:
     get:
       tags:
         - roleManagement.unifiedRbacApplication
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.exchange.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -22947,6 +22807,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.exchange_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -23056,6 +22917,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.exchange_GetRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -23402,6 +23264,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -23440,6 +23303,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: The roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.exchange_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -23459,6 +23323,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -23487,6 +23353,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -23546,6 +23413,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: The roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.exchange_GetRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
@@ -23567,6 +23435,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -23686,6 +23555,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowedPrincipalTypes
+                - allowedPrincipalTypes desc
                 - description
                 - description desc
                 - displayName
@@ -23714,6 +23585,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -23812,6 +23684,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -24115,6 +23988,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get transitiveRoleAssignments from roleManagement
+      description: Resource to grant access to users or groups that are transitive.
       operationId: roleManagement.exchange_ListTransitiveRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -24224,6 +24098,7 @@ paths:
       tags:
         - roleManagement.unifiedRbacApplication
       summary: Get transitiveRoleAssignments from roleManagement
+      description: Resource to grant access to users or groups that are transitive.
       operationId: roleManagement.exchange_GetTransitiveRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -24570,6 +24445,7 @@ paths:
             items:
               enum:
                 - id
+                - allowedPrincipalTypes
                 - description
                 - displayName
                 - isBuiltIn
@@ -25241,9 +25117,6 @@ components:
             registrationDisabled:
               type: boolean
               description: Indicates if registration is disabled
-            requestRequiresNetworkTether:
-              type: boolean
-              description: Indicates if the device is network-tethered to run the command
             setPrimarySetupAccountAsRegularUser:
               type: boolean
               description: Indicates whether Setup Assistant will set the account as a regular user
@@ -26001,6 +25874,8 @@ components:
         - title: unifiedRoleDefinition
           type: object
           properties:
+            allowedPrincipalTypes:
+              $ref: '#/components/schemas/microsoft.graph.allowedRolePrincipalTypes'
             description:
               type: string
               description: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
@@ -26549,21 +26424,25 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceNamespace'
+              description: Resource that represents a collection of related actions.
               x-ms-navigationProperty: true
             roleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+              description: Resource to grant access to users or groups.
               x-ms-navigationProperty: true
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+              description: The roles allowed by RBAC providers and the permissions assigned to the roles.
               x-ms-navigationProperty: true
             transitiveRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+              description: Resource to grant access to users or groups that are transitive.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -26705,6 +26584,9 @@ components:
         - androidWorkProfile
         - unknown
         - androidAOSP
+        - androidMobileApplicationManagement
+        - iOSMobileApplicationManagement
+        - unknownFutureValue
       type: string
       description: Supported platform types.
       x-ms-enum:
@@ -26741,6 +26623,15 @@ components:
           - value: androidAOSP
             description: Android AOSP.
             name: androidAOSP
+          - value: androidMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for android devices.
+            name: androidMobileApplicationManagement
+          - value: iOSMobileApplicationManagement
+            description: Indicates Mobile Application Management (MAM) for iOS devices
+            name: iOSMobileApplicationManagement
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use
+            name: unknownFutureValue
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -26935,7 +26826,7 @@ components:
               description: Indicates if siri setup pane is disabled
             supervisedModeEnabled:
               type: boolean
-              description: 'Supervised mode, True to enable, false otherwise. See hhttps://learn.microsoft.com/mem/intune/enrollment/device-enrollment for additional information.'
+              description: 'Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.'
             supportDepartment:
               type: string
               description: Support department information
@@ -27398,6 +27289,14 @@ components:
       additionalProperties:
         type: object
       description: 'A complex type to store the windows update rollout settings including offer start date time, offer end date time, and days between each set of offers.'
+    microsoft.graph.allowedRolePrincipalTypes:
+      title: allowedRolePrincipalTypes
+      enum:
+        - user
+        - servicePrincipal
+        - group
+        - unknownFutureValue
+      type: string
     microsoft.graph.unifiedRolePermission:
       title: unifiedRolePermission
       type: object
@@ -27424,11 +27323,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

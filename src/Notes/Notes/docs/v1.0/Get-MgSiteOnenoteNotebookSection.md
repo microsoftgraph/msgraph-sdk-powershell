@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgSiteOnenoteNotebookSection
 
 ## SYNOPSIS
-Retrieve a list of onenoteSection objects from the specified notebook.
+The sections in the notebook.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +21,9 @@ Get-MgSiteOnenoteNotebookSection -NotebookId <String> -SiteId <String> [-ExpandP
 ```
 
 ## DESCRIPTION
-Retrieve a list of onenoteSection objects from the specified notebook.
+The sections in the notebook.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -99,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotebookId
-key: id of notebook
+The unique identifier of notebook
 
 ```yaml
 Type: System.String
@@ -159,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -SiteId
-key: id of site
+The unique identifier of site
 
 ```yaml
 Type: System.String

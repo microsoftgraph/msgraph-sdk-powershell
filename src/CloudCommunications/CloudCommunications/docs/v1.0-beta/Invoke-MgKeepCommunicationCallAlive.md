@@ -8,13 +8,7 @@ schema: 2.0.0
 # Invoke-MgKeepCommunicationCallAlive
 
 ## SYNOPSIS
-Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.
-A call that does not receive this request within 45 minutes is considered inactive and will subsequently end.
-At least one successful request must be made within 45 minutes of the previous request, or the start of the call.
-We recommend that you send a request in shorter time intervals (every 15 minutes).
-Make sure that these requests are successful to prevent the call from timing out and ending.
-Attempting to send a request to a call that has already ended will result in a `404 Not-Found` error.
-The resources related to the call should be cleaned up on the application side.
+Invoke action keepAlive
 
 ## SYNTAX
 
@@ -30,13 +24,7 @@ Invoke-MgKeepCommunicationCallAlive -InputObject <ICloudCommunicationsIdentity> 
 ```
 
 ## DESCRIPTION
-Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.
-A call that does not receive this request within 45 minutes is considered inactive and will subsequently end.
-At least one successful request must be made within 45 minutes of the previous request, or the start of the call.
-We recommend that you send a request in shorter time intervals (every 15 minutes).
-Make sure that these requests are successful to prevent the call from timing out and ending.
-Attempting to send a request to a call that has already ended will result in a `404 Not-Found` error.
-The resources related to the call should be cleaned up on the application side.
+Invoke action keepAlive
 
 ## EXAMPLES
 
@@ -52,7 +40,7 @@ To learn about permissions for this resource, see the [permissions reference](/g
 ## PARAMETERS
 
 ### -CallId
-key: id of call
+The unique identifier of call
 
 ```yaml
 Type: System.String
@@ -149,20 +137,22 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
-  - `[AttendanceRecordId <String>]`: key: id of attendanceRecord
-  - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
-  - `[CallId <String>]`: key: id of call
-  - `[CallRecordId <String>]`: key: id of callRecord
-  - `[CallTranscriptId <String>]`: key: id of callTranscript
-  - `[CommsOperationId <String>]`: key: id of commsOperation
-  - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
-  - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport
-  - `[MeetingRegistrationQuestionId <String>]`: key: id of meetingRegistrationQuestion
-  - `[OnlineMeetingId <String>]`: key: id of onlineMeeting
-  - `[ParticipantId <String>]`: key: id of participant
-  - `[PresenceId <String>]`: key: id of presence
-  - `[SessionId <String>]`: key: id of session
-  - `[UserId <String>]`: key: id of user
+  - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord
+  - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
+  - `[CallId <String>]`: The unique identifier of call
+  - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
+  - `[CommsOperationId <String>]`: The unique identifier of commsOperation
+  - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
+  - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
+  - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
+  - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
+  - `[ParticipantId <String>]`: The unique identifier of participant
+  - `[PresenceId <String>]`: The unique identifier of presence
+  - `[SessionId <String>]`: The unique identifier of session
+  - `[ToDateTime <DateTime?>]`: Usage: toDateTime={toDateTime}
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

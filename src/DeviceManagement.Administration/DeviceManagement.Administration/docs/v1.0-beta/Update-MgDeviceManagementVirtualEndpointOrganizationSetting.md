@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementVirtualEndpointOrganizationSetting
 
 ## SYNOPSIS
-Update the properties of the cloudPcOrganizationSettings object in a tenant.
+Update the navigation property organizationSettings in deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Update-MgDeviceManagementVirtualEndpointOrganizationSetting
 ```
 
 ## DESCRIPTION
-Update the properties of the cloudPcOrganizationSettings object in a tenant.
+Update the navigation property organizationSettings in deviceManagement
 
 ## EXAMPLES
 
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableMemAutoEnroll
-Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM).
+Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager (MEM).
 The default value is false.
 
 ```yaml
@@ -100,7 +100,11 @@ Accept wildcard characters: False
 ```
 
 ### -EnableSingleSignOn
-.
+True if the provisioned Cloud PC can be accessed by single sign-on.
+False indicates that the provisioned Cloud PC doesn't support this feature.
+Default value is false.
+Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC.
+Optional.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -245,8 +249,8 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphCloudPcOrganizationSettings>: cloudPcOrganizationSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[EnableMemAutoEnroll <Boolean?>]`: Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
-  - `[EnableSingleSignOn <Boolean?>]`: 
+  - `[EnableMemAutoEnroll <Boolean?>]`: Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager (MEM). The default value is false.
+  - `[EnableSingleSignOn <Boolean?>]`: True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn't support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.
   - `[OSVersion <String>]`: cloudPcOperatingSystem
   - `[UserAccountType <String>]`: cloudPcUserAccountType
   - `[WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>]`: cloudPcWindowsSettings

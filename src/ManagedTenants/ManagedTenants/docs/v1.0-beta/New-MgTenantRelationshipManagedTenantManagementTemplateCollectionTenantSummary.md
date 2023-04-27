@@ -21,7 +21,8 @@ New-MgTenantRelationshipManagedTenantManagementTemplateCollectionTenantSummary
  [-IncompleteStepsCount <Int32>] [-IncompleteUsersCount <Int32>] [-IneligibleStepsCount <Int32>] [-IsComplete]
  [-LastActionByUserId <String>] [-LastActionDateTime <DateTime>]
  [-ManagementTemplateCollectionDisplayName <String>] [-ManagementTemplateCollectionId <String>]
- [-TenantId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-RegressedStepsCount <Int32>] [-RegressedUsersCount <Int32>] [-TenantId <String>]
+ [-UnlicensedUsersCount <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -310,11 +311,56 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RegressedStepsCount
+.
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegressedUsersCount
+.
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TenantId
 .
 
 ```yaml
 Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UnlicensedUsersCount
+.
+
+```yaml
+Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -394,7 +440,10 @@ BODYPARAMETER <IMicrosoftGraphManagedTenantsManagementTemplateCollectionTenantSu
   - `[LastActionDateTime <DateTime?>]`: 
   - `[ManagementTemplateCollectionDisplayName <String>]`: 
   - `[ManagementTemplateCollectionId <String>]`: 
+  - `[RegressedStepsCount <Int32?>]`: 
+  - `[RegressedUsersCount <Int32?>]`: 
   - `[TenantId <String>]`: 
+  - `[UnlicensedUsersCount <Int32?>]`: 
 
 ## RELATED LINKS
 

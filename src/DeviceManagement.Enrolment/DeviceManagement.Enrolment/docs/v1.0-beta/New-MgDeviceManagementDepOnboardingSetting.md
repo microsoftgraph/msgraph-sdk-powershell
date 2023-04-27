@@ -478,11 +478,15 @@ BODYPARAMETER <IMicrosoftGraphDepOnboardingSetting>: The depOnboardingSetting re
     - `[RequiresUserAuthentication <Boolean?>]`: Indicates if the profile requires user authentication
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AccessibilityScreenDisabled <Boolean?>]`: Indicates if Accessibility screen is disabled
+    - `[AdminAccountFullName <String>]`: Indicates what the full name for the admin account is
+    - `[AdminAccountPassword <String>]`: Indicates what the password for the admin account is
+    - `[AdminAccountUserName <String>]`: Indicates what the user name for the admin account is
     - `[AutoUnlockWithWatchDisabled <Boolean?>]`: Indicates if UnlockWithWatch screen is disabled
     - `[ChooseYourLockScreenDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
     - `[DontAutoPopulatePrimaryAccountInfo <Boolean?>]`: Indicates whether Setup Assistant will auto populate the primary account information
     - `[EnableRestrictEditing <Boolean?>]`: Indicates whether the user will enable blockediting
     - `[FileVaultDisabled <Boolean?>]`: Indicates if file vault is disabled
+    - `[HideAdminAccount <Boolean?>]`: Indicates whether the admin account should be hidded or not
     - `[ICloudDiagnosticsDisabled <Boolean?>]`: Indicates if iCloud Analytics screen is disabled
     - `[ICloudStorageDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
     - `[PassCodeDisabled <Boolean?>]`: Indicates if Passcode setup pane is disabled
@@ -615,11 +619,15 @@ DEFAULTMACOSENROLLMENTPROFILE <IMicrosoftGraphDepMacOSEnrollmentProfile>: The De
   - `[RequiresUserAuthentication <Boolean?>]`: Indicates if the profile requires user authentication
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AccessibilityScreenDisabled <Boolean?>]`: Indicates if Accessibility screen is disabled
+  - `[AdminAccountFullName <String>]`: Indicates what the full name for the admin account is
+  - `[AdminAccountPassword <String>]`: Indicates what the password for the admin account is
+  - `[AdminAccountUserName <String>]`: Indicates what the user name for the admin account is
   - `[AutoUnlockWithWatchDisabled <Boolean?>]`: Indicates if UnlockWithWatch screen is disabled
   - `[ChooseYourLockScreenDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
   - `[DontAutoPopulatePrimaryAccountInfo <Boolean?>]`: Indicates whether Setup Assistant will auto populate the primary account information
   - `[EnableRestrictEditing <Boolean?>]`: Indicates whether the user will enable blockediting
   - `[FileVaultDisabled <Boolean?>]`: Indicates if file vault is disabled
+  - `[HideAdminAccount <Boolean?>]`: Indicates whether the admin account should be hidded or not
   - `[ICloudDiagnosticsDisabled <Boolean?>]`: Indicates if iCloud Analytics screen is disabled
   - `[ICloudStorageDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
   - `[PassCodeDisabled <Boolean?>]`: Indicates if Passcode setup pane is disabled

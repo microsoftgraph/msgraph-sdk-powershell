@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgWindowsUpdatesUpdatableAsset
 
 ## SYNOPSIS
-Create a new updatableAssetGroup object.
-The **updatableAssetGroup** resource inherits from updatableAsset.
+Create new navigation property to updatableAssets for admin
 
 ## SYNTAX
 
@@ -25,8 +24,7 @@ New-MgWindowsUpdatesUpdatableAsset -BodyParameter <Hashtable> [-Confirm] [-WhatI
 ```
 
 ## DESCRIPTION
-Create a new updatableAssetGroup object.
-The **updatableAssetGroup** resource inherits from updatableAsset.
+Create new navigation property to updatableAssets for admin
 
 ## EXAMPLES
 

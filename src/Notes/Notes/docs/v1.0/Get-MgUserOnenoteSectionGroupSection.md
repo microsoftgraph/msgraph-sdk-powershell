@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserOnenoteSectionGroupSection
 
 ## SYNOPSIS
-Retrieve a list of onenoteSection objects from the specified section group.
+The sections in the section group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +21,9 @@ Get-MgUserOnenoteSectionGroupSection -SectionGroupId <String> -UserId <String> [
 ```
 
 ## DESCRIPTION
-Retrieve a list of onenoteSection objects from the specified section group.
+The sections in the section group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -142,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -SectionGroupId
-key: id of sectionGroup
+The unique identifier of sectionGroup
 
 ```yaml
 Type: System.String
@@ -202,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String

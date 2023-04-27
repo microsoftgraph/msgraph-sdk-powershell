@@ -8,14 +8,7 @@ schema: 2.0.0
 # New-MgGroupThreadPostInReplyToAttachmentUploadSession
 
 ## SYNOPSIS
-Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item.
-The item can be a message or event.
-Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
-This allows transfer to be resumed, in case the network connection is dropped during upload.
-The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
+Invoke action createUploadSession
 
 ## SYNTAX
 
@@ -49,14 +42,7 @@ New-MgGroupThreadPostInReplyToAttachmentUploadSession -InputObject <IGroupsIdent
 ```
 
 ## DESCRIPTION
-Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to the specified Outlook item.
-The item can be a message or event.
-Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
-This allows transfer to be resumed, in case the network connection is dropped during upload.
-The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
+Invoke action createUploadSession
 
 ## EXAMPLES
 
@@ -110,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConversationThreadId
-key: id of conversationThread
+The unique identifier of conversationThread
 
 ```yaml
 Type: System.String
@@ -125,7 +111,7 @@ Accept wildcard characters: False
 ```
 
 ### -GroupId
-key: id of group
+The unique identifier of group
 
 ```yaml
 Type: System.String
@@ -156,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -PostId
-key: id of post
+The unique identifier of post
 
 ```yaml
 Type: System.String
@@ -244,51 +230,54 @@ BODYPARAMETER <IPathsC777YoGroupsGroupIdThreadsConversationthreadIdPostsPostIdIn
     - `[Size <Int64?>]`: The length of the attachment in bytes. Required.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
-  - `[AttachmentId <String>]`: key: id of attachment
-  - `[ContentTypeId <String>]`: key: id of contentType
-  - `[ConversationId <String>]`: key: id of conversation
-  - `[ConversationThreadId <String>]`: key: id of conversationThread
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
-  - `[DirectorySettingId <String>]`: key: id of directorySetting
-  - `[DocumentSetVersionId <String>]`: key: id of documentSetVersion
-  - `[DriveId <String>]`: key: id of drive
-  - `[DriveItemId <String>]`: key: id of driveItem
-  - `[DriveItemVersionId <String>]`: key: id of driveItemVersion
+  - `[AttachmentId <String>]`: The unique identifier of attachment
+  - `[ContentTypeId <String>]`: The unique identifier of contentType
+  - `[ConversationId <String>]`: The unique identifier of conversation
+  - `[ConversationThreadId <String>]`: The unique identifier of conversationThread
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
+  - `[DirectorySettingId <String>]`: The unique identifier of directorySetting
+  - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
+  - `[DriveId <String>]`: The unique identifier of drive
+  - `[DriveItemId <String>]`: The unique identifier of driveItem
+  - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
-  - `[EndpointId <String>]`: key: id of endpoint
-  - `[EventId <String>]`: key: id of event
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[GroupId <String>]`: key: id of group
-  - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
-  - `[HorizontalSectionColumnId <String>]`: key: id of horizontalSectionColumn
-  - `[HorizontalSectionId <String>]`: key: id of horizontalSection
+  - `[EndpointId <String>]`: The unique identifier of endpoint
+  - `[EventId <String>]`: The unique identifier of event
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[GroupId <String>]`: The unique identifier of group
+  - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
+  - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
-  - `[ListId <String>]`: key: id of list
+  - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
-  - `[ListItemId <String>]`: key: id of listItem
-  - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[MentionId <String>]`: key: id of mention
-  - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
-  - `[NotebookId <String>]`: key: id of notebook
-  - `[OnenotePageId <String>]`: key: id of onenotePage
-  - `[OnenoteSectionId <String>]`: key: id of onenoteSection
+  - `[ListItemId <String>]`: The unique identifier of listItem
+  - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
+  - `[MentionId <String>]`: The unique identifier of mention
+  - `[MultiValueLegacyExtendedPropertyId <String>]`: The unique identifier of multiValueLegacyExtendedProperty
+  - `[NotebookId <String>]`: The unique identifier of notebook
+  - `[OnenotePageId <String>]`: The unique identifier of onenotePage
+  - `[OnenoteSectionId <String>]`: The unique identifier of onenoteSection
   - `[Path <String>]`: Usage: path='{path}'
-  - `[PermissionId <String>]`: key: id of permission
-  - `[PostId <String>]`: key: id of post
-  - `[ProfilePhotoId <String>]`: key: id of profilePhoto
+  - `[PermissionId <String>]`: The unique identifier of permission
+  - `[PlannerBucketId <String>]`: The unique identifier of plannerBucket
+  - `[PlannerPlanId <String>]`: The unique identifier of plannerPlan
+  - `[PostId <String>]`: The unique identifier of post
+  - `[ProfilePhotoId <String>]`: The unique identifier of profilePhoto
   - `[Q <String>]`: Usage: q='{q}'
-  - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
-  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
-  - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[SiteId <String>]`: key: id of site
-  - `[SitePageId <String>]`: key: id of sitePage
+  - `[ResourceSpecificPermissionGrantId <String>]`: The unique identifier of resourceSpecificPermissionGrant
+  - `[SensitivityLabelId <String>]`: The unique identifier of sensitivityLabel
+  - `[SingleValueLegacyExtendedPropertyId <String>]`: The unique identifier of singleValueLegacyExtendedProperty
+  - `[SiteId <String>]`: The unique identifier of site
+  - `[SitePageId <String>]`: The unique identifier of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
-  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[SubscriptionId <String>]`: The unique identifier of subscription
   - `[Token <String>]`: Usage: token='{token}'
   - `[User <String>]`: Usage: User='{User}'
-  - `[UserId <String>]`: key: id of user
-  - `[WebPartId <String>]`: key: id of webPart
+  - `[UserId <String>]`: The unique identifier of user
+  - `[WebPartId <String>]`: The unique identifier of webPart
 
 ## RELATED LINKS
 

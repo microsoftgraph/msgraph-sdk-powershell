@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceHealthId
-key: id of serviceHealth
+The unique identifier of serviceHealth
 
 ```yaml
 Type: System.String
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceHealthIssueId
-key: id of serviceHealthIssue
+The unique identifier of serviceHealthIssue
 
 ```yaml
 Type: System.String
@@ -159,10 +159,10 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesServiceAnnouncementIdentity>: Identity Parameter
-  - `[ServiceAnnouncementAttachmentId <String>]`: key: id of serviceAnnouncementAttachment
-  - `[ServiceHealthId <String>]`: key: id of serviceHealth
-  - `[ServiceHealthIssueId <String>]`: key: id of serviceHealthIssue
-  - `[ServiceUpdateMessageId <String>]`: key: id of serviceUpdateMessage
+  - `[ServiceAnnouncementAttachmentId <String>]`: The unique identifier of serviceAnnouncementAttachment
+  - `[ServiceHealthId <String>]`: The unique identifier of serviceHealth
+  - `[ServiceHealthIssueId <String>]`: The unique identifier of serviceHealthIssue
+  - `[ServiceUpdateMessageId <String>]`: The unique identifier of serviceUpdateMessage
 
 ## RELATED LINKS
 

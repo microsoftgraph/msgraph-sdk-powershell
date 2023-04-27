@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.PersonalContacts
-Module Guid: 9e5f8f25-785c-4705-a515-dcb0195f23c6
+Module Guid: f04719b1-bd7e-425e-9b72-85b8684e323a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts
 Help Version: 1.0.0.0
 Locale: en-US
@@ -123,21 +123,19 @@ Read-only.
 Nullable.
 
 ### [New-MgUserContact](New-MgUserContact.md)
-Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
+Create new navigation property to contacts for users
 
 ### [New-MgUserContactExtension](New-MgUserContactExtension.md)
 Create new navigation property to extensions for users
 
 ### [New-MgUserContactFolder](New-MgUserContactFolder.md)
-Create a new contactFolder under the user's default contacts folder.
-You can also create a new contactfolder as a child of any specified contact folder.
+Create new navigation property to contactFolders for users
 
 ### [New-MgUserContactFolderChildFolder](New-MgUserContactFolderChildFolder.md)
-Create a new contactFolder as a child of a specified folder.
-You can also create a new contactFolder under the user's default contact folder.
+Create new navigation property to childFolders for users
 
 ### [New-MgUserContactFolderChildFolderContact](New-MgUserContactFolderChildFolderContact.md)
-Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+Create new navigation property to contacts for users
 
 ### [New-MgUserContactFolderChildFolderContactExtension](New-MgUserContactFolderChildFolderContactExtension.md)
 Create new navigation property to extensions for users
@@ -155,7 +153,7 @@ Create new navigation property to multiValueExtendedProperties for users
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserContactFolderContact](New-MgUserContactFolderContact.md)
-Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+Create new navigation property to contacts for users
 
 ### [New-MgUserContactFolderContactExtension](New-MgUserContactFolderContactExtension.md)
 Create new navigation property to extensions for users

@@ -37,7 +37,7 @@ To learn about permissions for this resource, see the [permissions reference](/g
 ## PARAMETERS
 
 ### -AdministrativeUnitId
-key: id of administrativeUnit
+The unique identifier of administrativeUnit
 
 ```yaml
 Type: System.String

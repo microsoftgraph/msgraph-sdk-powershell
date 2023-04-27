@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgWindowsUpdatesDeployment
 
 ## SYNOPSIS
-Create a new deployment object.
+Create new navigation property to deployments for admin
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgWindowsUpdatesDeployment -BodyParameter <IMicrosoftGraphWindowsUpdatesDepl
 ```
 
 ## DESCRIPTION
-Create a new deployment object.
+Create new navigation property to deployments for admin
 
 ## EXAMPLES
 

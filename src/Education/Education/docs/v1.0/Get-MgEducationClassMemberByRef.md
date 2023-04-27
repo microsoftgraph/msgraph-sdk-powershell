@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEducationClassMemberByRef
 
 ## SYNOPSIS
-Retrieves the educationUser members of an educationClass.
+All users in the class.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgEducationClassMemberByRef -EducationClassId <String> [-Filter <String>] [-
 ```
 
 ## DESCRIPTION
-Retrieves the educationUser members of an educationClass.
+All users in the class.
+Nullable.
 
 ## EXAMPLES
 
@@ -68,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -EducationClassId
-key: id of educationClass
+The unique identifier of educationClass
 
 ```yaml
 Type: System.String

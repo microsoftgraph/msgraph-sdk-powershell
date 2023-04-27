@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CloudPrint
-Module Guid: f6cb225f-c225-4f4e-8bf3-7560721fd0b5
+Module Guid: 871cef9f-2542-4e61-bb6b-565f01bd9f8d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint
 Help Version: 1.0.0.0
 Locale: en-US
@@ -51,16 +51,21 @@ Nullable.
 The list of printer shares registered in the tenant.
 
 ### [Get-MgPrintShareAllowedGroup](Get-MgPrintShareAllowedGroup.md)
-Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+The groups whose users have access to print using the printer.
 
 ### [Get-MgPrintShareAllowedGroupByRef](Get-MgPrintShareAllowedGroupByRef.md)
-Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+The groups whose users have access to print using the printer.
 
 ### [Get-MgPrintShareAllowedUser](Get-MgPrintShareAllowedUser.md)
-Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+The users who have access to print using the printer.
 
 ### [Get-MgPrintShareAllowedUserByRef](Get-MgPrintShareAllowedUserByRef.md)
-Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+The users who have access to print using the printer.
+
+### [Get-MgPrintShareAllowedUserMailboxSetting](Get-MgPrintShareAllowedUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
 
 ### [Get-MgPrintSharePrinter](Get-MgPrintSharePrinter.md)
 The printer that this printer share is related to.
@@ -84,8 +89,7 @@ Create new navigation property to connectors for print
 Create new navigation property to operations for print
 
 ### [New-MgPrintPrinterTaskTrigger](New-MgPrintPrinterTaskTrigger.md)
-Create a new task trigger on the specified printer.
-Currently, only **one** task trigger can be specified per printer, but this limit might be removed in the future.
+Create new navigation property to taskTriggers for print
 
 ### [New-MgPrintService](New-MgPrintService.md)
 Create new navigation property to services for print
@@ -94,7 +98,7 @@ Create new navigation property to services for print
 Create new navigation property to endpoints for print
 
 ### [New-MgPrintShare](New-MgPrintShare.md)
-Create a new **printerShare** for the specified printer.
+Create new navigation property to shares for print
 
 ### [New-MgPrintShareAllowedGroupByRef](New-MgPrintShareAllowedGroupByRef.md)
 Create new navigation property ref to allowedGroups for print
@@ -103,8 +107,7 @@ Create new navigation property ref to allowedGroups for print
 Create new navigation property ref to allowedUsers for print
 
 ### [New-MgPrintTaskDefinition](New-MgPrintTaskDefinition.md)
-Create a new task definition.
-For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+Create new navigation property to taskDefinitions for print
 
 ### [New-MgPrintTaskDefinitionTask](New-MgPrintTaskDefinitionTask.md)
 Create new navigation property to tasks for print
@@ -143,7 +146,7 @@ Delete navigation property taskDefinitions for print
 Delete navigation property tasks for print
 
 ### [Restore-MgPrintPrinterFactoryDefault](Restore-MgPrintPrinterFactoryDefault.md)
-Restore a printer's default settings to the values specified by the manufacturer.
+Invoke action restoreFactoryDefaults
 
 ### [Update-MgPrint](Update-MgPrint.md)
 Update print
@@ -168,6 +171,9 @@ Update the navigation property endpoints in print
 
 ### [Update-MgPrintShare](Update-MgPrintShare.md)
 Update the navigation property shares in print
+
+### [Update-MgPrintShareAllowedUserMailboxSetting](Update-MgPrintShareAllowedUserMailboxSetting.md)
+Update property mailboxSettings value.
 
 ### [Update-MgPrintTaskDefinition](Update-MgPrintTaskDefinition.md)
 Update the navigation property taskDefinitions in print

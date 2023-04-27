@@ -8,8 +8,7 @@ schema: 2.0.0
 # Unpublish-MgBookingBusiness
 
 ## SYNOPSIS
-Make the scheduling page of this business not available to external customers.
-Set the **isPublished** property to `false`, and the **publicUrl** property to `null`.
+Prevents the general public from seeing the scheduling page of this business.
 
 ## SYNTAX
 
@@ -25,8 +24,7 @@ Unpublish-MgBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-Confi
 ```
 
 ## DESCRIPTION
-Make the scheduling page of this business not available to external customers.
-Set the **isPublished** property to `false`, and the **publicUrl** property to `null`.
+Prevents the general public from seeing the scheduling page of this business.
 
 ## EXAMPLES
 
@@ -42,7 +40,7 @@ To learn about permissions for this resource, see the [permissions reference](/g
 ## PARAMETERS
 
 ### -BookingBusinessId
-key: id of bookingBusiness
+The unique identifier of bookingBusiness
 
 ```yaml
 Type: System.String
@@ -139,18 +137,18 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IBookingsIdentity>: Identity Parameter
-  - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
-  - `[BookingBusinessId <String>]`: key: id of bookingBusiness
-  - `[BookingCurrencyId <String>]`: key: id of bookingCurrency
-  - `[BookingCustomQuestionId <String>]`: key: id of bookingCustomQuestion
-  - `[BookingCustomerBaseId <String>]`: key: id of bookingCustomerBase
-  - `[BookingCustomerId <String>]`: key: id of bookingCustomer
-  - `[BookingServiceId <String>]`: key: id of bookingService
-  - `[BookingStaffMemberBaseId <String>]`: key: id of bookingStaffMemberBase
-  - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
-  - `[BusinessScenarioId <String>]`: key: id of businessScenario
-  - `[BusinessScenarioTaskId <String>]`: key: id of businessScenarioTask
-  - `[PlannerPlanConfigurationLocalizationId <String>]`: key: id of plannerPlanConfigurationLocalization
+  - `[BookingAppointmentId <String>]`: The unique identifier of bookingAppointment
+  - `[BookingBusinessId <String>]`: The unique identifier of bookingBusiness
+  - `[BookingCurrencyId <String>]`: The unique identifier of bookingCurrency
+  - `[BookingCustomQuestionId <String>]`: The unique identifier of bookingCustomQuestion
+  - `[BookingCustomerBaseId <String>]`: The unique identifier of bookingCustomerBase
+  - `[BookingCustomerId <String>]`: The unique identifier of bookingCustomer
+  - `[BookingServiceId <String>]`: The unique identifier of bookingService
+  - `[BookingStaffMemberBaseId <String>]`: The unique identifier of bookingStaffMemberBase
+  - `[BookingStaffMemberId <String>]`: The unique identifier of bookingStaffMember
+  - `[BusinessScenarioId <String>]`: The unique identifier of businessScenario
+  - `[BusinessScenarioTaskId <String>]`: The unique identifier of businessScenarioTask
+  - `[PlannerPlanConfigurationLocalizationId <String>]`: The unique identifier of plannerPlanConfigurationLocalization
 
 ## RELATED LINKS
 

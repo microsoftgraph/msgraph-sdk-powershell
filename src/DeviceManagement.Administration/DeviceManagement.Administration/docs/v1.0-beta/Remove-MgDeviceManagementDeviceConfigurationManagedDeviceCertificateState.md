@@ -65,7 +65,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedAllDeviceCertificateStateId
-key: id of managedAllDeviceCertificateState
+The unique identifier of managedAllDeviceCertificateState
 
 ```yaml
 Type: System.String
@@ -146,60 +146,61 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter
-  - `[AuditEventId <String>]`: key: id of auditEvent
-  - `[CartToClassAssociationId <String>]`: key: id of cartToClassAssociation
-  - `[CloudPcAuditEventId <String>]`: key: id of cloudPcAuditEvent
-  - `[CloudPcDeviceImageId <String>]`: key: id of cloudPcDeviceImage
-  - `[CloudPcExportJobId <String>]`: key: id of cloudPcExportJob
-  - `[CloudPcExternalPartnerSettingId <String>]`: key: id of cloudPcExternalPartnerSetting
-  - `[CloudPcGalleryImageId <String>]`: key: id of cloudPcGalleryImage
-  - `[CloudPcId <String>]`: key: id of cloudPC
-  - `[CloudPcOnPremisesConnectionId <String>]`: key: id of cloudPcOnPremisesConnection
-  - `[CloudPcProvisioningPolicyAssignmentId <String>]`: key: id of cloudPcProvisioningPolicyAssignment
-  - `[CloudPcProvisioningPolicyId <String>]`: key: id of cloudPcProvisioningPolicy
-  - `[CloudPcServicePlanId <String>]`: key: id of cloudPcServicePlan
-  - `[CloudPcSharedUseServicePlanId <String>]`: key: id of cloudPcSharedUseServicePlan
-  - `[CloudPcSnapshotId <String>]`: key: id of cloudPcSnapshot
-  - `[CloudPcSupportedRegionId <String>]`: key: id of cloudPcSupportedRegion
-  - `[CloudPcUserSettingAssignmentId <String>]`: key: id of cloudPcUserSettingAssignment
-  - `[CloudPcUserSettingId <String>]`: key: id of cloudPcUserSetting
-  - `[ComanagementEligibleDeviceId <String>]`: key: id of comanagementEligibleDevice
-  - `[ComplianceManagementPartnerId <String>]`: key: id of complianceManagementPartner
-  - `[DeviceAndAppManagementRoleAssignmentId <String>]`: key: id of deviceAndAppManagementRoleAssignment
-  - `[DeviceManagementDomainJoinConnectorId <String>]`: key: id of deviceManagementDomainJoinConnector
-  - `[DeviceManagementExchangeConnectorId <String>]`: key: id of deviceManagementExchangeConnector
-  - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: key: id of deviceManagementExchangeOnPremisesPolicy
-  - `[DeviceManagementPartnerId <String>]`: key: id of deviceManagementPartner
-  - `[GroupPolicyCategoryId <String>]`: key: id of groupPolicyCategory
-  - `[GroupPolicyCategoryId1 <String>]`: key: id of groupPolicyCategory
-  - `[GroupPolicyDefinitionFileId <String>]`: key: id of groupPolicyDefinitionFile
-  - `[GroupPolicyDefinitionId <String>]`: key: id of groupPolicyDefinition
-  - `[GroupPolicyMigrationReportId <String>]`: key: id of groupPolicyMigrationReport
-  - `[GroupPolicyObjectFileId <String>]`: key: id of groupPolicyObjectFile
-  - `[GroupPolicyOperationId <String>]`: key: id of groupPolicyOperation
-  - `[GroupPolicyPresentationId <String>]`: key: id of groupPolicyPresentation
-  - `[GroupPolicySettingMappingId <String>]`: key: id of groupPolicySettingMapping
-  - `[GroupPolicyUploadedDefinitionFileId <String>]`: key: id of groupPolicyUploadedDefinitionFile
-  - `[IntuneBrandingProfileAssignmentId <String>]`: key: id of intuneBrandingProfileAssignment
-  - `[IntuneBrandingProfileId <String>]`: key: id of intuneBrandingProfile
-  - `[IosUpdateDeviceStatusId <String>]`: key: id of iosUpdateDeviceStatus
-  - `[ManagedAllDeviceCertificateStateId <String>]`: key: id of managedAllDeviceCertificateState
-  - `[MobileThreatDefenseConnectorId <String>]`: key: id of mobileThreatDefenseConnector
-  - `[NdesConnectorId <String>]`: key: id of ndesConnector
-  - `[RemoteAssistancePartnerId <String>]`: key: id of remoteAssistancePartner
-  - `[ResourceOperationId <String>]`: key: id of resourceOperation
-  - `[RestrictedAppsViolationId <String>]`: key: id of restrictedAppsViolation
-  - `[RoleAssignmentId <String>]`: key: id of roleAssignment
-  - `[RoleDefinitionId <String>]`: key: id of roleDefinition
-  - `[RoleScopeTagAutoAssignmentId <String>]`: key: id of roleScopeTagAutoAssignment
-  - `[RoleScopeTagId <String>]`: key: id of roleScopeTag
-  - `[TelecomExpenseManagementPartnerId <String>]`: key: id of telecomExpenseManagementPartner
-  - `[TermsAndConditionsAcceptanceStatusId <String>]`: key: id of termsAndConditionsAcceptanceStatus
-  - `[TermsAndConditionsAssignmentId <String>]`: key: id of termsAndConditionsAssignment
-  - `[TermsAndConditionsGroupAssignmentId <String>]`: key: id of termsAndConditionsGroupAssignment
-  - `[TermsAndConditionsId <String>]`: key: id of termsAndConditions
-  - `[UnsupportedGroupPolicyExtensionId <String>]`: key: id of unsupportedGroupPolicyExtension
-  - `[UserPfxCertificateId <String>]`: key: id of userPFXCertificate
+  - `[AuditEventId <String>]`: The unique identifier of auditEvent
+  - `[CartToClassAssociationId <String>]`: The unique identifier of cartToClassAssociation
+  - `[CloudPcAuditEventId <String>]`: The unique identifier of cloudPcAuditEvent
+  - `[CloudPcDeviceImageId <String>]`: The unique identifier of cloudPcDeviceImage
+  - `[CloudPcExportJobId <String>]`: The unique identifier of cloudPcExportJob
+  - `[CloudPcExternalPartnerSettingId <String>]`: The unique identifier of cloudPcExternalPartnerSetting
+  - `[CloudPcGalleryImageId <String>]`: The unique identifier of cloudPcGalleryImage
+  - `[CloudPcId <String>]`: The unique identifier of cloudPC
+  - `[CloudPcOnPremisesConnectionId <String>]`: The unique identifier of cloudPcOnPremisesConnection
+  - `[CloudPcProvisioningPolicyAssignmentId <String>]`: The unique identifier of cloudPcProvisioningPolicyAssignment
+  - `[CloudPcProvisioningPolicyId <String>]`: The unique identifier of cloudPcProvisioningPolicy
+  - `[CloudPcServicePlanId <String>]`: The unique identifier of cloudPcServicePlan
+  - `[CloudPcSharedUseServicePlanId <String>]`: The unique identifier of cloudPcSharedUseServicePlan
+  - `[CloudPcSnapshotId <String>]`: The unique identifier of cloudPcSnapshot
+  - `[CloudPcSupportedRegionId <String>]`: The unique identifier of cloudPcSupportedRegion
+  - `[CloudPcUserSettingAssignmentId <String>]`: The unique identifier of cloudPcUserSettingAssignment
+  - `[CloudPcUserSettingId <String>]`: The unique identifier of cloudPcUserSetting
+  - `[ComanagementEligibleDeviceId <String>]`: The unique identifier of comanagementEligibleDevice
+  - `[ComplianceManagementPartnerId <String>]`: The unique identifier of complianceManagementPartner
+  - `[DeviceAndAppManagementRoleAssignmentId <String>]`: The unique identifier of deviceAndAppManagementRoleAssignment
+  - `[DeviceManagementDomainJoinConnectorId <String>]`: The unique identifier of deviceManagementDomainJoinConnector
+  - `[DeviceManagementExchangeConnectorId <String>]`: The unique identifier of deviceManagementExchangeConnector
+  - `[DeviceManagementExchangeOnPremisesPolicyId <String>]`: The unique identifier of deviceManagementExchangeOnPremisesPolicy
+  - `[DeviceManagementPartnerId <String>]`: The unique identifier of deviceManagementPartner
+  - `[GroupPolicyCategoryId <String>]`: The unique identifier of groupPolicyCategory
+  - `[GroupPolicyCategoryId1 <String>]`: The unique identifier of groupPolicyCategory
+  - `[GroupPolicyDefinitionFileId <String>]`: The unique identifier of groupPolicyDefinitionFile
+  - `[GroupPolicyDefinitionId <String>]`: The unique identifier of groupPolicyDefinition
+  - `[GroupPolicyMigrationReportId <String>]`: The unique identifier of groupPolicyMigrationReport
+  - `[GroupPolicyObjectFileId <String>]`: The unique identifier of groupPolicyObjectFile
+  - `[GroupPolicyOperationId <String>]`: The unique identifier of groupPolicyOperation
+  - `[GroupPolicyPresentationId <String>]`: The unique identifier of groupPolicyPresentation
+  - `[GroupPolicySettingMappingId <String>]`: The unique identifier of groupPolicySettingMapping
+  - `[GroupPolicyUploadedDefinitionFileId <String>]`: The unique identifier of groupPolicyUploadedDefinitionFile
+  - `[IntuneBrandingProfileAssignmentId <String>]`: The unique identifier of intuneBrandingProfileAssignment
+  - `[IntuneBrandingProfileId <String>]`: The unique identifier of intuneBrandingProfile
+  - `[IosUpdateDeviceStatusId <String>]`: The unique identifier of iosUpdateDeviceStatus
+  - `[ManagedAllDeviceCertificateStateId <String>]`: The unique identifier of managedAllDeviceCertificateState
+  - `[MobileThreatDefenseConnectorId <String>]`: The unique identifier of mobileThreatDefenseConnector
+  - `[NdesConnectorId <String>]`: The unique identifier of ndesConnector
+  - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
+  - `[ResourceOperationId <String>]`: The unique identifier of resourceOperation
+  - `[RestrictedAppsViolationId <String>]`: The unique identifier of restrictedAppsViolation
+  - `[RoleAssignmentId <String>]`: The unique identifier of roleAssignment
+  - `[RoleDefinitionId <String>]`: The unique identifier of roleDefinition
+  - `[RoleScopeTagAutoAssignmentId <String>]`: The unique identifier of roleScopeTagAutoAssignment
+  - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
+  - `[TelecomExpenseManagementPartnerId <String>]`: The unique identifier of telecomExpenseManagementPartner
+  - `[TermsAndConditionsAcceptanceStatusId <String>]`: The unique identifier of termsAndConditionsAcceptanceStatus
+  - `[TermsAndConditionsAssignmentId <String>]`: The unique identifier of termsAndConditionsAssignment
+  - `[TermsAndConditionsGroupAssignmentId <String>]`: The unique identifier of termsAndConditionsGroupAssignment
+  - `[TermsAndConditionsId <String>]`: The unique identifier of termsAndConditions
+  - `[UnsupportedGroupPolicyExtensionId <String>]`: The unique identifier of unsupportedGroupPolicyExtension
+  - `[UserId <String>]`: The unique identifier of user
+  - `[UserPfxCertificateId <String>]`: The unique identifier of userPFXCertificate
 
 ## RELATED LINKS
 

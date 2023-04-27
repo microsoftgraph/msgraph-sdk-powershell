@@ -57,6 +57,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userAnalytics'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -84,6 +90,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -110,6 +122,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/analytics/activityStatistics':
     get:
@@ -189,6 +207,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.activityStatisticsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -223,6 +247,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}':
     get:
@@ -286,6 +316,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -321,6 +357,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -355,16 +397,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/people':
     get:
       tags:
         - users.person
-      summary: List people
-      description: 'Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user''s communication and collaboration patterns, and business relationships.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0
+      summary: Get people from users
+      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_ListPeople
       parameters:
         - name: user-id
@@ -470,6 +515,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -539,16 +590,19 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.person'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile':
     get:
       tags:
         - users.profile
-      summary: Get profile
-      description: 'Retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-get?view=graph-rest-1.0
+      summary: Get profile from users
+      description: Represents properties that are descriptive of a user in a tenant.
       operationId: users_GetProfile
       parameters:
         - name: user-id
@@ -630,6 +684,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.profile'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -657,15 +717,17 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
-      summary: Delete profile
-      description: Deletes a profile object from a user's account.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-delete?view=graph-rest-1.0
+      summary: Delete navigation property profile for users
       operationId: users_DeleteProfile
       parameters:
         - name: user-id
@@ -687,16 +749,18 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/account':
     get:
       tags:
         - users.profile
-      summary: List accounts
-      description: Retrieves properties related to the user's accounts from the profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-1.0
+      summary: Get account from users
       operationId: users.profile_ListAccount
       parameters:
         - name: user-id
@@ -790,6 +854,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userAccountInformationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -797,11 +867,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create account
-      description: Create a new userAccountInformation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-accounts?view=graph-rest-1.0
+      summary: Create new navigation property to account for users
       operationId: users.profile_CreateAccount
       parameters:
         - name: user-id
@@ -828,6 +894,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/account/{userAccountInformation-id}':
     get:
@@ -897,6 +969,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -932,6 +1010,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -966,16 +1050,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/addresses':
     get:
       tags:
         - users.profile
-      summary: List addresses
-      description: Get the itemAddress resources from the **addresses** navigation property.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-1.0
+      summary: Get addresses from users
+      description: Represents details of addresses associated with the user.
       operationId: users.profile_ListAddresses
       parameters:
         - name: user-id
@@ -1066,6 +1153,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.itemAddressCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1073,11 +1166,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create addresses
-      description: Create a new itemAddress object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-addresses?view=graph-rest-1.0
+      summary: Create new navigation property to addresses for users
       operationId: users.profile_CreateAddresses
       parameters:
         - name: user-id
@@ -1104,6 +1193,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemAddress'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/addresses/{itemAddress-id}':
     get:
@@ -1173,6 +1268,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemAddress'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1208,6 +1309,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1242,16 +1349,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/anniversaries':
     get:
       tags:
         - users.profile
-      summary: List anniversaries
-      description: Retrieve a list of personAnniversary objects for the given user from their profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0
+      summary: Get anniversaries from users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_ListAnniversaries
       parameters:
         - name: user-id
@@ -1342,6 +1452,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personAnnualEventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1349,11 +1465,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personAnniversary
-      description: Use this API to create a new personAnniversary object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0
+      summary: Create new navigation property to anniversaries for users
       operationId: users.profile_CreateAnniversaries
       parameters:
         - name: user-id
@@ -1380,6 +1492,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/anniversaries/{personAnnualEvent-id}':
     get:
@@ -1449,6 +1567,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1484,6 +1608,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1518,16 +1648,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/awards':
     get:
       tags:
         - users.profile
-      summary: List awards
-      description: Retrieve a list of personAward objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-awards?view=graph-rest-1.0
+      summary: Get awards from users
+      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_ListAwards
       parameters:
         - name: user-id
@@ -1627,6 +1760,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personAwardCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1634,11 +1773,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personAward
-      description: Create a new personAward object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-awards?view=graph-rest-1.0
+      summary: Create new navigation property to awards for users
       operationId: users.profile_CreateAwards
       parameters:
         - name: user-id
@@ -1665,6 +1800,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAward'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/awards/{personAward-id}':
     get:
@@ -1737,6 +1878,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAward'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -1772,6 +1919,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -1806,16 +1959,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/certifications':
     get:
       tags:
         - users.profile
-      summary: List certifications
-      description: Retrieve a list of personCertification objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-1.0
+      summary: Get certifications from users
+      description: Represents the details of certifications associated with a person.
       operationId: users.profile_ListCertifications
       parameters:
         - name: user-id
@@ -1927,6 +2083,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personCertificationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1934,11 +2096,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personCertification
-      description: Create a new personCertification object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-certifications?view=graph-rest-1.0
+      summary: Create new navigation property to certifications for users
       operationId: users.profile_CreateCertifications
       parameters:
         - name: user-id
@@ -1965,6 +2123,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personCertification'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/certifications/{personCertification-id}':
     get:
@@ -2041,6 +2205,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personCertification'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2076,6 +2246,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2110,16 +2286,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/educationalActivities':
     get:
       tags:
         - users.profile
-      summary: List educationalActivities
-      description: Retrieve a list of educationalActivity objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-educationalactivities?view=graph-rest-1.0
+      summary: Get educationalActivities from users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_ListEducationalActivities
       parameters:
         - name: user-id
@@ -2216,6 +2395,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.educationalActivityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2223,11 +2408,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create educationalActivity
-      description: Create a new educationalActivity in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-educationalactivities?view=graph-rest-1.0
+      summary: Create new navigation property to educationalActivities for users
       operationId: users.profile_CreateEducationalActivities
       parameters:
         - name: user-id
@@ -2254,6 +2435,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationalActivity'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/educationalActivities/{educationalActivity-id}':
     get:
@@ -2325,6 +2512,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.educationalActivity'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2360,6 +2553,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2394,16 +2593,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/emails':
     get:
       tags:
         - users.profile
-      summary: List emails
-      description: Retrieve a list of itemEmail objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-emails?view=graph-rest-1.0
+      summary: Get emails from users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_ListEmails
       parameters:
         - name: user-id
@@ -2494,6 +2696,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.itemEmailCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2501,11 +2709,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemEmail
-      description: Create a new itemEmail object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-emails?view=graph-rest-1.0
+      summary: Create new navigation property to emails for users
       operationId: users.profile_CreateEmails
       parameters:
         - name: user-id
@@ -2532,6 +2736,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemEmail'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/emails/{itemEmail-id}':
     get:
@@ -2601,6 +2811,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemEmail'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2636,6 +2852,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2670,16 +2892,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/interests':
     get:
       tags:
         - users.profile
-      summary: List interests
-      description: Retrieve a list of personInterest objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-interests?view=graph-rest-1.0
+      summary: Get interests from users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_ListInterests
       parameters:
         - name: user-id
@@ -2779,6 +3004,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personInterestCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2786,11 +3017,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personInterest
-      description: Create a new personInterest.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-interests?view=graph-rest-1.0
+      summary: Create new navigation property to interests for users
       operationId: users.profile_CreateInterests
       parameters:
         - name: user-id
@@ -2817,6 +3044,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personInterest'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/interests/{personInterest-id}':
     get:
@@ -2889,6 +3122,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personInterest'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -2924,6 +3163,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -2958,16 +3203,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/languages':
     get:
       tags:
         - users.profile
-      summary: List languages
-      description: Retrieve a list of languageProficiency objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-languages?view=graph-rest-1.0
+      summary: Get languages from users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_ListLanguages
       parameters:
         - name: user-id
@@ -3070,6 +3318,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.languageProficiencyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3077,11 +3331,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create languageProficiency
-      description: Use this API to create a new languageProficiency object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-languages?view=graph-rest-1.0
+      summary: Create new navigation property to languages for users
       operationId: users.profile_CreateLanguages
       parameters:
         - name: user-id
@@ -3108,6 +3358,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.languageProficiency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/languages/{languageProficiency-id}':
     get:
@@ -3181,6 +3437,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.languageProficiency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3216,6 +3478,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3250,16 +3518,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/names':
     get:
       tags:
         - users.profile
-      summary: List names
-      description: Retrieve a list of personName objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-names?view=graph-rest-1.0
+      summary: Get names from users
+      description: Represents the names a user has added to their profile.
       operationId: users.profile_ListNames
       parameters:
         - name: user-id
@@ -3374,6 +3645,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personNameCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3381,11 +3658,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personName
-      description: Use this API to create a new personName object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-names?view=graph-rest-1.0
+      summary: Create new navigation property to names for users
       operationId: users.profile_CreateNames
       parameters:
         - name: user-id
@@ -3412,6 +3685,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personName'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/names/{personName-id}':
     get:
@@ -3489,6 +3768,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personName'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3524,6 +3809,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3558,16 +3849,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/notes':
     get:
       tags:
         - users.profile
-      summary: List notes
-      description: Retrieve a list of personAnnotation objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-notes?view=graph-rest-1.0
+      summary: Get notes from users
+      description: Represents notes that a user has added to their profile.
       operationId: users.profile_ListNotes
       parameters:
         - name: user-id
@@ -3658,6 +3952,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personAnnotationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3665,11 +3965,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personAnnotation
-      description: Create a new personAnnotation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-notes?view=graph-rest-1.0
+      summary: Create new navigation property to notes for users
       operationId: users.profile_CreateNotes
       parameters:
         - name: user-id
@@ -3696,6 +3992,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAnnotation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/notes/{personAnnotation-id}':
     get:
@@ -3765,6 +4067,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personAnnotation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3800,6 +4108,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3834,16 +4148,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/patents':
     get:
       tags:
         - users.profile
-      summary: List patents
-      description: Retrieve a list of itemPatent objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-patents?view=graph-rest-1.0
+      summary: Get patents from users
+      description: Represents patents that a user has added to their profile.
       operationId: users.profile_ListPatents
       parameters:
         - name: user-id
@@ -3946,6 +4263,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.itemPatentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3953,11 +4276,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemPatent
-      description: Create a new itemPatent object within a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-patents?view=graph-rest-1.0
+      summary: Create new navigation property to patents for users
       operationId: users.profile_CreatePatents
       parameters:
         - name: user-id
@@ -3984,6 +4303,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPatent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/patents/{itemPatent-id}':
     get:
@@ -4057,6 +4382,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPatent'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4092,6 +4423,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4126,16 +4463,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/phones':
     get:
       tags:
         - users.profile
-      summary: List phones
-      description: Retrieve a list of itemPhone objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-phones?view=graph-rest-1.0
+      summary: Get phones from users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_ListPhones
       parameters:
         - name: user-id
@@ -4226,6 +4566,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.itemPhoneCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4233,11 +4579,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemPhoneNumber
-      description: Use this API to create a new itemPhone object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-phones?view=graph-rest-1.0
+      summary: Create new navigation property to phones for users
       operationId: users.profile_CreatePhones
       parameters:
         - name: user-id
@@ -4264,6 +4606,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPhone'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/phones/{itemPhone-id}':
     get:
@@ -4333,6 +4681,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPhone'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4368,6 +4722,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4402,16 +4762,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/positions':
     get:
       tags:
         - users.profile
-      summary: List positions
-      description: Retrieve a list of workPosition objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-positions?view=graph-rest-1.0
+      summary: Get positions from users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_ListPositions
       parameters:
         - name: user-id
@@ -4508,6 +4871,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.workPositionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4515,11 +4884,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create workPosition
-      description: Use this API to create a new workPosition in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-positions?view=graph-rest-1.0
+      summary: Create new navigation property to positions for users
       operationId: users.profile_CreatePositions
       parameters:
         - name: user-id
@@ -4546,6 +4911,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.workPosition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/positions/{workPosition-id}':
     get:
@@ -4617,6 +4988,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.workPosition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4652,6 +5029,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4686,16 +5069,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/projects':
     get:
       tags:
         - users.profile
-      summary: List projects
-      description: Retrieve a list of projectParticipation objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-projects?view=graph-rest-1.0
+      summary: Get projects from users
+      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_ListProjects
       parameters:
         - name: user-id
@@ -4801,6 +5187,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.projectParticipationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4808,11 +5200,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create projectParticipation
-      description: Use this API to create a new projectParticipation object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-projects?view=graph-rest-1.0
+      summary: Create new navigation property to projects for users
       operationId: users.profile_CreateProjects
       parameters:
         - name: user-id
@@ -4839,6 +5227,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/projects/{projectParticipation-id}':
     get:
@@ -4913,6 +5307,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4948,6 +5348,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4982,16 +5388,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/publications':
     get:
       tags:
         - users.profile
-      summary: List publications
-      description: Retrieve a list of itemPublication objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-publications?view=graph-rest-1.0
+      summary: Get publications from users
+      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_ListPublications
       parameters:
         - name: user-id
@@ -5091,6 +5500,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.itemPublicationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5098,11 +5513,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create itemPublication
-      description: Create a new itemPublication object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-publications?view=graph-rest-1.0
+      summary: Create new navigation property to publications for users
       operationId: users.profile_CreatePublications
       parameters:
         - name: user-id
@@ -5129,6 +5540,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPublication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/publications/{itemPublication-id}':
     get:
@@ -5201,6 +5618,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.itemPublication'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5236,6 +5659,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5270,16 +5699,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/skills':
     get:
       tags:
         - users.profile
-      summary: List skills
-      description: Retrieve a list of skillProficiency objects in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-skills?view=graph-rest-1.0
+      summary: Get skills from users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_ListSkills
       parameters:
         - name: user-id
@@ -5379,6 +5811,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.skillProficiencyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5386,11 +5824,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create skillProficiency
-      description: Use this API to create a new skillProficiency object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-skills?view=graph-rest-1.0
+      summary: Create new navigation property to skills for users
       operationId: users.profile_CreateSkills
       parameters:
         - name: user-id
@@ -5417,6 +5851,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.skillProficiency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/skills/{skillProficiency-id}':
     get:
@@ -5489,6 +5929,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.skillProficiency'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5524,6 +5970,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5558,16 +6010,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/webAccounts':
     get:
       tags:
         - users.profile
-      summary: List webAccounts
-      description: Retrieve a list of webAccounts objects from the user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-1.0
+      summary: Get webAccounts from users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_ListWebAccounts
       parameters:
         - name: user-id
@@ -5667,6 +6122,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.webAccountCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5674,11 +6135,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create webAccount
-      description: Create a new webAccount object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-webaccounts?view=graph-rest-1.0
+      summary: Create new navigation property to webAccounts for users
       operationId: users.profile_CreateWebAccounts
       parameters:
         - name: user-id
@@ -5705,6 +6162,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.webAccount'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/webAccounts/{webAccount-id}':
     get:
@@ -5777,6 +6240,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.webAccount'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5812,6 +6281,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5846,16 +6321,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/websites':
     get:
       tags:
         - users.profile
-      summary: List websites
-      description: Retrieve a list of personWebsite objects from a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-list-websites?view=graph-rest-1.0
+      summary: Get websites from users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_ListWebsites
       parameters:
         - name: user-id
@@ -5952,6 +6430,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.personWebsiteCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5959,11 +6443,7 @@ paths:
     post:
       tags:
         - users.profile
-      summary: Create personWebsite
-      description: Create a new personWebsite object in a user's profile.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/profile-post-websites?view=graph-rest-1.0
+      summary: Create new navigation property to websites for users
       operationId: users.profile_CreateWebsites
       parameters:
         - name: user-id
@@ -5990,6 +6470,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personWebsite'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/websites/{personWebsite-id}':
     get:
@@ -6061,6 +6547,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.personWebsite'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6096,6 +6588,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6130,6 +6628,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
 components:
   schemas:
@@ -7865,11 +8369,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

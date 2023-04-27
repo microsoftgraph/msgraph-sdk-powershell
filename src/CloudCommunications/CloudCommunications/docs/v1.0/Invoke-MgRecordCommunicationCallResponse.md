@@ -8,11 +8,7 @@ schema: 2.0.0
 # Invoke-MgRecordCommunicationCallResponse
 
 ## SYNOPSIS
-Records a short audio response from the caller.\nA bot can utilize this to capture a voice response from a caller after they are prompted for a response.
-For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call.
-The maximum length of recording is 2 minutes.
-The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends.
-The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
+Invoke action recordResponse
 
 ## SYNTAX
 
@@ -48,11 +44,7 @@ Invoke-MgRecordCommunicationCallResponse -InputObject <ICloudCommunicationsIdent
 ```
 
 ## DESCRIPTION
-Records a short audio response from the caller.\nA bot can utilize this to capture a voice response from a caller after they are prompted for a response.
-For further information on how to handle operations, please review commsOperation This action is not intended to record the entire call.
-The maximum length of recording is 2 minutes.
-The recording is not saved permanently by the Cloud Communications Platform and is discarded shortly after the call ends.
-The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that's given in the completed notification.
+Invoke action recordResponse
 
 ## EXAMPLES
 
@@ -132,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -CallId
-key: id of call
+The unique identifier of call
 
 ```yaml
 Type: System.String
@@ -332,20 +324,22 @@ BODYPARAMETER <IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordrespons
   - `[StopTones <String[]>]`: 
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
-  - `[AttendanceRecordId <String>]`: key: id of attendanceRecord
-  - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
-  - `[CallId <String>]`: key: id of call
-  - `[CallRecordId <String>]`: key: id of callRecord
-  - `[CallTranscriptId <String>]`: key: id of callTranscript
-  - `[CommsOperationId <String>]`: key: id of commsOperation
-  - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
-  - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport
-  - `[MeetingRegistrationQuestionId <String>]`: key: id of meetingRegistrationQuestion
-  - `[OnlineMeetingId <String>]`: key: id of onlineMeeting
-  - `[ParticipantId <String>]`: key: id of participant
-  - `[PresenceId <String>]`: key: id of presence
-  - `[SessionId <String>]`: key: id of session
-  - `[UserId <String>]`: key: id of user
+  - `[AttendanceRecordId <String>]`: The unique identifier of attendanceRecord
+  - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
+  - `[CallId <String>]`: The unique identifier of call
+  - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
+  - `[CommsOperationId <String>]`: The unique identifier of commsOperation
+  - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession
+  - `[FromDateTime <DateTime?>]`: Usage: fromDateTime={fromDateTime}
+  - `[MeetingAttendanceReportId <String>]`: The unique identifier of meetingAttendanceReport
+  - `[MeetingRegistrationQuestionId <String>]`: The unique identifier of meetingRegistrationQuestion
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
+  - `[ParticipantId <String>]`: The unique identifier of participant
+  - `[PresenceId <String>]`: The unique identifier of presence
+  - `[SessionId <String>]`: The unique identifier of session
+  - `[ToDateTime <DateTime?>]`: Usage: toDateTime={toDateTime}
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

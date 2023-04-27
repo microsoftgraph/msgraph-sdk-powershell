@@ -283,7 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceHealthId
-key: id of serviceHealth
+The unique identifier of serviceHealth
 
 ```yaml
 Type: System.String
@@ -426,10 +426,10 @@ DETAILS <IMicrosoftGraphKeyValuePair[]>: Additional details about service event.
   - `[Value <String>]`: Value for this key-value pair
 
 INPUTOBJECT <IDevicesServiceAnnouncementIdentity>: Identity Parameter
-  - `[ServiceAnnouncementAttachmentId <String>]`: key: id of serviceAnnouncementAttachment
-  - `[ServiceHealthId <String>]`: key: id of serviceHealth
-  - `[ServiceHealthIssueId <String>]`: key: id of serviceHealthIssue
-  - `[ServiceUpdateMessageId <String>]`: key: id of serviceUpdateMessage
+  - `[ServiceAnnouncementAttachmentId <String>]`: The unique identifier of serviceAnnouncementAttachment
+  - `[ServiceHealthId <String>]`: The unique identifier of serviceHealth
+  - `[ServiceHealthIssueId <String>]`: The unique identifier of serviceHealthIssue
+  - `[ServiceUpdateMessageId <String>]`: The unique identifier of serviceUpdateMessage
 
 POSTS <IMicrosoftGraphServiceHealthIssuePost[]>: Collection of historical posts for the service issue.
   - `[CreatedDateTime <DateTime?>]`: The published time of the post.

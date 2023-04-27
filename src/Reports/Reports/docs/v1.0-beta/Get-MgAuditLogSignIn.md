@@ -197,7 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -SignInId
-key: id of signIn
+The unique identifier of signIn
 
 ```yaml
 Type: System.String
@@ -277,31 +277,31 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IReportsIdentity>: Identity Parameter
-  - `[ApplicationSignInDetailedSummaryId <String>]`: key: id of applicationSignInDetailedSummary
-  - `[CredentialUserRegistrationDetailsId <String>]`: key: id of credentialUserRegistrationDetails
+  - `[ApplicationSignInDetailedSummaryId <String>]`: The unique identifier of applicationSignInDetailedSummary
+  - `[CredentialUserRegistrationDetailsId <String>]`: The unique identifier of credentialUserRegistrationDetails
   - `[Date <DateTime?>]`: Usage: date={date}
-  - `[DeviceManagementCachedReportConfigurationId <String>]`: key: id of deviceManagementCachedReportConfiguration
-  - `[DeviceManagementExportJobId <String>]`: key: id of deviceManagementExportJob
-  - `[DirectoryAuditId <String>]`: key: id of directoryAudit
+  - `[DeviceManagementCachedReportConfigurationId <String>]`: The unique identifier of deviceManagementCachedReportConfiguration
+  - `[DeviceManagementExportJobId <String>]`: The unique identifier of deviceManagementExportJob
+  - `[DirectoryAuditId <String>]`: The unique identifier of directoryAudit
   - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
   - `[Filter <String>]`: Usage: filter='{filter}'
   - `[GroupId <String>]`: Usage: groupId='{groupId}'
   - `[IncludedUserRoles <String>]`: Usage: includedUserRoles='{includedUserRoles}'
   - `[IncludedUserTypes <String>]`: Usage: includedUserTypes='{includedUserTypes}'
   - `[Period <String>]`: Usage: period='{period}'
-  - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
-  - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
-  - `[PrintUsageId <String>]`: key: id of printUsage
+  - `[PrintUsageByPrinterId <String>]`: The unique identifier of printUsageByPrinter
+  - `[PrintUsageByUserId <String>]`: The unique identifier of printUsageByUser
+  - `[PrintUsageId <String>]`: The unique identifier of printUsage
   - `[PrinterId <String>]`: Usage: printerId='{printerId}'
-  - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
-  - `[SignInId <String>]`: key: id of signIn
+  - `[ProvisioningObjectSummaryId <String>]`: The unique identifier of provisioningObjectSummary
+  - `[SignInId <String>]`: The unique identifier of signIn
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[SkipToken <String>]`: Usage: skipToken='{skipToken}'
   - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
   - `[Top <Int32?>]`: Usage: top={top}
-  - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
+  - `[UserCredentialUsageDetailsId <String>]`: The unique identifier of userCredentialUsageDetails
   - `[UserId <String>]`: Usage: userId='{userId}'
-  - `[UserRegistrationDetailsId <String>]`: key: id of userRegistrationDetails
+  - `[UserRegistrationDetailsId <String>]`: The unique identifier of userRegistrationDetails
 
 ## RELATED LINKS
 

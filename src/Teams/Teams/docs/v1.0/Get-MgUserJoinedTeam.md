@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserJoinedTeam
 
 ## SYNOPSIS
-Get the teams in Microsoft Teams that the user is a direct member of.
+Get joinedTeams from users
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgUserJoinedTeam -UserId <String> [-ExpandProperty <String[]>] [-Filter <Str
 ```
 
 ## DESCRIPTION
-Get the teams in Microsoft Teams that the user is a direct member of.
+Get joinedTeams from users
 
 ## EXAMPLES
 
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -208,7 +208,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeam1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeam
 
 ## NOTES
 

@@ -23,9 +23,8 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - calls
                 - callRecords
+                - calls
                 - onlineMeetings
                 - presences
               type: string
@@ -40,8 +39,8 @@ paths:
             items:
               enum:
                 - '*'
-                - calls
                 - callRecords
+                - calls
                 - onlineMeetings
                 - presences
               type: string
@@ -299,11 +298,8 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: List callRecord sessions
-      description: Retrieve the list of sessions associated with a callRecord object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/callrecords-session-list?view=graph-rest-1.0
+      summary: Get sessions from communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_ListSessions
       parameters:
         - name: callRecord-id
@@ -840,6 +836,171 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/callRecords/microsoft.graph.callRecords.getPstnBlockedUsersLog(fromDateTime={fromDateTime},toDateTime={toDateTime})':
+    get:
+      tags:
+        - communications.Functions
+      summary: Invoke function getPstnBlockedUsersLog
+      operationId: communications.callRecords_getPstnBlockedUsersLog
+      parameters:
+        - name: fromDateTime
+          in: path
+          description: 'Usage: fromDateTime={fromDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: toDateTime
+          in: path
+          description: 'Usage: toDateTime={toDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecords.pstnBlockedUsersLogRow'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/communications/callRecords/microsoft.graph.callRecords.getPstnOnlineMeetingDialoutReport(fromDateTime={fromDateTime},toDateTime={toDateTime})':
+    get:
+      tags:
+        - communications.Functions
+      summary: Invoke function getPstnOnlineMeetingDialoutReport
+      operationId: communications.callRecords_getPstnOnlineMeetingDialoutReport
+      parameters:
+        - name: fromDateTime
+          in: path
+          description: 'Usage: fromDateTime={fromDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: toDateTime
+          in: path
+          description: 'Usage: toDateTime={toDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecords.pstnOnlineMeetingDialoutReport'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/communications/callRecords/microsoft.graph.callRecords.getSmsLog(fromDateTime={fromDateTime},toDateTime={toDateTime})':
+    get:
+      tags:
+        - communications.Functions
+      summary: Invoke function getSmsLog
+      operationId: communications.callRecords_getSmsLog
+      parameters:
+        - name: fromDateTime
+          in: path
+          description: 'Usage: fromDateTime={fromDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: toDateTime
+          in: path
+          description: 'Usage: toDateTime={toDateTime}'
+          required: true
+          style: simple
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.callRecords.smsLogRow'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   /communications/calls:
     get:
       tags:
@@ -987,11 +1148,7 @@ paths:
     post:
       tags:
         - communications.call
-      summary: Create call
-      description: 'Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0
+      summary: Create new navigation property to calls for communications
       operationId: communications_CreateCalls
       requestBody:
         description: New navigation property
@@ -1150,11 +1307,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: List audio routing groups
-      description: Retrieve a list of **audioRoutingGroup** objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0
+      summary: Get audioRoutingGroups from communications
       operationId: communications.calls_ListAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1228,11 +1381,7 @@ paths:
     post:
       tags:
         - communications.call
-      summary: Create audio routing group
-      description: Create a new **audioRoutingGroup**.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0
+      summary: Create new navigation property to audioRoutingGroups for communications
       operationId: communications.calls_CreateAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1393,11 +1542,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: List contentSharingSessions
-      description: Retrieve a list of contentSharingSession objects in a call.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
+      summary: Get contentSharingSessions from communications
       operationId: communications.calls_ListContentSharingSessions
       parameters:
         - name: call-id
@@ -1621,10 +1766,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action addLargeGalleryView
-      description: 'Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0
       operationId: communications.calls_addLargeGalleryView
       parameters:
         - name: call-id
@@ -1663,10 +1804,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action answer
-      description: 'Enable a bot to answer an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer, reject or redirect the call before the call times out. The current timeout value is 15 seconds. The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-answer?view=graph-rest-1.0
       operationId: communications.calls_answer
       parameters:
         - name: call-id
@@ -1714,10 +1851,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action cancelMediaProcessing
-      description: 'Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The **cancelMediaProcessing** method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a **ubscribeToTone** operation because it operates independent of any operation queue.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-1.0
       operationId: communications.calls_cancelMediaProcessing
       parameters:
         - name: call-id
@@ -1756,10 +1889,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action changeScreenSharingRole
-      description: Allow applications to share screen content with the participants of a group call.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-1.0
       operationId: communications.calls_changeScreenSharingRole
       parameters:
         - name: call-id
@@ -1793,10 +1922,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action keepAlive
-      description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that does not receive this request within 45 minutes is considered inactive and will subsequently end. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that has already ended will result in a `404 Not-Found` error. The resources related to the call should be cleaned up on the application side.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-keepalive?view=graph-rest-1.0
       operationId: communications.calls_keepAlive
       parameters:
         - name: call-id
@@ -1818,10 +1943,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
-      description: 'Allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-mute?view=graph-rest-1.0
       operationId: communications.calls_mute
       parameters:
         - name: call-id
@@ -1860,10 +1981,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action playPrompt
-      description: 'Play a prompt in the call. For more information about how to handle operations, see commsOperation'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0
       operationId: communications.calls_playPrompt
       parameters:
         - name: call-id
@@ -1987,10 +2104,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action recordResponse
-      description: 'Record a short audio response from the caller. A bot can use this to capture a voice response from a caller after they are prompted for a response. For more information about how to handle operations, see commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that''s given in the completed notification.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-record?view=graph-rest-1.0
       operationId: communications.calls_recordResponse
       parameters:
         - name: call-id
@@ -2068,10 +2181,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action redirect
-      description: Redirect an incoming call that hasn't been answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0
       operationId: communications.calls_redirect
       parameters:
         - name: call-id
@@ -2126,10 +2235,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action reject
-      description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the **chatInfo** and **meetingInfo** parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API does not end existing calls that have already been answered. Use delete call to end a call.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-reject?view=graph-rest-1.0
       operationId: communications.calls_reject
       parameters:
         - name: call-id
@@ -2166,10 +2271,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action subscribeToTone
-      description: Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a 'Dialpad'.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0
       operationId: communications.calls_subscribeToTone
       parameters:
         - name: call-id
@@ -2208,10 +2309,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action transfer
-      description: 'Transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0
       operationId: communications.calls_transfer
       parameters:
         - name: call-id
@@ -2247,10 +2344,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action unmute
-      description: 'Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-unmute?view=graph-rest-1.0
       operationId: communications.calls_unmute
       parameters:
         - name: call-id
@@ -2289,10 +2382,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action updateRecordingStatus
-      description: Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-1.0
       operationId: communications.calls_updateRecordingStatus
       parameters:
         - name: call-id
@@ -2567,11 +2656,7 @@ paths:
     get:
       tags:
         - communications.call
-      summary: List participants
-      description: Retrieve a list of participant objects in the call.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0
+      summary: Get participants from communications
       operationId: communications.calls_ListParticipants
       parameters:
         - name: call-id
@@ -2613,8 +2698,12 @@ paths:
                 - metadata desc
                 - recordingInfo
                 - recordingInfo desc
+                - removedState
+                - removedState desc
                 - restrictedExperience
                 - restrictedExperience desc
+                - rosterSequenceNumber
+                - rosterSequenceNumber desc
               type: string
         - name: $select
           in: query
@@ -2634,7 +2723,9 @@ paths:
                 - mediaStreams
                 - metadata
                 - recordingInfo
+                - removedState
                 - restrictedExperience
+                - rosterSequenceNumber
               type: string
         - name: $expand
           in: query
@@ -2729,7 +2820,9 @@ paths:
                 - mediaStreams
                 - metadata
                 - recordingInfo
+                - removedState
                 - restrictedExperience
+                - rosterSequenceNumber
               type: string
         - name: $expand
           in: query
@@ -2827,10 +2920,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
-      description: 'Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-mute?view=graph-rest-1.0
       operationId: communications.calls.participants_mute
       parameters:
         - name: call-id
@@ -2877,10 +2966,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action startHoldMusic
-      description: Put a participant on hold and play music in the background.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-1.0
       operationId: communications.calls.participants_startHoldMusic
       parameters:
         - name: call-id
@@ -2929,10 +3014,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action stopHoldMusic
-      description: Reincorporate a participant previously put on hold to the call.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0
       operationId: communications.calls.participants_stopHoldMusic
       parameters:
         - name: call-id
@@ -2979,10 +3060,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communications.calls.participants_invite
       parameters:
         - name: call-id
@@ -3025,10 +3102,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action muteAll
-      description: Mute all participants in the call.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-muteall?view=graph-rest-1.0
       operationId: communications.calls.participants_muteAll
       parameters:
         - name: call-id
@@ -3072,10 +3145,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action logTeleconferenceDeviceQuality
-      description: 'Log video teleconferencing device quality data. The Cloud Video Interop (CVI) bot represents video teleconferencing (VTC) devices and acts as a back-to-back agent for a VTC device in a conference call. Because a CVI bot is in the middle of the VTC and Microsoft Teams infrastructure as a VTC proxy, it has two media legs. One media leg is between the CVI bot and Teams infrastructure, such as Teams conference server or a Teams client. The other media leg is between the CVI bot and the VTC device.  The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.  This method is only for the CVI partners to provide their media quality data.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/call-logteleconferencedevicequality?view=graph-rest-1.0
       operationId: communications.calls_logTeleconferenceDeviceQuality
       requestBody:
         description: Action parameters
@@ -3100,10 +3169,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action getPresencesByUserId
-      description: Get the presence information for multiple users.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0
       operationId: communications_getPresencesGraphBPreUserId
       requestBody:
         description: Action parameters
@@ -3147,11 +3212,7 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get onlineMeeting
-      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report and Teams live event recordings are online meeting artifacts. For details, see Online meeting artifacts and permissions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
+      summary: Get onlineMeetings from communications
       operationId: communications_ListOnlineMeetings
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3479,9 +3540,6 @@ paths:
         - communications.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from communications
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communications_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
@@ -3536,11 +3594,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: List meetingAttendanceReports
-      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
+      summary: Get attendanceReports from communications
+      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_ListAttendanceReports
       parameters:
         - name: onlineMeeting-id
@@ -3780,11 +3835,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+      summary: Get attendanceRecords from communications
+      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4074,9 +4126,6 @@ paths:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communications_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -4131,11 +4180,7 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
+      summary: Get meetingAttendanceReport from communications
       operationId: communications.onlineMeetings_GetMeetingAttendanceReport
       parameters:
         - name: onlineMeeting-id
@@ -4242,11 +4287,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+      summary: Get attendanceRecords from communications
+      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.meetingAttendanceReport_ListAttendanceRecords
       parameters:
         - name: onlineMeeting-id
@@ -4490,15 +4532,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
+    get:
+      tags:
+        - communications.Functions
+      summary: Invoke function getVirtualAppointmentJoinWebUrl
+      operationId: communications.onlineMeetings_getVirtualAppointmentJoinWebUrl
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/communications/onlineMeetings/{onlineMeeting-id}/recording':
     get:
       tags:
         - communications.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from communications
       description: The content stream of the recording of a Teams live event. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communications_GetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
@@ -4553,11 +4623,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+      summary: Get registration from communications
+      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: communications.onlineMeetings_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4617,11 +4684,7 @@ paths:
     patch:
       tags:
         - communications.onlineMeeting
-      summary: Update meetingRegistration
-      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
+      summary: Update the navigation property registration in communications
       operationId: communications.onlineMeetings_UpdateRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4648,11 +4711,7 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+      summary: Delete navigation property registration for communications
       operationId: communications.onlineMeetings_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4679,11 +4738,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: List customQuestions
-      description: Get a list of the custom registration questions associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
+      summary: Get customQuestions from communications
+      description: Custom registration questions.
       operationId: communications.onlineMeetings.registration_ListCustomQuestions
       parameters:
         - name: onlineMeeting-id
@@ -4760,11 +4816,7 @@ paths:
     post:
       tags:
         - communications.onlineMeeting
-      summary: Create meetingRegistrationQuestion
-      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
+      summary: Create new navigation property to customQuestions for communications
       operationId: communications.onlineMeetings.registration_CreateCustomQuestions
       parameters:
         - name: onlineMeeting-id
@@ -4927,11 +4979,8 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: List transcripts
-      description: Retrieve the list of callTranscript objects associated with an onlineMeeting.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+      summary: Get transcripts from communications
+      description: The transcripts of an online meeting. Read-only.
       operationId: communications.onlineMeetings_ListTranscripts
       parameters:
         - name: onlineMeeting-id
@@ -4963,6 +5012,8 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - metadataContent
+                - metadataContent desc
               type: string
         - name: $select
           in: query
@@ -4977,6 +5028,7 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - metadataContent
               type: string
         - name: $expand
           in: query
@@ -5067,6 +5119,7 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - metadataContent
               type: string
         - name: $expand
           in: query
@@ -5165,9 +5218,6 @@ paths:
         - communications.onlineMeeting
       summary: Get content for the navigation property transcripts from communications
       description: A field that represents the content of the transcript. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: communications.onlineMeetings_GetTranscriptsContent
       parameters:
         - name: onlineMeeting-id
@@ -5203,6 +5253,78 @@ paths:
       summary: Update content for the navigation property transcripts in communications
       description: A field that represents the content of the transcript. Read-only.
       operationId: communications.onlineMeetings_SetTranscriptsContent
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: The unique identifier of callTranscript
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/metadataContent':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get metadataContent for the navigation property transcripts from communications
+      description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+      operationId: communications.onlineMeetings_GetTranscriptsMetadataContent
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: The unique identifier of callTranscript
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - communications.onlineMeeting
+      summary: Update metadataContent for the navigation property transcripts in communications
+      description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+      operationId: communications.onlineMeetings_SetTranscriptsMetadataContent
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -5287,6 +5409,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-05-31T00:00:00.0000000+00:00'
+        date: '2023-04-04T00:00:00.0000000+00:00'
+        version: 2023-04/VirtualAppointment
+        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5314,6 +5442,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-05-31T00:00:00.0000000+00:00'
+        date: '2023-04-04T00:00:00.0000000+00:00'
+        version: 2023-04/VirtualAppointment
+        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5340,16 +5474,18 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-05-31T00:00:00.0000000+00:00'
+        date: '2023-04-04T00:00:00.0000000+00:00'
+        version: 2023-04/VirtualAppointment
+        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
       x-ms-docs-operation-type: operation
   /communications/onlineMeetings/microsoft.graph.createOrGet:
     post:
       tags:
         - communications.Actions
       summary: Invoke action createOrGet
-      description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
       operationId: communications.onlineMeetings_createOrGet
       requestBody:
         description: Action parameters
@@ -5593,10 +5729,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action clearPresence
-      description: 'Clear a presence session of an application for a user. If it is the user''s only presence session, a successful **clearPresence** changes the user''s presence to `Offline/Offline`. Read more about presence sessions and their time-out and expiration. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
       operationId: communications.presences_clearPresence
       parameters:
         - name: presence-id
@@ -5631,10 +5763,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action clearUserPreferredPresence
-      description: Clear the preferred availability and activity status for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0
       operationId: communications.presences_clearUserPreferredPresence
       parameters:
         - name: presence-id
@@ -5656,10 +5784,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setPresence
-      description: Set the availability and activity status in a presence session of an application for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
       operationId: communications.presences_setPresence
       parameters:
         - name: presence-id
@@ -5703,10 +5827,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setStatusMessage
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
       operationId: communications.presences_setStatusMessage
       parameters:
         - name: presence-id
@@ -5740,10 +5860,6 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setUserPreferredPresence
-      description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence is the preferred presence. Preferred presence takes effect only when there is at least one presence session of the user. Otherwise, the user''s presence stays as Offline. A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.  Read more about presence sessions and their time-out and expiration. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
       operationId: communications.presences_setUserPreferredPresence
       parameters:
         - name: presence-id
@@ -5783,11 +5899,7 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get onlineMeeting
-      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report and Teams live event recordings are online meeting artifacts. For details, see Online meeting artifacts and permissions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
+      summary: Get onlineMeetings from users
       operationId: users_ListOnlineMeetings
       parameters:
         - name: user-id
@@ -5948,6 +6060,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.onlineMeetingCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5955,11 +6073,7 @@ paths:
     post:
       tags:
         - users.onlineMeeting
-      summary: Create onlineMeeting
-      description: Create an online meeting on behalf of a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-1.0
+      summary: Create new navigation property to onlineMeetings for users
       operationId: users_CreateOnlineMeetings
       parameters:
         - name: user-id
@@ -5986,6 +6100,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}':
     get:
@@ -6084,6 +6204,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6119,6 +6245,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6153,6 +6285,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/alternativeRecording':
     get:
@@ -6160,9 +6298,6 @@ paths:
         - users.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from users
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: users_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
@@ -6191,6 +6326,12 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -6228,16 +6369,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports':
     get:
       tags:
         - users.onlineMeeting
-      summary: List meetingAttendanceReports
-      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
+      summary: Get attendanceReports from users
+      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_ListAttendanceReports
       parameters:
         - name: user-id
@@ -6314,6 +6458,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.meetingAttendanceReportCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6356,6 +6506,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}':
     get:
@@ -6427,6 +6583,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6470,6 +6632,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6512,16 +6680,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords':
     get:
       tags:
         - users.onlineMeeting
-      summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+      summary: Get attendanceRecords from users
+      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
         - name: user-id
@@ -6613,6 +6784,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -6663,6 +6840,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}':
     get:
@@ -6743,6 +6926,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6794,6 +6983,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6844,6 +7039,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendeeReport':
     get:
@@ -6851,9 +7052,6 @@ paths:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
       description: The content stream of the attendee report of a Teams live event. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: users_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -6882,6 +7080,12 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -6919,16 +7123,18 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport':
     get:
       tags:
         - users.onlineMeeting
-      summary: Get meetingAttendanceReport
-      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
+      summary: Get meetingAttendanceReport from users
       operationId: users.onlineMeetings_GetMeetingAttendanceReport
       parameters:
         - name: user-id
@@ -6985,6 +7191,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7020,6 +7232,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7054,16 +7272,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords':
     get:
       tags:
         - users.onlineMeeting
-      summary: List attendanceRecords
-      description: Get a list of attendanceRecord objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
+      summary: Get attendanceRecords from users
+      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.meetingAttendanceReport_ListAttendanceRecords
       parameters:
         - name: user-id
@@ -7147,6 +7368,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7189,6 +7416,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/meetingAttendanceReport/attendanceRecords/{attendanceRecord-id}':
     get:
@@ -7261,6 +7494,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7304,6 +7543,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7346,6 +7591,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/recording':
     get:
@@ -7353,9 +7604,6 @@ paths:
         - users.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from users
       description: The content stream of the recording of a Teams live event. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: users_GetOnlineMeetingsRecording
       parameters:
         - name: user-id
@@ -7384,6 +7632,12 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -7421,16 +7675,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration':
     get:
       tags:
         - users.onlineMeeting
-      summary: Get meetingRegistration
-      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
+      summary: Get registration from users
+      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
       operationId: users.onlineMeetings_GetRegistration
       parameters:
         - name: user-id
@@ -7494,15 +7751,17 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update meetingRegistration
-      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
+      summary: Update the navigation property registration in users
       operationId: users.onlineMeetings_UpdateRegistration
       parameters:
         - name: user-id
@@ -7533,15 +7792,17 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete meetingRegistration
-      description: Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0
+      summary: Delete navigation property registration for users
       operationId: users.onlineMeetings_DeleteRegistration
       parameters:
         - name: user-id
@@ -7571,16 +7832,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/customQuestions':
     get:
       tags:
         - users.onlineMeeting
-      summary: List customQuestions
-      description: Get a list of the custom registration questions associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
+      summary: Get customQuestions from users
+      description: Custom registration questions.
       operationId: users.onlineMeetings.registration_ListCustomQuestions
       parameters:
         - name: user-id
@@ -7658,6 +7922,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.meetingRegistrationQuestionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7665,11 +7935,7 @@ paths:
     post:
       tags:
         - users.onlineMeeting
-      summary: Create meetingRegistrationQuestion
-      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
+      summary: Create new navigation property to customQuestions for users
       operationId: users.onlineMeetings.registration_CreateCustomQuestions
       parameters:
         - name: user-id
@@ -7704,6 +7970,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/customQuestions/{meetingRegistrationQuestion-id}':
     get:
@@ -7774,6 +8046,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -7817,6 +8095,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -7859,16 +8143,19 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts':
     get:
       tags:
         - users.onlineMeeting
-      summary: List transcripts
-      description: Retrieve the list of callTranscript objects associated with an onlineMeeting.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
+      summary: Get transcripts from users
+      description: The transcripts of an online meeting. Read-only.
       operationId: users.onlineMeetings_ListTranscripts
       parameters:
         - name: user-id
@@ -7908,6 +8195,8 @@ paths:
                 - content desc
                 - createdDateTime
                 - createdDateTime desc
+                - metadataContent
+                - metadataContent desc
               type: string
         - name: $select
           in: query
@@ -7922,6 +8211,7 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - metadataContent
               type: string
         - name: $expand
           in: query
@@ -7940,6 +8230,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.callTranscriptCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -7982,6 +8278,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}':
     get:
@@ -8028,6 +8330,7 @@ paths:
                 - id
                 - content
                 - createdDateTime
+                - metadataContent
               type: string
         - name: $expand
           in: query
@@ -8050,6 +8353,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8093,6 +8402,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8135,6 +8450,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/content':
     get:
@@ -8142,9 +8463,6 @@ paths:
         - users.onlineMeeting
       summary: Get content for the navigation property transcripts from users
       description: A field that represents the content of the transcript. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: users.onlineMeetings_GetTranscriptsContent
       parameters:
         - name: user-id
@@ -8181,6 +8499,12 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -8226,6 +8550,112 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/metadataContent':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get metadataContent for the navigation property transcripts from users
+      description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+      operationId: users.onlineMeetings_GetTranscriptsMetadataContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: The unique identifier of callTranscript
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.onlineMeeting
+      summary: Update metadataContent for the navigation property transcripts in users
+      description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+      operationId: users.onlineMeetings_SetTranscriptsMetadataContent
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: The unique identifier of callTranscript
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/virtualAppointment':
     get:
@@ -8288,6 +8718,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.virtualAppointment'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-05-31T00:00:00.0000000+00:00'
+        date: '2023-04-04T00:00:00.0000000+00:00'
+        version: 2023-04/VirtualAppointment
+        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8323,6 +8759,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-05-31T00:00:00.0000000+00:00'
+        date: '2023-04-04T00:00:00.0000000+00:00'
+        version: 2023-04/VirtualAppointment
+        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8357,16 +8799,18 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-05-31T00:00:00.0000000+00:00'
+        date: '2023-04-04T00:00:00.0000000+00:00'
+        version: 2023-04/VirtualAppointment
+        description: 'The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/presence':
     get:
       tags:
         - users.presence
-      summary: 'presence: setStatusMessage'
-      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
+      summary: Get presence from users
       operationId: users_GetPresence
       parameters:
         - name: user-id
@@ -8414,6 +8858,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.presence'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -8441,6 +8891,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -8467,37 +8923,41 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.cloudCommunications:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: cloudCommunications
-          type: object
-          properties:
-            calls:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.call'
-              x-ms-navigationProperty: true
-            callRecords:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
-              x-ms-navigationProperty: true
-            onlineMeetings:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-              x-ms-navigationProperty: true
-            presences:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.presence'
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
+      title: cloudCommunications
+      type: object
+      properties:
+        callRecords:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+          x-ms-navigationProperty: true
+        calls:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.call'
+          x-ms-navigationProperty: true
+        onlineMeetings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+          x-ms-navigationProperty: true
+        presences:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.presence'
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
     microsoft.graph.callRecords.callRecord:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8613,6 +9073,177 @@ components:
               format: date-time
           additionalProperties:
             type: object
+    microsoft.graph.callRecords.pstnBlockedUsersLogRow:
+      title: pstnBlockedUsersLogRow
+      type: object
+      properties:
+        blockDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The date and time when the user was blocked/unblocked from making PSTN calls. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        blockReason:
+          type: string
+          description: The reason why the user is blocked/unblocked from making calls.
+          nullable: true
+        remediationId:
+          type: string
+          description: Unique identifier (GUID) for the blocking/unblocking action.
+          nullable: true
+        userBlockMode:
+          $ref: '#/components/schemas/microsoft.graph.callRecords.pstnUserBlockMode'
+        userDisplayName:
+          type: string
+          description: Display name of the user.
+          nullable: true
+        userId:
+          type: string
+          description: The unique identifier (GUID) of the user in Azure Active Directory.
+          nullable: true
+        userPrincipalName:
+          type: string
+          description: 'The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
+          nullable: true
+        userTelephoneNumber:
+          type: string
+          description: 'User''s blocked number. For details, see E.164.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.pstnOnlineMeetingDialoutReport:
+      title: pstnOnlineMeetingDialoutReport
+      type: object
+      properties:
+        currency:
+          type: string
+          description: 'Currency used to calculate the cost of the call. For details, see ISO 4217.'
+          nullable: true
+        destinationContext:
+          type: string
+          description: Indicates whether the call was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
+          nullable: true
+        totalCallCharge:
+          type: number
+          description: 'Total costs of all the calls within the selected time range, including call charges and connection fees.'
+          format: decimal
+          nullable: true
+        totalCalls:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Total number of dial-out calls within the selected time range.
+          format: int32
+          nullable: true
+        totalCallSeconds:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Total duration of all the calls within the selected time range, in seconds.'
+          format: int32
+          nullable: true
+        usageLocation:
+          type: string
+          description: 'Country code of the user. For details, see ISO 3166-1 alpha-2.'
+          nullable: true
+        userDisplayName:
+          type: string
+          description: Display name of the user.
+          nullable: true
+        userId:
+          type: string
+          description: The unique identifier (GUID) of the user in Azure Active Directory.
+          nullable: true
+        userPrincipalName:
+          type: string
+          description: 'The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.smsLogRow:
+      title: smsLogRow
+      type: object
+      properties:
+        callCharge:
+          type: number
+          description: Amount of money or cost of the SMS that is charged.
+          format: decimal
+          nullable: true
+        currency:
+          type: string
+          description: 'Currency used to calculate the cost of the call. For details, see ISO 4217.'
+          nullable: true
+        destinationContext:
+          type: string
+          description: Indicates whether the SMS was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
+          nullable: true
+        destinationName:
+          type: string
+          description: Country or region of a phone number that received the SMS.
+          nullable: true
+        destinationNumber:
+          type: string
+          description: 'Partially obfuscated phone number that received the SMS. For details, see E.164.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier (GUID) for the SMS.
+          nullable: true
+        licenseCapability:
+          type: string
+          description: The license used for the SMS.
+          nullable: true
+        otherPartyCountryCode:
+          type: string
+          description: 'For an outbound SMS, the country code of the receiver; otherwise (inbound SMS) the country code of the sender. For details, see ISO 3166-1 alpha-2.'
+          nullable: true
+        sentDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the SMS was sent.
+          format: date-time
+          nullable: true
+        smsId:
+          type: string
+          description: SMS identifier. Not guaranteed to be unique.
+          nullable: true
+        smsType:
+          type: string
+          description: Type of SMS such as outbound or inbound.
+          nullable: true
+        smsUnits:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of SMS units sent/received.
+          format: int32
+          nullable: true
+        sourceNumber:
+          type: string
+          description: 'Partially obfuscated phone number that sent the SMS. For details, see E.164.'
+          nullable: true
+        tenantCountryCode:
+          type: string
+          description: 'Country code of the tenant. For details, see ISO 3166-1 alpha-2.'
+          nullable: true
+        userCountryCode:
+          type: string
+          description: 'Country code of the user. For details, see ISO 3166-1 alpha-2.'
+          nullable: true
+        userDisplayName:
+          type: string
+          description: Display name of the user.
+          nullable: true
+        userId:
+          type: string
+          description: The unique identifier (GUID) of the user in Azure Active Directory.
+          nullable: true
+        userPrincipalName:
+          type: string
+          description: 'The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user''s SIP address, and can be same as the user''s e-mail address.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.call:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8977,8 +9608,14 @@ components:
               nullable: true
             recordingInfo:
               $ref: '#/components/schemas/microsoft.graph.recordingInfo'
+            removedState:
+              $ref: '#/components/schemas/microsoft.graph.removedState'
             restrictedExperience:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingRestricted'
+            rosterSequenceNumber:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.startHoldMusicOperation:
@@ -9383,6 +10020,11 @@ components:
               description: 'Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            metadataContent:
+              type: string
+              description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+              format: base64url
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.virtualAppointment:
@@ -9549,6 +10191,13 @@ components:
           description: Network streams associated with this media.
       additionalProperties:
         type: object
+    microsoft.graph.callRecords.pstnUserBlockMode:
+      title: pstnUserBlockMode
+      enum:
+        - blocked
+        - unblocked
+        - unknownFutureValue
+      type: string
     microsoft.graph.callOptions:
       title: callOptions
       type: object
@@ -9777,6 +10426,15 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         recordingStatus:
           $ref: '#/components/schemas/microsoft.graph.recordingStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.removedState:
+      title: removedState
+      type: object
+      properties:
+        reason:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.onlineMeetingRestricted:
@@ -10110,11 +10768,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

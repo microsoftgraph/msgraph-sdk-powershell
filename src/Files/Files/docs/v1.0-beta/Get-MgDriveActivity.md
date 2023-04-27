@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDriveActivity
 
 ## SYNOPSIS
-List the recent activities that took place on an item or under a hierarchy.
+The list of recent activities that took place under this drive.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgDriveActivity -DriveId <String> [-ExpandProperty <String[]>] [-Filter <Str
 ```
 
 ## DESCRIPTION
-List the recent activities that took place on an item or under a hierarchy.
+The list of recent activities that took place under this drive.
 
 ## EXAMPLES
 
@@ -57,7 +57,7 @@ Accept wildcard characters: False
 ```
 
 ### -DriveId
-key: id of drive
+The unique identifier of drive
 
 ```yaml
 Type: System.String

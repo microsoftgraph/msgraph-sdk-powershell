@@ -444,6 +444,10 @@ directive:
     set:
       subject: $1Of$2
   - where:
+      subject: ^(\w*[a-z])GraphVTwo(\w*)$
+    set:
+      subject: $1V2$2
+  - where:
       verb: Clear
       subject: ^UserManagedAppRegistrationByDeviceTag$
       variant: ^Wipe$|^WipeExpanded$|^WipeViaIdentity$|^WipeViaIdentityExpanded$
@@ -579,13 +583,13 @@ directive:
   - from: source-file-csharp
     where: $
     transform: >
-      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*_List\d*.cs/gm))
+      if (!$documentPath.match(/generated%2Fcmdlets%2FGet\w*_(List|Delta)\d*.cs/gm))
       {
         return $;
       } else {
         let odataNextLinkRegex = /(^\s*)(while\s*\(\s*_nextLink\s*!=\s*null\s*\))/gmi
         if($.match(odataNextLinkRegex)) {
-          // Add custom -PageSize parameter to *_List cmdlets that support Odata next link.
+          // Add custom -PageSize parameter to *_List and *_delta cmdlets that support Odata next link.
           let initializePageCountPlaceholder = 'this.InitializePageCount(result.Value.Length);'
           $ = $.replace(odataNextLinkRegex, `$1${initializePageCountPlaceholder}\n$1while (_nextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))$1`);
 

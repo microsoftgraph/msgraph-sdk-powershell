@@ -8,24 +8,22 @@ schema: 2.0.0
 # Get-MgUserCalendarEvent
 
 ## SYNOPSIS
-Retrieve a list of events in a calendar.
-The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
-The list of events contains single instance meetings and series masters.
-To get expanded event instances, you can get the calendar view, or \nget the instances of an event.
+The events in the calendar.
+Navigation property.
+Read-only.
 
 ## SYNTAX
 
 ```
-Get-MgUserCalendarEvent -CalendarId <String> -UserId <String> [-Filter <String>] [-Property <String[]>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
- [<CommonParameters>]
+Get-MgUserCalendarEvent -CalendarId <String> -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Retrieve a list of events in a calendar.
-The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
-The list of events contains single instance meetings and series masters.
-To get expanded event instances, you can get the calendar view, or \nget the instances of an event.
+The events in the calendar.
+Navigation property.
+Read-only.
 
 ## EXAMPLES
 
@@ -130,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -CalendarId
-key: id of calendar
+The unique identifier of calendar
 
 ```yaml
 Type: System.String
@@ -152,6 +150,21 @@ By default, this variable will be set in the global scope.
 Type: System.String
 Parameter Sets: (All)
 Aliases: CV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
 
 Required: False
 Position: Named
@@ -251,7 +264,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String

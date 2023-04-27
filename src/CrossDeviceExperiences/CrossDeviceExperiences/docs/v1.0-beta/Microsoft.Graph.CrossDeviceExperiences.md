@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CrossDeviceExperiences
-Module Guid: ee10532b-c2da-4a8b-942a-31a0a8949150
+Module Guid: 182e1360-732a-454b-8f8c-4fccb0da0cc6
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences
 Help Version: 1.0.0.0
 Locale: en-US
@@ -40,18 +40,31 @@ Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgUserDeviceMemberOfAsAdministrativeUnit](Get-MgUserDeviceMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgUserDeviceMemberOfAsGroup](Get-MgUserDeviceMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
 ### [Get-MgUserDeviceRegisteredOwner](Get-MgUserDeviceRegisteredOwner.md)
 The user that cloud joined the device or registered their personal device.
 The registered owner is set at the time of registration.
-Currently, there can be only one owner.
 Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgUserDeviceRegisteredOwnerAsEndpoint](Get-MgUserDeviceRegisteredOwnerAsEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Get-MgUserDeviceRegisteredOwnerAsServicePrincipal](Get-MgUserDeviceRegisteredOwnerAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Get-MgUserDeviceRegisteredOwnerAsUser](Get-MgUserDeviceRegisteredOwnerAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
 ### [Get-MgUserDeviceRegisteredOwnerByRef](Get-MgUserDeviceRegisteredOwnerByRef.md)
 The user that cloud joined the device or registered their personal device.
 The registered owner is set at the time of registration.
-Currently, there can be only one owner.
 Read-only.
 Nullable.
 Supports $expand.
@@ -63,10 +76,32 @@ Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgUserDeviceRegisteredUserAsEndpoint](Get-MgUserDeviceRegisteredUserAsEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Get-MgUserDeviceRegisteredUserAsServicePrincipal](Get-MgUserDeviceRegisteredUserAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Get-MgUserDeviceRegisteredUserAsUser](Get-MgUserDeviceRegisteredUserAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
+### [Get-MgUserDeviceRegisteredUserByRef](Get-MgUserDeviceRegisteredUserByRef.md)
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
+Supports $expand.
+
 ### [Get-MgUserDeviceTransitiveMemberOf](Get-MgUserDeviceTransitiveMemberOf.md)
 Groups and administrative units that this device is a member of.
 This operation is transitive.
 Supports $expand.
+
+### [Get-MgUserDeviceTransitiveMemberOfAsAdministrativeUnit](Get-MgUserDeviceTransitiveMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgUserDeviceTransitiveMemberOfAsGroup](Get-MgUserDeviceTransitiveMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgUserDeviceUsageRights](Get-MgUserDeviceUsageRights.md)
 Represents the usage rights a device has been granted.
@@ -89,6 +124,9 @@ Create new navigation property to extensions for users
 ### [New-MgUserDeviceRegisteredOwnerByRef](New-MgUserDeviceRegisteredOwnerByRef.md)
 Create new navigation property ref to registeredOwners for users
 
+### [New-MgUserDeviceRegisteredUserByRef](New-MgUserDeviceRegisteredUserByRef.md)
+Create new navigation property ref to registeredUsers for users
+
 ### [New-MgUserDeviceUsageRights](New-MgUserDeviceUsageRights.md)
 Create new navigation property to usageRights for users
 
@@ -109,6 +147,9 @@ Delete navigation property extensions for users
 
 ### [Remove-MgUserDeviceRegisteredOwnerByRef](Remove-MgUserDeviceRegisteredOwnerByRef.md)
 Delete ref of navigation property registeredOwners for users
+
+### [Remove-MgUserDeviceRegisteredUserByRef](Remove-MgUserDeviceRegisteredUserByRef.md)
+Delete ref of navigation property registeredUsers for users
 
 ### [Remove-MgUserDeviceUsageRights](Remove-MgUserDeviceUsageRights.md)
 Delete navigation property usageRights for users

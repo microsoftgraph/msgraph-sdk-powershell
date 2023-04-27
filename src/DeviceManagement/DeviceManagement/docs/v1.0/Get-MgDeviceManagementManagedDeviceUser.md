@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedDeviceId
-key: id of managedDevice
+The unique identifier of managedDevice
 
 ```yaml
 Type: System.String

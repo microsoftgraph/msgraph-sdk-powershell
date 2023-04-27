@@ -87,7 +87,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedDeviceId
-key: id of managedDevice
+The unique identifier of managedDevice
 
 ```yaml
 Type: System.String
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String

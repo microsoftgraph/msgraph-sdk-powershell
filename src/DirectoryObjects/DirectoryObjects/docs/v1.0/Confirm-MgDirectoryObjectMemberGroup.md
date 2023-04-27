@@ -8,11 +8,7 @@ schema: 2.0.0
 # Confirm-MgDirectoryObjectMemberGroup
 
 ## SYNOPSIS
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ## SYNTAX
 
@@ -43,11 +39,7 @@ Confirm-MgDirectoryObjectMemberGroup -InputObject <IDirectoryObjectsIdentity>
 ```
 
 ## DESCRIPTION
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ## EXAMPLES
 
@@ -103,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -DirectoryObjectId
-key: id of directoryObject
+The unique identifier of directoryObject
 
 ```yaml
 Type: System.String
@@ -206,7 +198,7 @@ BODYPARAMETER <IPaths1Ffes6MDirectoryobjectsDirectoryobjectIdMicrosoftGraphCheck
   - `[GroupIds <String[]>]`: 
 
 INPUTOBJECT <IDirectoryObjectsIdentity>: Identity Parameter
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[DirectoryObjectId <String>]`: The unique identifier of directoryObject
 
 ## RELATED LINKS
 

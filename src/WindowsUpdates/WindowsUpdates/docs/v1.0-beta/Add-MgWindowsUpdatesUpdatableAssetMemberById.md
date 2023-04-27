@@ -8,8 +8,7 @@ schema: 2.0.0
 # Add-MgWindowsUpdatesUpdatableAssetMemberById
 
 ## SYNOPSIS
-Add members of the same type to an updatableAssetGroup.
-You can also use the method addMembers to add members.
+Invoke action addMembersById
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Add-MgWindowsUpdatesUpdatableAssetMemberById -InputObject <IWindowsUpdatesIdenti
 ```
 
 ## DESCRIPTION
-Add members of the same type to an updatableAssetGroup.
-You can also use the method addMembers to add members.
+Invoke action addMembersById
 
 ## EXAMPLES
 
@@ -158,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -UpdatableAssetId
-key: id of updatableAsset
+The unique identifier of updatableAsset
 
 ```yaml
 Type: System.String
@@ -233,12 +231,12 @@ BODYPARAMETER <IPathsHfkndjAdminWindowsUpdatesUpdatableassetsUpdatableassetIdMic
   - `[MemberEntityType <String>]`: 
 
 INPUTOBJECT <IWindowsUpdatesIdentity>: Identity Parameter
-  - `[CatalogEntryId <String>]`: key: id of catalogEntry
-  - `[ComplianceChangeId <String>]`: key: id of complianceChange
-  - `[DeploymentId <String>]`: key: id of deployment
-  - `[ResourceConnectionId <String>]`: key: id of resourceConnection
-  - `[UpdatableAssetId <String>]`: key: id of updatableAsset
-  - `[UpdatePolicyId <String>]`: key: id of updatePolicy
+  - `[CatalogEntryId <String>]`: The unique identifier of catalogEntry
+  - `[ComplianceChangeId <String>]`: The unique identifier of complianceChange
+  - `[DeploymentId <String>]`: The unique identifier of deployment
+  - `[ResourceConnectionId <String>]`: The unique identifier of resourceConnection
+  - `[UpdatableAssetId <String>]`: The unique identifier of updatableAsset
+  - `[UpdatePolicyId <String>]`: The unique identifier of updatePolicy
 
 ## RELATED LINKS
 

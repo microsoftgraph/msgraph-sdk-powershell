@@ -8,14 +8,7 @@ schema: 2.0.0
 # Invoke-MgRecentUserActivity
 
 ## SYNOPSIS
-Get recent activities for a given user.
-This OData function has some default behaviors included to make it operate like a 'most recently used' API.
-The service will query for the most recent historyItems, and then pull those related activities.
-Activities will be sorted according to the most recent **lastModified** on the **historyItem**.
-This means that activities without **historyItems** will not be included in the response.
-The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned.
-This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities.
-To get your application's activities, use the **nextLink** property to paginate.
+Invoke function recent
 
 ## SYNTAX
 
@@ -33,14 +26,7 @@ Invoke-MgRecentUserActivity -InputObject <IUsersFunctionsIdentity> [-Count] [-Fi
 ```
 
 ## DESCRIPTION
-Get recent activities for a given user.
-This OData function has some default behaviors included to make it operate like a 'most recently used' API.
-The service will query for the most recent historyItems, and then pull those related activities.
-Activities will be sorted according to the most recent **lastModified** on the **historyItem**.
-This means that activities without **historyItems** will not be included in the response.
-The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned.
-This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities.
-To get your application's activities, use the **nextLink** property to paginate.
+Invoke function recent
 
 ## EXAMPLES
 
@@ -178,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -213,41 +199,45 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
-  - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
-  - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
-  - `[CalendarId <String>]`: key: id of calendar
-  - `[ChatId <String>]`: key: id of chat
-  - `[ChatMessageId <String>]`: key: id of chatMessage
-  - `[CloudPcId <String>]`: key: id of cloudPC
-  - `[ContactFolderId <String>]`: key: id of contactFolder
-  - `[ContactFolderId1 <String>]`: key: id of contactFolder
-  - `[ContentTypeId <String>]`: key: id of contentType
-  - `[DriveId <String>]`: key: id of drive
-  - `[DriveItemId <String>]`: key: id of driveItem
+  - `[AccessReviewInstanceId <String>]`: The unique identifier of accessReviewInstance
+  - `[AppConsentRequestId <String>]`: The unique identifier of appConsentRequest
+  - `[CalendarId <String>]`: The unique identifier of calendar
+  - `[ChatId <String>]`: The unique identifier of chat
+  - `[ChatMessageId <String>]`: The unique identifier of chatMessage
+  - `[CloudPcId <String>]`: The unique identifier of cloudPC
+  - `[ContactFolderId <String>]`: The unique identifier of contactFolder
+  - `[ContactFolderId1 <String>]`: The unique identifier of contactFolder
+  - `[ContentTypeId <String>]`: The unique identifier of contentType
+  - `[DriveId <String>]`: The unique identifier of drive
+  - `[DriveItemId <String>]`: The unique identifier of driveItem
   - `[EndDateTime <String>]`: Usage: EndDateTime='{EndDateTime}'
   - `[EndDateTime1 <String>]`: Usage: endDateTime='{endDateTime}'
-  - `[EventId <String>]`: key: id of event
+  - `[EventId <String>]`: The unique identifier of event
+  - `[GroupId <String>]`: Usage: groupId='{groupId}'
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
-  - `[ListItemId <String>]`: key: id of listItem
-  - `[MailFolderId <String>]`: key: id of mailFolder
-  - `[MailFolderId1 <String>]`: key: id of mailFolder
-  - `[ManagedDeviceId <String>]`: key: id of managedDevice
+  - `[ListItemId <String>]`: The unique identifier of listItem
+  - `[MailFolderId <String>]`: The unique identifier of mailFolder
+  - `[MailFolderId1 <String>]`: The unique identifier of mailFolder
+  - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[On <String>]`: Usage: on='{on}'
-  - `[OnenotePageId <String>]`: key: id of onenotePage
+  - `[OnenotePageId <String>]`: The unique identifier of onenotePage
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
+  - `[PlannerBucketId <String>]`: The unique identifier of plannerBucket
+  - `[PlannerPlanId <String>]`: The unique identifier of plannerPlan
   - `[Q <String>]`: Usage: q='{q}'
   - `[RoomList <String>]`: Usage: RoomList='{RoomList}'
-  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
+  - `[ServicePlanId <String>]`: Usage: servicePlanId='{servicePlanId}'
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[StartDateTime <String>]`: Usage: StartDateTime='{StartDateTime}'
   - `[StartDateTime1 <String>]`: Usage: startDateTime='{startDateTime}'
   - `[TimeZoneStandard <String>]`: Usage: TimeZoneStandard='{TimeZoneStandard}'
-  - `[TodoTaskListId <String>]`: key: id of todoTaskList
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[Token <String>]`: Usage: token='{token}'
   - `[Top <Int32?>]`: Usage: top={top}
   - `[Upn <String>]`: Usage: upn='{upn}'
   - `[User <String>]`: Usage: User='{User}'
-  - `[UserId <String>]`: key: id of user
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

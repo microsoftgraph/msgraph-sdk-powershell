@@ -16,18 +16,21 @@ Nullable.
 
 ### List (Default)
 ```
-Get-MgUserContactFolder -UserId <String> [-Filter <String>] [-Property <String[]>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUserContactFolder -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserContactFolder -ContactFolderId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
+Get-MgUserContactFolder -ContactFolderId <String> -UserId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserContactFolder -InputObject <IPersonalContactsIdentity> [-Property <String[]>] [<CommonParameters>]
+Get-MgUserContactFolder -InputObject <IPersonalContactsIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContactFolderId
-key: id of contactFolder
+The unique identifier of contactFolder
 
 ```yaml
 Type: System.String
@@ -97,6 +100,21 @@ By default, this variable will be set in the global scope.
 Type: System.String
 Parameter Sets: List
 Aliases: CV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
 
 Required: False
 Position: Named
@@ -212,7 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserId
-key: id of user
+The unique identifier of user
 
 ```yaml
 Type: System.String
@@ -247,13 +265,13 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IPersonalContactsIdentity>: Identity Parameter
-  - `[ContactFolderId <String>]`: key: id of contactFolder
-  - `[ContactFolderId1 <String>]`: key: id of contactFolder
-  - `[ContactId <String>]`: key: id of contact
-  - `[ExtensionId <String>]`: key: id of extension
-  - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
-  - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[UserId <String>]`: key: id of user
+  - `[ContactFolderId <String>]`: The unique identifier of contactFolder
+  - `[ContactFolderId1 <String>]`: The unique identifier of contactFolder
+  - `[ContactId <String>]`: The unique identifier of contact
+  - `[ExtensionId <String>]`: The unique identifier of extension
+  - `[MultiValueLegacyExtendedPropertyId <String>]`: The unique identifier of multiValueLegacyExtendedProperty
+  - `[SingleValueLegacyExtendedPropertyId <String>]`: The unique identifier of singleValueLegacyExtendedProperty
+  - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS
 

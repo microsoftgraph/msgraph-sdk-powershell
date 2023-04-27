@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyActivityBasedTimeoutPolicy
 
 ## SYNOPSIS
-Create a new activityBasedTimeoutPolicy object.
+Create new navigation property to activityBasedTimeoutPolicies for policies
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgPolicyActivityBasedTimeoutPolicy -BodyParameter <Hashtable> [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Create a new activityBasedTimeoutPolicy object.
+Create new navigation property to activityBasedTimeoutPolicies for policies
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 7c96d5fb-e0c2-4c96-b262-227030bac7ff
+Module Guid: e49af5e0-9b04-442b-8ee1-6c9d57c35387
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -85,6 +85,12 @@ Windows information protection for apps running on devices which are MDM enrolle
 
 ### [Get-MgDeviceAppMgtMobileApp](Get-MgDeviceAppMgtMobileApp.md)
 The mobile apps.
+
+### [Get-MgDeviceAppMgtMobileAppAsManagedMobileLobApp](Get-MgDeviceAppMgtMobileAppAsManagedMobileLobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
+
+### [Get-MgDeviceAppMgtMobileAppAsMobileLobApp](Get-MgDeviceAppMgtMobileAppAsMobileLobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.mobileLobApp
 
 ### [Get-MgDeviceAppMgtMobileAppAssignment](Get-MgDeviceAppMgtMobileAppAssignment.md)
 The list of group assignments for this mobile app.

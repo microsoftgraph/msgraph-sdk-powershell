@@ -23,7 +23,7 @@ Update-MgDirectory [-AdditionalProperties <Hashtable>]
  [-FederationConfigurations <IMicrosoftGraphIdentityProviderBase[]>] [-Id <String>]
  [-ImpactedResources <IMicrosoftGraphImpactedResource[]>]
  [-InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]
- [-OnPremisesSynchronization <IMicrosoftGraphOnPremisesDirectorySynchronization[]>]
+ [-OnPremisesSynchronization <IMicrosoftGraphOnPremisesDirectorySynchronization1[]>]
  [-OutboundSharedUserProfiles <IMicrosoftGraphOutboundSharedUserProfile[]>]
  [-Recommendations <IMicrosoftGraphRecommendation[]>]
  [-SharedEmailDomains <IMicrosoftGraphSharedEmailDomain[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -205,7 +205,8 @@ Accept wildcard characters: False
 ```
 
 ### -InboundSharedUserProfiles
-.
+A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant.
+Nullable.
 To construct, please use Get-Help -Online and see NOTES section for INBOUNDSHAREDUSERPROFILES properties and create a hash table.
 
 ```yaml
@@ -225,7 +226,7 @@ A container for on-premises directory synchronization functionalities that are a
 To construct, please use Get-Help -Online and see NOTES section for ONPREMISESSYNCHRONIZATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesDirectorySynchronization1[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -373,8 +374,8 @@ ADMINISTRATIVEUNITS <IMicrosoftGraphAdministrativeUnit1[]>: Conceptual container
 
 ATTRIBUTESETS <IMicrosoftGraphAttributeSet[]>: Group of related custom security attribute definitions.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Description <String>]`: Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
-  - `[MaxAttributesPerSet <Int32?>]`: Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.
+  - `[Description <String>]`: 
+  - `[MaxAttributesPerSet <Int32?>]`: 
 
 BODYPARAMETER <IMicrosoftGraphDirectory>: directory
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -401,21 +402,21 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
     - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
   - `[AttributeSets <IMicrosoftGraphAttributeSet[]>]`: Group of related custom security attribute definitions.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Description <String>]`: Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
-    - `[MaxAttributesPerSet <Int32?>]`: Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.
+    - `[Description <String>]`: 
+    - `[MaxAttributesPerSet <Int32?>]`: 
   - `[CustomSecurityAttributeDefinitions <IMicrosoftGraphCustomSecurityAttributeDefinition[]>]`: Schema of a custom security attributes (key-value pairs).
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[AllowedValues <IMicrosoftGraphAllowedValue[]>]`: Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+    - `[AllowedValues <IMicrosoftGraphAllowedValue[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[IsActive <Boolean?>]`: Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
-    - `[AttributeSet <String>]`: Name of the attribute set. Case insensitive.
-    - `[Description <String>]`: Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.
-    - `[IsCollection <Boolean?>]`: Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.
-    - `[IsSearchable <Boolean?>]`: Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
-    - `[Name <String>]`: Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
-    - `[Status <String>]`: Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
-    - `[Type <String>]`: Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-    - `[UsePreDefinedValuesOnly <Boolean?>]`: Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
+      - `[IsActive <Boolean?>]`: 
+    - `[AttributeSet <String>]`: 
+    - `[Description <String>]`: 
+    - `[IsCollection <Boolean?>]`: 
+    - `[IsSearchable <Boolean?>]`: 
+    - `[Name <String>]`: 
+    - `[Status <String>]`: 
+    - `[Type <String>]`: 
+    - `[UsePreDefinedValuesOnly <Boolean?>]`: 
   - `[DeletedItems <IMicrosoftGraphDirectoryObject[]>]`: Recently deleted items. Read-only. Nullable.
   - `[FeatureRolloutPolicies <IMicrosoftGraphFeatureRolloutPolicy[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -432,8 +433,8 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-      - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+      - `[Key <String>]`: Key for the key-value pair.
+      - `[Value <String>]`: Value for the key-value pair.
     - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
     - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -446,14 +447,14 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
     - `[ResourceType <String>]`: Indicates the type of Azure AD resource. Examples include user, application.
     - `[Status <String>]`: recommendationStatus
     - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
-  - `[InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]`: 
-    - `[DisplayName <String>]`: 
-    - `[HomeTenantId <String>]`: 
-    - `[UserId <String>]`: 
-    - `[UserPrincipalName <String>]`: 
-  - `[OnPremisesSynchronization <IMicrosoftGraphOnPremisesDirectorySynchronization[]>]`: A container for on-premises directory synchronization functionalities that are available for the organization.
+  - `[InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]`: A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
+    - `[DisplayName <String>]`: The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
+    - `[HomeTenantId <String>]`: The home tenant id of the external user. Read-only.
+    - `[UserId <String>]`: The object id of the external user. Read-only.
+    - `[UserPrincipalName <String>]`: The user principal name (UPN) of the external user. Read-only.
+  - `[OnPremisesSynchronization <IMicrosoftGraphOnPremisesDirectorySynchronization1[]>]`: A container for on-premises directory synchronization functionalities that are available for the organization.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]`: onPremisesDirectorySynchronizationConfiguration
+    - `[Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration1>]`: onPremisesDirectorySynchronizationConfiguration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AccidentalDeletionPrevention <IMicrosoftGraphOnPremisesAccidentalDeletionPrevention>]`: onPremisesAccidentalDeletionPrevention
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -483,9 +484,9 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
       - `[UserForcePasswordChangeOnLogonEnabled <Boolean?>]`: Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
       - `[UserWritebackEnabled <Boolean?>]`: Used to indicate that user writeback is enabled.
   - `[OutboundSharedUserProfiles <IMicrosoftGraphOutboundSharedUserProfile[]>]`: 
-    - `[Tenants <IMicrosoftGraphTenantReference[]>]`: 
-      - `[TenantId <String>]`: 
-    - `[UserId <String>]`: 
+    - `[Tenants <IMicrosoftGraphTenantReference[]>]`: The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
+      - `[TenantId <String>]`: The identifier of the Azure AD tenant. Read-only. Key.
+    - `[UserId <String>]`: The object id of the external user. Read-only.
   - `[Recommendations <IMicrosoftGraphRecommendation[]>]`: List of recommended improvements to improve tenant posture.
     - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: List of actions to take to complete a recommendation.
       - `[ActionUrl <IMicrosoftGraphActionUrl>]`: actionUrl
@@ -520,17 +521,17 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
 
 CUSTOMSECURITYATTRIBUTEDEFINITIONS <IMicrosoftGraphCustomSecurityAttributeDefinition[]>: Schema of a custom security attributes (key-value pairs).
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AllowedValues <IMicrosoftGraphAllowedValue[]>]`: Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+  - `[AllowedValues <IMicrosoftGraphAllowedValue[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[IsActive <Boolean?>]`: Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
-  - `[AttributeSet <String>]`: Name of the attribute set. Case insensitive.
-  - `[Description <String>]`: Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.
-  - `[IsCollection <Boolean?>]`: Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.
-  - `[IsSearchable <Boolean?>]`: Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
-  - `[Name <String>]`: Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
-  - `[Status <String>]`: Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
-  - `[Type <String>]`: Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-  - `[UsePreDefinedValuesOnly <Boolean?>]`: Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
+    - `[IsActive <Boolean?>]`: 
+  - `[AttributeSet <String>]`: 
+  - `[Description <String>]`: 
+  - `[IsCollection <Boolean?>]`: 
+  - `[IsSearchable <Boolean?>]`: 
+  - `[Name <String>]`: 
+  - `[Status <String>]`: 
+  - `[Type <String>]`: 
+  - `[UsePreDefinedValuesOnly <Boolean?>]`: 
 
 DELETEDITEMS <IMicrosoftGraphDirectoryObject[]>: Recently deleted items. Read-only. Nullable.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -555,8 +556,8 @@ IMPACTEDRESOURCES <IMicrosoftGraphImpactedResource[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-    - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-    - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+    - `[Key <String>]`: Key for the key-value pair.
+    - `[Value <String>]`: Value for the key-value pair.
   - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
   - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
   - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.
@@ -570,15 +571,15 @@ IMPACTEDRESOURCES <IMicrosoftGraphImpactedResource[]>: .
   - `[Status <String>]`: recommendationStatus
   - `[SubjectId <String>]`: The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.
 
-INBOUNDSHAREDUSERPROFILES <IMicrosoftGraphInboundSharedUserProfile[]>: .
-  - `[DisplayName <String>]`: 
-  - `[HomeTenantId <String>]`: 
-  - `[UserId <String>]`: 
-  - `[UserPrincipalName <String>]`: 
+INBOUNDSHAREDUSERPROFILES <IMicrosoftGraphInboundSharedUserProfile[]>: A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
+  - `[DisplayName <String>]`: The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
+  - `[HomeTenantId <String>]`: The home tenant id of the external user. Read-only.
+  - `[UserId <String>]`: The object id of the external user. Read-only.
+  - `[UserPrincipalName <String>]`: The user principal name (UPN) of the external user. Read-only.
 
-ONPREMISESSYNCHRONIZATION <IMicrosoftGraphOnPremisesDirectorySynchronization[]>: A container for on-premises directory synchronization functionalities that are available for the organization.
+ONPREMISESSYNCHRONIZATION <IMicrosoftGraphOnPremisesDirectorySynchronization1[]>: A container for on-premises directory synchronization functionalities that are available for the organization.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration>]`: onPremisesDirectorySynchronizationConfiguration
+  - `[Configuration <IMicrosoftGraphOnPremisesDirectorySynchronizationConfiguration1>]`: onPremisesDirectorySynchronizationConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AccidentalDeletionPrevention <IMicrosoftGraphOnPremisesAccidentalDeletionPrevention>]`: onPremisesAccidentalDeletionPrevention
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -609,9 +610,9 @@ ONPREMISESSYNCHRONIZATION <IMicrosoftGraphOnPremisesDirectorySynchronization[]>:
     - `[UserWritebackEnabled <Boolean?>]`: Used to indicate that user writeback is enabled.
 
 OUTBOUNDSHAREDUSERPROFILES <IMicrosoftGraphOutboundSharedUserProfile[]>: .
-  - `[Tenants <IMicrosoftGraphTenantReference[]>]`: 
-    - `[TenantId <String>]`: 
-  - `[UserId <String>]`: 
+  - `[Tenants <IMicrosoftGraphTenantReference[]>]`: The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
+    - `[TenantId <String>]`: The identifier of the Azure AD tenant. Read-only. Key.
+  - `[UserId <String>]`: The object id of the external user. Read-only.
 
 RECOMMENDATIONS <IMicrosoftGraphRecommendation[]>: List of recommended improvements to improve tenant posture.
   - `[ActionSteps <IMicrosoftGraphActionStep[]>]`: List of actions to take to complete a recommendation.
@@ -633,8 +634,8 @@ RECOMMENDATIONS <IMicrosoftGraphRecommendation[]>: List of recommended improveme
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AddedDateTime <DateTime?>]`: The date and time when the impactedResource object was initially associated with the recommendation.
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: Additional information unique to the impactedResource to help contextualize the recommendation.
-      - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
-      - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+      - `[Key <String>]`: Key for the key-value pair.
+      - `[Value <String>]`: Value for the key-value pair.
     - `[ApiUrl <String>]`: The URL link to the corresponding Azure AD resource.
     - `[DisplayName <String>]`: Friendly name of the Azure AD resource.
     - `[LastModifiedBy <String>]`: Name of the user or service that last updated the status.

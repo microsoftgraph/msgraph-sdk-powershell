@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgEntitlementManagementSetting
 
 ## SYNOPSIS
-Update an existing entitlementManagementSettings object to change one or more of its properties.
+Update the navigation property settings in identityGovernance
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgEntitlementManagementSetting -BodyParameter <IMicrosoftGraphEntitlement
 ```
 
 ## DESCRIPTION
-Update an existing entitlementManagementSettings object to change one or more of its properties.
+Update the navigation property settings in identityGovernance
 
 ## EXAMPLES
 

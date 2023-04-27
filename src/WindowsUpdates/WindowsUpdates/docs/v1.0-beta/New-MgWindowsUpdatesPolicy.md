@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgWindowsUpdatesPolicy
 
 ## SYNOPSIS
-Create a new updatePolicy object.
+Create new navigation property to updatePolicies for admin
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgWindowsUpdatesPolicy -BodyParameter <IMicrosoftGraphWindowsUpdatesUpdatePo
 ```
 
 ## DESCRIPTION
-Create a new updatePolicy object.
+Create new navigation property to updatePolicies for admin
 
 ## EXAMPLES
 
