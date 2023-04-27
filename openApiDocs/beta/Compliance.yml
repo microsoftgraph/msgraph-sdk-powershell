@@ -175,11 +175,7 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List cases
-      description: Retrieve a list of case objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-case-list?view=graph-rest-1.0
+      summary: Get cases from compliance
       operationId: compliance.ediscovery_ListCase
       parameters:
         - $ref: '#/components/parameters/top'
@@ -285,11 +281,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create case
-      description: Create a new case object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-case-post?view=graph-rest-1.0
+      summary: Create new navigation property to cases for compliance
       operationId: compliance.ediscovery_CreateCase
       requestBody:
         description: New navigation property
@@ -467,11 +459,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List custodians
-      description: Get a list of the custodian objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-case-list-custodians?view=graph-rest-1.0
+      summary: Get custodians from compliance
+      description: Returns a list of case custodian objects for this case.  Nullable.
       operationId: compliance.ediscovery.case_ListCustodian
       parameters:
         - name: case-id
@@ -577,11 +566,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create custodian
-      description: 'Create a new custodian object. After the custodian object is created, you will need to create the custodian''s userSource to reference their mailbox and OneDrive for Business site.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-case-post-custodians?view=graph-rest-1.0
+      summary: Create new navigation property to custodians for compliance
       operationId: compliance.ediscovery.case_CreateCustodian
       parameters:
         - name: case-id
@@ -786,10 +771,6 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action activate
-      description: 'Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-activate?view=graph-rest-1.0
       operationId: compliance.ediscovery.case.custodian_activate
       parameters:
         - name: case-id
@@ -860,10 +841,6 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action release
-      description: 'Release a custodian from a case. For details, see Release a custodian from a case.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-release?view=graph-rest-1.0
       operationId: compliance.ediscovery.case.custodian_release
       parameters:
         - name: case-id
@@ -968,11 +945,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List custodian siteSources
-      description: Get a list of siteSource objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-list-sitesources?view=graph-rest-1.0
+      summary: Get siteSources from compliance
+      description: Data source entity for SharePoint sites associated with the custodian.
       operationId: compliance.ediscovery.case.custodian_ListSiteSource
       parameters:
         - name: case-id
@@ -1065,11 +1039,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create custodian siteSource
-      description: Create a new custodian siteSource object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-post-sitesources?view=graph-rest-1.0
+      summary: Create new navigation property to siteSources for compliance
       operationId: compliance.ediscovery.case.custodian_CreateSiteSource
       parameters:
         - name: case-id
@@ -1451,11 +1421,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List unifiedGroupSources
-      description: Get a list of the unifiedGroupSource objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-list-unifiedgroupsources?view=graph-rest-1.0
+      summary: Get unifiedGroupSources from compliance
+      description: Data source entity for groups associated with the custodian.
       operationId: compliance.ediscovery.case.custodian_ListUnifiedGroupSource
       parameters:
         - name: case-id
@@ -1551,11 +1518,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create unifiedGroupSource
-      description: Create a new unifiedGroupSource object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-post-unifiedgroupsources?view=graph-rest-1.0
+      summary: Create new navigation property to unifiedGroupSources for compliance
       operationId: compliance.ediscovery.case.custodian_CreateUnifiedGroupSource
       parameters:
         - name: case-id
@@ -1997,11 +1960,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List custodian userSources
-      description: Get a list of the userSource objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-list-usersources?view=graph-rest-1.0
+      summary: Get userSources from compliance
+      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.case.custodian_ListUserSource
       parameters:
         - name: case-id
@@ -2101,11 +2061,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create custodian userSource
-      description: Create a new custodian userSource object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-post-usersources?view=graph-rest-1.0
+      summary: Create new navigation property to userSources for compliance
       operationId: compliance.ediscovery.case.custodian_CreateUserSource
       parameters:
         - name: case-id
@@ -2790,11 +2746,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List legalHold siteSources
-      description: Get the list of siteSource objecs associated with a legal hold.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-legalhold-list-sitesources?view=graph-rest-1.0
+      summary: Get siteSources from compliance
+      description: Data source entity for SharePoint sites associated with the legal hold.
       operationId: compliance.ediscovery.case.legalHold_ListSiteSource
       parameters:
         - name: case-id
@@ -2887,11 +2840,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create legalHold siteSource
-      description: Adds a siteSource to a legalHold object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-legalhold-post-sitesources?view=graph-rest-1.0
+      summary: Create new navigation property to siteSources for compliance
       operationId: compliance.ediscovery.case.legalHold_CreateSiteSource
       parameters:
         - name: case-id
@@ -3810,11 +3759,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List legalHold userSources
-      description: Get the list of userSource objects associated with a legal hold.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-legalhold-list-usersources?view=graph-rest-1.0
+      summary: Get userSources from compliance
+      description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
       operationId: compliance.ediscovery.case.legalHold_ListUserSource
       parameters:
         - name: case-id
@@ -3914,11 +3860,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create legalHold userSource
-      description: Adds a userSource to a legalHold object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-legalhold-post-usersources?view=graph-rest-1.0
+      summary: Create new navigation property to userSources for compliance
       operationId: compliance.ediscovery.case.legalHold_CreateUserSource
       parameters:
         - name: case-id
@@ -4209,10 +4151,6 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action close
-      description: 'Close an eDiscovery case. For details, see Close a case.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-case-close?view=graph-rest-1.0
       operationId: compliance.ediscovery.case_close
       parameters:
         - name: case-id
@@ -4240,10 +4178,6 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action reopen
-      description: 'Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-case-reopen?view=graph-rest-1.0
       operationId: compliance.ediscovery.case_reopen
       parameters:
         - name: case-id
@@ -4270,11 +4204,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List noncustodialDataSources
-      description: Get a list of the noncustodialDataSource objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-list?view=graph-rest-1.0
+      summary: Get noncustodialDataSources from compliance
+      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
       operationId: compliance.ediscovery.case_ListNoncustodialDataSource
       parameters:
         - name: case-id
@@ -4370,11 +4301,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create noncustodialDataSource
-      description: Create a new noncustodialDataSource object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-post?view=graph-rest-1.0
+      summary: Create new navigation property to noncustodialDataSources for compliance
       operationId: compliance.ediscovery.case_CreateNoncustodialDataSource
       parameters:
         - name: case-id
@@ -4761,10 +4688,6 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action release
-      description: Releases the non-custodial data source from the case.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-release?view=graph-rest-1.0
       operationId: compliance.ediscovery.case.noncustodialDataSource_release
       parameters:
         - name: case-id
@@ -5568,11 +5491,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create reviewSet
-      description: 'Create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-case-post-reviewsets?view=graph-rest-1.0
+      summary: Create new navigation property to reviewSets for compliance
       operationId: compliance.ediscovery.case_CreateReviewSet
       parameters:
         - name: case-id
@@ -5765,10 +5684,6 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action addToReviewSet
-      description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a caseExportOperation.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-reviewset-addtoreviewset?view=graph-rest-1.0
       operationId: compliance.ediscovery.case.reviewSet_addToReviewSet
       parameters:
         - name: case-id
@@ -5818,10 +5733,6 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action export
-      description: 'Initiate an export from a **reviewSet**.  For details, see Export documents from a review set in Advanced eDiscovery.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-reviewset-export?view=graph-rest-1.0
       operationId: compliance.ediscovery.case.reviewSet_export
       parameters:
         - name: case-id
@@ -5882,11 +5793,7 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List reviewSetQueries
-      description: Retrieve a list of eDiscovery reviewSetQuery objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-list?view=graph-rest-1.0
+      summary: Get queries from compliance
       operationId: compliance.ediscovery.case.reviewSet_ListQuery
       parameters:
         - name: case-id
@@ -5983,11 +5890,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create reviewSetQuery
-      description: Create a new reviewSetQuery object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-post?view=graph-rest-1.0
+      summary: Create new navigation property to queries for compliance
       operationId: compliance.ediscovery.case.reviewSet_CreateQuery
       parameters:
         - name: case-id
@@ -6212,10 +6115,6 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action applyTags
-      description: Apply tags to documents that match the specified reviewSetQuery.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-applytags?view=graph-rest-1.0
       operationId: compliance.ediscovery.case.reviewSet.query_applyTag
       parameters:
         - name: case-id
@@ -6340,11 +6239,7 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get caseSettings
-      description: Read the properties and relationships of an eDiscovery caseSettings object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-casesettings-get?view=graph-rest-1.0
+      summary: Get settings from compliance
       operationId: compliance.ediscovery.case_GetSetting
       parameters:
         - name: case-id
@@ -6401,11 +6296,7 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update caseSettings
-      description: Update the properties of a an eDiscovery caseSettings object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-casesettings-update?view=graph-rest-1.0
+      summary: Update the navigation property settings in compliance
       operationId: compliance.ediscovery.case_UpdateSetting
       parameters:
         - name: case-id
@@ -6476,10 +6367,6 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action resetToDefault
-      description: Reset a caseSettings object to the default values.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-casesettings-resettodefault?view=graph-rest-1.0
       operationId: compliance.ediscovery.case.setting_resetToDefault
       parameters:
         - name: case-id
@@ -6506,11 +6393,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List sourceCollections
-      description: Get the list of sourceCollections from a case object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-case-list-sourcecollections?view=graph-rest-1.0
+      summary: Get sourceCollections from compliance
+      description: Returns a list of sourceCollection objects associated with this case.
       operationId: compliance.ediscovery.case_ListSourceCollection
       parameters:
         - name: case-id
@@ -6615,11 +6499,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create sourceCollection
-      description: Create a new sourceCollection object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-case-post-sourcecollections?view=graph-rest-1.0
+      summary: Create new navigation property to sourceCollections for compliance
       operationId: compliance.ediscovery.case_CreateSourceCollection
       parameters:
         - name: case-id
@@ -6824,11 +6704,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List additionalSources
-      description: Get a list of additional dataSource objects associated with a source collection.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-additionalsources?view=graph-rest-1.0
+      summary: Get additionalSources from compliance
+      description: Adds an additional source to the sourceCollection.
       operationId: compliance.ediscovery.case.sourceCollection_ListAdditionalSource
       parameters:
         - name: case-id
@@ -7178,11 +7055,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List addToReviewSetOperation
-      description: 'Get the last addToReviewSetOperation object associated with a source collection. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-addtoreviewsetoperation?view=graph-rest-1.0
+      summary: Get addToReviewSetOperation from compliance
+      description: Adds the results of the sourceCollection to the specified reviewSet.
       operationId: compliance.ediscovery.case.sourceCollection_GetAddToReviewSetOperation
       parameters:
         - name: case-id
@@ -7256,11 +7130,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List custodianSources
-      description: Get the list of dataSource objects associated with a source collection.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-custodiansources?view=graph-rest-1.0
+      summary: Get custodianSources from compliance
+      description: Custodian sources that are included in the sourceCollection.
       operationId: compliance.ediscovery.case.sourceCollection_ListCustodianSource
       parameters:
         - name: case-id
@@ -7464,11 +7335,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List estimateStatisticsOperation
-      description: 'Get the last estimateStatisticsOperation object associated with a source collection. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-lastestimatestatisticsoperation?view=graph-rest-1.0
+      summary: Get lastEstimateStatisticsOperation from compliance
+      description: The last estimate operation associated with the sourceCollection.
       operationId: compliance.ediscovery.case.sourceCollection_GetLastEstimateStatisticsOperation
       parameters:
         - name: case-id
@@ -7547,11 +7415,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action estimateStatistics
-      description: 'Run an estimate of the number of emails and documents in the source collection. To learn more about source collections (also known as searches in eDiscovery), see Collect data for a case in Advanced eDiscovery.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-estimatestatistics?view=graph-rest-1.0
-      operationId: compliance.ediscovery.case.sourceCollection_estimateStatistic
+      operationId: compliance.ediscovery.case.sourceCollection_estimatestatistics
       parameters:
         - name: case-id
           in: path
@@ -7586,10 +7450,6 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action purgeData
-      description: "Permanently delete Microsoft Teams messages contained in a sourceCollection. You can collect and purge the following categories of Teams content:\n- **Teams 1:1 chats** - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.\n- **Teams group chats** - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.\n- **Teams channels** - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- **Private channels** - Message posts, replies, and attachments shared in a private Teams channel.\n- **Shared channels** - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- Advanced eDiscovery workflow for content in Microsoft Teams "
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-purgedata?view=graph-rest-1.0
       operationId: compliance.ediscovery.case.sourceCollection_purgeData
       parameters:
         - name: case-id
@@ -7624,11 +7484,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List noncustodialSources
-      description: Get a list of noncustodialDataSource associated with a sourceCollection.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-noncustodialsources?view=graph-rest-1.0
+      summary: Get noncustodialSources from compliance
+      description: noncustodialDataSource sources that are included in the sourceCollection
       operationId: compliance.ediscovery.case.sourceCollection_ListNoncustodialSource
       parameters:
         - name: case-id
@@ -7880,11 +7737,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List tags
-      description: Retrieve a list of tag objects from an eDiscovery case.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-1.0
+      summary: Get tags from compliance
+      description: Returns a list of tag objects associated to this case.
       operationId: compliance.ediscovery.case_ListTag
       parameters:
         - name: case-id
@@ -7974,11 +7828,7 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create tag
-      description: Create a new tag for the specified case.  The tags are used in review sets while reviewing content.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-1.0
+      summary: Create new navigation property to tags for compliance
       operationId: compliance.ediscovery.case_CreateTag
       parameters:
         - name: case-id
@@ -8174,11 +8024,8 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: List childTags
-      description: Get a list of child tag objects associated with a tag.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ediscovery-tag-childtags?view=graph-rest-1.0
+      summary: Get childTags from compliance
+      description: Returns the tags that are a child of a tag.
       operationId: compliance.ediscovery.case.tag_ListChildTag
       parameters:
         - name: case-id
@@ -12234,6 +12081,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.bitlocker:
@@ -13062,7 +12911,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -15094,7 +14943,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -15127,7 +14976,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -16140,7 +15989,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -16177,7 +16026,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -16200,7 +16049,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -16242,7 +16091,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -16274,7 +16123,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -16292,7 +16141,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -16300,7 +16149,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -16340,7 +16189,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -16363,7 +16212,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -16381,7 +16230,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -16434,7 +16283,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -16467,14 +16316,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -16724,6 +16573,10 @@ components:
             applicationId:
               type: string
               description: Intune application identifier.
+              nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
               nullable: true
             history:
               type: array
@@ -17208,7 +17061,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -17398,6 +17251,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -17577,6 +17432,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -18712,11 +18580,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -24325,6 +24193,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -24659,6 +24537,43 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
     microsoft.graph.volumeType:
@@ -28725,6 +28640,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.mediaSourceContentCategory:
       title: mediaSourceContentCategory
       enum:

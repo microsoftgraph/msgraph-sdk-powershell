@@ -10,11 +10,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List contactFolders
-      description: Get all the contact folders in the signed-in user's mailbox.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0
+      summary: Get contactFolders from users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: user_ListContactFolder
       parameters:
         - name: user-id
@@ -101,11 +98,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create ContactFolder
-      description: Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0
+      summary: Create new navigation property to contactFolders for users
       operationId: user_CreateContactFolder
       parameters:
         - name: user-id
@@ -303,11 +296,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List childFolders
-      description: Get a collection of child folders under the specified contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-childfolders?view=graph-rest-1.0
+      summary: Get childFolders from users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: user.contactFolder_ListChildFolder
       parameters:
         - name: user-id
@@ -402,11 +392,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create ContactFolder
-      description: Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-childfolders?view=graph-rest-1.0
+      summary: Create new navigation property to childFolders for users
       operationId: user.contactFolder_CreateChildFolder
       parameters:
         - name: user-id
@@ -636,11 +622,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List contacts
-      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: user.contactFolder.childFolder_ListContact
       parameters:
         - name: user-id
@@ -845,11 +828,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create Contact
-      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: user.contactFolder.childFolder_CreateContact
       parameters:
         - name: user-id
@@ -3541,11 +3520,8 @@ paths:
     get:
       tags:
         - users.contactFolder
-      summary: List contacts
-      description: 'Get all the contacts in the signed-in user''s mailbox (.../me/contacts), or from the specified contact folder.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: user.contactFolder_ListContact
       parameters:
         - name: user-id
@@ -3742,11 +3718,7 @@ paths:
     post:
       tags:
         - users.contactFolder
-      summary: Create Contact
-      description: Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: user.contactFolder_CreateContact
       parameters:
         - name: user-id
@@ -6118,11 +6090,8 @@ paths:
     get:
       tags:
         - users.contact
-      summary: List contacts
-      description: 'Get contacts in the user''s mailbox. There are two scenarios where an app can get contacts in another user''s contact folder:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0
+      summary: Get contacts from users
+      description: The user's contacts. Read-only. Nullable.
       operationId: user_ListContact
       parameters:
         - name: user-id
@@ -6312,11 +6281,7 @@ paths:
     post:
       tags:
         - users.contact
-      summary: Create contact
-      description: Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0
+      summary: Create new navigation property to contacts for users
       operationId: user_CreateContact
       parameters:
         - name: user-id

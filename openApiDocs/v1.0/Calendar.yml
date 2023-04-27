@@ -134,11 +134,7 @@ paths:
     post:
       tags:
         - groups.calendar
-      summary: Create calendarPermission
-      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
+      summary: Create new navigation property to calendarPermissions for groups
       operationId: group.calendar_CreateCalendarPermission
       parameters:
         - name: group-id
@@ -317,9 +313,6 @@ paths:
         - groups.calendar
       summary: Get calendarView from groups
       description: The calendar view for the calendar. Navigation property. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0
       operationId: group.calendar_ListCalendarView
       parameters:
         - name: group-id
@@ -622,11 +615,8 @@ paths:
     get:
       tags:
         - groups.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.calendarView_ListAttachment
       parameters:
         - name: group-id
@@ -713,11 +703,7 @@ paths:
     post:
       tags:
         - groups.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for groups
       operationId: group.calendar.calendarView_CreateAttachment
       parameters:
         - name: group-id
@@ -1036,11 +1022,7 @@ paths:
     post:
       tags:
         - groups.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for groups
       operationId: group.calendar.calendarView_CreateExtension
       parameters:
         - name: group-id
@@ -1266,9 +1248,6 @@ paths:
         - groups.calendar
       summary: Get instances from groups
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: group.calendar.calendarView_ListInstance
       parameters:
         - name: group-id
@@ -1587,11 +1566,8 @@ paths:
     get:
       tags:
         - groups.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.calendarView.instance_ListAttachment
       parameters:
         - name: group-id
@@ -1686,11 +1662,7 @@ paths:
     post:
       tags:
         - groups.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for groups
       operationId: group.calendar.calendarView.instance_CreateAttachment
       parameters:
         - name: group-id
@@ -2057,11 +2029,7 @@ paths:
     post:
       tags:
         - groups.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for groups
       operationId: group.calendar.calendarView.instance_CreateExtension
       parameters:
         - name: group-id
@@ -3683,11 +3651,8 @@ paths:
     get:
       tags:
         - groups.calendar
-      summary: List events
-      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
+      summary: Get events from groups
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: group.calendar_ListEvent
       parameters:
         - name: group-id
@@ -3883,11 +3848,7 @@ paths:
     post:
       tags:
         - groups.calendar
-      summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
+      summary: Create new navigation property to events for groups
       operationId: group.calendar_CreateEvent
       parameters:
         - name: group-id
@@ -4102,11 +4063,8 @@ paths:
     get:
       tags:
         - groups.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.event_ListAttachment
       parameters:
         - name: group-id
@@ -4193,11 +4151,7 @@ paths:
     post:
       tags:
         - groups.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for groups
       operationId: group.calendar.event_CreateAttachment
       parameters:
         - name: group-id
@@ -4516,11 +4470,7 @@ paths:
     post:
       tags:
         - groups.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for groups
       operationId: group.calendar.event_CreateExtension
       parameters:
         - name: group-id
@@ -4746,9 +4696,6 @@ paths:
         - groups.calendar
       summary: Get instances from groups
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: group.calendar.event_ListInstance
       parameters:
         - name: group-id
@@ -5067,11 +5014,8 @@ paths:
     get:
       tags:
         - groups.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: group.calendar.event.instance_ListAttachment
       parameters:
         - name: group-id
@@ -5166,11 +5110,7 @@ paths:
     post:
       tags:
         - groups.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for groups
       operationId: group.calendar.event.instance_CreateAttachment
       parameters:
         - name: group-id
@@ -5537,11 +5477,7 @@ paths:
     post:
       tags:
         - groups.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for groups
       operationId: group.calendar.event.instance_CreateExtension
       parameters:
         - name: group-id
@@ -7675,9 +7611,6 @@ paths:
         - groups.event
       summary: Get calendarView from groups
       description: The calendar view for the calendar. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-calendarview?view=graph-rest-1.0
       operationId: group_ListCalendarView
       parameters:
         - name: group-id
@@ -7980,11 +7913,8 @@ paths:
     get:
       tags:
         - groups.event
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: group.calendarView_ListAttachment
       parameters:
         - name: group-id
@@ -8071,11 +8001,7 @@ paths:
     post:
       tags:
         - groups.event
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for groups
       operationId: group.calendarView_CreateAttachment
       parameters:
         - name: group-id
@@ -8394,11 +8320,7 @@ paths:
     post:
       tags:
         - groups.event
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for groups
       operationId: group.calendarView_CreateExtension
       parameters:
         - name: group-id
@@ -8624,9 +8546,6 @@ paths:
         - groups.event
       summary: Get instances from groups
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: group.calendarView_ListInstance
       parameters:
         - name: group-id
@@ -8945,11 +8864,8 @@ paths:
     get:
       tags:
         - groups.event
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: group.calendarView.instance_ListAttachment
       parameters:
         - name: group-id
@@ -9044,11 +8960,7 @@ paths:
     post:
       tags:
         - groups.event
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for groups
       operationId: group.calendarView.instance_CreateAttachment
       parameters:
         - name: group-id
@@ -9415,11 +9327,7 @@ paths:
     post:
       tags:
         - groups.event
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for groups
       operationId: group.calendarView.instance_CreateExtension
       parameters:
         - name: group-id
@@ -11041,11 +10949,8 @@ paths:
     get:
       tags:
         - groups.event
-      summary: List events
-      description: Retrieve a list of event objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-list-events?view=graph-rest-1.0
+      summary: Get events from groups
+      description: The group's calendar events.
       operationId: group_ListEvent
       parameters:
         - name: group-id
@@ -11223,11 +11128,7 @@ paths:
     post:
       tags:
         - groups.event
-      summary: Create event
-      description: Use this API to create a new event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-events?view=graph-rest-1.0
+      summary: Create new navigation property to events for groups
       operationId: group_CreateEvent
       parameters:
         - name: group-id
@@ -11424,11 +11325,8 @@ paths:
     get:
       tags:
         - groups.event
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: group.event_ListAttachment
       parameters:
         - name: group-id
@@ -11515,11 +11413,7 @@ paths:
     post:
       tags:
         - groups.event
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for groups
       operationId: group.event_CreateAttachment
       parameters:
         - name: group-id
@@ -11838,11 +11732,7 @@ paths:
     post:
       tags:
         - groups.event
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for groups
       operationId: group.event_CreateExtension
       parameters:
         - name: group-id
@@ -12068,9 +11958,6 @@ paths:
         - groups.event
       summary: Get instances from groups
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: group.event_ListInstance
       parameters:
         - name: group-id
@@ -12389,11 +12276,8 @@ paths:
     get:
       tags:
         - groups.event
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from groups
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: group.event.instance_ListAttachment
       parameters:
         - name: group-id
@@ -12488,11 +12372,7 @@ paths:
     post:
       tags:
         - groups.event
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for groups
       operationId: group.event.instance_CreateAttachment
       parameters:
         - name: group-id
@@ -12859,11 +12739,7 @@ paths:
     post:
       tags:
         - groups.event
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for groups
       operationId: group.event.instance_CreateExtension
       parameters:
         - name: group-id
@@ -14696,11 +14572,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: Get calendar
-      description: "Get the properties and relationships of a calendar object. The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user's calendar:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-get?view=graph-rest-1.0
+      summary: Get calendar from users
+      description: The user's primary calendar. Read-only.
       operationId: user_GetCalendar
       parameters:
         - name: user-id
@@ -14754,11 +14627,7 @@ paths:
     patch:
       tags:
         - users.calendar
-      summary: Update calendar
-      description: "Update the properties of a calendar object. The calendar can be one for a user, \nor the default calendar of a Microsoft 365 group."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-update?view=graph-rest-1.0
+      summary: Update the navigation property calendar in users
       operationId: user_UpdateCalendar
       parameters:
         - name: user-id
@@ -14858,11 +14727,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create calendarPermission
-      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
+      summary: Create new navigation property to calendarPermissions for users
       operationId: user.calendar_CreateCalendarPermission
       parameters:
         - name: user-id
@@ -15041,9 +14906,6 @@ paths:
         - users.calendar
       summary: Get calendarView from users
       description: The calendar view for the calendar. Navigation property. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0
       operationId: user.calendar_ListCalendarView
       parameters:
         - name: user-id
@@ -15346,11 +15208,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView_ListAttachment
       parameters:
         - name: user-id
@@ -15437,11 +15296,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendar.calendarView_CreateAttachment
       parameters:
         - name: user-id
@@ -15760,11 +15615,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendar.calendarView_CreateExtension
       parameters:
         - name: user-id
@@ -15990,9 +15841,6 @@ paths:
         - users.calendar
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: user.calendar.calendarView_ListInstance
       parameters:
         - name: user-id
@@ -16311,11 +16159,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView.instance_ListAttachment
       parameters:
         - name: user-id
@@ -16410,11 +16255,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendar.calendarView.instance_CreateAttachment
       parameters:
         - name: user-id
@@ -16781,11 +16622,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendar.calendarView.instance_CreateExtension
       parameters:
         - name: user-id
@@ -18407,11 +18244,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List events
-      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
+      summary: Get events from users
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: user.calendar_ListEvent
       parameters:
         - name: user-id
@@ -18607,11 +18441,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
+      summary: Create new navigation property to events for users
       operationId: user.calendar_CreateEvent
       parameters:
         - name: user-id
@@ -18826,11 +18656,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event_ListAttachment
       parameters:
         - name: user-id
@@ -18917,11 +18744,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendar.event_CreateAttachment
       parameters:
         - name: user-id
@@ -19240,11 +19063,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendar.event_CreateExtension
       parameters:
         - name: user-id
@@ -19470,9 +19289,6 @@ paths:
         - users.calendar
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: user.calendar.event_ListInstance
       parameters:
         - name: user-id
@@ -19791,11 +19607,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event.instance_ListAttachment
       parameters:
         - name: user-id
@@ -19890,11 +19703,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendar.event.instance_CreateAttachment
       parameters:
         - name: user-id
@@ -20261,11 +20070,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendar.event.instance_CreateExtension
       parameters:
         - name: user-id
@@ -22397,11 +22202,8 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: List calendarGroups
-      description: Get the user's calendar groups.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-calendargroups?view=graph-rest-1.0
+      summary: Get calendarGroups from users
+      description: The user's calendar groups. Read-only. Nullable.
       operationId: user_ListCalendarGroup
       parameters:
         - name: user-id
@@ -22463,11 +22265,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Create CalendarGroup
-      description: Use this API to create a new CalendarGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-calendargroups?view=graph-rest-1.0
+      summary: Create new navigation property to calendarGroups for users
       operationId: user_CreateCalendarGroup
       parameters:
         - name: user-id
@@ -22622,11 +22420,8 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: List calendars
-      description: Retrieve a list of calendars belonging to a calendar group.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendargroup-list-calendars?view=graph-rest-1.0
+      summary: Get calendars from users
+      description: The calendars in the calendar group. Navigation property. Read-only. Nullable.
       operationId: user.calendarGroup_ListCalendar
       parameters:
         - name: user-id
@@ -22730,11 +22525,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Create Calendar
-      description: Use this API to create a new calendar in a calendar group for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendargroup-post-calendars?view=graph-rest-1.0
+      summary: Create new navigation property to calendars for users
       operationId: user.calendarGroup_CreateCalendar
       parameters:
         - name: user-id
@@ -23019,11 +22810,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Create calendarPermission
-      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
+      summary: Create new navigation property to calendarPermissions for users
       operationId: user.calendarGroup.calendar_CreateCalendarPermission
       parameters:
         - name: user-id
@@ -23280,11 +23067,8 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: List calendarView
-      description: "Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,\nfrom a user's default calendar `(../me/calendarView)` or some other calendar of the user's."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0
+      summary: Get calendarView from users
+      description: The calendar view for the calendar. Navigation property. Read-only.
       operationId: user.calendarGroup.calendar_ListCalendarView
       parameters:
         - name: user-id
@@ -23587,11 +23371,8 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.calendarView_ListAttachment
       parameters:
         - name: user-id
@@ -23694,11 +23475,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendarGroup.calendar.calendarView_CreateAttachment
       parameters:
         - name: user-id
@@ -24113,11 +23890,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendarGroup.calendar.calendarView_CreateExtension
       parameters:
         - name: user-id
@@ -24423,9 +24196,6 @@ paths:
         - users.calendarGroup
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.calendarView_ListInstance
       parameters:
         - name: user-id
@@ -24776,11 +24546,8 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.calendarView.instance_ListAttachment
       parameters:
         - name: user-id
@@ -24891,11 +24658,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendarGroup.calendar.calendarView.instance_CreateAttachment
       parameters:
         - name: user-id
@@ -25358,11 +25121,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendarGroup.calendar.calendarView.instance_CreateExtension
       parameters:
         - name: user-id
@@ -27480,11 +27239,8 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: List events
-      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
+      summary: Get events from users
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: user.calendarGroup.calendar_ListEvent
       parameters:
         - name: user-id
@@ -27696,11 +27452,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
+      summary: Create new navigation property to events for users
       operationId: user.calendarGroup.calendar_CreateEvent
       parameters:
         - name: user-id
@@ -27979,11 +27731,8 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.event_ListAttachment
       parameters:
         - name: user-id
@@ -28086,11 +27835,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendarGroup.calendar.event_CreateAttachment
       parameters:
         - name: user-id
@@ -28505,11 +28250,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendarGroup.calendar.event_CreateExtension
       parameters:
         - name: user-id
@@ -28815,9 +28556,6 @@ paths:
         - users.calendarGroup
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar.event_ListInstance
       parameters:
         - name: user-id
@@ -29168,11 +28906,8 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendarGroup.calendar.event.instance_ListAttachment
       parameters:
         - name: user-id
@@ -29283,11 +29018,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendarGroup.calendar.event.instance_CreateAttachment
       parameters:
         - name: user-id
@@ -29750,11 +29481,7 @@ paths:
     post:
       tags:
         - users.calendarGroup
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendarGroup.calendar.event.instance_CreateExtension
       parameters:
         - name: user-id
@@ -32624,11 +32351,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List calendars
-      description: 'Get all the user''s calendars (`/calendars` navigation property), get the calendars from the default calendar group or from a specific calendar group. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0
+      summary: Get calendars from users
+      description: The user's calendars. Read-only. Nullable.
       operationId: user_ListCalendar
       parameters:
         - name: user-id
@@ -32741,11 +32465,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create calendar
-      description: Create a new calendar for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-calendars?view=graph-rest-1.0
+      summary: Create new navigation property to calendars for users
       operationId: user_CreateCalendar
       parameters:
         - name: user-id
@@ -33007,11 +32727,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create calendarPermission
-      description: Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0
+      summary: Create new navigation property to calendarPermissions for users
       operationId: user.calendar_CreateCalendarPermission
       parameters:
         - name: user-id
@@ -33230,9 +32946,6 @@ paths:
         - users.calendar
       summary: Get calendarView from users
       description: The calendar view for the calendar. Navigation property. Read-only.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0
       operationId: user.calendar_ListCalendarView
       parameters:
         - name: user-id
@@ -33551,11 +33264,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView_ListAttachment
       parameters:
         - name: user-id
@@ -33650,11 +33360,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendar.calendarView_CreateAttachment
       parameters:
         - name: user-id
@@ -34021,11 +33727,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendar.calendarView_CreateExtension
       parameters:
         - name: user-id
@@ -34291,9 +33993,6 @@ paths:
         - users.calendar
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: user.calendar.calendarView_ListInstance
       parameters:
         - name: user-id
@@ -34628,11 +34327,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.calendarView.instance_ListAttachment
       parameters:
         - name: user-id
@@ -34735,11 +34431,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendar.calendarView.instance_CreateAttachment
       parameters:
         - name: user-id
@@ -35154,11 +34846,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendar.calendarView.instance_CreateExtension
       parameters:
         - name: user-id
@@ -37028,11 +36716,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List events
-      description: "Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0
+      summary: Get events from users
+      description: The events in the calendar. Navigation property. Read-only.
       operationId: user.calendar_ListEvent
       parameters:
         - name: user-id
@@ -37236,11 +36921,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create event
-      description: 'Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0
+      summary: Create new navigation property to events for users
       operationId: user.calendar_CreateEvent
       parameters:
         - name: user-id
@@ -37487,11 +37168,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event_ListAttachment
       parameters:
         - name: user-id
@@ -37586,11 +37264,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendar.event_CreateAttachment
       parameters:
         - name: user-id
@@ -37957,11 +37631,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendar.event_CreateExtension
       parameters:
         - name: user-id
@@ -38227,9 +37897,6 @@ paths:
         - users.calendar
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: user.calendar.event_ListInstance
       parameters:
         - name: user-id
@@ -38564,11 +38231,8 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendar.event.instance_ListAttachment
       parameters:
         - name: user-id
@@ -38671,11 +38335,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendar.event.instance_CreateAttachment
       parameters:
         - name: user-id
@@ -39090,11 +38750,7 @@ paths:
     post:
       tags:
         - users.calendar
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendar.event.instance_CreateExtension
       parameters:
         - name: user-id
@@ -41593,9 +41249,6 @@ paths:
         - users.event
       summary: Get calendarView from users
       description: The calendar view for the calendar. Read-only. Nullable.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-calendarview?view=graph-rest-1.0
       operationId: user_ListCalendarView
       parameters:
         - name: user-id
@@ -41934,11 +41587,8 @@ paths:
     get:
       tags:
         - users.event
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendarView_ListAttachment
       parameters:
         - name: user-id
@@ -42025,11 +41675,7 @@ paths:
     post:
       tags:
         - users.event
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendarView_CreateAttachment
       parameters:
         - name: user-id
@@ -42348,11 +41994,7 @@ paths:
     post:
       tags:
         - users.event
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendarView_CreateExtension
       parameters:
         - name: user-id
@@ -42578,9 +42220,6 @@ paths:
         - users.event
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: user.calendarView_ListInstance
       parameters:
         - name: user-id
@@ -42899,11 +42538,8 @@ paths:
     get:
       tags:
         - users.event
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.calendarView.instance_ListAttachment
       parameters:
         - name: user-id
@@ -42998,11 +42634,7 @@ paths:
     post:
       tags:
         - users.event
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.calendarView.instance_CreateAttachment
       parameters:
         - name: user-id
@@ -43369,11 +43001,7 @@ paths:
     post:
       tags:
         - users.event
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.calendarView.instance_CreateExtension
       parameters:
         - name: user-id
@@ -44995,11 +44623,8 @@ paths:
     get:
       tags:
         - users.event
-      summary: List events
-      description: "Get a list of event objects in the user's mailbox. The list contains single \ninstance meetings and series masters. To get expanded event instances, you can get the calendar view, or \nget the instances of an event. Currently, this operation returns event bodies in only HTML format. There are two scenarios where an app can get events in another user's calendar:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-events?view=graph-rest-1.0
+      summary: Get events from users
+      description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
       operationId: user_ListEvent
       parameters:
         - name: user-id
@@ -45195,11 +44820,7 @@ paths:
     post:
       tags:
         - users.event
-      summary: Create Event
-      description: "Create an event in the user's default calendar or specified calendar. By default, the **allowNewTimeProposals** property is set to true when an event is created, which means invitees can propose a different date/time for the event. See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal. You can specify the time zone for each of the start and end times of the event as part of their values, because the \n**start** and **end** properties are of dateTimeTimeZone type. First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server.  When an event is sent, the server sends invitations to all the attendees. **Setting the location in an event** An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipment \nlike a projector. Users can then invite the resource as an attendee to a meeting. On behalf of the resource, the server accepts or rejects \nthe meeting request based on the free/busy schedule of the resource. \nIf the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar. If the meeting is rescheduled, \nthe server automatically updates the event in the resource's calendar. Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executives\nor their delegates can book a private meeting room. If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-1.0
+      summary: Create new navigation property to events for users
       operationId: user_CreateEvent
       parameters:
         - name: user-id
@@ -45414,11 +45035,8 @@ paths:
     get:
       tags:
         - users.event
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.event_ListAttachment
       parameters:
         - name: user-id
@@ -45505,11 +45123,7 @@ paths:
     post:
       tags:
         - users.event
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.event_CreateAttachment
       parameters:
         - name: user-id
@@ -45828,11 +45442,7 @@ paths:
     post:
       tags:
         - users.event
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.event_CreateExtension
       parameters:
         - name: user-id
@@ -46058,9 +45668,6 @@ paths:
         - users.event
       summary: Get instances from users
       description: 'The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0
       operationId: user.event_ListInstance
       parameters:
         - name: user-id
@@ -46379,11 +45986,8 @@ paths:
     get:
       tags:
         - users.event
-      summary: List attachments
-      description: Retrieve a list of attachment objects attached to an event.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.'
       operationId: user.event.instance_ListAttachment
       parameters:
         - name: user-id
@@ -46478,11 +46082,7 @@ paths:
     post:
       tags:
         - users.event
-      summary: Add attachment
-      description: 'Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.event.instance_CreateAttachment
       parameters:
         - name: user-id
@@ -46849,11 +46449,7 @@ paths:
     post:
       tags:
         - users.event
-      summary: Create open extension
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+      summary: Create new navigation property to extensions for users
       operationId: user.event.instance_CreateExtension
       parameters:
         - name: user-id

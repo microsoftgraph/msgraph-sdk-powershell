@@ -709,11 +709,8 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List createdObjects
-      description: 'Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn''t in any administrator role; otherwise, it returns an empty object.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
+      summary: Get createdObjects from users
+      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: user_ListCreatedObject
       parameters:
         - name: user-id
@@ -1012,9 +1009,6 @@ paths:
         - users.directoryObject
       summary: Get directReports from users
       description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0
       operationId: user_ListDirectReport
       parameters:
         - name: user-id
@@ -1799,11 +1793,8 @@ paths:
     get:
       tags:
         - users.licenseDetails
-      summary: List licenseDetails
-      description: Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0
+      summary: Get licenseDetails from users
+      description: A collection of this user's license details. Read-only.
       operationId: user_ListLicenseDetail
       parameters:
         - name: user-id
@@ -2065,11 +2056,8 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
+      summary: Get manager from users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
       operationId: user_GetManager
       parameters:
         - name: user-id
@@ -2119,11 +2107,8 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
+      summary: Get ref of manager from users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
       operationId: user_GetManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -2198,9 +2183,6 @@ paths:
         - users.directoryObject
       summary: Get memberOf from users
       description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0
       operationId: user_ListMemberGraphOPre
       parameters:
         - name: user-id
@@ -2734,11 +2716,7 @@ paths:
     get:
       tags:
         - users.oAuth2PermissionGrant
-      summary: List oauth2PermissionGrants
-      description: 'Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0
+      summary: Get oauth2PermissionGrants from users
       operationId: user_ListOauth2PermissionGrant
       parameters:
         - name: user-id
@@ -2941,11 +2919,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List Outlook categories
-      description: Get all the categories that have been defined for the user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
+      summary: Get masterCategories from users
+      description: A list of categories defined for the user.
       operationId: user.outlook_ListMasterCategory
       parameters:
         - name: user-id
@@ -3003,11 +2978,7 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create Outlook category
-      description: Create an outlookCategory object in the user's master list of categories.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0
+      summary: Create new navigation property to masterCategories for users
       operationId: user.outlook_CreateMasterCategory
       parameters:
         - name: user-id
@@ -3183,9 +3154,6 @@ paths:
         - users.directoryObject
       summary: Get ownedDevices from users
       description: 'Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0
       operationId: user_ListOwnedDevice
       parameters:
         - name: user-id
@@ -3898,9 +3866,6 @@ paths:
         - users.directoryObject
       summary: Get ownedObjects from users
       description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0
       operationId: user_ListOwnedObject
       parameters:
         - name: user-id
@@ -4961,9 +4926,6 @@ paths:
         - users.directoryObject
       summary: Get registeredDevices from users
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0
       operationId: user_ListRegisteredDevice
       parameters:
         - name: user-id
@@ -5784,11 +5746,7 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get shiftPreferences
-      description: Retrieve the properties and relationships of a shiftPreferences object by ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
+      summary: Get shiftPreferences from users
       operationId: user.setting_GetShiftPreference
       parameters:
         - name: user-id
@@ -5840,11 +5798,7 @@ paths:
     patch:
       tags:
         - users.userSettings
-      summary: Update shiftPreferences
-      description: Update the properties and relationships of a shiftPreferences object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
+      summary: Update the navigation property shiftPreferences in users
       operationId: user.setting_UpdateShiftPreference
       parameters:
         - name: user-id
@@ -6011,11 +5965,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List lists
-      description: Get a list of the todoTaskList objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0
+      summary: Get lists from users
+      description: The task lists in the users mailbox.
       operationId: user.todo_ListList
       parameters:
         - name: user-id
@@ -6096,11 +6047,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create todoTaskList
-      description: Create a new lists object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0
+      summary: Create new navigation property to lists for users
       operationId: user.todo_CreateList
       parameters:
         - name: user-id
@@ -6570,11 +6517,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List tasks
-      description: Get the **todoTask** resources from the **tasks** navigation property of a specified todoTaskList.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0
+      summary: Get tasks from users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: user.todo.list_ListTask
       parameters:
         - name: user-id
@@ -6702,11 +6646,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create todoTask
-      description: Create a new task object in a specified todoTaskList.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotasklist-post-tasks?view=graph-rest-1.0
+      summary: Create new navigation property to tasks for users
       operationId: user.todo.list_CreateTask
       parameters:
         - name: user-id
@@ -6926,11 +6866,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List taskFileAttachments
-      description: Get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: A collection of file attachments for the task.
       operationId: user.todo.list.task_ListAttachment
       parameters:
         - name: user-id
@@ -7010,11 +6947,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create taskFileAttachment
-      description: 'Add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: user.todo.list.task_CreateAttachment
       parameters:
         - name: user-id
@@ -7179,9 +7112,6 @@ paths:
       tags:
         - users.todo
       summary: Get media content for the navigation property attachments from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
       operationId: user.todo.list.task_GetAttachmentsContent
       parameters:
         - name: user-id
@@ -7712,11 +7642,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List checklistItems
-      description: Get the checklistItem resources associated to a todoTask from the checklistItems navigation property.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0
+      summary: Get checklistItems from users
+      description: A collection of checklistItems linked to a task.
       operationId: user.todo.list.task_ListChecklistItem
       parameters:
         - name: user-id
@@ -7809,11 +7736,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create checklistItem
-      description: Create a new checklistItem object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0
+      summary: Create new navigation property to checklistItems for users
       operationId: user.todo.list.task_CreateChecklistItem
       parameters:
         - name: user-id
@@ -8429,11 +8352,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List linkedResources
-      description: 'Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0
+      summary: Get linkedResources from users
+      description: A collection of resources linked to the task.
       operationId: user.todo.list.task_ListLinkedResource
       parameters:
         - name: user-id
@@ -8526,11 +8446,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create linkedResource
-      description: 'Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association. You can also create a **linkedResource** object while creating a task.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-post-linkedresources?view=graph-rest-1.0
+      summary: Create new navigation property to linkedResources for users
       operationId: user.todo.list.task_CreateLinkedResource
       parameters:
         - name: user-id
@@ -8853,9 +8769,6 @@ paths:
         - users.directoryObject
       summary: Get transitiveMemberOf from users
       description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0
       operationId: user_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
@@ -10075,7 +9988,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             replyUrls:
               type: array
@@ -10100,7 +10013,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -10858,7 +10771,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -11024,7 +10937,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -19527,7 +19440,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.

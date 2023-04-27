@@ -321,11 +321,8 @@ paths:
     get:
       tags:
         - identity.identityApiConnector
-      summary: List identityApiConnectors
-      description: Read the properties of an identityApiConnector object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identityapiconnector-list?view=graph-rest-1.0
+      summary: Get apiConnectors from identity
+      description: Represents entry point for API connectors.
       operationId: identity_ListApiConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -391,11 +388,7 @@ paths:
     post:
       tags:
         - identity.identityApiConnector
-      summary: Create identityApiConnector
-      description: Create a new identityApiConnector object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identityapiconnector-create?view=graph-rest-1.0
+      summary: Create new navigation property to apiConnectors for identity
       operationId: identity_CreateApiConnector
       requestBody:
         description: New navigation property
@@ -529,10 +522,6 @@ paths:
       tags:
         - identity.Actions
       summary: Invoke action uploadClientCertificate
-      description: Upload a PKCS 12 format key (.pfx) to an API connector's authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-1.0
       operationId: identity.apiConnector_uploadClientCertificate
       parameters:
         - name: identityApiConnector-id
@@ -799,11 +788,8 @@ paths:
     get:
       tags:
         - identity.b2cIdentityUserFlow
-      summary: List b2cIdentityUserFlows
-      description: Retrieve a list of b2cIdentityUserFlow objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identitycontainer-list-b2cuserflows?view=graph-rest-1.0
+      summary: Get b2cUserFlows from identity
+      description: Represents entry point for B2C identity userflows.
       operationId: identity_ListB2cUserFlow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -883,11 +869,7 @@ paths:
     post:
       tags:
         - identity.b2cIdentityUserFlow
-      summary: Create b2cIdentityUserFlow
-      description: Create a new b2cIdentityUserFlow object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identitycontainer-post-b2cuserflows?view=graph-rest-1.0
+      summary: Create new navigation property to b2cUserFlows for identity
       operationId: identity_CreateB2cUserFlow
       requestBody:
         description: New navigation property
@@ -1030,11 +1012,7 @@ paths:
     get:
       tags:
         - identity.b2cIdentityUserFlow
-      summary: List all identityProviders in a b2cIdentityUserFlow (deprecated)
-      description: Get the identity providers in a b2cIdentityUserFlow object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/b2cidentityuserflow-list-identityproviders?view=graph-rest-1.0
+      summary: Get identityProviders from identity
       operationId: identity.b2cUserFlow_ListIdentityProvider
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -1194,11 +1172,7 @@ paths:
     get:
       tags:
         - identity.b2cIdentityUserFlow
-      summary: List all identityProviders in a b2cIdentityUserFlow (deprecated)
-      description: Get the identity providers in a b2cIdentityUserFlow object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/b2cidentityuserflow-list-identityproviders?view=graph-rest-1.0
+      summary: Get ref of identityProviders from identity
       operationId: identity.b2cUserFlow_ListIdentityProviderGraphBPreRef
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -1282,11 +1256,8 @@ paths:
     get:
       tags:
         - identity.b2cIdentityUserFlow
-      summary: List languages
-      description: 'Retrieve a list of languages supported for customization in an Azure AD B2C user flow. **Note:** To retrieve a list of languages supported for customization, you must first enable language customization on your Azure AD B2C user flow. For more information, see Update b2cIdentityUserFlow.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/b2cidentityuserflow-list-languages?view=graph-rest-1.0
+      summary: Get languages from identity
+      description: The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
       operationId: identity.b2cUserFlow_ListLanguage
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -1530,11 +1501,8 @@ paths:
     get:
       tags:
         - identity.b2cIdentityUserFlow
-      summary: List defaultPages
-      description: Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0
+      summary: Get defaultPages from identity
+      description: Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
       operationId: identity.b2cUserFlow.language_ListDefaultPage
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -1803,9 +1771,6 @@ paths:
       tags:
         - identity.b2cIdentityUserFlow
       summary: Get media content for the navigation property defaultPages from identity
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0
       operationId: identity.b2cUserFlow.language_GetDefaultPagesContent
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -1921,11 +1886,8 @@ paths:
     get:
       tags:
         - identity.b2cIdentityUserFlow
-      summary: List overridesPages
-      description: Get the userFlowLanguagePage resources from the overridesPages navigation property. These pages are used to customize the values shown to the user during a user journey in a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-overridespages?view=graph-rest-1.0
+      summary: Get overridesPages from identity
+      description: 'Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).'
       operationId: identity.b2cUserFlow.language_ListOverridesPage
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -2194,9 +2156,6 @@ paths:
       tags:
         - identity.b2cIdentityUserFlow
       summary: Get media content for the navigation property overridesPages from identity
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-overridespages?view=graph-rest-1.0
       operationId: identity.b2cUserFlow.language_GetOverridesPagesContent
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -2334,11 +2293,8 @@ paths:
     get:
       tags:
         - identity.b2cIdentityUserFlow
-      summary: List userAttributeAssignments
-      description: Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2cIdentityUserFlow.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/b2cidentityuserflow-list-userattributeassignments?view=graph-rest-1.0
+      summary: Get userAttributeAssignments from identity
+      description: The user attribute assignments included in the user flow.
       operationId: identity.b2cUserFlow_ListUserAttributeAssignment
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -2420,11 +2376,7 @@ paths:
     post:
       tags:
         - identity.b2cIdentityUserFlow
-      summary: Create userAttributeAssignments
-      description: Create a new identityUserFlowAttributeAssignment object in a b2cIdentityUserFlow.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/b2cidentityuserflow-post-userattributeassignments?view=graph-rest-1.0
+      summary: Create new navigation property to userAttributeAssignments for identity
       operationId: identity.b2cUserFlow_CreateUserAttributeAssignment
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -2704,10 +2656,6 @@ paths:
       tags:
         - identity.Actions
       summary: Invoke action setOrder
-      description: Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-1.0
       operationId: identity.b2cUserFlow.userAttributeAssignment_setOrder
       parameters:
         - name: b2cIdentityUserFlow-id
@@ -2903,11 +2851,8 @@ paths:
     get:
       tags:
         - identity.b2xIdentityUserFlow
-      summary: List b2xIdentityUserFlows
-      description: Retrieve a list of b2xIdentityUserFlow objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identitycontainer-list-b2xuserflows?view=graph-rest-1.0
+      summary: Get b2xUserFlows from identity
+      description: Represents entry point for B2X and self-service sign-up identity userflows.
       operationId: identity_ListB2xUserFlow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2981,11 +2926,7 @@ paths:
     post:
       tags:
         - identity.b2xIdentityUserFlow
-      summary: Create b2xIdentityUserFlow
-      description: Create a new b2xIdentityUserFlow object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identitycontainer-post-b2xuserflows?view=graph-rest-1.0
+      summary: Create new navigation property to b2xUserFlows for identity
       operationId: identity_CreateB2xUserFlow
       requestBody:
         description: New navigation property
@@ -3126,11 +3067,7 @@ paths:
     get:
       tags:
         - identity.b2xIdentityUserFlow
-      summary: List all identityProviders in a b2xIdentityUserFlow (deprecated)
-      description: Get the identity providers in a b2xIdentityUserFlow object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/b2xidentityuserflow-list-identityproviders?view=graph-rest-1.0
+      summary: Get identityProviders from identity
       operationId: identity.b2xUserFlow_ListIdentityProvider
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -3309,11 +3246,8 @@ paths:
     get:
       tags:
         - identity.b2xIdentityUserFlow
-      summary: List languages
-      description: Retrieve a list of languages supported for customization in a B2X user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/b2xidentityuserflow-list-languages?view=graph-rest-1.0
+      summary: Get languages from identity
+      description: The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
       operationId: identity.b2xUserFlow_ListLanguage
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -3557,11 +3491,8 @@ paths:
     get:
       tags:
         - identity.b2xIdentityUserFlow
-      summary: List defaultPages
-      description: Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0
+      summary: Get defaultPages from identity
+      description: Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
       operationId: identity.b2xUserFlow.language_ListDefaultPage
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -3830,9 +3761,6 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: Get media content for the navigation property defaultPages from identity
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0
       operationId: identity.b2xUserFlow.language_GetDefaultPagesContent
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -3948,11 +3876,8 @@ paths:
     get:
       tags:
         - identity.b2xIdentityUserFlow
-      summary: List overridesPages
-      description: Get the userFlowLanguagePage resources from the overridesPages navigation property. These pages are used to customize the values shown to the user during a user journey in a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-overridespages?view=graph-rest-1.0
+      summary: Get overridesPages from identity
+      description: 'Collection of pages with the overrides messages to display in a user flow for a specified language. This collection only allows to modify the content of the page, any other modification is not allowed (creation or deletion of pages).'
       operationId: identity.b2xUserFlow.language_ListOverridesPage
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -4221,9 +4146,6 @@ paths:
       tags:
         - identity.b2xIdentityUserFlow
       summary: Get media content for the navigation property overridesPages from identity
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-overridespages?view=graph-rest-1.0
       operationId: identity.b2xUserFlow.language_GetOverridesPagesContent
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -4361,11 +4283,8 @@ paths:
     get:
       tags:
         - identity.b2xIdentityUserFlow
-      summary: List userAttributeAssignments
-      description: Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/b2xidentityuserflow-list-userattributeassignments?view=graph-rest-1.0
+      summary: Get userAttributeAssignments from identity
+      description: The user attribute assignments included in the user flow.
       operationId: identity.b2xUserFlow_ListUserAttributeAssignment
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -4447,11 +4366,7 @@ paths:
     post:
       tags:
         - identity.b2xIdentityUserFlow
-      summary: Create userAttributeAssignments
-      description: Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/b2xidentityuserflow-post-userattributeassignments?view=graph-rest-1.0
+      summary: Create new navigation property to userAttributeAssignments for identity
       operationId: identity.b2xUserFlow_CreateUserAttributeAssignment
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -4731,10 +4646,6 @@ paths:
       tags:
         - identity.Actions
       summary: Invoke action setOrder
-      description: Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-1.0
       operationId: identity.b2xUserFlow.userAttributeAssignment_setOrder
       parameters:
         - name: b2xIdentityUserFlow-id
@@ -5074,11 +4985,8 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: List authenticationContextClassReferences
-      description: Retrieve a list of authenticationContextClassReference objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences?view=graph-rest-1.0
+      summary: Get authenticationContextClassReferences from identity
+      description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
       operationId: identity.conditionalAccess_ListAuthenticationContextClassReference
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5144,11 +5052,7 @@ paths:
     post:
       tags:
         - identity.conditionalAccessRoot
-      summary: Create authenticationContextClassReference
-      description: Create a new authenticationContextClassReference.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conditionalaccessroot-post-authenticationcontextclassreferences?view=graph-rest-1.0
+      summary: Create new navigation property to authenticationContextClassReferences for identity
       operationId: identity.conditionalAccess_CreateAuthenticationContextClassReference
       requestBody:
         description: New navigation property
@@ -5296,6 +5200,7 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get authenticationStrength from identity
+      description: 'Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.'
       operationId: identity.conditionalAccess_GetAuthenticationStrength
       parameters:
         - name: $select
@@ -5382,11 +5287,8 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: List authenticationMethodModes
-      description: 'Get a list of all supported authentication methods, or all supported authentication method combinations as a list of **authenticationMethodModes** objects and their properties.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthroot-list-authenticationmethodmodes?view=graph-rest-1.0
+      summary: Get authenticationMethodModes from identity
+      description: Names and descriptions of all valid authentication method modes in the system.
       operationId: identity.conditionalAccess.authenticationStrength_ListAuthenticationMethodMode
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5815,11 +5717,8 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: List combinationConfigurations
-      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0
+      summary: Get combinationConfigurations from identity
+      description: Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
       operationId: identity.conditionalAccess.authenticationStrength.policy_ListCombinationConfiguration
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -5887,11 +5786,7 @@ paths:
     post:
       tags:
         - identity.conditionalAccessRoot
-      summary: Create combinationConfiguration
-      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0
+      summary: Create new navigation property to combinationConfigurations for identity
       operationId: identity.conditionalAccess.authenticationStrength.policy_CreateCombinationConfiguration
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -6078,10 +5973,6 @@ paths:
       tags:
         - identity.Actions
       summary: Invoke action updateAllowedCombinations
-      description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-1.0
       operationId: identity.conditionalAccess.authenticationStrength.policy_updateAllowedCombination
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -6258,7 +6149,6 @@ paths:
       tags:
         - identity.conditionalAccessRoot
       summary: Get authenticationStrengths from identity
-      description: 'Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .'
       operationId: identity.conditionalAccess_GetAuthenticationStrength
       parameters:
         - name: $select
@@ -6363,11 +6253,8 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: List authenticationMethodModes
-      description: 'Get a list of all supported authentication methods, or all supported authentication method combinations as a list of **authenticationMethodModes** objects and their properties.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthroot-list-authenticationmethodmodes?view=graph-rest-1.0
+      summary: Get authenticationMethodModes from identity
+      description: Names and descriptions of all valid authentication method modes in the system.
       operationId: identity.conditionalAccess.authenticationStrength_ListAuthenticationMethodMode
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6862,11 +6749,8 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: List combinationConfigurations
-      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0
+      summary: Get combinationConfigurations from identity
+      description: Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
       operationId: identity.conditionalAccess.authenticationStrength.policy_ListCombinationConfiguration
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -6940,11 +6824,7 @@ paths:
     post:
       tags:
         - identity.conditionalAccessRoot
-      summary: Create combinationConfiguration
-      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0
+      summary: Create new navigation property to combinationConfigurations for identity
       operationId: identity.conditionalAccess.authenticationStrength.policy_CreateCombinationConfiguration
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -7161,10 +7041,6 @@ paths:
       tags:
         - identity.Actions
       summary: Invoke action updateAllowedCombinations
-      description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-1.0
       operationId: identity.conditionalAccess.authenticationStrength.policy_updateAllowedCombination
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -7358,11 +7234,8 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: List namedLocations
-      description: Get a list of namedLocation objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conditionalaccessroot-list-namedlocations?view=graph-rest-1.0
+      summary: Get namedLocations from identity
+      description: Read-only. Nullable. Returns a collection of the specified named locations.
       operationId: identity.conditionalAccess_ListNamedLocation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7428,11 +7301,7 @@ paths:
     post:
       tags:
         - identity.conditionalAccessRoot
-      summary: Create namedLocation
-      description: Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conditionalaccessroot-post-namedlocations?view=graph-rest-1.0
+      summary: Create new navigation property to namedLocations for identity
       operationId: identity.conditionalAccess_CreateNamedLocation
       requestBody:
         description: New navigation property
@@ -7579,11 +7448,8 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: List policies
-      description: Retrieve a list of conditionalAccessPolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conditionalaccessroot-list-policies?view=graph-rest-1.0
+      summary: Get policies from identity
+      description: Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
       operationId: identity.conditionalAccess_ListPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7664,11 +7530,7 @@ paths:
     post:
       tags:
         - identity.conditionalAccessRoot
-      summary: Create conditionalAccessPolicy
-      description: Create a new conditionalAccessPolicy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conditionalaccessroot-post-policies?view=graph-rest-1.0
+      summary: Create new navigation property to policies for identity
       operationId: identity.conditionalAccess_CreatePolicy
       requestBody:
         description: New navigation property
@@ -7820,11 +7682,8 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: List conditionalAccessTemplates
-      description: Get a list of the conditionalAccessTemplate objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conditionalaccessroot-list-templates?view=graph-rest-1.0
+      summary: Get templates from identity
+      description: Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
       operationId: identity.conditionalAccess_ListTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7962,11 +7821,8 @@ paths:
     get:
       tags:
         - identity.continuousAccessEvaluationPolicy
-      summary: Get continuousAccessEvaluationPolicy
-      description: Read the properties and relationships of a continuousAccessEvaluationPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/continuousaccessevaluationpolicy-get?view=graph-rest-1.0
+      summary: Get continuousAccessEvaluationPolicy from identity
+      description: Represents entry point for continuous access evaluation policy.
       operationId: identity_GetContinuousAccessEvaluationPolicy
       parameters:
         - name: $select
@@ -8012,11 +7868,7 @@ paths:
     patch:
       tags:
         - identity.continuousAccessEvaluationPolicy
-      summary: Update continuousAccessEvaluationPolicy
-      description: Update the properties of a continuousAccessEvaluationPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/continuousaccessevaluationpolicy-update?view=graph-rest-1.0
+      summary: Update the navigation property continuousAccessEvaluationPolicy in identity
       operationId: identity_UpdateContinuousAccessEvaluationPolicy
       requestBody:
         description: New navigation property values
@@ -8332,11 +8184,8 @@ paths:
     get:
       tags:
         - identity.identityProviderBase
-      summary: List identityProviders
-      description: 'Get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For an Azure AD tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, openIdConnectIdentityProvider, or appleManagedIdentityProvider objects.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identitycontainer-list-identityproviders?view=graph-rest-1.0
+      summary: Get identityProviders from identity
+      description: Represents entry point for identity provider base.
       operationId: identity_ListIdentityProvider
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8396,11 +8245,7 @@ paths:
     post:
       tags:
         - identity.identityProviderBase
-      summary: Create identityProvider
-      description: 'Create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identitycontainer-post-identityproviders?view=graph-rest-1.0
+      summary: Create new navigation property to identityProviders for identity
       operationId: identity_CreateIdentityProvider
       requestBody:
         description: New navigation property
@@ -8581,11 +8426,8 @@ paths:
     get:
       tags:
         - identity.identityUserFlowAttribute
-      summary: List identityUserFlowAttributes
-      description: Retrieve a list of identityUserFlowAttribute objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identityuserflowattribute-list?view=graph-rest-1.0
+      summary: Get userFlowAttributes from identity
+      description: Represents entry point for identity userflow attributes.
       operationId: identity_ListUserFlowAttribute
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8654,11 +8496,7 @@ paths:
     post:
       tags:
         - identity.identityUserFlowAttribute
-      summary: Create identityUserFlowAttribute
-      description: Create a new identityUserFlowAttribute object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identityuserflowattribute-post?view=graph-rest-1.0
+      summary: Create new navigation property to userFlowAttributes for identity
       operationId: identity_CreateUserFlowAttribute
       requestBody:
         description: New navigation property
@@ -8806,11 +8644,7 @@ paths:
     get:
       tags:
         - identity.identityUserFlow
-      summary: List userFlows
-      description: Retrieve a list of userflows.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identityuserflow-list?view=graph-rest-1.0
+      summary: Get userFlows from identity
       operationId: identity_ListUserFlow
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8879,11 +8713,7 @@ paths:
     post:
       tags:
         - identity.identityUserFlow
-      summary: Create userFlow
-      description: Create a new userFlow object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identityuserflow-post-userflows?view=graph-rest-1.0
+      summary: Create new navigation property to userFlows for identity
       operationId: identity_CreateUserFlow
       requestBody:
         description: New navigation property
@@ -9128,11 +8958,8 @@ paths:
     get:
       tags:
         - identityProtection.riskDetection
-      summary: List riskDetection
-      description: Retrieve the properties of a collection of **riskDetection** objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
+      summary: Get riskDetections from identityProtection
+      description: Risk detection in Azure AD Identity Protection and the associated information about the detection.
       operationId: identityProtection_ListRiskDetection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9413,11 +9240,8 @@ paths:
     get:
       tags:
         - identityProtection.riskyServicePrincipal
-      summary: List riskyServicePrincipals
-      description: Retrieve the properties and relationships of riskyServicePrincipal objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identityprotectionroot-list-riskyserviceprincipals?view=graph-rest-1.0
+      summary: Get riskyServicePrincipals from identityProtection
+      description: Azure AD service principals that are at risk.
       operationId: identityProtection_ListRiskyServicePrincipal
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9648,11 +9472,8 @@ paths:
     get:
       tags:
         - identityProtection.riskyServicePrincipal
-      summary: List history (risk history of riskyServicePrincipal)
-      description: Get the risk history of a riskyServicePrincipal object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyserviceprincipal-list-history?view=graph-rest-1.0
+      summary: Get history from identityProtection
+      description: Represents the risk history of Azure AD service principals.
       operationId: identityProtection.riskyServicePrincipal_ListHistory
       parameters:
         - name: riskyServicePrincipal-id
@@ -9973,10 +9794,6 @@ paths:
       tags:
         - identityProtection.Actions
       summary: Invoke action confirmCompromised
-      description: Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to `high`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyserviceprincipal-confirmcompromised?view=graph-rest-1.0
       operationId: identityProtection.riskyServicePrincipal_confirmCompromised
       requestBody:
         description: Action parameters
@@ -10004,10 +9821,6 @@ paths:
       tags:
         - identityProtection.Actions
       summary: Invoke action dismiss
-      description: Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account's risk level to `none`. You can dismiss up to 60 service principal accounts in one request.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyserviceprincipal-dismiss?view=graph-rest-1.0
       operationId: identityProtection.riskyServicePrincipal_dismiss
       requestBody:
         description: Action parameters
@@ -10034,11 +9847,8 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: List riskyUsers
-      description: Retrieve the properties and relationships of a collection of **riskyUser** objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0
+      summary: Get riskyUsers from identityProtection
+      description: Users that are flagged as at-risk by Azure AD Identity Protection.
       operationId: identityProtection_ListRiskyUser
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10261,11 +10071,7 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: List history of riskyUser
-      description: Get the risk history of a riskyUser resource.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0
+      summary: Get history from identityProtection
       operationId: identityProtection.riskyUser_ListHistory
       parameters:
         - name: riskyUser-id
@@ -10577,10 +10383,6 @@ paths:
       tags:
         - identityProtection.Actions
       summary: Invoke action confirmCompromised
-      description: Confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyusers-confirmcompromised?view=graph-rest-1.0
       operationId: identityProtection.riskyUser_confirmCompromised
       requestBody:
         description: Action parameters
@@ -10608,10 +10410,6 @@ paths:
       tags:
         - identityProtection.Actions
       summary: Invoke action dismiss
-      description: Dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none. The maximum count of users to dismiss in one call is 60.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyusers-dismiss?view=graph-rest-1.0
       operationId: identityProtection.riskyUser_dismiss
       requestBody:
         description: Action parameters
@@ -10638,11 +10436,8 @@ paths:
     get:
       tags:
         - identityProtection.servicePrincipalRiskDetection
-      summary: List servicePrincipalRiskDetections
-      description: Retrieve the properties of a collection of servicePrincipalRiskDetection objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identityprotectionroot-list-serviceprincipalriskdetections?view=graph-rest-1.0
+      summary: Get servicePrincipalRiskDetections from identityProtection
+      description: Represents information about detected at-risk service principals in an Azure AD tenant.
       operationId: identityProtection_ListServicePrincipalRiskDetection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11355,11 +11150,8 @@ paths:
     get:
       tags:
         - informationProtection.bitlocker
-      summary: List recoveryKeys
-      description: 'Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bitlocker-list-recoverykeys?view=graph-rest-1.0
+      summary: Get recoveryKeys from informationProtection
+      description: The recovery keys associated with the bitlocker entity.
       operationId: informationProtection.bitlocker_ListRecoveryKey
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11987,11 +11779,7 @@ paths:
     get:
       tags:
         - informationProtection.informationProtectionPolicy
-      summary: 'informationProtectionLabel: listLabels (deprecated)'
-      description: Get a collection of information protection labels available to the user or to the organization.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/informationprotectionpolicy-list-labels?view=graph-rest-1.0
+      summary: Get labels from informationProtection
       operationId: informationProtection.policy_ListLabel
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12256,10 +12044,6 @@ paths:
       tags:
         - informationProtection.Actions
       summary: Invoke action evaluateApplication
-      description: 'Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-1.0
       operationId: informationProtection.policy.label_evaluateApplication
       requestBody:
         description: Action parameters
@@ -12309,10 +12093,6 @@ paths:
       tags:
         - informationProtection.Actions
       summary: Invoke action evaluateClassificationResults
-      description: 'Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.  To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-1.0
       operationId: informationProtection.policy.label_evaluateClassificationResult
       requestBody:
         description: Action parameters
@@ -12364,10 +12144,6 @@ paths:
       tags:
         - informationProtection.Actions
       summary: Invoke action evaluateRemoval
-      description: 'Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-1.0
       operationId: informationProtection.policy.label_evaluateRemoval
       requestBody:
         description: Action parameters
@@ -12417,10 +12193,6 @@ paths:
       tags:
         - informationProtection.Actions
       summary: Invoke action extractLabel
-      description: 'Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-1.0
       operationId: informationProtection.policy.label_extractLabel
       requestBody:
         description: Action parameters
@@ -13165,11 +12937,7 @@ paths:
     get:
       tags:
         - informationProtection.threatAssessmentRequest
-      summary: List threatAssessmentRequests
-      description: 'Retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/informationprotection-list-threatassessmentrequests?view=graph-rest-1.0
+      summary: Get threatAssessmentRequests from informationProtection
       operationId: informationProtection_ListThreatAssessmentRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13249,11 +13017,7 @@ paths:
     post:
       tags:
         - informationProtection.threatAssessmentRequest
-      summary: Create threatAssessmentRequest
-      description: 'Create a new threat assessment request. A threat assessment request can be one of the following types:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/informationprotection-post-threatassessmentrequests?view=graph-rest-1.0
+      summary: Create new navigation property to threatAssessmentRequests for informationProtection
       operationId: informationProtection_CreateThreatAssessmentRequest
       requestBody:
         description: New navigation property
@@ -14067,6 +13831,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -14143,6 +13908,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -14611,11 +14377,8 @@ paths:
     get:
       tags:
         - organization.certificateBasedAuthConfiguration
-      summary: List certificateBasedAuthConfigurations
-      description: Get a list of certificateBasedAuthConfiguration objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-list?view=graph-rest-1.0
+      summary: Get certificateBasedAuthConfiguration from organization
+      description: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
       operationId: organization_ListCertificateBasedAuthConfiguration
       parameters:
         - name: organization-id
@@ -14881,11 +14644,8 @@ paths:
     get:
       tags:
         - policies.accessReviewPolicy
-      summary: Get accessReviewPolicy
-      description: Read the properties and relationships of an accessReviewPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/accessreviewpolicy-get?view=graph-rest-1.0
+      summary: Get accessReviewPolicy from policies
+      description: The policy that contains directory-level access review settings.
       operationId: policy_GetAccessReviewPolicy
       parameters:
         - name: $select
@@ -14928,11 +14688,7 @@ paths:
     patch:
       tags:
         - policies.accessReviewPolicy
-      summary: Update accessReviewPolicy
-      description: Update the properties of an accessReviewPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/accessreviewpolicy-update?view=graph-rest-1.0
+      summary: Update the navigation property accessReviewPolicy in policies
       operationId: policy_UpdateAccessReviewPolicy
       requestBody:
         description: New navigation property values
@@ -14973,11 +14729,8 @@ paths:
     get:
       tags:
         - policies.activityBasedTimeoutPolicy
-      summary: List activityBasedTimeoutPolicies
-      description: Get a list of activityBasedTimeoutPolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/activitybasedtimeoutpolicy-list?view=graph-rest-1.0
+      summary: Get activityBasedTimeoutPolicies from policies
+      description: The policy that controls the idle time out for web sessions for applications.
       operationId: policy_ListActivityBasedTimeoutPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15051,11 +14804,7 @@ paths:
     post:
       tags:
         - policies.activityBasedTimeoutPolicy
-      summary: Create activityBasedTimeoutPolicy
-      description: Create a new activityBasedTimeoutPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/activitybasedtimeoutpolicy-post-activitybasedtimeoutpolicies?view=graph-rest-1.0
+      summary: Create new navigation property to activityBasedTimeoutPolicies for policies
       operationId: policy_CreateActivityBasedTimeoutPolicy
       requestBody:
         description: New navigation property
@@ -15206,11 +14955,8 @@ paths:
     get:
       tags:
         - policies.adminConsentRequestPolicy
-      summary: Get adminConsentRequestPolicy
-      description: Read the properties and relationships of an adminConsentRequestPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/adminconsentrequestpolicy-get?view=graph-rest-1.0
+      summary: Get adminConsentRequestPolicy from policies
+      description: The policy by which consent requests are created and managed for the entire tenant.
       operationId: policy_GetAdminConsentRequestPolicy
       parameters:
         - name: $select
@@ -15256,11 +15002,7 @@ paths:
     patch:
       tags:
         - policies.adminConsentRequestPolicy
-      summary: Update adminConsentRequestPolicy
-      description: Update the properties of an adminConsentRequestPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/adminconsentrequestpolicy-update?view=graph-rest-1.0
+      summary: Update the navigation property adminConsentRequestPolicy in policies
       operationId: policy_UpdateAdminConsentRequestPolicy
       requestBody:
         description: New navigation property values
@@ -15301,11 +15043,8 @@ paths:
     get:
       tags:
         - policies.appManagementPolicy
-      summary: List appManagementPolicies
-      description: Retrieve a list of appManagementPolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-list?view=graph-rest-1.0
+      summary: Get appManagementPolicies from policies
+      description: 'The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.'
       operationId: policy_ListAppManagementPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15379,11 +15118,7 @@ paths:
     post:
       tags:
         - policies.appManagementPolicy
-      summary: Create appManagementPolicy
-      description: Create an appManagementPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-post?view=graph-rest-1.0
+      summary: Create new navigation property to appManagementPolicies for policies
       operationId: policy_CreateAppManagementPolicy
       requestBody:
         description: New navigation property
@@ -15520,11 +15255,8 @@ paths:
     get:
       tags:
         - policies.appManagementPolicy
-      summary: List appliesTo
-      description: List application and service principal objects assigned an appManagementPolicy policy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/appManagementPolicy-list-appliesTo?view=graph-rest-1.0
+      summary: Get appliesTo from policies
+      description: Collection of application and service principals to which a policy is applied.
       operationId: policy.appManagementPolicy_ListAppliesTo
       parameters:
         - name: appManagementPolicy-id
@@ -15688,11 +15420,8 @@ paths:
     get:
       tags:
         - policies.authenticationFlowsPolicy
-      summary: Get authenticationFlowsPolicy
-      description: Read the properties and relationships of an authenticationFlowsPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationflowspolicy-get?view=graph-rest-1.0
+      summary: Get authenticationFlowsPolicy from policies
+      description: The policy configuration of the self-service sign-up experience of external users.
       operationId: policy_GetAuthenticationFlowsPolicy
       parameters:
         - name: $select
@@ -15735,11 +15464,7 @@ paths:
     patch:
       tags:
         - policies.authenticationFlowsPolicy
-      summary: Update authenticationFlowsPolicy
-      description: 'Update the Boolean **selfServiceSignUp** property of an authenticationFlowsPolicy object. The properties **id**, **type**, and **description** cannot be modified.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationflowspolicy-update?view=graph-rest-1.0
+      summary: Update the navigation property authenticationFlowsPolicy in policies
       operationId: policy_UpdateAuthenticationFlowsPolicy
       requestBody:
         description: New navigation property values
@@ -15780,11 +15505,8 @@ paths:
     get:
       tags:
         - policies.authenticationMethodsPolicy
-      summary: Get authenticationMethodsPolicy
-      description: Read the properties and relationships of an authenticationMethodsPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationmethodspolicy-get?view=graph-rest-1.0
+      summary: Get authenticationMethodsPolicy from policies
+      description: The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
       operationId: policy_GetAuthenticationMethodsPolicy
       parameters:
         - name: $select
@@ -15805,6 +15527,7 @@ paths:
                 - policyVersion
                 - reconfirmationInDays
                 - registrationEnforcement
+                - systemCredentialPreferences
                 - authenticationMethodConfigurations
               type: string
         - name: $expand
@@ -15833,11 +15556,7 @@ paths:
     patch:
       tags:
         - policies.authenticationMethodsPolicy
-      summary: Update authenticationMethodsPolicy
-      description: Update the properties of an authenticationMethodsPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationmethodspolicy-update?view=graph-rest-1.0
+      summary: Update the navigation property authenticationMethodsPolicy in policies
       operationId: policy_UpdateAuthenticationMethodsPolicy
       requestBody:
         description: New navigation property values
@@ -16088,11 +15807,8 @@ paths:
     get:
       tags:
         - policies.authenticationStrengthPolicy
-      summary: List authenticationStrengthPolicies
-      description: Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthroot-list-policies?view=graph-rest-1.0
+      summary: Get authenticationStrengthPolicies from policies
+      description: The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
       operationId: policy_ListAuthenticationStrengthPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -16172,11 +15888,7 @@ paths:
     post:
       tags:
         - policies.authenticationStrengthPolicy
-      summary: Create authenticationStrengthPolicy
-      description: Create a new custom authenticationStrengthPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthroot-post-policies?view=graph-rest-1.0
+      summary: Create new navigation property to authenticationStrengthPolicies for policies
       operationId: policy_CreateAuthenticationStrengthPolicy
       requestBody:
         description: New navigation property
@@ -16315,11 +16027,8 @@ paths:
     get:
       tags:
         - policies.authenticationStrengthPolicy
-      summary: List combinationConfigurations
-      description: 'Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0
+      summary: Get combinationConfigurations from policies
+      description: Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
       operationId: policy.authenticationStrengthPolicy_ListCombinationConfiguration
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -16387,11 +16096,7 @@ paths:
     post:
       tags:
         - policies.authenticationStrengthPolicy
-      summary: Create combinationConfiguration
-      description: 'Create a new authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0
+      summary: Create new navigation property to combinationConfigurations for policies
       operationId: policy.authenticationStrengthPolicy_CreateCombinationConfiguration
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -16578,10 +16283,6 @@ paths:
       tags:
         - policies.Actions
       summary: Invoke action updateAllowedCombinations
-      description: 'Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-1.0
       operationId: policy.authenticationStrengthPolicy_updateAllowedCombination
       parameters:
         - name: authenticationStrengthPolicy-id
@@ -17272,11 +16973,8 @@ paths:
     get:
       tags:
         - policies.b2cAuthenticationMethodsPolicy
-      summary: Get b2cAuthenticationMethodsPolicy
-      description: Read the properties of a b2cAuthenticationMethodsPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-get?view=graph-rest-1.0
+      summary: Get b2cAuthenticationMethodsPolicy from policies
+      description: The Azure AD B2C policies that define how end users register via local accounts.
       operationId: policy_GetB2cAuthenticationMethodsPolicy
       parameters:
         - name: $select
@@ -17319,11 +17017,7 @@ paths:
     patch:
       tags:
         - policies.b2cAuthenticationMethodsPolicy
-      summary: Update b2cAuthenticationMethodsPolicy
-      description: Update the properties of a b2cAuthenticationMethodsPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-update?view=graph-rest-1.0
+      summary: Update the navigation property b2cAuthenticationMethodsPolicy in policies
       operationId: policy_UpdateB2cAuthenticationMethodsPolicy
       requestBody:
         description: New navigation property values
@@ -17364,11 +17058,8 @@ paths:
     get:
       tags:
         - policies.claimsMappingPolicy
-      summary: List claimsMappingPolicies
-      description: Get a list of claimsMappingPolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/claimsmappingpolicy-list?view=graph-rest-1.0
+      summary: Get claimsMappingPolicies from policies
+      description: 'The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.'
       operationId: policy_ListClaimsMappingPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17442,11 +17133,7 @@ paths:
     post:
       tags:
         - policies.claimsMappingPolicy
-      summary: Create claimsMappingPolicy
-      description: Create a new claimsMappingPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/claimsmappingpolicy-post-claimsmappingpolicies?view=graph-rest-1.0
+      summary: Create new navigation property to claimsMappingPolicies for policies
       operationId: policy_CreateClaimsMappingPolicy
       requestBody:
         description: New navigation property
@@ -17831,11 +17518,8 @@ paths:
     get:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Get crossTenantAccessPolicy
-      description: Read the properties and relationships of a crossTenantAccessPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicy-get?view=graph-rest-1.0
+      summary: Get crossTenantAccessPolicy from policies
+      description: The custom rules that define an access scenario when interacting with external Azure AD tenants.
       operationId: policy_GetCrossTenantAccessPolicy
       parameters:
         - name: $select
@@ -17884,11 +17568,7 @@ paths:
     patch:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Update crossTenantAccessPolicy
-      description: Update the properties of a cross-tenant access policy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicy-update?view=graph-rest-1.0
+      summary: Update the navigation property crossTenantAccessPolicy in policies
       operationId: policy_UpdateCrossTenantAccessPolicy
       requestBody:
         description: New navigation property values
@@ -17929,11 +17609,8 @@ paths:
     get:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Get crossTenantAccessPolicyConfigurationDefault
-      description: Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-get?view=graph-rest-1.0
+      summary: Get default from policies
+      description: Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
       operationId: policy.crossTenantAccessPolicy_GetDefault
       parameters:
         - name: $select
@@ -17981,11 +17658,7 @@ paths:
     patch:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Update crossTenantAccessPolicyConfigurationDefault
-      description: Update the default configuration of a cross-tenant access policy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-1.0
+      summary: Update the navigation property default in policies
       operationId: policy.crossTenantAccessPolicy_UpdateDefault
       requestBody:
         description: New navigation property values
@@ -18027,10 +17700,6 @@ paths:
       tags:
         - policies.Actions
       summary: Invoke action resetToSystemDefault
-      description: Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-resettosystemdefault?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.default_resetToSystemDefault
       responses:
         2XX:
@@ -18042,11 +17711,8 @@ paths:
     get:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: List partners
-      description: Get a list of all partner configurations within a cross-tenant access policy. You can also use the `$expand` parameter to list the user synchronization policy for all partner configurations.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicy-list-partners?view=graph-rest-1.0
+      summary: Get partners from policies
+      description: Defines partner-specific configurations for external Azure Active Directory organizations.
       operationId: policy.crossTenantAccessPolicy_ListPartner
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18129,11 +17795,7 @@ paths:
     post:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Create crossTenantAccessPolicyConfigurationPartner
-      description: Create a new partner configuration in a cross-tenant access policy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicy-post-partners?view=graph-rest-1.0
+      summary: Create new navigation property to partners for policies
       operationId: policy.crossTenantAccessPolicy_CreatePartner
       requestBody:
         description: New navigation property
@@ -18273,11 +17935,8 @@ paths:
     get:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Get crossTenantIdentitySyncPolicyPartner
-      description: Read the user synchronization policy of a partner-specific configuration.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-get?view=graph-rest-1.0
+      summary: Get identitySynchronization from policies
+      description: 'Defines the cross-tenant policy for synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating creating, updating, and deleting users from one tenant to another.'
       operationId: policy.crossTenantAccessPolicy.partner_GetIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -18332,11 +17991,7 @@ paths:
     patch:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Create identitySynchronization
-      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0
+      summary: Update the navigation property identitySynchronization in policies
       operationId: policy.crossTenantAccessPolicy.partner_UpdateIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -18372,11 +18027,7 @@ paths:
     delete:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Delete crossTenantIdentitySyncPolicyPartner
-      description: Delete the user synchronization policy for a partner-specific configuration.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-1.0
+      summary: Delete navigation property identitySynchronization for policies
       operationId: policy.crossTenantAccessPolicy.partner_DeleteIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -18422,11 +18073,8 @@ paths:
     get:
       tags:
         - policies.tenantAppManagementPolicy
-      summary: Get tenantAppManagementPolicy
-      description: Read the properties of a tenantAppManagementPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/tenantappmanagementpolicy-get?view=graph-rest-1.0
+      summary: Get defaultAppManagementPolicy from policies
+      description: The tenant-wide policy that enforces app management restrictions for all applications and service principals.
       operationId: policy_GetDefaultAppManagementPolicy
       parameters:
         - name: $select
@@ -18472,11 +18120,7 @@ paths:
     patch:
       tags:
         - policies.tenantAppManagementPolicy
-      summary: Update tenantAppManagementPolicy
-      description: Update the properties of a tenantAppManagementPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/tenantappmanagementpolicy-update?view=graph-rest-1.0
+      summary: Update the navigation property defaultAppManagementPolicy in policies
       operationId: policy_UpdateDefaultAppManagementPolicy
       requestBody:
         description: New navigation property values
@@ -18517,11 +18161,7 @@ paths:
     get:
       tags:
         - policies.deviceRegistrationPolicy
-      summary: Get deviceRegistrationPolicy
-      description: 'Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/deviceregistrationpolicy-get?view=graph-rest-1.0
+      summary: Get deviceRegistrationPolicy from policies
       operationId: policy_GetDeviceRegistrationPolicy
       parameters:
         - name: $select
@@ -18539,6 +18179,7 @@ paths:
                 - azureADRegistration
                 - description
                 - displayName
+                - localAdminPassword
                 - multiFactorAuthConfiguration
                 - userDeviceQuota
               type: string
@@ -18650,11 +18291,8 @@ paths:
     get:
       tags:
         - policies.externalIdentitiesPolicy
-      summary: Get externalIdentitiesPolicy
-      description: Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalidentitiespolicy-get?view=graph-rest-1.0
+      summary: Get externalIdentitiesPolicy from policies
+      description: Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.
       operationId: policy_GetExternalIdentitiesPolicy
       parameters:
         - name: $select
@@ -18699,11 +18337,7 @@ paths:
     patch:
       tags:
         - policies.externalIdentitiesPolicy
-      summary: Update externalIdentitiesPolicy
-      description: Update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalidentitiespolicy-update?view=graph-rest-1.0
+      summary: Update the navigation property externalIdentitiesPolicy in policies
       operationId: policy_UpdateExternalIdentitiesPolicy
       requestBody:
         description: New navigation property values
@@ -18744,11 +18378,8 @@ paths:
     get:
       tags:
         - policies.featureRolloutPolicy
-      summary: List featureRolloutPolicies
-      description: Retrieve a list of featureRolloutPolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-featurerolloutpolicies?view=graph-rest-1.0
+      summary: Get featureRolloutPolicies from policies
+      description: The feature rollout policy associated with a directory object.
       operationId: policy_ListFeatureRolloutPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18822,11 +18453,7 @@ paths:
     post:
       tags:
         - policies.featureRolloutPolicy
-      summary: Create featureRolloutPolicy
-      description: Create a new featureRolloutPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-featurerolloutpolicies?view=graph-rest-1.0
+      summary: Create new navigation property to featureRolloutPolicies for policies
       operationId: policy_CreateFeatureRolloutPolicy
       requestBody:
         description: New navigation property
@@ -19271,10 +18898,6 @@ paths:
       tags:
         - policies.Actions
       summary: Invoke action getByIds
-      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
       operationId: policy.featureRolloutPolicy.appliesTo_getGraphBPreId
       parameters:
         - name: featureRolloutPolicy-id
@@ -19333,10 +18956,6 @@ paths:
       tags:
         - policies.Actions
       summary: Invoke action getUserOwnedObjects
-      description: 'Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn''t support pagination.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0
       operationId: policy.featureRolloutPolicy.appliesTo_getUserOwnedObject
       parameters:
         - name: featureRolloutPolicy-id
@@ -19378,10 +18997,6 @@ paths:
       tags:
         - policies.Actions
       summary: Invoke action validateProperties
-      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group. For validating properties of an existing group, use the validateProperties function for groups. The following validations are performed for the display name and mail nickname properties: \n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate the mail nickname is unique This API returns with the first failure encountered. If one or more properties fail multiple validations, only the property with the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
       operationId: policy.featureRolloutPolicy.appliesTo_validateProperty
       parameters:
         - name: featureRolloutPolicy-id
@@ -19440,11 +19055,8 @@ paths:
     get:
       tags:
         - policies.homeRealmDiscoveryPolicy
-      summary: List homeRealmDiscoveryPolicies
-      description: Get a list of homeRealmDiscoveryPolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-list?view=graph-rest-1.0
+      summary: Get homeRealmDiscoveryPolicies from policies
+      description: The policy to control Azure AD authentication behavior for federated users.
       operationId: policy_ListHomeRealmDiscoveryPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19518,11 +19130,7 @@ paths:
     post:
       tags:
         - policies.homeRealmDiscoveryPolicy
-      summary: Create homeRealmDiscoveryPolicy
-      description: Create a new homeRealmDiscoveryPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-post-homerealmdiscoverypolicies?view=graph-rest-1.0
+      summary: Create new navigation property to homeRealmDiscoveryPolicies for policies
       operationId: policy_CreateHomeRealmDiscoveryPolicy
       requestBody:
         description: New navigation property
@@ -19673,11 +19281,8 @@ paths:
     get:
       tags:
         - policies.identitySecurityDefaultsEnforcementPolicy
-      summary: Get identitySecurityDefaultsEnforcementPolicy
-      description: Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-get?view=graph-rest-1.0
+      summary: Get identitySecurityDefaultsEnforcementPolicy from policies
+      description: The policy that represents the security defaults that protect against common attacks.
       operationId: policy_GetIdentitySecurityDefaultsEnforcementPolicy
       parameters:
         - name: $select
@@ -19721,11 +19326,7 @@ paths:
     patch:
       tags:
         - policies.identitySecurityDefaultsEnforcementPolicy
-      summary: Update identitySecurityDefaultsEnforcementPolicy
-      description: Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-update?view=graph-rest-1.0
+      summary: Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
       operationId: policy_UpdateIdentitySecurityDefaultsEnforcementPolicy
       requestBody:
         description: New navigation property values
@@ -19766,11 +19367,8 @@ paths:
     get:
       tags:
         - policies.mobilityManagementPolicy
-      summary: List mobileAppManagementPolicies
-      description: Get a list of the mobilityManagementPolicy objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-list?view=graph-rest-1.0
+      summary: Get mobileAppManagementPolicies from policies
+      description: The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
       operationId: policy_ListMobileAppManagementPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19989,11 +19587,8 @@ paths:
     get:
       tags:
         - policies.mobilityManagementPolicy
-      summary: List includedGroups
-      description: Get the list of groups that are included in a mobile app management policy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0
+      summary: Get includedGroups from policies
+      description: Azure AD groups under the scope of the mobility management application if appliesTo is selected
       operationId: policy.mobileAppManagementPolicy_ListIncludedGroup
       parameters:
         - name: mobilityManagementPolicy-id
@@ -20335,11 +19930,8 @@ paths:
     get:
       tags:
         - policies.mobilityManagementPolicy
-      summary: List includedGroups
-      description: Get the list of groups that are included in a mobile app management policy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0
+      summary: Get ref of includedGroups from policies
+      description: Azure AD groups under the scope of the mobility management application if appliesTo is selected
       operationId: policy.mobileAppManagementPolicy_ListIncludedGroupGraphBPreRef
       parameters:
         - name: mobilityManagementPolicy-id
@@ -20521,11 +20113,7 @@ paths:
     get:
       tags:
         - policies.mobilityManagementPolicy
-      summary: List mobileDeviceManagementPolicies
-      description: Get a list of the mobilityManagementPolicy objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mobiledevicemanagementpolicies-list?view=graph-rest-1.0
+      summary: Get mobileDeviceManagementPolicies from policies
       operationId: policy_ListMobileDeviceManagementPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20743,11 +20331,8 @@ paths:
     get:
       tags:
         - policies.mobilityManagementPolicy
-      summary: List includedGroups
-      description: Get the list of groups that are included in a mobile app management policy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0
+      summary: Get includedGroups from policies
+      description: Azure AD groups under the scope of the mobility management application if appliesTo is selected
       operationId: policy.mobileDeviceManagementPolicy_ListIncludedGroup
       parameters:
         - name: mobilityManagementPolicy-id
@@ -21089,11 +20674,8 @@ paths:
     get:
       tags:
         - policies.mobilityManagementPolicy
-      summary: List includedGroups
-      description: Get the list of groups that are included in a mobile app management policy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0
+      summary: Get ref of includedGroups from policies
+      description: Azure AD groups under the scope of the mobility management application if appliesTo is selected
       operationId: policy.mobileDeviceManagementPolicy_ListIncludedGroupGraphBPreRef
       parameters:
         - name: mobilityManagementPolicy-id
@@ -21275,11 +20857,8 @@ paths:
     get:
       tags:
         - policies.permissionGrantPolicy
-      summary: List permissionGrantPolicies
-      description: Retrieve the list of permissionGrantPolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permissiongrantpolicy-list?view=graph-rest-1.0
+      summary: Get permissionGrantPolicies from policies
+      description: The policy that specifies the conditions under which consent can be granted.
       operationId: policy_ListPermissionGrantPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -21349,11 +20928,7 @@ paths:
     post:
       tags:
         - policies.permissionGrantPolicy
-      summary: Create permissionGrantPolicy
-      description: 'Creates a permissionGrantPolicy. A permission grant policy is used to describe the conditions under which permissions can be granted (for example, during application consent). After creating the permission grant policy, you can add include condition sets to add matching rules, and add exclude condition sets to add exclusion rules.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-permissiongrantpolicies?view=graph-rest-1.0
+      summary: Create new navigation property to permissionGrantPolicies for policies
       operationId: policy_CreatePermissionGrantPolicy
       requestBody:
         description: New navigation property
@@ -21490,11 +21065,8 @@ paths:
     get:
       tags:
         - policies.permissionGrantPolicy
-      summary: List excludes collection of permissionGrantPolicy
-      description: Retrieve the condition sets which are *excluded* in a permissionGrantPolicy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permissiongrantpolicy-list-excludes?view=graph-rest-1.0
+      summary: Get excludes from policies
+      description: Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
       operationId: policy.permissionGrantPolicy_ListExclude
       parameters:
         - name: permissionGrantPolicy-id
@@ -21586,11 +21158,7 @@ paths:
     post:
       tags:
         - policies.permissionGrantPolicy
-      summary: Create permissionGrantConditionSet in excludes collection of permissionGrantPolicy
-      description: Add conditions under which a permission grant event is *excluded* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the **excludes** collection of a  permissionGrantPolicy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-excludes?view=graph-rest-1.0
+      summary: Create new navigation property to excludes for policies
       operationId: policy.permissionGrantPolicy_CreateExclude
       parameters:
         - name: permissionGrantPolicy-id
@@ -21784,11 +21352,8 @@ paths:
     get:
       tags:
         - policies.permissionGrantPolicy
-      summary: List includes collection of permissionGrantPolicy
-      description: Retrieve the condition sets which are *included* in a permissionGrantPolicy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permissiongrantpolicy-list-includes?view=graph-rest-1.0
+      summary: Get includes from policies
+      description: Condition sets which are included in this permission grant policy. Automatically expanded on GET.
       operationId: policy.permissionGrantPolicy_ListInclude
       parameters:
         - name: permissionGrantPolicy-id
@@ -21880,11 +21445,7 @@ paths:
     post:
       tags:
         - policies.permissionGrantPolicy
-      summary: Create permissionGrantConditionSet in includes collection of permissionGrantPolicy
-      description: Add conditions under which a permission grant event is *included* in a permission grant policy. You do this by adding a permissionGrantConditionSet to the **includes** collection of a  permissionGrantPolicy.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-includes?view=graph-rest-1.0
+      summary: Create new navigation property to includes for policies
       operationId: policy.permissionGrantPolicy_CreateInclude
       parameters:
         - name: permissionGrantPolicy-id
@@ -22092,11 +21653,8 @@ paths:
     get:
       tags:
         - policies.unifiedRoleManagementPolicy
-      summary: List roleManagementPolicies
-      description: 'Get role management policies and their details. This API only applies to Azure AD roles. To retrieve policies that apply to Azure RBAC, use the Azure REST PIM API for role management policies.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicies?view=graph-rest-1.0
+      summary: Get roleManagementPolicies from policies
+      description: Represents the role management policies.
       operationId: policy_ListRoleManagementPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -22319,11 +21877,8 @@ paths:
     get:
       tags:
         - policies.unifiedRoleManagementPolicy
-      summary: List effectiveRules
-      description: 'Get the unifiedRoleManagementPolicyRule resources from the effectiveRules navigation property. To retrieve rules for a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-list-effectiverules?view=graph-rest-1.0
+      summary: Get effectiveRules from policies
+      description: 'The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval. Supports $expand.'
       operationId: policy.roleManagementPolicy_ListEffectiveRule
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -22577,11 +22132,8 @@ paths:
     get:
       tags:
         - policies.unifiedRoleManagementPolicy
-      summary: List rules (for a role management policy)
-      description: "Get the rules defined for a role management policy. The rules are a collection of following types that are derived from the unifiedRoleManagementPolicyRule object:\n+ unifiedRoleManagementPolicyApprovalRule\n+ unifiedRoleManagementPolicyAuthenticationContextRule\n+ unifiedRoleManagementPolicyEnablementRule\n+ unifiedRoleManagementPolicyExpirationRule\n+ unifiedRoleManagementPolicyNotificationRule To retrieve rules for a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-list-rules?view=graph-rest-1.0
+      summary: Get rules from policies
+      description: The collection of rules like approval rules and expiration rules. Supports $expand.
       operationId: policy.roleManagementPolicy_ListRule
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -22849,11 +22401,8 @@ paths:
     get:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
-      summary: List roleManagementPolicyAssignments
-      description: Get the details of all role management policy assignments including the policies and rules associated with the Azure AD roles.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicyassignments?view=graph-rest-1.0
+      summary: Get roleManagementPolicyAssignments from policies
+      description: Represents the role management policy assignments.
       operationId: policy_ListRoleManagementPolicyAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -23897,11 +23446,8 @@ paths:
     get:
       tags:
         - policies.tokenIssuancePolicy
-      summary: List tokenIssuancePolicy
-      description: Get a list of tokenIssuancePolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/tokenissuancepolicy-list?view=graph-rest-1.0
+      summary: Get tokenIssuancePolicies from policies
+      description: The policy that specifies the characteristics of SAML tokens issued by Azure AD.
       operationId: policy_ListTokenIssuancePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -23975,11 +23521,7 @@ paths:
     post:
       tags:
         - policies.tokenIssuancePolicy
-      summary: Create tokenIssuancePolicy
-      description: Create a new tokenIssuancePolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/tokenissuancepolicy-post-tokenissuancepolicy?view=graph-rest-1.0
+      summary: Create new navigation property to tokenIssuancePolicies for policies
       operationId: policy_CreateTokenIssuancePolicy
       requestBody:
         description: New navigation property
@@ -24130,11 +23672,8 @@ paths:
     get:
       tags:
         - policies.tokenLifetimePolicy
-      summary: List tokenLifetimePolicies
-      description: Get a list of tokenLifetimePolicy objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/tokenlifetimepolicy-list?view=graph-rest-1.0
+      summary: Get tokenLifetimePolicies from policies
+      description: 'The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.'
       operationId: policy_ListTokenLifetimePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -24208,11 +23747,7 @@ paths:
     post:
       tags:
         - policies.tokenLifetimePolicy
-      summary: Create tokenLifetimePolicy
-      description: Create a new tokenLifetimePolicy object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/tokenlifetimepolicy-post-tokenlifetimepolicies?view=graph-rest-1.0
+      summary: Create new navigation property to tokenLifetimePolicies for policies
       operationId: policy_CreateTokenLifetimePolicy
       requestBody:
         description: New navigation property
@@ -24429,11 +23964,7 @@ paths:
     get:
       tags:
         - trustFramework.trustFrameworkKeySet
-      summary: List keySets
-      description: Retrieve a list of trustFrameworkKeySets.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/trustframework-list-keysets?view=graph-rest-1.0
+      summary: Get keySets from trustFramework
       operationId: trustFramework_ListKeySet
       parameters:
         - $ref: '#/components/parameters/top'
@@ -24493,11 +24024,7 @@ paths:
     post:
       tags:
         - trustFramework.trustFrameworkKeySet
-      summary: Create trustFrameworkKeySet
-      description: 'Create a new trustFrameworkKeySet. The ID of the **trustFrameworkKeySet** is expected in the create request; however, it can be modified by the service. The modified ID will be available in the response and in the location header.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/trustframework-post-keysets?view=graph-rest-1.0
+      summary: Create new navigation property to keySets for trustFramework
       operationId: trustFramework_CreateKeySet
       requestBody:
         description: New navigation property
@@ -24628,10 +24155,6 @@ paths:
       tags:
         - trustFramework.Actions
       summary: Invoke action generateKey
-      description: Generate a trustFrameworkKey and a secret automatically in the trustFrameworkKeyset. The caller doesn't have to provide a secret.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/trustframeworkkeyset-generatekey?view=graph-rest-1.0
       operationId: trustFramework.keySet_generateKey
       parameters:
         - name: trustFrameworkKeySet-id
@@ -24706,10 +24229,6 @@ paths:
       tags:
         - trustFramework.Actions
       summary: Invoke action uploadCertificate
-      description: Upload a certificate to a trustFrameworkKeyset. The input is a base-64 encoded value of the certificate contents. This method returns trustFrameworkKey.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/trustframeworkkeyset-uploadcertificate?view=graph-rest-1.0
       operationId: trustFramework.keySet_uploadCertificate
       parameters:
         - name: trustFrameworkKeySet-id
@@ -24748,10 +24267,6 @@ paths:
       tags:
         - trustFramework.Actions
       summary: Invoke action uploadPkcs12
-      description: Upload a PKCS12 format key (PFX) to a trustFrameworkKeyset. The input is a base-64 encoded value of the Pfx certificate contents. This method returns trustFrameworkKey.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/trustframeworkkeyset-uploadpkcs12?view=graph-rest-1.0
       operationId: trustFramework.keySet_uploadPkcs12
       parameters:
         - name: trustFrameworkKeySet-id
@@ -24793,10 +24308,6 @@ paths:
       tags:
         - trustFramework.Actions
       summary: Invoke action uploadSecret
-      description: 'Upload a plain text secret to a trustFrameworkKeyset. Examples of secrets are application secrets in Azure Active Directory, Google, Facebook, or any other identity provider. his method returns trustFrameworkKey.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/trustframeworkkeyset-uploadsecret?view=graph-rest-1.0
       operationId: trustFramework.keySet_uploadSecret
       parameters:
         - name: trustFrameworkKeySet-id
@@ -24859,11 +24370,7 @@ paths:
     get:
       tags:
         - trustFramework.trustFrameworkPolicy
-      summary: List trustFrameworkPolicies
-      description: Retrieve a list of trustFrameworkPolicies in the tenant/directory.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/trustframework-list-trustframeworkpolicies?view=graph-rest-1.0
+      summary: Get policies from trustFramework
       operationId: trustFramework_ListPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -25050,9 +24557,6 @@ paths:
       tags:
         - trustFramework.trustFrameworkPolicy
       summary: Get media content for the navigation property policies from trustFramework
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/trustframework-list-trustframeworkpolicies?view=graph-rest-1.0
       operationId: trustFramework_GetPoliciesContent
       parameters:
         - name: trustFrameworkPolicy-id
@@ -25142,6 +24646,7 @@ paths:
             items:
               enum:
                 - id
+                - signInPreferences
                 - emailMethods
                 - fido2Methods
                 - methods
@@ -25266,11 +24771,8 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: List emailAuthenticationMethods
-      description: Retrieve a list of a user's email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authentication-list-emailmethods?view=graph-rest-1.0
+      summary: Get emailMethods from users
+      description: Represents the email addresses registered to a user for authentication.
       operationId: user.authentication_ListEmailMethod
       parameters:
         - name: user-id
@@ -25344,11 +24846,7 @@ paths:
     post:
       tags:
         - users.authentication
-      summary: Create emailAuthenticationMethod
-      description: Set a user's emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authentication-post-emailmethods?view=graph-rest-1.0
+      summary: Create new navigation property to emailMethods for users
       operationId: user.authentication_CreateEmailMethod
       parameters:
         - name: user-id
@@ -25564,11 +25062,8 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: List fido2AuthenticationMethod
-      description: Retrieve a list of a user's FIDO2 Security Key Authentication Method objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/fido2authenticationmethod-list?view=graph-rest-1.0
+      summary: Get fido2Methods from users
+      description: Represents the FIDO2 security keys registered to a user for authentication.
       operationId: user.authentication_ListFido2Method
       parameters:
         - name: user-id
@@ -25796,11 +25291,8 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: List methods
-      description: 'Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-1.0
+      summary: Get methods from users
+      description: Represents all authentication methods registered to a user.
       operationId: user.authentication_ListMethod
       parameters:
         - name: user-id
@@ -26046,11 +25538,8 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: List microsoftAuthenticatorAuthenticationMethods
-      description: Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-list?view=graph-rest-1.0
+      summary: Get microsoftAuthenticatorMethods from users
+      description: The details of the Microsoft Authenticator app registered to a user for authentication.
       operationId: user.authentication_ListMicrosoftAuthenticatorMethod
       parameters:
         - name: user-id
@@ -26698,11 +26187,8 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: List passwordlessMicrosoftAuthenticatorAuthenticationMethods (deprecated)
-      description: Retrieve a list of a user's Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/passwordlessmicrosoftauthenticatorauthenticationmethod-list?view=graph-rest-1.0
+      summary: Get passwordlessMicrosoftAuthenticatorMethods from users
+      description: Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
       operationId: user.authentication_ListPasswordlessMicrosoftAuthenticatorMethod
       parameters:
         - name: user-id
@@ -27036,11 +26522,8 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: List passwordMethods
-      description: 'Retrieve a list of password authentication method objects. This will return exactly one object, as a user can have exactly one password.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authentication-list-passwordmethods?view=graph-rest-1.0
+      summary: Get passwordMethods from users
+      description: Represents the details of the password authentication method registered to a user for authentication.
       operationId: user.authentication_ListPasswordMethod
       parameters:
         - name: user-id
@@ -27249,11 +26732,8 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: List phoneMethods
-      description: 'Retrieve a list of phone authentication method objects. This will return up to three objects, as a user can have up to three phones usable for authentication. This method is available only for standard Azure AD and B2B users, but not B2C users.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authentication-list-phonemethods?view=graph-rest-1.0
+      summary: Get phoneMethods from users
+      description: Represents the phone registered to a user for authentication.
       operationId: user.authentication_ListPhoneMethod
       parameters:
         - name: user-id
@@ -27333,11 +26813,7 @@ paths:
     post:
       tags:
         - users.authentication
-      summary: Create phoneAuthenticationMethod
-      description: 'Add a new phone authentication method. A user may only have one phone of each type, captured in the **phoneType** property. This means, for example, adding a `mobile` phone to a user with a preexisting `mobile` phone will fail. Additionally, a user must always have a `mobile` phone before adding an `alternateMobile` phone. Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled. Additionally, if a user is enabled by policy to use SMS sign-in and a `mobile` number is added, the system will attempt to register the number for use in that system.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authentication-post-phonemethods?view=graph-rest-1.0
+      summary: Create new navigation property to phoneMethods for users
       operationId: user.authentication_CreatePhoneMethod
       parameters:
         - name: user-id
@@ -27555,11 +27031,7 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: List softwareOathMethods
-      description: Retrieve a list of a user's software OATH token authentication method objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authentication-list-softwareoathmethods?view=graph-rest-1.0
+      summary: Get softwareOathMethods from users
       operationId: user.authentication_ListSoftwareOathMethod
       parameters:
         - name: user-id
@@ -27766,11 +27238,8 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: List temporaryAccessPassMethods
-      description: Retrieve a list of a user's temporaryAccessPassAuthenticationMethod objects and their properties. This API will only return a single object in the collection as a user can have only one Temporary Access Pass (TAP) method.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authentication-list-temporaryaccesspassmethods?view=graph-rest-1.0
+      summary: Get temporaryAccessPassMethods from users
+      description: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
       operationId: user.authentication_ListTemporaryAccessPassMethod
       parameters:
         - name: user-id
@@ -27856,11 +27325,7 @@ paths:
     post:
       tags:
         - users.authentication
-      summary: Create temporaryAccessPassMethod
-      description: 'Create a new temporaryAccessPassAuthenticationMethod object on a user. A user can only have one Temporary Access Pass that''s usable within its specified lifetime. If the user requires a new Temporary Access Pass while the current Temporary Access Pass is valid, the admin can create a new Temporary Access Pass for the user, the previous Temporary Access Pass will be deleted, and a new Temporary Access Pass will be created.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authentication-post-temporaryaccesspassmethods?view=graph-rest-1.0
+      summary: Create new navigation property to temporaryAccessPassMethods for users
       operationId: user.authentication_CreateTemporaryAccessPassMethod
       parameters:
         - name: user-id
@@ -28035,11 +27500,8 @@ paths:
     get:
       tags:
         - users.authentication
-      summary: List windowsHelloForBusinessAuthenticationMethods
-      description: Get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-list?view=graph-rest-1.0
+      summary: Get windowsHelloForBusinessMethods from users
+      description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       operationId: user.authentication_ListWindowsHelloGraphFPreBusinessMethod
       parameters:
         - name: user-id
@@ -28567,11 +28029,8 @@ paths:
     get:
       tags:
         - users.informationProtection
-      summary: List recoveryKeys
-      description: 'Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/bitlocker-list-recoverykeys?view=graph-rest-1.0
+      summary: Get recoveryKeys from users
+      description: The recovery keys associated with the bitlocker entity.
       operationId: user.informationProtection.bitlocker_ListRecoveryKey
       parameters:
         - name: user-id
@@ -29166,11 +28625,7 @@ paths:
     get:
       tags:
         - users.informationProtection
-      summary: 'informationProtectionLabel: listLabels (deprecated)'
-      description: Get a collection of information protection labels available to the user or to the organization.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/informationprotectionpolicy-list-labels?view=graph-rest-1.0
+      summary: Get labels from users
       operationId: user.informationProtection.policy_ListLabel
       parameters:
         - name: user-id
@@ -30333,11 +29788,7 @@ paths:
     get:
       tags:
         - users.informationProtection
-      summary: List threatAssessmentRequests
-      description: 'Retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/informationprotection-list-threatassessmentrequests?view=graph-rest-1.0
+      summary: Get threatAssessmentRequests from users
       operationId: user.informationProtection_ListThreatAssessmentRequest
       parameters:
         - name: user-id
@@ -30431,11 +29882,7 @@ paths:
     post:
       tags:
         - users.informationProtection
-      summary: Create threatAssessmentRequest
-      description: 'Create a new threat assessment request. A threat assessment request can be one of the following types:'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/informationprotection-post-threatassessmentrequests?view=graph-rest-1.0
+      summary: Create new navigation property to threatAssessmentRequests for users
       operationId: user.informationProtection_CreateThreatAssessmentRequest
       parameters:
         - name: user-id
@@ -33160,6 +32607,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.mailboxSettings:
@@ -33514,6 +32963,8 @@ components:
               nullable: true
             registrationEnforcement:
               $ref: '#/components/schemas/microsoft.graph.registrationEnforcement'
+            systemCredentialPreferences:
+              $ref: '#/components/schemas/microsoft.graph.systemCredentialPreferences'
             authenticationMethodConfigurations:
               type: array
               items:
@@ -33752,6 +33203,8 @@ components:
               type: string
               description: The name of the device registration policy. It is always set to Device Registration Policy. Read-only.
               nullable: true
+            localAdminPassword:
+              $ref: '#/components/schemas/microsoft.graph.localAdminPasswordSettings'
             multiFactorAuthConfiguration:
               $ref: '#/components/schemas/microsoft.graph.multiFactorAuthConfiguration'
             userDeviceQuota:
@@ -34200,6 +33653,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -34528,7 +33983,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -35998,7 +35453,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -36031,7 +35486,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -37826,7 +37281,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -37863,7 +37318,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -37886,7 +37341,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -37928,7 +37383,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -37960,7 +37415,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -37978,7 +37433,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -37986,7 +37441,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -38026,7 +37481,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -38049,7 +37504,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -38067,7 +37522,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -38120,7 +37575,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -38153,14 +37608,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -38410,6 +37865,10 @@ components:
             applicationId:
               type: string
               description: Intune application identifier.
+              nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
               nullable: true
             history:
               type: array
@@ -39181,6 +38640,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.automaticRepliesSetting:
       title: automaticRepliesSetting
       type: object
@@ -39396,6 +38868,24 @@ components:
           $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRegistrationCampaign'
       additionalProperties:
         type: object
+    microsoft.graph.systemCredentialPreferences:
+      title: systemCredentialPreferences
+      type: object
+      properties:
+        excludeTargets:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.excludeTarget'
+          description: Users and groups excluded from the preferred authentication method experience of the system.
+        includeTargets:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.includeTarget'
+          description: Users and groups included in the preferred authentication method experience of the system.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.advancedConfigState'
+      additionalProperties:
+        type: object
     microsoft.graph.excludeTarget:
       title: excludeTarget
       type: object
@@ -39587,6 +39077,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.localAdminPasswordSettings:
+      title: localAdminPasswordSettings
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          description: Specifies whether this policy scope is configurable by the admin. The default value is false. An admin can set it to true to enable Local Admin Password Solution (LAPS) within their organzation.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.multiFactorAuthConfiguration:
       title: multiFactorAuthConfiguration
       enum:
@@ -39724,6 +39224,16 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.directoryObject'
           x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.attestationLevel:
@@ -47738,6 +47248,43 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.externalAudienceScope:
       title: externalAudienceScope
       enum:
@@ -47835,6 +47382,25 @@ components:
           $ref: '#/components/schemas/microsoft.graph.advancedConfigState'
       additionalProperties:
         type: object
+    microsoft.graph.includeTarget:
+      title: includeTarget
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the entity targeted.
+        targetType:
+          $ref: '#/components/schemas/microsoft.graph.authenticationMethodTargetType'
+      additionalProperties:
+        type: object
+    microsoft.graph.advancedConfigState:
+      title: advancedConfigState
+      enum:
+        - default
+        - enabled
+        - disabled
+        - unknownFutureValue
+      type: string
     microsoft.graph.authenticationMethodTargetType:
       title: authenticationMethodTargetType
       enum:
@@ -48301,11 +47867,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -49643,7 +49209,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -53279,6 +52845,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.appKeyCredentialRestrictionType:
       title: appKeyCredentialRestrictionType
       enum:
@@ -53310,14 +52884,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.authenticationMethodTargetType'
       additionalProperties:
         type: object
-    microsoft.graph.advancedConfigState:
-      title: advancedConfigState
-      enum:
-        - default
-        - enabled
-        - disabled
-        - unknownFutureValue
-      type: string
     microsoft.graph.crossTenantAccessPolicyTargetConfigurationAccessType:
       title: crossTenantAccessPolicyTargetConfigurationAccessType
       enum:

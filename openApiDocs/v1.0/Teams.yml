@@ -10,11 +10,7 @@ paths:
     get:
       tags:
         - appCatalogs.teamsApp
-      summary: List teamsApp
-      description: "List apps from the Microsoft Teams app catalog.\nThis includes apps from the Microsoft Teams store, as well as apps from your organization's app catalog (the tenant app catalog). To get apps from your organization's app catalog only, specify `organization` as the **distributionMethod** in the request."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0
+      summary: Get teamsApps from appCatalogs
       operationId: appCatalog_ListTeamsApp
       parameters:
         - $ref: '#/components/parameters/top'
@@ -82,11 +78,7 @@ paths:
     post:
       tags:
         - appCatalogs.teamsApp
-      summary: Publish teamsapp
-      description: "Publish an app to the Microsoft Teams apps catalog.\nSpecifically, this API publishes the app to your organization's catalog (the tenant app catalog);\nthe created resource will have a **distributionMethod** property value of `organization`. The **requiresReview** property allows any user to submit an app for review by an administrator. Admins can approve or reject these apps via this API or the Microsoft Teams admin center."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamsapp-publish?view=graph-rest-1.0
+      summary: Create new navigation property to teamsApps for appCatalogs
       operationId: appCatalog_CreateTeamsApp
       requestBody:
         description: New navigation property
@@ -312,11 +304,7 @@ paths:
     post:
       tags:
         - appCatalogs.teamsApp
-      summary: Update teamsApp
-      description: 'Update an app previously published to the Microsoft Teams app catalog. To update an app, the **distributionMethod** property for the app must be set to `organization`. This API specifically updates an app published to your organization''s app catalog (the tenant app catalog).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamsapp-update?view=graph-rest-1.0
+      summary: Create new navigation property to appDefinitions for appCatalogs
       operationId: appCatalog.teamsApp_CreateAppDefinition
       parameters:
         - name: teamsApp-id
@@ -489,11 +477,8 @@ paths:
     get:
       tags:
         - appCatalogs.teamsApp
-      summary: Get teamworkBot
-      description: Get the bot associated with a specific definition of the  TeamsApp.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworkbot-get?view=graph-rest-1.0
+      summary: Get bot from appCatalogs
+      description: The details of the bot specified in the Teams app manifest.
       operationId: appCatalog.teamsApp.appDefinition_GetBot
       parameters:
         - name: teamsApp-id
@@ -917,11 +902,8 @@ paths:
     get:
       tags:
         - chats.teamsAppInstallation
-      summary: List apps in chat
-      description: List all app installations within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-list-installedapps?view=graph-rest-1.0
+      summary: Get installedApps from chats
+      description: A collection of all the apps in the chat. Nullable.
       operationId: chat_ListInstalledApp
       parameters:
         - name: chat-id
@@ -990,11 +972,7 @@ paths:
     post:
       tags:
         - chats.teamsAppInstallation
-      summary: Add app to chat
-      description: Install a teamsApp to the specified chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-installedapps?view=graph-rest-1.0
+      summary: Create new navigation property to installedApps for chats
       operationId: chat_CreateInstalledApp
       parameters:
         - name: chat-id
@@ -1162,10 +1140,6 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action upgrade
-      description: Upgrade an app installation within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
       operationId: chat.installedApp_upgrade
       parameters:
         - name: chat-id
@@ -1460,11 +1434,8 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: List members of a chat
-      description: 'List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0
+      summary: Get members from chats
+      description: A collection of all the members in the chat. Nullable.
       operationId: chat_ListMember
       parameters:
         - name: chat-id
@@ -1538,11 +1509,7 @@ paths:
     post:
       tags:
         - chats.conversationMember
-      summary: Add member to a chat
-      description: Add a conversationMember to a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for chats
       operationId: chat_CreateMember
       parameters:
         - name: chat-id
@@ -1731,10 +1698,6 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: chat.member_add
       parameters:
         - name: chat-id
@@ -1786,11 +1749,8 @@ paths:
     get:
       tags:
         - chats.chatMessage
-      summary: List messages in a chat
-      description: 'Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0
+      summary: Get messages from chats
+      description: A collection of all the messages in the chat. Nullable.
       operationId: chat_ListMessage
       parameters:
         - name: chat-id
@@ -1925,11 +1885,7 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for chats
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -2118,11 +2074,8 @@ paths:
     get:
       tags:
         - chats.chatMessage
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from chats
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chat.message_ListHostedContent
       parameters:
         - name: chat-id
@@ -2399,9 +2352,6 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get media content for the navigation property hostedContents from chats
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: chat.message_GetHostedContentsContent
       parameters:
         - name: chat-id
@@ -2575,11 +2525,8 @@ paths:
     get:
       tags:
         - chats.chatMessage
-      summary: List replies
-      description: 'List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0
+      summary: Get replies from chats
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: chat.message_ListReply
       parameters:
         - name: chat-id
@@ -2722,11 +2669,7 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+      summary: Create new navigation property to replies for chats
       operationId: chat.message_CreateReply
       parameters:
         - name: chat-id
@@ -2947,11 +2890,8 @@ paths:
     get:
       tags:
         - chats.chatMessage
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from chats
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: chat.message.reply_ListHostedContent
       parameters:
         - name: chat-id
@@ -3268,9 +3208,6 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get media content for the navigation property hostedContents from chats
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: chat.message.reply_GetHostedContentsContent
       parameters:
         - name: chat-id
@@ -3825,10 +3762,6 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action hideForUser
-      description: Hide a chat for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-1.0
       operationId: chat_hideGraphFPreUser
       parameters:
         - name: chat-id
@@ -3862,10 +3795,6 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action markChatReadForUser
-      description: Mark a chat as read for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-markchatreadforuser?view=graph-rest-1.0
       operationId: chat_markChatReadGraphFPreUser
       parameters:
         - name: chat-id
@@ -3899,10 +3828,6 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action markChatUnreadForUser
-      description: Mark a chat as unread for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-markchatunreadforuser?view=graph-rest-1.0
       operationId: chat_markChatUnreadGraphFPreUser
       parameters:
         - name: chat-id
@@ -3941,10 +3866,6 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action sendActivityNotification
-      description: 'Send an activity feed notification in scope of a chat. For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-sendactivitynotification?view=graph-rest-1.0
       operationId: chat_sendActivityNotification
       parameters:
         - name: chat-id
@@ -3993,10 +3914,6 @@ paths:
       tags:
         - chats.Actions
       summary: Invoke action unhideForUser
-      description: Unhide a chat for a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0
       operationId: chat_unhideGraphFPreUser
       parameters:
         - name: chat-id
@@ -4029,11 +3946,8 @@ paths:
     get:
       tags:
         - chats.pinnedChatMessageInfo
-      summary: List pinnedChatMessages in a chat
-      description: Get a list of pinnedChatMessages in a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-list-pinnedmessages?view=graph-rest-1.0
+      summary: Get pinnedMessages from chats
+      description: A collection of all the pinned messages in the chat. Nullable.
       operationId: chat_ListPinnedMessage
       parameters:
         - name: chat-id
@@ -4100,11 +4014,7 @@ paths:
     post:
       tags:
         - chats.pinnedChatMessageInfo
-      summary: Pin a message in a chat
-      description: Pin a chat message in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-pinnedmessages?view=graph-rest-1.0
+      summary: Create new navigation property to pinnedMessages for chats
       operationId: chat_CreatePinnedMessage
       parameters:
         - name: chat-id
@@ -4375,11 +4285,8 @@ paths:
     get:
       tags:
         - chats.teamsTab
-      summary: List tabs in chat
-      description: Retrieve the list of tabs in the specified chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-list-tabs?view=graph-rest-1.0
+      summary: Get tabs from chats
+      description: A collection of all the tabs in the chat. Nullable.
       operationId: chat_ListTab
       parameters:
         - name: chat-id
@@ -4455,11 +4362,7 @@ paths:
     post:
       tags:
         - chats.teamsTab
-      summary: Add tab to chat
-      description: "Add (pin) a tab to the specified chat. \nThe corresponding app must already be installed in the chat."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-tabs?view=graph-rest-1.0
+      summary: Create new navigation property to tabs for chats
       operationId: chat_CreateTab
       parameters:
         - name: chat-id
@@ -5001,11 +4904,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List allChannels
-      description: Get the list of channels either in this team or shared with this team (incoming channels).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-allchannels?view=graph-rest-1.0
+      summary: Get allChannels from groups
+      description: List of channels either hosted in or shared with the team (incoming channels).
       operationId: group.team_ListAllChannel
       parameters:
         - name: group-id
@@ -5203,11 +5103,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List channels
-      description: Retrieve the list of channels in this team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
+      summary: Get channels from groups
+      description: The collection of channels and messages associated with the team.
       operationId: group.team_ListChannel
       parameters:
         - name: group-id
@@ -5306,11 +5203,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create channel
-      description: 'Create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel''s `displayName` is 50 characters. This is the name that appears to the user in Microsoft Teams. If you''re creating a private channel, you can add a maximum of 200 members.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post?view=graph-rest-1.0
+      summary: Create new navigation property to channels for groups
       operationId: group.team_CreateChannel
       parameters:
         - name: group-id
@@ -5491,11 +5384,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get filesFolder
-      description: 'Get the metadata for the location where the files of a channel are stored. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      summary: Get filesFolder from groups
+      description: Metadata for the location where the channel's files are stored.
       operationId: group.team.channel_GetFilesFolder
       parameters:
         - name: group-id
@@ -5607,9 +5497,6 @@ paths:
         - groups.team
       summary: Get content for the navigation property filesFolder from groups
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
       operationId: group.team.channel_GetFilesFolderContent
       parameters:
         - name: group-id
@@ -5684,11 +5571,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
+      summary: Get members from groups
+      description: A collection of membership records associated with the channel.
       operationId: group.team.channel_ListMember
       parameters:
         - name: group-id
@@ -5770,11 +5654,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for groups
       operationId: group.team.channel_CreateMember
       parameters:
         - name: group-id
@@ -6002,11 +5882,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
+      summary: Get messages from groups
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: group.team.channel_ListMessage
       parameters:
         - name: group-id
@@ -6149,11 +6026,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for groups
       operationId: group.team.channel_CreateMessage
       parameters:
         - name: group-id
@@ -6374,11 +6247,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from groups
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: group.team.channel.message_ListHostedContent
       parameters:
         - name: group-id
@@ -6695,9 +6565,6 @@ paths:
       tags:
         - groups.team
       summary: Get media content for the navigation property hostedContents from groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: group.team.channel.message_GetHostedContentsContent
       parameters:
         - name: group-id
@@ -6837,11 +6704,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List replies
-      description: 'List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0
+      summary: Get replies from groups
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: group.team.channel.message_ListReply
       parameters:
         - name: group-id
@@ -6992,11 +6856,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+      summary: Create new navigation property to replies for groups
       operationId: group.team.channel.message_CreateReply
       parameters:
         - name: group-id
@@ -7249,11 +7109,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from groups
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: group.team.channel.message.reply_ListHostedContent
       parameters:
         - name: group-id
@@ -7610,9 +7467,6 @@ paths:
       tags:
         - groups.team
       summary: Get media content for the navigation property hostedContents from groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: group.team.channel.message.reply_GetHostedContentsContent
       parameters:
         - name: group-id
@@ -7844,11 +7698,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List sharedWithChannelTeamInfo
-      description: Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0
+      summary: Get sharedWithTeams from groups
+      description: A collection of teams with which a channel is shared.
       operationId: group.team.channel_ListSharedGraphWPreTeam
       parameters:
         - name: group-id
@@ -8136,11 +7987,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List allowedMembers
-      description: "Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:\n- Users with `Guest` role\n- Users who are externally authenticated in the tenant"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list-allowedmembers?view=graph-rest-1.0
+      summary: Get allowedMembers from groups
+      description: A collection of team members who have access to the shared channel.
       operationId: group.team.channel.sharedGraphWPreTeam_ListAllowedMember
       parameters:
         - name: group-id
@@ -8376,11 +8224,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List tabs in channel
-      description: 'Retrieve the list of tabs in the specified channel within a team. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
+      summary: Get tabs from groups
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: group.team.channel_ListTab
       parameters:
         - name: group-id
@@ -8929,11 +8774,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List incomingChannels
-      description: Get the list of incoming channels (channels shared with a team).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0
+      summary: Get incomingChannels from groups
+      description: List of channels shared with the team.
       operationId: group.team_ListIncomingChannel
       parameters:
         - name: group-id
@@ -9131,11 +8973,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List apps in team
-      description: Retrieve a list of apps installed in the specified team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-1.0
+      summary: Get installedApps from groups
+      description: The apps installed in this team.
       operationId: group.team_ListInstalledApp
       parameters:
         - name: group-id
@@ -9204,11 +9043,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add app to team
-      description: Install an app to the specified team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-post-installedapps?view=graph-rest-1.0
+      summary: Create new navigation property to installedApps for groups
       operationId: group.team_CreateInstalledApp
       parameters:
         - name: group-id
@@ -9528,11 +9363,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List members of team
-      description: Get the conversationMember collection of a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-members?view=graph-rest-1.0
+      summary: Get members from groups
+      description: Members and owners of the team.
       operationId: group.team_ListMember
       parameters:
         - name: group-id
@@ -9606,11 +9438,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to team
-      description: Add a new conversationMember to a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for groups
       operationId: group.team_CreateMember
       parameters:
         - name: group-id
@@ -10244,11 +10072,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get primaryChannel
-      description: 'Get the default channel, **General**, of a team.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-get-primarychannel?view=graph-rest-1.0
+      summary: Get primaryChannel from groups
+      description: The general channel for the team.
       operationId: group.team_GetPrimaryChannel
       parameters:
         - name: group-id
@@ -10372,11 +10197,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get filesFolder
-      description: 'Get the metadata for the location where the files of a channel are stored. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      summary: Get filesFolder from groups
+      description: Metadata for the location where the channel's files are stored.
       operationId: group.team.primaryChannel_GetFilesFolder
       parameters:
         - name: group-id
@@ -10480,9 +10302,6 @@ paths:
         - groups.team
       summary: Get content for the navigation property filesFolder from groups
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
       operationId: group.team.primaryChannel_GetFilesFolderContent
       parameters:
         - name: group-id
@@ -10541,11 +10360,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
+      summary: Get members from groups
+      description: A collection of membership records associated with the channel.
       operationId: group.team.primaryChannel_ListMember
       parameters:
         - name: group-id
@@ -10619,11 +10435,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for groups
       operationId: group.team.primaryChannel_CreateMember
       parameters:
         - name: group-id
@@ -10811,11 +10623,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
+      summary: Get messages from groups
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: group.team.primaryChannel_ListMessage
       parameters:
         - name: group-id
@@ -10950,11 +10759,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for groups
       operationId: group.team.primaryChannel_CreateMessage
       parameters:
         - name: group-id
@@ -11143,11 +10948,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from groups
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: group.team.primaryChannel.message_ListHostedContent
       parameters:
         - name: group-id
@@ -11424,9 +11226,6 @@ paths:
       tags:
         - groups.team
       summary: Get media content for the navigation property hostedContents from groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_GetHostedContentsContent
       parameters:
         - name: group-id
@@ -11542,11 +11341,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List replies
-      description: 'List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0
+      summary: Get replies from groups
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: group.team.primaryChannel.message_ListReply
       parameters:
         - name: group-id
@@ -11689,11 +11485,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+      summary: Create new navigation property to replies for groups
       operationId: group.team.primaryChannel.message_CreateReply
       parameters:
         - name: group-id
@@ -11914,11 +11706,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from groups
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: group.team.primaryChannel.message.reply_ListHostedContent
       parameters:
         - name: group-id
@@ -12235,9 +12024,6 @@ paths:
       tags:
         - groups.team
       summary: Get media content for the navigation property hostedContents from groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message.reply_GetHostedContentsContent
       parameters:
         - name: group-id
@@ -12429,11 +12215,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List sharedWithChannelTeamInfo
-      description: Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0
+      summary: Get sharedWithTeams from groups
+      description: A collection of teams with which a channel is shared.
       operationId: group.team.primaryChannel_ListSharedGraphWPreTeam
       parameters:
         - name: group-id
@@ -12681,11 +12464,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List allowedMembers
-      description: "Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:\n- Users with `Guest` role\n- Users who are externally authenticated in the tenant"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list-allowedmembers?view=graph-rest-1.0
+      summary: Get allowedMembers from groups
+      description: A collection of team members who have access to the shared channel.
       operationId: group.team.primaryChannel.sharedGraphWPreTeam_ListAllowedMember
       parameters:
         - name: group-id
@@ -12889,11 +12669,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List tabs in channel
-      description: 'Retrieve the list of tabs in the specified channel within a team. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
+      summary: Get tabs from groups
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: group.team.primaryChannel_ListTab
       parameters:
         - name: group-id
@@ -13222,11 +12999,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get schedule
-      description: "Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\nWhen clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-get?view=graph-rest-1.0
+      summary: Get schedule from groups
+      description: The schedule of shifts for this team.
       operationId: group.team_GetSchedule
       parameters:
         - name: group-id
@@ -13360,11 +13134,7 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List offerShiftRequest
-      description: Retrieve the properties and relationships of all offerShiftRequest objects in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/offershiftrequest-list?view=graph-rest-1.0
+      summary: Get offerShiftRequests from groups
       operationId: group.team.schedule_ListOfferShiftRequest
       parameters:
         - name: group-id
@@ -13673,11 +13443,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List openShiftChangeRequests
-      description: Retrieve a list of openShiftChangeRequest objects in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshiftchangerequest-list?view=graph-rest-1.0
+      summary: Get openShiftChangeRequests from groups
+      description: The open shift requests in the schedule.
       operationId: group.team.schedule_ListOpenShiftChangeRequest
       parameters:
         - name: group-id
@@ -13778,11 +13545,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create openShiftChangeRequest
-      description: Create instance of an openShiftChangeRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshiftchangerequest-post?view=graph-rest-1.0
+      summary: Create new navigation property to openShiftChangeRequests for groups
       operationId: group.team.schedule_CreateOpenShiftChangeRequest
       parameters:
         - name: group-id
@@ -13979,11 +13742,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List openShifts
-      description: List openShift objects in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshift-list?view=graph-rest-1.0
+      summary: Get openShifts from groups
+      description: The set of open shifts in a scheduling group in the schedule.
       operationId: group.team.schedule_ListOpenShift
       parameters:
         - name: group-id
@@ -14066,11 +13826,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create openShift
-      description: Create an instance of an openShift object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshift-post?view=graph-rest-1.0
+      summary: Create new navigation property to openShifts for groups
       operationId: group.team.schedule_CreateOpenShift
       parameters:
         - name: group-id
@@ -14261,11 +14017,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List scheduleGroups
-      description: Get the list of schedulingGroups in this schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-1.0
+      summary: Get schedulingGroups from groups
+      description: The logical grouping of users in the schedule (usually by role).
       operationId: group.team.schedule_ListSchedulingGroup
       parameters:
         - name: group-id
@@ -14336,11 +14089,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create schedulingGroup
-      description: Create a new schedulingGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-schedulinggroups?view=graph-rest-1.0
+      summary: Create new navigation property to schedulingGroups for groups
       operationId: group.team.schedule_CreateSchedulingGroup
       parameters:
         - name: group-id
@@ -14519,11 +14268,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List shifts
-      description: Get the list of shift instances in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
+      summary: Get shifts from groups
+      description: The shifts in the schedule.
       operationId: group.team.schedule_ListShift
       parameters:
         - name: group-id
@@ -14597,11 +14343,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create shift
-      description: Create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
+      summary: Create new navigation property to shifts for groups
       operationId: group.team.schedule_CreateShift
       parameters:
         - name: group-id
@@ -14781,11 +14523,7 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List swapShiftsChangeRequest
-      description: Retrieve a list of swapShiftsChangeRequest objects in the team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/swapshiftschangerequest-list?view=graph-rest-1.0
+      summary: Get swapShiftsChangeRequests from groups
       operationId: group.team.schedule_ListSwapShiftsChangeRequest
       parameters:
         - name: group-id
@@ -14898,11 +14636,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create swapShiftsChangeRequest
-      description: Create an instance of a swapShiftsChangeRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/swapshiftschangerequest-post?view=graph-rest-1.0
+      summary: Create new navigation property to swapShiftsChangeRequests for groups
       operationId: group.team.schedule_CreateSwapShiftsChangeRequest
       parameters:
         - name: group-id
@@ -15102,11 +14836,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List timeOffReasons
-      description: Get the list of timeOffReasons in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0
+      summary: Get timeOffReasons from groups
+      description: The set of reasons for a time off in the schedule.
       operationId: group.team.schedule_ListTimeOffReason
       parameters:
         - name: group-id
@@ -15177,11 +14908,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create timeOffReason
-      description: Create a new timeOffReason.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-1.0
+      summary: Create new navigation property to timeOffReasons for groups
       operationId: group.team.schedule_CreateTimeOffReason
       parameters:
         - name: group-id
@@ -15360,11 +15087,7 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List timeOffRequest
-      description: Retrieve a list of timeOffRequest objects in the team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0
+      summary: Get timeOffRequests from groups
       operationId: group.team.schedule_ListTimeOffRequest
       parameters:
         - name: group-id
@@ -15645,11 +15368,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List timesOff
-      description: Get the list of timeOff instances in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0
+      summary: Get timesOff from groups
+      description: The instances of times off in the schedule.
       operationId: group.team.schedule_ListTimesOff
       parameters:
         - name: group-id
@@ -15720,11 +15440,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create timeOff
-      description: Create a new timeOff instance in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-timesoff?view=graph-rest-1.0
+      summary: Create new navigation property to timesOff for groups
       operationId: group.team.schedule_CreateTimesOff
       parameters:
         - name: group-id
@@ -15903,11 +15619,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List teamworkTags
-      description: Get a list of the tag objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
+      summary: Get tags from groups
+      description: The tags associated with the team.
       operationId: group.team_ListTag
       parameters:
         - name: group-id
@@ -15989,11 +15702,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create teamworkTag
-      description: Create a standard tag for members in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0
+      summary: Create new navigation property to tags for groups
       operationId: group.team_CreateTag
       parameters:
         - name: group-id
@@ -16163,11 +15872,8 @@ paths:
     get:
       tags:
         - groups.team
-      summary: List members in a teamworkTag
-      description: Get a list of the members of a standard tag in a team and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktagmember-list?view=graph-rest-1.0
+      summary: Get members from groups
+      description: Users assigned to the tag.
       operationId: group.team.tag_ListMember
       parameters:
         - name: group-id
@@ -16249,11 +15955,7 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create teamworkTagMember
-      description: Create a new teamworkTagMember object in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktagmember-post?view=graph-rest-1.0
+      summary: Create new navigation property to members for groups
       operationId: group.team.tag_CreateMember
       parameters:
         - name: group-id
@@ -16732,11 +16434,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List allChannels
-      description: Get the list of channels either in this team or shared with this team (incoming channels).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-allchannels?view=graph-rest-1.0
+      summary: Get allChannels from teams
+      description: List of channels either hosted in or shared with the team (incoming channels).
       operationId: team_ListAllChannel
       parameters:
         - name: team-id
@@ -16934,11 +16633,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List channels
-      description: Retrieve the list of channels in this team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
+      summary: Get channels from teams
+      description: The collection of channels and messages associated with the team.
       operationId: team_ListChannel
       parameters:
         - name: team-id
@@ -17037,11 +16733,7 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Create channel
-      description: 'Create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel''s `displayName` is 50 characters. This is the name that appears to the user in Microsoft Teams. If you''re creating a private channel, you can add a maximum of 200 members.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post?view=graph-rest-1.0
+      summary: Create new navigation property to channels for teams
       operationId: team_CreateChannel
       parameters:
         - name: team-id
@@ -17222,11 +16914,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get filesFolder
-      description: 'Get the metadata for the location where the files of a channel are stored. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      summary: Get filesFolder from teams
+      description: Metadata for the location where the channel's files are stored.
       operationId: team.channel_GetFilesFolder
       parameters:
         - name: team-id
@@ -17338,9 +17027,6 @@ paths:
         - teams.channel
       summary: Get content for the navigation property filesFolder from teams
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
       operationId: team.channel_GetFilesFolderContent
       parameters:
         - name: team-id
@@ -17415,11 +17101,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
+      summary: Get members from teams
+      description: A collection of membership records associated with the channel.
       operationId: team.channel_ListMember
       parameters:
         - name: team-id
@@ -17501,11 +17184,7 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for teams
       operationId: team.channel_CreateMember
       parameters:
         - name: team-id
@@ -17734,10 +17413,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: team.channel.member_add
       parameters:
         - name: team-id
@@ -17797,11 +17472,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
+      summary: Get messages from teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: team.channel_ListMessage
       parameters:
         - name: team-id
@@ -17944,11 +17616,7 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for teams
       operationId: team.channel_CreateMessage
       parameters:
         - name: team-id
@@ -18169,11 +17837,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: team.channel.message_ListHostedContent
       parameters:
         - name: team-id
@@ -18490,9 +18155,6 @@ paths:
       tags:
         - teams.channel
       summary: Get media content for the navigation property hostedContents from teams
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: team.channel.message_GetHostedContentsContent
       parameters:
         - name: team-id
@@ -18706,11 +18368,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List replies
-      description: 'List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0
+      summary: Get replies from teams
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: team.channel.message_ListReply
       parameters:
         - name: team-id
@@ -18861,11 +18520,7 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+      summary: Create new navigation property to replies for teams
       operationId: team.channel.message_CreateReply
       parameters:
         - name: team-id
@@ -19118,11 +18773,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: team.channel.message.reply_ListHostedContent
       parameters:
         - name: team-id
@@ -19479,9 +19131,6 @@ paths:
       tags:
         - teams.channel
       summary: Get media content for the navigation property hostedContents from teams
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: team.channel.message.reply_GetHostedContentsContent
       parameters:
         - name: team-id
@@ -20108,10 +19757,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing `migration mode` from a channel in a team. `Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: team.channel_completeMigration
       parameters:
         - name: team-id
@@ -20204,10 +19849,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: team.channel_provisionEmail
       parameters:
         - name: team-id
@@ -20241,10 +19882,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action removeEmail
-      description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: team.channel_removeEmail
       parameters:
         - name: team-id
@@ -20273,11 +19910,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List sharedWithChannelTeamInfo
-      description: Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0
+      summary: Get sharedWithTeams from teams
+      description: A collection of teams with which a channel is shared.
       operationId: team.channel_ListSharedGraphWPreTeam
       parameters:
         - name: team-id
@@ -20565,11 +20199,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List allowedMembers
-      description: "Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:\n- Users with `Guest` role\n- Users who are externally authenticated in the tenant"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list-allowedmembers?view=graph-rest-1.0
+      summary: Get allowedMembers from teams
+      description: A collection of team members who have access to the shared channel.
       operationId: team.channel.sharedGraphWPreTeam_ListAllowedMember
       parameters:
         - name: team-id
@@ -20805,11 +20436,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List tabs in channel
-      description: 'Retrieve the list of tabs in the specified channel within a team. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
+      summary: Get tabs from teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: team.channel_ListTab
       parameters:
         - name: team-id
@@ -21495,11 +21123,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List incomingChannels
-      description: Get the list of incoming channels (channels shared with a team).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0
+      summary: Get incomingChannels from teams
+      description: List of channels shared with the team.
       operationId: team_ListIncomingChannel
       parameters:
         - name: team-id
@@ -21697,11 +21322,8 @@ paths:
     get:
       tags:
         - teams.teamsAppInstallation
-      summary: List apps in team
-      description: Retrieve a list of apps installed in the specified team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-1.0
+      summary: Get installedApps from teams
+      description: The apps installed in this team.
       operationId: team_ListInstalledApp
       parameters:
         - name: team-id
@@ -21770,11 +21392,7 @@ paths:
     post:
       tags:
         - teams.teamsAppInstallation
-      summary: Add app to team
-      description: Install an app to the specified team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-post-installedapps?view=graph-rest-1.0
+      summary: Create new navigation property to installedApps for teams
       operationId: team_CreateInstalledApp
       parameters:
         - name: team-id
@@ -21942,10 +21560,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action upgrade
-      description: Upgrade an app installation within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0
       operationId: team.installedApp_upgrade
       parameters:
         - name: team-id
@@ -22127,11 +21741,8 @@ paths:
     get:
       tags:
         - teams.conversationMember
-      summary: List members of team
-      description: Get the conversationMember collection of a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-members?view=graph-rest-1.0
+      summary: Get members from teams
+      description: Members and owners of the team.
       operationId: team_ListMember
       parameters:
         - name: team-id
@@ -22205,11 +21816,7 @@ paths:
     post:
       tags:
         - teams.conversationMember
-      summary: Add member to team
-      description: Add a new conversationMember to a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for teams
       operationId: team_CreateMember
       parameters:
         - name: team-id
@@ -22398,10 +22005,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: team.member_add
       parameters:
         - name: team-id
@@ -22454,10 +22057,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action archive
-      description: "Archive the specified team. \nWhen a team is archived, users can no longer send or like messages on any channel in the team, edit the team's name, description, or other settings, or in general make most changes to the team.\nMembership changes to the team continue to be allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which may occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
       operationId: team_archive
       parameters:
         - name: team-id
@@ -22493,10 +22092,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action clone
-      description: "Create a copy of a team. This operation also creates a copy of the corresponding group.\nYou can specify which parts of the team to clone: When tabs are cloned, they are put into an unconfigured state \n-- they are displayed on the tab bar in Microsoft Teams, and the first time you open them, you'll go through the configuration screen. \n(If the person opening the tab does not have permission to configure apps, they will see a message explaining that the tab hasn't been configured.) Cloning is a long-running operation.\nAfter the POST clone returns, you need to GET the operation to see if it's 'running' or 'succeeded' or 'failed'. \nYou should continue to GET until the status is not 'running'. \nThe recommended delay between GETs is 5 seconds."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-clone?view=graph-rest-1.0
       operationId: team_clone
       parameters:
         - name: team-id
@@ -22544,10 +22139,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing `migration mode` from a team. `Migration mode` is a special state where certain operations are barred, like message POST and membership operations during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-completemigration?view=graph-rest-1.0
       operationId: team_completeMigration
       parameters:
         - name: team-id
@@ -22569,10 +22160,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action sendActivityNotification
-      description: "Send an activity feed notification in the scope of a team. For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0
       operationId: team_sendActivityNotification
       parameters:
         - name: team-id
@@ -22621,10 +22208,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action unarchive
-      description: 'Restore an archived team. This restores users'' ability to send messages and edit the team, abiding by tenant and team settings. Teams are archived using the archive API. Unarchiving is an async operation. A team is unarchived once the async operation completes successfully, which may occur subsequent to a response from this API.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-unarchive?view=graph-rest-1.0
       operationId: team_unarchive
       parameters:
         - name: team-id
@@ -23091,11 +22674,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get primaryChannel
-      description: 'Get the default channel, **General**, of a team.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-get-primarychannel?view=graph-rest-1.0
+      summary: Get primaryChannel from teams
+      description: The general channel for the team.
       operationId: team_GetPrimaryChannel
       parameters:
         - name: team-id
@@ -23219,11 +22799,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get filesFolder
-      description: 'Get the metadata for the location where the files of a channel are stored. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      summary: Get filesFolder from teams
+      description: Metadata for the location where the channel's files are stored.
       operationId: team.primaryChannel_GetFilesFolder
       parameters:
         - name: team-id
@@ -23327,9 +22904,6 @@ paths:
         - teams.channel
       summary: Get content for the navigation property filesFolder from teams
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
       operationId: team.primaryChannel_GetFilesFolderContent
       parameters:
         - name: team-id
@@ -23388,11 +22962,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
+      summary: Get members from teams
+      description: A collection of membership records associated with the channel.
       operationId: team.primaryChannel_ListMember
       parameters:
         - name: team-id
@@ -23466,11 +23037,7 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for teams
       operationId: team.primaryChannel_CreateMember
       parameters:
         - name: team-id
@@ -23659,10 +23226,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: team.primaryChannel.member_add
       parameters:
         - name: team-id
@@ -23714,11 +23277,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
+      summary: Get messages from teams
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: team.primaryChannel_ListMessage
       parameters:
         - name: team-id
@@ -23853,11 +23413,7 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for teams
       operationId: team.primaryChannel_CreateMessage
       parameters:
         - name: team-id
@@ -24046,11 +23602,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: team.primaryChannel.message_ListHostedContent
       parameters:
         - name: team-id
@@ -24327,9 +23880,6 @@ paths:
       tags:
         - teams.channel
       summary: Get media content for the navigation property hostedContents from teams
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: team.primaryChannel.message_GetHostedContentsContent
       parameters:
         - name: team-id
@@ -24503,11 +24053,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List replies
-      description: 'List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0
+      summary: Get replies from teams
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: team.primaryChannel.message_ListReply
       parameters:
         - name: team-id
@@ -24650,11 +24197,7 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+      summary: Create new navigation property to replies for teams
       operationId: team.primaryChannel.message_CreateReply
       parameters:
         - name: team-id
@@ -24875,11 +24418,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from teams
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: team.primaryChannel.message.reply_ListHostedContent
       parameters:
         - name: team-id
@@ -25196,9 +24736,6 @@ paths:
       tags:
         - teams.channel
       summary: Get media content for the navigation property hostedContents from teams
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: team.primaryChannel.message.reply_GetHostedContentsContent
       parameters:
         - name: team-id
@@ -25753,10 +25290,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing `migration mode` from a channel in a team. `Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: team.primaryChannel_completeMigration
       parameters:
         - name: team-id
@@ -25833,10 +25366,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: team.primaryChannel_provisionEmail
       parameters:
         - name: team-id
@@ -25862,10 +25391,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action removeEmail
-      description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: team.primaryChannel_removeEmail
       parameters:
         - name: team-id
@@ -25886,11 +25411,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List sharedWithChannelTeamInfo
-      description: Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0
+      summary: Get sharedWithTeams from teams
+      description: A collection of teams with which a channel is shared.
       operationId: team.primaryChannel_ListSharedGraphWPreTeam
       parameters:
         - name: team-id
@@ -26138,11 +25660,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List allowedMembers
-      description: "Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:\n- Users with `Guest` role\n- Users who are externally authenticated in the tenant"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list-allowedmembers?view=graph-rest-1.0
+      summary: Get allowedMembers from teams
+      description: A collection of team members who have access to the shared channel.
       operationId: team.primaryChannel.sharedGraphWPreTeam_ListAllowedMember
       parameters:
         - name: team-id
@@ -26346,11 +25865,8 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: List tabs in channel
-      description: 'Retrieve the list of tabs in the specified channel within a team. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
+      summary: Get tabs from teams
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: team.primaryChannel_ListTab
       parameters:
         - name: team-id
@@ -26679,11 +26195,8 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: Get schedule
-      description: "Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\nWhen clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-get?view=graph-rest-1.0
+      summary: Get schedule from teams
+      description: The schedule of shifts for this team.
       operationId: team_GetSchedule
       parameters:
         - name: team-id
@@ -26818,10 +26331,6 @@ paths:
       tags:
         - teams.Actions
       summary: Invoke action share
-      description: "Share a schedule time range with schedule members.\nMake the collections of shift, openshift and timeOff items in the specified time range of the schedule viewable by the specified team members, including employees and managers.\nEach shift, openshift and timeOff instance in a schedule supports a draft version and a shared version of the item. The draft version is viewable by only managers, and the shared version is viewable by employees and managers. For each shift, openshift and timeOff instance in the specified time range, the share action updates the shared version from the draft version, so that in addition to managers, employees can also view the most current information about the item. The **notifyTeam** parameter further specifies which employees can view the item."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-share?view=graph-rest-1.0
       operationId: team.schedule_share
       parameters:
         - name: team-id
@@ -26866,11 +26375,7 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: List offerShiftRequest
-      description: Retrieve the properties and relationships of all offerShiftRequest objects in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/offershiftrequest-list?view=graph-rest-1.0
+      summary: Get offerShiftRequests from teams
       operationId: team.schedule_ListOfferShiftRequest
       parameters:
         - name: team-id
@@ -27179,11 +26684,8 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: List openShiftChangeRequests
-      description: Retrieve a list of openShiftChangeRequest objects in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshiftchangerequest-list?view=graph-rest-1.0
+      summary: Get openShiftChangeRequests from teams
+      description: The open shift requests in the schedule.
       operationId: team.schedule_ListOpenShiftChangeRequest
       parameters:
         - name: team-id
@@ -27284,11 +26786,7 @@ paths:
     post:
       tags:
         - teams.schedule
-      summary: Create openShiftChangeRequest
-      description: Create instance of an openShiftChangeRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshiftchangerequest-post?view=graph-rest-1.0
+      summary: Create new navigation property to openShiftChangeRequests for teams
       operationId: team.schedule_CreateOpenShiftChangeRequest
       parameters:
         - name: team-id
@@ -27485,11 +26983,8 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: List openShifts
-      description: List openShift objects in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshift-list?view=graph-rest-1.0
+      summary: Get openShifts from teams
+      description: The set of open shifts in a scheduling group in the schedule.
       operationId: team.schedule_ListOpenShift
       parameters:
         - name: team-id
@@ -27572,11 +27067,7 @@ paths:
     post:
       tags:
         - teams.schedule
-      summary: Create openShift
-      description: Create an instance of an openShift object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshift-post?view=graph-rest-1.0
+      summary: Create new navigation property to openShifts for teams
       operationId: team.schedule_CreateOpenShift
       parameters:
         - name: team-id
@@ -27767,11 +27258,8 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: List scheduleGroups
-      description: Get the list of schedulingGroups in this schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-1.0
+      summary: Get schedulingGroups from teams
+      description: The logical grouping of users in the schedule (usually by role).
       operationId: team.schedule_ListSchedulingGroup
       parameters:
         - name: team-id
@@ -27842,11 +27330,7 @@ paths:
     post:
       tags:
         - teams.schedule
-      summary: Create schedulingGroup
-      description: Create a new schedulingGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-schedulinggroups?view=graph-rest-1.0
+      summary: Create new navigation property to schedulingGroups for teams
       operationId: team.schedule_CreateSchedulingGroup
       parameters:
         - name: team-id
@@ -28025,11 +27509,8 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: List shifts
-      description: Get the list of shift instances in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
+      summary: Get shifts from teams
+      description: The shifts in the schedule.
       operationId: team.schedule_ListShift
       parameters:
         - name: team-id
@@ -28103,11 +27584,7 @@ paths:
     post:
       tags:
         - teams.schedule
-      summary: Create shift
-      description: Create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
+      summary: Create new navigation property to shifts for teams
       operationId: team.schedule_CreateShift
       parameters:
         - name: team-id
@@ -28287,11 +27764,7 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: List swapShiftsChangeRequest
-      description: Retrieve a list of swapShiftsChangeRequest objects in the team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/swapshiftschangerequest-list?view=graph-rest-1.0
+      summary: Get swapShiftsChangeRequests from teams
       operationId: team.schedule_ListSwapShiftsChangeRequest
       parameters:
         - name: team-id
@@ -28404,11 +27877,7 @@ paths:
     post:
       tags:
         - teams.schedule
-      summary: Create swapShiftsChangeRequest
-      description: Create an instance of a swapShiftsChangeRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/swapshiftschangerequest-post?view=graph-rest-1.0
+      summary: Create new navigation property to swapShiftsChangeRequests for teams
       operationId: team.schedule_CreateSwapShiftsChangeRequest
       parameters:
         - name: team-id
@@ -28608,11 +28077,8 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: List timeOffReasons
-      description: Get the list of timeOffReasons in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0
+      summary: Get timeOffReasons from teams
+      description: The set of reasons for a time off in the schedule.
       operationId: team.schedule_ListTimeOffReason
       parameters:
         - name: team-id
@@ -28683,11 +28149,7 @@ paths:
     post:
       tags:
         - teams.schedule
-      summary: Create timeOffReason
-      description: Create a new timeOffReason.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-1.0
+      summary: Create new navigation property to timeOffReasons for teams
       operationId: team.schedule_CreateTimeOffReason
       parameters:
         - name: team-id
@@ -28866,11 +28328,7 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: List timeOffRequest
-      description: Retrieve a list of timeOffRequest objects in the team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0
+      summary: Get timeOffRequests from teams
       operationId: team.schedule_ListTimeOffRequest
       parameters:
         - name: team-id
@@ -29151,11 +28609,8 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: List timesOff
-      description: Get the list of timeOff instances in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0
+      summary: Get timesOff from teams
+      description: The instances of times off in the schedule.
       operationId: team.schedule_ListTimesOff
       parameters:
         - name: team-id
@@ -29226,11 +28681,7 @@ paths:
     post:
       tags:
         - teams.schedule
-      summary: Create timeOff
-      description: Create a new timeOff instance in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-timesoff?view=graph-rest-1.0
+      summary: Create new navigation property to timesOff for teams
       operationId: team.schedule_CreateTimesOff
       parameters:
         - name: team-id
@@ -29409,11 +28860,8 @@ paths:
     get:
       tags:
         - teams.teamworkTag
-      summary: List teamworkTags
-      description: Get a list of the tag objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
+      summary: Get tags from teams
+      description: The tags associated with the team.
       operationId: team_ListTag
       parameters:
         - name: team-id
@@ -29495,11 +28943,7 @@ paths:
     post:
       tags:
         - teams.teamworkTag
-      summary: Create teamworkTag
-      description: Create a standard tag for members in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0
+      summary: Create new navigation property to tags for teams
       operationId: team_CreateTag
       parameters:
         - name: team-id
@@ -29669,11 +29113,8 @@ paths:
     get:
       tags:
         - teams.teamworkTag
-      summary: List members in a teamworkTag
-      description: Get a list of the members of a standard tag in a team and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktagmember-list?view=graph-rest-1.0
+      summary: Get members from teams
+      description: Users assigned to the tag.
       operationId: team.tag_ListMember
       parameters:
         - name: team-id
@@ -29755,11 +29196,7 @@ paths:
     post:
       tags:
         - teams.teamworkTag
-      summary: Create teamworkTagMember
-      description: Create a new teamworkTagMember object in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktagmember-post?view=graph-rest-1.0
+      summary: Create new navigation property to members for teams
       operationId: team.tag_CreateMember
       parameters:
         - name: team-id
@@ -30269,11 +29706,8 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: List deletedTeams
-      description: Get a list of the deletedTeam objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamwork-list-deletedteams?view=graph-rest-1.0
+      summary: Get deletedTeams from teamwork
+      description: The deleted team.
       operationId: teamwork_ListDeletedTeam
       parameters:
         - $ref: '#/components/parameters/top'
@@ -30745,11 +30179,8 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: Get filesFolder
-      description: 'Get the metadata for the location where the files of a channel are stored. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      summary: Get filesFolder from teamwork
+      description: Metadata for the location where the channel's files are stored.
       operationId: teamwork.deletedTeam.channel_GetFilesFolder
       parameters:
         - name: deletedTeam-id
@@ -30861,9 +30292,6 @@ paths:
         - teamwork.deletedTeam
       summary: Get content for the navigation property filesFolder from teamwork
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_GetFilesFolderContent
       parameters:
         - name: deletedTeam-id
@@ -30938,11 +30366,8 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
+      summary: Get members from teamwork
+      description: A collection of membership records associated with the channel.
       operationId: teamwork.deletedTeam.channel_ListMember
       parameters:
         - name: deletedTeam-id
@@ -31024,11 +30449,7 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for teamwork
       operationId: teamwork.deletedTeam.channel_CreateMember
       parameters:
         - name: deletedTeam-id
@@ -31257,10 +30678,6 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action add
-      description: Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.member_add
       parameters:
         - name: deletedTeam-id
@@ -31320,11 +30737,8 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
+      summary: Get messages from teamwork
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: teamwork.deletedTeam.channel_ListMessage
       parameters:
         - name: deletedTeam-id
@@ -31467,11 +30881,7 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for teamwork
       operationId: teamwork.deletedTeam.channel_CreateMessage
       parameters:
         - name: deletedTeam-id
@@ -31692,11 +31102,8 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from teamwork
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teamwork.deletedTeam.channel.message_ListHostedContent
       parameters:
         - name: deletedTeam-id
@@ -32013,9 +31420,6 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Get media content for the navigation property hostedContents from teamwork
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message_GetHostedContentsContent
       parameters:
         - name: deletedTeam-id
@@ -32229,11 +31633,8 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: List replies
-      description: 'List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0
+      summary: Get replies from teamwork
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: teamwork.deletedTeam.channel.message_ListReply
       parameters:
         - name: deletedTeam-id
@@ -32384,11 +31785,7 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+      summary: Create new navigation property to replies for teamwork
       operationId: teamwork.deletedTeam.channel.message_CreateReply
       parameters:
         - name: deletedTeam-id
@@ -32641,11 +32038,8 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from teamwork
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: teamwork.deletedTeam.channel.message.reply_ListHostedContent
       parameters:
         - name: deletedTeam-id
@@ -33002,9 +32396,6 @@ paths:
       tags:
         - teamwork.deletedTeam
       summary: Get media content for the navigation property hostedContents from teamwork
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message.reply_GetHostedContentsContent
       parameters:
         - name: deletedTeam-id
@@ -33631,10 +33022,6 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action completeMigration
-      description: 'Complete the message migration process by removing `migration mode` from a channel in a team. `Migration mode` is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a **completeMigration** request is made, you cannot import additional messages into the team. You can add members to the team after the request returns a successful response.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_completeMigration
       parameters:
         - name: deletedTeam-id
@@ -33727,10 +33114,6 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action provisionEmail
-      description: 'Provision an email address for a channel. Microsoft Teams doesn''t automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_provisionEmail
       parameters:
         - name: deletedTeam-id
@@ -33764,10 +33147,6 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action removeEmail
-      description: Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_removeEmail
       parameters:
         - name: deletedTeam-id
@@ -33796,11 +33175,8 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: List sharedWithChannelTeamInfo
-      description: Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0
+      summary: Get sharedWithTeams from teamwork
+      description: A collection of teams with which a channel is shared.
       operationId: teamwork.deletedTeam.channel_ListSharedGraphWPreTeam
       parameters:
         - name: deletedTeam-id
@@ -34088,11 +33464,8 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: List allowedMembers
-      description: "Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:\n- Users with `Guest` role\n- Users who are externally authenticated in the tenant"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list-allowedmembers?view=graph-rest-1.0
+      summary: Get allowedMembers from teamwork
+      description: A collection of team members who have access to the shared channel.
       operationId: teamwork.deletedTeam.channel.sharedGraphWPreTeam_ListAllowedMember
       parameters:
         - name: deletedTeam-id
@@ -34328,11 +33701,8 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: List tabs in channel
-      description: 'Retrieve the list of tabs in the specified channel within a team. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
+      summary: Get tabs from teamwork
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: teamwork.deletedTeam.channel_ListTab
       parameters:
         - name: deletedTeam-id
@@ -35063,11 +34433,7 @@ paths:
     get:
       tags:
         - teamwork.workforceIntegration
-      summary: List workforceIntegrations
-      description: Retrieve a list of workforceIntegration objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/workforceintegration-list?view=graph-rest-1.0
+      summary: Get workforceIntegrations from teamwork
       operationId: teamwork_ListWorkforceIntegration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -35151,11 +34517,7 @@ paths:
     post:
       tags:
         - teamwork.workforceIntegration
-      summary: Create workforceIntegration
-      description: "Create a new workforceIntegration object.\nYou can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/workforceintegration-post?view=graph-rest-1.0
+      summary: Create new navigation property to workforceIntegrations for teamwork
       operationId: teamwork_CreateWorkforceIntegration
       requestBody:
         description: New navigation property
@@ -35307,11 +34669,7 @@ paths:
     get:
       tags:
         - users.chat
-      summary: List chats
-      description: 'Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-list?view=graph-rest-1.0
+      summary: Get chats from users
       operationId: user_ListChat
       parameters:
         - name: user-id
@@ -35594,11 +34952,8 @@ paths:
     get:
       tags:
         - users.chat
-      summary: List apps in chat
-      description: List all app installations within a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-list-installedapps?view=graph-rest-1.0
+      summary: Get installedApps from users
+      description: A collection of all the apps in the chat. Nullable.
       operationId: user.chat_ListInstalledApp
       parameters:
         - name: user-id
@@ -35675,11 +35030,7 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Add app to chat
-      description: Install a teamsApp to the specified chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-installedapps?view=graph-rest-1.0
+      summary: Create new navigation property to installedApps for users
       operationId: user.chat_CreateInstalledApp
       parameters:
         - name: user-id
@@ -36192,11 +35543,8 @@ paths:
     get:
       tags:
         - users.chat
-      summary: List members of a chat
-      description: 'List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0
+      summary: Get members from users
+      description: A collection of all the members in the chat. Nullable.
       operationId: user.chat_ListMember
       parameters:
         - name: user-id
@@ -36278,11 +35626,7 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Add member to a chat
-      description: Add a conversationMember to a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for users
       operationId: user.chat_CreateMember
       parameters:
         - name: user-id
@@ -36510,11 +35854,8 @@ paths:
     get:
       tags:
         - users.chat
-      summary: List messages in a chat
-      description: 'Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-list-messages?view=graph-rest-1.0
+      summary: Get messages from users
+      description: A collection of all the messages in the chat. Nullable.
       operationId: user.chat_ListMessage
       parameters:
         - name: user-id
@@ -36657,11 +35998,7 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: user.chat_CreateMessage
       parameters:
         - name: user-id
@@ -36882,11 +36219,8 @@ paths:
     get:
       tags:
         - users.chat
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from users
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: user.chat.message_ListHostedContent
       parameters:
         - name: user-id
@@ -37203,9 +36537,6 @@ paths:
       tags:
         - users.chat
       summary: Get media content for the navigation property hostedContents from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: user.chat.message_GetHostedContentsContent
       parameters:
         - name: user-id
@@ -37345,11 +36676,8 @@ paths:
     get:
       tags:
         - users.chat
-      summary: List replies
-      description: 'List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0
+      summary: Get replies from users
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: user.chat.message_ListReply
       parameters:
         - name: user-id
@@ -37500,11 +36828,7 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+      summary: Create new navigation property to replies for users
       operationId: user.chat.message_CreateReply
       parameters:
         - name: user-id
@@ -37757,11 +37081,8 @@ paths:
     get:
       tags:
         - users.chat
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from users
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: user.chat.message.reply_ListHostedContent
       parameters:
         - name: user-id
@@ -38118,9 +37439,6 @@ paths:
       tags:
         - users.chat
       summary: Get media content for the navigation property hostedContents from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: user.chat.message.reply_GetHostedContentsContent
       parameters:
         - name: user-id
@@ -38352,11 +37670,8 @@ paths:
     get:
       tags:
         - users.chat
-      summary: List pinnedChatMessages in a chat
-      description: Get a list of pinnedChatMessages in a chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-list-pinnedmessages?view=graph-rest-1.0
+      summary: Get pinnedMessages from users
+      description: A collection of all the pinned messages in the chat. Nullable.
       operationId: user.chat_ListPinnedMessage
       parameters:
         - name: user-id
@@ -38431,11 +37746,7 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Pin a message in a chat
-      description: Pin a chat message in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-pinnedmessages?view=graph-rest-1.0
+      summary: Create new navigation property to pinnedMessages for users
       operationId: user.chat_CreatePinnedMessage
       parameters:
         - name: user-id
@@ -38754,11 +38065,8 @@ paths:
     get:
       tags:
         - users.chat
-      summary: List tabs in chat
-      description: Retrieve the list of tabs in the specified chat.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-list-tabs?view=graph-rest-1.0
+      summary: Get tabs from users
+      description: A collection of all the tabs in the chat. Nullable.
       operationId: user.chat_ListTab
       parameters:
         - name: user-id
@@ -38842,11 +38150,7 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Add tab to chat
-      description: "Add (pin) a tab to the specified chat. \nThe corresponding app must already be installed in the chat."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-tabs?view=graph-rest-1.0
+      summary: Create new navigation property to tabs for users
       operationId: user.chat_CreateTab
       parameters:
         - name: user-id
@@ -39169,11 +38473,7 @@ paths:
     get:
       tags:
         - users.team
-      summary: List joinedTeams
-      description: Get the teams in Microsoft Teams that the user is a direct member of.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-1.0
+      summary: Get joinedTeams from users
       operationId: user_ListJoinedTeam
       parameters:
         - name: user-id
@@ -39508,11 +38808,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List allChannels
-      description: Get the list of channels either in this team or shared with this team (incoming channels).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-allchannels?view=graph-rest-1.0
+      summary: Get allChannels from users
+      description: List of channels either hosted in or shared with the team (incoming channels).
       operationId: user.joinedTeam_ListAllChannel
       parameters:
         - name: user-id
@@ -39734,11 +39031,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List channels
-      description: Retrieve the list of channels in this team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0
+      summary: Get channels from users
+      description: The collection of channels and messages associated with the team.
       operationId: user.joinedTeam_ListChannel
       parameters:
         - name: user-id
@@ -39845,11 +39139,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create channel
-      description: 'Create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel''s `displayName` is 50 characters. This is the name that appears to the user in Microsoft Teams. If you''re creating a private channel, you can add a maximum of 200 members.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post?view=graph-rest-1.0
+      summary: Create new navigation property to channels for users
       operationId: user.joinedTeam_CreateChannel
       parameters:
         - name: user-id
@@ -40062,11 +39352,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get filesFolder
-      description: 'Get the metadata for the location where the files of a channel are stored. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      summary: Get filesFolder from users
+      description: Metadata for the location where the channel's files are stored.
       operationId: user.joinedTeam.channel_GetFilesFolder
       parameters:
         - name: user-id
@@ -40186,9 +39473,6 @@ paths:
         - users.team
       summary: Get content for the navigation property filesFolder from users
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_GetFilesFolderContent
       parameters:
         - name: user-id
@@ -40279,11 +39563,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
+      summary: Get members from users
+      description: A collection of membership records associated with the channel.
       operationId: user.joinedTeam.channel_ListMember
       parameters:
         - name: user-id
@@ -40373,11 +39654,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for users
       operationId: user.joinedTeam.channel_CreateMember
       parameters:
         - name: user-id
@@ -40645,11 +39922,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
+      summary: Get messages from users
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: user.joinedTeam.channel_ListMessage
       parameters:
         - name: user-id
@@ -40800,11 +40074,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: user.joinedTeam.channel_CreateMessage
       parameters:
         - name: user-id
@@ -41057,11 +40327,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from users
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: user.joinedTeam.channel.message_ListHostedContent
       parameters:
         - name: user-id
@@ -41418,9 +40685,6 @@ paths:
       tags:
         - users.team
       summary: Get media content for the navigation property hostedContents from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_GetHostedContentsContent
       parameters:
         - name: user-id
@@ -41584,11 +40848,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List replies
-      description: 'List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0
+      summary: Get replies from users
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: user.joinedTeam.channel.message_ListReply
       parameters:
         - name: user-id
@@ -41747,11 +41008,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+      summary: Create new navigation property to replies for users
       operationId: user.joinedTeam.channel.message_CreateReply
       parameters:
         - name: user-id
@@ -42036,11 +41293,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from users
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: user.joinedTeam.channel.message.reply_ListHostedContent
       parameters:
         - name: user-id
@@ -42437,9 +41691,6 @@ paths:
       tags:
         - users.team
       summary: Get media content for the navigation property hostedContents from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message.reply_GetHostedContentsContent
       parameters:
         - name: user-id
@@ -42711,11 +41962,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List sharedWithChannelTeamInfo
-      description: Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0
+      summary: Get sharedWithTeams from users
+      description: A collection of teams with which a channel is shared.
       operationId: user.joinedTeam.channel_ListSharedGraphWPreTeam
       parameters:
         - name: user-id
@@ -43043,11 +42291,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List allowedMembers
-      description: "Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:\n- Users with `Guest` role\n- Users who are externally authenticated in the tenant"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list-allowedmembers?view=graph-rest-1.0
+      summary: Get allowedMembers from users
+      description: A collection of team members who have access to the shared channel.
       operationId: user.joinedTeam.channel.sharedGraphWPreTeam_ListAllowedMember
       parameters:
         - name: user-id
@@ -43315,11 +42560,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List tabs in channel
-      description: 'Retrieve the list of tabs in the specified channel within a team. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
+      summary: Get tabs from users
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: user.joinedTeam.channel_ListTab
       parameters:
         - name: user-id
@@ -43940,11 +43182,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List incomingChannels
-      description: Get the list of incoming channels (channels shared with a team).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0
+      summary: Get incomingChannels from users
+      description: List of channels shared with the team.
       operationId: user.joinedTeam_ListIncomingChannel
       parameters:
         - name: user-id
@@ -44166,11 +43405,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List apps in team
-      description: Retrieve a list of apps installed in the specified team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-installedapps?view=graph-rest-1.0
+      summary: Get installedApps from users
+      description: The apps installed in this team.
       operationId: user.joinedTeam_ListInstalledApp
       parameters:
         - name: user-id
@@ -44247,11 +43483,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add app to team
-      description: Install an app to the specified team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-post-installedapps?view=graph-rest-1.0
+      summary: Create new navigation property to installedApps for users
       operationId: user.joinedTeam_CreateInstalledApp
       parameters:
         - name: user-id
@@ -44627,11 +43859,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List members of team
-      description: Get the conversationMember collection of a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-list-members?view=graph-rest-1.0
+      summary: Get members from users
+      description: Members and owners of the team.
       operationId: user.joinedTeam_ListMember
       parameters:
         - name: user-id
@@ -44713,11 +43942,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to team
-      description: Add a new conversationMember to a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for users
       operationId: user.joinedTeam_CreateMember
       parameters:
         - name: user-id
@@ -45479,11 +44704,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get primaryChannel
-      description: 'Get the default channel, **General**, of a team.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/team-get-primarychannel?view=graph-rest-1.0
+      summary: Get primaryChannel from users
+      description: The general channel for the team.
       operationId: user.joinedTeam_GetPrimaryChannel
       parameters:
         - name: user-id
@@ -45631,11 +44853,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get filesFolder
-      description: 'Get the metadata for the location where the files of a channel are stored. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
+      summary: Get filesFolder from users
+      description: Metadata for the location where the channel's files are stored.
       operationId: user.joinedTeam.primaryChannel_GetFilesFolder
       parameters:
         - name: user-id
@@ -45747,9 +44966,6 @@ paths:
         - users.team
       summary: Get content for the navigation property filesFolder from users
       description: 'The content stream, if the item represents a file.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_GetFilesFolderContent
       parameters:
         - name: user-id
@@ -45824,11 +45040,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List members of a channel
-      description: Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-members?view=graph-rest-1.0
+      summary: Get members from users
+      description: A collection of membership records associated with the channel.
       operationId: user.joinedTeam.primaryChannel_ListMember
       parameters:
         - name: user-id
@@ -45910,11 +45123,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+      summary: Create new navigation property to members for users
       operationId: user.joinedTeam.primaryChannel_CreateMember
       parameters:
         - name: user-id
@@ -46142,11 +45351,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List channel messages
-      description: 'Retrieve the list of messages (without the replies) in a channel of a team.  To get the replies for a message, call the list message replies or the get message reply API.  This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the **tenantId** property on the channel).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-messages?view=graph-rest-1.0
+      summary: Get messages from users
+      description: A collection of all the messages in the channel. A navigation property. Nullable.
       operationId: user.joinedTeam.primaryChannel_ListMessage
       parameters:
         - name: user-id
@@ -46289,11 +45495,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+      summary: Create new navigation property to messages for users
       operationId: user.joinedTeam.primaryChannel_CreateMessage
       parameters:
         - name: user-id
@@ -46514,11 +45716,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from users
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: user.joinedTeam.primaryChannel.message_ListHostedContent
       parameters:
         - name: user-id
@@ -46835,9 +46034,6 @@ paths:
       tags:
         - users.team
       summary: Get media content for the navigation property hostedContents from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_GetHostedContentsContent
       parameters:
         - name: user-id
@@ -46977,11 +46173,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List replies
-      description: 'List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-replies?view=graph-rest-1.0
+      summary: Get replies from users
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: user.joinedTeam.primaryChannel.message_ListReply
       parameters:
         - name: user-id
@@ -47132,11 +46325,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+      summary: Create new navigation property to replies for users
       operationId: user.joinedTeam.primaryChannel.message_CreateReply
       parameters:
         - name: user-id
@@ -47389,11 +46578,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List hostedContents
-      description: 'Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
+      summary: Get hostedContents from users
+      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
       operationId: user.joinedTeam.primaryChannel.message.reply_ListHostedContent
       parameters:
         - name: user-id
@@ -47750,9 +46936,6 @@ paths:
       tags:
         - users.team
       summary: Get media content for the navigation property hostedContents from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-list-hostedcontents?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message.reply_GetHostedContentsContent
       parameters:
         - name: user-id
@@ -47984,11 +47167,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List sharedWithChannelTeamInfo
-      description: Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list?view=graph-rest-1.0
+      summary: Get sharedWithTeams from users
+      description: A collection of teams with which a channel is shared.
       operationId: user.joinedTeam.primaryChannel_ListSharedGraphWPreTeam
       parameters:
         - name: user-id
@@ -48276,11 +47456,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List allowedMembers
-      description: "Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:\n- Users with `Guest` role\n- Users who are externally authenticated in the tenant"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-list-allowedmembers?view=graph-rest-1.0
+      summary: Get allowedMembers from users
+      description: A collection of team members who have access to the shared channel.
       operationId: user.joinedTeam.primaryChannel.sharedGraphWPreTeam_ListAllowedMember
       parameters:
         - name: user-id
@@ -48516,11 +47693,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List tabs in channel
-      description: 'Retrieve the list of tabs in the specified channel within a team. '
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
+      summary: Get tabs from users
+      description: A collection of all the tabs in the channel. A navigation property.
       operationId: user.joinedTeam.primaryChannel_ListTab
       parameters:
         - name: user-id
@@ -48905,11 +48079,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get schedule
-      description: "Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).\nWhen clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-get?view=graph-rest-1.0
+      summary: Get schedule from users
+      description: The schedule of shifts for this team.
       operationId: user.joinedTeam_GetSchedule
       parameters:
         - name: user-id
@@ -49067,11 +48238,7 @@ paths:
     get:
       tags:
         - users.team
-      summary: List offerShiftRequest
-      description: Retrieve the properties and relationships of all offerShiftRequest objects in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/offershiftrequest-list?view=graph-rest-1.0
+      summary: Get offerShiftRequests from users
       operationId: user.joinedTeam.schedule_ListOfferShiftRequest
       parameters:
         - name: user-id
@@ -49428,11 +48595,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List openShiftChangeRequests
-      description: Retrieve a list of openShiftChangeRequest objects in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshiftchangerequest-list?view=graph-rest-1.0
+      summary: Get openShiftChangeRequests from users
+      description: The open shift requests in the schedule.
       operationId: user.joinedTeam.schedule_ListOpenShiftChangeRequest
       parameters:
         - name: user-id
@@ -49541,11 +48705,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create openShiftChangeRequest
-      description: Create instance of an openShiftChangeRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshiftchangerequest-post?view=graph-rest-1.0
+      summary: Create new navigation property to openShiftChangeRequests for users
       operationId: user.joinedTeam.schedule_CreateOpenShiftChangeRequest
       parameters:
         - name: user-id
@@ -49782,11 +48942,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List openShifts
-      description: List openShift objects in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshift-list?view=graph-rest-1.0
+      summary: Get openShifts from users
+      description: The set of open shifts in a scheduling group in the schedule.
       operationId: user.joinedTeam.schedule_ListOpenShift
       parameters:
         - name: user-id
@@ -49877,11 +49034,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create openShift
-      description: Create an instance of an openShift object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/openshift-post?view=graph-rest-1.0
+      summary: Create new navigation property to openShifts for users
       operationId: user.joinedTeam.schedule_CreateOpenShift
       parameters:
         - name: user-id
@@ -50112,11 +49265,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List scheduleGroups
-      description: Get the list of schedulingGroups in this schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-schedulinggroups?view=graph-rest-1.0
+      summary: Get schedulingGroups from users
+      description: The logical grouping of users in the schedule (usually by role).
       operationId: user.joinedTeam.schedule_ListSchedulingGroup
       parameters:
         - name: user-id
@@ -50195,11 +49345,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create schedulingGroup
-      description: Create a new schedulingGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-schedulinggroups?view=graph-rest-1.0
+      summary: Create new navigation property to schedulingGroups for users
       operationId: user.joinedTeam.schedule_CreateSchedulingGroup
       parameters:
         - name: user-id
@@ -50418,11 +49564,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List shifts
-      description: Get the list of shift instances in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
+      summary: Get shifts from users
+      description: The shifts in the schedule.
       operationId: user.joinedTeam.schedule_ListShift
       parameters:
         - name: user-id
@@ -50504,11 +49647,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create shift
-      description: Create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
+      summary: Create new navigation property to shifts for users
       operationId: user.joinedTeam.schedule_CreateShift
       parameters:
         - name: user-id
@@ -50728,11 +49867,7 @@ paths:
     get:
       tags:
         - users.team
-      summary: List swapShiftsChangeRequest
-      description: Retrieve a list of swapShiftsChangeRequest objects in the team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/swapshiftschangerequest-list?view=graph-rest-1.0
+      summary: Get swapShiftsChangeRequests from users
       operationId: user.joinedTeam.schedule_ListSwapShiftsChangeRequest
       parameters:
         - name: user-id
@@ -50853,11 +49988,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create swapShiftsChangeRequest
-      description: Create an instance of a swapShiftsChangeRequest object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/swapshiftschangerequest-post?view=graph-rest-1.0
+      summary: Create new navigation property to swapShiftsChangeRequests for users
       operationId: user.joinedTeam.schedule_CreateSwapShiftsChangeRequest
       parameters:
         - name: user-id
@@ -51097,11 +50228,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List timeOffReasons
-      description: Get the list of timeOffReasons in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-1.0
+      summary: Get timeOffReasons from users
+      description: The set of reasons for a time off in the schedule.
       operationId: user.joinedTeam.schedule_ListTimeOffReason
       parameters:
         - name: user-id
@@ -51180,11 +50308,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create timeOffReason
-      description: Create a new timeOffReason.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-1.0
+      summary: Create new navigation property to timeOffReasons for users
       operationId: user.joinedTeam.schedule_CreateTimeOffReason
       parameters:
         - name: user-id
@@ -51403,11 +50527,7 @@ paths:
     get:
       tags:
         - users.team
-      summary: List timeOffRequest
-      description: Retrieve a list of timeOffRequest objects in the team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/timeoffrequest-list?view=graph-rest-1.0
+      summary: Get timeOffRequests from users
       operationId: user.joinedTeam.schedule_ListTimeOffRequest
       parameters:
         - name: user-id
@@ -51736,11 +50856,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List timesOff
-      description: Get the list of timeOff instances in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0
+      summary: Get timesOff from users
+      description: The instances of times off in the schedule.
       operationId: user.joinedTeam.schedule_ListTimesOff
       parameters:
         - name: user-id
@@ -51819,11 +50936,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create timeOff
-      description: Create a new timeOff instance in a schedule.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/schedule-post-timesoff?view=graph-rest-1.0
+      summary: Create new navigation property to timesOff for users
       operationId: user.joinedTeam.schedule_CreateTimesOff
       parameters:
         - name: user-id
@@ -52042,11 +51155,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List teamworkTags
-      description: Get a list of the tag objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktag-list?view=graph-rest-1.0
+      summary: Get tags from users
+      description: The tags associated with the team.
       operationId: user.joinedTeam_ListTag
       parameters:
         - name: user-id
@@ -52136,11 +51246,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create teamworkTag
-      description: Create a standard tag for members in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktag-post?view=graph-rest-1.0
+      summary: Create new navigation property to tags for users
       operationId: user.joinedTeam_CreateTag
       parameters:
         - name: user-id
@@ -52342,11 +51448,8 @@ paths:
     get:
       tags:
         - users.team
-      summary: List members in a teamworkTag
-      description: Get a list of the members of a standard tag in a team and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktagmember-list?view=graph-rest-1.0
+      summary: Get members from users
+      description: Users assigned to the tag.
       operationId: user.joinedTeam.tag_ListMember
       parameters:
         - name: user-id
@@ -52436,11 +51539,7 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create teamworkTagMember
-      description: Create a new teamworkTagMember object in a team.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/teamworktagmember-post?view=graph-rest-1.0
+      summary: Create new navigation property to members for users
       operationId: user.joinedTeam.tag_CreateMember
       parameters:
         - name: user-id
@@ -52928,11 +52027,8 @@ paths:
     get:
       tags:
         - users.userTeamwork
-      summary: List associatedTeamInfo
-      description: "Get the list of teams in Microsoft Teams that a user is associated with.\nCurrently, a user can be associated with a team in two different ways:\n* A user can be a direct member of a team.\n* A user can be a member of a shared channel that is hosted inside a team."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/associatedteaminfo-list?view=graph-rest-1.0
+      summary: Get associatedTeams from users
+      description: The list of associatedTeamInfo objects that a user is associated with.
       operationId: user.teamwork_ListAssociatedTeam
       parameters:
         - name: user-id
@@ -53194,11 +52290,8 @@ paths:
     get:
       tags:
         - users.userTeamwork
-      summary: List apps installed for user
-      description: Retrieve the list of apps installed in the personal scope of the specified user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userteamwork-list-installedapps?view=graph-rest-1.0
+      summary: Get installedApps from users
+      description: The apps installed in the personal scope of this user.
       operationId: user.teamwork_ListInstalledApp
       parameters:
         - name: user-id
@@ -53269,11 +52362,7 @@ paths:
     post:
       tags:
         - users.userTeamwork
-      summary: Install app for user
-      description: Install an app in the personal scope of the specified user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userteamwork-post-installedapps?view=graph-rest-1.0
+      summary: Create new navigation property to installedApps for users
       operationId: user.teamwork_CreateInstalledApp
       parameters:
         - name: user-id
@@ -53442,11 +52531,8 @@ paths:
     get:
       tags:
         - users.userTeamwork
-      summary: Get chat between user and teamsApp
-      description: Retrieve the chat of the specified user and Teams app.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userscopeteamsappinstallation-get-chat?view=graph-rest-1.0
+      summary: Get chat from users
+      description: The chat between the user and Teams app.
       operationId: user.teamwork.installedApp_GetChat
       parameters:
         - name: user-id
@@ -56268,7 +55354,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -65628,7 +64714,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array

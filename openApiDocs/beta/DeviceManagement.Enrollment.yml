@@ -2124,7 +2124,6 @@ paths:
                 - primaryAccountFullName
                 - primaryAccountUserName
                 - registrationDisabled
-                - requestRequiresNetworkTether
                 - setPrimarySetupAccountAsRegularUser
                 - skipPrimarySetupAccountCreation
                 - zoomDisabled
@@ -6355,11 +6354,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespace_ListResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6784,11 +6780,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List unifiedRoleAssignmentMultiple
-      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.cloudPC_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6874,11 +6866,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.cloudPC_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -7658,11 +7646,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.cloudPC_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7748,11 +7732,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.cloudPC_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -8479,11 +8459,8 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List resourceActions
-      description: Get a list of the unifiedRbacResourceAction objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-1.0
+      summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespace_ListResourceAction
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -8908,11 +8885,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List unifiedRoleAssignmentMultiple
-      description: "Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-1.0
+      summary: Get roleAssignments from roleManagement
       operationId: roleManagement.deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8998,11 +8971,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create unifiedRoleAssignmentMultiple
-      description: "Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.  The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplicationmultiple-post-roleassignments?view=graph-rest-1.0
+      summary: Create new navigation property to roleAssignments for roleManagement
       operationId: roleManagement.deviceManagement_CreateRoleAssignment
       requestBody:
         description: New navigation property
@@ -9782,11 +9751,7 @@ paths:
     get:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: List roleDefinitions
-      description: "Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune)\n- directory (Azure AD) \n- entitlement management (Azure AD)\n- Exchange Online"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0
+      summary: Get roleDefinitions from roleManagement
       operationId: roleManagement.deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9872,11 +9837,7 @@ paths:
     post:
       tags:
         - roleManagement.rbacApplicationMultiple
-      summary: Create roleDefinitions
-      description: "Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)"
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/rbacapplication-post-roledefinitions?view=graph-rest-1.0
+      summary: Create new navigation property to roleDefinitions for roleManagement
       operationId: roleManagement.deviceManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property
@@ -10955,9 +10916,6 @@ components:
             registrationDisabled:
               type: boolean
               description: Indicates if registration is disabled
-            requestRequiresNetworkTether:
-              type: boolean
-              description: Indicates if the device is network-tethered to run the command
             setPrimarySetupAccountAsRegularUser:
               type: boolean
               description: Indicates whether Setup Assistant will set the account as a regular user
