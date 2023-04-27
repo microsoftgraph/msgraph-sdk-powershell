@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef
 
 ## SYNOPSIS
-List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+The homeRealmDiscoveryPolicies assigned to this service principal.
+Supports $expand.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef -ServicePrincipalId <String>
 ```
 
 ## DESCRIPTION
-List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+The homeRealmDiscoveryPolicies assigned to this service principal.
+Supports $expand.
 
 ## EXAMPLES
 

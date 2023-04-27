@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgForwardGroupThreadPostInReplyTo
 
 ## SYNOPSIS
-Forward a post to a recipient.
-You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
+Invoke action forward
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Invoke-MgForwardGroupThreadPostInReplyTo -InputObject <IGroupsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Forward a post to a recipient.
-You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
+Invoke action forward
 
 ## EXAMPLES
 
@@ -289,6 +287,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

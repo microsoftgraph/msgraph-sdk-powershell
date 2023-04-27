@@ -374,8 +374,8 @@ ADMINISTRATIVEUNITS <IMicrosoftGraphAdministrativeUnit1[]>: Conceptual container
 
 ATTRIBUTESETS <IMicrosoftGraphAttributeSet[]>: Group of related custom security attribute definitions.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[Description <String>]`: Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
-  - `[MaxAttributesPerSet <Int32?>]`: Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.
+  - `[Description <String>]`: 
+  - `[MaxAttributesPerSet <Int32?>]`: 
 
 BODYPARAMETER <IMicrosoftGraphDirectory>: directory
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -402,21 +402,21 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
     - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
   - `[AttributeSets <IMicrosoftGraphAttributeSet[]>]`: Group of related custom security attribute definitions.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[Description <String>]`: Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
-    - `[MaxAttributesPerSet <Int32?>]`: Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.
+    - `[Description <String>]`: 
+    - `[MaxAttributesPerSet <Int32?>]`: 
   - `[CustomSecurityAttributeDefinitions <IMicrosoftGraphCustomSecurityAttributeDefinition[]>]`: Schema of a custom security attributes (key-value pairs).
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[AllowedValues <IMicrosoftGraphAllowedValue[]>]`: Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+    - `[AllowedValues <IMicrosoftGraphAllowedValue[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[IsActive <Boolean?>]`: Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
-    - `[AttributeSet <String>]`: Name of the attribute set. Case insensitive.
-    - `[Description <String>]`: Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.
-    - `[IsCollection <Boolean?>]`: Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.
-    - `[IsSearchable <Boolean?>]`: Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
-    - `[Name <String>]`: Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
-    - `[Status <String>]`: Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
-    - `[Type <String>]`: Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-    - `[UsePreDefinedValuesOnly <Boolean?>]`: Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
+      - `[IsActive <Boolean?>]`: 
+    - `[AttributeSet <String>]`: 
+    - `[Description <String>]`: 
+    - `[IsCollection <Boolean?>]`: 
+    - `[IsSearchable <Boolean?>]`: 
+    - `[Name <String>]`: 
+    - `[Status <String>]`: 
+    - `[Type <String>]`: 
+    - `[UsePreDefinedValuesOnly <Boolean?>]`: 
   - `[DeletedItems <IMicrosoftGraphDirectoryObject[]>]`: Recently deleted items. Read-only. Nullable.
   - `[FeatureRolloutPolicies <IMicrosoftGraphFeatureRolloutPolicy[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -521,17 +521,17 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
 
 CUSTOMSECURITYATTRIBUTEDEFINITIONS <IMicrosoftGraphCustomSecurityAttributeDefinition[]>: Schema of a custom security attributes (key-value pairs).
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AllowedValues <IMicrosoftGraphAllowedValue[]>]`: Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+  - `[AllowedValues <IMicrosoftGraphAllowedValue[]>]`: 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-    - `[IsActive <Boolean?>]`: Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
-  - `[AttributeSet <String>]`: Name of the attribute set. Case insensitive.
-  - `[Description <String>]`: Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.
-  - `[IsCollection <Boolean?>]`: Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.
-  - `[IsSearchable <Boolean?>]`: Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
-  - `[Name <String>]`: Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
-  - `[Status <String>]`: Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
-  - `[Type <String>]`: Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
-  - `[UsePreDefinedValuesOnly <Boolean?>]`: Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.
+    - `[IsActive <Boolean?>]`: 
+  - `[AttributeSet <String>]`: 
+  - `[Description <String>]`: 
+  - `[IsCollection <Boolean?>]`: 
+  - `[IsSearchable <Boolean?>]`: 
+  - `[Name <String>]`: 
+  - `[Status <String>]`: 
+  - `[Type <String>]`: 
+  - `[UsePreDefinedValuesOnly <Boolean?>]`: 
 
 DELETEDITEMS <IMicrosoftGraphDirectoryObject[]>: Recently deleted items. Read-only. Nullable.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.

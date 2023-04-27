@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgSnoozeUserEventReminder
 
 ## SYNOPSIS
-Postpone a reminder for an event in a user calendar until a new time.
+Invoke action snoozeReminder
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Invoke-MgSnoozeUserEventReminder -InputObject <IUsersActionsIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Postpone a reminder for an event in a user calendar until a new time.
+Invoke action snoozeReminder
 
 ## EXAMPLES
 

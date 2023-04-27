@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgWindowsUpdatesResourceConnection
 
 ## SYNOPSIS
-Create a new operationalInsightsConnection object.
+Create new navigation property to resourceConnections for admin
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgWindowsUpdatesResourceConnection -BodyParameter <IMicrosoftGraphWindowsUpd
 ```
 
 ## DESCRIPTION
-Create a new operationalInsightsConnection object.
+Create new navigation property to resourceConnections for admin
 
 ## EXAMPLES
 

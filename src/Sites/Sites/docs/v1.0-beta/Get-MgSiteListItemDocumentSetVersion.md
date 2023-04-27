@@ -12,7 +12,7 @@ Version information for a document set version created by a user.
 
 ## SYNTAX
 
-### List (Default)
+### List1 (Default)
 ```
 Get-MgSiteListItemDocumentSetVersion -ListId <String> -ListItemId <String> -SiteId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
@@ -61,7 +61,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -77,7 +77,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: CV
 
 Required: False
@@ -122,7 +122,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -153,7 +153,7 @@ The unique identifier of list
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -168,7 +168,7 @@ The unique identifier of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -183,7 +183,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -213,7 +213,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -228,7 +228,7 @@ The unique identifier of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -243,7 +243,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -258,7 +258,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: OrderBy
 
 Required: False
@@ -273,7 +273,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: Limit
 
 Required: False
@@ -321,6 +321,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

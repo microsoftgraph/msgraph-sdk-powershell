@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTeamMember
 
 ## SYNOPSIS
-Add a new conversation member to a team.
+Create new navigation property to members for teams
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ New-MgTeamMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable
 ```
 
 ## DESCRIPTION
-Add a new conversation member to a team.
+Create new navigation property to members for teams
 
 ## EXAMPLES
 

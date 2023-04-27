@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: ce6af724-1d3c-40d1-a8ca-89a9a485c66a
+Module Guid: 8b847fe7-8661-473c-9611-2d588b0e89db
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -23,11 +23,20 @@ Directory objects that were created by the user.
 Read-only.
 Nullable.
 
+### [Get-MgUserCreatedObjectAsServicePrincipal](Get-MgUserCreatedObjectAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
 ### [Get-MgUserDirectReport](Get-MgUserDirectReport.md)
 The users and contacts that report to the user.
 (The users and contacts that have their manager property set to this user.) Read-only.
 Nullable.
 Supports $expand.
+
+### [Get-MgUserDirectReportAsOrgContact](Get-MgUserDirectReportAsOrgContact.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Get-MgUserDirectReportAsUser](Get-MgUserDirectReportAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgUserExtension](Get-MgUserExtension.md)
 The collection of open extensions defined for the user.
@@ -38,18 +47,28 @@ Nullable.
 Get licenseDetails from users
 
 ### [Get-MgUserManager](Get-MgUserManager.md)
-Returns the user or organizational contact assigned as the user's manager.
-Optionally, you can expand the manager's chain up to the root node.
+The user or contact that is this user's manager.
+Read-only.
+(HTTP Methods: GET, PUT, DELETE.).
+Supports $expand.
 
 ### [Get-MgUserManagerByRef](Get-MgUserManagerByRef.md)
-Returns the user or organizational contact assigned as the user's manager.
-Optionally, you can expand the manager's chain up to the root node.
+The user or contact that is this user's manager.
+Read-only.
+(HTTP Methods: GET, PUT, DELETE.).
+Supports $expand.
 
 ### [Get-MgUserMemberOf](Get-MgUserMemberOf.md)
 The groups, directory roles and administrative units that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.
+
+### [Get-MgUserMemberOfAsAdministrativeUnit](Get-MgUserMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgUserMemberOfAsGroup](Get-MgUserMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgUserNotification](Get-MgUserNotification.md)
 Get notifications from users
@@ -155,11 +174,26 @@ Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgUserOwnedDeviceAsDevice](Get-MgUserOwnedDeviceAsDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Get-MgUserOwnedDeviceAsEndpoint](Get-MgUserOwnedDeviceAsEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
 ### [Get-MgUserOwnedObject](Get-MgUserOwnedObject.md)
 Directory objects that are owned by the user.
 Read-only.
 Nullable.
 Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+
+### [Get-MgUserOwnedObjectAsApplication](Get-MgUserOwnedObjectAsApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Get-MgUserOwnedObjectAsGroup](Get-MgUserOwnedObjectAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Get-MgUserOwnedObjectAsServicePrincipal](Get-MgUserOwnedObjectAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
 
 ### [Get-MgUserPhoto](Get-MgUserPhoto.md)
 The user's profile photo.
@@ -174,20 +208,27 @@ Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgUserRegisteredDeviceAsDevice](Get-MgUserRegisteredDeviceAsDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Get-MgUserRegisteredDeviceAsEndpoint](Get-MgUserRegisteredDeviceAsEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
 ### [Get-MgUserSetting](Get-MgUserSetting.md)
 Get settings from users
 
 ### [Get-MgUserSettingContactMergeSuggestion](Get-MgUserSettingContactMergeSuggestion.md)
-Read the properties and relationships of a contactMergeSuggestions object.
+The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 
 ### [Get-MgUserSettingItemInsight](Get-MgUserSettingItemInsight.md)
-Get the user-customizable privacy settings for itemInsights and meeting hours insights.
+The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites.
+Get userInsightsSettings through this navigation property.
 
 ### [Get-MgUserSettingRegionalAndLanguageSetting](Get-MgUserSettingRegionalAndLanguageSetting.md)
-Get the properties of a regionalAndLanguageSettings object.
+The user's preferences for languages, regional locale and date/time formatting.
 
 ### [Get-MgUserSettingShiftPreference](Get-MgUserSettingShiftPreference.md)
-Retrieve the properties and relationships of a shiftPreferences object by ID.
+The shift preferences for the user.
 
 ### [Get-MgUserTodoList](Get-MgUserTodoList.md)
 The task lists in the users mailbox.
@@ -227,93 +268,15 @@ A collection of resources linked to the task.
 The groups, including nested groups, and directory roles that a user is a member of.
 Nullable.
 
+### [Get-MgUserTransitiveMemberOfAsAdministrativeUnit](Get-MgUserTransitiveMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgUserTransitiveMemberOfAsGroup](Get-MgUserTransitiveMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
 ### [Get-MgUserTransitiveReport](Get-MgUserTransitiveReport.md)
 The transitive reports for a user.
 Read-only.
-
-### [Group-MgUserGetMemberOfAs](Group-MgUserGetMemberOfAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgUserGetOwnedObjectAs](Group-MgUserGetOwnedObjectAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgUserGetTransitiveMemberOfAs](Group-MgUserGetTransitiveMemberOfAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgUserListMemberOfAs](Group-MgUserListMemberOfAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgUserListOwnedObjectAs](Group-MgUserListOwnedObjectAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgUserListTransitiveMemberOfAs](Group-MgUserListTransitiveMemberOfAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsUserGetDirectReportUser](Invoke-MgAsUserGetDirectReportUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsUserGetMemberOfAdministrativeUnit](Invoke-MgAsUserGetMemberOfAdministrativeUnit.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-
-### [Invoke-MgAsUserGetOwnedDevice](Invoke-MgAsUserGetOwnedDevice.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-
-### [Invoke-MgAsUserGetOwnedDeviceEndpoint](Invoke-MgAsUserGetOwnedDeviceEndpoint.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-
-### [Invoke-MgAsUserGetOwnedObjectApplication](Invoke-MgAsUserGetOwnedObjectApplication.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-
-### [Invoke-MgAsUserGetRegisteredDevice](Invoke-MgAsUserGetRegisteredDevice.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-
-### [Invoke-MgAsUserGetRegisteredDeviceEndpoint](Invoke-MgAsUserGetRegisteredDeviceEndpoint.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-
-### [Invoke-MgAsUserGetTransitiveMemberOfAdministrativeUnit](Invoke-MgAsUserGetTransitiveMemberOfAdministrativeUnit.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-
-### [Invoke-MgAsUserListDirectReportUser](Invoke-MgAsUserListDirectReportUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsUserListMemberOfAdministrativeUnit](Invoke-MgAsUserListMemberOfAdministrativeUnit.md)
-Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsUserListOwnedDevice](Invoke-MgAsUserListOwnedDevice.md)
-Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsUserListOwnedDeviceEndpoint](Invoke-MgAsUserListOwnedDeviceEndpoint.md)
-Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsUserListOwnedObjectApplication](Invoke-MgAsUserListOwnedObjectApplication.md)
-Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsUserListRegisteredDevice](Invoke-MgAsUserListRegisteredDevice.md)
-Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsUserListRegisteredDeviceEndpoint](Invoke-MgAsUserListRegisteredDeviceEndpoint.md)
-Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsUserListTransitiveMemberOfAdministrativeUnit](Invoke-MgAsUserListTransitiveMemberOfAdministrativeUnit.md)
-Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgContactUserGetDirectReportAsOrg](Invoke-MgContactUserGetDirectReportAsOrg.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-
-### [Invoke-MgContactUserListDirectReportAsOrg](Invoke-MgContactUserListDirectReportAsOrg.md)
-Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgServiceUserGetCreatedObject](Invoke-MgServiceUserGetCreatedObject.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-
-### [Invoke-MgServiceUserGetOwnedObject](Invoke-MgServiceUserGetOwnedObject.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-
-### [Invoke-MgServiceUserListCreatedObject](Invoke-MgServiceUserListCreatedObject.md)
-Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgServiceUserListOwnedObject](Invoke-MgServiceUserListOwnedObject.md)
-Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
 
 ### [New-MgUser](New-MgUser.md)
 Create a new user.\nThe request body contains the user to create.
@@ -330,20 +293,16 @@ Create new navigation property to extensions for users
 Create new navigation property to notifications for users
 
 ### [New-MgUserOutlookMasterCategory](New-MgUserOutlookMasterCategory.md)
-Create an outlookCategory object in the user's master list of categories.
+Create new navigation property to masterCategories for users
 
 ### [New-MgUserOutlookTask](New-MgUserOutlookTask.md)
-Create an Outlook task in the default task group (`My Tasks`) and default task folder (`Tasks`) in the user's mailbox.
-The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
-By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC.
-\nYou can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone \ndifferent than UTC.
+Create new navigation property to tasks for users
 
 ### [New-MgUserOutlookTaskAttachment](New-MgUserOutlookTaskAttachment.md)
-Use this API to add an attachment to an outlookTask.
-The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
+Create new navigation property to attachments for users
 
 ### [New-MgUserOutlookTaskFolder](New-MgUserOutlookTaskFolder.md)
-Create a task folder in the default task group (`My Tasks`) of the user's mailbox.
+Create new navigation property to taskFolders for users
 
 ### [New-MgUserOutlookTaskFolderMultiValueExtendedProperty](New-MgUserOutlookTaskFolderMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
@@ -352,12 +311,10 @@ Create new navigation property to multiValueExtendedProperties for users
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserOutlookTaskFolderTask](New-MgUserOutlookTaskFolderTask.md)
-Create an Outlook task in the specified task folder.
-The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
+Create new navigation property to tasks for users
 
 ### [New-MgUserOutlookTaskFolderTaskAttachment](New-MgUserOutlookTaskFolderTaskAttachment.md)
-Use this API to add an attachment to an outlookTask.
-The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
+Create new navigation property to attachments for users
 
 ### [New-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty](New-MgUserOutlookTaskFolderTaskMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
@@ -366,10 +323,10 @@ Create new navigation property to multiValueExtendedProperties for users
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserOutlookTaskGroup](New-MgUserOutlookTaskGroup.md)
-Create an Outlook task group in the user's mailbox.
+Create new navigation property to taskGroups for users
 
 ### [New-MgUserOutlookTaskGroupTaskFolder](New-MgUserOutlookTaskGroupTaskFolder.md)
-Create an Outlook task folder under a specified outlookTaskGroup.
+Create new navigation property to taskFolders for users
 
 ### [New-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty](New-MgUserOutlookTaskGroupTaskFolderMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
@@ -378,12 +335,10 @@ Create new navigation property to multiValueExtendedProperties for users
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserOutlookTaskGroupTaskFolderTask](New-MgUserOutlookTaskGroupTaskFolderTask.md)
-Create an Outlook task in the specified task folder.
-The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
+Create new navigation property to tasks for users
 
 ### [New-MgUserOutlookTaskGroupTaskFolderTaskAttachment](New-MgUserOutlookTaskGroupTaskFolderTaskAttachment.md)
-Use this API to add an attachment to an outlookTask.
-The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
+Create new navigation property to attachments for users
 
 ### [New-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty](New-MgUserOutlookTaskGroupTaskFolderTaskMultiValueExtendedProperty.md)
 Create new navigation property to multiValueExtendedProperties for users
@@ -398,29 +353,25 @@ Create new navigation property to multiValueExtendedProperties for users
 Create new navigation property to singleValueExtendedProperties for users
 
 ### [New-MgUserTodoList](New-MgUserTodoList.md)
-Create a new lists object.
+Create new navigation property to lists for users
 
 ### [New-MgUserTodoListExtension](New-MgUserTodoListExtension.md)
 Create new navigation property to extensions for users
 
 ### [New-MgUserTodoListTask](New-MgUserTodoListTask.md)
-Create a new task object in a specified todoTaskList.
+Create new navigation property to tasks for users
 
 ### [New-MgUserTodoListTaskAttachment](New-MgUserTodoListTaskAttachment.md)
-Add a new taskFileAttachment object to a todoTask.
-This operation limits the size of the attachment you can add to under 3 MB.
-If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
+Create new navigation property to attachments for users
 
 ### [New-MgUserTodoListTaskChecklistItem](New-MgUserTodoListTaskChecklistItem.md)
-Create a new checklistItem object as a subtask in a bigger todoTask.
+Create new navigation property to checklistItems for users
 
 ### [New-MgUserTodoListTaskExtension](New-MgUserTodoListTaskExtension.md)
 Create new navigation property to extensions for users
 
 ### [New-MgUserTodoListTaskLinkedResource](New-MgUserTodoListTaskLinkedResource.md)
-Create a linkedResource object to associate a specified task with an item in a partner application.
-For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association.
-You can also create a **linkedResource** object while creating a todoTask.
+Create new navigation property to linkedResources for users
 
 ### [Remove-MgUser](Remove-MgUser.md)
 Delete user.
@@ -626,16 +577,16 @@ Update the navigation property photo in users
 Update the navigation property settings in users
 
 ### [Update-MgUserSettingContactMergeSuggestion](Update-MgUserSettingContactMergeSuggestion.md)
-Update the properties of a contactMergeSuggestions object.
+Update the navigation property contactMergeSuggestions in users
 
 ### [Update-MgUserSettingItemInsight](Update-MgUserSettingItemInsight.md)
-Update the privacy settings for itemInsights and meeting hours insights of a user.
+Update the navigation property itemInsights in users
 
 ### [Update-MgUserSettingRegionalAndLanguageSetting](Update-MgUserSettingRegionalAndLanguageSetting.md)
-Update some or all of the properties of a regionalAndLanguageSettings object.
+Update the navigation property regionalAndLanguageSettings in users
 
 ### [Update-MgUserSettingShiftPreference](Update-MgUserSettingShiftPreference.md)
-Update the properties and relationships of a shiftPreferences object.
+Update the navigation property shiftPreferences in users
 
 ### [Update-MgUserTodoList](Update-MgUserTodoList.md)
 Update the navigation property lists in users

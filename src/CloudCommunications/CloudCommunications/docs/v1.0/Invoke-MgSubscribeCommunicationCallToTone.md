@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgSubscribeCommunicationCallToTone
 
 ## SYNOPSIS
-Subscribe to DTMF (dual-tone multi-frequency signaling).
-This allows you to be notified when the user presses keys on a 'dialpad'.
+Invoke action subscribeToTone
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Invoke-MgSubscribeCommunicationCallToTone -InputObject <ICloudCommunicationsIden
 ```
 
 ## DESCRIPTION
-Subscribe to DTMF (dual-tone multi-frequency signaling).
-This allows you to be notified when the user presses keys on a 'dialpad'.
+Invoke action subscribeToTone
 
 ## EXAMPLES
 

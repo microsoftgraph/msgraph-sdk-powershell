@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgSubscribeGroupByMail
 
 ## SYNOPSIS
-Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
-Supported for Microsoft 365 groups only.
+Invoke action subscribeByMail
 
 ## SYNTAX
 
@@ -25,8 +24,7 @@ Invoke-MgSubscribeGroupByMail -InputObject <IGroupsIdentity> [-PassThru] [-Confi
 ```
 
 ## DESCRIPTION
-Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
-Supported for Microsoft 365 groups only.
+Invoke action subscribeByMail
 
 ## EXAMPLES
 
@@ -155,6 +153,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

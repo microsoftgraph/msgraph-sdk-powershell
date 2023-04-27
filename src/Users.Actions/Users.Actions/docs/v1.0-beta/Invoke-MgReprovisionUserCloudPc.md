@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgReprovisionUserCloudPc
 
 ## SYNOPSIS
-Reprovision a specific Cloud PC.
+Invoke action reprovision
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Invoke-MgReprovisionUserCloudPc -InputObject <IUsersActionsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Reprovision a specific Cloud PC.
+Invoke action reprovision
 
 ## EXAMPLES
 

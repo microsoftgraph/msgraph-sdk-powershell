@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceTermOfUseAgreementFile
 
 ## SYNOPSIS
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Default PDF linked to this agreement.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Get-MgIdentityGovernanceTermOfUseAgreementFile -InputObject <IIdentityGovernance
 ```
 
 ## DESCRIPTION
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Default PDF linked to this agreement.
 
 ## EXAMPLES
 

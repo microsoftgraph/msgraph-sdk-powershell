@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyCrossTenantAccessPolicyPartner
 
 ## SYNOPSIS
-Create a new partner configuration in a cross-tenant access policy.
+Create new navigation property to partners for policies
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ New-MgPolicyCrossTenantAccessPolicyPartner
 ```
 
 ## DESCRIPTION
-Create a new partner configuration in a cross-tenant access policy.
+Create new navigation property to partners for policies
 
 ## EXAMPLES
 

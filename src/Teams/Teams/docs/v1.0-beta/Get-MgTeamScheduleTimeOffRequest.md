@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamScheduleTimeOffRequest
 
 ## SYNOPSIS
-Get timeOffRequests from teams
+The time off requests in the schedule.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Get-MgTeamScheduleTimeOffRequest -InputObject <ITeamsIdentity> [-Property <Strin
 ```
 
 ## DESCRIPTION
-Get timeOffRequests from teams
+The time off requests in the schedule.
 
 ## EXAMPLES
 

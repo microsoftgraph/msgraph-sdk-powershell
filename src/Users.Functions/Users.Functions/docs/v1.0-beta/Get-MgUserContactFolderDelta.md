@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgUserContactFolderDelta
 
 ## SYNOPSIS
-Get a set of contact folders that have been added, deleted, or removed from the user's mailbox.
-A **delta** function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders.
-This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time.
+Invoke function delta
 
 ## SYNTAX
 
@@ -29,9 +27,7 @@ Get-MgUserContactFolderDelta -InputObject <IUsersFunctionsIdentity> [-Count] [-F
 ```
 
 ## DESCRIPTION
-Get a set of contact folders that have been added, deleted, or removed from the user's mailbox.
-A **delta** function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders.
-This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time.
+Invoke function delta
 
 ## EXAMPLES
 
@@ -263,12 +259,12 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[On <String>]`: Usage: on='{on}'
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PlannerBucketId <String>]`: The unique identifier of plannerBucket
   - `[PlannerPlanId <String>]`: The unique identifier of plannerPlan
   - `[Q <String>]`: Usage: q='{q}'
   - `[RoomList <String>]`: Usage: RoomList='{RoomList}'
   - `[ServicePlanId <String>]`: Usage: servicePlanId='{servicePlanId}'
-  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[StartDateTime <String>]`: Usage: StartDateTime='{StartDateTime}'
   - `[StartDateTime1 <String>]`: Usage: startDateTime='{startDateTime}'

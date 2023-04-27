@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserChatInstalledApp
 
 ## SYNOPSIS
-Upgrade an app installation within a chat.
+Invoke action upgrade
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Update-MgUserChatInstalledApp -InputObject <IUsersActionsIdentity> [-PassThru] [
 ```
 
 ## DESCRIPTION
-Upgrade an app installation within a chat.
+Invoke action upgrade
 
 ## EXAMPLES
 

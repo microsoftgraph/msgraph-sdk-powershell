@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgPlayCommunicationCallPrompt
 
 ## SYNOPSIS
-Play a prompt in the call.
-For more information about how to handle operations, see commsOperation
+Invoke action playPrompt
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Invoke-MgPlayCommunicationCallPrompt -InputObject <ICloudCommunicationsIdentity>
 ```
 
 ## DESCRIPTION
-Play a prompt in the call.
-For more information about how to handle operations, see commsOperation
+Invoke action playPrompt
 
 ## EXAMPLES
 

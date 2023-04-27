@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgPrivilegedAccessRoleAssignmentRequest
 
 ## SYNOPSIS
-Create a role assignment request to represent the operation you want on a role assignment.
-The following table lists the operations.
+Create new navigation property to roleAssignmentRequests for privilegedAccess
 
 ## SYNTAX
 
@@ -51,8 +50,7 @@ New-MgPrivilegedAccessRoleAssignmentRequest -InputObject <IIdentityGovernanceIde
 ```
 
 ## DESCRIPTION
-Create a role assignment request to represent the operation you want on a role assignment.
-The following table lists the operations.
+Create new navigation property to roleAssignmentRequests for privilegedAccess
 
 ## EXAMPLES
 

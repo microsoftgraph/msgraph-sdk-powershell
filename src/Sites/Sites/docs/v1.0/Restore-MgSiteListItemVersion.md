@@ -8,8 +8,7 @@ schema: 2.0.0
 # Restore-MgSiteListItemVersion
 
 ## SYNOPSIS
-Restore a previous version of a ListItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
+Invoke action restoreVersion
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Restore-MgSiteListItemVersion -InputObject <ISitesIdentity> [-PassThru] [-Confir
 ```
 
 ## DESCRIPTION
-Restore a previous version of a ListItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
+Invoke action restoreVersion
 
 ## EXAMPLES
 
@@ -202,6 +200,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

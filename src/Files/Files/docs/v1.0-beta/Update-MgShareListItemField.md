@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgShareListItemField
 
 ## SYNOPSIS
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in shares
 
 ## SYNTAX
 
@@ -61,7 +61,7 @@ Update-MgShareListItemField -InputObject <IFilesIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in shares
 
 ## EXAMPLES
 

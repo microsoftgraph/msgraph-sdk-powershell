@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgIdentityContinuouAccessEvaluationPolicy
 
 ## SYNOPSIS
-Update the properties of a continuousAccessEvaluationPolicy object.
+Update the navigation property continuousAccessEvaluationPolicy in identity
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Update-MgIdentityContinuouAccessEvaluationPolicy
 ```
 
 ## DESCRIPTION
-Update the properties of a continuousAccessEvaluationPolicy object.
+Update the navigation property continuousAccessEvaluationPolicy in identity
 
 ## EXAMPLES
 

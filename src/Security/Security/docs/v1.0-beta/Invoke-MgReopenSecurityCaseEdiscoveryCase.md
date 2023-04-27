@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgReopenSecurityCaseEdiscoveryCase
 
 ## SYNOPSIS
-Reopen an eDiscovery case that was closed.
-For details, see Reopen a closed case.
+Invoke action reopen
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Invoke-MgReopenSecurityCaseEdiscoveryCase -InputObject <ISecurityIdentity> [-Pas
 ```
 
 ## DESCRIPTION
-Reopen an eDiscovery case that was closed.
-For details, see Reopen a closed case.
+Invoke action reopen
 
 ## EXAMPLES
 

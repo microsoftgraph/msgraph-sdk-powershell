@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserSettingItemInsight
 
 ## SYNOPSIS
-Update the privacy settings for itemInsights and meeting hours insights of a user.
+Update the navigation property itemInsights in users
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Update-MgUserSettingItemInsight -InputObject <IUsersIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Update the privacy settings for itemInsights and meeting hours insights of a user.
+Update the navigation property itemInsights in users
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgUnfollowDriveRoot
 
 ## SYNOPSIS
-Unfollow a driveItem.
+Invoke action unfollow
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Invoke-MgUnfollowDriveRoot -InputObject <IFilesIdentity> [-PassThru] [-Confirm] 
 ```
 
 ## DESCRIPTION
-Unfollow a driveItem.
+Invoke action unfollow
 
 ## EXAMPLES
 

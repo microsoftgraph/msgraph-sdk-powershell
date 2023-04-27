@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityThreatSubmissionUrlThreat
 
 ## SYNOPSIS
-Create a new urlThreatSubmission object.
+Create new navigation property to urlThreats for security
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgSecurityThreatSubmissionUrlThreat -BodyParameter <IMicrosoftGraphSecurityU
 ```
 
 ## DESCRIPTION
-Create a new urlThreatSubmission object.
+Create new navigation property to urlThreats for security
 
 ## EXAMPLES
 

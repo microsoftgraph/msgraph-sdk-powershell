@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeviceConfiguration
 
 ## SYNOPSIS
-Get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
+The configuration properties of the device.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgTeamworkDeviceConfiguration -InputObject <ITeamsIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
+The configuration properties of the device.
 
 ## EXAMPLES
 

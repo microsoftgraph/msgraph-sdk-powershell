@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementExchangeResourceNamespace
 
 ## SYNOPSIS
-Get resourceNamespaces from roleManagement
+Resource that represents a collection of related actions.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgRoleManagementExchangeResourceNamespace -InputObject <IDeviceManagementEnr
 ```
 
 ## DESCRIPTION
-Get resourceNamespaces from roleManagement
+Resource that represents a collection of related actions.
 
 ## EXAMPLES
 

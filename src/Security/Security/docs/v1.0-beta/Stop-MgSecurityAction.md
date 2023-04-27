@@ -8,7 +8,7 @@ schema: 2.0.0
 # Stop-MgSecurityAction
 
 ## SYNOPSIS
-Cancel a security operation.
+Invoke action cancelSecurityAction
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Stop-MgSecurityAction -InputObject <ISecurityIdentity> [-PassThru] [-Confirm] [-
 ```
 
 ## DESCRIPTION
-Cancel a security operation.
+Invoke action cancelSecurityAction
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityApiConnector
 
 ## SYNOPSIS
-Create a new identityApiConnector object.
+Create new navigation property to apiConnectors for identity
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgIdentityApiConnector -BodyParameter <IMicrosoftGraphIdentityApiConnector> 
 ```
 
 ## DESCRIPTION
-Create a new identityApiConnector object.
+Create new navigation property to apiConnectors for identity
 
 ## EXAMPLES
 

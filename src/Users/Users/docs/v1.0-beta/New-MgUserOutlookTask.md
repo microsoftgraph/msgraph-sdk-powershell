@@ -8,10 +8,7 @@ schema: 2.0.0
 # New-MgUserOutlookTask
 
 ## SYNOPSIS
-Create an Outlook task in the default task group (`My Tasks`) and default task folder (`Tasks`) in the user's mailbox.
-The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
-By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC.
-\nYou can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone \ndifferent than UTC.
+Create new navigation property to tasks for users
 
 ## SYNTAX
 
@@ -58,10 +55,7 @@ New-MgUserOutlookTask -InputObject <IUsersIdentity> [-AdditionalProperties <Hash
 ```
 
 ## DESCRIPTION
-Create an Outlook task in the default task group (`My Tasks`) and default task folder (`Tasks`) in the user's mailbox.
-The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
-By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC.
-\nYou can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone \ndifferent than UTC.
+Create new navigation property to tasks for users
 
 ## EXAMPLES
 

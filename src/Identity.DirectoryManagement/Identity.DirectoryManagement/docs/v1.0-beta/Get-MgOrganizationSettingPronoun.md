@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgOrganizationSettingPronoun
 
 ## SYNOPSIS
-Get the properties of the pronounsSettings resource for an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+Represents administrator settings that manage the support of pronouns in an organization.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Get-MgOrganizationSettingPronoun -InputObject <IIdentityDirectoryManagementIdent
 ```
 
 ## DESCRIPTION
-Get the properties of the pronounsSettings resource for an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+Represents administrator settings that manage the support of pronouns in an organization.
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupFavorite
 
 ## SYNOPSIS
-Remove the group from the list of the current user's favorite groups.
-Supported for Microsoft 365 groups only.
+Invoke action removeFavorite
 
 ## SYNTAX
 
@@ -24,8 +23,7 @@ Remove-MgGroupFavorite -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Remove the group from the list of the current user's favorite groups.
-Supported for Microsoft 365 groups only.
+Invoke action removeFavorite
 
 ## EXAMPLES
 
@@ -154,6 +152,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

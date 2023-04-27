@@ -185,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -OpenShiftChangeRequests
-.
+The open shift requests in the schedule.
 To construct, please use Get-Help -Online and see NOTES section for OPENSHIFTCHANGEREQUESTS properties and create a hash table.
 
 ```yaml
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -OpenShifts
-.
+The set of open shifts in a scheduling group in the schedule.
 To construct, please use Get-Help -Online and see NOTES section for OPENSHIFTS properties and create a hash table.
 
 ```yaml
@@ -508,7 +508,7 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
     - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
     - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
   - `[OfferShiftRequestsEnabled <Boolean?>]`: Indicates whether offer shift requests are enabled for the schedule.
-  - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: 
+  - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: The open shift requests in the schedule.
     - `[AssignedTo <String>]`: scheduleChangeRequestActor
     - `[ManagerActionMessage <String>]`: 
     - `[SenderMessage <String>]`: 
@@ -516,7 +516,7 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[OpenShiftId <String>]`: ID for the open shift.
-  - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: 
+  - `[OpenShifts <IMicrosoftGraphOpenShift[]>]`: The set of open shifts in a scheduling group in the schedule.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DraftOpenShift <IMicrosoftGraphOpenShiftItem>]`: openShiftItem
@@ -658,7 +658,7 @@ OFFERSHIFTREQUESTS <IMicrosoftGraphOfferShiftRequest[]>: .
   - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
   - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
 
-OPENSHIFTCHANGEREQUESTS <IMicrosoftGraphOpenShiftChangeRequest[]>: .
+OPENSHIFTCHANGEREQUESTS <IMicrosoftGraphOpenShiftChangeRequest[]>: The open shift requests in the schedule.
   - `[AssignedTo <String>]`: scheduleChangeRequestActor
   - `[ManagerActionMessage <String>]`: 
   - `[SenderMessage <String>]`: 
@@ -674,7 +674,7 @@ OPENSHIFTCHANGEREQUESTS <IMicrosoftGraphOpenShiftChangeRequest[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[OpenShiftId <String>]`: ID for the open shift.
 
-OPENSHIFTS <IMicrosoftGraphOpenShift[]>: .
+OPENSHIFTS <IMicrosoftGraphOpenShift[]>: The set of open shifts in a scheduling group in the schedule.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity

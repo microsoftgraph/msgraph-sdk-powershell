@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgChatInstalledApp
 
 ## SYNOPSIS
-Install a teamsApp to the specified chat.
+Create new navigation property to installedApps for chats
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgChatInstalledApp -InputObject <ITeamsIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Install a teamsApp to the specified chat.
+Create new navigation property to installedApps for chats
 
 ## EXAMPLES
 

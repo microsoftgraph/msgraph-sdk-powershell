@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBusinessScenarioPlannerTaskConfiguration
 
 ## SYNOPSIS
-Read the properties and relationships of a plannerTaskConfiguration object.
+The configuration of Planner tasks that will be created for the scenario.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBusinessScenarioPlannerTaskConfiguration -InputObject <IBookingsIdentity> 
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a plannerTaskConfiguration object.
+The configuration of Planner tasks that will be created for the scenario.
 
 ## EXAMPLES
 

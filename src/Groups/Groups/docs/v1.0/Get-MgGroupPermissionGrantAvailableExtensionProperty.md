@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgGroupPermissionGrantAvailableExtensionProperty
 
 ## SYNOPSIS
-Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
-The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
+Invoke action getAvailableExtensionProperties
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Get-MgGroupPermissionGrantAvailableExtensionProperty -InputObject <IGroupsIdenti
 ```
 
 ## DESCRIPTION
-Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
-The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
+Invoke action getAvailableExtensionProperties
 
 ## EXAMPLES
 
@@ -198,6 +196,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

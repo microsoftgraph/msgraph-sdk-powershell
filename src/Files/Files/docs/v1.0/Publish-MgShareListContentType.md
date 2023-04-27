@@ -8,7 +8,7 @@ schema: 2.0.0
 # Publish-MgShareListContentType
 
 ## SYNOPSIS
-Publishes a [contentType][] present in the content type hub site.
+Invoke action publish
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Publish-MgShareListContentType -InputObject <IFilesIdentity> [-PassThru] [-Confi
 ```
 
 ## DESCRIPTION
-Publishes a [contentType][] present in the content type hub site.
+Invoke action publish
 
 ## EXAMPLES
 

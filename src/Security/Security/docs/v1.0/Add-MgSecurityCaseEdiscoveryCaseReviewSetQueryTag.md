@@ -8,8 +8,7 @@ schema: 2.0.0
 # Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag
 
 ## SYNOPSIS
-Apply tags to files in an eDiscovery review set.
-For details, see Tag documents in a review set in eDiscovery.
+Invoke action applyTags
 
 ## SYNTAX
 
@@ -46,8 +45,7 @@ Add-MgSecurityCaseEdiscoveryCaseReviewSetQueryTag -InputObject <ISecurityIdentit
 ```
 
 ## DESCRIPTION
-Apply tags to files in an eDiscovery review set.
-For details, see Tag documents in a review set in eDiscovery.
+Invoke action applyTags
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Test-MgUserPassword
 
 ## SYNOPSIS
-Check a user's password against the organization's password validation policy and report whether the password is valid.
-Use this action to provide real-time feedback on password strength while the user types their password.
+Invoke action validatePassword
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Test-MgUserPassword
 ```
 
 ## DESCRIPTION
-Check a user's password against the organization's password validation policy and report whether the password is valid.
-Use this action to provide real-time feedback on password strength while the user types their password.
+Invoke action validatePassword
 
 ## EXAMPLES
 

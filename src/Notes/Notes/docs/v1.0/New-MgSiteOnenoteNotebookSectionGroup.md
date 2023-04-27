@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSiteOnenoteNotebookSectionGroup
 
 ## SYNOPSIS
-Create a new section group in the specified notebook.
+Create new navigation property to sectionGroups for sites
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgSiteOnenoteNotebookSectionGroup -InputObject <INotesIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Create a new section group in the specified notebook.
+Create new navigation property to sectionGroups for sites
 
 ## EXAMPLES
 

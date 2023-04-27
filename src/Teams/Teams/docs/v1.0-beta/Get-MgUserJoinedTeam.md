@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgUserJoinedTeam
 
 ## SYNOPSIS
-Get the teams in Microsoft Teams that the user is a direct member of.
+The Microsoft Teams teams that the user is a member of.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +21,9 @@ Get-MgUserJoinedTeam -UserId <String> [-ExpandProperty <String[]>] [-Filter <Str
 ```
 
 ## DESCRIPTION
-Get the teams in Microsoft Teams that the user is a direct member of.
+The Microsoft Teams teams that the user is a member of.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

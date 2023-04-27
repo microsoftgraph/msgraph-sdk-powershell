@@ -8,38 +8,38 @@ schema: 2.0.0
 # Hide-MgChatForUser
 
 ## SYNOPSIS
-Hide a chat for a user.
+Invoke action hideForUser
 
 ## SYNTAX
 
-### HideExpanded1 (Default)
+### HideExpanded (Default)
 ```
 Hide-MgChatForUser -ChatId <String> [-AdditionalProperties <Hashtable>] [-TenantId <String>]
  [-User <IMicrosoftGraphTeamworkUserIdentity1>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Hide1
+### Hide
 ```
 Hide-MgChatForUser -ChatId <String>
  -BodyParameter <IPaths1D9TndwChatsChatIdMicrosoftGraphHideforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### HideViaIdentity1
+### HideViaIdentity
 ```
 Hide-MgChatForUser -InputObject <ITeamsIdentity>
  -BodyParameter <IPaths1D9TndwChatsChatIdMicrosoftGraphHideforuserPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### HideViaIdentityExpanded1
+### HideViaIdentityExpanded
 ```
 Hide-MgChatForUser -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-TenantId <String>]
  [-User <IMicrosoftGraphTeamworkUserIdentity1>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Hide a chat for a user.
+Invoke action hideForUser
 
 ## EXAMPLES
 
@@ -65,7 +65,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: HideExpanded1, HideViaIdentityExpanded1
+Parameter Sets: HideExpanded, HideViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -81,7 +81,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1D9TndwChatsChatIdMicrosoftGraphHideforuserPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Hide1, HideViaIdentity1
+Parameter Sets: Hide, HideViaIdentity
 Aliases:
 
 Required: True
@@ -96,7 +96,7 @@ The unique identifier of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Hide1, HideExpanded1
+Parameter Sets: Hide, HideExpanded
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: HideViaIdentity1, HideViaIdentityExpanded1
+Parameter Sets: HideViaIdentity, HideViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: HideExpanded1, HideViaIdentityExpanded1
+Parameter Sets: HideExpanded, HideViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -158,7 +158,7 @@ To construct, please use Get-Help -Online and see NOTES section for USER propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamworkUserIdentity1
-Parameter Sets: HideExpanded1, HideViaIdentityExpanded1
+Parameter Sets: HideExpanded, HideViaIdentityExpanded
 Aliases:
 
 Required: False

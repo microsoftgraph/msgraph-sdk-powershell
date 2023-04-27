@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 6e9cc2a6-9d98-4491-a790-5ae7a4a07198
+Module Guid: e49af5e0-9b04-442b-8ee1-6c9d57c35387
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -109,6 +109,12 @@ Windows information protection for apps running on devices which are MDM enrolle
 
 ### [Get-MgDeviceAppMgtMobileApp](Get-MgDeviceAppMgtMobileApp.md)
 The mobile apps.
+
+### [Get-MgDeviceAppMgtMobileAppAsManagedMobileLobApp](Get-MgDeviceAppMgtMobileAppAsManagedMobileLobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
+
+### [Get-MgDeviceAppMgtMobileAppAsMobileLobApp](Get-MgDeviceAppMgtMobileAppAsMobileLobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.mobileLobApp
 
 ### [Get-MgDeviceAppMgtMobileAppAssignment](Get-MgDeviceAppMgtMobileAppAssignment.md)
 The list of group assignments for this mobile app.
@@ -233,21 +239,6 @@ Navigation property to list of inclusion and exclusion groups to which the polic
 ### [Get-MgDeviceAppMgtWindowManagementApp](Get-MgDeviceAppMgtWindowManagementApp.md)
 Windows management app.
 
-### [Get-MgOfficeClientConfiguration](Get-MgOfficeClientConfiguration.md)
-List of office Client configuration.
-
-### [Get-MgOfficeClientConfigurationAssignment](Get-MgOfficeClientConfigurationAssignment.md)
-The list of group assignments for the policy.
-
-### [Get-MgOfficeClientConfigurationPolicyPayload](Get-MgOfficeClientConfigurationPolicyPayload.md)
-Policy settings JSON string in binary format, these values cannot be changed by the user.
-
-### [Get-MgOfficeClientConfigurationUserPreferencePayload](Get-MgOfficeClientConfigurationUserPreferencePayload.md)
-Preference settings JSON string in binary format, these values can be overridden by the user.
-
-### [Get-MgOfficeConfiguration](Get-MgOfficeConfiguration.md)
-Get officeConfiguration
-
 ### [Get-MgUserDeviceEnrollmentConfiguration](Get-MgUserDeviceEnrollmentConfiguration.md)
 Get enrollment configurations targeted to the user
 
@@ -334,12 +325,6 @@ Invoke action hasPayloadLinks
 
 ### [Invoke-MgHasDeviceAppMgtTargetedManagedAppConfigurationPayloadLink](Invoke-MgHasDeviceAppMgtTargetedManagedAppConfigurationPayloadLink.md)
 Invoke action hasPayloadLinks
-
-### [Invoke-MgLobDeviceAppMgtGetMobileApp](Invoke-MgLobDeviceAppMgtGetMobileApp.md)
-Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
-
-### [Invoke-MgLobDeviceAppMgtListMobileApp](Invoke-MgLobDeviceAppMgtListMobileApp.md)
-Get the items of type microsoft.graph.managedMobileLobApp in the microsoft.graph.mobileApp collection
 
 ### [Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp](Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp.md)
 Invoke action targetApps
@@ -514,12 +499,6 @@ Create new navigation property to apps for deviceAppManagement
 
 ### [New-MgDeviceAppMgtWindowManagedAppProtectionAssignment](New-MgDeviceAppMgtWindowManagedAppProtectionAssignment.md)
 Create new navigation property to assignments for deviceAppManagement
-
-### [New-MgOfficeClientConfiguration](New-MgOfficeClientConfiguration.md)
-Create new navigation property to clientConfigurations for officeConfiguration
-
-### [New-MgOfficeClientConfigurationAssignment](New-MgOfficeClientConfigurationAssignment.md)
-Create new navigation property to assignments for officeConfiguration
 
 ### [New-MgUserDeviceEnrollmentConfiguration](New-MgUserDeviceEnrollmentConfiguration.md)
 Create new navigation property to deviceEnrollmentConfigurations for users
@@ -758,12 +737,6 @@ Delete navigation property apps for deviceAppManagement
 ### [Remove-MgDeviceAppMgtWindowManagedAppProtectionAssignment](Remove-MgDeviceAppMgtWindowManagedAppProtectionAssignment.md)
 Delete navigation property assignments for deviceAppManagement
 
-### [Remove-MgOfficeClientConfiguration](Remove-MgOfficeClientConfiguration.md)
-Delete navigation property clientConfigurations for officeConfiguration
-
-### [Remove-MgOfficeClientConfigurationAssignment](Remove-MgOfficeClientConfigurationAssignment.md)
-Delete navigation property assignments for officeConfiguration
-
 ### [Remove-MgUserDeviceEnrollmentConfiguration](Remove-MgUserDeviceEnrollmentConfiguration.md)
 Delete navigation property deviceEnrollmentConfigurations for users
 
@@ -818,6 +791,9 @@ Delete navigation property mobileAppTroubleshootingEvents for users
 ### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
 Delete navigation property appLogCollectionRequests for users
 
+### [Rename-MgDeviceAppMgtTargetedManagedAppConfigurationSetting](Rename-MgDeviceAppMgtTargetedManagedAppConfigurationSetting.md)
+Invoke action changeSettings
+
 ### [Revoke-MgDeviceAppMgtVppTokenLicense](Revoke-MgDeviceAppMgtVppTokenLicense.md)
 Revoke licenses associated with a specific appleVolumePurchaseProgramToken
 
@@ -841,15 +817,6 @@ Invoke action assign
 
 ### [Set-MgDeviceAppMgtWindowManagedAppProtection](Set-MgDeviceAppMgtWindowManagedAppProtection.md)
 Invoke action assign
-
-### [Set-MgOfficeClientConfiguration](Set-MgOfficeClientConfiguration.md)
-Invoke action assign
-
-### [Set-MgOfficeClientConfigurationPolicyPayload](Set-MgOfficeClientConfigurationPolicyPayload.md)
-Policy settings JSON string in binary format, these values cannot be changed by the user.
-
-### [Set-MgOfficeClientConfigurationUserPreferencePayload](Set-MgOfficeClientConfigurationUserPreferencePayload.md)
-Preference settings JSON string in binary format, these values can be overridden by the user.
 
 ### [Sync-MgDeviceAppMgtMicrosoftStoreForBusinessApp](Sync-MgDeviceAppMgtMicrosoftStoreForBusinessApp.md)
 Syncs Intune account with Microsoft Store For Business
@@ -1063,18 +1030,6 @@ Update the navigation property apps in deviceAppManagement
 
 ### [Update-MgDeviceAppMgtWindowManagedAppProtectionAssignment](Update-MgDeviceAppMgtWindowManagedAppProtectionAssignment.md)
 Update the navigation property assignments in deviceAppManagement
-
-### [Update-MgOfficeClientConfiguration](Update-MgOfficeClientConfiguration.md)
-Update the navigation property clientConfigurations in officeConfiguration
-
-### [Update-MgOfficeClientConfigurationAssignment](Update-MgOfficeClientConfigurationAssignment.md)
-Update the navigation property assignments in officeConfiguration
-
-### [Update-MgOfficeClientConfigurationPriority](Update-MgOfficeClientConfigurationPriority.md)
-Invoke action updatePriorities
-
-### [Update-MgOfficeConfiguration](Update-MgOfficeConfiguration.md)
-Update officeConfiguration
 
 ### [Update-MgUserDeviceEnrollmentConfiguration](Update-MgUserDeviceEnrollmentConfiguration.md)
 Update the navigation property deviceEnrollmentConfigurations in users

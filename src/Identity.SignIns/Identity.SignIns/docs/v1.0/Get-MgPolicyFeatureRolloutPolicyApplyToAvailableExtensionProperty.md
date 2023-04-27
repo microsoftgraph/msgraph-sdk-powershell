@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyFeatureRolloutPolicyApplyToAvailableExtensionProperty
 
 ## SYNOPSIS
-Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
-The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
+Invoke action getAvailableExtensionProperties
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Get-MgPolicyFeatureRolloutPolicyApplyToAvailableExtensionProperty -InputObject <
 ```
 
 ## DESCRIPTION
-Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps.
-The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization
+Invoke action getAvailableExtensionProperties
 
 ## EXAMPLES
 
@@ -218,6 +216,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

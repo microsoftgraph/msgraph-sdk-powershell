@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointDeviceImage
 
 ## SYNOPSIS
-Create a new cloudPcDeviceImage object.
-Upload a custom OS image that you can later provision on Cloud PCs.
+Create new navigation property to deviceImages for deviceManagement
 
 ## SYNTAX
 
@@ -28,8 +27,7 @@ New-MgDeviceManagementVirtualEndpointDeviceImage -BodyParameter <IMicrosoftGraph
 ```
 
 ## DESCRIPTION
-Create a new cloudPcDeviceImage object.
-Upload a custom OS image that you can later provision on Cloud PCs.
+Create new navigation property to deviceImages for deviceManagement
 
 ## EXAMPLES
 

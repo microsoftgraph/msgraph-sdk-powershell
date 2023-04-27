@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgExtractSiteInformationProtectionPolicyLabel
 
 ## SYNOPSIS
-Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
-The contentInfo input is resolved to informationProtectionContentLabel.
+Invoke action extractLabel
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Invoke-MgExtractSiteInformationProtectionPolicyLabel -InputObject <ISitesIdentit
 ```
 
 ## DESCRIPTION
-Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
-The contentInfo input is resolved to informationProtectionContentLabel.
+Invoke action extractLabel
 
 ## EXAMPLES
 
@@ -217,6 +215,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

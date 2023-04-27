@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgRoleManagementDeviceManagementRoleAssignment
 
 ## SYNOPSIS
-Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+Create new navigation property to roleAssignments for roleManagement
 
 ## SYNTAX
 
@@ -30,8 +29,7 @@ New-MgRoleManagementDeviceManagementRoleAssignment
 ```
 
 ## DESCRIPTION
-Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+Create new navigation property to roleAssignments for roleManagement
 
 ## EXAMPLES
 

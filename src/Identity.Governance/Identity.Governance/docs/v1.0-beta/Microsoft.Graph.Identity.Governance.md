@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: 3e429bbf-4765-4d7b-a20d-3f239eb30df7
+Module Guid: 13fd1a51-e81c-454c-a598-364d24c3ca5f
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,36 +12,16 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Identity.Governance Cmdlets
 ### [Add-MgAccessReviewDecision](Add-MgAccessReviewDecision.md)
-In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
-The target object can be either a one-time access review, or an instance of a recurring access review.
- After an access review is finished, either because it reached the end date or an administrator stopped it manually, and auto-apply wasn't configured for the review, you can call Apply to apply the changes.
-Until apply occurs, the decisions to remove access rights do not appear on the source resource, the users for instance retain their group memberships.
-By calling apply, the outcome of the review is implemented by updating the group or application.
-If a user's access was denied in the review, when an administrator calls this API, Azure AD removes their membership or application assignment.
-After an access review is finished, and auto-apply was configured, then the status of the review will change from Completed through intermediate states and finally will change to state Applied.
-You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
-A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
-If you want to change a group that originates on-premises, download the results and apply those changes to the representation of the group in that directory.
+Invoke action applyDecisions
 
 ### [Add-MgAccessReviewInstanceDecision](Add-MgAccessReviewInstanceDecision.md)
-In the Azure AD access reviews feature, apply the decisions of a completed accessReview.
-The target object can be either a one-time access review, or an instance of a recurring access review.
- After an access review is finished, either because it reached the end date or an administrator stopped it manually, and auto-apply wasn't configured for the review, you can call Apply to apply the changes.
-Until apply occurs, the decisions to remove access rights do not appear on the source resource, the users for instance retain their group memberships.
-By calling apply, the outcome of the review is implemented by updating the group or application.
-If a user's access was denied in the review, when an administrator calls this API, Azure AD removes their membership or application assignment.
-After an access review is finished, and auto-apply was configured, then the status of the review will change from Completed through intermediate states and finally will change to state Applied.
-You should expect to see denied users, if any, being removed from the resource group membership or app assignment in a few minutes.
-A configured auto applying review, or selecting Apply doesn't have an effect on a group that originates in an on-premises directory or a dynamic group.
-If you want to change a group that originates on-premises, download the results and apply those changes to the representation of the group in that directory.
+Invoke action applyDecisions
 
 ### [Add-MgIdentityGovernanceAccessReviewDecisionInstanceDecision](Add-MgIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
-Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
-The status of the accessReviewInstance must be `Completed` to call this method.
+Invoke action applyDecisions
 
 ### [Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Add-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
-Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is `false` in the review's accessReviewScheduleSettings.
-The status of the accessReviewInstance must be `Completed` to call this method.
+Invoke action applyDecisions
 
 ### [Export-MgPrivilegedAccessResourceRoleAssignment](Export-MgPrivilegedAccessResourceRoleAssignment.md)
 Invoke function export
@@ -86,8 +66,7 @@ Read-only.
 Information about acceptances of this agreement.
 
 ### [Get-MgAgreementFile](Get-MgAgreementFile.md)
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Default PDF linked to this agreement.
 
 ### [Get-MgAgreementFileLocalization](Get-MgAgreementFileLocalization.md)
 The localized version of the terms of use agreement files attached to the agreement.
@@ -103,8 +82,7 @@ Get entity from businessFlowTemplates by key
 Represents access package objects.
 
 ### [Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
-In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
-Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
+Invoke action getApplicablePolicyRequirements
 
 ### [Get-MgEntitlementManagementAccessPackageAssignment](Get-MgEntitlementManagementAccessPackageAssignment.md)
 The assignment of an access package to a subject for a period of time.
@@ -130,19 +108,17 @@ Represents access package assignment requests created by or on behalf of a user.
 Represents the resource-specific role which a subject has been assigned through an access package assignment.
 
 ### [Get-MgEntitlementManagementAccessPackageCatalog](Get-MgEntitlementManagementAccessPackageCatalog.md)
-A container of access packages.
+Get accessPackageCatalog from identityGovernance
 
 ### [Get-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Get-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
 The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.
 
 ### [Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
-Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
-To request to add or remove an accessPackageResource, use create accessPackageResourceRequest.
+Get accessPackageResources from identityGovernance
 
 ### [Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceRole](Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceRole.md)
-Retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog.
-The resource should have been added to the catalog by creating an accessPackageResourceRequest.
-This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.
+The roles in each resource in a catalog.
+Read-only.
 
 ### [Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceScope](Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceScope.md)
 Get accessPackageResourceScopes from identityGovernance
@@ -151,16 +127,16 @@ Get accessPackageResourceScopes from identityGovernance
 Get customAccessPackageWorkflowExtensions from identityGovernance
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage](Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackage.md)
-Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+The  access packages whose assigned users are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Get-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
-Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.
+The  access packages whose assigned users are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleGroup](Get-MgEntitlementManagementAccessPackageIncompatibleGroup.md)
-Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+The groups whose members are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleGroupByRef](Get-MgEntitlementManagementAccessPackageIncompatibleGroupByRef.md)
-Retrieve a list of the group objects that have been marked as incompatible on an accessPackage.
+The groups whose members are ineligible to be assigned this access package.
 
 ### [Get-MgEntitlementManagementAccessPackageIncompatibleWith](Get-MgEntitlementManagementAccessPackageIncompatibleWith.md)
 The access packages that are incompatible with this package.
@@ -179,45 +155,37 @@ Represents a request to add or remove a resource to or from a catalog respective
 Represents references to a directory or domain of another organization whose users can request access.
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsor](Get-MgEntitlementManagementConnectedOrganizationExternalSponsor.md)
-Retrieve a list of a connectedOrganization's external sponsors.
-The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+Get externalSponsors from identityGovernance
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorById](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
-Retrieve a list of a connectedOrganization's external sponsors.
-The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+Get ref of externalSponsors from identityGovernance
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorDelta](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorDelta.md)
 Invoke function delta
 
 ### [Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject](Get-MgEntitlementManagementConnectedOrganizationExternalSponsorUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsor](Get-MgEntitlementManagementConnectedOrganizationInternalSponsor.md)
-Retrieve a list of a connectedOrganization's internal sponsors.
-The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+Get internalSponsors from identityGovernance
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorById](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorByRef.md)
-Retrieve a list of a connectedOrganization's internal sponsors.
-The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+Get ref of internalSponsors from identityGovernance
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorDelta](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorDelta.md)
 Invoke function delta
 
 ### [Get-MgEntitlementManagementConnectedOrganizationInternalSponsorUserOwnedObject](Get-MgEntitlementManagementConnectedOrganizationInternalSponsorUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgEntitlementManagementSetting](Get-MgEntitlementManagementSetting.md)
-Retrieve the properties of an entitlementManagementSettings object.
+Represents the settings that control the behavior of Azure AD entitlement management.
 
 ### [Get-MgEntitlementManagementSubject](Get-MgEntitlementManagementSubject.md)
 Get subjects from identityGovernance
@@ -311,7 +279,7 @@ If the accessReviewHistoryDefinition is a recurring definition, instances repres
 A definition that does not recur will have exactly one instance.
 
 ### [Get-MgIdentityGovernanceAccessReviewPolicy](Get-MgIdentityGovernanceAccessReviewPolicy.md)
-Read the properties and relationships of an accessReviewPolicy object.
+Resource that enables administrators to manage directory-level access review policies in their tenant.
 
 ### [Get-MgIdentityGovernanceAppConsentRequest](Get-MgIdentityGovernanceAppConsentRequest.md)
 A collection of userConsentRequest objects for a specific application.
@@ -335,8 +303,20 @@ The customTaskExtension instance.
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedBy.md)
 The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.
 
+### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
 ### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedBy](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedBy.md)
 The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
+
+### [Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowDeletedItem](Get-MgIdentityGovernanceLifecycleWorkflowDeletedItem.md)
 Deleted workflows in your lifecycle workflows instance.
@@ -362,6 +342,12 @@ The workflow versions that are available.
 ### [Get-MgIdentityGovernanceLifecycleWorkflowExecutionScope](Get-MgIdentityGovernanceLifecycleWorkflowExecutionScope.md)
 The unique identifier of the Azure AD identity that last modified the workflow object.
 
+### [Get-MgIdentityGovernanceLifecycleWorkflowExecutionScopeMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowExecutionScopeMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRun](Get-MgIdentityGovernanceLifecycleWorkflowRun.md)
 Workflow runs.
 
@@ -370,6 +356,12 @@ The related taskProcessingResults.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubject.md)
 The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
+
+### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultTask](Get-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultTask.md)
 The related workflow task
@@ -380,11 +372,17 @@ The associated individual user execution.
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubject.md)
 The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
 
+### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
 ### [Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultTaskProcessingResult.md)
 The associated individual task execution.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowSetting](Get-MgIdentityGovernanceLifecycleWorkflowSetting.md)
-Read the properties and relationships of a lifecycleManagementSettings object.
+The settings of the lifecycle workflows instance.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition](Get-MgIdentityGovernanceLifecycleWorkflowTaskDefinition.md)
 The definition of tasks within the lifecycle workflows instance.
@@ -404,6 +402,12 @@ The related lifecycle workflow taskProcessingResults.
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubject.md)
 The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
+### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultTask](Get-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultTask.md)
 The related workflow task
 
@@ -420,6 +424,12 @@ The result of processing the task.
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubject.md)
 The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
 
+### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
 ### [Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultTask](Get-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultTask.md)
 The related workflow task
 
@@ -428,6 +438,12 @@ Per-user workflow execution results.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubject.md)
 The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
+
+### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectMailboxSetting](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
 
 ### [Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult](Get-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultTaskProcessingResult.md)
 The associated individual task execution.
@@ -440,6 +456,12 @@ Get privilegedAccess from identityGovernance
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroup](Get-MgIdentityGovernancePrivilegedAccessGroup.md)
 Get group from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentApproval](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentApproval.md)
+Get assignmentApprovals from identityGovernance
+
+### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep.md)
+Get steps from identityGovernance
 
 ### [Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](Get-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
 Get assignmentSchedules from identityGovernance
@@ -535,8 +557,7 @@ Represents a tenant's customizable terms of use agreement that's created and man
 Represents the current status of a user's response to a company's customizable terms of use agreement.
 
 ### [Get-MgIdentityGovernanceTermOfUseAgreementFile](Get-MgIdentityGovernanceTermOfUseAgreementFile.md)
-Retrieve the details of the default file for an agreement, including the language and version information.
-The file information is specified through the agreementFile object.
+Default PDF linked to this agreement.
 
 ### [Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization](Get-MgIdentityGovernanceTermOfUseAgreementFileLocalization.md)
 The localized version of the terms of use agreement files attached to the agreement.
@@ -703,11 +724,14 @@ Read-only.
 Nullable.
 
 ### [Get-MgPrivilegedApprovalRoleInfoSetting](Get-MgPrivilegedApprovalRoleInfoSetting.md)
-Retrieve the role settings for the given role.
-A privilegedRoleSettings object will be returned.
+The settings for this role.
+Read-only.
+Nullable.
 
 ### [Get-MgPrivilegedApprovalRoleInfoSummary](Get-MgPrivilegedApprovalRoleInfoSummary.md)
-Retrieve the properties and relationships of privilegedRoleSummary object.
+The summary information for this role.
+Read-only.
+Nullable.
 
 ### [Get-MgPrivilegedOperationEvent](Get-MgPrivilegedOperationEvent.md)
 Get entity from privilegedOperationEvents by key
@@ -727,11 +751,14 @@ Read-only.
 Nullable.
 
 ### [Get-MgPrivilegedRoleAssignmentRequestRoleInfoSetting](Get-MgPrivilegedRoleAssignmentRequestRoleInfoSetting.md)
-Retrieve the role settings for the given role.
-A privilegedRoleSettings object will be returned.
+The settings for this role.
+Read-only.
+Nullable.
 
 ### [Get-MgPrivilegedRoleAssignmentRequestRoleInfoSummary](Get-MgPrivilegedRoleAssignmentRequestRoleInfoSummary.md)
-Retrieve the properties and relationships of privilegedRoleSummary object.
+The summary information for this role.
+Read-only.
+Nullable.
 
 ### [Get-MgPrivilegedRoleAssignmentRoleInfo](Get-MgPrivilegedRoleAssignmentRoleInfo.md)
 Read-only.
@@ -744,21 +771,27 @@ Read-only.
 Nullable.
 
 ### [Get-MgPrivilegedRoleAssignmentRoleInfoSetting](Get-MgPrivilegedRoleAssignmentRoleInfoSetting.md)
-Retrieve the role settings for the given role.
-A privilegedRoleSettings object will be returned.
+The settings for this role.
+Read-only.
+Nullable.
 
 ### [Get-MgPrivilegedRoleAssignmentRoleInfoSummary](Get-MgPrivilegedRoleAssignmentRoleInfoSummary.md)
-Retrieve the properties and relationships of privilegedRoleSummary object.
+The summary information for this role.
+Read-only.
+Nullable.
 
 ### [Get-MgPrivilegedRoleRoleAssignment](Get-MgPrivilegedRoleRoleAssignment.md)
 Retrieve the properties and relationships of privilegedRoleAssignment object.
 
 ### [Get-MgPrivilegedRoleSetting](Get-MgPrivilegedRoleSetting.md)
-Retrieve the role settings for the given role.
-A privilegedRoleSettings object will be returned.
+The settings for this role.
+Read-only.
+Nullable.
 
 ### [Get-MgPrivilegedRoleSummary](Get-MgPrivilegedRoleSummary.md)
-Retrieve the properties and relationships of privilegedRoleSummary object.
+The summary information for this role.
+Read-only.
+Nullable.
 
 ### [Get-MgProgram](Get-MgProgram.md)
 Get entity from programs by key
@@ -778,32 +811,22 @@ Read-only.
 Nullable.
 
 ### [Initialize-MgIdentityGovernanceLifecycleWorkflow](Initialize-MgIdentityGovernanceLifecycleWorkflow.md)
-Run a workflow object on-demand.
-You can run any workflow on-demand, including scheduled workflows.
-Workflows created from the 'Real-time employee termination' template are run on-demand only.
-When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
+Invoke action activate
 
 ### [Initialize-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Initialize-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
-Run a workflow object on-demand.
-You can run any workflow on-demand, including scheduled workflows.
-Workflows created from the 'Real-time employee termination' template are run on-demand only.
-When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
+Invoke action activate
 
 ### [Invoke-MgAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation](Invoke-MgAcceptIdentityGovernanceAccessReviewDecisionInstanceRecommendation.md)
-Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
-Recommendations are generated if **recommendationsEnabled** is `true` on the accessReviewScheduleDefinition object.
-If there is not a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
+Invoke action acceptRecommendations
 
 ### [Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation](Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation.md)
-Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
-Recommendations are generated if **recommendationsEnabled** is `true` on the accessReviewScheduleDefinition object.
-If there is not a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
+Invoke action acceptRecommendations
 
 ### [Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision](Invoke-MgBatchIdentityGovernanceAccessReviewDecisionInstanceRecordDecision.md)
-Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
+Invoke action batchRecordDecisions
 
 ### [Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision](Invoke-MgBatchIdentityGovernanceAccessReviewDefinitionInstanceRecordDecision.md)
-Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
+Invoke action batchRecordDecisions
 
 ### [Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser](Invoke-MgFilterEntitlementManagementAccessPackageAssignmentApprovalByCurrentUser.md)
 Invoke function filterByCurrentUser
@@ -847,6 +870,9 @@ Invoke function filterByCurrentUser
 ### [Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser](Invoke-MgFilterIdentityGovernanceAppConsentRequestUserConsentRequestByCurrentUser.md)
 Invoke function filterByCurrentUser
 
+### [Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentApprovalByCurrentUser](Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentApprovalByCurrentUser.md)
+Invoke function filterByCurrentUser
+
 ### [Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleByCurrentUser](Invoke-MgFilterIdentityGovernancePrivilegedAccessGroupAssignmentScheduleByCurrentUser.md)
 Invoke function filterByCurrentUser
 
@@ -875,47 +901,43 @@ Invoke function my
 Invoke function my
 
 ### [Invoke-MgRecordIdentityGovernanceAccessReviewDecision](Invoke-MgRecordIdentityGovernanceAccessReviewDecision.md)
-As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+Invoke action recordAllDecisions
 
 ### [Invoke-MgRecordIdentityGovernanceAccessReviewDecisionInstanceDecision](Invoke-MgRecordIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
-As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+Invoke action recordAllDecisions
 
 ### [Invoke-MgRecordIdentityGovernanceAccessReviewDecisionInstanceStageDecision](Invoke-MgRecordIdentityGovernanceAccessReviewDecisionInstanceStageDecision.md)
-As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+Invoke action recordAllDecisions
 
 ### [Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision](Invoke-MgRecordIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
-As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+Invoke action recordAllDecisions
 
 ### [Invoke-MgRemediateIdentityGovernanceRoleManagementAlertIncident](Invoke-MgRemediateIdentityGovernanceRoleManagementAlertIncident.md)
 Invoke action remediate
 
 ### [Invoke-MgSelfPrivilegedApprovalRoleInfoActivate](Invoke-MgSelfPrivilegedApprovalRoleInfoActivate.md)
-Activate the role that is assigned to the requester.
+Invoke action selfActivate
 
 ### [Invoke-MgSelfPrivilegedApprovalRoleInfoDeactivate](Invoke-MgSelfPrivilegedApprovalRoleInfoDeactivate.md)
-Deactivate the role that is assigned to the requestor.
+Invoke action selfDeactivate
 
 ### [Invoke-MgSelfPrivilegedRoleActivate](Invoke-MgSelfPrivilegedRoleActivate.md)
-Activate the role that is assigned to the requester.
+Invoke action selfActivate
 
 ### [Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoActivate](Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoActivate.md)
-Activate the role that is assigned to the requester.
+Invoke action selfActivate
 
 ### [Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate](Invoke-MgSelfPrivilegedRoleAssignmentRequestRoleInfoDeactivate.md)
-Deactivate the role that is assigned to the requestor.
+Invoke action selfDeactivate
 
 ### [Invoke-MgSelfPrivilegedRoleAssignmentRoleInfoActivate](Invoke-MgSelfPrivilegedRoleAssignmentRoleInfoActivate.md)
-Activate the role that is assigned to the requester.
+Invoke action selfActivate
 
 ### [Invoke-MgSelfPrivilegedRoleAssignmentRoleInfoDeactivate](Invoke-MgSelfPrivilegedRoleAssignmentRoleInfoDeactivate.md)
-Deactivate the role that is assigned to the requestor.
+Invoke action selfDeactivate
 
 ### [Invoke-MgSelfPrivilegedRoleDeactivate](Invoke-MgSelfPrivilegedRoleDeactivate.md)
-Deactivate the role that is assigned to the requestor.
+Invoke action selfDeactivate
 
 ### [Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowRun](Invoke-MgSummaryIdentityGovernanceLifecycleWorkflowRun.md)
 Invoke function summary
@@ -930,8 +952,7 @@ Invoke function summary
 Invoke function summary
 
 ### [Move-MgEntitlementManagementAccessPackageToCatalog](Move-MgEntitlementManagementAccessPackageToCatalog.md)
-In Azure AD entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog.
-The resources in the access package must be present in the target catalog.
+Invoke action moveToCatalog
 
 ### [New-MgAccessReview](New-MgAccessReview.md)
 In the Azure AD access reviews feature, create a new accessReview object.
@@ -951,17 +972,13 @@ Create new navigation property to decisions for accessReviews
 Create new navigation property to myDecisions for accessReviews
 
 ### [New-MgAccessReviewInstanceReviewer](New-MgAccessReviewInstanceReviewer.md)
-In the Azure AD access reviews feature, update an existing accessReview object to add another user as a reviewer.
-This operation is only permitted for an access review that is not yet completed, and only for an access review where the reviewers are explicitly specified.
-This operation is not permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
+Create new navigation property to reviewers for accessReviews
 
 ### [New-MgAccessReviewMyDecision](New-MgAccessReviewMyDecision.md)
 Create new navigation property to myDecisions for accessReviews
 
 ### [New-MgAccessReviewReviewer](New-MgAccessReviewReviewer.md)
-In the Azure AD access reviews feature, update an existing accessReview object to add another user as a reviewer.
-This operation is only permitted for an access review that is not yet completed, and only for an access review where the reviewers are explicitly specified.
-This operation is not permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers.
+Create new navigation property to reviewers for accessReviews
 
 ### [New-MgAgreement](New-MgAgreement.md)
 Add new entity to agreements
@@ -979,15 +996,13 @@ Create new navigation property to versions for agreements
 Add new entity to businessFlowTemplates
 
 ### [New-MgEntitlementManagementAccessPackage](New-MgEntitlementManagementAccessPackage.md)
-Create a new accessPackage object.
-The access package will be added to an existing accessPackageCatalog.
-After the access package is created, you can then create accessPackageAssignmentPolicies which specify how users are assigned to the access package.
+Create new navigation property to accessPackages for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageAssignment](New-MgEntitlementManagementAccessPackageAssignment.md)
 Create a new entitlement management accessPackageAssignment
 
 ### [New-MgEntitlementManagementAccessPackageAssignmentPolicy](New-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
-In Azure AD entitlement management, create a new accessPackageAssignmentPolicy object.
+Create new navigation property to accessPackageAssignmentPolicies for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler](New-MgEntitlementManagementAccessPackageAssignmentPolicyCustomExtensionHandler.md)
 Create new navigation property to customExtensionHandlers for identityGovernance
@@ -996,17 +1011,16 @@ Create new navigation property to customExtensionHandlers for identityGovernance
 Create new navigation property to customExtensionStageSettings for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageAssignmentRequest](New-MgEntitlementManagementAccessPackageAssignmentRequest.md)
-In Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.
-This operation is used to assign a user to an access package, or to remove an access package assignment.
+Create new navigation property to accessPackageAssignmentRequests for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageCatalog](New-MgEntitlementManagementAccessPackageCatalog.md)
-Create a new accessPackageCatalog object.
+Create new navigation property to accessPackageCatalogs for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](New-MgEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
 Create new navigation property to accessPackageCustomWorkflowExtensions for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](New-MgEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
-Create a new customAccessPackageWorkflowExtension object and add it to an existing accessPackageCatalog object.
+Create new navigation property to customAccessPackageWorkflowExtensions for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](New-MgEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Create new navigation property ref to incompatibleAccessPackages for identityGovernance
@@ -1015,16 +1029,13 @@ Create new navigation property ref to incompatibleAccessPackages for identityGov
 Create new navigation property ref to incompatibleGroups for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageResourceRequest](New-MgEntitlementManagementAccessPackageResourceRequest.md)
-Create a new accessPackageResourceRequest object to request the addition of a resource to an access package catalog, update of a resource, or the removal of a resource from a catalog.
-A resource must be included in an access package catalog before a role of that resource can be added to an access package.
+Create new navigation property to accessPackageResourceRequests for identityGovernance
 
 ### [New-MgEntitlementManagementAccessPackageResourceRoleScope](New-MgEntitlementManagementAccessPackageResourceRoleScope.md)
-Create a new accessPackageResourceRoleScope for adding a resource role to an access package.
-The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the **originId** for the resource role retrieved from the list of the resource roles.
-Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
+Create new navigation property to accessPackageResourceRoleScopes for identityGovernance
 
 ### [New-MgEntitlementManagementConnectedOrganization](New-MgEntitlementManagementConnectedOrganization.md)
-Create a new connectedOrganization object.
+Create new navigation property to connectedOrganizations for identityGovernance
 
 ### [New-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef](New-MgEntitlementManagementConnectedOrganizationExternalSponsorByRef.md)
 Create new navigation property ref to externalSponsors for identityGovernance
@@ -1060,7 +1071,7 @@ Create new navigation property to decisions for identityGovernance
 Create new navigation property to insights for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewDefinition](New-MgIdentityGovernanceAccessReviewDefinition.md)
-Create a new accessReviewScheduleDefinition object.
+Create new navigation property to definitions for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewDefinitionInstance](New-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
 Create new navigation property to instances for identityGovernance
@@ -1081,15 +1092,13 @@ Create new navigation property to stages for identityGovernance
 Create new navigation property to decisions for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewHistoryDefinition](New-MgIdentityGovernanceAccessReviewHistoryDefinition.md)
-Create a new accessReviewHistoryDefinition object.
+Create new navigation property to historyDefinitions for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance](New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstance.md)
 Create new navigation property to instances for identityGovernance
 
 ### [New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri](New-MgIdentityGovernanceAccessReviewHistoryDefinitionInstanceDownloadUri.md)
-Generates a URI for an accessReviewHistoryInstance object the **status** for which is `done`.
-Each URI can be used to retrieve the instance's review history data.
-Each URI is valid for 24 hours and can be retrieved by fetching the **downloadUri** property from the accessReviewHistoryInstance object.
+Invoke action generateDownloadUri
 
 ### [New-MgIdentityGovernanceAppConsentRequest](New-MgIdentityGovernanceAppConsentRequest.md)
 Create new navigation property to appConsentRequests for identityGovernance
@@ -1101,17 +1110,22 @@ Create new navigation property to userConsentRequests for identityGovernance
 Create new navigation property to steps for identityGovernance
 
 ### [New-MgIdentityGovernanceLifecycleWorkflow](New-MgIdentityGovernanceLifecycleWorkflow.md)
-Create a new workflow object.
-You can create up to 50 workflows in a tenant.
+Create new navigation property to workflows for identityGovernance
 
 ### [New-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](New-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
-Create a new customTaskExtension object.
+Create new navigation property to customTaskExtensions for identityGovernance
 
 ### [New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion](New-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowNewVersion.md)
-Create a new version of the workflow object.
+Invoke action createNewVersion
 
 ### [New-MgIdentityGovernanceLifecycleWorkflowNewVersion](New-MgIdentityGovernanceLifecycleWorkflowNewVersion.md)
-Create a new version of the workflow object.
+Invoke action createNewVersion
+
+### [New-MgIdentityGovernancePrivilegedAccessGroupAssignmentApproval](New-MgIdentityGovernancePrivilegedAccessGroupAssignmentApproval.md)
+Create new navigation property to assignmentApprovals for identityGovernance
+
+### [New-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep](New-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep.md)
+Create new navigation property to steps for identityGovernance
 
 ### [New-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](New-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
 Create new navigation property to assignmentSchedules for identityGovernance
@@ -1147,7 +1161,7 @@ Create new navigation property to alertIncidents for identityGovernance
 Create new navigation property to operations for identityGovernance
 
 ### [New-MgIdentityGovernanceTermOfUseAgreement](New-MgIdentityGovernanceTermOfUseAgreement.md)
-Create a new agreement object.
+Create new navigation property to agreements for identityGovernance
 
 ### [New-MgIdentityGovernanceTermOfUseAgreementAcceptance](New-MgIdentityGovernanceTermOfUseAgreementAcceptance.md)
 Create new navigation property to agreementAcceptances for identityGovernance
@@ -1180,8 +1194,7 @@ Create new navigation property to roleSettings for privilegedAccess
 Create new navigation property to roleAssignments for privilegedAccess
 
 ### [New-MgPrivilegedAccessRoleAssignmentRequest](New-MgPrivilegedAccessRoleAssignmentRequest.md)
-Create a role assignment request to represent the operation you want on a role assignment.
-The following table lists the operations.
+Create new navigation property to roleAssignmentRequests for privilegedAccess
 
 ### [New-MgPrivilegedAccessRoleDefinition](New-MgPrivilegedAccessRoleDefinition.md)
 Create new navigation property to roleDefinitions for privilegedAccess
@@ -1202,13 +1215,10 @@ Add new entity to privilegedRoles
 Use this API to create a new  privilegedRoleAssignment.
 
 ### [New-MgPrivilegedRoleAssignmentEligible](New-MgPrivilegedRoleAssignmentEligible.md)
-Make the role assignment eligible.
-If the role assignment is already eligible before the call, it does nothing.
-If the role assignment is permanent and the requestor is different from the target user, the role assignment will become eligible and the role will be deactivated for the target user.
-If the requestor is the target user and the role is Security Administrator or Privileged Role Administrator, the role will be activated with the default expiration.
+Invoke action makeEligible
 
 ### [New-MgPrivilegedRoleAssignmentPermanent](New-MgPrivilegedRoleAssignmentPermanent.md)
-Make the role assignment permanent.
+Invoke action makePermanent
 
 ### [New-MgPrivilegedRoleAssignmentRequest](New-MgPrivilegedRoleAssignmentRequest.md)
 Create a privilegedroleassignmentrequest object.
@@ -1416,6 +1426,12 @@ Delete navigation property privilegedAccess for identityGovernance
 ### [Remove-MgIdentityGovernancePrivilegedAccessGroup](Remove-MgIdentityGovernancePrivilegedAccessGroup.md)
 Delete navigation property group for identityGovernance
 
+### [Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentApproval](Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentApproval.md)
+Delete navigation property assignmentApprovals for identityGovernance
+
+### [Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep](Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep.md)
+Delete navigation property steps for identityGovernance
+
 ### [Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](Remove-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
 Delete navigation property assignmentSchedules for identityGovernance
 
@@ -1588,47 +1604,34 @@ Delete navigation property program for programControls
 Delete entity from programControlTypes
 
 ### [Reset-MgAccessReviewDecision](Reset-MgAccessReviewDecision.md)
-In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.
-The target object can be either a one-time access review, or an instance of a recurring access review.
-Previous decisions are no longer recorded, but reviewers can continue to update decisions.
+Invoke action resetDecisions
 
 ### [Reset-MgAccessReviewInstanceDecision](Reset-MgAccessReviewInstanceDecision.md)
-In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.
-The target object can be either a one-time access review, or an instance of a recurring access review.
-Previous decisions are no longer recorded, but reviewers can continue to update decisions.
+Invoke action resetDecisions
 
 ### [Reset-MgIdentityGovernanceAccessReviewDecisionInstanceDecision](Reset-MgIdentityGovernanceAccessReviewDecisionInstanceDecision.md)
-Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
+Invoke action resetDecisions
 
 ### [Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision](Reset-MgIdentityGovernanceAccessReviewDefinitionInstanceDecision.md)
-Resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to `notReviewed`.
+Invoke action resetDecisions
 
 ### [Restore-MgIdentityGovernanceLifecycleWorkflow](Restore-MgIdentityGovernanceLifecycleWorkflow.md)
-Restore a workflow that has been deleted.
-You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
+Invoke action restore
 
 ### [Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow](Restore-MgIdentityGovernanceLifecycleWorkflowDeletedItemWorkflow.md)
-Restore a workflow that has been deleted.
-You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
+Invoke action restore
 
 ### [Resume-MgEntitlementManagementAccessPackageAssignmentRequest](Resume-MgEntitlementManagementAccessPackageAssignmentRequest.md)
-In Azure AD entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
-It is performed on an accessPackageAssignmentRequest object whose **requestStatus** is in a `WaitingForCallback` state.
+Invoke action resume
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
-In the default case an Azure Logic Apps system-assigned managed identity calls this API.
-For more information read about Lifecycle Workflows extensibility approach.
+Invoke action resume
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
-In the default case an Azure Logic Apps system-assigned managed identity calls this API.
-For more information read about Lifecycle Workflows extensibility approach.
+Invoke action resume
 
 ### [Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Resume-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
-Resume a task processing result that's `inProgress`.
-In the default case an Azure Logic Apps system-assigned managed identity calls this API.
-For more information read about Lifecycle Workflows extensibility approach.
+Invoke action resume
 
 ### [Select-MgEntitlementManagementAccessPackage](Select-MgEntitlementManagementAccessPackage.md)
 Select matching entitlement management accessPackage
@@ -1637,18 +1640,16 @@ Select matching entitlement management accessPackage
 Select matching entitlement management accessPackageAssignmentPolicy
 
 ### [Send-MgAccessReviewInstanceReminder](Send-MgAccessReviewInstanceReminder.md)
-In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.
-The target object can be either a one-time access review, or an instance of a recurring access review.
+Invoke action sendReminder
 
 ### [Send-MgAccessReviewReminder](Send-MgAccessReviewReminder.md)
-In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.
-The target object can be either a one-time access review, or an instance of a recurring access review.
+Invoke action sendReminder
 
 ### [Send-MgIdentityGovernanceAccessReviewDecisionInstanceReminder](Send-MgIdentityGovernanceAccessReviewDecisionInstanceReminder.md)
-Send a reminder to the reviewers of a currently active accessReviewInstance.
+Invoke action sendReminder
 
 ### [Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder](Send-MgIdentityGovernanceAccessReviewDefinitionInstanceReminder.md)
-Send a reminder to the reviewers of a currently active accessReviewInstance.
+Invoke action sendReminder
 
 ### [Set-MgEntitlementManagementAccessPackageAssignmentPolicy](Set-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
 Update the navigation property accessPackageAssignmentPolicies in identityGovernance
@@ -1657,46 +1658,28 @@ Update the navigation property accessPackageAssignmentPolicies in identityGovern
 Split elements of one or more Azure AD entitlement management connected organizations, returned by Get-MgEntitlementManagementConnectedOrganization, to simplify reporting.
 
 ### [Stop-MgAccessReview](Stop-MgAccessReview.md)
-In the Azure AD access reviews feature, stop a currently active accessReview.
-The target object can be either a one-time access review, or an instance of a recurring access review.
-(To prevent a recurring access review from starting future instances, update it to change its scheduled end date).
-After the access review stops, reviewers can no longer give input, and the access review decisions can be applied.
+Invoke action stop
 
 ### [Stop-MgAccessReviewInstance](Stop-MgAccessReviewInstance.md)
-In the Azure AD access reviews feature, stop a currently active accessReview.
-The target object can be either a one-time access review, or an instance of a recurring access review.
-(To prevent a recurring access review from starting future instances, update it to change its scheduled end date).
-After the access review stops, reviewers can no longer give input, and the access review decisions can be applied.
+Invoke action stop
 
 ### [Stop-MgEntitlementManagementAccessPackageAssignmentRequest](Stop-MgEntitlementManagementAccessPackageAssignmentRequest.md)
-In Azure AD Entitlement Management, cancel accessPackageAssignmentRequest objects that are in a cancellable state: `accepted`, `pendingApproval`, `pendingNotBefore`, `pendingApprovalEscalated`.
+Invoke action cancel
 
 ### [Stop-MgIdentityGovernanceAccessReviewDecisionInstance](Stop-MgIdentityGovernanceAccessReviewDecisionInstance.md)
-Stop a currently active accessReviewInstance.
-After the access review instance stops, the instance status will be `Completed`, the reviewers can no longer give input, and the access review decisions can be applied.
-Stopping an instance will not effect future instances.
-To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
+Invoke action stop
 
 ### [Stop-MgIdentityGovernanceAccessReviewDecisionInstanceStage](Stop-MgIdentityGovernanceAccessReviewDecisionInstanceStage.md)
-Stop an access review stage that is `inProgress`.
-After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
-If there are subsequent stages that depend on the completed stage, the next stage will be created.
-The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
+Invoke action stop
 
 ### [Stop-MgIdentityGovernanceAccessReviewDefinition](Stop-MgIdentityGovernanceAccessReviewDefinition.md)
 Invoke action stop
 
 ### [Stop-MgIdentityGovernanceAccessReviewDefinitionInstance](Stop-MgIdentityGovernanceAccessReviewDefinitionInstance.md)
-Stop a currently active accessReviewInstance.
-After the access review instance stops, the instance status will be `Completed`, the reviewers can no longer give input, and the access review decisions can be applied.
-Stopping an instance will not effect future instances.
-To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
+Invoke action stop
 
 ### [Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage](Stop-MgIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
-Stop an access review stage that is `inProgress`.
-After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
-If there are subsequent stages that depend on the completed stage, the next stage will be created.
-The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
+Invoke action stop
 
 ### [Stop-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest](Stop-MgIdentityGovernancePrivilegedAccessGroupAssignmentScheduleRequest.md)
 Invoke action cancel
@@ -1711,29 +1694,13 @@ Invoke action cancel
 Invoke action cancel
 
 ### [Stop-MgPrivilegedRoleAssignmentRequest](Stop-MgPrivilegedRoleAssignmentRequest.md)
-Cancel a privilegedRoleAssignmentRequest.
+Invoke action cancel
 
 ### [Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty](Test-MgEntitlementManagementConnectedOrganizationExternalSponsorProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgEntitlementManagementConnectedOrganizationInternalSponsorProperty](Test-MgEntitlementManagementConnectedOrganizationInternalSponsorProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Update-MgAccessReview](Update-MgAccessReview.md)
 In the Azure AD access reviews feature, update an existing accessReview object to change one or more of its properties.
@@ -1821,7 +1788,7 @@ Update the navigation property accessPackageResourceRoleScopes in identityGovern
 Update the navigation property connectedOrganizations in identityGovernance
 
 ### [Update-MgEntitlementManagementSetting](Update-MgEntitlementManagementSetting.md)
-Update an existing entitlementManagementSettings object to change one or more of its properties.
+Update the navigation property settings in identityGovernance
 
 ### [Update-MgEntitlementManagementSubject](Update-MgEntitlementManagementSubject.md)
 Update the navigation property subjects in identityGovernance
@@ -1884,7 +1851,7 @@ Update the navigation property historyDefinitions in identityGovernance
 Update the navigation property instances in identityGovernance
 
 ### [Update-MgIdentityGovernanceAccessReviewPolicy](Update-MgIdentityGovernanceAccessReviewPolicy.md)
-Update the properties of an accessReviewPolicy object.
+Update the navigation property policy in identityGovernance
 
 ### [Update-MgIdentityGovernanceAppConsentRequest](Update-MgIdentityGovernanceAppConsentRequest.md)
 Update the navigation property appConsentRequests in identityGovernance
@@ -1904,14 +1871,44 @@ Update the navigation property workflows in identityGovernance
 ### [Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Update the navigation property customTaskExtensions in identityGovernance
 
+### [Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting](Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionCreatedByMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByMailboxSetting](Update-MgIdentityGovernanceLifecycleWorkflowCustomTaskExtensionLastModifiedByMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgIdentityGovernanceLifecycleWorkflowExecutionScopeMailboxSetting](Update-MgIdentityGovernanceLifecycleWorkflowExecutionScopeMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectMailboxSetting](Update-MgIdentityGovernanceLifecycleWorkflowRunTaskProcessingResultSubjectMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectMailboxSetting](Update-MgIdentityGovernanceLifecycleWorkflowRunUserProcessingResultSubjectMailboxSetting.md)
+Update property mailboxSettings value.
+
 ### [Update-MgIdentityGovernanceLifecycleWorkflowSetting](Update-MgIdentityGovernanceLifecycleWorkflowSetting.md)
-Update the properties of a lifecycleManagementSettings object.
+Update the navigation property settings in identityGovernance
+
+### [Update-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectMailboxSetting](Update-MgIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResultSubjectMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectMailboxSetting](Update-MgIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResultSubjectMailboxSetting.md)
+Update property mailboxSettings value.
+
+### [Update-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectMailboxSetting](Update-MgIdentityGovernanceLifecycleWorkflowUserProcessingResultSubjectMailboxSetting.md)
+Update property mailboxSettings value.
 
 ### [Update-MgIdentityGovernancePrivilegedAccess](Update-MgIdentityGovernancePrivilegedAccess.md)
 Update the navigation property privilegedAccess in identityGovernance
 
 ### [Update-MgIdentityGovernancePrivilegedAccessGroup](Update-MgIdentityGovernancePrivilegedAccessGroup.md)
 Update the navigation property group in identityGovernance
+
+### [Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApproval](Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApproval.md)
+Update the navigation property assignmentApprovals in identityGovernance
+
+### [Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep](Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentApprovalStep.md)
+Update the navigation property steps in identityGovernance
 
 ### [Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule](Update-MgIdentityGovernancePrivilegedAccessGroupAssignmentSchedule.md)
 Update the navigation property assignmentSchedules in identityGovernance
@@ -2028,8 +2025,7 @@ Update the properties of privilegedapproval object.
 Update the navigation property roleInfo in privilegedApproval
 
 ### [Update-MgPrivilegedApprovalRoleInfoSetting](Update-MgPrivilegedApprovalRoleInfoSetting.md)
-Update the role settings for the given role setting.
-A privilegedRoleSettings object will be returned.
+Update the navigation property settings in privilegedApproval
 
 ### [Update-MgPrivilegedApprovalRoleInfoSummary](Update-MgPrivilegedApprovalRoleInfoSummary.md)
 Update the navigation property summary in privilegedApproval
@@ -2050,8 +2046,7 @@ Update entity in privilegedRoleAssignmentRequests
 Update the navigation property roleInfo in privilegedRoleAssignmentRequests
 
 ### [Update-MgPrivilegedRoleAssignmentRequestRoleInfoSetting](Update-MgPrivilegedRoleAssignmentRequestRoleInfoSetting.md)
-Update the role settings for the given role setting.
-A privilegedRoleSettings object will be returned.
+Update the navigation property settings in privilegedRoleAssignmentRequests
 
 ### [Update-MgPrivilegedRoleAssignmentRequestRoleInfoSummary](Update-MgPrivilegedRoleAssignmentRequestRoleInfoSummary.md)
 Update the navigation property summary in privilegedRoleAssignmentRequests
@@ -2060,15 +2055,13 @@ Update the navigation property summary in privilegedRoleAssignmentRequests
 Update the navigation property roleInfo in privilegedRoleAssignments
 
 ### [Update-MgPrivilegedRoleAssignmentRoleInfoSetting](Update-MgPrivilegedRoleAssignmentRoleInfoSetting.md)
-Update the role settings for the given role setting.
-A privilegedRoleSettings object will be returned.
+Update the navigation property settings in privilegedRoleAssignments
 
 ### [Update-MgPrivilegedRoleAssignmentRoleInfoSummary](Update-MgPrivilegedRoleAssignmentRoleInfoSummary.md)
 Update the navigation property summary in privilegedRoleAssignments
 
 ### [Update-MgPrivilegedRoleSetting](Update-MgPrivilegedRoleSetting.md)
-Update the role settings for the given role setting.
-A privilegedRoleSettings object will be returned.
+Update the navigation property settings in privilegedRoles
 
 ### [Update-MgPrivilegedRoleSummary](Update-MgPrivilegedRoleSummary.md)
 Update the navigation property summary in privilegedRoles

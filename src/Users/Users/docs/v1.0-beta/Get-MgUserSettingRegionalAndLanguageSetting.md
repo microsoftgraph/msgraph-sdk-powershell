@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserSettingRegionalAndLanguageSetting
 
 ## SYNOPSIS
-Get the properties of a regionalAndLanguageSettings object.
+The user's preferences for languages, regional locale and date/time formatting.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity> [-Expa
 ```
 
 ## DESCRIPTION
-Get the properties of a regionalAndLanguageSettings object.
+The user's preferences for languages, regional locale and date/time formatting.
 
 ## EXAMPLES
 

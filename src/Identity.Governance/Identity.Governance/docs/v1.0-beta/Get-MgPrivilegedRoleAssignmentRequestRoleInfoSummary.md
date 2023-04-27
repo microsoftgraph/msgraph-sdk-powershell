@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgPrivilegedRoleAssignmentRequestRoleInfoSummary
 
 ## SYNOPSIS
-Retrieve the properties and relationships of privilegedRoleSummary object.
+The summary information for this role.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgPrivilegedRoleAssignmentRequestRoleInfoSummary -InputObject <IIdentityGove
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of privilegedRoleSummary object.
+The summary information for this role.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Set-MgUserPresenceStatusMessage
 
 ## SYNOPSIS
-Set a presence status message for a user.
-An optional expiration date and time can be supplied.
+Invoke action setStatusMessage
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Set-MgUserPresenceStatusMessage -InputObject <IUsersActionsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Set a presence status message for a user.
-An optional expiration date and time can be supplied.
+Invoke action setStatusMessage
 
 ## EXAMPLES
 

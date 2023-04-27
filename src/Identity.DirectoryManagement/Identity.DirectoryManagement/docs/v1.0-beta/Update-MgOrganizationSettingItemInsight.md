@@ -8,9 +8,7 @@ schema: 2.0.0
 # Update-MgOrganizationSettingItemInsight
 
 ## SYNOPSIS
-Update the privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+Update the navigation property itemInsights in organization
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ Update-MgOrganizationSettingItemInsight -InputObject <IIdentityDirectoryManageme
 ```
 
 ## DESCRIPTION
-Update the privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+Update the navigation property itemInsights in organization
 
 ## EXAMPLES
 

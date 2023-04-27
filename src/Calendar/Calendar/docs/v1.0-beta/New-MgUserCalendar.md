@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserCalendar
 
 ## SYNOPSIS
-Create a new calendar for a user.
+Create new navigation property to calendars for users
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ New-MgUserCalendar -InputObject <ICalendarIdentity> [-AdditionalProperties <Hash
 ```
 
 ## DESCRIPTION
-Create a new calendar for a user.
+Create new navigation property to calendars for users
 
 ## EXAMPLES
 

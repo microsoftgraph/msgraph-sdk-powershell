@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgGroupPermissionGrantMemberGroup
 
 ## SYNOPSIS
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Get-MgGroupPermissionGrantMemberGroup -InputObject <IGroupsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ## EXAMPLES
 
@@ -244,6 +242,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

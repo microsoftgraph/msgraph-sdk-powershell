@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBusinessScenarioPlannerPlan
 
 ## SYNOPSIS
-Get information about the plannerPlan mapped to a given target.
-If a **plannerPlan** doesn't exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
+Invoke action getPlan
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Get-MgBusinessScenarioPlannerPlan -InputObject <IBookingsIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Get information about the plannerPlan mapped to a given target.
-If a **plannerPlan** doesn't exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
+Invoke action getPlan
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Disable-MgUserAuthenticationPhoneMethodSmSign
 
 ## SYNOPSIS
-Disable SMS sign-in for an existing `mobile` phone number registered to a user.
-The number will no longer be available for SMS sign-in, which can prevent your user from signing in.
+Invoke action disableSmsSignIn
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Disable-MgUserAuthenticationPhoneMethodSmSign -InputObject <IUsersActionsIdentit
 ```
 
 ## DESCRIPTION
-Disable SMS sign-in for an existing `mobile` phone number registered to a user.
-The number will no longer be available for SMS sign-in, which can prevent your user from signing in.
+Invoke action disableSmsSignIn
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Restore-MgUserCloudPc
 
 ## SYNOPSIS
-Restore a specific Cloud PC.
-Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
+Invoke action restore
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Restore-MgUserCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Restore a specific Cloud PC.
-Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
+Invoke action restore
 
 ## EXAMPLES
 

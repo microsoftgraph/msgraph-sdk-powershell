@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex
 
 ## SYNOPSIS
-Trigger an indexOperation
+Invoke action updateIndex
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex -InputObject <ISe
 ```
 
 ## DESCRIPTION
-Trigger an indexOperation
+Invoke action updateIndex
 
 ## EXAMPLES
 

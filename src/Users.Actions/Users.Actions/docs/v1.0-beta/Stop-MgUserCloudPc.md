@@ -8,8 +8,7 @@ schema: 2.0.0
 # Stop-MgUserCloudPc
 
 ## SYNOPSIS
-Stop a specific Cloud PC for a user.
-Currently, only Windows 365 Frontline Cloud PCs are supported.
+Invoke action stop
 
 ## SYNTAX
 
@@ -24,8 +23,7 @@ Stop-MgUserCloudPc -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [
 ```
 
 ## DESCRIPTION
-Stop a specific Cloud PC for a user.
-Currently, only Windows 365 Frontline Cloud PCs are supported.
+Invoke action stop
 
 ## EXAMPLES
 

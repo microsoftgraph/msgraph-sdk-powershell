@@ -23,7 +23,7 @@ Update-MgEducationMeUserMailboxSetting [-AdditionalProperties <Hashtable>] [-Arc
 
 ### Update
 ```
-Update-MgEducationMeUserMailboxSetting -BodyParameter <IMicrosoftGraphMailboxSettings1> [-PassThru] [-Confirm]
+Update-MgEducationMeUserMailboxSetting -BodyParameter <IMicrosoftGraphMailboxSettings> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
@@ -86,7 +86,7 @@ mailboxSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailboxSettings1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailboxSettings
 Parameter Sets: Update
 Aliases:
 
@@ -270,7 +270,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailboxSettings1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMailboxSettings
 
 ## OUTPUTS
 
@@ -297,7 +297,7 @@ AUTOMATICREPLIESSETTING <IMicrosoftGraphAutomaticRepliesSetting>: automaticRepli
   - `[ScheduledStartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[Status <String>]`: automaticRepliesStatus
 
-BODYPARAMETER <IMicrosoftGraphMailboxSettings1>: mailboxSettings
+BODYPARAMETER <IMicrosoftGraphMailboxSettings>: mailboxSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ArchiveFolder <String>]`: Folder ID of an archive folder for the user. Read-only.
   - `[AutomaticRepliesSetting <IMicrosoftGraphAutomaticRepliesSetting>]`: automaticRepliesSetting

@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgUserOutlookTaskFolderTask
 
 ## SYNOPSIS
-Create an Outlook task in the specified task folder.
-The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
+Create new navigation property to tasks for users
 
 ## SYNTAX
 
@@ -57,8 +56,7 @@ New-MgUserOutlookTaskFolderTask -InputObject <IUsersIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Create an Outlook task in the specified task folder.
-The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone.
+Create new navigation property to tasks for users
 
 ## EXAMPLES
 

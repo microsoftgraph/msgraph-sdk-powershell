@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgPolicyPermissionGrantPolicyInclude
 
 ## SYNOPSIS
-Add conditions under which a permission grant event is *included* in a permission grant policy.
-You do this by adding a permissionGrantConditionSet to the **includes** collection of a  permissionGrantPolicy.
+Create new navigation property to includes for policies
 
 ## SYNTAX
 
@@ -45,8 +44,7 @@ New-MgPolicyPermissionGrantPolicyInclude -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Add conditions under which a permission grant event is *included* in a permission grant policy.
-You do this by adding a permissionGrantConditionSet to the **includes** collection of a  permissionGrantPolicy.
+Create new navigation property to includes for policies
 
 ## EXAMPLES
 
@@ -383,6 +381,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

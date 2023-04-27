@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgSnoozeGroupCalendarEventReminder
 
 ## SYNOPSIS
-Postpone a reminder for an event in a user calendar until a new time.
+Invoke action snoozeReminder
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Invoke-MgSnoozeGroupCalendarEventReminder -InputObject <IGroupsIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Postpone a reminder for an event in a user calendar until a new time.
+Invoke action snoozeReminder
 
 ## EXAMPLES
 
@@ -250,6 +250,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

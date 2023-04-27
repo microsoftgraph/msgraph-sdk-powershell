@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgArchiveServiceAnnouncementMessage
 
 ## SYNOPSIS
-Archive a list of serviceUpdateMessages for the signed in user.
+Invoke action archive
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Invoke-MgArchiveServiceAnnouncementMessage
 ```
 
 ## DESCRIPTION
-Archive a list of serviceUpdateMessages for the signed in user.
+Invoke action archive
 
 ## EXAMPLES
 

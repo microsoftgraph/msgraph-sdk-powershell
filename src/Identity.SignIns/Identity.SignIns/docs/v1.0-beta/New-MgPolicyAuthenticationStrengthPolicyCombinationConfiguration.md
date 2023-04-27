@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration
 
 ## SYNOPSIS
-Create a new authenticationCombinationConfiguration object.
-In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
+Create new navigation property to combinationConfigurations for policies
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ New-MgPolicyAuthenticationStrengthPolicyCombinationConfiguration -InputObject <I
 ```
 
 ## DESCRIPTION
-Create a new authenticationCombinationConfiguration object.
-In use, only fido2combinationConfigurations may be created, and these may only be created for custom authentication strength policies.
+Create new navigation property to combinationConfigurations for policies
 
 ## EXAMPLES
 
@@ -239,6 +237,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

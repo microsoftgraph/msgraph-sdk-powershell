@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgRenewGroupLifecyclePolicy
 
 ## SYNOPSIS
-Renew a group's expiration.
-When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+Invoke action renewGroup
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Invoke-MgRenewGroupLifecyclePolicy
 ```
 
 ## DESCRIPTION
-Renew a group's expiration.
-When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+Invoke action renewGroup
 
 ## EXAMPLES
 

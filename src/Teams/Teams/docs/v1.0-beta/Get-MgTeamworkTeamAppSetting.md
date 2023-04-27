@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkTeamAppSetting
 
 ## SYNOPSIS
-Read the properties and relationships of a teamsAppSettings object.
+Represents tenant-wide settings for all Teams apps in the tenant.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgTeamworkTeamAppSetting [-ExpandProperty <String[]>] [-Property <String[]>]
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a teamsAppSettings object.
+Represents tenant-wide settings for all Teams apps in the tenant.
 
 ## EXAMPLES
 

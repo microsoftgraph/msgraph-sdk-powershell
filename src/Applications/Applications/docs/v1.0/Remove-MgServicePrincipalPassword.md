@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgServicePrincipalPassword
 
 ## SYNOPSIS
-Remove a password from a servicePrincipal object.
+Invoke action removePassword
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Remove-MgServicePrincipalPassword -InputObject <IApplicationsIdentity> [-Additio
 ```
 
 ## DESCRIPTION
-Remove a password from a servicePrincipal object.
+Invoke action removePassword
 
 ## EXAMPLES
 

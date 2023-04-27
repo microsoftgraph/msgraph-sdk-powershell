@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgCommunicationCall
 
 ## SYNOPSIS
-Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
-You will need to register the calling bot and go through the list of permissions needed as mentioned below.
+Create new navigation property to calls for communications
 
 ## SYNTAX
 
@@ -35,8 +34,7 @@ New-MgCommunicationCall -BodyParameter <IMicrosoftGraphCall> [-Confirm] [-WhatIf
 ```
 
 ## DESCRIPTION
-Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting.
-You will need to register the calling bot and go through the list of permissions needed as mentioned below.
+Create new navigation property to calls for communications
 
 ## EXAMPLES
 

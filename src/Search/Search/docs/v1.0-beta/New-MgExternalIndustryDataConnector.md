@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgExternalIndustryDataConnector
 
 ## SYNOPSIS
-Create a new industryDataConnector object.
+Create new navigation property to dataConnectors for external
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgExternalIndustryDataConnector -BodyParameter <IMicrosoftGraphIndustryDataC
 ```
 
 ## DESCRIPTION
-Create a new industryDataConnector object.
+Create new navigation property to dataConnectors for external
 
 ## EXAMPLES
 

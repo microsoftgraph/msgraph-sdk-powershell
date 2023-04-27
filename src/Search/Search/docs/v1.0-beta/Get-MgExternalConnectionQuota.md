@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgExternalConnectionQuota
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a connectionQuota object.
+Get quota from external
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgExternalConnectionQuota -InputObject <ISearchIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a connectionQuota object.
+Get quota from external
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgMarkChatUnreadForUser
 
 ## SYNOPSIS
-Mark a chat as unread for a user.
+Invoke action markChatUnreadForUser
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Invoke-MgMarkChatUnreadForUser -InputObject <ITeamsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Mark a chat as unread for a user.
+Invoke action markChatUnreadForUser
 
 ## EXAMPLES
 

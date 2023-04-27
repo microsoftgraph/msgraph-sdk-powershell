@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgChatPermissionGrantById
 
 ## SYNOPSIS
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Get-MgChatPermissionGrantById -InputObject <ITeamsIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ## EXAMPLES
 

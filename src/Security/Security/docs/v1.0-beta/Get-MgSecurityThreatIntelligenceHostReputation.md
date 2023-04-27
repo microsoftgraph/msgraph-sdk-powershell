@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityThreatIntelligenceHostReputation
 
 ## SYNOPSIS
-Get the properties and relationships of a hostReputation object.
+Represents a calculated reputation of this host.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSecurityThreatIntelligenceHostReputation -InputObject <ISecurityIdentity> 
 ```
 
 ## DESCRIPTION
-Get the properties and relationships of a hostReputation object.
+Represents a calculated reputation of this host.
 
 ## EXAMPLES
 

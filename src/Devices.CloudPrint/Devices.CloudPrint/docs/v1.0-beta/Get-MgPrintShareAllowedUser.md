@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPrintShareAllowedUser
 
 ## SYNOPSIS
-Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+The users who have access to print using the printer.
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgPrintShareAllowedUser -PrinterShareId <String> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+The users who have access to print using the printer.
 
 ## EXAMPLES
 

@@ -15,8 +15,9 @@ Wipe a device
 ### WipeExpanded (Default)
 ```
 Clear-MgUserManagedDevice -ManagedDeviceId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-KeepEnrollmentData] [-KeepUserData] [-MacOSUnlockCode <String>] [-PersistEsimDataPlan] [-UseProtectedWipe]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-KeepEnrollmentData] [-KeepUserData] [-MacOSUnlockCode <String>]
+ [-ObliterationBehavior <ObliterationBehavior>] [-PersistEsimDataPlan] [-UseProtectedWipe] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Wipe
@@ -36,8 +37,9 @@ Clear-MgUserManagedDevice -InputObject <IUsersActionsIdentity>
 ### WipeViaIdentityExpanded
 ```
 Clear-MgUserManagedDevice -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-KeepEnrollmentData] [-KeepUserData] [-MacOSUnlockCode <String>] [-PersistEsimDataPlan] [-UseProtectedWipe]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-KeepEnrollmentData] [-KeepUserData] [-MacOSUnlockCode <String>]
+ [-ObliterationBehavior <ObliterationBehavior>] [-PersistEsimDataPlan] [-UseProtectedWipe] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -148,6 +150,25 @@ Parameter Sets: Wipe, WipeExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ObliterationBehavior
+In macOS 12 and later, this command uses Erase All Content and Settings (EACS) on Mac computers with the Apple M1 chip or the Apple T2 Security Chip.
+On those devices, if EACS can’t run, the device can use obliteration (macOS 11.x behavior).
+This key has no effect on machines prior to the T2 chip.
+Upon receiving this command, the device performs preflight checks to determine if the device is in a state that allows EACS.
+The ObliterationBehavior value defines the device's fallback behavior.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Support.ObliterationBehavior
+Parameter Sets: WipeExpanded, WipeViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -272,6 +293,7 @@ BODYPARAMETER <IPaths14R8Rr7UsersUserIdManageddevicesManageddeviceIdMicrosoftGra
   - `[KeepEnrollmentData <Boolean?>]`: 
   - `[KeepUserData <Boolean?>]`: 
   - `[MacOSUnlockCode <String>]`: 
+  - `[ObliterationBehavior <ObliterationBehavior?>]`: In macOS 12 and later, this command uses Erase All Content and Settings (EACS) on Mac computers with the Apple M1 chip or the Apple T2 Security Chip. On those devices, if EACS can’t run, the device can use obliteration (macOS 11.x behavior). This key has no effect on machines prior to the T2 chip. Upon receiving this command, the device performs preflight checks to determine if the device is in a state that allows EACS. The ObliterationBehavior value defines the device's fallback behavior.
   - `[PersistEsimDataPlan <Boolean?>]`: 
   - `[UseProtectedWipe <Boolean?>]`: 
 

@@ -8,26 +8,24 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement
 
 ## SYNOPSIS
-In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
-Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
+Invoke action getApplicablePolicyRequirements
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
 Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement -AccessPackageId <String> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgEntitlementManagementAccessPackageApplicablePolicyRequirement -InputObject <IIdentityGovernanceIdentity>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
-Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
+Invoke action getApplicablePolicyRequirements
 
 ## EXAMPLES
 
@@ -47,7 +45,7 @@ The unique identifier of accessPackage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -63,7 +61,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True

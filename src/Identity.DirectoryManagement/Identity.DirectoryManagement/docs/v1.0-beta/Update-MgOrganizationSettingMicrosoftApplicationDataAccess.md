@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgOrganizationSettingMicrosoftApplicationDataAccess
 
 ## SYNOPSIS
-Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+Update the navigation property microsoftApplicationDataAccess in organization
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgOrganizationSettingMicrosoftApplicationDataAccess -InputObject <IIdenti
 ```
 
 ## DESCRIPTION
-Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+Update the navigation property microsoftApplicationDataAccess in organization
 
 ## EXAMPLES
 

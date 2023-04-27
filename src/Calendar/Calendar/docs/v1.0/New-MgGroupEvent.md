@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupEvent
 
 ## SYNOPSIS
-Use this API to create a new event.
+Create new navigation property to events for groups
 
 ## SYNTAX
 
@@ -69,7 +69,7 @@ New-MgGroupEvent -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashta
 ```
 
 ## DESCRIPTION
-Use this API to create a new event.
+Create new navigation property to events for groups
 
 ## EXAMPLES
 

@@ -8,36 +8,22 @@ schema: 2.0.0
 # Publish-MgEducationMeAssignment
 
 ## SYNOPSIS
-Publish an education assignment.
-Change the state of an educationAssignment from its original `draft` status to the `published` status.
-You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.
-Only a teacher in the class can make this call.
-When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects.
-Calling this API creates educationSubmission objects and displays the assignment in each student's list.
-The state of the assignment goes back to `draft` if there is any backend failure during publish process.
-To update the properties of a published **assignment**, see update an assignment.
+Invoke action publish
 
 ## SYNTAX
 
-### Publish (Default)
+### Publish1 (Default)
 ```
 Publish-MgEducationMeAssignment -EducationAssignmentId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### PublishViaIdentity
+### PublishViaIdentity1
 ```
 Publish-MgEducationMeAssignment -InputObject <IEducationIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Publish an education assignment.
-Change the state of an educationAssignment from its original `draft` status to the `published` status.
-You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.
-Only a teacher in the class can make this call.
-When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects.
-Calling this API creates educationSubmission objects and displays the assignment in each student's list.
-The state of the assignment goes back to `draft` if there is any backend failure during publish process.
-To update the properties of a published **assignment**, see update an assignment.
+Invoke action publish
 
 ## EXAMPLES
 
@@ -59,7 +45,7 @@ The unique identifier of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Publish
+Parameter Sets: Publish1
 Aliases:
 
 Required: True
@@ -75,7 +61,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: PublishViaIdentity
+Parameter Sets: PublishViaIdentity1
 Aliases:
 
 Required: True

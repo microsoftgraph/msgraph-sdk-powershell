@@ -8,7 +8,7 @@ schema: 2.0.0
 # Revoke-MgUserDriveRootPermissionGrant
 
 ## SYNOPSIS
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Invoke action revokeGrants
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Revoke-MgUserDriveRootPermissionGrant -InputObject <IUsersActionsIdentity> [-Add
 ```
 
 ## DESCRIPTION
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Invoke action revokeGrants
 
 ## EXAMPLES
 

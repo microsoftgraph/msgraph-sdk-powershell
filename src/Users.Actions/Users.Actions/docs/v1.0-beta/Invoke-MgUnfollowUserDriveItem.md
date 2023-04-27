@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgUnfollowUserDriveItem
 
 ## SYNOPSIS
-Unfollow a driveItem.
+Invoke action unfollow
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgUnfollowUserDriveItem -InputObject <IUsersActionsIdentity> [-PassThru] 
 ```
 
 ## DESCRIPTION
-Unfollow a driveItem.
+Invoke action unfollow
 
 ## EXAMPLES
 

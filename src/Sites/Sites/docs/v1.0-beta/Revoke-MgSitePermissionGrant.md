@@ -8,7 +8,7 @@ schema: 2.0.0
 # Revoke-MgSitePermissionGrant
 
 ## SYNOPSIS
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Invoke action revokeGrants
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Revoke-MgSitePermissionGrant -InputObject <ISitesIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Invoke action revokeGrants
 
 ## EXAMPLES
 
@@ -221,6 +221,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityAlertMultiple
 
 ## SYNOPSIS
-Update multiple alerts in one request instead of multiple requests.
+Invoke action updateAlerts
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgSecurityAlertMultiple
 ```
 
 ## DESCRIPTION
-Update multiple alerts in one request instead of multiple requests.
+Invoke action updateAlerts
 
 ## EXAMPLES
 

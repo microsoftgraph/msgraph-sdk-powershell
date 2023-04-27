@@ -8,7 +8,7 @@ schema: 2.0.0
 # Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault
 
 ## SYNOPSIS
-Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
+Invoke action resetToSystemDefault
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault [-PassThru] [-Confir
 ```
 
 ## DESCRIPTION
-Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
+Invoke action resetToSystemDefault
 
 ## EXAMPLES
 

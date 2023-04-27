@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserDriveItemListItemField
 
 ## SYNOPSIS
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in users
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Update-MgUserDriveItemListItemField -InputObject <IFilesIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in users
 
 ## EXAMPLES
 

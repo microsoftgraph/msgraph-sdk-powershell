@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyTokenIssuancePolicy
 
 ## SYNOPSIS
-Create a new tokenIssuancePolicy object.
+Create new navigation property to tokenIssuancePolicies for policies
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgPolicyTokenIssuancePolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] 
 ```
 
 ## DESCRIPTION
-Create a new tokenIssuancePolicy object.
+Create new navigation property to tokenIssuancePolicies for policies
 
 ## EXAMPLES
 

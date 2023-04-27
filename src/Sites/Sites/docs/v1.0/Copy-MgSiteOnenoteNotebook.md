@@ -8,7 +8,7 @@ schema: 2.0.0
 # Copy-MgSiteOnenoteNotebook
 
 ## SYNOPSIS
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyNotebook
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Copy-MgSiteOnenoteNotebook -InputObject <ISitesIdentity> [-SiteId <String>]
 ```
 
 ## DESCRIPTION
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyNotebook
 
 ## EXAMPLES
 
@@ -295,6 +295,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

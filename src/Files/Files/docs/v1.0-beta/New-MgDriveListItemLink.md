@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgDriveListItemLink
 
 ## SYNOPSIS
-Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+Invoke action createLink
 
 ## SYNTAX
 
@@ -45,9 +43,7 @@ New-MgDriveListItemLink -InputObject <IFilesIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+Invoke action createLink
 
 ## EXAMPLES
 

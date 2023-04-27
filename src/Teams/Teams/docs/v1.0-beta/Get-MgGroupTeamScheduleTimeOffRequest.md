@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamScheduleTimeOffRequest
 
 ## SYNOPSIS
-Get timeOffRequests from groups
+The time off requests in the schedule.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupTeamScheduleTimeOffRequest -InputObject <ITeamsIdentity> [-Property <
 ```
 
 ## DESCRIPTION
-Get timeOffRequests from groups
+The time off requests in the schedule.
 
 ## EXAMPLES
 

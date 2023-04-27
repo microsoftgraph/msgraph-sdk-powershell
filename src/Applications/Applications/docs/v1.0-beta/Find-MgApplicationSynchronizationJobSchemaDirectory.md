@@ -8,7 +8,7 @@ schema: 2.0.0
 # Find-MgApplicationSynchronizationJobSchemaDirectory
 
 ## SYNOPSIS
-Discover the latest schema definition for provisioning to an application.
+Invoke action discover
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Find-MgApplicationSynchronizationJobSchemaDirectory -InputObject <IApplicationsI
 ```
 
 ## DESCRIPTION
-Discover the latest schema definition for provisioning to an application.
+Invoke action discover
 
 ## EXAMPLES
 

@@ -8,10 +8,7 @@ schema: 2.0.0
 # New-MgGroupAppRoleAssignment
 
 ## SYNOPSIS
-Use this API to assign an app role to a security group.
-All direct members of the group will be considered assigned.
-Security groups with dynamic memberships are supported.
-To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
+Create new navigation property to appRoleAssignments for groups
 
 ## SYNTAX
 
@@ -44,10 +41,7 @@ New-MgGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Use this API to assign an app role to a security group.
-All direct members of the group will be considered assigned.
-Security groups with dynamic memberships are supported.
-To grant an app role assignment to a group, you need three identifiers: Additional licenses might be required to use a group to manage access to applications.
+Create new navigation property to appRoleAssignments for groups
 
 ## EXAMPLES
 

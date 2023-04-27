@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 6e9cc2a6-9d98-4491-a790-5ae7a4a07198
+Module Guid: e49af5e0-9b04-442b-8ee1-6c9d57c35387
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -86,6 +86,12 @@ Windows information protection for apps running on devices which are MDM enrolle
 ### [Get-MgDeviceAppMgtMobileApp](Get-MgDeviceAppMgtMobileApp.md)
 The mobile apps.
 
+### [Get-MgDeviceAppMgtMobileAppAsManagedMobileLobApp](Get-MgDeviceAppMgtMobileAppAsManagedMobileLobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
+
+### [Get-MgDeviceAppMgtMobileAppAsMobileLobApp](Get-MgDeviceAppMgtMobileAppAsMobileLobApp.md)
+Get the item of type microsoft.graph.mobileApp as microsoft.graph.mobileLobApp
+
 ### [Get-MgDeviceAppMgtMobileAppAssignment](Get-MgDeviceAppMgtMobileAppAssignment.md)
 The list of group assignments for this mobile app.
 
@@ -148,12 +154,6 @@ Device configuration states for this device.
 
 ### [Get-MgUserManagedDeviceUser](Get-MgUserManagedDeviceUser.md)
 The primary users associated with the managed device.
-
-### [Invoke-MgLobDeviceAppMgtGetMobileApp](Invoke-MgLobDeviceAppMgtGetMobileApp.md)
-Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
-
-### [Invoke-MgLobDeviceAppMgtListMobileApp](Invoke-MgLobDeviceAppMgtListMobileApp.md)
-Get the items of type microsoft.graph.managedMobileLobApp in the microsoft.graph.mobileApp collection
 
 ### [Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp](Invoke-MgTargetDeviceAppMgtManagedAppPolicyApp.md)
 Invoke action targetApps

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgCommunicationPresence
 
 ## SYNOPSIS
-Set the availability and activity status in a presence session of an application for a user.
+Invoke action setPresence
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Set-MgCommunicationPresence -InputObject <ICloudCommunicationsIdentity> [-Activi
 ```
 
 ## DESCRIPTION
-Set the availability and activity status in a presence session of an application for a user.
+Invoke action setPresence
 
 ## EXAMPLES
 

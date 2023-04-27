@@ -8,7 +8,7 @@ schema: 2.0.0
 # Unpublish-MgUserDriveListContentType
 
 ## SYNOPSIS
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Unpublish-MgUserDriveListContentType -InputObject <IUsersActionsIdentity> [-Pass
 ```
 
 ## DESCRIPTION
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ## EXAMPLES
 

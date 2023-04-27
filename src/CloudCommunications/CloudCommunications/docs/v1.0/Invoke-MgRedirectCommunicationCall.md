@@ -8,10 +8,7 @@ schema: 2.0.0
 # Invoke-MgRedirectCommunicationCall
 
 ## SYNOPSIS
-Redirect an incoming call that hasn't been answered or rejected yet.
-The terms 'redirecting' and 'forwarding' a call are used interchangeably.
-The bot is expected to redirect the call before the call times out.
-The current timeout value is 15 seconds.
+Invoke action redirect
 
 ## SYNTAX
 
@@ -45,10 +42,7 @@ Invoke-MgRedirectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
 ```
 
 ## DESCRIPTION
-Redirect an incoming call that hasn't been answered or rejected yet.
-The terms 'redirecting' and 'forwarding' a call are used interchangeably.
-The bot is expected to redirect the call before the call times out.
-The current timeout value is 15 seconds.
+Invoke action redirect
 
 ## EXAMPLES
 

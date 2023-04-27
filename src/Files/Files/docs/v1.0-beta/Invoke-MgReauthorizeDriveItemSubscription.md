@@ -12,13 +12,13 @@ Invoke action reauthorize
 
 ## SYNTAX
 
-### Reauthorize (Default)
+### Reauthorize1 (Default)
 ```
 Invoke-MgReauthorizeDriveItemSubscription -DriveId <String> -DriveItemId <String> -SubscriptionId <String>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ReauthorizeViaIdentity
+### ReauthorizeViaIdentity1
 ```
 Invoke-MgReauthorizeDriveItemSubscription -InputObject <IFilesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ The unique identifier of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Reauthorize
+Parameter Sets: Reauthorize1
 Aliases:
 
 Required: True
@@ -51,7 +51,7 @@ The unique identifier of driveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Reauthorize
+Parameter Sets: Reauthorize1
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: ReauthorizeViaIdentity
+Parameter Sets: ReauthorizeViaIdentity1
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ The unique identifier of subscription
 
 ```yaml
 Type: System.String
-Parameter Sets: Reauthorize
+Parameter Sets: Reauthorize1
 Aliases:
 
 Required: True

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation
 
 ## SYNOPSIS
-Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
-Recommendations are generated if **recommendationsEnabled** is `true` on the accessReviewScheduleDefinition object.
-If there is not a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
+Invoke action acceptRecommendations
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Invoke-MgAcceptIdentityGovernanceAccessReviewDefinitionInstanceRecommendation
 ```
 
 ## DESCRIPTION
-Allows the acceptance of recommendations on all accessReviewInstanceDecisionItem objects that have not been reviewed for an accessReviewInstance object for which the calling user is a reviewer.
-Recommendations are generated if **recommendationsEnabled** is `true` on the accessReviewScheduleDefinition object.
-If there is not a recommendation on an accessReviewInstanceDecisionItem object no decision will be recorded.
+Invoke action acceptRecommendations
 
 ## EXAMPLES
 

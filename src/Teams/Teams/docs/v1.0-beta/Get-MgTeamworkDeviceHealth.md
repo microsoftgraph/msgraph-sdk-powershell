@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeviceHealth
 
 ## SYNOPSIS
-Get the health details of a Microsoft Teams-enabled device.
-Device health is calculated based on the device configuration and other device parameters.
+The health properties of the device.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Get-MgTeamworkDeviceHealth -InputObject <ITeamsIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get the health details of a Microsoft Teams-enabled device.
-Device health is calculated based on the device configuration and other device parameters.
+The health properties of the device.
 
 ## EXAMPLES
 

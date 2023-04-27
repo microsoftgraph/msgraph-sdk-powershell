@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationSchoolAdministrativeUnit
 
 ## SYNOPSIS
-Retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
+Get administrativeUnit from education
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgEducationSchoolAdministrativeUnit -InputObject <IEducationIdentity> [-Expa
 ```
 
 ## DESCRIPTION
-Retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
+Get administrativeUnit from education
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Reset-MgEducationSynchronizationProfile
 
 ## SYNOPSIS
-Reset the sync of a specific school data synchronization profile in the tenant.
+Invoke action reset
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Reset-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Pass
 ```
 
 ## DESCRIPTION
-Reset the sync of a specific school data synchronization profile in the tenant.
+Invoke action reset
 
 ## EXAMPLES
 

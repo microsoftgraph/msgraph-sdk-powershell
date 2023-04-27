@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyAccessReviewPolicy
 
 ## SYNOPSIS
-Update the properties of an accessReviewPolicy object.
+Update the navigation property accessReviewPolicy in policies
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgPolicyAccessReviewPolicy -BodyParameter <IMicrosoftGraphAccessReviewPol
 ```
 
 ## DESCRIPTION
-Update the properties of an accessReviewPolicy object.
+Update the navigation property accessReviewPolicy in policies
 
 ## EXAMPLES
 

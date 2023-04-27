@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgFollowDriveItem
 
 ## SYNOPSIS
-Follow a driveItem.
+Invoke action follow
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Invoke-MgFollowDriveItem -InputObject <IFilesIdentity> [-Confirm] [-WhatIf] [<Co
 ```
 
 ## DESCRIPTION
-Follow a driveItem.
+Invoke action follow
 
 ## EXAMPLES
 

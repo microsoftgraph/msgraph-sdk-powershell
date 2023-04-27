@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgTrustFrameworkKeySet
 
 ## SYNOPSIS
-Create a new trustFrameworkKeySet.
-The ID of the **trustFrameworkKeySet** is expected in the create request; however, it can be modified by the service.
-The modified ID will be available in the response and in the location header.
+Create new navigation property to keySets for trustFramework
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ New-MgTrustFrameworkKeySet -BodyParameter <IMicrosoftGraphTrustFrameworkKeySet> 
 ```
 
 ## DESCRIPTION
-Create a new trustFrameworkKeySet.
-The ID of the **trustFrameworkKeySet** is expected in the create request; however, it can be modified by the service.
-The modified ID will be available in the response and in the location header.
+Create new navigation property to keySets for trustFramework
 
 ## EXAMPLES
 

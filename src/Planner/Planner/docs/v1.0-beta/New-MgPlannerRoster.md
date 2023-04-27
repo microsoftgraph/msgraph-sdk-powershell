@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPlannerRoster
 
 ## SYNOPSIS
-Create a new plannerRoster object.
+Create new navigation property to rosters for planner
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgPlannerRoster -BodyParameter <IMicrosoftGraphPlannerRoster> [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Create a new plannerRoster object.
+Create new navigation property to rosters for planner
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBookingBusinessCustomQuestion
 
 ## SYNOPSIS
-Create a new bookingCustomQuestion object.
+Create new navigation property to customQuestions for solutions
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgBookingBusinessCustomQuestion -InputObject <IBookingsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Create a new bookingCustomQuestion object.
+Create new navigation property to customQuestions for solutions
 
 ## EXAMPLES
 

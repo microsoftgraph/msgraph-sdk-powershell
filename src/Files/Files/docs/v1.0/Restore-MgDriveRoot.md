@@ -8,8 +8,7 @@ schema: 2.0.0
 # Restore-MgDriveRoot
 
 ## SYNOPSIS
-Restore a driveItem that has been deleted and is currently in the recycle bin.
-**NOTE**: This functionality is currently only available for OneDrive Personal.
+Invoke action restore
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Restore-MgDriveRoot -InputObject <IFilesIdentity> [-AdditionalProperties <Hashta
 ```
 
 ## DESCRIPTION
-Restore a driveItem that has been deleted and is currently in the recycle bin.
-**NOTE**: This functionality is currently only available for OneDrive Personal.
+Invoke action restore
 
 ## EXAMPLES
 

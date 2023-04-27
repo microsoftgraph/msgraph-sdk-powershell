@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserPresence
 
 ## SYNOPSIS
-Get a user's presence information.
+Get presence from users
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Get-MgUserPresence -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get a user's presence information.
+Get presence from users
 
 ## EXAMPLES
 

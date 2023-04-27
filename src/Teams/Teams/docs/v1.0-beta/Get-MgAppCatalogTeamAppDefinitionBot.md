@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgAppCatalogTeamAppDefinitionBot
 
 ## SYNOPSIS
-Get the bot associated with a specific definition of the  TeamsApp.
+The details of the bot specified in the Teams app manifest.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgAppCatalogTeamAppDefinitionBot -InputObject <ITeamsIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Get the bot associated with a specific definition of the  TeamsApp.
+The details of the bot specified in the Teams app manifest.
 
 ## EXAMPLES
 

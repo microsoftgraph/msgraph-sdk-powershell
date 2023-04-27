@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgApplicationPassword
 
 ## SYNOPSIS
-Remove a password from an application.
+Invoke action removePassword
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Remove-MgApplicationPassword -InputObject <IApplicationsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Remove a password from an application.
+Invoke action removePassword
 
 ## EXAMPLES
 

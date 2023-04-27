@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointReportExportJob
 
 ## SYNOPSIS
-Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report.
-Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
-When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property.
+Create new navigation property to exportJobs for deviceManagement
 
 ## SYNTAX
 
@@ -29,9 +27,7 @@ New-MgDeviceManagementVirtualEndpointReportExportJob -BodyParameter <IMicrosoftG
 ```
 
 ## DESCRIPTION
-Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report.
-Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
-When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property.
+Create new navigation property to exportJobs for deviceManagement
 
 ## EXAMPLES
 

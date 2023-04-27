@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointExternalPartnerSetting
 
 ## SYNOPSIS
-Create a new cloudPcExternalPartnerSetting object.
+Create new navigation property to externalPartnerSettings for deviceManagement
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementVirtualEndpointExternalPartnerSetting
 ```
 
 ## DESCRIPTION
-Create a new cloudPcExternalPartnerSetting object.
+Create new navigation property to externalPartnerSettings for deviceManagement
 
 ## EXAMPLES
 

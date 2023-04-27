@@ -21,7 +21,8 @@ Update-MgContact -OrgContactId <String> [-AdditionalProperties <Hashtable>]
  [-Manager <IMicrosoftGraphDirectoryObject>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>]
  [-OnPremisesLastSyncDateTime <DateTime>]
  [-OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>] [-OnPremisesSyncEnabled]
- [-Phones <IMicrosoftGraphPhone1[]>] [-ProxyAddresses <String[]>] [-Surname <String>]
+ [-Phones <IMicrosoftGraphPhone1[]>] [-ProxyAddresses <String[]>]
+ [-ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>] [-Surname <String>]
  [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]
  [-TransitiveReports <IMicrosoftGraphDirectoryObject[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -47,7 +48,8 @@ Update-MgContact -InputObject <IIdentityDirectoryManagementIdentity> [-Additiona
  [-Manager <IMicrosoftGraphDirectoryObject>] [-MemberOf <IMicrosoftGraphDirectoryObject[]>]
  [-OnPremisesLastSyncDateTime <DateTime>]
  [-OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>] [-OnPremisesSyncEnabled]
- [-Phones <IMicrosoftGraphPhone1[]>] [-ProxyAddresses <String[]>] [-Surname <String>]
+ [-Phones <IMicrosoftGraphPhone1[]>] [-ProxyAddresses <String[]>]
+ [-ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>] [-Surname <String>]
  [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]
  [-TransitiveReports <IMicrosoftGraphDirectoryObject[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -449,6 +451,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ServiceProvisioningErrors
+.
+To construct, please use Get-Help -Online and see NOTES section for SERVICEPROVISIONINGERRORS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphServiceProvisioningError[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Surname
 Last name for this organizational contact.
 Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)
@@ -593,6 +611,10 @@ BODYPARAMETER <IMicrosoftGraphOrgContact1>: orgContact
     - `[Number <String>]`: The phone number.
     - `[Type <String>]`: phoneType
   - `[ProxyAddresses <String[]>]`: For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0).
+  - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
+    - `[CreatedDateTime <DateTime?>]`: 
+    - `[IsResolved <Boolean?>]`: 
+    - `[ServiceInstance <String>]`: 
   - `[Surname <String>]`: Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)
   - `[TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]`: 
   - `[TransitiveReports <IMicrosoftGraphDirectoryObject[]>]`: The transitive reports for a contact. Read-only.
@@ -655,6 +677,11 @@ ONPREMISESPROVISIONINGERRORS <IMicrosoftGraphOnPremisesProvisioningError[]>: Lis
 PHONES <IMicrosoftGraphPhone1[]>: List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).
   - `[Number <String>]`: The phone number.
   - `[Type <String>]`: phoneType
+
+SERVICEPROVISIONINGERRORS <IMicrosoftGraphServiceProvisioningError[]>: .
+  - `[CreatedDateTime <DateTime?>]`: 
+  - `[IsResolved <Boolean?>]`: 
+  - `[ServiceInstance <String>]`: 
 
 TRANSITIVEMEMBEROF <IMicrosoftGraphDirectoryObject[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupSiteTermStoreGroup
 
 ## SYNOPSIS
-Create a new group object in a term store.
+Create new navigation property to groups for groups
 
 ## SYNTAX
 
@@ -69,7 +69,7 @@ New-MgGroupSiteTermStoreGroup -InputObject <ISitesIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Create a new group object in a term store.
+Create new navigation property to groups for groups
 
 ## EXAMPLES
 
@@ -388,6 +388,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

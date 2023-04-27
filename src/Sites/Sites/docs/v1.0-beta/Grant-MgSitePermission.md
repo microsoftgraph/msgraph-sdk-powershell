@@ -8,7 +8,7 @@ schema: 2.0.0
 # Grant-MgSitePermission
 
 ## SYNOPSIS
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Grant-MgSitePermission -InputObject <ISitesIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ## EXAMPLES
 
@@ -257,6 +257,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

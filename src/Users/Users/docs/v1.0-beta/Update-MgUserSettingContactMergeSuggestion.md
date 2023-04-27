@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserSettingContactMergeSuggestion
 
 ## SYNOPSIS
-Update the properties of a contactMergeSuggestions object.
+Update the navigation property contactMergeSuggestions in users
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Update-MgUserSettingContactMergeSuggestion -InputObject <IUsersIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Update the properties of a contactMergeSuggestions object.
+Update the navigation property contactMergeSuggestions in users
 
 ## EXAMPLES
 

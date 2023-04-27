@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityTiIndicatorMultiple
 
 ## SYNOPSIS
-Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+Invoke action deleteTiIndicators
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgSecurityTiIndicatorMultiple
 ```
 
 ## DESCRIPTION
-Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+Invoke action deleteTiIndicators
 
 ## EXAMPLES
 

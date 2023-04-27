@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyFeatureRolloutPolicy
 
 ## SYNOPSIS
-Create a new featureRolloutPolicy object.
+Create new navigation property to featureRolloutPolicies for policies
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgPolicyFeatureRolloutPolicy -BodyParameter <IMicrosoftGraphFeatureRolloutPo
 ```
 
 ## DESCRIPTION
-Create a new featureRolloutPolicy object.
+Create new navigation property to featureRolloutPolicies for policies
 
 ## EXAMPLES
 

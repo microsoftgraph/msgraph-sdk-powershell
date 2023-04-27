@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restart-MgUserCloudPc
 
 ## SYNOPSIS
-Reboot a specific Cloud PC.
+Invoke action reboot
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Restart-MgUserCloudPc -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm
 ```
 
 ## DESCRIPTION
-Reboot a specific Cloud PC.
+Invoke action reboot
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgRecordUserPendingAccessReviewInstanceDecision
 
 ## SYNOPSIS
-As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+Invoke action recordAllDecisions
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Invoke-MgRecordUserPendingAccessReviewInstanceDecision -InputObject <IUsersActio
 ```
 
 ## DESCRIPTION
-As a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified.
-If no IDs are specified, the decisions will apply to every **accessReviewInstanceDecisionItem** for which you are the reviewer.
+Invoke action recordAllDecisions
 
 ## EXAMPLES
 

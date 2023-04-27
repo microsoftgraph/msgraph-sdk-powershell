@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityGovernanceAccessReviewHistoryDefinition
 
 ## SYNOPSIS
-Create a new accessReviewHistoryDefinition object.
+Create new navigation property to historyDefinitions for identityGovernance
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgIdentityGovernanceAccessReviewHistoryDefinition
 ```
 
 ## DESCRIPTION
-Create a new accessReviewHistoryDefinition object.
+Create new navigation property to historyDefinitions for identityGovernance
 
 ## EXAMPLES
 

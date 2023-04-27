@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgInviteGroupDriveItem
 
 ## SYNOPSIS
-Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
+Invoke action invite
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Invoke-MgInviteGroupDriveItem -InputObject <IGroupsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
+Invoke action invite
 
 ## EXAMPLES
 
@@ -346,6 +346,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgGroupDriveItemListItemField
 
 ## SYNOPSIS
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in groups
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Update-MgGroupDriveItemListItemField -InputObject <IFilesIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in groups
 
 ## EXAMPLES
 

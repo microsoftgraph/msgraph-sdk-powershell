@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserSettingShiftPreference
 
 ## SYNOPSIS
-Update the properties and relationships of a shiftPreferences object.
+Update the navigation property shiftPreferences in users
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgUserSettingShiftPreference -InputObject <IUsersIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Update the properties and relationships of a shiftPreferences object.
+Update the navigation property shiftPreferences in users
 
 ## EXAMPLES
 

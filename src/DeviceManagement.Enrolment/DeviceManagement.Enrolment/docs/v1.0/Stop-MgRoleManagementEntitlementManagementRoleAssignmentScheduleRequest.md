@@ -8,8 +8,7 @@ schema: 2.0.0
 # Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest
 
 ## SYNOPSIS
-Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
-After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
+Invoke action cancel
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest
 ```
 
 ## DESCRIPTION
-Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
-After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
+Invoke action cancel
 
 ## EXAMPLES
 

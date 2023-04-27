@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyTokenLifetimePolicy
 
 ## SYNOPSIS
-Create a new tokenLifetimePolicy object.
+Create new navigation property to tokenLifetimePolicies for policies
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgPolicyTokenLifetimePolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] 
 ```
 
 ## DESCRIPTION
-Create a new tokenLifetimePolicy object.
+Create new navigation property to tokenLifetimePolicies for policies
 
 ## EXAMPLES
 

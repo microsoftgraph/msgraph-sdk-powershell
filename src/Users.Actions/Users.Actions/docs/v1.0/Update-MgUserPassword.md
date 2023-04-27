@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgUserPassword
 
 ## SYNOPSIS
-Enable the user to update their password.
-Any user can update their password without belonging to any administrator role.
+Invoke action changePassword
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Update-MgUserPassword -InputObject <IUsersActionsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Enable the user to update their password.
-Any user can update their password without belonging to any administrator role.
+Invoke action changePassword
 
 ## EXAMPLES
 

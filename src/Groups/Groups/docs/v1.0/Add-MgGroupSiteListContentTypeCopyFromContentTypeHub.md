@@ -8,10 +8,7 @@ schema: 2.0.0
 # Add-MgGroupSiteListContentTypeCopyFromContentTypeHub
 
 ## SYNOPSIS
-Add or sync a copy of a published content type from the content type hub to a target site or a list.
-This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
-The method allows users to pull content types directly from the content type hub to a site or list.
-For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+Invoke action addCopyFromContentTypeHub
 
 ## SYNTAX
 
@@ -42,10 +39,7 @@ Add-MgGroupSiteListContentTypeCopyFromContentTypeHub -InputObject <IGroupsIdenti
 ```
 
 ## DESCRIPTION
-Add or sync a copy of a published content type from the content type hub to a target site or a list.
-This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
-The method allows users to pull content types directly from the content type hub to a site or list.
-For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+Invoke action addCopyFromContentTypeHub
 
 ## EXAMPLES
 
@@ -262,6 +256,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

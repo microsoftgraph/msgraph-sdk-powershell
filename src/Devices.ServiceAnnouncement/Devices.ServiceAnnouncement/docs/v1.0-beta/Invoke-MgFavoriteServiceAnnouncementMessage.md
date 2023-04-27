@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgFavoriteServiceAnnouncementMessage
 
 ## SYNOPSIS
-Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+Invoke action favorite
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Invoke-MgFavoriteServiceAnnouncementMessage
 ```
 
 ## DESCRIPTION
-Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+Invoke action favorite
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgTeamworkDeletedTeamChannelMember
 
 ## SYNOPSIS
-Add a conversationMember to a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+Create new navigation property to members for teamwork
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ New-MgTeamworkDeletedTeamChannelMember -InputObject <ITeamsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Add a conversationMember to a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+Create new navigation property to members for teamwork
 
 ## EXAMPLES
 

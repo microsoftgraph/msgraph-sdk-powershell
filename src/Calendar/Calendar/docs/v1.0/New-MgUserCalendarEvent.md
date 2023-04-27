@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgUserCalendarEvent
 
 ## SYNOPSIS
-Use this API to create a new event in a calendar.
-The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
+Create new navigation property to events for users
 
 ## SYNTAX
 
@@ -70,8 +69,7 @@ New-MgUserCalendarEvent -InputObject <ICalendarIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Use this API to create a new event in a calendar.
-The calendar can be one for a user, or the default calendar of a Microsoft 365 group.
+Create new navigation property to events for users
 
 ## EXAMPLES
 

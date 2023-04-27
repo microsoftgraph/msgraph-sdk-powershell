@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBookingBusinessAppointment
 
 ## SYNOPSIS
-Create a new bookingAppointment for the specified bookingBusiness.
+Create new navigation property to appointments for bookingBusinesses
 
 ## SYNTAX
 
@@ -59,7 +59,7 @@ New-MgBookingBusinessAppointment -InputObject <IBookingsIdentity> [-AdditionalIn
 ```
 
 ## DESCRIPTION
-Create a new bookingAppointment for the specified bookingBusiness.
+Create new navigation property to appointments for bookingBusinesses
 
 ## EXAMPLES
 

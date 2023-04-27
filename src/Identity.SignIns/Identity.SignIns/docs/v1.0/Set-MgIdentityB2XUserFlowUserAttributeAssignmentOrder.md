@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder
 
 ## SYNOPSIS
-Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
+Invoke action setOrder
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Set-MgIdentityB2XUserFlowUserAttributeAssignmentOrder -InputObject <IIdentitySig
 ```
 
 ## DESCRIPTION
-Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
+Invoke action setOrder
 
 ## EXAMPLES
 
@@ -253,6 +253,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

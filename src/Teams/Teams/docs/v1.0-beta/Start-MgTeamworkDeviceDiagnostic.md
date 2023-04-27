@@ -8,8 +8,7 @@ schema: 2.0.0
 # Start-MgTeamworkDeviceDiagnostic
 
 ## SYNOPSIS
-Run and generate diagnostic logs for the specified Microsoft Teams-enabled device.
-This API triggers a long-running operation used to generate logs for a device.
+Invoke action runDiagnostics
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Start-MgTeamworkDeviceDiagnostic -InputObject <ITeamsIdentity> [-PassThru] [-Con
 ```
 
 ## DESCRIPTION
-Run and generate diagnostic logs for the specified Microsoft Teams-enabled device.
-This API triggers a long-running operation used to generate logs for a device.
+Invoke action runDiagnostics
 
 ## EXAMPLES
 

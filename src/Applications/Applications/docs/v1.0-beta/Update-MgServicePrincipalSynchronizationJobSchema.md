@@ -8,10 +8,7 @@ schema: 2.0.0
 # Update-MgServicePrincipalSynchronizationJobSchema
 
 ## SYNOPSIS
-Update the synchronization schema for a given job or template.
-This method fully replaces the current schema with the one provided in the request.
-To update the schema of a template, make the call on the application object.
-You must be the owner of the application.
+Update the navigation property schema in servicePrincipals
 
 ## SYNTAX
 
@@ -44,10 +41,7 @@ Update-MgServicePrincipalSynchronizationJobSchema -InputObject <IApplicationsIde
 ```
 
 ## DESCRIPTION
-Update the synchronization schema for a given job or template.
-This method fully replaces the current schema with the one provided in the request.
-To update the schema of a template, make the call on the application object.
-You must be the owner of the application.
+Update the navigation property schema in servicePrincipals
 
 ## EXAMPLES
 
@@ -295,7 +289,13 @@ BODYPARAMETER <IMicrosoftGraphSynchronizationSchema>: synchronizationSchema
     - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
     - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
   - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
+    - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IncludedContainers <String[]>]`: 
     - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+    - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[IncludedGroups <String[]>]`: 
     - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
     - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
     - `[Name <String>]`: Human-readable name of the synchronization rule. Not nullable.
@@ -400,7 +400,13 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[UserId <String>]`: The unique identifier of user
 
 SYNCHRONIZATIONRULES <IMicrosoftGraphSynchronizationRule[]>: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
+  - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IncludedContainers <String[]>]`: 
   - `[Editable <Boolean?>]`: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+  - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IncludedGroups <String[]>]`: 
   - `[Id <String>]`: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
   - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.
     - `[Key <String>]`: Key.

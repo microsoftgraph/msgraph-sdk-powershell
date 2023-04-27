@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgPlannerTaskBucketTaskBoardFormat
 
 ## SYNOPSIS
-Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Get-MgPlannerTaskBucketTaskBoardFormat -InputObject <IPlannerIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgGraphUserChat
 
 ## SYNOPSIS
-Unhide a chat for a user.
+Invoke action unhideForUser
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Invoke-MgGraphUserChat -InputObject <IUsersActionsIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Unhide a chat for a user.
+Invoke action unhideForUser
 
 ## EXAMPLES
 

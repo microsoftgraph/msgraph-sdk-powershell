@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamScheduleOpenShiftChangeRequest
 
 ## SYNOPSIS
-Get openShiftChangeRequests from groups
+The open shift requests in the schedule.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgGroupTeamScheduleOpenShiftChangeRequest -InputObject <ITeamsIdentity> [-Ex
 ```
 
 ## DESCRIPTION
-Get openShiftChangeRequests from groups
+The open shift requests in the schedule.
 
 ## EXAMPLES
 

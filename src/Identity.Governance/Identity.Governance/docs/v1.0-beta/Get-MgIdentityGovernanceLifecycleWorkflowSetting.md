@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityGovernanceLifecycleWorkflowSetting
 
 ## SYNOPSIS
-Read the properties and relationships of a lifecycleManagementSettings object.
+The settings of the lifecycle workflows instance.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgIdentityGovernanceLifecycleWorkflowSetting [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a lifecycleManagementSettings object.
+The settings of the lifecycle workflows instance.
 
 ## EXAMPLES
 

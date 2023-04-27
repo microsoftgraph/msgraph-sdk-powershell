@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyFeatureRolloutPolicyApplyToById
 
 ## SYNOPSIS
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Get-MgPolicyFeatureRolloutPolicyApplyToById -InputObject <IIdentitySignInsIdenti
 ```
 
 ## DESCRIPTION
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ## EXAMPLES
 
@@ -261,6 +259,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

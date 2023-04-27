@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityContinuouAccessEvaluationPolicy
 
 ## SYNOPSIS
-Read the properties and relationships of a continuousAccessEvaluationPolicy object.
+Represents entry point for continuous access evaluation policy.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgIdentityContinuouAccessEvaluationPolicy [-ExpandProperty <String[]>] [-Pro
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a continuousAccessEvaluationPolicy object.
+Represents entry point for continuous access evaluation policy.
 
 ## EXAMPLES
 

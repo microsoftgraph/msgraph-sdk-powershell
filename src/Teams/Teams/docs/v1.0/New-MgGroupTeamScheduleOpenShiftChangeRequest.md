@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupTeamScheduleOpenShiftChangeRequest
 
 ## SYNOPSIS
-Create instance of an openShiftChangeRequest object.
+Create new navigation property to openShiftChangeRequests for groups
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgGroupTeamScheduleOpenShiftChangeRequest -InputObject <ITeamsIdentity>
 ```
 
 ## DESCRIPTION
-Create instance of an openShiftChangeRequest object.
+Create new navigation property to openShiftChangeRequests for groups
 
 ## EXAMPLES
 

@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgIdentityProvider
 
 ## SYNOPSIS
-Create an identity provider object that is of the type specified in the request body.
-Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD.
-In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource.
+Create new navigation property to identityProviders for identity
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ New-MgIdentityProvider -BodyParameter <IMicrosoftGraphIdentityProviderBase> [-Co
 ```
 
 ## DESCRIPTION
-Create an identity provider object that is of the type specified in the request body.
-Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD.
-In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource.
+Create new navigation property to identityProviders for identity
 
 ## EXAMPLES
 

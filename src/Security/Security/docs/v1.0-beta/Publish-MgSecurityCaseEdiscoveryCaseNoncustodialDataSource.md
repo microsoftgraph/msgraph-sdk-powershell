@@ -8,7 +8,7 @@ schema: 2.0.0
 # Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource
 
 ## SYNOPSIS
-Release the non-custodial data source from the case.
+Invoke action release
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Publish-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -InputObject <ISecuri
 ```
 
 ## DESCRIPTION
-Release the non-custodial data source from the case.
+Invoke action release
 
 ## EXAMPLES
 

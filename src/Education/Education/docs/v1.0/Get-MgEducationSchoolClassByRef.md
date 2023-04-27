@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEducationSchoolClassByRef
 
 ## SYNOPSIS
-Get the educationClass resources owned by an educationSchool.
+Classes taught at the school.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgEducationSchoolClassByRef -EducationSchoolId <String> [-Filter <String>] [
 ```
 
 ## DESCRIPTION
-Get the educationClass resources owned by an educationSchool.
+Classes taught at the school.
+Nullable.
 
 ## EXAMPLES
 

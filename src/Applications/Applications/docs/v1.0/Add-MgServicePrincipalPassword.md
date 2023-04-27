@@ -8,7 +8,7 @@ schema: 2.0.0
 # Add-MgServicePrincipalPassword
 
 ## SYNOPSIS
-Add a strong password or secret to a servicePrincipal object.
+Invoke action addPassword
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Add-MgServicePrincipalPassword -InputObject <IApplicationsIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Add a strong password or secret to a servicePrincipal object.
+Invoke action addPassword
 
 ## EXAMPLES
 

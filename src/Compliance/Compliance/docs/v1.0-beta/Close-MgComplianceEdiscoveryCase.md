@@ -8,8 +8,7 @@ schema: 2.0.0
 # Close-MgComplianceEdiscoveryCase
 
 ## SYNOPSIS
-Close an eDiscovery case.
-For details, see Close a case.
+Invoke action close
 
 ## SYNTAX
 
@@ -25,8 +24,7 @@ Close-MgComplianceEdiscoveryCase -InputObject <IComplianceIdentity> [-PassThru] 
 ```
 
 ## DESCRIPTION
-Close an eDiscovery case.
-For details, see Close a case.
+Invoke action close
 
 ## EXAMPLES
 

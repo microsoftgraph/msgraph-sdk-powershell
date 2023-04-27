@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgTranslateUserExchangeId
 
 ## SYNOPSIS
-Translate identifiers of Outlook-related resources between formats.
+Invoke action translateExchangeIds
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Invoke-MgTranslateUserExchangeId -InputObject <IUsersActionsIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Translate identifiers of Outlook-related resources between formats.
+Invoke action translateExchangeIds
 
 ## EXAMPLES
 

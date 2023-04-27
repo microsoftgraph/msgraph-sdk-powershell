@@ -8,9 +8,7 @@ schema: 2.0.0
 # Confirm-MgAuditLogSignInSafe
 
 ## SYNOPSIS
-Allow admins to mark an event in Azure AD sign in logs as safe.
-Admins can either mark the events flagged as risky by Azure AD Identity Protection as safe, or they can mark unflagged events as safe.
-For details about investigating Identity Protection risks, see How to investigate risk.
+Invoke action confirmSafe
 
 ## SYNTAX
 
@@ -28,9 +26,7 @@ Confirm-MgAuditLogSignInSafe
 ```
 
 ## DESCRIPTION
-Allow admins to mark an event in Azure AD sign in logs as safe.
-Admins can either mark the events flagged as risky by Azure AD Identity Protection as safe, or they can mark unflagged events as safe.
-For details about investigating Identity Protection risks, see How to investigate risk.
+Invoke action confirmSafe
 
 ## EXAMPLES
 

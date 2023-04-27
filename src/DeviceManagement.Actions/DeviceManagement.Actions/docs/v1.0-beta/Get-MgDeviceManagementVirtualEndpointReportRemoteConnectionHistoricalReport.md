@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport
 
 ## SYNOPSIS
-Get the remote connection history records of a Cloud PC during a given period.
+Invoke action getRemoteConnectionHistoricalReports
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport
 ```
 
 ## DESCRIPTION
-Get the remote connection history records of a Cloud PC during a given period.
+Invoke action getRemoteConnectionHistoricalReports
 
 ## EXAMPLES
 

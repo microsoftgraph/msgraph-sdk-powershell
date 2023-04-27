@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDirectoryInboundSharedUserProfilePersonalData
 
 ## SYNOPSIS
-Create a request to remove the personal data for an inboundSharedUserProfile.
+Invoke action removePersonalData
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDirectoryInboundSharedUserProfilePersonalData -InputObject <IIdentityDi
 ```
 
 ## DESCRIPTION
-Create a request to remove the personal data for an inboundSharedUserProfile.
+Invoke action removePersonalData
 
 ## EXAMPLES
 

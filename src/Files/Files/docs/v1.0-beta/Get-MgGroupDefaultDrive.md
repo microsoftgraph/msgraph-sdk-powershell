@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgGroupDefaultDrive
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+The group's default drive.
+Read-only.
 
 ## SYNTAX
 
@@ -26,8 +26,8 @@ Get-MgGroupDefaultDrive -InputObject <IFilesIdentity> [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+The group's default drive.
+Read-only.
 
 ## EXAMPLES
 

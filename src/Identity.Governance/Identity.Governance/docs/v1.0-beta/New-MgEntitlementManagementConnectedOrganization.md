@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgEntitlementManagementConnectedOrganization
 
 ## SYNOPSIS
-Create a new connectedOrganization object.
+Create new navigation property to connectedOrganizations for identityGovernance
 
 ## SYNTAX
 
@@ -35,7 +35,7 @@ New-MgEntitlementManagementConnectedOrganization [-AdditionalProperties <Hashtab
 ```
 
 ## DESCRIPTION
-Create a new connectedOrganization object.
+Create new navigation property to connectedOrganizations for identityGovernance
 
 ## EXAMPLES
 

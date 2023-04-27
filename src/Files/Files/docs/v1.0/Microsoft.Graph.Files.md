@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files
-Module Guid: ee3ef964-50b7-4f70-8fde-5f1193820cab
+Module Guid: 675213f1-1b7d-4db2-a1db-dda661391a3d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,40 +12,31 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Files Cmdlets
 ### [Add-MgDriveListContentTypeCopy](Add-MgDriveListContentTypeCopy.md)
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Invoke action addCopy
 
 ### [Add-MgDriveListContentTypeCopyFromContentTypeHub](Add-MgDriveListContentTypeCopyFromContentTypeHub.md)
-Add or sync a copy of a published content type from the content type hub to a target site or a list.
-This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
-The method allows users to pull content types directly from the content type hub to a site or list.
-For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+Invoke action addCopyFromContentTypeHub
 
 ### [Add-MgShareListContentTypeCopy](Add-MgShareListContentTypeCopy.md)
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Invoke action addCopy
 
 ### [Add-MgShareListContentTypeCopyFromContentTypeHub](Add-MgShareListContentTypeCopyFromContentTypeHub.md)
-Add or sync a copy of a published content type from the content type hub to a target site or a list.
-This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
-The method allows users to pull content types directly from the content type hub to a site or list.
-For more information, see contentType: getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+Invoke action addCopyFromContentTypeHub
 
 ### [Copy-MgDriveItem](Copy-MgDriveItem.md)
-Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
+Invoke action copy
 
 ### [Copy-MgDriveListContentTypeToDefaultContentLocation](Copy-MgDriveListContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a [content type][contentType].
-The file can then be added as a default file or template via a POST operation.
+Invoke action copyToDefaultContentLocation
 
 ### [Copy-MgDriveRoot](Copy-MgDriveRoot.md)
-Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
+Invoke action copy
 
 ### [Copy-MgShareListContentTypeToDefaultContentLocation](Copy-MgShareListContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a [content type][contentType].
-The file can then be added as a default file or template via a POST operation.
+Invoke action copyToDefaultContentLocation
 
 ### [Get-MgDrive](Get-MgDrive.md)
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+Get entity from drives by key
 
 ### [Get-MgDriveBundle](Get-MgDriveBundle.md)
 Collection of [bundles][bundle] (albums and multi-select-shared sets of items).
@@ -82,7 +73,7 @@ Exposes the itemActivities represented in this itemActivityStat resource.
 Get lastSevenDays from drives
 
 ### [Get-MgDriveItemAnalyticTime](Get-MgDriveItemAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get allTime from drives
 
 ### [Get-MgDriveItemChild](Get-MgDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -225,8 +216,8 @@ The collection of long-running operations on the list.
 The set of subscriptions on the list.
 
 ### [Get-MgDriveRoot](Get-MgDriveRoot.md)
-Retrieve the metadata for a driveItem in a drive by file system path or ID.\n`item-id` is the ID of a driveItem.
-It may also be the unique ID of a SharePoint list item.
+The root folder of the drive.
+Read-only.
 
 ### [Get-MgDriveRootActivityByInterval](Get-MgDriveRootActivityByInterval.md)
 Invoke function getActivitiesByInterval
@@ -244,7 +235,7 @@ Exposes the itemActivities represented in this itemActivityStat resource.
 Get lastSevenDays from drives
 
 ### [Get-MgDriveRootAnalyticTime](Get-MgDriveRootAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get allTime from drives
 
 ### [Get-MgDriveRootChild](Get-MgDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -323,8 +314,8 @@ Nullable.
 The content stream, if the item represents a file.
 
 ### [Get-MgGroupDefaultDrive](Get-MgGroupDefaultDrive.md)
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+The group's default drive.
+Read-only.
 
 ### [Get-MgGroupDrive](Get-MgGroupDrive.md)
 The group's drives.
@@ -362,7 +353,7 @@ Exposes the itemActivities represented in this itemActivityStat resource.
 Get lastSevenDays from groups
 
 ### [Get-MgGroupDriveItemAnalyticTime](Get-MgGroupDriveItemAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get allTime from groups
 
 ### [Get-MgGroupDriveItemChild](Get-MgGroupDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -493,8 +484,8 @@ The collection of long-running operations on the list.
 The set of subscriptions on the list.
 
 ### [Get-MgGroupDriveRoot](Get-MgGroupDriveRoot.md)
-Retrieve the metadata for a driveItem in a drive by file system path or ID.\n`item-id` is the ID of a driveItem.
-It may also be the unique ID of a SharePoint list item.
+The root folder of the drive.
+Read-only.
 
 ### [Get-MgGroupDriveRootAnalytic](Get-MgGroupDriveRootAnalytic.md)
 Analytics about the view activities that took place on this item.
@@ -509,7 +500,7 @@ Exposes the itemActivities represented in this itemActivityStat resource.
 Get lastSevenDays from groups
 
 ### [Get-MgGroupDriveRootAnalyticTime](Get-MgGroupDriveRootAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get allTime from groups
 
 ### [Get-MgGroupDriveRootChild](Get-MgGroupDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -582,8 +573,7 @@ Nullable.
 The content stream, if the item represents a file.
 
 ### [Get-MgShareDriveItem](Get-MgShareDriveItem.md)
-Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL.
-To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
+Used to access the underlying driveItem
 
 ### [Get-MgShareDriveItemContent](Get-MgShareDriveItemContent.md)
 The content stream, if the item represents a file.
@@ -683,8 +673,8 @@ To use a sharing URL with this API, your app needs to transform the URL into a s
 Used to access the underlying site
 
 ### [Get-MgUserDefaultDrive](Get-MgUserDefaultDrive.md)
-Retrieve the properties and relationships of a Drive resource.
-A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+The user's OneDrive.
+Read-only.
 
 ### [Get-MgUserDrive](Get-MgUserDrive.md)
 A collection of drives available for this user.
@@ -722,7 +712,7 @@ Exposes the itemActivities represented in this itemActivityStat resource.
 Get lastSevenDays from users
 
 ### [Get-MgUserDriveItemAnalyticTime](Get-MgUserDriveItemAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get allTime from users
 
 ### [Get-MgUserDriveItemChild](Get-MgUserDriveItemChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -853,8 +843,8 @@ The collection of long-running operations on the list.
 The set of subscriptions on the list.
 
 ### [Get-MgUserDriveRoot](Get-MgUserDriveRoot.md)
-Retrieve the metadata for a driveItem in a drive by file system path or ID.\n`item-id` is the ID of a driveItem.
-It may also be the unique ID of a SharePoint list item.
+The root folder of the drive.
+Read-only.
 
 ### [Get-MgUserDriveRootAnalytic](Get-MgUserDriveRootAnalytic.md)
 Analytics about the view activities that took place on this item.
@@ -869,7 +859,7 @@ Exposes the itemActivities represented in this itemActivityStat resource.
 Get lastSevenDays from users
 
 ### [Get-MgUserDriveRootAnalyticTime](Get-MgUserDriveRootAnalyticTime.md)
-Get [itemAnalytics][] about the views that took place under this resource.\nThe **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.\nFor a custom time range or interval, use the [getActivitiesByInterval][] API.
+Get allTime from users
 
 ### [Get-MgUserDriveRootChild](Get-MgUserDriveRootChild.md)
 Collection containing Item objects for the immediate children of Item.
@@ -942,40 +932,40 @@ Nullable.
 The content stream, if the item represents a file.
 
 ### [Grant-MgDriveItemPermission](Grant-MgDriveItemPermission.md)
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ### [Grant-MgDriveRootPermission](Grant-MgDriveRootPermission.md)
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ### [Grant-MgSharePermission](Grant-MgSharePermission.md)
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ### [Invoke-MgCheckinDriveItem](Invoke-MgCheckinDriveItem.md)
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Invoke action checkin
 
 ### [Invoke-MgCheckinDriveRoot](Invoke-MgCheckinDriveRoot.md)
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Invoke action checkin
 
 ### [Invoke-MgCheckoutDriveItem](Invoke-MgCheckoutDriveItem.md)
-Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+Invoke action checkout
 
 ### [Invoke-MgCheckoutDriveRoot](Invoke-MgCheckoutDriveRoot.md)
-Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+Invoke action checkout
 
 ### [Invoke-MgFollowDriveItem](Invoke-MgFollowDriveItem.md)
-Follow a driveItem.
+Invoke action follow
 
 ### [Invoke-MgFollowDriveRoot](Invoke-MgFollowDriveRoot.md)
-Follow a driveItem.
+Invoke action follow
 
 ### [Invoke-MgGraphDrive](Invoke-MgGraphDrive.md)
 Invoke function sharedWithMe
 
 ### [Invoke-MgInviteDriveItem](Invoke-MgInviteDriveItem.md)
-Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
+Invoke action invite
 
 ### [Invoke-MgInviteDriveRoot](Invoke-MgInviteDriveRoot.md)
-Sends a sharing invitation for a **driveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends them an email with a [sharing link][].
+Invoke action invite
 
 ### [Invoke-MgPreviewDriveItem](Invoke-MgPreviewDriveItem.md)
 Invoke action preview
@@ -999,16 +989,16 @@ Invoke action reauthorize
 Invoke function recent
 
 ### [Invoke-MgUnfollowDriveItem](Invoke-MgUnfollowDriveItem.md)
-Unfollow a driveItem.
+Invoke action unfollow
 
 ### [Invoke-MgUnfollowDriveRoot](Invoke-MgUnfollowDriveRoot.md)
-Unfollow a driveItem.
+Invoke action unfollow
 
 ### [Join-MgDriveListContentTypeWithHubSite](Join-MgDriveListContentTypeWithHubSite.md)
-Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+Invoke action associateWithHubSites
 
 ### [Join-MgShareListContentTypeWithHubSite](Join-MgShareListContentTypeWithHubSite.md)
-Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+Invoke action associateWithHubSites
 
 ### [New-MgDrive](New-MgDrive.md)
 Add new entity to drives
@@ -1026,12 +1016,10 @@ Create new navigation property to itemActivityStats for drives
 Create new navigation property to children for drives
 
 ### [New-MgDriveItemLink](New-MgDriveItemLink.md)
-You can use **createLink** action to share a DriveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
-DriveItem resources inherit sharing permissions from their ancestors.
+Invoke action createLink
 
 ### [New-MgDriveItemListItemDocumentSetVersion](New-MgDriveItemListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for drives
 
 ### [New-MgDriveItemListItemVersion](New-MgDriveItemListItemVersion.md)
 Create new navigation property to versions for drives
@@ -1046,29 +1034,28 @@ Create new navigation property to subscriptions for drives
 Create new navigation property to thumbnails for drives
 
 ### [New-MgDriveItemUploadSession](New-MgDriveItemUploadSession.md)
-Create an upload session to allow your app to upload files up to the maximum file size.\nAn upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session, there are two steps:
+Invoke action createUploadSession
 
 ### [New-MgDriveItemVersion](New-MgDriveItemVersion.md)
 Create new navigation property to versions for drives
 
 ### [New-MgDriveListColumn](New-MgDriveListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for drives
 
 ### [New-MgDriveListContentType](New-MgDriveListContentType.md)
 Create new navigation property to contentTypes for drives
 
 ### [New-MgDriveListContentTypeColumn](New-MgDriveListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for drives
 
 ### [New-MgDriveListContentTypeColumnLink](New-MgDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for drives
 
 ### [New-MgDriveListItem](New-MgDriveListItem.md)
-Create a new [listItem][] in a [list][].
+Create new navigation property to items for drives
 
 ### [New-MgDriveListItemDocumentSetVersion](New-MgDriveListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for drives
 
 ### [New-MgDriveListItemVersion](New-MgDriveListItemVersion.md)
 Create new navigation property to versions for drives
@@ -1086,12 +1073,10 @@ Create new navigation property to itemActivityStats for drives
 Create new navigation property to children for drives
 
 ### [New-MgDriveRootLink](New-MgDriveRootLink.md)
-You can use **createLink** action to share a DriveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
-DriveItem resources inherit sharing permissions from their ancestors.
+Invoke action createLink
 
 ### [New-MgDriveRootListItemDocumentSetVersion](New-MgDriveRootListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for drives
 
 ### [New-MgDriveRootListItemVersion](New-MgDriveRootListItemVersion.md)
 Create new navigation property to versions for drives
@@ -1106,8 +1091,7 @@ Create new navigation property to subscriptions for drives
 Create new navigation property to thumbnails for drives
 
 ### [New-MgDriveRootUploadSession](New-MgDriveRootUploadSession.md)
-Create an upload session to allow your app to upload files up to the maximum file size.\nAn upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session, there are two steps:
+Invoke action createUploadSession
 
 ### [New-MgDriveRootVersion](New-MgDriveRootVersion.md)
 Create new navigation property to versions for drives
@@ -1128,7 +1112,7 @@ Create new navigation property to itemActivityStats for groups
 Create new navigation property to children for groups
 
 ### [New-MgGroupDriveItemListItemDocumentSetVersion](New-MgGroupDriveItemListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for groups
 
 ### [New-MgGroupDriveItemListItemVersion](New-MgGroupDriveItemListItemVersion.md)
 Create new navigation property to versions for groups
@@ -1146,22 +1130,22 @@ Create new navigation property to thumbnails for groups
 Create new navigation property to versions for groups
 
 ### [New-MgGroupDriveListColumn](New-MgGroupDriveListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for groups
 
 ### [New-MgGroupDriveListContentType](New-MgGroupDriveListContentType.md)
 Create new navigation property to contentTypes for groups
 
 ### [New-MgGroupDriveListContentTypeColumn](New-MgGroupDriveListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for groups
 
 ### [New-MgGroupDriveListContentTypeColumnLink](New-MgGroupDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for groups
 
 ### [New-MgGroupDriveListItem](New-MgGroupDriveListItem.md)
-Create a new [listItem][] in a [list][].
+Create new navigation property to items for groups
 
 ### [New-MgGroupDriveListItemDocumentSetVersion](New-MgGroupDriveListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for groups
 
 ### [New-MgGroupDriveListItemVersion](New-MgGroupDriveListItemVersion.md)
 Create new navigation property to versions for groups
@@ -1179,7 +1163,7 @@ Create new navigation property to itemActivityStats for groups
 Create new navigation property to children for groups
 
 ### [New-MgGroupDriveRootListItemDocumentSetVersion](New-MgGroupDriveRootListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for groups
 
 ### [New-MgGroupDriveRootListItemVersion](New-MgGroupDriveRootListItemVersion.md)
 Create new navigation property to versions for groups
@@ -1197,22 +1181,22 @@ Create new navigation property to thumbnails for groups
 Create new navigation property to versions for groups
 
 ### [New-MgShareListColumn](New-MgShareListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for shares
 
 ### [New-MgShareListContentType](New-MgShareListContentType.md)
 Create new navigation property to contentTypes for shares
 
 ### [New-MgShareListContentTypeColumn](New-MgShareListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for shares
 
 ### [New-MgShareListContentTypeColumnLink](New-MgShareListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for shares
 
 ### [New-MgShareListItem](New-MgShareListItem.md)
-Create a new [listItem][] in a [list][].
+Create new navigation property to items for shares
 
 ### [New-MgShareListItemDocumentSetVersion](New-MgShareListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for shares
 
 ### [New-MgShareListItemVersion](New-MgShareListItemVersion.md)
 Create new navigation property to versions for shares
@@ -1242,7 +1226,7 @@ Create new navigation property to itemActivityStats for users
 Create new navigation property to children for users
 
 ### [New-MgUserDriveItemListItemDocumentSetVersion](New-MgUserDriveItemListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for users
 
 ### [New-MgUserDriveItemListItemVersion](New-MgUserDriveItemListItemVersion.md)
 Create new navigation property to versions for users
@@ -1260,22 +1244,22 @@ Create new navigation property to thumbnails for users
 Create new navigation property to versions for users
 
 ### [New-MgUserDriveListColumn](New-MgUserDriveListColumn.md)
-Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for users
 
 ### [New-MgUserDriveListContentType](New-MgUserDriveListContentType.md)
 Create new navigation property to contentTypes for users
 
 ### [New-MgUserDriveListContentTypeColumn](New-MgUserDriveListContentTypeColumn.md)
-Add a column to a [content type][contentType] in a site, or a list with a request that specifies a [columnDefinition][columnDefinition].
+Create new navigation property to columns for users
 
 ### [New-MgUserDriveListContentTypeColumnLink](New-MgUserDriveListContentTypeColumnLink.md)
 Create new navigation property to columnLinks for users
 
 ### [New-MgUserDriveListItem](New-MgUserDriveListItem.md)
-Create a new [listItem][] in a [list][].
+Create new navigation property to items for users
 
 ### [New-MgUserDriveListItemDocumentSetVersion](New-MgUserDriveListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for users
 
 ### [New-MgUserDriveListItemVersion](New-MgUserDriveListItemVersion.md)
 Create new navigation property to versions for users
@@ -1293,7 +1277,7 @@ Create new navigation property to itemActivityStats for users
 Create new navigation property to children for users
 
 ### [New-MgUserDriveRootListItemDocumentSetVersion](New-MgUserDriveRootListItemDocumentSetVersion.md)
-Create a new version of a document set item in a list.
+Create new navigation property to documentSetVersions for users
 
 ### [New-MgUserDriveRootListItemVersion](New-MgUserDriveRootListItemVersion.md)
 Create new navigation property to versions for users
@@ -1311,10 +1295,10 @@ Create new navigation property to thumbnails for users
 Create new navigation property to versions for users
 
 ### [Publish-MgDriveListContentType](Publish-MgDriveListContentType.md)
-Publishes a [contentType][] present in the content type hub site.
+Invoke action publish
 
 ### [Publish-MgShareListContentType](Publish-MgShareListContentType.md)
-Publishes a [contentType][] present in the content type hub site.
+Invoke action publish
 
 ### [Remove-MgDrive](Remove-MgDrive.md)
 Delete entity from drives
@@ -1692,48 +1676,40 @@ Delete navigation property thumbnails for users
 Delete navigation property versions for users
 
 ### [Restore-MgDriveItem](Restore-MgDriveItem.md)
-Restore a driveItem that has been deleted and is currently in the recycle bin.
-**NOTE**: This functionality is currently only available for OneDrive Personal.
+Invoke action restore
 
 ### [Restore-MgDriveItemListItemDocumentSetVersion](Restore-MgDriveItemListItemDocumentSetVersion.md)
-Restore a document set version.
+Invoke action restore
 
 ### [Restore-MgDriveItemListItemVersion](Restore-MgDriveItemListItemVersion.md)
-Restore a previous version of a ListItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
+Invoke action restoreVersion
 
 ### [Restore-MgDriveItemVersion](Restore-MgDriveItemVersion.md)
-Restore a previous version of a DriveItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
+Invoke action restoreVersion
 
 ### [Restore-MgDriveListItemDocumentSetVersion](Restore-MgDriveListItemDocumentSetVersion.md)
-Restore a document set version.
+Invoke action restore
 
 ### [Restore-MgDriveListItemVersion](Restore-MgDriveListItemVersion.md)
-Restore a previous version of a ListItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
+Invoke action restoreVersion
 
 ### [Restore-MgDriveRoot](Restore-MgDriveRoot.md)
-Restore a driveItem that has been deleted and is currently in the recycle bin.
-**NOTE**: This functionality is currently only available for OneDrive Personal.
+Invoke action restore
 
 ### [Restore-MgDriveRootListItemDocumentSetVersion](Restore-MgDriveRootListItemDocumentSetVersion.md)
-Restore a document set version.
+Invoke action restore
 
 ### [Restore-MgDriveRootListItemVersion](Restore-MgDriveRootListItemVersion.md)
-Restore a previous version of a ListItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
+Invoke action restoreVersion
 
 ### [Restore-MgDriveRootVersion](Restore-MgDriveRootVersion.md)
-Restore a previous version of a DriveItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
+Invoke action restoreVersion
 
 ### [Restore-MgShareListItemDocumentSetVersion](Restore-MgShareListItemDocumentSetVersion.md)
-Restore a document set version.
+Invoke action restore
 
 ### [Restore-MgShareListItemVersion](Restore-MgShareListItemVersion.md)
-Restore a previous version of a ListItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
+Invoke action restoreVersion
 
 ### [Search-MgDrive](Search-MgDrive.md)
 Invoke function search
@@ -1877,10 +1853,10 @@ Invoke action validatePermission
 Invoke function isPublished
 
 ### [Unpublish-MgDriveListContentType](Unpublish-MgDriveListContentType.md)
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ### [Unpublish-MgShareListContentType](Unpublish-MgShareListContentType.md)
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ### [Update-MgDrive](Update-MgDrive.md)
 Update entity in drives
@@ -1901,7 +1877,7 @@ Update the navigation property listItem in drives
 Update the navigation property documentSetVersions in drives
 
 ### [Update-MgDriveItemListItemField](Update-MgDriveItemListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in drives
 
 ### [Update-MgDriveItemListItemVersion](Update-MgDriveItemListItemVersion.md)
 Update the navigation property versions in drives
@@ -1943,7 +1919,7 @@ Update the navigation property items in drives
 Update the navigation property documentSetVersions in drives
 
 ### [Update-MgDriveListItemField](Update-MgDriveListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in drives
 
 ### [Update-MgDriveListItemVersion](Update-MgDriveListItemVersion.md)
 Update the navigation property versions in drives
@@ -1973,7 +1949,7 @@ Update the navigation property listItem in drives
 Update the navigation property documentSetVersions in drives
 
 ### [Update-MgDriveRootListItemField](Update-MgDriveRootListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in drives
 
 ### [Update-MgDriveRootListItemVersion](Update-MgDriveRootListItemVersion.md)
 Update the navigation property versions in drives
@@ -2012,7 +1988,7 @@ Update the navigation property listItem in groups
 Update the navigation property documentSetVersions in groups
 
 ### [Update-MgGroupDriveItemListItemField](Update-MgGroupDriveItemListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in groups
 
 ### [Update-MgGroupDriveItemListItemVersion](Update-MgGroupDriveItemListItemVersion.md)
 Update the navigation property versions in groups
@@ -2054,7 +2030,7 @@ Update the navigation property items in groups
 Update the navigation property documentSetVersions in groups
 
 ### [Update-MgGroupDriveListItemField](Update-MgGroupDriveListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in groups
 
 ### [Update-MgGroupDriveListItemVersion](Update-MgGroupDriveListItemVersion.md)
 Update the navigation property versions in groups
@@ -2084,7 +2060,7 @@ Update the navigation property listItem in groups
 Update the navigation property documentSetVersions in groups
 
 ### [Update-MgGroupDriveRootListItemField](Update-MgGroupDriveRootListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in groups
 
 ### [Update-MgGroupDriveRootListItemVersion](Update-MgGroupDriveRootListItemVersion.md)
 Update the navigation property versions in groups
@@ -2126,7 +2102,7 @@ Update the navigation property items in shares
 Update the navigation property documentSetVersions in shares
 
 ### [Update-MgShareListItemField](Update-MgShareListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in shares
 
 ### [Update-MgShareListItemVersion](Update-MgShareListItemVersion.md)
 Update the navigation property versions in shares
@@ -2165,7 +2141,7 @@ Update the navigation property listItem in users
 Update the navigation property documentSetVersions in users
 
 ### [Update-MgUserDriveItemListItemField](Update-MgUserDriveItemListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in users
 
 ### [Update-MgUserDriveItemListItemVersion](Update-MgUserDriveItemListItemVersion.md)
 Update the navigation property versions in users
@@ -2207,7 +2183,7 @@ Update the navigation property items in users
 Update the navigation property documentSetVersions in users
 
 ### [Update-MgUserDriveListItemField](Update-MgUserDriveListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in users
 
 ### [Update-MgUserDriveListItemVersion](Update-MgUserDriveListItemVersion.md)
 Update the navigation property versions in users
@@ -2237,7 +2213,7 @@ Update the navigation property listItem in users
 Update the navigation property documentSetVersions in users
 
 ### [Update-MgUserDriveRootListItemField](Update-MgUserDriveRootListItemField.md)
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in users
 
 ### [Update-MgUserDriveRootListItemVersion](Update-MgUserDriveRootListItemVersion.md)
 Update the navigation property versions in users

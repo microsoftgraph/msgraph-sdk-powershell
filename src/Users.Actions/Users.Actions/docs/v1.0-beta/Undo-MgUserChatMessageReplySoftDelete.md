@@ -8,7 +8,7 @@ schema: 2.0.0
 # Undo-MgUserChatMessageReplySoftDelete
 
 ## SYNOPSIS
-Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+Invoke action undoSoftDelete
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Undo-MgUserChatMessageReplySoftDelete -InputObject <IUsersActionsIdentity> [-Pas
 ```
 
 ## DESCRIPTION
-Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+Invoke action undoSoftDelete
 
 ## EXAMPLES
 

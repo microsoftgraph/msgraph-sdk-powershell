@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgCommunicationCallRecordingStatus
 
 ## SYNOPSIS
-Update the application's recording status associated with a call.
-This requires the use of the Teams policy-based recording solution.
+Invoke action updateRecordingStatus
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Update-MgCommunicationCallRecordingStatus -InputObject <ICloudCommunicationsIden
 ```
 
 ## DESCRIPTION
-Update the application's recording status associated with a call.
-This requires the use of the Teams policy-based recording solution.
+Invoke action updateRecordingStatus
 
 ## EXAMPLES
 

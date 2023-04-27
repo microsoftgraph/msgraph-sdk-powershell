@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityCaseEdiscoveryCaseReviewSetQuery
 
 ## SYNOPSIS
-Create a new ediscoveryReviewSetQuery object.
+Create new navigation property to queries for security
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgSecurityCaseEdiscoveryCaseReviewSetQuery -InputObject <ISecurityIdentity>
 ```
 
 ## DESCRIPTION
-Create a new ediscoveryReviewSetQuery object.
+Create new navigation property to queries for security
 
 ## EXAMPLES
 

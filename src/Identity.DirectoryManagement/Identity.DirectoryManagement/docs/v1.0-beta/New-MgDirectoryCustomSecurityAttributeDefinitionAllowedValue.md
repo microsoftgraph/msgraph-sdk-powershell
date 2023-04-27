@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
 
 ## SYNOPSIS
-Create a new allowedValue object.
+Create new navigation property to allowedValues for directory
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
 ```
 
 ## DESCRIPTION
-Create a new allowedValue object.
+Create new navigation property to allowedValues for directory
 
 ## EXAMPLES
 
@@ -137,8 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsActive
-Indicates whether the predefined value is active or deactivated.
-If set to false, this predefined value cannot be assigned to any additional supported directory objects.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -208,7 +207,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphAllowedValue>: allowedValue
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[IsActive <Boolean?>]`: Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
+  - `[IsActive <Boolean?>]`: 
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: The unique identifier of administrativeUnit

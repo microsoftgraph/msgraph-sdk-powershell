@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserMailFolderMessage
 
 ## SYNOPSIS
-Use this API to create a new Message in a mailfolder.
+Create new navigation property to messages for users
 
 ## SYNTAX
 
@@ -65,7 +65,7 @@ New-MgUserMailFolderMessage -InputObject <IMailIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Use this API to create a new Message in a mailfolder.
+Create new navigation property to messages for users
 
 ## EXAMPLES
 

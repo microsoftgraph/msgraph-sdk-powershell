@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgGroupSiteListItemLink
 
 ## SYNOPSIS
-Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+Invoke action createLink
 
 ## SYNTAX
 
@@ -45,9 +43,7 @@ New-MgGroupSiteListItemLink -InputObject <IGroupsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+Invoke action createLink
 
 ## EXAMPLES
 
@@ -349,6 +345,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

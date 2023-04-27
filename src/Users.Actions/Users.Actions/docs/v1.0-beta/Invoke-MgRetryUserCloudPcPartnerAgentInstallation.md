@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgRetryUserCloudPcPartnerAgentInstallation
 
 ## SYNOPSIS
-Retry installation for the partner agents which failed to install on the Cloud PC.
-Service side will check which agent installation failed firstly and retry.
+Invoke action retryPartnerAgentInstallation
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Invoke-MgRetryUserCloudPcPartnerAgentInstallation -InputObject <IUsersActionsIde
 ```
 
 ## DESCRIPTION
-Retry installation for the partner agents which failed to install on the Cloud PC.
-Service side will check which agent installation failed firstly and retry.
+Invoke action retryPartnerAgentInstallation
 
 ## EXAMPLES
 

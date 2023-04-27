@@ -8,8 +8,7 @@ schema: 2.0.0
 # Set-MgApplicationVerifiedPublisher
 
 ## SYNOPSIS
-Set the verifiedPublisher on an application.
-For more information, including prerequisites to setting a verified publisher, see Publisher verification.
+Invoke action setVerifiedPublisher
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Set-MgApplicationVerifiedPublisher -InputObject <IApplicationsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Set the verifiedPublisher on an application.
-For more information, including prerequisites to setting a verified publisher, see Publisher verification.
+Invoke action setVerifiedPublisher
 
 ## EXAMPLES
 

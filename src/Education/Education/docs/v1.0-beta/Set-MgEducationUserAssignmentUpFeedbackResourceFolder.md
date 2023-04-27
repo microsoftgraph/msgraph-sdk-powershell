@@ -8,9 +8,7 @@ schema: 2.0.0
 # Set-MgEducationUserAssignmentUpFeedbackResourceFolder
 
 ## SYNOPSIS
-Create a SharePoint folder to upload feedback files for a given educationSubmission.
-Only teachers can perform this operation.
-The teacher determines the resources to upload in the feedback resources folder of a submission.
+Invoke action setUpFeedbackResourcesFolder
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Set-MgEducationUserAssignmentUpFeedbackResourceFolder -InputObject <IEducationId
 ```
 
 ## DESCRIPTION
-Create a SharePoint folder to upload feedback files for a given educationSubmission.
-Only teachers can perform this operation.
-The teacher determines the resources to upload in the feedback resources folder of a submission.
+Invoke action setUpFeedbackResourcesFolder
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Send-MgChatActivityNotification
 
 ## SYNOPSIS
-Send an activity feed notification in scope of a chat.
-For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+Invoke action sendActivityNotification
 
 ## SYNTAX
 
@@ -44,8 +43,7 @@ Send-MgChatActivityNotification -InputObject <ITeamsIdentity> [-ActivityType <St
 ```
 
 ## DESCRIPTION
-Send an activity feed notification in scope of a chat.
-For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+Invoke action sendActivityNotification
 
 ## EXAMPLES
 

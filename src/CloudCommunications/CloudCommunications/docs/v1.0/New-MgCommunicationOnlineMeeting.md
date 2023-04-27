@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgCommunicationOnlineMeeting
 
 ## SYNOPSIS
-Create an onlineMeeting object with a custom specified external ID.
-If the external ID already exists, this API will return the onlineMeeting object with that external ID.
+Invoke action createOrGet
 
 ## SYNTAX
 
@@ -28,8 +27,7 @@ New-MgCommunicationOnlineMeeting
 ```
 
 ## DESCRIPTION
-Create an onlineMeeting object with a custom specified external ID.
-If the external ID already exists, this API will return the onlineMeeting object with that external ID.
+Invoke action createOrGet
 
 ## EXAMPLES
 

@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -OpenShiftChangeRequests
-.
+The open shift requests in the schedule.
 To construct, please use Get-Help -Online and see NOTES section for OPENSHIFTCHANGEREQUESTS properties and create a hash table.
 
 ```yaml
@@ -203,7 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -OpenShifts
-.
+The set of open shifts in a scheduling group in the schedule.
 To construct, please use Get-Help -Online and see NOTES section for OPENSHIFTS properties and create a hash table.
 
 ```yaml
@@ -296,7 +296,7 @@ Accept wildcard characters: False
 ```
 
 ### -SwapShiftsChangeRequests
-.
+The swap requests for shifts in the schedule.
 To construct, please use Get-Help -Online and see NOTES section for SWAPSHIFTSCHANGEREQUESTS properties and create a hash table.
 
 ```yaml
@@ -390,7 +390,7 @@ Accept wildcard characters: False
 ```
 
 ### -TimeOffRequests
-.
+The time off requests in the schedule.
 To construct, please use Get-Help -Online and see NOTES section for TIMEOFFREQUESTS properties and create a hash table.
 
 ```yaml
@@ -543,7 +543,7 @@ BODYPARAMETER <IMicrosoftGraphSchedule1>: schedule
     - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
     - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
   - `[OfferShiftRequestsEnabled <Boolean?>]`: Indicates whether offer shift requests are enabled for the schedule.
-  - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest1[]>]`: 
+  - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest1[]>]`: The open shift requests in the schedule.
     - `[AssignedTo <String>]`: scheduleChangeRequestActor
     - `[ManagerActionMessage <String>]`: 
     - `[SenderMessage <String>]`: 
@@ -552,7 +552,7 @@ BODYPARAMETER <IMicrosoftGraphSchedule1>: schedule
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[OpenShiftId <String>]`: ID for the open shift.
-  - `[OpenShifts <IMicrosoftGraphOpenShift1[]>]`: 
+  - `[OpenShifts <IMicrosoftGraphOpenShift1[]>]`: The set of open shifts in a scheduling group in the schedule.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -598,7 +598,7 @@ BODYPARAMETER <IMicrosoftGraphSchedule1>: schedule
     - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
     - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
     - `[UserId <String>]`: ID of the user assigned to the shift. Required.
-  - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest1[]>]`: 
+  - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest1[]>]`: The swap requests for shifts in the schedule.
     - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
     - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
     - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
@@ -653,7 +653,7 @@ BODYPARAMETER <IMicrosoftGraphSchedule1>: schedule
     - `[DisplayName <String>]`: The name of the timeOffReason. Required.
     - `[IconType <String>]`: timeOffReasonIconType
     - `[IsActive <Boolean?>]`: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
-  - `[TimeOffRequests <IMicrosoftGraphTimeOffRequest1[]>]`: 
+  - `[TimeOffRequests <IMicrosoftGraphTimeOffRequest1[]>]`: The time off requests in the schedule.
     - `[AssignedTo <String>]`: scheduleChangeRequestActor
     - `[ManagerActionMessage <String>]`: 
     - `[SenderMessage <String>]`: 
@@ -739,7 +739,7 @@ OFFERSHIFTREQUESTS <IMicrosoftGraphOfferShiftRequest1[]>: .
   - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
   - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
 
-OPENSHIFTCHANGEREQUESTS <IMicrosoftGraphOpenShiftChangeRequest1[]>: .
+OPENSHIFTCHANGEREQUESTS <IMicrosoftGraphOpenShiftChangeRequest1[]>: The open shift requests in the schedule.
   - `[AssignedTo <String>]`: scheduleChangeRequestActor
   - `[ManagerActionMessage <String>]`: 
   - `[SenderMessage <String>]`: 
@@ -756,7 +756,7 @@ OPENSHIFTCHANGEREQUESTS <IMicrosoftGraphOpenShiftChangeRequest1[]>: .
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[OpenShiftId <String>]`: ID for the open shift.
 
-OPENSHIFTS <IMicrosoftGraphOpenShift1[]>: .
+OPENSHIFTS <IMicrosoftGraphOpenShift1[]>: The set of open shifts in a scheduling group in the schedule.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -830,7 +830,7 @@ SHIFTS <IMicrosoftGraphShift1[]>: The shifts in the schedule.
   - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
   - `[UserId <String>]`: ID of the user assigned to the shift. Required.
 
-SWAPSHIFTSCHANGEREQUESTS <IMicrosoftGraphSwapShiftsChangeRequest1[]>: .
+SWAPSHIFTSCHANGEREQUESTS <IMicrosoftGraphSwapShiftsChangeRequest1[]>: The swap requests for shifts in the schedule.
   - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
   - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
   - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
@@ -908,7 +908,7 @@ TIMEOFFREASONS <IMicrosoftGraphTimeOffReason1[]>: The set of reasons for a time 
   - `[IconType <String>]`: timeOffReasonIconType
   - `[IsActive <Boolean?>]`: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
 
-TIMEOFFREQUESTS <IMicrosoftGraphTimeOffRequest1[]>: .
+TIMEOFFREQUESTS <IMicrosoftGraphTimeOffRequest1[]>: The time off requests in the schedule.
   - `[AssignedTo <String>]`: scheduleChangeRequestActor
   - `[ManagerActionMessage <String>]`: 
   - `[SenderMessage <String>]`: 

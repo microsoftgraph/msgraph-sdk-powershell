@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgExtractUserInformationProtectionPolicyLabel
 
 ## SYNOPSIS
-Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
-The contentInfo input is resolved to informationProtectionContentLabel.
+Invoke action extractLabel
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Invoke-MgExtractUserInformationProtectionPolicyLabel -InputObject <IUsersActions
 ```
 
 ## DESCRIPTION
-Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
-The contentInfo input is resolved to informationProtectionContentLabel.
+Invoke action extractLabel
 
 ## EXAMPLES
 

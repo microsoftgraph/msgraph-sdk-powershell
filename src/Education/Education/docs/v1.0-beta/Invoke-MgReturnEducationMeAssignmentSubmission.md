@@ -8,9 +8,7 @@ schema: 2.0.0
 # Invoke-MgReturnEducationMeAssignmentSubmission
 
 ## SYNOPSIS
-Make the grade and feedback associated with this submission available to the student.
-This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done.
-This action can only be done by the teacher.
+Invoke action return
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Invoke-MgReturnEducationMeAssignmentSubmission -InputObject <IEducationIdentity>
 ```
 
 ## DESCRIPTION
-Make the grade and feedback associated with this submission available to the student.
-This will change the status of the submission from 'submitted' to 'returned' and indicates that feedback is provided or grading is done.
-This action can only be done by the teacher.
+Invoke action return
 
 ## EXAMPLES
 

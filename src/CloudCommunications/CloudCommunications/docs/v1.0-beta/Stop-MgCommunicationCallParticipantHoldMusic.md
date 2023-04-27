@@ -8,7 +8,7 @@ schema: 2.0.0
 # Stop-MgCommunicationCallParticipantHoldMusic
 
 ## SYNOPSIS
-Reincorporate a participant previously put on hold to the call.
+Invoke action stopHoldMusic
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Stop-MgCommunicationCallParticipantHoldMusic -InputObject <ICloudCommunicationsI
 ```
 
 ## DESCRIPTION
-Reincorporate a participant previously put on hold to the call.
+Invoke action stopHoldMusic
 
 ## EXAMPLES
 

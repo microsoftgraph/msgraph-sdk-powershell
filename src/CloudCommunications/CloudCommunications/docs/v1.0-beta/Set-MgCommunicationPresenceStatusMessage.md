@@ -8,8 +8,7 @@ schema: 2.0.0
 # Set-MgCommunicationPresenceStatusMessage
 
 ## SYNOPSIS
-Set a presence status message for a user.
-An optional expiration date and time can be supplied.
+Invoke action setStatusMessage
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Set-MgCommunicationPresenceStatusMessage -InputObject <ICloudCommunicationsIdent
 ```
 
 ## DESCRIPTION
-Set a presence status message for a user.
-An optional expiration date and time can be supplied.
+Invoke action setStatusMessage
 
 ## EXAMPLES
 

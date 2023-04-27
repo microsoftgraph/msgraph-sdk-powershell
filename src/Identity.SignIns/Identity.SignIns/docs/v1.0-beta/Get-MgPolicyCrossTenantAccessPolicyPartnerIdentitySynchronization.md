@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization
 
 ## SYNOPSIS
-Read the user synchronization policy of a partner-specific configuration.
+Defines the cross-tenant policy for synchronization of users from a partner tenant.
+Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating creating, updating, and deleting users from one tenant to another.
 
 ## SYNTAX
 
@@ -26,7 +27,8 @@ Get-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -InputObject <
 ```
 
 ## DESCRIPTION
-Read the user synchronization policy of a partner-specific configuration.
+Defines the cross-tenant policy for synchronization of users from a partner tenant.
+Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating creating, updating, and deleting users from one tenant to another.
 
 ## EXAMPLES
 
@@ -150,6 +152,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

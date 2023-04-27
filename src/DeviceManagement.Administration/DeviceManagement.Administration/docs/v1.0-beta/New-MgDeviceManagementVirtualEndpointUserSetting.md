@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementVirtualEndpointUserSetting
 
 ## SYNOPSIS
-Create a new cloudPcUserSetting object.
+Create new navigation property to userSettings for deviceManagement
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgDeviceManagementVirtualEndpointUserSetting -BodyParameter <IMicrosoftGraph
 ```
 
 ## DESCRIPTION
-Create a new cloudPcUserSetting object.
+Create new navigation property to userSettings for deviceManagement
 
 ## EXAMPLES
 

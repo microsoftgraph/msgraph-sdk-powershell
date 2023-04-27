@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseSetting
 
 ## SYNOPSIS
-Read the properties and relationships of an eDiscovery caseSettings object.
+Get settings from compliance
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgComplianceEdiscoveryCaseSetting -InputObject <IComplianceIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an eDiscovery caseSettings object.
+Get settings from compliance
 
 ## EXAMPLES
 

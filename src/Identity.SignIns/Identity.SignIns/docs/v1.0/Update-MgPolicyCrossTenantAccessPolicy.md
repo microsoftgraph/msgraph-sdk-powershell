@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyCrossTenantAccessPolicy
 
 ## SYNOPSIS
-Update the properties of a cross-tenant access policy.
+Update the navigation property crossTenantAccessPolicy in policies
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Update-MgPolicyCrossTenantAccessPolicy -BodyParameter <IMicrosoftGraphCrossTenan
 ```
 
 ## DESCRIPTION
-Update the properties of a cross-tenant access policy.
+Update the navigation property crossTenantAccessPolicy in policies
 
 ## EXAMPLES
 

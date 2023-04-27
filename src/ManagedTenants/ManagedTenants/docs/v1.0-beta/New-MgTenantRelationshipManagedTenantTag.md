@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTenantRelationshipManagedTenantTag
 
 ## SYNOPSIS
-Create a new tenantTag object.
+Create new navigation property to tenantTags for tenantRelationships
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgTenantRelationshipManagedTenantTag -BodyParameter <IMicrosoftGraphManagedT
 ```
 
 ## DESCRIPTION
-Create a new tenantTag object.
+Create new navigation property to tenantTags for tenantRelationships
 
 ## EXAMPLES
 

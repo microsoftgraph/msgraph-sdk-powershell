@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyClaimMappingPolicy
 
 ## SYNOPSIS
-Create a new claimsMappingPolicy object.
+Create new navigation property to claimsMappingPolicies for policies
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgPolicyClaimMappingPolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [
 ```
 
 ## DESCRIPTION
-Create a new claimsMappingPolicy object.
+Create new navigation property to claimsMappingPolicies for policies
 
 ## EXAMPLES
 

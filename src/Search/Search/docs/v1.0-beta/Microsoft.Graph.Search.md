@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: 4874deb6-4400-4810-a62e-13e559e3d9b9
+Module Guid: 6fddcf7f-e8e5-4d63-ab8b-b854e4c5ab49
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -41,10 +41,10 @@ Represents an identity used to identify who is responsible for the activity.
 Get operations from external
 
 ### [Get-MgExternalConnectionQuota](Get-MgExternalConnectionQuota.md)
-Retrieve the properties and relationships of a connectionQuota object.
+Get quota from external
 
 ### [Get-MgExternalConnectionSchema](Get-MgExternalConnectionSchema.md)
-Retrieve the properties of a schema for an externalConnection.
+Get schema from external
 
 ### [Get-MgExternalIndustryData](Get-MgExternalIndustryData.md)
 Get industryData from external
@@ -103,17 +103,16 @@ Get search
 Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 
 ### [Invoke-MgQuerySearch](Invoke-MgQuerySearch.md)
-Run a specified search query.
-Search results are provided in the response.
+Invoke action query
 
 ### [New-MgExternalConnection](New-MgExternalConnection.md)
-Create a new externalConnection.
+Create new navigation property to connections for external
 
 ### [New-MgExternalConnectionGroup](New-MgExternalConnectionGroup.md)
-Create a new externalGroup object.
+Create new navigation property to groups for external
 
 ### [New-MgExternalConnectionGroupMember](New-MgExternalConnectionGroupMember.md)
-Create a new externalGroupMember object.
+Create new navigation property to members for external
 
 ### [New-MgExternalConnectionItem](New-MgExternalConnectionItem.md)
 Create new navigation property to items for external
@@ -125,11 +124,10 @@ Create new navigation property to activities for external
 Create new navigation property to operations for external
 
 ### [New-MgExternalIndustryDataConnector](New-MgExternalIndustryDataConnector.md)
-Create a new industryDataConnector object.
+Create new navigation property to dataConnectors for external
 
 ### [New-MgExternalIndustryDataInboundFlow](New-MgExternalIndustryDataInboundFlow.md)
-Create a new inboundFlow object.
-The following prerequisite resources are required when you create an **inboundFlow**:
+Create new navigation property to inboundFlows for external
 
 ### [New-MgExternalIndustryDataOperation](New-MgExternalIndustryDataOperation.md)
 Create new navigation property to operations for external
@@ -141,19 +139,19 @@ Create new navigation property to referenceDefinitions for external
 Create new navigation property to roleGroups for external
 
 ### [New-MgExternalIndustryDataSourceSystem](New-MgExternalIndustryDataSourceSystem.md)
-Create a new sourceSystemDefinition object.
+Create new navigation property to sourceSystems for external
 
 ### [New-MgExternalIndustryDataYear](New-MgExternalIndustryDataYear.md)
-Create a new yearTimePeriodDefinition object.
+Create new navigation property to years for external
 
 ### [New-MgSearchAcronym](New-MgSearchAcronym.md)
-Create a new acronym object.
+Create new navigation property to acronyms for search
 
 ### [New-MgSearchBookmark](New-MgSearchBookmark.md)
-Create a new bookmark object.
+Create new navigation property to bookmarks for search
 
 ### [New-MgSearchQna](New-MgSearchQna.md)
-Create a new qna object.
+Create new navigation property to qnas for search
 
 ### [Remove-MgExternalConnection](Remove-MgExternalConnection.md)
 Delete navigation property connections for external
@@ -213,7 +211,7 @@ Delete navigation property qnas for search
 Update the navigation property items in external
 
 ### [Test-MgExternalIndustryDataConnector](Test-MgExternalIndustryDataConnector.md)
-Perform validations applicable for the specific instance of the data connector.
+Invoke action validate
 
 ### [Update-MgExternal](Update-MgExternal.md)
 Update external
@@ -237,7 +235,7 @@ Update the navigation property operations in external
 Update the navigation property quota in external
 
 ### [Update-MgExternalConnectionSchema](Update-MgExternalConnectionSchema.md)
-Update the properties of a schema for an externalConnection.
+Update the navigation property schema in external
 
 ### [Update-MgExternalIndustryDataConnector](Update-MgExternalIndustryDataConnector.md)
 Update the navigation property dataConnectors in external
