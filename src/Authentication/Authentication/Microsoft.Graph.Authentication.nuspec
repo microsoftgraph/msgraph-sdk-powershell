@@ -35,7 +35,6 @@
     <file src="artifacts\Dependencies\Microsoft.IdentityModel.Tokens.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.IdentityModel.Logging.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.IdentityModel.Tokens.Jwt.dll" target="Dependencies" />
-    <file src="artifacts\Dependencies\Core\runtimes\win-x64\native\" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Bcl.AsyncInterfaces.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Identity.Client.Extensions.Msal.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.IdentityModel.Abstractions.dll" target="Dependencies" />
@@ -48,6 +47,8 @@
     <file src="artifacts\Dependencies\System.Text.Encodings.Web.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.Text.Json.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.Threading.Tasks.Extensions.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Core\runtimes\win-x64\native\msalruntime.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Core\runtimes\win-x86\native\msalruntime_x86.dll" target="Dependencies" />
     <!-- Core-->
     <file src="artifacts\Dependencies\Core\Azure.Core.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Azure.Identity.dll" target="Dependencies\Core" />
@@ -56,7 +57,7 @@
     <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.Extensions.Msal.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Microsoft.IdentityModel.Abstractions.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Newtonsoft.Json.dll" target="Dependencies\Core" />
-    <file src="artifacts\Dependencies\Core\System.Security.Cryptography.ProtectedData.dll" target="Dependencies\Core" />
+    <file src="artifacts\Dependencies\Core\System.Security.Cryptography.ProtectedData.dll" target="Dependencies\Core" /> 
     <!-- Desktop -->
     <file src="artifacts\Dependencies\Desktop\Microsoft.Graph.Core.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\Microsoft.Identity.Client.dll" target="Dependencies\Desktop" />
