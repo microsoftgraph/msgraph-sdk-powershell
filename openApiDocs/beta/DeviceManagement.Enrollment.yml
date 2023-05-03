@@ -12629,6 +12629,11 @@ components:
         - title: unifiedRbacApplication
           type: object
           properties:
+            customAppScopes:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.customAppScope'
+              x-ms-navigationProperty: true
             resourceNamespaces:
               type: array
               items:
@@ -13377,6 +13382,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
           additionalProperties:
             type: object
+    microsoft.graph.customAppScope:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.appScope'
+        - title: customAppScope
+          type: object
+          properties:
+            customAttributes:
+              $ref: '#/components/schemas/microsoft.graph.customAppScopeAttributesDictionary'
+          additionalProperties:
+            type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -13581,6 +13596,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
           additionalProperties:
             type: object
+    microsoft.graph.customAppScopeAttributesDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: customAppScopeAttributesDictionary
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
@@ -13655,6 +13677,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.recurrencePattern'
         range:
           $ref: '#/components/schemas/microsoft.graph.recurrenceRange'
+      additionalProperties:
+        type: object
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.expirationPatternType:
