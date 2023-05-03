@@ -16,7 +16,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
     /// </summary>
     internal class ODataQueryOptionsHandler : DelegatingHandler
     {
-        private List<string> _standardODataQueryOptions = new List<string>
+        private readonly List<string> _standardODataQueryOptions = new List<string>
         {
             "count",
             "expand",
@@ -59,13 +59,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
         }
 
         /// <summary>
-        /// Add `$` to all standard OData query options. v1.0 endpoint requires $ to be prefixed to all OData query options.
+        /// Add `$` to all standard OData query options. v1.0 and China cloud endpoint require $ to be prefixed to all OData query options.
+        /// See https://github.com/microsoftgraph/msgraph-sdk-powershell/issues/1893
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
         private HttpRequestMessage AddDollarSignToQueryParameters(HttpRequestMessage request)
         {
-            if (request.RequestUri.Segments[1].ToLower().Contains("v1.0") && request.RequestUri.Query != null)
+            if (request.RequestUri.Query != null)
             {
                 string newRequestQuery = request.RequestUri.Query;
                 string[] querySegments = newRequestQuery.Split(new char[] { '&', '?' }, StringSplitOptions.RemoveEmptyEntries);
