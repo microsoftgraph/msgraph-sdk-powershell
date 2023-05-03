@@ -109,7 +109,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         private static async Task<InteractiveBrowserCredential> GetInteractiveBrowserCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
         {
-            using AzureEventSourceListener listener = AzureEventSourceListener.CreateConsoleLogger();
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             InteractiveBrowserCredentialOptions interactiveOptions;
