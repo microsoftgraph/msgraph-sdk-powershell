@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: d7cae808-f975-49fa-a433-3aabe8b9a652
+Module Guid: 4c88e257-a61b-4f4b-8fd3-ec595eb7a8c1
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -355,6 +355,9 @@ When creating a new invitation you have several options available:
 Create a delegated permission grant represented by an oAuth2PermissionGrant object.
 A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.
 
+### [New-MgOrganizationCertificateBasedAuthConfiguration](New-MgOrganizationCertificateBasedAuthConfiguration.md)
+Create new navigation property to certificateBasedAuthConfiguration for organization
+
 ### [New-MgPolicyActivityBasedTimeoutPolicy](New-MgPolicyActivityBasedTimeoutPolicy.md)
 Create new navigation property to activityBasedTimeoutPolicies for policies
 
@@ -494,6 +497,9 @@ Delete navigation property results for informationProtection
 Delete a delegated permission grant, represented by an oAuth2PermissionGrant object.
 When a delegated permission grant is deleted, the access it granted is revoked.
 Existing access tokens will continue to be valid for their lifetime, but new access tokens will not be granted for the delegated permissions identified in the deleted **oAuth2PermissionGrant**.
+
+### [Remove-MgOrganizationCertificateBasedAuthConfiguration](Remove-MgOrganizationCertificateBasedAuthConfiguration.md)
+Delete navigation property certificateBasedAuthConfiguration for organization
 
 ### [Remove-MgPolicyActivityBasedTimeoutPolicy](Remove-MgPolicyActivityBasedTimeoutPolicy.md)
 Delete navigation property activityBasedTimeoutPolicies for policies

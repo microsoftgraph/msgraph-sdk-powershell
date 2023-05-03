@@ -313,8 +313,8 @@ To create the parameters described below, construct a hash table containing the 
 
 AUTOMATICUSERCONSENTSETTINGS <IMicrosoftGraphInboundOutboundPolicyConfiguration>: inboundOutboundPolicyConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[InboundAllowed <Boolean?>]`: Defines whether external users coming inbound are allowed.
-  - `[OutboundAllowed <Boolean?>]`: Defines whether internal users are allowed to go outbound.
+  - `[InboundAllowed <Boolean?>]`: 
+  - `[OutboundAllowed <Boolean?>]`: 
 
 B2BCOLLABORATIONINBOUND <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>: crossTenantAccessPolicyB2BSetting
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -361,8 +361,8 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1>: cro
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]`: inboundOutboundPolicyConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[InboundAllowed <Boolean?>]`: Defines whether external users coming inbound are allowed.
-    - `[OutboundAllowed <Boolean?>]`: Defines whether internal users are allowed to go outbound.
+    - `[InboundAllowed <Boolean?>]`: 
+    - `[OutboundAllowed <Boolean?>]`: 
   - `[B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Applications <IMicrosoftGraphCrossTenantAccessPolicyTargetConfiguration>]`: crossTenantAccessPolicyTargetConfiguration
