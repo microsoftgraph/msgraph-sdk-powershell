@@ -26,4 +26,9 @@ directive:
       variant: ^Get$|^GetViaIdentity$
     set:
       subject: $1Default$2
+  - where:
+      subject: ^(User)(CalendarEvent)$
+      variant: ^List$|^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
+    set:
+      subject: $1Default$2
 ```
