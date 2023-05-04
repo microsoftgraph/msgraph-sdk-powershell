@@ -12,7 +12,7 @@ paths:
         - users.userActivity
       summary: Get activities from users
       description: The user's activities across devices. Read-only. Nullable.
-      operationId: users_ListActivities
+      operationId: user_ListActivity
       parameters:
         - name: user-id
           in: path
@@ -118,7 +118,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to activities for users
-      operationId: users_CreateActivities
+      operationId: user_CreateActivity
       parameters:
         - name: user-id
           in: path
@@ -151,7 +151,7 @@ paths:
         - users.userActivity
       summary: Get activities from users
       description: The user's activities across devices. Read-only. Nullable.
-      operationId: users_GetActivities
+      operationId: user_GetActivity
       parameters:
         - name: user-id
           in: path
@@ -222,7 +222,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property activities in users
-      operationId: users_UpdateActivities
+      operationId: user_UpdateActivity
       parameters:
         - name: user-id
           in: path
@@ -249,7 +249,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -261,7 +261,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property activities for users
-      operationId: users_DeleteActivities
+      operationId: user_DeleteActivity
       parameters:
         - name: user-id
           in: path
@@ -297,7 +297,7 @@ paths:
         - users.userActivity
       summary: Get historyItems from users
       description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-      operationId: users.activities_ListHistoryItems
+      operationId: user.activity_ListHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -396,7 +396,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to historyItems for users
-      operationId: users.activities_CreateHistoryItems
+      operationId: user.activity_CreateHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -437,7 +437,7 @@ paths:
         - users.userActivity
       summary: Get historyItems from users
       description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
-      operationId: users.activities_GetHistoryItems
+      operationId: user.activity_GetHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -511,7 +511,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property historyItems in users
-      operationId: users.activities_UpdateHistoryItems
+      operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -546,7 +546,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -558,7 +558,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property historyItems for users
-      operationId: users.activities_DeleteHistoryItems
+      operationId: user.activity_DeleteHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -602,7 +602,7 @@ paths:
         - users.userActivity
       summary: Get activity from users
       description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems_GetActivity
+      operationId: user.activity.historyItem_GetActivity
       parameters:
         - name: user-id
           in: path
@@ -677,6 +677,58 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/activities/{userActivity-id}/historyItems/$count':
+    get:
+      tags:
+        - users.userActivity
+      summary: Get the number of the resource
+      operationId: user.activity.historyItem_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: userActivity-id
+          in: path
+          description: The unique identifier of userActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userActivity
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/activities/$count':
+    get:
+      tags:
+        - users.userActivity
+      summary: Get the number of the resource
+      operationId: user.activity_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.userActivity:
@@ -873,6 +925,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.imageInfo:
       title: imageInfo
       type: object
@@ -954,6 +1009,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.activityHistoryItemCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
   parameters:
     top:
       name: $top

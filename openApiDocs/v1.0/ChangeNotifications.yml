@@ -15,7 +15,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subscription-list?view=graph-rest-1.0
-      operationId: subscriptions.subscription_ListSubscription
+      operationId: subscription_ListSubscription
       parameters:
         - $ref: '#/components/parameters/search'
         - name: $select
@@ -61,7 +61,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subscription-post-subscriptions?view=graph-rest-1.0
-      operationId: subscriptions.subscription_CreateSubscription
+      operationId: subscription_CreateSubscription
       requestBody:
         description: New entity
         content:
@@ -88,7 +88,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subscription-get?view=graph-rest-1.0
-      operationId: subscriptions.subscription_GetSubscription
+      operationId: subscription_GetSubscription
       parameters:
         - name: subscription-id
           in: path
@@ -142,7 +142,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subscription-update?view=graph-rest-1.0
-      operationId: subscriptions.subscription_UpdateSubscription
+      operationId: subscription_UpdateSubscription
       parameters:
         - name: subscription-id
           in: path
@@ -161,7 +161,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -177,7 +177,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/subscription-delete?view=graph-rest-1.0
-      operationId: subscriptions.subscription_DeleteSubscription
+      operationId: subscription_DeleteSubscription
       parameters:
         - name: subscription-id
           in: path
@@ -204,7 +204,7 @@ paths:
       tags:
         - subscriptions.Actions
       summary: Invoke action reauthorize
-      operationId: subscriptions_reauthorize
+      operationId: subscription_reauthorize
       parameters:
         - name: subscription-id
           in: path
@@ -274,7 +274,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.

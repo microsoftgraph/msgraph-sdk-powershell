@@ -13,7 +13,7 @@ Describe "Update-MgApplication" {
     }
 
     It "Should support UpdateExpanded parameterSet by default" {
-        $UpdateMgApplication.OutputType | Should -Be "System.Boolean"
+        $UpdateMgApplication.OutputType | Should -Be "Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication"
         $UpdateMgApplication.DefaultParameterSet | Should -Be "UpdateExpanded"
     }
 

@@ -34,7 +34,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditActivityTypes
-      operationId: deviceManagement.auditEvents_getAuditActivityTypes
+      operationId: deviceManagement.auditEvent_getAuditActivityType
       parameters:
         - name: category
           in: path
@@ -78,7 +78,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getAuditCategories
-      operationId: deviceManagement.auditEvents_getAuditCategories
+      operationId: deviceManagement.auditEvent_getAuditCategory
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -114,7 +114,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getOmaSettingPlainTextValue
-      operationId: deviceManagement.deviceConfigurations_getOmaSettingPlainTextValue
+      operationId: deviceManagement.deviceConfiguration_getOmaSettingPlainTextValue
       parameters:
         - name: deviceConfiguration-id
           in: path
@@ -154,7 +154,7 @@ paths:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
       description: Retrieves the effective permissions of the currently authenticated user
-      operationId: deviceManagement_getEffectivePermissions
+      operationId: deviceManagement_getEffectivePermission
       parameters:
         - name: scope
           in: path

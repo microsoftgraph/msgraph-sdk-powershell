@@ -12,7 +12,7 @@ paths:
         - groups.plannerGroup
       summary: Get planner from groups
       description: Entry-point to Planner resource that might exist for a Unified Group.
-      operationId: groups_GetPlanner
+      operationId: group_GetPlanner
       parameters:
         - name: group-id
           in: path
@@ -62,7 +62,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property planner in groups
-      operationId: groups_UpdatePlanner
+      operationId: group_UpdatePlanner
       parameters:
         - name: group-id
           in: path
@@ -88,7 +88,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -100,7 +100,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property planner for groups
-      operationId: groups_DeletePlanner
+      operationId: group_DeletePlanner
       parameters:
         - name: group-id
           in: path
@@ -126,12 +126,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: List plans
-      description: Retrieve a list of **plannerPlan** objects owned by a group object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannergroup-list-plans?view=graph-rest-1.0
-      operationId: groups.planner_ListPlans
+      summary: Get plans from groups
+      description: Read-only. Nullable. Returns the plannerPlans owned by the group.
+      operationId: group.planner_ListPlan
       parameters:
         - name: group-id
           in: path
@@ -217,7 +214,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to plans for groups
-      operationId: groups.planner_CreatePlans
+      operationId: group.planner_CreatePlan
       parameters:
         - name: group-id
           in: path
@@ -250,7 +247,7 @@ paths:
         - groups.plannerGroup
       summary: Get plans from groups
       description: Read-only. Nullable. Returns the plannerPlans owned by the group.
-      operationId: groups.planner_GetPlans
+      operationId: group.planner_GetPlan
       parameters:
         - name: group-id
           in: path
@@ -317,7 +314,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property plans in groups
-      operationId: groups.planner_UpdatePlans
+      operationId: group.planner_UpdatePlan
       parameters:
         - name: group-id
           in: path
@@ -344,7 +341,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -356,7 +353,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property plans for groups
-      operationId: groups.planner_DeletePlans
+      operationId: group.planner_DeletePlan
       parameters:
         - name: group-id
           in: path
@@ -390,12 +387,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: List buckets
-      description: Retrieve a list of plannerBucket objects contained by a plannerPlan object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0
-      operationId: groups.planner.plans_ListBuckets
+      summary: Get buckets from groups
+      description: Read-only. Nullable. Collection of buckets in the plan.
+      operationId: group.planner.plan_ListBucket
       parameters:
         - name: group-id
           in: path
@@ -479,7 +473,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to buckets for groups
-      operationId: groups.planner.plans_CreateBuckets
+      operationId: group.planner.plan_CreateBucket
       parameters:
         - name: group-id
           in: path
@@ -520,7 +514,7 @@ paths:
         - groups.plannerGroup
       summary: Get buckets from groups
       description: Read-only. Nullable. Collection of buckets in the plan.
-      operationId: groups.planner.plans_GetBuckets
+      operationId: group.planner.plan_GetBucket
       parameters:
         - name: group-id
           in: path
@@ -589,7 +583,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property buckets in groups
-      operationId: groups.planner.plans_UpdateBuckets
+      operationId: group.planner.plan_UpdateBucket
       parameters:
         - name: group-id
           in: path
@@ -624,7 +618,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -636,7 +630,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property buckets for groups
-      operationId: groups.planner.plans_DeleteBuckets
+      operationId: group.planner.plan_DeleteBucket
       parameters:
         - name: group-id
           in: path
@@ -678,12 +672,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: List tasks
-      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
-      operationId: groups.planner.plans.buckets_ListTasks
+      summary: Get tasks from groups
+      description: Read-only. Nullable. The collection of tasks in the bucket.
+      operationId: group.planner.plan.bucket_ListTask
       parameters:
         - name: group-id
           in: path
@@ -835,7 +826,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to tasks for groups
-      operationId: groups.planner.plans.buckets_CreateTasks
+      operationId: group.planner.plan.bucket_CreateTask
       parameters:
         - name: group-id
           in: path
@@ -884,7 +875,7 @@ paths:
         - groups.plannerGroup
       summary: Get tasks from groups
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: groups.planner.plans.buckets_GetTasks
+      operationId: group.planner.plan.bucket_GetTask
       parameters:
         - name: group-id
           in: path
@@ -985,7 +976,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property tasks in groups
-      operationId: groups.planner.plans.buckets_UpdateTasks
+      operationId: group.planner.plan.bucket_UpdateTask
       parameters:
         - name: group-id
           in: path
@@ -1028,7 +1019,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1040,7 +1031,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property tasks for groups
-      operationId: groups.planner.plans.buckets_DeleteTasks
+      operationId: group.planner.plan.bucket_DeleteTask
       parameters:
         - name: group-id
           in: path
@@ -1090,12 +1081,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: groups.planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
+      summary: Get assignedToTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+      operationId: group.planner.plan.bucket.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -1169,10 +1157,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property assignedToTaskBoardFormat in groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: groups.planner.plans.buckets.tasks_UpdateAssignedToTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -1222,7 +1207,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1234,7 +1219,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property assignedToTaskBoardFormat for groups
-      operationId: groups.planner.plans.buckets.tasks_DeleteAssignedToTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -1284,12 +1269,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: groups.planner.plans.buckets.tasks_GetBucketTaskBoardFormat
+      summary: Get bucketTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+      operationId: group.planner.plan.bucket.task_GetBucketTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -1362,10 +1344,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property bucketTaskBoardFormat in groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: groups.planner.plans.buckets.tasks_UpdateBucketTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -1415,7 +1394,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1427,7 +1406,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property bucketTaskBoardFormat for groups
-      operationId: groups.planner.plans.buckets.tasks_DeleteBucketTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -1477,12 +1456,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a **plannerTaskDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: groups.planner.plans.buckets.tasks_GetDetails
+      summary: Get details from groups
+      description: Read-only. Nullable. Additional details about the task.
+      operationId: group.planner.plan.bucket.task_GetDetail
       parameters:
         - name: group-id
           in: path
@@ -1558,10 +1534,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property details in groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: groups.planner.plans.buckets.tasks_UpdateDetails
+      operationId: group.planner.plan.bucket.task_UpdateDetail
       parameters:
         - name: group-id
           in: path
@@ -1611,7 +1584,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1623,7 +1596,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      operationId: groups.planner.plans.buckets.tasks_DeleteDetails
+      operationId: group.planner.plan.bucket.task_DeleteDetail
       parameters:
         - name: group-id
           in: path
@@ -1673,12 +1646,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: groups.planner.plans.buckets.tasks_GetProgressTaskBoardFormat
+      summary: Get progressTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+      operationId: group.planner.plan.bucket.task_GetProgressTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -1751,10 +1721,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property progressTaskBoardFormat in groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: groups.planner.plans.buckets.tasks_UpdateProgressTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -1804,7 +1771,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1816,7 +1783,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property progressTaskBoardFormat for groups
-      operationId: groups.planner.plans.buckets.tasks_DeleteProgressTaskBoardFormat
+      operationId: group.planner.plan.bucket.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -1862,16 +1829,81 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get the number of the resource
+      operationId: group.planner.plan.bucket.task_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: The unique identifier of plannerBucket
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/buckets/$count':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get the number of the resource
+      operationId: group.planner.plan.bucket_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/groups/{group-id}/planner/plans/{plannerPlan-id}/details':
     get:
       tags:
         - groups.plannerGroup
-      summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
-      operationId: groups.planner.plans_GetDetails
+      summary: Get details from groups
+      description: Read-only. Nullable. Additional details about the plan.
+      operationId: group.planner.plan_GetDetail
       parameters:
         - name: group-id
           in: path
@@ -1929,10 +1961,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property details in groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
-      operationId: groups.planner.plans_UpdateDetails
+      operationId: group.planner.plan_UpdateDetail
       parameters:
         - name: group-id
           in: path
@@ -1966,7 +1995,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -1978,7 +2007,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      operationId: groups.planner.plans_DeleteDetails
+      operationId: group.planner.plan_DeleteDetail
       parameters:
         - name: group-id
           in: path
@@ -2012,12 +2041,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: List tasks
-      description: Retrieve a list of plannerTask objects associated with a plannerPlan object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0
-      operationId: groups.planner.plans_ListTasks
+      summary: Get tasks from groups
+      description: Read-only. Nullable. Collection of tasks in the plan.
+      operationId: group.planner.plan_ListTask
       parameters:
         - name: group-id
           in: path
@@ -2161,7 +2187,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Create new navigation property to tasks for groups
-      operationId: groups.planner.plans_CreateTasks
+      operationId: group.planner.plan_CreateTask
       parameters:
         - name: group-id
           in: path
@@ -2202,7 +2228,7 @@ paths:
         - groups.plannerGroup
       summary: Get tasks from groups
       description: Read-only. Nullable. Collection of tasks in the plan.
-      operationId: groups.planner.plans_GetTasks
+      operationId: group.planner.plan_GetTask
       parameters:
         - name: group-id
           in: path
@@ -2295,7 +2321,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property tasks in groups
-      operationId: groups.planner.plans_UpdateTasks
+      operationId: group.planner.plan_UpdateTask
       parameters:
         - name: group-id
           in: path
@@ -2330,7 +2356,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2342,7 +2368,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property tasks for groups
-      operationId: groups.planner.plans_DeleteTasks
+      operationId: group.planner.plan_DeleteTask
       parameters:
         - name: group-id
           in: path
@@ -2384,12 +2410,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: groups.planner.plans.tasks_GetAssignedToTaskBoardFormat
+      summary: Get assignedToTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+      operationId: group.planner.plan.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -2455,10 +2478,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property assignedToTaskBoardFormat in groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: groups.planner.plans.tasks_UpdateAssignedToTaskBoardFormat
+      operationId: group.planner.plan.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -2500,7 +2520,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2512,7 +2532,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property assignedToTaskBoardFormat for groups
-      operationId: groups.planner.plans.tasks_DeleteAssignedToTaskBoardFormat
+      operationId: group.planner.plan.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -2554,12 +2574,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: groups.planner.plans.tasks_GetBucketTaskBoardFormat
+      summary: Get bucketTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+      operationId: group.planner.plan.task_GetBucketTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -2624,10 +2641,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property bucketTaskBoardFormat in groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: groups.planner.plans.tasks_UpdateBucketTaskBoardFormat
+      operationId: group.planner.plan.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -2669,7 +2683,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2681,7 +2695,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property bucketTaskBoardFormat for groups
-      operationId: groups.planner.plans.tasks_DeleteBucketTaskBoardFormat
+      operationId: group.planner.plan.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -2723,12 +2737,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a **plannerTaskDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: groups.planner.plans.tasks_GetDetails
+      summary: Get details from groups
+      description: Read-only. Nullable. Additional details about the task.
+      operationId: group.planner.plan.task_GetDetail
       parameters:
         - name: group-id
           in: path
@@ -2796,10 +2807,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property details in groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: groups.planner.plans.tasks_UpdateDetails
+      operationId: group.planner.plan.task_UpdateDetail
       parameters:
         - name: group-id
           in: path
@@ -2841,7 +2849,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -2853,7 +2861,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property details for groups
-      operationId: groups.planner.plans.tasks_DeleteDetails
+      operationId: group.planner.plan.task_DeleteDetail
       parameters:
         - name: group-id
           in: path
@@ -2895,12 +2903,9 @@ paths:
     get:
       tags:
         - groups.plannerGroup
-      summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: groups.planner.plans.tasks_GetProgressTaskBoardFormat
+      summary: Get progressTaskBoardFormat from groups
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+      operationId: group.planner.plan.task_GetProgressTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -2965,10 +2970,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Update the navigation property progressTaskBoardFormat in groups
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: groups.planner.plans.tasks_UpdateProgressTaskBoardFormat
+      operationId: group.planner.plan.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -3010,7 +3012,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3022,7 +3024,7 @@ paths:
       tags:
         - groups.plannerGroup
       summary: Delete navigation property progressTaskBoardFormat for groups
-      operationId: groups.planner.plans.tasks_DeleteProgressTaskBoardFormat
+      operationId: group.planner.plan.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: group-id
           in: path
@@ -3060,12 +3062,64 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/groups/{group-id}/planner/plans/{plannerPlan-id}/tasks/$count':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get the number of the resource
+      operationId: group.planner.plan.task_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/groups/{group-id}/planner/plans/$count':
+    get:
+      tags:
+        - groups.plannerGroup
+      summary: Get the number of the resource
+      operationId: group.planner.plan_GetCount
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /planner:
     get:
       tags:
         - planner.planner
       summary: Get planner
-      operationId: planner.planner_GetPlanner
+      operationId: planner_GetPlanner
       parameters:
         - name: $select
           in: query
@@ -3111,7 +3165,7 @@ paths:
       tags:
         - planner.planner
       summary: Update planner
-      operationId: planner.planner_UpdatePlanner
+      operationId: planner_UpdatePlanner
       requestBody:
         description: New property values
         content:
@@ -3121,7 +3175,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3133,12 +3187,9 @@ paths:
     get:
       tags:
         - planner.plannerBucket
-      summary: List buckets
-      description: Retrieve a list of **plannerbucket** objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-1.0
-      operationId: planner_ListBuckets
+      summary: Get buckets from planner
+      description: Read-only. Nullable. Returns a collection of the specified buckets
+      operationId: planner_ListBucket
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -3205,12 +3256,8 @@ paths:
     post:
       tags:
         - planner.plannerBucket
-      summary: Create plannerBucket
-      description: Create a new plannerBucket object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/planner-post-buckets?view=graph-rest-1.0
-      operationId: planner_CreateBuckets
+      summary: Create new navigation property to buckets for planner
+      operationId: planner_CreateBucket
       requestBody:
         description: New navigation property
         content:
@@ -3234,7 +3281,7 @@ paths:
         - planner.plannerBucket
       summary: Get buckets from planner
       description: Read-only. Nullable. Returns a collection of the specified buckets
-      operationId: planner_GetBuckets
+      operationId: planner_GetBucket
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3287,7 +3334,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property buckets in planner
-      operationId: planner_UpdateBuckets
+      operationId: planner_UpdateBucket
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3313,7 +3360,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3325,7 +3372,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property buckets for planner
-      operationId: planner_DeleteBuckets
+      operationId: planner_DeleteBucket
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3351,12 +3398,9 @@ paths:
     get:
       tags:
         - planner.plannerBucket
-      summary: List tasks
-      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
-      operationId: planner.buckets_ListTasks
+      summary: Get tasks from planner
+      description: Read-only. Nullable. The collection of tasks in the bucket.
+      operationId: planner.bucket_ListTask
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3492,7 +3536,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Create new navigation property to tasks for planner
-      operationId: planner.buckets_CreateTasks
+      operationId: planner.bucket_CreateTask
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3525,7 +3569,7 @@ paths:
         - planner.plannerBucket
       summary: Get tasks from planner
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: planner.buckets_GetTasks
+      operationId: planner.bucket_GetTask
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3610,7 +3654,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property tasks in planner
-      operationId: planner.buckets_UpdateTasks
+      operationId: planner.bucket_UpdateTask
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3637,7 +3681,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3649,7 +3693,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property tasks for planner
-      operationId: planner.buckets_DeleteTasks
+      operationId: planner.bucket_DeleteTask
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3683,12 +3727,9 @@ paths:
     get:
       tags:
         - planner.plannerBucket
-      summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.buckets.tasks_GetAssignedToTaskBoardFormat
+      summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+      operationId: planner.bucket.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3746,10 +3787,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property assignedToTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.buckets.tasks_UpdateAssignedToTaskBoardFormat
+      operationId: planner.bucket.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3783,7 +3821,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3795,7 +3833,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      operationId: planner.buckets.tasks_DeleteAssignedToTaskBoardFormat
+      operationId: planner.bucket.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3829,12 +3867,9 @@ paths:
     get:
       tags:
         - planner.plannerBucket
-      summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.buckets.tasks_GetBucketTaskBoardFormat
+      summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+      operationId: planner.bucket.task_GetBucketTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3891,10 +3926,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property bucketTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.buckets.tasks_UpdateBucketTaskBoardFormat
+      operationId: planner.bucket.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3928,7 +3960,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -3940,7 +3972,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      operationId: planner.buckets.tasks_DeleteBucketTaskBoardFormat
+      operationId: planner.bucket.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
@@ -3974,12 +4006,9 @@ paths:
     get:
       tags:
         - planner.plannerBucket
-      summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a **plannerTaskDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: planner.buckets.tasks_GetDetails
+      summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
+      operationId: planner.bucket.task_GetDetail
       parameters:
         - name: plannerBucket-id
           in: path
@@ -4039,10 +4068,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property details in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: planner.buckets.tasks_UpdateDetails
+      operationId: planner.bucket.task_UpdateDetail
       parameters:
         - name: plannerBucket-id
           in: path
@@ -4076,7 +4102,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4088,7 +4114,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property details for planner
-      operationId: planner.buckets.tasks_DeleteDetails
+      operationId: planner.bucket.task_DeleteDetail
       parameters:
         - name: plannerBucket-id
           in: path
@@ -4122,12 +4148,9 @@ paths:
     get:
       tags:
         - planner.plannerBucket
-      summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.buckets.tasks_GetProgressTaskBoardFormat
+      summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+      operationId: planner.bucket.task_GetProgressTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
@@ -4184,10 +4207,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property progressTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.buckets.tasks_UpdateProgressTaskBoardFormat
+      operationId: planner.bucket.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
@@ -4221,7 +4241,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4233,7 +4253,7 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Delete navigation property progressTaskBoardFormat for planner
-      operationId: planner.buckets.tasks_DeleteProgressTaskBoardFormat
+      operationId: planner.bucket.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: plannerBucket-id
           in: path
@@ -4263,16 +4283,49 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/planner/buckets/{plannerBucket-id}/tasks/$count':
+    get:
+      tags:
+        - planner.plannerBucket
+      summary: Get the number of the resource
+      operationId: planner.bucket.task_GetCount
+      parameters:
+        - name: plannerBucket-id
+          in: path
+          description: The unique identifier of plannerBucket
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /planner/buckets/$count:
+    get:
+      tags:
+        - planner.plannerBucket
+      summary: Get the number of the resource
+      operationId: planner.bucket_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /planner/plans:
     get:
       tags:
         - planner.plannerPlan
-      summary: List plans
-      description: Retrieve a list of **plannerplan** objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/planner-list-plans?view=graph-rest-1.0
-      operationId: planner_ListPlans
+      summary: Get plans from planner
+      description: Read-only. Nullable. Returns a collection of the specified plans
+      operationId: planner_ListPlan
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -4349,12 +4402,8 @@ paths:
     post:
       tags:
         - planner.plannerPlan
-      summary: Create plannerPlan
-      description: Use this API to create a new **plannerPlan**.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/planner-post-plans?view=graph-rest-1.0
-      operationId: planner_CreatePlans
+      summary: Create new navigation property to plans for planner
+      operationId: planner_CreatePlan
       requestBody:
         description: New navigation property
         content:
@@ -4378,7 +4427,7 @@ paths:
         - planner.plannerPlan
       summary: Get plans from planner
       description: Read-only. Nullable. Returns a collection of the specified plans
-      operationId: planner_GetPlans
+      operationId: planner_GetPlan
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4437,7 +4486,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property plans in planner
-      operationId: planner_UpdatePlans
+      operationId: planner_UpdatePlan
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4456,7 +4505,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4468,7 +4517,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property plans for planner
-      operationId: planner_DeletePlans
+      operationId: planner_DeletePlan
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4494,12 +4543,9 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: List buckets
-      description: Retrieve a list of plannerBucket objects contained by a plannerPlan object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0
-      operationId: planner.plans_ListBuckets
+      summary: Get buckets from planner
+      description: Read-only. Nullable. Collection of buckets in the plan.
+      operationId: planner.plan_ListBucket
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4575,7 +4621,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to buckets for planner
-      operationId: planner.plans_CreateBuckets
+      operationId: planner.plan_CreateBucket
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4608,7 +4654,7 @@ paths:
         - planner.plannerPlan
       summary: Get buckets from planner
       description: Read-only. Nullable. Collection of buckets in the plan.
-      operationId: planner.plans_GetBuckets
+      operationId: planner.plan_GetBucket
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4669,7 +4715,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property buckets in planner
-      operationId: planner.plans_UpdateBuckets
+      operationId: planner.plan_UpdateBucket
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4696,7 +4742,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -4708,7 +4754,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property buckets for planner
-      operationId: planner.plans_DeleteBuckets
+      operationId: planner.plan_DeleteBucket
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4742,12 +4788,9 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: List tasks
-      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
-      operationId: planner.plans.buckets_ListTasks
+      summary: Get tasks from planner
+      description: Read-only. Nullable. The collection of tasks in the bucket.
+      operationId: planner.plan.bucket_ListTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4891,7 +4934,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to tasks for planner
-      operationId: planner.plans.buckets_CreateTasks
+      operationId: planner.plan.bucket_CreateTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -4932,7 +4975,7 @@ paths:
         - planner.plannerPlan
       summary: Get tasks from planner
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: planner.plans.buckets_GetTasks
+      operationId: planner.plan.bucket_GetTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5025,7 +5068,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property tasks in planner
-      operationId: planner.plans.buckets_UpdateTasks
+      operationId: planner.plan.bucket_UpdateTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5060,7 +5103,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5072,7 +5115,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property tasks for planner
-      operationId: planner.plans.buckets_DeleteTasks
+      operationId: planner.plan.bucket_DeleteTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5114,12 +5157,9 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
+      summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+      operationId: planner.plan.bucket.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5185,10 +5225,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property assignedToTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.plans.buckets.tasks_UpdateAssignedToTaskBoardFormat
+      operationId: planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5230,7 +5267,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5242,7 +5279,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      operationId: planner.plans.buckets.tasks_DeleteAssignedToTaskBoardFormat
+      operationId: planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5284,12 +5321,9 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.plans.buckets.tasks_GetBucketTaskBoardFormat
+      summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+      operationId: planner.plan.bucket.task_GetBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5354,10 +5388,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property bucketTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.plans.buckets.tasks_UpdateBucketTaskBoardFormat
+      operationId: planner.plan.bucket.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5399,7 +5430,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5411,7 +5442,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      operationId: planner.plans.buckets.tasks_DeleteBucketTaskBoardFormat
+      operationId: planner.plan.bucket.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5453,12 +5484,9 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a **plannerTaskDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: planner.plans.buckets.tasks_GetDetails
+      summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
+      operationId: planner.plan.bucket.task_GetDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5526,10 +5554,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property details in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: planner.plans.buckets.tasks_UpdateDetails
+      operationId: planner.plan.bucket.task_UpdateDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5571,7 +5596,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5583,7 +5608,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      operationId: planner.plans.buckets.tasks_DeleteDetails
+      operationId: planner.plan.bucket.task_DeleteDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5625,12 +5650,9 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.plans.buckets.tasks_GetProgressTaskBoardFormat
+      summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+      operationId: planner.plan.bucket.task_GetProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5695,10 +5717,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property progressTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.plans.buckets.tasks_UpdateProgressTaskBoardFormat
+      operationId: planner.plan.bucket.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5740,7 +5759,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5752,7 +5771,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property progressTaskBoardFormat for planner
-      operationId: planner.plans.buckets.tasks_DeleteProgressTaskBoardFormat
+      operationId: planner.plan.bucket.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5790,16 +5809,65 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count':
+    get:
+      tags:
+        - planner.plannerPlan
+      summary: Get the number of the resource
+      operationId: planner.plan.bucket.task_GetCount
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: The unique identifier of plannerBucket
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/planner/plans/{plannerPlan-id}/buckets/$count':
+    get:
+      tags:
+        - planner.plannerPlan
+      summary: Get the number of the resource
+      operationId: planner.plan.bucket_GetCount
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/planner/plans/{plannerPlan-id}/details':
     get:
       tags:
         - planner.plannerPlan
-      summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
-      operationId: planner.plans_GetDetails
+      summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the plan.
+      operationId: planner.plan_GetDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5849,10 +5917,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property details in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
-      operationId: planner.plans_UpdateDetails
+      operationId: planner.plan_UpdateDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5878,7 +5943,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -5890,7 +5955,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      operationId: planner.plans_DeleteDetails
+      operationId: planner.plan_DeleteDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -5916,12 +5981,9 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: List tasks
-      description: Retrieve a list of plannerTask objects associated with a plannerPlan object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0
-      operationId: planner.plans_ListTasks
+      summary: Get tasks from planner
+      description: Read-only. Nullable. Collection of tasks in the plan.
+      operationId: planner.plan_ListTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6057,7 +6119,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Create new navigation property to tasks for planner
-      operationId: planner.plans_CreateTasks
+      operationId: planner.plan_CreateTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6090,7 +6152,7 @@ paths:
         - planner.plannerPlan
       summary: Get tasks from planner
       description: Read-only. Nullable. Collection of tasks in the plan.
-      operationId: planner.plans_GetTasks
+      operationId: planner.plan_GetTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6175,7 +6237,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property tasks in planner
-      operationId: planner.plans_UpdateTasks
+      operationId: planner.plan_UpdateTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6202,7 +6264,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6214,7 +6276,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property tasks for planner
-      operationId: planner.plans_DeleteTasks
+      operationId: planner.plan_DeleteTask
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6248,12 +6310,9 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.plans.tasks_GetAssignedToTaskBoardFormat
+      summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+      operationId: planner.plan.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6311,10 +6370,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property assignedToTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.plans.tasks_UpdateAssignedToTaskBoardFormat
+      operationId: planner.plan.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6348,7 +6404,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6360,7 +6416,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      operationId: planner.plans.tasks_DeleteAssignedToTaskBoardFormat
+      operationId: planner.plan.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6394,12 +6450,9 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.plans.tasks_GetBucketTaskBoardFormat
+      summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+      operationId: planner.plan.task_GetBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6456,10 +6509,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property bucketTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.plans.tasks_UpdateBucketTaskBoardFormat
+      operationId: planner.plan.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6493,7 +6543,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6505,7 +6555,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      operationId: planner.plans.tasks_DeleteBucketTaskBoardFormat
+      operationId: planner.plan.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6539,12 +6589,9 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a **plannerTaskDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: planner.plans.tasks_GetDetails
+      summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
+      operationId: planner.plan.task_GetDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6604,10 +6651,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property details in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: planner.plans.tasks_UpdateDetails
+      operationId: planner.plan.task_UpdateDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6641,7 +6685,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6653,7 +6697,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property details for planner
-      operationId: planner.plans.tasks_DeleteDetails
+      operationId: planner.plan.task_DeleteDetail
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6687,12 +6731,9 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.plans.tasks_GetProgressTaskBoardFormat
+      summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+      operationId: planner.plan.task_GetProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6749,10 +6790,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Update the navigation property progressTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.plans.tasks_UpdateProgressTaskBoardFormat
+      operationId: planner.plan.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6786,7 +6824,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -6798,7 +6836,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: Delete navigation property progressTaskBoardFormat for planner
-      operationId: planner.plans.tasks_DeleteProgressTaskBoardFormat
+      operationId: planner.plan.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: plannerPlan-id
           in: path
@@ -6828,16 +6866,49 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/planner/plans/{plannerPlan-id}/tasks/$count':
+    get:
+      tags:
+        - planner.plannerPlan
+      summary: Get the number of the resource
+      operationId: planner.plan.task_GetCount
+      parameters:
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /planner/plans/$count:
+    get:
+      tags:
+        - planner.plannerPlan
+      summary: Get the number of the resource
+      operationId: planner.plan_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /planner/tasks:
     get:
       tags:
         - planner.plannerTask
-      summary: List tasks
-      description: Retrieve a list of **plannertask** objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/planner-list-tasks?view=graph-rest-1.0
-      operationId: planner_ListTasks
+      summary: Get tasks from planner
+      description: Read-only. Nullable. Returns a collection of the specified tasks
+      operationId: planner_ListTask
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6964,12 +7035,8 @@ paths:
     post:
       tags:
         - planner.plannerTask
-      summary: Create plannerTask
-      description: Create a new **plannerTask**.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/planner-post-tasks?view=graph-rest-1.0
-      operationId: planner_CreateTasks
+      summary: Create new navigation property to tasks for planner
+      operationId: planner_CreateTask
       requestBody:
         description: New navigation property
         content:
@@ -6993,7 +7060,7 @@ paths:
         - planner.plannerTask
       summary: Get tasks from planner
       description: Read-only. Nullable. Returns a collection of the specified tasks
-      operationId: planner_GetTasks
+      operationId: planner_GetTask
       parameters:
         - name: plannerTask-id
           in: path
@@ -7070,7 +7137,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property tasks in planner
-      operationId: planner_UpdateTasks
+      operationId: planner_UpdateTask
       parameters:
         - name: plannerTask-id
           in: path
@@ -7096,7 +7163,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7108,7 +7175,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property tasks for planner
-      operationId: planner_DeleteTasks
+      operationId: planner_DeleteTask
       parameters:
         - name: plannerTask-id
           in: path
@@ -7134,12 +7201,9 @@ paths:
     get:
       tags:
         - planner.plannerTask
-      summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.tasks_GetAssignedToTaskBoardFormat
+      summary: Get assignedToTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+      operationId: planner.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
@@ -7189,10 +7253,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property assignedToTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.tasks_UpdateAssignedToTaskBoardFormat
+      operationId: planner.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
@@ -7218,7 +7279,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7230,7 +7291,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property assignedToTaskBoardFormat for planner
-      operationId: planner.tasks_DeleteAssignedToTaskBoardFormat
+      operationId: planner.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
@@ -7256,12 +7317,9 @@ paths:
     get:
       tags:
         - planner.plannerTask
-      summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.tasks_GetBucketTaskBoardFormat
+      summary: Get bucketTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+      operationId: planner.task_GetBucketTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
@@ -7310,10 +7368,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property bucketTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.tasks_UpdateBucketTaskBoardFormat
+      operationId: planner.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
@@ -7339,7 +7394,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7351,7 +7406,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property bucketTaskBoardFormat for planner
-      operationId: planner.tasks_DeleteBucketTaskBoardFormat
+      operationId: planner.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
@@ -7377,12 +7432,9 @@ paths:
     get:
       tags:
         - planner.plannerTask
-      summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a **plannerTaskDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: planner.tasks_GetDetails
+      summary: Get details from planner
+      description: Read-only. Nullable. Additional details about the task.
+      operationId: planner.task_GetDetail
       parameters:
         - name: plannerTask-id
           in: path
@@ -7434,10 +7486,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property details in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: planner.tasks_UpdateDetails
+      operationId: planner.task_UpdateDetail
       parameters:
         - name: plannerTask-id
           in: path
@@ -7463,7 +7512,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7475,7 +7524,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property details for planner
-      operationId: planner.tasks_DeleteDetails
+      operationId: planner.task_DeleteDetail
       parameters:
         - name: plannerTask-id
           in: path
@@ -7501,12 +7550,9 @@ paths:
     get:
       tags:
         - planner.plannerTask
-      summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: planner.tasks_GetProgressTaskBoardFormat
+      summary: Get progressTaskBoardFormat from planner
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+      operationId: planner.task_GetProgressTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
@@ -7555,10 +7601,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property progressTaskBoardFormat in planner
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: planner.tasks_UpdateProgressTaskBoardFormat
+      operationId: planner.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
@@ -7584,7 +7627,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7596,7 +7639,7 @@ paths:
       tags:
         - planner.plannerTask
       summary: Delete navigation property progressTaskBoardFormat for planner
-      operationId: planner.tasks_DeleteProgressTaskBoardFormat
+      operationId: planner.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: plannerTask-id
           in: path
@@ -7618,13 +7661,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /planner/tasks/$count:
+    get:
+      tags:
+        - planner.plannerTask
+      summary: Get the number of the resource
+      operationId: planner.task_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/planner':
     get:
       tags:
         - users.plannerUser
       summary: Get planner from users
       description: Entry-point to the Planner resource that might exist for a user. Read-only.
-      operationId: users_GetPlanner
+      operationId: user_GetPlanner
       parameters:
         - name: user-id
           in: path
@@ -7676,7 +7733,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property planner in users
-      operationId: users_UpdatePlanner
+      operationId: user_UpdatePlanner
       parameters:
         - name: user-id
           in: path
@@ -7702,7 +7759,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7714,7 +7771,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property planner for users
-      operationId: users_DeletePlanner
+      operationId: user_DeletePlanner
       parameters:
         - name: user-id
           in: path
@@ -7740,12 +7797,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: List plans
-      description: Retrieve a list of **plannerplan** objects shared with a user object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/planneruser-list-plans?view=graph-rest-1.0
-      operationId: users.planner_ListPlans
+      summary: Get plans from users
+      description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
+      operationId: user.planner_ListPlan
       parameters:
         - name: user-id
           in: path
@@ -7831,7 +7885,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to plans for users
-      operationId: users.planner_CreatePlans
+      operationId: user.planner_CreatePlan
       parameters:
         - name: user-id
           in: path
@@ -7864,7 +7918,7 @@ paths:
         - users.plannerUser
       summary: Get plans from users
       description: Read-only. Nullable. Returns the plannerTasks assigned to the user.
-      operationId: users.planner_GetPlans
+      operationId: user.planner_GetPlan
       parameters:
         - name: user-id
           in: path
@@ -7931,7 +7985,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property plans in users
-      operationId: users.planner_UpdatePlans
+      operationId: user.planner_UpdatePlan
       parameters:
         - name: user-id
           in: path
@@ -7958,7 +8012,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -7970,7 +8024,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property plans for users
-      operationId: users.planner_DeletePlans
+      operationId: user.planner_DeletePlan
       parameters:
         - name: user-id
           in: path
@@ -8004,12 +8058,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: List buckets
-      description: Retrieve a list of plannerBucket objects contained by a plannerPlan object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0
-      operationId: users.planner.plans_ListBuckets
+      summary: Get buckets from users
+      description: Read-only. Nullable. Collection of buckets in the plan.
+      operationId: user.planner.plan_ListBucket
       parameters:
         - name: user-id
           in: path
@@ -8093,7 +8144,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to buckets for users
-      operationId: users.planner.plans_CreateBuckets
+      operationId: user.planner.plan_CreateBucket
       parameters:
         - name: user-id
           in: path
@@ -8134,7 +8185,7 @@ paths:
         - users.plannerUser
       summary: Get buckets from users
       description: Read-only. Nullable. Collection of buckets in the plan.
-      operationId: users.planner.plans_GetBuckets
+      operationId: user.planner.plan_GetBucket
       parameters:
         - name: user-id
           in: path
@@ -8203,7 +8254,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property buckets in users
-      operationId: users.planner.plans_UpdateBuckets
+      operationId: user.planner.plan_UpdateBucket
       parameters:
         - name: user-id
           in: path
@@ -8238,7 +8289,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8250,7 +8301,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property buckets for users
-      operationId: users.planner.plans_DeleteBuckets
+      operationId: user.planner.plan_DeleteBucket
       parameters:
         - name: user-id
           in: path
@@ -8292,12 +8343,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: List tasks
-      description: Retrieve a list of plannerTask objects associated to a plannerBucket object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbucket-list-tasks?view=graph-rest-1.0
-      operationId: users.planner.plans.buckets_ListTasks
+      summary: Get tasks from users
+      description: Read-only. Nullable. The collection of tasks in the bucket.
+      operationId: user.planner.plan.bucket_ListTask
       parameters:
         - name: user-id
           in: path
@@ -8449,7 +8497,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      operationId: users.planner.plans.buckets_CreateTasks
+      operationId: user.planner.plan.bucket_CreateTask
       parameters:
         - name: user-id
           in: path
@@ -8498,7 +8546,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. The collection of tasks in the bucket.
-      operationId: users.planner.plans.buckets_GetTasks
+      operationId: user.planner.plan.bucket_GetTask
       parameters:
         - name: user-id
           in: path
@@ -8599,7 +8647,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      operationId: users.planner.plans.buckets_UpdateTasks
+      operationId: user.planner.plan.bucket_UpdateTask
       parameters:
         - name: user-id
           in: path
@@ -8642,7 +8690,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8654,7 +8702,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      operationId: users.planner.plans.buckets_DeleteTasks
+      operationId: user.planner.plan.bucket_DeleteTask
       parameters:
         - name: user-id
           in: path
@@ -8704,12 +8752,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: users.planner.plans.buckets.tasks_GetAssignedToTaskBoardFormat
+      summary: Get assignedToTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+      operationId: user.planner.plan.bucket.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -8783,10 +8828,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property assignedToTaskBoardFormat in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: users.planner.plans.buckets.tasks_UpdateAssignedToTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -8836,7 +8878,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -8848,7 +8890,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property assignedToTaskBoardFormat for users
-      operationId: users.planner.plans.buckets.tasks_DeleteAssignedToTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -8898,12 +8940,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: users.planner.plans.buckets.tasks_GetBucketTaskBoardFormat
+      summary: Get bucketTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+      operationId: user.planner.plan.bucket.task_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -8976,10 +9015,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property bucketTaskBoardFormat in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: users.planner.plans.buckets.tasks_UpdateBucketTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -9029,7 +9065,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9041,7 +9077,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property bucketTaskBoardFormat for users
-      operationId: users.planner.plans.buckets.tasks_DeleteBucketTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -9091,12 +9127,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a **plannerTaskDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: users.planner.plans.buckets.tasks_GetDetails
+      summary: Get details from users
+      description: Read-only. Nullable. Additional details about the task.
+      operationId: user.planner.plan.bucket.task_GetDetail
       parameters:
         - name: user-id
           in: path
@@ -9172,10 +9205,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: users.planner.plans.buckets.tasks_UpdateDetails
+      operationId: user.planner.plan.bucket.task_UpdateDetail
       parameters:
         - name: user-id
           in: path
@@ -9225,7 +9255,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9237,7 +9267,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: users.planner.plans.buckets.tasks_DeleteDetails
+      operationId: user.planner.plan.bucket.task_DeleteDetail
       parameters:
         - name: user-id
           in: path
@@ -9287,12 +9317,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: users.planner.plans.buckets.tasks_GetProgressTaskBoardFormat
+      summary: Get progressTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+      operationId: user.planner.plan.bucket.task_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -9365,10 +9392,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property progressTaskBoardFormat in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: users.planner.plans.buckets.tasks_UpdateProgressTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -9418,7 +9442,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9430,7 +9454,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property progressTaskBoardFormat for users
-      operationId: users.planner.plans.buckets.tasks_DeleteProgressTaskBoardFormat
+      operationId: user.planner.plan.bucket.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -9476,16 +9500,81 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/{plannerBucket-id}/tasks/$count':
+    get:
+      tags:
+        - users.plannerUser
+      summary: Get the number of the resource
+      operationId: user.planner.plan.bucket.task_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - name: plannerBucket-id
+          in: path
+          description: The unique identifier of plannerBucket
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerBucket
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/planner/plans/{plannerPlan-id}/buckets/$count':
+    get:
+      tags:
+        - users.plannerUser
+      summary: Get the number of the resource
+      operationId: user.planner.plan.bucket_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/planner/plans/{plannerPlan-id}/details':
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerPlanDetails
-      description: Retrieve the properties and relationships of a **plannerPlanDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplandetails-get?view=graph-rest-1.0
-      operationId: users.planner.plans_GetDetails
+      summary: Get details from users
+      description: Read-only. Nullable. Additional details about the plan.
+      operationId: user.planner.plan_GetDetail
       parameters:
         - name: user-id
           in: path
@@ -9543,10 +9632,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplandetails-update?view=graph-rest-1.0
-      operationId: users.planner.plans_UpdateDetails
+      operationId: user.planner.plan_UpdateDetail
       parameters:
         - name: user-id
           in: path
@@ -9580,7 +9666,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9592,7 +9678,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: users.planner.plans_DeleteDetails
+      operationId: user.planner.plan_DeleteDetail
       parameters:
         - name: user-id
           in: path
@@ -9626,12 +9712,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: List tasks
-      description: Retrieve a list of plannerTask objects associated with a plannerPlan object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-1.0
-      operationId: users.planner.plans_ListTasks
+      summary: Get tasks from users
+      description: Read-only. Nullable. Collection of tasks in the plan.
+      operationId: user.planner.plan_ListTask
       parameters:
         - name: user-id
           in: path
@@ -9775,7 +9858,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      operationId: users.planner.plans_CreateTasks
+      operationId: user.planner.plan_CreateTask
       parameters:
         - name: user-id
           in: path
@@ -9816,7 +9899,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. Collection of tasks in the plan.
-      operationId: users.planner.plans_GetTasks
+      operationId: user.planner.plan_GetTask
       parameters:
         - name: user-id
           in: path
@@ -9909,7 +9992,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      operationId: users.planner.plans_UpdateTasks
+      operationId: user.planner.plan_UpdateTask
       parameters:
         - name: user-id
           in: path
@@ -9944,7 +10027,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -9956,7 +10039,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      operationId: users.planner.plans_DeleteTasks
+      operationId: user.planner.plan_DeleteTask
       parameters:
         - name: user-id
           in: path
@@ -9998,12 +10081,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: users.planner.plans.tasks_GetAssignedToTaskBoardFormat
+      summary: Get assignedToTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+      operationId: user.planner.plan.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -10069,10 +10149,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property assignedToTaskBoardFormat in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: users.planner.plans.tasks_UpdateAssignedToTaskBoardFormat
+      operationId: user.planner.plan.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -10114,7 +10191,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10126,7 +10203,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property assignedToTaskBoardFormat for users
-      operationId: users.planner.plans.tasks_DeleteAssignedToTaskBoardFormat
+      operationId: user.planner.plan.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -10168,12 +10245,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: users.planner.plans.tasks_GetBucketTaskBoardFormat
+      summary: Get bucketTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+      operationId: user.planner.plan.task_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -10238,10 +10312,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property bucketTaskBoardFormat in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: users.planner.plans.tasks_UpdateBucketTaskBoardFormat
+      operationId: user.planner.plan.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -10283,7 +10354,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10295,7 +10366,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property bucketTaskBoardFormat for users
-      operationId: users.planner.plans.tasks_DeleteBucketTaskBoardFormat
+      operationId: user.planner.plan.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -10337,12 +10408,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a **plannerTaskDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: users.planner.plans.tasks_GetDetails
+      summary: Get details from users
+      description: Read-only. Nullable. Additional details about the task.
+      operationId: user.planner.plan.task_GetDetail
       parameters:
         - name: user-id
           in: path
@@ -10410,10 +10478,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: users.planner.plans.tasks_UpdateDetails
+      operationId: user.planner.plan.task_UpdateDetail
       parameters:
         - name: user-id
           in: path
@@ -10455,7 +10520,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10467,7 +10532,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: users.planner.plans.tasks_DeleteDetails
+      operationId: user.planner.plan.task_DeleteDetail
       parameters:
         - name: user-id
           in: path
@@ -10509,12 +10574,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: users.planner.plans.tasks_GetProgressTaskBoardFormat
+      summary: Get progressTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+      operationId: user.planner.plan.task_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -10579,10 +10641,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property progressTaskBoardFormat in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: users.planner.plans.tasks_UpdateProgressTaskBoardFormat
+      operationId: user.planner.plan.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -10624,7 +10683,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10636,7 +10695,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property progressTaskBoardFormat for users
-      operationId: users.planner.plans.tasks_DeleteProgressTaskBoardFormat
+      operationId: user.planner.plan.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -10674,16 +10733,65 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/planner/plans/{plannerPlan-id}/tasks/$count':
+    get:
+      tags:
+        - users.plannerUser
+      summary: Get the number of the resource
+      operationId: user.planner.plan.task_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: plannerPlan-id
+          in: path
+          description: The unique identifier of plannerPlan
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: plannerPlan
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/planner/plans/$count':
+    get:
+      tags:
+        - users.plannerUser
+      summary: Get the number of the resource
+      operationId: user.planner.plan_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/planner/tasks':
     get:
       tags:
         - users.plannerUser
-      summary: List tasks
-      description: Retrieve a list of **plannertask** objects assigned to a User.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/planneruser-list-tasks?view=graph-rest-1.0
-      operationId: users.planner_ListTasks
+      summary: Get tasks from users
+      description: Read-only. Nullable. Returns the plannerPlans shared with the user.
+      operationId: user.planner_ListTask
       parameters:
         - name: user-id
           in: path
@@ -10819,7 +10927,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Create new navigation property to tasks for users
-      operationId: users.planner_CreateTasks
+      operationId: user.planner_CreateTask
       parameters:
         - name: user-id
           in: path
@@ -10852,7 +10960,7 @@ paths:
         - users.plannerUser
       summary: Get tasks from users
       description: Read-only. Nullable. Returns the plannerPlans shared with the user.
-      operationId: users.planner_GetTasks
+      operationId: user.planner_GetTask
       parameters:
         - name: user-id
           in: path
@@ -10937,7 +11045,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property tasks in users
-      operationId: users.planner_UpdateTasks
+      operationId: user.planner_UpdateTask
       parameters:
         - name: user-id
           in: path
@@ -10964,7 +11072,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -10976,7 +11084,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property tasks for users
-      operationId: users.planner_DeleteTasks
+      operationId: user.planner_DeleteTask
       parameters:
         - name: user-id
           in: path
@@ -11010,12 +11118,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerAssignedToTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of a **plannerAssignedToTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: users.planner.tasks_GetAssignedToTaskBoardFormat
+      summary: Get assignedToTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+      operationId: user.planner.task_GetAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -11073,10 +11178,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property assignedToTaskBoardFormat in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: users.planner.tasks_UpdateAssignedToTaskBoardFormat
+      operationId: user.planner.task_UpdateAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -11110,7 +11212,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11122,7 +11224,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property assignedToTaskBoardFormat for users
-      operationId: users.planner.tasks_DeleteAssignedToTaskBoardFormat
+      operationId: user.planner.task_DeleteAssignedToTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -11156,12 +11258,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerBucketTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: users.planner.tasks_GetBucketTaskBoardFormat
+      summary: Get bucketTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+      operationId: user.planner.task_GetBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -11218,10 +11317,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property bucketTaskBoardFormat in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: users.planner.tasks_UpdateBucketTaskBoardFormat
+      operationId: user.planner.task_UpdateBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -11255,7 +11351,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11267,7 +11363,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property bucketTaskBoardFormat for users
-      operationId: users.planner.tasks_DeleteBucketTaskBoardFormat
+      operationId: user.planner.task_DeleteBucketTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -11301,12 +11397,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerTaskDetails
-      description: Retrieve the properties and relationships of a **plannerTaskDetails** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
-      operationId: users.planner.tasks_GetDetails
+      summary: Get details from users
+      description: Read-only. Nullable. Additional details about the task.
+      operationId: user.planner.task_GetDetail
       parameters:
         - name: user-id
           in: path
@@ -11366,10 +11459,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property details in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
-      operationId: users.planner.tasks_UpdateDetails
+      operationId: user.planner.task_UpdateDetail
       parameters:
         - name: user-id
           in: path
@@ -11403,7 +11493,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11415,7 +11505,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property details for users
-      operationId: users.planner.tasks_DeleteDetails
+      operationId: user.planner.task_DeleteDetail
       parameters:
         - name: user-id
           in: path
@@ -11449,12 +11539,9 @@ paths:
     get:
       tags:
         - users.plannerUser
-      summary: Get plannerProgressTaskBoardTaskFormat
-      description: Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
-      operationId: users.planner.tasks_GetProgressTaskBoardFormat
+      summary: Get progressTaskBoardFormat from users
+      description: Read-only. Nullable. Used to render the task correctly in the task board view when grouped by progress.
+      operationId: user.planner.task_GetProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -11511,10 +11598,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Update the navigation property progressTaskBoardFormat in users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
-      operationId: users.planner.tasks_UpdateProgressTaskBoardFormat
+      operationId: user.planner.task_UpdateProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -11548,7 +11632,7 @@ paths:
         required: true
       responses:
         2XX:
-          description: ''
+          description: Success
           content:
             application/json:
               schema:
@@ -11560,7 +11644,7 @@ paths:
       tags:
         - users.plannerUser
       summary: Delete navigation property progressTaskBoardFormat for users
-      operationId: users.planner.tasks_DeleteProgressTaskBoardFormat
+      operationId: user.planner.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: user-id
           in: path
@@ -11590,6 +11674,28 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/planner/tasks/$count':
+    get:
+      tags:
+        - users.plannerUser
+      summary: Get the number of the resource
+      operationId: user.planner.task_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.plannerGroup:
@@ -12125,6 +12231,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.plannerContainerType:
       title: plannerContainerType
       enum:
@@ -12212,6 +12321,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.plannerTaskCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
   parameters:
     top:
       name: $top

@@ -18,12 +18,17 @@ require:
 ``` yaml
 directive:
 # Remove paths that are not valid.
-  - remove-path-by-operation: (users|groups)_(Update|Delete)Calendar$|(users|groups)..*_(Get|Create|Update|Delete)CalendarView$|(users|groups).(calendar|calendars).calendarView.*$|(users|groups).calendar_.*Events$|users.calendars_(Get|Update|Delete)Events$|(users|groups).(calendar|calendars).events.*$|(users|groups)_.*CalendarView$|(users|groups).calendarView.*$|users.calendarGroups_(Get|Update|Delete)Calendars$|users.calendarGroups.calendars.*$|(groups|users).events_(Create|Update|Create)Calendar$|(users|groups).events.calendar.*$
+  - remove-path-by-operation: (user|group)_(Update|Delete)Calendar$|(user|group)..*_(Get|Create|Update|Delete)CalendarView$|(user|group).(calendar).calendarView.*$|user.calendar_(Get|Update|Delete)Event$|(user|group).(calendar).event.*$|(user|group)_.*CalendarView$|(user|group).calendarView.*$|user.calendarGroup_(Get|Update|Delete)Calendar$|user.calendarGroup.calendar.*$|(group|user).event_(Create|Update|Create)Calendar$|(user|group).event.calendar.*$
 # Rename cmdlets.
   - where:
       verb: Get
       subject: ^(User)(Calendar)$
       variant: ^Get$|^GetViaIdentity$
+    set:
+      subject: $1Default$2
+  - where:
+      subject: ^(User)(CalendarEvent)$
+      variant: ^List$|^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$
     set:
       subject: $1Default$2
 ```

@@ -432,6 +432,11 @@ directive:
       subject: ^(Office)(Configuration)(ClientConfiguration.*)
     set:
       subject: $1$3
+  - where:
+      verb: Invoke
+      subject: ^Link(.*)HasPayload$
+    set:
+      subject: Has$1PayloadLink
 # Remove *AvailableExtensionProperty commands except those bound to DirectoryObject.
   - where:
       subject: ^(?!DirectoryObject).*AvailableExtensionProperty$
@@ -475,6 +480,27 @@ directive:
       verb: New|Remove|Update|Get
       subject: ^(.*)(IdentityGovernance)TermOfUse$
     remove: true
+# Pluralize commands
+  - where:
+      subject: (\w*[a-z]|^)Window([^s]\w*|$)
+    set:
+      subject: $1Windows$2
+  - where:
+      subject: (\w*[a-z]|^)TermOfUse([A-Z]\w*|$)
+    set:
+      subject: $1TermsOfUse$2
+  - where:
+      subject: (\w*[a-z]|^)MethodSm([A-Z]\w*|$)
+    set:
+      subject: $1MethodSms$2
+  - where:
+      subject: (\w*[a-z]|^)PassiveDn([^s]\w*|$)
+    set:
+      subject: $1PassiveDns$2
+  - where:
+      subject: (\w*[a-z]|^)UsageRight([^s]\w*|$)
+    set:
+      subject: $1UsageRights$2
 # Modify OpenAPI documents to correct AutoREST.PowerShell limitations.
 # Change content-type from text/plain to application/json. AutoREST does not support non-json content types.
 # See https://github.com/Azure/autorest.powershell/issues/206.
@@ -488,10 +514,28 @@ directive:
                 }
             }
           }
+# Mark '@odata.id' as required properties for /$ref.
+  - from: 'openapi-document'
+    where: $.components.schemas.ReferenceCreate
+    transform: $['required'] = ['@odata.id']
+  - from: 'openapi-document'
+    where: $.components.schemas.ReferenceCreate..properties['@odata.id']
+    transform: $['description'] = 'The entity reference URL of the resource. For example, https://graph.microsoft.com/v1.0/directoryObjects/{id}.'
+  - from: 'openapi-document'
+    where: $.components.schemas.ReferenceUpdate
+    transform: $['required'] = ['@odata.id']
+  - from: 'openapi-document'
+    where: $.components.schemas.ReferenceUpdate..properties['@odata.id']
+    transform: $['description'] = 'The entity reference URL of the resource. For example, https://graph.microsoft.com/v1.0/directoryObjects/{id}.'
 # Mark consistency level parameter as required for /$count paths when header is present.
   - from: openapi-document
     where: $..paths.*[?(/(.*_GetCount)/gmi.exec(@.operationId))]..parameters[?(@.name === "ConsistencyLevel")]
     transform: $['required'] = true
+# Fix binary response definition for AutoREST to generate -OutFile parameter.
+  - from: openapi-document
+    where: $..paths..responses['2XX'].content['application/octet-stream'].schema
+    transform: >-
+      if ($.type === 'object') { $['format'] = "binary" }
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $

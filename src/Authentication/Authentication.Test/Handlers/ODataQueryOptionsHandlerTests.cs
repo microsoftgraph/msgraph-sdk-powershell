@@ -10,9 +10,9 @@ namespace Microsoft.Graph.Authentication.Test
 {
     public class ODataQueryOptionsHandlerTests : IDisposable
     {
-        private HttpMessageInvoker _invoker;
-        private FakeSuccessHandler _fakeSuccessHandler;
-        private ODataQueryOptionsHandler _graphODataHandler;
+        private readonly HttpMessageInvoker _invoker;
+        private readonly FakeSuccessHandler _fakeSuccessHandler;
+        private readonly ODataQueryOptionsHandler _graphODataHandler;
 
         public ODataQueryOptionsHandlerTests()
         {
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Authentication.Test
         }
 
         [Fact]
-        public async Task ShouldSkipWhenGraphVersionIsBeta()
+        public async Task ShouldAddDollarSignWhenGraphVersionIsBeta()
         {
             // Arrange
             string topParam = "$top=5";
@@ -78,9 +78,15 @@ namespace Microsoft.Graph.Authentication.Test
 
             // Act
             var response = await this._invoker.SendAsync(httpRequestMessage, new CancellationToken());
+            var sentRequestQuery = response.RequestMessage.RequestUri.Query;
 
             // Assert
-            Assert.Equal(requestUrl.ToString(), response.RequestMessage.RequestUri.ToString());
+            Assert.NotEqual(requestUrl.Query, sentRequestQuery);
+            Assert.Contains(topParam, sentRequestQuery);
+            Assert.Contains(orderbyParam, sentRequestQuery);
+            Assert.Contains($"${selectParam}", sentRequestQuery);
+            Assert.Contains($"${filterParam}", sentRequestQuery);
+            Assert.Contains($"${expandParam}", sentRequestQuery);
             Assert.Equal(5, response.RequestMessage.RequestUri.Query.Split('&').Length);
         }
 

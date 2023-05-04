@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^(admin(_.*Windows|.windows_.*Updates|.windows.updates.deployments_.*Audience)|admin(?!\.windows).*|admin\.windows\.updates(\.deploymentAudiences(\.|\_).*)|.*DeploymentAudiences)|admin\.windows\.updates\.updatePolicies\.audience_updateAudience$
+  - remove-path-by-operation: ^(admin(_.*Window|.window_.*Update|.window.update.deployment_.*Audience)|admin(?!\.window).*|admin\.window\.update(\.deploymentAudience(\.|\_).*)|.*DeploymentAudience)|admin\.window\.update\.updatePolicy\.audience_updateAudience$
 # Pluralize.
   - where:
       subject: (.*)AdminWindowUpdate(.*)

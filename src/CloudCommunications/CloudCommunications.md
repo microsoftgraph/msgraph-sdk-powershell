@@ -18,7 +18,7 @@ require:
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^communications(.cloudCommunications_.*CloudCommunications|_(List|Create|Update|Delete)CallRecords|.callRecords.sessions_.*Segments|(_List|_Update)Calls)$
+  - remove-path-by-operation: ^communication(.cloudCommunication_.*CloudCommunication|_(List|Create|Update|Delete)CallRecord|.callRecord.session_.*Segment|(_List|_Update)Call)$
 # Rename cmdlets
   - where:
       verb: Invoke
