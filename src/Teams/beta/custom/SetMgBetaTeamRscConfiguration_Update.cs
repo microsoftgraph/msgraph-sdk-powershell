@@ -366,6 +366,12 @@
             }
         }
 
+        /// <summary>
+        /// Add or update group consent settings.
+        /// </summary>
+        /// <param name="tenantConsentSettingsCollection">The tenant consent settings collection.</param>
+        /// <param name="isGroupSpecificConsentEnabled">Is group specific consent enabled.</param>
+        /// <returns>Task tracking operation.</returns>
         private async System.Threading.Tasks.Task AddOrUpdateGroupConsentSettings(
             MGTeamsInternalTenantConsentSettingsCollection tenantConsentSettingsCollection,
             bool isGroupSpecificConsentEnabled)
@@ -425,7 +431,7 @@
 
                     await this.Client.UpdateGroupConsentSettings(
                         groupConsentSettings.Id,
-                        groupConsentSettings.Values,
+                        updatedValues,
                         eventListener: this,
                         sender: Pipeline);
 
