@@ -301,4 +301,25 @@ directive:
           - CountryLetterCode
           - VerifiedDomains
           - AssignedPlans
+  - where:
+      model-name: ^MicrosoftGraphUnifiedRoleDefinition\d*$
+    set:
+      format-table:
+        properties:
+          - DisplayName
+          - Id
+          - TemplateId
+          - Description
+          - IsBuiltIn
+          - IsEnabled
+  - where:
+      model-name: ^MicrosoftGraphUnifiedRoleAssignment\d*$
+    set:
+      format-table:
+        properties:
+          - Id
+          - PrincipalId
+          - RoleDefinitionId
+          - DirectoryScopeId
+          - AppScopeId
 ```
