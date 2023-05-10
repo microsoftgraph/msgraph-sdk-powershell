@@ -843,8 +843,11 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: Get createdObjects from users
-      description: Directory objects that were created by the user. Read-only. Nullable.
+      summary: List createdObjects
+      description: 'Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn''t in any administrator role; otherwise, it returns an empty object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
       operationId: user_ListCreatedObject
       parameters:
         - name: user-id
@@ -1179,6 +1182,9 @@ paths:
         - users.directoryObject
       summary: Get directReports from users
       description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0
       operationId: user_ListDirectReport
       parameters:
         - name: user-id
@@ -2053,7 +2059,11 @@ paths:
     get:
       tags:
         - users.licenseDetails
-      summary: Get licenseDetails from users
+      summary: List licenseDetails
+      description: Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0
       operationId: user_ListLicenseDetail
       parameters:
         - name: user-id
@@ -2350,8 +2360,11 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: Get manager from users
-      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
+      summary: List manager
+      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
       operationId: user_GetManager
       parameters:
         - name: user-id
@@ -2403,12 +2416,51 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Remove manager
+      description: Remove a user's manager.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
+      operationId: user_DeleteManager
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/manager/$ref':
     get:
       tags:
         - users.directoryObject
-      summary: Get ref of manager from users
-      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
+      summary: List manager
+      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
       operationId: user_GetManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -2438,7 +2490,11 @@ paths:
     put:
       tags:
         - users.directoryObject
-      summary: Update the ref of navigation property manager in users
+      summary: Assign a manager
+      description: Use this API to assign a user's manager.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0
       operationId: user_SetManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -2466,7 +2522,11 @@ paths:
     delete:
       tags:
         - users.directoryObject
-      summary: Delete ref of navigation property manager for users
+      summary: Remove manager
+      description: Remove a user's manager.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0
       operationId: user_DeleteManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -2501,6 +2561,9 @@ paths:
         - users.directoryObject
       summary: Get memberOf from users
       description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0
       operationId: user_ListMemberGraphOPre
       parameters:
         - name: user-id
@@ -3401,7 +3464,11 @@ paths:
     get:
       tags:
         - users.oAuth2PermissionGrant
-      summary: Get oauth2PermissionGrants from users
+      summary: List oauth2PermissionGrants
+      description: 'Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0
       operationId: user_ListOauth2PermissionGrant
       parameters:
         - name: user-id
@@ -3640,8 +3707,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get masterCategories from users
-      description: A list of categories defined for the user.
+      summary: List Outlook categories
+      description: Get all the categories that have been defined for the user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
       operationId: user.outlook_ListMasterCategory
       parameters:
         - name: user-id
@@ -3705,7 +3775,11 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create new navigation property to masterCategories for users
+      summary: Create Outlook category
+      description: Create an outlookCategory object in the user's master list of categories.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0
       operationId: user.outlook_CreateMasterCategory
       parameters:
         - name: user-id
@@ -3743,8 +3817,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get masterCategories from users
-      description: A list of categories defined for the user.
+      summary: Get Outlook category
+      description: Get the properties and relationships of the specified outlookCategory object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0
       operationId: user.outlook_GetMasterCategory
       parameters:
         - name: user-id
@@ -3796,7 +3873,11 @@ paths:
     patch:
       tags:
         - users.outlookUser
-      summary: Update the navigation property masterCategories in users
+      summary: Update Outlook category
+      description: "Update the writable property, **color**, of the specified outlookCategory object. You cannot modify the **displayName** property\nonce you have created the category."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0
       operationId: user.outlook_UpdateMasterCategory
       parameters:
         - name: user-id
@@ -3841,7 +3922,11 @@ paths:
     delete:
       tags:
         - users.outlookUser
-      summary: Delete navigation property masterCategories for users
+      summary: Delete Outlook category
+      description: Delete the specified outlookCategory object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0
       operationId: user.outlook_DeleteMasterCategory
       parameters:
         - name: user-id
@@ -3909,7 +3994,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get taskFolders from users
+      summary: List taskFolders (deprecated)
+      description: Get all the Outlook task folders in the user's mailbox.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0
       operationId: user.outlook_ListTaskFolder
       parameters:
         - name: user-id
@@ -3982,7 +4071,11 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create new navigation property to taskFolders for users
+      summary: Create outlookTaskFolder (deprecated)
+      description: Create a task folder in the default task group (`My Tasks`) of the user's mailbox.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookuser-post-taskfolders?view=graph-rest-1.0
       operationId: user.outlook_CreateTaskFolder
       parameters:
         - name: user-id
@@ -4020,7 +4113,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get taskFolders from users
+      summary: Get outlookTaskFolder (deprecated)
+      description: Get the properties and relationships of the specified Outlook task folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-1.0
       operationId: user.outlook_GetTaskFolder
       parameters:
         - name: user-id
@@ -4077,7 +4174,11 @@ paths:
     patch:
       tags:
         - users.outlookUser
-      summary: Update the navigation property taskFolders in users
+      summary: Update outlooktaskfolder (deprecated)
+      description: 'Update the writable properties of an Outlook task folder. You cannot change the **name** property value of the default task folder, ''Tasks''.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-update?view=graph-rest-1.0
       operationId: user.outlook_UpdateTaskFolder
       parameters:
         - name: user-id
@@ -4122,7 +4223,11 @@ paths:
     delete:
       tags:
         - users.outlookUser
-      summary: Delete navigation property taskFolders for users
+      summary: Delete outlookTaskFolder (deprecated)
+      description: Delete the specified Outlook task folder.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-delete?view=graph-rest-1.0
       operationId: user.outlook_DeleteTaskFolder
       parameters:
         - name: user-id
@@ -4159,690 +4264,15 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: user.outlook.taskFolder_ListMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.outlookUser
-      summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.outlook.taskFolder_CreateMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: user.outlook.taskFolder_GetMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.outlookUser
-      summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.outlook.taskFolder_UpdateMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.outlookUser
-      summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.outlook.taskFolder_DeleteMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties/$count':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get the number of the resource
-      operationId: user.outlook.taskFolder.multiValueExtendedProperty_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: user.outlook.taskFolder_ListSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.outlookUser
-      summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.outlook.taskFolder_CreateSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: user.outlook.taskFolder_GetSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.outlookUser
-      summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.outlook.taskFolder_UpdateSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.outlookUser
-      summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.outlook.taskFolder_DeleteSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties/$count':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get the number of the resource
-      operationId: user.outlook.taskFolder.singleValueExtendedProperty_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks':
     get:
       tags:
         - users.outlookUser
-      summary: Get tasks from users
-      description: The tasks in this task folder. Read-only. Nullable.
+      summary: List tasks (deprecated)
+      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a `Prefer: outlook.timezone` request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
       operationId: user.outlook.taskFolder_ListTask
       parameters:
         - name: user-id
@@ -4968,7 +4398,11 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create new navigation property to tasks for users
+      summary: Create outlookTask (deprecated)
+      description: "Create an Outlook task in the specified task folder. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0
       operationId: user.outlook.taskFolder_CreateTask
       parameters:
         - name: user-id
@@ -5197,8 +4631,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get attachments from users
-      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
+      summary: List attachments (deprecated)
+      description: Get a list of attachment objects attached to an Outlook task.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
       operationId: user.outlook.taskFolder.task_ListAttachment
       parameters:
         - name: user-id
@@ -5299,7 +4736,11 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create new navigation property to attachments for users
+      summary: Create attachment (deprecated)
+      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
       operationId: user.outlook.taskFolder.task_CreateAttachment
       parameters:
         - name: user-id
@@ -5533,780 +4974,6 @@ paths:
         date: '2023-03-09T00:00:00.0000000+00:00'
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.taskFolder.task_ListMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.outlookUser
-      summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.outlook.taskFolder.task_CreateMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.taskFolder.task_GetMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.outlookUser
-      summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.outlook.taskFolder.task_UpdateMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.outlookUser
-      summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.outlook.taskFolder.task_DeleteMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties/$count':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get the number of the resource
-      operationId: user.outlook.taskFolder.task.multiValueExtendedProperty_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.taskFolder.task_ListSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.outlookUser
-      summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.outlook.taskFolder.task_CreateSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.taskFolder.task_GetSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.outlookUser
-      summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.outlook.taskFolder.task_UpdateSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.outlookUser
-      summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.outlook.taskFolder.task_DeleteSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties/$count':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get the number of the resource
-      operationId: user.outlook.taskFolder.task.singleValueExtendedProperty_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/outlook/taskFolders/{outlookTaskFolder-id}/tasks/$count':
     get:
       tags:
@@ -6373,7 +5040,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get taskGroups from users
+      summary: List taskGroups (deprecated)
+      description: 'Get all the Outlook task groups in the user''s mailbox. The response always includes the default task group `My Tasks`, and any other task groups that have been created in the mailbox.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-1.0
       operationId: user.outlook_ListTaskGroup
       parameters:
         - name: user-id
@@ -6444,7 +5115,11 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create new navigation property to taskGroups for users
+      summary: Create outlookTaskGroup (deprecated)
+      description: Create an Outlook task group in the user's mailbox.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookuser-post-taskgroups?view=graph-rest-1.0
       operationId: user.outlook_CreateTaskGroup
       parameters:
         - name: user-id
@@ -6482,7 +5157,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get taskGroups from users
+      summary: Get outlookTaskGroup (deprecated)
+      description: Get the properties and relationships of the specified Outlook task group.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-1.0
       operationId: user.outlook_GetTaskGroup
       parameters:
         - name: user-id
@@ -6623,8 +5302,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get taskFolders from users
-      description: The collection of task folders in the task group. Read-only. Nullable.
+      summary: List taskFolders (deprecated)
+      description: Get Outlook task folders in a specific outlookTaskGroup.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-1.0
       operationId: user.outlook.taskGroup_ListTaskFolder
       parameters:
         - name: user-id
@@ -6705,7 +5387,11 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create new navigation property to taskFolders for users
+      summary: Create outlookTaskFolder (deprecated)
+      description: Create an Outlook task folder under a specified outlookTaskGroup.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktaskgroup-post-taskfolders?view=graph-rest-1.0
       operationId: user.outlook.taskGroup_CreateTaskFolder
       parameters:
         - name: user-id
@@ -6915,786 +5601,15 @@ paths:
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: user.outlook.taskGroup.taskFolder_ListMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.outlookUser
-      summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.outlook.taskGroup.taskFolder_CreateMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: user.outlook.taskGroup.taskFolder_GetMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.outlookUser
-      summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.outlook.taskGroup.taskFolder_UpdateMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.outlookUser
-      summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.outlook.taskGroup.taskFolder_DeleteMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/multiValueExtendedProperties/$count':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get the number of the resource
-      operationId: user.outlook.taskGroup.taskFolder.multiValueExtendedProperty_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: user.outlook.taskGroup.taskFolder_ListSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.outlookUser
-      summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.outlook.taskGroup.taskFolder_CreateSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the task folder. Read-only. Nullable.
-      operationId: user.outlook.taskGroup.taskFolder_GetSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.outlookUser
-      summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.outlook.taskGroup.taskFolder_UpdateSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.outlookUser
-      summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.outlook.taskGroup.taskFolder_DeleteSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/singleValueExtendedProperties/$count':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get the number of the resource
-      operationId: user.outlook.taskGroup.taskFolder.singleValueExtendedProperty_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks':
     get:
       tags:
         - users.outlookUser
-      summary: Get tasks from users
-      description: The tasks in this task folder. Read-only. Nullable.
+      summary: List tasks (deprecated)
+      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a `Prefer: outlook.timezone` request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
       operationId: user.outlook.taskGroup.taskFolder_ListTask
       parameters:
         - name: user-id
@@ -7828,7 +5743,11 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create new navigation property to tasks for users
+      summary: Create outlookTask (deprecated)
+      description: "Create an Outlook task in the specified task folder. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0
       operationId: user.outlook.taskGroup.taskFolder_CreateTask
       parameters:
         - name: user-id
@@ -8089,8 +6008,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get attachments from users
-      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
+      summary: List attachments (deprecated)
+      description: Get a list of attachment objects attached to an Outlook task.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
       operationId: user.outlook.taskGroup.taskFolder.task_ListAttachment
       parameters:
         - name: user-id
@@ -8199,7 +6121,11 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create new navigation property to attachments for users
+      summary: Create attachment (deprecated)
+      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
       operationId: user.outlook.taskGroup.taskFolder.task_CreateAttachment
       parameters:
         - name: user-id
@@ -8465,876 +6391,6 @@ paths:
         date: '2023-03-09T00:00:00.0000000+00:00'
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.taskGroup.taskFolder.task_ListMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.outlookUser
-      summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.outlook.taskGroup.taskFolder.task_CreateMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.taskGroup.taskFolder.task_GetMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.outlookUser
-      summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.outlook.taskGroup.taskFolder.task_UpdateMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.outlookUser
-      summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.outlook.taskGroup.taskFolder.task_DeleteMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/multiValueExtendedProperties/$count':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get the number of the resource
-      operationId: user.outlook.taskGroup.taskFolder.task.multiValueExtendedProperty_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.taskGroup.taskFolder.task_ListSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.outlookUser
-      summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.outlook.taskGroup.taskFolder.task_CreateSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.taskGroup.taskFolder.task_GetSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.outlookUser
-      summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.outlook.taskGroup.taskFolder.task_UpdateSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.outlookUser
-      summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.outlook.taskGroup.taskFolder.task_DeleteSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/{outlookTask-id}/singleValueExtendedProperties/$count':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get the number of the resource
-      operationId: user.outlook.taskGroup.taskFolder.task.singleValueExtendedProperty_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTaskGroup-id
-          in: path
-          description: The unique identifier of outlookTaskGroup
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskGroup
-        - name: outlookTaskFolder-id
-          in: path
-          description: The unique identifier of outlookTaskFolder
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTaskFolder
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/outlook/taskGroups/{outlookTaskGroup-id}/taskFolders/{outlookTaskFolder-id}/tasks/$count':
     get:
       tags:
@@ -9444,7 +6500,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get tasks from users
+      summary: List tasks (deprecated)
+      description: "Get all the Outlook tasks in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.\nYou can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookuser-list-tasks?view=graph-rest-1.0
       operationId: user.outlook_ListTask
       parameters:
         - name: user-id
@@ -9562,7 +6622,11 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create new navigation property to tasks for users
+      summary: Create outlookTask (deprecated)
+      description: "Create an Outlook task in the default task group (`My Tasks`) and default task folder (`Tasks`) in the user's mailbox. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone. By default, this operation (and the GET, PATCH, and complete task operations) returns date-related properties in UTC. \nYou can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone \ndifferent than UTC."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookuser-post-tasks?view=graph-rest-1.0
       operationId: user.outlook_CreateTask
       parameters:
         - name: user-id
@@ -9600,7 +6664,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get tasks from users
+      summary: Get outlookTask (deprecated)
+      description: 'Get the properties and relationships of an Outlook task in the user''s mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC. You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktask-get?view=graph-rest-1.0
       operationId: user.outlook_GetTask
       parameters:
         - name: user-id
@@ -9672,7 +6740,11 @@ paths:
     patch:
       tags:
         - users.outlookUser
-      summary: Update the navigation property tasks in users
+      summary: Update outlooktask (deprecated)
+      description: 'Change writable properties of an Outlook task. The **completedDateTime** property can be set by the **complete** action, or explicitly by a PATCH operation. If you use PATCH to set **completedDateTime**, make sure you set **status** to `completed` as well. By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC. You can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone different than UTC.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktask-update?view=graph-rest-1.0
       operationId: user.outlook_UpdateTask
       parameters:
         - name: user-id
@@ -9717,7 +6789,11 @@ paths:
     delete:
       tags:
         - users.outlookUser
-      summary: Delete navigation property tasks for users
+      summary: Delete outlookTask (deprecated)
+      description: Delete the specified Outlook task in the user's mailbox.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktask-delete?view=graph-rest-1.0
       operationId: user.outlook_DeleteTask
       parameters:
         - name: user-id
@@ -9758,8 +6834,11 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: Get attachments from users
-      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
+      summary: List attachments (deprecated)
+      description: Get a list of attachment objects attached to an Outlook task.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
       operationId: user.outlook.task_ListAttachment
       parameters:
         - name: user-id
@@ -9852,7 +6931,11 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create new navigation property to attachments for users
+      summary: Create attachment (deprecated)
+      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
       operationId: user.outlook.task_CreateAttachment
       parameters:
         - name: user-id
@@ -10054,684 +7137,6 @@ paths:
         date: '2023-03-09T00:00:00.0000000+00:00'
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-  '/users/{user-id}/outlook/tasks/{outlookTask-id}/multiValueExtendedProperties':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.task_ListMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.outlookUser
-      summary: Create new navigation property to multiValueExtendedProperties for users
-      operationId: user.outlook.task_CreateMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/tasks/{outlookTask-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get multiValueExtendedProperties from users
-      description: The collection of multi-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.task_GetMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.outlookUser
-      summary: Update the navigation property multiValueExtendedProperties in users
-      operationId: user.outlook.task_UpdateMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.outlookUser
-      summary: Delete navigation property multiValueExtendedProperties for users
-      operationId: user.outlook.task_DeleteMultiValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of multiValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/tasks/{outlookTask-id}/multiValueExtendedProperties/$count':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get the number of the resource
-      operationId: user.outlook.task.multiValueExtendedProperty_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-  '/users/{user-id}/outlook/tasks/{outlookTask-id}/singleValueExtendedProperties':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.task_ListSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - value
-                - value desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.outlookUser
-      summary: Create new navigation property to singleValueExtendedProperties for users
-      operationId: user.outlook.task_CreateSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/tasks/{outlookTask-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get singleValueExtendedProperties from users
-      description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
-      operationId: user.outlook.task_GetSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - users.outlookUser
-      summary: Update the navigation property singleValueExtendedProperties in users
-      operationId: user.outlook.task_UpdateSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.outlookUser
-      summary: Delete navigation property singleValueExtendedProperties for users
-      operationId: user.outlook.task_DeleteSingleValueExtendedProperty
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: The unique identifier of singleValueLegacyExtendedProperty
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/outlook/tasks/{outlookTask-id}/singleValueExtendedProperties/$count':
-    get:
-      tags:
-        - users.outlookUser
-      summary: Get the number of the resource
-      operationId: user.outlook.task.singleValueExtendedProperty_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookTask-id
-          in: path
-          description: The unique identifier of outlookTask
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookTask
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/outlook/tasks/$count':
     get:
       tags:
@@ -10765,6 +7170,9 @@ paths:
         - users.directoryObject
       summary: Get ownedDevices from users
       description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0
       operationId: user_ListOwnedDevice
       parameters:
         - name: user-id
@@ -11354,6 +7762,9 @@ paths:
         - users.directoryObject
       summary: Get ownedObjects from users
       description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0
       operationId: user_ListOwnedObject
       parameters:
         - name: user-id
@@ -12546,6 +8957,9 @@ paths:
         - users.directoryObject
       summary: Get registeredDevices from users
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0
       operationId: user_ListRegisteredDevice
       parameters:
         - name: user-id
@@ -13267,8 +9681,11 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get contactMergeSuggestions from users
-      description: The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+      summary: Get contactMergeSuggestions
+      description: Read the properties and relationships of a contactMergeSuggestions object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactmergesuggestions-get?view=graph-rest-1.0
       operationId: user.setting_GetContactMergeSuggestion
       parameters:
         - name: user-id
@@ -13323,7 +9740,11 @@ paths:
     patch:
       tags:
         - users.userSettings
-      summary: Update the navigation property contactMergeSuggestions in users
+      summary: Update contactMergeSuggestions
+      description: Update the properties of a contactMergeSuggestions object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactmergesuggestions-update?view=graph-rest-1.0
       operationId: user.setting_UpdateContactMergeSuggestion
       parameters:
         - name: user-id
@@ -13393,8 +9814,11 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get itemInsights from users
-      description: 'The user''s settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.'
+      summary: Get userInsightsSettings
+      description: Get the user-customizable privacy settings for itemInsights and meeting hours insights.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0
       operationId: user.setting_GetItemInsight
       parameters:
         - name: user-id
@@ -13449,7 +9873,11 @@ paths:
     patch:
       tags:
         - users.userSettings
-      summary: Update the navigation property itemInsights in users
+      summary: Update userInsightsSettings
+      description: Update the privacy settings for itemInsights and meeting hours insights of a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0
       operationId: user.setting_UpdateItemInsight
       parameters:
         - name: user-id
@@ -13519,8 +9947,11 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get regionalAndLanguageSettings from users
-      description: 'The user''s preferences for languages, regional locale and date/time formatting.'
+      summary: Get regionalAndLanguageSettings
+      description: Get the properties of a regionalAndLanguageSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0
       operationId: user.setting_GetRegionalAndLanguageSetting
       parameters:
         - name: user-id
@@ -13581,7 +10012,11 @@ paths:
     patch:
       tags:
         - users.userSettings
-      summary: Update the navigation property regionalAndLanguageSettings in users
+      summary: Update regionalAndLanguageSettings
+      description: Update some or all of the properties of a regionalAndLanguageSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0
       operationId: user.setting_UpdateRegionalAndLanguageSetting
       parameters:
         - name: user-id
@@ -13651,8 +10086,11 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get shiftPreferences from users
-      description: The shift preferences for the user.
+      summary: Get shiftPreferences
+      description: Retrieve the properties and relationships of a shiftPreferences object by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
       operationId: user.setting_GetShiftPreference
       parameters:
         - name: user-id
@@ -13711,7 +10149,11 @@ paths:
     patch:
       tags:
         - users.userSettings
-      summary: Update the navigation property shiftPreferences in users
+      summary: Update shiftPreferences
+      description: Update the properties and relationships of a shiftPreferences object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
       operationId: user.setting_UpdateShiftPreference
       parameters:
         - name: user-id
@@ -13908,8 +10350,11 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get lists from users
-      description: The task lists in the users mailbox.
+      summary: List lists
+      description: Get a list of the todoTaskList objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0
       operationId: user.todo_ListList
       parameters:
         - name: user-id
@@ -13996,7 +10441,11 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create new navigation property to lists for users
+      summary: Create todoTaskList
+      description: Create a new lists object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0
       operationId: user.todo_CreateList
       parameters:
         - name: user-id
@@ -14034,8 +10483,11 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get lists from users
-      description: The task lists in the users mailbox.
+      summary: Get todoTaskList
+      description: Read the properties and relationships of a todoTaskList object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0
       operationId: user.todo_GetList
       parameters:
         - name: user-id
@@ -14105,7 +10557,11 @@ paths:
     patch:
       tags:
         - users.todo
-      summary: Update the navigation property lists in users
+      summary: Update todoTaskList
+      description: Update the properties of a todoTaskList object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotasklist-update?view=graph-rest-1.0
       operationId: user.todo_UpdateList
       parameters:
         - name: user-id
@@ -14150,7 +10606,11 @@ paths:
     delete:
       tags:
         - users.todo
-      summary: Delete navigation property lists for users
+      summary: Delete todoTaskList
+      description: Deletes a todoTaskList object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0
       operationId: user.todo_DeleteList
       parameters:
         - name: user-id
@@ -14526,8 +10986,11 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get tasks from users
-      description: The tasks in this task list. Read-only. Nullable.
+      summary: List tasks
+      description: Get the **todoTask** resources from the **tasks** navigation property of a specified todoTaskList.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0
       operationId: user.todo.list_ListTask
       parameters:
         - name: user-id
@@ -14661,7 +11124,11 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create new navigation property to tasks for users
+      summary: Create todoTask
+      description: Create a new task object in a specified todoTaskList.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotasklist-post-tasks?view=graph-rest-1.0
       operationId: user.todo.list_CreateTask
       parameters:
         - name: user-id
@@ -14707,8 +11174,11 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get tasks from users
-      description: The tasks in this task list. Read-only. Nullable.
+      summary: Get todoTask
+      description: Read the properties and relationships of a todoTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotask-get?view=graph-rest-1.0
       operationId: user.todo.list_GetTask
       parameters:
         - name: user-id
@@ -14803,7 +11273,11 @@ paths:
     patch:
       tags:
         - users.todo
-      summary: Update the navigation property tasks in users
+      summary: Update todoTask
+      description: Update the properties of a todoTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotask-update?view=graph-rest-1.0
       operationId: user.todo.list_UpdateTask
       parameters:
         - name: user-id
@@ -14856,7 +11330,11 @@ paths:
     delete:
       tags:
         - users.todo
-      summary: Delete navigation property tasks for users
+      summary: Delete todoTask
+      description: Deletes a todoTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotask-delete?view=graph-rest-1.0
       operationId: user.todo.list_DeleteTask
       parameters:
         - name: user-id
@@ -14905,8 +11383,11 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get attachments from users
-      description: A collection of file attachments for the task.
+      summary: List taskFileAttachments
+      description: Get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
       operationId: user.todo.list.task_ListAttachment
       parameters:
         - name: user-id
@@ -14992,7 +11473,11 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create new navigation property to attachments for users
+      summary: Create taskFileAttachment
+      description: 'Add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0
       operationId: user.todo.list.task_CreateAttachment
       parameters:
         - name: user-id
@@ -15046,8 +11531,11 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get attachments from users
-      description: A collection of file attachments for the task.
+      summary: Get taskFileAttachment
+      description: Read the properties and relationships of a taskFileAttachment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0
       operationId: user.todo.list.task_GetAttachment
       parameters:
         - name: user-id
@@ -15117,7 +11605,11 @@ paths:
     delete:
       tags:
         - users.todo
-      summary: Delete navigation property attachments for users
+      summary: Delete taskFileAttachment
+      description: Delete a taskFileAttachment object from a todoTask resource.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0
       operationId: user.todo.list.task_DeleteAttachment
       parameters:
         - name: user-id
@@ -15175,6 +11667,9 @@ paths:
       tags:
         - users.todo
       summary: Get media content for the navigation property attachments from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
       operationId: user.todo.list.task_GetAttachmentsContent
       parameters:
         - name: user-id
@@ -15765,8 +12260,11 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get checklistItems from users
-      description: A collection of smaller subtasks linked to the more complex parent task.
+      summary: List checklistItems
+      description: Get the checklistItem resources associated to the **checklistItems** navigation property of a todoTask.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0
       operationId: user.todo.list.task_ListChecklistItem
       parameters:
         - name: user-id
@@ -15865,7 +12363,11 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create new navigation property to checklistItems for users
+      summary: Create checklistItem
+      description: Create a new checklistItem object as a subtask in a bigger todoTask.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0
       operationId: user.todo.list.task_CreateChecklistItem
       parameters:
         - name: user-id
@@ -15919,8 +12421,11 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get checklistItems from users
-      description: A collection of smaller subtasks linked to the more complex parent task.
+      summary: Get checklistItem
+      description: Read the properties and relationships of a checklistItem object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/checklistitem-get?view=graph-rest-1.0
       operationId: user.todo.list.task_GetChecklistItem
       parameters:
         - name: user-id
@@ -16002,7 +12507,11 @@ paths:
     patch:
       tags:
         - users.todo
-      summary: Update the navigation property checklistItems in users
+      summary: Update checklistItem
+      description: Update the properties of a checklistItem object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/checklistitem-update?view=graph-rest-1.0
       operationId: user.todo.list.task_UpdateChecklistItem
       parameters:
         - name: user-id
@@ -16063,7 +12572,11 @@ paths:
     delete:
       tags:
         - users.todo
-      summary: Delete navigation property checklistItems for users
+      summary: Delete checklistItem
+      description: Delete a checklistItem object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/checklistitem-delete?view=graph-rest-1.0
       operationId: user.todo.list.task_DeleteChecklistItem
       parameters:
         - name: user-id
@@ -16547,8 +13060,11 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get linkedResources from users
-      description: A collection of resources linked to the task.
+      summary: List linkedResources
+      description: 'Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0
       operationId: user.todo.list.task_ListLinkedResource
       parameters:
         - name: user-id
@@ -16647,7 +13163,11 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create new navigation property to linkedResources for users
+      summary: Create linkedResource
+      description: 'Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association. You can also create a **linkedResource** object while creating a todoTask.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/todotask-post-linkedresources?view=graph-rest-1.0
       operationId: user.todo.list.task_CreateLinkedResource
       parameters:
         - name: user-id
@@ -16701,8 +13221,11 @@ paths:
     get:
       tags:
         - users.todo
-      summary: Get linkedResources from users
-      description: A collection of resources linked to the task.
+      summary: Get linkedResource
+      description: Read the properties and relationships of a linkedResource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/linkedresource-get?view=graph-rest-1.0
       operationId: user.todo.list.task_GetLinkedResource
       parameters:
         - name: user-id
@@ -16784,7 +13307,11 @@ paths:
     patch:
       tags:
         - users.todo
-      summary: Update the navigation property linkedResources in users
+      summary: Update linkedResource
+      description: Update the properties of a linkedResource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/linkedresource-update?view=graph-rest-1.0
       operationId: user.todo.list.task_UpdateLinkedResource
       parameters:
         - name: user-id
@@ -16845,7 +13372,11 @@ paths:
     delete:
       tags:
         - users.todo
-      summary: Delete navigation property linkedResources for users
+      summary: Delete linkedResource
+      description: Deletes a linkedResource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/linkedresource-delete?view=graph-rest-1.0
       operationId: user.todo.list.task_DeleteLinkedResource
       parameters:
         - name: user-id
@@ -17012,6 +13543,9 @@ paths:
         - users.directoryObject
       summary: Get transitiveMemberOf from users
       description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0
       operationId: user_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
@@ -18605,7 +15139,7 @@ components:
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.'
+              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.'
               format: date-time
               nullable: true
             preferredTokenSigningKeyThumbprint:
@@ -19454,32 +15988,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.outlookTask'
               description: The tasks in this task folder. Read-only. Nullable.
               x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.multiValueLegacyExtendedProperty:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: multiValueLegacyExtendedProperty
-          type: object
-          properties:
-            value:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: A collection of property values.
-          additionalProperties:
-            type: object
-    microsoft.graph.singleValueLegacyExtendedProperty:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: singleValueLegacyExtendedProperty
-          type: object
-          properties:
-            value:
-              type: string
-              description: A property value.
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.outlookTask:
@@ -23034,9 +19542,15 @@ components:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowRecording:
+              type: boolean
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
               nullable: true
             alternativeRecording:
               type: string
@@ -24208,6 +20722,32 @@ components:
         - preset23
         - preset24
       type: string
+    microsoft.graph.multiValueLegacyExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: multiValueLegacyExtendedProperty
+          type: object
+          properties:
+            value:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: A collection of property values.
+          additionalProperties:
+            type: object
+    microsoft.graph.singleValueLegacyExtendedProperty:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: singleValueLegacyExtendedProperty
+          type: object
+          properties:
+            value:
+              type: string
+              description: A property value.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.outlookItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24995,32 +21535,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.outlookTaskFolder'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
-      title: Collection of multiValueLegacyExtendedProperty
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse:
-      title: Collection of singleValueLegacyExtendedProperty
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -31177,33 +27691,42 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The assigned categories for the team template.
             description:
               type: string
+              description: A brief description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             displayName:
               type: string
+              description: The user defined name of the team template.
               nullable: true
             iconUrl:
               type: string
+              description: The icon url for the team template.
               nullable: true
             languageTag:
               type: string
+              description: Language the template is available in.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date time of when the team template was last modified.
               format: date-time
               nullable: true
             parentTemplateId:
               type: string
+              description: The templateId for the team template
               nullable: true
             publisherName:
               type: string
+              description: The organization which published the team template.
               nullable: true
             shortDescription:
               type: string
+              description: A short-description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             teamDefinition:
               $ref: '#/components/schemas/microsoft.graph.team'
@@ -36197,7 +32720,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -42953,18 +39476,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.outlookTaskFolderCollectionResponse'
-    microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
-    microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
     microsoft.graph.outlookTaskCollectionResponse:
       description: Retrieved collection
       content:
