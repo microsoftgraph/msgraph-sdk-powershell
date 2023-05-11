@@ -91,7 +91,11 @@ paths:
     get:
       tags:
         - security.alert
-      summary: Get alerts from security
+      summary: List alerts
+      description: Retrieve a list of alert objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0
       operationId: security_ListAlert
       parameters:
         - $ref: '#/components/parameters/top'
@@ -288,8 +292,11 @@ paths:
     get:
       tags:
         - security.alert
-      summary: Get alerts_v2 from security
-      description: A collection of alerts in Microsoft 365 Defender.
+      summary: List alerts_v2
+      description: 'Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-list-alerts_v2?view=graph-rest-1.0
       operationId: security_ListAlerts_v2
       parameters:
         - $ref: '#/components/parameters/top'
@@ -453,8 +460,11 @@ paths:
     get:
       tags:
         - security.alert
-      summary: Get alerts_v2 from security
-      description: A collection of alerts in Microsoft 365 Defender.
+      summary: Get alert
+      description: Get the properties and relationships of an alert in an organization based on the specified alert **id** property.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-alert-get?view=graph-rest-1.0
       operationId: security_GetAlerts_v2
       parameters:
         - name: alert-id
@@ -530,7 +540,11 @@ paths:
     patch:
       tags:
         - security.alert
-      summary: Update the navigation property alerts_v2 in security
+      summary: Update alert
+      description: Update the properties of an alert object in an organization based on the specified alert **id** property.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-alert-update?view=graph-rest-1.0
       operationId: security_UpdateAlerts_v2
       parameters:
         - name: alert-id
@@ -602,7 +616,11 @@ paths:
     get:
       tags:
         - security.alert
-      summary: Get alerts from security
+      summary: Get alert
+      description: Retrieve the properties and relationships of an alert object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/alert-get?view=graph-rest-1.0
       operationId: security_GetAlert
       parameters:
         - name: alert-id
@@ -689,7 +707,11 @@ paths:
     patch:
       tags:
         - security.alert
-      summary: Update the navigation property alerts in security
+      summary: Update alert
+      description: Update an editable **alert** property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/alert-update?view=graph-rest-1.0
       operationId: security_UpdateAlert
       parameters:
         - name: alert-id
@@ -820,8 +842,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get simulationAutomations from security
-      description: Represents simulation automation created to run on a tenant.
+      summary: List simulationAutomations
+      description: Get a list of attack simulation automations for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attacksimulationroot-list-simulationautomations?view=graph-rest-1.0
       operationId: security.attackSimulation_ListSimulationAutomation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -930,8 +955,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get simulationAutomations from security
-      description: Represents simulation automation created to run on a tenant.
+      summary: Get simulationAutomation
+      description: Get an attack simulation automation for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/simulationautomation-get?view=graph-rest-1.0
       operationId: security.attackSimulation_GetSimulationAutomation
       parameters:
         - name: simulationAutomation-id
@@ -1048,8 +1076,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get runs from security
-      description: A collection of simulation automation runs.
+      summary: List runs
+      description: Get a list of the attack simulation automation runs for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/simulationautomation-list-runs?view=graph-rest-1.0
       operationId: security.attackSimulation.simulationAutomation_ListRun
       parameters:
         - name: simulationAutomation-id
@@ -1329,8 +1360,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get simulations from security
-      description: Represents an attack simulation training campaign in a tenant.
+      summary: List simulations
+      description: Get a list of attack simulation campaigns for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attacksimulationroot-list-simulations?view=graph-rest-1.0
       operationId: security.attackSimulation_ListSimulation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1455,8 +1489,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get simulations from security
-      description: Represents an attack simulation training campaign in a tenant.
+      summary: Get simulation
+      description: Get an attack simulation campaign for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/simulation-get?view=graph-rest-1.0
       operationId: security.attackSimulation_GetSimulation
       parameters:
         - name: simulation-id
@@ -1674,7 +1711,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get ediscoveryCases from security
+      summary: List ediscoveryCases
+      description: Get a list of the ediscoveryCase objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-casesroot-list-ediscoverycases?view=graph-rest-1.0
       operationId: security.case_ListEdiscoveryCase
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1772,7 +1813,11 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to ediscoveryCases for security
+      summary: Create ediscoveryCase
+      description: Create a new ediscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-casesroot-post-ediscoverycases?view=graph-rest-1.0
       operationId: security.case_CreateEdiscoveryCase
       requestBody:
         description: New navigation property
@@ -1795,7 +1840,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get ediscoveryCases from security
+      summary: Get ediscoveryCase
+      description: Read the properties and relationships of an ediscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-get?view=graph-rest-1.0
       operationId: security.case_GetEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
@@ -1866,7 +1915,11 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property ediscoveryCases in security
+      summary: Update ediscoveryCase
+      description: Update the properties of an ediscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-update?view=graph-rest-1.0
       operationId: security.case_UpdateEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
@@ -1897,7 +1950,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property ediscoveryCases for security
+      summary: Delete ediscoveryCase
+      description: Delete an ediscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-casesroot-delete-ediscoverycases?view=graph-rest-1.0
       operationId: security.case_DeleteEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
@@ -1924,8 +1981,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get custodians from security
-      description: Returns a list of case ediscoveryCustodian objects for this case.
+      summary: List ediscoveryCustodian
+      description: Get a list of the custodian objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-custodians?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_ListCustodian
       parameters:
         - name: ediscoveryCase-id
@@ -2022,7 +2082,11 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to custodians for security
+      summary: Create custodians
+      description: "Create a new ediscoveryCustodian object.\nAfter the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-custodians?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_CreateCustodian
       parameters:
         - name: ediscoveryCase-id
@@ -2054,8 +2118,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get custodians from security
-      description: Returns a list of case ediscoveryCustodian objects for this case.
+      summary: Get ediscoveryCustodian
+      description: Read the properties and relationships of an ediscoveryCustodian object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_GetCustodian
       parameters:
         - name: ediscoveryCase-id
@@ -2201,8 +2268,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get lastIndexOperation from security
-      description: Operation entity that represents the latest indexing for the custodian.
+      summary: List lastIndexOperation
+      description: Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-lastindexoperation?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_GetLastIndexOperation
       parameters:
         - name: ediscoveryCase-id
@@ -2267,6 +2337,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action activate
+      description: 'Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an eDiscovery (Premium) case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-activate?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_activate
       parameters:
         - name: ediscoveryCase-id
@@ -2296,6 +2370,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyHold
+      description: 'Start the process of applying hold on eDiscovery custodians. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-applyhold?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_applyHold
       parameters:
         - name: ediscoveryCase-id
@@ -2325,6 +2403,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action release
+      description: 'Release a custodian from a case. For details, see Release a custodian from a case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-release?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_release
       parameters:
         - name: ediscoveryCase-id
@@ -2354,6 +2436,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
+      description: 'Start the process of removing hold from eDiscovery custodians. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-removehold?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_removeHold
       parameters:
         - name: ediscoveryCase-id
@@ -2383,6 +2469,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action updateIndex
+      description: Trigger an indexOperation to make a custodian and associated sources searchable.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-updateindex?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_updateIndex
       parameters:
         - name: ediscoveryCase-id
@@ -2411,8 +2501,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get siteSources from security
-      description: Data source entity for SharePoint sites associated with the custodian.
+      summary: List siteSources
+      description: Get a list of the siteSource objects associated with an ediscoveryCustodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-sitesources?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_ListSiteSource
       parameters:
         - name: ediscoveryCase-id
@@ -2499,7 +2592,11 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to siteSources for security
+      summary: Create siteSource
+      description: Create a new siteSource object associated with an eDiscovery custodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-sitesources?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_CreateSiteSource
       parameters:
         - name: ediscoveryCase-id
@@ -2842,8 +2939,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get unifiedGroupSources from security
-      description: Data source entity for groups associated with the custodian.
+      summary: List unifiedGroupSources
+      description: Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-unifiedgroupsources?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_ListUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
@@ -2933,7 +3033,11 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to unifiedGroupSources for security
+      summary: Create custodian unifiedGroupSource
+      description: Create a new unifiedGroupSource object associated with an eDiscovery custodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-unifiedgroupsources?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_CreateUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
@@ -3324,8 +3428,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get userSources from security
-      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
+      summary: List userSources
+      description: Get a list of the userSource objects associated with an ediscoveryCustodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-usersources?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_ListUserSource
       parameters:
         - name: ediscoveryCase-id
@@ -3419,7 +3526,11 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to userSources for security
+      summary: Create custodian userSource
+      description: Create a new userSource object associated with an eDiscovery custodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-usersources?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.custodian_CreateUserSource
       parameters:
         - name: ediscoveryCase-id
@@ -3746,6 +3857,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action close
+      description: 'Close an eDiscovery case. For details, see Close a case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-close?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_close
       parameters:
         - name: ediscoveryCase-id
@@ -3767,6 +3882,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action reopen
+      description: 'Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-reopen?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_reopen
       parameters:
         - name: ediscoveryCase-id
@@ -3875,7 +3994,11 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to noncustodialDataSources for security
+      summary: Create nonCustodialDataSources
+      description: Create a new ediscoveryNoncustodialDataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-noncustodialdatasources?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_CreateNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
@@ -4249,6 +4372,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyHold
+      description: 'Start the process of applying hold on eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-applyhold?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.noncustodialDataSource_applyHold
       parameters:
         - name: ediscoveryCase-id
@@ -4278,6 +4405,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action release
+      description: Release the non-custodial data source from the case.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-release?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.noncustodialDataSource_release
       parameters:
         - name: ediscoveryCase-id
@@ -4307,6 +4438,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
+      description: 'Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-removehold?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.noncustodialDataSource_removeHold
       parameters:
         - name: ediscoveryCase-id
@@ -4336,6 +4471,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action updateIndex
+      description: Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-updateindex?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.noncustodialDataSource_updateIndex
       parameters:
         - name: ediscoveryCase-id
@@ -4458,8 +4597,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get operations from security
-      description: Returns a list of case caseOperation objects for this case.
+      summary: List caseOperations
+      description: Get a list of the caseOperation objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-operations?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_ListOperation
       parameters:
         - name: ediscoveryCase-id
@@ -4577,8 +4719,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get operations from security
-      description: Returns a list of case caseOperation objects for this case.
+      summary: Get caseOperation
+      description: Read the properties and relationships of a caseOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-caseoperation-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_GetOperation
       parameters:
         - name: ediscoveryCase-id
@@ -4737,8 +4882,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get reviewSets from security
-      description: Returns a list of eDiscoveryReviewSet objects in the case.
+      summary: List reviewSets
+      description: Get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-reviewsets?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_ListReviewSet
       parameters:
         - name: ediscoveryCase-id
@@ -4814,7 +4962,11 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to reviewSets for security
+      summary: Create reviewSets
+      description: Create a new ediscoveryReviewSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-reviewsets?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_CreateReviewSet
       parameters:
         - name: ediscoveryCase-id
@@ -4846,8 +4998,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get reviewSets from security
-      description: Returns a list of eDiscoveryReviewSet objects in the case.
+      summary: Get ediscoveryReviewSet
+      description: Read the properties and relationships of an ediscoveryReviewSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_GetReviewSet
       parameters:
         - name: ediscoveryCase-id
@@ -4983,6 +5138,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action addToReviewSet
+      description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a Add to review set operation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-addtoreviewset?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.reviewSet_addToReviewSet
       parameters:
         - name: ediscoveryCase-id
@@ -5025,8 +5184,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get queries from security
-      description: Represents queries within the review set.
+      summary: List queries
+      description: Get the list of queries associated with an eDiscovery review set.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-list-queries?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.reviewSet_ListQuery
       parameters:
         - name: ediscoveryCase-id
@@ -5120,7 +5282,11 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to queries for security
+      summary: Create ediscoveryReviewSetQuery
+      description: Create a new ediscoveryReviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-post-queries?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.reviewSet_CreateQuery
       parameters:
         - name: ediscoveryCase-id
@@ -5160,8 +5326,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get queries from security
-      description: Represents queries within the review set.
+      summary: Get ediscoveryReviewSetQuery
+      description: Read the properties and relationships of an ediscoveryReviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.reviewSet_GetQuery
       parameters:
         - name: ediscoveryCase-id
@@ -5232,7 +5401,11 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property queries in security
+      summary: Update ediscoveryReviewSetQuery
+      description: Update the properties of an ediscoveryReviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-update?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.reviewSet_UpdateQuery
       parameters:
         - name: ediscoveryCase-id
@@ -5279,7 +5452,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property queries for security
+      summary: Delete ediscoveryReviewSetQuery
+      description: Delete an ediscoveryReviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-delete-queries?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.reviewSet_DeleteQuery
       parameters:
         - name: ediscoveryCase-id
@@ -5323,6 +5500,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyTags
+      description: 'Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-applytags?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.reviewSet.query_applyTag
       parameters:
         - name: ediscoveryCase-id
@@ -5429,8 +5610,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get searches from security
-      description: Returns a list of eDiscoverySearch objects associated with this case.
+      summary: List searches
+      description: Get the list of ediscoverySearch resources from an eDiscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-searches?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_ListSearch
       parameters:
         - name: ediscoveryCase-id
@@ -5529,7 +5713,11 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to searches for security
+      summary: Create searches
+      description: Create a new ediscoverySearch object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-searches?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_CreateSearch
       parameters:
         - name: ediscoveryCase-id
@@ -5561,8 +5749,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get searches from security
-      description: Returns a list of eDiscoverySearch objects associated with this case.
+      summary: Get ediscoverySearch
+      description: Read the properties and relationships of an ediscoverySearch object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_GetSearch
       parameters:
         - name: ediscoveryCase-id
@@ -5636,7 +5827,11 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property searches in security
+      summary: Update ediscoverySearch
+      description: Update the properties of an ediscoverySearch object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-update?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_UpdateSearch
       parameters:
         - name: ediscoveryCase-id
@@ -5675,7 +5870,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property searches for security
+      summary: Delete ediscoverySearch
+      description: Delete an ediscoverySearch object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-delete-searches?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_DeleteSearch
       parameters:
         - name: ediscoveryCase-id
@@ -5710,8 +5909,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get additionalSources from security
-      description: Adds an additional source to the eDiscovery search.
+      summary: List additionalSources
+      description: Get the list of additional sources associated with an eDiscovery search.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-list-additionalsources?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.search_ListAdditionalSource
       parameters:
         - name: ediscoveryCase-id
@@ -5796,7 +5998,11 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to additionalSources for security
+      summary: Add additional sources
+      description: Create a new additional source associated with an eDiscovery search.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-post-additionalsources?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.search_CreateAdditionalSource
       parameters:
         - name: ediscoveryCase-id
@@ -6094,8 +6300,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get custodianSources from security
-      description: Custodian sources that are included in the eDiscovery search.
+      summary: List custodianSources
+      description: Get the list of custodial data sources associated with an eDiscovery search.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-list-custodiansources?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.search_ListCustodianSource
       parameters:
         - name: ediscoveryCase-id
@@ -6247,6 +6456,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.casesRoot
+      summary: Remove custodianSources
+      description: Remove a dataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-delete-custodiansources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_DeleteCustodianSource
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - name: dataSource-id
+          in: path
+          description: The unique identifier of dataSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: dataSource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/custodianSources/$count':
     get:
       tags:
@@ -6281,8 +6536,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get lastEstimateStatisticsOperation from security
-      description: The last estimate operation associated with the eDiscovery search.
+      summary: List lastEstimateStatisticsOperation
+      description: Get the last  ediscoveryEstimateOperation objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-list-lastestimatestatisticsoperation?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.search_GetLastEstimateStatisticsOperation
       parameters:
         - name: ediscoveryCase-id
@@ -6355,7 +6613,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action estimateStatistics
-      operationId: security.case.ediscoveryCase.search_estimatestatistics
+      description: 'Run an estimate of the number of emails and documents in the eDiscovery search. To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-estimatestatistics?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_estimateStatistics
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6595,6 +6857,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.casesRoot
+      summary: Remove noncustodialSources
+      description: Remove an ediscoveryNoncustodialDataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-delete-noncustodialsources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_DeleteNoncustodialSource
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - name: ediscoveryNoncustodialDataSource-id
+          in: path
+          description: The unique identifier of ediscoveryNoncustodialDataSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryNoncustodialDataSource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/noncustodialSources/$count':
     get:
       tags:
@@ -6651,8 +6959,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get settings from security
-      description: Returns a list of eDIscoverySettings objects in the case.
+      summary: Get ediscoveryCaseSettings
+      description: Read the properties and relationships of an ediscoveryCaseSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_GetSetting
       parameters:
         - name: ediscoveryCase-id
@@ -6703,7 +7014,11 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property settings in security
+      summary: Update ediscoveryCaseSettings
+      description: Update the properties of an ediscoveryCaseSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-update?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_UpdateSetting
       parameters:
         - name: ediscoveryCase-id
@@ -6762,6 +7077,10 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action resetToDefault
+      description: Reset a caseSettings object to the default values.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-resettodefault?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.setting_resetToDefault
       parameters:
         - name: ediscoveryCase-id
@@ -6782,8 +7101,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get tags from security
-      description: Returns a list of ediscoveryReviewTag objects associated to this case.
+      summary: List tags
+      description: Get a list of eDiscoveryReviewTag objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-tags?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_ListTag
       parameters:
         - name: ediscoveryCase-id
@@ -6867,7 +7189,11 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to tags for security
+      summary: Create tags
+      description: Create a new ediscoveryReviewTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-tags?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_CreateTag
       parameters:
         - name: ediscoveryCase-id
@@ -6899,8 +7225,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get tags from security
-      description: Returns a list of ediscoveryReviewTag objects associated to this case.
+      summary: Get ediscoveryReviewTag
+      description: Read the properties and relationships of an ediscoveryReviewTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewtag-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_GetTag
       parameters:
         - name: ediscoveryCase-id
@@ -6965,7 +7294,11 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property tags in security
+      summary: Update ediscoveryReviewTag
+      description: Update the properties of an ediscoveryReviewTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewtag-update?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_UpdateTag
       parameters:
         - name: ediscoveryCase-id
@@ -7004,7 +7337,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property tags for security
+      summary: Remove ediscoveryReviewTag
+      description: Remove an ediscoveryReviewTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-delete-tags?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_DeleteTag
       parameters:
         - name: ediscoveryCase-id
@@ -7427,8 +7764,11 @@ paths:
     get:
       tags:
         - security.incident
-      summary: Get incidents from security
-      description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
+      summary: List incidents
+      description: 'Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-list-incidents?view=graph-rest-1.0
       operationId: security_ListIncident
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7549,8 +7889,11 @@ paths:
     get:
       tags:
         - security.incident
-      summary: Get incidents from security
-      description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
+      summary: Get incident
+      description: 'Retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-incident-get?view=graph-rest-1.0
       operationId: security_GetIncident
       parameters:
         - name: incident-id
@@ -7613,7 +7956,11 @@ paths:
     patch:
       tags:
         - security.incident
-      summary: Update the navigation property incidents in security
+      summary: Update incident
+      description: Update the properties of an incident object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-incident-update?view=graph-rest-1.0
       operationId: security_UpdateIncident
       parameters:
         - name: incident-id
@@ -7973,7 +8320,11 @@ paths:
     get:
       tags:
         - security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from security
+      summary: List secureScoreControlProfiles
+      description: Retrieve the properties and relationships of a secureScoreControlProfiles object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-list-securescorecontrolprofiles?view=graph-rest-1.0
       operationId: security_ListSecureScoreControlProfile
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8110,7 +8461,11 @@ paths:
     get:
       tags:
         - security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from security
+      summary: Get secureScoreControlProfile
+      description: Retrieve the properties and relationships of an securescorecontrolprofile object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/securescorecontrolprofile-get?view=graph-rest-1.0
       operationId: security_GetSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
@@ -8177,7 +8532,11 @@ paths:
     patch:
       tags:
         - security.secureScoreControlProfile
-      summary: Update the navigation property secureScoreControlProfiles in security
+      summary: Update secureScoreControlProfile
+      description: 'Update an editable **secureScoreControlProfile** object within any integrated solution to change various properties, such as **assignedTo** or **tenantNote**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/securescorecontrolprofile-update?view=graph-rest-1.0
       operationId: security_UpdateSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
@@ -8249,7 +8608,11 @@ paths:
     get:
       tags:
         - security.secureScore
-      summary: Get secureScores from security
+      summary: List secureScores
+      description: Retrieve a list of secureScore objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-list-securescores?view=graph-rest-1.0
       operationId: security_ListSecureScore
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8359,7 +8722,11 @@ paths:
     get:
       tags:
         - security.secureScore
-      summary: Get secureScores from security
+      summary: Get secureScore
+      description: Retrieve the properties and relationships of a secureScore object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/securescore-get?view=graph-rest-1.0
       operationId: security_GetSecureScore
       parameters:
         - name: secureScore-id
@@ -23346,7 +23713,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -23397,6 +23764,10 @@ components:
               description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            deviceCategory:
+              type: string
+              description: User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
+              nullable: true
             deviceId:
               type: string
               description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
@@ -23404,6 +23775,10 @@ components:
             deviceMetadata:
               type: string
               description: For internal use only. Set to null.
+              nullable: true
+            deviceOwnership:
+              type: string
+              description: 'Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.'
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -23415,6 +23790,10 @@ components:
             displayName:
               type: string
               description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              nullable: true
+            enrollmentProfileName:
+              type: string
+              description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
             isCompliant:
               type: boolean
@@ -23454,6 +23833,12 @@ components:
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
+              nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
               nullable: true
             systemLabels:
               type: array
