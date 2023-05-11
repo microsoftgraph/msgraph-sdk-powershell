@@ -80,7 +80,8 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: Get callRecords from communications
+      summary: Get callRecord
+      description: 'Retrieve the properties and relationships of a callRecord object. There are two ways to get the **id** of a **callRecord**:'
       operationId: communication_ListCallRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -189,7 +190,11 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: Get callRecords from communications
+      summary: Get callRecord
+      description: 'Retrieve the properties and relationships of a callRecord object. There are two ways to get the **id** of a **callRecord**:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/callrecords-callrecord-get?view=graph-rest-1.0
       operationId: communication_GetCallRecord
       parameters:
         - name: callRecord-id
@@ -306,8 +311,11 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: Get sessions from communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
+      summary: List callRecord sessions
+      description: Retrieve the list of sessions associated with a callRecord object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/callrecords-session-list?view=graph-rest-1.0
       operationId: communication.callRecord_ListSession
       parameters:
         - name: callRecord-id
@@ -1091,7 +1099,8 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get calls from communications
+      summary: Get call
+      description: Retrieve the properties and relationships of a call object.
       operationId: communication_ListCall
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1234,7 +1243,11 @@ paths:
     post:
       tags:
         - communications.call
-      summary: Create new navigation property to calls for communications
+      summary: Create call
+      description: 'Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0
       operationId: communication_CreateCall
       requestBody:
         description: New navigation property
@@ -1257,7 +1270,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get calls from communications
+      summary: Get call
+      description: Retrieve the properties and relationships of a call object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-get?view=graph-rest-1.0
       operationId: communication_GetCall
       parameters:
         - name: call-id
@@ -1370,7 +1387,11 @@ paths:
     delete:
       tags:
         - communications.call
-      summary: Delete navigation property calls for communications
+      summary: Delete call
+      description: 'Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-delete?view=graph-rest-1.0
       operationId: communication_DeleteCall
       parameters:
         - name: call-id
@@ -1397,7 +1418,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get audioRoutingGroups from communications
+      summary: List audio routing groups
+      description: Retrieve a list of **audioRoutingGroup** objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0
       operationId: communication.call_ListAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1471,7 +1496,11 @@ paths:
     post:
       tags:
         - communications.call
-      summary: Create new navigation property to audioRoutingGroups for communications
+      summary: Create audio routing group
+      description: Create a new **audioRoutingGroup**.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0
       operationId: communication.call_CreateAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1503,7 +1532,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get audioRoutingGroups from communications
+      summary: Get audio routing group
+      description: Retrieve the properties and relationships of an audioRoutingGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/audioroutinggroup-get?view=graph-rest-1.0
       operationId: communication.call_GetAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1562,7 +1595,11 @@ paths:
     patch:
       tags:
         - communications.call
-      summary: Update the navigation property audioRoutingGroups in communications
+      summary: Update audio routing group
+      description: Modify sources and receivers of an audioRoutingGroup.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/audioroutinggroup-update?view=graph-rest-1.0
       operationId: communication.call_UpdateAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1601,7 +1638,11 @@ paths:
     delete:
       tags:
         - communications.call
-      summary: Delete navigation property audioRoutingGroups for communications
+      summary: Delete audio routing group
+      description: Delete the specified audioRoutingGroup.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/audioroutinggroup-delete?view=graph-rest-1.0
       operationId: communication.call_DeleteAudioRoutingGroup
       parameters:
         - name: call-id
@@ -1658,7 +1699,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get contentSharingSessions from communications
+      summary: List contentSharingSessions
+      description: Retrieve a list of contentSharingSession objects in a call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-list-contentsharingsessions?view=graph-rest-1.0
       operationId: communication.call_ListContentSharingSession
       parameters:
         - name: call-id
@@ -1755,7 +1800,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get contentSharingSessions from communications
+      summary: Get contentSharingSession
+      description: Retrieve the properties of a contentSharingSession object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contentsharingsession-get?view=graph-rest-1.0
       operationId: communication.call_GetContentSharingSession
       parameters:
         - name: call-id
@@ -1908,6 +1957,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action addLargeGalleryView
+      description: 'Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0
       operationId: communication.call_addLargeGalleryView
       parameters:
         - name: call-id
@@ -1946,6 +1999,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action answer
+      description: 'Enable a bot to answer an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the chatInfo and meetingInfo parameters. The bot is expected to answer, reject or redirect the call before the call times out. The current timeout value is 15 seconds. The current timeout value is 15 seconds for regular scenarios, and 5 seconds for policy-based recording scenarios.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-answer?view=graph-rest-1.0
       operationId: communication.call_answer
       parameters:
         - name: call-id
@@ -1993,6 +2050,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action cancelMediaProcessing
+      description: 'Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The **cancelMediaProcessing** method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a **ubscribeToTone** operation because it operates independent of any operation queue.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-1.0
       operationId: communication.call_cancelMediaProcessing
       parameters:
         - name: call-id
@@ -2031,6 +2092,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action changeScreenSharingRole
+      description: Allow applications to share screen content with the participants of a group call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-changescreensharingrole?view=graph-rest-1.0
       operationId: communication.call_changeScreenSharingRole
       parameters:
         - name: call-id
@@ -2064,6 +2129,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action keepAlive
+      description: 'Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active. A call that does not receive this request within 45 minutes is considered inactive and will subsequently end. At least one successful request must be made within 45 minutes of the previous request, or the start of the call. We recommend that you send a request in shorter time intervals (every 15 minutes). Make sure that these requests are successful to prevent the call from timing out and ending. Attempting to send a request to a call that has already ended will result in a `404 Not-Found` error. The resources related to the call should be cleaned up on the application side.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-keepalive?view=graph-rest-1.0
       operationId: communication.call_keepAlive
       parameters:
         - name: call-id
@@ -2085,6 +2154,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
+      description: 'Allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-mute?view=graph-rest-1.0
       operationId: communication.call_mute
       parameters:
         - name: call-id
@@ -2123,6 +2196,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action playPrompt
+      description: 'Play a prompt in the call. For more information about how to handle operations, see commsOperation'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0
       operationId: communication.call_playPrompt
       parameters:
         - name: call-id
@@ -2246,6 +2323,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action recordResponse
+      description: 'Record a short audio response from the caller. A bot can use this to capture a voice response from a caller after they are prompted for a response. For more information about how to handle operations, see commsOperation This action is not intended to record the entire call. The maximum length of recording is 2 minutes. The recording is not saved permanently by the by the Cloud Communications Platform and is discarded shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value that''s given in the completed notification.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-record?view=graph-rest-1.0
       operationId: communication.call_recordResponse
       parameters:
         - name: call-id
@@ -2323,6 +2404,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action redirect
+      description: Redirect an incoming call that hasn't been answered or rejected yet. The terms 'redirecting' and 'forwarding' a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0
       operationId: communication.call_redirect
       parameters:
         - name: call-id
@@ -2377,6 +2462,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action reject
+      description: 'Enable a bot to reject an incoming call. The incoming call request can be an invite from a participant in a group call or a peer-to-peer call. If an invite to a group call is received, the notification will contain the **chatInfo** and **meetingInfo** parameters. The bot is expected to answer or reject the call before the call times out. The current timeout value is 15 seconds. This API does not end existing calls that have already been answered. Use delete call to end a call.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-reject?view=graph-rest-1.0
       operationId: communication.call_reject
       parameters:
         - name: call-id
@@ -2413,6 +2502,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action subscribeToTone
+      description: Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a 'Dialpad'.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0
       operationId: communication.call_subscribeToTone
       parameters:
         - name: call-id
@@ -2451,6 +2544,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action transfer
+      description: 'Transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0
       operationId: communication.call_transfer
       parameters:
         - name: call-id
@@ -2486,6 +2583,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action unmute
+      description: 'Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-unmute?view=graph-rest-1.0
       operationId: communication.call_unmute
       parameters:
         - name: call-id
@@ -2524,6 +2625,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action updateRecordingStatus
+      description: Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-1.0
       operationId: communication.call_updateRecordingStatus
       parameters:
         - name: call-id
@@ -2563,7 +2668,8 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get operations from communications
+      summary: Get addLargeGalleryViewOperation
+      description: Get the status of an operation that adds the large gallery view to a call.
       operationId: communication.call_ListOperation
       parameters:
         - name: call-id
@@ -2669,7 +2775,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get operations from communications
+      summary: Get addLargeGalleryViewOperation
+      description: Get the status of an operation that adds the large gallery view to a call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/addlargegalleryviewoperation-get?view=graph-rest-1.0
       operationId: communication.call_GetOperation
       parameters:
         - name: call-id
@@ -2824,7 +2934,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get participants from communications
+      summary: List participants
+      description: Retrieve a list of participant objects in the call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0
       operationId: communication.call_ListParticipant
       parameters:
         - name: call-id
@@ -2951,7 +3065,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get participants from communications
+      summary: Get participant
+      description: Retrieve the properties and relationships of a **participant** object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-get?view=graph-rest-1.0
       operationId: communication.call_GetParticipant
       parameters:
         - name: call-id
@@ -3056,7 +3174,11 @@ paths:
     delete:
       tags:
         - communications.call
-      summary: Delete navigation property participants for communications
+      summary: Delete participant
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communication.call_DeleteParticipant
       parameters:
         - name: call-id
@@ -3092,6 +3214,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
+      description: 'Mute a specific participant in the call. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more information about how to handle mute operations, see muteParticipantOperation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-mute?view=graph-rest-1.0
       operationId: communication.call.participant_mute
       parameters:
         - name: call-id
@@ -3138,6 +3264,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action startHoldMusic
+      description: Put a participant on hold and play music in the background.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-1.0
       operationId: communication.call.participant_startHoldMusic
       parameters:
         - name: call-id
@@ -3186,6 +3316,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action stopHoldMusic
+      description: Reincorporate a participant previously put on hold to the call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-stopholdmusic?view=graph-rest-1.0
       operationId: communication.call.participant_stopHoldMusic
       parameters:
         - name: call-id
@@ -3254,6 +3388,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -3296,6 +3434,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action muteAll
+      description: Mute all participants in the call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-muteall?view=graph-rest-1.0
       operationId: communication.call.participant_muteAll
       parameters:
         - name: call-id
@@ -3353,6 +3495,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action logTeleconferenceDeviceQuality
+      description: 'Log video teleconferencing device quality data. The Cloud Video Interop (CVI) bot represents video teleconferencing (VTC) devices and acts as a back-to-back agent for a VTC device in a conference call. Because a CVI bot is in the middle of the VTC and Microsoft Teams infrastructure as a VTC proxy, it has two media legs. One media leg is between the CVI bot and Teams infrastructure, such as Teams conference server or a Teams client. The other media leg is between the CVI bot and the VTC device.  The third-party partners own the VTC media leg and the Teams infrastructure cannot access the quality data of the third-party call leg.  This method is only for the CVI partners to provide their media quality data.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-logteleconferencedevicequality?view=graph-rest-1.0
       operationId: communication.call_logTeleconferenceDeviceQuality
       requestBody:
         description: Action parameters
@@ -3377,6 +3523,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action getPresencesByUserId
+      description: Get the presence information for multiple users.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0
       operationId: communication_getPresencesGraphBPreUserId
       requestBody:
         description: Action parameters
@@ -3420,7 +3570,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get onlineMeetings from communications
+      summary: Get onlineMeeting
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report and Teams live event recordings are online meeting artifacts. For details, see Online meeting artifacts and permissions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communication_ListOnlineMeeting
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3450,8 +3604,12 @@ paths:
                 - allowMeetingChat desc
                 - allowParticipantsToChangeName
                 - allowParticipantsToChangeName desc
+                - allowRecording
+                - allowRecording desc
                 - allowTeamworkReactions
                 - allowTeamworkReactions desc
+                - allowTranscription
+                - allowTranscription desc
                 - alternativeRecording
                 - alternativeRecording desc
                 - anonymizeIdentityForRoles
@@ -3519,7 +3677,9 @@ paths:
                 - allowedPresenters
                 - allowMeetingChat
                 - allowParticipantsToChangeName
+                - allowRecording
                 - allowTeamworkReactions
+                - allowTranscription
                 - alternativeRecording
                 - anonymizeIdentityForRoles
                 - attendeeReport
@@ -3630,7 +3790,9 @@ paths:
                 - allowedPresenters
                 - allowMeetingChat
                 - allowParticipantsToChangeName
+                - allowRecording
                 - allowTeamworkReactions
+                - allowTranscription
                 - alternativeRecording
                 - anonymizeIdentityForRoles
                 - attendeeReport
@@ -3752,6 +3914,9 @@ paths:
         - communications.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from communications
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communication_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: onlineMeeting-id
@@ -3806,8 +3971,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get attendanceReports from communications
-      description: The attendance reports of an online meeting. Read-only.
+      summary: List meetingAttendanceReports
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
       operationId: communication.onlineMeeting_ListAttendanceReport
       parameters:
         - name: onlineMeeting-id
@@ -3915,8 +4083,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get attendanceReports from communications
-      description: The attendance reports of an online meeting. Read-only.
+      summary: Get meetingAttendanceReport
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetAttendanceReport
       parameters:
         - name: onlineMeeting-id
@@ -4051,8 +4222,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: communication.onlineMeeting.attendanceReport_ListAttendanceRecord
       parameters:
         - name: onlineMeeting-id
@@ -4398,6 +4572,9 @@ paths:
         - communications.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from communications
       description: The content stream of the attendee report of a Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communication_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: onlineMeeting-id
@@ -4452,7 +4629,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get meetingAttendanceReport from communications
+      summary: Get meetingAttendanceReport
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetMeetingAttendanceReport
       parameters:
         - name: onlineMeeting-id
@@ -4563,8 +4744,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get attendanceRecords from communications
-      description: List of attendance records of an attendance report. Read-only.
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: communication.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord
       parameters:
         - name: onlineMeeting-id
@@ -4871,6 +5055,9 @@ paths:
         - communications.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from communications
       description: The content stream of the recording of a Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: communication_GetOnlineMeetingsRecording
       parameters:
         - name: onlineMeeting-id
@@ -4925,8 +5112,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get registration from communications
-      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -4986,7 +5176,11 @@ paths:
     patch:
       tags:
         - communications.onlineMeeting
-      summary: Update the navigation property registration in communications
+      summary: Update meetingRegistration
+      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
       operationId: communication.onlineMeeting_UpdateRegistration
       parameters:
         - name: onlineMeeting-id
@@ -5017,7 +5211,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete navigation property registration for communications
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: communication.onlineMeeting_DeleteRegistration
       parameters:
         - name: onlineMeeting-id
@@ -5044,8 +5242,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get customQuestions from communications
-      description: Custom registration questions.
+      summary: Get customRegistrationQuestion
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
       operationId: communication.onlineMeeting.registration_ListCustomQuestion
       parameters:
         - name: onlineMeeting-id
@@ -5122,7 +5323,11 @@ paths:
     post:
       tags:
         - communications.onlineMeeting
-      summary: Create new navigation property to customQuestions for communications
+      summary: Create meetingRegistrationQuestion
+      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
       operationId: communication.onlineMeeting.registration_CreateCustomQuestion
       parameters:
         - name: onlineMeeting-id
@@ -5154,8 +5359,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get customQuestions from communications
-      description: Custom registration questions.
+      summary: Get customRegistrationQuestion
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting.registration_GetCustomQuestion
       parameters:
         - name: onlineMeeting-id
@@ -5215,7 +5423,11 @@ paths:
     patch:
       tags:
         - communications.onlineMeeting
-      summary: Update the navigation property customQuestions in communications
+      summary: Update meetingRegistrationQuestion
+      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
       operationId: communication.onlineMeeting.registration_UpdateCustomQuestion
       parameters:
         - name: onlineMeeting-id
@@ -5254,7 +5466,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete navigation property customQuestions for communications
+      summary: Delete meetingRegistrationQuestion
+      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
       operationId: communication.onlineMeeting.registration_DeleteCustomQuestion
       parameters:
         - name: onlineMeeting-id
@@ -5307,12 +5523,270 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/communications/onlineMeetings/{onlineMeeting-id}/registration/registrants':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get registrants from communications
+      description: Registrants of the online meeting.
+      operationId: communication.onlineMeeting.registration_ListRegistrant
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - joinWebUrl
+                - joinWebUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - joinWebUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.meetingRegistrantBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.onlineMeeting
+      summary: Create new navigation property to registrants for communications
+      operationId: communication.onlineMeeting.registration_CreateRegistrant
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/registration/registrants/{meetingRegistrantBase-id}':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get registrants from communications
+      description: Registrants of the online meeting.
+      operationId: communication.onlineMeeting.registration_GetRegistrant
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: meetingRegistrantBase-id
+          in: path
+          description: The unique identifier of meetingRegistrantBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: meetingRegistrantBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - joinWebUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.onlineMeeting
+      summary: Update the navigation property registrants in communications
+      operationId: communication.onlineMeeting.registration_UpdateRegistrant
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: meetingRegistrantBase-id
+          in: path
+          description: The unique identifier of meetingRegistrantBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: meetingRegistrantBase
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.onlineMeeting
+      summary: Delete navigation property registrants for communications
+      operationId: communication.onlineMeeting.registration_DeleteRegistrant
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: meetingRegistrantBase-id
+          in: path
+          description: The unique identifier of meetingRegistrantBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: meetingRegistrantBase
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/registration/registrants/$count':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get the number of the resource
+      operationId: communication.onlineMeeting.registration.registrant_GetCount
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/communications/onlineMeetings/{onlineMeeting-id}/transcripts':
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get transcripts from communications
-      description: The transcripts of an online meeting. Read-only.
+      summary: List transcripts
+      description: Retrieve the list of callTranscript objects associated with an onlineMeeting.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: communication.onlineMeeting_ListTranscript
       parameters:
         - name: onlineMeeting-id
@@ -5418,8 +5892,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get transcripts from communications
-      description: The transcripts of an online meeting. Read-only.
+      summary: Get callTranscript
+      description: Retrieve a callTranscript object associated with an onlineMeeting. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetTranscript
       parameters:
         - name: onlineMeeting-id
@@ -5554,6 +6031,9 @@ paths:
         - communications.onlineMeeting
       summary: Get content for the navigation property transcripts from communications
       description: A field that represents the content of the transcript. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetTranscriptsContent
       parameters:
         - name: onlineMeeting-id
@@ -5630,6 +6110,9 @@ paths:
         - communications.onlineMeeting
       summary: Get metadataContent for the navigation property transcripts from communications
       description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetTranscriptsMetadataContent
       parameters:
         - name: onlineMeeting-id
@@ -5866,6 +6349,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action createOrGet
+      description: 'Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0
       operationId: communication.onlineMeeting_createOrGet
       requestBody:
         description: Action parameters
@@ -5910,7 +6397,8 @@ paths:
     get:
       tags:
         - communications.presence
-      summary: Get presences from communications
+      summary: Get presence
+      description: Get a user's presence information.
       operationId: communication_ListPresence
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6002,7 +6490,11 @@ paths:
     get:
       tags:
         - communications.presence
-      summary: Get presences from communications
+      summary: Get presence
+      description: Get a user's presence information.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
       operationId: communication_GetPresence
       parameters:
         - name: presence-id
@@ -6113,6 +6605,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action clearPresence
+      description: 'Clear a presence session of an application for a user. If it is the user''s only presence session, a successful **clearPresence** changes the user''s presence to `Offline/Offline`. Read more about presence sessions and their time-out and expiration. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0
       operationId: communication.presence_clearPresence
       parameters:
         - name: presence-id
@@ -6147,6 +6643,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action clearUserPreferredPresence
+      description: Clear the preferred availability and activity status for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-clearuserpreferredpresence?view=graph-rest-1.0
       operationId: communication.presence_clearUserPreferredPresence
       parameters:
         - name: presence-id
@@ -6168,6 +6668,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setPresence
+      description: Set the availability and activity status in a presence session of an application for a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0
       operationId: communication.presence_setPresence
       parameters:
         - name: presence-id
@@ -6211,6 +6715,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setStatusMessage
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
       operationId: communication.presence_setStatusMessage
       parameters:
         - name: presence-id
@@ -6244,6 +6752,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setUserPreferredPresence
+      description: 'Set the preferred availability and activity status for a user. If the preferred presence of a user is set, the user''s presence is the preferred presence. Preferred presence takes effect only when there is at least one presence session of the user. Otherwise, the user''s presence stays as Offline. A presence session can be created as a result of a successful setPresence operation, or if the user is signed in on a Teams client.  Read more about presence sessions and their time-out and expiration. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-setuserpreferredpresence?view=graph-rest-1.0
       operationId: communication.presence_setUserPreferredPresence
       parameters:
         - name: presence-id
@@ -6297,7 +6809,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get onlineMeetings from users
+      summary: Get onlineMeeting
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report and Teams live event recordings are online meeting artifacts. For details, see Online meeting artifacts and permissions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: user_ListOnlineMeeting
       parameters:
         - name: user-id
@@ -6335,8 +6851,12 @@ paths:
                 - allowMeetingChat desc
                 - allowParticipantsToChangeName
                 - allowParticipantsToChangeName desc
+                - allowRecording
+                - allowRecording desc
                 - allowTeamworkReactions
                 - allowTeamworkReactions desc
+                - allowTranscription
+                - allowTranscription desc
                 - alternativeRecording
                 - alternativeRecording desc
                 - anonymizeIdentityForRoles
@@ -6404,7 +6924,9 @@ paths:
                 - allowedPresenters
                 - allowMeetingChat
                 - allowParticipantsToChangeName
+                - allowRecording
                 - allowTeamworkReactions
+                - allowTranscription
                 - alternativeRecording
                 - anonymizeIdentityForRoles
                 - attendeeReport
@@ -6471,7 +6993,11 @@ paths:
     post:
       tags:
         - users.onlineMeeting
-      summary: Create new navigation property to onlineMeetings for users
+      summary: Create onlineMeeting
+      description: Create an online meeting on behalf of a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-post-onlinemeetings?view=graph-rest-1.0
       operationId: user_CreateOnlineMeeting
       parameters:
         - name: user-id
@@ -6544,7 +7070,9 @@ paths:
                 - allowedPresenters
                 - allowMeetingChat
                 - allowParticipantsToChangeName
+                - allowRecording
                 - allowTeamworkReactions
+                - allowTranscription
                 - alternativeRecording
                 - anonymizeIdentityForRoles
                 - attendeeReport
@@ -6612,7 +7140,11 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update the navigation property onlineMeetings in users
+      summary: Update onlineMeeting
+      description: Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
       operationId: user_UpdateOnlineMeeting
       parameters:
         - name: user-id
@@ -6657,7 +7189,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete navigation property onlineMeetings for users
+      summary: Delete onlineMeeting
+      description: Delete an onlineMeeting object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
       operationId: user_DeleteOnlineMeeting
       parameters:
         - name: user-id
@@ -6700,6 +7236,9 @@ paths:
         - users.onlineMeeting
       summary: Get alternativeRecording for the navigation property onlineMeetings from users
       description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: user_GetOnlineMeetingsAlternativeRecording
       parameters:
         - name: user-id
@@ -6782,8 +7321,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get attendanceReports from users
-      description: The attendance reports of an online meeting. Read-only.
+      summary: List meetingAttendanceReports
+      description: 'Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0
       operationId: user.onlineMeeting_ListAttendanceReport
       parameters:
         - name: user-id
@@ -6919,8 +7461,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get attendanceReports from users
-      description: The attendance reports of an online meeting. Read-only.
+      summary: Get meetingAttendanceReport
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetAttendanceReport
       parameters:
         - name: user-id
@@ -7097,8 +7642,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: user.onlineMeeting.attendanceReport_ListAttendanceRecord
       parameters:
         - name: user-id
@@ -7542,6 +8090,9 @@ paths:
         - users.onlineMeeting
       summary: Get attendeeReport for the navigation property onlineMeetings from users
       description: The content stream of the attendee report of a Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: user_GetOnlineMeetingsAttendeeReport
       parameters:
         - name: user-id
@@ -7624,7 +8175,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get meetingAttendanceReport from users
+      summary: Get meetingAttendanceReport
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetMeetingAttendanceReport
       parameters:
         - name: user-id
@@ -7777,8 +8332,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get attendanceRecords from users
-      description: List of attendance records of an attendance report. Read-only.
+      summary: List attendanceRecords
+      description: Get a list of attendanceRecord objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0
       operationId: user.onlineMeeting.meetingAttendanceReport_ListAttendanceRecord
       parameters:
         - name: user-id
@@ -8138,6 +8696,9 @@ paths:
         - users.onlineMeeting
       summary: Get recording for the navigation property onlineMeetings from users
       description: The content stream of the recording of a Teams live event. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: user_GetOnlineMeetingsRecording
       parameters:
         - name: user-id
@@ -8220,8 +8781,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get registration from users
-      description: The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+      summary: Get externalMeetingRegistration
+      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetRegistration
       parameters:
         - name: user-id
@@ -8295,7 +8859,11 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update the navigation property registration in users
+      summary: Update meetingRegistration
+      description: Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0
       operationId: user.onlineMeeting_UpdateRegistration
       parameters:
         - name: user-id
@@ -8340,7 +8908,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete navigation property registration for users
+      summary: Delete externalMeetingRegistration
+      description: Disable and delete the externalMeetingRegistration of an onlineMeeting.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0
       operationId: user.onlineMeeting_DeleteRegistration
       parameters:
         - name: user-id
@@ -8381,8 +8953,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get customQuestions from users
-      description: Custom registration questions.
+      summary: Get customRegistrationQuestion
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0
       operationId: user.onlineMeeting.registration_ListCustomQuestion
       parameters:
         - name: user-id
@@ -8473,7 +9048,11 @@ paths:
     post:
       tags:
         - users.onlineMeeting
-      summary: Create new navigation property to customQuestions for users
+      summary: Create meetingRegistrationQuestion
+      description: Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0
       operationId: user.onlineMeeting.registration_CreateCustomQuestion
       parameters:
         - name: user-id
@@ -8519,8 +9098,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get customQuestions from users
-      description: Custom registration questions.
+      summary: Get customRegistrationQuestion
+      description: Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0
       operationId: user.onlineMeeting.registration_GetCustomQuestion
       parameters:
         - name: user-id
@@ -8594,7 +9176,11 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update the navigation property customQuestions in users
+      summary: Update meetingRegistrationQuestion
+      description: Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0
       operationId: user.onlineMeeting.registration_UpdateCustomQuestion
       parameters:
         - name: user-id
@@ -8647,7 +9233,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete navigation property customQuestions for users
+      summary: Delete meetingRegistrationQuestion
+      description: Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0
       operationId: user.onlineMeeting.registration_DeleteCustomQuestion
       parameters:
         - name: user-id
@@ -8728,12 +9318,354 @@ paths:
         date: '2023-03-09T00:00:00.0000000+00:00'
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/registrants':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get registrants from users
+      description: Registrants of the online meeting.
+      operationId: user.onlineMeeting.registration_ListRegistrant
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - joinWebUrl
+                - joinWebUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - joinWebUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.meetingRegistrantBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.onlineMeeting
+      summary: Create new navigation property to registrants for users
+      operationId: user.onlineMeeting.registration_CreateRegistrant
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/registrants/{meetingRegistrantBase-id}':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get registrants from users
+      description: Registrants of the online meeting.
+      operationId: user.onlineMeeting.registration_GetRegistrant
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: meetingRegistrantBase-id
+          in: path
+          description: The unique identifier of meetingRegistrantBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: meetingRegistrantBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - joinWebUrl
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.onlineMeeting
+      summary: Update the navigation property registrants in users
+      operationId: user.onlineMeeting.registration_UpdateRegistrant
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: meetingRegistrantBase-id
+          in: path
+          description: The unique identifier of meetingRegistrantBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: meetingRegistrantBase
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.onlineMeeting
+      summary: Delete navigation property registrants for users
+      operationId: user.onlineMeeting.registration_DeleteRegistrant
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: meetingRegistrantBase-id
+          in: path
+          description: The unique identifier of meetingRegistrantBase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: meetingRegistrantBase
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/registrants/$count':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get the number of the resource
+      operationId: user.onlineMeeting.registration.registrant_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-03-20T00:00:00.0000000+00:00'
+        date: '2023-03-09T00:00:00.0000000+00:00'
+        version: 2023-03/Notification_Deprecation
+        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts':
     get:
       tags:
         - users.onlineMeeting
-      summary: Get transcripts from users
-      description: The transcripts of an online meeting. Read-only.
+      summary: List transcripts
+      description: Retrieve the list of callTranscript objects associated with an onlineMeeting.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: user.onlineMeeting_ListTranscript
       parameters:
         - name: user-id
@@ -8867,8 +9799,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get transcripts from users
-      description: The transcripts of an online meeting. Read-only.
+      summary: Get callTranscript
+      description: Retrieve a callTranscript object associated with an onlineMeeting. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetTranscript
       parameters:
         - name: user-id
@@ -9045,6 +9980,9 @@ paths:
         - users.onlineMeeting
       summary: Get content for the navigation property transcripts from users
       description: A field that represents the content of the transcript. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetTranscriptsContent
       parameters:
         - name: user-id
@@ -9149,6 +10087,9 @@ paths:
         - users.onlineMeeting
       summary: Get metadataContent for the navigation property transcripts from users
       description: A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetTranscriptsMetadataContent
       parameters:
         - name: user-id
@@ -9464,7 +10405,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence from users
+      summary: Get presence
+      description: Get a user's presence information.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -10411,9 +11356,15 @@ components:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowRecording:
+              type: boolean
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
               nullable: true
             alternativeRecording:
               type: string
@@ -10571,7 +11522,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -10663,6 +11614,18 @@ components:
             isRequired:
               type: boolean
               description: Indicates whether the question is required. Default value is false.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.meetingRegistrantBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingRegistrantBase
+          type: object
+          properties:
+            joinWebUrl:
+              type: string
+              description: A unique web URL for the registrant to join the meeting. Read-only.
               nullable: true
           additionalProperties:
             type: object
@@ -11700,6 +12663,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.meetingRegistrantBaseCollectionResponse:
+      title: Collection of meetingRegistrantBase
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.callTranscriptCollectionResponse:
       title: Collection of callTranscript
       type: object
@@ -12269,18 +13245,6 @@ components:
         - organization
         - unknownFutureValue
       type: string
-    microsoft.graph.meetingRegistrantBase:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: meetingRegistrantBase
-          type: object
-          properties:
-            joinWebUrl:
-              type: string
-              description: A unique web URL for the registrant to join the meeting. Read-only.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -12518,6 +13482,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestionCollectionResponse'
+    microsoft.graph.meetingRegistrantBaseCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBaseCollectionResponse'
     microsoft.graph.callTranscriptCollectionResponse:
       description: Retrieved collection
       content:

@@ -206,6 +206,10 @@ paths:
       tags:
         - subscriptions.Actions
       summary: Invoke action reauthorize
+      description: Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0
       operationId: subscription_reauthorize
       parameters:
         - name: subscription-id

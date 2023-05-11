@@ -288,8 +288,11 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: Get appointments from bookingBusinesses
-      description: All the appointments of this business. Read-only. Nullable.
+      summary: List appointments
+      description: Get a list of bookingAppointment objects for the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-appointments?view=graph-rest-1.0
       operationId: bookingBusiness_ListAppointment
       parameters:
         - name: bookingBusiness-id
@@ -462,7 +465,11 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: Create new navigation property to appointments for bookingBusinesses
+      summary: Create bookingAppointment
+      description: Create a new bookingAppointment for the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-appointments?view=graph-rest-1.0
       operationId: bookingBusiness_CreateAppointment
       parameters:
         - name: bookingBusiness-id
@@ -494,8 +501,11 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: Get appointments from bookingBusinesses
-      description: All the appointments of this business. Read-only. Nullable.
+      summary: Get bookingAppointment
+      description: Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The **start** and **end** properties are always returned in UTC.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0
       operationId: bookingBusiness_GetAppointment
       parameters:
         - name: bookingBusiness-id
@@ -587,7 +597,11 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: Update the navigation property appointments in bookingBusinesses
+      summary: Update bookingAppointment
+      description: Update the properties of a bookingAppointment object in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0
       operationId: bookingBusiness_UpdateAppointment
       parameters:
         - name: bookingBusiness-id
@@ -626,7 +640,11 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingAppointment
-      summary: Delete navigation property appointments for bookingBusinesses
+      summary: Delete bookingAppointment
+      description: Delete a bookingAppointment in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0
       operationId: bookingBusiness_DeleteAppointment
       parameters:
         - name: bookingBusiness-id
@@ -662,7 +680,10 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
-      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
+      description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: bookingBusiness.appointment_cancel
       parameters:
         - name: bookingBusiness-id
@@ -728,6 +749,9 @@ paths:
         - bookingBusinesses.bookingAppointment
       summary: Get calendarView from bookingBusinesses
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
       operationId: bookingBusiness_ListCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -1132,7 +1156,10 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action cancel
-      description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
+      description: 'Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
       operationId: bookingBusiness.calendarView_cancel
       parameters:
         - name: bookingBusiness-id
@@ -1196,8 +1223,11 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: Get customers from bookingBusinesses
-      description: All the customers of this business. Read-only. Nullable.
+      summary: List customers
+      description: Get a list of bookingCustomer objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customers?view=graph-rest-1.0
       operationId: bookingBusiness_ListCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1274,7 +1304,11 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: Create new navigation property to customers for bookingBusinesses
+      summary: Create bookingCustomer
+      description: Create a new bookingCustomer object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customers?view=graph-rest-1.0
       operationId: bookingBusiness_CreateCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1306,8 +1340,11 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: Get customers from bookingBusinesses
-      description: All the customers of this business. Read-only. Nullable.
+      summary: Get bookingCustomer
+      description: Get the properties and relationships of a bookingCustomer object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingcustomer-get?view=graph-rest-1.0
       operationId: bookingBusiness_GetCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1367,7 +1404,11 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: Update the navigation property customers in bookingBusinesses
+      summary: Update bookingcustomer
+      description: Update the properties of a bookingCustomer object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingcustomer-update?view=graph-rest-1.0
       operationId: bookingBusiness_UpdateCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1406,7 +1447,11 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingCustomer
-      summary: Delete navigation property customers for bookingBusinesses
+      summary: Delete bookingCustomer
+      description: Delete the specified bookingCustomer object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingcustomer-delete?view=graph-rest-1.0
       operationId: bookingBusiness_DeleteCustomer
       parameters:
         - name: bookingBusiness-id
@@ -1463,8 +1508,11 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingCustomQuestion
-      summary: Get customQuestions from bookingBusinesses
-      description: All the custom questions of this business. Read-only. Nullable.
+      summary: List customQuestions
+      description: Get the bookingCustomQuestion resources associated with a bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
       operationId: bookingBusiness_ListCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1538,7 +1586,11 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingCustomQuestion
-      summary: Create new navigation property to customQuestions for bookingBusinesses
+      summary: Create bookingCustomQuestion
+      description: Create a new bookingCustomQuestion object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
       operationId: bookingBusiness_CreateCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1570,8 +1622,11 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingCustomQuestion
-      summary: Get customQuestions from bookingBusinesses
-      description: All the custom questions of this business. Read-only. Nullable.
+      summary: Get bookingCustomQuestion
+      description: Read the properties and relationships of a bookingCustomQuestion object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
       operationId: bookingBusiness_GetCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1630,7 +1685,11 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingCustomQuestion
-      summary: Update the navigation property customQuestions in bookingBusinesses
+      summary: Update bookingCustomQuestion
+      description: Update the properties of a bookingCustomQuestion object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
       operationId: bookingBusiness_UpdateCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1669,7 +1728,11 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingCustomQuestion
-      summary: Delete navigation property customQuestions for bookingBusinesses
+      summary: Delete bookingCustomQuestion
+      description: Delete the specified bookingCustomQuestion object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
       operationId: bookingBusiness_DeleteCustomQuestion
       parameters:
         - name: bookingBusiness-id
@@ -1727,6 +1790,10 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action getStaffAvailability
+      description: Get the availability information of staff members of a Microsoft Bookings calendar.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
       operationId: bookingBusiness_getStaffAvailability
       parameters:
         - name: bookingBusiness-id
@@ -1783,7 +1850,10 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action publish
-      description: Makes the scheduling page of this business available to the general public.
+      description: 'Make the scheduling page of this business available to external customers. Set the **isPublished** property to true, and **publicUrl** property to the URL of the scheduling page.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0
       operationId: bookingBusiness_publish
       parameters:
         - name: bookingBusiness-id
@@ -1805,7 +1875,10 @@ paths:
       tags:
         - bookingBusinesses.Actions
       summary: Invoke action unpublish
-      description: Prevents the general public from seeing the scheduling page of this business.
+      description: 'Make the scheduling page of this business not available to external customers. Set the **isPublished** property to false, and **publicUrl** property to null.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0
       operationId: bookingBusiness_unpublish
       parameters:
         - name: bookingBusiness-id
@@ -1826,8 +1899,11 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingService
-      summary: Get services from bookingBusinesses
-      description: All the services offered by this business. Read-only. Nullable.
+      summary: List services
+      description: Get a list of bookingService objects in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-services?view=graph-rest-1.0
       operationId: bookingBusiness_ListService
       parameters:
         - name: bookingBusiness-id
@@ -1955,7 +2031,11 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingService
-      summary: Create new navigation property to services for bookingBusinesses
+      summary: Create bookingService
+      description: Create a new bookingService for the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-services?view=graph-rest-1.0
       operationId: bookingBusiness_CreateService
       parameters:
         - name: bookingBusiness-id
@@ -1987,8 +2067,11 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingService
-      summary: Get services from bookingBusinesses
-      description: All the services offered by this business. Read-only. Nullable.
+      summary: Get bookingService
+      description: Get the properties and relationships of a bookingService object in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0
       operationId: bookingBusiness_GetService
       parameters:
         - name: bookingBusiness-id
@@ -2065,7 +2148,11 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingService
-      summary: Update the navigation property services in bookingBusinesses
+      summary: Update bookingservice
+      description: "Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:\n- Price\n- Typical length of an appointment\n- Reminders\n- Any time buffer to set up before or finish up after the service\n- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0
       operationId: bookingBusiness_UpdateService
       parameters:
         - name: bookingBusiness-id
@@ -2104,7 +2191,11 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingService
-      summary: Delete navigation property services for bookingBusinesses
+      summary: Delete bookingService
+      description: Delete a bookingService object in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0
       operationId: bookingBusiness_DeleteService
       parameters:
         - name: bookingBusiness-id
@@ -2161,8 +2252,11 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: Get staffMembers from bookingBusinesses
-      description: All the staff members that provide services in this business. Read-only. Nullable.
+      summary: List staffMembers
+      description: Get a list of bookingStaffMember objects in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-list-staffmembers?view=graph-rest-1.0
       operationId: bookingBusiness_ListStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2257,7 +2351,11 @@ paths:
     post:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: Create new navigation property to staffMembers for bookingBusinesses
+      summary: Create bookingStaffMember
+      description: Create a new staff member in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingbusiness-post-staffmembers?view=graph-rest-1.0
       operationId: bookingBusiness_CreateStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2289,8 +2387,11 @@ paths:
     get:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: Get staffMembers from bookingBusinesses
-      description: All the staff members that provide services in this business. Read-only. Nullable.
+      summary: Get bookingStaffMember
+      description: Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0
       operationId: bookingBusiness_GetStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2356,7 +2457,11 @@ paths:
     patch:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: Update the navigation property staffMembers in bookingBusinesses
+      summary: Update bookingstaffmember
+      description: Update the properties of a bookingStaffMember in the specified bookingBusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0
       operationId: bookingBusiness_UpdateStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2395,7 +2500,11 @@ paths:
     delete:
       tags:
         - bookingBusinesses.bookingStaffMember
-      summary: Delete navigation property staffMembers for bookingBusinesses
+      summary: Delete bookingStaffMember
+      description: Delete a staff member in the specified bookingbusiness.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0
       operationId: bookingBusiness_DeleteStaffMember
       parameters:
         - name: bookingBusiness-id
@@ -2742,7 +2851,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get businessScenarios from solutions
+      summary: List businessScenarios
+      description: Get a list of all businessScenario objects in an organization.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0
       operationId: solution_ListBusinessScenario
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2822,7 +2935,11 @@ paths:
     post:
       tags:
         - solutions.businessScenario
-      summary: Create new navigation property to businessScenarios for solutions
+      summary: Create businessScenario
+      description: Create a new businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0
       operationId: solution_CreateBusinessScenario
       requestBody:
         description: New navigation property
@@ -2845,7 +2962,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get businessScenarios from solutions
+      summary: Get businessScenario
+      description: Read the properties and relationships of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/businessscenario-get?view=graph-rest-1.0
       operationId: solution_GetBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -2902,7 +3023,11 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update the navigation property businessScenarios in solutions
+      summary: Update businessScenario
+      description: Update the properties of a businessScenario object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/businessscenario-update?view=graph-rest-1.0
       operationId: solution_UpdateBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -2933,7 +3058,11 @@ paths:
     delete:
       tags:
         - solutions.businessScenario
-      summary: Delete navigation property businessScenarios for solutions
+      summary: Delete businessScenario
+      description: Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-1.0
       operationId: solution_DeleteBusinessScenario
       parameters:
         - name: businessScenario-id
@@ -2960,8 +3089,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get planner from solutions
-      description: Planner content related to the scenario.
+      summary: Get businessScenarioPlanner
+      description: Read the properties and relationships of a businessScenarioPlanner object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/businessscenarioplanner-get?view=graph-rest-1.0
       operationId: solution.businessScenario_GetPlanner
       parameters:
         - name: businessScenario-id
@@ -3074,6 +3206,10 @@ paths:
       tags:
         - solutions.Actions
       summary: Invoke action getPlan
+      description: 'Get information about the plannerPlan mapped to a given target. If a **plannerPlan** doesn''t exist for the specified target at the time of the request, a new plan will be created for the businessScenario.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_getPlan
       parameters:
         - name: businessScenario-id
@@ -3110,8 +3246,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get planConfiguration from solutions
-      description: The configuration of Planner plans that will be created for the scenario.
+      summary: Get plannerPlanConfiguration
+      description: Read the properties and relationships of a plannerPlanConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_GetPlanConfiguration
       parameters:
         - name: businessScenario-id
@@ -3167,7 +3306,11 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update the navigation property planConfiguration in solutions
+      summary: Update plannerPlanConfiguration
+      description: Update the properties of a plannerPlanConfiguration object for a businessScenario.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_UpdatePlanConfiguration
       parameters:
         - name: businessScenario-id
@@ -3225,8 +3368,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get localizations from solutions
-      description: Localized names for the plan configuration.
+      summary: List plannerPlanConfigurationLocalizations
+      description: Get a list of the plannerPlanConfigurationLocalization objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.planConfiguration_ListLocalization
       parameters:
         - name: businessScenario-id
@@ -3300,7 +3446,11 @@ paths:
     post:
       tags:
         - solutions.businessScenario
-      summary: Create new navigation property to localizations for solutions
+      summary: Create plannerPlanConfigurationLocalization
+      description: Create a new plannerPlanConfigurationLocalization object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.planConfiguration_CreateLocalization
       parameters:
         - name: businessScenario-id
@@ -3332,8 +3482,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get localizations from solutions
-      description: Localized names for the plan configuration.
+      summary: Get plannerPlanConfigurationLocalization
+      description: Read the properties and relationships of a plannerPlanConfigurationLocalization object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.planConfiguration_GetLocalization
       parameters:
         - name: businessScenario-id
@@ -3392,7 +3545,11 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update the navigation property localizations in solutions
+      summary: Update plannerPlanConfigurationLocalization
+      description: Update the properties of a plannerPlanConfigurationLocalization object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.planConfiguration_UpdateLocalization
       parameters:
         - name: businessScenario-id
@@ -3431,7 +3588,11 @@ paths:
     delete:
       tags:
         - solutions.businessScenario
-      summary: Delete navigation property localizations for solutions
+      summary: Delete plannerPlanConfigurationLocalization
+      description: Delete a plannerPlanConfigurationLocalization object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-1.0
       operationId: solution.businessScenario.planner.planConfiguration_DeleteLocalization
       parameters:
         - name: businessScenario-id
@@ -3488,8 +3649,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get taskConfiguration from solutions
-      description: The configuration of Planner tasks that will be created for the scenario.
+      summary: Get plannerTaskConfiguration
+      description: Read the properties and relationships of a plannerTaskConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannertaskconfiguration-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_GetTaskConfiguration
       parameters:
         - name: businessScenario-id
@@ -3538,7 +3702,11 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update the navigation property taskConfiguration in solutions
+      summary: Update plannerTaskConfiguration
+      description: Update the properties of a plannerTaskConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannertaskconfiguration-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_UpdateTaskConfiguration
       parameters:
         - name: businessScenario-id
@@ -3596,8 +3764,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get tasks from solutions
-      description: The Planner tasks for the scenario.
+      summary: List businessScenarioTasks
+      description: Get a list of the businessScenarioTask objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_ListTask
       parameters:
         - name: businessScenario-id
@@ -3745,7 +3916,11 @@ paths:
     post:
       tags:
         - solutions.businessScenario
-      summary: Create new navigation property to tasks for solutions
+      summary: Create businessScenarioTask
+      description: Create a new businessScenarioTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_CreateTask
       parameters:
         - name: businessScenario-id
@@ -3777,8 +3952,11 @@ paths:
     get:
       tags:
         - solutions.businessScenario
-      summary: Get tasks from solutions
-      description: The Planner tasks for the scenario.
+      summary: Get businessScenarioTask
+      description: Read the properties and relationships of a businessScenarioTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_GetTask
       parameters:
         - name: businessScenario-id
@@ -3867,7 +4045,11 @@ paths:
     patch:
       tags:
         - solutions.businessScenario
-      summary: Update the navigation property tasks in solutions
+      summary: Update businessScenarioTask
+      description: Update the properties of a businessScenarioTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_UpdateTask
       parameters:
         - name: businessScenario-id
@@ -3906,8 +4088,597 @@ paths:
     delete:
       tags:
         - solutions.businessScenario
-      summary: Delete navigation property tasks for solutions
+      summary: Delete businessScenarioTask
+      description: Delete a businessScenarioTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-1.0
       operationId: solution.businessScenario.planner_DeleteTask
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/assignedToTaskBoardFormat':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get plannerAssignedToTaskBoardTaskFormat
+      description: Retrieve the properties and relationships of **plannerAssignedToTaskBoardTaskFormat** object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-get?view=graph-rest-1.0
+      operationId: solution.businessScenario.planner.task_GetAssignedToTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - orderHintsByAssignee
+                - unassignedOrderHint
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property assignedToTaskBoardFormat in solutions
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerassignedtotaskboardtaskformat-update?view=graph-rest-1.0
+      operationId: solution.businessScenario.planner.task_UpdateAssignedToTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerAssignedToTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property assignedToTaskBoardFormat for solutions
+      operationId: solution.businessScenario.planner.task_DeleteAssignedToTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/bucketTaskBoardFormat':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get plannerBucketTaskBoardTaskFormat
+      description: Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-1.0
+      operationId: solution.businessScenario.planner.task_GetBucketTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - orderHint
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property bucketTaskBoardFormat in solutions
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-1.0
+      operationId: solution.businessScenario.planner.task_UpdateBucketTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerBucketTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property bucketTaskBoardFormat for solutions
+      operationId: solution.businessScenario.planner.task_DeleteBucketTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/details':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get plannerTaskDetails
+      description: Retrieve the properties and relationships of a **plannerTaskDetails** object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannertaskdetails-get?view=graph-rest-1.0
+      operationId: solution.businessScenario.planner.task_GetDetail
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - checklist
+                - description
+                - notes
+                - previewType
+                - references
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property details in solutions
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannertaskdetails-update?view=graph-rest-1.0
+      operationId: solution.businessScenario.planner.task_UpdateDetail
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerTaskDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property details for solutions
+      operationId: solution.businessScenario.planner.task_DeleteDetail
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/solutions/businessScenarios/{businessScenario-id}/planner/tasks/{businessScenarioTask-id}/progressTaskBoardFormat':
+    get:
+      tags:
+        - solutions.businessScenario
+      summary: Get plannerProgressTaskBoardTaskFormat
+      description: Retrieve the properties and relationships of **plannerProgressTaskBoardTaskFormat** object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-get?view=graph-rest-1.0
+      operationId: solution.businessScenario.planner.task_GetProgressTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - orderHint
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - solutions.businessScenario
+      summary: Update the navigation property progressTaskBoardFormat in solutions
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerprogresstaskboardtaskformat-update?view=graph-rest-1.0
+      operationId: solution.businessScenario.planner.task_UpdateProgressTaskBoardFormat
+      parameters:
+        - name: businessScenario-id
+          in: path
+          description: The unique identifier of businessScenario
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenario
+        - name: businessScenarioTask-id
+          in: path
+          description: The unique identifier of businessScenarioTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: businessScenarioTask
+        - name: If-Match
+          in: header
+          description: ETag value.
+          required: true
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.plannerProgressTaskBoardTaskFormat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - solutions.businessScenario
+      summary: Delete navigation property progressTaskBoardFormat for solutions
+      operationId: solution.businessScenario.planner.task_DeleteProgressTaskBoardFormat
       parameters:
         - name: businessScenario-id
           in: path
@@ -4582,6 +5353,64 @@ components:
               $ref: '#/components/schemas/microsoft.graph.businessScenarioTaskTargetBase'
           additionalProperties:
             type: object
+    microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerAssignedToTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHintsByAssignee:
+              $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
+            unassignedOrderHint:
+              type: string
+              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerBucketTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerBucketTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHint:
+              type: string
+              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerTaskDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerTaskDetails
+          type: object
+          properties:
+            checklist:
+              $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
+            description:
+              type: string
+              description: Description of the task.
+              nullable: true
+            notes:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            previewType:
+              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
+            references:
+              $ref: '#/components/schemas/microsoft.graph.plannerExternalReferences'
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerProgressTaskBoardTaskFormat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
+        - title: plannerProgressTaskBoardTaskFormat
+          type: object
+          properties:
+            orderHint:
+              type: string
+              description: 'Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.bookingNamedEntity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5059,6 +5888,49 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.plannerDelta:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: plannerDelta
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.plannerOrderHintsByAssignee:
+      title: plannerOrderHintsByAssignee
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerChecklistItems:
+      title: plannerChecklistItems
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.itemBody:
+      title: itemBody
+      type: object
+      properties:
+        content:
+          type: string
+          description: The content of the item.
+          nullable: true
+        contentType:
+          $ref: '#/components/schemas/microsoft.graph.bodyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerPreviewType:
+      title: plannerPreviewType
+      enum:
+        - automatic
+        - noPreview
+        - checklist
+        - description
+        - reference
+      type: string
+    microsoft.graph.plannerExternalReferences:
+      title: plannerExternalReferences
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.bookingBusinessCollectionResponse:
       title: Collection of bookingBusiness
       type: object
@@ -5348,13 +6220,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.plannerTaskConfigurationRoleBase'
       additionalProperties:
         type: object
-    microsoft.graph.plannerDelta:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: plannerDelta
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.plannerAppliedCategories:
       title: plannerAppliedCategories
       type: object
@@ -5375,15 +6240,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.plannerTeamsPublicationInfo'
       additionalProperties:
         type: object
-    microsoft.graph.plannerPreviewType:
-      title: plannerPreviewType
-      enum:
-        - automatic
-        - noPreview
-        - checklist
-        - description
-        - reference
-      type: string
     microsoft.graph.plannerTaskRecurrence:
       title: plannerTaskRecurrence
       type: object
@@ -5414,64 +6270,12 @@ components:
           description: The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
       additionalProperties:
         type: object
-    microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerAssignedToTaskBoardTaskFormat
-          type: object
-          properties:
-            orderHintsByAssignee:
-              $ref: '#/components/schemas/microsoft.graph.plannerOrderHintsByAssignee'
-            unassignedOrderHint:
-              type: string
-              description: 'Hint value used to order the task on the AssignedTo view of the Task Board when the task is not assigned to anyone, or if the orderHintsByAssignee dictionary does not provide an order hint for the user the task is assigned to. The format is defined as outlined here.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.plannerBucketTaskBoardTaskFormat:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerBucketTaskBoardTaskFormat
-          type: object
-          properties:
-            orderHint:
-              type: string
-              description: 'Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.plannerTaskDetails:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerTaskDetails
-          type: object
-          properties:
-            checklist:
-              $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
-            description:
-              type: string
-              description: Description of the task.
-              nullable: true
-            notes:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
-            previewType:
-              $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
-            references:
-              $ref: '#/components/schemas/microsoft.graph.plannerExternalReferences'
-          additionalProperties:
-            type: object
-    microsoft.graph.plannerProgressTaskBoardTaskFormat:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
-        - title: plannerProgressTaskBoardTaskFormat
-          type: object
-          properties:
-            orderHint:
-              type: string
-              description: 'Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.'
-              nullable: true
-          additionalProperties:
-            type: object
+    microsoft.graph.bodyType:
+      title: bodyType
+      enum:
+        - text
+        - html
+      type: string
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -5635,33 +6439,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.plannerOrderHintsByAssignee:
-      title: plannerOrderHintsByAssignee
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerChecklistItems:
-      title: plannerChecklistItems
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.itemBody:
-      title: itemBody
-      type: object
-      properties:
-        content:
-          type: string
-          description: The content of the item.
-          nullable: true
-        contentType:
-          $ref: '#/components/schemas/microsoft.graph.bodyType'
-      additionalProperties:
-        type: object
-    microsoft.graph.plannerExternalReferences:
-      title: plannerExternalReferences
-      type: object
-      additionalProperties:
-        type: object
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
@@ -5748,12 +6525,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.recurrencePatternType'
       additionalProperties:
         type: object
-    microsoft.graph.bodyType:
-      title: bodyType
-      enum:
-        - text
-        - html
-      type: string
     microsoft.graph.plannerRuleKind:
       title: plannerRuleKind
       enum:

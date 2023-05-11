@@ -2204,6 +2204,62 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment-id}/roleDefinition':
+    get:
+      tags:
+        - deviceManagement.deviceAndAppManagementRoleAssignment
+      summary: Get roleDefinition from deviceManagement
+      description: Role definition this assignment is part of.
+      operationId: deviceManagement.roleAssignment_GetRoleDefinition
+      parameters:
+        - name: deviceAndAppManagementRoleAssignment-id
+          in: path
+          description: The unique identifier of deviceAndAppManagementRoleAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - rolePermissions
+                - roleAssignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleAssignments
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /deviceManagement/roleAssignments/$count:
     get:
       tags:

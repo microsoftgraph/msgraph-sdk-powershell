@@ -282,7 +282,11 @@ paths:
     delete:
       tags:
         - users.userActivity
-      summary: Delete navigation property activities for users
+      summary: Delete an activity
+      description: Delete an existing user activity for your app.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0
       operationId: user_DeleteActivity
       parameters:
         - name: user-id
@@ -554,7 +558,11 @@ paths:
     patch:
       tags:
         - users.userActivity
-      summary: Update the navigation property historyItems in users
+      summary: Delete a historyItem
+      description: Delete an existing history item for an existing user activity.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0
       operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id
@@ -2018,6 +2026,9 @@ paths:
         - users.device
       summary: Get memberOf from users
       description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
       operationId: user.device_ListMemberGraphOPre
       parameters:
         - name: user-id
@@ -2679,6 +2690,9 @@ paths:
         - users.device
       summary: Get registeredOwners from users
       description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: user.device_ListRegisteredOwner
       parameters:
         - name: user-id
@@ -2771,7 +2785,11 @@ paths:
     delete:
       tags:
         - users.device
-      summary: Delete ref of navigation property registeredOwners for users
+      summary: Delete registeredOwner
+      description: Remove a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
       operationId: user.device_DeleteRegisteredOwnerGraphBPreRef
       parameters:
         - name: user-id
@@ -3118,6 +3136,9 @@ paths:
         - users.device
       summary: Get ref of registeredOwners from users
       description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
       operationId: user.device_ListRegisteredOwnerGraphBPreRef
       parameters:
         - name: user-id
@@ -3184,7 +3205,11 @@ paths:
     post:
       tags:
         - users.device
-      summary: Create new navigation property ref to registeredOwners for users
+      summary: Create registeredOwner
+      description: Add a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-post-registeredowners?view=graph-rest-1.0
       operationId: user.device_CreateRegisteredOwnerGraphBPreRef
       parameters:
         - name: user-id
@@ -3637,6 +3662,9 @@ paths:
         - users.device
       summary: Get registeredUsers from users
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: user.device_ListRegisteredUser
       parameters:
         - name: user-id
@@ -3729,7 +3757,11 @@ paths:
     delete:
       tags:
         - users.device
-      summary: Delete ref of navigation property registeredUsers for users
+      summary: Delete registeredUser
+      description: Remove a user as a registered user of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
       operationId: user.device_DeleteRegisteredUserGraphBPreRef
       parameters:
         - name: user-id
@@ -4076,6 +4108,9 @@ paths:
         - users.device
       summary: Get ref of registeredUsers from users
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
       operationId: user.device_ListRegisteredUserGraphBPreRef
       parameters:
         - name: user-id
@@ -4142,7 +4177,11 @@ paths:
     post:
       tags:
         - users.device
-      summary: Create new navigation property ref to registeredUsers for users
+      summary: Create registeredUser
+      description: Add a registered user for the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
       operationId: user.device_CreateRegisteredUserGraphBPreRef
       parameters:
         - name: user-id
@@ -4595,6 +4634,9 @@ paths:
         - users.device
       summary: Get transitiveMemberOf from users
       description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
       operationId: user.device_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
@@ -5254,8 +5296,11 @@ paths:
     get:
       tags:
         - users.device
-      summary: Get usageRights from users
-      description: Represents the usage rights a device has been granted.
+      summary: List device usageRights
+      description: Retrieve a list of usageRight objects for a given device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0
       operationId: user.device_ListUsageRight
       parameters:
         - name: user-id
@@ -6535,7 +6580,7 @@ components:
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.'
+              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.'
               format: date-time
               nullable: true
             preferredTokenSigningKeyThumbprint:
@@ -10918,9 +10963,15 @@ components:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowRecording:
+              type: boolean
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
               nullable: true
             alternativeRecording:
               type: string
@@ -13186,33 +13237,42 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The assigned categories for the team template.
             description:
               type: string
+              description: A brief description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             displayName:
               type: string
+              description: The user defined name of the team template.
               nullable: true
             iconUrl:
               type: string
+              description: The icon url for the team template.
               nullable: true
             languageTag:
               type: string
+              description: Language the template is available in.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date time of when the team template was last modified.
               format: date-time
               nullable: true
             parentTemplateId:
               type: string
+              description: The templateId for the team template
               nullable: true
             publisherName:
               type: string
+              description: The organization which published the team template.
               nullable: true
             shortDescription:
               type: string
+              description: A short-description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             teamDefinition:
               $ref: '#/components/schemas/microsoft.graph.team'
@@ -23358,7 +23418,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
