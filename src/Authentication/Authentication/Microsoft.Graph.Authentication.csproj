@@ -11,7 +11,10 @@
     <NuspecFile>Microsoft.Graph.Authentication.nuspec</NuspecFile>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <VersionPrefix>2.0.0</VersionPrefix>
-    <VersionSuffix>preview7</VersionSuffix>
+    <VersionSuffix>preview10</VersionSuffix>
+    <AssemblyOriginatorKeyFile>D:\a\_work\1\s\tools\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>true</DelaySign>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
