@@ -164,6 +164,11 @@ directive:
       subject: ^Link(.*)HasPayload$
     set:
       subject: Has$1PayloadLink
+  - where:
+      verb: Get
+      subject: ^(.*)List(.*)(As.*)$
+    set:
+      subject: $1$2$3
 # Remove *AvailableExtensionProperty commands except those bound to DirectoryObject.
   - where:
       subject: ^(?!DirectoryObject).*AvailableExtensionProperty$
