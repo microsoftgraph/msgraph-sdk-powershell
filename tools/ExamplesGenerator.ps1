@@ -40,7 +40,7 @@ function Start-Generator {
             $ProfilePathMapping = "beta\examples"
         }
         $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
-        Get-ExternalDocsUrl -ManualExternalDocsUrl $ManualExternalDocsUrl -GenerationMode $GenerationMode -GraphProfilePath $ModulePath -Command $GraphCommand -GraphProfile $ProfilePath -Module -$Module
+        Get-ExternalDocsUrl -ManualExternalDocsUrl $ManualExternalDocsUrl -GenerationMode $GenerationMode -GraphProfilePath $ModulePath -Command $GraphCommand -GraphProfile $ProfilePath -Module $GraphModule
             
     }
 
@@ -347,15 +347,19 @@ function Update-ExampleFile {
             }
         }
     }
-    Write-Host $Command
+    Write-Host $Command " Module " $Module
     $PatternToSearch = "Import-Module Microsoft.Graph.$Module"
     if($GraphProfile -eq "beta"){
         $PatternToSearch = "Import-Module Microsoft.Graph.Beta.$Module"  
     }
     if(($Content | Select-String -pattern $SearchText) -and ($Content | Select-String -pattern "This example shows")){
-        Write-Host "does not contain anything"
-        
-        if($ExampleList.Contains($PatternToSearch)){
+        $ContainsPatternToSearch = $False
+        foreach($List in $ExampleList){
+           if($List.Contains($PatternToSearch)){
+            $ContainsPatternToSearch = $True
+           }
+        }
+        if($ContainsPatternToSearch){
             Clear-Content $ExampleFile -Force
            #Replace everything
            for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
@@ -396,10 +400,10 @@ function Update-ExampleFile {
             "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" | Out-File -FilePath "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -Append -Encoding ASCII
         }
     }
-    git config --global user.email "timwamalwa@gmail.com"
-    git config --global user.name "Timothy Wamalwa"
-    git add $ExampleFile
-    git commit -m "Examples update on  $ExampleFile-$GraphProfile"   
+    # git config --global user.email "timwamalwa@gmail.com"
+    # git config --global user.name "Timothy Wamalwa"
+    # git add $ExampleFile
+    # git commit -m "Examples update on  $ExampleFile-$GraphProfile"   
 }
         
 $JsonContent = Get-Content -Path $MetaDataJsonFile
@@ -457,4 +461,7 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #2. Test for ensuring that a handwritten example is not tampered with
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0" -GraphCommand "Get-MgUser" -GraphModule "Users" -Profile "v1.0" 
+
+#3. Test for updates from api reference
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0" -GraphCommand "New-MgServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "v1.0"
 Write-Host -ForegroundColor Green "-------------Done-------------"
