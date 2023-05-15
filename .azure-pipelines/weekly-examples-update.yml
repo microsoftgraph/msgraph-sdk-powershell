@@ -65,9 +65,9 @@ jobs:
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Examples to be reviewed as artifact'
     inputs:
-      PathtoPublish: 'examplesreport'
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/examplesreport'
       ArtifactName: 'ExamplesToBeReviewed'
-      publishLocation: 'Container'
+      #publishLocation: 'Container'
       # StoreAsTar: true
 
   - task: PowerShell@2
