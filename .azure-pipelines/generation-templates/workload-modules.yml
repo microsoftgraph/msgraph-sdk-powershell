@@ -24,7 +24,6 @@ steps:
   - ${{ if eq(parameters.Test, true) }}:
     - task: PowerShell@2
       displayName: Test Workload Modules
-      enabled: true
       inputs:
         targetType: inline
         pwsh: true
