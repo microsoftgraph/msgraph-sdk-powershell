@@ -80,7 +80,8 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: Get callRecords from communications
+      summary: Get callRecord
+      description: 'Retrieve the properties and relationships of a callRecord object. There are two ways to get the **id** of a **callRecord**:'
       operationId: communication_ListCallRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -189,7 +190,11 @@ paths:
     get:
       tags:
         - communications.callRecord
-      summary: Get callRecords from communications
+      summary: Get callRecord
+      description: 'Retrieve the properties and relationships of a callRecord object. There are two ways to get the **id** of a **callRecord**:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/callrecords-callrecord-get?view=graph-rest-1.0
       operationId: communication_GetCallRecord
       parameters:
         - name: callRecord-id
@@ -925,7 +930,8 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get calls from communications
+      summary: Get call
+      description: Retrieve the properties and relationships of a call object.
       operationId: communication_ListCall
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1077,7 +1083,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get calls from communications
+      summary: Get call
+      description: Retrieve the properties and relationships of a call object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-get?view=graph-rest-1.0
       operationId: communication_GetCall
       parameters:
         - name: call-id
@@ -1184,7 +1194,11 @@ paths:
     delete:
       tags:
         - communications.call
-      summary: Delete navigation property calls for communications
+      summary: Delete call
+      description: 'Delete or hang up an active call. For group calls, this will only delete your call leg and the underlying group call will still continue.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/call-delete?view=graph-rest-1.0
       operationId: communication_DeleteCall
       parameters:
         - name: call-id
@@ -1573,7 +1587,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get contentSharingSessions from communications
+      summary: Get contentSharingSession
+      description: Retrieve the properties of a contentSharingSession object in a call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contentsharingsession-get?view=graph-rest-1.0
       operationId: communication.call_GetContentSharingSession
       parameters:
         - name: call-id
@@ -2342,7 +2360,8 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get operations from communications
+      summary: Get addLargeGalleryViewOperation
+      description: Get the status of an operation that adds the large gallery view to a call.
       operationId: communication.call_ListOperation
       parameters:
         - name: call-id
@@ -2448,7 +2467,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get operations from communications
+      summary: Get addLargeGalleryViewOperation
+      description: Get the status of an operation that adds the large gallery view to a call.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/addlargegalleryviewoperation-get?view=graph-rest-1.0
       operationId: communication.call_GetOperation
       parameters:
         - name: call-id
@@ -2722,7 +2745,11 @@ paths:
     get:
       tags:
         - communications.call
-      summary: Get participants from communications
+      summary: Get participant
+      description: Retrieve the properties and relationships of a **participant** object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-get?view=graph-rest-1.0
       operationId: communication.call_GetParticipant
       parameters:
         - name: call-id
@@ -2823,7 +2850,11 @@ paths:
     delete:
       tags:
         - communications.call
-      summary: Delete navigation property participants for communications
+      summary: Delete participant
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communication.call_DeleteParticipant
       parameters:
         - name: call-id
@@ -3570,8 +3601,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get attendanceReports from communications
-      description: The attendance reports of an online meeting. Read-only.
+      summary: Get meetingAttendanceReport
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetAttendanceReport
       parameters:
         - name: onlineMeeting-id
@@ -4172,7 +4206,8 @@ paths:
     get:
       tags:
         - communications.presence
-      summary: Get presences from communications
+      summary: Get presence
+      description: Get a user's presence information.
       operationId: communication_ListPresence
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4258,7 +4293,11 @@ paths:
     get:
       tags:
         - communications.presence
-      summary: Get presences from communications
+      summary: Get presence
+      description: Get a user's presence information.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
       operationId: communication_GetPresence
       parameters:
         - name: presence-id
@@ -4713,7 +4752,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get onlineMeetings from users
+      summary: Get onlineMeeting
+      description: 'Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
       operationId: user_GetOnlineMeeting
       parameters:
         - name: user-id
@@ -4795,7 +4838,11 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update the navigation property onlineMeetings in users
+      summary: Update onlineMeeting
+      description: Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0
       operationId: user_UpdateOnlineMeeting
       parameters:
         - name: user-id
@@ -4834,7 +4881,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete navigation property onlineMeetings for users
+      summary: Delete onlineMeeting
+      description: Delete an onlineMeeting object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0
       operationId: user_DeleteOnlineMeeting
       parameters:
         - name: user-id
@@ -4997,8 +5048,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get attendanceReports from users
-      description: The attendance reports of an online meeting. Read-only.
+      summary: Get meetingAttendanceReport
+      description: 'Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetAttendanceReport
       parameters:
         - name: user-id
@@ -6456,7 +6510,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'

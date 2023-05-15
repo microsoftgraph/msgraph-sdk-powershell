@@ -282,7 +282,11 @@ paths:
     delete:
       tags:
         - users.userActivity
-      summary: Delete navigation property activities for users
+      summary: Delete an activity
+      description: Delete an existing user activity for your app.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0
       operationId: user_DeleteActivity
       parameters:
         - name: user-id
@@ -554,7 +558,11 @@ paths:
     patch:
       tags:
         - users.userActivity
-      summary: Update the navigation property historyItems in users
+      summary: Delete a historyItem
+      description: Delete an existing history item for an existing user activity.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0
       operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id
@@ -2681,7 +2689,7 @@ paths:
       tags:
         - users.device
       summary: Get registeredOwners from users
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+      description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
@@ -2777,7 +2785,11 @@ paths:
     delete:
       tags:
         - users.device
-      summary: Delete ref of navigation property registeredOwners for users
+      summary: Delete registeredOwner
+      description: Remove a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
       operationId: user.device_DeleteRegisteredOwnerGraphBPreRef
       parameters:
         - name: user-id
@@ -3123,7 +3135,7 @@ paths:
       tags:
         - users.device
       summary: Get ref of registeredOwners from users
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+      description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
@@ -3193,7 +3205,11 @@ paths:
     post:
       tags:
         - users.device
-      summary: Create new navigation property ref to registeredOwners for users
+      summary: Create registeredOwner
+      description: Add a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-post-registeredowners?view=graph-rest-1.0
       operationId: user.device_CreateRegisteredOwnerGraphBPreRef
       parameters:
         - name: user-id
@@ -3741,7 +3757,11 @@ paths:
     delete:
       tags:
         - users.device
-      summary: Delete ref of navigation property registeredUsers for users
+      summary: Delete registeredUser
+      description: Remove a user as a registered user of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
       operationId: user.device_DeleteRegisteredUserGraphBPreRef
       parameters:
         - name: user-id
@@ -4157,7 +4177,11 @@ paths:
     post:
       tags:
         - users.device
-      summary: Create new navigation property ref to registeredUsers for users
+      summary: Create registeredUser
+      description: Add a registered user for the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
       operationId: user.device_CreateRegisteredUserGraphBPreRef
       parameters:
         - name: user-id
@@ -5924,7 +5948,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -6556,12 +6580,12 @@ components:
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.'
+              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.'
               format: date-time
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -6594,7 +6618,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -7363,6 +7387,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.usageRight:
@@ -8895,7 +8921,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -8905,7 +8931,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -10074,7 +10100,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -10111,7 +10137,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -10134,7 +10160,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -10176,7 +10202,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -10208,7 +10234,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -10226,7 +10252,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -10234,7 +10260,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -10274,7 +10300,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -10297,7 +10323,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -10315,7 +10341,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -10368,7 +10394,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -10401,14 +10427,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -10658,6 +10684,10 @@ components:
             applicationId:
               type: string
               description: Intune application identifier.
+              nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
               nullable: true
             history:
               type: array
@@ -10933,9 +10963,15 @@ components:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowRecording:
+              type: boolean
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
               nullable: true
             alternativeRecording:
               type: string
@@ -11073,6 +11109,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -11252,6 +11290,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -13186,33 +13237,42 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The assigned categories for the team template.
             description:
               type: string
+              description: A brief description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             displayName:
               type: string
+              description: The user defined name of the team template.
               nullable: true
             iconUrl:
               type: string
+              description: The icon url for the team template.
               nullable: true
             languageTag:
               type: string
+              description: Language the template is available in.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date time of when the team template was last modified.
               format: date-time
               nullable: true
             parentTemplateId:
               type: string
+              description: The templateId for the team template
               nullable: true
             publisherName:
               type: string
+              description: The organization which published the team template.
               nullable: true
             shortDescription:
               type: string
+              description: A short-description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             teamDefinition:
               $ref: '#/components/schemas/microsoft.graph.team'
@@ -17739,6 +17799,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -18240,6 +18310,43 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
     microsoft.graph.ODataErrors.MainError:
@@ -19167,7 +19274,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -23311,7 +23418,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -23729,6 +23836,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code

@@ -492,8 +492,11 @@ paths:
     get:
       tags:
         - security.alert
-      summary: Get alerts_v2 from security
-      description: A collection of alerts in Microsoft 365 Defender.
+      summary: Get alert
+      description: Get the properties and relationships of an alert in an organization based on the specified alert **id** property.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-alert-get?view=graph-rest-1.0
       operationId: security_GetAlerts_v2
       parameters:
         - name: alert-id
@@ -570,7 +573,11 @@ paths:
     patch:
       tags:
         - security.alert
-      summary: Update the navigation property alerts_v2 in security
+      summary: Update alert
+      description: Update the properties of an alert object in an organization based on the specified alert **id** property.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-alert-update?view=graph-rest-1.0
       operationId: security_UpdateAlerts_v2
       parameters:
         - name: alert-id
@@ -642,8 +649,11 @@ paths:
     get:
       tags:
         - security.alert
-      summary: Get alerts from security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      summary: Get alert
+      description: Retrieve the properties and relationships of an alert object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/alert-get?view=graph-rest-1.0
       operationId: security_GetAlert
       parameters:
         - name: alert-id
@@ -730,7 +740,11 @@ paths:
     patch:
       tags:
         - security.alert
-      summary: Update the navigation property alerts in security
+      summary: Update alert
+      description: Update an editable **alert** property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/alert-update?view=graph-rest-1.0
       operationId: security_UpdateAlert
       parameters:
         - name: alert-id
@@ -914,8 +928,8 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get operations from security
-      description: Represents an attack simulation training operation.
+      summary: Get attackSimulationOperation
+      description: Get an attack simulation operation to track a long-running operation request for a tenant.
       operationId: security.attackSimulation_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1019,8 +1033,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get operations from security
-      description: Represents an attack simulation training operation.
+      summary: Get attackSimulationOperation
+      description: Get an attack simulation operation to track a long-running operation request for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attacksimulationoperation-get?view=graph-rest-1.0
       operationId: security.attackSimulation_GetOperation
       parameters:
         - name: attackSimulationOperation-id
@@ -1554,8 +1571,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get simulationAutomations from security
-      description: Represents simulation automation created to run on a tenant.
+      summary: Get simulationAutomation
+      description: Get an attack simulation automation for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/simulationautomation-get?view=graph-rest-1.0
       operationId: security.attackSimulation_GetSimulationAutomation
       parameters:
         - name: simulationAutomation-id
@@ -2100,8 +2120,11 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get simulations from security
-      description: Represents an attack simulation training campaign in a tenant.
+      summary: Get simulation
+      description: Get an attack simulation campaign for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/simulation-get?view=graph-rest-1.0
       operationId: security.attackSimulation_GetSimulation
       parameters:
         - name: simulation-id
@@ -2169,7 +2192,11 @@ paths:
     patch:
       tags:
         - security.attackSimulationRoot
-      summary: Update the navigation property simulations in security
+      summary: Update simulation
+      description: Update an attack simulation campaign for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/simulation-update?view=graph-rest-1.0
       operationId: security.attackSimulation_UpdateSimulation
       parameters:
         - name: simulation-id
@@ -2200,7 +2227,11 @@ paths:
     delete:
       tags:
         - security.attackSimulationRoot
-      summary: Delete navigation property simulations for security
+      summary: Delete simulation
+      description: Delete an attack simulation campaign for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/simulation-delete?view=graph-rest-1.0
       operationId: security.attackSimulation_DeleteSimulation
       parameters:
         - name: simulation-id
@@ -2527,7 +2558,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get ediscoveryCases from security
+      summary: Get ediscoveryCase
+      description: Read the properties and relationships of an ediscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-get?view=graph-rest-1.0
       operationId: security.case_GetEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
@@ -2600,7 +2635,11 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property ediscoveryCases in security
+      summary: Update ediscoveryCase
+      description: Update the properties of an ediscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-update?view=graph-rest-1.0
       operationId: security.case_UpdateEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
@@ -2631,7 +2670,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property ediscoveryCases for security
+      summary: Delete ediscoveryCase
+      description: Delete an ediscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-casesroot-delete-ediscoverycases?view=graph-rest-1.0
       operationId: security.case_DeleteEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
@@ -2795,8 +2838,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get custodians from security
-      description: Returns a list of case ediscoveryCustodian objects for this case.
+      summary: Get ediscoveryCustodian
+      description: Read the properties and relationships of an ediscoveryCustodian object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_GetCustodian
       parameters:
         - name: ediscoveryCase-id
@@ -4477,7 +4523,6 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyHold
-      description: 'Start the process of applying hold on eDiscovery custodians. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-applyhold?view=graph-rest-1.0
@@ -4517,7 +4562,6 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
-      description: 'Start the process of removing hold from eDiscovery custodians. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-removehold?view=graph-rest-1.0
@@ -6301,7 +6345,6 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyHold
-      description: 'Start the process of applying hold on eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-applyhold?view=graph-rest-1.0
@@ -6341,7 +6384,6 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
-      description: 'Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-removehold?view=graph-rest-1.0
@@ -6502,8 +6544,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get operations from security
-      description: Returns a list of case caseOperation objects for this case.
+      summary: Get caseOperation
+      description: Read the properties and relationships of a caseOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-caseoperation-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_GetOperation
       parameters:
         - name: ediscoveryCase-id
@@ -6780,8 +6825,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get reviewSets from security
-      description: Returns a list of eDiscoveryReviewSet objects in the case.
+      summary: Get ediscoveryReviewSet
+      description: Read the properties and relationships of an ediscoveryReviewSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_GetReviewSet
       parameters:
         - name: ediscoveryCase-id
@@ -7075,8 +7123,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get files from security
-      description: Represents files within the review set.
+      summary: Get ediscoveryFile
+      description: Read the properties and relationships of an ediscoveryFile object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryfile-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.reviewSet_GetFile
       parameters:
         - name: ediscoveryCase-id
@@ -8011,8 +8062,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get queries from security
-      description: Represents queries within the review set.
+      summary: Get ediscoveryReviewSetQuery
+      description: Read the properties and relationships of an ediscoveryReviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.reviewSet_GetQuery
       parameters:
         - name: ediscoveryCase-id
@@ -8083,7 +8137,11 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property queries in security
+      summary: Update ediscoveryReviewSetQuery
+      description: Update the properties of an ediscoveryReviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-update?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.reviewSet_UpdateQuery
       parameters:
         - name: ediscoveryCase-id
@@ -8130,7 +8188,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property queries for security
+      summary: Delete ediscoveryReviewSetQuery
+      description: Delete an ediscoveryReviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-delete-queries?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase.reviewSet_DeleteQuery
       parameters:
         - name: ediscoveryCase-id
@@ -8613,8 +8675,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get searches from security
-      description: Returns a list of eDiscoverySearch objects associated with this case.
+      summary: Get ediscoverySearch
+      description: Read the properties and relationships of an ediscoverySearch object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_GetSearch
       parameters:
         - name: ediscoveryCase-id
@@ -8688,7 +8753,11 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property searches in security
+      summary: Update ediscoverySearch
+      description: Update the properties of an ediscoverySearch object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-update?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_UpdateSearch
       parameters:
         - name: ediscoveryCase-id
@@ -8727,7 +8796,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property searches for security
+      summary: Delete ediscoverySearch
+      description: Delete an ediscoverySearch object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-delete-searches?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_DeleteSearch
       parameters:
         - name: ediscoveryCase-id
@@ -9309,6 +9382,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.casesRoot
+      summary: Remove custodianSources
+      description: Remove a dataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-delete-custodiansources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_DeleteCustodianSource
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - name: dataSource-id
+          in: path
+          description: The unique identifier of dataSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: dataSource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/custodianSources/$count':
     get:
       tags:
@@ -9424,7 +9543,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-estimatestatistics?view=graph-rest-1.0
-      operationId: security.case.ediscoveryCase.search_estimateStatistic
+      operationId: security.case.ediscoveryCase.search_estimateStatistics
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -9665,6 +9784,52 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.casesRoot
+      summary: Remove noncustodialSources
+      description: Remove an ediscoveryNoncustodialDataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-delete-noncustodialsources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_DeleteNoncustodialSource
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - name: ediscoveryNoncustodialDataSource-id
+          in: path
+          description: The unique identifier of ediscoveryNoncustodialDataSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryNoncustodialDataSource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9990,8 +10155,11 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get tags from security
-      description: Returns a list of ediscoveryReviewTag objects associated to this case.
+      summary: Get ediscoveryReviewTag
+      description: Read the properties and relationships of an ediscoveryReviewTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewtag-get?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_GetTag
       parameters:
         - name: ediscoveryCase-id
@@ -10056,7 +10224,11 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property tags in security
+      summary: Update ediscoveryReviewTag
+      description: Update the properties of an ediscoveryReviewTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewtag-update?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_UpdateTag
       parameters:
         - name: ediscoveryCase-id
@@ -10095,7 +10267,11 @@ paths:
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property tags for security
+      summary: Remove ediscoveryReviewTag
+      description: Remove an ediscoveryReviewTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-delete-tags?view=graph-rest-1.0
       operationId: security.case.ediscoveryCase_DeleteTag
       parameters:
         - name: ediscoveryCase-id
@@ -11715,8 +11891,11 @@ paths:
     get:
       tags:
         - security.incident
-      summary: Get incidents from security
-      description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
+      summary: Get incident
+      description: 'Retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-incident-get?view=graph-rest-1.0
       operationId: security_GetIncident
       parameters:
         - name: incident-id
@@ -11783,7 +11962,11 @@ paths:
     patch:
       tags:
         - security.incident
-      summary: Update the navigation property incidents in security
+      summary: Update incident
+      description: Update the properties of an incident object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-incident-update?view=graph-rest-1.0
       operationId: security_UpdateIncident
       parameters:
         - name: incident-id
@@ -13365,7 +13548,11 @@ paths:
     patch:
       tags:
         - security.labelsRoot
-      summary: Update the navigation property retentionLabels in security
+      summary: Update retentionLabel
+      description: 'Update the properties of a retentionLabel object. To update a disposition review stage, include the **actionAfterRetentionPeriod** property in the request body with one of the possible values specified.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionlabel-update?view=graph-rest-1.0
       operationId: security.label_UpdateRetentionLabel
       parameters:
         - name: retentionLabel-id
@@ -13396,7 +13583,11 @@ paths:
     delete:
       tags:
         - security.labelsRoot
-      summary: Delete navigation property retentionLabels for security
+      summary: Delete retentionLabel
+      description: Delete a retentionLabel object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionlabel-delete?view=graph-rest-1.0
       operationId: security.label_DeleteRetentionLabel
       parameters:
         - name: retentionLabel-id
@@ -14212,7 +14403,11 @@ paths:
     patch:
       tags:
         - security.secureScoreControlProfile
-      summary: Update the navigation property secureScoreControlProfiles in security
+      summary: Update secureScoreControlProfiles
+      description: 'Update an editable **secureScoreControlProfiles** property within any integrated solution to change various properties, such as **assignedTo** or **tenantNote**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/securescorecontrolprofiles-update?view=graph-rest-1.0
       operationId: security_UpdateSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
@@ -14659,7 +14854,11 @@ paths:
     get:
       tags:
         - security.securityAction
-      summary: Get securityActions from security
+      summary: Get securityAction
+      description: Retrieve the properties and relationships of a securityAction object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/securityaction-get?view=graph-rest-1.0
       operationId: security_GetSecurityAction
       parameters:
         - name: securityAction-id
@@ -15466,6 +15665,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -15542,6 +15742,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -15738,6 +15939,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -15814,6 +16016,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -16329,6 +16532,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -16405,6 +16609,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -16601,6 +16806,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -16677,6 +16883,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -17388,8 +17595,8 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get articleIndicators from security
-      description: 'Refers to indicators of threat or compromise highlighted in an microsoft.graph.security.article.Note: List retrieval is not yet supported.'
+      summary: Get articleIndicator
+      description: Read the properties and relationships of an articleIndicator object.
       operationId: security.threatIntelligence_ListArticleIndicator
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17474,8 +17681,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get articleIndicators from security
-      description: 'Refers to indicators of threat or compromise highlighted in an microsoft.graph.security.article.Note: List retrieval is not yet supported.'
+      summary: Get articleIndicator
+      description: Read the properties and relationships of an articleIndicator object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-articleindicator-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetArticleIndicator
       parameters:
         - name: articleIndicator-id
@@ -17577,6 +17787,56 @@ paths:
       responses:
         2XX:
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/articleIndicators/{articleIndicator-id}/artifact':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get artifact from security
+      description: The artifact related to this indicator.
+      operationId: security.threatIntelligence.articleIndicator_GetArtifact
+      parameters:
+        - name: articleIndicator-id
+          in: path
+          description: The unique identifier of articleIndicator
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: articleIndicator
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.artifact'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -17708,8 +17968,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get articles from security
-      description: A list of article objects.
+      summary: Get article
+      description: Read the properties and relationships of an article object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-article-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetArticle
       parameters:
         - name: article-id
@@ -17997,8 +18260,8 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hostComponents from security
-      description: 'Retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.'
+      summary: Get hostComponent
+      description: Read the properties and relationships of a hostComponent object.
       operationId: security.threatIntelligence_ListHostComponent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18095,8 +18358,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hostComponents from security
-      description: 'Retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.'
+      summary: Get hostComponent
+      description: Read the properties and relationships of a hostComponent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-hostcomponent-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetHostComponent
       parameters:
         - name: hostComponent-id
@@ -18287,8 +18553,8 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hostCookies from security
-      description: 'Retrieve details about microsoft.graph.security.hostCookie objects.Note: List retrieval is not yet supported.'
+      summary: Get hostCookie
+      description: Read the properties and relationships of a hostCookie object.
       operationId: security.threatIntelligence_ListHostCookie
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18382,8 +18648,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hostCookies from security
-      description: 'Retrieve details about microsoft.graph.security.hostCookie objects.Note: List retrieval is not yet supported.'
+      summary: Get hostCookie
+      description: Read the properties and relationships of a hostCookie object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-hostcookie-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetHostCookie
       parameters:
         - name: hostCookie-id
@@ -18573,8 +18842,8 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hosts from security
-      description: 'Refers to microsoft.graph.security.host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.'
+      summary: Get host
+      description: 'Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:'
       operationId: security.threatIntelligence_ListHost
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18672,8 +18941,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hosts from security
-      description: 'Refers to microsoft.graph.security.host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.'
+      summary: Get host
+      description: 'Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-host-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetHost
       parameters:
         - name: host-id
@@ -19782,8 +20054,8 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hostTrackers from security
-      description: 'Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.'
+      summary: Get hostTracker
+      description: Read the properties and relationships of a hostTracker object.
       operationId: security.threatIntelligence_ListHostTracker
       parameters:
         - $ref: '#/components/parameters/top'
@@ -19877,8 +20149,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get hostTrackers from security
-      description: 'Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.'
+      summary: Get hostTracker
+      description: Read the properties and relationships of a hostTracker object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-hosttracker-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetHostTracker
       parameters:
         - name: hostTracker-id
@@ -20266,6 +20541,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/threatIntelligence/intelligenceProfileIndicators/{intelligenceProfileIndicator-id}/artifact':
+    get:
+      tags:
+        - security.threatIntelligence
+      summary: Get artifact from security
+      description: The artifact related to this indicator.
+      operationId: security.threatIntelligence.intelligenceProfileIndicator_GetArtifact
+      parameters:
+        - name: intelligenceProfileIndicator-id
+          in: path
+          description: The unique identifier of intelligenceProfileIndicator
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: intelligenceProfileIndicator
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.artifact'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /security/threatIntelligence/intelligenceProfileIndicators/$count:
     get:
       tags:
@@ -20397,8 +20722,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get intelProfiles from security
-      description: A list of intelligenceProfile objects.
+      summary: Get intelligenceProfile
+      description: Read the properties and relationships of a intelligenceProfile object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-intelligenceprofile-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetIntelProfile
       parameters:
         - name: intelligenceProfile-id
@@ -20695,8 +21023,8 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get passiveDnsRecords from security
-      description: 'Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.'
+      summary: Get passiveDnsRecord
+      description: Read the properties and relationships of a passiveDnsRecord object.
       operationId: security.threatIntelligence_ListPassiveDnsRecord
       parameters:
         - $ref: '#/components/parameters/top'
@@ -20792,8 +21120,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get passiveDnsRecords from security
-      description: 'Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.'
+      summary: Get passiveDnsRecord
+      description: Read the properties and relationships of a passiveDnsRecord object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-passivednsrecord-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetPassiveDnsRecord
       parameters:
         - name: passiveDnsRecord-id
@@ -21035,8 +21366,8 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get vulnerabilities from security
-      description: 'Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.'
+      summary: Get vulnerability
+      description: Read the properties and relationships of a vulnerability object.
       operationId: security.threatIntelligence_ListVulnerability
       parameters:
         - $ref: '#/components/parameters/top'
@@ -21165,8 +21496,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get vulnerabilities from security
-      description: 'Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.'
+      summary: Get vulnerability
+      description: Read the properties and relationships of a vulnerability object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-vulnerability-get?view=graph-rest-1.0
       operationId: security.threatIntelligence_GetVulnerability
       parameters:
         - name: vulnerability-id
@@ -21578,8 +21912,11 @@ paths:
     get:
       tags:
         - security.threatIntelligence
-      summary: Get components from security
-      description: Components related to this vulnerability article.
+      summary: Get vulnerabilityComponent
+      description: Read the properties and relationships of a vulnerabilityComponent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-vulnerabilitycomponent-get?view=graph-rest-1.0
       operationId: security.threatIntelligence.vulnerability_GetComponent
       parameters:
         - name: vulnerability-id
@@ -21981,7 +22318,11 @@ paths:
     get:
       tags:
         - security.threatSubmissionRoot
-      summary: Get emailThreats from security
+      summary: Get emailThreatSubmission
+      description: Read the properties and relationships of an emailThreatSubmission object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-emailthreatsubmission-get?view=graph-rest-1.0
       operationId: security.threatSubmission_GetEmailThreat
       parameters:
         - name: emailThreatSubmission-id
@@ -22243,7 +22584,11 @@ paths:
     get:
       tags:
         - security.threatSubmissionRoot
-      summary: Get emailThreatSubmissionPolicies from security
+      summary: Get emailThreatSubmissionPolicy
+      description: Read the properties and relationships of an emailThreatSubmissionPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-get?view=graph-rest-1.0
       operationId: security.threatSubmission_GetEmailThreatSubmissionPolicy
       parameters:
         - name: emailThreatSubmissionPolicy-id
@@ -22493,7 +22838,11 @@ paths:
     get:
       tags:
         - security.threatSubmissionRoot
-      summary: Get fileThreats from security
+      summary: Get fileThreatSubmission
+      description: Read the properties and relationships of a fileThreatSubmission object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-filethreatsubmission-get?view=graph-rest-1.0
       operationId: security.threatSubmission_GetFileThreat
       parameters:
         - name: fileThreatSubmission-id
@@ -22745,7 +23094,11 @@ paths:
     get:
       tags:
         - security.threatSubmissionRoot
-      summary: Get urlThreats from security
+      summary: Get urlThreatSubmission
+      description: Read the properties and relationships of an urlThreatSubmission object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-urlthreatsubmission-get?view=graph-rest-1.0
       operationId: security.threatSubmission_GetUrlThreat
       parameters:
         - name: urlThreatSubmission-id
@@ -23138,7 +23491,11 @@ paths:
     get:
       tags:
         - security.tiIndicator
-      summary: Get tiIndicators from security
+      summary: Get threat intelligence indicator
+      description: Retrieve the properties and relationships of a tiIndicator object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/tiindicator-get?view=graph-rest-1.0
       operationId: security_GetTiIndicator
       parameters:
         - name: tiIndicator-id
@@ -23244,7 +23601,11 @@ paths:
     patch:
       tags:
         - security.tiIndicator
-      summary: Update the navigation property tiIndicators in security
+      summary: Update tiIndicator
+      description: Update the properties of a tiIndicator object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/tiindicator-update?view=graph-rest-1.0
       operationId: security_UpdateTiIndicator
       parameters:
         - name: tiIndicator-id
@@ -23275,7 +23636,11 @@ paths:
     delete:
       tags:
         - security.tiIndicator
-      summary: Delete navigation property tiIndicators for security
+      summary: Delete threat intelligence indicator
+      description: Delete a tiIndicator object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/tiindicator-delete?view=graph-rest-1.0
       operationId: security_DeleteTiIndicator
       parameters:
         - name: tiIndicator-id
@@ -23714,7 +24079,11 @@ paths:
     get:
       tags:
         - security.triggersRoot
-      summary: Get retentionEvents from security
+      summary: Get retentionEvent
+      description: Read the properties and relationships of a retentionEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-1.0
       operationId: security.trigger_GetRetentionEvent
       parameters:
         - name: retentionEvent-id
@@ -23806,7 +24175,11 @@ paths:
     delete:
       tags:
         - security.triggersRoot
-      summary: Delete navigation property retentionEvents for security
+      summary: Delete retentionEvent
+      description: Delete a retentionEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionevent-delete?view=graph-rest-1.0
       operationId: security.trigger_DeleteRetentionEvent
       parameters:
         - name: retentionEvent-id
@@ -24092,7 +24465,11 @@ paths:
     get:
       tags:
         - security.triggerTypesRoot
-      summary: Get retentionEventTypes from security
+      summary: Get retentionEventType
+      description: Read the properties and relationships of a retentionEventType object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-1.0
       operationId: security.triggerType_GetRetentionEventType
       parameters:
         - name: retentionEventType-id
@@ -24177,7 +24554,11 @@ paths:
     delete:
       tags:
         - security.triggerTypesRoot
-      summary: Delete navigation property retentionEventTypes for security
+      summary: Delete retentionEventType
+      description: Delete a retentionEventType object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentioneventtype-delete?view=graph-rest-1.0
       operationId: security.triggerType_DeleteRetentionEventType
       parameters:
         - name: retentionEventType-id
@@ -27824,6 +28205,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.mailboxSettings:
@@ -28077,6 +28460,13 @@ components:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.security.indicator'
         - title: articleIndicator
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.security.artifact:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: artifact
           type: object
           additionalProperties:
             type: object
@@ -28374,13 +28764,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.security.intelligenceProfileIndicator'
               description: Includes an assemblage of high-fidelity network indicators of compromise.
               x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-    microsoft.graph.security.artifact:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: artifact
-          type: object
           additionalProperties:
             type: object
     microsoft.graph.security.vulnerability:
@@ -32178,7 +32561,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -32188,7 +32571,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -32673,12 +33056,12 @@ components:
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.'
+              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.'
               format: date-time
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -32711,7 +33094,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -33724,7 +34107,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -33761,7 +34144,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -33784,7 +34167,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -33826,7 +34209,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -33858,7 +34241,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -33876,7 +34259,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -33884,7 +34267,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -33924,7 +34307,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -33947,7 +34330,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -33965,7 +34348,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -34018,7 +34401,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -34051,14 +34434,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -34308,6 +34691,10 @@ components:
             applicationId:
               type: string
               description: Intune application identifier.
+              nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
               nullable: true
             history:
               type: array
@@ -34792,7 +35179,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -34842,9 +35229,15 @@ components:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowRecording:
+              type: boolean
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
               nullable: true
             alternativeRecording:
               type: string
@@ -34982,6 +35375,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -35161,6 +35556,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -35614,33 +36022,42 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The assigned categories for the team template.
             description:
               type: string
+              description: A brief description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             displayName:
               type: string
+              description: The user defined name of the team template.
               nullable: true
             iconUrl:
               type: string
+              description: The icon url for the team template.
               nullable: true
             languageTag:
               type: string
+              description: Language the template is available in.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date time of when the team template was last modified.
               format: date-time
               nullable: true
             parentTemplateId:
               type: string
+              description: The templateId for the team template
               nullable: true
             publisherName:
               type: string
+              description: The organization which published the team template.
               nullable: true
             shortDescription:
               type: string
+              description: A short-description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             teamDefinition:
               $ref: '#/components/schemas/microsoft.graph.team'
@@ -37975,7 +38392,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -43479,6 +43896,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -43950,6 +44377,43 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
     microsoft.graph.externalAudienceScope:
@@ -48750,7 +49214,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -49159,6 +49623,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.replyRestriction:
       title: replyRestriction
       enum:

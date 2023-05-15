@@ -49,6 +49,20 @@ if ($ModuleFullName -ne "Microsoft.Graph.Authentication") {
         Write-Debug "Failed to build '$ModuleFullName' module."
         exit $lastexitcode
     }
+
+    # Move generated docs from export folder to root of docs folder.
+    $DocsPath = Join-Path $ModuleSrc "docs"
+    $DocsExportPath = Join-Path $DocsPath "exports"
+    Write-Debug "Moving generated docs from '$DocsExportPath' to '$DocsPath'..."
+    if (Test-Path $DocsExportPath){
+        $DocsExportFiles = Get-ChildItem $DocsExportPath -Recurse
+        foreach ($docFile in $DocsExportFiles) {
+            $newPath = Join-Path $DocsPath $docFile.Name
+            Move-Item $docFile.FullName $newPath -Force
+        }
+        Write-Debug "Cleaning '$DocsExportPath'..."
+        Remove-Item $DocsExportPath -Force -Recurse
+    }
 }
 
 # Lock module GUID. See https://github.com/Azure/autorest.powershell/issues/981.

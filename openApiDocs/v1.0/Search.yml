@@ -98,12 +98,16 @@ paths:
               enum:
                 - id
                 - id desc
+                - activitySettings
+                - activitySettings desc
                 - configuration
                 - configuration desc
                 - description
                 - description desc
                 - name
                 - name desc
+                - searchSettings
+                - searchSettings desc
                 - state
                 - state desc
               type: string
@@ -118,9 +122,11 @@ paths:
             items:
               enum:
                 - id
+                - activitySettings
                 - configuration
                 - description
                 - name
+                - searchSettings
                 - state
                 - groups
                 - items
@@ -182,7 +188,11 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get connections from external
+      summary: Get externalConnection
+      description: Read the properties and relationships of an externalConnection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0
       operationId: external_GetConnection
       parameters:
         - name: externalConnection-id
@@ -204,9 +214,11 @@ paths:
             items:
               enum:
                 - id
+                - activitySettings
                 - configuration
                 - description
                 - name
+                - searchSettings
                 - state
                 - groups
                 - items
@@ -242,7 +254,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update the navigation property connections in external
+      summary: Update externalConnection
+      description: Update the properties of an externalConnection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0
       operationId: external_UpdateConnection
       parameters:
         - name: externalConnection-id
@@ -273,7 +289,11 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property connections for external
+      summary: Delete externalConnection
+      description: Deletes an externalConnection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0
       operationId: external_DeleteConnection
       parameters:
         - name: externalConnection-id
@@ -300,7 +320,8 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get groups from external
+      summary: Get externalGroup
+      description: Get an externalGroup object.
       operationId: external.connection_ListGroup
       parameters:
         - name: externalConnection-id
@@ -409,7 +430,11 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get groups from external
+      summary: Get externalGroup
+      description: Get an externalGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-get?view=graph-rest-1.0
       operationId: external.connection_GetGroup
       parameters:
         - name: externalConnection-id
@@ -469,7 +494,11 @@ paths:
     patch:
       tags:
         - external.externalConnection
-      summary: Update the navigation property groups in external
+      summary: Update externalGroup
+      description: Update the properties of an externalGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-update?view=graph-rest-1.0
       operationId: external.connection_UpdateGroup
       parameters:
         - name: externalConnection-id
@@ -508,7 +537,11 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property groups for external
+      summary: Delete externalGroup
+      description: Delete an externalGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-delete?view=graph-rest-1.0
       operationId: external.connection_DeleteGroup
       parameters:
         - name: externalConnection-id
@@ -777,7 +810,11 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property members for external
+      summary: Delete identity
+      description: Delete an identity resource to remove the corresponding member from an externalGroup.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-identity-delete?view=graph-rest-1.0
       operationId: external.connection.group_DeleteMember
       parameters:
         - name: externalConnection-id
@@ -872,7 +909,8 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get items from external
+      summary: Get externalItem
+      description: Read the properties and relationships of an externalItem object.
       operationId: external.connection_ListItem
       parameters:
         - name: externalConnection-id
@@ -978,7 +1016,11 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get items from external
+      summary: Get externalItem
+      description: Read the properties and relationships of an externalItem object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0
       operationId: external.connection_GetItem
       parameters:
         - name: externalConnection-id
@@ -1076,7 +1118,11 @@ paths:
     delete:
       tags:
         - external.externalConnection
-      summary: Delete navigation property items for external
+      summary: Delete externalItem
+      description: Delete an externalItem object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0
       operationId: external.connection_DeleteItem
       parameters:
         - name: externalConnection-id
@@ -1133,7 +1179,8 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get operations from external
+      summary: Get connectionOperation
+      description: Read the properties and relationships of a connectionOperation object.
       operationId: external.connection_ListOperation
       parameters:
         - name: externalConnection-id
@@ -1236,7 +1283,11 @@ paths:
     get:
       tags:
         - external.externalConnection
-      summary: Get operations from external
+      summary: Get connectionOperation
+      description: Read the properties and relationships of a connectionOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/externalconnectors-connectionoperation-get?view=graph-rest-1.0
       operationId: external.connection_GetOperation
       parameters:
         - name: externalConnection-id
@@ -1637,6 +1688,8 @@ components:
         - title: externalConnection
           type: object
           properties:
+            activitySettings:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.activitySettings'
             configuration:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.configuration'
             description:
@@ -1647,6 +1700,8 @@ components:
               type: string
               description: The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
               nullable: true
+            searchSettings:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.searchSettings'
             state:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionState'
             groups:
@@ -1839,6 +1894,17 @@ components:
           description: The unique idenfier for an entity. Read-only.
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.activitySettings:
+      title: activitySettings
+      type: object
+      properties:
+        urlToItemResolvers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.urlToItemResolverBase'
+          description: Specifies configurations to identify an externalItem based on a shared URL.
+      additionalProperties:
+        type: object
     microsoft.graph.externalConnectors.configuration:
       title: configuration
       type: object
@@ -1849,6 +1915,17 @@ components:
             type: string
             nullable: true
           description: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+      additionalProperties:
+        type: object
+    microsoft.graph.externalConnectors.searchSettings:
+      title: searchSettings
+      type: object
+      properties:
+        searchResultTemplates:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.displayTemplate'
+          description: Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of 2 search result templates per connection.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.connectionState:
@@ -2012,6 +2089,7 @@ components:
           description: The search query containing the search terms. Required.
         queryTemplate:
           type: string
+          description: Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
           nullable: true
       additionalProperties:
         type: object
@@ -2182,6 +2260,41 @@ components:
         '@odata.nextLink':
           type: string
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.externalConnectors.urlToItemResolverBase:
+      title: urlToItemResolverBase
+      type: object
+      properties:
+        priority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The priority which defines the sequence in which the urlToItemResolverBase instances are evaluated.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.externalConnectors.displayTemplate:
+      title: displayTemplate
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The text identifier for the display template; for example, contosoTickets. Maximum 16 characters. Only alphanumeric characters allowed.'
+        layout:
+          $ref: '#/components/schemas/microsoft.graph.Json'
+        priority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported. Must be positive value.
+          format: int32
+        rules:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.propertyRule'
+          description: Specifies additional rules for selecting this display template based on the item schema. Optional.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.accessType:
@@ -2408,6 +2521,29 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
+    microsoft.graph.Json:
+      title: Json
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.externalConnectors.propertyRule:
+      title: propertyRule
+      type: object
+      properties:
+        operation:
+          $ref: '#/components/schemas/microsoft.graph.externalConnectors.ruleOperation'
+        property:
+          type: string
+          description: The property from the externalItem schema. Required.
+        values:
+          type: array
+          items:
+            type: string
+          description: A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
+        valuesJoinedBy:
+          $ref: '#/components/schemas/microsoft.graph.binaryOperator'
+      additionalProperties:
+        type: object
     microsoft.graph.bucketAggregationRange:
       title: bucketAggregationRange
       type: object
@@ -2493,6 +2629,25 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.externalConnectors.ruleOperation:
+      title: ruleOperation
+      enum:
+        - 'null'
+        - equals
+        - notEquals
+        - contains
+        - notContains
+        - lessThan
+        - greaterThan
+        - startsWith
+        - unknownFutureValue
+      type: string
+    microsoft.graph.binaryOperator:
+      title: binaryOperator
+      enum:
+        - or
+        - and
+      type: string
   responses:
     error:
       description: error

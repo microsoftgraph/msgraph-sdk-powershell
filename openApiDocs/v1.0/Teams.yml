@@ -193,7 +193,10 @@ paths:
     delete:
       tags:
         - appCatalogs.teamsApp
-      summary: Delete navigation property teamsApps for appCatalogs
+      summary: Delete teamsApp
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamsapp-delete?view=graph-rest-1.0
       operationId: appCatalog_DeleteTeamsApp
       parameters:
         - name: teamsApp-id
@@ -415,7 +418,11 @@ paths:
     patch:
       tags:
         - appCatalogs.teamsApp
-      summary: Update the navigation property appDefinitions in appCatalogs
+      summary: Publish teamsapp
+      description: "Publish an app to the Microsoft Teams apps catalog.\nSpecifically, this API publishes the app to your organization's catalog (the tenant app catalog);\nthe created resource will have a **distributionMethod** property value of `organization`. The **requiresReview** property allows any user to submit an app for review by an administrator. Admins can approve or reject these apps via this API or the Microsoft Teams admin center."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamsapp-publish?view=graph-rest-1.0
       operationId: appCatalog.teamsApp_UpdateAppDefinition
       parameters:
         - name: teamsApp-id
@@ -1026,8 +1033,11 @@ paths:
     get:
       tags:
         - chats.teamsAppInstallation
-      summary: Get installedApps from chats
-      description: A collection of all the apps in the chat. Nullable.
+      summary: Get installed app in chat
+      description: Get an app installed in a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-get-installedapps?view=graph-rest-1.0
       operationId: chat_GetInstalledApp
       parameters:
         - name: chat-id
@@ -1126,7 +1136,11 @@ paths:
     delete:
       tags:
         - chats.teamsAppInstallation
-      summary: Delete navigation property installedApps for chats
+      summary: Uninstall app in a chat
+      description: Uninstall an app installed within a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-delete-installedapps?view=graph-rest-1.0
       operationId: chat_DeleteInstalledApp
       parameters:
         - name: chat-id
@@ -1460,8 +1474,8 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: List members of a chat
-      description: 'List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.'
+      summary: Get conversationMember
+      description: Retrieve a conversationMember from a chat or channel.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0
@@ -1574,8 +1588,11 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: Get members from chats
-      description: A collection of all the members in the chat. Nullable.
+      summary: Get conversationMember
+      description: Retrieve a conversationMember from a chat or channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
       operationId: chat_GetMember
       parameters:
         - name: chat-id
@@ -1673,7 +1690,11 @@ paths:
     delete:
       tags:
         - chats.conversationMember
-      summary: Delete navigation property members for chats
+      summary: Remove member from chat
+      description: Remove a conversationMember from a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-delete-members?view=graph-rest-1.0
       operationId: chat_DeleteMember
       parameters:
         - name: chat-id
@@ -1925,11 +1946,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -1961,8 +1982,11 @@ paths:
     get:
       tags:
         - chats.chatMessage
-      summary: Get messages from chats
-      description: A collection of all the messages in the chat. Nullable.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: chat_GetMessage
       parameters:
         - name: chat-id
@@ -2241,8 +2265,11 @@ paths:
     get:
       tags:
         - chats.chatMessage
-      summary: Get hostedContents from chats
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: chat.message_GetHostedContent
       parameters:
         - name: chat-id
@@ -2722,11 +2749,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: chat.message_CreateReply
       parameters:
         - name: chat-id
@@ -2766,8 +2793,11 @@ paths:
     get:
       tags:
         - chats.chatMessage
-      summary: Get replies from chats
-      description: Replies for a specified message. Supports $expand for channel messages.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: chat.message_GetReply
       parameters:
         - name: chat-id
@@ -3086,8 +3116,11 @@ paths:
     get:
       tags:
         - chats.chatMessage
-      summary: Get hostedContents from chats
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: chat.message.reply_GetHostedContent
       parameters:
         - name: chat-id
@@ -4234,7 +4267,11 @@ paths:
     delete:
       tags:
         - chats.pinnedChatMessageInfo
-      summary: Delete navigation property pinnedMessages for chats
+      summary: Unpin a message from a chat
+      description: Unpin a message from a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-delete-pinnedmessages?view=graph-rest-1.0
       operationId: chat_DeletePinnedMessage
       parameters:
         - name: chat-id
@@ -4491,8 +4528,11 @@ paths:
     get:
       tags:
         - chats.teamsTab
-      summary: Get tabs from chats
-      description: A collection of all the tabs in the chat. Nullable.
+      summary: Get tab in chat
+      description: 'Retrieve the properties and relationships of the specified tab in a chat. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-get-tabs?view=graph-rest-1.0
       operationId: chat_GetTab
       parameters:
         - name: chat-id
@@ -4553,7 +4593,11 @@ paths:
     patch:
       tags:
         - chats.teamsTab
-      summary: Update the navigation property tabs in chats
+      summary: Update tab in chat
+      description: "Update the properties of the specified tab in a chat. \nThis can be used to configure the content of the tab."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-patch-tabs?view=graph-rest-1.0
       operationId: chat_UpdateTab
       parameters:
         - name: chat-id
@@ -4592,7 +4636,11 @@ paths:
     delete:
       tags:
         - chats.teamsTab
-      summary: Delete navigation property tabs for chats
+      summary: Delete tab from chat
+      description: 'Remove (unpin) a tab from the specified chat. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-delete-tabs?view=graph-rest-1.0
       operationId: chat_DeleteTab
       parameters:
         - name: chat-id
@@ -5342,8 +5390,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get channels from groups
-      description: The collection of channels and messages associated with the team.
+      summary: Get channel
+      description: Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get?view=graph-rest-1.0
       operationId: group.team_GetChannel
       parameters:
         - name: group-id
@@ -5417,7 +5468,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property channels in groups
+      summary: Patch channel
+      description: Update the properties of the specified channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-patch?view=graph-rest-1.0
       operationId: group.team_UpdateChannel
       parameters:
         - name: group-id
@@ -5456,7 +5511,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property channels for groups
+      summary: Delete channel
+      description: Delete the channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0
       operationId: group.team_DeleteChannel
       parameters:
         - name: group-id
@@ -5770,11 +5829,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: group.team.channel_CreateMember
       parameters:
         - name: group-id
@@ -5814,8 +5873,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get members from groups
-      description: A collection of membership records associated with the channel.
+      summary: Get member of channel
+      description: Get a conversationMember from a channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0
       operationId: group.team.channel_GetMember
       parameters:
         - name: group-id
@@ -5882,7 +5944,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property members in groups
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.channel_UpdateMember
       parameters:
         - name: group-id
@@ -5929,7 +5995,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property members for groups
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: group.team.channel_DeleteMember
       parameters:
         - name: group-id
@@ -6149,11 +6219,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: group.team.channel_CreateMessage
       parameters:
         - name: group-id
@@ -6193,8 +6263,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get messages from groups
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: group.team.channel_GetMessage
       parameters:
         - name: group-id
@@ -6284,7 +6357,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property messages in groups
+      summary: Update chatMessage
+      description: "Update a chatMessage object. \nWith the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.\nOnly the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
       operationId: group.team.channel_UpdateMessage
       parameters:
         - name: group-id
@@ -6513,8 +6590,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: group.team.channel.message_GetHostedContent
       parameters:
         - name: group-id
@@ -6992,11 +7072,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: group.team.channel.message_CreateReply
       parameters:
         - name: group-id
@@ -7044,8 +7124,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get replies from groups
-      description: Replies for a specified message. Supports $expand for channel messages.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: group.team.channel.message_GetReply
       parameters:
         - name: group-id
@@ -7404,8 +7487,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: group.team.channel.message.reply_GetHostedContent
       parameters:
         - name: group-id
@@ -7974,8 +8060,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get sharedWithTeams from groups
-      description: A collection of teams with which a channel is shared.
+      summary: Get sharedWithChannelTeamInfo
+      description: Get a team that has been shared with a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-get?view=graph-rest-1.0
       operationId: group.team.channel_GetSharedGraphWPreTeam
       parameters:
         - name: group-id
@@ -8093,7 +8182,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property sharedWithTeams for groups
+      summary: Delete sharedWithChannelTeamInfo
+      description: Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-delete?view=graph-rest-1.0
       operationId: group.team.channel_DeleteSharedGraphWPreTeam
       parameters:
         - name: group-id
@@ -8342,6 +8435,110 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/groups/{group-id}/team/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/team':
+    get:
+      tags:
+        - groups.team
+      summary: Get team from groups
+      operationId: group.team.channel.sharedGraphWPreTeam_GetTeam
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: The unique identifier of sharedWithChannelTeamInfo
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classification
+                - createdDateTime
+                - description
+                - displayName
+                - funSettings
+                - guestSettings
+                - internalId
+                - isArchived
+                - memberSettings
+                - messagingSettings
+                - specialization
+                - summary
+                - tenantId
+                - visibility
+                - webUrl
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/team/channels/{channel-id}/sharedWithTeams/$count':
     get:
       tags:
@@ -9105,6 +9302,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groups.team
+      summary: Remove channel
+      description: Remove an incoming channel (a **channel** shared with a **team**) from a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-delete-incomingchannels?view=graph-rest-1.0
+      operationId: group.team_DeleteIncomingChannel
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/team/incomingChannels/$count':
     get:
       tags:
@@ -9240,8 +9475,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get installedApps from groups
-      description: The apps installed in this team.
+      summary: Get installed app in team
+      description: Retrieve the app installed in the specified team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-1.0
       operationId: group.team_GetInstalledApp
       parameters:
         - name: group-id
@@ -9340,7 +9578,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property installedApps for groups
+      summary: Remove app from team
+      description: Uninstalls an app from the specified team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-delete-installedapps?view=graph-rest-1.0
       operationId: group.team_DeleteInstalledApp
       parameters:
         - name: group-id
@@ -9642,8 +9884,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get members from groups
-      description: Members and owners of the team.
+      summary: Get member of team
+      description: Get a conversationMember from a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0
       operationId: group.team_GetMember
       parameters:
         - name: group-id
@@ -9702,7 +9947,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property members in groups
+      summary: Update member in team
+      description: Update the role of a conversationMember in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0
       operationId: group.team_UpdateMember
       parameters:
         - name: group-id
@@ -9741,7 +9990,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property members for groups
+      summary: Remove member from team
+      description: Remove a conversationMember from a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0
       operationId: group.team_DeleteMember
       parameters:
         - name: group-id
@@ -10619,11 +10872,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: group.team.primaryChannel_CreateMember
       parameters:
         - name: group-id
@@ -10655,8 +10908,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get members from groups
-      description: A collection of membership records associated with the channel.
+      summary: Get member of channel
+      description: Get a conversationMember from a channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0
       operationId: group.team.primaryChannel_GetMember
       parameters:
         - name: group-id
@@ -10715,7 +10971,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property members in groups
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.primaryChannel_UpdateMember
       parameters:
         - name: group-id
@@ -10754,7 +11014,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property members for groups
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: group.team.primaryChannel_DeleteMember
       parameters:
         - name: group-id
@@ -10950,11 +11214,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: group.team.primaryChannel_CreateMessage
       parameters:
         - name: group-id
@@ -10986,8 +11250,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get messages from groups
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: group.team.primaryChannel_GetMessage
       parameters:
         - name: group-id
@@ -11069,7 +11336,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property messages in groups
+      summary: Update chatMessage
+      description: "Update a chatMessage object. \nWith the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.\nOnly the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
       operationId: group.team.primaryChannel_UpdateMessage
       parameters:
         - name: group-id
@@ -11266,8 +11537,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_GetHostedContent
       parameters:
         - name: group-id
@@ -11689,11 +11963,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_CreateReply
       parameters:
         - name: group-id
@@ -11733,8 +12007,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get replies from groups
-      description: Replies for a specified message. Supports $expand for channel messages.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_GetReply
       parameters:
         - name: group-id
@@ -12053,8 +12330,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get hostedContents from groups
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message.reply_GetHostedContent
       parameters:
         - name: group-id
@@ -12543,8 +12823,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get sharedWithTeams from groups
-      description: A collection of teams with which a channel is shared.
+      summary: Get sharedWithChannelTeamInfo
+      description: Get a team that has been shared with a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-get?view=graph-rest-1.0
       operationId: group.team.primaryChannel_GetSharedGraphWPreTeam
       parameters:
         - name: group-id
@@ -12646,7 +12929,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property sharedWithTeams for groups
+      summary: Delete sharedWithChannelTeamInfo
+      description: Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-delete?view=graph-rest-1.0
       operationId: group.team.primaryChannel_DeleteSharedGraphWPreTeam
       parameters:
         - name: group-id
@@ -12863,6 +13150,102 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/groups/{group-id}/team/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}/team':
+    get:
+      tags:
+        - groups.team
+      summary: Get team from groups
+      operationId: group.team.primaryChannel.sharedGraphWPreTeam_GetTeam
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: The unique identifier of sharedWithChannelTeamInfo
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classification
+                - createdDateTime
+                - description
+                - displayName
+                - funSettings
+                - guestSettings
+                - internalId
+                - isArchived
+                - memberSettings
+                - messagingSettings
+                - specialization
+                - summary
+                - tenantId
+                - visibility
+                - webUrl
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/team/primaryChannel/sharedWithTeams/$count':
     get:
       tags:
@@ -13506,7 +13889,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get offerShiftRequests from groups
+      summary: Get offerShiftRequest
+      description: Retrieve the properties and relationships of an offerShiftRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/offershiftrequest-get?view=graph-rest-1.0
       operationId: group.team.schedule_GetOfferShiftRequest
       parameters:
         - name: group-id
@@ -13814,8 +14201,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get openShiftChangeRequests from groups
-      description: The open shift requests in the schedule.
+      summary: Get openShiftChangeRequest
+      description: Retrieve the properties and relationships of an openShiftChangeRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshiftchangerequest-get?view=graph-rest-1.0
       operationId: group.team.schedule_GetOpenShiftChangeRequest
       parameters:
         - name: group-id
@@ -14102,8 +14492,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get openShifts from groups
-      description: The set of open shifts in a scheduling group in the schedule.
+      summary: Get openShift
+      description: Retrieve the properties and relationships of an openshift object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshift-get?view=graph-rest-1.0
       operationId: group.team.schedule_GetOpenShift
       parameters:
         - name: group-id
@@ -14165,7 +14558,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property openShifts in groups
+      summary: Update openShift
+      description: Update the properties of an openShift object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshift-update?view=graph-rest-1.0
       operationId: group.team.schedule_UpdateOpenShift
       parameters:
         - name: group-id
@@ -14204,7 +14601,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property openShifts for groups
+      summary: Delete openShift
+      description: Delete an openShift object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshift-delete?view=graph-rest-1.0
       operationId: group.team.schedule_DeleteOpenShift
       parameters:
         - name: group-id
@@ -14372,8 +14773,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get schedulingGroups from groups
-      description: The logical grouping of users in the schedule (usually by role).
+      summary: Get schedulingGroup
+      description: Retrieve the properties and relationships of a schedulingGroup by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-1.0
       operationId: group.team.schedule_GetSchedulingGroup
       parameters:
         - name: group-id
@@ -14423,7 +14827,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property schedulingGroups in groups
+      summary: Replace schedulingGroup
+      description: 'Replace an existing schedulingGroup. If the specified schedulingGroup doesn''t exist, this method returns `404 Not found`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/schedulinggroup-put?view=graph-rest-1.0
       operationId: group.team.schedule_UpdateSchedulingGroup
       parameters:
         - name: group-id
@@ -14462,7 +14870,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property schedulingGroups for groups
+      summary: Delete schedulingGroup
+      description: "Mark a schedulingGroup as inactive by setting its **isActive** property.\nThis method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/schedulinggroup-delete?view=graph-rest-1.0
       operationId: group.team.schedule_DeleteSchedulingGroup
       parameters:
         - name: group-id
@@ -14633,8 +15045,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get shifts from groups
-      description: The shifts in the schedule.
+      summary: Get shift
+      description: Retrieve the properties and relationships of a shift object by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/shift-get?view=graph-rest-1.0
       operationId: group.team.schedule_GetShift
       parameters:
         - name: group-id
@@ -14685,7 +15100,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property shifts in groups
+      summary: Replace shift
+      description: 'Replace an existing shift. If the specified shift doesn''t exist, this method returns `404 Not found`. The duration of a shift cannot be less than 1 minute or longer than 24 hours.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/shift-put?view=graph-rest-1.0
       operationId: group.team.schedule_UpdateShift
       parameters:
         - name: group-id
@@ -14724,7 +15143,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property shifts for groups
+      summary: Delete shift
+      description: Delete a shift from the schedule.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/shift-delete?view=graph-rest-1.0
       operationId: group.team.schedule_DeleteShift
       parameters:
         - name: group-id
@@ -14934,7 +15357,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get swapShiftsChangeRequests from groups
+      summary: Get swapShiftsChangeRequest
+      description: Retrieve the properties and relationships of a swapShiftsChangeRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/swapshiftschangerequest-get?view=graph-rest-1.0
       operationId: group.team.schedule_GetSwapShiftsChangeRequest
       parameters:
         - name: group-id
@@ -15213,8 +15640,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get timeOffReasons from groups
-      description: The set of reasons for a time off in the schedule.
+      summary: Get timeOffReason
+      description: Retrieve the properties and relationships of a timeOffReason object by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-1.0
       operationId: group.team.schedule_GetTimeOffReason
       parameters:
         - name: group-id
@@ -15264,7 +15694,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property timeOffReasons in groups
+      summary: Replace timeOffReason
+      description: 'Replace an existing timeOffReason. If the specified timeOffReason doesn''t exist, this method returns `404 Not found`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffreason-put?view=graph-rest-1.0
       operationId: group.team.schedule_UpdateTimeOffReason
       parameters:
         - name: group-id
@@ -15303,7 +15737,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property timeOffReasons for groups
+      summary: Delete timeOffReason
+      description: Mark a timeOffReason as inactive by setting the **isActive** property. Every team must include at least one timeoff reason. This method does not remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffreason-delete?view=graph-rest-1.0
       operationId: group.team.schedule_DeleteTimeOffReason
       parameters:
         - name: group-id
@@ -15491,7 +15929,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get timeOffRequests from groups
+      summary: Get timeOffRequest
+      description: Retrieve the properties and relationships of a timeoffrequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0
       operationId: group.team.schedule_GetTimeOffRequest
       parameters:
         - name: group-id
@@ -15588,7 +16030,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property timeOffRequests for groups
+      summary: Delete timeOffRequest
+      description: Delete a timeOffRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0
       operationId: group.team.schedule_DeleteTimeOffRequest
       parameters:
         - name: group-id
@@ -15756,8 +16202,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get timesOff from groups
-      description: The instances of times off in the schedule.
+      summary: Get timeOff
+      description: Retrieve the properties and relationships of a timeOff object by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0
       operationId: group.team.schedule_GetTimesOff
       parameters:
         - name: group-id
@@ -15807,7 +16256,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property timesOff in groups
+      summary: Replace timeOff
+      description: 'Replace an existing timeOff object. If the specified timeOff object doesn''t exist, this method returns `404 Not found`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoff-put?view=graph-rest-1.0
       operationId: group.team.schedule_UpdateTimesOff
       parameters:
         - name: group-id
@@ -15846,7 +16299,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property timesOff for groups
+      summary: Delete timeOff
+      description: Delete a timeOff instance from a schedule.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoff-delete?view=graph-rest-1.0
       operationId: group.team.schedule_DeleteTimesOff
       parameters:
         - name: group-id
@@ -16025,8 +16482,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get tags from groups
-      description: The tags associated with the team.
+      summary: Get teamworkTag
+      description: Read the properties and relationships of a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-get?view=graph-rest-1.0
       operationId: group.team_GetTag
       parameters:
         - name: group-id
@@ -16089,7 +16549,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property tags in groups
+      summary: Update teamworkTag
+      description: Update the properties of a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-update?view=graph-rest-1.0
       operationId: group.team_UpdateTag
       parameters:
         - name: group-id
@@ -16128,7 +16592,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property tags for groups
+      summary: Delete teamworkTag
+      description: Delete a tag object permanently.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-delete?view=graph-rest-1.0
       operationId: group.team_DeleteTag
       parameters:
         - name: group-id
@@ -16293,8 +16761,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get members from groups
-      description: Users assigned to the tag.
+      summary: Get teamworkTagMember
+      description: Get the properties and relationships of a member of a standard tag in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-get?view=graph-rest-1.0
       operationId: group.team.tag_GetMember
       parameters:
         - name: group-id
@@ -16408,7 +16879,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property members for groups
+      summary: Delete teamworkTagMember
+      description: Delete a member from a standard tag in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-delete?view=graph-rest-1.0
       operationId: group.team.tag_DeleteMember
       parameters:
         - name: group-id
@@ -17073,8 +17548,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get channels from teams
-      description: The collection of channels and messages associated with the team.
+      summary: Get channel
+      description: Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get?view=graph-rest-1.0
       operationId: team_GetChannel
       parameters:
         - name: team-id
@@ -17148,7 +17626,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update the navigation property channels in teams
+      summary: Patch channel
+      description: Update the properties of the specified channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-patch?view=graph-rest-1.0
       operationId: team_UpdateChannel
       parameters:
         - name: team-id
@@ -17187,7 +17669,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Delete navigation property channels for teams
+      summary: Delete channel
+      description: Delete the channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0
       operationId: team_DeleteChannel
       parameters:
         - name: team-id
@@ -17501,11 +17987,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: team.channel_CreateMember
       parameters:
         - name: team-id
@@ -17545,8 +18031,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get members from teams
-      description: A collection of membership records associated with the channel.
+      summary: Get member of channel
+      description: Get a conversationMember from a channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0
       operationId: team.channel_GetMember
       parameters:
         - name: team-id
@@ -17613,7 +18102,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update the navigation property members in teams
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id
@@ -17660,7 +18153,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Delete navigation property members for teams
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: team.channel_DeleteMember
       parameters:
         - name: team-id
@@ -17944,11 +18441,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: team.channel_CreateMessage
       parameters:
         - name: team-id
@@ -17988,8 +18485,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get messages from teams
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: team.channel_GetMessage
       parameters:
         - name: team-id
@@ -18079,7 +18579,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update the navigation property messages in teams
+      summary: Update chatMessage
+      description: "Update a chatMessage object. \nWith the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.\nOnly the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
       operationId: team.channel_UpdateMessage
       parameters:
         - name: team-id
@@ -18308,8 +18812,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: team.channel.message_GetHostedContent
       parameters:
         - name: team-id
@@ -18861,11 +19368,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: team.channel.message_CreateReply
       parameters:
         - name: team-id
@@ -18913,8 +19420,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get replies from teams
-      description: Replies for a specified message. Supports $expand for channel messages.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: team.channel.message_GetReply
       parameters:
         - name: team-id
@@ -19273,8 +19783,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: team.channel.message.reply_GetHostedContent
       parameters:
         - name: team-id
@@ -20403,8 +20916,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get sharedWithTeams from teams
-      description: A collection of teams with which a channel is shared.
+      summary: Get sharedWithChannelTeamInfo
+      description: Get a team that has been shared with a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-get?view=graph-rest-1.0
       operationId: team.channel_GetSharedGraphWPreTeam
       parameters:
         - name: team-id
@@ -20522,7 +21038,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Delete navigation property sharedWithTeams for teams
+      summary: Delete sharedWithChannelTeamInfo
+      description: Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-delete?view=graph-rest-1.0
       operationId: team.channel_DeleteSharedGraphWPreTeam
       parameters:
         - name: team-id
@@ -20771,6 +21291,110 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/teams/{team-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/team':
+    get:
+      tags:
+        - teams.channel
+      summary: Get team from teams
+      operationId: team.channel.sharedGraphWPreTeam_GetTeam
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: The unique identifier of sharedWithChannelTeamInfo
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classification
+                - createdDateTime
+                - description
+                - displayName
+                - funSettings
+                - guestSettings
+                - internalId
+                - isArchived
+                - memberSettings
+                - messagingSettings
+                - specialization
+                - summary
+                - tenantId
+                - visibility
+                - webUrl
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/channels/{channel-id}/sharedWithTeams/$count':
     get:
       tags:
@@ -21671,6 +22295,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - teams.channel
+      summary: Remove channel
+      description: Remove an incoming channel (a **channel** shared with a **team**) from a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-delete-incomingchannels?view=graph-rest-1.0
+      operationId: team_DeleteIncomingChannel
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/incomingChannels/$count':
     get:
       tags:
@@ -21806,8 +22468,11 @@ paths:
     get:
       tags:
         - teams.teamsAppInstallation
-      summary: Get installedApps from teams
-      description: The apps installed in this team.
+      summary: Get installed app in team
+      description: Retrieve the app installed in the specified team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-1.0
       operationId: team_GetInstalledApp
       parameters:
         - name: team-id
@@ -21906,7 +22571,11 @@ paths:
     delete:
       tags:
         - teams.teamsAppInstallation
-      summary: Delete navigation property installedApps for teams
+      summary: Remove app from team
+      description: Uninstalls an app from the specified team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-delete-installedapps?view=graph-rest-1.0
       operationId: team_DeleteInstalledApp
       parameters:
         - name: team-id
@@ -22241,8 +22910,11 @@ paths:
     get:
       tags:
         - teams.conversationMember
-      summary: Get members from teams
-      description: Members and owners of the team.
+      summary: Get member of team
+      description: Get a conversationMember from a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0
       operationId: team_GetMember
       parameters:
         - name: team-id
@@ -22301,7 +22973,11 @@ paths:
     patch:
       tags:
         - teams.conversationMember
-      summary: Update the navigation property members in teams
+      summary: Update member in team
+      description: Update the role of a conversationMember in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0
       operationId: team_UpdateMember
       parameters:
         - name: team-id
@@ -22340,7 +23016,11 @@ paths:
     delete:
       tags:
         - teams.conversationMember
-      summary: Delete navigation property members for teams
+      summary: Remove member from team
+      description: Remove a conversationMember from a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0
       operationId: team_DeleteMember
       parameters:
         - name: team-id
@@ -23466,11 +24146,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: team.primaryChannel_CreateMember
       parameters:
         - name: team-id
@@ -23502,8 +24182,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get members from teams
-      description: A collection of membership records associated with the channel.
+      summary: Get member of channel
+      description: Get a conversationMember from a channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0
       operationId: team.primaryChannel_GetMember
       parameters:
         - name: team-id
@@ -23562,7 +24245,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update the navigation property members in teams
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.primaryChannel_UpdateMember
       parameters:
         - name: team-id
@@ -23601,7 +24288,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Delete navigation property members for teams
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: team.primaryChannel_DeleteMember
       parameters:
         - name: team-id
@@ -23853,11 +24544,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: team.primaryChannel_CreateMessage
       parameters:
         - name: team-id
@@ -23889,8 +24580,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get messages from teams
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: team.primaryChannel_GetMessage
       parameters:
         - name: team-id
@@ -23972,7 +24666,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update the navigation property messages in teams
+      summary: Update chatMessage
+      description: "Update a chatMessage object. \nWith the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.\nOnly the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
       operationId: team.primaryChannel_UpdateMessage
       parameters:
         - name: team-id
@@ -24169,8 +24867,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: team.primaryChannel.message_GetHostedContent
       parameters:
         - name: team-id
@@ -24650,11 +25351,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: team.primaryChannel.message_CreateReply
       parameters:
         - name: team-id
@@ -24694,8 +25395,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get replies from teams
-      description: Replies for a specified message. Supports $expand for channel messages.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: team.primaryChannel.message_GetReply
       parameters:
         - name: team-id
@@ -25014,8 +25718,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get hostedContents from teams
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: team.primaryChannel.message.reply_GetHostedContent
       parameters:
         - name: team-id
@@ -26000,8 +26707,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get sharedWithTeams from teams
-      description: A collection of teams with which a channel is shared.
+      summary: Get sharedWithChannelTeamInfo
+      description: Get a team that has been shared with a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-get?view=graph-rest-1.0
       operationId: team.primaryChannel_GetSharedGraphWPreTeam
       parameters:
         - name: team-id
@@ -26103,7 +26813,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Delete navigation property sharedWithTeams for teams
+      summary: Delete sharedWithChannelTeamInfo
+      description: Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-delete?view=graph-rest-1.0
       operationId: team.primaryChannel_DeleteSharedGraphWPreTeam
       parameters:
         - name: team-id
@@ -26320,6 +27034,102 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/teams/{team-id}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}/team':
+    get:
+      tags:
+        - teams.channel
+      summary: Get team from teams
+      operationId: team.primaryChannel.sharedGraphWPreTeam_GetTeam
+      parameters:
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: The unique identifier of sharedWithChannelTeamInfo
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classification
+                - createdDateTime
+                - description
+                - displayName
+                - funSettings
+                - guestSettings
+                - internalId
+                - isArchived
+                - memberSettings
+                - messagingSettings
+                - specialization
+                - summary
+                - tenantId
+                - visibility
+                - webUrl
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teams/{team-id}/primaryChannel/sharedWithTeams/$count':
     get:
       tags:
@@ -27012,7 +27822,11 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: Get offerShiftRequests from teams
+      summary: Get offerShiftRequest
+      description: Retrieve the properties and relationships of an offerShiftRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/offershiftrequest-get?view=graph-rest-1.0
       operationId: team.schedule_GetOfferShiftRequest
       parameters:
         - name: team-id
@@ -27320,8 +28134,11 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: Get openShiftChangeRequests from teams
-      description: The open shift requests in the schedule.
+      summary: Get openShiftChangeRequest
+      description: Retrieve the properties and relationships of an openShiftChangeRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshiftchangerequest-get?view=graph-rest-1.0
       operationId: team.schedule_GetOpenShiftChangeRequest
       parameters:
         - name: team-id
@@ -27608,8 +28425,11 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: Get openShifts from teams
-      description: The set of open shifts in a scheduling group in the schedule.
+      summary: Get openShift
+      description: Retrieve the properties and relationships of an openshift object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshift-get?view=graph-rest-1.0
       operationId: team.schedule_GetOpenShift
       parameters:
         - name: team-id
@@ -27671,7 +28491,11 @@ paths:
     patch:
       tags:
         - teams.schedule
-      summary: Update the navigation property openShifts in teams
+      summary: Update openShift
+      description: Update the properties of an openShift object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshift-update?view=graph-rest-1.0
       operationId: team.schedule_UpdateOpenShift
       parameters:
         - name: team-id
@@ -27710,7 +28534,11 @@ paths:
     delete:
       tags:
         - teams.schedule
-      summary: Delete navigation property openShifts for teams
+      summary: Delete openShift
+      description: Delete an openShift object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshift-delete?view=graph-rest-1.0
       operationId: team.schedule_DeleteOpenShift
       parameters:
         - name: team-id
@@ -27878,8 +28706,11 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: Get schedulingGroups from teams
-      description: The logical grouping of users in the schedule (usually by role).
+      summary: Get schedulingGroup
+      description: Retrieve the properties and relationships of a schedulingGroup by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-1.0
       operationId: team.schedule_GetSchedulingGroup
       parameters:
         - name: team-id
@@ -27929,7 +28760,11 @@ paths:
     patch:
       tags:
         - teams.schedule
-      summary: Update the navigation property schedulingGroups in teams
+      summary: Replace schedulingGroup
+      description: 'Replace an existing schedulingGroup. If the specified schedulingGroup doesn''t exist, this method returns `404 Not found`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/schedulinggroup-put?view=graph-rest-1.0
       operationId: team.schedule_UpdateSchedulingGroup
       parameters:
         - name: team-id
@@ -27968,7 +28803,11 @@ paths:
     delete:
       tags:
         - teams.schedule
-      summary: Delete navigation property schedulingGroups for teams
+      summary: Delete schedulingGroup
+      description: "Mark a schedulingGroup as inactive by setting its **isActive** property.\nThis method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/schedulinggroup-delete?view=graph-rest-1.0
       operationId: team.schedule_DeleteSchedulingGroup
       parameters:
         - name: team-id
@@ -28139,8 +28978,11 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: Get shifts from teams
-      description: The shifts in the schedule.
+      summary: Get shift
+      description: Retrieve the properties and relationships of a shift object by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/shift-get?view=graph-rest-1.0
       operationId: team.schedule_GetShift
       parameters:
         - name: team-id
@@ -28191,7 +29033,11 @@ paths:
     patch:
       tags:
         - teams.schedule
-      summary: Update the navigation property shifts in teams
+      summary: Replace shift
+      description: 'Replace an existing shift. If the specified shift doesn''t exist, this method returns `404 Not found`. The duration of a shift cannot be less than 1 minute or longer than 24 hours.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/shift-put?view=graph-rest-1.0
       operationId: team.schedule_UpdateShift
       parameters:
         - name: team-id
@@ -28230,7 +29076,11 @@ paths:
     delete:
       tags:
         - teams.schedule
-      summary: Delete navigation property shifts for teams
+      summary: Delete shift
+      description: Delete a shift from the schedule.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/shift-delete?view=graph-rest-1.0
       operationId: team.schedule_DeleteShift
       parameters:
         - name: team-id
@@ -28440,7 +29290,11 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: Get swapShiftsChangeRequests from teams
+      summary: Get swapShiftsChangeRequest
+      description: Retrieve the properties and relationships of a swapShiftsChangeRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/swapshiftschangerequest-get?view=graph-rest-1.0
       operationId: team.schedule_GetSwapShiftsChangeRequest
       parameters:
         - name: team-id
@@ -28719,8 +29573,11 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: Get timeOffReasons from teams
-      description: The set of reasons for a time off in the schedule.
+      summary: Get timeOffReason
+      description: Retrieve the properties and relationships of a timeOffReason object by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-1.0
       operationId: team.schedule_GetTimeOffReason
       parameters:
         - name: team-id
@@ -28770,7 +29627,11 @@ paths:
     patch:
       tags:
         - teams.schedule
-      summary: Update the navigation property timeOffReasons in teams
+      summary: Replace timeOffReason
+      description: 'Replace an existing timeOffReason. If the specified timeOffReason doesn''t exist, this method returns `404 Not found`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffreason-put?view=graph-rest-1.0
       operationId: team.schedule_UpdateTimeOffReason
       parameters:
         - name: team-id
@@ -28809,7 +29670,11 @@ paths:
     delete:
       tags:
         - teams.schedule
-      summary: Delete navigation property timeOffReasons for teams
+      summary: Delete timeOffReason
+      description: Mark a timeOffReason as inactive by setting the **isActive** property. Every team must include at least one timeoff reason. This method does not remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffreason-delete?view=graph-rest-1.0
       operationId: team.schedule_DeleteTimeOffReason
       parameters:
         - name: team-id
@@ -28997,7 +29862,11 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: Get timeOffRequests from teams
+      summary: Get timeOffRequest
+      description: Retrieve the properties and relationships of a timeoffrequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0
       operationId: team.schedule_GetTimeOffRequest
       parameters:
         - name: team-id
@@ -29094,7 +29963,11 @@ paths:
     delete:
       tags:
         - teams.schedule
-      summary: Delete navigation property timeOffRequests for teams
+      summary: Delete timeOffRequest
+      description: Delete a timeOffRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0
       operationId: team.schedule_DeleteTimeOffRequest
       parameters:
         - name: team-id
@@ -29262,8 +30135,11 @@ paths:
     get:
       tags:
         - teams.schedule
-      summary: Get timesOff from teams
-      description: The instances of times off in the schedule.
+      summary: Get timeOff
+      description: Retrieve the properties and relationships of a timeOff object by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0
       operationId: team.schedule_GetTimesOff
       parameters:
         - name: team-id
@@ -29313,7 +30189,11 @@ paths:
     patch:
       tags:
         - teams.schedule
-      summary: Update the navigation property timesOff in teams
+      summary: Replace timeOff
+      description: 'Replace an existing timeOff object. If the specified timeOff object doesn''t exist, this method returns `404 Not found`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoff-put?view=graph-rest-1.0
       operationId: team.schedule_UpdateTimesOff
       parameters:
         - name: team-id
@@ -29352,7 +30232,11 @@ paths:
     delete:
       tags:
         - teams.schedule
-      summary: Delete navigation property timesOff for teams
+      summary: Delete timeOff
+      description: Delete a timeOff instance from a schedule.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoff-delete?view=graph-rest-1.0
       operationId: team.schedule_DeleteTimesOff
       parameters:
         - name: team-id
@@ -29531,8 +30415,11 @@ paths:
     get:
       tags:
         - teams.teamworkTag
-      summary: Get tags from teams
-      description: The tags associated with the team.
+      summary: Get teamworkTag
+      description: Read the properties and relationships of a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-get?view=graph-rest-1.0
       operationId: team_GetTag
       parameters:
         - name: team-id
@@ -29595,7 +30482,11 @@ paths:
     patch:
       tags:
         - teams.teamworkTag
-      summary: Update the navigation property tags in teams
+      summary: Update teamworkTag
+      description: Update the properties of a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-update?view=graph-rest-1.0
       operationId: team_UpdateTag
       parameters:
         - name: team-id
@@ -29634,7 +30525,11 @@ paths:
     delete:
       tags:
         - teams.teamworkTag
-      summary: Delete navigation property tags for teams
+      summary: Delete teamworkTag
+      description: Delete a tag object permanently.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-delete?view=graph-rest-1.0
       operationId: team_DeleteTag
       parameters:
         - name: team-id
@@ -29799,8 +30694,11 @@ paths:
     get:
       tags:
         - teams.teamworkTag
-      summary: Get members from teams
-      description: Users assigned to the tag.
+      summary: Get teamworkTagMember
+      description: Get the properties and relationships of a member of a standard tag in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-get?view=graph-rest-1.0
       operationId: team.tag_GetMember
       parameters:
         - name: team-id
@@ -29914,7 +30812,11 @@ paths:
     delete:
       tags:
         - teams.teamworkTag
-      summary: Delete navigation property members for teams
+      summary: Delete teamworkTagMember
+      description: Delete a member from a standard tag in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-delete?view=graph-rest-1.0
       operationId: team.tag_DeleteMember
       parameters:
         - name: team-id
@@ -31024,11 +31926,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_CreateMember
       parameters:
         - name: deletedTeam-id
@@ -31068,8 +31970,11 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: Get members from teamwork
-      description: A collection of membership records associated with the channel.
+      summary: Get member of channel
+      description: Get a conversationMember from a channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_GetMember
       parameters:
         - name: deletedTeam-id
@@ -31136,7 +32041,11 @@ paths:
     patch:
       tags:
         - teamwork.deletedTeam
-      summary: Update the navigation property members in teamwork
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_UpdateMember
       parameters:
         - name: deletedTeam-id
@@ -31183,7 +32092,11 @@ paths:
     delete:
       tags:
         - teamwork.deletedTeam
-      summary: Delete navigation property members for teamwork
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_DeleteMember
       parameters:
         - name: deletedTeam-id
@@ -31467,11 +32380,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_CreateMessage
       parameters:
         - name: deletedTeam-id
@@ -31511,8 +32424,11 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: Get messages from teamwork
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_GetMessage
       parameters:
         - name: deletedTeam-id
@@ -31602,7 +32518,11 @@ paths:
     patch:
       tags:
         - teamwork.deletedTeam
-      summary: Update the navigation property messages in teamwork
+      summary: Update chatMessage
+      description: "Update a chatMessage object. \nWith the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.\nOnly the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_UpdateMessage
       parameters:
         - name: deletedTeam-id
@@ -31831,8 +32751,11 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: Get hostedContents from teamwork
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message_GetHostedContent
       parameters:
         - name: deletedTeam-id
@@ -32384,11 +33307,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message_CreateReply
       parameters:
         - name: deletedTeam-id
@@ -32436,8 +33359,11 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: Get replies from teamwork
-      description: Replies for a specified message. Supports $expand for channel messages.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message_GetReply
       parameters:
         - name: deletedTeam-id
@@ -32796,8 +33722,11 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: Get hostedContents from teamwork
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message.reply_GetHostedContent
       parameters:
         - name: deletedTeam-id
@@ -33926,8 +34855,11 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: Get sharedWithTeams from teamwork
-      description: A collection of teams with which a channel is shared.
+      summary: Get sharedWithChannelTeamInfo
+      description: Get a team that has been shared with a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-get?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_GetSharedGraphWPreTeam
       parameters:
         - name: deletedTeam-id
@@ -34045,7 +34977,11 @@ paths:
     delete:
       tags:
         - teamwork.deletedTeam
-      summary: Delete navigation property sharedWithTeams for teamwork
+      summary: Delete sharedWithChannelTeamInfo
+      description: Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-delete?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_DeleteSharedGraphWPreTeam
       parameters:
         - name: deletedTeam-id
@@ -34294,6 +35230,110 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/team':
+    get:
+      tags:
+        - teamwork.deletedTeam
+      summary: Get team from teamwork
+      operationId: teamwork.deletedTeam.channel.sharedGraphWPreTeam_GetTeam
+      parameters:
+        - name: deletedTeam-id
+          in: path
+          description: The unique identifier of deletedTeam
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deletedTeam
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: The unique identifier of sharedWithChannelTeamInfo
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classification
+                - createdDateTime
+                - description
+                - displayName
+                - funSettings
+                - guestSettings
+                - internalId
+                - isArchived
+                - memberSettings
+                - messagingSettings
+                - specialization
+                - summary
+                - tenantId
+                - visibility
+                - webUrl
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/teamwork/deletedTeams/{deletedTeam-id}/channels/{channel-id}/sharedWithTeams/$count':
     get:
       tags:
@@ -35178,7 +36218,11 @@ paths:
     get:
       tags:
         - teamwork.workforceIntegration
-      summary: Get workforceIntegrations from teamwork
+      summary: Get workforceIntegration
+      description: Retrieve the properties and relationships of a workforceIntegration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/workforceintegration-get?view=graph-rest-1.0
       operationId: teamwork_GetWorkforceIntegration
       parameters:
         - name: workforceIntegration-id
@@ -35235,7 +36279,11 @@ paths:
     patch:
       tags:
         - teamwork.workforceIntegration
-      summary: Update the navigation property workforceIntegrations in teamwork
+      summary: Update workforceIntegration
+      description: Update the properties of a workforceIntegration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/workforceintegration-update?view=graph-rest-1.0
       operationId: teamwork_UpdateWorkforceIntegration
       parameters:
         - name: workforceIntegration-id
@@ -35266,7 +36314,11 @@ paths:
     delete:
       tags:
         - teamwork.workforceIntegration
-      summary: Delete navigation property workforceIntegrations for teamwork
+      summary: Delete workforceIntegration
+      description: Delete an instance of a workforceIntegration.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/workforceintegration-delete?view=graph-rest-1.0
       operationId: teamwork_DeleteWorkforceIntegration
       parameters:
         - name: workforceIntegration-id
@@ -35444,7 +36496,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get chats from users
+      summary: Get chat
+      description: 'Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0
       operationId: user_GetChat
       parameters:
         - name: user-id
@@ -35719,8 +36775,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get installedApps from users
-      description: A collection of all the apps in the chat. Nullable.
+      summary: Get installed app in chat
+      description: Get an app installed in a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-get-installedapps?view=graph-rest-1.0
       operationId: user.chat_GetInstalledApp
       parameters:
         - name: user-id
@@ -35835,7 +36894,11 @@ paths:
     delete:
       tags:
         - users.chat
-      summary: Delete navigation property installedApps for users
+      summary: Uninstall app in a chat
+      description: Uninstall an app installed within a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-delete-installedapps?view=graph-rest-1.0
       operationId: user.chat_DeleteInstalledApp
       parameters:
         - name: user-id
@@ -36192,8 +37255,8 @@ paths:
     get:
       tags:
         - users.chat
-      summary: List members of a chat
-      description: 'List all conversation members in a chat. This method supports federation. For one-on-one chats, at least one chat member must belong to the tenant the request initiates from. For group chats, the chat must be initiated by a user in the tenant the request initiates from.'
+      summary: Get conversationMember
+      description: Retrieve a conversationMember from a chat or channel.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/chat-list-members?view=graph-rest-1.0
@@ -36322,8 +37385,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get members from users
-      description: A collection of all the members in the chat. Nullable.
+      summary: Get conversationMember
+      description: Retrieve a conversationMember from a chat or channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
       operationId: user.chat_GetMember
       parameters:
         - name: user-id
@@ -36437,7 +37503,11 @@ paths:
     delete:
       tags:
         - users.chat
-      summary: Delete navigation property members for users
+      summary: Remove member from chat
+      description: Remove a conversationMember from a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-delete-members?view=graph-rest-1.0
       operationId: user.chat_DeleteMember
       parameters:
         - name: user-id
@@ -36657,11 +37727,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: user.chat_CreateMessage
       parameters:
         - name: user-id
@@ -36701,8 +37771,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get messages from users
-      description: A collection of all the messages in the chat. Nullable.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: user.chat_GetMessage
       parameters:
         - name: user-id
@@ -37021,8 +38094,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: user.chat.message_GetHostedContent
       parameters:
         - name: user-id
@@ -37500,11 +38576,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.chat.message_CreateReply
       parameters:
         - name: user-id
@@ -37552,8 +38628,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get replies from users
-      description: Replies for a specified message. Supports $expand for channel messages.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: user.chat.message_GetReply
       parameters:
         - name: user-id
@@ -37912,8 +38991,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: user.chat.message.reply_GetHostedContent
       parameters:
         - name: user-id
@@ -38589,7 +39671,11 @@ paths:
     delete:
       tags:
         - users.chat
-      summary: Delete navigation property pinnedMessages for users
+      summary: Unpin a message from a chat
+      description: Unpin a message from a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-delete-pinnedmessages?view=graph-rest-1.0
       operationId: user.chat_DeletePinnedMessage
       parameters:
         - name: user-id
@@ -38886,8 +39972,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get tabs from users
-      description: A collection of all the tabs in the chat. Nullable.
+      summary: Get tab in chat
+      description: 'Retrieve the properties and relationships of the specified tab in a chat. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-get-tabs?view=graph-rest-1.0
       operationId: user.chat_GetTab
       parameters:
         - name: user-id
@@ -38956,7 +40045,11 @@ paths:
     patch:
       tags:
         - users.chat
-      summary: Update the navigation property tabs in users
+      summary: Update tab in chat
+      description: "Update the properties of the specified tab in a chat. \nThis can be used to configure the content of the tab."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-patch-tabs?view=graph-rest-1.0
       operationId: user.chat_UpdateTab
       parameters:
         - name: user-id
@@ -39003,7 +40096,11 @@ paths:
     delete:
       tags:
         - users.chat
-      summary: Delete navigation property tabs for users
+      summary: Delete tab from chat
+      description: 'Remove (unpin) a tab from the specified chat. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chat-delete-tabs?view=graph-rest-1.0
       operationId: user.chat_DeleteTab
       parameters:
         - name: user-id
@@ -39889,8 +40986,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get channels from users
-      description: The collection of channels and messages associated with the team.
+      summary: Get channel
+      description: Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get?view=graph-rest-1.0
       operationId: user.joinedTeam_GetChannel
       parameters:
         - name: user-id
@@ -39972,7 +41072,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property channels in users
+      summary: Patch channel
+      description: Update the properties of the specified channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-patch?view=graph-rest-1.0
       operationId: user.joinedTeam_UpdateChannel
       parameters:
         - name: user-id
@@ -40019,7 +41123,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property channels for users
+      summary: Delete channel
+      description: Delete the channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0
       operationId: user.joinedTeam_DeleteChannel
       parameters:
         - name: user-id
@@ -40373,11 +41481,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_CreateMember
       parameters:
         - name: user-id
@@ -40425,8 +41533,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get members from users
-      description: A collection of membership records associated with the channel.
+      summary: Get member of channel
+      description: Get a conversationMember from a channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_GetMember
       parameters:
         - name: user-id
@@ -40501,7 +41612,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property members in users
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_UpdateMember
       parameters:
         - name: user-id
@@ -40556,7 +41671,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property members for users
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_DeleteMember
       parameters:
         - name: user-id
@@ -40800,11 +41919,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_CreateMessage
       parameters:
         - name: user-id
@@ -40852,8 +41971,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get messages from users
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_GetMessage
       parameters:
         - name: user-id
@@ -40951,7 +42073,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property messages in users
+      summary: Update chatMessage
+      description: "Update a chatMessage object. \nWith the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.\nOnly the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_UpdateMessage
       parameters:
         - name: user-id
@@ -41212,8 +42338,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_GetHostedContent
       parameters:
         - name: user-id
@@ -41747,11 +42876,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_CreateReply
       parameters:
         - name: user-id
@@ -41807,8 +42936,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get replies from users
-      description: Replies for a specified message. Supports $expand for channel messages.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_GetReply
       parameters:
         - name: user-id
@@ -42207,8 +43339,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message.reply_GetHostedContent
       parameters:
         - name: user-id
@@ -42857,8 +43992,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get sharedWithTeams from users
-      description: A collection of teams with which a channel is shared.
+      summary: Get sharedWithChannelTeamInfo
+      description: Get a team that has been shared with a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-get?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_GetSharedGraphWPreTeam
       parameters:
         - name: user-id
@@ -42992,7 +44130,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property sharedWithTeams for users
+      summary: Delete sharedWithChannelTeamInfo
+      description: Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_DeleteSharedGraphWPreTeam
       parameters:
         - name: user-id
@@ -43273,6 +44415,118 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/sharedWithTeams/{sharedWithChannelTeamInfo-id}/team':
+    get:
+      tags:
+        - users.team
+      summary: Get team from users
+      operationId: user.joinedTeam.channel.sharedGraphWPreTeam_GetTeam
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: The unique identifier of sharedWithChannelTeamInfo
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classification
+                - createdDateTime
+                - description
+                - displayName
+                - funSettings
+                - guestSettings
+                - internalId
+                - isArchived
+                - memberSettings
+                - messagingSettings
+                - specialization
+                - summary
+                - tenantId
+                - visibility
+                - webUrl
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/joinedTeams/{team-id}/channels/{channel-id}/sharedWithTeams/$count':
     get:
       tags:
@@ -44132,6 +45386,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.team
+      summary: Remove channel
+      description: Remove an incoming channel (a **channel** shared with a **team**) from a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-delete-incomingchannels?view=graph-rest-1.0
+      operationId: user.joinedTeam_DeleteIncomingChannel
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: channel-id
+          in: path
+          description: The unique identifier of channel
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: channel
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/joinedTeams/{team-id}/incomingChannels/$count':
     get:
       tags:
@@ -44291,8 +45591,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get installedApps from users
-      description: The apps installed in this team.
+      summary: Get installed app in team
+      description: Retrieve the app installed in the specified team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-1.0
       operationId: user.joinedTeam_GetInstalledApp
       parameters:
         - name: user-id
@@ -44407,7 +45710,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property installedApps for users
+      summary: Remove app from team
+      description: Uninstalls an app from the specified team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-delete-installedapps?view=graph-rest-1.0
       operationId: user.joinedTeam_DeleteInstalledApp
       parameters:
         - name: user-id
@@ -44757,8 +46064,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get members from users
-      description: Members and owners of the team.
+      summary: Get member of team
+      description: Get a conversationMember from a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-get-members?view=graph-rest-1.0
       operationId: user.joinedTeam_GetMember
       parameters:
         - name: user-id
@@ -44825,7 +46135,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property members in users
+      summary: Update member in team
+      description: Update the role of a conversationMember in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-update-members?view=graph-rest-1.0
       operationId: user.joinedTeam_UpdateMember
       parameters:
         - name: user-id
@@ -44872,7 +46186,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property members for users
+      summary: Remove member from team
+      description: Remove a conversationMember from a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/team-delete-members?view=graph-rest-1.0
       operationId: user.joinedTeam_DeleteMember
       parameters:
         - name: user-id
@@ -45910,11 +47228,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add member to channel
-      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Add conversationMember
+      description: Add a conversationMember to a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_CreateMember
       parameters:
         - name: user-id
@@ -45954,8 +47272,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get members from users
-      description: A collection of membership records associated with the channel.
+      summary: Get member of channel
+      description: Get a conversationMember from a channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_GetMember
       parameters:
         - name: user-id
@@ -46022,7 +47343,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property members in users
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_UpdateMember
       parameters:
         - name: user-id
@@ -46069,7 +47394,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property members for users
+      summary: Remove member from channel
+      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_DeleteMember
       parameters:
         - name: user-id
@@ -46289,11 +47618,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_CreateMessage
       parameters:
         - name: user-id
@@ -46333,8 +47662,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get messages from users
-      description: A collection of all the messages in the channel. A navigation property. Nullable.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_GetMessage
       parameters:
         - name: user-id
@@ -46424,7 +47756,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property messages in users
+      summary: Update chatMessage
+      description: "Update a chatMessage object. \nWith the exception of the **policyViolation** property, all properties of a **chatMessage** can be updated in delegated permissions scenarios.\nOnly the **policyViolation** property of a **chatMessage** can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-update?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_UpdateMessage
       parameters:
         - name: user-id
@@ -46653,8 +47989,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_GetHostedContent
       parameters:
         - name: user-id
@@ -47132,11 +48471,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_CreateReply
       parameters:
         - name: user-id
@@ -47184,8 +48523,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get replies from users
-      description: Replies for a specified message. Supports $expand for channel messages.
+      summary: Get chatMessage in a channel or chat
+      description: Retrieve a single message or a message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-get?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_GetReply
       parameters:
         - name: user-id
@@ -47544,8 +48886,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get hostedContents from users
-      description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+      summary: Get chatMessageHostedContent
+      description: Retrieve the properties and relationships of chatMessageHostedContent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessagehostedcontent-get?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message.reply_GetHostedContent
       parameters:
         - name: user-id
@@ -48114,8 +49459,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get sharedWithTeams from users
-      description: A collection of teams with which a channel is shared.
+      summary: Get sharedWithChannelTeamInfo
+      description: Get a team that has been shared with a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-get?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_GetSharedGraphWPreTeam
       parameters:
         - name: user-id
@@ -48233,7 +49581,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property sharedWithTeams for users
+      summary: Delete sharedWithChannelTeamInfo
+      description: Unshare a channel with a team by deleting the corresponding sharedWithChannelTeamInfo resource. This operation is allowed only for channels with a **membershipType** value of `shared`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharedwithchannelteaminfo-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_DeleteSharedGraphWPreTeam
       parameters:
         - name: user-id
@@ -48482,6 +49834,110 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  '/users/{user-id}/joinedTeams/{team-id}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo-id}/team':
+    get:
+      tags:
+        - users.team
+      summary: Get team from users
+      operationId: user.joinedTeam.primaryChannel.sharedGraphWPreTeam_GetTeam
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: team-id
+          in: path
+          description: The unique identifier of team
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: team
+        - name: sharedWithChannelTeamInfo-id
+          in: path
+          description: The unique identifier of sharedWithChannelTeamInfo
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedWithChannelTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classification
+                - createdDateTime
+                - description
+                - displayName
+                - funSettings
+                - guestSettings
+                - internalId
+                - isArchived
+                - memberSettings
+                - messagingSettings
+                - specialization
+                - summary
+                - tenantId
+                - visibility
+                - webUrl
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/joinedTeams/{team-id}/primaryChannel/sharedWithTeams/$count':
     get:
       tags:
@@ -49229,7 +50685,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get offerShiftRequests from users
+      summary: Get offerShiftRequest
+      description: Retrieve the properties and relationships of an offerShiftRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/offershiftrequest-get?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_GetOfferShiftRequest
       parameters:
         - name: user-id
@@ -49585,8 +51045,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get openShiftChangeRequests from users
-      description: The open shift requests in the schedule.
+      summary: Get openShiftChangeRequest
+      description: Retrieve the properties and relationships of an openShiftChangeRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshiftchangerequest-get?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_GetOpenShiftChangeRequest
       parameters:
         - name: user-id
@@ -49921,8 +51384,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get openShifts from users
-      description: The set of open shifts in a scheduling group in the schedule.
+      summary: Get openShift
+      description: Retrieve the properties and relationships of an openshift object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshift-get?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_GetOpenShift
       parameters:
         - name: user-id
@@ -49992,7 +51458,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property openShifts in users
+      summary: Update openShift
+      description: Update the properties of an openShift object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshift-update?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_UpdateOpenShift
       parameters:
         - name: user-id
@@ -50039,7 +51509,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property openShifts for users
+      summary: Delete openShift
+      description: Delete an openShift object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/openshift-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_DeleteOpenShift
       parameters:
         - name: user-id
@@ -50239,8 +51713,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get schedulingGroups from users
-      description: The logical grouping of users in the schedule (usually by role).
+      summary: Get schedulingGroup
+      description: Retrieve the properties and relationships of a schedulingGroup by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/schedulinggroup-get?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_GetSchedulingGroup
       parameters:
         - name: user-id
@@ -50298,7 +51775,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property schedulingGroups in users
+      summary: Replace schedulingGroup
+      description: 'Replace an existing schedulingGroup. If the specified schedulingGroup doesn''t exist, this method returns `404 Not found`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/schedulinggroup-put?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_UpdateSchedulingGroup
       parameters:
         - name: user-id
@@ -50345,7 +51826,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property schedulingGroups for users
+      summary: Delete schedulingGroup
+      description: "Mark a schedulingGroup as inactive by setting its **isActive** property.\nThis method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/schedulinggroup-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_DeleteSchedulingGroup
       parameters:
         - name: user-id
@@ -50548,8 +52033,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get shifts from users
-      description: The shifts in the schedule.
+      summary: Get shift
+      description: Retrieve the properties and relationships of a shift object by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/shift-get?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_GetShift
       parameters:
         - name: user-id
@@ -50608,7 +52096,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property shifts in users
+      summary: Replace shift
+      description: 'Replace an existing shift. If the specified shift doesn''t exist, this method returns `404 Not found`. The duration of a shift cannot be less than 1 minute or longer than 24 hours.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/shift-put?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_UpdateShift
       parameters:
         - name: user-id
@@ -50655,7 +52147,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property shifts for users
+      summary: Delete shift
+      description: Delete a shift from the schedule.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/shift-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_DeleteShift
       parameters:
         - name: user-id
@@ -50897,7 +52393,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get swapShiftsChangeRequests from users
+      summary: Get swapShiftsChangeRequest
+      description: Retrieve the properties and relationships of a swapShiftsChangeRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/swapshiftschangerequest-get?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_GetSwapShiftsChangeRequest
       parameters:
         - name: user-id
@@ -51224,8 +52724,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get timeOffReasons from users
-      description: The set of reasons for a time off in the schedule.
+      summary: Get timeOffReason
+      description: Retrieve the properties and relationships of a timeOffReason object by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_GetTimeOffReason
       parameters:
         - name: user-id
@@ -51283,7 +52786,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property timeOffReasons in users
+      summary: Replace timeOffReason
+      description: 'Replace an existing timeOffReason. If the specified timeOffReason doesn''t exist, this method returns `404 Not found`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffreason-put?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_UpdateTimeOffReason
       parameters:
         - name: user-id
@@ -51330,7 +52837,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property timeOffReasons for users
+      summary: Delete timeOffReason
+      description: Mark a timeOffReason as inactive by setting the **isActive** property. Every team must include at least one timeoff reason. This method does not remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffreason-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_DeleteTimeOffReason
       parameters:
         - name: user-id
@@ -51550,7 +53061,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get timeOffRequests from users
+      summary: Get timeOffRequest
+      description: Retrieve the properties and relationships of a timeoffrequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_GetTimeOffRequest
       parameters:
         - name: user-id
@@ -51663,7 +53178,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property timeOffRequests for users
+      summary: Delete timeOffRequest
+      description: Delete a timeOffRequest object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_DeleteTimeOffRequest
       parameters:
         - name: user-id
@@ -51863,8 +53382,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get timesOff from users
-      description: The instances of times off in the schedule.
+      summary: Get timeOff
+      description: Retrieve the properties and relationships of a timeOff object by ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_GetTimesOff
       parameters:
         - name: user-id
@@ -51922,7 +53444,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property timesOff in users
+      summary: Replace timeOff
+      description: 'Replace an existing timeOff object. If the specified timeOff object doesn''t exist, this method returns `404 Not found`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoff-put?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_UpdateTimesOff
       parameters:
         - name: user-id
@@ -51969,7 +53495,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property timesOff for users
+      summary: Delete timeOff
+      description: Delete a timeOff instance from a schedule.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/timeoff-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_DeleteTimesOff
       parameters:
         - name: user-id
@@ -52180,8 +53710,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get tags from users
-      description: The tags associated with the team.
+      summary: Get teamworkTag
+      description: Read the properties and relationships of a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-get?view=graph-rest-1.0
       operationId: user.joinedTeam_GetTag
       parameters:
         - name: user-id
@@ -52252,7 +53785,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property tags in users
+      summary: Update teamworkTag
+      description: Update the properties of a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-update?view=graph-rest-1.0
       operationId: user.joinedTeam_UpdateTag
       parameters:
         - name: user-id
@@ -52299,7 +53836,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property tags for users
+      summary: Delete teamworkTag
+      description: Delete a tag object permanently.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktag-delete?view=graph-rest-1.0
       operationId: user.joinedTeam_DeleteTag
       parameters:
         - name: user-id
@@ -52488,8 +54029,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get members from users
-      description: Users assigned to the tag.
+      summary: Get teamworkTagMember
+      description: Get the properties and relationships of a member of a standard tag in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-get?view=graph-rest-1.0
       operationId: user.joinedTeam.tag_GetMember
       parameters:
         - name: user-id
@@ -52619,7 +54163,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property members for users
+      summary: Delete teamworkTagMember
+      description: Delete a member from a standard tag in a team.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamworktagmember-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.tag_DeleteMember
       parameters:
         - name: user-id
@@ -53168,6 +54716,102 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/teamwork/associatedTeams/{associatedTeamInfo-id}/team':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Get team from users
+      operationId: user.teamwork.associatedTeam_GetTeam
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: associatedTeamInfo-id
+          in: path
+          description: The unique identifier of associatedTeamInfo
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: associatedTeamInfo
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classification
+                - createdDateTime
+                - description
+                - displayName
+                - funSettings
+                - guestSettings
+                - internalId
+                - isArchived
+                - memberSettings
+                - messagingSettings
+                - specialization
+                - summary
+                - tenantId
+                - visibility
+                - webUrl
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - schedule
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.team'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/teamwork/associatedTeams/$count':
     get:
       tags:
@@ -53305,8 +54949,11 @@ paths:
     get:
       tags:
         - users.userTeamwork
-      summary: Get installedApps from users
-      description: The apps installed in the personal scope of this user.
+      summary: Get installed app for user
+      description: Retrieve the app installed in the personal scope of the specified user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/userteamwork-get-installedapps?view=graph-rest-1.0
       operationId: user.teamwork_GetInstalledApp
       parameters:
         - name: user-id
@@ -53407,7 +55054,11 @@ paths:
     delete:
       tags:
         - users.userTeamwork
-      summary: Delete navigation property installedApps for users
+      summary: Uninstall app for user
+      description: Uninstall an app from the personal scope of the specified user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/userteamwork-delete-installedapps?view=graph-rest-1.0
       operationId: user.teamwork_DeleteInstalledApp
       parameters:
         - name: user-id
@@ -53516,6 +55167,137 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.chat'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/teamwork/installedApps/{userScopeTeamsAppInstallation-id}/teamsApp':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Get teamsApp from users
+      description: The app that is installed.
+      operationId: user.teamwork.installedApp_GetTeamsApp
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: userScopeTeamsAppInstallation-id
+          in: path
+          description: The unique identifier of userScopeTeamsAppInstallation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userScopeTeamsAppInstallation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - distributionMethod
+                - externalId
+                - appDefinitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appDefinitions
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsApp'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/teamwork/installedApps/{userScopeTeamsAppInstallation-id}/teamsAppDefinition':
+    get:
+      tags:
+        - users.userTeamwork
+      summary: Get teamsAppDefinition from users
+      description: The details of this version of the app.
+      operationId: user.teamwork.installedApp_GetTeamsAppDefinition
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: userScopeTeamsAppInstallation-id
+          in: path
+          description: The unique identifier of userScopeTeamsAppInstallation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userScopeTeamsAppInstallation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - description
+                - displayName
+                - lastModifiedDateTime
+                - publishingState
+                - shortDescription
+                - teamsAppId
+                - version
+                - bot
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - bot
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -56268,7 +58050,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -59845,7 +61627,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -59855,7 +61637,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -65500,7 +67282,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -65551,6 +67333,10 @@ components:
               description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            deviceCategory:
+              type: string
+              description: User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
+              nullable: true
             deviceId:
               type: string
               description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
@@ -65558,6 +67344,10 @@ components:
             deviceMetadata:
               type: string
               description: For internal use only. Set to null.
+              nullable: true
+            deviceOwnership:
+              type: string
+              description: 'Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.'
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -65569,6 +67359,10 @@ components:
             displayName:
               type: string
               description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              nullable: true
+            enrollmentProfileName:
+              type: string
+              description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
             isCompliant:
               type: boolean
@@ -65609,6 +67403,12 @@ components:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
               nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
             systemLabels:
               type: array
               items:
@@ -65628,7 +67428,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array

@@ -498,7 +498,11 @@ paths:
     delete:
       tags:
         - applications.appManagementPolicy
-      summary: Delete ref of navigation property appManagementPolicies for applications
+      summary: Remove appliesTo
+      description: 'Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
       operationId: application_DeleteAppManagementPolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -614,7 +618,11 @@ paths:
     post:
       tags:
         - applications.appManagementPolicy
-      summary: Create new navigation property ref to appManagementPolicies for applications
+      summary: Assign appliesTo
+      description: Assign an appManagementPolicy policy object to an application or service principal object. The application or service principal adopts this policy over the tenant-wide tenantAppManagementPolicy setting. Only one policy object can be assigned to an application or service principal.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-post-appliesto?view=graph-rest-1.0
       operationId: application_CreateAppManagementPolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -720,7 +728,11 @@ paths:
     put:
       tags:
         - applications.connectorGroup
-      summary: Update the ref of navigation property connectorGroup in applications
+      summary: Assign a connectorGroup to an application
+      description: Assign a connectorGroup to an application.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/connectorgroup-post-applications?view=graph-rest-1.0
       operationId: application_SetConnectorGroupGraphBPreRef
       parameters:
         - name: application-id
@@ -946,8 +958,11 @@ paths:
     get:
       tags:
         - applications.extensionProperty
-      summary: Get extensionProperties from applications
-      description: 'Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).'
+      summary: Get extensionProperty (directory extension)
+      description: Read a directory extension definition represented by an extensionProperty object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0
       operationId: application_GetExtensionProperty
       parameters:
         - name: application-id
@@ -1049,7 +1064,11 @@ paths:
     delete:
       tags:
         - applications.extensionProperty
-      summary: Delete navigation property extensionProperties for applications
+      summary: Delete extensionProperty (directory extension)
+      description: Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren't synced from on-premises active directory (AD).
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0
       operationId: application_DeleteExtensionProperty
       parameters:
         - name: application-id
@@ -1226,8 +1245,11 @@ paths:
     get:
       tags:
         - applications.federatedIdentityCredential
-      summary: Get federatedIdentityCredentials from applications
-      description: 'Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).'
+      summary: Get federatedIdentityCredential
+      description: Read the properties and relationships of a federatedIdentityCredential object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0
       operationId: application_GetFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -1288,7 +1310,11 @@ paths:
     patch:
       tags:
         - applications.federatedIdentityCredential
-      summary: Update the navigation property federatedIdentityCredentials in applications
+      summary: Update federatedIdentityCredential
+      description: Update the properties of a federatedIdentityCredential object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/federatedidentitycredential-update?view=graph-rest-1.0
       operationId: application_UpdateFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -1327,7 +1353,11 @@ paths:
     delete:
       tags:
         - applications.federatedIdentityCredential
-      summary: Delete navigation property federatedIdentityCredentials for applications
+      summary: Delete federatedIdentityCredential
+      description: Deletes a federatedIdentityCredential object from an application.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0
       operationId: application_DeleteFederatedIdentityCredential
       parameters:
         - name: application-id
@@ -2165,7 +2195,11 @@ paths:
     delete:
       tags:
         - applications.directoryObject
-      summary: Delete ref of navigation property owners for applications
+      summary: Remove owner
+      description: 'Remove an owner from an application. As a recommended best practice, apps should have at least two owners.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-delete-owners?view=graph-rest-1.0
       operationId: application_DeleteOwnerGraphBPreRef
       parameters:
         - name: application-id
@@ -2503,7 +2537,11 @@ paths:
     post:
       tags:
         - applications.directoryObject
-      summary: Create new navigation property ref to owners for applications
+      summary: Add owner
+      description: Use this API to add an owner to an application by posting to the owners collection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0
       operationId: application_CreateOwnerGraphBPreRef
       parameters:
         - name: application-id
@@ -3099,8 +3137,11 @@ paths:
     get:
       tags:
         - applications.synchronization
-      summary: Get jobs from applications
-      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
+      summary: Get synchronizationJob
+      description: Retrieve the existing synchronization job and its properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0
       operationId: application.synchronization_GetJob
       parameters:
         - name: application-id
@@ -3201,7 +3242,11 @@ paths:
     delete:
       tags:
         - applications.synchronization
-      summary: Delete navigation property jobs for applications
+      summary: Delete synchronizationJob
+      description: 'Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0
       operationId: application.synchronization_DeleteJob
       parameters:
         - name: application-id
@@ -4594,7 +4639,11 @@ paths:
     patch:
       tags:
         - applications.synchronization
-      summary: Update the navigation property templates in applications
+      summary: Update synchronizationTemplate
+      description: Update (override) the synchronization template associated with a given application.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
       operationId: application.synchronization_UpdateTemplate
       parameters:
         - name: application-id
@@ -5500,7 +5549,11 @@ paths:
     delete:
       tags:
         - applications.tokenIssuancePolicy
-      summary: Delete ref of navigation property tokenIssuancePolicies for applications
+      summary: Remove tokenIssuancePolicy
+      description: Remove a tokenIssuancePolicy from an application.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0
       operationId: application_DeleteTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5619,7 +5672,11 @@ paths:
     post:
       tags:
         - applications.tokenIssuancePolicy
-      summary: Create new navigation property ref to tokenIssuancePolicies for applications
+      summary: Assign tokenIssuancePolicy
+      description: Assign a tokenIssuancePolicy to an application.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-post-tokenissuancepolicies?view=graph-rest-1.0
       operationId: application_CreateTokenIssuancePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5729,7 +5786,11 @@ paths:
     delete:
       tags:
         - applications.tokenLifetimePolicy
-      summary: Delete ref of navigation property tokenLifetimePolicies for applications
+      summary: Remove tokenLifetimePolicy
+      description: Remove a tokenLifetimePolicy from an application or servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: application_DeleteTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -5848,7 +5909,11 @@ paths:
     post:
       tags:
         - applications.tokenLifetimePolicy
-      summary: Create new navigation property ref to tokenLifetimePolicies for applications
+      summary: Assign tokenLifetimePolicy
+      description: Assign a tokenLifetimePolicy to an application or servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/application-post-tokenlifetimepolicies?view=graph-rest-1.0
       operationId: application_CreateTokenLifetimePolicyGraphBPreRef
       parameters:
         - name: application-id
@@ -6669,7 +6734,11 @@ paths:
     delete:
       tags:
         - groups.appRoleAssignment
-      summary: Delete navigation property appRoleAssignments for groups
+      summary: Delete appRoleAssignment
+      description: Deletes an appRoleAssignment that a group has been granted.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/group-delete-approleassignments?view=graph-rest-1.0
       operationId: group_DeleteAppRoleAssignment
       parameters:
         - name: group-id
@@ -7072,8 +7141,11 @@ paths:
     get:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
-      summary: Get agentGroups from onPremisesPublishingProfiles
-      description: List of existing onPremisesAgentGroup objects. Read-only. Nullable.
+      summary: Get onPremisesAgentGroup
+      description: Retrieve the properties and relationships of an onPremisesAgentGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onpremisesagentgroup-get?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_GetAgentGroup
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7136,7 +7208,11 @@ paths:
     patch:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
-      summary: Update the navigation property agentGroups in onPremisesPublishingProfiles
+      summary: Update onPremisesAgentGroup
+      description: Update the properties of an onPremisesAgentGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onpremisesagentgroup-update?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_UpdateAgentGroup
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -7175,7 +7251,11 @@ paths:
     delete:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgentGroup
-      summary: Delete navigation property agentGroups for onPremisesPublishingProfiles
+      summary: Delete onPremisesAgentGroup
+      description: Delete an onPremisesAgentGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onpremisesagentgroup-delete?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_DeleteAgentGroup
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -8618,8 +8698,11 @@ paths:
     get:
       tags:
         - onPremisesPublishingProfiles.onPremisesAgent
-      summary: Get agents from onPremisesPublishingProfiles
-      description: List of existing onPremisesAgent objects. Read-only. Nullable.
+      summary: Get onPremisesAgent
+      description: Retrieve the properties and relationships of an onPremisesAgent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/onpremisesagent-get?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_GetAgent
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9153,8 +9236,11 @@ paths:
     get:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
-      summary: Get connectorGroups from onPremisesPublishingProfiles
-      description: List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
+      summary: Get connectorGroup
+      description: Retrieve the properties of a connectorGroup.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/connectorgroup-get?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_GetConnectorGroup
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9218,7 +9304,11 @@ paths:
     patch:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
-      summary: Update the navigation property connectorGroups in onPremisesPublishingProfiles
+      summary: Update connectorGroups
+      description: Update the properties of a connectorGroup object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/connectorgroup-update?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_UpdateConnectorGroup
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -9257,7 +9347,11 @@ paths:
     delete:
       tags:
         - onPremisesPublishingProfiles.connectorGroup
-      summary: Delete navigation property connectorGroups for onPremisesPublishingProfiles
+      summary: Delete connectorGroup
+      description: Delete a connectorGroup. All connectors and applications must be removed from the connector group before a connector group can be deleted.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/connectorgroup-delete?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_DeleteConnectorGroup
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10122,8 +10216,11 @@ paths:
     get:
       tags:
         - onPremisesPublishingProfiles.connector
-      summary: Get connectors from onPremisesPublishingProfiles
-      description: List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
+      summary: Get connector
+      description: Retrieve the properties and relationships of a connector object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/connector-get?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_GetConnector
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10656,8 +10753,11 @@ paths:
     get:
       tags:
         - onPremisesPublishingProfiles.publishedResource
-      summary: Get publishedResources from onPremisesPublishingProfiles
-      description: List of existing publishedResource objects. Read-only. Nullable.
+      summary: Get publishedResource
+      description: Retrieve the properties and relationships of publishedResource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/publishedresource-get?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_GetPublishedResource
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -10718,7 +10818,11 @@ paths:
     patch:
       tags:
         - onPremisesPublishingProfiles.publishedResource
-      summary: Update the navigation property publishedResources in onPremisesPublishingProfiles
+      summary: Update publishedResource
+      description: Update the properties of publishedresource  publishedResource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/publishedresource-update?view=graph-rest-1.0
       operationId: onPremisesPublishingProfile_UpdatePublishedResource
       parameters:
         - name: onPremisesPublishingProfile-id
@@ -11711,6 +11815,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - servicePrincipals.appManagementPolicy
+      summary: Remove appliesTo
+      description: 'Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-delete-appliesto?view=graph-rest-1.0
+      operationId: servicePrincipal_DeleteAppManagementPolicy
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: The unique identifier of servicePrincipal
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - name: appManagementPolicy-id
+          in: path
+          description: The unique identifier of appManagementPolicy
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appManagementPolicy
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/servicePrincipals/{servicePrincipal-id}/appManagementPolicies/$count':
     get:
       tags:
@@ -11966,7 +12108,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Delete navigation property appRoleAssignedTo for servicePrincipals
+      summary: Delete appRoleAssignedTo
+      description: 'Deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignedto?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -12272,7 +12418,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.appRoleAssignment
-      summary: Delete navigation property appRoleAssignments for servicePrincipals
+      summary: Delete appRoleAssignment
+      description: Deletes an appRoleAssignment that a service principal has been granted. App roles which are assigned to service principals are also known as application permissions. Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteAppRoleAssignment
       parameters:
         - name: servicePrincipal-id
@@ -12426,7 +12576,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: Delete ref of navigation property claimsMappingPolicies for servicePrincipals
+      summary: Remove claimsMappingPolicy
+      description: Remove a claimsMappingPolicy from a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-claimsmappingpolicies?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteClaimsMappingPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -12545,7 +12699,11 @@ paths:
     post:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
+      summary: Assign claimsMappingPolicy
+      description: Assign a claimsMappingPolicy to a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-claimsmappingpolicies?view=graph-rest-1.0
       operationId: servicePrincipal_CreateClaimsMappingPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -13082,7 +13240,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.delegatedPermissionClassification
-      summary: Delete navigation property delegatedPermissionClassifications for servicePrincipals
+      summary: Delete delegatedPermissionClassification
+      description: Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteDelegatedPermissionClassification
       parameters:
         - name: servicePrincipal-id
@@ -13770,7 +13932,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
+      summary: Remove homeRealmDiscoveryPolicy
+      description: Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -13889,7 +14055,11 @@ paths:
     post:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
+      summary: Assign homeRealmDiscoveryPolicy
+      description: Assign a homeRealmDiscoveryPolicy to a servicePrincipal.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-homerealmdiscoverypolicies?view=graph-rest-1.0
       operationId: servicePrincipal_CreateHomeRealmDiscoveryPolicyGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -16170,7 +16340,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.directoryObject
-      summary: Delete ref of navigation property owners for servicePrincipals
+      summary: Remove owner
+      description: 'Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0
       operationId: servicePrincipal_DeleteOwnerGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -16508,7 +16682,11 @@ paths:
     post:
       tags:
         - servicePrincipals.directoryObject
-      summary: Create new navigation property ref to owners for servicePrincipals
+      summary: 'servicePrincipal: Add owner'
+      description: 'Add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceprincipal-post-owners?view=graph-rest-1.0
       operationId: servicePrincipal_CreateOwnerGraphBPreRef
       parameters:
         - name: servicePrincipal-id
@@ -17104,8 +17282,11 @@ paths:
     get:
       tags:
         - servicePrincipals.synchronization
-      summary: Get jobs from servicePrincipals
-      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
+      summary: Get synchronizationJob
+      description: Retrieve the existing synchronization job and its properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_GetJob
       parameters:
         - name: servicePrincipal-id
@@ -17206,7 +17387,11 @@ paths:
     delete:
       tags:
         - servicePrincipals.synchronization
-      summary: Delete navigation property jobs for servicePrincipals
+      summary: Delete synchronizationJob
+      description: 'Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_DeleteJob
       parameters:
         - name: servicePrincipal-id
@@ -18599,7 +18784,11 @@ paths:
     patch:
       tags:
         - servicePrincipals.synchronization
-      summary: Update the navigation property templates in servicePrincipals
+      summary: Update synchronizationTemplate
+      description: Update (override) the synchronization template associated with a given application.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-update?view=graph-rest-1.0
       operationId: servicePrincipal.synchronization_UpdateTemplate
       parameters:
         - name: servicePrincipal-id
@@ -20921,7 +21110,11 @@ paths:
     delete:
       tags:
         - users.appRoleAssignment
-      summary: Delete navigation property appRoleAssignments for users
+      summary: Delete appRoleAssignment
+      description: Delete an appRoleAssignment that has been granted to a user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-delete-approleassignments?view=graph-rest-1.0
       operationId: user_DeleteAppRoleAssignment
       parameters:
         - name: user-id
@@ -21113,7 +21306,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -21507,12 +21700,12 @@ components:
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.'
+              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.'
               format: date-time
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -21545,7 +21738,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -22314,6 +22507,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.synchronization:
@@ -23985,7 +24180,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -23995,7 +24190,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -25733,7 +25928,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -25770,7 +25965,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -25793,7 +25988,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -25835,7 +26030,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -25867,7 +26062,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -25885,7 +26080,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -25893,7 +26088,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -25933,7 +26128,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -25956,7 +26151,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -25974,7 +26169,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -26027,7 +26222,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -26060,14 +26255,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -26317,6 +26512,10 @@ components:
             applicationId:
               type: string
               description: Intune application identifier.
+              nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
               nullable: true
             history:
               type: array
@@ -26867,7 +27066,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -26917,9 +27116,15 @@ components:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowRecording:
+              type: boolean
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
               nullable: true
             alternativeRecording:
               type: string
@@ -27057,6 +27262,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -27364,6 +27571,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -34301,6 +34521,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -35102,33 +35332,42 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The assigned categories for the team template.
             description:
               type: string
+              description: A brief description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             displayName:
               type: string
+              description: The user defined name of the team template.
               nullable: true
             iconUrl:
               type: string
+              description: The icon url for the team template.
               nullable: true
             languageTag:
               type: string
+              description: Language the template is available in.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date time of when the team template was last modified.
               format: date-time
               nullable: true
             parentTemplateId:
               type: string
+              description: The templateId for the team template
               nullable: true
             publisherName:
               type: string
+              description: The organization which published the team template.
               nullable: true
             shortDescription:
               type: string
+              description: A short-description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             teamDefinition:
               $ref: '#/components/schemas/microsoft.graph.team'
@@ -35289,6 +35528,43 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
     microsoft.graph.synchronizationScheduleState:
@@ -37345,7 +37621,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -40216,7 +40492,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -41087,6 +41363,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.synchronizationError:
       title: synchronizationError
       type: object

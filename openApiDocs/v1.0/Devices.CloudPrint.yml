@@ -187,8 +187,11 @@ paths:
     get:
       tags:
         - print.printConnector
-      summary: Get connectors from print
-      description: The list of available print connectors.
+      summary: Get printConnector
+      description: Retrieve the properties and relationships of a **printConnector** object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printconnector-get?view=graph-rest-1.0
       operationId: print_GetConnector
       parameters:
         - name: printConnector-id
@@ -242,7 +245,11 @@ paths:
     patch:
       tags:
         - print.printConnector
-      summary: Update the navigation property connectors in print
+      summary: Update printConnector
+      description: Update the properties of a **printConnector** object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printconnector-update?view=graph-rest-1.0
       operationId: print_UpdateConnector
       parameters:
         - name: printConnector-id
@@ -273,7 +280,11 @@ paths:
     delete:
       tags:
         - print.printConnector
-      summary: Delete navigation property connectors for print
+      summary: Delete printConnector
+      description: Delete (unregister) a **printConnector**.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0
       operationId: print_DeleteConnector
       parameters:
         - name: printConnector-id
@@ -314,8 +325,8 @@ paths:
     get:
       tags:
         - print.printOperation
-      summary: Get operations from print
-      description: The list of print long running operations.
+      summary: Get printOperation
+      description: Retrieve the properties and relationships of a printOperation object.
       operationId: print_ListOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -401,8 +412,11 @@ paths:
     get:
       tags:
         - print.printOperation
-      summary: Get operations from print
-      description: The list of print long running operations.
+      summary: Get printOperation
+      description: Retrieve the properties and relationships of a printOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printoperation-get?view=graph-rest-1.0
       operationId: print_GetOperation
       parameters:
         - name: printOperation-id
@@ -652,8 +666,11 @@ paths:
     get:
       tags:
         - print.printer
-      summary: Get printers from print
-      description: The list of printers registered in the tenant.
+      summary: Get printer
+      description: Retrieve the properties and relationships of a printer object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printer-get?view=graph-rest-1.0
       operationId: print_GetPrinter
       parameters:
         - name: printer-id
@@ -721,7 +738,11 @@ paths:
     patch:
       tags:
         - print.printer
-      summary: Update the navigation property printers in print
+      summary: Update printer
+      description: Update the properties of a printer object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printer-update?view=graph-rest-1.0
       operationId: print_UpdatePrinter
       parameters:
         - name: printer-id
@@ -752,7 +773,11 @@ paths:
     delete:
       tags:
         - print.printer
-      summary: Delete navigation property printers for print
+      summary: Delete printer
+      description: Delete (unregister) a printer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printer-delete?view=graph-rest-1.0
       operationId: print_DeletePrinter
       parameters:
         - name: printer-id
@@ -933,6 +958,1366 @@ paths:
         - print.printer
       summary: Get the number of the resource
       operationId: print.printer.connector_GetCount
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/print/printers/{printer-id}/jobs':
+    get:
+      tags:
+        - print.printer
+      summary: Get jobs from print
+      description: The list of jobs that are queued for printing by the printer/printerShare.
+      operationId: print.printer_ListJob
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - configuration
+                - configuration desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - isFetchable
+                - isFetchable desc
+                - redirectedFrom
+                - redirectedFrom desc
+                - redirectedTo
+                - redirectedTo desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - createdBy
+                - createdDateTime
+                - isFetchable
+                - redirectedFrom
+                - redirectedTo
+                - status
+                - documents
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - documents
+                - tasks
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.printJobCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - print.printer
+      summary: Create new navigation property to jobs for print
+      operationId: print.printer_CreateJob
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printJob'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/jobs/{printJob-id}':
+    get:
+      tags:
+        - print.printer
+      summary: Get jobs from print
+      description: The list of jobs that are queued for printing by the printer/printerShare.
+      operationId: print.printer_GetJob
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - createdBy
+                - createdDateTime
+                - isFetchable
+                - redirectedFrom
+                - redirectedTo
+                - status
+                - documents
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - documents
+                - tasks
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - print.printer
+      summary: Update the navigation property jobs in print
+      operationId: print.printer_UpdateJob
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printJob'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - print.printer
+      summary: Delete navigation property jobs for print
+      operationId: print.printer_DeleteJob
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/jobs/{printJob-id}/documents':
+    get:
+      tags:
+        - print.printer
+      summary: Get documents from print
+      operationId: print.printer.job_ListDocument
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - contentType
+                - contentType desc
+                - displayName
+                - displayName desc
+                - size
+                - size desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentType
+                - displayName
+                - size
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.printDocumentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - print.printer
+      summary: Create new navigation property to documents for print
+      operationId: print.printer.job_CreateDocument
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printDocument'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printDocument'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/jobs/{printJob-id}/documents/{printDocument-id}':
+    get:
+      tags:
+        - print.printer
+      summary: Get documents from print
+      operationId: print.printer.job_GetDocument
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentType
+                - displayName
+                - size
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printDocument'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - print.printer
+      summary: Update the navigation property documents in print
+      operationId: print.printer.job_UpdateDocument
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printDocument'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printDocument'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - print.printer
+      summary: Delete navigation property documents for print
+      operationId: print.printer.job_DeleteDocument
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/jobs/{printJob-id}/documents/{printDocument-id}/$value':
+    get:
+      tags:
+        - print.printer
+      summary: Get media content for the navigation property documents from print
+      operationId: print.printer.job_GetDocumentsContent
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - print.printer
+      summary: Update media content for the navigation property documents in print
+      operationId: print.printer.job_SetDocumentsContent
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/jobs/{printJob-id}/documents/{printDocument-id}/microsoft.graph.createUploadSession':
+    post:
+      tags:
+        - print.Actions
+      summary: Invoke action createUploadSession
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential `PUT` queries. Request headers for each `PUT` operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
+      operationId: print.printer.job.document_createUploadSession
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                properties:
+                  $ref: '#/components/schemas/microsoft.graph.printDocumentUploadProperties'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.uploadSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/print/printers/{printer-id}/jobs/{printJob-id}/documents/$count':
+    get:
+      tags:
+        - print.printer
+      summary: Get the number of the resource
+      operationId: print.printer.job.document_GetCount
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/print/printers/{printer-id}/jobs/{printJob-id}/microsoft.graph.abort':
+    post:
+      tags:
+        - print.Actions
+      summary: Invoke action abort
+      description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0
+      operationId: print.printer.job_abort
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/print/printers/{printer-id}/jobs/{printJob-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - print.Actions
+      summary: Invoke action cancel
+      description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
+      operationId: print.printer.job_cancel
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/print/printers/{printer-id}/jobs/{printJob-id}/microsoft.graph.redirect':
+    post:
+      tags:
+        - print.Actions
+      summary: Invoke action redirect
+      description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
+      operationId: print.printer.job_redirect
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                destinationPrinterId:
+                  type: string
+                configuration:
+                  $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/print/printers/{printer-id}/jobs/{printJob-id}/microsoft.graph.start':
+    post:
+      tags:
+        - print.Actions
+      summary: Invoke action start
+      description: 'Submits the print job to the associated printer or printerShare. It will be printed after any existing pending **jobs** are completed, aborted, or canceled.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0
+      operationId: print.printer.job_start
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printJobStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/print/printers/{printer-id}/jobs/{printJob-id}/tasks':
+    get:
+      tags:
+        - print.printer
+      summary: Get tasks from print
+      description: A list of printTasks that were triggered by this print job.
+      operationId: print.printer.job_ListTask
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - parentUrl
+                - parentUrl desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - parentUrl
+                - status
+                - definition
+                - trigger
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - definition
+                - trigger
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.printTaskCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - print.printer
+      summary: Create new navigation property to tasks for print
+      operationId: print.printer.job_CreateTask
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printTask'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/jobs/{printJob-id}/tasks/{printTask-id}':
+    get:
+      tags:
+        - print.printer
+      summary: Get tasks from print
+      description: A list of printTasks that were triggered by this print job.
+      operationId: print.printer.job_GetTask
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printTask-id
+          in: path
+          description: The unique identifier of printTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - parentUrl
+                - status
+                - definition
+                - trigger
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - definition
+                - trigger
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - print.printer
+      summary: Update the navigation property tasks in print
+      operationId: print.printer.job_UpdateTask
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printTask-id
+          in: path
+          description: The unique identifier of printTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printTask'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - print.printer
+      summary: Delete navigation property tasks for print
+      operationId: print.printer.job_DeleteTask
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printTask-id
+          in: path
+          description: The unique identifier of printTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/jobs/{printJob-id}/tasks/{printTask-id}/definition':
+    get:
+      tags:
+        - print.printer
+      summary: Get definition from print
+      description: The printTaskDefinition that was used to create this task. Read-only.
+      operationId: print.printer.job.task_GetDefinition
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printTask-id
+          in: path
+          description: The unique identifier of printTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - displayName
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tasks
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/jobs/{printJob-id}/tasks/{printTask-id}/trigger':
+    get:
+      tags:
+        - print.printer
+      summary: Get trigger from print
+      description: The printTaskTrigger that triggered this task's execution. Read-only.
+      operationId: print.printer.job.task_GetTrigger
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printTask-id
+          in: path
+          description: The unique identifier of printTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - event
+                - definition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - definition
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/printers/{printer-id}/jobs/{printJob-id}/tasks/$count':
+    get:
+      tags:
+        - print.printer
+      summary: Get the number of the resource
+      operationId: print.printer.job.task_GetCount
+      parameters:
+        - name: printer-id
+          in: path
+          description: The unique identifier of printer
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printer
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/print/printers/{printer-id}/jobs/$count':
+    get:
+      tags:
+        - print.printer
+      summary: Get the number of the resource
+      operationId: print.printer.job_GetCount
       parameters:
         - name: printer-id
           in: path
@@ -1294,8 +2679,11 @@ paths:
     get:
       tags:
         - print.printer
-      summary: Get taskTriggers from print
-      description: A list of task triggers that are associated with the printer.
+      summary: Get printTaskTrigger
+      description: 'Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printtasktrigger-get?view=graph-rest-1.0
       operationId: print.printer_GetTaskTrigger
       parameters:
         - name: printer-id
@@ -1393,7 +2781,11 @@ paths:
     delete:
       tags:
         - print.printer
-      summary: Delete navigation property taskTriggers for print
+      summary: Delete printTaskTrigger
+      description: Delete the task trigger of a printer to prevent related print events from triggering tasks on the specified printer.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printer-delete-tasktrigger?view=graph-rest-1.0
       operationId: print.printer_DeleteTaskTrigger
       parameters:
         - name: printer-id
@@ -1656,8 +3048,11 @@ paths:
     get:
       tags:
         - print.printService
-      summary: Get services from print
-      description: The list of available Universal Print service endpoints.
+      summary: Get printService
+      description: Retrieve the properties and relationships of a print service.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printservice-get?view=graph-rest-1.0
       operationId: print_GetService
       parameters:
         - name: printService-id
@@ -1872,8 +3267,11 @@ paths:
     get:
       tags:
         - print.printService
-      summary: Get endpoints from print
-      description: Endpoints that can be used to access the service. Read-only. Nullable.
+      summary: Get printServiceEndpoint
+      description: Retrieve the properties and relationships of a print service endpoint.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printserviceendpoint-get?view=graph-rest-1.0
       operationId: print.service_GetEndpoint
       parameters:
         - name: printService-id
@@ -2167,8 +3565,11 @@ paths:
     get:
       tags:
         - print.printerShare
-      summary: Get shares from print
-      description: The list of printer shares registered in the tenant.
+      summary: Get printerShare
+      description: Retrieve the properties and relationships of a printer share.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printershare-get?view=graph-rest-1.0
       operationId: print_GetShare
       parameters:
         - name: printerShare-id
@@ -2234,7 +3635,11 @@ paths:
     patch:
       tags:
         - print.printerShare
-      summary: Update the navigation property shares in print
+      summary: Update printerShare
+      description: 'Update the properties of a printer share. This method can be used to swap printers. For example, if a physical printer device breaks, an administrator can register a new printer device and update this printerShare to point to the new printer without requiring users to take any action.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printershare-update?view=graph-rest-1.0
       operationId: print_UpdateShare
       parameters:
         - name: printerShare-id
@@ -2265,7 +3670,11 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete navigation property shares for print
+      summary: Delete printerShare
+      description: 'Delete a printer share (unshare the associated printer). This action cannot be undone. If the printer is shared again in the future, any Windows users who had previously installed the printer will need to discover and reinstall it.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printershare-delete?view=graph-rest-1.0
       operationId: print_DeleteShare
       parameters:
         - name: printerShare-id
@@ -2533,7 +3942,11 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete ref of navigation property allowedGroups for print
+      summary: Delete allowedGroup from printerShare
+      description: Revoke the specified group's access to submit print jobs to the associated printerShare.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
       operationId: print.share_DeleteAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -2720,7 +4133,11 @@ paths:
     post:
       tags:
         - print.printerShare
-      summary: Create new navigation property ref to allowedGroups for print
+      summary: Create allowedGroup for printerShare
+      description: Grant the specified group access to submit print jobs to the associated printerShare.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printershare-post-allowedgroups?view=graph-rest-1.0
       operationId: print.share_CreateAllowedGroupGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -3130,7 +4547,11 @@ paths:
     delete:
       tags:
         - print.printerShare
-      summary: Delete ref of navigation property allowedUsers for print
+      summary: Delete allowedUser from printerShare
+      description: Revoke the specified user's access to submit print jobs to the associated printerShare.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-1.0
       operationId: print.share_DeleteAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -3492,7 +4913,11 @@ paths:
     post:
       tags:
         - print.printerShare
-      summary: Create new navigation property ref to allowedUsers for print
+      summary: Create allowedUser for printerShare
+      description: Grant the specified user access to submit print jobs to the associated printerShare.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printershare-post-allowedusers?view=graph-rest-1.0
       operationId: print.share_CreateAllowedUserGraphBPreRef
       parameters:
         - name: printerShare-id
@@ -3511,6 +4936,1366 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/jobs':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get jobs from print
+      description: The list of jobs that are queued for printing by the printer/printerShare.
+      operationId: print.share_ListJob
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - configuration
+                - configuration desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - isFetchable
+                - isFetchable desc
+                - redirectedFrom
+                - redirectedFrom desc
+                - redirectedTo
+                - redirectedTo desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - createdBy
+                - createdDateTime
+                - isFetchable
+                - redirectedFrom
+                - redirectedTo
+                - status
+                - documents
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - documents
+                - tasks
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.printJobCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - print.printerShare
+      summary: Create new navigation property to jobs for print
+      operationId: print.share_CreateJob
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printJob'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get jobs from print
+      description: The list of jobs that are queued for printing by the printer/printerShare.
+      operationId: print.share_GetJob
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - configuration
+                - createdBy
+                - createdDateTime
+                - isFetchable
+                - redirectedFrom
+                - redirectedTo
+                - status
+                - documents
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - documents
+                - tasks
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - print.printerShare
+      summary: Update the navigation property jobs in print
+      operationId: print.share_UpdateJob
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printJob'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - print.printerShare
+      summary: Delete navigation property jobs for print
+      operationId: print.share_DeleteJob
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/documents':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get documents from print
+      operationId: print.share.job_ListDocument
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - contentType
+                - contentType desc
+                - displayName
+                - displayName desc
+                - size
+                - size desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentType
+                - displayName
+                - size
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.printDocumentCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - print.printerShare
+      summary: Create new navigation property to documents for print
+      operationId: print.share.job_CreateDocument
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printDocument'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printDocument'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/documents/{printDocument-id}':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get documents from print
+      operationId: print.share.job_GetDocument
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentType
+                - displayName
+                - size
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printDocument'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - print.printerShare
+      summary: Update the navigation property documents in print
+      operationId: print.share.job_UpdateDocument
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printDocument'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printDocument'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - print.printerShare
+      summary: Delete navigation property documents for print
+      operationId: print.share.job_DeleteDocument
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/documents/{printDocument-id}/$value':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get media content for the navigation property documents from print
+      operationId: print.share.job_GetDocumentsContent
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - print.printerShare
+      summary: Update media content for the navigation property documents in print
+      operationId: print.share.job_SetDocumentsContent
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/documents/{printDocument-id}/microsoft.graph.createUploadSession':
+    post:
+      tags:
+        - print.Actions
+      summary: Invoke action createUploadSession
+      description: 'Create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential `PUT` queries. Request headers for each `PUT` operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-1.0
+      operationId: print.share.job.document_createUploadSession
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printDocument-id
+          in: path
+          description: The unique identifier of printDocument
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printDocument
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                properties:
+                  $ref: '#/components/schemas/microsoft.graph.printDocumentUploadProperties'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.uploadSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/documents/$count':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.share.job.document_GetCount
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.abort':
+    post:
+      tags:
+        - print.Actions
+      summary: Invoke action abort
+      description: 'Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0
+      operationId: print.share.job_abort
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - print.Actions
+      summary: Invoke action cancel
+      description: 'Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0
+      operationId: print.share.job_cancel
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.redirect':
+    post:
+      tags:
+        - print.Actions
+      summary: Invoke action redirect
+      description: 'Redirect a print job to a different printer. Redirecting a print job will only succeed if there is a printTask in a `processing` state on the associated print job, started by a trigger that the requesting app created.  For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printjob-redirect?view=graph-rest-1.0
+      operationId: print.share.job_redirect
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                destinationPrinterId:
+                  type: string
+                configuration:
+                  $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.start':
+    post:
+      tags:
+        - print.Actions
+      summary: Invoke action start
+      description: 'Submits the print job to the associated printer or printerShare. It will be printed after any existing pending **jobs** are completed, aborted, or canceled.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0
+      operationId: print.share.job_start
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printJobStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/tasks':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get tasks from print
+      description: A list of printTasks that were triggered by this print job.
+      operationId: print.share.job_ListTask
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - parentUrl
+                - parentUrl desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - parentUrl
+                - status
+                - definition
+                - trigger
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - definition
+                - trigger
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.printTaskCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - print.printerShare
+      summary: Create new navigation property to tasks for print
+      operationId: print.share.job_CreateTask
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printTask'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/tasks/{printTask-id}':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get tasks from print
+      description: A list of printTasks that were triggered by this print job.
+      operationId: print.share.job_GetTask
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printTask-id
+          in: path
+          description: The unique identifier of printTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - parentUrl
+                - status
+                - definition
+                - trigger
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - definition
+                - trigger
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - print.printerShare
+      summary: Update the navigation property tasks in print
+      operationId: print.share.job_UpdateTask
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printTask-id
+          in: path
+          description: The unique identifier of printTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTask
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printTask'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - print.printerShare
+      summary: Delete navigation property tasks for print
+      operationId: print.share.job_DeleteTask
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printTask-id
+          in: path
+          description: The unique identifier of printTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTask
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/tasks/{printTask-id}/definition':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get definition from print
+      description: The printTaskDefinition that was used to create this task. Read-only.
+      operationId: print.share.job.task_GetDefinition
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printTask-id
+          in: path
+          description: The unique identifier of printTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - displayName
+                - tasks
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tasks
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/tasks/{printTask-id}/trigger':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get trigger from print
+      description: The printTaskTrigger that triggered this task's execution. Read-only.
+      operationId: print.share.job.task_GetTrigger
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - name: printTask-id
+          in: path
+          description: The unique identifier of printTask
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printTask
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - event
+                - definition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - definition
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/jobs/{printJob-id}/tasks/$count':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.share.job.task_GetCount
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - name: printJob-id
+          in: path
+          description: The unique identifier of printJob
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printJob
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/print/shares/{printerShare-id}/jobs/$count':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get the number of the resource
+      operationId: print.share.job_GetCount
+      parameters:
+        - name: printerShare-id
+          in: path
+          description: The unique identifier of printerShare
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: printerShare
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/print/shares/{printerShare-id}/printer':
     get:
       tags:
@@ -3695,8 +6480,11 @@ paths:
     get:
       tags:
         - print.printTaskDefinition
-      summary: Get taskDefinitions from print
-      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
+      summary: Get printTaskDefinition
+      description: 'Get details about a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printtaskdefinition-get?view=graph-rest-1.0
       operationId: print_GetTaskDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -3748,7 +6536,11 @@ paths:
     patch:
       tags:
         - print.printTaskDefinition
-      summary: Update the navigation property taskDefinitions in print
+      summary: Update printTaskDefinition
+      description: 'Update a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/print-update-taskdefinition?view=graph-rest-1.0
       operationId: print_UpdateTaskDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -3779,7 +6571,11 @@ paths:
     delete:
       tags:
         - print.printTaskDefinition
-      summary: Delete navigation property taskDefinitions for print
+      summary: Delete printTaskDefinition
+      description: 'Delete a **taskDefinition**. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/print-delete-taskdefinition?view=graph-rest-1.0
       operationId: print_DeleteTaskDefinition
       parameters:
         - name: printTaskDefinition-id
@@ -3917,8 +6713,11 @@ paths:
     get:
       tags:
         - print.printTaskDefinition
-      summary: Get tasks from print
-      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+      summary: Get printTask
+      description: 'Get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printtask-get?view=graph-rest-1.0
       operationId: print.taskDefinition_GetTask
       parameters:
         - name: printTaskDefinition-id
@@ -3980,7 +6779,11 @@ paths:
     patch:
       tags:
         - print.printTaskDefinition
-      summary: Update the navigation property tasks in print
+      summary: Update printTask
+      description: 'Update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/printtaskdefinition-update-task?view=graph-rest-1.0
       operationId: print.taskDefinition_UpdateTask
       parameters:
         - name: printTaskDefinition-id
@@ -4340,6 +7143,244 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.printJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printJob
+          type: object
+          properties:
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the job was created. Read-only.
+              format: date-time
+            isFetchable:
+              type: boolean
+              description: 'If true, document can be fetched by printer.'
+            redirectedFrom:
+              type: string
+              description: 'Contains the source job URL, if the job has been redirected from another printer.'
+              nullable: true
+            redirectedTo:
+              type: string
+              description: 'Contains the destination job URL, if the job has been redirected to another printer.'
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printJobStatus'
+            documents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printDocument'
+              x-ms-navigationProperty: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+              description: A list of printTasks that were triggered by this print job.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printDocument:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printDocument
+          type: object
+          properties:
+            contentType:
+              type: string
+              description: The document's content (MIME) type. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: The document's name. Read-only.
+              nullable: true
+            size:
+              type: integer
+              description: The document's size in bytes. Read-only.
+              format: int64
+          additionalProperties:
+            type: object
+    microsoft.graph.printDocumentUploadProperties:
+      title: printDocumentUploadProperties
+      type: object
+      properties:
+        contentType:
+          type: string
+          description: The document's content (MIME) type.
+        documentName:
+          type: string
+          description: The document's name.
+        size:
+          type: integer
+          description: The document's size in bytes.
+          format: int64
+      additionalProperties:
+        type: object
+    microsoft.graph.uploadSession:
+      title: uploadSession
+      type: object
+      properties:
+        expirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+          format: date-time
+          nullable: true
+        nextExpectedRanges:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format ''start-end'' (e.g. ''0-26'' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value ''{start}'', the location in the file where the next upload should begin.'
+        uploadUrl:
+          type: string
+          description: The URL endpoint that accepts PUT requests for byte ranges of the file.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printJobConfiguration:
+      title: printJobConfiguration
+      type: object
+      properties:
+        collate:
+          type: boolean
+          description: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+          nullable: true
+        colorMode:
+          $ref: '#/components/schemas/microsoft.graph.printColorMode'
+        copies:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of copies that should be printed. Read-only.
+          format: int32
+          nullable: true
+        dpi:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
+          format: int32
+          nullable: true
+        duplexMode:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+        feedOrientation:
+          $ref: '#/components/schemas/microsoft.graph.printerFeedOrientation'
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: Finishing processes to use when printing.
+        fitPdfToPage:
+          type: boolean
+          nullable: true
+        inputBin:
+          type: string
+          description: The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
+          nullable: true
+        margin:
+          $ref: '#/components/schemas/microsoft.graph.printMargin'
+        mediaSize:
+          type: string
+          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+          nullable: true
+        mediaType:
+          type: string
+          nullable: true
+        multipageLayout:
+          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientation:
+          $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBin:
+          type: string
+          nullable: true
+        pageRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.integerRange'
+        pagesPerSheet:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        quality:
+          $ref: '#/components/schemas/microsoft.graph.printQuality'
+        scaling:
+          $ref: '#/components/schemas/microsoft.graph.printScaling'
+      additionalProperties:
+        type: object
+    microsoft.graph.printJobStatus:
+      title: printJobStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the print job's current processing state. Read-only.
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printJobStateDetail'
+          description: Additional details for print job state. Valid values are described in the following table. Read-only.
+        isAcquiredByPrinter:
+          type: boolean
+          description: True if the job was acknowledged by a printer; false otherwise. Read-only.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.printTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTask
+          type: object
+          properties:
+            parentUrl:
+              type: string
+              description: 'The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printTaskStatus'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+            trigger:
+              $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+          additionalProperties:
+            type: object
+    microsoft.graph.printTaskDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTaskDefinition
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.appIdentity'
+            displayName:
+              type: string
+              description: The name of the printTaskDefinition.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+              description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printTaskTrigger:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTaskTrigger
+          type: object
+          properties:
+            event:
+              $ref: '#/components/schemas/microsoft.graph.printEvent'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+          additionalProperties:
+            type: object
     microsoft.graph.printerShare:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.printerBase'
@@ -4368,37 +7409,6 @@ components:
               x-ms-navigationProperty: true
             printer:
               $ref: '#/components/schemas/microsoft.graph.printer'
-          additionalProperties:
-            type: object
-    microsoft.graph.printTaskTrigger:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: printTaskTrigger
-          type: object
-          properties:
-            event:
-              $ref: '#/components/schemas/microsoft.graph.printEvent'
-            definition:
-              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-          additionalProperties:
-            type: object
-    microsoft.graph.printTaskDefinition:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: printTaskDefinition
-          type: object
-          properties:
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.appIdentity'
-            displayName:
-              type: string
-              description: The name of the printTaskDefinition.
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printTask'
-              description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.printCertificateSigningRequest:
@@ -4473,23 +7483,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
-    microsoft.graph.printTask:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: printTask
-          type: object
-          properties:
-            parentUrl:
-              type: string
-              description: 'The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.printTaskStatus'
-            definition:
-              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-            trigger:
-              $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
-          additionalProperties:
-            type: object
     microsoft.graph.printSettings:
       title: printSettings
       type: object
@@ -4640,6 +7633,224 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printColorMode:
+      title: printColorMode
+      enum:
+        - blackAndWhite
+        - grayscale
+        - color
+        - auto
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printDuplexMode:
+      title: printDuplexMode
+      enum:
+        - flipOnLongEdge
+        - flipOnShortEdge
+        - oneSided
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printerFeedOrientation:
+      title: printerFeedOrientation
+      enum:
+        - longEdgeFirst
+        - shortEdgeFirst
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printFinishing:
+      title: printFinishing
+      enum:
+        - none
+        - staple
+        - punch
+        - cover
+        - bind
+        - saddleStitch
+        - stitchEdge
+        - stapleTopLeft
+        - stapleBottomLeft
+        - stapleTopRight
+        - stapleBottomRight
+        - stitchLeftEdge
+        - stitchTopEdge
+        - stitchRightEdge
+        - stitchBottomEdge
+        - stapleDualLeft
+        - stapleDualTop
+        - stapleDualRight
+        - stapleDualBottom
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printMargin:
+      title: printMargin
+      type: object
+      properties:
+        bottom:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the bottom edge.
+          format: int32
+          nullable: true
+        left:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the left edge.
+          format: int32
+          nullable: true
+        right:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the right edge.
+          format: int32
+          nullable: true
+        top:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the top edge.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printMultipageLayout:
+      title: printMultipageLayout
+      enum:
+        - clockwiseFromTopLeft
+        - counterclockwiseFromTopLeft
+        - counterclockwiseFromTopRight
+        - clockwiseFromTopRight
+        - counterclockwiseFromBottomLeft
+        - clockwiseFromBottomLeft
+        - counterclockwiseFromBottomRight
+        - clockwiseFromBottomRight
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printOrientation:
+      title: printOrientation
+      enum:
+        - portrait
+        - landscape
+        - reverseLandscape
+        - reversePortrait
+        - unknownFutureValue
+      type: string
+    microsoft.graph.integerRange:
+      title: integerRange
+      type: object
+      properties:
+        end:
+          type: integer
+          description: The inclusive upper bound of the integer range.
+          format: int64
+          nullable: true
+        start:
+          type: integer
+          description: The inclusive lower bound of the integer range.
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printQuality:
+      title: printQuality
+      enum:
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printScaling:
+      title: printScaling
+      enum:
+        - auto
+        - shrinkToFit
+        - fill
+        - fit
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printJobStateDetail:
+      title: printJobStateDetail
+      enum:
+        - uploadPending
+        - transforming
+        - completedSuccessfully
+        - completedWithWarnings
+        - completedWithErrors
+        - releaseWait
+        - interpreting
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printJobProcessingState:
+      title: printJobProcessingState
+      enum:
+        - unknown
+        - pending
+        - processing
+        - paused
+        - stopped
+        - completed
+        - canceled
+        - aborted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printTaskStatus:
+      title: printTaskStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the current processing state of the printTask.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printTaskProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.appIdentity:
+      title: appIdentity
+      type: object
+      properties:
+        appId:
+          type: string
+          description: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+          nullable: true
+        displayName:
+          type: string
+          description: Refers to the Application Name displayed in the Azure Portal.
+          nullable: true
+        servicePrincipalId:
+          type: string
+          description: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+          nullable: true
+        servicePrincipalName:
+          type: string
+          description: Refers to the Service Principal Name is the Application name in the tenant.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printEvent:
+      title: printEvent
+      enum:
+        - jobStarted
+        - unknownFutureValue
+      type: string
     microsoft.graph.group:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -5490,34 +8701,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.todo'
           additionalProperties:
             type: object
-    microsoft.graph.printEvent:
-      title: printEvent
-      enum:
-        - jobStarted
-        - unknownFutureValue
-      type: string
-    microsoft.graph.appIdentity:
-      title: appIdentity
-      type: object
-      properties:
-        appId:
-          type: string
-          description: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
-          nullable: true
-        displayName:
-          type: string
-          description: Refers to the Application Name displayed in the Azure Portal.
-          nullable: true
-        servicePrincipalId:
-          type: string
-          description: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
-          nullable: true
-        servicePrincipalName:
-          type: string
-          description: Refers to the Service Principal Name is the Application name in the tenant.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.automaticRepliesSetting:
       title: automaticRepliesSetting
       type: object
@@ -5597,17 +8780,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
       additionalProperties:
         type: object
-    microsoft.graph.printTaskStatus:
-      title: printTaskStatus
-      type: object
-      properties:
-        description:
-          type: string
-          description: A human-readable description of the current processing state of the printTask.
-        state:
-          $ref: '#/components/schemas/microsoft.graph.printTaskProcessingState'
-      additionalProperties:
-        type: object
     ReferenceCreate:
       type: object
       properties:
@@ -5661,6 +8833,45 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printer'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printJobCollectionResponse:
+      title: Collection of printJob
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printJob'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printDocumentCollectionResponse:
+      title: Collection of printDocument
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printDocument'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printTaskCollectionResponse:
+      title: Collection of printTask
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printTask'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -5765,19 +8976,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.printTaskCollectionResponse:
-      title: Collection of printTask
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.printTask'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -6039,47 +9237,29 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printerProcessingState'
       additionalProperties:
         type: object
-    microsoft.graph.printJob:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: printJob
-          type: object
-          properties:
-            configuration:
-              $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.userIdentity'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The DateTimeOffset when the job was created. Read-only.
-              format: date-time
-            isFetchable:
-              type: boolean
-              description: 'If true, document can be fetched by printer.'
-            redirectedFrom:
-              type: string
-              description: 'Contains the source job URL, if the job has been redirected from another printer.'
-              nullable: true
-            redirectedTo:
-              type: string
-              description: 'Contains the destination job URL, if the job has been redirected to another printer.'
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.printJobStatus'
-            documents:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printDocument'
-              x-ms-navigationProperty: true
-            tasks:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.printTask'
-              description: A list of printTasks that were triggered by this print job.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
+    microsoft.graph.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          nullable: true
+        id:
+          type: string
+          description: Unique identifier for the identity.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printTaskProcessingState:
+      title: printTaskProcessingState
+      enum:
+        - pending
+        - processing
+        - completed
+        - aborted
+        - unknownFutureValue
+      type: string
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6923,7 +10103,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -6933,7 +10113,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -8607,15 +11787,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.printTaskProcessingState:
-      title: printTaskProcessingState
-      enum:
-        - pending
-        - processing
-        - completed
-        - aborted
-        - unknownFutureValue
-      type: string
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -8637,110 +11808,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    microsoft.graph.printColorMode:
-      title: printColorMode
-      enum:
-        - blackAndWhite
-        - grayscale
-        - color
-        - auto
-        - unknownFutureValue
-      type: string
-    microsoft.graph.integerRange:
-      title: integerRange
-      type: object
-      properties:
-        end:
-          type: integer
-          description: The inclusive upper bound of the integer range.
-          format: int64
-          nullable: true
-        start:
-          type: integer
-          description: The inclusive lower bound of the integer range.
-          format: int64
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.printDuplexMode:
-      title: printDuplexMode
-      enum:
-        - flipOnLongEdge
-        - flipOnShortEdge
-        - oneSided
-        - unknownFutureValue
-      type: string
-    microsoft.graph.printerFeedOrientation:
-      title: printerFeedOrientation
-      enum:
-        - longEdgeFirst
-        - shortEdgeFirst
-        - unknownFutureValue
-      type: string
-    microsoft.graph.printFinishing:
-      title: printFinishing
-      enum:
-        - none
-        - staple
-        - punch
-        - cover
-        - bind
-        - saddleStitch
-        - stitchEdge
-        - stapleTopLeft
-        - stapleBottomLeft
-        - stapleTopRight
-        - stapleBottomRight
-        - stitchLeftEdge
-        - stitchTopEdge
-        - stitchRightEdge
-        - stitchBottomEdge
-        - stapleDualLeft
-        - stapleDualTop
-        - stapleDualRight
-        - stapleDualBottom
-        - unknownFutureValue
-      type: string
-    microsoft.graph.printMultipageLayout:
-      title: printMultipageLayout
-      enum:
-        - clockwiseFromTopLeft
-        - counterclockwiseFromTopLeft
-        - counterclockwiseFromTopRight
-        - clockwiseFromTopRight
-        - counterclockwiseFromBottomLeft
-        - clockwiseFromBottomLeft
-        - counterclockwiseFromBottomRight
-        - clockwiseFromBottomRight
-        - unknownFutureValue
-      type: string
-    microsoft.graph.printOrientation:
-      title: printOrientation
-      enum:
-        - portrait
-        - landscape
-        - reverseLandscape
-        - reversePortrait
-        - unknownFutureValue
-      type: string
-    microsoft.graph.printQuality:
-      title: printQuality
-      enum:
-        - low
-        - medium
-        - high
-        - unknownFutureValue
-      type: string
-    microsoft.graph.printScaling:
-      title: printScaling
-      enum:
-        - auto
-        - shrinkToFit
-        - fill
-        - fit
-        - none
-        - unknownFutureValue
-      type: string
     microsoft.graph.printerProcessingStateDetail:
       title: printerProcessingStateDetail
       enum:
@@ -9580,133 +12647,6 @@ components:
         - stopped
         - unknownFutureValue
       type: string
-    microsoft.graph.printJobConfiguration:
-      title: printJobConfiguration
-      type: object
-      properties:
-        collate:
-          type: boolean
-          description: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
-          nullable: true
-        colorMode:
-          $ref: '#/components/schemas/microsoft.graph.printColorMode'
-        copies:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The number of copies that should be printed. Read-only.
-          format: int32
-          nullable: true
-        dpi:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
-          format: int32
-          nullable: true
-        duplexMode:
-          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
-        feedOrientation:
-          $ref: '#/components/schemas/microsoft.graph.printerFeedOrientation'
-        finishings:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.printFinishing'
-          description: Finishing processes to use when printing.
-        fitPdfToPage:
-          type: boolean
-          nullable: true
-        inputBin:
-          type: string
-          description: The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
-          nullable: true
-        margin:
-          $ref: '#/components/schemas/microsoft.graph.printMargin'
-        mediaSize:
-          type: string
-          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
-          nullable: true
-        mediaType:
-          type: string
-          nullable: true
-        multipageLayout:
-          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
-        orientation:
-          $ref: '#/components/schemas/microsoft.graph.printOrientation'
-        outputBin:
-          type: string
-          nullable: true
-        pageRanges:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.integerRange'
-        pagesPerSheet:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-        quality:
-          $ref: '#/components/schemas/microsoft.graph.printQuality'
-        scaling:
-          $ref: '#/components/schemas/microsoft.graph.printScaling'
-      additionalProperties:
-        type: object
-    microsoft.graph.userIdentity:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: userIdentity
-          type: object
-          properties:
-            ipAddress:
-              type: string
-              description: Indicates the client IP address used by user performing the activity (audit log only).
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: The userPrincipalName attribute of the user.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.printJobStatus:
-      title: printJobStatus
-      type: object
-      properties:
-        description:
-          type: string
-          description: A human-readable description of the print job's current processing state. Read-only.
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.printJobStateDetail'
-          description: Additional details for print job state. Valid values are described in the following table. Read-only.
-        isAcquiredByPrinter:
-          type: boolean
-          description: True if the job was acknowledged by a printer; false otherwise. Read-only.
-        state:
-          $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
-      additionalProperties:
-        type: object
-    microsoft.graph.printDocument:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: printDocument
-          type: object
-          properties:
-            contentType:
-              type: string
-              description: The document's content (MIME) type. Read-only.
-              nullable: true
-            displayName:
-              type: string
-              description: The document's name. Read-only.
-              nullable: true
-            size:
-              type: integer
-              description: The document's size in bytes. Read-only.
-              format: int64
-          additionalProperties:
-            type: object
     microsoft.graph.settingValue:
       title: settingValue
       type: object
@@ -11378,20 +14318,6 @@ components:
         servicePlanName:
           type: string
           description: The name of the service plan.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.identity:
-      title: identity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -13252,65 +16178,6 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
-    microsoft.graph.printMargin:
-      title: printMargin
-      type: object
-      properties:
-        bottom:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The margin in microns from the bottom edge.
-          format: int32
-          nullable: true
-        left:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The margin in microns from the left edge.
-          format: int32
-          nullable: true
-        right:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The margin in microns from the right edge.
-          format: int32
-          nullable: true
-        top:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The margin in microns from the top edge.
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.printJobStateDetail:
-      title: printJobStateDetail
-      enum:
-        - uploadPending
-        - transforming
-        - completedSuccessfully
-        - completedWithWarnings
-        - completedWithErrors
-        - releaseWait
-        - interpreting
-        - unknownFutureValue
-      type: string
-    microsoft.graph.printJobProcessingState:
-      title: printJobProcessingState
-      enum:
-        - unknown
-        - pending
-        - processing
-        - paused
-        - stopped
-        - completed
-        - canceled
-        - aborted
-        - unknownFutureValue
-      type: string
     microsoft.graph.calendarRoleType:
       title: calendarRoleType
       enum:
@@ -14119,7 +16986,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -16031,7 +18898,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -16082,6 +18949,10 @@ components:
               description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            deviceCategory:
+              type: string
+              description: User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
+              nullable: true
             deviceId:
               type: string
               description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
@@ -16089,6 +18960,10 @@ components:
             deviceMetadata:
               type: string
               description: For internal use only. Set to null.
+              nullable: true
+            deviceOwnership:
+              type: string
+              description: 'Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.'
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -16100,6 +18975,10 @@ components:
             displayName:
               type: string
               description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              nullable: true
+            enrollmentProfileName:
+              type: string
+              description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
             isCompliant:
               type: boolean
@@ -16140,6 +19019,12 @@ components:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
               nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
             systemLabels:
               type: array
               items:
@@ -16159,7 +19044,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -18528,6 +21413,24 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.printerCollectionResponse'
+    microsoft.graph.printJobCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printJobCollectionResponse'
+    microsoft.graph.printDocumentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printDocumentCollectionResponse'
+    microsoft.graph.printTaskCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printTaskCollectionResponse'
     microsoft.graph.printerShareCollectionResponse:
       description: Retrieved collection
       content:
@@ -18576,12 +21479,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.printTaskDefinitionCollectionResponse'
-    microsoft.graph.printTaskCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.printTaskCollectionResponse'
   parameters:
     top:
       name: $top

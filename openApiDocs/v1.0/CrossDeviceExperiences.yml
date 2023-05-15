@@ -260,7 +260,11 @@ paths:
     delete:
       tags:
         - users.userActivity
-      summary: Delete navigation property activities for users
+      summary: Delete an activity
+      description: Delete an existing user activity for your app.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0
       operationId: user_DeleteActivity
       parameters:
         - name: user-id
@@ -510,7 +514,11 @@ paths:
     patch:
       tags:
         - users.userActivity
-      summary: Update the navigation property historyItems in users
+      summary: Delete a historyItem
+      description: Delete an existing history item for an existing user activity.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0
       operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id

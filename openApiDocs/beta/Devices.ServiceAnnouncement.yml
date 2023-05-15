@@ -239,8 +239,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get healthOverviews from admin
-      description: 'A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: Get serviceHealth
+      description: Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_GetHealthOverview
       parameters:
         - name: serviceHealth-id
@@ -837,8 +840,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get issues from admin
-      description: 'A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: Get serviceHealthIssue
+      description: Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_GetIssue
       parameters:
         - name: serviceHealthIssue-id
@@ -1135,8 +1141,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get messages from admin
-      description: 'A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.'
+      summary: Get serviceUpdateMessage
+      description: Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceupdatemessage-get?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement_GetMessage
       parameters:
         - name: serviceUpdateMessage-id
@@ -1375,8 +1384,11 @@ paths:
     get:
       tags:
         - admin.serviceAnnouncement
-      summary: Get attachments from admin
-      description: A collection of serviceAnnouncementAttachments.
+      summary: Get serviceAnnouncementAttachment
+      description: Read the properties and relationships of a serviceAnnouncementAttachment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0
       operationId: admin.serviceAnnouncement.message_GetAttachment
       parameters:
         - name: serviceUpdateMessage-id

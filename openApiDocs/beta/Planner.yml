@@ -3392,8 +3392,11 @@ paths:
     get:
       tags:
         - planner.plannerBucket
-      summary: Get buckets from planner
-      description: Read-only. Nullable. Returns a collection of the specified buckets
+      summary: Get plannerBucket
+      description: Retrieve the properties and relationships of a plannerBucket object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-1.0
       operationId: planner_GetBucket
       parameters:
         - name: plannerBucket-id
@@ -3448,6 +3451,9 @@ paths:
       tags:
         - planner.plannerBucket
       summary: Update the navigation property buckets in planner
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerbucket-update?view=graph-rest-1.0
       operationId: planner_UpdateBucket
       parameters:
         - name: plannerBucket-id
@@ -3485,7 +3491,11 @@ paths:
     delete:
       tags:
         - planner.plannerBucket
-      summary: Delete navigation property buckets for planner
+      summary: Delete plannerBucket
+      description: Delete **plannerBucket**.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerbucket-delete?view=graph-rest-1.0
       operationId: planner_DeleteBucket
       parameters:
         - name: plannerBucket-id
@@ -4696,7 +4706,7 @@ paths:
       tags:
         - planner.plannerPlan
       summary: List plans
-      description: Retrieve a list of **plannerplan** objects.
+      description: Get a list of plannerPlan objects.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/planner-list-plans?view=graph-rest-1.0
@@ -4813,8 +4823,11 @@ paths:
     get:
       tags:
         - planner.plannerPlan
-      summary: Get plans from planner
-      description: Read-only. Nullable. Returns a collection of the specified plans
+      summary: Get plannerPlan
+      description: Retrieve the properties and relationships of a plannerplan object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerplan-get?view=graph-rest-1.0
       operationId: planner_GetPlan
       parameters:
         - name: plannerPlan-id
@@ -4876,7 +4889,11 @@ paths:
     patch:
       tags:
         - planner.plannerPlan
-      summary: Update the navigation property plans in planner
+      summary: Update plannerPlan
+      description: Update the properties of a **plannerPlan** object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerplan-update?view=graph-rest-1.0
       operationId: planner_UpdatePlan
       parameters:
         - name: plannerPlan-id
@@ -4907,7 +4924,11 @@ paths:
     delete:
       tags:
         - planner.plannerPlan
-      summary: Delete navigation property plans for planner
+      summary: Delete plannerPlan
+      description: Delete a plannerPlan object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerplan-delete?view=graph-rest-1.0
       operationId: planner_DeletePlan
       parameters:
         - name: plannerPlan-id
@@ -7857,8 +7878,8 @@ paths:
     get:
       tags:
         - planner.plannerRoster
-      summary: Get rosters from planner
-      description: Read-only. Nullable. Returns a collection of the specified rosters
+      summary: Get plannerRoster
+      description: Read the properties and relationships of a plannerRoster object.
       operationId: planner_ListRoster
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7946,8 +7967,11 @@ paths:
     get:
       tags:
         - planner.plannerRoster
-      summary: Get rosters from planner
-      description: Read-only. Nullable. Returns a collection of the specified rosters
+      summary: Get plannerRoster
+      description: Read the properties and relationships of a plannerRoster object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerroster-get?view=graph-rest-1.0
       operationId: planner_GetRoster
       parameters:
         - name: plannerRoster-id
@@ -8030,7 +8054,11 @@ paths:
     delete:
       tags:
         - planner.plannerRoster
-      summary: Delete navigation property rosters for planner
+      summary: Delete plannerRoster
+      description: Delete a plannerRoster object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerroster-delete?view=graph-rest-1.0
       operationId: planner_DeleteRoster
       parameters:
         - name: plannerRoster-id
@@ -8171,8 +8199,11 @@ paths:
     get:
       tags:
         - planner.plannerRoster
-      summary: Get members from planner
-      description: Retrieves the members of the plannerRoster.
+      summary: Get plannerRosterMember
+      description: Read the properties and relationships of a plannerRosterMember object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerrostermember-get?view=graph-rest-1.0
       operationId: planner.roster_GetMember
       parameters:
         - name: plannerRoster-id
@@ -8270,7 +8301,11 @@ paths:
     delete:
       tags:
         - planner.plannerRoster
-      summary: Delete navigation property members for planner
+      summary: Delete plannerRosterMember
+      description: Delete a plannerRosterMember object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannerrostermember-delete?view=graph-rest-1.0
       operationId: planner.roster_DeleteMember
       parameters:
         - name: plannerRoster-id
@@ -8700,8 +8735,11 @@ paths:
     get:
       tags:
         - planner.plannerTask
-      summary: Get tasks from planner
-      description: Read-only. Nullable. Returns a collection of the specified tasks
+      summary: Get plannerTask
+      description: Retrieve the properties and relationships of plannerTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannertask-get?view=graph-rest-1.0
       operationId: planner_GetTask
       parameters:
         - name: plannerTask-id
@@ -8781,6 +8819,9 @@ paths:
       tags:
         - planner.plannerTask
       summary: Update the navigation property tasks in planner
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannertask-update?view=graph-rest-1.0
       operationId: planner_UpdateTask
       parameters:
         - name: plannerTask-id
@@ -8818,7 +8859,11 @@ paths:
     delete:
       tags:
         - planner.plannerTask
-      summary: Delete navigation property tasks for planner
+      summary: Delete plannerTask
+      description: Delete a plannerTask object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/plannertask-delete?view=graph-rest-1.0
       operationId: planner_DeleteTask
       parameters:
         - name: plannerTask-id

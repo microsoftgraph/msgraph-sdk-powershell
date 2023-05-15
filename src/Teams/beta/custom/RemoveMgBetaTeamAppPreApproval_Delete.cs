@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.PowerShell.Cmdlets
     /// <summary>
     /// Delete PreApproval policy associated with a Teams App.
     /// </summary>
-    [global::System.Management.Automation.Cmdlet(global::System.Management.Automation.VerbsCommon.Remove, @"MgBetaTeamsAppPreApproval_Delete", SupportsShouldProcess = true)]
+    [global::System.Management.Automation.Cmdlet(global::System.Management.Automation.VerbsCommon.Remove, @"MgBetaTeamAppPreApproval_Delete", SupportsShouldProcess = true)]
     [global::System.Management.Automation.OutputType(typeof(bool))]
     [global::Microsoft.Graph.Beta.PowerShell.Description(@"Delete Preapproval policy associated with a Teams App.")]
     [global::Microsoft.Graph.Beta.PowerShell.Generated]
