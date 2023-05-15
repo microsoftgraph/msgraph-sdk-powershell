@@ -362,3 +362,6 @@ MigrationBackup/
 localenv.json
 *Microsoft.Graph.Authentication-TestResults.xml
 coverage.xml
+
+#Wrong Examples report Folder
+examplesreport/
