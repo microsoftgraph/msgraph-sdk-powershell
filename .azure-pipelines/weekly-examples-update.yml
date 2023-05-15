@@ -85,9 +85,9 @@ jobs:
         git push --set-upstream origin $(ComputeBranch.WeeklyExamplesBranch)
         git status
 
-  - template: ./common-templates/create-pr.yml
-    parameters:
-      BaseBranch: "features/2.0"
-      TargetBranch: $(ComputeBranch.WeeklyExamplesBranch)
-      Title: "[v2] Examples Update"
-      Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
+  # - template: ./common-templates/create-pr.yml
+  #   parameters:
+  #     BaseBranch: "features/2.0"
+  #     TargetBranch: $(ComputeBranch.WeeklyExamplesBranch)
+  #     Title: "[v2] Examples Update"
+  #     Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
