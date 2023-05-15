@@ -83,7 +83,11 @@ function Get-Files {
         [string] $Module = "Users",
         [Hashtable] $OpenApiContent 
     )
-    $ModuleManifestFile = (Join-Path $PSScriptRoot "..\src\$Module\$GraphProfile\Microsoft.Graph.$Module.psd1")
+
+    $ModuleManifestFile = Join-Path $SDKDocsPath $Module "v1.0" "Microsoft.Graph.$Module.psd1"
+    if ($GraphProfile -eq "beta") {
+        $ModuleManifestFile = Join-Path $SDKDocsPath $Module "beta" "Microsoft.Graph.Beta.$Module.psd1"
+    }
     $ModuleManifestFileContent = Get-Content -Path $ModuleManifestFile
 
     try {
