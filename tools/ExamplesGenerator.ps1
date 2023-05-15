@@ -43,6 +43,10 @@ function Start-Generator {
         Get-ExternalDocsUrl -ManualExternalDocsUrl $ManualExternalDocsUrl -GenerationMode $GenerationMode -GraphProfilePath $ModulePath -Command $GraphCommand -GraphProfile $ProfilePath -Module $GraphModule
             
     }
+    git config --global user.email "timwamalwa@gmail.com"
+    git config --global user.name "Timothy Wamalwa"
+    git add .
+    git commit -m "Importing updates from API reference" 
 
 }
 function Get-FilesByProfile {
@@ -79,7 +83,7 @@ function Get-Files {
         [string] $Module = "Users",
         [Hashtable] $OpenApiContent 
     )
-    $ModuleManifestFile = (Join-Path $PSScriptRoot "..\src\$Module\Microsoft.Graph.$Module.psd1")
+    $ModuleManifestFile = (Join-Path $PSScriptRoot "..\src\$Module\$GraphProfile\Microsoft.Graph.$Module.psd1")
     $ModuleManifestFileContent = Get-Content -Path $ModuleManifestFile
 
     try {
@@ -347,7 +351,6 @@ function Update-ExampleFile {
             }
         }
     }
-    Write-Host $Command " Module " $Module
     $PatternToSearch = "Import-Module Microsoft.Graph.$Module"
     if($GraphProfile -eq "beta"){
         $PatternToSearch = "Import-Module Microsoft.Graph.Beta.$Module"  
@@ -400,10 +403,7 @@ function Update-ExampleFile {
             "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" | Out-File -FilePath "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -Append -Encoding ASCII
         }
     }
-    # git config --global user.email "timwamalwa@gmail.com"
-    # git config --global user.name "Timothy Wamalwa"
-    # git add $ExampleFile
-    # git commit -m "Examples update on  $ExampleFile-$GraphProfile"   
+  
 }
         
 $JsonContent = Get-Content -Path $MetaDataJsonFile
