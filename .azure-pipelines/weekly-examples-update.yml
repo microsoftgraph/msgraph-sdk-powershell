@@ -33,7 +33,7 @@ jobs:
     name: ${{ parameters.BuildAgent }}
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
-  
+
   - task: PowerShell@2
     name: "ComputeBranch"
     displayName: "Compute weekly examples update branch name"
@@ -68,7 +68,7 @@ jobs:
       PathtoPublish: 'examplesreport'
       ArtifactName: 'ExamplesToBeReviewed'
       publishLocation: 'Container'
-      StoreAsTar: true
+      # StoreAsTar: true
 
   - task: PowerShell@2
     displayName: Pushing to github
