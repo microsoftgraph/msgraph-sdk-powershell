@@ -83,7 +83,7 @@ jobs:
         git status
         git add .
         git commit -m "Updating examples"
-        git push --set-upstream origin $(ComputeBranch.WeeklyExamplesBranch)
+        git push --set-upstream https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git $(ComputeBranch.WeeklyExamplesBranch)
         git status
 
   # - template: ./common-templates/create-pr.yml
