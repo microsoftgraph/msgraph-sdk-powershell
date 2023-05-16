@@ -13986,6 +13986,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action assignLicense
+      description: Add or remove subscriptions for the user. You can also enable and disable specific plans associated with a subscription.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0
