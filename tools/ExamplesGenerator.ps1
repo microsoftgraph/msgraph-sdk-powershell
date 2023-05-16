@@ -9,6 +9,7 @@ Param(
     [hashtable]$BetaCommandListVariantList= @{},
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $FolderForExamplesToBeReviewed = (Join-Path $PSScriptRoot "..\examplesreport"),
+    [string] $ArchivePath = (Join-Path $PSScriptRoot "..\"),
     [string] $ExamplesToBeReviewed = "ExamplesToBeReviewed.csv",
     $MetaDataJsonFile = (Join-Path $PSScriptRoot "../src/Authentication/Authentication/custom/common/MgCommandMetadata.json")
 )
@@ -47,7 +48,7 @@ function Start-Generator {
     git config --global user.name "Timothy Wamalwa"
     git add .
     git commit -m "Importing updates from API reference" 
-
+    Compress-Archive -Path "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -DestinationPath "$ArchivePath\ExamplesToBeReviewed.zip"
 }
 function Get-FilesByProfile {
     Param(
