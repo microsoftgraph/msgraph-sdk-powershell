@@ -4061,11 +4061,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update countryNamedLocation
-      description: Update the properties of a countryNamedLocation object.
+      summary: Update ipNamedlocation
+      description: Update the properties of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -4096,11 +4096,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete countryNamedLocation
-      description: Delete a countryNamedLocation object.
+      summary: Delete ipNamedLocation
+      description: Delete an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -11978,7 +11978,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: List partners
-      description: Get a list of all partner configurations within a cross-tenant access policy.
+      description: Get a list of all partner configurations within a cross-tenant access policy. You can also use the `$expand` parameter to list the user synchronization policy for all partner configurations.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicy-list-partners?view=graph-rest-1.0
@@ -12185,7 +12185,7 @@ paths:
       tags:
         - policies.crossTenantAccessPolicy
       summary: Delete crossTenantAccessPolicyConfigurationPartner
-      description: Delete a partner-specific configuration in a cross-tenant access policy.
+      description: 'Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-delete?view=graph-rest-1.0
@@ -12215,7 +12215,11 @@ paths:
     get:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Get identitySynchronization from policies
+      summary: Get crossTenantIdentitySyncPolicyPartner
+      description: Get the user synchronization policy of a partner-specific configuration.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-get?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_GetIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -12265,7 +12269,11 @@ paths:
     patch:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Update the navigation property identitySynchronization in policies
+      summary: Update crossTenantIdentitySyncPolicyPartner
+      description: Update the user synchronization policy of a partner-specific configuration.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_UpdateIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -12296,7 +12304,11 @@ paths:
     delete:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Delete navigation property identitySynchronization for policies
+      summary: Delete crossTenantIdentitySyncPolicyPartner
+      description: Delete the user synchronization policy for a partner-specific configuration.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_DeleteIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -20788,7 +20800,7 @@ components:
               description: Indicates whether users can sign up for email based subscriptions.
             allowedToUseSSPR:
               type: boolean
-              description: Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+              description: Indicates whether users can use the Self-Serve Password Reset feature on the tenant.
             allowEmailVerifiedUsersToJoinOrganization:
               type: boolean
               description: Indicates whether a user can join the tenant by email validation.
@@ -20796,10 +20808,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.allowInvitesFrom'
             allowUserConsentForRiskyApps:
               type: boolean
+              description: Indicates whether user consent for risky apps is allowed. We recommend to keep this as false. Default value is false.
               nullable: true
             blockMsolPowerShell:
               type: boolean
-              description: To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+              description: 'To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure Active Directory Connect or Microsoft Graph.'
               nullable: true
             defaultUserRolePermissions:
               $ref: '#/components/schemas/microsoft.graph.defaultUserRolePermissions'
@@ -20896,9 +20909,11 @@ components:
       properties:
         displayName:
           type: string
+          description: Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD (Azure Active Directory) tenant to easily identify the policy. Optional.
           nullable: true
         tenantId:
           type: string
+          description: Tenant identifier for the partner Azure AD organization. Read-only.
         userSyncInbound:
           $ref: '#/components/schemas/microsoft.graph.crossTenantUserSyncInbound'
       additionalProperties:
@@ -24440,7 +24455,7 @@ components:
           description: Indicates whether the default user role can create applications.
         allowedToCreateSecurityGroups:
           type: boolean
-          description: Indicates whether the default user role can create security groups.
+          description: 'Indicates whether the default user role can create security groups. This setting corresponds to the The Users can create security groups in Azure portals, API or PowerShell setting in the group settings menu in the Azure portal.'
         allowedToReadBitlockerKeysForOwnedDevice:
           type: boolean
           description: Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
@@ -24462,9 +24477,11 @@ components:
       properties:
         inboundAllowed:
           type: boolean
+          description: Defines whether external users coming inbound are allowed.
           nullable: true
         outboundAllowed:
           type: boolean
+          description: Defines whether internal users are allowed to go outbound.
           nullable: true
       additionalProperties:
         type: object
@@ -24502,6 +24519,7 @@ components:
       properties:
         isSyncAllowed:
           type: boolean
+          description: Defines whether user objects should be synchronized from the partner tenant. false causes any current user synchronization from the source tenant to the target tenant to stop. This property has no impact on existing users who have already been synchronized.
           nullable: true
       additionalProperties:
         type: object

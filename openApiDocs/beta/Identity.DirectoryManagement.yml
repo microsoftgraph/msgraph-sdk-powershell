@@ -28708,6 +28708,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -28980,6 +28981,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an orgContact object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             surname:
               type: string
               description: 'Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)'
@@ -29404,6 +29406,10 @@ components:
               items:
                 type: string
               description: 'Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).'
+            isLicenseReconciliationNeeded:
+              type: boolean
+              description: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
+              nullable: true
             isManagementRestricted:
               type: boolean
               nullable: true
@@ -29534,6 +29540,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -31089,11 +31096,11 @@ components:
           nullable: true
         type:
           type: string
-          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert.'
+          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.'
           nullable: true
         usage:
           type: string
-          description: 'A string that describes the purpose for which the key can be used; for example, Verify.'
+          description: 'A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.'
           nullable: true
       additionalProperties:
         type: object
@@ -31697,13 +31704,16 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time at which the error occurred.
           format: date-time
           nullable: true
         isResolved:
           type: boolean
+          description: Indicates whether the Error has been attended to.
           nullable: true
         serviceInstance:
           type: string
+          description: 'Qualified service instance (e.g., ''SharePoint/Dublin'') that published the service error information.'
           nullable: true
       additionalProperties:
         type: object
@@ -35252,11 +35262,25 @@ components:
       properties:
         accidentalDeletionPrevention:
           $ref: '#/components/schemas/microsoft.graph.onPremisesAccidentalDeletionPrevention'
+        anchorAttribute:
+          type: string
+          description: The anchor attribute allows customers to customize the property used to create source anchors for synchronization enabled objects.
+          nullable: true
+        applicationId:
+          type: string
+          description: The identifier of the on-premises directory synchronization client application that is configured for the tenant.
+          nullable: true
+        currentExportData:
+          $ref: '#/components/schemas/microsoft.graph.onPremisesCurrentExportData'
         customerRequestedSynchronizationInterval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
           description: Interval of time that the customer requested the sync client waits between sync cycles.
           format: duration
+          nullable: true
+        synchronizationClientVersion:
+          type: string
+          description: Indicates the version of the on-premises directory synchronization application.
           nullable: true
         synchronizationInterval:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
@@ -35264,6 +35288,8 @@ components:
           description: Interval of time the sync client should honor between sync cycles
           format: duration
           nullable: true
+        writebackConfiguration:
+          $ref: '#/components/schemas/microsoft.graph.onPremisesWritebackConfiguration'
       additionalProperties:
         type: object
     microsoft.graph.onPremisesDirectorySynchronizationFeature:
@@ -41614,10 +41640,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
@@ -43511,6 +43537,74 @@ components:
           nullable: true
         synchronizationPreventionType:
           $ref: '#/components/schemas/microsoft.graph.onPremisesDirectorySynchronizationDeletionPreventionType'
+      additionalProperties:
+        type: object
+    microsoft.graph.onPremisesCurrentExportData:
+      title: onPremisesCurrentExportData
+      type: object
+      properties:
+        clientMachineName:
+          type: string
+          description: The name of the onPremises client machine which ran the last export.
+          nullable: true
+        pendingObjectsAddition:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of pending adds from on-premises directory.
+          format: int32
+          nullable: true
+        pendingObjectsDeletion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of pending deletes from on-premises directory.
+          format: int32
+          nullable: true
+        pendingObjectsUpdate:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of pending updates from on-premises directory.
+          format: int32
+          nullable: true
+        serviceAccount:
+          type: string
+          description: The name of the dirsync service account which is configured to connect to the directory.
+          nullable: true
+        successfulLinksProvisioningCount:
+          type: integer
+          description: The count of updated links during the current directory sync export run.
+          format: int64
+          nullable: true
+        successfulObjectsProvisioningCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The count of objects which were successfully provisioned during the current directory sync export run.
+          format: int32
+          nullable: true
+        totalConnectorSpaceObjects:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The total number of objects in the AAD Connector Space.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.onPremisesWritebackConfiguration:
+      title: onPremisesWritebackConfiguration
+      type: object
+      properties:
+        unifiedGroupContainer:
+          type: string
+          description: The distinguished name of the on-premises container that the customer is using to store unified groups which are created in the cloud.
+          nullable: true
+        userContainer:
+          type: string
+          description: The distinguished name of the on-premises container that the customer is using to store users which are created in the cloud.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.actionStep:

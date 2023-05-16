@@ -4924,10 +4924,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Retrieve the properties and relationships of conversation object.
+      description: The group's conversations.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -4981,7 +4981,7 @@ paths:
       description: Delete conversation.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -5328,10 +5328,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -5380,11 +5380,11 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get post
-      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the **post** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **post** instance."
+      summary: List posts
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
       operationId: group.conversation.thread_ListPost
       parameters:
         - name: group-id
@@ -26738,6 +26738,133 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/groups/{group-id}/sites/microsoft.graph.getAllSites()':
+    get:
+      tags:
+        - groups.Functions
+      summary: Invoke function getAllSites
+      operationId: group.site_getAllSite
+      parameters:
+        - name: group-id
+          in: path
+          description: The unique identifier of group
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - eTag
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - name
+                - parentReference
+                - webUrl
+                - displayName
+                - error
+                - root
+                - sharepointIds
+                - siteCollection
+                - createdByUser
+                - lastModifiedByUser
+                - analytics
+                - columns
+                - contentTypes
+                - drive
+                - drives
+                - externalColumns
+                - items
+                - lists
+                - operations
+                - permissions
+                - sites
+                - termStore
+                - termStores
+                - onenote
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - eTag
+                - eTag desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - name
+                - name desc
+                - parentReference
+                - parentReference desc
+                - webUrl
+                - webUrl desc
+                - displayName
+                - displayName desc
+                - error
+                - error desc
+                - root
+                - root desc
+                - sharepointIds
+                - sharepointIds desc
+                - siteCollection
+                - siteCollection desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of site
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.site'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
   '/groups/{group-id}/sites/microsoft.graph.remove':
     post:
       tags:
@@ -28691,11 +28818,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversation thread
-      description: Get a thread object.
+      summary: Get conversationThread
+      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -28830,10 +28957,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -28874,11 +29001,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get post
-      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the **post** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **post** instance."
+      summary: List posts
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
       operationId: group.thread_ListPost
       parameters:
         - name: group-id

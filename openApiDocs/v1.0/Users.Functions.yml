@@ -10293,6 +10293,45 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getVirtualAppointmentJoinWebUrl
+      operationId: user.onlineMeeting_getVirtualAppointmentJoinWebUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/outlook/microsoft.graph.supportedLanguages()':
     get:
       tags:

@@ -9230,7 +9230,6 @@ paths:
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -12097,44 +12096,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: listItem
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-  '/groups/{group-id}/sites/{site-id}/lists/{list-id}/items/$count':
-    get:
-      tags:
-        - groups.site
-      summary: Get the number of the resource
-      operationId: group.site.list.item_GetCount
-      parameters:
-        - name: group-id
-          in: path
-          description: The unique identifier of group
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: site-id
-          in: path
-          description: The unique identifier of site
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: site
-        - name: list-id
-          in: path
-          description: The unique identifier of list
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: list
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
@@ -64678,11 +64639,11 @@ paths:
     get:
       tags:
         - sites.site
-      summary: Search for sites
-      description: 'Search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.'
+      summary: List sites
+      description: 'List all available sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/site-search?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/site-list?view=graph-rest-1.0
       operationId: site_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -73053,7 +73014,6 @@ paths:
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -75988,36 +75948,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: listItem
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-  '/sites/{site-id}/lists/{list-id}/items/$count':
-    get:
-      tags:
-        - sites.list
-      summary: Get the number of the resource
-      operationId: site.list.item_GetCount
-      parameters:
-        - name: site-id
-          in: path
-          description: The unique identifier of site
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: site
-        - name: list-id
-          in: path
-          description: The unique identifier of list
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: list
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
       responses:
@@ -117207,6 +117137,125 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /sites/microsoft.graph.getAllSites():
+    get:
+      tags:
+        - sites.Functions
+      summary: Invoke function getAllSites
+      operationId: site_getAllSite
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - eTag
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - name
+                - parentReference
+                - webUrl
+                - displayName
+                - error
+                - root
+                - sharepointIds
+                - siteCollection
+                - createdByUser
+                - lastModifiedByUser
+                - analytics
+                - columns
+                - contentTypes
+                - drive
+                - drives
+                - externalColumns
+                - items
+                - lists
+                - operations
+                - permissions
+                - sites
+                - termStore
+                - termStores
+                - onenote
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - eTag
+                - eTag desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - name
+                - name desc
+                - parentReference
+                - parentReference desc
+                - webUrl
+                - webUrl desc
+                - displayName
+                - displayName desc
+                - error
+                - error desc
+                - root
+                - root desc
+                - sharepointIds
+                - sharepointIds desc
+                - siteCollection
+                - siteCollection desc
+              type: string
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of site
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.site'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore

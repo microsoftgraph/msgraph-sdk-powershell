@@ -2190,11 +2190,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: List azureDataLakeConnectors
-      description: Get a list of the azureDataLakeConnector objects and their properties.
+      summary: List industryDataConnectors
+      description: Get the industryDataConnector resources from the **dataConnector** navigation property.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
       operationId: external.industryData_ListDataConnector
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2338,11 +2338,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update azureDataLakeConnector
-      description: Update the properties of an azureDataLakeConnector object.
+      summary: Update industryDataConnector
+      description: Update the properties of an industryDataConnector object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2373,11 +2373,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete industryDataConnector
-      description: Delete an industryDataConnector object.
+      summary: Delete azureDataLakeConnector
+      description: Delete an azureDataLakeConnector object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2664,11 +2664,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update inboundFileFlow
-      description: Update the properties of an inboundFileFlow object.
+      summary: Update inboundFlow
+      description: Update the properties of an inboundFlow object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -2699,11 +2699,11 @@ paths:
     delete:
       tags:
         - external.industryDataRoot
-      summary: Delete inboundFlow
-      description: Delete an inboundFlow object.
+      summary: Delete inboundFileFlow
+      description: Delete an inboundFileFlow object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-1.0
       operationId: external.industryData_DeleteInboundFlow
       parameters:
         - name: inboundFlow-id
