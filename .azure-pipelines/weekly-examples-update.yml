@@ -25,7 +25,7 @@ resources:
      type: github
      endpoint: microsoftgraph
      name: microsoftgraph/msgraph-sdk-powershell
-     ref: features/2.0
+     ref: v2/examples-update
 
 jobs:
 - job: PowerShellExamplesUpdate
@@ -78,8 +78,6 @@ jobs:
       targetType: inline
       pwsh: true
       script: |
-        git config --global user.email "timwamalwa@gmail.com"
-        git config --global user.name "Timothy Wamalwa"
         git status
         git add .
         git commit -m "Updating examples"

@@ -43,6 +43,8 @@ function Start-Generator {
         Get-ExternalDocsUrl -ManualExternalDocsUrl $ManualExternalDocsUrl -GenerationMode $GenerationMode -GraphProfilePath $ModulePath -Command $GraphCommand -GraphProfile $ProfilePath -Module $GraphModule
             
     }
+    git add .
+    git commit -m "Importing updates from API reference" 
 }
 function Get-FilesByProfile {
     Param(
@@ -404,7 +406,7 @@ function Update-ExampleFile {
     }
   
 }
-        
+Set-Location msgraph-sdk-powershell       
 $JsonContent = Get-Content -Path $MetaDataJsonFile
 $DeserializedContent = $JsonContent | ConvertFrom-Json
 foreach($Data in $DeserializedContent)
@@ -445,7 +447,7 @@ if ($ModulesToGenerate.Count -eq 0) {
     [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
     $ModulesToGenerate = $ModuleMapping.Keys
 }
-
+Set-Location ..\msgraph-sdk-powershell
 Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #Comment the above and uncomment the below start command, if you manually want to manually pass ExternalDocs url.
