@@ -48,7 +48,7 @@ function Start-Generator {
     git config --global user.name "Timothy Wamalwa"
     git add .
     git commit -m "Importing updates from API reference" 
-    Compress-Archive -Path "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -DestinationPath "$ArchivePath\ExamplesToBeReviewed.zip"
+    Compress-Archive -Path "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -DestinationPath "$ArchivePath\ExamplesToBeReviewed.zip" -Force
 }
 function Get-FilesByProfile {
     Param(
