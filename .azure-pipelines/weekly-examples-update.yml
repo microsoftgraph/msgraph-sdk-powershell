@@ -62,12 +62,12 @@ jobs:
       pwsh: true
       filePath: tools\ExamplesGenerator.ps1
 
-  - task: PublishPipelineArtifact@0
+  - task: PublishBuildArtifacts@1
     displayName: 'Publish Examples to be reviewed as artifact'
     inputs:
-      targetPath: '$(Build.ArtifactStagingDirectory)/'
-      archiveFilePatterns: '*.zip'
-      #publishLocation: 'Container'
+      PathtoPublish: 'examplesreport'
+      ArtifactName: 'ExamplesToBeReviewed'
+      publishLocation: 'Container'
       # StoreAsTar: true
 
   - task: PowerShell@2
