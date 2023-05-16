@@ -17,7 +17,6 @@ paths:
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -1345,6 +1344,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -2423,11 +2423,11 @@ paths:
     patch:
       tags:
         - drives.driveItem
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
+      summary: Update DriveItem properties
+      description: Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's **parentReference** property.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: drive_UpdateItem
       parameters:
         - name: drive-id
@@ -4594,6 +4594,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -4985,6 +4986,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -6227,6 +6229,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -7491,6 +7494,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -11801,6 +11805,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -15099,6 +15104,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -15515,7 +15521,6 @@ paths:
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -16571,6 +16576,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -17835,6 +17841,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -19189,6 +19196,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -22653,6 +22661,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -23020,6 +23029,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -24126,6 +24136,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -25238,6 +25249,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -29372,20 +29384,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  /drives/$count:
-    get:
-      tags:
-        - drives.drive
-      summary: Get the number of the resource
-      operationId: drive_GetCount
-      parameters:
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
   '/groups/{group-id}/drive':
     get:
       tags:
@@ -30986,6 +30984,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -32144,11 +32143,11 @@ paths:
     patch:
       tags:
         - groups.drive
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
+      summary: Update DriveItem properties
+      description: Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's **parentReference** property.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: group.drive_UpdateItem
       parameters:
         - name: group-id
@@ -34595,6 +34594,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -35010,6 +35010,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -36388,6 +36389,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -37755,6 +37757,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -40553,6 +40556,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -43777,6 +43781,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -44225,7 +44230,6 @@ paths:
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -45409,6 +45413,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -46776,6 +46781,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -47661,36 +47667,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/groups/{group-id}/drives/{drive-id}/list/items/$count':
-    get:
-      tags:
-        - groups.drive
-      summary: Get the number of the resource
-      operationId: group.drive.list.item_GetCount
-      parameters:
-        - name: group-id
-          in: path
-          description: The unique identifier of group
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: group
-        - name: drive-id
-          in: path
-          description: The unique identifier of drive
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
   '/groups/{group-id}/drives/{drive-id}/list/lastModifiedByUser':
     get:
       tags:
@@ -47755,6 +47731,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -51065,6 +51042,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -51456,6 +51434,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -52698,6 +52677,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -53921,6 +53901,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -57104,6 +57085,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -58057,6 +58039,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -61355,6 +61338,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -61771,7 +61755,6 @@ paths:
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -62827,6 +62810,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -64091,6 +64075,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -65127,28 +65112,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/shares/{sharedDriveItem-id}/list/items/$count':
-    get:
-      tags:
-        - shares.list
-      summary: Get the number of the resource
-      operationId: share.list.item_GetCount
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: The unique identifier of sharedDriveItem
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
   '/shares/{sharedDriveItem-id}/list/items/microsoft.graph.delta()':
     get:
       tags:
@@ -65445,6 +65408,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -67182,6 +67146,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -68294,6 +68259,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -71460,6 +71426,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -72666,11 +72633,11 @@ paths:
     patch:
       tags:
         - users.drive
-      summary: Move a DriveItem to a new folder
-      description: "To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move. This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request."
+      summary: Update DriveItem properties
+      description: Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item's **parentReference** property.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0
       operationId: user.drive_UpdateItem
       parameters:
         - name: user-id
@@ -75321,6 +75288,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -75736,6 +75704,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -77198,6 +77167,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -78655,6 +78625,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -81687,6 +81658,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -85139,6 +85111,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -85593,7 +85566,6 @@ paths:
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -86873,6 +86845,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -88330,6 +88303,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -89269,42 +89243,6 @@ paths:
         date: '2023-03-09T00:00:00.0000000+00:00'
         version: 2023-03/Notification_Deprecation
         description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
-  '/users/{user-id}/drives/{drive-id}/list/items/$count':
-    get:
-      tags:
-        - users.drive
-      summary: Get the number of the resource
-      operationId: user.drive.list.item_GetCount
-      parameters:
-        - name: user-id
-          in: path
-          description: The unique identifier of user
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: drive-id
-          in: path
-          description: The unique identifier of drive
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/drives/{drive-id}/list/lastModifiedByUser':
     get:
       tags:
@@ -89369,6 +89307,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -92961,6 +92900,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -93352,6 +93292,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -94678,6 +94619,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -95991,6 +95933,7 @@ paths:
                 - identities
                 - imAddresses
                 - infoCatalogs
+                - isLicenseReconciliationNeeded
                 - isManagementRestricted
                 - isResourceAccount
                 - jobTitle
@@ -99468,6 +99411,10 @@ components:
               items:
                 type: string
               description: 'Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).'
+            isLicenseReconciliationNeeded:
+              type: boolean
+              description: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
+              nullable: true
             isManagementRestricted:
               type: boolean
               nullable: true
@@ -99598,6 +99545,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -101913,13 +101861,16 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time at which the error occurred.
           format: date-time
           nullable: true
         isResolved:
           type: boolean
+          description: Indicates whether the Error has been attended to.
           nullable: true
         serviceInstance:
           type: string
+          description: 'Qualified service instance (e.g., ''SharePoint/Dublin'') that published the service error information.'
           nullable: true
       additionalProperties:
         type: object
@@ -103126,6 +103077,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -107539,11 +107491,11 @@ components:
           nullable: true
         type:
           type: string
-          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert.'
+          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.'
           nullable: true
         usage:
           type: string
-          description: 'A string that describes the purpose for which the key can be used; for example, Verify.'
+          description: 'A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.'
           nullable: true
       additionalProperties:
         type: object
@@ -110863,10 +110815,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object

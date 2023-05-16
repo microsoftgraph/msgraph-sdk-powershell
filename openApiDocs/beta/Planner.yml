@@ -8085,7 +8085,7 @@ paths:
     get:
       tags:
         - planner.plannerRoster
-      summary: List members of a roster
+      summary: List plannerRosterMembers
       description: Get the list of plannerRosterMembers from a plannerRoster.
       externalDocs:
         description: Find more info here
