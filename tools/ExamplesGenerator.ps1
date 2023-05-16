@@ -43,8 +43,6 @@ function Start-Generator {
         Get-ExternalDocsUrl -ManualExternalDocsUrl $ManualExternalDocsUrl -GenerationMode $GenerationMode -GraphProfilePath $ModulePath -Command $GraphCommand -GraphProfile $ProfilePath -Module $GraphModule
             
     }
-    git add .
-    git commit -m "Importing updates from API reference" 
 }
 function Get-FilesByProfile {
     Param(
