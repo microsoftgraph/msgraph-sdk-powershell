@@ -411,8 +411,7 @@ $DeserializedContent = $JsonContent | ConvertFrom-Json
 foreach($Data in $DeserializedContent)
 {
     if($Data.ApiVersion -eq "beta")
-    {
-        
+    {        
         if((-not($Data.Variants[0].Contains("List")))){
             $Beta = $BetaCommandGetVariantList.Add($Data.Command, $Data.Uri)        
         }else{
