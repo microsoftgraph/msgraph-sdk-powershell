@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: c6750709-dfb6-43c6-9bf9-078a98f627a5
+Module Guid: eb3072d1-c6a4-42e9-b758-0b895f2efb42
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -271,7 +271,7 @@ Read the properties and relationships of a partner-specific configuration.
 Get the number of the resource
 
 ### [Get-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Get-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
-Get identitySynchronization from policies
+Get the user synchronization policy of a partner-specific configuration.
 
 ### [Get-MgPolicyDefaultAppManagementPolicy](Get-MgPolicyDefaultAppManagementPolicy.md)
 Read the properties of a tenantAppManagementPolicy object.
@@ -731,7 +731,7 @@ Delete navigation property conditionalAccess for identity
 Delete navigation property authenticationContextClassReferences for identity
 
 ### [Remove-MgIdentityConditionalAccessNamedLocation](Remove-MgIdentityConditionalAccessNamedLocation.md)
-Delete a countryNamedLocation object.
+Delete an ipNamedLocation object.
 
 ### [Remove-MgIdentityConditionalAccessPolicy](Remove-MgIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
@@ -800,9 +800,10 @@ Delete navigation property default for policies
 
 ### [Remove-MgPolicyCrossTenantAccessPolicyPartner](Remove-MgPolicyCrossTenantAccessPolicyPartner.md)
 Delete a partner-specific configuration in a cross-tenant access policy.
+If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
 
 ### [Remove-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Remove-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
-Delete navigation property identitySynchronization for policies
+Delete the user synchronization policy for a partner-specific configuration.
 
 ### [Remove-MgPolicyDefaultAppManagementPolicy](Remove-MgPolicyDefaultAppManagementPolicy.md)
 Delete navigation property defaultAppManagementPolicy for policies
@@ -945,7 +946,7 @@ Update the navigation property conditionalAccess in identity
 Update the navigation property authenticationContextClassReferences in identity
 
 ### [Update-MgIdentityConditionalAccessNamedLocation](Update-MgIdentityConditionalAccessNamedLocation.md)
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 
 ### [Update-MgIdentityConditionalAccessPolicy](Update-MgIdentityConditionalAccessPolicy.md)
 Update the properties of a conditionalAccessPolicy object.
@@ -1026,7 +1027,7 @@ Update the default configuration of a cross-tenant access policy.
 Update the properties of a partner-specific configuration.
 
 ### [Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
-Update the navigation property identitySynchronization in policies
+Update the user synchronization policy of a partner-specific configuration.
 
 ### [Update-MgPolicyDefaultAppManagementPolicy](Update-MgPolicyDefaultAppManagementPolicy.md)
 Update the properties of a tenantAppManagementPolicy object.

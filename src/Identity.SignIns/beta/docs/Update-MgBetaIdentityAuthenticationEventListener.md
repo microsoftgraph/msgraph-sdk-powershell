@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgBetaIdentityAuthenticationEventListener
 
 ## SYNOPSIS
-Update the navigation property authenticationEventListeners in identity
+Update the properties of an authenticationEventListener object.
+You must specify the **@odata.type** property and the value of the authenticationEventListener object type to update.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Update-MgBetaIdentityAuthenticationEventListener -InputObject <IIdentitySignInsI
 ```
 
 ## DESCRIPTION
-Update the navigation property authenticationEventListeners in identity
+Update the properties of an authenticationEventListener object.
+You must specify the **@odata.type** property and the value of the authenticationEventListener object type to update.
 
 ## EXAMPLES
 
@@ -92,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthenticationEventsFlowId
-.
+The identifier of the authenticationEventsFlow object.
 
 ```yaml
 Type: System.String
@@ -171,7 +173,8 @@ Accept wildcard characters: False
 ```
 
 ### -Priority
-.
+The priority of this handler.
+Between 0 (lower priority) and 1000 (higher priority).
 
 ```yaml
 Type: System.Int32
@@ -241,23 +244,23 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphAuthenticationEventListener>`: authenticationEventListener
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AuthenticationEventsFlowId <String>]`: 
+  - `[AuthenticationEventsFlowId <String>]`: The identifier of the authenticationEventsFlow object.
   - `[Conditions <IMicrosoftGraphAuthenticationConditions>]`: authenticationConditions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Applications <IMicrosoftGraphAuthenticationConditionsApplications>]`: authenticationConditionsApplications
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IncludeAllApplications <Boolean?>]`: 
+      - `[IncludeAllApplications <Boolean?>]`: Whether the custom authentication extension should trigger for all applications with appIds specified in the includeApplications relationship. This property must be set to false for listener of type onTokenIssuanceStartListener.
       - `[IncludeApplications <IMicrosoftGraphAuthenticationConditionApplication[]>]`: 
-        - `[AppId <String>]`: 
-  - `[Priority <Int32?>]`: 
+        - `[AppId <String>]`: The identifier for an application corresponding to a condition which will trigger an authenticationEventListener.
+  - `[Priority <Int32?>]`: The priority of this handler. Between 0 (lower priority) and 1000 (higher priority).
 
 `CONDITIONS <IMicrosoftGraphAuthenticationConditions>`: authenticationConditions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Applications <IMicrosoftGraphAuthenticationConditionsApplications>]`: authenticationConditionsApplications
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IncludeAllApplications <Boolean?>]`: 
+    - `[IncludeAllApplications <Boolean?>]`: Whether the custom authentication extension should trigger for all applications with appIds specified in the includeApplications relationship. This property must be set to false for listener of type onTokenIssuanceStartListener.
     - `[IncludeApplications <IMicrosoftGraphAuthenticationConditionApplication[]>]`: 
-      - `[AppId <String>]`: 
+      - `[AppId <String>]`: The identifier for an application corresponding to a condition which will trigger an authenticationEventListener.
 
 `INPUTOBJECT <IIdentitySignInsIdentity>`: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy

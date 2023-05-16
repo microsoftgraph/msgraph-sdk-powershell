@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: 0f8b0918-253d-46ff-b09a-b5f75a6a7416
+Module Guid: 86086860-e94a-49aa-b74a-474cbbad7b83
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -235,10 +235,10 @@ Delete navigation property quota for external
 Delete navigation property schema for external
 
 ### [Remove-MgBetaExternalIndustryDataConnector](Remove-MgBetaExternalIndustryDataConnector.md)
-Delete an industryDataConnector object.
+Delete an azureDataLakeConnector object.
 
 ### [Remove-MgBetaExternalIndustryDataInboundFlow](Remove-MgBetaExternalIndustryDataInboundFlow.md)
-Delete an inboundFlow object.
+Delete an inboundFileFlow object.
 
 ### [Remove-MgBetaExternalIndustryDataOperation](Remove-MgBetaExternalIndustryDataOperation.md)
 Delete navigation property operations for external
@@ -295,10 +295,10 @@ Update the navigation property quota in external
 Update the properties of a schema for an externalConnection.
 
 ### [Update-MgBetaExternalIndustryDataConnector](Update-MgBetaExternalIndustryDataConnector.md)
-Update the properties of an azureDataLakeConnector object.
+Update the properties of an industryDataConnector object.
 
 ### [Update-MgBetaExternalIndustryDataInboundFlow](Update-MgBetaExternalIndustryDataInboundFlow.md)
-Update the properties of an inboundFileFlow object.
+Update the properties of an inboundFlow object.
 
 ### [Update-MgBetaExternalIndustryDataOperation](Update-MgBetaExternalIndustryDataOperation.md)
 Update the navigation property operations in external

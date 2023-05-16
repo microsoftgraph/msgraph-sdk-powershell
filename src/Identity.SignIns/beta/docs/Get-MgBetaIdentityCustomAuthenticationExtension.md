@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaIdentityCustomAuthenticationExtension
 
 ## SYNOPSIS
-Get customAuthenticationExtensions from identity
+Read the properties and relationships of an authenticationEventListener object.
+The **@odata.type** property in the response object indicates the type of the authenticationEventListener object.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgBetaIdentityCustomAuthenticationExtension -InputObject <IIdentitySignInsId
 ```
 
 ## DESCRIPTION
-Get customAuthenticationExtensions from identity
+Read the properties and relationships of an authenticationEventListener object.
+The **@odata.type** property in the response object indicates the type of the authenticationEventListener object.
 
 ## EXAMPLES
 

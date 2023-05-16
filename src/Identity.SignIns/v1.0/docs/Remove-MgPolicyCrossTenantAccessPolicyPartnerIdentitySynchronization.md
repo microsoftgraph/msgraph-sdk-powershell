@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization
 
 ## SYNOPSIS
-Delete navigation property identitySynchronization for policies
+Delete the user synchronization policy for a partner-specific configuration.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -InputObjec
 ```
 
 ## DESCRIPTION
-Delete navigation property identitySynchronization for policies
+Delete the user synchronization policy for a partner-specific configuration.
 
 ## EXAMPLES
 

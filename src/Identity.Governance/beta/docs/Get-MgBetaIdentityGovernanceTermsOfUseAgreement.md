@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernanceTermsOfUseAgreement
 
 ## SYNOPSIS
-Retrieve all localized files related to an agreement.
+Retrieve the properties and relationships of an agreement object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaIdentityGovernanceTermsOfUseAgreement -InputObject <IIdentityGovernanc
 ```
 
 ## DESCRIPTION
-Retrieve all localized files related to an agreement.
+Retrieve the properties and relationships of an agreement object.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Actions
-Module Guid: cf3e63e2-b114-4492-babe-d87c3d72f286
+Module Guid: b3f67a2d-9528-4754-b316-a5c03795f8c8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -560,7 +560,7 @@ Retry installation for the partner agents which failed to install on the Cloud P
 Service side will check which agent installation failed firstly and retry.
 
 ### [Invoke-MgBetaRetryUserServiceProvisioning](Invoke-MgBetaRetryUserServiceProvisioning.md)
-Invoke action retryServiceProvisioning
+Retry the user service provisioning.
 
 ### [Invoke-MgBetaRotateUserManagedDeviceBitLockerKey](Invoke-MgBetaRotateUserManagedDeviceBitLockerKey.md)
 Rotate BitLockerKeys
@@ -1102,6 +1102,9 @@ Stop a currently active accessReviewInstance.
 After the access review instance stops, the instance status will be `Completed`, the reviewers can no longer give input, and the access review decisions can be applied.
 Stopping an instance will not effect future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
+
+### [Stop-MgBetaUserPendingAccessReviewInstanceApplyDecision](Stop-MgBetaUserPendingAccessReviewInstanceApplyDecision.md)
+Invoke action stopApplyDecisions
 
 ### [Stop-MgBetaUserPendingAccessReviewInstanceStage](Stop-MgBetaUserPendingAccessReviewInstanceStage.md)
 Stop an access review stage that is `inProgress`.

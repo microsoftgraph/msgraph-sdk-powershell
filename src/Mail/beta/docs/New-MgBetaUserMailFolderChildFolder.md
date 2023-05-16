@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgBetaUserMailFolderChildFolder
 
 ## SYNOPSIS
-Use this API to create a new child mailFolder.
-If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+Create a new mailSearchFolder in the specified user's mailbox.
 
 ## SYNTAX
 
@@ -54,8 +53,7 @@ New-MgBetaUserMailFolderChildFolder -InputObject <IMailIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Use this API to create a new child mailFolder.
-If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+Create a new mailSearchFolder in the specified user's mailbox.
 
 ## EXAMPLES
 

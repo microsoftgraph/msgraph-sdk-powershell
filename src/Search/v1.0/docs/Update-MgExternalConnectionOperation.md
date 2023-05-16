@@ -276,6 +276,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISearchIdentity>`: Identity Parameter
   - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
+  - `[ExternalActivityId <String>]`: The unique identifier of externalActivity
   - `[ExternalConnectionId <String>]`: The unique identifier of externalConnection
   - `[ExternalGroupId <String>]`: The unique identifier of externalGroup
   - `[ExternalItemId <String>]`: The unique identifier of externalItem

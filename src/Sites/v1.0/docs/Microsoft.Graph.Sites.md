@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: 0af10207-e5d7-4b92-a1e8-c7751298033a
+Module Guid: b6db6022-51a8-459f-adc6-451f0c6e2a6a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -275,9 +275,6 @@ Returns the metadata for an [item][] in a [list][].
 
 ### [Get-MgGroupSiteListItemAnalytic](Get-MgGroupSiteListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
-
-### [Get-MgGroupSiteListItemCount](Get-MgGroupSiteListItemCount.md)
-Get the number of the resource
 
 ### [Get-MgGroupSiteListItemCreatedByUser](Get-MgGroupSiteListItemCreatedByUser.md)
 Identity of the user who created the item.
@@ -1094,9 +1091,6 @@ Invoke function getActivitiesByInterval
 
 ### [Get-MgSiteListItemAnalytic](Get-MgSiteListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
-
-### [Get-MgSiteListItemCount](Get-MgSiteListItemCount.md)
-Get the number of the resource
 
 ### [Get-MgSiteListItemCreatedByUser](Get-MgSiteListItemCreatedByUser.md)
 Identity of the user who created the item.

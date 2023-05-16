@@ -8,7 +8,7 @@ schema: 2.0.0
 # Test-MgBetaIdentityCustomAuthenticationExtensionAuthenticationConfiguration
 
 ## SYNOPSIS
-Invoke action validateAuthenticationConfiguration
+An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Test-MgBetaIdentityCustomAuthenticationExtensionAuthenticationConfiguration
 ```
 
 ## DESCRIPTION
-Invoke action validateAuthenticationConfiguration
+An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
 
 ## EXAMPLES
 

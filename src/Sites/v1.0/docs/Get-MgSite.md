@@ -12,11 +12,10 @@ Retrieve properties and relationships for a [site][] resource.\nA **site** resou
 
 ## SYNTAX
 
-### List (Default)
+### Get2 (Default)
 ```
-Get-MgSite [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
- [<CommonParameters>]
+Get-MgSite [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -27,6 +26,13 @@ Get-MgSite -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] 
 ### GetViaIdentity
 ```
 Get-MgSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
+```
+
+### List
+```
+Get-MgSite [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
@@ -76,6 +82,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Get2
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -CountVariable
 Specifies a count of the total number of items in a collection.
 By default, this variable will be set in the global scope.
@@ -97,7 +118,7 @@ Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: (All)
+Parameter Sets: Get, GetViaIdentity, List
 Aliases: Expand
 
 Required: False
@@ -112,7 +133,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: Get2, List
 Aliases:
 
 Required: False
@@ -173,7 +194,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: Get2, List
 Aliases:
 
 Required: False
@@ -203,7 +224,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: Get2, List
 Aliases:
 
 Required: False
@@ -218,7 +239,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: Get2, List
 Aliases: OrderBy
 
 Required: False
@@ -233,7 +254,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: Get2, List
 Aliases: Limit
 
 Required: False

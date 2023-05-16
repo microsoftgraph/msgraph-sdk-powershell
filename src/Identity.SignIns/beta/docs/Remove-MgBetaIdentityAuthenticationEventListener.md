@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaIdentityAuthenticationEventListener
 
 ## SYNOPSIS
-Delete navigation property authenticationEventListeners for identity
+Deletes an authenticationEventListener object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaIdentityAuthenticationEventListener -InputObject <IIdentitySignInsI
 ```
 
 ## DESCRIPTION
-Delete navigation property authenticationEventListeners for identity
+Deletes an authenticationEventListener object.
 
 ## EXAMPLES
 

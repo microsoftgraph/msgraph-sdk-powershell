@@ -1,11 +1,11 @@
-if(($null -eq $TestName) -or ($TestName -contains 'Get-MgSiteListItemCount'))
+if(($null -eq $TestName) -or ($TestName -contains 'Add-MgExternalConnectionItemActivity'))
 {
   $loadEnvPath = Join-Path $PSScriptRoot 'loadEnv.ps1'
   if (-Not (Test-Path -Path $loadEnvPath)) {
       $loadEnvPath = Join-Path $PSScriptRoot '..\loadEnv.ps1'
   }
   . ($loadEnvPath)
-  $TestRecordingFile = Join-Path $PSScriptRoot 'Get-MgSiteListItemCount.Recording.json'
+  $TestRecordingFile = Join-Path $PSScriptRoot 'Add-MgExternalConnectionItemActivity.Recording.json'
   $currentPath = $PSScriptRoot
   while(-not $mockingPath) {
       $mockingPath = Get-ChildItem -Path $currentPath -Recurse -Include 'HttpPipelineMocking.ps1' -File
@@ -14,12 +14,20 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-MgSiteListItemCount'))
   . ($mockingPath | Select-Object -First 1).FullName
 }
 
-Describe 'Get-MgSiteListItemCount' {
-    It 'Get' -skip {
+Describe 'Add-MgExternalConnectionItemActivity' {
+    It 'AddExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 
-    It 'GetViaIdentity' -skip {
+    It 'Add' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'AddViaIdentityExpanded' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'AddViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }

@@ -15,8 +15,9 @@ Create new navigation property to items for external
 ### CreateExpanded (Default)
 ```
 New-MgExternalConnectionItem -ExternalConnectionId <String> [-Acl <IMicrosoftGraphExternalConnectorsAcl[]>]
- [-AdditionalProperties <Hashtable>] [-Content <IMicrosoftGraphExternalConnectorsExternalItemContent>]
- [-Id <String>] [-Properties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>] [-AdditionalProperties <Hashtable>]
+ [-Content <IMicrosoftGraphExternalConnectorsExternalItemContent>] [-Id <String>] [-Properties <Hashtable>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -34,8 +35,9 @@ New-MgExternalConnectionItem -InputObject <ISearchIdentity>
 ### CreateViaIdentityExpanded
 ```
 New-MgExternalConnectionItem -InputObject <ISearchIdentity> [-Acl <IMicrosoftGraphExternalConnectorsAcl[]>]
- [-AdditionalProperties <Hashtable>] [-Content <IMicrosoftGraphExternalConnectorsExternalItemContent>]
- [-Id <String>] [-Properties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>] [-AdditionalProperties <Hashtable>]
+ [-Content <IMicrosoftGraphExternalConnectorsExternalItemContent>] [-Id <String>] [-Properties <Hashtable>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,6 +69,23 @@ To construct, see NOTES section for ACL properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsAcl[]
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Activities
+Returns a list of activities performed on the item.
+Write-only.
+To construct, see NOTES section for ACTIVITIES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalActivity[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -244,6 +263,15 @@ To create the parameters described below, construct a hash table containing the 
   - `[Type <String>]`: aclType
   - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
 
+`ACTIVITIES <IMicrosoftGraphExternalConnectorsExternalActivity[]>`: Returns a list of activities performed on the item. Write-only.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Type <String>]`: identityType
+  - `[StartDateTime <DateTime?>]`: The date and time when the particular activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[Type <String>]`: externalActivityType
+
 `BODYPARAMETER <IMicrosoftGraphExternalConnectorsExternalItem>`: externalItem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -251,6 +279,14 @@ To create the parameters described below, construct a hash table containing the 
     - `[AccessType <String>]`: accessType
     - `[Type <String>]`: aclType
     - `[Value <String>]`: The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup
+  - `[Activities <IMicrosoftGraphExternalConnectorsExternalActivity[]>]`: Returns a list of activities performed on the item. Write-only.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[PerformedBy <IMicrosoftGraphExternalConnectorsIdentity>]`: identity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Type <String>]`: identityType
+    - `[StartDateTime <DateTime?>]`: The date and time when the particular activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[Type <String>]`: externalActivityType
   - `[Content <IMicrosoftGraphExternalConnectorsExternalItemContent>]`: externalItemContent
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Type <String>]`: externalItemContentType
@@ -265,6 +301,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `INPUTOBJECT <ISearchIdentity>`: Identity Parameter
   - `[ConnectionOperationId <String>]`: The unique identifier of connectionOperation
+  - `[ExternalActivityId <String>]`: The unique identifier of externalActivity
   - `[ExternalConnectionId <String>]`: The unique identifier of externalConnection
   - `[ExternalGroupId <String>]`: The unique identifier of externalGroup
   - `[ExternalItemId <String>]`: The unique identifier of externalItem

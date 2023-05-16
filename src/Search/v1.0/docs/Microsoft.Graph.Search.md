@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: d763f5b8-59ac-4ad8-a30b-45bec95e0a1f
+Module Guid: dec5fe3c-942a-4987-bcfe-f72a83984f37
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,6 +11,9 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Search Cmdlets
+### [Add-MgExternalConnectionItemActivity](Add-MgExternalConnectionItemActivity.md)
+Invoke action addActivities
+
 ### [Get-MgExternal](Get-MgExternal.md)
 Get external
 
@@ -35,6 +38,16 @@ Get the number of the resource
 
 ### [Get-MgExternalConnectionItem](Get-MgExternalConnectionItem.md)
 Read the properties and relationships of an externalItem object.
+
+### [Get-MgExternalConnectionItemActivity](Get-MgExternalConnectionItemActivity.md)
+Returns a list of activities performed on the item.
+Write-only.
+
+### [Get-MgExternalConnectionItemActivityCount](Get-MgExternalConnectionItemActivityCount.md)
+Get the number of the resource
+
+### [Get-MgExternalConnectionItemActivityPerformedBy](Get-MgExternalConnectionItemActivityPerformedBy.md)
+Represents an identity used to identify who is responsible for the activity.
 
 ### [Get-MgExternalConnectionItemCount](Get-MgExternalConnectionItemCount.md)
 Get the number of the resource
@@ -66,6 +79,9 @@ Create an identity resource for a new member in an externalGroup.
 ### [New-MgExternalConnectionItem](New-MgExternalConnectionItem.md)
 Create new navigation property to items for external
 
+### [New-MgExternalConnectionItemActivity](New-MgExternalConnectionItemActivity.md)
+Create new navigation property to activities for external
+
 ### [New-MgExternalConnectionOperation](New-MgExternalConnectionOperation.md)
 Create new navigation property to operations for external
 
@@ -80,6 +96,9 @@ Delete an identity resource to remove the corresponding member from an externalG
 
 ### [Remove-MgExternalConnectionItem](Remove-MgExternalConnectionItem.md)
 Delete an externalItem object.
+
+### [Remove-MgExternalConnectionItemActivity](Remove-MgExternalConnectionItemActivity.md)
+Delete navigation property activities for external
 
 ### [Remove-MgExternalConnectionOperation](Remove-MgExternalConnectionOperation.md)
 Delete navigation property operations for external
@@ -101,6 +120,9 @@ Update the properties of an externalGroup object.
 
 ### [Update-MgExternalConnectionGroupMember](Update-MgExternalConnectionGroupMember.md)
 Update the navigation property members in external
+
+### [Update-MgExternalConnectionItemActivity](Update-MgExternalConnectionItemActivity.md)
+Update the navigation property activities in external
 
 ### [Update-MgExternalConnectionOperation](Update-MgExternalConnectionOperation.md)
 Update the navigation property operations in external

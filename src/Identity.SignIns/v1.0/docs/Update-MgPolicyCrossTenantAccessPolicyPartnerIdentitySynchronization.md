@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization
 
 ## SYNOPSIS
-Update the navigation property identitySynchronization in policies
+Update the user synchronization policy of a partner-specific configuration.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -InputObjec
 ```
 
 ## DESCRIPTION
-Update the navigation property identitySynchronization in policies
+Update the user synchronization policy of a partner-specific configuration.
 
 ## EXAMPLES
 
@@ -110,7 +110,9 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Display name for the cross-tenant user synchronization policy.
+Use the name of the partner Azure AD (Azure Active Directory) tenant to easily identify the policy.
+Optional.
 
 ```yaml
 Type: System.String
@@ -141,7 +143,8 @@ Accept wildcard characters: False
 ```
 
 ### -TenantId
-.
+Tenant identifier for the partner Azure AD organization.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -226,11 +229,11 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphCrossTenantIdentitySyncPolicyPartner>`: crossTenantIdentitySyncPolicyPartner
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: 
-  - `[TenantId <String>]`: 
+  - `[DisplayName <String>]`: Display name for the cross-tenant user synchronization policy. Use the name of the partner Azure AD (Azure Active Directory) tenant to easily identify the policy. Optional.
+  - `[TenantId <String>]`: Tenant identifier for the partner Azure AD organization. Read-only.
   - `[UserSyncInbound <IMicrosoftGraphCrossTenantUserSyncInbound>]`: crossTenantUserSyncInbound
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsSyncAllowed <Boolean?>]`: 
+    - `[IsSyncAllowed <Boolean?>]`: Defines whether user objects should be synchronized from the partner tenant. false causes any current user synchronization from the source tenant to the target tenant to stop. This property has no impact on existing users who have already been synchronized.
 
 `INPUTOBJECT <IIdentitySignInsIdentity>`: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: The unique identifier of activityBasedTimeoutPolicy
@@ -291,7 +294,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `USERSYNCINBOUND <IMicrosoftGraphCrossTenantUserSyncInbound>`: crossTenantUserSyncInbound
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[IsSyncAllowed <Boolean?>]`: 
+  - `[IsSyncAllowed <Boolean?>]`: Defines whether user objects should be synchronized from the partner tenant. false causes any current user synchronization from the source tenant to the target tenant to stop. This property has no impact on existing users who have already been synchronized.
 
 ## RELATED LINKS
 

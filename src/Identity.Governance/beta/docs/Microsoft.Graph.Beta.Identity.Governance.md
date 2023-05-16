@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Governance
-Module Guid: 9e1a2224-1f18-4298-8fe2-44423e0100de
+Module Guid: ed44fc7e-287e-41dd-b86e-b46e398f0832
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -146,7 +146,9 @@ Get entity from businessFlowTemplates by key
 Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackage](Get-MgBetaEntitlementManagementAccessPackage.md)
-Retrieve the properties and relationships of an accessPackage object.
+Retrieve an access package with a list of accessPackageResourceRoleScope objects.
+These objects represent the resource roles that an access package assigns to each subject.
+Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
 In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
@@ -197,7 +199,7 @@ Get the number of the resource
 Retrieve the properties and relationships of an accessPackageCatalog object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
 Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
@@ -942,7 +944,7 @@ Get operations from identityGovernance
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreement](Get-MgBetaIdentityGovernanceTermsOfUseAgreement.md)
-Retrieve all localized files related to an agreement.
+Retrieve the properties and relationships of an agreement object.
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance](Get-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -3479,6 +3481,9 @@ After the access review instance stops, the instance status will be `Completed`,
 Stopping an instance will not effect future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
 
+### [Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceApplyDecision](Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceApplyDecision.md)
+Invoke action stopApplyDecisions
+
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage](Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceStage.md)
 Stop an access review stage that is `inProgress`.
 After the access review stage stops, the stage **status** will be `Completed` and the reviewers can no longer give input.
@@ -3493,6 +3498,9 @@ Stop a currently active accessReviewInstance.
 After the access review instance stops, the instance status will be `Completed`, the reviewers can no longer give input, and the access review decisions can be applied.
 Stopping an instance will not effect future instances.
 To prevent a recurring access review from starting future instances, update the schedule definition to change its scheduled end date.
+
+### [Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceApplyDecision](Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceApplyDecision.md)
+Invoke action stopApplyDecisions
 
 ### [Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage](Stop-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage.md)
 Stop an access review stage that is `inProgress`.
@@ -3638,7 +3646,7 @@ Invoke action reprocess
 Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+Update the properties of an accessPackageAssignmentWorkflowExtension object.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Update the properties of an existing customAccessPackageWorkflowExtension object.

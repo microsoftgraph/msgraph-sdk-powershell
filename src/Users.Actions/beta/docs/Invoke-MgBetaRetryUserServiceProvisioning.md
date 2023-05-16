@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBetaRetryUserServiceProvisioning
 
 ## SYNOPSIS
-Invoke action retryServiceProvisioning
+Retry the user service provisioning.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgBetaRetryUserServiceProvisioning -InputObject <IUsersActionsIdentity> [
 ```
 
 ## DESCRIPTION
-Invoke action retryServiceProvisioning
+Retry the user service provisioning.
 
 ## EXAMPLES
 

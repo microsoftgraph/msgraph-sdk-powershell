@@ -5829,11 +5829,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: group.team.channel_CreateMember
       parameters:
         - name: group-id
@@ -10872,11 +10872,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: group.team.primaryChannel_CreateMember
       parameters:
         - name: group-id
@@ -17987,11 +17987,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: team.channel_CreateMember
       parameters:
         - name: team-id
@@ -24146,11 +24146,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: team.primaryChannel_CreateMember
       parameters:
         - name: team-id
@@ -31926,11 +31926,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_CreateMember
       parameters:
         - name: deletedTeam-id
@@ -41481,11 +41481,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_CreateMember
       parameters:
         - name: user-id
@@ -47228,11 +47228,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Add conversationMember
-      description: Add a conversationMember to a channel.
+      summary: Add member to channel
+      description: Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationmember-add?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/channel-post-members?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_CreateMember
       parameters:
         - name: user-id

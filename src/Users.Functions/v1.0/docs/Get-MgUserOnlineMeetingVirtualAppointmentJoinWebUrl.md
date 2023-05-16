@@ -1,31 +1,31 @@
 ---
 external help file:
-Module Name: Microsoft.Graph.Files
-online version: https://learn.microsoft.com/powershell/module/microsoft.graph.files/get-mguserdrivelistitemcount
+Module Name: Microsoft.Graph.Users.Functions
+online version: https://learn.microsoft.com/powershell/module/microsoft.graph.users.functions/get-mguseronlinemeetingvirtualappointmentjoinweburl
 schema: 2.0.0
 ---
 
-# Get-MgUserDriveListItemCount
+# Get-MgUserOnlineMeetingVirtualAppointmentJoinWebUrl
 
 ## SYNOPSIS
-Get the number of the resource
+Invoke function getVirtualAppointmentJoinWebUrl
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-MgUserDriveListItemCount -DriveId <String> -UserId <String> [-Filter <String>] [-Search <String>]
+Get-MgUserOnlineMeetingVirtualAppointmentJoinWebUrl -OnlineMeetingId <String> -UserId <String>
  [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserDriveListItemCount -InputObject <IFilesIdentity> [-Filter <String>] [-Search <String>]
+Get-MgUserOnlineMeetingVirtualAppointmentJoinWebUrl -InputObject <IUsersFunctionsIdentity>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get the number of the resource
+Invoke function getVirtualAppointmentJoinWebUrl
 
 ## EXAMPLES
 
@@ -45,42 +45,12 @@ Get the number of the resource
 
 ## PARAMETERS
 
-### -DriveId
-The unique identifier of drive
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -91,15 +61,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Search
-Search items by search phrases
+### -OnlineMeetingId
+The unique identifier of onlineMeeting
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Get
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -126,11 +96,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IFilesIdentity
+### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
 
 ## OUTPUTS
 
-### System.Int32
+### System.String
 
 ## NOTES
 
@@ -141,30 +111,32 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`INPUTOBJECT <IFilesIdentity>`: Identity Parameter
-  - `[ColumnDefinitionId <String>]`: The unique identifier of columnDefinition
-  - `[ColumnLinkId <String>]`: The unique identifier of columnLink
+`INPUTOBJECT <IUsersFunctionsIdentity>`: Identity Parameter
+  - `[CalendarId <String>]`: The unique identifier of calendar
+  - `[ChatId <String>]`: The unique identifier of chat
+  - `[ChatMessageId <String>]`: The unique identifier of chatMessage
+  - `[ContactFolderId <String>]`: The unique identifier of contactFolder
+  - `[ContactFolderId1 <String>]`: The unique identifier of contactFolder
   - `[ContentTypeId <String>]`: The unique identifier of contentType
-  - `[ContentTypeId1 <String>]`: The unique identifier of contentType
-  - `[DocumentSetVersionId <String>]`: The unique identifier of documentSetVersion
   - `[DriveId <String>]`: The unique identifier of drive
   - `[DriveItemId <String>]`: The unique identifier of driveItem
-  - `[DriveItemId1 <String>]`: The unique identifier of driveItem
-  - `[DriveItemVersionId <String>]`: The unique identifier of driveItemVersion
   - `[EndDateTime <String>]`: Usage: endDateTime='{endDateTime}'
-  - `[GroupId <String>]`: The unique identifier of group
+  - `[EventId <String>]`: The unique identifier of event
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[Interval <String>]`: Usage: interval='{interval}'
-  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListItemId <String>]`: The unique identifier of listItem
-  - `[ListItemVersionId <String>]`: The unique identifier of listItemVersion
-  - `[PermissionId <String>]`: The unique identifier of permission
+  - `[MailFolderId <String>]`: The unique identifier of mailFolder
+  - `[MailFolderId1 <String>]`: The unique identifier of mailFolder
+  - `[OnenotePageId <String>]`: The unique identifier of onenotePage
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[Q <String>]`: Usage: q='{q}'
-  - `[RichLongRunningOperationId <String>]`: The unique identifier of richLongRunningOperation
-  - `[SharedDriveItemId <String>]`: The unique identifier of sharedDriveItem
+  - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[StartDateTime <String>]`: Usage: startDateTime='{startDateTime}'
-  - `[SubscriptionId <String>]`: The unique identifier of subscription
-  - `[ThumbnailSetId <String>]`: The unique identifier of thumbnailSet
+  - `[TimeZoneStandard <String>]`: Usage: TimeZoneStandard='{TimeZoneStandard}'
+  - `[TodoTaskListId <String>]`: The unique identifier of todoTaskList
   - `[Token <String>]`: Usage: token='{token}'
+  - `[Top <Int32?>]`: Usage: top={top}
+  - `[User <String>]`: Usage: User='{User}'
   - `[UserId <String>]`: The unique identifier of user
 
 ## RELATED LINKS

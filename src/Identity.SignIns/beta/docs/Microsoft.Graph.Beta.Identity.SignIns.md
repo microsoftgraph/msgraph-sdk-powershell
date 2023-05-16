@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: bcf9c7f7-ffe7-4fc2-a874-0e8450c84f3d
+Module Guid: 1c10da5b-8acf-4262-8565-e41c0cb753e6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -189,7 +189,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocation](Get-MgBetaIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of a namedLocation object.
+Retrieve the properties and relationships of a countryNamedLocation object.
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocationCount](Get-MgBetaIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -210,7 +210,8 @@ Get the number of the resource
 Read the properties and relationships of a continuousAccessEvaluationPolicy object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtension](Get-MgBetaIdentityCustomAuthenticationExtension.md)
-Get customAuthenticationExtensions from identity
+Read the properties and relationships of an authenticationEventListener object.
+The **@odata.type** property in the response object indicates the type of the authenticationEventListener object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtensionCount](Get-MgBetaIdentityCustomAuthenticationExtensionCount.md)
 Get the number of the resource
@@ -417,7 +418,7 @@ Read the properties and relationships of a partner-specific configuration.
 Get the number of the resource
 
 ### [Get-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Get-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
-Read the user synchronization policy of a partner-specific configuration.
+Get the user synchronization policy of a partner-specific configuration.
 
 ### [Get-MgBetaPolicyDefaultAppManagementPolicy](Get-MgBetaPolicyDefaultAppManagementPolicy.md)
 Read the properties of a tenantAppManagementPolicy object.
@@ -859,7 +860,8 @@ Add new entity to dataPolicyOperations
 Create a new identityApiConnector object.
 
 ### [New-MgBetaIdentityAuthenticationEventListener](New-MgBetaIdentityAuthenticationEventListener.md)
-Create new navigation property to authenticationEventListeners for identity
+Create a new authenticationEventListener object.
+Only the onTokenIssuanceStartListener type is supported.
 
 ### [New-MgBetaIdentityB2CUserFlow](New-MgBetaIdentityB2CUserFlow.md)
 Create a new b2cIdentityUserFlow object.
@@ -918,7 +920,8 @@ Named locations can be either ipNamedLocation or countryNamedLocation objects.
 Create a new conditionalAccessPolicy.
 
 ### [New-MgBetaIdentityCustomAuthenticationExtension](New-MgBetaIdentityCustomAuthenticationExtension.md)
-Create new navigation property to customAuthenticationExtensions for identity
+Create a new customAuthenticationExtension object.
+Only the **onTokenIssuanceStartCustomExtension** object type is supported.
 
 ### [New-MgBetaIdentityProvider](New-MgBetaIdentityProvider.md)
 Create an identity provider object that is of the type specified in the request body.
@@ -1128,7 +1131,7 @@ Delete entity from dataPolicyOperations
 Deletes an identityApiConnector object.
 
 ### [Remove-MgBetaIdentityAuthenticationEventListener](Remove-MgBetaIdentityAuthenticationEventListener.md)
-Delete navigation property authenticationEventListeners for identity
+Deletes an authenticationEventListener object.
 
 ### [Remove-MgBetaIdentityB2CUserFlow](Remove-MgBetaIdentityB2CUserFlow.md)
 Delete a b2cIdentityUserFlow object.
@@ -1191,7 +1194,7 @@ Delete navigation property policies for identity
 Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
 
 ### [Remove-MgBetaIdentityConditionalAccessNamedLocation](Remove-MgBetaIdentityConditionalAccessNamedLocation.md)
-Delete a namedLocation object.
+Delete an ipNamedLocation object.
 
 ### [Remove-MgBetaIdentityConditionalAccessPolicy](Remove-MgBetaIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
@@ -1200,7 +1203,7 @@ Delete a conditionalAccessPolicy object.
 Delete navigation property continuousAccessEvaluationPolicy for identity
 
 ### [Remove-MgBetaIdentityCustomAuthenticationExtension](Remove-MgBetaIdentityCustomAuthenticationExtension.md)
-Delete navigation property customAuthenticationExtensions for identity
+Delete a customAuthenticationExtension object.
 
 ### [Remove-MgBetaIdentityProvider](Remove-MgBetaIdentityProvider.md)
 Delete an identity provider resource that is of the type specified by the **id** in the request.
@@ -1471,7 +1474,7 @@ Set the order of identityUserFlowAttributeAssignments being collected within a u
 Update media content for the navigation property policies in trustFramework
 
 ### [Test-MgBetaIdentityCustomAuthenticationExtensionAuthenticationConfiguration](Test-MgBetaIdentityCustomAuthenticationExtensionAuthenticationConfiguration.md)
-Invoke action validateAuthenticationConfiguration
+An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.
 
 ### [Test-MgBetaInformationProtectionDataLossPreventionPolicy](Test-MgBetaInformationProtectionDataLossPreventionPolicy.md)
 Invoke action evaluate
@@ -1509,7 +1512,8 @@ Update entity in dataPolicyOperations
 Update the properties of an identityApiConnector object.
 
 ### [Update-MgBetaIdentityAuthenticationEventListener](Update-MgBetaIdentityAuthenticationEventListener.md)
-Update the navigation property authenticationEventListeners in identity
+Update the properties of an authenticationEventListener object.
+You must specify the **@odata.type** property and the value of the authenticationEventListener object type to update.
 
 ### [Update-MgBetaIdentityB2CUserFlow](Update-MgBetaIdentityB2CUserFlow.md)
 Update the properties of a b2cIdentityUserFlow object.
@@ -1567,7 +1571,7 @@ Update the properties of an authenticationCombinationConfiguration object.
 In use, only fido2combinationConfigurations may be updated as they are the only type of authenticationCombinationConfiguration that may be created.
 
 ### [Update-MgBetaIdentityConditionalAccessNamedLocation](Update-MgBetaIdentityConditionalAccessNamedLocation.md)
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 
 ### [Update-MgBetaIdentityConditionalAccessPolicy](Update-MgBetaIdentityConditionalAccessPolicy.md)
 Update the properties of a conditionalAccessPolicy object.

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Files
-Module Guid: a74f5fdf-a583-44bf-82e9-1c42b3d84919
+Module Guid: a1029add-9f46-407e-ae84-14db409062a7
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -56,9 +56,6 @@ Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 The content stream, if the item represents a file.
 
 ### [Get-MgBetaDriveBundleCount](Get-MgBetaDriveBundleCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDriveCount](Get-MgBetaDriveCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDriveCreatedByUser](Get-MgBetaDriveCreatedByUser.md)
@@ -852,9 +849,6 @@ The list of recent activities that took place on this item.
 ### [Get-MgBetaGroupDriveListItemAnalytic](Get-MgBetaGroupDriveListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgBetaGroupDriveListItemCount](Get-MgBetaGroupDriveListItemCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaGroupDriveListItemCreatedByUser](Get-MgBetaGroupDriveListItemCreatedByUser.md)
 Get createdByUser from groups
 
@@ -1199,9 +1193,6 @@ Invoke function getActivitiesByInterval
 
 ### [Get-MgBetaShareListItemAnalytic](Get-MgBetaShareListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
-
-### [Get-MgBetaShareListItemCount](Get-MgBetaShareListItemCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaShareListItemCreatedByUser](Get-MgBetaShareListItemCreatedByUser.md)
 Get createdByUser from shares
@@ -1565,9 +1556,6 @@ The list of recent activities that took place on this item.
 
 ### [Get-MgBetaUserDriveListItemAnalytic](Get-MgBetaUserDriveListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
-
-### [Get-MgBetaUserDriveListItemCount](Get-MgBetaUserDriveListItemCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaUserDriveListItemCreatedByUser](Get-MgBetaUserDriveListItemCreatedByUser.md)
 Get createdByUser from users
@@ -2849,9 +2837,8 @@ Update entity in drives
 Update property mailboxSettings value.
 
 ### [Update-MgBetaDriveItem](Update-MgBetaDriveItem.md)
-To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move.
-This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
-Items cannot be moved between Drives using this request.
+Update the metadata for a DriveItem by ID or path.
+You can also use update to move an item to another parent by updating the item's **parentReference** property.
 
 ### [Update-MgBetaDriveItemAnalytic](Update-MgBetaDriveItemAnalytic.md)
 Update the navigation property analytics in drives
@@ -3021,9 +3008,8 @@ Update the navigation property drives in groups
 Update property mailboxSettings value.
 
 ### [Update-MgBetaGroupDriveItem](Update-MgBetaGroupDriveItem.md)
-To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move.
-This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
-Items cannot be moved between Drives using this request.
+Update the metadata for a DriveItem by ID or path.
+You can also use update to move an item to another parent by updating the item's **parentReference** property.
 
 ### [Update-MgBetaGroupDriveItemAnalytic](Update-MgBetaGroupDriveItemAnalytic.md)
 Update the navigation property analytics in groups
@@ -3256,9 +3242,8 @@ Update the navigation property drives in users
 Update property mailboxSettings value.
 
 ### [Update-MgBetaUserDriveItem](Update-MgBetaUserDriveItem.md)
-To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move.
-This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
-Items cannot be moved between Drives using this request.
+Update the metadata for a DriveItem by ID or path.
+You can also use update to move an item to another parent by updating the item's **parentReference** property.
 
 ### [Update-MgBetaUserDriveItemAnalytic](Update-MgBetaUserDriveItemAnalytic.md)
 Update the navigation property analytics in users

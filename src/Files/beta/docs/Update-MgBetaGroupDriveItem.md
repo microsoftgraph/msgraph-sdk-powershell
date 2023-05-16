@@ -8,9 +8,8 @@ schema: 2.0.0
 # Update-MgBetaGroupDriveItem
 
 ## SYNOPSIS
-To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move.
-This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
-Items cannot be moved between Drives using this request.
+Update the metadata for a DriveItem by ID or path.
+You can also use update to move an item to another parent by updating the item's **parentReference** property.
 
 ## SYNTAX
 
@@ -78,9 +77,8 @@ Update-MgBetaGroupDriveItem -InputObject <IFilesIdentity> [-Activities <IMicroso
 ```
 
 ## DESCRIPTION
-To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move.
-This is a special case of the Update method.\nYour app can combine moving an item to a new container and updating other properties of the item into a single request.
-Items cannot be moved between Drives using this request.
+Update the metadata for a DriveItem by ID or path.
+You can also use update to move an item to another parent by updating the item's **parentReference** property.
 
 ## EXAMPLES
 
@@ -1285,8 +1283,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
           - `[KeyId <String>]`: The unique identifier for the key.
           - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-          - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-          - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
+          - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
+          - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
         - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
@@ -1488,8 +1486,8 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Value <Int64?>]`: Total number of synchronized objects.
               - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
             - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-              - `[Name <String>]`: Name for this key-value pair
-              - `[Value <String>]`: Value for this key-value pair
+              - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+              - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
             - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
           - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
             - `[Key <String>]`: synchronizationSecret
@@ -3010,6 +3008,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[ResourceVisualization <IMicrosoftGraphResourceVisualization>]`: resourceVisualization
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
+      - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
       - `[IsManagementRestricted <Boolean?>]`: 
       - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
       - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -3283,10 +3282,10 @@ To create the parameters described below, construct a hash table containing the 
         - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
         - `[SecurityEnabled <Boolean?>]`: Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
         - `[SecurityIdentifier <String>]`: Security identifier of the group, used in Windows scenarios. Returned by default.
-        - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
-          - `[CreatedDateTime <DateTime?>]`: 
-          - `[IsResolved <Boolean?>]`: 
-          - `[ServiceInstance <String>]`: 
+        - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+          - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
+          - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
+          - `[ServiceInstance <String>]`: Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
         - `[Settings <IMicrosoftGraphDirectorySetting[]>]`: Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
@@ -5130,7 +5129,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
             - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
       - `[SecurityIdentifier <String>]`: Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-      - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
+      - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
       - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -5934,8 +5933,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
               - `[KeyId <String>]`: The unique identifier for the key.
               - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-              - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-              - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
+              - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
+              - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
             - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
               - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
@@ -6137,8 +6136,8 @@ To create the parameters described below, construct a hash table containing the 
                     - `[Value <Int64?>]`: Total number of synchronized objects.
                   - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
                 - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-                  - `[Name <String>]`: Name for this key-value pair
-                  - `[Value <String>]`: Value for this key-value pair
+                  - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+                  - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
                 - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
               - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
                 - `[Key <String>]`: synchronizationSecret
@@ -7674,6 +7673,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[ResourceVisualization <IMicrosoftGraphResourceVisualization>]`: resourceVisualization
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
+          - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
           - `[IsManagementRestricted <Boolean?>]`: 
           - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
           - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -7947,10 +7947,10 @@ To create the parameters described below, construct a hash table containing the 
             - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
             - `[SecurityEnabled <Boolean?>]`: Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
             - `[SecurityIdentifier <String>]`: Security identifier of the group, used in Windows scenarios. Returned by default.
-            - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
-              - `[CreatedDateTime <DateTime?>]`: 
-              - `[IsResolved <Boolean?>]`: 
-              - `[ServiceInstance <String>]`: 
+            - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+              - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
+              - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
+              - `[ServiceInstance <String>]`: Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
             - `[Settings <IMicrosoftGraphDirectorySetting[]>]`: Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
               - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
@@ -9794,7 +9794,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
                 - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
           - `[SecurityIdentifier <String>]`: Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-          - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
+          - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
           - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -10608,8 +10608,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
         - `[KeyId <String>]`: The unique identifier for the key.
         - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-        - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
+        - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
+        - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
       - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
@@ -10811,8 +10811,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Value <Int64?>]`: Total number of synchronized objects.
             - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
           - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-            - `[Name <String>]`: Name for this key-value pair
-            - `[Value <String>]`: Value for this key-value pair
+            - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+            - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
           - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
         - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
           - `[Key <String>]`: synchronizationSecret
@@ -12377,6 +12377,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[ResourceVisualization <IMicrosoftGraphResourceVisualization>]`: resourceVisualization
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
+    - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
     - `[IsManagementRestricted <Boolean?>]`: 
     - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
     - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -12650,10 +12651,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
       - `[SecurityEnabled <Boolean?>]`: Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
       - `[SecurityIdentifier <String>]`: Security identifier of the group, used in Windows scenarios. Returned by default.
-      - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
-        - `[CreatedDateTime <DateTime?>]`: 
-        - `[IsResolved <Boolean?>]`: 
-        - `[ServiceInstance <String>]`: 
+      - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+        - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
+        - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
+        - `[ServiceInstance <String>]`: Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
       - `[Settings <IMicrosoftGraphDirectorySetting[]>]`: Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
@@ -14497,7 +14498,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
           - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
     - `[SecurityIdentifier <String>]`: Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
+    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
     - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -15285,8 +15286,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
         - `[KeyId <String>]`: The unique identifier for the key.
         - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-        - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
+        - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
+        - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
       - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
@@ -15488,8 +15489,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Value <Int64?>]`: Total number of synchronized objects.
             - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
           - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-            - `[Name <String>]`: Name for this key-value pair
-            - `[Value <String>]`: Value for this key-value pair
+            - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+            - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
           - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
         - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
           - `[Key <String>]`: synchronizationSecret
@@ -17054,6 +17055,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[ResourceVisualization <IMicrosoftGraphResourceVisualization>]`: resourceVisualization
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
+    - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
     - `[IsManagementRestricted <Boolean?>]`: 
     - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
     - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -17327,10 +17329,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
       - `[SecurityEnabled <Boolean?>]`: Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
       - `[SecurityIdentifier <String>]`: Security identifier of the group, used in Windows scenarios. Returned by default.
-      - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
-        - `[CreatedDateTime <DateTime?>]`: 
-        - `[IsResolved <Boolean?>]`: 
-        - `[ServiceInstance <String>]`: 
+      - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+        - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
+        - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
+        - `[ServiceInstance <String>]`: Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
       - `[Settings <IMicrosoftGraphDirectorySetting[]>]`: Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
@@ -19174,7 +19176,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
           - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
     - `[SecurityIdentifier <String>]`: Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
+    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
     - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -19962,8 +19964,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
       - `[KeyId <String>]`: The unique identifier for the key.
       - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-      - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
+      - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
+      - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
     - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
@@ -20165,8 +20167,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Value <Int64?>]`: Total number of synchronized objects.
           - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
         - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-          - `[Name <String>]`: Name for this key-value pair
-          - `[Value <String>]`: Value for this key-value pair
+          - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+          - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
         - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
       - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
         - `[Key <String>]`: synchronizationSecret
@@ -22154,6 +22156,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[ResourceVisualization <IMicrosoftGraphResourceVisualization>]`: resourceVisualization
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
+  - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
   - `[IsManagementRestricted <Boolean?>]`: 
   - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
   - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -22427,10 +22430,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
     - `[SecurityEnabled <Boolean?>]`: Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
     - `[SecurityIdentifier <String>]`: Security identifier of the group, used in Windows scenarios. Returned by default.
-    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
-      - `[CreatedDateTime <DateTime?>]`: 
-      - `[IsResolved <Boolean?>]`: 
-      - `[ServiceInstance <String>]`: 
+    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+      - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
+      - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
+      - `[ServiceInstance <String>]`: Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
     - `[Settings <IMicrosoftGraphDirectorySetting[]>]`: Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
@@ -24270,7 +24273,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
         - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
   - `[SecurityIdentifier <String>]`: Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-  - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
+  - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
   - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -24703,8 +24706,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
       - `[KeyId <String>]`: The unique identifier for the key.
       - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-      - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-      - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
+      - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
+      - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
     - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
@@ -24906,8 +24909,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Value <Int64?>]`: Total number of synchronized objects.
           - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
         - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-          - `[Name <String>]`: Name for this key-value pair
-          - `[Value <String>]`: Value for this key-value pair
+          - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+          - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
         - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
       - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
         - `[Key <String>]`: synchronizationSecret
@@ -26895,6 +26898,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[ResourceVisualization <IMicrosoftGraphResourceVisualization>]`: resourceVisualization
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
+  - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
   - `[IsManagementRestricted <Boolean?>]`: 
   - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
   - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -27168,10 +27172,10 @@ To create the parameters described below, construct a hash table containing the 
     - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
     - `[SecurityEnabled <Boolean?>]`: Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
     - `[SecurityIdentifier <String>]`: Security identifier of the group, used in Windows scenarios. Returned by default.
-    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
-      - `[CreatedDateTime <DateTime?>]`: 
-      - `[IsResolved <Boolean?>]`: 
-      - `[ServiceInstance <String>]`: 
+    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+      - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
+      - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
+      - `[ServiceInstance <String>]`: Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
     - `[Settings <IMicrosoftGraphDirectorySetting[]>]`: Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
@@ -29011,7 +29015,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
         - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
   - `[SecurityIdentifier <String>]`: Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-  - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
+  - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
   - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -29377,8 +29381,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
         - `[KeyId <String>]`: The unique identifier for the key.
         - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-        - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
+        - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
+        - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
       - `[LicenseDetails <IMicrosoftGraphLicenseDetails[]>]`: 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[ServicePlans <IMicrosoftGraphServicePlanInfo[]>]`: Information about the service plans assigned with the license. Read-only, Not nullable
@@ -29580,8 +29584,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Value <Int64?>]`: Total number of synchronized objects.
             - `[TroubleshootingUrl <String>]`: In the event of an error, the URL with the troubleshooting steps for the issue.
           - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: Settings associated with the job. Some settings are inherited from the template.
-            - `[Name <String>]`: Name for this key-value pair
-            - `[Value <String>]`: Value for this key-value pair
+            - `[Name <String>]`: Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+            - `[Value <String>]`: Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
           - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
         - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
           - `[Key <String>]`: synchronizationSecret
@@ -31527,6 +31531,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[ResourceVisualization <IMicrosoftGraphResourceVisualization>]`: resourceVisualization
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
+    - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
     - `[IsManagementRestricted <Boolean?>]`: 
     - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
     - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -31800,10 +31805,10 @@ To create the parameters described below, construct a hash table containing the 
       - `[ResourceProvisioningOptions <String[]>]`: Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
       - `[SecurityEnabled <Boolean?>]`: Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
       - `[SecurityIdentifier <String>]`: Security identifier of the group, used in Windows scenarios. Returned by default.
-      - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
-        - `[CreatedDateTime <DateTime?>]`: 
-        - `[IsResolved <Boolean?>]`: 
-        - `[ServiceInstance <String>]`: 
+      - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
+        - `[CreatedDateTime <DateTime?>]`: The date and time at which the error occurred.
+        - `[IsResolved <Boolean?>]`: Indicates whether the Error has been attended to.
+        - `[ServiceInstance <String>]`: Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
       - `[Settings <IMicrosoftGraphDirectorySetting[]>]`: Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
@@ -33643,7 +33648,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Sensitivity <Int32?>]`: The sensitivity value of the label, where lower is less sensitive.
           - `[Tooltip <String>]`: The tooltip that should be displayed for the label in a UI.
     - `[SecurityIdentifier <String>]`: Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: 
+    - `[ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]`: Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).
     - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.

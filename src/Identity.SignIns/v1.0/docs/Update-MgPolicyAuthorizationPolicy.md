@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedToUseSspr
-Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+Indicates whether users can use the Self-Serve Password Reset feature on the tenant.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -125,7 +125,9 @@ Accept wildcard characters: False
 ```
 
 ### -AllowUserConsentForRiskyApps
-.
+Indicates whether user consent for risky apps is allowed.
+We recommend to keep this as false.
+Default value is false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -140,9 +142,9 @@ Accept wildcard characters: False
 ```
 
 ### -BlockMsolPowerShell
-To disable the use of MSOL PowerShell set this property to true.
-This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell.
-This does not affect Azure AD Connect or Microsoft Graph.
+To disable the use of MSOL PowerShell, set this property to true.
+This also disables user-based access to the legacy service endpoint used by MSOL PowerShell.
+This does not affect Azure Active Directory Connect or Microsoft Graph.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -327,14 +329,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AllowEmailVerifiedUsersToJoinOrganization <Boolean?>]`: Indicates whether a user can join the tenant by email validation.
   - `[AllowInvitesFrom <String>]`: allowInvitesFrom
-  - `[AllowUserConsentForRiskyApps <Boolean?>]`: 
+  - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. We recommend to keep this as false. Default value is false.
   - `[AllowedToSignUpEmailBasedSubscriptions <Boolean?>]`: Indicates whether users can sign up for email based subscriptions.
-  - `[AllowedToUseSspr <Boolean?>]`: Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
-  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+  - `[AllowedToUseSspr <Boolean?>]`: Indicates whether users can use the Self-Serve Password Reset feature on the tenant.
+  - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure Active Directory Connect or Microsoft Graph.
   - `[DefaultUserRolePermissions <IMicrosoftGraphDefaultUserRolePermissions>]`: defaultUserRolePermissions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedToCreateApps <Boolean?>]`: Indicates whether the default user role can create applications.
-    - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups.
+    - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups. This setting corresponds to the The Users can create security groups in Azure portals, API or PowerShell setting in the group settings menu in the Azure portal.
     - `[AllowedToReadBitlockerKeysForOwnedDevice <Boolean?>]`: Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
     - `[AllowedToReadOtherUsers <Boolean?>]`: Indicates whether the default user role can read other users.
     - `[PermissionGrantPoliciesAssigned <String[]>]`: Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
@@ -343,7 +345,7 @@ To create the parameters described below, construct a hash table containing the 
 `DEFAULTUSERROLEPERMISSIONS <IMicrosoftGraphDefaultUserRolePermissions>`: defaultUserRolePermissions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedToCreateApps <Boolean?>]`: Indicates whether the default user role can create applications.
-  - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups.
+  - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups. This setting corresponds to the The Users can create security groups in Azure portals, API or PowerShell setting in the group settings menu in the Azure portal.
   - `[AllowedToReadBitlockerKeysForOwnedDevice <Boolean?>]`: Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
   - `[AllowedToReadOtherUsers <Boolean?>]`: Indicates whether the default user role can read other users.
   - `[PermissionGrantPoliciesAssigned <String[]>]`: Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.

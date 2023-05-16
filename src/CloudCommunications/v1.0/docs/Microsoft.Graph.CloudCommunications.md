@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: f529782d-a4a3-4673-910c-e8bbc08ac97f
+Module Guid: 456a138d-77de-4ea6-9d68-834385fcf3b6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -95,6 +95,9 @@ Read-only.
 
 ### [Get-MgCommunicationOnlineMeetingCount](Get-MgCommunicationOnlineMeetingCount.md)
 Get the number of the resource
+
+### [Get-MgCommunicationOnlineMeetingVirtualAppointmentJoinWebUrl](Get-MgCommunicationOnlineMeetingVirtualAppointmentJoinWebUrl.md)
+Invoke function getVirtualAppointmentJoinWebUrl
 
 ### [Get-MgCommunicationPresence](Get-MgCommunicationPresence.md)
 Get a user's presence information.

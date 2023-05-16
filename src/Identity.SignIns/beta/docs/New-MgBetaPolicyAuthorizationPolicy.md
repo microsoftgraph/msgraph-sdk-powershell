@@ -82,7 +82,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedToUseSspr
-Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+Indicates whether the Admin Self-Serve Password Reset feature is enabled on the tenant.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -128,7 +128,8 @@ Accept wildcard characters: False
 
 ### -AllowUserConsentForRiskyApps
 Indicates whether user consent for risky apps is allowed.
-We recommend to keep this as false.
+Default value is false.
+We recommend that you keep the value set to false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -379,9 +380,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AllowEmailVerifiedUsersToJoinOrganization <Boolean?>]`: Indicates whether a user can join the tenant by email validation.
   - `[AllowInvitesFrom <String>]`: allowInvitesFrom
-  - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
+  - `[AllowUserConsentForRiskyApps <Boolean?>]`: Indicates whether user consent for risky apps is allowed. Default value is false. We recommend that you keep the value set to false.
   - `[AllowedToSignUpEmailBasedSubscriptions <Boolean?>]`: Indicates whether users can sign up for email based subscriptions.
-  - `[AllowedToUseSspr <Boolean?>]`: Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+  - `[AllowedToUseSspr <Boolean?>]`: Indicates whether the Admin Self-Serve Password Reset feature is enabled on the tenant.
   - `[BlockMsolPowerShell <Boolean?>]`: To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
   - `[DefaultUserRoleOverrides <IMicrosoftGraphDefaultUserRoleOverride[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaIdentityCustomAuthenticationExtension
 
 ## SYNOPSIS
-Delete navigation property customAuthenticationExtensions for identity
+Delete a customAuthenticationExtension object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaIdentityCustomAuthenticationExtension -InputObject <IIdentitySignIn
 ```
 
 ## DESCRIPTION
-Delete navigation property customAuthenticationExtensions for identity
+Delete a customAuthenticationExtension object.
 
 ## EXAMPLES
 

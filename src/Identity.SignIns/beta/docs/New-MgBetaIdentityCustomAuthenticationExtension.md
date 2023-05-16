@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgBetaIdentityCustomAuthenticationExtension
 
 ## SYNOPSIS
-Create new navigation property to customAuthenticationExtensions for identity
+Create a new customAuthenticationExtension object.
+Only the **onTokenIssuanceStartCustomExtension** object type is supported.
 
 ## SYNTAX
 
@@ -28,7 +29,8 @@ New-MgBetaIdentityCustomAuthenticationExtension -BodyParameter <Hashtable> [-Con
 ```
 
 ## DESCRIPTION
-Create new navigation property to customAuthenticationExtensions for identity
+Create a new customAuthenticationExtension object.
+Only the **onTokenIssuanceStartCustomExtension** object type is supported.
 
 ## EXAMPLES
 
@@ -223,7 +225,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `CLIENTCONFIGURATION <IMicrosoftGraphCustomExtensionClientConfiguration>`: customExtensionClientConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[TimeoutInMilliseconds <Int32?>]`: The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+  - `[TimeoutInMilliseconds <Int32?>]`: The max duration in milliseconds that Azure AD will wait for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
 
 ## RELATED LINKS
 

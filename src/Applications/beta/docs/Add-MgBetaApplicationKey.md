@@ -263,8 +263,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
     - `[KeyId <String>]`: The unique identifier for the key.
     - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-    - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-    - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
+    - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
+    - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
   - `[PasswordCredential <IMicrosoftGraphPasswordCredential>]`: passwordCredential
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CustomKeyIdentifier <Byte[]>]`: Do not use.
@@ -314,8 +314,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[Key <Byte[]>]`: Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
   - `[KeyId <String>]`: The unique identifier for the key.
   - `[StartDateTime <DateTime?>]`: The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-  - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert.
-  - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, Verify.
+  - `[Type <String>]`: The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
+  - `[Usage <String>]`: A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
 
 `PASSWORDCREDENTIAL <IMicrosoftGraphPasswordCredential>`: passwordCredential
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

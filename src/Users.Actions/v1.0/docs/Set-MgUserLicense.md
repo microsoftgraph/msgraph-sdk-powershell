@@ -8,7 +8,8 @@ schema: 2.0.0
 # Set-MgUserLicense
 
 ## SYNOPSIS
-Invoke action assignLicense
+Add or remove subscriptions for the user.
+You can also enable and disable specific plans associated with a subscription.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Set-MgUserLicense -InputObject <IUsersActionsIdentity> [-AdditionalProperties <H
 ```
 
 ## DESCRIPTION
-Invoke action assignLicense
+Add or remove subscriptions for the user.
+You can also enable and disable specific plans associated with a subscription.
 
 ## EXAMPLES
 

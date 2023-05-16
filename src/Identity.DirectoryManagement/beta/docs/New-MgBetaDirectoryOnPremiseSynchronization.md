@@ -186,8 +186,25 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AlertThreshold <Int32?>]`: Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
       - `[SynchronizationPreventionType <String>]`: onPremisesDirectorySynchronizationDeletionPreventionType
+    - `[AnchorAttribute <String>]`: The anchor attribute allows customers to customize the property used to create source anchors for synchronization enabled objects.
+    - `[ApplicationId <String>]`: The identifier of the on-premises directory synchronization client application that is configured for the tenant.
+    - `[CurrentExportData <IMicrosoftGraphOnPremisesCurrentExportData>]`: onPremisesCurrentExportData
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[ClientMachineName <String>]`: The name of the onPremises client machine which ran the last export.
+      - `[PendingObjectsAddition <Int32?>]`: The count of pending adds from on-premises directory.
+      - `[PendingObjectsDeletion <Int32?>]`: The count of pending deletes from on-premises directory.
+      - `[PendingObjectsUpdate <Int32?>]`: The count of pending updates from on-premises directory.
+      - `[ServiceAccount <String>]`: The name of the dirsync service account which is configured to connect to the directory.
+      - `[SuccessfulLinksProvisioningCount <Int64?>]`: The count of updated links during the current directory sync export run.
+      - `[SuccessfulObjectsProvisioningCount <Int32?>]`: The count of objects which were successfully provisioned during the current directory sync export run.
+      - `[TotalConnectorSpaceObjects <Int32?>]`: The total number of objects in the AAD Connector Space.
     - `[CustomerRequestedSynchronizationInterval <TimeSpan?>]`: Interval of time that the customer requested the sync client waits between sync cycles.
+    - `[SynchronizationClientVersion <String>]`: Indicates the version of the on-premises directory synchronization application.
     - `[SynchronizationInterval <TimeSpan?>]`: Interval of time the sync client should honor between sync cycles
+    - `[WritebackConfiguration <IMicrosoftGraphOnPremisesWritebackConfiguration>]`: onPremisesWritebackConfiguration
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[UnifiedGroupContainer <String>]`: The distinguished name of the on-premises container that the customer is using to store unified groups which are created in the cloud.
+      - `[UserContainer <String>]`: The distinguished name of the on-premises container that the customer is using to store users which are created in the cloud.
   - `[Features <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>]`: onPremisesDirectorySynchronizationFeature
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[BlockCloudObjectTakeoverThroughHardMatchEnabled <Boolean?>]`: Used to block cloud object takeover via source anchor hard match if enabled.
@@ -216,8 +233,25 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AlertThreshold <Int32?>]`: Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
     - `[SynchronizationPreventionType <String>]`: onPremisesDirectorySynchronizationDeletionPreventionType
+  - `[AnchorAttribute <String>]`: The anchor attribute allows customers to customize the property used to create source anchors for synchronization enabled objects.
+  - `[ApplicationId <String>]`: The identifier of the on-premises directory synchronization client application that is configured for the tenant.
+  - `[CurrentExportData <IMicrosoftGraphOnPremisesCurrentExportData>]`: onPremisesCurrentExportData
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[ClientMachineName <String>]`: The name of the onPremises client machine which ran the last export.
+    - `[PendingObjectsAddition <Int32?>]`: The count of pending adds from on-premises directory.
+    - `[PendingObjectsDeletion <Int32?>]`: The count of pending deletes from on-premises directory.
+    - `[PendingObjectsUpdate <Int32?>]`: The count of pending updates from on-premises directory.
+    - `[ServiceAccount <String>]`: The name of the dirsync service account which is configured to connect to the directory.
+    - `[SuccessfulLinksProvisioningCount <Int64?>]`: The count of updated links during the current directory sync export run.
+    - `[SuccessfulObjectsProvisioningCount <Int32?>]`: The count of objects which were successfully provisioned during the current directory sync export run.
+    - `[TotalConnectorSpaceObjects <Int32?>]`: The total number of objects in the AAD Connector Space.
   - `[CustomerRequestedSynchronizationInterval <TimeSpan?>]`: Interval of time that the customer requested the sync client waits between sync cycles.
+  - `[SynchronizationClientVersion <String>]`: Indicates the version of the on-premises directory synchronization application.
   - `[SynchronizationInterval <TimeSpan?>]`: Interval of time the sync client should honor between sync cycles
+  - `[WritebackConfiguration <IMicrosoftGraphOnPremisesWritebackConfiguration>]`: onPremisesWritebackConfiguration
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[UnifiedGroupContainer <String>]`: The distinguished name of the on-premises container that the customer is using to store unified groups which are created in the cloud.
+    - `[UserContainer <String>]`: The distinguished name of the on-premises container that the customer is using to store users which are created in the cloud.
 
 `FEATURES <IMicrosoftGraphOnPremisesDirectorySynchronizationFeature>`: onPremisesDirectorySynchronizationFeature
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

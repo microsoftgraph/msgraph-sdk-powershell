@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization
 
 ## SYNOPSIS
-Read the user synchronization policy of a partner-specific configuration.
+Get the user synchronization policy of a partner-specific configuration.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Get-MgBetaPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization -InputObje
 ```
 
 ## DESCRIPTION
-Read the user synchronization policy of a partner-specific configuration.
+Get the user synchronization policy of a partner-specific configuration.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CloudCommunications
-Module Guid: 9db144fd-42f0-4e3c-be27-5231061178e2
+Module Guid: 5067629f-10f9-4f48-bf48-251ad1f02651
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -226,7 +226,8 @@ Read-only.
 Get virtualAppointment from users
 
 ### [Get-MgBetaUserPresence](Get-MgBetaUserPresence.md)
-Get a user's presence information.
+Set a presence status message for a user.
+An optional expiration date and time can be supplied.
 
 ### [Invoke-MgBetaAnswerCommunicationCall](Invoke-MgBetaAnswerCommunicationCall.md)
 Enable a bot to answer an incoming call.
@@ -413,7 +414,7 @@ Delete navigation property attendanceReports for communications
 Delete navigation property attendanceRecords for communications
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistration](Remove-MgBetaCommunicationOnlineMeetingRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -440,7 +441,7 @@ Delete navigation property attendanceReports for users
 Delete navigation property attendanceRecords for users
 
 ### [Remove-MgBetaUserOnlineMeetingRegistration](Remove-MgBetaUserOnlineMeetingRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ### [Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.

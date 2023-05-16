@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Functions
-Module Guid: cc8c915e-f7c1-4475-9992-2fe82459bbfb
+Module Guid: f7ba9afd-8403-471b-a952-9412b702f589
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -129,6 +129,9 @@ This allows you to maintain and synchronize a local store of a user's messages w
 
 ### [Get-MgUserOnenoteRecentNotebook](Get-MgUserOnenoteRecentNotebook.md)
 Invoke function getRecentNotebooks
+
+### [Get-MgUserOnlineMeetingVirtualAppointmentJoinWebUrl](Get-MgUserOnlineMeetingVirtualAppointmentJoinWebUrl.md)
+Invoke function getVirtualAppointmentJoinWebUrl
 
 ### [Get-MgUserTodoListDelta](Get-MgUserTodoListDelta.md)
 Invoke function delta

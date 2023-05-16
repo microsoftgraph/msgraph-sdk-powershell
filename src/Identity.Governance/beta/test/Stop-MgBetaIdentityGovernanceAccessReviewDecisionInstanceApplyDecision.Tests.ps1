@@ -1,11 +1,11 @@
-if(($null -eq $TestName) -or ($TestName -contains 'Get-MgBetaDriveCount'))
+if(($null -eq $TestName) -or ($TestName -contains 'Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceApplyDecision'))
 {
   $loadEnvPath = Join-Path $PSScriptRoot 'loadEnv.ps1'
   if (-Not (Test-Path -Path $loadEnvPath)) {
       $loadEnvPath = Join-Path $PSScriptRoot '..\loadEnv.ps1'
   }
   . ($loadEnvPath)
-  $TestRecordingFile = Join-Path $PSScriptRoot 'Get-MgBetaDriveCount.Recording.json'
+  $TestRecordingFile = Join-Path $PSScriptRoot 'Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceApplyDecision.Recording.json'
   $currentPath = $PSScriptRoot
   while(-not $mockingPath) {
       $mockingPath = Get-ChildItem -Path $currentPath -Recurse -Include 'HttpPipelineMocking.ps1' -File
@@ -14,8 +14,12 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-MgBetaDriveCount'))
   . ($mockingPath | Select-Object -First 1).FullName
 }
 
-Describe 'Get-MgBetaDriveCount' {
-    It 'Get' -skip {
+Describe 'Stop-MgBetaIdentityGovernanceAccessReviewDecisionInstanceApplyDecision' {
+    It 'Stop' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'StopViaIdentity' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 }
