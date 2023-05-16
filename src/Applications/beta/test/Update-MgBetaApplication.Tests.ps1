@@ -13,7 +13,7 @@ Describe "Update-MgBetaApplication" {
     }
 
     It "Should support UpdateExpanded parameterSet by default" {
-        $UpdateMgBetaApplication.OutputType | Should -Be "Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplication"
+        $UpdateMgBetaApplication.OutputType | Should -Be "Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphApplication"
         $UpdateMgBetaApplication.DefaultParameterSet | Should -Be "UpdateExpanded"
     }
 
