@@ -10,11 +10,11 @@ paths:
     get:
       tags:
         - users.user
-      summary: List users
-      description: Retrieve a list of user objects.
+      summary: Get a user
+      description: Retrieve the properties and relationships of user object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0
       operationId: user_ListUser
       parameters:
         - name: ConsistencyLevel

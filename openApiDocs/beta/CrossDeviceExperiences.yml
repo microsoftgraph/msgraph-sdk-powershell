@@ -6240,6 +6240,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -6863,6 +6864,10 @@ components:
               items:
                 type: string
               description: 'Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).'
+            isLicenseReconciliationNeeded:
+              type: boolean
+              description: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
+              nullable: true
             isManagementRestricted:
               type: boolean
               nullable: true
@@ -6993,6 +6998,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -7633,13 +7639,16 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time at which the error occurred.
           format: date-time
           nullable: true
         isResolved:
           type: boolean
+          description: Indicates whether the Error has been attended to.
           nullable: true
         serviceInstance:
           type: string
+          description: 'Qualified service instance (e.g., ''SharePoint/Dublin'') that published the service error information.'
           nullable: true
       additionalProperties:
         type: object
@@ -8617,11 +8626,11 @@ components:
           nullable: true
         type:
           type: string
-          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert.'
+          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.'
           nullable: true
         usage:
           type: string
-          description: 'A string that describes the purpose for which the key can be used; for example, Verify.'
+          description: 'A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.'
           nullable: true
       additionalProperties:
         type: object
@@ -16545,10 +16554,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.'
           nullable: true
       additionalProperties:
         type: object
