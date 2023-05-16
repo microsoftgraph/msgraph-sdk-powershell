@@ -2,13 +2,13 @@
 
 trigger: none # disable triggers based on commits.
 pr: none # disable as a PR gate.
-name: 'PowerShellExamplesUpdate Check'
+name: 'PowerShellExamplesUpdateV2 Check'
 schedules:
   - cron: "0 3 * * FRI"  # every Friday at 3AM UTC (off hours for Redmond, Nairobi and Montréal)
-    displayName: 'PowerShellExamplesUpdate Check'
+    displayName: 'PowerShellExamplesUpdateV2'
     branches:
       include:
-      - dev
+      - features/2.0
     always: true
 parameters:
 - name: PipelineTimeout
@@ -25,10 +25,10 @@ resources:
      type: github
      endpoint: microsoftgraph
      name: microsoftgraph/msgraph-sdk-powershell
-     ref: v2/examples-update
+     ref: features/2.0
 
 jobs:
-- job: PowerShellExamplesUpdate
+- job: PowerShellExamplesUpdateV2
   pool: 
     name: ${{ parameters.BuildAgent }}
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
@@ -86,9 +86,9 @@ jobs:
         git push --set-upstream https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git $(ComputeBranch.WeeklyExamplesBranch)
         git status
 
-  # - template: ./common-templates/create-pr.yml
-  #   parameters:
-  #     BaseBranch: "features/2.0"
-  #     TargetBranch: $(ComputeBranch.WeeklyExamplesBranch)
-  #     Title: "[v2] Examples Update"
-  #     Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
+  - template: ./common-templates/create-pr.yml
+    parameters:
+      BaseBranch: "features/2.0"
+      TargetBranch: $(ComputeBranch.WeeklyExamplesBranch)
+      Title: "[v2] Examples Update"
+      Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
