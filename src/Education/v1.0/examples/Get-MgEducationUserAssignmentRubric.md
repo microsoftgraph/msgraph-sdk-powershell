@@ -2,7 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Education
 
-Get-MgEducationClassAssignmentRubric -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+Remove-MgEducationClassAssignmentRubricByRef -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```
 This example shows how to use the Get-MgEducationUserAssignmentRubric Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

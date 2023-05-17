@@ -2,7 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
-Get-MgTeamScheduleOpenShift -TeamId $teamId
+Remove-MgTeamScheduleOpenShift -TeamId $teamId -OpenShiftId $openShiftId
 ```
 This example shows how to use the Get-MgGroupTeamScheduleOpenShift Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

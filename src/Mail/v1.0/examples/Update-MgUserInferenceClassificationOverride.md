@@ -1,11 +1,10 @@
-### Example 1: Using the Update-MgUserInferenceClassificationOverride Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Mail
-$params = @{
-	ClassifyAs = "focused"
-}
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Mail
+
 # A UPN can also be used as -UserId.
-Update-MgUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
+Remove-MgUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId
 ```
 This example shows how to use the Update-MgUserInferenceClassificationOverride Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

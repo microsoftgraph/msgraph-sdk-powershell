@@ -1,24 +1,17 @@
-### Example 1: Using the Get-MgBetaUserOnenoteNotebook Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Notes
-# A UPN can also be used as -UserId.
-Get-MgBetaUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaUserOnenoteNotebook Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaUserOnenoteNotebook Cmdlet
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Notes
-# A UPN can also be used as -UserId.
-Get-MgBetaUserOnenoteNotebook -UserId $userId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaUserOnenoteNotebook Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgBetaUserOnenoteNotebook Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Notes
-# A UPN can also be used as -UserId.
-Get-MgBetaUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
-```
-This example shows how to use the Get-MgBetaUserOnenoteNotebook Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}

@@ -1,10 +1,17 @@
-### Example 1: Using the New-MgBetaDirectoryRole Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-$params = @{
-	RoleTemplateId = "fe930be7-5e62-47db-91af-98c3a49a38b1"
-}
-New-MgBetaDirectoryRole -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaDirectoryRole Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

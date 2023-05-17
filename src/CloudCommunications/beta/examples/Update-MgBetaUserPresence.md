@@ -1,34 +1,17 @@
-### Example 1: Get your own presence information
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
+ PS C:\> {{ Add code here }}
 
-# A UPN can also be used as -UserId.
-Get-MgBetaUserPresence -UserId $userId
+{{ Add output here }}
 ```
-This example shows how to use the Update-MgBetaUserPresence Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: Get the presence information of another user
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaUserPresence -UserId $userId
+{{ Add output here }}
 ```
-This example shows how to use the Update-MgBetaUserPresence Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 3: Get the presence information of another user
-
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-
-Get-MgBetaCommunicationPresence -PresenceId $presenceId
-```
-This example shows how to use the Update-MgBetaUserPresence Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

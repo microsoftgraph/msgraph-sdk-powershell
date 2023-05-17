@@ -1,11 +1,17 @@
-### Example 1: Code snippet
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaTeamPrimaryChannelSharedWithTeam Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

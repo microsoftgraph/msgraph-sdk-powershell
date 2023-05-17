@@ -1,8 +1,17 @@
-### Example 1: Using the Get-MgUserDefaultCalendar Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-# A UPN can also be used as -UserId.
-Get-MgUserDefaultCalendar -UserId $userId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgUserDefaultCalendar Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

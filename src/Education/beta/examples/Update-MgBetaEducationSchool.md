@@ -1,11 +1,17 @@
-### Example 1: Using the Update-MgBetaEducationSchool Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Education
-$params = @{
-	DisplayName = "Fabrikam Arts High School"
-	Description = "Magnate school for the arts. Los Angeles School District"
-}
-Update-MgBetaEducationSchool -EducationSchoolId $educationSchoolId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Update-MgBetaEducationSchool Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

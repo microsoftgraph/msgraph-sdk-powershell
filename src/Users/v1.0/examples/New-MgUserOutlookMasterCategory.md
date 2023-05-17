@@ -1,12 +1,10 @@
-### Example 1: Using the New-MgUserOutlookMasterCategory Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Users
-$params = @{
-	DisplayName = "Project expenses"
-	Color = "preset9"
-}
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Users
+
 # A UPN can also be used as -UserId.
-New-MgUserOutlookMasterCategory -UserId $userId -BodyParameter $params
+Get-MgUserOutlookMasterCategory -UserId $userId
 ```
 This example shows how to use the New-MgUserOutlookMasterCategory Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

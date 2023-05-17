@@ -1,13 +1,17 @@
-### Example 1: Using the New-MgBetaTeamChannelMessageReply Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	Body = @{
-		ContentType = "html"
-		Content = "Hello World"
-	}
-}
-New-MgBetaTeamChannelMessageReply -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaTeamChannelMessageReply Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

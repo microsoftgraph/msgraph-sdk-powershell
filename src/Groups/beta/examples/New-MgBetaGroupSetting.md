@@ -1,16 +1,17 @@
-### Example 1: Using the New-MgBetaGroupSetting Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Groups
-$params = @{
-	TemplateId = "08d542b9-071f-4e16-94b0-74abb372e3d9"
-	Values = @(
-		@{
-			Name = "AllowToAddGuests"
-			Value = "false"
-		}
-	)
-}
-New-MgBetaGroupSetting -GroupId $groupId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaGroupSetting Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

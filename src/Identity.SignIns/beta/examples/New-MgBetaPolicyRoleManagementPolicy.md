@@ -1,22 +1,17 @@
-### Example 1: Retrieve the role management policies that apply to Azure AD roles
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaPolicyRoleManagementPolicy -Filter "scopeId eq '/' and scopeType eq 'DirectoryRole'"
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaPolicyRoleManagementPolicy Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: Retrieve the role management policies that apply to the directory and expand the associated rules
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaPolicyRoleManagementPolicy -Filter "scopeId eq '/' and scopeType eq 'Directory'" -ExpandProperty "rules"
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaPolicyRoleManagementPolicy Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

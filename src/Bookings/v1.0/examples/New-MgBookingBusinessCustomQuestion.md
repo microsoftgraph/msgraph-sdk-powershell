@@ -1,14 +1,17 @@
-### Example 1: Using the New-MgBookingBusinessCustomQuestion Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-$params = @{
-	"@odata.type" = "#microsoft.graph.bookingCustomQuestion"
-	DisplayName = "What is your age?"
-	AnswerInputType = "text"
-	AnswerOptions = @(
-	)
-}
-New-MgBookingBusinessCustomQuestion -BookingBusinessId $bookingBusinessId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBookingBusinessCustomQuestion Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

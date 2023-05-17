@@ -1,20 +1,27 @@
-### Example 1: Using the Update-MgTeamChannelMessage Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Teams
-$params = @{
-	PolicyViolation = @{
-		PolicyTip = @{
-			GeneralText = "This item has been blocked by the administrator."
-			ComplianceUrl = "https://contoso.com/dlp-policy-page"
-			MatchedConditionDescriptions = @(
-				"Credit Card Number"
-			)
-		}
-		VerdictDetails = "AllowOverrideWithoutJustification,AllowFalsePositiveOverride"
-		DlpAction = "BlockAccess"
-	}
-}
-Update-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
+### Example 1: Get a message in a chat
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgChatMessage -ChatId $chatId -ChatMessageId $chatMessageId
 ```
 This example shows how to use the Update-MgTeamChannelMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Get a message in a channel
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId
+```
+This example shows how to use the Update-MgTeamChannelMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Get reply to a message in a channel
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamChannelMessageReply -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -ChatMessageId1 $chatMessageId1
+```
+This example shows how to use the Update-MgTeamChannelMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

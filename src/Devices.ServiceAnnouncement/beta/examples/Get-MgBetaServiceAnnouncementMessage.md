@@ -1,14 +1,17 @@
-### Example 1: Using the Get-MgBetaServiceAnnouncementMessage Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
-Get-MgBetaServiceAnnouncementMessage -ServiceUpdateMessageId $serviceUpdateMessageId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaServiceAnnouncementMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaServiceAnnouncementMessage Cmdlet
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
-Get-MgBetaServiceAnnouncementMessage
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaServiceAnnouncementMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}

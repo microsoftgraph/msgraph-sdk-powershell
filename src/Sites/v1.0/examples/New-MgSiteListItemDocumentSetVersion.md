@@ -1,11 +1,9 @@
-### Example 1: Using the New-MgSiteListItemDocumentSetVersion Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Sites
-$params = @{
-	Comment = "v1"
-	ShouldCaptureMinorVersion = $false
-}
-New-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -BodyParameter $params
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Sites
+
+Get-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId
 ```
 This example shows how to use the New-MgSiteListItemDocumentSetVersion Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

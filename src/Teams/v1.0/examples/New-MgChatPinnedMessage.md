@@ -1,10 +1,18 @@
-### Example 1: Using the New-MgChatPinnedMessage Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Teams
-$params = @{
-	"Message@odata.bind" = "https://graph.microsoft.com/v1.0/chats/19:2da4c29f6d7041eca70b638b43d45437@thread.v2/messages/1616964509832"
-}
-New-MgChatPinnedMessage -ChatId $chatId -BodyParameter $params
+### Example 1: List all the pinned messages in a chat
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgChatPinnedMessage -ChatId $chatId
 ```
 This example shows how to use the New-MgChatPinnedMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: List all the pinned messages in a chat along with the associated chat message
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgChatPinnedMessage -ChatId $chatId -ExpandProperty "message"
+```
+This example shows how to use the New-MgChatPinnedMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

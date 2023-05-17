@@ -1,17 +1,18 @@
-### Example 1: Using the New-MgChatTab Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Teams
-$params = @{
-	DisplayName = "My Contoso Tab"
-	"TeamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps/06805b9e-77e3-4b93-ac81-525eb87513b8"
-	Configuration = @{
-		EntityId = "2DCA2E6C7A10415CAF6B8AB6661B3154"
-		ContentUrl = "https://www.contoso.com/Orders/2DCA2E6C7A10415CAF6B8AB6661B3154/tabView"
-		WebsiteUrl = "https://www.contoso.com/Orders/2DCA2E6C7A10415CAF6B8AB6661B3154"
-		RemoveUrl = "https://www.contoso.com/Orders/2DCA2E6C7A10415CAF6B8AB6661B3154/uninstallTab"
-	}
-}
-New-MgChatTab -ChatId $chatId -BodyParameter $params
+### Example 1: List all the tabs in the chat along with associated Teams app
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp"
 ```
 This example shows how to use the New-MgChatTab Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: List all the tabs belonging to a specific app in a chat
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.web'"
+```
+This example shows how to use the New-MgChatTab Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

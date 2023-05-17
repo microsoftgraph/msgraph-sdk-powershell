@@ -1,18 +1,17 @@
-### Example 1: Using the New-MgBetaPlannerTask Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Planner
-$params = @{
-	PlanId = "xqQg5FS2LkCp935s-FIFm2QAFkHM"
-	BucketId = "hsOf2dhOJkqyYYZEtdzDe2QAIUCR"
-	Title = "Update client list"
-	Assignments = @{
-		"Fbab97d0-4932-4511-b675-204639209557" = @{
-			"@odata.type" = "#microsoft.graph.plannerAssignment"
-			OrderHint = " !"
-		}
-	}
-}
-New-MgBetaPlannerTask -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaPlannerTask Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

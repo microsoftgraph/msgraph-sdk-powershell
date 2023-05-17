@@ -1,31 +1,17 @@
-### Example 1: Using the New-MgBetaUserContact Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.PersonalContacts
-$params = @{
-	GivenName = "Pavel"
-	Surname = "Bansky"
-	EmailAddresses = @(
-		@{
-			Address = "pavelb@contoso.onmicrosoft.com"
-			Name = "Pavel Bansky"
-			Type = "personal"
-		}
-		@{
-			Address = "pavelb@fabrikam.onmicrosoft.com"
-			Name = "Pavel Bansky"
-			Type = "other"
-			OtherLabel = "Volunteer work"
-		}
-	)
-	Phones = @(
-		@{
-			Number = "+1 732 555 0102"
-			Type = "business"
-		}
-	)
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserContact -UserId $userId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaUserContact Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

@@ -1,35 +1,17 @@
-### Example 1: Using the Update-MgBetaPlannerTaskDetail Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Planner
-$params = @{
-	PreviewType = "noPreview"
-	References = @{
-		"Http%3A//developer%2Emicrosoft%2Ecom" = @{
-			"@odata.type" = "microsoft.graph.plannerExternalReference"
-			Alias = "Documentation"
-			PreviewPriority = " !"
-			Type = "Other"
-		}
-		"Https%3A//developer%2Emicrosoft%2Ecom/graph/graph-explorer" = @{
-			"@odata.type" = "microsoft.graph.plannerExternalReference"
-			PreviewPriority = "  !!"
-		}
-		"Http%3A//www%2Ebing%2Ecom" = $null
-	}
-	Checklist = @{
-		"95e27074-6c4a-447a-aa24-9d718a0b86fa" = @{
-			"@odata.type" = "microsoft.graph.plannerChecklistItem"
-			Title = "Update task details"
-			IsChecked = $true
-		}
-		"D280ed1a-9f6b-4f9c-a962-fb4d00dc50ff" = @{
-			"@odata.type" = "microsoft.graph.plannerChecklistItem"
-			IsChecked = $true
-		}
-		"A93c93c5-10a6-4167-9551-8bafa09967a7" = $null
-	}
-}
-Update-MgBetaPlannerTaskDetail -PlannerTaskId $plannerTaskId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Update-MgBetaPlannerTaskDetail Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

@@ -1,14 +1,17 @@
-### Example 1: Using the Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinition Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinition -AccessReviewHistoryDefinitionId $accessReviewHistoryDefinitionId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinition Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinition Cmdlet
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinition
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewHistoryDefinition Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}

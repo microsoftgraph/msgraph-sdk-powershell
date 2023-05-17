@@ -1,22 +1,17 @@
-### Example 1: List all the tabs in the chat along with associated Teams app
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaChatTab -ChatId $chatId -ExpandProperty "teamsApp"
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaUserChatTab Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: List all the tabs belonging to a specific app in a chat
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaChatTab -ChatId $chatId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.web'"
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaUserChatTab Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

@@ -1,21 +1,17 @@
-### Example 1: Using the Get-MgBetaChatTab Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaChatTab -ChatId $chatId -TeamsTabId $teamsTabId -ExpandProperty "teamsApp" 
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaChatTab Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaChatTab Cmdlet
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaChatTab -ChatId $chatId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.web'" 
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaChatTab Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgBetaChatTab Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaChatTab -ChatId $chatId -ExpandProperty "teamsApp" 
-```
-This example shows how to use the Get-MgBetaChatTab Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}

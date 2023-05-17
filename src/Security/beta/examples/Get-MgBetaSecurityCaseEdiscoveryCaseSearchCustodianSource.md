@@ -1,14 +1,17 @@
-### Example 1: Using the Get-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Security
-Get-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId -OutFile $outFileId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource Cmdlet
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Security
-Get-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseSearchCustodianSource Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}

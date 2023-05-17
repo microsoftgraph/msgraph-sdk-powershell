@@ -1,22 +1,17 @@
-### Example 1: List risk detections
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaServicePrincipalRiskDetection
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaServicePrincipalRiskDetection Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: List risk detections and filter the results
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaServicePrincipalRiskDetection -Filter "riskEventType eq 'investigationsThreatIntelligence' or riskLevel eq 'medium'"
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaServicePrincipalRiskDetection Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

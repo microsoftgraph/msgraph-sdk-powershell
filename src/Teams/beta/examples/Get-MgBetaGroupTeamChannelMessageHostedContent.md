@@ -1,33 +1,17 @@
-### Example 1: List hosted content for a channel message
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaTeamChannelMessageHostedContent -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaGroupTeamChannelMessageHostedContent Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: List hosted content for reply to a channel message
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaTeamChannelMessageReplyHostedContent -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -ChatMessageId1 $chatMessageId1
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaGroupTeamChannelMessageHostedContent Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 3: List hosted content for message in a chat
-
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-
-Get-MgBetaChatMessageHostedContent -ChatId $chatId -ChatMessageId $chatMessageId
-```
-This example shows how to use the Get-MgBetaGroupTeamChannelMessageHostedContent Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

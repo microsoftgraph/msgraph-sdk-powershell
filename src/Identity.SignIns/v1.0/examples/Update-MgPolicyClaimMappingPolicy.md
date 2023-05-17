@@ -1,10 +1,9 @@
-### Example 1: Using the Update-MgPolicyClaimMappingPolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	DisplayName = "UpdateClaimsPolicy"
-}
-Update-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId -BodyParameter $params
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Remove-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
 ```
 This example shows how to use the Update-MgPolicyClaimMappingPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

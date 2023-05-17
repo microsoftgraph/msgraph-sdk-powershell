@@ -1,22 +1,17 @@
-### Example 1: Get all outcomes
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Education
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaEducationMeAssignmentSubmissionOutcome Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: Get outcomes filtered by outcome type
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Education
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -Filter "isof('microsoft.graph.educationFeedbackResourceOutcome')"
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaEducationMeAssignmentSubmissionOutcome Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}
