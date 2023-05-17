@@ -33,13 +33,20 @@ function Set-ModuleVersion {
 
 function Invoke-BumpMinorOrPreReleaseVersion {
     Param(
-        [string] $FullVersion
+        [string] $FullVersion,
+        [string] $PreReleaseTag
     )
-    $versionSegments = $FullVersion -split "-preview"
-    if ($versionSegments.Count -gt 1) {
-        $version = [System.Version]("$($versionSegments[0]).$($versionSegments[1])")
+    $versionSegments = $FullVersion -split "-"
+    if ($versionSegments.Count -gt 1 -and [string]::IsNullOrWhiteSpace($PreReleaseTag) -eq $false) {
+        $PreReleaseVersion = $versionSegments[1] -split $PreReleaseTag
+        if ($PreReleaseVersion.Count -gt 1) {
+            $version = [System.Version]("$($versionSegments[0]).$($PreReleaseVersion[1])")
+        }
+        else {
+            $version = [System.Version]("$($versionSegments[0]).0")
+        }
         $newVersion = "$($version.Major).$($version.Minor).$($version.Build)"
-        $newPrereleaseVersion = "preview$($version.Revision + 1)"
+        $newPrereleaseVersion = "$PreReleaseTag$($version.Revision + 1)"
     }
     else {
         $version = [System.Version]("$($versionSegments[0])")

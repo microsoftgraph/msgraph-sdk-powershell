@@ -90,7 +90,7 @@ steps:
       pwsh: true
       targetType: inline
       script: |
-        . "$(System.DefaultWorkingDirectory)\tools\Versions\BumpModuleVersion.ps1" -BumpV1Module -BumpBetaModule -BumpAuthModule -Debug
+        . "$(System.DefaultWorkingDirectory)\tools\Versions\BumpModuleVersion.ps1" -BumpV1Module -BumpBetaModule -BumpAuthModule -PreReleaseTag "rc" -Debug
 
   - task: Bash@3
     displayName: Commit downloaded files

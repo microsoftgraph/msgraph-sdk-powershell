@@ -88,6 +88,7 @@ if ($Prerelease) {
     $FullVersionNumber = "$Version-$Prerelease"
 }
 else {
+    $ModuleManifestSettings.Prerelease = " "
     $FullVersionNumber = $Version
 }
 
