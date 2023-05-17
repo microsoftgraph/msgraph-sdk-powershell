@@ -79,12 +79,6 @@ function Get-Files {
         [Hashtable] $OpenApiContent 
     )
     
-    $ModuleManifestFile = (Join-Path $PSScriptRoot "..\src\$Module\$GraphProfile\Microsoft.Graph.$Module.psd1")
-    if($GraphProfile -eq "beta"){
-        $ModuleManifestFile = (Join-Path $PSScriptRoot "..\src\$Module\$GraphProfile\Microsoft.Graph.Beta.$Module.psd1")  
-    }
-    $ModuleManifestFileContent = Get-Content -Path $ModuleManifestFile
-
     try {
         if (Test-Path $GraphProfilePath) {
 
@@ -92,9 +86,6 @@ function Get-Files {
                
                 #Extract command over here
                 $Command = [System.IO.Path]::GetFileNameWithoutExtension($File)
-                #Check for cmdlet existence from the module manifest file
-                if ($ModuleManifestFileContent | Select-String -pattern $Command) {
-                
                     #Extract URI path
                     $UriPath = $null
                     if($GraphProfile -eq "beta"){
@@ -107,8 +98,6 @@ function Get-Files {
                         $Method = $UriPaths.Method
                         Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $UriPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method -Module $Module
                     }
-                    
-                }
 
             }
         }
