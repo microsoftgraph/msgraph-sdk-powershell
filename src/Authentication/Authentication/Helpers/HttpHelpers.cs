@@ -6,6 +6,7 @@ using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using Microsoft.Graph.PowerShell.Authentication.Handlers;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Net;
 using System.Net.Http;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
@@ -46,7 +47,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 throw new AuthenticationException(string.Format(CultureInfo.InvariantCulture, Core.ErrorConstants.Message.MissingSessionProperty, nameof(requestContext)));
 
             IList<DelegatingHandler> delegatingHandlers = new List<DelegatingHandler> {
-                new RequestHeaderHandler(),
                 new AuthenticationHandler(authProvider),
                 new NationalCloudHandler(),
                 new ODataQueryOptionsHandler(),
@@ -57,10 +57,26 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     MaxRetry = requestContext.MaxRetry,
                     RetriesTimeLimit= requestContext.RetriesTimeLimit
                 }),
-                new RedirectHandler()
+                new RedirectHandler(),
+                new RequestHeaderHandler() // Should always be last.
             };
 
-            HttpClient httpClient = GraphClientFactory.Create(delegatingHandlers);
+            HttpClient httpClient;
+            if (!RuntimeUtils.IsPsCore())
+            {
+                httpClient = GraphClientFactory.Create(delegatingHandlers,
+                finalHandler: new HttpClientHandler
+                {
+                    Proxy = null,
+                    AllowAutoRedirect = false,
+                    AutomaticDecompression = DecompressionMethods.None
+                });
+            }
+            else
+            {
+                httpClient = GraphClientFactory.Create(delegatingHandlers);
+            }
+
             httpClient.Timeout = requestContext.ClientTimeout;
             return httpClient;
         }
