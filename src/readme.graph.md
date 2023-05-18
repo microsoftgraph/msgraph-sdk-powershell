@@ -558,6 +558,10 @@ directive:
         // Serialize streams (not supported by AutoREST).
         let streamContentRegex = /(request\.Content\s*=)\s*null\s*\/\*\s*serializeToNode\s*doesn't.*.\s*(request\.Content\.Headers\.ContentType.*Parse)\("application\/json"\);/gmi
         $ = $.replace(streamContentRegex, '$1 new global::System.Net.Http.StreamContent(body);\n $2("application/octet-stream");');
+
+        // Fix double = in date parameter. Temp fix for https://github.com/Azure/autorest.powershell/issues/1025.
+        let dateAssignmentRegex = /(date="\n.*)(\+.*"=")(.*\+.*date)/gmi
+        $ = $.replace(dateAssignmentRegex, '$1 $3');
         return $;
       }
 
