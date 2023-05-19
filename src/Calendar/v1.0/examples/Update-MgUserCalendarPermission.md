@@ -1,10 +1,9 @@
-### Example 1: Using the Update-MgUserCalendarPermission Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Calendar
-$params = @{
-	Role = "write"
-}
-Update-MgUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId -BodyParameter $params
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Calendar
+
+Get-MgUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId
 ```
 This example shows how to use the Update-MgUserCalendarPermission Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

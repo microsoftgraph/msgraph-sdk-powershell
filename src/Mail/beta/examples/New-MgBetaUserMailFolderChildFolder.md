@@ -1,29 +1,17 @@
-### Example 1: Using the New-MgBetaUserMailFolderChildFolder Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	DisplayName = "displayName-value"
-	IsHidden = $true
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaUserMailFolderChildFolder Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgBetaUserMailFolderChildFolder Cmdlet
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	"@odata.type" = "microsoft.graph.mailSearchFolder"
-	DisplayName = "Weekly digests"
-	IncludeNestedFolders = $true
-	SourceFolderIds = @(
-		"AQMkADYAAAIBDAAAAA=="
-	)
-	FilterQuery = "contains(subject, 'weekly digest')"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaUserMailFolderChildFolder Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}

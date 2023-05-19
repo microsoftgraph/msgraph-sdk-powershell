@@ -1,12 +1,17 @@
-### Example 1: Using the New-MgBetaSecurityCaseEdiscoveryCase Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Security
-$params = @{
-	DisplayName = "CONTOSO LITIGATION-005"
-	Description = "Project Bazooka"
-	ExternalId = "324516"
-}
-New-MgBetaSecurityCaseEdiscoveryCase -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaSecurityCaseEdiscoveryCase Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

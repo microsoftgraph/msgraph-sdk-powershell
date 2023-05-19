@@ -1,22 +1,17 @@
-### Example 1: Get session list
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaCommunicationCallRecordSession -CallRecordId $callRecordId
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaCommunicationCallRecordSession Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: Get session list with segments
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaCommunicationCallRecordSession -CallRecordId $callRecordId -ExpandProperty "segments"
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaCommunicationCallRecordSession Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

@@ -1,14 +1,17 @@
-### Example 1: Using the New-MgBetaGroupEventExtension Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Calendar
-$params = @{
-	"@odata.type" = "microsoft.graph.openTypeExtension"
-	ExtensionName = "Com.Contoso.Deal"
-	CompanyName = "Alpine Skis"
-	DealValue = 
-	ExpirationDate = "2015-07-03T13:04:00.000Z"
-}
-New-MgBetaGroupEventExtension -GroupId $groupId -EventId $eventId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaGroupEventExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

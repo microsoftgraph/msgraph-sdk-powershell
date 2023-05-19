@@ -1,13 +1,18 @@
-### Example 1: Using the Update-MgPolicyFeatureRolloutPolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	DisplayName = "PasswordHashSync Rollout Policy"
-	Description = "PasswordHashSync Rollout Policy"
-	IsEnabled = $true
-	IsAppliedToOrganization = $false
-}
-Update-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -BodyParameter $params
+### Example 1: Get a feature rollout policy
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId
 ```
 This example shows how to use the Update-MgPolicyFeatureRolloutPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Get a feature rollout policy and expand appliesTo
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -ExpandProperty "appliesTo"
+```
+This example shows how to use the Update-MgPolicyFeatureRolloutPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

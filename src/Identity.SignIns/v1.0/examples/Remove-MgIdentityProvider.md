@@ -1,14 +1,27 @@
-### Example 1: Using the Remove-MgIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
+### Example 1: Retrieve a specific social identity provider (Azure AD or Azure AD B2C)
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 This example shows how to use the Remove-MgIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Remove-MgIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Retrieve a specific built-in identity provider (only for Azure AD)
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 This example shows how to use the Remove-MgIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Retrieves Apple identity provider(only for Azure AD B2C)
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
+```
+This example shows how to use the Remove-MgIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -1,10 +1,17 @@
-### Example 1: Using the New-MgBetaGroupMemberByRef Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Groups
-$params = @{
-	"@odata.id" = "https://graph.microsoft.com/beta/directoryObjects/{id}"
-}
-New-MgBetaGroupMemberByRef -GroupId $groupId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaGroupMemberByRef Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

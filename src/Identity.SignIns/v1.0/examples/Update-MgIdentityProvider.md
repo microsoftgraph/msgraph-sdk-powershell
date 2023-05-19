@@ -1,32 +1,27 @@
-### Example 1: Using the Update-MgIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
-	DisplayName = "Apple"
-}
-Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+### Example 1: Retrieve a specific social identity provider (Azure AD or Azure AD B2C)
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 This example shows how to use the Update-MgIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	ClientSecret = "1111111111111"
-}
-Update-MgIdentityProvider -IdentityProviderId $identityProviderId -BodyParameter $params
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Retrieve a specific built-in identity provider (only for Azure AD)
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 This example shows how to use the Update-MgIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Update-MgIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
-	ClientSecret = "1111111111111"
-}
-Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Retrieves Apple identity provider(only for Azure AD B2C)
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 This example shows how to use the Update-MgIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

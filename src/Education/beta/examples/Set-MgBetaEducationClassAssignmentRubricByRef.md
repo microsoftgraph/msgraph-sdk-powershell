@@ -1,10 +1,17 @@
-### Example 1: Using the Set-MgBetaEducationClassAssignmentRubricByRef Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Education
-$params = @{
-	"@odata.id" = "https://graph.microsoft.com/v1.0/education/me/rubrics/{id}"
-}
-Set-MgBetaEducationClassAssignmentRubricByRef -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Set-MgBetaEducationClassAssignmentRubricByRef Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

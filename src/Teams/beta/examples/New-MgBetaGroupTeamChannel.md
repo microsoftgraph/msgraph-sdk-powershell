@@ -1,33 +1,17 @@
-### Example 1: List all channels
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaTeamChannel -TeamId $teamId
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaGroupTeamChannel Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: List all private channels
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaTeamChannel -TeamId $teamId -Filter "membershipType eq 'private'"
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaGroupTeamChannel Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 3: List all shared channels
-
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-
-Get-MgBetaTeamChannel -TeamId $teamId -Filter "membershipType eq 'shared'"
-```
-This example shows how to use the New-MgBetaGroupTeamChannel Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

@@ -1,23 +1,20 @@
-### Example 1: Using the Update-MgUserMailFolder Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Mail
-$params = @{
-	DisplayName = "displayName-value"
-}
+### Example 1: Get a mail folder
+
+```powershellImport-Module Microsoft.Graph.Mail
+
 # A UPN can also be used as -UserId.
-Update-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+Get-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId
 ```
 This example shows how to use the Update-MgUserMailFolder Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgUserMailFolder Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Mail
-$params = @{
-	"@odata.type" = "microsoft.graph.mailSearchFolder"
-	FilterQuery = "contains(subject, 'Analytics')"
-}
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Get a mail sent items folder
+
+```powershellImport-Module Microsoft.Graph.Mail
+
 # A UPN can also be used as -UserId.
-Update-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+Get-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId
 ```
 This example shows how to use the Update-MgUserMailFolder Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

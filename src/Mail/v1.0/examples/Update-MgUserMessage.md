@@ -1,27 +1,20 @@
-### Example 1: Using the Update-MgUserMessage Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Mail
-$params = @{
-	IsRead = $true
-}
+### Example 1
+
+```powershellImport-Module Microsoft.Graph.Mail
+
 # A UPN can also be used as -UserId.
-Update-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+Get-MgUserMessage -UserId $userId -MessageId $messageId
 ```
 This example shows how to use the Update-MgUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgUserMessage Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Mail
-$params = @{
-	Subject = "subject-value"
-	Body = @{
-		ContentType = ""
-		Content = "content-value"
-	}
-	InferenceClassification = "other"
-}
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2
+
+```powershellImport-Module Microsoft.Graph.Mail
+
 # A UPN can also be used as -UserId.
-Update-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+Get-MgUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "microsoft.graph.eventMessage/event"
 ```
 This example shows how to use the Update-MgUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -1,20 +1,45 @@
-### Example 1: Using the New-MgDevice Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-$params = @{
-	AccountEnabled = $false
-	AlternativeSecurityIds = @(
-		@{
-			Type = 2
-			Key = [System.Text.Encoding]::ASCII.GetBytes("base64Y3YxN2E1MWFlYw==")
-		}
-	)
-	DeviceId = "4c299165-6e8f-4b45-a5ba-c5d250a707ff"
-	DisplayName = "Test device"
-	OperatingSystem = "linux"
-	OperatingSystemVersion = "1"
-}
-New-MgDevice -BodyParameter $params
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
+
+Get-MgDevice
 ```
 This example shows how to use the New-MgDevice Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
+
+Get-MgDevice -Property "id,extensionAttributes"
+```
+This example shows how to use the New-MgDevice Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
+
+Get-MgDevice -Filter "startswith(displayName, 'a')" -CountVariable CountVar -Top 1 -Sort "displayName" -ConsistencyLevel eventual
+```
+This example shows how to use the New-MgDevice Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
+
+Get-MgDevice -Search '"displayName:Android"' -CountVariable CountVar -ConsistencyLevel eventual
+```
+This example shows how to use the New-MgDevice Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
+
+Get-MgDevice -Filter "extensionAttributes/extensionAttribute1 eq 'BYOD-Device'" -CountVariable CountVar -ConsistencyLevel eventual
+```
+This example shows how to use the New-MgDevice Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

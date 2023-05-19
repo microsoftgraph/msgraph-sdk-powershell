@@ -1,22 +1,17 @@
-### Example 1: Get all attachments of a message in a collection
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaServiceAnnouncementMessageAttachment -ServiceUpdateMessageId $serviceUpdateMessageId
+{{ Add output here }}
 ```
-This example shows how to use the Set-MgBetaServiceAnnouncementMessageAttachmentContent Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: Get a zip file of all attachments in stream for a message
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaServiceAnnouncementMessageAttachmentArchive -ServiceUpdateMessageId $serviceUpdateMessageId
+{{ Add output here }}
 ```
-This example shows how to use the Set-MgBetaServiceAnnouncementMessageAttachmentContent Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

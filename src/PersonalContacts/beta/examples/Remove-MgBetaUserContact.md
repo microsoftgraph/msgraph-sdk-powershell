@@ -1,8 +1,17 @@
-### Example 1: Using the Remove-MgBetaUserContact Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.PersonalContacts
-# A UPN can also be used as -UserId.
-Remove-MgBetaUserContact -UserId $userId -ContactId $contactId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Remove-MgBetaUserContact Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

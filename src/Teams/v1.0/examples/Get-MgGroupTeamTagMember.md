@@ -2,7 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
-Get-MgTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId
+Get-MgTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -TeamworkTagMemberId $teamworkTagMemberId
 ```
 This example shows how to use the Get-MgGroupTeamTagMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

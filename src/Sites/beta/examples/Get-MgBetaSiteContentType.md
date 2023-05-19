@@ -1,21 +1,17 @@
-### Example 1: Using the Get-MgBetaSiteContentType Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteContentType -SiteId $siteId -OutFile $outFileId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaSiteContentType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaSiteContentType Cmdlet
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaSiteContentType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgBetaSiteContentType Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteContentType -SiteId $siteId
-```
-This example shows how to use the Get-MgBetaSiteContentType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}

@@ -1,26 +1,26 @@
-### Example 1: Code snippet
+### Example 1: Get a message in a chat
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
-Get-MgChatMessage -ChatId $chatId -Top 2
+Get-MgChatMessage -ChatId $chatId -ChatMessageId $chatMessageId
 ```
 This example shows how to use the Get-MgUserChatMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Code snippet
+### Example 2: Get a message in a channel
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
-Get-MgChatMessage -ChatId $chatId -Top 2 -Sort "createdDateTime desc"
+Get-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId
 ```
 This example shows how to use the Get-MgUserChatMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Code snippet
+### Example 3: Get reply to a message in a channel
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
-Get-MgChatMessage -ChatId $chatId -Top 2 -Sort "lastModifiedDateTime desc" -Filter "lastModifiedDateTime ge 2022-09-22T00:00:00.000Z and lastModifiedDateTime le 2022-09-24T00:00:00.000Z"
+Get-MgTeamChannelMessageReply -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -ChatMessageId1 $chatMessageId1
 ```
 This example shows how to use the Get-MgUserChatMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

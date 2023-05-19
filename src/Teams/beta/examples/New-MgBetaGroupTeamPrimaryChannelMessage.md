@@ -1,22 +1,17 @@
-### Example 1: Code snippet
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -Top 3
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaGroupTeamPrimaryChannelMessage Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: Code snippet
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -Top 1 -ExpandProperty "replies"
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaGroupTeamPrimaryChannelMessage Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

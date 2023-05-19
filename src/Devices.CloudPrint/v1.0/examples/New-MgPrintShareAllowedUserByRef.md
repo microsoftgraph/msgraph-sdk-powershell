@@ -1,10 +1,9 @@
-### Example 1: Using the New-MgPrintShareAllowedUserByRef Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-$params = @{
-	"@odata.id" = "https://graph.microsoft.com/v1.0/users/{userId}"
-}
-New-MgPrintShareAllowedUserByRef -PrinterShareId $printerShareId -BodyParameter $params
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Devices.CloudPrint
+
+Get-MgPrintShareAllowedUser -PrinterShareId $printerShareId
 ```
 This example shows how to use the New-MgPrintShareAllowedUserByRef Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

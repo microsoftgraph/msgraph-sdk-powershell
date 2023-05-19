@@ -1,11 +1,17 @@
-### Example 1: Code snippet
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Groups
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaGroupThreadPostAttachment -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaGroupConversationThreadPostInReplyToAttachment Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

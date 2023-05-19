@@ -1,55 +1,48 @@
-### Example 1: Using the New-MgUserMessage Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Mail
-$params = @{
-	Subject = "Did you see last night's game?"
-	Importance = "Low"
-	Body = @{
-		ContentType = "HTML"
-		Content = "They were <b>awesome</b>!"
-	}
-	ToRecipients = @(
-		@{
-			EmailAddress = @{
-				Address = "AdeleV@contoso.onmicrosoft.com"
-			}
-		}
-	)
-}
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Mail
+
 # A UPN can also be used as -UserId.
-New-MgUserMessage -UserId $userId -BodyParameter $params
+Get-MgUserMessageExtension -UserId $userId -MessageId $messageId -ExtensionId $extensionId
 ```
 This example shows how to use the New-MgUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgUserMessage Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Mail
-$params = @{
-	Subject = "9/8/2018: concert"
-	Body = @{
-		ContentType = "HTML"
-		Content = "The group represents Washington."
-	}
-	ToRecipients = @(
-		@{
-			EmailAddress = @{
-				Address = "AlexW@contoso.OnMicrosoft.com"
-			}
-		}
-	)
-	InternetMessageHeaders = @(
-		@{
-			Name = "x-custom-header-group-name"
-			Value = "Washington"
-		}
-		@{
-			Name = "x-custom-header-group-id"
-			Value = "WA001"
-		}
-	)
-}
-# A UPN can also be used as -UserId.
-New-MgUserMessage -UserId $userId -BodyParameter $params
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Calendar
+
+Get-MgGroupEventExtension -GroupId $groupId -EventId $eventId -ExtensionId $extensionId
 ```
 This example shows how to use the New-MgUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Mail
+
+# A UPN can also be used as -UserId.
+Get-MgUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "extensions(`$filter=id eq 'Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')"
+```
+This example shows how to use the New-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Groups
+
+Get-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId
+```
+This example shows how to use the New-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Mail
+
+# A UPN can also be used as -UserId.
+Get-MgUserMessage -UserId $userId -Filter "Extensions/any(f:f/id eq 'Com.Contoso.Referral')" -ExpandProperty "Extensions(`$filter=id eq 'Com.Contoso.Referral')"
+```
+This example shows how to use the New-MgUserMessage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

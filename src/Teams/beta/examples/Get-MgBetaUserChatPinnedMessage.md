@@ -1,22 +1,17 @@
-### Example 1: List all the pinned messages in a chat
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaChatPinnedMessage -ChatId $chatId
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaUserChatPinnedMessage Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: List all the pinned messages in a chat along with the associated chat message
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaChatPinnedMessage -ChatId $chatId -ExpandProperty "message"
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaUserChatPinnedMessage Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

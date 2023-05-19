@@ -20,7 +20,7 @@ This example shows how to use the New-MgContact Cmdlet.
 
 ```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
 
-Get-MgContact -Search "displayName:wa" -CountVariable CountVar -ConsistencyLevel eventual
+Get-MgContact -Search '"displayName:wa"' -CountVariable CountVar -ConsistencyLevel eventual
 ```
 This example shows how to use the New-MgContact Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

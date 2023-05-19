@@ -1,7 +1,9 @@
-### Example 1: Using the Remove-MgSecurityCaseEdiscoveryCase Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Security
-Remove-MgSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Security
+
+Get-MgSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
 ```
 This example shows how to use the Remove-MgSecurityCaseEdiscoveryCase Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

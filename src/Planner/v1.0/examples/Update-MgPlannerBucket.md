@@ -1,10 +1,9 @@
-### Example 1: Using the Update-MgPlannerBucket Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Planner
-$params = @{
-	Name = "Development"
-}
-Update-MgPlannerBucket -PlannerBucketId $plannerBucketId -BodyParameter $params
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Planner
+
+Get-MgPlannerBucket -PlannerBucketId $plannerBucketId
 ```
 This example shows how to use the Update-MgPlannerBucket Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

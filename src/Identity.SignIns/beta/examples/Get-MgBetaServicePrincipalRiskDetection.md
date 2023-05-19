@@ -1,21 +1,17 @@
-### Example 1: Using the Get-MgBetaServicePrincipalRiskDetection Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId $servicePrincipalRiskDetectionId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaServicePrincipalRiskDetection Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaServicePrincipalRiskDetection Cmdlet
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaServicePrincipalRiskDetection -Filter "riskEventType eq 'investigationsThreatIntelligence' or riskLevel eq 'medium'" 
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaServicePrincipalRiskDetection Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgBetaServicePrincipalRiskDetection Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaServicePrincipalRiskDetection
-```
-This example shows how to use the Get-MgBetaServicePrincipalRiskDetection Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}

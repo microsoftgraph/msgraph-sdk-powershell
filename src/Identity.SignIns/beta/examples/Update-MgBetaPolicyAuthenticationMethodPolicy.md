@@ -1,24 +1,17 @@
-### Example 1: Using the Update-MgBetaPolicyAuthenticationMethodPolicy Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	RegistrationEnforcement = @{
-		AuthenticationMethodsRegistrationCampaign = @{
-			SnoozeDurationInDays = 1
-			State = "enabled"
-			ExcludeTargets = @(
-			)
-			IncludeTargets = @(
-				@{
-					Id = "3ee3a9de-0a86-4e12-a287-9769accf1ba2"
-					TargetType = "group"
-					TargetedAuthenticationMethod = "microsoftAuthenticator"
-				}
-			)
-		}
-	}
-}
-Update-MgBetaPolicyAuthenticationMethodPolicy -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Update-MgBetaPolicyAuthenticationMethodPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

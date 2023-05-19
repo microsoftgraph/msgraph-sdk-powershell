@@ -1,28 +1,27 @@
-### Example 1: Using the New-MgTeamMember Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Teams
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
-		"owner"
-	)
-	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
-}
-New-MgTeamMember -TeamId $teamId -BodyParameter $params
+### Example 1: Get list of members in team
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamMember -TeamId $teamId
 ```
 This example shows how to use the New-MgTeamMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgTeamMember Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Teams
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
-		"owner"
-	)
-	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
-}
-New-MgTeamMember -TeamId $teamId -BodyParameter $params
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Find members of a team by their Azure AD user object ID
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamMember -TeamId $teamId -Filter "(microsoft.graph.aadUserConversationMember/userId eq '73761f06-2ac9-469c-9f10-279a8cc267f9')"
 ```
 This example shows how to use the New-MgTeamMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Find members of a team by their names or email
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamMember -TeamId $teamId -Filter "(microsoft.graph.aadUserConversationMember/displayName eq 'Harry Johnson' or microsoft.graph.aadUserConversationMember/email eq 'admin@M365x987948.OnMicrosoft.com')"
+```
+This example shows how to use the New-MgTeamMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

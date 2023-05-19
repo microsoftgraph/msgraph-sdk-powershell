@@ -1,7 +1,9 @@
-### Example 1: Using the Remove-MgSiteListItem Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Sites
-Remove-MgSiteListItem -SiteId $siteId -ListId $listId -ListItemId $listItemId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Sites
+
+Get-MgSiteListItem -SiteId $siteId -ListId $listId -ListItemId $listItemId -ExpandProperty "fields"
 ```
 This example shows how to use the Remove-MgSiteListItem Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

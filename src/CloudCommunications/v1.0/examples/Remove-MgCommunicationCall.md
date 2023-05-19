@@ -1,7 +1,18 @@
-### Example 1: Using the Remove-MgCommunicationCall Cmdlet
-```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Remove-MgCommunicationCall -CallId $callId
+### Example 1: Getting a Peer-to-Peer call
+
+```powershellImport-Module Microsoft.Graph.CloudCommunications
+
+Get-MgCommunicationCall -CallId $callId
 ```
 This example shows how to use the Remove-MgCommunicationCall Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Getting a group call
+
+```powershellImport-Module Microsoft.Graph.CloudCommunications
+
+Get-MgCommunicationCall -CallId $callId
+```
+This example shows how to use the Remove-MgCommunicationCall Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

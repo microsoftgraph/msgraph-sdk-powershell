@@ -1,29 +1,20 @@
-### Example 1: Using the New-MgUserMailFolderChildFolder Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Mail
-$params = @{
-	DisplayName = "displayName-value"
-	IsHidden = $true
-}
+### Example 1: List mail folders
+
+```powershellImport-Module Microsoft.Graph.Mail
+
 # A UPN can also be used as -UserId.
-New-MgUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+Get-MgUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId
 ```
 This example shows how to use the New-MgUserMailFolderChildFolder Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgUserMailFolderChildFolder Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Mail
-$params = @{
-	"@odata.type" = "microsoft.graph.mailSearchFolder"
-	DisplayName = "Weekly digests"
-	IncludeNestedFolders = $true
-	SourceFolderIds = @(
-		"AQMkADYAAAIBDAAAAA=="
-	)
-	FilterQuery = "contains(subject, 'weekly digest')"
-}
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Include hidden child folders under a specified mail folder
+
+```powershellImport-Module Microsoft.Graph.Mail
+
 # A UPN can also be used as -UserId.
-New-MgUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+Get-MgUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -Includehiddenfolders true
 ```
 This example shows how to use the New-MgUserMailFolderChildFolder Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

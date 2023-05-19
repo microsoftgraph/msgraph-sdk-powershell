@@ -1,23 +1,17 @@
-### Example 1: Get manager
-
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Users
+ PS C:\> {{ Add code here }}
 
-Get-MgBetaUserManager -UserId $userId
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaUserManagerByRef Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+{{ Add description here }}
 
-### Example 2: Get manager chain up to the root level
-
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Users
+ PS C:\> {{ Add code here }}
 
-# A UPN can also be used as -UserId.
-Get-MgBetaUser -UserId $userId -ExpandProperty "manager(`$levels=max;`$select=id,displayName)" -Property "id,displayName" -CountVariable CountVar -ConsistencyLevel eventual
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaUserManagerByRef Cmdlet.
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

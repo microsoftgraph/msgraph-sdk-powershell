@@ -1,33 +1,17 @@
-### Example 1: Using the Update-MgBetaExternalConnectionSchema Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Search
-$params = @{
-	BaseType = "microsoft.graph.externalItem"
-	Properties = @(
-		@{
-			Name = "ticketTitle"
-			Type = "string"
-			IsSearchable = "true"
-			IsRetrievable = "true"
-			Labels = @(
-				"title"
-			)
-		}
-		@{
-			Name = "priority"
-			Type = "string"
-			IsQueryable = "true"
-			IsRetrievable = "true"
-			IsSearchable = "false"
-		}
-		@{
-			Name = "assignee"
-			Type = "string"
-			IsRetrievable = "true"
-		}
-	)
-}
-Update-MgBetaExternalConnectionSchema -ExternalConnectionId $externalConnectionId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Update-MgBetaExternalConnectionSchema Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
