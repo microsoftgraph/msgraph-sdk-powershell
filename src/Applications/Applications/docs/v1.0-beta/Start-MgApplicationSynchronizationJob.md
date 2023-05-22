@@ -8,11 +8,7 @@ schema: 2.0.0
 # Start-MgApplicationSynchronizationJob
 
 ## SYNOPSIS
-Start an existing synchronization job.
-If the job is in a paused state, it will continue processing changes from the point where it was paused.
-If the job is in quarantine, the quarantine status will be cleared.
-Do not create scripts to call the start job continuously while it's running because that can cause the service to stop running.
-Use the start job only when the job is currently paused or in quarantine.
+Invoke action start
 
 ## SYNTAX
 
@@ -29,11 +25,7 @@ Start-MgApplicationSynchronizationJob -InputObject <IApplicationsIdentity> [-Pas
 ```
 
 ## DESCRIPTION
-Start an existing synchronization job.
-If the job is in a paused state, it will continue processing changes from the point where it was paused.
-If the job is in quarantine, the quarantine status will be cleared.
-Do not create scripts to call the start job continuously while it's running because that can cause the service to stop running.
-Use the start job only when the job is currently paused or in quarantine.
+Invoke action start
 
 ## EXAMPLES
 

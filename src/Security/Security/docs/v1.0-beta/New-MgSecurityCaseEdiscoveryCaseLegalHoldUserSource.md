@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource
 
 ## SYNOPSIS
-Create a new userSource object.
+Create new navigation property to userSources for security
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgSecurityCaseEdiscoveryCaseLegalHoldUserSource -InputObject <ISecurityIdent
 ```
 
 ## DESCRIPTION
-Create a new userSource object.
+Create new navigation property to userSources for security
 
 ## EXAMPLES
 

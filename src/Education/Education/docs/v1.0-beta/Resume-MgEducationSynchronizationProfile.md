@@ -8,7 +8,7 @@ schema: 2.0.0
 # Resume-MgEducationSynchronizationProfile
 
 ## SYNOPSIS
-Resume the sync of a specific school data synchronization profile in the tenant.
+Invoke action resume
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Resume-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Pas
 ```
 
 ## DESCRIPTION
-Resume the sync of a specific school data synchronization profile in the tenant.
+Invoke action resume
 
 ## EXAMPLES
 

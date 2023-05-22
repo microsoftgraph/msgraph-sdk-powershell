@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgDismissGroupCalendarEventReminder
 
 ## SYNOPSIS
-Dismiss a reminder that has been triggered for an event in a user calendar.
+Invoke action dismissReminder
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgDismissGroupCalendarEventReminder -InputObject <IGroupsIdentity> [-Pass
 ```
 
 ## DESCRIPTION
-Dismiss a reminder that has been triggered for an event in a user calendar.
+Invoke action dismissReminder
 
 ## EXAMPLES
 
@@ -172,6 +172,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

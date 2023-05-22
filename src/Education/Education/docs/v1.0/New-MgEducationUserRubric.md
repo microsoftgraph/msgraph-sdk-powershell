@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgEducationUserRubric
 
 ## SYNOPSIS
-Create a new educationRubric object.
+Create new navigation property to rubrics for education
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgEducationUserRubric -InputObject <IEducationIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Create a new educationRubric object.
+Create new navigation property to rubrics for education
 
 ## EXAMPLES
 

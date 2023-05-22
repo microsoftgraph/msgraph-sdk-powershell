@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileEducationalActivity
 
 ## SYNOPSIS
-Create a new educationalActivity in a user's profile.
+Create new navigation property to educationalActivities for users
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Create a new educationalActivity in a user's profile.
+Create new navigation property to educationalActivities for users
 
 ## EXAMPLES
 

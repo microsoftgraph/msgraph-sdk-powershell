@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityConditionalAccessAuthenticationContextClassReference
 
 ## SYNOPSIS
-Create a new authenticationContextClassReference.
+Create new navigation property to authenticationContextClassReferences for identity
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgIdentityConditionalAccessAuthenticationContextClassReference
 ```
 
 ## DESCRIPTION
-Create a new authenticationContextClassReference.
+Create new navigation property to authenticationContextClassReferences for identity
 
 ## EXAMPLES
 

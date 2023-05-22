@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgTrustFrameworkKeySetKey
 
 ## SYNOPSIS
-Generate a trustFrameworkKey and a secret automatically in the trustFrameworkKeyset.
-The caller doesn't have to provide a secret.
+Invoke action generateKey
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ New-MgTrustFrameworkKeySetKey -InputObject <IIdentitySignInsIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Generate a trustFrameworkKey and a secret automatically in the trustFrameworkKeyset.
-The caller doesn't have to provide a secret.
+Invoke action generateKey
 
 ## EXAMPLES
 
@@ -281,6 +279,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

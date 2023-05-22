@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBusinessScenario
 
 ## SYNOPSIS
-Create a new businessScenario object.
+Create new navigation property to businessScenarios for solutions
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgBusinessScenario -BodyParameter <IMicrosoftGraphBusinessScenario> [-Confir
 ```
 
 ## DESCRIPTION
-Create a new businessScenario object.
+Create new navigation property to businessScenarios for solutions
 
 ## EXAMPLES
 

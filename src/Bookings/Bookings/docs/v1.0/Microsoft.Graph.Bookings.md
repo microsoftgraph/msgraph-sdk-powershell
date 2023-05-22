@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Bookings
-Module Guid: 64c28acc-bdad-476b-8583-07f6dce010d6
+Module Guid: 5cd57b91-821b-4e86-8a85-308d06aa9a38
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -40,7 +40,7 @@ Read-only.
 Nullable.
 
 ### [Get-MgBookingBusinessStaffAvailability](Get-MgBookingBusinessStaffAvailability.md)
-Get the availability information of staff members of a Microsoft Bookings calendar.
+Invoke action getStaffAvailability
 
 ### [Get-MgBookingBusinessStaffMember](Get-MgBookingBusinessStaffMember.md)
 All the staff members that provide services in this business.
@@ -51,34 +51,31 @@ Nullable.
 Get bookingCurrencies from solutions
 
 ### [New-MgBookingBusiness](New-MgBookingBusiness.md)
-Create a new Microsoft Bookings business in a tenant.
-This is the first step in setting up a Bookings business where you must specify the business display name.
-You can include other information such as business address, web site address, and scheduling policy, or set that information later by updating the **bookingBusiness**.
+Create new navigation property to bookingBusinesses for solutions
 
 ### [New-MgBookingBusinessAppointment](New-MgBookingBusinessAppointment.md)
-Create a new bookingAppointment for the specified bookingBusiness.
+Create new navigation property to appointments for solutions
 
 ### [New-MgBookingBusinessCalendarView](New-MgBookingBusinessCalendarView.md)
 Create new navigation property to calendarView for solutions
 
 ### [New-MgBookingBusinessCustomer](New-MgBookingBusinessCustomer.md)
-Create a new bookingCustomer object.
+Create new navigation property to customers for solutions
 
 ### [New-MgBookingBusinessCustomQuestion](New-MgBookingBusinessCustomQuestion.md)
-Create a new bookingCustomQuestion object.
+Create new navigation property to customQuestions for solutions
 
 ### [New-MgBookingBusinessService](New-MgBookingBusinessService.md)
-Create a new bookingService for the specified bookingBusiness.
+Create new navigation property to services for solutions
 
 ### [New-MgBookingBusinessStaffMember](New-MgBookingBusinessStaffMember.md)
-Create a new bookingStaffMember in the specified bookingBusiness.
+Create new navigation property to staffMembers for solutions
 
 ### [New-MgBookingCurrency](New-MgBookingCurrency.md)
 Create new navigation property to bookingCurrencies for solutions
 
 ### [Publish-MgBookingBusiness](Publish-MgBookingBusiness.md)
-Make the scheduling page of a business available to external customers.
-Set the **isPublished** property to `true`, and the **publicUrl** property to the URL of the scheduling page.
+Makes the scheduling page of this business available to the general public.
 
 ### [Remove-MgBookingBusiness](Remove-MgBookingBusiness.md)
 Delete navigation property bookingBusinesses for solutions
@@ -105,14 +102,13 @@ Delete navigation property staffMembers for solutions
 Delete navigation property bookingCurrencies for solutions
 
 ### [Stop-MgBookingBusinessAppointment](Stop-MgBookingBusinessAppointment.md)
-Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
+Cancels the giving booking appointment, sending a message to the involved parties.
 
 ### [Stop-MgBookingBusinessCalendarView](Stop-MgBookingBusinessCalendarView.md)
-Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
+Cancels the giving booking appointment, sending a message to the involved parties.
 
 ### [Unpublish-MgBookingBusiness](Unpublish-MgBookingBusiness.md)
-Make the scheduling page of this business not available to external customers.
-Set the **isPublished** property to `false`, and the **publicUrl** property to `null`.
+Prevents the general public from seeing the scheduling page of this business.
 
 ### [Update-MgBookingBusiness](Update-MgBookingBusiness.md)
 Update the navigation property bookingBusinesses in solutions

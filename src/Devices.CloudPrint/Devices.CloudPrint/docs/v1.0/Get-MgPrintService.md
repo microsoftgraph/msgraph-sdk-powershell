@@ -247,7 +247,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintService
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintService1
 
 ## NOTES
 

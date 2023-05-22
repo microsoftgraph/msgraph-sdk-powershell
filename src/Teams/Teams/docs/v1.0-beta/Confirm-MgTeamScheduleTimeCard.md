@@ -8,7 +8,7 @@ schema: 2.0.0
 # Confirm-MgTeamScheduleTimeCard
 
 ## SYNOPSIS
-Confirm a specific timeCard.
+Invoke action confirm
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Confirm-MgTeamScheduleTimeCard -InputObject <ITeamsIdentity> [-Confirm] [-WhatIf
 ```
 
 ## DESCRIPTION
-Confirm a specific timeCard.
+Invoke action confirm
 
 ## EXAMPLES
 

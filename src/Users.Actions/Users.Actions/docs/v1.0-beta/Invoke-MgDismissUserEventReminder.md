@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgDismissUserEventReminder
 
 ## SYNOPSIS
-Dismiss a reminder that has been triggered for an event in a user calendar.
+Invoke action dismissReminder
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgDismissUserEventReminder -InputObject <IUsersActionsIdentity> [-PassThr
 ```
 
 ## DESCRIPTION
-Dismiss a reminder that has been triggered for an event in a user calendar.
+Invoke action dismissReminder
 
 ## EXAMPLES
 

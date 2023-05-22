@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfilePosition
 
 ## SYNOPSIS
-Use this API to create a new workPosition in a user's profile.
+Create new navigation property to positions for users
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgUserProfilePosition -InputObject <IPeopleIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Use this API to create a new workPosition in a user's profile.
+Create new navigation property to positions for users
 
 ## EXAMPLES
 

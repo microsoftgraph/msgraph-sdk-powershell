@@ -8,11 +8,7 @@ schema: 2.0.0
 # Start-MgEducationSynchronizationProfile
 
 ## SYNOPSIS
-Verify the files uploaded to a specific school data synchronization profile in the tenant.
-If the verification is successful, synchronization will start on the profile.
-Otherwise, the response will contain errors and warnings.
-If the response contains errors, the synchronization will not start.
-If the response contains only warnings, synchronization will start.
+Invoke action start
 
 ## SYNTAX
 
@@ -29,11 +25,7 @@ Start-MgEducationSynchronizationProfile -InputObject <IEducationIdentity> [-Conf
 ```
 
 ## DESCRIPTION
-Verify the files uploaded to a specific school data synchronization profile in the tenant.
-If the verification is successful, synchronization will start on the profile.
-Otherwise, the response will contain errors and warnings.
-If the response contains errors, the synchronization will not start.
-If the response contains only warnings, synchronization will start.
+Invoke action start
 
 ## EXAMPLES
 

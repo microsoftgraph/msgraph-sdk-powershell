@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileWebAccount
 
 ## SYNOPSIS
-Create a new webAccount object in a user's profile.
+Create new navigation property to webAccounts for users
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgUserProfileWebAccount -InputObject <IPeopleIdentity> [-UserId <String>]
 ```
 
 ## DESCRIPTION
-Create a new webAccount object in a user's profile.
+Create new navigation property to webAccounts for users
 
 ## EXAMPLES
 

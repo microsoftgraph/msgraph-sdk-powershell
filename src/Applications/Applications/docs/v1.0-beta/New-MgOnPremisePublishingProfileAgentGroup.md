@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgOnPremisePublishingProfileAgentGroup
 
 ## SYNOPSIS
-Create a new onPremisesAgentGroup object.
+Create new navigation property to agentGroups for onPremisesPublishingProfiles
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgOnPremisePublishingProfileAgentGroup -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Create a new onPremisesAgentGroup object.
+Create new navigation property to agentGroups for onPremisesPublishingProfiles
 
 ## EXAMPLES
 

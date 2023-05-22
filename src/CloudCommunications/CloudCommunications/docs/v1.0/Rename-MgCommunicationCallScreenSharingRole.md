@@ -8,7 +8,7 @@ schema: 2.0.0
 # Rename-MgCommunicationCallScreenSharingRole
 
 ## SYNOPSIS
-Allow applications to share screen content with the participants of a group call.
+Invoke action changeScreenSharingRole
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Rename-MgCommunicationCallScreenSharingRole -InputObject <ICloudCommunicationsId
 ```
 
 ## DESCRIPTION
-Allow applications to share screen content with the participants of a group call.
+Invoke action changeScreenSharingRole
 
 ## EXAMPLES
 

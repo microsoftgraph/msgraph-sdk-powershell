@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileName
 
 ## SYNOPSIS
-Use this API to create a new personName object in a user's profile.
+Create new navigation property to names for users
 
 ## SYNTAX
 
@@ -48,7 +48,7 @@ New-MgUserProfileName -InputObject <IPeopleIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Use this API to create a new personName object in a user's profile.
+Create new navigation property to names for users
 
 ## EXAMPLES
 

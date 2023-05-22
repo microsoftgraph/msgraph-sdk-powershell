@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSiteOnenoteNotebookSection
 
 ## SYNOPSIS
-Create a new onenoteSection in the specified notebook.
+Create new navigation property to sections for sites
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgSiteOnenoteNotebookSection -InputObject <INotesIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Create a new onenoteSection in the specified notebook.
+Create new navigation property to sections for sites
 
 ## EXAMPLES
 

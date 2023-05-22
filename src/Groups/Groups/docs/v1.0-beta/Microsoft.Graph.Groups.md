@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: a7b304c6-0a02-4887-b401-0dd97eb07684
+Module Guid: a3d5ccf9-d04d-4bb6-ab9c-8aa63e968018
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,38 +12,28 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Groups Cmdlets
 ### [Add-MgGroupDriveListContentTypeCopy](Add-MgGroupDriveListContentTypeCopy.md)
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Invoke action addCopy
 
 ### [Add-MgGroupDriveListContentTypeCopyFromContentTypeHub](Add-MgGroupDriveListContentTypeCopyFromContentTypeHub.md)
-Add or sync a copy of a published content type from the content type hub to a target site or a list.
-This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
-The method allows users to pull content types directly from the content type hub to a site or list.
-For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+Invoke action addCopyFromContentTypeHub
 
 ### [Add-MgGroupFavorite](Add-MgGroupFavorite.md)
-Add the group to the list of the current user's favorite groups.
-Supported for Microsoft 365 groups only.
+Invoke action addFavorite
 
 ### [Add-MgGroupSite](Add-MgGroupSite.md)
-Follow a user's site or multiple sites.
+Invoke action add
 
 ### [Add-MgGroupSiteContentTypeCopy](Add-MgGroupSiteContentTypeCopy.md)
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Invoke action addCopy
 
 ### [Add-MgGroupSiteContentTypeCopyFromContentTypeHub](Add-MgGroupSiteContentTypeCopyFromContentTypeHub.md)
-Add or sync a copy of a published content type from the content type hub to a target site or a list.
-This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
-The method allows users to pull content types directly from the content type hub to a site or list.
-For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+Invoke action addCopyFromContentTypeHub
 
 ### [Add-MgGroupSiteListContentTypeCopy](Add-MgGroupSiteListContentTypeCopy.md)
-Add a copy of a [content type][contentType] from a [site][site] to a [list][list].
+Invoke action addCopy
 
 ### [Add-MgGroupSiteListContentTypeCopyFromContentTypeHub](Add-MgGroupSiteListContentTypeCopyFromContentTypeHub.md)
-Add or sync a copy of a published content type from the content type hub to a target site or a list.
-This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a 'push everywhere' to 'pull as needed' approach.
-The method allows users to pull content types directly from the content type hub to a site or list.
-For more information, see getCompatibleHubContentTypes and the blog post Syntex Product Updates – August 2021.
+Invoke action addCopyFromContentTypeHub
 
 ### [Add-MgGroupToLifecyclePolicy](Add-MgGroupToLifecyclePolicy.md)
 Invoke action addGroup
@@ -52,21 +42,13 @@ Invoke action addGroup
 Invoke action checkGrantedPermissionsForApp
 
 ### [Confirm-MgGroupMemberGroup](Confirm-MgGroupMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgGroupMemberObject](Confirm-MgGroupMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgGroupPermissionGrantMemberGroup](Confirm-MgGroupPermissionGrantMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgGroupPermissionGrantMemberObject](Confirm-MgGroupPermissionGrantMemberObject.md)
 Invoke action checkMemberObjects
@@ -75,39 +57,31 @@ Invoke action checkMemberObjects
 Invoke action verifySignature
 
 ### [Copy-MgGroupDriveItem](Copy-MgGroupDriveItem.md)
-Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
+Invoke action copy
 
 ### [Copy-MgGroupDriveListContentTypeToDefaultContentLocation](Copy-MgGroupDriveListContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a [content type][contentType].
-The file can then be added as a default file or template via a POST operation.
+Invoke action copyToDefaultContentLocation
 
 ### [Copy-MgGroupDriveRoot](Copy-MgGroupDriveRoot.md)
-Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
+Invoke action copy
 
 ### [Copy-MgGroupOnenoteNotebook](Copy-MgGroupOnenoteNotebook.md)
-Copies a notebook to the Notebooks folder in the destination Documents library.
-The folder is created if it doesn't exist.
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyNotebook
 
 ### [Copy-MgGroupOnenotePageToSection](Copy-MgGroupOnenotePageToSection.md)
-Copy a page to a specific section.
-For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToSection
 
 ### [Copy-MgGroupOnenoteSectionToNotebook](Copy-MgGroupOnenoteSectionToNotebook.md)
-Copies a section to a specific notebook.
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToNotebook
 
 ### [Copy-MgGroupOnenoteSectionToSectionGroup](Copy-MgGroupOnenoteSectionToSectionGroup.md)
-Copies a section to a specific section group.
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToSectionGroup
 
 ### [Copy-MgGroupSiteContentTypeToDefaultContentLocation](Copy-MgGroupSiteContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a [content type][contentType].
-The file can then be added as a default file or template via a POST operation.
+Invoke action copyToDefaultContentLocation
 
 ### [Copy-MgGroupSiteListContentTypeToDefaultContentLocation](Copy-MgGroupSiteListContentTypeToDefaultContentLocation.md)
-Copy a file to a default content location in a [content type][contentType].
-The file can then be added as a default file or template via a POST operation.
+Invoke action copyToDefaultContentLocation
 
 ### [Get-MgGroup](Get-MgGroup.md)
 Get the properties and relationships of a group object.
@@ -117,31 +91,21 @@ The **hasMembersWithLicenseErrors** and **isArchived** properties are an excepti
 Because the **group** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **group** instance.
 
 ### [Get-MgGroupAcceptedSender](Get-MgGroupAcceptedSender.md)
-Get a list of users or groups that are in the accepted-senders list for this group.
-Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).
-Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+The list of users or groups that are allowed to create post's or calendar events in this group.
+If this list is non-empty then only users or groups listed here are allowed to post.
 
 ### [Get-MgGroupAcceptedSenderByRef](Get-MgGroupAcceptedSenderByRef.md)
-Get a list of users or groups that are in the accepted-senders list for this group.
-Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).
-Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+The list of users or groups that are allowed to create post's or calendar events in this group.
+If this list is non-empty then only users or groups listed here are allowed to post.
 
 ### [Get-MgGroupById](Get-MgGroupById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgGroupCalendarEventDelta](Get-MgGroupCalendarEventDelta.md)
-Get a set of event resources that have been added, deleted, or updated in one or more calendars.
-You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar.
-The calendar can be the default calendar or some other specified calendar of the user's.
-In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well.
-Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls.
-The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates).
-This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time.
-The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.
+Invoke function delta
 
 ### [Get-MgGroupCalendarSchedule](Get-MgGroupCalendarSchedule.md)
-Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
+Invoke action getSchedule
 
 ### [Get-MgGroupConversation](Get-MgGroupConversation.md)
 The group's conversations.
@@ -246,14 +210,7 @@ Read-only.
 Nullable.
 
 ### [Get-MgGroupEventDelta](Get-MgGroupEventDelta.md)
-Get a set of event resources that have been added, deleted, or updated in one or more calendars.
-You can get specific types of these incremental changes in the events in all the calendars of a mailbox or in a specific calendar, or in an event collection of a **calendarView** (range of events defined by start and end dates) of a calendar.
-The calendar can be the default calendar or some other specified calendar of the user's.
-In the case of getting incremental changes on **calendarView**, the calendar can be a group calendar as well.
-Typically, synchronizing events in a calendar or **calendarView** in a local store entails a round of multiple **delta** function calls.
-The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates).
-This allows you to maintain and synchronize a local store of events in the specified calendar, without having to fetch all the events of that calendar from the server every time.
-The following table lists the differences between the **delta** function on events and the **delta** function on a **calendarView** in a calendar.
+Invoke function delta
 
 ### [Get-MgGroupExtension](Get-MgGroupExtension.md)
 The collection of open extensions defined for the group.
@@ -264,7 +221,9 @@ Nullable.
 Retrieve the properties and relationships of a groupLifecyclePolicies object.
 
 ### [Get-MgGroupLifecyclePolicyByGroup](Get-MgGroupLifecyclePolicyByGroup.md)
-Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
+The collection of lifecycle policies for this group.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupMember](Get-MgGroupMember.md)
 Direct members of this group, who can be users, devices, other groups, or service principals.
@@ -272,6 +231,24 @@ Supports the List members, Add member, and Remove member operations.
 Nullable.
 Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
+
+### [Get-MgGroupMemberAsApplication](Get-MgGroupMemberAsApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Get-MgGroupMemberAsDevice](Get-MgGroupMemberAsDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Get-MgGroupMemberAsGroup](Get-MgGroupMemberAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Get-MgGroupMemberAsOrgContact](Get-MgGroupMemberAsOrgContact.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Get-MgGroupMemberAsServicePrincipal](Get-MgGroupMemberAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Get-MgGroupMemberAsUser](Get-MgGroupMemberAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgGroupMemberByRef](Get-MgGroupMemberByRef.md)
 Direct members of this group, who can be users, devices, other groups, or service principals.
@@ -281,8 +258,7 @@ Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 
 ### [Get-MgGroupMemberGroup](Get-MgGroupMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgGroupMemberObject](Get-MgGroupMemberObject.md)
 Invoke action getMemberObjects
@@ -294,13 +270,36 @@ Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgGroupMemberOfAsAdministrativeUnit](Get-MgGroupMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgGroupMemberOfAsGroup](Get-MgGroupMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
 ### [Get-MgGroupMemberWithLicenseError](Get-MgGroupMemberWithLicenseError.md)
 A list of group members with license errors from this group-based license assignment.
 Read-only.
 
+### [Get-MgGroupMemberWithLicenseErrorAsApplication](Get-MgGroupMemberWithLicenseErrorAsApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Get-MgGroupMemberWithLicenseErrorAsDevice](Get-MgGroupMemberWithLicenseErrorAsDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Get-MgGroupMemberWithLicenseErrorAsGroup](Get-MgGroupMemberWithLicenseErrorAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Get-MgGroupMemberWithLicenseErrorAsOrgContact](Get-MgGroupMemberWithLicenseErrorAsOrgContact.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Get-MgGroupMemberWithLicenseErrorAsServicePrincipal](Get-MgGroupMemberWithLicenseErrorAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Get-MgGroupMemberWithLicenseErrorAsUser](Get-MgGroupMemberWithLicenseErrorAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
 ### [Get-MgGroupOnenoteNotebookFromWebUrl](Get-MgGroupOnenoteNotebookFromWebUrl.md)
-Retrieve the properties and relationships of a notebook object by using its URL path.
-The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
+Invoke action getNotebookFromWebUrl
 
 ### [Get-MgGroupOnenoteRecentNotebook](Get-MgGroupOnenoteRecentNotebook.md)
 Invoke function getRecentNotebooks
@@ -311,6 +310,24 @@ Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
 Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+
+### [Get-MgGroupOwnerAsApplication](Get-MgGroupOwnerAsApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Get-MgGroupOwnerAsDevice](Get-MgGroupOwnerAsDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Get-MgGroupOwnerAsGroup](Get-MgGroupOwnerAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Get-MgGroupOwnerAsOrgContact](Get-MgGroupOwnerAsOrgContact.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Get-MgGroupOwnerAsServicePrincipal](Get-MgGroupOwnerAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Get-MgGroupOwnerAsUser](Get-MgGroupOwnerAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgGroupOwnerByRef](Get-MgGroupOwnerByRef.md)
 The owners of the group who can be users or service principals.
@@ -324,22 +341,19 @@ The permissions that have been granted for a group to a specific application.
 Supports $expand.
 
 ### [Get-MgGroupPermissionGrantById](Get-MgGroupPermissionGrantById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgGroupPermissionGrantDelta](Get-MgGroupPermissionGrantDelta.md)
 Invoke function delta
 
 ### [Get-MgGroupPermissionGrantMemberGroup](Get-MgGroupPermissionGrantMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgGroupPermissionGrantMemberObject](Get-MgGroupPermissionGrantMemberObject.md)
 Invoke action getMemberObjects
 
 ### [Get-MgGroupPermissionGrantUserOwnedObject](Get-MgGroupPermissionGrantUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgGroupPhoto](Get-MgGroupPhoto.md)
 The group's profile photo.
@@ -360,14 +374,12 @@ Invoke function delta
 Invoke function delta
 
 ### [Get-MgGroupRejectedSender](Get-MgGroupRejectedSender.md)
-Get a list of users or groups that are in the rejected-senders list for this group.
-Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL).
-Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+The list of users or groups that are not allowed to create posts or calendar events in this group.
+Nullable
 
 ### [Get-MgGroupRejectedSenderByRef](Get-MgGroupRejectedSenderByRef.md)
-Get a list of users or groups that are in the rejected-senders list for this group.
-Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL).
-Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+The list of users or groups that are not allowed to create posts or calendar events in this group.
+Nullable
 
 ### [Get-MgGroupSetting](Get-MgGroupSetting.md)
 Settings that can govern this group's behavior, like whether members can invite guest users to the group.
@@ -470,161 +482,60 @@ Nullable.
 The direct and transitive members of a group.
 Nullable.
 
+### [Get-MgGroupTransitiveMemberAsApplication](Get-MgGroupTransitiveMemberAsApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Get-MgGroupTransitiveMemberAsDevice](Get-MgGroupTransitiveMemberAsDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Get-MgGroupTransitiveMemberAsGroup](Get-MgGroupTransitiveMemberAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Get-MgGroupTransitiveMemberAsOrgContact](Get-MgGroupTransitiveMemberAsOrgContact.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Get-MgGroupTransitiveMemberAsServicePrincipal](Get-MgGroupTransitiveMemberAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Get-MgGroupTransitiveMemberAsUser](Get-MgGroupTransitiveMemberAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
 ### [Get-MgGroupTransitiveMemberOf](Get-MgGroupTransitiveMemberOf.md)
 The groups that a group is a member of, either directly and through nested membership.
 Nullable.
 
+### [Get-MgGroupTransitiveMemberOfAsAdministrativeUnit](Get-MgGroupTransitiveMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgGroupTransitiveMemberOfAsGroup](Get-MgGroupTransitiveMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
 ### [Get-MgGroupUserOwnedObject](Get-MgGroupUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgUserJoinedGroup](Get-MgUserJoinedGroup.md)
 Get joinedGroups from users
 
 ### [Grant-MgGroupDriveItemPermission](Grant-MgGroupDriveItemPermission.md)
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ### [Grant-MgGroupDriveRootPermission](Grant-MgGroupDriveRootPermission.md)
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ### [Grant-MgGroupSitePermission](Grant-MgGroupSitePermission.md)
-Grant users access to a link represented by a [permission][].
-
-### [Group-MgGroupGetMemberAs](Group-MgGroupGetMemberAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgGroupGetMemberOfAs](Group-MgGroupGetMemberOfAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgGroupGetMemberWithLicenseErrorAs](Group-MgGroupGetMemberWithLicenseErrorAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgGroupGetOwnerAs](Group-MgGroupGetOwnerAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgGroupGetTransitiveMemberAs](Group-MgGroupGetTransitiveMemberAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgGroupGetTransitiveMemberOfAs](Group-MgGroupGetTransitiveMemberOfAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgGroupListMemberAs](Group-MgGroupListMemberAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgGroupListMemberOfAs](Group-MgGroupListMemberOfAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgGroupListMemberWithLicenseErrorAs](Group-MgGroupListMemberWithLicenseErrorAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgGroupListOwnerAs](Group-MgGroupListOwnerAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgGroupListTransitiveMemberAs](Group-MgGroupListTransitiveMemberAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgGroupListTransitiveMemberOfAs](Group-MgGroupListTransitiveMemberOfAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+Invoke action grant
 
 ### [Invoke-MgAcceptGroupCalendarEvent](Invoke-MgAcceptGroupCalendarEvent.md)
-Accept the specified event in a user calendar.
+Invoke action accept
 
 ### [Invoke-MgAcceptGroupCalendarEventTentatively](Invoke-MgAcceptGroupCalendarEventTentatively.md)
-Tentatively accept the specified event in a user calendar.
-If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
-For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
+Invoke action tentativelyAccept
 
 ### [Invoke-MgAcceptGroupEvent](Invoke-MgAcceptGroupEvent.md)
-Accept the specified event in a user calendar.
+Invoke action accept
 
 ### [Invoke-MgAcceptGroupEventTentatively](Invoke-MgAcceptGroupEventTentatively.md)
-Tentatively accept the specified event in a user calendar.
-If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
-For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
-
-### [Invoke-MgAsGroupGetMemberApplication](Invoke-MgAsGroupGetMemberApplication.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-
-### [Invoke-MgAsGroupGetMemberDevice](Invoke-MgAsGroupGetMemberDevice.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-
-### [Invoke-MgAsGroupGetMemberOfAdministrativeUnit](Invoke-MgAsGroupGetMemberOfAdministrativeUnit.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-
-### [Invoke-MgAsGroupGetMemberUser](Invoke-MgAsGroupGetMemberUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsGroupGetMemberWithLicenseErrorApplication](Invoke-MgAsGroupGetMemberWithLicenseErrorApplication.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-
-### [Invoke-MgAsGroupGetMemberWithLicenseErrorDevice](Invoke-MgAsGroupGetMemberWithLicenseErrorDevice.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-
-### [Invoke-MgAsGroupGetMemberWithLicenseErrorUser](Invoke-MgAsGroupGetMemberWithLicenseErrorUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsGroupGetOwnerApplication](Invoke-MgAsGroupGetOwnerApplication.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-
-### [Invoke-MgAsGroupGetOwnerDevice](Invoke-MgAsGroupGetOwnerDevice.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-
-### [Invoke-MgAsGroupGetOwnerUser](Invoke-MgAsGroupGetOwnerUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsGroupGetTransitiveMemberApplication](Invoke-MgAsGroupGetTransitiveMemberApplication.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-
-### [Invoke-MgAsGroupGetTransitiveMemberDevice](Invoke-MgAsGroupGetTransitiveMemberDevice.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-
-### [Invoke-MgAsGroupGetTransitiveMemberOfAdministrativeUnit](Invoke-MgAsGroupGetTransitiveMemberOfAdministrativeUnit.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-
-### [Invoke-MgAsGroupGetTransitiveMemberUser](Invoke-MgAsGroupGetTransitiveMemberUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsGroupListMemberApplication](Invoke-MgAsGroupListMemberApplication.md)
-Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListMemberDevice](Invoke-MgAsGroupListMemberDevice.md)
-Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListMemberOfAdministrativeUnit](Invoke-MgAsGroupListMemberOfAdministrativeUnit.md)
-Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListMemberUser](Invoke-MgAsGroupListMemberUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListMemberWithLicenseErrorApplication](Invoke-MgAsGroupListMemberWithLicenseErrorApplication.md)
-Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListMemberWithLicenseErrorDevice](Invoke-MgAsGroupListMemberWithLicenseErrorDevice.md)
-Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListMemberWithLicenseErrorUser](Invoke-MgAsGroupListMemberWithLicenseErrorUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListOwnerApplication](Invoke-MgAsGroupListOwnerApplication.md)
-Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListOwnerDevice](Invoke-MgAsGroupListOwnerDevice.md)
-Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListOwnerUser](Invoke-MgAsGroupListOwnerUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListTransitiveMemberApplication](Invoke-MgAsGroupListTransitiveMemberApplication.md)
-Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListTransitiveMemberDevice](Invoke-MgAsGroupListTransitiveMemberDevice.md)
-Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListTransitiveMemberOfAdministrativeUnit](Invoke-MgAsGroupListTransitiveMemberOfAdministrativeUnit.md)
-Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsGroupListTransitiveMemberUser](Invoke-MgAsGroupListTransitiveMemberUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+Invoke action tentativelyAccept
 
 ### [Invoke-MgBufferGroupSiteInformationProtectionDecrypt](Invoke-MgBufferGroupSiteInformationProtectionDecrypt.md)
 Invoke action decryptBuffer
@@ -636,56 +547,28 @@ Invoke action encryptBuffer
 Invoke function allowedCalendarSharingRoles
 
 ### [Invoke-MgCheckinGroupDriveItem](Invoke-MgCheckinGroupDriveItem.md)
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Invoke action checkin
 
 ### [Invoke-MgCheckinGroupDriveRoot](Invoke-MgCheckinGroupDriveRoot.md)
-Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+Invoke action checkin
 
 ### [Invoke-MgCheckoutGroupDriveItem](Invoke-MgCheckoutGroupDriveItem.md)
-Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
+Invoke action checkout
 
 ### [Invoke-MgCheckoutGroupDriveRoot](Invoke-MgCheckoutGroupDriveRoot.md)
-Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
-
-### [Invoke-MgContactGroupGetMemberAsOrg](Invoke-MgContactGroupGetMemberAsOrg.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-
-### [Invoke-MgContactGroupGetMemberWithLicenseErrorAsOrg](Invoke-MgContactGroupGetMemberWithLicenseErrorAsOrg.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-
-### [Invoke-MgContactGroupGetOwnerAsOrg](Invoke-MgContactGroupGetOwnerAsOrg.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-
-### [Invoke-MgContactGroupGetTransitiveMemberAsOrg](Invoke-MgContactGroupGetTransitiveMemberAsOrg.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-
-### [Invoke-MgContactGroupListMemberAsOrg](Invoke-MgContactGroupListMemberAsOrg.md)
-Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgContactGroupListMemberWithLicenseErrorAsOrg](Invoke-MgContactGroupListMemberWithLicenseErrorAsOrg.md)
-Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgContactGroupListOwnerAsOrg](Invoke-MgContactGroupListOwnerAsOrg.md)
-Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgContactGroupListTransitiveMemberAsOrg](Invoke-MgContactGroupListTransitiveMemberAsOrg.md)
-Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
+Invoke action checkout
 
 ### [Invoke-MgDeclineGroupCalendarEvent](Invoke-MgDeclineGroupCalendarEvent.md)
-Decline invitation to the specified event in a user calendar.
-If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
-For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
+Invoke action decline
 
 ### [Invoke-MgDeclineGroupEvent](Invoke-MgDeclineGroupEvent.md)
-Decline invitation to the specified event in a user calendar.
-If the event allows proposals for new times, on declining the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter.
-For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
+Invoke action decline
 
 ### [Invoke-MgDismissGroupCalendarEventReminder](Invoke-MgDismissGroupCalendarEventReminder.md)
-Dismiss a reminder that has been triggered for an event in a user calendar.
+Invoke action dismissReminder
 
 ### [Invoke-MgDismissGroupEventReminder](Invoke-MgDismissGroupEventReminder.md)
-Dismiss a reminder that has been triggered for an event in a user calendar.
+Invoke action dismissReminder
 
 ### [Invoke-MgExtractGroupDriveItemSensitivityLabel](Invoke-MgExtractGroupDriveItemSensitivityLabel.md)
 Invoke action extractSensitivityLabels
@@ -694,53 +577,43 @@ Invoke action extractSensitivityLabels
 Invoke action extractSensitivityLabels
 
 ### [Invoke-MgExtractGroupSiteInformationProtectionPolicyLabel](Invoke-MgExtractGroupSiteInformationProtectionPolicyLabel.md)
-Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
-The contentInfo input is resolved to informationProtectionContentLabel.
+Invoke action extractLabel
 
 ### [Invoke-MgFollowGroupDriveItem](Invoke-MgFollowGroupDriveItem.md)
-Follow a driveItem.
+Invoke action follow
 
 ### [Invoke-MgFollowGroupDriveRoot](Invoke-MgFollowGroupDriveRoot.md)
-Follow a driveItem.
+Invoke action follow
 
 ### [Invoke-MgForwardGroupCalendarEvent](Invoke-MgForwardGroupCalendarEvent.md)
-This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
-This convenience is not available when forwarding from an Outlook.com account.
+Invoke action forward
 
 ### [Invoke-MgForwardGroupConversationThreadPost](Invoke-MgForwardGroupConversationThreadPost.md)
-Forward a post to a recipient.
-You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
+Invoke action forward
 
 ### [Invoke-MgForwardGroupConversationThreadPostInReplyTo](Invoke-MgForwardGroupConversationThreadPostInReplyTo.md)
-Forward a post to a recipient.
-You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
+Invoke action forward
 
 ### [Invoke-MgForwardGroupEvent](Invoke-MgForwardGroupEvent.md)
-This action allows the organizer or attendee of a meeting event to forward the \nmeeting request to a new recipient.
-If the meeting event is forwarded from an attendee's Microsoft 365 mailbox to another recipient, this action \nalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer's \ncopy of the meeting event.
-This convenience is not available when forwarding from an Outlook.com account.
+Invoke action forward
 
 ### [Invoke-MgForwardGroupThreadPost](Invoke-MgForwardGroupThreadPost.md)
-Forward a post to a recipient.
-You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
+Invoke action forward
 
 ### [Invoke-MgForwardGroupThreadPostInReplyTo](Invoke-MgForwardGroupThreadPostInReplyTo.md)
-Forward a post to a recipient.
-You can specify both the parent conversation and thread in the request, \nor, you can specify just the parent thread without the parent conversation.
+Invoke action forward
 
 ### [Invoke-MgGraphGroup](Invoke-MgGraphGroup.md)
-Calling this method will disable the current user to receive email notifications for this group about new posts, events, and files in that group.
-Supported for Microsoft 365 groups only.
+Invoke action unsubscribeByMail
 
 ### [Invoke-MgGraphGroupDrive](Invoke-MgGraphGroupDrive.md)
 Invoke function sharedWithMe
 
 ### [Invoke-MgInviteGroupDriveItem](Invoke-MgInviteGroupDriveItem.md)
-Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Invoke action invite
 
 ### [Invoke-MgInviteGroupDriveRoot](Invoke-MgInviteGroupDriveRoot.md)
-Sends a sharing invitation for a **DriveItem**.\nA sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+Invoke action invite
 
 ### [Invoke-MgPreviewGroupDriveItem](Invoke-MgPreviewGroupDriveItem.md)
 Invoke action preview
@@ -767,96 +640,58 @@ Invoke action reauthorize
 Invoke function recent
 
 ### [Invoke-MgRenewGroup](Invoke-MgRenewGroup.md)
-Renews a group's expiration.
-When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+Invoke action renew
 
 ### [Invoke-MgRenewGroupLifecyclePolicy](Invoke-MgRenewGroupLifecyclePolicy.md)
-Renew a group's expiration.
-When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+Invoke action renewGroup
 
 ### [Invoke-MgReplyGroupConversationThread](Invoke-MgReplyGroupConversationThread.md)
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
+Invoke action reply
 
 ### [Invoke-MgReplyGroupConversationThreadPost](Invoke-MgReplyGroupConversationThreadPost.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Invoke action reply
 
 ### [Invoke-MgReplyGroupConversationThreadPostInReplyTo](Invoke-MgReplyGroupConversationThreadPostInReplyTo.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Invoke action reply
 
 ### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
-Reply to a thread in a group conversation and add a new post to it.
-You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
+Invoke action reply
 
 ### [Invoke-MgReplyGroupThreadPost](Invoke-MgReplyGroupThreadPost.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Invoke action reply
 
 ### [Invoke-MgReplyGroupThreadPostInReplyTo](Invoke-MgReplyGroupThreadPostInReplyTo.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Invoke action reply
 
-### [Invoke-MgServiceGroupGetMember](Invoke-MgServiceGroupGetMember.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-
-### [Invoke-MgServiceGroupGetMemberWithLicenseError](Invoke-MgServiceGroupGetMemberWithLicenseError.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-
-### [Invoke-MgServiceGroupGetOwner](Invoke-MgServiceGroupGetOwner.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-
-### [Invoke-MgServiceGroupGetTransitiveMember](Invoke-MgServiceGroupGetTransitiveMember.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-
-### [Invoke-MgServiceGroupListMember](Invoke-MgServiceGroupListMember.md)
-Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgServiceGroupListMemberWithLicenseError](Invoke-MgServiceGroupListMemberWithLicenseError.md)
-Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgServiceGroupListOwner](Invoke-MgServiceGroupListOwner.md)
-Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgServiceGroupListTransitiveMember](Invoke-MgServiceGroupListTransitiveMember.md)
-Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+### [Invoke-MgRetryGroupServiceProvisioning](Invoke-MgRetryGroupServiceProvisioning.md)
+Invoke action retryServiceProvisioning
 
 ### [Invoke-MgSignGroupSiteInformationProtectionDigest](Invoke-MgSignGroupSiteInformationProtectionDigest.md)
 Invoke action signDigest
 
 ### [Invoke-MgSnoozeGroupCalendarEventReminder](Invoke-MgSnoozeGroupCalendarEventReminder.md)
-Postpone a reminder for an event in a user calendar until a new time.
+Invoke action snoozeReminder
 
 ### [Invoke-MgSnoozeGroupEventReminder](Invoke-MgSnoozeGroupEventReminder.md)
-Postpone a reminder for an event in a user calendar until a new time.
+Invoke action snoozeReminder
 
 ### [Invoke-MgSubscribeGroupByMail](Invoke-MgSubscribeGroupByMail.md)
-Calling this method will enable the current user to receive email notifications for this group, about new posts, events, and files in that group.
-Supported for Microsoft 365 groups only.
+Invoke action subscribeByMail
 
 ### [Invoke-MgUnfollowGroupDriveItem](Invoke-MgUnfollowGroupDriveItem.md)
-Unfollow a driveItem.
+Invoke action unfollow
 
 ### [Invoke-MgUnfollowGroupDriveRoot](Invoke-MgUnfollowGroupDriveRoot.md)
-Unfollow a driveItem.
+Invoke action unfollow
 
 ### [Join-MgGroupDriveListContentTypeWithHubSite](Join-MgGroupDriveListContentTypeWithHubSite.md)
-Associate a [content type][contentType] with a list of hub sites.
+Invoke action associateWithHubSites
 
 ### [Join-MgGroupSiteContentTypeWithHubSite](Join-MgGroupSiteContentTypeWithHubSite.md)
-Associate a [content type][contentType] with a list of hub sites.
+Invoke action associateWithHubSites
 
 ### [Join-MgGroupSiteListContentTypeWithHubSite](Join-MgGroupSiteListContentTypeWithHubSite.md)
-Associate a [content type][contentType] with a list of hub sites.
+Invoke action associateWithHubSites
 
 ### [New-MgGroup](New-MgGroup.md)
 Create a new group as specified in the request body.
@@ -869,10 +704,7 @@ To get properties that are _not_ returned by default, do a GET operation and spe
 Create new navigation property ref to acceptedSenders for groups
 
 ### [New-MgGroupConversation](New-MgGroupConversation.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Create new navigation property to conversations for groups
 
 ### [New-MgGroupConversationThread](New-MgGroupConversationThread.md)
 Create new navigation property to threads for groups
@@ -881,14 +713,7 @@ Create new navigation property to threads for groups
 Create new navigation property to attachments for groups
 
 ### [New-MgGroupConversationThreadPostAttachmentUploadSession](New-MgGroupConversationThreadPostAttachmentUploadSession.md)
-Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
-The item can be a message or event.
-Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
-This allows transfer to be resumed, in case the network connection is dropped during upload.
-The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
+Invoke action createUploadSession
 
 ### [New-MgGroupConversationThreadPostExtension](New-MgGroupConversationThreadPostExtension.md)
 Create new navigation property to extensions for groups
@@ -897,14 +722,7 @@ Create new navigation property to extensions for groups
 Create new navigation property to attachments for groups
 
 ### [New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession](New-MgGroupConversationThreadPostInReplyToAttachmentUploadSession.md)
-Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
-The item can be a message or event.
-Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
-This allows transfer to be resumed, in case the network connection is dropped during upload.
-The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
+Invoke action createUploadSession
 
 ### [New-MgGroupConversationThreadPostInReplyToExtension](New-MgGroupConversationThreadPostInReplyToExtension.md)
 Create new navigation property to extensions for groups
@@ -928,39 +746,25 @@ Create new navigation property to multiValueExtendedProperties for groups
 Create new navigation property to singleValueExtendedProperties for groups
 
 ### [New-MgGroupDriveItemLink](New-MgGroupDriveItemLink.md)
-You can use **createLink** action to share a driveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
-DriveItem resources inherit sharing permissions from their ancestors.
+Invoke action createLink
 
 ### [New-MgGroupDriveItemListItemLink](New-MgGroupDriveItemListItemLink.md)
-Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+Invoke action createLink
 
 ### [New-MgGroupDriveItemUploadSession](New-MgGroupDriveItemUploadSession.md)
-Create an upload session to allow your app to upload files up to the maximum file size.
-An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session:
+Invoke action createUploadSession
 
 ### [New-MgGroupDriveListItemLink](New-MgGroupDriveListItemLink.md)
-Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+Invoke action createLink
 
 ### [New-MgGroupDriveRootLink](New-MgGroupDriveRootLink.md)
-You can use **createLink** action to share a driveItem via a sharing link.
-The **createLink** action will create a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, the existing sharing link will be returned.
-DriveItem resources inherit sharing permissions from their ancestors.
+Invoke action createLink
 
 ### [New-MgGroupDriveRootListItemLink](New-MgGroupDriveRootListItemLink.md)
-Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+Invoke action createLink
 
 ### [New-MgGroupDriveRootUploadSession](New-MgGroupDriveRootUploadSession.md)
-Create an upload session to allow your app to upload files up to the maximum file size.
-An upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session:
+Invoke action createUploadSession
 
 ### [New-MgGroupEndpoint](New-MgGroupEndpoint.md)
 Create new navigation property to endpoints for groups
@@ -990,34 +794,19 @@ Create new navigation property to permissionGrants for groups
 Create new navigation property ref to rejectedSenders for groups
 
 ### [New-MgGroupSetting](New-MgGroupSetting.md)
-Create a new setting based on the templates available in directorySettingTemplates.
-These settings can be at the tenant-level or at the group level.
-Group settings apply to only Microsoft 365 groups.
-The template named `Group.Unified` can be used to configure tenant-wide Microsoft 365 group settings, while the template named `Group.Unified.Guest` can be used to configure group-specific settings.
+Create new navigation property to settings for groups
 
 ### [New-MgGroupSiteListItemLink](New-MgGroupSiteListItemLink.md)
-Create a sharing link for a listItem.
-The **createLink** action creates a new sharing link if the specified link type doesn't already exist for the calling application.\nIf a sharing link of the specified type already exists for the app, this action will return the existing sharing link.
-**listItem** resources inherit sharing permissions from the list the item resides in.
+Invoke action createLink
 
 ### [New-MgGroupThread](New-MgGroupThread.md)
-Start a new group conversation by first creating a thread.
-A new conversation, conversation thread, and post are created in the group.
-Use reply thread or reply post to further post to that thread.
-Note: You can also start a new thread in an existing conversation.
+Create new navigation property to threads for groups
 
 ### [New-MgGroupThreadPostAttachment](New-MgGroupThreadPostAttachment.md)
 Create new navigation property to attachments for groups
 
 ### [New-MgGroupThreadPostAttachmentUploadSession](New-MgGroupThreadPostAttachmentUploadSession.md)
-Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
-The item can be a message or event.
-Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
-This allows transfer to be resumed, in case the network connection is dropped during upload.
-The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
+Invoke action createUploadSession
 
 ### [New-MgGroupThreadPostExtension](New-MgGroupThreadPostExtension.md)
 Create new navigation property to extensions for groups
@@ -1026,14 +815,7 @@ Create new navigation property to extensions for groups
 Create new navigation property to attachments for groups
 
 ### [New-MgGroupThreadPostInReplyToAttachmentUploadSession](New-MgGroupThreadPostInReplyToAttachmentUploadSession.md)
-Create an upload session that allows an app to iteratively upload ranges of a file, so as to attach the file to an Outlook item.
-The item can be a message or event.
-Use this approach to attach a file if the file size is between 3 MB and 150 MB.
-To attach a file that's smaller than 3 MB, do a `POST` operation on the **attachments** navigation property of the Outlook item; see how to do this for a message or for an event.
-As part of the response, this action returns an upload URL that you can use in subsequent sequential `PUT` queries.
-Request headers for each `PUT` operation let you specify the exact range of bytes to be uploaded.
-This allows transfer to be resumed, in case the network connection is dropped during upload.
-The following are the steps to attach a file to an Outlook item using an upload session: See attach large files to Outlook messages or events for an example.
+Invoke action createUploadSession
 
 ### [New-MgGroupThreadPostInReplyToExtension](New-MgGroupThreadPostInReplyToExtension.md)
 Create new navigation property to extensions for groups
@@ -1057,13 +839,13 @@ Create new navigation property to multiValueExtendedProperties for groups
 Create new navigation property to singleValueExtendedProperties for groups
 
 ### [Publish-MgGroupDriveListContentType](Publish-MgGroupDriveListContentType.md)
-Publishes a [contentType][] present in a content type hub site.
+Invoke action publish
 
 ### [Publish-MgGroupSiteContentType](Publish-MgGroupSiteContentType.md)
-Publishes a [contentType][] present in a content type hub site.
+Invoke action publish
 
 ### [Publish-MgGroupSiteListContentType](Publish-MgGroupSiteListContentType.md)
-Publishes a [contentType][] present in a content type hub site.
+Invoke action publish
 
 ### [Publish-MgGroupSitePage](Publish-MgGroupSitePage.md)
 Invoke action publish
@@ -1121,8 +903,7 @@ Delete navigation property endpoints for groups
 Delete navigation property extensions for groups
 
 ### [Remove-MgGroupFavorite](Remove-MgGroupFavorite.md)
-Remove the group from the list of the current user's favorite groups.
-Supported for Microsoft 365 groups only.
+Invoke action removeFavorite
 
 ### [Remove-MgGroupFromLifecyclePolicy](Remove-MgGroupFromLifecyclePolicy.md)
 Invoke action removeGroup
@@ -1149,7 +930,7 @@ Delete ref of navigation property rejectedSenders for groups
 Delete navigation property settings for groups
 
 ### [Remove-MgGroupSite](Remove-MgGroupSite.md)
-Unfollow a user's site or multiple sites.
+Invoke action remove
 
 ### [Remove-MgGroupThread](Remove-MgGroupThread.md)
 Delete navigation property threads for groups
@@ -1185,55 +966,52 @@ Delete navigation property multiValueExtendedProperties for groups
 Delete navigation property singleValueExtendedProperties for groups
 
 ### [Reset-MgGroupUnseenCount](Reset-MgGroupUnseenCount.md)
-Reset the unseenCount of all the posts that the current user has not seen since their last visit.
-Supported for Microsoft 365 groups only.
+Invoke action resetUnseenCount
 
 ### [Restore-MgGroupDriveItem](Restore-MgGroupDriveItem.md)
-Restore a driveItem that has been deleted and is currently in the recycle bin.
+Invoke action restore
 
 ### [Restore-MgGroupDriveItemListItemDocumentSetVersion](Restore-MgGroupDriveItemListItemDocumentSetVersion.md)
-Restore a document set version.
+Invoke action restore
 
 ### [Restore-MgGroupDriveItemListItemVersion](Restore-MgGroupDriveItemListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgGroupDriveItemVersion](Restore-MgGroupDriveItemVersion.md)
-Restore a previous version of a DriveItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
+Invoke action restoreVersion
 
 ### [Restore-MgGroupDriveListItemDocumentSetVersion](Restore-MgGroupDriveListItemDocumentSetVersion.md)
-Restore a document set version.
+Invoke action restore
 
 ### [Restore-MgGroupDriveListItemVersion](Restore-MgGroupDriveListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgGroupDriveRoot](Restore-MgGroupDriveRoot.md)
-Restore a driveItem that has been deleted and is currently in the recycle bin.
+Invoke action restore
 
 ### [Restore-MgGroupDriveRootListItemDocumentSetVersion](Restore-MgGroupDriveRootListItemDocumentSetVersion.md)
-Restore a document set version.
+Invoke action restore
 
 ### [Restore-MgGroupDriveRootListItemVersion](Restore-MgGroupDriveRootListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Restore-MgGroupDriveRootVersion](Restore-MgGroupDriveRootVersion.md)
-Restore a previous version of a DriveItem to be the current version.
-This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
+Invoke action restoreVersion
 
 ### [Restore-MgGroupSiteListItemDocumentSetVersion](Restore-MgGroupSiteListItemDocumentSetVersion.md)
-Restore a document set version.
+Invoke action restore
 
 ### [Restore-MgGroupSiteListItemVersion](Restore-MgGroupSiteListItemVersion.md)
 Invoke action restoreVersion
 
 ### [Revoke-MgGroupDriveItemPermissionGrant](Revoke-MgGroupDriveItemPermissionGrant.md)
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Invoke action revokeGrants
 
 ### [Revoke-MgGroupDriveRootPermissionGrant](Revoke-MgGroupDriveRootPermissionGrant.md)
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Invoke action revokeGrants
 
 ### [Revoke-MgGroupSitePermissionGrant](Revoke-MgGroupSitePermissionGrant.md)
-Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+Invoke action revokeGrants
 
 ### [Search-MgGroupDrive](Search-MgGroupDrive.md)
 Invoke function search
@@ -1251,27 +1029,16 @@ Invoke action assignSensitivityLabel
 Invoke action assignSensitivityLabel
 
 ### [Set-MgGroupLicense](Set-MgGroupLicense.md)
-Add or remove licenses on the group.
-Licenses assigned to the group will be assigned to all users in the group.
-To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory.
-To get the subscriptions available in the directory, perform a GET subscribedSkus request.
+Invoke action assignLicense
 
 ### [Set-MgGroupPhotoContent](Set-MgGroupPhotoContent.md)
 Update media content for the navigation property photo in groups
 
 ### [Stop-MgGroupCalendarEvent](Stop-MgGroupCalendarEvent.md)
-This action allows the organizer of a meeting to send a cancellation message and cancel the event.
-The action moves the event to the Deleted Items folder.
-The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID.
-An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed.
-You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
+Invoke action cancel
 
 ### [Stop-MgGroupEvent](Stop-MgGroupEvent.md)
-This action allows the organizer of a meeting to send a cancellation message and cancel the event.
-The action moves the event to the Deleted Items folder.
-The organizer can also cancel an occurrence of a recurring meeting \nby providing the occurrence event ID.
-An attendee calling this action gets an error (HTTP 400 Bad Request), with the following\nerror message: 'Your request can't be completed.
-You need to be an organizer to cancel a meeting.' This action differs from Delete in that **Cancel** is available to only the organizer, and lets\nthe organizer send a custom message to the attendees about the cancellation.
+Invoke action cancel
 
 ### [Test-MgGroupDriveItemPermission](Test-MgGroupDriveItemPermission.md)
 Invoke action validatePermission
@@ -1283,33 +1050,16 @@ Invoke function isPublished
 Invoke action validatePermission
 
 ### [Test-MgGroupDynamicMembership](Test-MgGroupDynamicMembership.md)
-Evaluate whether a user or device is or would be a member of a dynamic group.
-The membership rule is returned along with other details that were used in the evaluation.
-You can complete this operation in the following ways:
+Invoke action evaluateDynamicMembership
 
 ### [Test-MgGroupDynamicMembershipRule](Test-MgGroupDynamicMembershipRule.md)
-Evaluate whether a user or device is or would be a member of a dynamic group.
-The membership rule is returned along with other details that were used in the evaluation.
-You can complete this operation in the following ways:
+Invoke action evaluateDynamicMembership
 
 ### [Test-MgGroupPermissionGrantProperty](Test-MgGroupPermissionGrantProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgGroupProperty](Test-MgGroupProperty.md)
-Validate if a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use the API to determine if a display name or mail nickname is valid before trying to **update** a Microsoft 365 group.
-For validating properties before creating a group, use the validateProperties function for directory objects.
-The following validations are performed for the display name and mail nickname properties: This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgGroupSiteContentTypePublished](Test-MgGroupSiteContentTypePublished.md)
 Invoke function isPublished
@@ -1318,19 +1068,13 @@ Invoke function isPublished
 Invoke action evaluate
 
 ### [Test-MgGroupSiteInformationProtectionPolicyLabelApplication](Test-MgGroupSiteInformationProtectionPolicyLabelApplication.md)
-Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
-This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.
-Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:
+Invoke action evaluateApplication
 
 ### [Test-MgGroupSiteInformationProtectionPolicyLabelClassificationResult](Test-MgGroupSiteInformationProtectionPolicyLabelClassificationResult.md)
-Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
-This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.
-To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results.
-The API returns an informationProtectionAction that contains one of more of the following:
+Invoke action evaluateClassificationResults
 
 ### [Test-MgGroupSiteInformationProtectionPolicyLabelRemoval](Test-MgGroupSiteInformationProtectionPolicyLabelRemoval.md)
-Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:
+Invoke action evaluateRemoval
 
 ### [Test-MgGroupSiteInformationProtectionSensitivityLabel](Test-MgGroupSiteInformationProtectionSensitivityLabel.md)
 Invoke action evaluate
@@ -1342,13 +1086,13 @@ Invoke action evaluate
 Invoke function isPublished
 
 ### [Unpublish-MgGroupDriveListContentType](Unpublish-MgGroupDriveListContentType.md)
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ### [Unpublish-MgGroupSiteContentType](Unpublish-MgGroupSiteContentType.md)
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ### [Unpublish-MgGroupSiteListContentType](Unpublish-MgGroupSiteListContentType.md)
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ### [Update-MgGroup](Update-MgGroup.md)
 Update the properties of a group object.

@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgOrganizationSettingItemInsight
 
 ## SYNOPSIS
-Get the properties of an insightsSettings object for displaying or returning item insights in an organization.
-To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy.
+Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
+List itemInsights returns the settings to display or return item insights in an organization.
 
 ## SYNTAX
 
@@ -26,8 +26,8 @@ Get-MgOrganizationSettingItemInsight -InputObject <IIdentityDirectoryManagementI
 ```
 
 ## DESCRIPTION
-Get the properties of an insightsSettings object for displaying or returning item insights in an organization.
-To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy.
+Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
+List itemInsights returns the settings to display or return item insights in an organization.
 
 ## EXAMPLES
 

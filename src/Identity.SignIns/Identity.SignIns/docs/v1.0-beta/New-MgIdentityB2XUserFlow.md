@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityB2XUserFlow
 
 ## SYNOPSIS
-Create a new b2xIdentityUserFlow object.
+Create new navigation property to b2xUserFlows for identity
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgIdentityB2XUserFlow -BodyParameter <IMicrosoftGraphB2XIdentityUserFlow1> [
 ```
 
 ## DESCRIPTION
-Create a new b2xIdentityUserFlow object.
+Create new navigation property to b2xUserFlows for identity
 
 ## EXAMPLES
 

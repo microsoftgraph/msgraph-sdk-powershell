@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserPresence
 
 ## SYNOPSIS
-Set the state of a user's presence session as an application.
+Invoke action setPresence
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Set-MgUserPresence -InputObject <IUsersActionsIdentity> [-Activity <String>]
 ```
 
 ## DESCRIPTION
-Set the state of a user's presence session as an application.
+Invoke action setPresence
 
 ## EXAMPLES
 

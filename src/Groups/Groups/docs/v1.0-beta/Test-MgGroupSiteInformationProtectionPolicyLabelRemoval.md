@@ -8,8 +8,7 @@ schema: 2.0.0
 # Test-MgGroupSiteInformationProtectionPolicyLabelRemoval
 
 ## SYNOPSIS
-Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:
+Invoke action evaluateRemoval
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Test-MgGroupSiteInformationProtectionPolicyLabelRemoval -InputObject <IGroupsIde
 ```
 
 ## DESCRIPTION
-Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following:
+Invoke action evaluateRemoval
 
 ## EXAMPLES
 
@@ -257,6 +255,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

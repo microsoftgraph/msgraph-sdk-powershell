@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgMarkServiceAnnouncementMessageUnread
 
 ## SYNOPSIS
-Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+Invoke action markUnread
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Invoke-MgMarkServiceAnnouncementMessageUnread
 ```
 
 ## DESCRIPTION
-Mark a list of serviceUpdateMessages as **unread** for the signed in user.
+Invoke action markUnread
 
 ## EXAMPLES
 

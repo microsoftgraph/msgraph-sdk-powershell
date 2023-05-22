@@ -8,8 +8,7 @@ schema: 2.0.0
 # Rename-MgUserCloudPc
 
 ## SYNOPSIS
-Rename a specific Cloud PC.
-Use this API to update the **displayName** for the Cloud PC entity.
+Invoke action rename
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ Rename-MgUserCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Rename a specific Cloud PC.
-Use this API to update the **displayName** for the Cloud PC entity.
+Invoke action rename
 
 ## EXAMPLES
 

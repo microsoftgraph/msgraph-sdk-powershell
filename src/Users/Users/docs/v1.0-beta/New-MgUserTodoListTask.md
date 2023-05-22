@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserTodoListTask
 
 ## SYNOPSIS
-Create a new task object in a specified todoTaskList.
+Create new navigation property to tasks for users
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ New-MgUserTodoListTask -InputObject <IUsersIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Create a new task object in a specified todoTaskList.
+Create new navigation property to tasks for users
 
 ## EXAMPLES
 

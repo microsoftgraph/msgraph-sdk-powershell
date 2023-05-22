@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent
 
 ## SYNOPSIS
-Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the **isPortalNotificationSent** property of the portal notification to `true`.
+Invoke action setPortalNotificationAsSent
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent
 ```
 
 ## DESCRIPTION
-Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the **isPortalNotificationSent** property of the portal notification to `true`.
+Invoke action setPortalNotificationAsSent
 
 ## EXAMPLES
 
@@ -172,7 +172,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

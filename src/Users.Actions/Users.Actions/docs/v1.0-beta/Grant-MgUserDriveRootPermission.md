@@ -8,7 +8,7 @@ schema: 2.0.0
 # Grant-MgUserDriveRootPermission
 
 ## SYNOPSIS
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Grant-MgUserDriveRootPermission -InputObject <IUsersActionsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Grant users access to a link represented by a [permission][].
+Invoke action grant
 
 ## EXAMPLES
 

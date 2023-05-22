@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgPolicyDefaultAppManagementPolicy
 
 ## SYNOPSIS
-Update the properties of a tenantAppManagementPolicy object.
+Update the navigation property defaultAppManagementPolicy in policies
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ Update-MgPolicyDefaultAppManagementPolicy -BodyParameter <IMicrosoftGraphTenantA
 ```
 
 ## DESCRIPTION
-Update the properties of a tenantAppManagementPolicy object.
+Update the navigation property defaultAppManagementPolicy in policies
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTeamScheduleTimeOff
 
 ## SYNOPSIS
-Create a new timeOff instance in a schedule.
+Create new navigation property to timesOff for teams
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgTeamScheduleTimeOff -InputObject <ITeamsIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Create a new timeOff instance in a schedule.
+Create new navigation property to timesOff for teams
 
 ## EXAMPLES
 

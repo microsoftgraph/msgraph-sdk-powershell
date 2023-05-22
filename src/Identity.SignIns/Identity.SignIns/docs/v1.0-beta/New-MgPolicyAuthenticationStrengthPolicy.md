@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyAuthenticationStrengthPolicy
 
 ## SYNOPSIS
-Create a new custom authenticationStrengthPolicy object.
+Create new navigation property to authenticationStrengthPolicies for policies
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgPolicyAuthenticationStrengthPolicy -BodyParameter <IMicrosoftGraphAuthenti
 ```
 
 ## DESCRIPTION
-Create a new custom authenticationStrengthPolicy object.
+Create new navigation property to authenticationStrengthPolicies for policies
 
 ## EXAMPLES
 

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Rename-MgDeviceManagementVirtualEndpointCloudPc
 
 ## SYNOPSIS
-Rename a specific Cloud PC.
-Use this API to update the **displayName** for the Cloud PC entity.
+Invoke action rename
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Rename-MgDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagementA
 ```
 
 ## DESCRIPTION
-Rename a specific Cloud PC.
-Use this API to update the **displayName** for the Cloud PC entity.
+Invoke action rename
 
 ## EXAMPLES
 
@@ -241,7 +239,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

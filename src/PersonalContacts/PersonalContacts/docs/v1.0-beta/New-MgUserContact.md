@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserContact
 
 ## SYNOPSIS
-Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
+Create new navigation property to contacts for users
 
 ## SYNTAX
 
@@ -64,7 +64,7 @@ New-MgUserContact -InputObject <IPersonalContactsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
+Create new navigation property to contacts for users
 
 ## EXAMPLES
 

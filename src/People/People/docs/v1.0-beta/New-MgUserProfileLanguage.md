@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileLanguage
 
 ## SYNOPSIS
-Use this API to create a new languageProficiency object in a user's profile.
+Create new navigation property to languages for users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserProfileLanguage -InputObject <IPeopleIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Use this API to create a new languageProficiency object in a user's profile.
+Create new navigation property to languages for users
 
 ## EXAMPLES
 

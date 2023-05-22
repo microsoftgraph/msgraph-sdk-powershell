@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restart-MgDeviceManagementVirtualEndpointCloudPc
 
 ## SYNOPSIS
-Reboot a specific Cloud PC.
+Invoke action reboot
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Restart-MgDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagement
 ```
 
 ## DESCRIPTION
-Reboot a specific Cloud PC.
+Invoke action reboot
 
 ## EXAMPLES
 
@@ -181,7 +181,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

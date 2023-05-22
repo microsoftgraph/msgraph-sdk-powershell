@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgApplicationExtensionProperty
 
 ## SYNOPSIS
-Create a new directory extension definition, represented by an extensionProperty object.
+Create new navigation property to extensionProperties for applications
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Create a new directory extension definition, represented by an extensionProperty object.
+Create new navigation property to extensionProperties for applications
 
 ## EXAMPLES
 

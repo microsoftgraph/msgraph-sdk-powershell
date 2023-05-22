@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileAccount
 
 ## SYNOPSIS
-Create a new userAccountInformation object in a user's profile.
+Create new navigation property to account for users
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ New-MgUserProfileAccount -InputObject <IPeopleIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Create a new userAccountInformation object in a user's profile.
+Create new navigation property to account for users
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Export-MgDirectoryInboundSharedUserProfilePersonalData
 
 ## SYNOPSIS
-Create a request to export the personal data for an inboundSharedUserProfile.
+Invoke action exportPersonalData
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Export-MgDirectoryInboundSharedUserProfilePersonalData -InputObject <IIdentityDi
 ```
 
 ## DESCRIPTION
-Create a request to export the personal data for an inboundSharedUserProfile.
+Invoke action exportPersonalData
 
 ## EXAMPLES
 

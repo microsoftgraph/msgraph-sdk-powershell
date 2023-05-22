@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Enrolment
-Module Guid: edf821c2-b986-4387-b35d-ba6886ca9da4
+Module Guid: c201d622-a924-4807-96e0-12e0a128de35
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.enrolment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -492,7 +492,7 @@ Supports $expand.
 Get exchange from roleManagement
 
 ### [Get-MgRoleManagementExchangeResourceNamespace](Get-MgRoleManagementExchangeResourceNamespace.md)
-Get resourceNamespaces from roleManagement
+Resource that represents a collection of related actions.
 
 ### [Get-MgRoleManagementExchangeResourceNamespaceResourceAction](Get-MgRoleManagementExchangeResourceNamespaceResourceAction.md)
 Operations that an authorized principal are allowed to perform.
@@ -501,7 +501,7 @@ Operations that an authorized principal are allowed to perform.
 Get resourceScope from roleManagement
 
 ### [Get-MgRoleManagementExchangeRoleAssignment](Get-MgRoleManagementExchangeRoleAssignment.md)
-Get roleAssignments from roleManagement
+Resource to grant access to users or groups.
 
 ### [Get-MgRoleManagementExchangeRoleAssignmentAppScope](Get-MgRoleManagementExchangeRoleAssignmentAppScope.md)
 Details of the app specific scope when the assignment scope is app specific.
@@ -526,14 +526,14 @@ roleDefinition.id will be auto expanded.
 Supports $expand.
 
 ### [Get-MgRoleManagementExchangeRoleDefinition](Get-MgRoleManagementExchangeRoleDefinition.md)
-Get roleDefinitions from roleManagement
+The roles allowed by RBAC providers and the permissions assigned to the roles.
 
 ### [Get-MgRoleManagementExchangeRoleDefinitionInheritPermissionFrom](Get-MgRoleManagementExchangeRoleDefinitionInheritPermissionFrom.md)
 Read-only collection of role definitions that the given role definition inherits from.
 Only Azure AD built-in roles support this attribute.
 
 ### [Get-MgRoleManagementExchangeTransitiveRoleAssignment](Get-MgRoleManagementExchangeTransitiveRoleAssignment.md)
-Get transitiveRoleAssignments from roleManagement
+Resource to grant access to users or groups that are transitive.
 
 ### [Get-MgRoleManagementExchangeTransitiveRoleAssignmentAppScope](Get-MgRoleManagementExchangeTransitiveRoleAssignmentAppScope.md)
 Details of the app specific scope when the assignment scope is app specific.
@@ -705,16 +705,13 @@ Create new navigation property to resourceNamespaces for roleManagement
 Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgRoleManagementCloudPcRoleAssignment](New-MgRoleManagementCloudPcRoleAssignment.md)
-Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+Create new navigation property to roleAssignments for roleManagement
 
 ### [New-MgRoleManagementCloudPcRoleAssignmentAppScope](New-MgRoleManagementCloudPcRoleAssignmentAppScope.md)
 Create new navigation property to appScopes for roleManagement
 
 ### [New-MgRoleManagementCloudPcRoleDefinition](New-MgRoleManagementCloudPcRoleDefinition.md)
-Create a new unifiedRoleDefinition object for an RBAC provider.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
+Create new navigation property to roleDefinitions for roleManagement
 
 ### [New-MgRoleManagementCloudPcRoleDefinitionInheritPermissionFrom](New-MgRoleManagementCloudPcRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -726,16 +723,13 @@ Create new navigation property to resourceNamespaces for roleManagement
 Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgRoleManagementDeviceManagementRoleAssignment](New-MgRoleManagementDeviceManagementRoleAssignment.md)
-Create a new unifiedRoleAssignmentMultiple object for an RBAC provider.
-The following RBAC providers are currently supported:\n- Cloud PC \n- device management (Intune) For other Microsoft 365 applications (like Azure AD), use unifiedRoleAssignment.
+Create new navigation property to roleAssignments for roleManagement
 
 ### [New-MgRoleManagementDeviceManagementRoleAssignmentAppScope](New-MgRoleManagementDeviceManagementRoleAssignmentAppScope.md)
 Create new navigation property to appScopes for roleManagement
 
 ### [New-MgRoleManagementDeviceManagementRoleDefinition](New-MgRoleManagementDeviceManagementRoleDefinition.md)
-Create a new unifiedRoleDefinition object for an RBAC provider.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
+Create new navigation property to roleDefinitions for roleManagement
 
 ### [New-MgRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom](New-MgRoleManagementDeviceManagementRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -747,7 +741,7 @@ Create new navigation property to resourceNamespaces for roleManagement
 Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleAssignment](New-MgRoleManagementDirectoryRoleAssignment.md)
-Create a new unifiedRoleAssignment object.
+Create new navigation property to roleAssignments for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleAssignmentApproval](New-MgRoleManagementDirectoryRoleAssignmentApproval.md)
 Create new navigation property to roleAssignmentApprovals for roleManagement
@@ -762,15 +756,10 @@ Create new navigation property to roleAssignmentSchedules for roleManagement
 Create new navigation property to roleAssignmentScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](New-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
-Create a new unifiedRoleAssignmentScheduleRequest object.
-This operation allows both admins and users to add, remove, extend, or renew assignments.
-To run this request, the calling user must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
-See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
+Create new navigation property to roleAssignmentScheduleRequests for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleDefinition](New-MgRoleManagementDirectoryRoleDefinition.md)
-Create a new unifiedRoleDefinition object for an RBAC provider.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
+Create new navigation property to roleDefinitions for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom](New-MgRoleManagementDirectoryRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -782,8 +771,7 @@ Create new navigation property to roleEligibilitySchedules for roleManagement
 Create new navigation property to roleEligibilityScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
-Create a new unifiedRoleEligibilityScheduleRequest object.
-This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
+Create new navigation property to roleEligibilityScheduleRequests for roleManagement
 
 ### [New-MgRoleManagementDirectoryTransitiveRoleAssignment](New-MgRoleManagementDirectoryTransitiveRoleAssignment.md)
 Create new navigation property to transitiveRoleAssignments for roleManagement
@@ -795,7 +783,7 @@ Create new navigation property to resourceNamespaces for roleManagement
 Create new navigation property to resourceActions for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignment](New-MgRoleManagementEntitlementManagementRoleAssignment.md)
-Create a new unifiedRoleAssignment object.
+Create new navigation property to roleAssignments for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignmentApproval](New-MgRoleManagementEntitlementManagementRoleAssignmentApproval.md)
 Create new navigation property to roleAssignmentApprovals for roleManagement
@@ -810,15 +798,10 @@ Create new navigation property to roleAssignmentSchedules for roleManagement
 Create new navigation property to roleAssignmentScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](New-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
-Create a new unifiedRoleAssignmentScheduleRequest object.
-This operation allows both admins and users to add, remove, extend, or renew assignments.
-To run this request, the calling user must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA.
-See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
+Create new navigation property to roleAssignmentScheduleRequests for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleDefinition](New-MgRoleManagementEntitlementManagementRoleDefinition.md)
-Create a new unifiedRoleDefinition object for an RBAC provider.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
+Create new navigation property to roleDefinitions for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom](New-MgRoleManagementEntitlementManagementRoleDefinitionInheritPermissionFrom.md)
 Create new navigation property to inheritsPermissionsFrom for roleManagement
@@ -830,8 +813,7 @@ Create new navigation property to roleEligibilitySchedules for roleManagement
 Create new navigation property to roleEligibilityScheduleInstances for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](New-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
-Create a new unifiedRoleEligibilityScheduleRequest object.
-This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
+Create new navigation property to roleEligibilityScheduleRequests for roleManagement
 
 ### [New-MgRoleManagementEntitlementManagementTransitiveRoleAssignment](New-MgRoleManagementEntitlementManagementTransitiveRoleAssignment.md)
 Create new navigation property to transitiveRoleAssignments for roleManagement
@@ -1104,20 +1086,16 @@ Delete navigation property transitiveRoleAssignments for roleManagement
 Delete navigation property appScope for roleManagement
 
 ### [Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest](Stop-MgRoleManagementDirectoryRoleAssignmentScheduleRequest.md)
-Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
-After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
+Invoke action cancel
 
 ### [Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest](Stop-MgRoleManagementDirectoryRoleEligibilityScheduleRequest.md)
-Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days.
-After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
+Invoke action cancel
 
 ### [Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleAssignmentScheduleRequest.md)
-Immediately cancel a unifiedRoleAssignmentScheduleRequest object that is in a `Granted` status, and have the system automatically delete the canceled request after 30 days.
-After calling this action, the **status** of the canceled **unifiedRoleAssignmentScheduleRequest** changes to `Canceled`.
+Invoke action cancel
 
 ### [Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest](Stop-MgRoleManagementEntitlementManagementRoleEligibilityScheduleRequest.md)
-Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days.
-After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
+Invoke action cancel
 
 ### [Update-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfile](Update-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfile.md)
 Update the navigation property androidDeviceOwnerEnrollmentProfiles in deviceManagement

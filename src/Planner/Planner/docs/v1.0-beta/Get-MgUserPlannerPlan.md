@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserPlannerPlan
 
 ## SYNOPSIS
-Retrieve a list of **plannerplan** objects shared with a user object.
+Get plans from users
 
 ## SYNTAX
 
@@ -19,7 +19,7 @@ Get-MgUserPlannerPlan -UserId <String> [-ExpandProperty <String[]>] [-Filter <St
 ```
 
 ## DESCRIPTION
-Retrieve a list of **plannerplan** objects shared with a user object.
+Get plans from users
 
 ## EXAMPLES
 

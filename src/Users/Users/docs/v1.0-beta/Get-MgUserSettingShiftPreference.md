@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserSettingShiftPreference
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a shiftPreferences object by ID.
+The shift preferences for the user.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgUserSettingShiftPreference -InputObject <IUsersIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a shiftPreferences object by ID.
+The shift preferences for the user.
 
 ## EXAMPLES
 

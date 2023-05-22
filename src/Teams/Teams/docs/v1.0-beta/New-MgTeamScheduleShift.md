@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgTeamScheduleShift
 
 ## SYNOPSIS
-Create a new shift instance in a schedule.
-The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+Create new navigation property to shifts for teams
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ New-MgTeamScheduleShift -InputObject <ITeamsIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Create a new shift instance in a schedule.
-The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+Create new navigation property to shifts for teams
 
 ## EXAMPLES
 

@@ -8,9 +8,7 @@ schema: 2.0.0
 # Test-MgGroupSiteInformationProtectionPolicyLabelApplication
 
 ## SYNOPSIS
-Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
-This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.
-Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:
+Invoke action evaluateApplication
 
 ## SYNTAX
 
@@ -43,9 +41,7 @@ Test-MgGroupSiteInformationProtectionPolicyLabelApplication -InputObject <IGroup
 ```
 
 ## DESCRIPTION
-Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
-This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.
-Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:
+Invoke action evaluateApplication
 
 ## EXAMPLES
 
@@ -259,6 +255,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

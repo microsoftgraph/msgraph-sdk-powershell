@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.ManagedTenants
-Module Guid: 7043b4b3-e6bd-4fe3-a83d-7e9a7d936eda
+Module Guid: 42c6d4a4-7863-4c50-b156-4acd5db95a5d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.managedtenants
 Help Version: 1.0.0.0
 Locale: en-US
@@ -267,7 +267,7 @@ Create new navigation property to deployments for tenantRelationships
 Create new navigation property to myRoles for tenantRelationships
 
 ### [New-MgTenantRelationshipManagedTenantTag](New-MgTenantRelationshipManagedTenantTag.md)
-Create a new tenantTag object.
+Create new navigation property to tenantTags for tenantRelationships
 
 ### [New-MgTenantRelationshipManagedTenantTicketingEndpoint](New-MgTenantRelationshipManagedTenantTicketingEndpoint.md)
 Create new navigation property to managedTenantTicketingEndpoints for tenantRelationships

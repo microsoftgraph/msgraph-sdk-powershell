@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgReprovisionUserManagedDeviceCloudPc
 
 ## SYNOPSIS
-Reprovision a Cloud PC with an Intune managed device ID.
+Invoke action reprovisionCloudPc
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgReprovisionUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity
 ```
 
 ## DESCRIPTION
-Reprovision a Cloud PC with an Intune managed device ID.
+Invoke action reprovisionCloudPc
 
 ## EXAMPLES
 

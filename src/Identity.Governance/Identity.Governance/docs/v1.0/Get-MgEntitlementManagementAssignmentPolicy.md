@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAssignmentPolicy
 
 ## SYNOPSIS
-Read-only.
-Supports $filter (eq) on the id property and $expand query parameters.
+Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
 
 ## SYNTAX
 
@@ -22,14 +21,14 @@ Get-MgEntitlementManagementAssignmentPolicy [-ExpandProperty <String[]>] [-Filte
 
 ### Get
 ```
-Get-MgEntitlementManagementAssignmentPolicy -AccessPackageAssignmentId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgEntitlementManagementAssignmentPolicy -AccessPackageAssignmentPolicyId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgEntitlementManagementAssignmentPolicy -AccessPackageAssignmentPolicyId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgEntitlementManagementAssignmentPolicy -AccessPackageAssignmentId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -45,8 +44,7 @@ Get-MgEntitlementManagementAssignmentPolicy -InputObject <IIdentityGovernanceIde
 ```
 
 ## DESCRIPTION
-Read-only.
-Supports $filter (eq) on the id property and $expand query parameters.
+Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
 
 ## EXAMPLES
 
@@ -75,7 +73,7 @@ The unique identifier of accessPackageAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -90,7 +88,7 @@ The unique identifier of accessPackageAssignmentPolicy
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True

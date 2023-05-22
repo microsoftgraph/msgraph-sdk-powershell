@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgGroupDriveItemUploadSession
 
 ## SYNOPSIS
-Create an upload session to allow your app to upload files up to the maximum file size.\nAn upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session, there are two steps:
+Invoke action createUploadSession
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ New-MgGroupDriveItemUploadSession -InputObject <IGroupsIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Create an upload session to allow your app to upload files up to the maximum file size.\nAn upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session, there are two steps:
+Invoke action createUploadSession
 
 ## EXAMPLES
 
@@ -239,6 +237,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

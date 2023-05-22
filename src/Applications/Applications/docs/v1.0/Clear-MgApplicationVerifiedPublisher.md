@@ -8,8 +8,7 @@ schema: 2.0.0
 # Clear-MgApplicationVerifiedPublisher
 
 ## SYNOPSIS
-Unset the verifiedPublisher previously set on an application, removing all verified publisher properties.
-For more information, see Publisher verification.
+Invoke action unsetVerifiedPublisher
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Clear-MgApplicationVerifiedPublisher -InputObject <IApplicationsIdentity> [-Pass
 ```
 
 ## DESCRIPTION
-Unset the verifiedPublisher previously set on an application, removing all verified publisher properties.
-For more information, see Publisher verification.
+Invoke action unsetVerifiedPublisher
 
 ## EXAMPLES
 

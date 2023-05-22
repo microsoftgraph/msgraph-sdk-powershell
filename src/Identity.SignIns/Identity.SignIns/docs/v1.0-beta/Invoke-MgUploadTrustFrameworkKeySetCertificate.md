@@ -8,9 +8,7 @@ schema: 2.0.0
 # Invoke-MgUploadTrustFrameworkKeySetCertificate
 
 ## SYNOPSIS
-Upload a certificate to a trustFrameworkKeyset.
-The input is a base-64 encoded value of the certificate contents.
-This method returns trustFrameworkKey.
+Invoke action uploadCertificate
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ Invoke-MgUploadTrustFrameworkKeySetCertificate -InputObject <IIdentitySignInsIde
 ```
 
 ## DESCRIPTION
-Upload a certificate to a trustFrameworkKeyset.
-The input is a base-64 encoded value of the certificate contents.
-This method returns trustFrameworkKey.
+Invoke action uploadCertificate
 
 ## EXAMPLES
 
@@ -232,6 +228,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

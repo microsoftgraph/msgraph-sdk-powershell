@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgServicePrincipalPasswordSingleSignOnCredentials
 
 ## SYNOPSIS
-Delete single sign-on credentials using a password for a user or group.
+Invoke action deletePasswordSingleSignOnCredentials
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Remove-MgServicePrincipalPasswordSingleSignOnCredentials -InputObject <IApplicat
 ```
 
 ## DESCRIPTION
-Delete single sign-on credentials using a password for a user or group.
+Invoke action deletePasswordSingleSignOnCredentials
 
 ## EXAMPLES
 

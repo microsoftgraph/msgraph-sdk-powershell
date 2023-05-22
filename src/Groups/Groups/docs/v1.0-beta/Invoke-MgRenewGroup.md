@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgRenewGroup
 
 ## SYNOPSIS
-Renews a group's expiration.
-When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+Invoke action renew
 
 ## SYNTAX
 
@@ -24,8 +23,7 @@ Invoke-MgRenewGroup -InputObject <IGroupsIdentity> [-PassThru] [-Confirm] [-What
 ```
 
 ## DESCRIPTION
-Renews a group's expiration.
-When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+Invoke action renew
 
 ## EXAMPLES
 
@@ -154,6 +152,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

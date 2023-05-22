@@ -8,7 +8,7 @@ schema: 2.0.0
 # Clear-MgCommunicationPresenceUserPreferredPresence
 
 ## SYNOPSIS
-Clear the preferred availability and activity status for a user.
+Invoke action clearUserPreferredPresence
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Clear-MgCommunicationPresenceUserPreferredPresence -InputObject <ICloudCommunica
 ```
 
 ## DESCRIPTION
-Clear the preferred availability and activity status for a user.
+Invoke action clearUserPreferredPresence
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDriveListItemField
 
 ## SYNOPSIS
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in drives
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Update-MgDriveListItemField -InputObject <IFilesIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Update the properties on a **[listItem][]**.
+Update the navigation property fields in drives
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgExternalConnection
 
 ## SYNOPSIS
-Create a new externalConnection object.
+Create new navigation property to connections for external
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ New-MgExternalConnection -BodyParameter <IMicrosoftGraphExternalConnectorsExtern
 ```
 
 ## DESCRIPTION
-Create a new externalConnection object.
+Create new navigation property to connections for external
 
 ## EXAMPLES
 

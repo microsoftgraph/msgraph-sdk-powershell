@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassAssignmentSetting
 
 ## SYNOPSIS
-Read the properties and relationships of an educationAssignmentSettings object.
-Only teachers can perform this operation.
+Specifies class-level assignments settings.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Get-MgEducationClassAssignmentSetting -InputObject <IEducationIdentity> [-Expand
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of an educationAssignmentSettings object.
-Only teachers can perform this operation.
+Specifies class-level assignments settings.
 
 ## EXAMPLES
 

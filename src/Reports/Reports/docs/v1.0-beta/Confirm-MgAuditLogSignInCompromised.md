@@ -8,10 +8,7 @@ schema: 2.0.0
 # Confirm-MgAuditLogSignInCompromised
 
 ## SYNOPSIS
-Allow admins to mark an event in the Azure AD sign in logs as risky.
-Events marked as risky by an admin are immediately flagged as high risk in Azure AD Identity Protection, overriding previous risk states.
-Admins can confirm that events flagged as risky by Azure AD Identity Protection are in fact risky.
-For details about investigating Identity Protection risks, see How to investigate risk.
+Invoke action confirmCompromised
 
 ## SYNTAX
 
@@ -29,10 +26,7 @@ Confirm-MgAuditLogSignInCompromised
 ```
 
 ## DESCRIPTION
-Allow admins to mark an event in the Azure AD sign in logs as risky.
-Events marked as risky by an admin are immediately flagged as high risk in Azure AD Identity Protection, overriding previous risk states.
-Admins can confirm that events flagged as risky by Azure AD Identity Protection are in fact risky.
-For details about investigating Identity Protection risks, see How to investigate risk.
+Invoke action confirmCompromised
 
 ## EXAMPLES
 

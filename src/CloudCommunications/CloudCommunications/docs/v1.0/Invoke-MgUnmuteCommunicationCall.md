@@ -8,9 +8,7 @@ schema: 2.0.0
 # Invoke-MgUnmuteCommunicationCall
 
 ## SYNOPSIS
-Allow the application to unmute itself.
-This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again.
-For more information about how to handle unmute operations, see unmuteParticipantOperation.
+Invoke action unmute
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ Invoke-MgUnmuteCommunicationCall -InputObject <ICloudCommunicationsIdentity>
 ```
 
 ## DESCRIPTION
-Allow the application to unmute itself.
-This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again.
-For more information about how to handle unmute operations, see unmuteParticipantOperation.
+Invoke action unmute
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfilePatent
 
 ## SYNOPSIS
-Create a new itemPatent object within a user's profile.
+Create new navigation property to patents for users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserProfilePatent -InputObject <IPeopleIdentity> [-AdditionalProperties <H
 ```
 
 ## DESCRIPTION
-Create a new itemPatent object within a user's profile.
+Create new navigation property to patents for users
 
 ## EXAMPLES
 

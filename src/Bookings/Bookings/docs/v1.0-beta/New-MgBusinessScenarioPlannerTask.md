@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBusinessScenarioPlannerTask
 
 ## SYNOPSIS
-Create a new businessScenarioTask object.
+Create new navigation property to tasks for solutions
 
 ## SYNTAX
 
@@ -63,7 +63,7 @@ New-MgBusinessScenarioPlannerTask -InputObject <IBookingsIdentity> [-ActiveCheck
 ```
 
 ## DESCRIPTION
-Create a new businessScenarioTask object.
+Create new navigation property to tasks for solutions
 
 ## EXAMPLES
 

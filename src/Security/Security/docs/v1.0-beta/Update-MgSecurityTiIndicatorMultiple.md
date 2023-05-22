@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityTiIndicatorMultiple
 
 ## SYNOPSIS
-Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+Invoke action updateTiIndicators
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Update-MgSecurityTiIndicatorMultiple
 ```
 
 ## DESCRIPTION
-Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+Invoke action updateTiIndicators
 
 ## EXAMPLES
 

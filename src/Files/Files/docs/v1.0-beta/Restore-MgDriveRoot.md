@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgDriveRoot
 
 ## SYNOPSIS
-Restore a driveItem that has been deleted and is currently in the recycle bin.
+Invoke action restore
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Restore-MgDriveRoot -InputObject <IFilesIdentity> [-AdditionalProperties <Hashta
 ```
 
 ## DESCRIPTION
-Restore a driveItem that has been deleted and is currently in the recycle bin.
+Invoke action restore
 
 ## EXAMPLES
 

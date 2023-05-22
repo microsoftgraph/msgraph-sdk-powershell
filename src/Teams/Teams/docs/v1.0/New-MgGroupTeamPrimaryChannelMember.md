@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgGroupTeamPrimaryChannelMember
 
 ## SYNOPSIS
-Add a conversationMember to a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+Create new navigation property to members for groups
 
 ## SYNTAX
 
@@ -40,8 +39,7 @@ New-MgGroupTeamPrimaryChannelMember -InputObject <ITeamsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Add a conversationMember to a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+Create new navigation property to members for groups
 
 ## EXAMPLES
 

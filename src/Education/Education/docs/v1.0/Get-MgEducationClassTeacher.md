@@ -8,8 +8,8 @@ schema: 2.0.0
 # Get-MgEducationClassTeacher
 
 ## SYNOPSIS
-Retrieve a list teachers for a class.
-Delegated tokens must be members of the class to get the teacher list.
+All teachers in the class.
+Nullable.
 
 ## SYNTAX
 
@@ -20,8 +20,8 @@ Get-MgEducationClassTeacher -EducationClassId <String> [-ExpandProperty <String[
 ```
 
 ## DESCRIPTION
-Retrieve a list teachers for a class.
-Delegated tokens must be members of the class to get the teacher list.
+All teachers in the class.
+Nullable.
 
 ## EXAMPLES
 

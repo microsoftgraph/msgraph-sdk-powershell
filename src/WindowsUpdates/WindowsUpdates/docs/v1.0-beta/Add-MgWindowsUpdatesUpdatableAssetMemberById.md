@@ -8,8 +8,7 @@ schema: 2.0.0
 # Add-MgWindowsUpdatesUpdatableAssetMemberById
 
 ## SYNOPSIS
-Add members of the same type to an updatableAssetGroup.
-You can also use the method addMembers to add members.
+Invoke action addMembersById
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Add-MgWindowsUpdatesUpdatableAssetMemberById -InputObject <IWindowsUpdatesIdenti
 ```
 
 ## DESCRIPTION
-Add members of the same type to an updatableAssetGroup.
-You can also use the method addMembers to add members.
+Invoke action addMembersById
 
 ## EXAMPLES
 

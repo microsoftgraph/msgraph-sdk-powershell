@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgCommunicationOnlineMeetingRegistrationCustomQuestion
 
 ## SYNOPSIS
-Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+Create new navigation property to customQuestions for communications
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgCommunicationOnlineMeetingRegistrationCustomQuestion -InputObject <ICloudC
 ```
 
 ## DESCRIPTION
-Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+Create new navigation property to customQuestions for communications
 
 ## EXAMPLES
 

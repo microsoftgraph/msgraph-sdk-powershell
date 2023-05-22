@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgRoleManagementCloudPcRoleDefinition
 
 ## SYNOPSIS
-Create a new unifiedRoleDefinition object for an RBAC provider.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
+Create new navigation property to roleDefinitions for roleManagement
 
 ## SYNTAX
 
@@ -30,9 +28,7 @@ New-MgRoleManagementCloudPcRoleDefinition -BodyParameter <IMicrosoftGraphUnified
 ```
 
 ## DESCRIPTION
-Create a new unifiedRoleDefinition object for an RBAC provider.
-This feature requires an Azure AD Premium P1 or P2 license.
-The following RBAC providers are currently supported:\n- Cloud PC\n- device management (Intune)\n- directory (Azure AD)
+Create new navigation property to roleDefinitions for roleManagement
 
 ## EXAMPLES
 

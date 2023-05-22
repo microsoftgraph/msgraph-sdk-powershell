@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDirectoryOutboundSharedUserProfileTenantPersonalData
 
 ## SYNOPSIS
-Create a request to remove the personal data for an outboundSharedUserProfile.
+Invoke action removePersonalData
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDirectoryOutboundSharedUserProfileTenantPersonalData
 ```
 
 ## DESCRIPTION
-Create a request to remove the personal data for an outboundSharedUserProfile.
+Invoke action removePersonalData
 
 ## EXAMPLES
 

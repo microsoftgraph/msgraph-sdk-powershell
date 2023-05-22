@@ -8,9 +8,7 @@ schema: 2.0.0
 # Find-MgUserRoomList
 
 ## SYNOPSIS
-Get the room lists defined in a tenant, as represented by their emailAddress objects.
-Tenants can organize meeting rooms into room lists.
-In this API, each meeting room and room list is represented by an emailAddress instance.\nYou can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
+Invoke function findRoomLists
 
 ## SYNTAX
 
@@ -27,9 +25,7 @@ Find-MgUserRoomList -InputObject <IUsersFunctionsIdentity> [-Count] [-Filter <St
 ```
 
 ## DESCRIPTION
-Get the room lists defined in a tenant, as represented by their emailAddress objects.
-Tenants can organize meeting rooms into room lists.
-In this API, each meeting room and room list is represented by an emailAddress instance.\nYou can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
+Invoke function findRoomLists
 
 ## EXAMPLES
 
@@ -195,12 +191,12 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[On <String>]`: Usage: on='{on}'
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PlannerBucketId <String>]`: The unique identifier of plannerBucket
   - `[PlannerPlanId <String>]`: The unique identifier of plannerPlan
   - `[Q <String>]`: Usage: q='{q}'
   - `[RoomList <String>]`: Usage: RoomList='{RoomList}'
   - `[ServicePlanId <String>]`: Usage: servicePlanId='{servicePlanId}'
-  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[StartDateTime <String>]`: Usage: StartDateTime='{StartDateTime}'
   - `[StartDateTime1 <String>]`: Usage: startDateTime='{startDateTime}'

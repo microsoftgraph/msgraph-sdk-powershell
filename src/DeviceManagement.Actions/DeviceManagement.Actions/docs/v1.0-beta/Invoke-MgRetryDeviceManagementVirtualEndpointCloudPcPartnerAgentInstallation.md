@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation
 
 ## SYNOPSIS
-Retry installation for the partner agents which failed to install on the Cloud PC.
-Service side will check which agent installation failed firstly and retry.
+Invoke action retryPartnerAgentInstallation
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Invoke-MgRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation
 ```
 
 ## DESCRIPTION
-Retry installation for the partner agents which failed to install on the Cloud PC.
-Service side will check which agent installation failed firstly and retry.
+Invoke action retryPartnerAgentInstallation
 
 ## EXAMPLES
 
@@ -174,7 +172,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

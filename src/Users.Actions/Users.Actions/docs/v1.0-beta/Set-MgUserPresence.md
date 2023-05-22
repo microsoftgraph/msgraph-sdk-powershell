@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgUserPresence
 
 ## SYNOPSIS
-Set the availability and activity status in a presence session of an application for a user.
+Invoke action setPresence
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Set-MgUserPresence -InputObject <IUsersActionsIdentity> [-Activity <String>]
 ```
 
 ## DESCRIPTION
-Set the availability and activity status in a presence session of an application for a user.
+Invoke action setPresence
 
 ## EXAMPLES
 

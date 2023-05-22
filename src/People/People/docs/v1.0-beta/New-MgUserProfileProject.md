@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileProject
 
 ## SYNOPSIS
-Use this API to create a new projectParticipation object in a user's profile.
+Create new navigation property to projects for users
 
 ## SYNTAX
 
@@ -50,7 +50,7 @@ New-MgUserProfileProject -InputObject <IPeopleIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Use this API to create a new projectParticipation object in a user's profile.
+Create new navigation property to projects for users
 
 ## EXAMPLES
 

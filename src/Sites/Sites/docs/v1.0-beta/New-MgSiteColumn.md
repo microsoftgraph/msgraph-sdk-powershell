@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSiteColumn
 
 ## SYNOPSIS
-Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
+Create new navigation property to columns for sites
 
 ## SYNTAX
 
@@ -57,7 +57,7 @@ New-MgSiteColumn -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable
 ```
 
 ## DESCRIPTION
-Create a column for a [site][site] by specifying a [columnDefinition][columnDefinition].
+Create new navigation property to columns for sites
 
 ## EXAMPLES
 
@@ -896,6 +896,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

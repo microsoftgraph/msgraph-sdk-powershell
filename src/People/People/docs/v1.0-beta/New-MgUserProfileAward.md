@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileAward
 
 ## SYNOPSIS
-Create a new personAward object in a user's profile.
+Create new navigation property to awards for users
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ New-MgUserProfileAward -InputObject <IPeopleIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Create a new personAward object in a user's profile.
+Create new navigation property to awards for users
 
 ## EXAMPLES
 

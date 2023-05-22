@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: f4b4c495-c680-4076-8636-abdd2ffadce2
+Module Guid: 35e7ea80-358e-4618-a591-7c67a6a30be1
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -18,118 +18,77 @@ Invoke action complete
 Invoke action complete
 
 ### [Confirm-MgAdministrativeUnitMemberGroup](Confirm-MgAdministrativeUnitMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgAdministrativeUnitMemberObject](Confirm-MgAdministrativeUnitMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgContactMemberGroup](Confirm-MgContactMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgContactMemberObject](Confirm-MgContactMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgContractMemberGroup](Confirm-MgContractMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgContractMemberObject](Confirm-MgContractMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgDeviceMemberGroup](Confirm-MgDeviceMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgDeviceMemberObject](Confirm-MgDeviceMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgDirectoryAdministrativeUnitMemberGroup](Confirm-MgDirectoryAdministrativeUnitMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgDirectoryAdministrativeUnitMemberObject](Confirm-MgDirectoryAdministrativeUnitMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgDirectoryDeletedItemMemberGroup](Confirm-MgDirectoryDeletedItemMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgDirectoryDeletedItemMemberObject](Confirm-MgDirectoryDeletedItemMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgDirectoryRoleMemberGroup](Confirm-MgDirectoryRoleMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgDirectoryRoleMemberObject](Confirm-MgDirectoryRoleMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgDirectoryRoleTemplateMemberGroup](Confirm-MgDirectoryRoleTemplateMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgDirectoryRoleTemplateMemberObject](Confirm-MgDirectoryRoleTemplateMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgDirectorySettingTemplateMemberGroup](Confirm-MgDirectorySettingTemplateMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgDirectorySettingTemplateMemberObject](Confirm-MgDirectorySettingTemplateMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Confirm-MgDomain](Confirm-MgDomain.md)
-Validates the ownership of the domain.
+Invoke action verify
 
 ### [Confirm-MgOrganizationMemberGroup](Confirm-MgOrganizationMemberGroup.md)
-Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
-This function is transitive.
-You can check up to a maximum of 20 groups per request.
-This function supports all groups provisioned in Azure AD.
-Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+Invoke action checkMemberGroups
 
 ### [Confirm-MgOrganizationMemberObject](Confirm-MgOrganizationMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Export-MgDirectoryInboundSharedUserProfilePersonalData](Export-MgDirectoryInboundSharedUserProfilePersonalData.md)
-Create a request to export the personal data for an inboundSharedUserProfile.
+Invoke action exportPersonalData
 
 ### [Get-MgAdministrativeUnit](Get-MgAdministrativeUnit.md)
 Retrieve the properties and relationships of an administrativeUnit object.
 Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.
 
 ### [Get-MgAdministrativeUnitById](Get-MgAdministrativeUnitById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgAdministrativeUnitDelta](Get-MgAdministrativeUnitDelta.md)
 Invoke function delta
@@ -142,13 +101,30 @@ Nullable.
 Users and groups that are members of this administrative unit.
 Supports $expand.
 
+### [Get-MgAdministrativeUnitMemberAsApplication](Get-MgAdministrativeUnitMemberAsApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Get-MgAdministrativeUnitMemberAsDevice](Get-MgAdministrativeUnitMemberAsDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Get-MgAdministrativeUnitMemberAsGroup](Get-MgAdministrativeUnitMemberAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Get-MgAdministrativeUnitMemberAsOrgContact](Get-MgAdministrativeUnitMemberAsOrgContact.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Get-MgAdministrativeUnitMemberAsServicePrincipal](Get-MgAdministrativeUnitMemberAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Get-MgAdministrativeUnitMemberAsUser](Get-MgAdministrativeUnitMemberAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
 ### [Get-MgAdministrativeUnitMemberByRef](Get-MgAdministrativeUnitMemberByRef.md)
 Users and groups that are members of this administrative unit.
 Supports $expand.
 
 ### [Get-MgAdministrativeUnitMemberGroup](Get-MgAdministrativeUnitMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgAdministrativeUnitMemberObject](Get-MgAdministrativeUnitMemberObject.md)
 Invoke action getMemberObjects
@@ -157,15 +133,13 @@ Invoke action getMemberObjects
 Scoped-role members of this administrative unit.
 
 ### [Get-MgAdministrativeUnitUserOwnedObject](Get-MgAdministrativeUnitUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgContact](Get-MgContact.md)
 Get the properties and relationships of an organizational contact object.
 
 ### [Get-MgContactById](Get-MgContactById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgContactDelta](Get-MgContactDelta.md)
 Invoke function delta
@@ -176,12 +150,19 @@ The contact's direct reports.
 Nullable.
 Supports $expand.
 
+### [Get-MgContactDirectReportAsOrgContact](Get-MgContactDirectReportAsOrgContact.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Get-MgContactDirectReportAsUser](Get-MgContactDirectReportAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
 ### [Get-MgContactManager](Get-MgContactManager.md)
-Get the contact's manager
+The user or contact that is this contact's manager.
+Read-only.
+Supports $expand and $filter (eq) by id.
 
 ### [Get-MgContactMemberGroup](Get-MgContactMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgContactMemberObject](Get-MgContactMemberObject.md)
 Invoke action getMemberObjects
@@ -192,45 +173,52 @@ Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgContactMemberOfAsAdministrativeUnit](Get-MgContactMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgContactMemberOfAsGroup](Get-MgContactMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
 ### [Get-MgContactTransitiveMemberOf](Get-MgContactTransitiveMemberOf.md)
 Get transitiveMemberOf from contacts
+
+### [Get-MgContactTransitiveMemberOfAsAdministrativeUnit](Get-MgContactTransitiveMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgContactTransitiveMemberOfAsGroup](Get-MgContactTransitiveMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgContactTransitiveReport](Get-MgContactTransitiveReport.md)
 The transitive reports for a contact.
 Read-only.
 
 ### [Get-MgContactUserOwnedObject](Get-MgContactUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgContract](Get-MgContract.md)
 Retrieve the properties and relationships of contract object.
 
 ### [Get-MgContractById](Get-MgContractById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgContractDelta](Get-MgContractDelta.md)
 Invoke function delta
 
 ### [Get-MgContractMemberGroup](Get-MgContractMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgContractMemberObject](Get-MgContractMemberObject.md)
 Invoke action getMemberObjects
 
 ### [Get-MgContractUserOwnedObject](Get-MgContractUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgDevice](Get-MgDevice.md)
 Get the properties and relationships of a device object.
 Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
 
 ### [Get-MgDeviceById](Get-MgDeviceById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgDeviceCommand](Get-MgDeviceCommand.md)
 Set of commands sent to this device.
@@ -247,8 +235,7 @@ Read-only.
 Nullable.
 
 ### [Get-MgDeviceMemberGroup](Get-MgDeviceMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgDeviceMemberObject](Get-MgDeviceMemberObject.md)
 Invoke action getMemberObjects
@@ -259,18 +246,31 @@ Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgDeviceMemberOfAsAdministrativeUnit](Get-MgDeviceMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgDeviceMemberOfAsGroup](Get-MgDeviceMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
 ### [Get-MgDeviceRegisteredOwner](Get-MgDeviceRegisteredOwner.md)
 The user that cloud joined the device or registered their personal device.
 The registered owner is set at the time of registration.
-Currently, there can be only one owner.
 Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgDeviceRegisteredOwnerAsEndpoint](Get-MgDeviceRegisteredOwnerAsEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Get-MgDeviceRegisteredOwnerAsServicePrincipal](Get-MgDeviceRegisteredOwnerAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Get-MgDeviceRegisteredOwnerAsUser](Get-MgDeviceRegisteredOwnerAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
 ### [Get-MgDeviceRegisteredOwnerByRef](Get-MgDeviceRegisteredOwnerByRef.md)
 The user that cloud joined the device or registered their personal device.
 The registered owner is set at the time of registration.
-Currently, there can be only one owner.
 Read-only.
 Nullable.
 Supports $expand.
@@ -281,6 +281,15 @@ For cloud joined devices and registered personal devices, registered users are s
 Read-only.
 Nullable.
 Supports $expand.
+
+### [Get-MgDeviceRegisteredUserAsEndpoint](Get-MgDeviceRegisteredUserAsEndpoint.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
+
+### [Get-MgDeviceRegisteredUserAsServicePrincipal](Get-MgDeviceRegisteredUserAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Get-MgDeviceRegisteredUserAsUser](Get-MgDeviceRegisteredUserAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgDeviceRegisteredUserByRef](Get-MgDeviceRegisteredUserByRef.md)
 Collection of registered users of the device.
@@ -294,12 +303,17 @@ Groups and administrative units that this device is a member of.
 This operation is transitive.
 Supports $expand.
 
+### [Get-MgDeviceTransitiveMemberOfAsAdministrativeUnit](Get-MgDeviceTransitiveMemberOfAsAdministrativeUnit.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
+
+### [Get-MgDeviceTransitiveMemberOfAsGroup](Get-MgDeviceTransitiveMemberOfAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
 ### [Get-MgDeviceUsageRights](Get-MgDeviceUsageRights.md)
 Represents the usage rights a device has been granted.
 
 ### [Get-MgDeviceUserOwnedObject](Get-MgDeviceUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgDirectory](Get-MgDirectory.md)
 Get directory
@@ -308,8 +322,7 @@ Get directory
 Conceptual container for user and group directory objects.
 
 ### [Get-MgDirectoryAdministrativeUnitById](Get-MgDirectoryAdministrativeUnitById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgDirectoryAdministrativeUnitDelta](Get-MgDirectoryAdministrativeUnitDelta.md)
 Invoke function delta
@@ -322,13 +335,30 @@ Nullable.
 Users and groups that are members of this administrative unit.
 Supports $expand.
 
+### [Get-MgDirectoryAdministrativeUnitMemberAsApplication](Get-MgDirectoryAdministrativeUnitMemberAsApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Get-MgDirectoryAdministrativeUnitMemberAsDevice](Get-MgDirectoryAdministrativeUnitMemberAsDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Get-MgDirectoryAdministrativeUnitMemberAsGroup](Get-MgDirectoryAdministrativeUnitMemberAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Get-MgDirectoryAdministrativeUnitMemberAsOrgContact](Get-MgDirectoryAdministrativeUnitMemberAsOrgContact.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Get-MgDirectoryAdministrativeUnitMemberAsServicePrincipal](Get-MgDirectoryAdministrativeUnitMemberAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Get-MgDirectoryAdministrativeUnitMemberAsUser](Get-MgDirectoryAdministrativeUnitMemberAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
 ### [Get-MgDirectoryAdministrativeUnitMemberByRef](Get-MgDirectoryAdministrativeUnitMemberByRef.md)
 Users and groups that are members of this administrative unit.
 Supports $expand.
 
 ### [Get-MgDirectoryAdministrativeUnitMemberGroup](Get-MgDirectoryAdministrativeUnitMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgDirectoryAdministrativeUnitMemberObject](Get-MgDirectoryAdministrativeUnitMemberObject.md)
 Invoke action getMemberObjects
@@ -337,8 +367,7 @@ Invoke action getMemberObjects
 Scoped-role members of this administrative unit.
 
 ### [Get-MgDirectoryAdministrativeUnitUserOwnedObject](Get-MgDirectoryAdministrativeUnitUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgDirectoryAttributeSet](Get-MgDirectoryAttributeSet.md)
 Group of related custom security attribute definitions.
@@ -353,23 +382,29 @@ For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues
 ### [Get-MgDirectoryDeletedItem](Get-MgDirectoryDeletedItem.md)
 Get deletedItems from directory
 
+### [Get-MgDirectoryDeletedItemAsApplication](Get-MgDirectoryDeletedItemAsApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Get-MgDirectoryDeletedItemAsGroup](Get-MgDirectoryDeletedItemAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Get-MgDirectoryDeletedItemAsUser](Get-MgDirectoryDeletedItemAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
 ### [Get-MgDirectoryDeletedItemById](Get-MgDirectoryDeletedItemById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgDirectoryDeletedItemDelta](Get-MgDirectoryDeletedItemDelta.md)
 Invoke function delta
 
 ### [Get-MgDirectoryDeletedItemMemberGroup](Get-MgDirectoryDeletedItemMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgDirectoryDeletedItemMemberObject](Get-MgDirectoryDeletedItemMemberObject.md)
 Invoke action getMemberObjects
 
 ### [Get-MgDirectoryDeletedItemUserOwnedObject](Get-MgDirectoryDeletedItemUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgDirectoryFeatureRolloutPolicy](Get-MgDirectoryFeatureRolloutPolicy.md)
 Get featureRolloutPolicies from directory
@@ -379,8 +414,7 @@ Nullable.
 Specifies a list of directoryObjects that feature is enabled for.
 
 ### [Get-MgDirectoryFeatureRolloutPolicyApplyToById](Get-MgDirectoryFeatureRolloutPolicyApplyToById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgDirectoryFeatureRolloutPolicyApplyToByRef](Get-MgDirectoryFeatureRolloutPolicyApplyToByRef.md)
 Nullable.
@@ -390,8 +424,7 @@ Specifies a list of directoryObjects that feature is enabled for.
 Invoke function delta
 
 ### [Get-MgDirectoryFeatureRolloutPolicyApplyToUserOwnedObject](Get-MgDirectoryFeatureRolloutPolicyApplyToUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgDirectoryFederationConfiguration](Get-MgDirectoryFederationConfiguration.md)
 Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
@@ -423,8 +456,7 @@ The template ID of a built-in role is immutable and can be seen in the role desc
 For details, see Role template IDs.
 
 ### [Get-MgDirectoryRoleById](Get-MgDirectoryRoleById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgDirectoryRoleDelta](Get-MgDirectoryRoleDelta.md)
 Invoke function delta
@@ -436,6 +468,24 @@ Read-only.
 Nullable.
 Supports $expand.
 
+### [Get-MgDirectoryRoleMemberAsApplication](Get-MgDirectoryRoleMemberAsApplication.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+
+### [Get-MgDirectoryRoleMemberAsDevice](Get-MgDirectoryRoleMemberAsDevice.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
+
+### [Get-MgDirectoryRoleMemberAsGroup](Get-MgDirectoryRoleMemberAsGroup.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+
+### [Get-MgDirectoryRoleMemberAsOrgContact](Get-MgDirectoryRoleMemberAsOrgContact.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
+
+### [Get-MgDirectoryRoleMemberAsServicePrincipal](Get-MgDirectoryRoleMemberAsServicePrincipal.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
+
+### [Get-MgDirectoryRoleMemberAsUser](Get-MgDirectoryRoleMemberAsUser.md)
+Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
+
 ### [Get-MgDirectoryRoleMemberByRef](Get-MgDirectoryRoleMemberByRef.md)
 Users that are members of this directory role.
 HTTP Methods: GET, POST, DELETE.
@@ -444,8 +494,7 @@ Nullable.
 Supports $expand.
 
 ### [Get-MgDirectoryRoleMemberGroup](Get-MgDirectoryRoleMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgDirectoryRoleMemberObject](Get-MgDirectoryRoleMemberObject.md)
 Invoke action getMemberObjects
@@ -459,26 +508,22 @@ Nullable.
 Retrieve the properties and relationships of a directoryroletemplate object.
 
 ### [Get-MgDirectoryRoleTemplateById](Get-MgDirectoryRoleTemplateById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgDirectoryRoleTemplateDelta](Get-MgDirectoryRoleTemplateDelta.md)
 Invoke function delta
 
 ### [Get-MgDirectoryRoleTemplateMemberGroup](Get-MgDirectoryRoleTemplateMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgDirectoryRoleTemplateMemberObject](Get-MgDirectoryRoleTemplateMemberObject.md)
 Invoke action getMemberObjects
 
 ### [Get-MgDirectoryRoleTemplateUserOwnedObject](Get-MgDirectoryRoleTemplateUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgDirectoryRoleUserOwnedObject](Get-MgDirectoryRoleUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgDirectorySetting](Get-MgDirectorySetting.md)
 Retrieve the properties of a specific directory setting object.
@@ -488,22 +533,19 @@ A directory setting template represents a template of settings from which settin
 This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.
 
 ### [Get-MgDirectorySettingTemplateById](Get-MgDirectorySettingTemplateById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgDirectorySettingTemplateDelta](Get-MgDirectorySettingTemplateDelta.md)
 Invoke function delta
 
 ### [Get-MgDirectorySettingTemplateMemberGroup](Get-MgDirectorySettingTemplateMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgDirectorySettingTemplateMemberObject](Get-MgDirectorySettingTemplateMemberObject.md)
 Invoke action getMemberObjects
 
 ### [Get-MgDirectorySettingTemplateUserOwnedObject](Get-MgDirectorySettingTemplateUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgDirectorySharedEmailDomain](Get-MgDirectorySharedEmailDomain.md)
 Get sharedEmailDomains from directory
@@ -539,11 +581,8 @@ Get the properties and relationships of the currently authenticated organization
 Since the **organization** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **organization** instance.
 
 ### [Get-MgOrganizationBranding](Get-MgOrganizationBranding.md)
-Retrieve the default organizational branding object, if the **Accept-Language** header is set to `0` or `default`.
-If no default organizational branding object exists, this method returns a `404 Not Found` error.
-If the **Accept-Language** header is set to an existing locale identified by the value of its **id**, this method retrieves the branding for the specified locale.
-This method retrieves only non-Stream properties, for example, **usernameHintText** and **signInPageText**.
-To retrieve Stream types of the default branding, for example, **bannerLogo** and **backgroundImage**, use the GET organizationalBrandingLocalization method.
+Resource to manage the default branding for the organization.
+Nullable.
 
 ### [Get-MgOrganizationBrandingBackgroundImage](Get-MgOrganizationBrandingBackgroundImage.md)
 Image that appears as the background of the sign-in page.
@@ -613,52 +652,46 @@ Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than
 We recommend using a transparent image with no padding around the logo.
 
 ### [Get-MgOrganizationById](Get-MgOrganizationById.md)
-Return the directory objects specified in a list of IDs.
-Some common uses for this function are to:
+Invoke action getByIds
 
 ### [Get-MgOrganizationExtension](Get-MgOrganizationExtension.md)
 The collection of open extensions defined for the organization resource.
 Nullable.
 
 ### [Get-MgOrganizationMemberGroup](Get-MgOrganizationMemberGroup.md)
-Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
-This function is transitive.
+Invoke action getMemberGroups
 
 ### [Get-MgOrganizationMemberObject](Get-MgOrganizationMemberObject.md)
 Invoke action getMemberObjects
 
 ### [Get-MgOrganizationSetting](Get-MgOrganizationSetting.md)
-Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**.
-This operation does not return insightsSettings.
-Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights.
-This operation does not return microsoftApplicationDataAccessSettings.
-To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
+Retrieve the properties and relationships of organizationSettings object.
+Nullable.
 
 ### [Get-MgOrganizationSettingContactInsight](Get-MgOrganizationSettingContactInsight.md)
-Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
+Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user's contacts list and suggest the user to merge those contacts to have a cleaner contacts list.
+List contactInsights returns the settings to display or return contact insights in an organization.
 
 ### [Get-MgOrganizationSettingItemInsight](Get-MgOrganizationSettingItemInsight.md)
-Get the properties of an insightsSettings object for displaying or returning item insights in an organization.
-To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy.
+Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
+List itemInsights returns the settings to display or return item insights in an organization.
 
 ### [Get-MgOrganizationSettingMicrosoftApplicationDataAccess](Get-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
-Get the _settings_ in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+Get microsoftApplicationDataAccess from organization
 
 ### [Get-MgOrganizationSettingPersonInsight](Get-MgOrganizationSettingPersonInsight.md)
-Get the properties of an insightsSettings object for displaying or returning people insights in an organization.
-To learn how to customize privacy for people insights in an organization, see Customize people insights privacy.
+Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.
+List peopleInsights returns the settings to display or return people insights in an organization.
 
 ### [Get-MgOrganizationSettingProfileCardProperty](Get-MgOrganizationSettingProfileCardProperty.md)
 Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.
 Get organization settings returns the properties configured for profile cards for the organization.
 
 ### [Get-MgOrganizationSettingPronoun](Get-MgOrganizationSettingPronoun.md)
-Get the properties of the pronounsSettings resource for an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+Represents administrator settings that manage the support of pronouns in an organization.
 
 ### [Get-MgOrganizationUserOwnedObject](Get-MgOrganizationUserOwnedObject.md)
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ### [Get-MgSubscribedSku](Get-MgSubscribedSku.md)
 Get a specific commercial subscription that an organization has acquired.
@@ -668,200 +701,8 @@ The scoped-role administrative unit memberships for this user.
 Read-only.
 Nullable.
 
-### [Group-MgAdministrativeUnitGetMemberAs](Group-MgAdministrativeUnitGetMemberAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgAdministrativeUnitListMemberAs](Group-MgAdministrativeUnitListMemberAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgContactGetMemberOfAs](Group-MgContactGetMemberOfAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgContactGetTransitiveMemberOfAs](Group-MgContactGetTransitiveMemberOfAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgContactListMemberOfAs](Group-MgContactListMemberOfAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgContactListTransitiveMemberOfAs](Group-MgContactListTransitiveMemberOfAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgDeviceGetMemberOfAs](Group-MgDeviceGetMemberOfAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgDeviceGetTransitiveMemberOfAs](Group-MgDeviceGetTransitiveMemberOfAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgDeviceListMemberOfAs](Group-MgDeviceListMemberOfAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgDeviceListTransitiveMemberOfAs](Group-MgDeviceListTransitiveMemberOfAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgDirectoryAdministrativeUnitGetMemberAs](Group-MgDirectoryAdministrativeUnitGetMemberAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgDirectoryAdministrativeUnitListMemberAs](Group-MgDirectoryAdministrativeUnitListMemberAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgDirectoryGetDeletedItemAs](Group-MgDirectoryGetDeletedItemAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgDirectoryListDeletedItemAs](Group-MgDirectoryListDeletedItemAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Group-MgDirectoryRoleGetMemberAs](Group-MgDirectoryRoleGetMemberAs.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-
-### [Group-MgDirectoryRoleListMemberAs](Group-MgDirectoryRoleListMemberAs.md)
-Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsAdministrativeUnitGetMemberApplication](Invoke-MgAsAdministrativeUnitGetMemberApplication.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-
-### [Invoke-MgAsAdministrativeUnitGetMemberDevice](Invoke-MgAsAdministrativeUnitGetMemberDevice.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-
-### [Invoke-MgAsAdministrativeUnitGetMemberUser](Invoke-MgAsAdministrativeUnitGetMemberUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsAdministrativeUnitListMemberApplication](Invoke-MgAsAdministrativeUnitListMemberApplication.md)
-Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsAdministrativeUnitListMemberDevice](Invoke-MgAsAdministrativeUnitListMemberDevice.md)
-Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsAdministrativeUnitListMemberUser](Invoke-MgAsAdministrativeUnitListMemberUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsContactGetDirectReportUser](Invoke-MgAsContactGetDirectReportUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsContactGetMemberOfAdministrativeUnit](Invoke-MgAsContactGetMemberOfAdministrativeUnit.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-
-### [Invoke-MgAsContactGetTransitiveMemberOfAdministrativeUnit](Invoke-MgAsContactGetTransitiveMemberOfAdministrativeUnit.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-
-### [Invoke-MgAsContactListDirectReportUser](Invoke-MgAsContactListDirectReportUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsContactListMemberOfAdministrativeUnit](Invoke-MgAsContactListMemberOfAdministrativeUnit.md)
-Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsContactListTransitiveMemberOfAdministrativeUnit](Invoke-MgAsContactListTransitiveMemberOfAdministrativeUnit.md)
-Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDeviceGetMemberOfAdministrativeUnit](Invoke-MgAsDeviceGetMemberOfAdministrativeUnit.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-
-### [Invoke-MgAsDeviceGetRegisteredOwnerEndpoint](Invoke-MgAsDeviceGetRegisteredOwnerEndpoint.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-
-### [Invoke-MgAsDeviceGetRegisteredOwnerUser](Invoke-MgAsDeviceGetRegisteredOwnerUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsDeviceGetRegisteredUser](Invoke-MgAsDeviceGetRegisteredUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsDeviceGetRegisteredUserEndpoint](Invoke-MgAsDeviceGetRegisteredUserEndpoint.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-
-### [Invoke-MgAsDeviceGetTransitiveMemberOfAdministrativeUnit](Invoke-MgAsDeviceGetTransitiveMemberOfAdministrativeUnit.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-
-### [Invoke-MgAsDeviceListMemberOfAdministrativeUnit](Invoke-MgAsDeviceListMemberOfAdministrativeUnit.md)
-Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDeviceListRegisteredOwnerEndpoint](Invoke-MgAsDeviceListRegisteredOwnerEndpoint.md)
-Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDeviceListRegisteredOwnerUser](Invoke-MgAsDeviceListRegisteredOwnerUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDeviceListRegisteredUser](Invoke-MgAsDeviceListRegisteredUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDeviceListRegisteredUserEndpoint](Invoke-MgAsDeviceListRegisteredUserEndpoint.md)
-Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDeviceListTransitiveMemberOfAdministrativeUnit](Invoke-MgAsDeviceListTransitiveMemberOfAdministrativeUnit.md)
-Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDirectoryAdministrativeUnitGetMemberApplication](Invoke-MgAsDirectoryAdministrativeUnitGetMemberApplication.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-
-### [Invoke-MgAsDirectoryAdministrativeUnitGetMemberDevice](Invoke-MgAsDirectoryAdministrativeUnitGetMemberDevice.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-
-### [Invoke-MgAsDirectoryAdministrativeUnitGetMemberUser](Invoke-MgAsDirectoryAdministrativeUnitGetMemberUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsDirectoryAdministrativeUnitListMemberApplication](Invoke-MgAsDirectoryAdministrativeUnitListMemberApplication.md)
-Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDirectoryAdministrativeUnitListMemberDevice](Invoke-MgAsDirectoryAdministrativeUnitListMemberDevice.md)
-Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDirectoryAdministrativeUnitListMemberUser](Invoke-MgAsDirectoryAdministrativeUnitListMemberUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDirectoryGetDeletedItemApplication](Invoke-MgAsDirectoryGetDeletedItemApplication.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-
-### [Invoke-MgAsDirectoryGetDeletedItemUser](Invoke-MgAsDirectoryGetDeletedItemUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsDirectoryListDeletedItemApplication](Invoke-MgAsDirectoryListDeletedItemApplication.md)
-Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDirectoryListDeletedItemUser](Invoke-MgAsDirectoryListDeletedItemUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDirectoryRoleGetMemberApplication](Invoke-MgAsDirectoryRoleGetMemberApplication.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-
-### [Invoke-MgAsDirectoryRoleGetMemberDevice](Invoke-MgAsDirectoryRoleGetMemberDevice.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-
-### [Invoke-MgAsDirectoryRoleGetMemberUser](Invoke-MgAsDirectoryRoleGetMemberUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-
-### [Invoke-MgAsDirectoryRoleListMemberApplication](Invoke-MgAsDirectoryRoleListMemberApplication.md)
-Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDirectoryRoleListMemberDevice](Invoke-MgAsDirectoryRoleListMemberDevice.md)
-Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgAsDirectoryRoleListMemberUser](Invoke-MgAsDirectoryRoleListMemberUser.md)
-Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-
 ### [Invoke-MgAvailableDirectoryFederationConfigurationProviderType](Invoke-MgAvailableDirectoryFederationConfigurationProviderType.md)
 Invoke function availableProviderTypes
-
-### [Invoke-MgContactAdministrativeUnitGetMemberAsOrg](Invoke-MgContactAdministrativeUnitGetMemberAsOrg.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-
-### [Invoke-MgContactAdministrativeUnitListMemberAsOrg](Invoke-MgContactAdministrativeUnitListMemberAsOrg.md)
-Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgContactDirectoryAdministrativeUnitGetMemberAsOrg](Invoke-MgContactDirectoryAdministrativeUnitGetMemberAsOrg.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-
-### [Invoke-MgContactDirectoryAdministrativeUnitListMemberAsOrg](Invoke-MgContactDirectoryAdministrativeUnitListMemberAsOrg.md)
-Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgContactDirectoryRoleGetMemberAsOrg](Invoke-MgContactDirectoryRoleGetMemberAsOrg.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-
-### [Invoke-MgContactDirectoryRoleListMemberAsOrg](Invoke-MgContactDirectoryRoleListMemberAsOrg.md)
-Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgContactGetDirectReportAsOrg](Invoke-MgContactGetDirectReportAsOrg.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-
-### [Invoke-MgContactListDirectReportAsOrg](Invoke-MgContactListDirectReportAsOrg.md)
-Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
 
 ### [Invoke-MgDismissDirectoryImpactedResource](Invoke-MgDismissDirectoryImpactedResource.md)
 Invoke action dismiss
@@ -870,11 +711,7 @@ Invoke action dismiss
 Invoke action dismiss
 
 ### [Invoke-MgForceDomainDelete](Invoke-MgForceDomainDelete.md)
-Deletes a domain using an asynchronous operation.
-Prior to calling forceDelete, you must update or remove any references to **Exchange** as the provisioning service.
-The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a 404 HTTP response code.
-To verify deletion of a domain, you can perform a get domain.
-If the domain was successfully deleted, a 404 HTTP response code will be returned in the response.
+Invoke action forceDelete
 
 ### [Invoke-MgPostponeDirectoryImpactedResource](Invoke-MgPostponeDirectoryImpactedResource.md)
 Invoke action postpone
@@ -883,8 +720,7 @@ Invoke action postpone
 Invoke action postpone
 
 ### [Invoke-MgPromoteDomain](Invoke-MgPromoteDomain.md)
-Promote a verified subdomain to the root domain.
-A verified domain has its **isVerified** property set to `true`.
+Invoke action promote
 
 ### [Invoke-MgReactivateDirectoryImpactedResource](Invoke-MgReactivateDirectoryImpactedResource.md)
 Invoke action reactivate
@@ -892,35 +728,8 @@ Invoke action reactivate
 ### [Invoke-MgReactivateDirectoryRecommendation](Invoke-MgReactivateDirectoryRecommendation.md)
 Invoke action reactivate
 
-### [Invoke-MgServiceAdministrativeUnitGetMember](Invoke-MgServiceAdministrativeUnitGetMember.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-
-### [Invoke-MgServiceAdministrativeUnitListMember](Invoke-MgServiceAdministrativeUnitListMember.md)
-Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgServiceDeviceGetRegisteredOwner](Invoke-MgServiceDeviceGetRegisteredOwner.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-
-### [Invoke-MgServiceDeviceGetRegisteredUser](Invoke-MgServiceDeviceGetRegisteredUser.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-
-### [Invoke-MgServiceDeviceListRegisteredOwner](Invoke-MgServiceDeviceListRegisteredOwner.md)
-Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgServiceDeviceListRegisteredUser](Invoke-MgServiceDeviceListRegisteredUser.md)
-Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgServiceDirectoryAdministrativeUnitGetMember](Invoke-MgServiceDirectoryAdministrativeUnitGetMember.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-
-### [Invoke-MgServiceDirectoryAdministrativeUnitListMember](Invoke-MgServiceDirectoryAdministrativeUnitListMember.md)
-Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-
-### [Invoke-MgServiceDirectoryRoleGetMember](Invoke-MgServiceDirectoryRoleGetMember.md)
-Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-
-### [Invoke-MgServiceDirectoryRoleListMember](Invoke-MgServiceDirectoryRoleListMember.md)
-Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
+### [Invoke-MgRetryContactServiceProvisioning](Invoke-MgRetryContactServiceProvisioning.md)
+Invoke action retryServiceProvisioning
 
 ### [New-MgAdministrativeUnit](New-MgAdministrativeUnit.md)
 Use this API to create a new administrativeUnit.
@@ -929,13 +738,10 @@ Use this API to create a new administrativeUnit.
 Create new navigation property to extensions for administrativeUnits
 
 ### [New-MgAdministrativeUnitMemberByRef](New-MgAdministrativeUnitMemberByRef.md)
-Use this API to add a member (user, group, or device) to an administrative unit or to create a new group within an administrative unit.
-All group types can be created within an administrative unit.
-**Note:** Currently, it's only possible to add one member at a time to an administrative unit.`
+Create new navigation property ref to members for administrativeUnits
 
 ### [New-MgAdministrativeUnitScopedRoleMember](New-MgAdministrativeUnitScopedRoleMember.md)
-Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
-For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+Create new navigation property to scopedRoleMembers for administrativeUnits
 
 ### [New-MgContact](New-MgContact.md)
 Add new entity to contacts
@@ -968,22 +774,19 @@ Create new navigation property to administrativeUnits for directory
 Create new navigation property to extensions for directory
 
 ### [New-MgDirectoryAdministrativeUnitMemberByRef](New-MgDirectoryAdministrativeUnitMemberByRef.md)
-Use this API to add a member (user, group, or device) to an administrative unit or to create a new group within an administrative unit.
-All group types can be created within an administrative unit.
-**Note:** Currently, it's only possible to add one member at a time to an administrative unit.`
+Create new navigation property ref to members for directory
 
 ### [New-MgDirectoryAdministrativeUnitScopedRoleMember](New-MgDirectoryAdministrativeUnitScopedRoleMember.md)
-Assign an Azure Active Directory (Azure AD) role with administrative unit scope.
-For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+Create new navigation property to scopedRoleMembers for directory
 
 ### [New-MgDirectoryAttributeSet](New-MgDirectoryAttributeSet.md)
-Create a new attributeSet object.
+Create new navigation property to attributeSets for directory
 
 ### [New-MgDirectoryCustomSecurityAttributeDefinition](New-MgDirectoryCustomSecurityAttributeDefinition.md)
-Create a new customSecurityAttributeDefinition object.
+Create new navigation property to customSecurityAttributeDefinitions for directory
 
 ### [New-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue](New-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue.md)
-Create a new allowedValue object.
+Create new navigation property to allowedValues for directory
 
 ### [New-MgDirectoryDeletedItem](New-MgDirectoryDeletedItem.md)
 Create new navigation property to deletedItems for directory
@@ -1055,7 +858,7 @@ If a root domain is verified, subdomains of the root domain are automatically ve
 For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
 
 ### [New-MgDomainFederationConfiguration](New-MgDomainFederationConfiguration.md)
-Create a new internalDomainFederation object.
+Create new navigation property to federationConfiguration for domains
 
 ### [New-MgDomainServiceConfigurationRecord](New-MgDomainServiceConfigurationRecord.md)
 Create new navigation property to serviceConfigurationRecords for domains
@@ -1070,19 +873,13 @@ Create new navigation property to verificationDnsRecords for domains
 Add new entity to organization
 
 ### [New-MgOrganizationBrandingLocalization](New-MgOrganizationBrandingLocalization.md)
-Create a new organizationalBrandingLocalization object.
-This creates a localized branding and at the same time, the default branding if it doesn't exist.
-The default branding is created only once.
-It's loaded when a localized branding isn't configured for the user's browser language.
-To retrieve the default branding, see Get branding.
+Create new navigation property to localizations for organization
 
 ### [New-MgOrganizationExtension](New-MgOrganizationExtension.md)
 Create new navigation property to extensions for organization
 
 ### [New-MgOrganizationSettingProfileCardProperty](New-MgOrganizationSettingProfileCardProperty.md)
-Create a new profileCardProperty for an organization.
-The new property is identified by its **directoryPropertyName** property.
-For more information on adding properties to the profile card for an organization, see customize the profile card.
+Create new navigation property to profileCardProperties for organization
 
 ### [New-MgSubscribedSku](New-MgSubscribedSku.md)
 Add new entity to subscribedSkus
@@ -1166,7 +963,7 @@ Delete navigation property impactedResources for directory
 Delete navigation property inboundSharedUserProfiles for directory
 
 ### [Remove-MgDirectoryInboundSharedUserProfilePersonalData](Remove-MgDirectoryInboundSharedUserProfilePersonalData.md)
-Create a request to remove the personal data for an inboundSharedUserProfile.
+Invoke action removePersonalData
 
 ### [Remove-MgDirectoryOnPremisSynchronization](Remove-MgDirectoryOnPremisSynchronization.md)
 Delete navigation property onPremisesSynchronization for directory
@@ -1178,7 +975,7 @@ Delete navigation property outboundSharedUserProfiles for directory
 Delete navigation property tenants for directory
 
 ### [Remove-MgDirectoryOutboundSharedUserProfileTenantPersonalData](Remove-MgDirectoryOutboundSharedUserProfileTenantPersonalData.md)
-Create a request to remove the personal data for an outboundSharedUserProfile.
+Invoke action removePersonalData
 
 ### [Remove-MgDirectoryRecommendation](Remove-MgDirectoryRecommendation.md)
 Delete navigation property recommendations for directory
@@ -1223,8 +1020,7 @@ Delete navigation property verificationDnsRecords for domains
 Delete entity from organization
 
 ### [Remove-MgOrganizationBranding](Remove-MgOrganizationBranding.md)
-Delete the default organizational branding object.
-To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
+Delete navigation property branding for organization
 
 ### [Remove-MgOrganizationBrandingLocalization](Remove-MgOrganizationBrandingLocalization.md)
 Delete navigation property localizations for organization
@@ -1260,11 +1056,7 @@ Delete entity from subscribedSkus
 Delete navigation property scopedRoleMemberOf for users
 
 ### [Restore-MgDirectoryDeletedItem](Restore-MgDirectoryDeletedItem.md)
-Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
-If an item was accidentally deleted, you can fully restore the item.
-This is not applicable to security groups, which are deleted permanently.
-A recently deleted item will remain available for up to 30 days.
-After 30 days, the item is permanently deleted.
+Invoke action restore
 
 ### [Set-MgOrganizationBrandingBackgroundImage](Set-MgOrganizationBrandingBackgroundImage.md)
 Image that appears as the background of the sign-in page.
@@ -1334,125 +1126,37 @@ We recommend using a transparent image with no padding around the logo.
 Set mobile device management authority
 
 ### [Test-MgAdministrativeUnitProperty](Test-MgAdministrativeUnitProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgContactProperty](Test-MgContactProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgContractProperty](Test-MgContractProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgDeviceProperty](Test-MgDeviceProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgDirectoryAdministrativeUnitProperty](Test-MgDirectoryAdministrativeUnitProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgDirectoryDeletedItemProperty](Test-MgDirectoryDeletedItemProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgDirectoryFeatureRolloutPolicyApplyToProperty](Test-MgDirectoryFeatureRolloutPolicyApplyToProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgDirectoryRoleProperty](Test-MgDirectoryRoleProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgDirectoryRoleTemplateProperty](Test-MgDirectoryRoleTemplateProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgDirectorySettingTemplateProperty](Test-MgDirectorySettingTemplateProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Test-MgOrganizationProperty](Test-MgOrganizationProperty.md)
-Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.
-Clients can use this API to determine whether a display name or mail nickname is valid before trying to **create** a Microsoft 365 group.
-For validating properties of an existing group, use the validateProperties function for groups.
-The following validations are performed for the display name and mail nickname properties: \n1.
-Validate the prefix and suffix naming policy\n2.
-Validate the custom banned words policy\n3.
-Validate the mail nickname is unique This API returns with the first failure encountered.
-If one or more properties fail multiple validations, only the property with the first validation failure is returned.
-However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy.
+Invoke action validateProperties
 
 ### [Update-MgAdministrativeUnit](Update-MgAdministrativeUnit.md)
 Update the properties of an administrativeUnit object.
@@ -1569,7 +1273,7 @@ In this case, `organization` is defined as a collection of exactly one record, a
 The **ID** is also known as the **tenantId** of the organization.
 
 ### [Update-MgOrganizationBranding](Update-MgOrganizationBranding.md)
-Update the properties of the default branding object specified by the organizationalBranding resource.
+Update the navigation property branding in organization
 
 ### [Update-MgOrganizationBrandingLocalization](Update-MgOrganizationBrandingLocalization.md)
 Update the navigation property localizations in organization
@@ -1581,29 +1285,22 @@ Update the navigation property extensions in organization
 Update the navigation property settings in organization
 
 ### [Update-MgOrganizationSettingContactInsight](Update-MgOrganizationSettingContactInsight.md)
-Update the privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+Update the navigation property contactInsights in organization
 
 ### [Update-MgOrganizationSettingItemInsight](Update-MgOrganizationSettingItemInsight.md)
-Update the privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+Update the navigation property itemInsights in organization
 
 ### [Update-MgOrganizationSettingMicrosoftApplicationDataAccess](Update-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
-Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+Update the navigation property microsoftApplicationDataAccess in organization
 
 ### [Update-MgOrganizationSettingPersonInsight](Update-MgOrganizationSettingPersonInsight.md)
-Update the privacy settings to display or return the specified type of insights in an organization.
-The type of settings can be contact insights, item insights, or people insights.
-To learn more about customizing insights privacy for your organization, see:\n-  Customize item insights privacy \n-  Customize people insights privacy
+Update the navigation property peopleInsights in organization
 
 ### [Update-MgOrganizationSettingProfileCardProperty](Update-MgOrganizationSettingProfileCardProperty.md)
 Update the navigation property profileCardProperties in organization
 
 ### [Update-MgOrganizationSettingPronoun](Update-MgOrganizationSettingPronoun.md)
-Update the properties of a pronounsSettings in an organization.
-For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+Update the navigation property pronouns in organization
 
 ### [Update-MgSubscribedSku](Update-MgSubscribedSku.md)
 Update entity in subscribedSkus

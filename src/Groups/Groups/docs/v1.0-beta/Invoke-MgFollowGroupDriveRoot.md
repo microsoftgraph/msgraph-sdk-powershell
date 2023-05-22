@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgFollowGroupDriveRoot
 
 ## SYNOPSIS
-Follow a driveItem.
+Invoke action follow
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Invoke-MgFollowGroupDriveRoot -InputObject <IGroupsIdentity> [-Confirm] [-WhatIf
 ```
 
 ## DESCRIPTION
-Follow a driveItem.
+Invoke action follow
 
 ## EXAMPLES
 
@@ -143,6 +143,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

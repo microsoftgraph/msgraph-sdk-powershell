@@ -8,7 +8,7 @@ schema: 2.0.0
 # Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault
 
 ## SYNOPSIS
-Reset a caseSettings object to the default values.
+Invoke action resetToDefault
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault -InputObject <ISecurityIdenti
 ```
 
 ## DESCRIPTION
-Reset a caseSettings object to the default values.
+Invoke action resetToDefault
 
 ## EXAMPLES
 

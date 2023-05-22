@@ -8,9 +8,7 @@ schema: 2.0.0
 # Test-MgGroupDynamicMembership
 
 ## SYNOPSIS
-Evaluate whether a user or device is or would be a member of a dynamic group.
-The membership rule is returned along with other details that were used in the evaluation.
-You can complete this operation in the following ways:
+Invoke action evaluateDynamicMembership
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ Test-MgGroupDynamicMembership -InputObject <IGroupsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Evaluate whether a user or device is or would be a member of a dynamic group.
-The membership rule is returned along with other details that were used in the evaluation.
-You can complete this operation in the following ways:
+Invoke action evaluateDynamicMembership
 
 ## EXAMPLES
 
@@ -212,6 +208,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

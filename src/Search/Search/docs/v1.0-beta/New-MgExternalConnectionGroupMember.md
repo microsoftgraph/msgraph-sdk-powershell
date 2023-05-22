@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgExternalConnectionGroupMember
 
 ## SYNOPSIS
-Create a new externalGroupMember object.
+Create new navigation property to members for external
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ New-MgExternalConnectionGroupMember -InputObject <ISearchIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Create a new externalGroupMember object.
+Create new navigation property to members for external
 
 ## EXAMPLES
 

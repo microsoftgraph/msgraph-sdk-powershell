@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityCaseEdiscoveryCaseCustodianHold
 
 ## SYNOPSIS
-Start the process of removing hold from eDiscovery custodians.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
-The location provides a URL that will return an eDiscoveryHoldOperation object.
+Invoke action removeHold
 
 ## SYNTAX
 
@@ -53,9 +51,7 @@ Remove-MgSecurityCaseEdiscoveryCaseCustodianHold -InputObject <ISecurityIdentity
 ```
 
 ## DESCRIPTION
-Start the process of removing hold from eDiscovery custodians.
-After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers.
-The location provides a URL that will return an eDiscoveryHoldOperation object.
+Invoke action removeHold
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Hide-MgUserChatForUser
 
 ## SYNOPSIS
-Hide a chat for a user.
+Invoke action hideForUser
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Hide-MgUserChatForUser -InputObject <IUsersActionsIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Hide a chat for a user.
+Invoke action hideForUser
 
 ## EXAMPLES
 

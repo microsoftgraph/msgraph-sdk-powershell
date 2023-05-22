@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgBusinessScenarioPlannerPlanConfigurationLocalization
 
 ## SYNOPSIS
-Create a new plannerPlanConfigurationLocalization object.
+Create new navigation property to localizations for solutions
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgBusinessScenarioPlannerPlanConfigurationLocalization -InputObject <IBookin
 ```
 
 ## DESCRIPTION
-Create a new plannerPlanConfigurationLocalization object.
+Create new navigation property to localizations for solutions
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileCertification
 
 ## SYNOPSIS
-Create a new personCertification object in a user's profile.
+Create new navigation property to certifications for users
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgUserProfileCertification -InputObject <IPeopleIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Create a new personCertification object in a user's profile.
+Create new navigation property to certifications for users
 
 ## EXAMPLES
 

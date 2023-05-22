@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupTeamScheduleSchedulingGroup
 
 ## SYNOPSIS
-Create a new schedulingGroup.
+Create new navigation property to schedulingGroups for groups
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgGroupTeamScheduleSchedulingGroup -InputObject <ITeamsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Create a new schedulingGroup.
+Create new navigation property to schedulingGroups for groups
 
 ## EXAMPLES
 

@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgEducationUserAssignmentResource
 
 ## SYNOPSIS
-Create an assignment resource.
-Only teachers can perform this operation.
-You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
+Create new navigation property to resources for education
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ New-MgEducationUserAssignmentResource -InputObject <IEducationIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Create an assignment resource.
-Only teachers can perform this operation.
-You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
+Create new navigation property to resources for education
 
 ## EXAMPLES
 

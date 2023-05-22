@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgSelfPrivilegedRoleAssignmentRoleInfoDeactivate
 
 ## SYNOPSIS
-Deactivate the role that is assigned to the requestor.
+Invoke action selfDeactivate
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Invoke-MgSelfPrivilegedRoleAssignmentRoleInfoDeactivate -InputObject <IIdentityG
 ```
 
 ## DESCRIPTION
-Deactivate the role that is assigned to the requestor.
+Invoke action selfDeactivate
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: 617d4e20-2244-4a92-932d-fb6740436390
+Module Guid: ccabf99f-bf08-4459-9d46-ec1d9b8e0029
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -235,6 +235,18 @@ Invoke function getSkypeForBusinessPeerToPeerActivityMinuteCounts
 
 ### [Get-MgReportSkypeForBusinessPeerToPeerActivityUserCount](Get-MgReportSkypeForBusinessPeerToPeerActivityUserCount.md)
 Invoke function getSkypeForBusinessPeerToPeerActivityUserCounts
+
+### [Get-MgReportTeamActivityCount](Get-MgReportTeamActivityCount.md)
+Invoke function getTeamsTeamActivityCounts
+
+### [Get-MgReportTeamActivityDetail](Get-MgReportTeamActivityDetail.md)
+Invoke function getTeamsTeamActivityDetail
+
+### [Get-MgReportTeamActivityDistributionCount](Get-MgReportTeamActivityDistributionCount.md)
+Invoke function getTeamsTeamActivityDistributionCounts
+
+### [Get-MgReportTeamCount](Get-MgReportTeamCount.md)
+Invoke function getTeamsTeamCounts
 
 ### [Get-MgReportTeamDeviceUsageDistributionUserCount](Get-MgReportTeamDeviceUsageDistributionUserCount.md)
 Invoke function getTeamsDeviceUsageDistributionUserCounts

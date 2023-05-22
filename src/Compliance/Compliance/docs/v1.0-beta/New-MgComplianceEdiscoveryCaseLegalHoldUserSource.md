@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgComplianceEdiscoveryCaseLegalHoldUserSource
 
 ## SYNOPSIS
-Adds a userSource to a legalHold object.
+Create new navigation property to userSources for compliance
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgComplianceEdiscoveryCaseLegalHoldUserSource -InputObject <IComplianceIdent
 ```
 
 ## DESCRIPTION
-Adds a userSource to a legalHold object.
+Create new navigation property to userSources for compliance
 
 ## EXAMPLES
 

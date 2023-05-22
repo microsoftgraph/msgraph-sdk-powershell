@@ -8,10 +8,7 @@ schema: 2.0.0
 # New-MgGroupThread
 
 ## SYNOPSIS
-Start a new group conversation by first creating a thread.
-A new conversation, conversation thread, and post are created in the group.
-Use reply thread or reply post to further post to that thread.
-Note: You can also start a new thread in an existing conversation.
+Create new navigation property to threads for groups
 
 ## SYNTAX
 
@@ -46,10 +43,7 @@ New-MgGroupThread -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtab
 ```
 
 ## DESCRIPTION
-Start a new group conversation by first creating a thread.
-A new conversation, conversation thread, and post are created in the group.
-Use reply thread or reply post to further post to that thread.
-Note: You can also start a new thread in an existing conversation.
+Create new navigation property to threads for groups
 
 ## EXAMPLES
 
@@ -445,6 +439,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Unpublish-MgGroupSiteContentType
 
 ## SYNOPSIS
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Unpublish-MgGroupSiteContentType -InputObject <IGroupsIdentity> [-PassThru] [-Co
 ```
 
 ## DESCRIPTION
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ## EXAMPLES
 
@@ -175,6 +175,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityCaseEdiscoveryCaseSetting
 
 ## SYNOPSIS
-Update the properties of an ediscoveryCaseSettings object.
+Update the navigation property settings in security
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgSecurityCaseEdiscoveryCaseSetting -InputObject <ISecurityIdentity>
 ```
 
 ## DESCRIPTION
-Update the properties of an ediscoveryCaseSettings object.
+Update the navigation property settings in security
 
 ## EXAMPLES
 

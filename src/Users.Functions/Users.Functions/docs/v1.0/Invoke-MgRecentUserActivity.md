@@ -8,14 +8,7 @@ schema: 2.0.0
 # Invoke-MgRecentUserActivity
 
 ## SYNOPSIS
-Get recent activities for a given user.
-This OData function has some default behaviors included to make it operate like a 'most recently used' API.
-The service will query for the most recent historyItems, and then pull those related activities.
-Activities will be sorted according to the most recent **lastModified** on the **historyItem**.
-This means that activities without **historyItems** will not be included in the response.
-The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned.
-This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities.
-To get your application's activities, use the **nextLink** property to paginate.
+Invoke function recent
 
 ## SYNTAX
 
@@ -33,14 +26,7 @@ Invoke-MgRecentUserActivity -InputObject <IUsersFunctionsIdentity> [-Count] [-Fi
 ```
 
 ## DESCRIPTION
-Get recent activities for a given user.
-This OData function has some default behaviors included to make it operate like a 'most recently used' API.
-The service will query for the most recent historyItems, and then pull those related activities.
-Activities will be sorted according to the most recent **lastModified** on the **historyItem**.
-This means that activities without **historyItems** will not be included in the response.
-The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned.
-This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities.
-To get your application's activities, use the **nextLink** property to paginate.
+Invoke function recent
 
 ## EXAMPLES
 
@@ -236,12 +222,12 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[ManagedDeviceId <String>]`: The unique identifier of managedDevice
   - `[On <String>]`: Usage: on='{on}'
   - `[OnenotePageId <String>]`: The unique identifier of onenotePage
+  - `[OnlineMeetingId <String>]`: The unique identifier of onlineMeeting
   - `[PlannerBucketId <String>]`: The unique identifier of plannerBucket
   - `[PlannerPlanId <String>]`: The unique identifier of plannerPlan
   - `[Q <String>]`: Usage: q='{q}'
   - `[RoomList <String>]`: Usage: RoomList='{RoomList}'
   - `[ServicePlanId <String>]`: Usage: servicePlanId='{servicePlanId}'
-  - `[SessionKey <String>]`: Usage: sessionKey='{sessionKey}'
   - `[Skip <Int32?>]`: Usage: skip={skip}
   - `[StartDateTime <String>]`: Usage: StartDateTime='{StartDateTime}'
   - `[StartDateTime1 <String>]`: Usage: startDateTime='{startDateTime}'

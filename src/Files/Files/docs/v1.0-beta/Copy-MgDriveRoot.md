@@ -8,7 +8,7 @@ schema: 2.0.0
 # Copy-MgDriveRoot
 
 ## SYNOPSIS
-Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
+Invoke action copy
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Copy-MgDriveRoot -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable
 ```
 
 ## DESCRIPTION
-Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
+Invoke action copy
 
 ## EXAMPLES
 

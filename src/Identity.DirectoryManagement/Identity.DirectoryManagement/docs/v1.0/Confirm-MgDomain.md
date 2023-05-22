@@ -8,7 +8,7 @@ schema: 2.0.0
 # Confirm-MgDomain
 
 ## SYNOPSIS
-Validates the ownership of the domain.
+Invoke action verify
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Confirm-MgDomain -InputObject <IIdentityDirectoryManagementIdentity> [-Confirm] 
 ```
 
 ## DESCRIPTION
-Validates the ownership of the domain.
+Invoke action verify
 
 ## EXAMPLES
 

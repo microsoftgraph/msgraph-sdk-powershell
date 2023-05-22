@@ -8,8 +8,7 @@ schema: 2.0.0
 # Publish-MgSecurityCaseEdiscoveryCaseCustodian
 
 ## SYNOPSIS
-Release a custodian from a case.
-For details, see Release a custodian from a case.
+Invoke action release
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Publish-MgSecurityCaseEdiscoveryCaseCustodian -InputObject <ISecurityIdentity> [
 ```
 
 ## DESCRIPTION
-Release a custodian from a case.
-For details, see Release a custodian from a case.
+Invoke action release
 
 ## EXAMPLES
 

@@ -18,19 +18,19 @@ Get-MgEntitlementManagementAccessPackage [-ExpandProperty <String[]>] [-Property
  [-Sort <String[]>] [-All] [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgEntitlementManagementAccessPackage -AccessPackageId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgEntitlementManagementAccessPackage -InputObject <IIdentityGovernanceIdentity>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### List
+### List1
 ```
 Get-MgEntitlementManagementAccessPackage [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
@@ -139,7 +139,7 @@ The unique identifier of accessPackage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -154,7 +154,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, ListAll, ListByCatalogId, ListByDisplayNameContains, ListByDisplayNameEq
+Parameter Sets: List1, ListAll, ListByCatalogId, ListByDisplayNameContains, ListByDisplayNameEq
 Aliases:
 
 Required: False
@@ -185,7 +185,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: CV
 
 Required: False
@@ -245,7 +245,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -261,7 +261,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -276,7 +276,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -306,7 +306,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -321,7 +321,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -336,7 +336,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, ListAll, ListByCatalogId, ListByDisplayNameContains, ListByDisplayNameEq
+Parameter Sets: List1, ListAll, ListByCatalogId, ListByDisplayNameContains, ListByDisplayNameEq
 Aliases: OrderBy
 
 Required: False
@@ -351,7 +351,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, ListByCatalogId, ListByDisplayNameContains, ListByDisplayNameEq
+Parameter Sets: List1, ListByCatalogId, ListByDisplayNameContains, ListByDisplayNameEq
 Aliases: Limit
 
 Required: False

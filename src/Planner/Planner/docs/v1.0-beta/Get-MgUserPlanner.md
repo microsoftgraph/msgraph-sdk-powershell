@@ -8,8 +8,9 @@ schema: 2.0.0
 # Get-MgUserPlanner
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a plannerUser object.
-The returned properties include the user's favorite plans and recently viewed plans.
+Selective Planner services available to the user.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -44,8 +45,9 @@ Get-MgUserPlanner -UserId <String> [-ExpandProperty <String[]>] [-Filter <String
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a plannerUser object.
-The returned properties include the user's favorite plans and recently viewed plans.
+Selective Planner services available to the user.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

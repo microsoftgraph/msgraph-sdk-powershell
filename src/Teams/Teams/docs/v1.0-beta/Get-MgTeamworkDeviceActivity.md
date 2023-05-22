@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeviceActivity
 
 ## SYNOPSIS
-Get the activity status of a Microsoft Teams-enabled device.
+The activity properties that change based on the device usage.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgTeamworkDeviceActivity -InputObject <ITeamsIdentity> [-ExpandProperty <Str
 ```
 
 ## DESCRIPTION
-Get the activity status of a Microsoft Teams-enabled device.
+The activity properties that change based on the device usage.
 
 ## EXAMPLES
 

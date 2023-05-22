@@ -8,9 +8,7 @@ schema: 2.0.0
 # Remove-MgApplicationKey
 
 ## SYNOPSIS
-Remove a key credential from an application.
-This method along with addKey can be used by an application to automate rolling its expiring keys.
-As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
+Invoke action removeKey
 
 ## SYNTAX
 
@@ -41,9 +39,7 @@ Remove-MgApplicationKey -InputObject <IApplicationsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Remove a key credential from an application.
-This method along with addKey can be used by an application to automate rolling its expiring keys.
-As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
+Invoke action removeKey
 
 ## EXAMPLES
 

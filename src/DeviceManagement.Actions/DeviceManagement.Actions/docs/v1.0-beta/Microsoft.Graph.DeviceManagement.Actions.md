@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: d8cf5cd1-cee0-4598-b950-6c27ad0bc746
+Module Guid: 70c45c4c-a2ba-440a-93bc-24598e845d02
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -62,9 +62,6 @@ Invoke action disable
 ### [Disable-MgDeviceManagementManagedDeviceLostMode](Disable-MgDeviceManagementManagedDeviceLostMode.md)
 Disable lost mode
 
-### [Disable-MgDeviceManagementOemWarrantyInformationOnboarding](Disable-MgDeviceManagementOemWarrantyInformationOnboarding.md)
-Invoke action disable
-
 ### [Disconnect-MgDeviceManagementChromeOSOnboardingSetting](Disconnect-MgDeviceManagementChromeOSOnboardingSetting.md)
 Invoke action disconnect
 
@@ -91,9 +88,6 @@ Invoke action enableLegacyPcManagement
 
 ### [Enable-MgDeviceManagementManagedDeviceLostMode](Enable-MgDeviceManagementManagedDeviceLostMode.md)
 Enable lost mode
-
-### [Enable-MgDeviceManagementOemWarrantyInformationOnboarding](Enable-MgDeviceManagementOemWarrantyInformationOnboarding.md)
-Invoke action enable
 
 ### [Enable-MgDeviceManagementTenantAttachRbac](Enable-MgDeviceManagementTenantAttachRbac.md)
 Invoke action enable
@@ -335,16 +329,16 @@ Invoke action getZebraFotaDeploymentReport
 Invoke action getRoleScopeTagsById
 
 ### [Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport](Get-MgDeviceManagementVirtualEndpointReportDailyAggregatedRemoteConnectionReport.md)
-Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
+Invoke action getDailyAggregatedRemoteConnectionReports
 
 ### [Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport](Get-MgDeviceManagementVirtualEndpointReportRemoteConnectionHistoricalReport.md)
-Get the remote connection history records of a Cloud PC during a given period.
+Invoke action getRemoteConnectionHistoricalReports
 
 ### [Get-MgDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport](Get-MgDeviceManagementVirtualEndpointReportSharedUseLicenseUsageReport.md)
-Get a usage report on shared-use licenses, such as **servicePlanId**, **licenseCount**, and **claimedLicenseCount**, for real-time, 7 days, or 28 days trend.
+Invoke action getSharedUseLicenseUsageReport
 
 ### [Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport](Get-MgDeviceManagementVirtualEndpointReportTotalAggregatedRemoteConnectionReport.md)
-Get the total aggregated remote connection usage of a Cloud PC during a given time span.
+Invoke action getTotalAggregatedRemoteConnectionReports
 
 ### [Import-MgDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentityAppleDeviceIdentityList](Import-MgDeviceManagementDepOnboardingSettingImportedAppleDeviceIdentityAppleDeviceIdentityList.md)
 Invoke action importAppleDeviceIdentityList
@@ -375,25 +369,25 @@ A request to start onboarding.
 Must be coupled with the appropriate TeamViewer account information
 
 ### [Invoke-MgBulkDeviceManagementComanagedDeviceSetCloudPcReviewStatus](Invoke-MgBulkDeviceManagementComanagedDeviceSetCloudPcReviewStatus.md)
-Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+Invoke action bulkSetCloudPcReviewStatus
 
 ### [Invoke-MgBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus](Invoke-MgBulkDeviceManagementManagedDeviceSetCloudPcReviewStatus.md)
-Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
+Invoke action bulkSetCloudPcReviewStatus
 
 ### [Invoke-MgBulkDeviceManagementVirtualEndpointCloudPcResize](Invoke-MgBulkDeviceManagementVirtualEndpointCloudPcResize.md)
 Invoke action bulkResize
 
 ### [Invoke-MgBulkReprovisionDeviceManagementComanagedDeviceCloudPc](Invoke-MgBulkReprovisionDeviceManagementComanagedDeviceCloudPc.md)
-Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+Invoke action bulkReprovisionCloudPc
 
 ### [Invoke-MgBulkReprovisionDeviceManagementManagedDeviceCloudPc](Invoke-MgBulkReprovisionDeviceManagementManagedDeviceCloudPc.md)
-Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+Invoke action bulkReprovisionCloudPc
 
 ### [Invoke-MgBulkRestoreDeviceManagementComanagedDeviceCloudPc](Invoke-MgBulkRestoreDeviceManagementComanagedDeviceCloudPc.md)
-Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
+Invoke action bulkRestoreCloudPc
 
 ### [Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc](Invoke-MgBulkRestoreDeviceManagementManagedDeviceCloudPc.md)
-Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
+Invoke action bulkRestoreCloudPc
 
 ### [Invoke-MgCleanDeviceManagementComanagedDeviceWindowDevice](Invoke-MgCleanDeviceManagementComanagedDeviceWindowDevice.md)
 Clean Windows device
@@ -507,13 +501,13 @@ Invoke action reenable
 Invoke action reorder
 
 ### [Invoke-MgReprovisionDeviceManagementComanagedDeviceCloudPc](Invoke-MgReprovisionDeviceManagementComanagedDeviceCloudPc.md)
-Reprovision a Cloud PC with an Intune managed device ID.
+Invoke action reprovisionCloudPc
 
 ### [Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc](Invoke-MgReprovisionDeviceManagementManagedDeviceCloudPc.md)
-Reprovision a Cloud PC with an Intune managed device ID.
+Invoke action reprovisionCloudPc
 
 ### [Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc](Invoke-MgReprovisionDeviceManagementVirtualEndpointCloudPc.md)
-Reprovision a specific Cloud PC.
+Invoke action reprovision
 
 ### [Invoke-MgRetireDeviceManagementComanagedDevice](Invoke-MgRetireDeviceManagementComanagedDevice.md)
 Retire a device
@@ -522,11 +516,10 @@ Retire a device
 Retire a device
 
 ### [Invoke-MgRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation](Invoke-MgRetryDeviceManagementVirtualEndpointCloudPcPartnerAgentInstallation.md)
-Retry installation for the partner agents which failed to install on the Cloud PC.
-Service side will check which agent installation failed firstly and retry.
+Invoke action retryPartnerAgentInstallation
 
 ### [Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage](Invoke-MgReuploadDeviceManagementVirtualEndpointDeviceImage.md)
-Reupload a cloudPcDeviceImage object that failed to upload.
+Invoke action reupload
 
 ### [Invoke-MgRotateDeviceManagementComanagedDeviceBitLockerKey](Invoke-MgRotateDeviceManagementComanagedDeviceBitLockerKey.md)
 Rotate BitLockerKeys
@@ -562,8 +555,7 @@ Invoke action shareForSchoolDataSyncService
 Invoke action terminate
 
 ### [Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc](Invoke-MgTroubleshootDeviceManagementVirtualEndpointCloudPc.md)
-Troubleshoot a specific Cloud PC.
-Use this API to check the health status of the Cloud PC and the session host.
+Invoke action troubleshoot
 
 ### [Invoke-MgUnassignDeviceManagementWindowAutopilotDeploymentProfileAssignedDeviceUserFromDevice](Invoke-MgUnassignDeviceManagementWindowAutopilotDeploymentProfileAssignedDeviceUserFromDevice.md)
 Unassigns the user from an Autopilot device.
@@ -613,9 +605,6 @@ Download Apple push notification certificate signing request
 ### [New-MgDeviceManagementComanagedDeviceLogCollectionRequestDownloadUrl](New-MgDeviceManagementComanagedDeviceLogCollectionRequestDownloadUrl.md)
 Invoke action createDownloadUrl
 
-### [New-MgDeviceManagementComanagedDeviceRemoteHelpSession](New-MgDeviceManagementComanagedDeviceRemoteHelpSession.md)
-Remote help - Create session with a specific device
-
 ### [New-MgDeviceManagementConfigurationPolicyCopy](New-MgDeviceManagementConfigurationPolicyCopy.md)
 Invoke action createCopy
 
@@ -636,9 +625,6 @@ Invoke action createDeviceLogCollectionRequest
 
 ### [New-MgDeviceManagementManagedDeviceLogCollectionRequestDownloadUrl](New-MgDeviceManagementManagedDeviceLogCollectionRequestDownloadUrl.md)
 Invoke action createDownloadUrl
-
-### [New-MgDeviceManagementManagedDeviceRemoteHelpSession](New-MgDeviceManagementManagedDeviceRemoteHelpSession.md)
-Remote help - Create session with a specific device
 
 ### [New-MgDeviceManagementManagedDeviceWindowsDefenderUpdateSignature](New-MgDeviceManagementManagedDeviceWindowsDefenderUpdateSignature.md)
 Invoke action windowsDefenderUpdateSignatures
@@ -677,11 +663,10 @@ Remove device from Device Firmware Configuration Interface management
 Delete user from shared Apple device
 
 ### [Rename-MgDeviceManagementVirtualEndpointCloudPc](Rename-MgDeviceManagementVirtualEndpointCloudPc.md)
-Rename a specific Cloud PC.
-Use this API to update the **displayName** for the Cloud PC entity.
+Invoke action rename
 
 ### [Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType](Rename-MgDeviceManagementVirtualEndpointCloudPcUserAccountType.md)
-Change the account type of the user on a specific Cloud PC.
+Invoke action changeUserAccountType
 
 ### [Request-MgDeviceManagementAndroidForWorkSettingSignupUrl](Request-MgDeviceManagementAndroidForWorkSettingSignupUrl.md)
 Invoke action requestSignupUrl
@@ -692,14 +677,8 @@ Invoke action requestSignupUrl
 ### [Request-MgDeviceManagementComanagedDeviceRemoteAssistance](Request-MgDeviceManagementComanagedDeviceRemoteAssistance.md)
 Request remote assistance
 
-### [Request-MgDeviceManagementComanagedDeviceRemoteHelpSessionAccess](Request-MgDeviceManagementComanagedDeviceRemoteHelpSessionAccess.md)
-Remote help - Request Remote help session access permission for an existing session
-
 ### [Request-MgDeviceManagementManagedDeviceRemoteAssistance](Request-MgDeviceManagementManagedDeviceRemoteAssistance.md)
 Request remote assistance
-
-### [Request-MgDeviceManagementManagedDeviceRemoteHelpSessionAccess](Request-MgDeviceManagementManagedDeviceRemoteHelpSessionAccess.md)
-Remote help - Request Remote help session access permission for an existing session
 
 ### [Request-MgDeviceManagementMicrosoftTunnelSiteUpgrade](Request-MgDeviceManagementMicrosoftTunnelSiteUpgrade.md)
 Invoke action requestUpgrade
@@ -711,10 +690,10 @@ Reset passcode
 Reset passcode
 
 ### [Resize-MgDeviceManagementComanagedDeviceCloudPc](Resize-MgDeviceManagementComanagedDeviceCloudPc.md)
-Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+Invoke action resizeCloudPc
 
 ### [Resize-MgDeviceManagementManagedDeviceCloudPc](Resize-MgDeviceManagementManagedDeviceCloudPc.md)
-Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+Invoke action resizeCloudPc
 
 ### [Restart-MgDeviceManagementComanagedDeviceNow](Restart-MgDeviceManagementComanagedDeviceNow.md)
 Reboot device
@@ -723,23 +702,22 @@ Reboot device
 Reboot device
 
 ### [Restart-MgDeviceManagementVirtualEndpointCloudPc](Restart-MgDeviceManagementVirtualEndpointCloudPc.md)
-Reboot a specific Cloud PC.
+Invoke action reboot
 
 ### [Restore-MgDeviceManagementComanagedDeviceCloudPc](Restore-MgDeviceManagementComanagedDeviceCloudPc.md)
-Restore a Cloud PC device to a previous state with an Intune managed device ID.
+Invoke action restoreCloudPc
 
 ### [Restore-MgDeviceManagementComanagedDevicePasscode](Restore-MgDeviceManagementComanagedDevicePasscode.md)
 Recover passcode
 
 ### [Restore-MgDeviceManagementManagedDeviceCloudPc](Restore-MgDeviceManagementManagedDeviceCloudPc.md)
-Restore a Cloud PC device to a previous state with an Intune managed device ID.
+Invoke action restoreCloudPc
 
 ### [Restore-MgDeviceManagementManagedDevicePasscode](Restore-MgDeviceManagementManagedDevicePasscode.md)
 Recover passcode
 
 ### [Restore-MgDeviceManagementVirtualEndpointCloudPc](Restore-MgDeviceManagementVirtualEndpointCloudPc.md)
-Restore a specific Cloud PC.
-Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
+Invoke action restore
 
 ### [Revoke-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken](Revoke-MgDeviceManagementAndroidDeviceOwnerEnrollmentProfileToken.md)
 Invoke action revokeToken
@@ -775,9 +753,7 @@ Sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyMan
 Invoke action setPriority
 
 ### [Set-MgDeviceManagementComanagedDeviceCloudPcReviewStatus](Set-MgDeviceManagementComanagedDeviceCloudPcReviewStatus.md)
-Set the review status of a specific Cloud PC device.
-Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious.
-After the review is completed, use this API again to set the Cloud PC back to a normal state.
+Invoke action setCloudPcReviewStatus
 
 ### [Set-MgDeviceManagementComanagedDeviceName](Set-MgDeviceManagementComanagedDeviceName.md)
 Set device name of the device.
@@ -834,15 +810,13 @@ Invoke action assign
 Invoke action assign
 
 ### [Set-MgDeviceManagementManagedDeviceCloudPcReviewStatus](Set-MgDeviceManagementManagedDeviceCloudPcReviewStatus.md)
-Set the review status of a specific Cloud PC device.
-Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious.
-After the review is completed, use this API again to set the Cloud PC back to a normal state.
+Invoke action setCloudPcReviewStatus
 
 ### [Set-MgDeviceManagementManagedDeviceName](Set-MgDeviceManagementManagedDeviceName.md)
 Set device name of the device.
 
 ### [Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent](Set-MgDeviceManagementMonitoringAlertRecordPortalNotificationAsSent.md)
-Set the status of the notification associated with the specified alertRecord on the Microsoft EndPoint Manager admin center as sent, by setting the **isPortalNotificationSent** property of the portal notification to `true`.
+Invoke action setPortalNotificationAsSent
 
 ### [Set-MgDeviceManagementResourceAccessProfile](Set-MgDeviceManagementResourceAccessProfile.md)
 Invoke action assign
@@ -854,10 +828,10 @@ Invoke action assign
 Invoke action assign
 
 ### [Set-MgDeviceManagementVirtualEndpointProvisioningPolicy](Set-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
-Assign cloudPcProvisioningPolicy to user groups.
+Invoke action assign
 
 ### [Set-MgDeviceManagementVirtualEndpointUserSetting](Set-MgDeviceManagementVirtualEndpointUserSetting.md)
-Assign a cloudPcUserSetting to user groups.
+Invoke action assign
 
 ### [Set-MgDeviceManagementWindowAutopilotDeploymentProfile](Set-MgDeviceManagementWindowAutopilotDeploymentProfile.md)
 Invoke action assign
@@ -905,23 +879,13 @@ Invoke action powerOff
 Invoke action powerOn
 
 ### [Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck](Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck.md)
-Run health checks on the cloudPcOnPremisesConnection object.
-This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
-
-### [Stop-MgDeviceManagementComanagedDeviceRemoteHelpSession](Stop-MgDeviceManagementComanagedDeviceRemoteHelpSession.md)
-Remote help - End ACS session, Pubsub session and delete Remote help session
-
-### [Stop-MgDeviceManagementManagedDeviceRemoteHelpSession](Stop-MgDeviceManagementManagedDeviceRemoteHelpSession.md)
-Remote help - End ACS session, Pubsub session and delete Remote help session
+Invoke action runHealthChecks
 
 ### [Stop-MgDeviceManagementVirtualEndpointCloudPc](Stop-MgDeviceManagementVirtualEndpointCloudPc.md)
 Invoke action stop
 
 ### [Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod](Stop-MgDeviceManagementVirtualEndpointCloudPcGracePeriod.md)
-End the grace period for a specific Cloud PC.
-The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned.
-It allows users to access Cloud PCs for up to seven days before de-provisioning occurs.
-Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
+Invoke action endGracePeriod
 
 ### [Stop-MgDeviceManagementZebraFotaDeployment](Stop-MgDeviceManagementZebraFotaDeployment.md)
 Invoke action cancel
@@ -987,8 +951,7 @@ Invoke action updateSettings
 Invoke action updateWindowsDeviceAccount
 
 ### [Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword](Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword.md)
-Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
-This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
+Invoke action updateAdDomainPassword
 
 ### [Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty](Update-MgDeviceManagementWindowAutopilotDeviceIdentityDeviceProperty.md)
 Updates properties on Autopilot devices.

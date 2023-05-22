@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgIdentityGovernanceAccessReviewDefinition
 
 ## SYNOPSIS
-Create a new accessReviewScheduleDefinition object.
+Create new navigation property to definitions for identityGovernance
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ New-MgIdentityGovernanceAccessReviewDefinition -BodyParameter <IMicrosoftGraphAc
 ```
 
 ## DESCRIPTION
-Create a new accessReviewScheduleDefinition object.
+Create new navigation property to definitions for identityGovernance
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEducationSchoolUserByRef
 
 ## SYNOPSIS
-Retrieve a list of users at a school.
+Users in the school.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgEducationSchoolUserByRef -EducationSchoolId <String> [-Filter <String>] [-
 ```
 
 ## DESCRIPTION
-Retrieve a list of users at a school.
+Users in the school.
+Nullable.
 
 ## EXAMPLES
 

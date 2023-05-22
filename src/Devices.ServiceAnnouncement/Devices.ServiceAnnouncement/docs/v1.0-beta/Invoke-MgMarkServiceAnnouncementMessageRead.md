@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgMarkServiceAnnouncementMessageRead
 
 ## SYNOPSIS
-Mark a list of serviceUpdateMessages as **read** for the signed in user.
+Invoke action markRead
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Invoke-MgMarkServiceAnnouncementMessageRead
 ```
 
 ## DESCRIPTION
-Mark a list of serviceUpdateMessages as **read** for the signed in user.
+Invoke action markRead
 
 ## EXAMPLES
 

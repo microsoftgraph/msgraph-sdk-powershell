@@ -8,7 +8,7 @@ schema: 2.0.0
 # Add-MgComplianceEdiscoveryCaseReviewSetQueryTag
 
 ## SYNOPSIS
-Apply tags to documents that match the specified reviewSetQuery.
+Invoke action applyTags
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ Add-MgComplianceEdiscoveryCaseReviewSetQueryTag -InputObject <IComplianceIdentit
 ```
 
 ## DESCRIPTION
-Apply tags to documents that match the specified reviewSetQuery.
+Invoke action applyTags
 
 ## EXAMPLES
 

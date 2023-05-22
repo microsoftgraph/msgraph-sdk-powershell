@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserTodoList
 
 ## SYNOPSIS
-Create a new lists object.
+Create new navigation property to lists for users
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgUserTodoList -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtab
 ```
 
 ## DESCRIPTION
-Create a new lists object.
+Create new navigation property to lists for users
 
 ## EXAMPLES
 

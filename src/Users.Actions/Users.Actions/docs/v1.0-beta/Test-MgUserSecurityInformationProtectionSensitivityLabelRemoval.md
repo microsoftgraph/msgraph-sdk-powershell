@@ -8,8 +8,7 @@ schema: 2.0.0
 # Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval
 
 ## SYNOPSIS
-Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following:
+Invoke action evaluateRemoval
 
 ## SYNTAX
 
@@ -44,8 +43,7 @@ Test-MgUserSecurityInformationProtectionSensitivityLabelRemoval -InputObject <IU
 ```
 
 ## DESCRIPTION
-Indicate to the consuming application what actions it should take to remove the label information.
-Given contentInfo as an input, which includes existing content metadata key-value pairs, the API returns an informationProtectionAction that contains some combination of one or more of the following:
+Invoke action evaluateRemoval
 
 ## EXAMPLES
 

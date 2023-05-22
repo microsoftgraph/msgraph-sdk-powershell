@@ -163,6 +163,8 @@ paths:
                 - refreshTokensValidFromDateTime desc
                 - securityIdentifier
                 - securityIdentifier desc
+                - serviceProvisioningErrors
+                - serviceProvisioningErrors desc
                 - showInAddressList
                 - showInAddressList desc
                 - signInSessionsValidFromDateTime
@@ -277,6 +279,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -362,6 +365,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -438,6 +442,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         '200':
@@ -576,6 +581,7 @@ paths:
                 - proxyAddresses
                 - refreshTokensValidFromDateTime
                 - securityIdentifier
+                - serviceProvisioningErrors
                 - showInAddressList
                 - signInSessionsValidFromDateTime
                 - state
@@ -661,6 +667,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -737,6 +744,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         '200':
@@ -831,11 +839,8 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List createdObjects
-      description: 'Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn''t in any administrator role; otherwise, it returns an empty object.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0
+      summary: Get createdObjects from users
+      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_ListCreatedObjects
       parameters:
         - name: user-id
@@ -976,7 +981,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: users.GetCreatedObjects_AsServicePrincipal
+      operationId: users_GetCreatedObjectsAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -1039,7 +1044,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: users.ListCreatedObjects_AsServicePrincipal
+      operationId: users_ListCreatedObjectsAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -1114,9 +1119,6 @@ paths:
         - users.directoryObject
       summary: Get directReports from users
       description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-directreports?view=graph-rest-1.0
       operationId: users_ListDirectReports
       parameters:
         - name: user-id
@@ -1277,7 +1279,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgContact
-      operationId: users.GetDirectReports_AsOrgContact
+      operationId: users_GetDirectReportsAsOrgContact
       parameters:
         - name: user-id
           in: path
@@ -1350,7 +1352,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: users.GetDirectReports_AsUser
+      operationId: users_GetDirectReportsAsUser
       parameters:
         - name: user-id
           in: path
@@ -1423,7 +1425,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-      operationId: users.ListDirectReports_AsOrgContact
+      operationId: users_ListDirectReportsAsOrgContact
       parameters:
         - name: user-id
           in: path
@@ -1507,7 +1509,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: users.ListDirectReports_AsUser
+      operationId: users_ListDirectReportsAsUser
       parameters:
         - name: user-id
           in: path
@@ -1845,11 +1847,7 @@ paths:
     get:
       tags:
         - users.licenseDetails
-      summary: List licenseDetails
-      description: Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0
+      summary: Get licenseDetails from users
       operationId: users_ListLicenseDetails
       parameters:
         - name: user-id
@@ -2114,11 +2112,8 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
+      summary: Get manager from users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
       operationId: users_GetManager
       parameters:
         - name: user-id
@@ -2174,11 +2169,8 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List manager
-      description: 'Returns the user or organizational contact assigned as the user''s manager. Optionally, you can expand the manager''s chain up to the root node.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0
+      summary: Get ref of manager from users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
       operationId: users_GetManagerGraphBPreRef
       parameters:
         - name: user-id
@@ -2271,9 +2263,6 @@ paths:
         - users.directoryObject
       summary: Get memberOf from users
       description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0
       operationId: users_ListMemberGraphOPre
       parameters:
         - name: user-id
@@ -2434,7 +2423,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: users.GetMemberOf_AsAdministrativeUnit
+      operationId: users_GetMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -2507,7 +2496,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: users.GetMemberOf_AsGroup
+      operationId: users_GetMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -2580,7 +2569,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: users.ListMemberOf_AsAdministrativeUnit
+      operationId: users_ListMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -2664,7 +2653,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: users.ListMemberOf_AsGroup
+      operationId: users_ListMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -3028,11 +3017,7 @@ paths:
     get:
       tags:
         - users.oAuth2PermissionGrant
-      summary: List oauth2PermissionGrants
-      description: 'Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-oauth2permissiongrants?view=graph-rest-1.0
+      summary: Get oauth2PermissionGrants from users
       operationId: users_ListOauth2PermissionGrants
       parameters:
         - name: user-id
@@ -3243,11 +3228,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List Outlook categories
-      description: Get all the categories that have been defined for the user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-list-mastercategories?view=graph-rest-1.0
+      summary: Get masterCategories from users
+      description: A list of categories defined for the user.
       operationId: users.outlook_ListMasterCategories
       parameters:
         - name: user-id
@@ -3311,11 +3293,7 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create Outlook category
-      description: Create an outlookCategory object in the user's master list of categories.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-post-mastercategories?view=graph-rest-1.0
+      summary: Create new navigation property to masterCategories for users
       operationId: users.outlook_CreateMasterCategories
       parameters:
         - name: user-id
@@ -3488,11 +3466,7 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List taskFolders (deprecated)
-      description: Get all the Outlook task folders in the user's mailbox.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0
+      summary: Get taskFolders from users
       operationId: users.outlook_ListTaskFolders
       parameters:
         - name: user-id
@@ -4340,11 +4314,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List tasks (deprecated)
-      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a `Prefer: outlook.timezone` request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
+      summary: Get tasks from users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskFolders_ListTasks
       parameters:
         - name: user-id
@@ -4695,11 +4666,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List attachments (deprecated)
-      description: Get a list of attachment objects attached to an Outlook task.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskFolders.tasks_ListAttachments
       parameters:
         - name: user-id
@@ -4800,11 +4768,7 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create attachment (deprecated)
-      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: users.outlook.taskFolders.tasks_CreateAttachments
       parameters:
         - name: user-id
@@ -5677,11 +5641,7 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List taskGroups (deprecated)
-      description: 'Get all the Outlook task groups in the user''s mailbox. The response always includes the default task group `My Tasks`, and any other task groups that have been created in the mailbox.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-1.0
+      summary: Get taskGroups from users
       operationId: users.outlook_ListTaskGroups
       parameters:
         - name: user-id
@@ -5752,11 +5712,7 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create outlookTaskGroup (deprecated)
-      description: Create an Outlook task group in the user's mailbox.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-post-taskgroups?view=graph-rest-1.0
+      summary: Create new navigation property to taskGroups for users
       operationId: users.outlook_CreateTaskGroups
       parameters:
         - name: user-id
@@ -5931,11 +5887,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List taskFolders (deprecated)
-      description: Get Outlook task folders in a specific outlookTaskGroup.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-1.0
+      summary: Get taskFolders from users
+      description: The collection of task folders in the task group. Read-only. Nullable.
       operationId: users.outlook.taskGroups_ListTaskFolders
       parameters:
         - name: user-id
@@ -6904,11 +6857,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List tasks (deprecated)
-      description: "Get all the Outlook tasks in the specified folder. By default, this operation (and the POST, PATCH, and complete task operations) returns\ndate-related properties in UTC.  You can use a `Prefer: outlook.timezone` request header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks. If there is more than one task group, and you want to get all the tasks in a specific task group, first\nget all the task folders in that task group,\nand then get the tasks in each of these task folders."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-list-tasks?view=graph-rest-1.0
+      summary: Get tasks from users
+      description: The tasks in this task folder. Read-only. Nullable.
       operationId: users.outlook.taskGroups.taskFolders_ListTasks
       parameters:
         - name: user-id
@@ -7299,11 +7249,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List attachments (deprecated)
-      description: Get a list of attachment objects attached to an Outlook task.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.taskGroups.taskFolders.tasks_ListAttachments
       parameters:
         - name: user-id
@@ -7412,11 +7359,7 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create attachment (deprecated)
-      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: users.outlook.taskGroups.taskFolders.tasks_CreateAttachments
       parameters:
         - name: user-id
@@ -8393,11 +8336,7 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List tasks (deprecated)
-      description: "Get all the Outlook tasks in the user's mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.\nYou can use the `Prefer: outlook.timezone` header to have all the date-related properties in the response represented in a time zone\ndifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlookuser-list-tasks?view=graph-rest-1.0
+      summary: Get tasks from users
       operationId: users.outlook_ListTasks
       parameters:
         - name: user-id
@@ -8515,11 +8454,7 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create outlookTask (deprecated)
-      description: "Create an Outlook task in the specified task folder. The POST method always ignores the time portion of **startDateTime** and **dueDateTime** in the request body, and assumes the time \nto be always midnight in the specified time zone."
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktaskfolder-post-tasks?view=graph-rest-1.0
+      summary: Create new navigation property to tasks for users
       operationId: users.outlook_CreateTasks
       parameters:
         - name: user-id
@@ -8711,11 +8646,8 @@ paths:
     get:
       tags:
         - users.outlookUser
-      summary: List attachments (deprecated)
-      description: Get a list of attachment objects attached to an Outlook task.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: 'The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.'
       operationId: users.outlook.tasks_ListAttachments
       parameters:
         - name: user-id
@@ -8808,11 +8740,7 @@ paths:
     post:
       tags:
         - users.outlookUser
-      summary: Create attachment (deprecated)
-      description: Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: users.outlook.tasks_CreateAttachments
       parameters:
         - name: user-id
@@ -9583,9 +9511,6 @@ paths:
         - users.directoryObject
       summary: Get ownedDevices from users
       description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0
       operationId: users_ListOwnedDevices
       parameters:
         - name: user-id
@@ -9746,7 +9671,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-      operationId: users.GetOwnedDevices_AsDevice
+      operationId: users_GetOwnedDevicesAsDevice
       parameters:
         - name: user-id
           in: path
@@ -9819,7 +9744,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: users.GetOwnedDevices_AsEndpoint
+      operationId: users_GetOwnedDevicesAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -9892,7 +9817,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-      operationId: users.ListOwnedDevices_AsDevice
+      operationId: users_ListOwnedDevicesAsDevice
       parameters:
         - name: user-id
           in: path
@@ -9976,7 +9901,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: users.ListOwnedDevices_AsEndpoint
+      operationId: users_ListOwnedDevicesAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -10061,9 +9986,6 @@ paths:
         - users.directoryObject
       summary: Get ownedObjects from users
       description: 'Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0
       operationId: users_ListOwnedObjects
       parameters:
         - name: user-id
@@ -10224,7 +10146,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
-      operationId: users.GetOwnedObjects_AsApplication
+      operationId: users_GetOwnedObjectsAsApplication
       parameters:
         - name: user-id
           in: path
@@ -10297,7 +10219,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: users.GetOwnedObjects_AsGroup
+      operationId: users_GetOwnedObjectsAsGroup
       parameters:
         - name: user-id
           in: path
@@ -10370,7 +10292,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: users.GetOwnedObjects_AsServicePrincipal
+      operationId: users_GetOwnedObjectsAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -10443,7 +10365,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.application in the microsoft.graph.directoryObject collection
-      operationId: users.ListOwnedObjects_AsApplication
+      operationId: users_ListOwnedObjectsAsApplication
       parameters:
         - name: user-id
           in: path
@@ -10527,7 +10449,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: users.ListOwnedObjects_AsGroup
+      operationId: users_ListOwnedObjectsAsGroup
       parameters:
         - name: user-id
           in: path
@@ -10611,7 +10533,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: users.ListOwnedObjects_AsServicePrincipal
+      operationId: users_ListOwnedObjectsAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -11073,9 +10995,6 @@ paths:
         - users.directoryObject
       summary: Get registeredDevices from users
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-registereddevices?view=graph-rest-1.0
       operationId: users_ListRegisteredDevices
       parameters:
         - name: user-id
@@ -11236,7 +11155,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
-      operationId: users.GetRegisteredDevices_AsDevice
+      operationId: users_GetRegisteredDevicesAsDevice
       parameters:
         - name: user-id
           in: path
@@ -11309,7 +11228,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: users.GetRegisteredDevices_AsEndpoint
+      operationId: users_GetRegisteredDevicesAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -11382,7 +11301,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.device in the microsoft.graph.directoryObject collection
-      operationId: users.ListRegisteredDevices_AsDevice
+      operationId: users_ListRegisteredDevicesAsDevice
       parameters:
         - name: user-id
           in: path
@@ -11466,7 +11385,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: users.ListRegisteredDevices_AsEndpoint
+      operationId: users_ListRegisteredDevicesAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -11679,11 +11598,8 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get contactMergeSuggestions
-      description: Read the properties and relationships of a contactMergeSuggestions object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactmergesuggestions-get?view=graph-rest-1.0
+      summary: Get contactMergeSuggestions from users
+      description: The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
       operationId: users.settings_GetContactMergeSuggestions
       parameters:
         - name: user-id
@@ -11738,11 +11654,7 @@ paths:
     patch:
       tags:
         - users.userSettings
-      summary: Update contactMergeSuggestions
-      description: Update the properties of a contactMergeSuggestions object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/contactmergesuggestions-update?view=graph-rest-1.0
+      summary: Update the navigation property contactMergeSuggestions in users
       operationId: users.settings_UpdateContactMergeSuggestions
       parameters:
         - name: user-id
@@ -11808,11 +11720,8 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get userInsightsSettings
-      description: Get the user-customizable privacy settings for itemInsights and meeting hours insights.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0
+      summary: Get itemInsights from users
+      description: 'The user''s settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.'
       operationId: users.settings_GetItemInsights
       parameters:
         - name: user-id
@@ -11867,11 +11776,7 @@ paths:
     patch:
       tags:
         - users.userSettings
-      summary: Update userInsightsSettings
-      description: Update the privacy settings for itemInsights and meeting hours insights of a user.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0
+      summary: Update the navigation property itemInsights in users
       operationId: users.settings_UpdateItemInsights
       parameters:
         - name: user-id
@@ -11937,11 +11842,8 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get regionalAndLanguageSettings
-      description: Get the properties of a regionalAndLanguageSettings object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0
+      summary: Get regionalAndLanguageSettings from users
+      description: 'The user''s preferences for languages, regional locale and date/time formatting.'
       operationId: users.settings_GetRegionalAndLanguageSettings
       parameters:
         - name: user-id
@@ -12068,11 +11970,8 @@ paths:
     get:
       tags:
         - users.userSettings
-      summary: Get shiftPreferences
-      description: Retrieve the properties and relationships of a shiftPreferences object by ID.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-1.0
+      summary: Get shiftPreferences from users
+      description: The shift preferences for the user.
       operationId: users.settings_GetShiftPreferences
       parameters:
         - name: user-id
@@ -12131,11 +12030,7 @@ paths:
     patch:
       tags:
         - users.userSettings
-      summary: Update shiftPreferences
-      description: Update the properties and relationships of a shiftPreferences object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-1.0
+      summary: Update the navigation property shiftPreferences in users
       operationId: users.settings_UpdateShiftPreferences
       parameters:
         - name: user-id
@@ -12324,11 +12219,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List lists
-      description: Get a list of the todoTaskList objects and their properties.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0
+      summary: Get lists from users
+      description: The task lists in the users mailbox.
       operationId: users.todo_ListLists
       parameters:
         - name: user-id
@@ -12415,11 +12307,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create todoTaskList
-      description: Create a new lists object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0
+      summary: Create new navigation property to lists for users
       operationId: users.todo_CreateLists
       parameters:
         - name: user-id
@@ -12905,11 +12793,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List tasks
-      description: Get the **todoTask** resources from the **tasks** navigation property of a specified todoTaskList.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotasklist-list-tasks?view=graph-rest-1.0
+      summary: Get tasks from users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_ListTasks
       parameters:
         - name: user-id
@@ -13043,11 +12928,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create todoTask
-      description: Create a new task object in a specified todoTaskList.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotasklist-post-tasks?view=graph-rest-1.0
+      summary: Create new navigation property to tasks for users
       operationId: users.todo.lists_CreateTasks
       parameters:
         - name: user-id
@@ -13287,11 +13168,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List taskFileAttachments
-      description: Get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
+      summary: Get attachments from users
+      description: A collection of file attachments for the task.
       operationId: users.todo.lists.tasks_ListAttachments
       parameters:
         - name: user-id
@@ -13377,11 +13255,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create taskFileAttachment
-      description: 'Add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0
+      summary: Create new navigation property to attachments for users
       operationId: users.todo.lists.tasks_CreateAttachments
       parameters:
         - name: user-id
@@ -13564,9 +13438,6 @@ paths:
       tags:
         - users.todo
       summary: Get media content for the navigation property attachments from users
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0
       operationId: users.todo.lists.tasks_GetAttachmentsContent
       parameters:
         - name: user-id
@@ -14749,11 +14620,8 @@ paths:
     get:
       tags:
         - users.todo
-      summary: List linkedResources
-      description: 'Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0
+      summary: Get linkedResources from users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_ListLinkedResources
       parameters:
         - name: user-id
@@ -14852,11 +14720,7 @@ paths:
     post:
       tags:
         - users.todo
-      summary: Create linkedResource
-      description: 'Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association. You can also create a **linkedResource** object while creating a todoTask.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/todotask-post-linkedresources?view=graph-rest-1.0
+      summary: Create new navigation property to linkedResources for users
       operationId: users.todo.lists.tasks_CreateLinkedResources
       parameters:
         - name: user-id
@@ -15109,9 +14973,6 @@ paths:
         - users.directoryObject
       summary: Get transitiveMemberOf from users
       description: 'The groups, including nested groups, and directory roles that a user is a member of. Nullable.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0
       operationId: users_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
@@ -15272,7 +15133,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: users.GetTransitiveMemberOf_AsAdministrativeUnit
+      operationId: users_GetTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -15345,7 +15206,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: users.GetTransitiveMemberOf_AsGroup
+      operationId: users_GetTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -15418,7 +15279,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: users.ListTransitiveMemberOf_AsAdministrativeUnit
+      operationId: users_ListTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -15502,7 +15363,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: users.ListTransitiveMemberOf_AsGroup
+      operationId: users_ListTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -15997,6 +15858,10 @@ components:
               type: string
               description: 'Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -16391,6 +16256,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.directoryObject:
@@ -16522,7 +16389,7 @@ components:
               nullable: true
             preferredTokenSigningKeyThumbprint:
               type: string
-              description: Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+              description: 'This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.'
               nullable: true
             publishedPermissionScopes:
               type: array
@@ -16555,7 +16422,7 @@ components:
               nullable: true
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization''s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization''s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization''s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.'
               nullable: true
             tags:
               type: array
@@ -16737,6 +16604,10 @@ components:
               items:
                 type: string
               description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0).'
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             surname:
               type: string
               description: 'Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)'
@@ -16997,6 +16868,10 @@ components:
               type: string
               description: 'Security identifier of the group, used in Windows scenarios. Returned by default.'
               nullable: true
+            serviceProvisioningErrors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -17692,7 +17567,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+              description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
               x-ms-navigationProperty: true
             registeredUsers:
               type: array
@@ -17861,7 +17736,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -18567,6 +18442,23 @@ components:
         service:
           type: string
           description: 'The name of the service; for example, ''AccessControlS2S'''
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.serviceProvisioningError:
+      title: serviceProvisioningError
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        isResolved:
+          type: boolean
+          nullable: true
+        serviceInstance:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -20018,7 +19910,7 @@ components:
               readOnly: true
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -20055,7 +19947,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chromeOSDeviceProperty'
-              description: List of properties of the ChromeOS Device.
+              description: 'List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.'
             complianceGracePeriodExpirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -20078,7 +19970,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -20120,7 +20012,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             enrollmentProfileName:
@@ -20152,7 +20044,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.hardwareInformation'
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -20170,7 +20062,7 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             joinType:
@@ -20178,7 +20070,7 @@ components:
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             lostModeState:
@@ -20218,7 +20110,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -20241,7 +20133,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             preferMdmOverGroupPolicyAppliedDateTime:
@@ -20259,7 +20151,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -20312,7 +20204,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -20345,14 +20237,14 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of active malware for this windows device. This property is read-only.
+              description: 'Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             windowsRemediatedMalwareCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Count of remediated malware for this windows device. This property is read-only.
+              description: 'Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               format: int32
               readOnly: true
             assignmentFilterEvaluationStatusDetails:
@@ -20602,6 +20494,10 @@ components:
             applicationId:
               type: string
               description: Intune application identifier.
+              nullable: true
+            deviceId:
+              type: string
+              description: Device identifier created or collected by Intune.
               nullable: true
             history:
               type: array
@@ -21057,6 +20953,8 @@ components:
         - title: authentication
           type: object
           properties:
+            signInPreferences:
+              $ref: '#/components/schemas/microsoft.graph.signInPreferences'
             emailMethods:
               type: array
               items:
@@ -21353,6 +21251,19 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -21616,12 +21527,14 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: Denotes whether the policy is enabled.
             restrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Collection of application and service principals to which a policy is applied.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -24181,6 +24094,8 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.permission'
               description: The set of permissions for the item. Read-only. Nullable.
               x-ms-navigationProperty: true
+            retentionLabel:
+              $ref: '#/components/schemas/microsoft.graph.itemRetentionLabel'
             subscriptions:
               type: array
               items:
@@ -28227,6 +28142,16 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.signInPreferences:
+      title: signInPreferences
+      type: object
+      properties:
+        isSystemPreferredAuthenticationMethodEnabled:
+          type: boolean
+          description: Indicates whether the credential preferences of the system are enabled.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.emailAuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -29117,11 +29042,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+              description: The open shift requests in the schedule.
               x-ms-navigationProperty: true
             openShifts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.openShift'
+              description: The set of open shifts in a scheduling group in the schedule.
               x-ms-navigationProperty: true
             schedulingGroups:
               type: array
@@ -29139,6 +29066,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeCards:
               type: array
@@ -29155,6 +29083,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -29179,6 +29108,43 @@ components:
           properties:
             chat:
               $ref: '#/components/schemas/microsoft.graph.chat'
+          additionalProperties:
+            type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
     microsoft.graph.passwordSingleSignOnField:
@@ -31154,6 +31120,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.itemRetentionLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: itemRetentionLabel
+          type: object
+          properties:
+            isLabelAppliedExplicitly:
+              type: boolean
+              nullable: true
+            labelAppliedBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            labelAppliedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            retentionSettings:
+              $ref: '#/components/schemas/microsoft.graph.retentionLabelSettings'
+          additionalProperties:
+            type: object
     microsoft.graph.subscription:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31210,7 +31199,7 @@ components:
               nullable: true
             notificationUrl:
               type: string
-              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+              description: Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
             notificationUrlAppId:
               type: string
               description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
@@ -34762,6 +34751,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.keyCredentialConfiguration:
       title: keyCredentialConfiguration
       type: object
@@ -36114,6 +36111,29 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.retentionLabelSettings:
+      title: retentionLabelSettings
+      type: object
+      properties:
+        behaviorDuringRetentionPeriod:
+          $ref: '#/components/schemas/microsoft.graph.security.behaviorDuringRetentionPeriod'
+        isContentUpdateAllowed:
+          type: boolean
+          nullable: true
+        isDeleteAllowed:
+          type: boolean
+          nullable: true
+        isLabelUpdateAllowed:
+          type: boolean
+          nullable: true
+        isMetadataUpdateAllowed:
+          type: boolean
+          nullable: true
+        isRecordLocked:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.thumbnail:
       title: thumbnail
       type: object
@@ -37865,9 +37885,13 @@ components:
       title: synchronizationRule
       type: object
       properties:
+        containerFilter:
+          $ref: '#/components/schemas/microsoft.graph.containerFilter'
         editable:
           type: boolean
           description: true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
+        groupFilter:
+          $ref: '#/components/schemas/microsoft.graph.groupFilter'
         id:
           type: string
           description: Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.
@@ -39361,6 +39385,15 @@ components:
               description: Indicates if the worksheet is protected.  Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.security.behaviorDuringRetentionPeriod:
+      title: behaviorDuringRetentionPeriod
+      enum:
+        - doNotRetain
+        - retain
+        - retainAsRecord
+        - retainAsRegulatoryRecord
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessAction:
       title: accessAction
       type: object
@@ -39630,6 +39663,28 @@ components:
         - TooManyDeletes
         - IngestionInterrupted
       type: string
+    microsoft.graph.containerFilter:
+      title: containerFilter
+      type: object
+      properties:
+        includedContainers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupFilter:
+      title: groupFilter
+      type: object
+      properties:
+        includedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.stringKeyStringValuePair:
       title: stringKeyStringValuePair
       type: object

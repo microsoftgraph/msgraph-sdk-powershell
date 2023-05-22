@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgGroupDriveItem
 
 ## SYNOPSIS
-Restore a driveItem that has been deleted and is currently in the recycle bin.
+Invoke action restore
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Restore-MgGroupDriveItem -InputObject <IGroupsIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Restore a driveItem that has been deleted and is currently in the recycle bin.
+Invoke action restore
 
 ## EXAMPLES
 
@@ -261,6 +261,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

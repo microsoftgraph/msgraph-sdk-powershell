@@ -8,8 +8,7 @@ schema: 2.0.0
 # Restore-MgDeviceManagementVirtualEndpointCloudPc
 
 ## SYNOPSIS
-Restore a specific Cloud PC.
-Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
+Invoke action restore
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ Restore-MgDeviceManagementVirtualEndpointCloudPc -InputObject <IDeviceManagement
 ```
 
 ## DESCRIPTION
-Restore a specific Cloud PC.
-Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
+Invoke action restore
 
 ## EXAMPLES
 
@@ -253,7 +251,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

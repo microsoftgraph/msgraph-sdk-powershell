@@ -8,7 +8,7 @@ schema: 2.0.0
 # Resize-MgDeviceManagementManagedDeviceCloudPc
 
 ## SYNOPSIS
-Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+Invoke action resizeCloudPc
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Resize-MgDeviceManagementManagedDeviceCloudPc -InputObject <IDeviceManagementAct
 ```
 
 ## DESCRIPTION
-Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
+Invoke action resizeCloudPc
 
 ## EXAMPLES
 
@@ -251,7 +251,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

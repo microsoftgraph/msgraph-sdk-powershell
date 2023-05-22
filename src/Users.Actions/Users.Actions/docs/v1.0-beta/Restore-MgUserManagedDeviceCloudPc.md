@@ -8,7 +8,7 @@ schema: 2.0.0
 # Restore-MgUserManagedDeviceCloudPc
 
 ## SYNOPSIS
-Restore a Cloud PC device to a previous state with an Intune managed device ID.
+Invoke action restoreCloudPc
 
 ## SYNTAX
 
@@ -40,7 +40,7 @@ Restore-MgUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity> [-Additi
 ```
 
 ## DESCRIPTION
-Restore a Cloud PC device to a previous state with an Intune managed device ID.
+Invoke action restoreCloudPc
 
 ## EXAMPLES
 

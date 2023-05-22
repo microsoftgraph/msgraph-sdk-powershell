@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex
 
 ## SYNOPSIS
-Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
+Invoke action updateIndex
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Update-MgSecurityCaseEdiscoveryCaseNoncustodialDataSourceIndex -InputObject <ISe
 ```
 
 ## DESCRIPTION
-Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
+Invoke action updateIndex
 
 ## EXAMPLES
 

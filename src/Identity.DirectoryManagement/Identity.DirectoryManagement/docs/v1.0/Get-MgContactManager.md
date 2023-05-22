@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgContactManager
 
 ## SYNOPSIS
-Get this organizational contact's manager.
+Get manager from contacts
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgContactManager -InputObject <IIdentityDirectoryManagementIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get this organizational contact's manager.
+Get manager from contacts
 
 ## EXAMPLES
 

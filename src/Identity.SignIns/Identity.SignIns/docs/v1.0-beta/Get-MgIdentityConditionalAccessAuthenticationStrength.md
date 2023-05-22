@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityConditionalAccessAuthenticationStrength
 
 ## SYNOPSIS
-Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
+Get authenticationStrengths from identity
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Get-MgIdentityConditionalAccessAuthenticationStrength [-ExpandProperty <String[]
 ```
 
 ## DESCRIPTION
-Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
+Get authenticationStrengths from identity
 
 ## EXAMPLES
 
@@ -61,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAuthenticationStrengthRoot1
 
 ## NOTES
 

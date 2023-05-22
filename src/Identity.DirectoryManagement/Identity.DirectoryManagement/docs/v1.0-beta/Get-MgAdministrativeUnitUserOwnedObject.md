@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgAdministrativeUnitUserOwnedObject
 
 ## SYNOPSIS
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Get-MgAdministrativeUnitUserOwnedObject
 ```
 
 ## DESCRIPTION
-Retrieve a list of recently deleted application and group objects owned by the specified user.
-This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
+Invoke action getUserOwnedObjects
 
 ## EXAMPLES
 

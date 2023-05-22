@@ -8,8 +8,7 @@ schema: 2.0.0
 # Copy-MgUserOnenoteSectionToNotebook
 
 ## SYNOPSIS
-Copies a section to a specific notebook.
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToNotebook
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Copy-MgUserOnenoteSectionToNotebook -InputObject <IUsersActionsIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Copies a section to a specific notebook.
-For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+Invoke action copyToNotebook
 
 ## EXAMPLES
 

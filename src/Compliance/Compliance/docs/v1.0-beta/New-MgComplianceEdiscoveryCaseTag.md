@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgComplianceEdiscoveryCaseTag
 
 ## SYNOPSIS
-Create a new tag for the specified case.
-The tags are used in review sets while reviewing content.
+Create new navigation property to tags for compliance
 
 ## SYNTAX
 
@@ -44,8 +43,7 @@ New-MgComplianceEdiscoveryCaseTag -InputObject <IComplianceIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Create a new tag for the specified case.
-The tags are used in review sets while reviewing content.
+Create new navigation property to tags for compliance
 
 ## EXAMPLES
 

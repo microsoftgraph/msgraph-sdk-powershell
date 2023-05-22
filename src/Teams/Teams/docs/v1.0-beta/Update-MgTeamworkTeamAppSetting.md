@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgTeamworkTeamAppSetting
 
 ## SYNOPSIS
-Update the properties of a teamsAppSettings object.
+Update the navigation property teamsAppSettings in teamwork
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Update-MgTeamworkTeamAppSetting -BodyParameter <IMicrosoftGraphTeamsAppSettings>
 ```
 
 ## DESCRIPTION
-Update the properties of a teamsAppSettings object.
+Update the navigation property teamsAppSettings in teamwork
 
 ## EXAMPLES
 
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowUserRequestsForAppAccess
-Indicates whether Teams users are allowed to request admins access to certain Teams apps.
+Indicates whether users are allowed to request access to the unavailable Teams apps.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -206,7 +206,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphTeamsAppSettings>: teamsAppSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[AllowUserRequestsForAppAccess <Boolean?>]`: Indicates whether Teams users are allowed to request admins access to certain Teams apps.
+  - `[AllowUserRequestsForAppAccess <Boolean?>]`: Indicates whether users are allowed to request access to the unavailable Teams apps.
   - `[IsChatResourceSpecificConsentEnabled <Boolean?>]`: Indicates whether resource-specific consent for chats/meetings has been enabled for the tenant. If true, Teams apps that are allowed in the tenant and require resource-specific permissions can be installed inside chats and meetings. If false, the installation of any Teams app that requires resource-specific permissions in a chat or a meeting will be blocked.
 
 ## RELATED LINKS

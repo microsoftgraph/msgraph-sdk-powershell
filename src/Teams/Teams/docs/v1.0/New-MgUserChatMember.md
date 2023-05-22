@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserChatMember
 
 ## SYNOPSIS
-Add a conversationMember to a chat.
+Create new navigation property to members for users
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgUserChatMember -InputObject <ITeamsIdentity> [-AdditionalProperties <Hasht
 ```
 
 ## DESCRIPTION
-Add a conversationMember to a chat.
+Create new navigation property to members for users
 
 ## EXAMPLES
 

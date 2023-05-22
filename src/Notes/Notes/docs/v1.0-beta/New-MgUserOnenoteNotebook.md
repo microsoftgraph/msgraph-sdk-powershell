@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserOnenoteNotebook
 
 ## SYNOPSIS
-Create a new OneNote notebook.
+Create new navigation property to notebooks for users
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ New-MgUserOnenoteNotebook -InputObject <INotesIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Create a new OneNote notebook.
+Create new navigation property to notebooks for users
 
 ## EXAMPLES
 

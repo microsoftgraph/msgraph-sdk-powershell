@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgExternalIndustryDataInboundFlow
 
 ## SYNOPSIS
-Create a new inboundFlow object.
-The following prerequisite resources are required when you create an **inboundFlow**:
+Create new navigation property to inboundFlows for external
 
 ## SYNTAX
 
@@ -28,8 +27,7 @@ New-MgExternalIndustryDataInboundFlow -BodyParameter <IMicrosoftGraphIndustryDat
 ```
 
 ## DESCRIPTION
-Create a new inboundFlow object.
-The following prerequisite resources are required when you create an **inboundFlow**:
+Create new navigation property to inboundFlows for external
 
 ## EXAMPLES
 

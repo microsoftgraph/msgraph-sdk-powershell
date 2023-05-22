@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBusinessScenarioPlannerPlanConfiguration
 
 ## SYNOPSIS
-Read the properties and relationships of a plannerPlanConfiguration object.
+The configuration of Planner plans that will be created for the scenario.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBusinessScenarioPlannerPlanConfiguration -InputObject <IBookingsIdentity> 
 ```
 
 ## DESCRIPTION
-Read the properties and relationships of a plannerPlanConfiguration object.
+The configuration of Planner plans that will be created for the scenario.
 
 ## EXAMPLES
 

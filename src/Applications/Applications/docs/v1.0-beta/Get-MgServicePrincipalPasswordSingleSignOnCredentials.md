@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgServicePrincipalPasswordSingleSignOnCredentials
 
 ## SYNOPSIS
-Get a list of single sign-on credentials using a password for a user or group.
+Invoke action getPasswordSingleSignOnCredentials
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Get-MgServicePrincipalPasswordSingleSignOnCredentials -InputObject <IApplication
 ```
 
 ## DESCRIPTION
-Get a list of single sign-on credentials using a password for a user or group.
+Invoke action getPasswordSingleSignOnCredentials
 
 ## EXAMPLES
 

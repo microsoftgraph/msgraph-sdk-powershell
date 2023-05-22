@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgBatchUserPendingAccessReviewInstanceRecordDecision
 
 ## SYNOPSIS
-Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
+Invoke action batchRecordDecisions
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Invoke-MgBatchUserPendingAccessReviewInstanceRecordDecision -InputObject <IUsers
 ```
 
 ## DESCRIPTION
-Enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using **principalId**, **resourceId**, or neither.
+Invoke action batchRecordDecisions
 
 ## EXAMPLES
 

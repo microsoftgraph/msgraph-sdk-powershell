@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfilePhone
 
 ## SYNOPSIS
-Use this API to create a new itemPhone object in a user's profile.
+Create new navigation property to phones for users
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgUserProfilePhone -InputObject <IPeopleIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Use this API to create a new itemPhone object in a user's profile.
+Create new navigation property to phones for users
 
 ## EXAMPLES
 

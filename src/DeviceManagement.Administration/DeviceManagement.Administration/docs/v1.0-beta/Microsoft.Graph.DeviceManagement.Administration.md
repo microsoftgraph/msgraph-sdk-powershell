@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Administration
-Module Guid: 678ef567-c6df-4fa3-b19c-e1cad0db0b26
+Module Guid: 781b85f2-e61e-4d7b-850f-89975caecc29
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -235,7 +235,7 @@ Cloud PC audit event.
 Cloud managed virtual desktops.
 
 ### [Get-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping](Get-MgDeviceManagementVirtualEndpointCrossCloudGovernmentOrganizationMapping.md)
-Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
+Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
 
 ### [Get-MgDeviceManagementVirtualEndpointDeviceImage](Get-MgDeviceManagementVirtualEndpointDeviceImage.md)
 The image resource on Cloud PC.
@@ -250,8 +250,7 @@ The gallery image resource on Cloud PC.
 A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 
 ### [Get-MgDeviceManagementVirtualEndpointOrganizationSetting](Get-MgDeviceManagementVirtualEndpointOrganizationSetting.md)
-Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant.
-A tenant has only one **cloudPcOrganizationSettings** object.
+The Cloud PC organization settings for a tenant.
 
 ### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicy](Get-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Cloud PC provisioning policy.
@@ -264,6 +263,12 @@ For an example about how to get the assignments relationship, see Get cloudPcPro
 
 ### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUser](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUser.md)
 Get assignedUsers from deviceManagement
+
+### [Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserMailboxSetting](Get-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
 
 ### [Get-MgDeviceManagementVirtualEndpointReport](Get-MgDeviceManagementVirtualEndpointReport.md)
 Cloud PC related reports.
@@ -415,28 +420,25 @@ Create new navigation property to groupAssignments for deviceManagement
 Create new navigation property to userPfxCertificates for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointDeviceImage](New-MgDeviceManagementVirtualEndpointDeviceImage.md)
-Create a new cloudPcDeviceImage object.
-Upload a custom OS image that you can later provision on Cloud PCs.
+Create new navigation property to deviceImages for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointExternalPartnerSetting](New-MgDeviceManagementVirtualEndpointExternalPartnerSetting.md)
-Create a new cloudPcExternalPartnerSetting object.
+Create new navigation property to externalPartnerSettings for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointGalleryImage](New-MgDeviceManagementVirtualEndpointGalleryImage.md)
 Create new navigation property to galleryImages for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointOnPremisesConnection](New-MgDeviceManagementVirtualEndpointOnPremisesConnection.md)
-Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
+Create new navigation property to onPremisesConnections for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointProvisioningPolicy](New-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
-Create a new cloudPcProvisioningPolicy object.
+Create new navigation property to provisioningPolicies for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment](New-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
 Create new navigation property to assignments for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointReportExportJob](New-MgDeviceManagementVirtualEndpointReportExportJob.md)
-Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report.
-Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
-When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property.
+Create new navigation property to exportJobs for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointServicePlan](New-MgDeviceManagementVirtualEndpointServicePlan.md)
 Create new navigation property to servicePlans for deviceManagement
@@ -451,7 +453,7 @@ Create new navigation property to snapshots for deviceManagement
 Create new navigation property to supportedRegions for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointUserSetting](New-MgDeviceManagementVirtualEndpointUserSetting.md)
-Create a new cloudPcUserSetting object.
+Create new navigation property to userSettings for deviceManagement
 
 ### [New-MgDeviceManagementVirtualEndpointUserSettingAssignment](New-MgDeviceManagementVirtualEndpointUserSettingAssignment.md)
 Create new navigation property to assignments for deviceManagement
@@ -805,13 +807,16 @@ Update the navigation property galleryImages in deviceManagement
 Update the navigation property onPremisesConnections in deviceManagement
 
 ### [Update-MgDeviceManagementVirtualEndpointOrganizationSetting](Update-MgDeviceManagementVirtualEndpointOrganizationSetting.md)
-Update the properties of the cloudPcOrganizationSettings object in a tenant.
+Update the navigation property organizationSettings in deviceManagement
 
 ### [Update-MgDeviceManagementVirtualEndpointProvisioningPolicy](Update-MgDeviceManagementVirtualEndpointProvisioningPolicy.md)
 Update the navigation property provisioningPolicies in deviceManagement
 
 ### [Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment](Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignment.md)
 Update the navigation property assignments in deviceManagement
+
+### [Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserMailboxSetting](Update-MgDeviceManagementVirtualEndpointProvisioningPolicyAssignmentAssignedUserMailboxSetting.md)
+Update property mailboxSettings value.
 
 ### [Update-MgDeviceManagementVirtualEndpointReport](Update-MgDeviceManagementVirtualEndpointReport.md)
 Update the navigation property reports in deviceManagement

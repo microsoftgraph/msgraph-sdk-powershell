@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileWebsite
 
 ## SYNOPSIS
-Create a new personWebsite object in a user's profile.
+Create new navigation property to websites for users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserProfileWebsite -InputObject <IPeopleIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Create a new personWebsite object in a user's profile.
+Create new navigation property to websites for users
 
 ## EXAMPLES
 

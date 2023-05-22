@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgComplianceEdiscoveryCaseNoncustodialDataSource
 
 ## SYNOPSIS
-Create a new noncustodialDataSource object.
+Create new navigation property to noncustodialDataSources for compliance
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgComplianceEdiscoveryCaseNoncustodialDataSource -InputObject <IComplianceId
 ```
 
 ## DESCRIPTION
-Create a new noncustodialDataSource object.
+Create new navigation property to noncustodialDataSources for compliance
 
 ## EXAMPLES
 

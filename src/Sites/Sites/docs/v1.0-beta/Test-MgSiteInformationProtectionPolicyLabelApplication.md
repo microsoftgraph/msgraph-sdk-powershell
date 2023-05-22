@@ -8,9 +8,7 @@ schema: 2.0.0
 # Test-MgSiteInformationProtectionPolicyLabelApplication
 
 ## SYNOPSIS
-Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
-This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.
-Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:
+Invoke action evaluateApplication
 
 ## SYNTAX
 
@@ -43,9 +41,7 @@ Test-MgSiteInformationProtectionPolicyLabelApplication -InputObject <ISitesIdent
 ```
 
 ## DESCRIPTION
-Compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information.
-This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.
-Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following:
+Invoke action evaluateApplication
 
 ## EXAMPLES
 
@@ -245,6 +241,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

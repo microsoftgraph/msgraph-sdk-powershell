@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassGroup
 
 ## SYNOPSIS
-Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**.
+Get group from education
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgEducationClassGroup -InputObject <IEducationIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**.
+Get group from education
 
 ## EXAMPLES
 

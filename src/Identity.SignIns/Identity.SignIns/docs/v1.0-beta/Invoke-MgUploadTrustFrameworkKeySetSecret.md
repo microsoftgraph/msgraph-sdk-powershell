@@ -8,9 +8,7 @@ schema: 2.0.0
 # Invoke-MgUploadTrustFrameworkKeySetSecret
 
 ## SYNOPSIS
-Upload a plain text secret to a trustFrameworkKeyset.
-Examples of secrets are application secrets in Azure Active Directory, Google, Facebook, or any other identity provider.
-his method returns trustFrameworkKey.
+Invoke action uploadSecret
 
 ## SYNTAX
 
@@ -42,9 +40,7 @@ Invoke-MgUploadTrustFrameworkKeySetSecret -InputObject <IIdentitySignInsIdentity
 ```
 
 ## DESCRIPTION
-Upload a plain text secret to a trustFrameworkKeyset.
-Examples of secrets are application secrets in Azure Active Directory, Google, Facebook, or any other identity provider.
-his method returns trustFrameworkKey.
+Invoke action uploadSecret
 
 ## EXAMPLES
 
@@ -284,6 +280,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Initialize-MgSecurityCaseEdiscoveryCaseCustodian
 
 ## SYNOPSIS
-Activate a custodian that has been released from a case to make them part of the case again.
-For details, see Manage custodians in an eDiscovery (Premium) case.
+Invoke action activate
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Initialize-MgSecurityCaseEdiscoveryCaseCustodian -InputObject <ISecurityIdentity
 ```
 
 ## DESCRIPTION
-Activate a custodian that has been released from a case to make them part of the case again.
-For details, see Manage custodians in an eDiscovery (Premium) case.
+Invoke action activate
 
 ## EXAMPLES
 

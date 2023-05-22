@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPrivilegedRoleAssignmentPermanent
 
 ## SYNOPSIS
-Make the role assignment permanent.
+Invoke action makePermanent
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgPrivilegedRoleAssignmentPermanent -InputObject <IIdentityGovernanceIdentit
 ```
 
 ## DESCRIPTION
-Make the role assignment permanent.
+Invoke action makePermanent
 
 ## EXAMPLES
 

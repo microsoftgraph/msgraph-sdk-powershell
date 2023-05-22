@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileInterest
 
 ## SYNOPSIS
-Create a new personInterest.
+Create new navigation property to interests for users
 
 ## SYNTAX
 
@@ -46,7 +46,7 @@ New-MgUserProfileInterest -InputObject <IPeopleIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Create a new personInterest.
+Create new navigation property to interests for users
 
 ## EXAMPLES
 

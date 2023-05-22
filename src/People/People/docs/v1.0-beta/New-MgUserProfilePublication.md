@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfilePublication
 
 ## SYNOPSIS
-Create a new itemPublication object in a user's profile.
+Create new navigation property to publications for users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserProfilePublication -InputObject <IPeopleIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Create a new itemPublication object in a user's profile.
+Create new navigation property to publications for users
 
 ## EXAMPLES
 

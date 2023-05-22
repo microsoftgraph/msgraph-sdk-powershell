@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgCommunicationOnlineMeetingRegistration
 
 ## SYNOPSIS
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Delete navigation property registration for communications
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgCommunicationOnlineMeetingRegistration -InputObject <ICloudCommunicatio
 ```
 
 ## DESCRIPTION
-Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+Delete navigation property registration for communications
 
 ## EXAMPLES
 

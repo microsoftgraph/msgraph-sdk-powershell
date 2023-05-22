@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgRoleManagementExchangeRoleAssignment
 
 ## SYNOPSIS
-Get roleAssignments from roleManagement
+Resource to grant access to users or groups.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgRoleManagementExchangeRoleAssignment -InputObject <IDeviceManagementEnrolm
 ```
 
 ## DESCRIPTION
-Get roleAssignments from roleManagement
+Resource to grant access to users or groups.
 
 ## EXAMPLES
 

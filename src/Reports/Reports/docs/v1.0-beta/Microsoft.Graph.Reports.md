@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: 617d4e20-2244-4a92-932d-fb6740436390
+Module Guid: ccabf99f-bf08-4459-9d46-ec1d9b8e0029
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,15 +12,10 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Reports Cmdlets
 ### [Confirm-MgAuditLogSignInCompromised](Confirm-MgAuditLogSignInCompromised.md)
-Allow admins to mark an event in the Azure AD sign in logs as risky.
-Events marked as risky by an admin are immediately flagged as high risk in Azure AD Identity Protection, overriding previous risk states.
-Admins can confirm that events flagged as risky by Azure AD Identity Protection are in fact risky.
-For details about investigating Identity Protection risks, see How to investigate risk.
+Invoke action confirmCompromised
 
 ### [Confirm-MgAuditLogSignInSafe](Confirm-MgAuditLogSignInSafe.md)
-Allow admins to mark an event in Azure AD sign in logs as safe.
-Admins can either mark the events flagged as risky by Azure AD Identity Protection as safe, or they can mark unflagged events as safe.
-For details about investigating Identity Protection risks, see How to investigate risk.
+Invoke action confirmSafe
 
 ### [Get-MgAuditLogDirectoryAudit](Get-MgAuditLogDirectoryAudit.md)
 Get directoryAudits from auditLogs
@@ -77,7 +72,7 @@ Invoke function getBrowserUserDetail
 Invoke function getCredentialUsageSummary
 
 ### [Get-MgReportCredentialUserRegistrationCount](Get-MgReportCredentialUserRegistrationCount.md)
-Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+Invoke function getCredentialUserRegistrationCount
 
 ### [Get-MgReportCredentialUserRegistrationDetail](Get-MgReportCredentialUserRegistrationDetail.md)
 Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.

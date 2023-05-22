@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgExternalIndustryDataSourceSystem
 
 ## SYNOPSIS
-Create a new sourceSystemDefinition object.
+Create new navigation property to sourceSystems for external
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgExternalIndustryDataSourceSystem -BodyParameter <IMicrosoftGraphIndustryDa
 ```
 
 ## DESCRIPTION
-Create a new sourceSystemDefinition object.
+Create new navigation property to sourceSystems for external
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Start-MgTeamScheduleTimeCardBreak
 
 ## SYNOPSIS
-Start a break in a specific timeCard.
+Invoke action startBreak
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Start-MgTeamScheduleTimeCardBreak -InputObject <ITeamsIdentity> [-AdditionalProp
 ```
 
 ## DESCRIPTION
-Start a break in a specific timeCard.
+Invoke action startBreak
 
 ## EXAMPLES
 

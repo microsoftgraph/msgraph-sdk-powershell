@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileNote
 
 ## SYNOPSIS
-Create a new personAnnotation object in a user's profile.
+Create new navigation property to notes for users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserProfileNote -InputObject <IPeopleIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Create a new personAnnotation object in a user's profile.
+Create new navigation property to notes for users
 
 ## EXAMPLES
 

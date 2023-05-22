@@ -8,8 +8,7 @@ schema: 2.0.0
 # Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck
 
 ## SYNOPSIS
-Run health checks on the cloudPcOnPremisesConnection object.
-This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+Invoke action runHealthChecks
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Start-MgDeviceManagementVirtualEndpointOnPremisConnectionHealthCheck
 ```
 
 ## DESCRIPTION
-Run health checks on the cloudPcOnPremisesConnection object.
-This will trigger a new health check for this cloudPcOnPremisesConnection object and change the healthCheckStatus and healthCheckStatusDetails properties when check finished.
+Invoke action runHealthChecks
 
 ## EXAMPLES
 
@@ -183,7 +181,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

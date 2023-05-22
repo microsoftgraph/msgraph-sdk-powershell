@@ -8,7 +8,7 @@ schema: 2.0.0
 # Join-MgGroupSiteListContentTypeWithHubSite
 
 ## SYNOPSIS
-Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+Invoke action associateWithHubSites
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Join-MgGroupSiteListContentTypeWithHubSite -InputObject <IGroupsIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+Invoke action associateWithHubSites
 
 ## EXAMPLES
 
@@ -274,6 +274,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

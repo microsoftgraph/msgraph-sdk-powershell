@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
 
 ## SYNOPSIS
-Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
-This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
+Invoke action updateAdDomainPassword
 
 ## SYNTAX
 
@@ -44,8 +43,7 @@ Update-MgDeviceManagementVirtualEndpointOnPremisConnectionAdDomainPassword
 ```
 
 ## DESCRIPTION
-Update the Active Directory domain password for a cloudPcOnPremisesConnection object.
-This API is supported when the type of the **cloudPcOnPremisesConnection** object is `hybridAzureADJoin`.
+Invoke action updateAdDomainPassword
 
 ## EXAMPLES
 
@@ -256,7 +254,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgQuerySearch
 
 ## SYNOPSIS
-Run a specified search query.
-Search results are provided in the response.
+Invoke action query
 
 ## SYNTAX
 
@@ -27,8 +26,7 @@ Invoke-MgQuerySearch
 ```
 
 ## DESCRIPTION
-Run a specified search query.
-Search results are provided in the response.
+Invoke action query
 
 ## EXAMPLES
 

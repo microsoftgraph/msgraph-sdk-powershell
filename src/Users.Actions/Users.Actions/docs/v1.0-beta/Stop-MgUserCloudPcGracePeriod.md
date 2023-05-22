@@ -8,10 +8,7 @@ schema: 2.0.0
 # Stop-MgUserCloudPcGracePeriod
 
 ## SYNOPSIS
-End the grace period for a specific Cloud PC.
-The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned.
-It allows users to access Cloud PCs for up to seven days before de-provisioning occurs.
-Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
+Invoke action endGracePeriod
 
 ## SYNTAX
 
@@ -28,10 +25,7 @@ Stop-MgUserCloudPcGracePeriod -InputObject <IUsersActionsIdentity> [-PassThru] [
 ```
 
 ## DESCRIPTION
-End the grace period for a specific Cloud PC.
-The grace period is triggered when the Cloud PC license is removed or the provisioning policy is unassigned.
-It allows users to access Cloud PCs for up to seven days before de-provisioning occurs.
-Ending the grace period immediately deprovisions the Cloud PC without waiting the seven days.
+Invoke action endGracePeriod
 
 ## EXAMPLES
 

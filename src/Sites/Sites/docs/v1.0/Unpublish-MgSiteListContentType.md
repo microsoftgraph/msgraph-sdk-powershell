@@ -8,24 +8,24 @@ schema: 2.0.0
 # Unpublish-MgSiteListContentType
 
 ## SYNOPSIS
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ## SYNTAX
 
-### Unpublish1 (Default)
+### Unpublish (Default)
 ```
 Unpublish-MgSiteListContentType -ContentTypeId <String> -ListId <String> -SiteId <String> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UnpublishViaIdentity1
+### UnpublishViaIdentity
 ```
 Unpublish-MgSiteListContentType -InputObject <ISitesIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Unpublish a [contentType][] from a content type hub site.
+Invoke action unpublish
 
 ## EXAMPLES
 
@@ -47,7 +47,7 @@ The unique identifier of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Unpublish1
+Parameter Sets: Unpublish
 Aliases:
 
 Required: True
@@ -63,7 +63,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: UnpublishViaIdentity1
+Parameter Sets: UnpublishViaIdentity
 Aliases:
 
 Required: True
@@ -78,7 +78,7 @@ The unique identifier of list
 
 ```yaml
 Type: System.String
-Parameter Sets: Unpublish1
+Parameter Sets: Unpublish
 Aliases:
 
 Required: True
@@ -108,7 +108,7 @@ The unique identifier of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Unpublish1
+Parameter Sets: Unpublish
 Aliases:
 
 Required: True
@@ -187,6 +187,7 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
   - `[Interval <String>]`: Usage: interval='{interval}'
+  - `[ItemActivityStatId <String>]`: The unique identifier of itemActivityStat
   - `[ListId <String>]`: The unique identifier of list
   - `[ListId1 <String>]`: Usage: listId='{listId}'
   - `[ListItemId <String>]`: The unique identifier of listItem

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgDeviceManagementVirtualEndpointUserSetting
 
 ## SYNOPSIS
-Assign a cloudPcUserSetting to user groups.
+Invoke action assign
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Set-MgDeviceManagementVirtualEndpointUserSetting -InputObject <IDeviceManagement
 ```
 
 ## DESCRIPTION
-Assign a cloudPcUserSetting to user groups.
+Invoke action assign
 
 ## EXAMPLES
 
@@ -271,7 +271,6 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: The unique identifier of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: The unique identifier of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: The unique identifier of notificationMessageTemplate
-  - `[OemWarrantyInformationOnboardingId <String>]`: The unique identifier of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: The unique identifier of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: The unique identifier of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: The unique identifier of windowsAutopilotDeploymentProfile

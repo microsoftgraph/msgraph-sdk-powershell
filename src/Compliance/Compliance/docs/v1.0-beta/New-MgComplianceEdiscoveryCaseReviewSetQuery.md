@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgComplianceEdiscoveryCaseReviewSetQuery
 
 ## SYNOPSIS
-Create a new reviewSetQuery object.
+Create new navigation property to queries for compliance
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgComplianceEdiscoveryCaseReviewSetQuery -InputObject <IComplianceIdentity>
 ```
 
 ## DESCRIPTION
-Create a new reviewSetQuery object.
+Create new navigation property to queries for compliance
 
 ## EXAMPLES
 

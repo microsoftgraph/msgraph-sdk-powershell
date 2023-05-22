@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
-key: id of subscription
+The unique identifier of subscription
 
 ```yaml
 Type: System.String
@@ -183,7 +183,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IChangeNotificationsIdentity>: Identity Parameter
-  - `[SubscriptionId <String>]`: key: id of subscription
+  - `[SubscriptionId <String>]`: The unique identifier of subscription
 
 ## RELATED LINKS
 

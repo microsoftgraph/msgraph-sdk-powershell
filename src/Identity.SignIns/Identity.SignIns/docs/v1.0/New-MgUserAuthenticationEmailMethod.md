@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgUserAuthenticationEmailMethod
 
 ## SYNOPSIS
-Set a user's emailAuthenticationMethod object.
-Email authentication is a self-service password reset method.
-A user may only have one email authentication method.
+Create new navigation property to emailMethods for users
 
 ## SYNTAX
 
@@ -40,9 +38,7 @@ New-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Set a user's emailAuthenticationMethod object.
-Email authentication is a self-service password reset method.
-A user may only have one email authentication method.
+Create new navigation property to emailMethods for users
 
 ## EXAMPLES
 
@@ -248,6 +244,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[IdentityUserFlowAttributeId <String>]`: The unique identifier of identityUserFlowAttribute
   - `[IdentityUserFlowId <String>]`: The unique identifier of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: The unique identifier of informationProtectionLabel
+  - `[InvitationId <String>]`: The unique identifier of invitation
   - `[LongRunningOperationId <String>]`: The unique identifier of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: The unique identifier of microsoftAuthenticatorAuthenticationMethod
   - `[MobilityManagementPolicyId <String>]`: The unique identifier of mobilityManagementPolicy

@@ -8,8 +8,9 @@ schema: 2.0.0
 # Get-MgPrivilegedApprovalRoleInfoSetting
 
 ## SYNOPSIS
-Retrieve the role settings for the given role.
-A privilegedRoleSettings object will be returned.
+The settings for this role.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -26,8 +27,9 @@ Get-MgPrivilegedApprovalRoleInfoSetting -InputObject <IIdentityGovernanceIdentit
 ```
 
 ## DESCRIPTION
-Retrieve the role settings for the given role.
-A privilegedRoleSettings object will be returned.
+The settings for this role.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

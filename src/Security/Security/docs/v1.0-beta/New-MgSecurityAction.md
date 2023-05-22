@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityAction
 
 ## SYNOPSIS
-Create a new securityAction object.
+Create new navigation property to securityActions for security
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgSecurityAction -BodyParameter <IMicrosoftGraphSecurityAction> [-Confirm] [
 ```
 
 ## DESCRIPTION
-Create a new securityAction object.
+Create new navigation property to securityActions for security
 
 ## EXAMPLES
 

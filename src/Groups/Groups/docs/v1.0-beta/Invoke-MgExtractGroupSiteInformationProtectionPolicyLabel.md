@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgExtractGroupSiteInformationProtectionPolicyLabel
 
 ## SYNOPSIS
-Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
-The contentInfo input is resolved to informationProtectionContentLabel.
+Invoke action extractLabel
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Invoke-MgExtractGroupSiteInformationProtectionPolicyLabel -InputObject <IGroupsI
 ```
 
 ## DESCRIPTION
-Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label.
-The contentInfo input is resolved to informationProtectionContentLabel.
+Invoke action extractLabel
 
 ## EXAMPLES
 
@@ -232,6 +230,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

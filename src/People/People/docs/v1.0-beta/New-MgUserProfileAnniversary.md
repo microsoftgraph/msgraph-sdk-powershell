@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileAnniversary
 
 ## SYNOPSIS
-Use this API to create a new personAnniversary object in a user's profile.
+Create new navigation property to anniversaries for users
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgUserProfileAnniversary -InputObject <IPeopleIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Use this API to create a new personAnniversary object in a user's profile.
+Create new navigation property to anniversaries for users
 
 ## EXAMPLES
 

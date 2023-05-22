@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgUserDriveItemUploadSession
 
 ## SYNOPSIS
-Create an upload session to allow your app to upload files up to the maximum file size.\nAn upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session, there are two steps:
+Invoke action createUploadSession
 
 ## SYNTAX
 
@@ -41,8 +40,7 @@ New-MgUserDriveItemUploadSession -InputObject <IUsersActionsIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Create an upload session to allow your app to upload files up to the maximum file size.\nAn upload session allows your app to upload ranges of the file in sequential API requests, which allows the transfer to be resumed if a connection is dropped while the upload is in progress.
-To upload a file using an upload session, there are two steps:
+Invoke action createUploadSession
 
 ## EXAMPLES
 

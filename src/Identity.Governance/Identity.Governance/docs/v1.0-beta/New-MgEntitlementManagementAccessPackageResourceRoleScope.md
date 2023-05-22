@@ -8,9 +8,7 @@ schema: 2.0.0
 # New-MgEntitlementManagementAccessPackageResourceRoleScope
 
 ## SYNOPSIS
-Create a new accessPackageResourceRoleScope for adding a resource role to an access package.
-The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the **originId** for the resource role retrieved from the list of the resource roles.
-Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
+Create new navigation property to accessPackageResourceRoleScopes for identityGovernance
 
 ## SYNTAX
 
@@ -45,9 +43,7 @@ New-MgEntitlementManagementAccessPackageResourceRoleScope -InputObject <IIdentit
 ```
 
 ## DESCRIPTION
-Create a new accessPackageResourceRoleScope for adding a resource role to an access package.
-The access package resource, for a group, an app, or a SharePoint Online site, must already exist in the access package catalog, and the **originId** for the resource role retrieved from the list of the resource roles.
-Once you add the resource role scope to the access package, the user will receive this resource role through any current and future access package assignments.
+Create new navigation property to accessPackageResourceRoleScopes for identityGovernance
 
 ## EXAMPLES
 

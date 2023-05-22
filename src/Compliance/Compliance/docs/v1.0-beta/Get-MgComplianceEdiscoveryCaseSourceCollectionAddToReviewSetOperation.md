@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation
 
 ## SYNOPSIS
-Get the last addToReviewSetOperation object associated with a source collection.
+Adds the results of the sourceCollection to the specified reviewSet.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgComplianceEdiscoveryCaseSourceCollectionAddToReviewSetOperation -InputObje
 ```
 
 ## DESCRIPTION
-Get the last addToReviewSetOperation object associated with a source collection.
+Adds the results of the sourceCollection to the specified reviewSet.
 
 ## EXAMPLES
 

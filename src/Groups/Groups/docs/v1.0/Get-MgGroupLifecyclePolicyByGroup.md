@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupLifecyclePolicyByGroup
 
 ## SYNOPSIS
-Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
+The collection of lifecycle policies for this group.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +21,9 @@ Get-MgGroupLifecyclePolicyByGroup -GroupId <String> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
+The collection of lifecycle policies for this group.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

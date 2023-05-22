@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileEmail
 
 ## SYNOPSIS
-Create a new itemEmail object in a user's profile.
+Create new navigation property to emails for users
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgUserProfileEmail -InputObject <IPeopleIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Create a new itemEmail object in a user's profile.
+Create new navigation property to emails for users
 
 ## EXAMPLES
 

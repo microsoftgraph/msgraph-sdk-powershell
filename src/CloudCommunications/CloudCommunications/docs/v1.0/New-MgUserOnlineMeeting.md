@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserOnlineMeeting
 
 ## SYNOPSIS
-Create an online meeting on behalf of a user.
+Create new navigation property to onlineMeetings for users
 
 ## SYNTAX
 
@@ -58,7 +58,7 @@ New-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Create an online meeting on behalf of a user.
+Create new navigation property to onlineMeetings for users
 
 ## EXAMPLES
 

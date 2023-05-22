@@ -8,8 +8,7 @@ schema: 2.0.0
 # Resume-MgEntitlementManagementAccessPackageAssignmentRequest
 
 ## SYNOPSIS
-In Azure AD entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
-It is performed on an accessPackageAssignmentRequest object whose **requestStatus** is in a `WaitingForCallback` state.
+Invoke action resume
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ Resume-MgEntitlementManagementAccessPackageAssignmentRequest -InputObject <IIden
 ```
 
 ## DESCRIPTION
-In Azure AD entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action.
-It is performed on an accessPackageAssignmentRequest object whose **requestStatus** is in a `WaitingForCallback` state.
+Invoke action resume
 
 ## EXAMPLES
 

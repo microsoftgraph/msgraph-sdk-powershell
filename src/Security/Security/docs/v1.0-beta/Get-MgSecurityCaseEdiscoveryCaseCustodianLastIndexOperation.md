@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation
 
 ## SYNOPSIS
-Get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
+Operation entity that represents the latest indexing for the custodian.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgSecurityCaseEdiscoveryCaseCustodianLastIndexOperation -InputObject <ISecur
 ```
 
 ## DESCRIPTION
-Get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
+Operation entity that represents the latest indexing for the custodian.
 
 ## EXAMPLES
 

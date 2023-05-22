@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgAcceptGroupCalendarEvent
 
 ## SYNOPSIS
-Accept the specified event in a user calendar.
+Invoke action accept
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Invoke-MgAcceptGroupCalendarEvent -InputObject <IGroupsIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Accept the specified event in a user calendar.
+Invoke action accept
 
 ## EXAMPLES
 
@@ -259,6 +259,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ExtensionId <String>]`: The unique identifier of extension
   - `[GroupId <String>]`: The unique identifier of group
   - `[GroupLifecyclePolicyId <String>]`: The unique identifier of groupLifecyclePolicy
+  - `[GroupSettingId <String>]`: The unique identifier of groupSetting
+  - `[GroupSettingTemplateId <String>]`: The unique identifier of groupSettingTemplate
   - `[HorizontalSectionColumnId <String>]`: The unique identifier of horizontalSectionColumn
   - `[HorizontalSectionId <String>]`: The unique identifier of horizontalSection
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}

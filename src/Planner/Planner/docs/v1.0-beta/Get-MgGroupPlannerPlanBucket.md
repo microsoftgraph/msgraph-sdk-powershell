@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupPlannerPlanBucket
 
 ## SYNOPSIS
-Retrieve a list of plannerBucket objects contained by a plannerPlan object.
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -19,7 +21,9 @@ Get-MgGroupPlannerPlanBucket -GroupId <String> -PlannerPlanId <String> [-ExpandP
 ```
 
 ## DESCRIPTION
-Retrieve a list of plannerBucket objects contained by a plannerPlan object.
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

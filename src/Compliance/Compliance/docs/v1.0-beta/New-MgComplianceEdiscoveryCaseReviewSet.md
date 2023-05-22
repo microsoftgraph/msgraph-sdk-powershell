@@ -8,8 +8,7 @@ schema: 2.0.0
 # New-MgComplianceEdiscoveryCaseReviewSet
 
 ## SYNOPSIS
-Create a new reviewSet object.
-The request body contains the display name of the review set, which is the only writable property.
+Create new navigation property to reviewSets for compliance
 
 ## SYNTAX
 
@@ -42,8 +41,7 @@ New-MgComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity> [-Add
 ```
 
 ## DESCRIPTION
-Create a new reviewSet object.
-The request body contains the display name of the review set, which is the only writable property.
+Create new navigation property to reviewSets for compliance
 
 ## EXAMPLES
 

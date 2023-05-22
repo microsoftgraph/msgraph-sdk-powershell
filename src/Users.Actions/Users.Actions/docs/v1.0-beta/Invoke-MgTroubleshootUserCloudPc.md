@@ -8,8 +8,7 @@ schema: 2.0.0
 # Invoke-MgTroubleshootUserCloudPc
 
 ## SYNOPSIS
-Troubleshoot a specific Cloud PC.
-Use this API to check the health status of the Cloud PC and the session host.
+Invoke action troubleshoot
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Invoke-MgTroubleshootUserCloudPc -InputObject <IUsersActionsIdentity> [-PassThru
 ```
 
 ## DESCRIPTION
-Troubleshoot a specific Cloud PC.
-Use this API to check the health status of the Cloud PC and the session host.
+Invoke action troubleshoot
 
 ## EXAMPLES
 

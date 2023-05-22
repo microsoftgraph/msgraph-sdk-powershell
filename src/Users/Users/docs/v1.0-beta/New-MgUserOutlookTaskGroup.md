@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserOutlookTaskGroup
 
 ## SYNOPSIS
-Create an Outlook task group in the user's mailbox.
+Create new navigation property to taskGroups for users
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgUserOutlookTaskGroup -InputObject <IUsersIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Create an Outlook task group in the user's mailbox.
+Create new navigation property to taskGroups for users
 
 ## EXAMPLES
 

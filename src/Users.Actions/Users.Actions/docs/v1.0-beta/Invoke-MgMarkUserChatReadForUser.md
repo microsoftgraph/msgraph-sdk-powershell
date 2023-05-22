@@ -8,7 +8,7 @@ schema: 2.0.0
 # Invoke-MgMarkUserChatReadForUser
 
 ## SYNOPSIS
-Mark a chat as read for a user.
+Invoke action markChatReadForUser
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Invoke-MgMarkUserChatReadForUser -InputObject <IUsersActionsIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Mark a chat as read for a user.
+Invoke action markChatReadForUser
 
 ## EXAMPLES
 

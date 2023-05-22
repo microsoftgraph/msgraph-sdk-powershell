@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileAddress
 
 ## SYNOPSIS
-Create a new itemAddress object in a user's profile.
+Create new navigation property to addresses for users
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ New-MgUserProfileAddress -InputObject <IPeopleIdentity> [-AdditionalProperties <
 ```
 
 ## DESCRIPTION
-Create a new itemAddress object in a user's profile.
+Create new navigation property to addresses for users
 
 ## EXAMPLES
 

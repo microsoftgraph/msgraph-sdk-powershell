@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBusinessScenarioPlannerPlanConfiguration
 
 ## SYNOPSIS
-Update the properties of a plannerPlanConfiguration object for a businessScenario.
+Update the navigation property planConfiguration in solutions
 
 ## SYNTAX
 
@@ -47,7 +47,7 @@ Update-MgBusinessScenarioPlannerPlanConfiguration -InputObject <IBookingsIdentit
 ```
 
 ## DESCRIPTION
-Update the properties of a plannerPlanConfiguration object for a businessScenario.
+Update the navigation property planConfiguration in solutions
 
 ## EXAMPLES
 

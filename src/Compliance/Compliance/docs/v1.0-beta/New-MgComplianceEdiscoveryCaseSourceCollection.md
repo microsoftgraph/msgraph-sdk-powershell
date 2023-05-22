@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgComplianceEdiscoveryCaseSourceCollection
 
 ## SYNOPSIS
-Create a new sourceCollection object.
+Create new navigation property to sourceCollections for compliance
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ New-MgComplianceEdiscoveryCaseSourceCollection -InputObject <IComplianceIdentity
 ```
 
 ## DESCRIPTION
-Create a new sourceCollection object.
+Create new navigation property to sourceCollections for compliance
 
 ## EXAMPLES
 

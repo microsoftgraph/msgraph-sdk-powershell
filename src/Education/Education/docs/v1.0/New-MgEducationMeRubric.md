@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgEducationMeRubric
 
 ## SYNOPSIS
-Create a new educationRubric object.
+Create new navigation property to rubrics for education
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgEducationMeRubric -BodyParameter <IMicrosoftGraphEducationRubric> [-Confir
 ```
 
 ## DESCRIPTION
-Create a new educationRubric object.
+Create new navigation property to rubrics for education
 
 ## EXAMPLES
 
