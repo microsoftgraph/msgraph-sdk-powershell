@@ -1,8 +1,17 @@
-### Example 1: Using the Remove-MgUserTodoListTask Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Users
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Users
+
+$params = @{
+	dueDateTime = @{
+		dateTime = "2020-07-25T16:00:00"
+		timeZone = "Eastern Standard Time"
+	}
+}
+
 # A UPN can also be used as -UserId.
-Remove-MgUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
+Update-MgUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 ```
 This example shows how to use the Remove-MgUserTodoListTask Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

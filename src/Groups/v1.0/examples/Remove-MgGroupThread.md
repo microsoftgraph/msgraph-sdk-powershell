@@ -1,14 +1,17 @@
-### Example 1: Using the Remove-MgGroupThread Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Groups
-Remove-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Groups
+
+$params = @{
+	originalStartTimeZone = "originalStartTimeZone-value"
+	originalEndTimeZone = "originalEndTimeZone-value"
+	iCalUId = "iCalUId-value"
+	reminderMinutesBeforeStart = 
+	isReminderOn = $true
+}
+
+Update-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
 ```
 This example shows how to use the Remove-MgGroupThread Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Remove-MgGroupThread Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Groups
-Remove-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
-```
-This example shows how to use the Remove-MgGroupThread Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

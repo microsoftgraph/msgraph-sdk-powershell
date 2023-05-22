@@ -1,14 +1,17 @@
-### Example 1: Using the Get-MgPolicyActivityBasedTimeoutPolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyActivityBasedTimeoutPolicy
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+$params = @{
+	definition = @(
+		"definition-value"
+	)
+	displayName = "displayName-value"
+	isOrganizationDefault = $true
+}
+
+Update-MgPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId -BodyParameter $params
 ```
 This example shows how to use the Get-MgPolicyActivityBasedTimeoutPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgPolicyActivityBasedTimeoutPolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId
-```
-This example shows how to use the Get-MgPolicyActivityBasedTimeoutPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

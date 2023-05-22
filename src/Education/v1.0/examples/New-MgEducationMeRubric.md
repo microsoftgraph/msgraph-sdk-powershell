@@ -1,157 +1,75 @@
-### Example 1: Using the New-MgEducationMeRubric Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Education
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Education
+
 $params = @{
-	DisplayName = "Example Credit Rubric"
-	Description = @{
-		Content = "This is an example of a credit rubric (no points)"
-		ContentType = "text"
+	displayName = "Example Credit Rubric"
+	description = @{
+		content = "This is an example of a credit rubric (no points)"
+		contentType = "text"
 	}
-	Levels = @(
+	levels = @(
 		@{
-			DisplayName = "Good"
-			Description = @{
-				Content = ""
-				ContentType = "text"
+			displayName = "Good"
+			description = @{
+				content = ""
+				contentType = "text"
 			}
 		}
 		@{
-			DisplayName = "Poor"
-			Description = @{
-				Content = ""
-				ContentType = "text"
+			displayName = "Poor"
+			description = @{
+				content = ""
+				contentType = "text"
 			}
 		}
 	)
-	Qualities = @(
+	qualities = @(
 		@{
-			Description = @{
-				Content = "Argument"
-				ContentType = "text"
+			description = @{
+				content = "Argument"
+				contentType = "text"
 			}
-			Criteria = @(
+			criteria = @(
 				@{
-					Description = @{
-						Content = "The essay's argument is persuasive."
-						ContentType = "text"
+					description = @{
+						content = "The essay's argument is persuasive."
+						contentType = "text"
 					}
 				}
 				@{
-					Description = @{
-						Content = "The essay's argument does not make sense."
-						ContentType = "text"
+					description = @{
+						content = "The essay's argument does not make sense."
+						contentType = "text"
 					}
 				}
 			)
 		}
 		@{
-			Description = @{
-				Content = "Spelling and Grammar"
-				ContentType = "text"
+			description = @{
+				content = "Spelling and Grammar"
+				contentType = "text"
 			}
-			Criteria = @(
+			criteria = @(
 				@{
-					Description = @{
-						Content = "The essay uses proper spelling and grammar with few or no errors."
-						ContentType = "text"
+					description = @{
+						content = "The essay uses proper spelling and grammar with few or no errors."
+						contentType = "text"
 					}
 				}
 				@{
-					Description = @{
-						Content = "The essay has numerous errors in spelling and/or grammar."
-						ContentType = "text"
+					description = @{
+						content = "The essay has numerous errors in spelling and/or grammar."
+						contentType = "text"
 					}
 				}
 			)
 		}
 	)
 }
+
 New-MgEducationMeRubric -BodyParameter $params
 ```
 This example shows how to use the New-MgEducationMeRubric Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgEducationMeRubric Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Education
-$params = @{
-	DisplayName = "Example Points Rubric"
-	Description = @{
-		Content = "This is an example of a rubric with points"
-		ContentType = "text"
-	}
-	Levels = @(
-		@{
-			DisplayName = "Good"
-			Description = @{
-				Content = ""
-				ContentType = "text"
-			}
-			Grading = @{
-				"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
-				MaxPoints = 
-			}
-		}
-		@{
-			DisplayName = "Poor"
-			Description = @{
-				Content = ""
-				ContentType = "text"
-			}
-			Grading = @{
-				"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
-				MaxPoints = 
-			}
-		}
-	)
-	Qualities = @(
-		@{
-			Description = @{
-				Content = "Argument"
-				ContentType = "text"
-			}
-			Criteria = @(
-				@{
-					Description = @{
-						Content = "The essay's argument is persuasive."
-						ContentType = "text"
-					}
-				}
-				@{
-					Description = @{
-						Content = "The essay's argument does not make sense."
-						ContentType = "text"
-					}
-				}
-			)
-			Weight = 50.0
-		}
-		@{
-			Description = @{
-				Content = "Spelling and Grammar"
-				ContentType = "text"
-			}
-			Criteria = @(
-				@{
-					Description = @{
-						Content = "The essay uses proper spelling and grammar with few or no errors."
-						ContentType = "text"
-					}
-				}
-				@{
-					Description = @{
-						Content = "The essay has numerous errors in spelling and/or grammar."
-						ContentType = "text"
-					}
-				}
-			)
-			Weight = 50.0
-		}
-	)
-	Grading = @{
-		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
-	}
-}
-New-MgEducationMeRubric -BodyParameter $params
-```
-This example shows how to use the New-MgEducationMeRubric Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -1,8 +1,15 @@
-### Example 1: Using the Remove-MgBetaUserAuthenticationPhoneMethod Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
+$params = @{
+	phoneNumber = "+1 2065555554"
+	phoneType = "mobile"
+}
+
 # A UPN can also be used as -UserId.
-Remove-MgBetaUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId
+Update-MgBetaUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaUserAuthenticationPhoneMethod Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaBetaUserAuthenticationPhoneMethod Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -1,14 +1,15 @@
-### Example 1: Using the Get-MgBetaEntitlementManagementConnectedOrganization Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.Governance
+
+$params = @{
+	displayName = "Connected organization new name"
+	description = "Connected organization new description"
+	state = "configured"
+}
+
+Update-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaEntitlementManagementConnectedOrganization Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaEntitlementManagementConnectedOrganization Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaEntitlementManagementConnectedOrganization
-```
-This example shows how to use the Get-MgBetaEntitlementManagementConnectedOrganization Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaEntitlementManagementConnectedOrganization Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

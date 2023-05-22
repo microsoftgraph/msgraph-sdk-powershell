@@ -1,17 +1,12 @@
-### Example 1: List all the tabs in the chat along with associated Teams app
+### Example 1: Update the name of a tab in a chat
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
-Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp"
-```
-This example shows how to use the Get-MgUserChatTab Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+$params = @{
+	displayName = "My Contoso Tab - updated again"
+}
 
-### Example 2: List all the tabs belonging to a specific app in a chat
-
-```powershellImport-Module Microsoft.Graph.Teams
-
-Get-MgChatTab -ChatId $chatId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.web'"
+Update-MgChatTab -ChatId $chatId -TeamsTabId $teamsTabId -BodyParameter $params
 ```
 This example shows how to use the Get-MgUserChatTab Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

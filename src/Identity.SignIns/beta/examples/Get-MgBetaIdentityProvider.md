@@ -1,70 +1,28 @@
-### Example 1: Using the Get-MgBetaIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
+### Example 1: Update a specific <strong>social identity provider</strong> (Azure AD or Azure AD B2C)
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	clientSecret = "1111111111111"
+}
+
+Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
+This example shows how to use the Get-MgBetaBetaIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Update a specific <strong>Apple identity provider</strong> (only for Azure AD B2C)
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	displayName = "Apple"
+}
+
+Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgBetaIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderId $identityProviderId
-```
-This example shows how to use the Get-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Get-MgBetaIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderId $identityProviderId
-```
-This example shows how to use the Get-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the Get-MgBetaIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider
-```
-This example shows how to use the Get-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 6: Using the Get-MgBetaIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider
-```
-This example shows how to use the Get-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 7: Using the Get-MgBetaIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider
-```
-This example shows how to use the Get-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 8: Using the Get-MgBetaIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -OutFile $outFileId
-```
-This example shows how to use the Get-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 9: Using the Get-MgBetaIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
-```
-This example shows how to use the Get-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 10: Using the Get-MgBetaIdentityProvider Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
-```
-This example shows how to use the Get-MgBetaIdentityProvider Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

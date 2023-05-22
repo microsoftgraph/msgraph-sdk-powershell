@@ -1,14 +1,13 @@
-### Example 1: Using the Get-MgIdentityUserFlowAttribute Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+$params = @{
+	description = "Your new hobby"
+}
+
+Update-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId -BodyParameter $params
 ```
 This example shows how to use the Get-MgIdentityUserFlowAttribute Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgIdentityUserFlowAttribute Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityUserFlowAttribute
-```
-This example shows how to use the Get-MgIdentityUserFlowAttribute Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

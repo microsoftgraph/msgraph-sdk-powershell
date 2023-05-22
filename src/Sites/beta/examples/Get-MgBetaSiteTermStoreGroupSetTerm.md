@@ -1,14 +1,19 @@
-### Example 1: Using the Get-MgBetaSiteTermStoreGroupSetTerm Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteTermStoreGroupSetTerm -SiteId $siteId -GroupId $groupId -SetId $setId -TermId $termId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Sites
+
+$params = @{
+	labels = @(
+		@{
+			name = "changedLabel"
+			languageTag = "en-US"
+			isDefault = $true
+		}
+	)
+}
+
+Update-MgBetaSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaSiteTermStoreGroupSetTerm Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaSiteTermStoreGroupSetTerm Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteTermStoreGroupSetTerm -SiteId $siteId -GroupId $groupId -SetId $setId -TermId $termId
-```
-This example shows how to use the Get-MgBetaSiteTermStoreGroupSetTerm Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaSiteTermStoreGroupSetTerm Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

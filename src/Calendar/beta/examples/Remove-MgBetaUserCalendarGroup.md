@@ -1,8 +1,14 @@
-### Example 1: Using the Remove-MgBetaUserCalendarGroup Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Calendar
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Calendar
+
+$params = @{
+	name = "name-value"
+}
+
 # A UPN can also be used as -UserId.
-Remove-MgBetaUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId
+Update-MgBetaUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaUserCalendarGroup Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaBetaUserCalendarGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

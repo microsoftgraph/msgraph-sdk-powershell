@@ -1,7 +1,9 @@
-### Example 1: Using the Get-MgServicePrincipalAppRoleAssignedTo Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Applications
+
+Remove-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -AppRoleAssignmentId $appRoleAssignmentId
 ```
 This example shows how to use the Get-MgServicePrincipalAppRoleAssignedTo Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

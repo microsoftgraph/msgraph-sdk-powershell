@@ -1,14 +1,21 @@
-### Example 1: Using the Get-MgBetaTeamworkWorkforceIntegration Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Teams
+
+$params = @{
+	displayName = "displayName-value"
+	apiVersion = 99
+	encryption = @{
+		protocol = "protocol-value"
+		secret = "secret-value"
+	}
+	isActive = $true
+	url = "url-value"
+	supportedEntities = "supportedEntities-value"
+}
+
+Update-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaTeamworkWorkforceIntegration Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaTeamworkWorkforceIntegration Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeamworkWorkforceIntegration
-```
-This example shows how to use the Get-MgBetaTeamworkWorkforceIntegration Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaTeamworkWorkforceIntegration Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

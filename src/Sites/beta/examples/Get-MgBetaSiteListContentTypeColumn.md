@@ -1,11 +1,9 @@
 ### Example 1: Code snippet
 
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
+```powershellImport-Module Microsoft.Graph.Beta.Sites
 
-Get-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId
+Get-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -ColumnDefinitionId $columnDefinitionId
 ```
-This example shows how to use the Get-MgBetaSiteListContentTypeColumn Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaSiteListContentTypeColumn Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

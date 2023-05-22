@@ -1,7 +1,28 @@
-### Example 1: Using the Get-MgCommunicationPresence Cmdlet
-```powershell
-Import-Module Microsoft.Graph.CloudCommunications
+### Example 1: Get your own presence information
+
+```powershellImport-Module Microsoft.Graph.CloudCommunications
+
+# A UPN can also be used as -UserId.
+Get-MgUserPresence -UserId $userId
+```
+This example shows how to use the Get-MgCommunicationPresence Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Get the presence information of another user
+
+```powershellImport-Module Microsoft.Graph.CloudCommunications
+
+Get-MgUserPresence -UserId $userId
+```
+This example shows how to use the Get-MgCommunicationPresence Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Get the presence information of another user
+
+```powershellImport-Module Microsoft.Graph.CloudCommunications
+
 Get-MgCommunicationPresence -PresenceId $presenceId
 ```
 This example shows how to use the Get-MgCommunicationPresence Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

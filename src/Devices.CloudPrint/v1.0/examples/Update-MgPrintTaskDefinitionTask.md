@@ -1,13 +1,16 @@
-### Example 1: Using the Update-MgPrintTaskDefinitionTask Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Devices.CloudPrint
+
 $params = @{
-	Status = @{
-		State = "completed"
-		Description = "completed"
+	status = @{
+		state = "completed"
+		description = "completed"
 	}
 }
+
 Update-MgPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId -PrintTaskId $printTaskId -BodyParameter $params
 ```
 This example shows how to use the Update-MgPrintTaskDefinitionTask Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

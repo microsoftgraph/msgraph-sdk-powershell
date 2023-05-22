@@ -1,17 +1,16 @@
-### Example 1: Get all outcomes
+### Example 1: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Education
 
-Get-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
-```
-This example shows how to use the New-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+$params = @{
+	"@odata.type" = "#microsoft.graph.educationFeedbackResourceOutcome"
+	feedbackResource = @{
+		"@odata.type" = "#microsoft.graph.educationWordResource"
+		displayName = "Document1.docx"
+	}
+}
 
-### Example 2: Get outcomes filtered by outcome type
-
-```powershellImport-Module Microsoft.Graph.Education
-
-Get-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -Filter "isof('microsoft.graph.educationFeedbackResourceOutcome')"
+New-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
 This example shows how to use the New-MgEducationClassAssignmentSubmissionOutcome Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

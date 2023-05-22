@@ -1,7 +1,9 @@
-### Example 1: Using the Get-MgBetaServicePrincipalDelegatedPermissionClassification Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Applications
-Get-MgBetaServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Applications
+
+Remove-MgBetaServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId -DelegatedPermissionClassificationId $delegatedPermissionClassificationId
 ```
-This example shows how to use the Get-MgBetaServicePrincipalDelegatedPermissionClassification Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaServicePrincipalDelegatedPermissionClassification Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

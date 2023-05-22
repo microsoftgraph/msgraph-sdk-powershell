@@ -2,8 +2,12 @@
 
 ```powershellImport-Module Microsoft.Graph.Notes
 
+$params = @{
+	displayName = "My Private notebook"
+}
+
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteNotebook -UserId $userId
+New-MgUserOnenoteNotebook -UserId $userId -BodyParameter $params
 ```
 This example shows how to use the New-MgGroupOnenoteNotebook Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

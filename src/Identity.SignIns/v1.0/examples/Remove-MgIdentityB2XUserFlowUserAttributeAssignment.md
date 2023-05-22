@@ -1,7 +1,13 @@
-### Example 1: Using the Remove-MgIdentityB2XUserFlowUserAttributeAssignment Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgIdentityB2XUserFlowUserAttributeAssignment -B2xIdentityUserFlowId $b2xIdentityUserFlowId -IdentityUserFlowAttributeAssignmentId $identityUserFlowAttributeAssignmentId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+$params = @{
+	userInputType = "textBox"
+}
+
+Update-MgIdentityB2XUserFlowUserAttributeAssignment -B2xIdentityUserFlowId $b2xIdentityUserFlowId -IdentityUserFlowAttributeAssignmentId $identityUserFlowAttributeAssignmentId -BodyParameter $params
 ```
 This example shows how to use the Remove-MgIdentityB2XUserFlowUserAttributeAssignment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -1,16 +1,17 @@
-### Example 1: Using the Get-MgBetaUserTodoListTask Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Users
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Users
+
+$params = @{
+	dueDateTime = @{
+		dateTime = "2020-07-25T16:00:00"
+		timeZone = "Eastern Standard Time"
+	}
+}
+
 # A UPN can also be used as -UserId.
-Get-MgBetaUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId
+Update-MgBetaUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaUserTodoListTask Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaUserTodoListTask Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Users
-# A UPN can also be used as -UserId.
-Get-MgBetaUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId
-```
-This example shows how to use the Get-MgBetaUserTodoListTask Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaUserTodoListTask Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -1,25 +1,23 @@
 ### Example 1: Code snippet
 
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+```powershellImport-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
-	MemberSettings = @{
-		AllowCreateUpdateChannels = $true
+	memberSettings = @{
+		allowCreateUpdateChannels = $true
 	}
-	MessagingSettings = @{
-		AllowUserEditMessages = $true
-		AllowUserDeleteMessages = $true
+	messagingSettings = @{
+		allowUserEditMessages = $true
+		allowUserDeleteMessages = $true
 	}
-	FunSettings = @{
-		AllowGiphy = $true
-		GiphyContentRating = "strict"
+	funSettings = @{
+		allowGiphy = $true
+		giphyContentRating = "strict"
 	}
 }
 
 Update-MgBetaTeam -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaTeam Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaBetaTeam Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

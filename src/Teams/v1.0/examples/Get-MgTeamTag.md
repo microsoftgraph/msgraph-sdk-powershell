@@ -2,7 +2,11 @@
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
-Get-MgTeamTag -TeamId $teamId
+$params = @{
+	displayName = "Finance"
+}
+
+Update-MgTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
 ```
 This example shows how to use the Get-MgTeamTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

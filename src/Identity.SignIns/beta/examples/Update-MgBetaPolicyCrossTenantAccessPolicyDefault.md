@@ -1,29 +1,32 @@
-### Example 1: Using the Update-MgBetaPolicyCrossTenantAccessPolicyDefault Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
 $params = @{
-	B2bCollaborationOutbound = @{
-		UsersAndGroups = @{
-			AccessType = "blocked"
-			Targets = @(
+	b2bCollaborationOutbound = @{
+		usersAndGroups = @{
+			accessType = "blocked"
+			targets = @(
 				@{
-					Target = "0be493dc-cb56-4a53-936f-9cf64410b8b0"
-					TargetType = "group"
+					target = "0be493dc-cb56-4a53-936f-9cf64410b8b0"
+					targetType = "group"
 				}
 			)
 		}
-		Applications = @{
-			AccessType = "blocked"
-			Targets = @(
+		applications = @{
+			accessType = "blocked"
+			targets = @(
 				@{
-					Target = "AllApplications"
-					TargetType = "application"
+					target = "AllApplications"
+					targetType = "application"
 				}
 			)
 		}
 	}
 }
+
 Update-MgBetaPolicyCrossTenantAccessPolicyDefault -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaPolicyCrossTenantAccessPolicyDefault Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Update-MgBetaBetaPolicyCrossTenantAccessPolicyDefault Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

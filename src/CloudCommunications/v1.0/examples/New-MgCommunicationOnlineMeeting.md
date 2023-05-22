@@ -27,7 +27,17 @@ Get-MgUserOnlineMeeting -UserId $userId -Filter "JoinWebUrl eq 'https://teams.mi
 This example shows how to use the New-MgCommunicationOnlineMeeting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Fetch attendee report of a Teams live event
+### Example 4: Retrieve an online meeting by joinMeetingId
+
+```powershellImport-Module Microsoft.Graph.CloudCommunications
+
+# A UPN can also be used as -UserId.
+Get-MgUserOnlineMeeting -UserId $userId -Filter "joinMeetingIdSettings/joinMeetingId eq '1234567890'"
+```
+This example shows how to use the New-MgCommunicationOnlineMeeting Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Fetch attendee report of a Teams live event
 
 ```powershellImport-Module Microsoft.Graph.CloudCommunications
 
