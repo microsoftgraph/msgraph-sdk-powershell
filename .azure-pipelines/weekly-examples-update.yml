@@ -2,10 +2,10 @@
 
 trigger: none # disable triggers based on commits.
 pr: none # disable as a PR gate.
-name: 'PowerShellExamplesUpdate Check'
+name: 'PowerShellExamplesUpdateV1 Check'
 schedules:
   - cron: "0 3 * * FRI"  # every Friday at 3AM UTC (off hours for Redmond, Nairobi and Montréal)
-    displayName: 'PowerShellExamplesUpdate Check'
+    displayName: 'PowerShellExamplesUpdateV1'
     branches:
       include:
       - dev
@@ -28,12 +28,11 @@ resources:
      ref: dev
 
 jobs:
-- job: PowerShellExamplesUpdate
+- job: PowerShellExamplesUpdateV1
   pool: 
     name: ${{ parameters.BuildAgent }}
   timeoutInMinutes: ${{ parameters.PipelineTimeout }}
   steps:
-  - template: ./common-templates/update-sdkversion.yml
 
   - task: PowerShell@2
     name: "ComputeBranch"
@@ -56,12 +55,20 @@ jobs:
         git status
 
   - task: PowerShell@2
-    displayName: 'Update Examples From Graph Reference'
+    displayName: 'Update Examples From API reference - V1'
     continueOnError: false
     inputs:
       targetType: 'filePath'
       pwsh: true
       filePath: tools\ExamplesGenerator.ps1
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Examples to be reviewed as artifact'
+    inputs:
+      PathtoPublish: 'examplesreport'
+      ArtifactName: 'ExamplesToBeReviewed'
+      publishLocation: 'Container'
+      # StoreAsTar: true
 
   - task: PowerShell@2
     displayName: Pushing to github
@@ -71,10 +78,12 @@ jobs:
       targetType: inline
       pwsh: true
       script: |
+        git config --global user.email "GraphTooling@service.microsoft.com"
+        git config --global user.name "Microsoft Graph DevX Tooling"
         git status
         git add .
-        git commit -m "Updating examples"
-        git push --set-upstream origin $(ComputeBranch.WeeklyExamplesBranch)
+        git commit -m "Updating v1 examples"
+        git push --set-upstream https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git $(ComputeBranch.WeeklyExamplesBranch)
         git status
 
   - template: ./common-templates/create-pr.yml
