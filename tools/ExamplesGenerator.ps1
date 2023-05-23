@@ -332,6 +332,11 @@ function Update-ExampleFile {
             $Code = "``````powershell`r$CodeValue`r`n``````"
 	
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
+            if($GraphProfile -eq "beta"){
+                #Replace examples to match the new beta naming convention
+                $TotalText = $TotalText.Replace("-Mg", "-MgBeta")
+                $TotalText = $TotalText.Replace("Microsoft.Graph", "Microsoft.Graph.Beta")
+            }
             Add-Content -Path $ExampleFile -Value $TotalText
             }else{    
                 $WrongExamplesCount++
@@ -340,9 +345,6 @@ function Update-ExampleFile {
         }
     }
     $PatternToSearch = "Import-Module Microsoft.Graph.$Module"
-    if($GraphProfile -eq "beta"){
-        $PatternToSearch = "Import-Module Microsoft.Graph.Beta.$Module"  
-    }
     if(($Content | Select-String -pattern $SearchText) -and ($Content | Select-String -pattern "This example shows")){
         $ContainsPatternToSearch = $False
         foreach($List in $ExampleList){
@@ -359,6 +361,11 @@ function Update-ExampleFile {
             $Code = "``````powershell`r$CodeValue`r`n``````"
     
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
+            if($GraphProfile -eq "beta"){
+                #Replace examples to match the new beta naming convention
+                $TotalText = $TotalText.Replace("-Mg", "-MgBeta")
+                $TotalText = $TotalText.Replace("Microsoft.Graph", "Microsoft.Graph.Beta")
+            }
             Add-Content -Path $ExampleFile -Value $TotalText
         }
 
@@ -447,6 +454,9 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 #2. Test for ensuring that a handwritten example is not tampered with
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0" -GraphCommand "Get-MgUser" -GraphModule "Users" -Profile "v1.0" 
 
-#3. Test for updates from api reference
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0" -GraphCommand "New-MgServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "v1.0"
-Write-Host -ForegroundColor Green "-------------Done-------------"
+#3. Test for v1.0 updates from api reference
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-v1.0" -GraphCommand "New-MgServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "v1.0"
+
+#4. Test for beta updates from api reference
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
+#Write-Host -ForegroundColor Green "-------------Done-------------"
