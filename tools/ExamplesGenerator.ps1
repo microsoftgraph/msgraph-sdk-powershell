@@ -156,14 +156,14 @@ function Get-ExternalDocsUrl {
                             $RebuiltPath = $PathRebuild + "microsoft.graph." + $PathToAppend
                             $ExternalDocUrl = $path[$RebuiltPath].get.externalDocs.url
                             if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                $UriPath2 = $null
+                                $GetPath = $null
                                 if($GraphProfile -eq "beta"){
-                                    $UriPath2 = $BetaCommandListVariantList[$Command]
+                                    $GetPath = $BetaCommandListVariantList[$Command]
                                 }else{
-                                    $UriPath2 = $V1CommandListVariantList[$Command]
+                                    $GetPath = $V1CommandListVariantList[$Command]
                                 } 
-                                if(-not([string]::IsNullOrEmpty($UriPath2))){
-                                    $ExternalDocUrl = $Path[$UriPath2].get.externalDocs.url
+                                if(-not([string]::IsNullOrEmpty($GetPath))){
+                                    $ExternalDocUrl = $Path[$GetPath].get.externalDocs.url
                                 }
                                   
                             }
@@ -172,14 +172,14 @@ function Get-ExternalDocsUrl {
                     if ($MethodName -eq "POST") {
                         $ExternalDocUrl = $Path[$UriPath].post.externalDocs.url
                         if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                            $UriPath3 = $null
+                            $PostPath = $null
                             if($GraphProfile -eq "beta"){
-                                $UriPath3 = $BetaCommandListVariantList[$Command]
+                                $PostPath = $BetaCommandListVariantList[$Command]
                             }else{
-                                $UriPath3 = $V1CommandListVariantList[$Command]
+                                $PostPath = $V1CommandListVariantList[$Command]
                             }
-                            if(-not([string]::IsNullOrEmpty($UriPath3))){ 
-                                $ExternalDocUrl = $Path[$UriPath3].post.externalDocs.url
+                            if(-not([string]::IsNullOrEmpty($PostPath))){ 
+                                $ExternalDocUrl = $Path[$PostPath].post.externalDocs.url
                             }  
                         } 
                     }
@@ -187,14 +187,14 @@ function Get-ExternalDocsUrl {
                     if ($MethodName -eq "PATCH") {
                         $ExternalDocUrl = $Path[$UriPath].patch.externalDocs.url 
                         if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                            $UriPath4 = $null
+                            $PatchPath = $null
                             if($GraphProfile -eq "beta"){
-                                $UriPath4 = $BetaCommandListVariantList[$Command]
+                                $PatchPath = $BetaCommandListVariantList[$Command]
                             }else{
-                                $UriPath4 = $V1CommandListVariantList[$Command]
+                                $PatchPath = $V1CommandListVariantList[$Command]
                             } 
-                            if(-not([string]::IsNullOrEmpty($UriPath4))){ 
-                                $ExternalDocUrl = $Path[$UriPath4].post.externalDocs.url
+                            if(-not([string]::IsNullOrEmpty($PatchPath))){ 
+                                $ExternalDocUrl = $Path[$PatchPath].post.externalDocs.url
                             }  
                         } 
                     }
@@ -202,14 +202,14 @@ function Get-ExternalDocsUrl {
                     if ($MethodName -eq "DELETE") {
                         $ExternalDocUrl = $Path[$UriPath].delete.externalDocs.url
                         if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                            $UriPath5 = $null
+                            $DeletePath = $null
                             if($GraphProfile -eq "beta"){
-                                $UriPath5 = $BetaCommandListVariantList[$Command]
+                                $DeletePath = $BetaCommandListVariantList[$Command]
                             }else{
-                                $UriPath5 = $V1CommandListVariantList[$Command]
+                                $DeletePath = $V1CommandListVariantList[$Command]
                             } 
-                            if(-not([string]::IsNullOrEmpty($UriPath5))){ 
-                                $ExternalDocUrl = $Path[$UriPath5].post.externalDocs.url
+                            if(-not([string]::IsNullOrEmpty($DeletePath))){ 
+                                $ExternalDocUrl = $Path[$DeletePath].post.externalDocs.url
                             }  
                         } 
                     }
@@ -217,14 +217,14 @@ function Get-ExternalDocsUrl {
                     if ($MethodName -eq "PUT") {
                         $ExternalDocUrl = $Path[$UriPath].put.externalDocs.url
                         if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                            $UriPath6 = $null
+                            $PutPath = $null
                             if($GraphProfile -eq "beta"){
-                                $UriPath6 = $BetaCommandListVariantList[$Command]
+                                $PutPath = $BetaCommandListVariantList[$Command]
                             }else{
-                                $UriPath6 = $V1CommandListVariantList[$Command]
+                                $PutPath = $V1CommandListVariantList[$Command]
                             } 
-                            if(-not([string]::IsNullOrEmpty($UriPath6))){ 
-                                $ExternalDocUrl = $Path[$UriPath6].post.externalDocs.url
+                            if(-not([string]::IsNullOrEmpty($PutPath))){ 
+                                $ExternalDocUrl = $Path[$PutPath].post.externalDocs.url
                             }  
                         } 
                     }
