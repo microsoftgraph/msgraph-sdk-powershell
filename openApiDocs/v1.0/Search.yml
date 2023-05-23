@@ -2296,6 +2296,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.aggregationOption'
+        collapseProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.collapseProperty'
         contentSources:
           type: array
           items:
@@ -2550,6 +2554,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.collapseProperty:
+      title: collapseProperty
+      type: object
+      properties:
+        fields:
+          type: array
+          items:
+            type: string
+        limit:
+          maximum: 32767
+          minimum: -32768
+          type: integer
+          format: int16
+      additionalProperties:
+        type: object
     microsoft.graph.entityType:
       title: entityType
       enum:
@@ -2562,6 +2581,8 @@ components:
         - listItem
         - drive
         - unknownFutureValue
+        - acronym
+        - bookmark
         - chatMessage
         - person
       type: string
@@ -2947,6 +2968,9 @@ components:
         hitId:
           type: string
           description: 'The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.'
+          nullable: true
+        isCollapsed:
+          type: boolean
           nullable: true
         rank:
           maximum: 2147483647
