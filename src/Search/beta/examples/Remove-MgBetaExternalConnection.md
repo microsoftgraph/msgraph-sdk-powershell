@@ -1,7 +1,14 @@
-### Example 1: Using the Remove-MgBetaExternalConnection Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Search
-Remove-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Search
+
+$params = @{
+	name = "Contoso HR Service Tickets"
+	description = "Connection to index HR service tickets"
+}
+
+Update-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaExternalConnection Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaBetaExternalConnection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

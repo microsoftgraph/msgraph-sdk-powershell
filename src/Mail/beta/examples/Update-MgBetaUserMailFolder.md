@@ -1,23 +1,14 @@
-### Example 1: Using the Update-MgBetaUserMailFolder Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Mail
+
 $params = @{
-	DisplayName = "displayName-value"
+	displayName = "displayName-value"
 }
+
 # A UPN can also be used as -UserId.
 Update-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaUserMailFolder Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgBetaUserMailFolder Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	"@odata.type" = "microsoft.graph.mailSearchFolder"
-	FilterQuery = "contains(subject, 'Analytics')"
-}
-# A UPN can also be used as -UserId.
-Update-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
-```
-This example shows how to use the Update-MgBetaUserMailFolder Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Update-MgBetaBetaUserMailFolder Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

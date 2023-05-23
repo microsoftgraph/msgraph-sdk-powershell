@@ -1,7 +1,13 @@
-### Example 1: Using the Remove-MgPolicyClaimMappingPolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+$params = @{
+	displayName = "UpdateClaimsPolicy"
+}
+
+Update-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId -BodyParameter $params
 ```
 This example shows how to use the Remove-MgPolicyClaimMappingPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

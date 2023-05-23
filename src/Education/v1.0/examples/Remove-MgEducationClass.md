@@ -1,7 +1,14 @@
-### Example 1: Using the Remove-MgEducationClass Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Education
-Remove-MgEducationClass -EducationClassId $educationClassId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Education
+
+$params = @{
+	description = "History - World History 1"
+	displayName = "World History Level 1"
+}
+
+Update-MgEducationClass -EducationClassId $educationClassId -BodyParameter $params
 ```
 This example shows how to use the Remove-MgEducationClass Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

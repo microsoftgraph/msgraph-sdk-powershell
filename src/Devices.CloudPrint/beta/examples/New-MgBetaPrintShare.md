@@ -1,11 +1,15 @@
-### Example 1: Using the New-MgBetaPrintShare Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Devices.CloudPrint
+
 $params = @{
-	Name = "name-value"
-	"Printer@odata.bind" = "https://graph.microsoft.com/beta/print/printers/{id}"
+	displayName = "ShareName"
+	allowAllUsers = $false
+	"printer@odata.bind" = "https://graph.microsoft.com/v1.0/print/printers/{printerId}"
 }
+
 New-MgBetaPrintShare -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaPrintShare Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaBetaPrintShare Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

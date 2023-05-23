@@ -1,8 +1,14 @@
-### Example 1: Using the Remove-MgBetaUserTodoList Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Users
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Users
+
+$params = @{
+	displayName = "Vacation Plan"
+}
+
 # A UPN can also be used as -UserId.
-Remove-MgBetaUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId
+Update-MgBetaUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaUserTodoList Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaBetaUserTodoList Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

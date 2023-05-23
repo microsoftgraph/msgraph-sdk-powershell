@@ -1,42 +1,18 @@
-### Example 1: Using the Get-MgBetaEducationClassAssignmentSubmission Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
+### Example 1: Get submission
+
+```powershellImport-Module Microsoft.Graph.Beta.Education
+
 Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```
-This example shows how to use the Get-MgBetaEducationClassAssignmentSubmission Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaEducationClassAssignmentSubmission Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+This example shows how to use the Get-MgBetaBetaEducationClassAssignmentSubmission Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Get submission with $expand options
+
+```powershellImport-Module Microsoft.Graph.Beta.Education
+
+Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -ExpandProperty "*"
 ```
-This example shows how to use the Get-MgBetaEducationClassAssignmentSubmission Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgBetaEducationClassAssignmentSubmission Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -ExpandProperty "*" 
-```
-This example shows how to use the Get-MgBetaEducationClassAssignmentSubmission Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the Get-MgBetaEducationClassAssignmentSubmission Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -ExpandProperty "outcomes" 
-```
-This example shows how to use the Get-MgBetaEducationClassAssignmentSubmission Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 5: Using the Get-MgBetaEducationClassAssignmentSubmission Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
-```
-This example shows how to use the Get-MgBetaEducationClassAssignmentSubmission Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 6: Using the Get-MgBetaEducationClassAssignmentSubmission Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
-```
-This example shows how to use the Get-MgBetaEducationClassAssignmentSubmission Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaEducationClassAssignmentSubmission Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

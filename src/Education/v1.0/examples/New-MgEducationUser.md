@@ -1,69 +1,72 @@
-### Example 1: Using the New-MgEducationUser Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Education
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Education
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.educationUser"
-	PrimaryRole = "String"
-	MiddleName = "String"
-	ExternalSource = "String"
-	ExternalSourceDetail = "String"
-	ResidenceAddress = @{
+	primaryRole = "String"
+	middleName = "String"
+	externalSource = "String"
+	externalSourceDetail = "String"
+	residenceAddress = @{
 		"@odata.type" = "microsoft.graph.physicalAddress"
 	}
-	MailingAddress = @{
+	mailingAddress = @{
 		"@odata.type" = "microsoft.graph.physicalAddress"
 	}
-	Student = @{
+	student = @{
 		"@odata.type" = "microsoft.graph.educationStudent"
 	}
-	Teacher = @{
+	teacher = @{
 		"@odata.type" = "microsoft.graph.educationTeacher"
 	}
-	CreatedBy = @{
+	createdBy = @{
 		"@odata.type" = "microsoft.graph.identitySet"
 	}
-	AccountEnabled = "Boolean"
-	AssignedLicenses = @(
+	accountEnabled = "Boolean"
+	assignedLicenses = @(
 		@{
 			"@odata.type" = "microsoft.graph.assignedLicense"
 		}
 	)
-	AssignedPlans = @(
+	assignedPlans = @(
 		@{
 			"@odata.type" = "microsoft.graph.assignedPlan"
 		}
 	)
-	BusinessPhones = @(
+	businessPhones = @(
 		"String"
 	)
-	Department = "String"
-	DisplayName = "String"
-	GivenName = "String"
-	Mail = "String"
-	MailNickname = "String"
-	MobilePhone = "String"
-	PasswordPolicies = "String"
-	PasswordProfile = @{
+	department = "String"
+	displayName = "String"
+	givenName = "String"
+	mail = "String"
+	mailNickname = "String"
+	mobilePhone = "String"
+	passwordPolicies = "String"
+	passwordProfile = @{
 		"@odata.type" = "microsoft.graph.passwordProfile"
 	}
-	OfficeLocation = "String"
-	PreferredLanguage = "String"
-	ProvisionedPlans = @(
+	officeLocation = "String"
+	preferredLanguage = "String"
+	provisionedPlans = @(
 		@{
 			"@odata.type" = "microsoft.graph.provisionedPlan"
 		}
 	)
-	RefreshTokensValidFromDateTime = [System.DateTime]::Parse("String (timestamp)")
-	ShowInAddressList = "Boolean"
-	Surname = "String"
-	UsageLocation = "String"
-	UserPrincipalName = "String"
-	UserType = "String"
-	OnPremisesInfo = @{
+	refreshTokensValidFromDateTime = [System.DateTime]::Parse("String (timestamp)")
+	showInAddressList = "Boolean"
+	surname = "String"
+	usageLocation = "String"
+	userPrincipalName = "String"
+	userType = "String"
+	onPremisesInfo = @{
 		"@odata.type" = "microsoft.graph.educationOnPremisesInfo"
 	}
 }
+
 New-MgEducationUser -BodyParameter $params
 ```
 This example shows how to use the New-MgEducationUser Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -1,21 +1,16 @@
-### Example 1: Using the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaPolicyFeatureRolloutPolicy
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
+$params = @{
+	displayName = "PasswordHashSync Rollout Policy"
+	description = "PasswordHashSync Rollout Policy"
+	isEnabled = $true
+	isAppliedToOrganization = $false
+}
+
+Update-MgBetaPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -ExpandProperty "appliesTo" 
-```
-This example shows how to use the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId
-```
-This example shows how to use the Get-MgBetaPolicyFeatureRolloutPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaPolicyFeatureRolloutPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

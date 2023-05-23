@@ -1,25 +1,28 @@
-### Example 1: Using the New-MgEducationClass Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Education
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Education
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.educationClass"
-	DisplayName = "String"
-	MailNickname = "String"
-	Description = "String"
-	CreatedBy = @{
+	displayName = "String"
+	mailNickname = "String"
+	description = "String"
+	createdBy = @{
 		"@odata.type" = "microsoft.graph.identitySet"
 	}
-	ClassCode = "String"
-	ExternalName = "String"
-	ExternalId = "String"
-	ExternalSource = "String"
-	ExternalSourceDetail = "String"
-	Grade = "String"
-	Term = @{
+	classCode = "String"
+	externalName = "String"
+	externalId = "String"
+	externalSource = "String"
+	externalSourceDetail = "String"
+	grade = "String"
+	term = @{
 		"@odata.type" = "microsoft.graph.educationTerm"
 	}
 }
+
 New-MgEducationClass -BodyParameter $params
 ```
 This example shows how to use the New-MgEducationClass Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

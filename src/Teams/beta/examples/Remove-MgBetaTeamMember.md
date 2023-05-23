@@ -1,7 +1,16 @@
-### Example 1: Using the Remove-MgBetaTeamMember Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Remove-MgBetaTeamMember -TeamId $teamId -ConversationMemberId $conversationMemberId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Teams
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	roles = @(
+		"owner"
+	)
+}
+
+Update-MgBetaTeamMember -TeamId $teamId -ConversationMemberId $conversationMemberId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaTeamMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaBetaTeamMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

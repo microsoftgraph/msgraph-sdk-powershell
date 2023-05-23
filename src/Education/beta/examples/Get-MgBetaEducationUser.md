@@ -1,14 +1,16 @@
-### Example 1: Using the Get-MgBetaEducationUser Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationUser
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Education
+
+$params = @{
+	displayName = "Rogelio Cazares"
+	givenName = "Rogelio"
+	middleName = "Fernando"
+	surname = "Cazares"
+}
+
+Update-MgBetaEducationUser -EducationUserId $educationUserId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaEducationUser Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaEducationUser Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationUser -EducationUserId $educationUserId
-```
-This example shows how to use the Get-MgBetaEducationUser Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaEducationUser Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

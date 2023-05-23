@@ -1,14 +1,28 @@
-### Example 1: Using the Get-MgPolicyRoleManagementPolicyRule Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId -UnifiedRoleManagementPolicyRuleId $unifiedRoleManagementPolicyRuleId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.unifiedRoleManagementPolicyExpirationRule"
+	id = "Expiration_EndUser_Assignment"
+	isExpirationRequired = $true
+	maximumDuration = "PT1H45M"
+	target = @{
+		"@odata.type" = "microsoft.graph.unifiedRoleManagementPolicyRuleTarget"
+		caller = "EndUser"
+		operations = @(
+			"All"
+		)
+		level = "Assignment"
+		inheritableSettings = @(
+		)
+		enforcedSettings = @(
+		)
+	}
+}
+
+Update-MgPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId -UnifiedRoleManagementPolicyRuleId $unifiedRoleManagementPolicyRuleId -BodyParameter $params
 ```
 This example shows how to use the Get-MgPolicyRoleManagementPolicyRule Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgPolicyRoleManagementPolicyRule Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyRoleManagementPolicyRule -UnifiedRoleManagementPolicyId $unifiedRoleManagementPolicyId
-```
-This example shows how to use the Get-MgPolicyRoleManagementPolicyRule Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

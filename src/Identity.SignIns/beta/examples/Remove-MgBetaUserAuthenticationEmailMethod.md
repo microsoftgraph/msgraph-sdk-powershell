@@ -1,7 +1,13 @@
-### Example 1: Using the Remove-MgBetaUserAuthenticationEmailMethod Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Remove-MgBetaUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
+$params = @{
+	emailAddress = "kim@contoso.com"
+}
+
+Update-MgBetaUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaUserAuthenticationEmailMethod Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaBetaUserAuthenticationEmailMethod Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

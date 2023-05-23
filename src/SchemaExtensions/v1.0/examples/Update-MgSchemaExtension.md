@@ -1,56 +1,31 @@
-### Example 1: Using the Update-MgSchemaExtension Cmdlet
-```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.SchemaExtensions
+
 $params = @{
-	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
-	Properties = @(
+	owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
+	properties = @(
 		@{
-			Name = "courseId"
-			Type = "Integer"
+			name = "courseId"
+			type = "Integer"
 		}
 		@{
-			Name = "courseName"
-			Type = "String"
+			name = "courseName"
+			type = "String"
 		}
 		@{
-			Name = "courseType"
-			Type = "String"
+			name = "courseType"
+			type = "String"
 		}
 		@{
-			Name = "courseSupervisors"
-			Type = "String"
+			name = "courseSupervisors"
+			type = "String"
 		}
 	)
 }
+
 Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
 ```
 This example shows how to use the Update-MgSchemaExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgSchemaExtension Cmdlet
-```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
-$params = @{
-	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
-	Properties = @(
-		@{
-			Name = "courseId"
-			Type = "Integer"
-		}
-		@{
-			Name = "courseName"
-			Type = "String"
-		}
-		@{
-			Name = "courseType"
-			Type = "String"
-		}
-		@{
-			Name = "courseSupervisors"
-			Type = "String"
-		}
-	)
-}
-Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
-```
-This example shows how to use the Update-MgSchemaExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

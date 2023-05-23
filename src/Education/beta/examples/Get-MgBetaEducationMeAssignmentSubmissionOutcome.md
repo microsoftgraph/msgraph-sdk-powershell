@@ -1,22 +1,47 @@
-### Example 1: Get all outcomes
+### Example 1: Update a feedback outcome
 
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
+```powershellImport-Module Microsoft.Graph.Beta.Education
 
-Get-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+$params = @{
+	"@odata.type" = "#microsoft.graph.educationFeedbackOutcome"
+}
+
+Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaEducationMeAssignmentSubmissionOutcome Cmdlet.
+This example shows how to use the Get-MgBetaBetaEducationMeAssignmentSubmissionOutcome Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 2: Update a points outcome
 
-### Example 2: Get outcomes filtered by outcome type
+```powershellImport-Module Microsoft.Graph.Beta.Education
 
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
+$params = @{
+	"@odata.type" = "#microsoft.graph.educationPointsOutcome"
+	points = @{
+		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGrade"
+		points = 
+	}
+}
 
-Get-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -Filter "isof('microsoft.graph.educationFeedbackResourceOutcome')"
+Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaEducationMeAssignmentSubmissionOutcome Cmdlet.
+This example shows how to use the Get-MgBetaBetaEducationMeAssignmentSubmissionOutcome Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+### Example 3: Update a rubric outcome
+
+```powershellImport-Module Microsoft.Graph.Beta.Education
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.educationRubricOutcome"
+	rubricQualityFeedback = @(
+	)
+	rubricQualitySelectedLevels = @(
+	)
+}
+
+Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
+```
+This example shows how to use the Get-MgBetaBetaEducationMeAssignmentSubmissionOutcome Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

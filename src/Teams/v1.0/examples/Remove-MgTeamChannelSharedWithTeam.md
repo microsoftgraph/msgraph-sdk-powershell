@@ -1,7 +1,9 @@
-### Example 1: Using the Remove-MgTeamChannelSharedWithTeam Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Teams
-Remove-MgTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Teams
+
+Get-MgTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
 ```
 This example shows how to use the Remove-MgTeamChannelSharedWithTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

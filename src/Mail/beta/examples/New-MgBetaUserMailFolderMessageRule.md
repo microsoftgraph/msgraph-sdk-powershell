@@ -1,29 +1,32 @@
-### Example 1: Using the New-MgBetaUserMailFolderMessageRule Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Mail
+
 $params = @{
-	DisplayName = "From partner"
-	Sequence = 2
-	IsEnabled = $true
-	Conditions = @{
-		SenderContains = @(
+	displayName = "From partner"
+	sequence = 2
+	isEnabled = $true
+	conditions = @{
+		senderContains = @(
 			"adele"
 		)
 	}
-	Actions = @{
-		ForwardTo = @(
+	actions = @{
+		forwardTo = @(
 			@{
-				EmailAddress = @{
-					Name = "Alex Wilbur"
-					Address = "AlexW@contoso.onmicrosoft.com"
+				emailAddress = @{
+					name = "Alex Wilbur"
+					address = "AlexW@contoso.onmicrosoft.com"
 				}
 			}
 		)
-		StopProcessingRules = $true
+		stopProcessingRules = $true
 	}
 }
+
 # A UPN can also be used as -UserId.
 New-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaUserMailFolderMessageRule Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaBetaUserMailFolderMessageRule Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

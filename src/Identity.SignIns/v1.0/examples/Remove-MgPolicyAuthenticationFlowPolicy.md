@@ -3,8 +3,8 @@
 ```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
 $params = @{
-	SelfServiceSignUp = @{
-		IsEnabled = $true
+	selfServiceSignUp = @{
+		isEnabled = $true
 	}
 }
 

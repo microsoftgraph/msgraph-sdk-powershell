@@ -1,11 +1,10 @@
-### Example 1: Using the New-MgBetaUserOnenoteSectionGroup Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Notes
-$params = @{
-	DisplayName = "Section group name"
-}
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Notes
+
 # A UPN can also be used as -UserId.
-New-MgBetaUserOnenoteSectionGroup -UserId $userId -SectionGroupId $sectionGroupId -BodyParameter $params
+Get-MgBetaUserOnenoteSectionGroup -UserId $userId
 ```
-This example shows how to use the New-MgBetaUserOnenoteSectionGroup Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaBetaUserOnenoteSectionGroup Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

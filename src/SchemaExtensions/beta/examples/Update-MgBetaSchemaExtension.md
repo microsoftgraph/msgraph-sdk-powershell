@@ -1,56 +1,31 @@
-### Example 1: Using the Update-MgBetaSchemaExtension Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.SchemaExtensions
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.SchemaExtensions
+
 $params = @{
-	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
-	Properties = @(
+	owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
+	properties = @(
 		@{
-			Name = "courseId"
-			Type = "Integer"
+			name = "courseId"
+			type = "Integer"
 		}
 		@{
-			Name = "courseName"
-			Type = "String"
+			name = "courseName"
+			type = "String"
 		}
 		@{
-			Name = "courseType"
-			Type = "String"
+			name = "courseType"
+			type = "String"
 		}
 		@{
-			Name = "courseSupervisors"
-			Type = "String"
+			name = "courseSupervisors"
+			type = "String"
 		}
 	)
 }
+
 Update-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaSchemaExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgBetaSchemaExtension Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.SchemaExtensions
-$params = @{
-	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
-	Properties = @(
-		@{
-			Name = "courseId"
-			Type = "Integer"
-		}
-		@{
-			Name = "courseName"
-			Type = "String"
-		}
-		@{
-			Name = "courseType"
-			Type = "String"
-		}
-		@{
-			Name = "courseSupervisors"
-			Type = "String"
-		}
-	)
-}
-Update-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
-```
-This example shows how to use the Update-MgBetaSchemaExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Update-MgBetaBetaSchemaExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

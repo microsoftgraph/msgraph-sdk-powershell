@@ -1,25 +1,28 @@
-### Example 1: Using the New-MgBetaSiteList Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Sites
+
 $params = @{
-	DisplayName = "Books"
-	Columns = @(
+	displayName = "Books"
+	columns = @(
 		@{
-			Name = "Author"
-			Text = @{
+			name = "Author"
+			text = @{
 			}
 		}
 		@{
-			Name = "PageCount"
-			Number = @{
+			name = "PageCount"
+			number = @{
 			}
 		}
 	)
-	List = @{
-		Template = "genericList"
+	list = @{
+		template = "genericList"
 	}
 }
+
 New-MgBetaSiteList -SiteId $siteId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaSiteList Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaBetaSiteList Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -1,21 +1,29 @@
-### Example 1: Using the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.Governance
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.accessReviewStage"
+	reviewers = @(
+		@{
+			query = "/users/1ed8ac56-4827-4733-8f80-86adc2e67db5"
+			queryType = "MicrosoftGraph"
+		}
+	)
+	fallbackReviewers = @(
+		@{
+			query = "/users/4562bcc8-c436-4f95-b7c0-4f8ce89dca5e"
+			queryType = "MicrosoftGraph"
+		}
+		@{
+			query = "/users/1ed8ac56-4827-4733-8f80-86adc2e67db5"
+			queryType = "MicrosoftGraph"
+		}
+	)
+}
+
+Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId
-```
-This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId
-```
-This example shows how to use the Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaIdentityGovernanceAccessReviewDefinitionInstanceStage Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

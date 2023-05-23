@@ -1,7 +1,19 @@
-### Example 1: Using the Remove-MgBetaEducationClassAssignment Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Remove-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Education
+
+$params = @{
+	displayName = "Reading and review test 09.03 #5"
+	instructions = @{
+		contentType = "text"
+		content = "Read chapter 5 and write your review"
+	}
+	dueDateTime = [System.DateTime]::Parse("2021-09-10T00:00:00Z")
+	addedStudentAction = "none"
+}
+
+Update-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaEducationClassAssignment Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaBetaEducationClassAssignment Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -1,7 +1,15 @@
-### Example 1: Using the Remove-MgBetaEntitlementManagementConnectedOrganization Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.Governance
-Remove-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.Governance
+
+$params = @{
+	displayName = "Connected organization new name"
+	description = "Connected organization new description"
+	state = "configured"
+}
+
+Update-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaEntitlementManagementConnectedOrganization Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaBetaEntitlementManagementConnectedOrganization Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

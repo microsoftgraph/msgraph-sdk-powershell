@@ -1,21 +1,17 @@
-### Example 1: Using the Get-MgPrintShare Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintShare -PrinterShareId $printerShareId -Property "id,displayName,capabilities" 
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgPrintShare Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgPrintShare Cmdlet
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintShare -PrinterShareId $printerShareId
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgPrintShare Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgPrintShare Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintShare
-```
-This example shows how to use the Get-MgPrintShare Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}

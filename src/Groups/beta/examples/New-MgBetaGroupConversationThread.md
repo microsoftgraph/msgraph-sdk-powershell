@@ -1,18 +1,21 @@
-### Example 1: Using the New-MgBetaGroupConversationThread Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Groups
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Groups
+
 $params = @{
-	Topic = "Take your wellness days and rest"
-	Posts = @(
+	topic = "Take your wellness days and rest"
+	posts = @(
 		@{
-			Body = @{
-				ContentType = "html"
-				Content = "Waiting for the summer holidays."
+			body = @{
+				contentType = "html"
+				content = "Waiting for the summer holidays."
 			}
 		}
 	)
 }
+
 New-MgBetaGroupConversationThread -GroupId $groupId -ConversationId $conversationId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaGroupConversationThread Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaBetaGroupConversationThread Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

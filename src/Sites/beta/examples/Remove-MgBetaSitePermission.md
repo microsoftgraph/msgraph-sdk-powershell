@@ -1,7 +1,15 @@
-### Example 1: Using the Remove-MgBetaSitePermission Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Remove-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Sites
+
+$params = @{
+	roles = @(
+		"read"
+	)
+}
+
+Update-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaSitePermission Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaBetaSitePermission Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

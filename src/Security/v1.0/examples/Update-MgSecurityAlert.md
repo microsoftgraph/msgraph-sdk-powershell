@@ -1,46 +1,52 @@
-### Example 1: Using the Update-MgSecurityAlert Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Security
+### Example 1: Request without Prefer header
+
+```powershellImport-Module Microsoft.Graph.Security
+
 $params = @{
-	AssignedTo = "String"
-	ClosedDateTime = [System.DateTime]::Parse("String (timestamp)")
-	Comments = @(
+	assignedTo = "String"
+	closedDateTime = [System.DateTime]::Parse("String (timestamp)")
+	comments = @(
 		"String"
 	)
-	Feedback = "@odata.type: microsoft.graph.alertFeedback"
-	Status = "@odata.type: microsoft.graph.alertStatus"
-	Tags = @(
+	feedback = "@odata.type: microsoft.graph.alertFeedback"
+	status = "@odata.type: microsoft.graph.alertStatus"
+	tags = @(
 		"String"
 	)
-	VendorInformation = @{
-		Provider = "String"
-		Vendor = "String"
+	vendorInformation = @{
+		provider = "String"
+		vendor = "String"
 	}
 }
+
 Update-MgSecurityAlert -AlertId $alertId -BodyParameter $params
 ```
 This example shows how to use the Update-MgSecurityAlert Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Update-MgSecurityAlert Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Security
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Request with Prefer header
+
+```powershellImport-Module Microsoft.Graph.Security
+
 $params = @{
-	AssignedTo = "String"
-	ClosedDateTime = [System.DateTime]::Parse("String (timestamp)")
-	Comments = @(
+	assignedTo = "String"
+	closedDateTime = [System.DateTime]::Parse("String (timestamp)")
+	comments = @(
 		"String"
 	)
-	Feedback = "@odata.type: microsoft.graph.alertFeedback"
-	Status = "@odata.type: microsoft.graph.alertStatus"
-	Tags = @(
+	feedback = "@odata.type: microsoft.graph.alertFeedback"
+	status = "@odata.type: microsoft.graph.alertStatus"
+	tags = @(
 		"String"
 	)
-	VendorInformation = @{
-		Provider = "String"
-		Vendor = "String"
+	vendorInformation = @{
+		provider = "String"
+		vendor = "String"
 	}
 }
+
 Update-MgSecurityAlert -AlertId $alertId -BodyParameter $params
 ```
 This example shows how to use the Update-MgSecurityAlert Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

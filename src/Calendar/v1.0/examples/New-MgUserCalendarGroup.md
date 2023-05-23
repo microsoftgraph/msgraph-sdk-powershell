@@ -1,11 +1,14 @@
-### Example 1: Using the New-MgUserCalendarGroup Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Calendar
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Calendar
+
 $params = @{
-	Name = "Personal events"
+	name = "Personal events"
 }
+
 # A UPN can also be used as -UserId.
 New-MgUserCalendarGroup -UserId $userId -BodyParameter $params
 ```
 This example shows how to use the New-MgUserCalendarGroup Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

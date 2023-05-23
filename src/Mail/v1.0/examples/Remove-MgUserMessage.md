@@ -1,16 +1,19 @@
-### Example 1: Using the Remove-MgUserMessage Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Mail
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Mail
+
+$params = @{
+	subject = "subject-value"
+	body = @{
+		contentType = ""
+		content = "content-value"
+	}
+	inferenceClassification = "other"
+}
+
 # A UPN can also be used as -UserId.
-Remove-MgUserMessage -UserId $userId -MessageId $messageId
+Update-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 This example shows how to use the Remove-MgUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Remove-MgUserMessage Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Mail
-# A UPN can also be used as -UserId.
-Remove-MgUserMessage -UserId $userId -MessageId $messageId
-```
-This example shows how to use the Remove-MgUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

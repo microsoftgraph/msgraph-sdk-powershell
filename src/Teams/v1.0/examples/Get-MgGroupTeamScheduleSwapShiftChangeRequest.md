@@ -2,7 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
-Get-MgTeamScheduleSwapShiftChangeRequest -TeamId $teamId
+Get-MgTeamScheduleSwapShiftChangeRequest -TeamId $teamId -SwapShiftsChangeRequestId $swapShiftsChangeRequestId
 ```
 This example shows how to use the Get-MgGroupTeamScheduleSwapShiftChangeRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

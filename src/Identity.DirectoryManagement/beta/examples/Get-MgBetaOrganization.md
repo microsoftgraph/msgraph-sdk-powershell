@@ -1,14 +1,28 @@
-### Example 1: Using the Get-MgBetaOrganization Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-Get-MgBetaOrganization -OrganizationId $organizationId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+$params = @{
+	marketingNotificationEmails = @(
+		"marketing@contoso.com"
+	)
+	privacyProfile = @{
+		contactEmail = "alice@contoso.com"
+		statementUrl = "https://contoso.com/privacyStatement"
+	}
+	securityComplianceNotificationMails = @(
+		"security@contoso.com"
+	)
+	securityComplianceNotificationPhones = @(
+		"(123) 456-7890"
+	)
+	technicalNotificationMails = @(
+		"tech@contoso.com"
+	)
+}
+
+Update-MgBetaOrganization -OrganizationId $organizationId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaOrganization Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaOrganization Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-Get-MgBetaOrganization
-```
-This example shows how to use the Get-MgBetaOrganization Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaOrganization Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

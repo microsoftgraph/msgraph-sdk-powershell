@@ -1,28 +1,31 @@
-### Example 1: Using the Update-MgTeamScheduleOpenShift Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Teams
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Teams
+
 $params = @{
-	SchedulingGroupId = "TAG_228940ed-ff84-4e25-b129-1b395cf78be0"
-	SharedOpenShift = @{
-		Notes = "Inventory Management"
-		OpenSlotCount = 5
-		DisplayName = "Field shift"
-		StartDateTime = [System.DateTime]::Parse("2018-10-04T00:58:45.340Z")
-		EndDateTime = [System.DateTime]::Parse("2018-10-04T09:50:45.332Z")
-		Theme = "white"
-		Activities = @(
+	schedulingGroupId = "TAG_228940ed-ff84-4e25-b129-1b395cf78be0"
+	sharedOpenShift = @{
+		notes = "Inventory Management"
+		openSlotCount = 5
+		displayName = "Field shift"
+		startDateTime = [System.DateTime]::Parse("2018-10-04T00:58:45.340Z")
+		endDateTime = [System.DateTime]::Parse("2018-10-04T09:50:45.332Z")
+		theme = "white"
+		activities = @(
 			@{
-				IsPaid = $true
-				StartDateTime = [System.DateTime]::Parse("2018-10-04T00:58:45.340Z")
-				EndDateTime = [System.DateTime]::Parse("2018-10-04T01:58:45.340Z")
-				Code = ""
-				DisplayName = "Lunch"
+				isPaid = $true
+				startDateTime = [System.DateTime]::Parse("2018-10-04T00:58:45.340Z")
+				endDateTime = [System.DateTime]::Parse("2018-10-04T01:58:45.340Z")
+				code = ""
+				displayName = "Lunch"
 			}
 		)
 	}
-	DraftOpenShift = $null
+	draftOpenShift = $null
 }
+
 Update-MgTeamScheduleOpenShift -TeamId $teamId -OpenShiftId $openShiftId -BodyParameter $params
 ```
 This example shows how to use the Update-MgTeamScheduleOpenShift Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

@@ -1,7 +1,19 @@
-### Example 1: Using the Get-MgSiteTermStoreGroupSetTerm Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSiteTermStoreGroupSetTerm -SiteId $siteId -GroupId $groupId -SetId $setId -TermId $termId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Sites
+
+$params = @{
+	labels = @(
+		@{
+			name = "changedLabel"
+			languageTag = "en-US"
+			isDefault = $true
+		}
+	)
+}
+
+Update-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId -BodyParameter $params
 ```
 This example shows how to use the Get-MgSiteTermStoreGroupSetTerm Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
