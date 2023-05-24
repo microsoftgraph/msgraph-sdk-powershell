@@ -19,7 +19,7 @@ steps:
       targetType: inline
       pwsh: true
       script: |
-        . $(System.DefaultWorkingDirectory)/tools/GenerateMigrationTool.ps1
+        . $(System.DefaultWorkingDirectory)/msgraph-tools-migration/GenerateNuspec.ps1
 
   - ${{ if eq(parameters.Sign, true) }}:
       - template: ../common-templates/esrp/codesign.yml
