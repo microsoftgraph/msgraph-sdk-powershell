@@ -6,10 +6,10 @@ name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 parameters:
   - name: BuildAgent
     displayName: Build Agent
-    default: 1es-windows-ps-compute
+    default: Dev
   - name: BaseBranch
     displayName: Base Branch
-    default: features/2.0
+    default: migration-tool-publisher
   - name: GenerationBranch
     displayName: Generation branch
     default: v2/generation
@@ -51,33 +51,33 @@ schedules:
       include:
         - migration-tool-publisher
     always: true
-jobs:
-  - job: RefreshOpenAPIDocuments
-    displayName: Refresh OpenApi documents
-    timeoutInMinutes: 240
-    pool: $(BuildAgent)
-    steps:
-      - template: common-templates/download-openapi-docs.yml
-        parameters:
-          Branch: $(Branch)
-          BaseBranch: $(BaseBranch)
-          BuildAgent: $(BuildAgent)
-          SkipForceRefresh: $(SkipForceRefresh)
-          SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}
+# jobs:
+#   - job: RefreshOpenAPIDocuments
+#     displayName: Refresh OpenApi documents
+#     timeoutInMinutes: 240
+#     pool: $(BuildAgent)
+#     steps:
+#       - template: common-templates/download-openapi-docs.yml
+#         parameters:
+#           Branch: $(Branch)
+#           BaseBranch: $(BaseBranch)
+#           BuildAgent: $(BuildAgent)
+#           SkipForceRefresh: $(SkipForceRefresh)
+#           SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}
 
   - job: MsGraphPsSdkWeeklyGeneration
-    dependsOn: RefreshOpenAPIDocuments
-    displayName: Microsoft Graph PowerShell SDK Generation
-    condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
-    timeoutInMinutes: 840
-    variables:
-      WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
+    # dependsOn: RefreshOpenAPIDocuments
+    # displayName: Microsoft Graph PowerShell SDK Generation
+    # condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+    # timeoutInMinutes: 840
+    # variables:
+    #   WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
     steps:
-      - template: ./common-templates/checkout.yml
-        parameters:
-          TargetBranch: $(WeeklyBranch)
-      - template: ./common-templates/install-tools.yml
-      - template: ./common-templates/security-pre-checks.yml
+      # - template: ./common-templates/checkout.yml
+      #   parameters:
+      #     TargetBranch: $(WeeklyBranch)
+      # - template: ./common-templates/install-tools.yml
+      # - template: ./common-templates/security-pre-checks.yml
       # - template: ./generation-templates/authentication-module.yml
       #   parameters:
       #     Test: ${{ parameters.Test }}
