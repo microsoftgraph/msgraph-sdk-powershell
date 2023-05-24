@@ -1,0 +1,3 @@
+[submodule "msgraph-tools-migration"]
+	path = msgraph-tools-migration
+	url = https://github.com/microsoftgraph/msgraph-tools-migration.git
