@@ -66,12 +66,12 @@ jobs:
   #         SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}
 
   - job: MsGraphPsSdkWeeklyGeneration
-    dependsOn: RefreshOpenAPIDocuments
-    displayName: Microsoft Graph PowerShell SDK Generation
-    condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
-    timeoutInMinutes: 840
-    variables:
-      WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
+    # dependsOn: RefreshOpenAPIDocuments
+    # displayName: Microsoft Graph PowerShell SDK Generation
+    # condition: and(succeeded(), ne(dependencies.RefreshOpenAPIDocuments.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+    # timeoutInMinutes: 840
+    # variables:
+    #   WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
     steps:
       - template: ./common-templates/checkout.yml
         parameters:
