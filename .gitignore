@@ -365,6 +365,3 @@ coverage.xml
 
 #Wrong Examples report Folder
 examplesreport/
-
-#Ignore migration tool submodule
-msgraph-tools-migration/
