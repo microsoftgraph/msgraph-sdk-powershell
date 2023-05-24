@@ -52,18 +52,18 @@ schedules:
         - migration-tool-publisher
     always: true
 jobs:
-  - job: RefreshOpenAPIDocuments
-    displayName: Refresh OpenApi documents
-    timeoutInMinutes: 240
-    pool: $(BuildAgent)
-    steps:
-      - template: common-templates/download-openapi-docs.yml
-        parameters:
-          Branch: $(Branch)
-          BaseBranch: $(BaseBranch)
-          BuildAgent: $(BuildAgent)
-          SkipForceRefresh: $(SkipForceRefresh)
-          SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}
+  # - job: RefreshOpenAPIDocuments
+  #   displayName: Refresh OpenApi documents
+  #   timeoutInMinutes: 240
+  #   pool: $(BuildAgent)
+  #   steps:
+  #     - template: common-templates/download-openapi-docs.yml
+  #       parameters:
+  #         Branch: $(Branch)
+  #         BaseBranch: $(BaseBranch)
+  #         BuildAgent: $(BuildAgent)
+  #         SkipForceRefresh: $(SkipForceRefresh)
+  #         SkipOpenAPIDocsDownload: ${{ parameters.SkipOpenAPIDocsDownload }}
 
   - job: MsGraphPsSdkWeeklyGeneration
     dependsOn: RefreshOpenAPIDocuments
@@ -78,21 +78,21 @@ jobs:
           TargetBranch: $(WeeklyBranch)
       - template: ./common-templates/install-tools.yml
       - template: ./common-templates/security-pre-checks.yml
-      - template: ./generation-templates/authentication-module.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
-      - template: ./generation-templates/workload-modules.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
-      - template: ./generation-templates/meta-module.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
+      # - template: ./generation-templates/authentication-module.yml
+      #   parameters:
+      #     Test: ${{ parameters.Test }}
+      #     Pack: ${{ parameters.Pack }}
+      #     Sign: ${{ parameters.Sign }}
+      # - template: ./generation-templates/workload-modules.yml
+      #   parameters:
+      #     Test: ${{ parameters.Test }}
+      #     Pack: ${{ parameters.Pack }}
+      #     Sign: ${{ parameters.Sign }}
+      # - template: ./generation-templates/meta-module.yml
+      #   parameters:
+      #     Test: ${{ parameters.Test }}
+      #     Pack: ${{ parameters.Pack }}
+      #     Sign: ${{ parameters.Sign }}
       - template: ./generation-templates/migration-tool.yml
         parameters:
           Test: ${{ parameters.Test }}
