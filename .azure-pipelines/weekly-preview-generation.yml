@@ -98,67 +98,67 @@ jobs:
           Test: ${{ parameters.Test }}
           Pack: ${{ parameters.Pack }}
           Sign: ${{ parameters.Sign }}
-      - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
-          - template: ./common-templates/esrp/codesign-nuget.yml
-            parameters:
-              FolderPath: "$(Build.ArtifactStagingDirectory)"
-              Pattern: "Microsoft.Graph*.nupkg"
-          - task: PublishBuildArtifacts@1
-            displayName: Publish Module Artifacts
-            inputs:
-              PathtoPublish: "$(Build.ArtifactStagingDirectory)"
-              ArtifactName: "drop"
-              publishLocation: "Container"
-          - task: NuGetCommand@2
-            displayName: Publish NuGet to preview feed
-            inputs:
-              command: push
-              packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-              publishVstsFeed: $(PROJECT_NAME)/$(PREVIEW_FEED_NAME)
-              allowPackageConflicts: true
-      - template: ./generation-templates/generate-command-metadata.yml
-      - template: ./common-templates/security-post-checks.yml
-      - ${{ if eq(parameters.CreatePullRequest, true) }}:
-          - template: common-templates/create-pr.yml
-            parameters:
-              BaseBranch: $(BaseBranch)
-              TargetBranch: $(WeeklyBranch)
-              Title: "[v2] Weekly OpenApiDocs Refresh"
-              Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
-      # Push SDK artifacts to generation branch.
-      - task: PowerShell@2
-        name: "ComputeGenerationBranch"
-        displayName: "Compute weekly generation branch name"
-        inputs:
-          targetType: inline
-          script: |
-            $branch = "{0}/{1}" -f "WeeklyGeneration", (Get-Date -Format yyyyMMddHHmm)
-            Write-Host "##vso[task.setvariable variable=WeeklyGenerationBranch;isOutput=true]$branch"
-      - task: Bash@3
-        displayName: "Create weekly generation branch"
-        inputs:
-          targetType: inline
-          script: |
-            git status
-            git branch $(ComputeGenerationBranch.WeeklyGenerationBranch)
-            git checkout $(ComputeGenerationBranch.WeeklyGenerationBranch)
-            git status
-      - task: Bash@3
-        displayName: Commit Generated SDK artifacts
-        enabled: true
-        env:
-          GITHUB_TOKEN: $(GITHUB_TOKEN)
-        inputs:
-          targetType: inline
-          script: |
-            git add .
-            git commit -m 'Adds generated module artifacts'
-            git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
-            git status
-      - ${{ if eq(parameters.CreatePullRequest, true) }}:
-          - template: common-templates/create-pr.yml
-            parameters:
-              BaseBranch: $(GenerationBranch)
-              TargetBranch: $(ComputeGenerationBranch.WeeklyGenerationBranch)
-              Title: "[v2] Weekly Generated Module Artifacts"
-              Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
+      # - ${{ if and(eq(parameters.Pack, true), eq(parameters.Sign, true)) }}:
+      #     - template: ./common-templates/esrp/codesign-nuget.yml
+      #       parameters:
+      #         FolderPath: "$(Build.ArtifactStagingDirectory)"
+      #         Pattern: "Microsoft.Graph*.nupkg"
+      #     - task: PublishBuildArtifacts@1
+      #       displayName: Publish Module Artifacts
+      #       inputs:
+      #         PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+      #         ArtifactName: "drop"
+      #         publishLocation: "Container"
+      #     - task: NuGetCommand@2
+      #       displayName: Publish NuGet to preview feed
+      #       inputs:
+      #         command: push
+      #         packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
+      #         publishVstsFeed: $(PROJECT_NAME)/$(PREVIEW_FEED_NAME)
+      #         allowPackageConflicts: true
+      # - template: ./generation-templates/generate-command-metadata.yml
+      # - template: ./common-templates/security-post-checks.yml
+      # - ${{ if eq(parameters.CreatePullRequest, true) }}:
+      #     - template: common-templates/create-pr.yml
+      #       parameters:
+      #         BaseBranch: $(BaseBranch)
+      #         TargetBranch: $(WeeklyBranch)
+      #         Title: "[v2] Weekly OpenApiDocs Refresh"
+      #         Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
+      # # Push SDK artifacts to generation branch.
+      # - task: PowerShell@2
+      #   name: "ComputeGenerationBranch"
+      #   displayName: "Compute weekly generation branch name"
+      #   inputs:
+      #     targetType: inline
+      #     script: |
+      #       $branch = "{0}/{1}" -f "WeeklyGeneration", (Get-Date -Format yyyyMMddHHmm)
+      #       Write-Host "##vso[task.setvariable variable=WeeklyGenerationBranch;isOutput=true]$branch"
+      # - task: Bash@3
+      #   displayName: "Create weekly generation branch"
+      #   inputs:
+      #     targetType: inline
+      #     script: |
+      #       git status
+      #       git branch $(ComputeGenerationBranch.WeeklyGenerationBranch)
+      #       git checkout $(ComputeGenerationBranch.WeeklyGenerationBranch)
+      #       git status
+      # - task: Bash@3
+      #   displayName: Commit Generated SDK artifacts
+      #   enabled: true
+      #   env:
+      #     GITHUB_TOKEN: $(GITHUB_TOKEN)
+      #   inputs:
+      #     targetType: inline
+      #     script: |
+      #       git add .
+      #       git commit -m 'Adds generated module artifacts'
+      #       git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
+      #       git status
+      # - ${{ if eq(parameters.CreatePullRequest, true) }}:
+      #     - template: common-templates/create-pr.yml
+      #       parameters:
+      #         BaseBranch: $(GenerationBranch)
+      #         TargetBranch: $(ComputeGenerationBranch.WeeklyGenerationBranch)
+      #         Title: "[v2] Weekly Generated Module Artifacts"
+      #         Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
