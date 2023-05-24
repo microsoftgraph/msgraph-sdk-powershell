@@ -73,7 +73,7 @@ jobs:
     # variables:
     #   WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
     steps:
-      # - template: ./common-templates/checkout.yml
+      - template: ./common-templates/checkout.yml
       #   parameters:
       #     TargetBranch: $(WeeklyBranch)
       # - template: ./common-templates/install-tools.yml
