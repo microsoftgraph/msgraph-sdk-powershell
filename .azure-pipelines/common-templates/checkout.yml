@@ -23,18 +23,18 @@ steps:
         git config --global user.email "GraphTooling@service.microsoft.com"
         git config --global user.name "Microsoft Graph DevX Tooling"
 
-  - task: PowerShell@2
-    displayName: "Switch to target branch: ${{ parameters.TargetBranch }}"
-    condition: and(succeeded(), ne('${{ parameters.TargetBranch }}', ''))
-    inputs:
-      targetType: inline
-      pwsh: true
-      errorActionPreference: stop
-      script: |
-        git status
-        git fetch --all
-        git checkout ${{ parameters.TargetBranch }}
-        git pull
-        git status
+  # - task: PowerShell@2
+  #   displayName: "Switch to target branch: ${{ parameters.TargetBranch }}"
+  #   condition: and(succeeded(), ne('${{ parameters.TargetBranch }}', ''))
+  #   inputs:
+  #     targetType: inline
+  #     pwsh: true
+  #     errorActionPreference: stop
+  #     script: |
+  #       git status
+  #       git fetch --all
+  #       git checkout ${{ parameters.TargetBranch }}
+  #       git pull
+  #       git status
 
   - template: ./security-pre-checks.yml
