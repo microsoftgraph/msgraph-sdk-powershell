@@ -100,9 +100,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Parameter(ParameterSetName = Constants.EnvironmentVariableParameterSet, Mandatory = false, HelpMessage = HelpMessages.EnvironmentVariable)]
         public SwitchParameter EnvironmentVariable { get; set; }
 
-        //[Parameter(ParameterSetName = Constants.UserParameterSet, Mandatory = false, HelpMessage = HelpMessages.SigninUi)]
-        //public SigninUi SigninUi { get; set; }
-
         [Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
         public SwitchParameter Break { get; set; }
 
@@ -193,7 +190,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                                 authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
                             }
                             authContext.TokenCredentialType = UseDeviceCode ? TokenCredentialType.DeviceCode : TokenCredentialType.InteractiveBrowser;
-                            //authContext.SigninUi = this.IsParameterBound(nameof(SigninUi)) ? SigninUi : SigninUi.Browser;
                         }
                         break;
                     case Constants.AppCertificateParameterSet:

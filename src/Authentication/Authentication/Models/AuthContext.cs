@@ -30,6 +30,5 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             ClientId = PowerShellClientId;
         }
-        //public SigninUi SigninUi { get ; set ; }
     }
 }

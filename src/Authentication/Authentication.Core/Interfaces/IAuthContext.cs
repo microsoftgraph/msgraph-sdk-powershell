@@ -34,12 +34,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         EnvironmentVariable
     }
 
-    /*public enum SigninUi
-    {
-        Browser,
-        Native
-    }*/
-
     public interface IAuthContext
     {
         string ManagedIdentityId { get; set; }
