@@ -37,4 +37,4 @@ steps:
         git pull
         git status
 
- # - template: ./security-pre-checks.yml
+  - template: ./security-pre-checks.yml

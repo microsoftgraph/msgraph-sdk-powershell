@@ -21,25 +21,25 @@ steps:
       script: |
         . $(System.DefaultWorkingDirectory)/tools/GenerateMigrationTool.ps1
 
-  # - ${{ if eq(parameters.Sign, true) }}:
-  #     - template: ../common-templates/esrp/codesign.yml
-  #       parameters:
-  #         FolderPath: "$(System.DefaultWorkingDirectory)/msgraph-tools-migration"
-  #         Pattern: "Microsoft.Graph.*.psm1, Microsoft.Graph.*.psd1, Microsoft.Graph.*.format.ps1xml"
+  - ${{ if eq(parameters.Sign, true) }}:
+      - template: ../common-templates/esrp/codesign.yml
+        parameters:
+          FolderPath: "$(System.DefaultWorkingDirectory)/msgraph-tools-migration"
+          Pattern: "Microsoft.Graph.*.psm1, Microsoft.Graph.*.psd1, Microsoft.Graph.*.format.ps1xml"
 
-  #     - task: PowerShell@2
-  #       displayName: "Validate Authenticode Signature"
-  #       inputs:
-  #         targetType: "inline"
-  #         pwsh: true
-  #         script: |
-  #             $ModulePath = "$(System.DefaultWorkingDirectory)/msgraph-tools-migration"
-  #             if (Test-Path $ModulePath) {
-  #               $ModulePsd1 = Join-Path $ModulePath "Microsoft.Graph*.psd1" -Resolve
-  #               $ModulePsm1 = Join-Path $ModulePath "Microsoft.Graph*.psm1" -Resolve
-  #               ($ModulePsd1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
-  #               ($ModulePsm1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
-  #             }
+      - task: PowerShell@2
+        displayName: "Validate Authenticode Signature"
+        inputs:
+          targetType: "inline"
+          pwsh: true
+          script: |
+              $ModulePath = "$(System.DefaultWorkingDirectory)/msgraph-tools-migration"
+              if (Test-Path $ModulePath) {
+                $ModulePsd1 = Join-Path $ModulePath "Microsoft.Graph*.psd1" -Resolve
+                $ModulePsm1 = Join-Path $ModulePath "Microsoft.Graph*.psm1" -Resolve
+                ($ModulePsd1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
+                ($ModulePsm1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
+              }
                        
   - ${{ if eq(parameters.Pack, true) }}:
       - task: PowerShell@2
