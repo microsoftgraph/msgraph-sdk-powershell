@@ -26,7 +26,7 @@ trigger:
   branches:
     include:
       - main
-      - features/2.0
+      - migration-tool-publisher
 pr: none
 
 jobs:
@@ -37,23 +37,23 @@ jobs:
       - template: ./common-templates/install-tools.yml
       - template: ./common-templates/security-pre-checks.yml
 
-      - template: ./generation-templates/authentication-module.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
+      # - template: ./generation-templates/authentication-module.yml
+      #   parameters:
+      #     Test: ${{ parameters.Test }}
+      #     Pack: ${{ parameters.Pack }}
+      #     Sign: ${{ parameters.Sign }}
 
-      - template: ./generation-templates/workload-modules.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
+      # - template: ./generation-templates/workload-modules.yml
+      #   parameters:
+      #     Test: ${{ parameters.Test }}
+      #     Pack: ${{ parameters.Pack }}
+      #     Sign: ${{ parameters.Sign }}
 
-      - template: ./generation-templates/meta-module.yml
-        parameters:
-          Test: ${{ parameters.Test }}
-          Pack: ${{ parameters.Pack }}
-          Sign: ${{ parameters.Sign }}
+      # - template: ./generation-templates/meta-module.yml
+      #   parameters:
+      #     Test: ${{ parameters.Test }}
+      #     Pack: ${{ parameters.Pack }}
+      #     Sign: ${{ parameters.Sign }}
 
       - template: ./generation-templates/migration-tool.yml
         parameters:
