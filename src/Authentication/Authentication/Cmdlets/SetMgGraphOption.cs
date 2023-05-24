@@ -2,11 +2,11 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph.PowerShell.Authentication;
+using System.Management.Automation;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    [Cmdlet(VerbsCommunications.Set, "MgGraphOption", HelpUri = "")]
+    [Cmdlet(VerbsCommon.Set, "MgGraphOption", HelpUri = "")]
     public class SetMgGraphOption : PSCmdlet
     {
         protected override void BeginProcessing()
@@ -17,8 +17,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            GraphState.EnableWAMForMSGraph = !GraphState.EnableWAMForMSGraph;
-            WriteObject("WAM Signin currently set to: ", GraphState.EnableWAMForMSGraph);
+            GraphSession.Instance.GraphOption.EnableWAMForMSGraph = !GraphSession.Instance.GraphOption.EnableWAMForMSGraph;
+            if (GraphSession.Instance.GraphOption.EnableWAMForMSGraph == true)
+            {
+                WriteObject("WAM Signin currently enabled");
+            }
+            else
+            {
+                WriteObject("WAM Signin disabled");
+            }
         }
 
         protected override void EndProcessing()

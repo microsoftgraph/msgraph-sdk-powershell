@@ -2,13 +2,14 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using System.IO;
+using System;
+using System.Security;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
-    public class GraphState
+    public interface IGraphOption
     {
-        public bool EnableWAMForMSGraph = false;
+        bool EnableWAMForMSGraph { get; set; }
     }
-
 }

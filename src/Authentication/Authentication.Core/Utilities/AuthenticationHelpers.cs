@@ -112,7 +112,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             InteractiveBrowserCredentialOptions interactiveOptions;
-            if (Microsoft.Graph.PowerShell.Authentication.GraphState.EnableWAMForMSGraph)
+            if (GraphSession.Instance.GraphOption.EnableWAMForMSGraph)
             {
                 [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
                 IntPtr parentWindowHandle = GetForegroundWindow();
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 AuthenticationRecord authRecord;
                 var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
-                if (Microsoft.Graph.PowerShell.Authentication.GraphState.EnableWAMForMSGraph)
+                if (GraphSession.Instance.GraphOption.EnableWAMForMSGraph)
                 {
                     authRecord = interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
                 }
