@@ -1,12 +1,10 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-
 $NuspecFile = Join-Path $PSScriptRoot "..\msgraph-tools-migration\Microsoft.Graph.Migration.Tool.nuspec" -Resolve
 $ModuleMetadataJson = Join-Path $PSScriptRoot "..\config\ModuleMetadata.json" -Resolve
 [HashTable] $NuspecMetadata = Get-Content $ModuleMetadataJson | ConvertFrom-Json -AsHashTable
 $NuspecMetadata.Remove("assemblyOriginatorKeyFile")
 $ModuleManifest = Join-Path $PSScriptRoot "..\msgraph-tools-migration\Microsoft.Graph.Migration.Tool.psd1" -Resolve
-
 function Set-NuSpecValuesFromManifest(
     [parameter(Position=1,Mandatory=$true)][ValidateScript({Test-Path $_ -PathType Leaf})][string] $NuSpecFilePath,
     [parameter(Position=2,Mandatory=$true)][HashTable] $Manifest) {
@@ -88,6 +86,5 @@ function Update-ManifestFile(
     Write-Debug "Updating '$ModuleFullName' module manifest and nuspec..."
     Update-ModuleManifest @ModuleManifestSettings
 }
-
 $NuspecMetadata.Remove("guid")
 Set-NuSpecValuesFromManifest -NuSpecFilePath $NuspecFile -Manifest $NuspecMetadata
