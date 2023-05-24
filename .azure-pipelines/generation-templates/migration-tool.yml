@@ -19,27 +19,13 @@ steps:
       targetType: inline
       pwsh: true
       script: |
-        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -EnableSigning:$${{ parameters.Sign }} -Build -ExcludeExampleTemplates -ExcludeNotesSection
-
-  - task: PowerShell@2
-    displayName: Test Workload Modules
-    enabled: false
-    inputs:
-      targetType: inline
-      pwsh: true
-      script: |
-        . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Test
+        . $(System.DefaultWorkingDirectory)/tools/GenerateMigrationTool.ps1
 
   - ${{ if eq(parameters.Sign, true) }}:
-      - template: ../common-templates/esrp/strongname.yml
-        parameters:
-          FolderPath: "$(System.DefaultWorkingDirectory)/src"
-          Pattern: "Microsoft.Graph.*.private.dll"
-
       - template: ../common-templates/esrp/codesign.yml
         parameters:
-          FolderPath: "$(System.DefaultWorkingDirectory)/src"
-          Pattern: "Microsoft.Graph.*.private.dll, Microsoft.Graph.*.psm1, Microsoft.Graph.*.psd1, Microsoft.Graph.*.format.ps1xml, ProxyCmdletDefinitions.ps1, load-dependency.ps1"
+          FolderPath: "$(System.DefaultWorkingDirectory)/msgraph-tools-migration"
+          Pattern: "Microsoft.Graph.*.psm1, Microsoft.Graph.*.psd1, Microsoft.Graph.*.format.ps1xml"
 
       - task: PowerShell@2
         displayName: "Validate Authenticode Signature"
@@ -47,27 +33,19 @@ steps:
           targetType: "inline"
           pwsh: true
           script: |
-            $ModuleMappingConfigPath = '$(System.DefaultWorkingDirectory)/config/ModulesMapping.jsonc'
-            [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-            @("v1.0", "beta") | ForEach-Object {
-              $ApiVersion = $_
-              $ModuleMapping.Keys | ForEach-Object {
-                  $ModuleName = $_
-                  $ModulePath = "$(System.DefaultWorkingDirectory)/src/$ModuleName/$ApiVersion"
-                  if (Test-Path $ModulePath) {
-                    $ModulePsd1 = Join-Path $ModulePath "Microsoft.Graph*.$ModuleName.psd1" -Resolve
-                    $ModulePsm1 = Join-Path $ModulePath "Microsoft.Graph*.$ModuleName.psm1" -Resolve
-                    ($ModulePsd1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
-                    ($ModulePsm1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
-                  }
+              $ModulePath = "$(System.DefaultWorkingDirectory)/msgraph-tools-migration"
+              if (Test-Path $ModulePath) {
+                $ModulePsd1 = Join-Path $ModulePath "Microsoft.Graph*.psd1" -Resolve
+                $ModulePsm1 = Join-Path $ModulePath "Microsoft.Graph*.psm1" -Resolve
+                ($ModulePsd1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
+                ($ModulePsm1 | Get-AuthenticodeSignature).Status | Should -Be "Valid"
               }
-            }
-
+                       
   - ${{ if eq(parameters.Pack, true) }}:
       - task: PowerShell@2
-        displayName: Pack Workload Modules
+        displayName: Pack Migration Tool Module
         inputs:
           targetType: inline
           pwsh: true
           script: |
-            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -SkipGeneration -Pack -ArtifactsLocation $(Build.ArtifactStagingDirectory)
+            . $(System.DefaultWorkingDirectory)/tools/PackMigrationToolModule.ps1
