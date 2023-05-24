@@ -5,6 +5,7 @@ $NuspecFile = Join-Path $PSScriptRoot "..\msgraph-tools-migration\Microsoft.Grap
 $ModuleMetadataJson = Join-Path $PSScriptRoot "..\config\ModuleMetadata.json" -Resolve
 [HashTable] $NuspecMetadata = Get-Content $ModuleMetadataJson | ConvertFrom-Json -AsHashTable
 $NuspecMetadata.Remove("assemblyOriginatorKeyFile")
+$ModuleManifest = Join-Path $PSScriptRoot "..\msgraph-tools-migration\Microsoft.Graph.Migration.Tool.psd1" -Resolve
 
 function Set-NuSpecValuesFromManifest(
     [parameter(Position=1,Mandatory=$true)][ValidateScript({Test-Path $_ -PathType Leaf})][string] $NuSpecFilePath,
@@ -15,6 +16,7 @@ function Set-NuSpecValuesFromManifest(
 
     if($MetadataElement)
     {
+        Update-ManifestFile -ModuleMetadata $Manifest 
         if ($Manifest["versions"]["v1.0"]["prerelease"]) {
             Set-ElementValue -XmlDocument $XmlDocument -MetadataElement $MetadataElement -ElementName "version" -ElementValue "$($Manifest["versions"]["v1.0"]["version"])-$($Manifest["versions"]["v1.0"]["prerelease"])"
         } else {
@@ -40,6 +42,7 @@ function Set-NuSpecValuesFromManifest(
         }
         Remove-Element -XmlDocument $XmlDocument -ElementName "dependencies"
         Remove-Element -XmlDocument $XmlDocument -ElementName "license"
+        
     }
 
     $XmlDocument.Save($NuSpecFilePath)
@@ -62,6 +65,28 @@ function Remove-Element(
     [string] $ElementName ){
     $XmlDocument.package.metadata.SelectNodes($ElementName).ForEach{ $Null = $_.ParentNode.RemoveChild($_) }
    
+}
+
+function Update-ManifestFile(
+    [parameter(Position=1,Mandatory=$true)][HashTable] $ModuleMetadata
+){
+    $Version = $ModuleMetadata["versions"]["v1.0"]["version"]
+    $ExistingModule = Find-Module "Microsoft.Graph.Migrations.Tool" -Repository PSGallery -ErrorAction SilentlyContinue
+    $ModuleGuid = ($null -eq $ExistingModule) ? (New-Guid).Guid : $ExistingModule.AdditionalMetadata.GUID
+
+    [HashTable]$ModuleManifestSettings = @{
+        Guid          = $ModuleGuid
+        Path          = $ModuleManifest
+        ModuleVersion = $Version
+        ProjectUri = "https://github.com/microsoftgraph/msgraph-tools-migration"
+        IconUri       = $ModuleMetadata["iconUri"]
+        ReleaseNotes  = $ModuleMetadata["releaseNotes"]
+    }
+    if ($Manifest["versions"]["v1.0"]["prerelease"]) {
+        $ModuleManifestSettings.Prerelease = $ModuleMetadata["versions"]["v1.0"]["prerelease"]
+    }
+    Write-Debug "Updating '$ModuleFullName' module manifest and nuspec..."
+    Update-ModuleManifest @ModuleManifestSettings
 }
 
 $NuspecMetadata.Remove("guid")
