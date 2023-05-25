@@ -95,9 +95,17 @@ Describe 'Connect-MgGraph In App Mode' {
     }
 
 }
+
 Describe 'Connect-MgGraph Dependency Resolution' {
     It 'Should load Mg module side by side with Az module.' {
         { Connect-AzAccount -ApplicationId $RandomClientId -CertificateThumbprint "Invalid" -Tenant "Invalid" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Could not find tenant id*"
         { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS90002*"
+    }
+}
+
+Describe 'Connect-MgGraph Logging' {
+    It 'Should write MSAL logs to debug stream.' {
+        $MgDebugStream = $(Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -UseDeviceAuthentication -Debug -ErrorAction SilentlyContinue) 5>&1
+        $MgDebugStream[0] | Should -Match "DeviceCodeCredential.Authenticate invoked. Scopes: \[ User.Read \]"
     }
 }
