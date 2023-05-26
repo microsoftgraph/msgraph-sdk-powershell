@@ -5,6 +5,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
 {
     using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Common;
+    using NamespacePrefixPlaceholder.PowerShell.Models;
     using System;
     using System.Collections.ObjectModel;
     using System.IO;
@@ -103,6 +104,21 @@ namespace NamespacePrefixPlaceholder.PowerShell
                 string downloadUrl = response?.RequestMessage?.RequestUri.ToString();
                 cmdlet.WriteToStream(inputStream, fileProvider.Stream, downloadUrl, cancellationToken);
             }
+        }
+
+        internal static ErrorDetails GetErrorDetails(this PSCmdlet cmdlet, IMicrosoftGraphODataErrorsMainError odataError, HttpResponseMessage responseMessage)
+        {
+            var serviceErrorDoc = "https://learn.microsoft.com/graph/errors";
+            var recommendedAction = $"See service error codes: {serviceErrorDoc}";
+            var requestUri = $"{responseMessage.RequestMessage?.Method} {responseMessage.RequestMessage?.RequestUri}";
+            string date = odataError?.Innererror?.Date;
+            string requestId = odataError?.Innererror?.RequestId;
+            string clientRequestId = odataError?.Innererror?.ClientRequestId;
+            string errorDetailsMessage = $"{odataError?.Message}\n\n{requestUri}\nStatusCode: {responseMessage.StatusCode}\nErrorCode: {odataError?.Code}\nDate: {date}\nRequestId: {requestId}\nClientRequestId: {clientRequestId}\n\n{recommendedAction}";
+            return new ErrorDetails(errorDetailsMessage)
+            {
+                RecommendedAction = recommendedAction
+            };
         }
 
         /// <summary>
