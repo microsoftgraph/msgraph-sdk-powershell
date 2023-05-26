@@ -2,11 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Education
 
-$params = @{
-	displayName = "Example Credit Rubric after display name patch"
-}
-
-Update-MgEducationMeRubric -EducationRubricId $educationRubricId -BodyParameter $params
+Get-MgEducationMeRubric -EducationRubricId $educationRubricId
 ```
 This example shows how to use the Remove-MgEducationMeRubric Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

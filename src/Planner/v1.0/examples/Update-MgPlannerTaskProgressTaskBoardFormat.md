@@ -2,11 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Planner
 
-$params = @{
-	orderHint = "A6673H Ejkl!"
-}
-
-Update-MgPlannerTaskProgressTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
+Get-MgPlannerTaskProgressTaskBoardFormat -PlannerTaskId $plannerTaskId
 ```
 This example shows how to use the Update-MgPlannerTaskProgressTaskBoardFormat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

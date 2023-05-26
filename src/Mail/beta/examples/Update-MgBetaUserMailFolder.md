@@ -1,13 +1,19 @@
-### Example 1: Code snippet
+### Example 1: Get a mail folder
 
 ```powershellImport-Module Microsoft.Graph.Beta.Mail
 
-$params = @{
-	displayName = "displayName-value"
-}
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId
+```
+This example shows how to use the Update-MgBetaBetaUserMailFolder Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Get a mail sent items folder
+
+```powershellImport-Module Microsoft.Graph.Beta.Mail
 
 # A UPN can also be used as -UserId.
-Update-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+Get-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId
 ```
 This example shows how to use the Update-MgBetaBetaUserMailFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -2,11 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
-$params = @{
-	displayName = "UpdateClaimsPolicy"
-}
-
-Update-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId -BodyParameter $params
+Get-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
 ```
 This example shows how to use the Remove-MgPolicyClaimMappingPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

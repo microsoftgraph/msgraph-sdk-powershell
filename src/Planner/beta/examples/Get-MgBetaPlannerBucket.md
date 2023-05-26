@@ -2,11 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Planner
 
-$params = @{
-	name = "Development"
-}
-
-Update-MgBetaPlannerBucket -PlannerBucketId $plannerBucketId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
+Get-MgBetaPlannerBucket -PlannerBucketId $plannerBucketId
 ```
 This example shows how to use the Get-MgBetaBetaPlannerBucket Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

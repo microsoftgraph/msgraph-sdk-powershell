@@ -2,11 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Calendar
 
-$params = @{
-	role = "write"
-}
-
-Update-MgBetaUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId -BodyParameter $params
+Get-MgBetaUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId
 ```
 This example shows how to use the Get-MgBetaBetaUserCalendarPermission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

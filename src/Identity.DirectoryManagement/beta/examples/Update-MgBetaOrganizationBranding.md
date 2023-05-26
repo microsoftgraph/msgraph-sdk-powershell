@@ -2,12 +2,34 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
-$params = @{
-	signInPageText = "Default"
-	usernameHintText = "DefaultHint"
-}
+Get-MgBetaOrganizationBranding -OrganizationId $organizationId
+```
+This example shows how to use the Update-MgBetaBetaOrganizationBranding Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-Update-MgBetaOrganizationBranding -OrganizationId $organizationId -BodyParameter $params
+### Example 2: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaOrganizationBranding -OrganizationId $organizationId
+```
+This example shows how to use the Update-MgBetaBetaOrganizationBranding Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaOrganizationBranding -OrganizationId $organizationId
+```
+This example shows how to use the Update-MgBetaBetaOrganizationBranding Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+
+Get-MgBetaOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 ```
 This example shows how to use the Update-MgBetaBetaOrganizationBranding Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

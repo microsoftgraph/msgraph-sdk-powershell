@@ -2,13 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
-$params = @{
-	selfServiceSignUp = @{
-		isEnabled = $true
-	}
-}
-
-Update-MgPolicyAuthenticationFlowPolicy -BodyParameter $params
+Get-MgPolicyAuthenticationFlowPolicy
 ```
 This example shows how to use the Remove-MgPolicyAuthenticationFlowPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

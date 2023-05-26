@@ -2,11 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
-$params = @{
-	displayName = "Finance"
-}
-
-Update-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
+Get-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId
 ```
 This example shows how to use the Get-MgBetaBetaGroupTeamTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

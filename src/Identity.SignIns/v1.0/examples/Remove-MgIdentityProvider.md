@@ -1,27 +1,26 @@
-### Example 1: Update a specific <strong>social identity provider</strong> (Azure AD or Azure AD B2C)
+### Example 1: Retrieve a specific social identity provider (Azure AD or Azure AD B2C)
 
 ```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
-	clientSecret = "1111111111111"
-}
-
-Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 This example shows how to use the Remove-MgIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Update a specific <strong>Apple identity provider</strong> (only for Azure AD B2C)
+### Example 2: Retrieve a specific built-in identity provider (only for Azure AD)
 
 ```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
-	displayName = "Apple"
-}
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
+```
+This example shows how to use the Remove-MgIdentityProvider Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+### Example 3: Retrieves Apple identity provider(only for Azure AD B2C)
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
+Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 This example shows how to use the Remove-MgIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

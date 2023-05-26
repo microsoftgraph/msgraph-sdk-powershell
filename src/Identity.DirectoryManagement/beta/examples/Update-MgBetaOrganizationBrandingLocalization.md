@@ -2,12 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
-$params = @{
-	backgroundColor = "#00000F"
-	signInPageText = "Welcome to Contoso France"
-}
-
-Update-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
+Get-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 ```
 This example shows how to use the Update-MgBetaBetaOrganizationBrandingLocalization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
@@ -16,12 +11,7 @@ This example shows how to use the Update-MgBetaBetaOrganizationBrandingLocalizat
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
-$params = @{
-	signInPageText = "Welcome to Contoso France."
-	usernameHintText = " "
-}
-
-Update-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
+Get-MgBetaOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 ```
 This example shows how to use the Update-MgBetaBetaOrganizationBrandingLocalization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

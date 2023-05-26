@@ -2,12 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
 
-$params = @{
-	backgroundColor = "#00000F"
-	signInPageText = "Welcome to Contoso France"
-}
-
-Update-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
+Get-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 ```
 This example shows how to use the Update-MgOrganizationBrandingLocalization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
@@ -16,12 +11,7 @@ This example shows how to use the Update-MgOrganizationBrandingLocalization Cmdl
 
 ```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
 
-$params = @{
-	signInPageText = "Welcome to Contoso France."
-	usernameHintText = " "
-}
-
-Update-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
+Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 ```
 This example shows how to use the Update-MgOrganizationBrandingLocalization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

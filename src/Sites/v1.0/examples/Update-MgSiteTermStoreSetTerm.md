@@ -2,17 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Sites
 
-$params = @{
-	labels = @(
-		@{
-			name = "changedLabel"
-			languageTag = "en-US"
-			isDefault = $true
-		}
-	)
-}
-
-Update-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId -BodyParameter $params
+Get-MgSiteTermStoreGroupSetTerm -SiteId $siteId -GroupId $groupId -SetId $setId -TermId $termId
 ```
 This example shows how to use the Update-MgSiteTermStoreSetTerm Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

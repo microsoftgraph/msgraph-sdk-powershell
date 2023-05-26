@@ -2,14 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Teams
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	roles = @(
-		"owner"
-	)
-}
-
-Update-MgTeamMember -TeamId $teamId -ConversationMemberId $conversationMemberId -BodyParameter $params
+Get-MgTeamMember -TeamId $teamId -ConversationMemberId $conversationMemberId
 ```
 This example shows how to use the Get-MgGroupTeamMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
