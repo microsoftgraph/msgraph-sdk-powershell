@@ -1,14 +1,31 @@
-### Example 1: Using the Get-MgSchemaExtension Cmdlet
-```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
-Get-MgSchemaExtension -SchemaExtensionId $schemaExtensionId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.SchemaExtensions
+
+$params = @{
+	owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
+	properties = @(
+		@{
+			name = "courseId"
+			type = "Integer"
+		}
+		@{
+			name = "courseName"
+			type = "String"
+		}
+		@{
+			name = "courseType"
+			type = "String"
+		}
+		@{
+			name = "courseSupervisors"
+			type = "String"
+		}
+	)
+}
+
+Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
 ```
 This example shows how to use the Get-MgSchemaExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgSchemaExtension Cmdlet
-```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
-Get-MgSchemaExtension -Filter "id eq 'graphlearn_test'" 
-```
-This example shows how to use the Get-MgSchemaExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

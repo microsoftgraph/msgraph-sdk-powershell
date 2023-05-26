@@ -1,14 +1,13 @@
-### Example 1: Using the Get-MgSubscription Cmdlet
-```powershell
-Import-Module Microsoft.Graph.ChangeNotifications
-Get-MgSubscription -SubscriptionId $subscriptionId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.ChangeNotifications
+
+$params = @{
+	expirationDateTime = [System.DateTime]::Parse("2016-11-22T18:23:45.9356913Z")
+}
+
+Update-MgSubscription -SubscriptionId $subscriptionId -BodyParameter $params
 ```
 This example shows how to use the Get-MgSubscription Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgSubscription Cmdlet
-```powershell
-Import-Module Microsoft.Graph.ChangeNotifications
-Get-MgSubscription
-```
-This example shows how to use the Get-MgSubscription Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
