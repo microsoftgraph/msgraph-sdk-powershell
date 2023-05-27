@@ -65,10 +65,17 @@ Add a column to a [content type][contentType] in a site, or a list with a reques
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Sites
+{{ Add code here }}
 ```
 
-Get-MgSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId
+{{ Add output here }}
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

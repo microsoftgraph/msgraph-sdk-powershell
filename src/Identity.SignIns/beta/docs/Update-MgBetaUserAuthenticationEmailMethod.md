@@ -46,13 +46,13 @@ Update a user's email address associated with an email Authentication Method obj
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	EmailAddress = "kim@contoso.com"
-}
-Update-MgBetaUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId -BodyParameter $params
 ```
 
+$params = @{
+	emailAddress = "kim@contoso.com"
+}
 
+Update-MgBetaUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId -BodyParameter $params
 
 ## PARAMETERS
 

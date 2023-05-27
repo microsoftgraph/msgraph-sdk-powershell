@@ -39,18 +39,9 @@ Retrieve the properties and relationships of a swapShiftsChangeRequest object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
+```
+
 Get-MgTeamScheduleSwapShiftChangeRequest -TeamId $teamId -SwapShiftsChangeRequestId $swapShiftsChangeRequestId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamScheduleSwapShiftChangeRequest -TeamId $teamId
-```
-
-
 
 ## PARAMETERS
 

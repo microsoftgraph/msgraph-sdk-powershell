@@ -61,15 +61,15 @@ If you intend a new folder to be hidden, you must set the **isHidden** property 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	DisplayName = "Clutter"
-	IsHidden = $true
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserMailFolder -UserId $userId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Clutter"
+	isHidden = $true
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserMailFolder -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

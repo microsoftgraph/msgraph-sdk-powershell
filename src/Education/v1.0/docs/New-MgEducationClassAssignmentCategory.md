@@ -71,13 +71,13 @@ Only teachers can perform this operation.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-$params = @{
-	DisplayName = "Quizzes"
-}
-New-MgEducationClassAssignmentCategory -EducationClassId $educationClassId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Quizzes"
+}
 
+New-MgEducationClassAssignmentCategory -EducationClassId $educationClassId -BodyParameter $params
 
 ## PARAMETERS
 

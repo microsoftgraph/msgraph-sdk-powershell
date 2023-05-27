@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
-Module Guid: 906db379-27d2-4f0e-a48a-eeafdd990176
+Module Guid: 58cc9fb8-e154-4d8e-8c39-ec9ec391e19f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -109,12 +109,6 @@ Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementiOSManagedAppProtectionDeploymentSummary](Get-MgBetaDeviceAppManagementiOSManagedAppProtectionDeploymentSummary.md)
 Navigation property to deployment summary of the configuration.
-
-### [Get-MgBetaDeviceAppManagementListMobileAppCountAsManagedMobileLobApp](Get-MgBetaDeviceAppManagementListMobileAppCountAsManagedMobileLobApp.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementListMobileAppCountAsMobileLobApp](Get-MgBetaDeviceAppManagementListMobileAppCountAsMobileLobApp.md)
-Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementManagedAppPolicy](Get-MgBetaDeviceAppManagementManagedAppPolicy.md)
 Managed app policies.
@@ -270,6 +264,12 @@ Get the number of the resource
 App configuration user status summary.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppCount](Get-MgBetaDeviceAppManagementMobileAppCount.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsManagedMobileLobApp](Get-MgBetaDeviceAppManagementMobileAppCountAsManagedMobileLobApp.md)
+Get the number of the resource
+
+### [Get-MgBetaDeviceAppManagementMobileAppCountAsMobileLobApp](Get-MgBetaDeviceAppManagementMobileAppCountAsMobileLobApp.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementMobileAppDeviceStatus](Get-MgBetaDeviceAppManagementMobileAppDeviceStatus.md)

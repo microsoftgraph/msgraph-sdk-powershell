@@ -34,10 +34,13 @@ For the list of resources that support subscribing to change notifications, see 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.ChangeNotifications
-Remove-MgSubscription -SubscriptionId $subscriptionId
 ```
 
+$params = @{
+	expirationDateTime = [System.DateTime]::Parse("2016-11-22T18:23:45.9356913Z")
+}
 
+Update-MgSubscription -SubscriptionId $subscriptionId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -35,20 +35,20 @@ Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
 $params = @{
-	MarketingNotificationEmails = @(
+	marketingNotificationEmails = @(
 		"marketing@contoso.com"
 	)
-	PrivacyProfile = @{
-		ContactEmail = "alice@contoso.com"
-		StatementUrl = "https://contoso.com/privacyStatement"
+	privacyProfile = @{
+		contactEmail = "alice@contoso.com"
+		statementUrl = "https://contoso.com/privacyStatement"
 	}
-	SecurityComplianceNotificationMails = @(
+	securityComplianceNotificationMails = @(
 		"security@contoso.com"
 	)
-	SecurityComplianceNotificationPhones = @(
+	securityComplianceNotificationPhones = @(
 		"(123) 456-7890"
 	)
-	TechnicalNotificationMails = @(
+	technicalNotificationMails = @(
 		"tech@contoso.com"
 	)
 }
@@ -173,6 +173,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[AdministrativeUnitId <String>]`: The unique identifier of administrativeUnit
   - `[AllowedValueId <String>]`: The unique identifier of allowedValue
   - `[AttributeSetId <String>]`: The unique identifier of attributeSet
+  - `[CertificateAuthorityAsEntityId <String>]`: The unique identifier of certificateAuthorityAsEntity
+  - `[CertificateBasedApplicationConfigurationId <String>]`: The unique identifier of certificateBasedApplicationConfiguration
   - `[CommandId <String>]`: The unique identifier of command
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition

@@ -48,13 +48,13 @@ Only custom user flow attributes can be updated.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	Description = "Your new hobby"
-}
-Update-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId -BodyParameter $params
 ```
 
+$params = @{
+	description = "Your new hobby"
+}
 
+Update-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId -BodyParameter $params
 
 ## PARAMETERS
 

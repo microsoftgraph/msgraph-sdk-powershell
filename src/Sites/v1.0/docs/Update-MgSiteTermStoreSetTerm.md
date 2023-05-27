@@ -84,19 +84,19 @@ Update the properties of a term object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
+```
+
 $params = @{
-	Labels = @(
+	labels = @(
 		@{
-			Name = "changedLabel"
-			LanguageTag = "en-US"
-			IsDefault = $true
+			name = "changedLabel"
+			languageTag = "en-US"
+			isDefault = $true
 		}
 	)
 }
+
 Update-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

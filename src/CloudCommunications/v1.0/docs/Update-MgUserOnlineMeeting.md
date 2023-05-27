@@ -68,30 +68,30 @@ Please see Request body section for the list of properties that support updating
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-$params = @{
-	LobbyBypassSettings = @{
-		IsDialInBypassEnabled = $true
-	}
-}
-# A UPN can also be used as -UserId.
-Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
 ```
 
+$params = @{
+	startDateTime = [System.DateTime]::Parse("2020-09-09T14:33:30.8546353-07:00")
+	endDateTime = [System.DateTime]::Parse("2020-09-09T15:03:30.8566356-07:00")
+	subject = "Patch Meeting Subject"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-$params = @{
-	StartDateTime = [System.DateTime]::Parse("2020-09-09T14:33:30.8546353-07:00")
-	EndDateTime = [System.DateTime]::Parse("2020-09-09T15:03:30.8566356-07:00")
-	Subject = "Patch Meeting Subject"
-}
-# A UPN can also be used as -UserId.
-Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
 ```
 
+$params = @{
+	lobbyBypassSettings = @{
+		isDialInBypassEnabled = $true
+	}
+}
 
+# A UPN can also be used as -UserId.
+Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
 
 ## PARAMETERS
 

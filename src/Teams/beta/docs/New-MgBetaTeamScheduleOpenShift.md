@@ -47,44 +47,17 @@ Create an instance of an openshift object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	Id = "OPNSHFT_577b75d2-a927-48c0-a5d1-dc984894e7b8"
-	SchedulingGroupId = "TAG_228940ed-ff84-4e25-b129-1b395cf78be0"
-	SharedOpenShift = @{
-		Notes = "InventoryManagement"
-		OpenSlotCount = 2
-		DisplayName = "Dayshift"
-		StartDateTime = [System.DateTime]::Parse("2018-10-04T00: 58: 45.340Z")
-		EndDateTime = [System.DateTime]::Parse("2018-10-04T09: 50: 45.332Z")
-		Theme = "white"
-		Activities = @(
-			@{
-				IsPaid = $true
-				StartDateTime = [System.DateTime]::Parse("2018-10-04T00: 58: 45.340Z")
-				EndDateTime = [System.DateTime]::Parse("2018-10-04T01: 58: 45.340Z")
-				Code = ""
-				DisplayName = "Lunch"
-			}
-		)
-	}
-	DraftOpenShift = $null
-	CreatedDateTime = [System.DateTime]::Parse("2019-03-14T04: 32: 51.451Z")
-	LastModifiedDateTime = [System.DateTime]::Parse("2019-03-14T05: 32: 51.451Z")
-	LastModifiedBy = @{
-		Application = $null
-		Device = $null
-		Conversation = $null
-		User = @{
-			Id = "366c0b19-49b1-41b5-a03f-9f3887bd0ed8"
-			DisplayName = "JohnDoe"
-		}
-	}
-}
-New-MgBetaTeamScheduleOpenShift -TeamId $teamId -BodyParameter $params
+{{ Add code here }}
 ```
 
+{{ Add output here }}
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 
@@ -319,8 +292,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -348,8 +321,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -412,8 +385,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

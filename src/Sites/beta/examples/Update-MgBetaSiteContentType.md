@@ -1,49 +1,52 @@
-### Example 1: Using the Update-MgBetaSiteContentType Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Sites
+
 $params = @{
-	Name = "updatedCt"
-	DocumentSet = @{
-		ShouldPrefixNameToFile = $true
-		AllowedContentTypes = @(
+	name = "updatedCt"
+	documentSet = @{
+		shouldPrefixNameToFile = $true
+		allowedContentTypes = @(
 			@{
-				Id = "0x0101"
-				Name = "Document"
+				id = "0x0101"
+				name = "Document"
 			}
 		)
-		DefaultContents = @(
+		defaultContents = @(
 			@{
-				FileName = "a.txt"
-				ContentType = @{
-					Id = "0x0101"
+				fileName = "a.txt"
+				contentType = @{
+					id = "0x0101"
 				}
 			}
 			@{
-				FileName = "b.txt"
-				ContentType = @{
-					Id = "0x0101"
+				fileName = "b.txt"
+				contentType = @{
+					id = "0x0101"
 				}
 			}
 		)
-		SharedColumns = @(
+		sharedColumns = @(
 			@{
-				Name = "Description"
-				Id = "cbb92da4-fd46-4c7d-af6c-3128c2a5576e"
+				name = "Description"
+				id = "cbb92da4-fd46-4c7d-af6c-3128c2a5576e"
 			}
 			@{
-				Name = "Address"
-				Id = "fc2e188e-ba91-48c9-9dd3-16431afddd50"
+				name = "Address"
+				id = "fc2e188e-ba91-48c9-9dd3-16431afddd50"
 			}
 		)
-		WelcomePageColumns = @(
+		welcomePageColumns = @(
 			@{
-				Name = "Address"
-				Id = "fc2e188e-ba91-48c9-9dd3-16431afddd50"
+				name = "Address"
+				id = "fc2e188e-ba91-48c9-9dd3-16431afddd50"
 			}
 		)
 	}
 }
+
 Update-MgBetaSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaSiteContentType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Update-MgBetaBetaSiteContentType Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

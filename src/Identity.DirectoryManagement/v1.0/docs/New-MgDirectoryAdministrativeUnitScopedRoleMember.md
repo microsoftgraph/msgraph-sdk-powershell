@@ -48,16 +48,16 @@ For a list of roles that can be assigned with administrative unit scope, see Ass
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-$params = @{
-	RoleId = "roleId-value"
-	RoleMemberInfo = @{
-		Id = "id-value"
-	}
-}
-New-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
 ```
 
+$params = @{
+	roleId = "roleId-value"
+	roleMemberInfo = @{
+		id = "id-value"
+	}
+}
 
+New-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
 
 ## PARAMETERS
 

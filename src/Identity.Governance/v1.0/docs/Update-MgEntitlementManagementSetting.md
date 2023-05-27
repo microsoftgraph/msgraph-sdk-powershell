@@ -33,13 +33,13 @@ Update an existing entitlementManagementSettings object to change one or more of
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-$params = @{
-	ExternalUserLifecycleAction = "None"
-}
-Update-MgEntitlementManagementSetting -BodyParameter $params
 ```
 
+$params = @{
+	externalUserLifecycleAction = "None"
+}
 
+Update-MgEntitlementManagementSetting -BodyParameter $params
 
 ## PARAMETERS
 

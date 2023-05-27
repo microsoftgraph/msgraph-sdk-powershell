@@ -58,15 +58,15 @@ To retrieve the default branding, see Get branding.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-$params = @{
-	BackgroundColor = "#00000F"
-	Id = "fr-FR"
-	SignInPageText = " "
-}
-New-MgOrganizationBrandingLocalization -OrganizationId $organizationId -BodyParameter $params
 ```
 
+$params = @{
+	backgroundColor = "#00000F"
+	id = "fr-FR"
+	signInPageText = " "
+}
 
+New-MgOrganizationBrandingLocalization -OrganizationId $organizationId -BodyParameter $params
 
 ## PARAMETERS
 

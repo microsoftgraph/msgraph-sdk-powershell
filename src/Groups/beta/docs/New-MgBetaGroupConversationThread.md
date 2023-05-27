@@ -50,21 +50,21 @@ Create new navigation property to threads for groups
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Groups
+```
+
 $params = @{
-	Topic = "Take your wellness days and rest"
-	Posts = @(
+	topic = "Take your wellness days and rest"
+	posts = @(
 		@{
-			Body = @{
-				ContentType = "html"
-				Content = "Waiting for the summer holidays."
+			body = @{
+				contentType = "html"
+				content = "Waiting for the summer holidays."
 			}
 		}
 	)
 }
+
 New-MgBetaGroupConversationThread -GroupId $groupId -ConversationId $conversationId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

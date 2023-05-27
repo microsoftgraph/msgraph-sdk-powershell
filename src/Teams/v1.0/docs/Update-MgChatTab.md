@@ -48,13 +48,13 @@ Update the properties of the specified tab in a chat.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-$params = @{
-	DisplayName = "My Contoso Tab - updated again"
-}
-Update-MgChatTab -ChatId $chatId -TeamsTabId $teamsTabId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "My Contoso Tab - updated again"
+}
 
+Update-MgChatTab -ChatId $chatId -TeamsTabId $teamsTabId -BodyParameter $params
 
 ## PARAMETERS
 

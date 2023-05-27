@@ -1,11 +1,14 @@
-### Example 1: Using the New-MgBetaUserOnenoteNotebookSection Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Notes
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Notes
+
 $params = @{
-	DisplayName = "Section name"
+	displayName = "Section name"
 }
+
 # A UPN can also be used as -UserId.
 New-MgBetaUserOnenoteNotebookSection -UserId $userId -NotebookId $notebookId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaUserOnenoteNotebookSection Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaBetaUserOnenoteNotebookSection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

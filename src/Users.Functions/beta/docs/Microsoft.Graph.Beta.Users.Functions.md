@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Functions
-Module Guid: b53508ce-473d-40c4-af4d-c4ec94c881f9
+Module Guid: 9e8daba1-958b-4f0e-9d5b-420df7c55b4e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -225,7 +225,7 @@ Invoke function delta
 ### [Get-MgBetaUserTodoListDelta](Get-MgBetaUserTodoListDelta.md)
 Invoke function delta
 
-### [Get-MgBetaUserTodoListTaskDelta](Get-MgBetaUserTodoListTaskDelta.md)
+### [Get-MgBetaUserTodoTaskDelta](Get-MgBetaUserTodoTaskDelta.md)
 Invoke function delta
 
 ### [Invoke-MgBetaAppUserManagedDeviceDiagnostic](Invoke-MgBetaAppUserManagedDeviceDiagnostic.md)

@@ -50,17 +50,17 @@ Change writable properties on a messageRule object and save the changes.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	DisplayName = "Important from partner"
-	Actions = @{
-		MarkImportance = "high"
-	}
-}
-# A UPN can also be used as -UserId.
-Update-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Important from partner"
+	actions = @{
+		markImportance = "high"
+	}
+}
 
+# A UPN can also be used as -UserId.
+Update-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId -BodyParameter $params
 
 ## PARAMETERS
 

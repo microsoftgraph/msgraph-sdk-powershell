@@ -32,18 +32,13 @@ Read the properties and relationships of a store object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteTermStore -SiteId $siteId
 ```
 
+$params = @{
+	defaultLanguageTag = "en-US"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteTermStore -SiteId $siteId -OutFile $outFileId
-```
-
-
+Update-MgBetaSiteTermStore -SiteId $siteId -BodyParameter $params
 
 ## PARAMETERS
 

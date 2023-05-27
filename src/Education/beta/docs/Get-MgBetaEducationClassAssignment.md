@@ -45,34 +45,19 @@ You can use the `Prefer` header in your request to get the `inactive` status in 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassAssignment -EducationClassId $educationClassId
 ```
 
+$params = @{
+	displayName = "Reading and review test 09.03 #5"
+	instructions = @{
+		contentType = "text"
+		content = "Read chapter 5 and write your review"
+	}
+	dueDateTime = [System.DateTime]::Parse("2021-09-10T00:00:00Z")
+	addedStudentAction = "none"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassAssignment -EducationClassId $educationClassId -OutFile $outFileId
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassAssignment -EducationClassId $educationClassId -ExpandProperty "resources"
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
-```
-
-
+Update-MgBetaEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 
 ## PARAMETERS
 

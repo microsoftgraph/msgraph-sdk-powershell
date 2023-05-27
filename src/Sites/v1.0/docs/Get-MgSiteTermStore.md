@@ -50,10 +50,13 @@ Read the properties and relationships of a store object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-Get-MgSiteTermStore -SiteId $siteId -OutFile $outFileId
 ```
 
+$params = @{
+	defaultLanguageTag = "en-US"
+}
 
+Update-MgSiteTermStore -SiteId $siteId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -32,10 +32,13 @@ Specifies class-level assignments settings.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-Get-MgEducationClassAssignmentSetting -EducationClassId $educationClassId
 ```
 
+$params = @{
+	submissionAnimationDisabled = $true
+}
 
+Update-MgEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
 
 ## PARAMETERS
 

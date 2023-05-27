@@ -31,10 +31,23 @@ Delete a registered device.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Remove-MgDevice -DeviceId $deviceId
 ```
 
+$params = @{
+	accountEnabled = $false
+}
 
+Update-MgDevice -DeviceId $deviceId -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Identity.DirectoryManagement
+```
+
+$params = @{
+}
+
+Update-MgDevice -DeviceId $deviceId -BodyParameter $params
 
 ## PARAMETERS
 

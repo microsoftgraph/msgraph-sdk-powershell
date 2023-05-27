@@ -21,8 +21,9 @@ Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowExecutionScope -
 
 ### Get
 ```
-Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowExecutionScope -UserId <String>
- -WorkflowId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowExecutionScope
+ -UserProcessingResultId <String> -WorkflowId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -220,8 +221,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserId
-The unique identifier of user
+### -UserProcessingResultId
+The unique identifier of userProcessingResult
 
 ```yaml
 Type: System.String
@@ -259,7 +260,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphUser
+### Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphIdentityGovernanceUserProcessingResult
 
 ## NOTES
 

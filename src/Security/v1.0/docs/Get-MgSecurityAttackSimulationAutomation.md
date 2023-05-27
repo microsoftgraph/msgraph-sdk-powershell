@@ -38,17 +38,10 @@ Get an attack simulation automation for a tenant.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Security
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgSecurityAttackSimulationAutomation -SimulationAutomationId $simulationAutomationId
 
 ## PARAMETERS
 

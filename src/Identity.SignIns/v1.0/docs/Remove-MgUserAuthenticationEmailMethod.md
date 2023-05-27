@@ -32,10 +32,13 @@ Deletes a user's emailAuthenticationMethod object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId
 ```
 
+$params = @{
+	emailAddress = "kim@contoso.com"
+}
 
+Update-MgUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId -BodyParameter $params
 
 ## PARAMETERS
 

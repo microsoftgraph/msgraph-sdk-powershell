@@ -38,19 +38,17 @@ Read the properties of an appManagementPolicy object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaPolicyAppManagementPolicy -AppManagementPolicyId $appManagementPolicyId
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaPolicyAppManagementPolicy
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ## PARAMETERS
 

@@ -45,18 +45,17 @@ Update the properties of a bookingCustomQuestion object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Bookings
-$params = @{
-	"@odata.type" = "#microsoft.graph.bookingCustomQuestion"
-	DisplayName = "What is your age?"
-	AnswerInputType = "text"
-	AnswerOptions = @(
-	)
-}
-Update-MgBookingBusinessCustomQuestion -BookingBusinessId $bookingBusinessId -BookingCustomQuestionId $bookingCustomQuestionId -BodyParameter $params
+{{ Add code here }}
 ```
 
+{{ Add output here }}
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

@@ -48,18 +48,18 @@ Future messages from that SMTP address will be consistently classified\nas speci
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	ClassifyAs = "focused"
-	SenderEmailAddress = @{
-		Name = "Samantha Booth"
-		Address = "samanthab@adatum.onmicrosoft.com"
-	}
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserInferenceClassificationOverride -UserId $userId -BodyParameter $params
 ```
 
+$params = @{
+	classifyAs = "focused"
+	senderEmailAddress = @{
+		name = "Samantha Booth"
+		address = "samanthab@adatum.onmicrosoft.com"
+	}
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserInferenceClassificationOverride -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

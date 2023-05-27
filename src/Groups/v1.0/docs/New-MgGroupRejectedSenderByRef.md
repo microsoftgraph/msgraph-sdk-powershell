@@ -48,13 +48,13 @@ Make sure you do not specify the same user or group in the rejected senders and 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Groups
+```
+
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/v1.0/users/alexd@contoso.com"
 }
+
 New-MgGroupRejectedSenderByRef -GroupId $groupId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

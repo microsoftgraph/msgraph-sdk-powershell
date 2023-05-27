@@ -32,10 +32,15 @@ Delete a connectedOrganization object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId
 ```
 
+$params = @{
+	displayName = "Connected organization new name"
+	description = "Connected organization new description"
+	state = "configured"
+}
 
+Update-MgEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId -BodyParameter $params
 
 ## PARAMETERS
 

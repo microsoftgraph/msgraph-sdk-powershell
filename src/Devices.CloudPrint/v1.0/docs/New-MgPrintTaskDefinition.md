@@ -35,16 +35,16 @@ For details about how to use this API to add pull printing support to Universal 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
-$params = @{
-	DisplayName = "Test TaskDefinitionName"
-	CreatedBy = @{
-		DisplayName = "Requesting App Display Name"
-	}
-}
-New-MgPrintTaskDefinition -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Test TaskDefinitionName"
+	createdBy = @{
+		displayName = "Requesting App Display Name"
+	}
+}
 
+New-MgPrintTaskDefinition -BodyParameter $params
 
 ## PARAMETERS
 

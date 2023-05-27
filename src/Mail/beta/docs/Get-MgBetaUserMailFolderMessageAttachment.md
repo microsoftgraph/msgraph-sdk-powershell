@@ -44,7 +44,39 @@ Import-Module Microsoft.Graph.Beta.Mail
 ```
 
 # A UPN can also be used as -UserId.
-Get-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId
+Get-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
+```
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
+```
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId -ExpandProperty "microsoft.graph.itemattachment/item"
+
+### -------------------------- EXAMPLE 4 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
+```
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId -ExpandProperty "microsoft.graph.itemattachment/item"
+
+### -------------------------- EXAMPLE 5 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
+```
+
+# A UPN can also be used as -UserId.
+Get-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
 
 ## PARAMETERS
 

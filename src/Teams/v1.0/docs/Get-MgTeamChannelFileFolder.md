@@ -32,10 +32,9 @@ Get the metadata for the location where the files of a channel are stored.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannelFileFolder -TeamId $teamId -ChannelId $channelId
 ```
 
-
+Get-MgTeamChannelFileFolder -TeamId $teamId -ChannelId $channelId
 
 ## PARAMETERS
 

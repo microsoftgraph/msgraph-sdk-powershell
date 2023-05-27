@@ -64,24 +64,17 @@ Create a column for a [list][list] with a request that specifies a [columnDefini
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Sites
-$params = @{
-	Description = "test"
-	EnforceUniqueValues = $false
-	Hidden = $false
-	Indexed = $false
-	Name = "Title"
-	Text = @{
-		AllowMultipleLines = $false
-		AppendChangesToExistingText = $false
-		LinesForEditing = 0
-		MaxLength = 255
-	}
-}
-New-MgSiteListColumn -SiteId $siteId -ListId $listId -BodyParameter $params
+{{ Add code here }}
 ```
 
+{{ Add output here }}
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

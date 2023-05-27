@@ -159,6 +159,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[SortBy <String>]`: bucketAggregationSortProperty
       - `[Field <String>]`: Computes aggregation on the field while the field exists in current entity type. Required.
       - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+    - `[CollapseProperties <IMicrosoftGraphCollapseProperty[]>]`: 
+      - `[Fields <String[]>]`: 
+      - `[Limit <Int32?>]`: 
     - `[ContentSources <String[]>]`: 
     - `[EnableTopResults <Boolean?>]`: 
     - `[EntityTypes <String[]>]`: 
@@ -198,6 +201,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[SortBy <String>]`: bucketAggregationSortProperty
     - `[Field <String>]`: Computes aggregation on the field while the field exists in current entity type. Required.
     - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+  - `[CollapseProperties <IMicrosoftGraphCollapseProperty[]>]`: 
+    - `[Fields <String[]>]`: 
+    - `[Limit <Int32?>]`: 
   - `[ContentSources <String[]>]`: 
   - `[EnableTopResults <Boolean?>]`: 
   - `[EntityTypes <String[]>]`: 

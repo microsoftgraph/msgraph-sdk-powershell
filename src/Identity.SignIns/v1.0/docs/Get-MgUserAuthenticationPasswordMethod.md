@@ -41,20 +41,10 @@ For security, the password itself will never be returned in the object and the *
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
+```
+
 # A UPN can also be used as -UserId.
 Get-MgUserAuthenticationPasswordMethod -UserId $userId -PasswordAuthenticationMethodId $passwordAuthenticationMethodId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-# A UPN can also be used as -UserId.
-Get-MgUserAuthenticationPasswordMethod -UserId $userId
-```
-
-
 
 ## PARAMETERS
 

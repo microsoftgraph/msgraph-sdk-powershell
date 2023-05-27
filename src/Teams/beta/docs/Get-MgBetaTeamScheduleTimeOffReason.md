@@ -37,19 +37,17 @@ Retrieve the properties and relationships of a timeOffReason object by ID.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeamScheduleTimeOffReason -TeamId $teamId
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeamScheduleTimeOffReason -TeamId $teamId -TimeOffReasonId $timeOffReasonId
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ## PARAMETERS
 

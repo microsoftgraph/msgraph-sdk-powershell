@@ -28,7 +28,9 @@ Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
 $params = @{
-	DisplayName = "CrossTenantAccessPolicy"
+	allowedCloudEndpoints = @(
+		"microsoftonline.us"
+	)
 }
 
 Update-MgBetaPolicyCrossTenantAccessPolicy -BodyParameter $params

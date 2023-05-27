@@ -32,18 +32,17 @@ Delete conversationThread.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Groups
-Remove-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
 ```
 
+$params = @{
+	originalStartTimeZone = "originalStartTimeZone-value"
+	originalEndTimeZone = "originalEndTimeZone-value"
+	iCalUId = "iCalUId-value"
+	reminderMinutesBeforeStart = 
+	isReminderOn = $true
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Groups
-Remove-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
-```
-
-
+Update-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
 
 ## PARAMETERS
 

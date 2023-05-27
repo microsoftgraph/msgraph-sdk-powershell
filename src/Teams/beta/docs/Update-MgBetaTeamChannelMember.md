@@ -8,8 +8,7 @@ schema: 2.0.0
 # Update-MgBetaTeamChannelMember
 
 ## SYNOPSIS
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+Update the role of a conversationMember in a \nteam.\nor channel.
 
 ## SYNTAX
 
@@ -40,38 +39,23 @@ Update-MgBetaTeamChannelMember -InputObject <ITeamsIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+Update the role of a conversationMember in a \nteam.\nor channel.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
-		"owner"
-	)
-}
-Update-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -ConversationMemberId $conversationMemberId -BodyParameter $params
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
-		"owner"
-	)
-}
-Update-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -ConversationMemberId $conversationMemberId -BodyParameter $params
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ## PARAMETERS
 

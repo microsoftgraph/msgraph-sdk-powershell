@@ -44,10 +44,19 @@ Delete a term object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-Remove-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId
 ```
 
+$params = @{
+	labels = @(
+		@{
+			name = "changedLabel"
+			languageTag = "en-US"
+			isDefault = $true
+		}
+	)
+}
 
+Update-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId -BodyParameter $params
 
 ## PARAMETERS
 

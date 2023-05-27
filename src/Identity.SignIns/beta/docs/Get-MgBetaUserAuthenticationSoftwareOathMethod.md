@@ -39,20 +39,9 @@ Retrieve a user's single Software OATH token authentication method object and it
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-# A UPN can also be used as -UserId.
-Get-MgBetaUserAuthenticationSoftwareOathMethod -UserId $userId -SoftwareOathAuthenticationMethodId $softwareOathAuthenticationMethodId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-# A UPN can also be used as -UserId.
-Get-MgBetaUserAuthenticationSoftwareOathMethod -UserId $userId
-```
-
-
+Remove-MgBetaUserAuthenticationSoftwareOathMethod -UserId $userId -SoftwareOathAuthenticationMethodId $softwareOathAuthenticationMethodId
 
 ## PARAMETERS
 

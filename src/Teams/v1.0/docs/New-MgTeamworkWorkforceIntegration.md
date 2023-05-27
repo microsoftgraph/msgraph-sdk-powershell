@@ -34,21 +34,21 @@ Create a new workforceIntegration object.\nYou can set up which entities you wan
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-$params = @{
-	DisplayName = "displayName-value"
-	ApiVersion = 99
-	Encryption = @{
-		Protocol = "protocol-value"
-		Secret = "secret-value"
-	}
-	IsActive = $true
-	Url = "url-value"
-	SupportedEntities = "supportedEntities-value"
-}
-New-MgTeamworkWorkforceIntegration -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "displayName-value"
+	apiVersion = 99
+	encryption = @{
+		protocol = "protocol-value"
+		secret = "secret-value"
+	}
+	isActive = $true
+	url = "url-value"
+	supportedEntities = "supportedEntities-value"
+}
 
+New-MgTeamworkWorkforceIntegration -BodyParameter $params
 
 ## PARAMETERS
 

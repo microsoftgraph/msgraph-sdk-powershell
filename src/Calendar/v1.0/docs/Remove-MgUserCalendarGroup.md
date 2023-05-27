@@ -32,11 +32,14 @@ Delete a calendar group other than the default calendar group.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Calendar
-# A UPN can also be used as -UserId.
-Remove-MgUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId
 ```
 
+$params = @{
+	name = "name-value"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId -BodyParameter $params
 
 ## PARAMETERS
 

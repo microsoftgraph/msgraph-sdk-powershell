@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: 5144652c-63c5-49ff-9bd4-58a166542216
+Module Guid: 73f64321-c2bb-4a65-a92d-9e8cce9d1e81
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -112,22 +112,10 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 ### [Get-MgContactDirectReportCount](Get-MgContactDirectReportCount.md)
 Get the number of the resource
 
-### [Get-MgContactListDirectReportCountAsOrgContact](Get-MgContactListDirectReportCountAsOrgContact.md)
+### [Get-MgContactDirectReportCountAsOrgContact](Get-MgContactDirectReportCountAsOrgContact.md)
 Get the number of the resource
 
-### [Get-MgContactListDirectReportCountAsUser](Get-MgContactListDirectReportCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgContactListMemberOfCountAsAdministrativeUnit](Get-MgContactListMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgContactListMemberOfCountAsGroup](Get-MgContactListMemberOfCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgContactListTransitiveMemberOfCountAsAdministrativeUnit](Get-MgContactListTransitiveMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgContactListTransitiveMemberOfCountAsGroup](Get-MgContactListTransitiveMemberOfCountAsGroup.md)
+### [Get-MgContactDirectReportCountAsUser](Get-MgContactDirectReportCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgContactManager](Get-MgContactManager.md)
@@ -157,6 +145,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 ### [Get-MgContactMemberOfCount](Get-MgContactMemberOfCount.md)
 Get the number of the resource
 
+### [Get-MgContactMemberOfCountAsAdministrativeUnit](Get-MgContactMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgContactMemberOfCountAsGroup](Get-MgContactMemberOfCountAsGroup.md)
+Get the number of the resource
+
 ### [Get-MgContactTransitiveMemberOf](Get-MgContactTransitiveMemberOf.md)
 Groups that this contact is a member of, including groups that the contact is nested under.
 Read-only.
@@ -169,6 +163,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgContactTransitiveMemberOfCount](Get-MgContactTransitiveMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgContactTransitiveMemberOfCountAsAdministrativeUnit](Get-MgContactTransitiveMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgContactTransitiveMemberOfCountAsGroup](Get-MgContactTransitiveMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgContract](Get-MgContract.md)
@@ -214,42 +214,6 @@ Nullable.
 ### [Get-MgDeviceExtensionCount](Get-MgDeviceExtensionCount.md)
 Get the number of the resource
 
-### [Get-MgDeviceListMemberOfCountAsAdministrativeUnit](Get-MgDeviceListMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgDeviceListMemberOfCountAsGroup](Get-MgDeviceListMemberOfCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgDeviceListRegisteredOwnerCountAsAppRoleAssignment](Get-MgDeviceListRegisteredOwnerCountAsAppRoleAssignment.md)
-Get the number of the resource
-
-### [Get-MgDeviceListRegisteredOwnerCountAsEndpoint](Get-MgDeviceListRegisteredOwnerCountAsEndpoint.md)
-Get the number of the resource
-
-### [Get-MgDeviceListRegisteredOwnerCountAsServicePrincipal](Get-MgDeviceListRegisteredOwnerCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgDeviceListRegisteredOwnerCountAsUser](Get-MgDeviceListRegisteredOwnerCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgDeviceListRegisteredUserCountAsAppRoleAssignment](Get-MgDeviceListRegisteredUserCountAsAppRoleAssignment.md)
-Get the number of the resource
-
-### [Get-MgDeviceListRegisteredUserCountAsEndpoint](Get-MgDeviceListRegisteredUserCountAsEndpoint.md)
-Get the number of the resource
-
-### [Get-MgDeviceListRegisteredUserCountAsServicePrincipal](Get-MgDeviceListRegisteredUserCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgDeviceListRegisteredUserCountAsUser](Get-MgDeviceListRegisteredUserCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgDeviceListTransitiveMemberOfCountAsAdministrativeUnit](Get-MgDeviceListTransitiveMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgDeviceListTransitiveMemberOfCountAsGroup](Get-MgDeviceListTransitiveMemberOfCountAsGroup.md)
-Get the number of the resource
-
 ### [Get-MgDeviceMemberGroup](Get-MgDeviceMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
@@ -272,6 +236,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgDeviceMemberOfCount](Get-MgDeviceMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgDeviceMemberOfCountAsAdministrativeUnit](Get-MgDeviceMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgDeviceMemberOfCountAsGroup](Get-MgDeviceMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgDeviceRegisteredOwner](Get-MgDeviceRegisteredOwner.md)
@@ -303,6 +273,18 @@ Supports $expand.
 ### [Get-MgDeviceRegisteredOwnerCount](Get-MgDeviceRegisteredOwnerCount.md)
 Get the number of the resource
 
+### [Get-MgDeviceRegisteredOwnerCountAsAppRoleAssignment](Get-MgDeviceRegisteredOwnerCountAsAppRoleAssignment.md)
+Get the number of the resource
+
+### [Get-MgDeviceRegisteredOwnerCountAsEndpoint](Get-MgDeviceRegisteredOwnerCountAsEndpoint.md)
+Get the number of the resource
+
+### [Get-MgDeviceRegisteredOwnerCountAsServicePrincipal](Get-MgDeviceRegisteredOwnerCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgDeviceRegisteredOwnerCountAsUser](Get-MgDeviceRegisteredOwnerCountAsUser.md)
+Get the number of the resource
+
 ### [Get-MgDeviceRegisteredUser](Get-MgDeviceRegisteredUser.md)
 Collection of registered users of the device.
 For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
@@ -332,6 +314,18 @@ Supports $expand.
 ### [Get-MgDeviceRegisteredUserCount](Get-MgDeviceRegisteredUserCount.md)
 Get the number of the resource
 
+### [Get-MgDeviceRegisteredUserCountAsAppRoleAssignment](Get-MgDeviceRegisteredUserCountAsAppRoleAssignment.md)
+Get the number of the resource
+
+### [Get-MgDeviceRegisteredUserCountAsEndpoint](Get-MgDeviceRegisteredUserCountAsEndpoint.md)
+Get the number of the resource
+
+### [Get-MgDeviceRegisteredUserCountAsServicePrincipal](Get-MgDeviceRegisteredUserCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgDeviceRegisteredUserCountAsUser](Get-MgDeviceRegisteredUserCountAsUser.md)
+Get the number of the resource
+
 ### [Get-MgDeviceTransitiveMemberOf](Get-MgDeviceTransitiveMemberOf.md)
 Groups and administrative units that the device is a member of.
 This operation is transitive.
@@ -344,6 +338,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgDeviceTransitiveMemberOfCount](Get-MgDeviceTransitiveMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgDeviceTransitiveMemberOfCountAsAdministrativeUnit](Get-MgDeviceTransitiveMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgDeviceTransitiveMemberOfCountAsGroup](Get-MgDeviceTransitiveMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgDirectory](Get-MgDirectory.md)
@@ -363,24 +363,6 @@ The collection of open extensions defined for this administrative unit.
 Nullable.
 
 ### [Get-MgDirectoryAdministrativeUnitExtensionCount](Get-MgDirectoryAdministrativeUnitExtensionCount.md)
-Get the number of the resource
-
-### [Get-MgDirectoryAdministrativeUnitListMemberCountAsApplication](Get-MgDirectoryAdministrativeUnitListMemberCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgDirectoryAdministrativeUnitListMemberCountAsDevice](Get-MgDirectoryAdministrativeUnitListMemberCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgDirectoryAdministrativeUnitListMemberCountAsGroup](Get-MgDirectoryAdministrativeUnitListMemberCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgDirectoryAdministrativeUnitListMemberCountAsOrgContact](Get-MgDirectoryAdministrativeUnitListMemberCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgDirectoryAdministrativeUnitListMemberCountAsServicePrincipal](Get-MgDirectoryAdministrativeUnitListMemberCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgDirectoryAdministrativeUnitListMemberCountAsUser](Get-MgDirectoryAdministrativeUnitListMemberCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgDirectoryAdministrativeUnitMember](Get-MgDirectoryAdministrativeUnitMember.md)
@@ -410,6 +392,24 @@ Users and groups that are members of this administrative unit.
 Supports $expand.
 
 ### [Get-MgDirectoryAdministrativeUnitMemberCount](Get-MgDirectoryAdministrativeUnitMemberCount.md)
+Get the number of the resource
+
+### [Get-MgDirectoryAdministrativeUnitMemberCountAsApplication](Get-MgDirectoryAdministrativeUnitMemberCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgDirectoryAdministrativeUnitMemberCountAsDevice](Get-MgDirectoryAdministrativeUnitMemberCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgDirectoryAdministrativeUnitMemberCountAsGroup](Get-MgDirectoryAdministrativeUnitMemberCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgDirectoryAdministrativeUnitMemberCountAsOrgContact](Get-MgDirectoryAdministrativeUnitMemberCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgDirectoryAdministrativeUnitMemberCountAsServicePrincipal](Get-MgDirectoryAdministrativeUnitMemberCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgDirectoryAdministrativeUnitMemberCountAsUser](Get-MgDirectoryAdministrativeUnitMemberCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgDirectoryAdministrativeUnitScopedRoleMember](Get-MgDirectoryAdministrativeUnitScopedRoleMember.md)
@@ -461,6 +461,24 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 Return the directory objects specified in a list of IDs.
 Some common uses for this function are to:
 
+### [Get-MgDirectoryDeletedItemCountAsAdministrativeUnit](Get-MgDirectoryDeletedItemCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgDirectoryDeletedItemCountAsApplication](Get-MgDirectoryDeletedItemCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgDirectoryDeletedItemCountAsDevice](Get-MgDirectoryDeletedItemCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgDirectoryDeletedItemCountAsGroup](Get-MgDirectoryDeletedItemCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgDirectoryDeletedItemCountAsServicePrincipal](Get-MgDirectoryDeletedItemCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgDirectoryDeletedItemCountAsUser](Get-MgDirectoryDeletedItemCountAsUser.md)
+Get the number of the resource
+
 ### [Get-MgDirectoryDeletedItemMemberGroup](Get-MgDirectoryDeletedItemMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
@@ -474,24 +492,6 @@ This function is transitive.
 Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
 
 ### [Get-MgDirectoryFederationConfigurationCount](Get-MgDirectoryFederationConfigurationCount.md)
-Get the number of the resource
-
-### [Get-MgDirectoryListDeletedItemCountAsAdministrativeUnit](Get-MgDirectoryListDeletedItemCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgDirectoryListDeletedItemCountAsApplication](Get-MgDirectoryListDeletedItemCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgDirectoryListDeletedItemCountAsDevice](Get-MgDirectoryListDeletedItemCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgDirectoryListDeletedItemCountAsGroup](Get-MgDirectoryListDeletedItemCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgDirectoryListDeletedItemCountAsServicePrincipal](Get-MgDirectoryListDeletedItemCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgDirectoryListDeletedItemCountAsUser](Get-MgDirectoryListDeletedItemCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgDirectoryOnPremiseSynchronization](Get-MgDirectoryOnPremiseSynchronization.md)
@@ -516,24 +516,6 @@ Get the number of the resource
 
 ### [Get-MgDirectoryRoleDelta](Get-MgDirectoryRoleDelta.md)
 Invoke function delta
-
-### [Get-MgDirectoryRoleListMemberCountAsApplication](Get-MgDirectoryRoleListMemberCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgDirectoryRoleListMemberCountAsDevice](Get-MgDirectoryRoleListMemberCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgDirectoryRoleListMemberCountAsGroup](Get-MgDirectoryRoleListMemberCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgDirectoryRoleListMemberCountAsOrgContact](Get-MgDirectoryRoleListMemberCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgDirectoryRoleListMemberCountAsServicePrincipal](Get-MgDirectoryRoleListMemberCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgDirectoryRoleListMemberCountAsUser](Get-MgDirectoryRoleListMemberCountAsUser.md)
-Get the number of the resource
 
 ### [Get-MgDirectoryRoleMember](Get-MgDirectoryRoleMember.md)
 Users that are members of this directory role.
@@ -568,6 +550,24 @@ Nullable.
 Supports $expand.
 
 ### [Get-MgDirectoryRoleMemberCount](Get-MgDirectoryRoleMemberCount.md)
+Get the number of the resource
+
+### [Get-MgDirectoryRoleMemberCountAsApplication](Get-MgDirectoryRoleMemberCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgDirectoryRoleMemberCountAsDevice](Get-MgDirectoryRoleMemberCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgDirectoryRoleMemberCountAsGroup](Get-MgDirectoryRoleMemberCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgDirectoryRoleMemberCountAsOrgContact](Get-MgDirectoryRoleMemberCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgDirectoryRoleMemberCountAsServicePrincipal](Get-MgDirectoryRoleMemberCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgDirectoryRoleMemberCountAsUser](Get-MgDirectoryRoleMemberCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgDirectoryRoleMemberGroup](Get-MgDirectoryRoleMemberGroup.md)

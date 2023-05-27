@@ -32,10 +32,13 @@ Delete an administrativeUnit.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Remove-MgDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
 ```
 
+$params = @{
+	displayName = "Greater Seattle District Technical Schools"
+}
 
+Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
 
 ## PARAMETERS
 

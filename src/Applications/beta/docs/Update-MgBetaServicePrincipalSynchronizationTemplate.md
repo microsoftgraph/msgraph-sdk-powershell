@@ -17,8 +17,8 @@ Update (override) the synchronization template associated with a given applicati
 Update-MgBetaServicePrincipalSynchronizationTemplate -ServicePrincipalId <String>
  -SynchronizationTemplateId <String> [-AdditionalProperties <Hashtable>] [-ApplicationId <String>] [-Default]
  [-Description <String>] [-Discoverable] [-FactoryTag <String>] [-Id <String>]
- [-Metadata <IMicrosoftGraphMetadataEntry[]>] [-Schema <IMicrosoftGraphSynchronizationSchema>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>] [-Schema <IMicrosoftGraphSynchronizationSchema>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -38,8 +38,9 @@ Update-MgBetaServicePrincipalSynchronizationTemplate -InputObject <IApplications
 ```
 Update-MgBetaServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ApplicationId <String>] [-Default] [-Description <String>]
- [-Discoverable] [-FactoryTag <String>] [-Id <String>] [-Metadata <IMicrosoftGraphMetadataEntry[]>]
- [-Schema <IMicrosoftGraphSynchronizationSchema>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Discoverable] [-FactoryTag <String>] [-Id <String>]
+ [-Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>] [-Schema <IMicrosoftGraphSynchronizationSchema>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -208,7 +209,7 @@ Unless mentioned explicitly, metadata values should not be changed.
 To construct, see NOTES section for METADATA properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphMetadataEntry[]
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphSynchronizationMetadataEntry[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -326,9 +327,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[Description <String>]`: Description of the template.
   - `[Discoverable <Boolean?>]`: true if this template should appear in the collection of templates available for the application instance (service principal).
   - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
-  - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-    - `[Key <String>]`: Name of the metadata property.
-    - `[Value <String>]`: Value of the metadata property.
+  - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+    - `[Key <String>]`: synchronizationMetadata
+    - `[Value <String>]`: 
   - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -346,7 +347,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
           - `[DefaultValue <String>]`: 
           - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-          - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+          - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+            - `[Key <String>]`: attributeDefinitionMetadata
+            - `[Value <String>]`: 
           - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
           - `[Mutability <String>]`: mutability
           - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -355,7 +358,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
           - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
           - `[Type <String>]`: attributeType
-        - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
+        - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+          - `[Key <String>]`: objectDefinitionMetadata
+          - `[Value <String>]`: 
         - `[Name <String>]`: 
         - `[SupportedApis <String[]>]`: 
       - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -389,7 +394,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[TargetAttributeName <String>]`: Name of the attribute on the target object.
         - `[Enabled <Boolean?>]`: When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
         - `[FlowTypes <String>]`: objectFlowTypes
-        - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+        - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+          - `[Key <String>]`: objectMappingMetadata
+          - `[Value <String>]`: 
         - `[Name <String>]`: Human-friendly name of the object mapping.
         - `[Scope <IMicrosoftGraphFilter>]`: filter
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -440,9 +447,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[TokenLifetimePolicyId <String>]`: The unique identifier of tokenLifetimePolicy
   - `[UserId <String>]`: The unique identifier of user
 
-`METADATA <IMicrosoftGraphMetadataEntry[]>`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-  - `[Key <String>]`: Name of the metadata property.
-  - `[Value <String>]`: Value of the metadata property.
+`METADATA <IMicrosoftGraphSynchronizationMetadataEntry[]>`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+  - `[Key <String>]`: synchronizationMetadata
+  - `[Value <String>]`: 
 
 `SCHEMA <IMicrosoftGraphSynchronizationSchema>`: synchronizationSchema
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -461,9 +468,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
         - `[DefaultValue <String>]`: 
         - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-        - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-          - `[Key <String>]`: Name of the metadata property.
-          - `[Value <String>]`: Value of the metadata property.
+        - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+          - `[Key <String>]`: attributeDefinitionMetadata
+          - `[Value <String>]`: 
         - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
         - `[Mutability <String>]`: mutability
         - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -472,7 +479,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
         - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
         - `[Type <String>]`: attributeType
-      - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
+      - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+        - `[Key <String>]`: objectDefinitionMetadata
+        - `[Value <String>]`: 
       - `[Name <String>]`: 
       - `[SupportedApis <String[]>]`: 
     - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -506,7 +515,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[TargetAttributeName <String>]`: Name of the attribute on the target object.
       - `[Enabled <Boolean?>]`: When true, this object mapping will be processed during synchronization. When false, this object mapping will be skipped.
       - `[FlowTypes <String>]`: objectFlowTypes
-      - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+      - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+        - `[Key <String>]`: objectMappingMetadata
+        - `[Value <String>]`: 
       - `[Name <String>]`: Human-friendly name of the object mapping.
       - `[Scope <IMicrosoftGraphFilter>]`: filter
         - `[(Any) <Object>]`: This indicates any property can be added to this object.

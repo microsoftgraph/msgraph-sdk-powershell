@@ -39,18 +39,9 @@ Retrieve the properties and relationships of a **participant** object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
 Get-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-Get-MgBetaCommunicationCallParticipant -CallId $callId
-```
-
-
 
 ## PARAMETERS
 

@@ -43,29 +43,14 @@ Nullable.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId
 ```
 
+$params = @{
+	displayName = "displayName-value"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgBetaUserMailFolder -UserId $userId
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId
-```
-
-
+Update-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 
 ## PARAMETERS
 

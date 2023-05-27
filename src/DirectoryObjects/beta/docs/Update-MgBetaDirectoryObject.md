@@ -46,7 +46,7 @@ Update entity in directoryObjects
 Import-Module Microsoft.Graph.Beta.DirectoryObjects
 ```
 
-Remove-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
+Get-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
 
 ## PARAMETERS
 

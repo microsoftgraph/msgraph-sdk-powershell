@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users
-Module Guid: 7b035ff6-5872-474f-9814-617b889b17c2
+Module Guid: 1a3297d0-d744-4e4e-89ff-da9cc550feeb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -32,6 +32,9 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.serviceP
 ### [Get-MgBetaUserCreatedObjectCount](Get-MgBetaUserCreatedObjectCount.md)
 Get the number of the resource
 
+### [Get-MgBetaUserCreatedObjectCountAsServicePrincipal](Get-MgBetaUserCreatedObjectCountAsServicePrincipal.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDirectReport](Get-MgBetaUserDirectReport.md)
 The users and contacts that report to the user.
 (The users and contacts that have their manager property set to this user.) Read-only.
@@ -47,6 +50,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 ### [Get-MgBetaUserDirectReportCount](Get-MgBetaUserDirectReportCount.md)
 Get the number of the resource
 
+### [Get-MgBetaUserDirectReportCountAsOrgContact](Get-MgBetaUserDirectReportCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgBetaUserDirectReportCountAsUser](Get-MgBetaUserDirectReportCountAsUser.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserExtension](Get-MgBetaUserExtension.md)
 The collection of open extensions defined for the user.
 Supports $expand.
@@ -59,48 +68,6 @@ Get the number of the resource
 Get licenseDetails from users
 
 ### [Get-MgBetaUserLicenseDetailCount](Get-MgBetaUserLicenseDetailCount.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListCreatedObjectCountAsServicePrincipal](Get-MgBetaUserListCreatedObjectCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListDirectReportCountAsOrgContact](Get-MgBetaUserListDirectReportCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListDirectReportCountAsUser](Get-MgBetaUserListDirectReportCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListMemberOfCountAsAdministrativeUnit](Get-MgBetaUserListMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListMemberOfCountAsGroup](Get-MgBetaUserListMemberOfCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListOwnedDeviceCountAsDevice](Get-MgBetaUserListOwnedDeviceCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListOwnedDeviceCountAsEndpoint](Get-MgBetaUserListOwnedDeviceCountAsEndpoint.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListOwnedObjectCountAsApplication](Get-MgBetaUserListOwnedObjectCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListOwnedObjectCountAsGroup](Get-MgBetaUserListOwnedObjectCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListOwnedObjectCountAsServicePrincipal](Get-MgBetaUserListOwnedObjectCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListRegisteredDeviceCountAsDevice](Get-MgBetaUserListRegisteredDeviceCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListRegisteredDeviceCountAsEndpoint](Get-MgBetaUserListRegisteredDeviceCountAsEndpoint.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListTransitiveMemberOfCountAsAdministrativeUnit](Get-MgBetaUserListTransitiveMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgBetaUserListTransitiveMemberOfCountAsGroup](Get-MgBetaUserListTransitiveMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserManager](Get-MgBetaUserManager.md)
@@ -124,6 +91,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgBetaUserMemberOfCount](Get-MgBetaUserMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgBetaUserMemberOfCountAsAdministrativeUnit](Get-MgBetaUserMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgBetaUserMemberOfCountAsGroup](Get-MgBetaUserMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserNotification](Get-MgBetaUserNotification.md)
@@ -227,6 +200,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
 ### [Get-MgBetaUserOwnedDeviceCount](Get-MgBetaUserOwnedDeviceCount.md)
 Get the number of the resource
 
+### [Get-MgBetaUserOwnedDeviceCountAsDevice](Get-MgBetaUserOwnedDeviceCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgBetaUserOwnedDeviceCountAsEndpoint](Get-MgBetaUserOwnedDeviceCountAsEndpoint.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserOwnedObject](Get-MgBetaUserOwnedObject.md)
 Directory objects that are owned by the user.
 Read-only.
@@ -243,6 +222,15 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
 
 ### [Get-MgBetaUserOwnedObjectCount](Get-MgBetaUserOwnedObjectCount.md)
+Get the number of the resource
+
+### [Get-MgBetaUserOwnedObjectCountAsApplication](Get-MgBetaUserOwnedObjectCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgBetaUserOwnedObjectCountAsGroup](Get-MgBetaUserOwnedObjectCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgBetaUserOwnedObjectCountAsServicePrincipal](Get-MgBetaUserOwnedObjectCountAsServicePrincipal.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserPhoto](Get-MgBetaUserPhoto.md)
@@ -268,6 +256,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.device
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
 
 ### [Get-MgBetaUserRegisteredDeviceCount](Get-MgBetaUserRegisteredDeviceCount.md)
+Get the number of the resource
+
+### [Get-MgBetaUserRegisteredDeviceCountAsDevice](Get-MgBetaUserRegisteredDeviceCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgBetaUserRegisteredDeviceCountAsEndpoint](Get-MgBetaUserRegisteredDeviceCountAsEndpoint.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserSetting](Get-MgBetaUserSetting.md)
@@ -298,47 +292,47 @@ Nullable.
 ### [Get-MgBetaUserTodoListExtensionCount](Get-MgBetaUserTodoListExtensionCount.md)
 Get the number of the resource
 
-### [Get-MgBetaUserTodoListTask](Get-MgBetaUserTodoListTask.md)
+### [Get-MgBetaUserTodoTask](Get-MgBetaUserTodoTask.md)
 Read the properties and relationships of a todoTask object.
 
-### [Get-MgBetaUserTodoListTaskAttachment](Get-MgBetaUserTodoListTaskAttachment.md)
+### [Get-MgBetaUserTodoTaskAttachment](Get-MgBetaUserTodoTaskAttachment.md)
 Read the properties and relationships of a taskFileAttachment object.
 
-### [Get-MgBetaUserTodoListTaskAttachmentContent](Get-MgBetaUserTodoListTaskAttachmentContent.md)
+### [Get-MgBetaUserTodoTaskAttachmentContent](Get-MgBetaUserTodoTaskAttachmentContent.md)
 Get media content for the navigation property attachments from users
 
-### [Get-MgBetaUserTodoListTaskAttachmentCount](Get-MgBetaUserTodoListTaskAttachmentCount.md)
+### [Get-MgBetaUserTodoTaskAttachmentCount](Get-MgBetaUserTodoTaskAttachmentCount.md)
 Get the number of the resource
 
-### [Get-MgBetaUserTodoListTaskAttachmentSession](Get-MgBetaUserTodoListTaskAttachmentSession.md)
+### [Get-MgBetaUserTodoTaskAttachmentSession](Get-MgBetaUserTodoTaskAttachmentSession.md)
 Get attachmentSessions from users
 
-### [Get-MgBetaUserTodoListTaskAttachmentSessionContent](Get-MgBetaUserTodoListTaskAttachmentSessionContent.md)
+### [Get-MgBetaUserTodoTaskAttachmentSessionContent](Get-MgBetaUserTodoTaskAttachmentSessionContent.md)
 The content streams that are uploaded.
 
-### [Get-MgBetaUserTodoListTaskAttachmentSessionCount](Get-MgBetaUserTodoListTaskAttachmentSessionCount.md)
+### [Get-MgBetaUserTodoTaskAttachmentSessionCount](Get-MgBetaUserTodoTaskAttachmentSessionCount.md)
 Get the number of the resource
 
-### [Get-MgBetaUserTodoListTaskChecklistItem](Get-MgBetaUserTodoListTaskChecklistItem.md)
+### [Get-MgBetaUserTodoTaskChecklistItem](Get-MgBetaUserTodoTaskChecklistItem.md)
 Read the properties and relationships of a checklistItem object.
 
-### [Get-MgBetaUserTodoListTaskChecklistItemCount](Get-MgBetaUserTodoListTaskChecklistItemCount.md)
+### [Get-MgBetaUserTodoTaskChecklistItemCount](Get-MgBetaUserTodoTaskChecklistItemCount.md)
 Get the number of the resource
 
-### [Get-MgBetaUserTodoListTaskCount](Get-MgBetaUserTodoListTaskCount.md)
+### [Get-MgBetaUserTodoTaskCount](Get-MgBetaUserTodoTaskCount.md)
 Get the number of the resource
 
-### [Get-MgBetaUserTodoListTaskExtension](Get-MgBetaUserTodoListTaskExtension.md)
+### [Get-MgBetaUserTodoTaskExtension](Get-MgBetaUserTodoTaskExtension.md)
 The collection of open extensions defined for the task.
 Nullable.
 
-### [Get-MgBetaUserTodoListTaskExtensionCount](Get-MgBetaUserTodoListTaskExtensionCount.md)
+### [Get-MgBetaUserTodoTaskExtensionCount](Get-MgBetaUserTodoTaskExtensionCount.md)
 Get the number of the resource
 
-### [Get-MgBetaUserTodoListTaskLinkedResource](Get-MgBetaUserTodoListTaskLinkedResource.md)
+### [Get-MgBetaUserTodoTaskLinkedResource](Get-MgBetaUserTodoTaskLinkedResource.md)
 Read the properties and relationships of a linkedResource object.
 
-### [Get-MgBetaUserTodoListTaskLinkedResourceCount](Get-MgBetaUserTodoListTaskLinkedResourceCount.md)
+### [Get-MgBetaUserTodoTaskLinkedResourceCount](Get-MgBetaUserTodoTaskLinkedResourceCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserTransitiveMemberOf](Get-MgBetaUserTransitiveMemberOf.md)
@@ -352,6 +346,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgBetaUserTransitiveMemberOfCount](Get-MgBetaUserTransitiveMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgBetaUserTransitiveMemberOfCountAsAdministrativeUnit](Get-MgBetaUserTransitiveMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgBetaUserTransitiveMemberOfCountAsGroup](Get-MgBetaUserTransitiveMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserTransitiveReport](Get-MgBetaUserTransitiveReport.md)

@@ -39,18 +39,13 @@ Retrieve the properties and relationships of a plannerBucket object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Planner
-Get-MgPlannerBucket
 ```
 
+$params = @{
+	name = "Development"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Planner
-Get-MgPlannerBucket -PlannerBucketId $plannerBucketId
-```
-
-
+Update-MgPlannerBucket -PlannerBucketId $plannerBucketId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 
 ## PARAMETERS
 

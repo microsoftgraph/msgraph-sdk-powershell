@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files
-Module Guid: f5c51b42-c91c-40d3-8d98-a8d16e350ab6
+Module Guid: 9c15894c-de82-4234-92c2-b36ebbc3d0c6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -53,6 +53,15 @@ Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 The content stream, if the item represents a file.
 
 ### [Get-MgDriveBundleCount](Get-MgDriveBundleCount.md)
+Get the number of the resource
+
+### [Get-MgDriveContentTypeBase](Get-MgDriveContentTypeBase.md)
+Parent contentType from which this content type is derived.
+
+### [Get-MgDriveContentTypeBaseType](Get-MgDriveContentTypeBaseType.md)
+The collection of content types that are ancestors of this content type.
+
+### [Get-MgDriveContentTypeBaseTypeCount](Get-MgDriveContentTypeBaseTypeCount.md)
 Get the number of the resource
 
 ### [Get-MgDriveCreatedByUser](Get-MgDriveCreatedByUser.md)
@@ -128,6 +137,15 @@ Returned only on $select.
 ### [Get-MgDriveItemDelta](Get-MgDriveItemDelta.md)
 Invoke function delta
 
+### [Get-MgDriveItemItemLastModifiedByUser](Get-MgDriveItemItemLastModifiedByUser.md)
+Identity of the user who last modified the item.
+Read-only.
+
+### [Get-MgDriveItemItemLastModifiedByUserMailboxSetting](Get-MgDriveItemItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
 ### [Get-MgDriveItemLastModifiedByUser](Get-MgDriveItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -174,15 +192,6 @@ The content stream, if the item represents a file.
 
 ### [Get-MgDriveItemListItemField](Get-MgDriveItemListItemField.md)
 The values of the columns set on this list item.
-
-### [Get-MgDriveItemListItemLastModifiedByUser](Get-MgDriveItemListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgDriveItemListItemLastModifiedByUserMailboxSetting](Get-MgDriveItemListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgDriveItemListItemVersion](Get-MgDriveItemListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
@@ -251,15 +260,6 @@ The source column for the content type column.
 
 ### [Get-MgDriveListContentType](Get-MgDriveListContentType.md)
 The collection of content types present in this list.
-
-### [Get-MgDriveListContentTypeBase](Get-MgDriveListContentTypeBase.md)
-Parent contentType from which this content type is derived.
-
-### [Get-MgDriveListContentTypeBaseType](Get-MgDriveListContentTypeBaseType.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgDriveListContentTypeBaseTypeCount](Get-MgDriveListContentTypeBaseTypeCount.md)
-Get the number of the resource
 
 ### [Get-MgDriveListContentTypeColumn](Get-MgDriveListContentTypeColumn.md)
 Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
@@ -340,15 +340,6 @@ The content stream, if the item represents a file.
 ### [Get-MgDriveListItemField](Get-MgDriveListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgDriveListItemLastModifiedByUser](Get-MgDriveListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgDriveListItemLastModifiedByUserMailboxSetting](Get-MgDriveListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
-
 ### [Get-MgDriveListItemVersion](Get-MgDriveListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
 
@@ -357,15 +348,6 @@ Get the number of the resource
 
 ### [Get-MgDriveListItemVersionField](Get-MgDriveListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
-
-### [Get-MgDriveListLastModifiedByUser](Get-MgDriveListLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgDriveListLastModifiedByUserMailboxSetting](Get-MgDriveListLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgDriveListOperation](Get-MgDriveListOperation.md)
 The collection of long-running operations on the list.
@@ -431,6 +413,15 @@ Returned only on $select.
 ### [Get-MgDriveRootDelta](Get-MgDriveRootDelta.md)
 Invoke function delta
 
+### [Get-MgDriveRootItemLastModifiedByUser](Get-MgDriveRootItemLastModifiedByUser.md)
+Identity of the user who last modified the item.
+Read-only.
+
+### [Get-MgDriveRootItemLastModifiedByUserMailboxSetting](Get-MgDriveRootItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
 ### [Get-MgDriveRootLastModifiedByUser](Get-MgDriveRootLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -477,15 +468,6 @@ The content stream, if the item represents a file.
 
 ### [Get-MgDriveRootListItemField](Get-MgDriveRootListItemField.md)
 The values of the columns set on this list item.
-
-### [Get-MgDriveRootListItemLastModifiedByUser](Get-MgDriveRootListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgDriveRootListItemLastModifiedByUserMailboxSetting](Get-MgDriveRootListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgDriveRootListItemVersion](Get-MgDriveRootListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
@@ -559,6 +541,15 @@ The content stream, if the item represents a file.
 ### [Get-MgGroupDriveBundleCount](Get-MgGroupDriveBundleCount.md)
 Get the number of the resource
 
+### [Get-MgGroupDriveContentTypeBase](Get-MgGroupDriveContentTypeBase.md)
+Parent contentType from which this content type is derived.
+
+### [Get-MgGroupDriveContentTypeBaseType](Get-MgGroupDriveContentTypeBaseType.md)
+The collection of content types that are ancestors of this content type.
+
+### [Get-MgGroupDriveContentTypeBaseTypeCount](Get-MgGroupDriveContentTypeBaseTypeCount.md)
+Get the number of the resource
+
 ### [Get-MgGroupDriveCount](Get-MgGroupDriveCount.md)
 Get the number of the resource
 
@@ -629,6 +620,15 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
+### [Get-MgGroupDriveItemItemLastModifiedByUser](Get-MgGroupDriveItemItemLastModifiedByUser.md)
+Identity of the user who last modified the item.
+Read-only.
+
+### [Get-MgGroupDriveItemItemLastModifiedByUserMailboxSetting](Get-MgGroupDriveItemItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
 ### [Get-MgGroupDriveItemLastModifiedByUser](Get-MgGroupDriveItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -672,15 +672,6 @@ The content stream, if the item represents a file.
 
 ### [Get-MgGroupDriveItemListItemField](Get-MgGroupDriveItemListItemField.md)
 The values of the columns set on this list item.
-
-### [Get-MgGroupDriveItemListItemLastModifiedByUser](Get-MgGroupDriveItemListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgGroupDriveItemListItemLastModifiedByUserMailboxSetting](Get-MgGroupDriveItemListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgGroupDriveItemListItemVersion](Get-MgGroupDriveItemListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
@@ -749,15 +740,6 @@ The source column for the content type column.
 
 ### [Get-MgGroupDriveListContentType](Get-MgGroupDriveListContentType.md)
 The collection of content types present in this list.
-
-### [Get-MgGroupDriveListContentTypeBase](Get-MgGroupDriveListContentTypeBase.md)
-Parent contentType from which this content type is derived.
-
-### [Get-MgGroupDriveListContentTypeBaseType](Get-MgGroupDriveListContentTypeBaseType.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgGroupDriveListContentTypeBaseTypeCount](Get-MgGroupDriveListContentTypeBaseTypeCount.md)
-Get the number of the resource
 
 ### [Get-MgGroupDriveListContentTypeColumn](Get-MgGroupDriveListContentTypeColumn.md)
 Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
@@ -829,15 +811,6 @@ The content stream, if the item represents a file.
 ### [Get-MgGroupDriveListItemField](Get-MgGroupDriveListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgGroupDriveListItemLastModifiedByUser](Get-MgGroupDriveListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgGroupDriveListItemLastModifiedByUserMailboxSetting](Get-MgGroupDriveListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
-
 ### [Get-MgGroupDriveListItemVersion](Get-MgGroupDriveListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
 
@@ -846,15 +819,6 @@ Get the number of the resource
 
 ### [Get-MgGroupDriveListItemVersionField](Get-MgGroupDriveListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
-
-### [Get-MgGroupDriveListLastModifiedByUser](Get-MgGroupDriveListLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgGroupDriveListLastModifiedByUserMailboxSetting](Get-MgGroupDriveListLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgGroupDriveListOperation](Get-MgGroupDriveListOperation.md)
 The collection of long-running operations on the list.
@@ -914,6 +878,15 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
+### [Get-MgGroupDriveRootItemLastModifiedByUser](Get-MgGroupDriveRootItemLastModifiedByUser.md)
+Identity of the user who last modified the item.
+Read-only.
+
+### [Get-MgGroupDriveRootItemLastModifiedByUserMailboxSetting](Get-MgGroupDriveRootItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
 ### [Get-MgGroupDriveRootLastModifiedByUser](Get-MgGroupDriveRootLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -957,15 +930,6 @@ The content stream, if the item represents a file.
 
 ### [Get-MgGroupDriveRootListItemField](Get-MgGroupDriveRootListItemField.md)
 The values of the columns set on this list item.
-
-### [Get-MgGroupDriveRootListItemLastModifiedByUser](Get-MgGroupDriveRootListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgGroupDriveRootListItemLastModifiedByUserMailboxSetting](Get-MgGroupDriveRootListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgGroupDriveRootListItemVersion](Get-MgGroupDriveRootListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
@@ -1022,6 +986,15 @@ The content stream, if the item represents a file.
 ### [Get-MgGroupDriveSpecialCount](Get-MgGroupDriveSpecialCount.md)
 Get the number of the resource
 
+### [Get-MgShareContentTypeBase](Get-MgShareContentTypeBase.md)
+Parent contentType from which this content type is derived.
+
+### [Get-MgShareContentTypeBaseType](Get-MgShareContentTypeBaseType.md)
+The collection of content types that are ancestors of this content type.
+
+### [Get-MgShareContentTypeBaseTypeCount](Get-MgShareContentTypeBaseTypeCount.md)
+Get the number of the resource
+
 ### [Get-MgShareCount](Get-MgShareCount.md)
 Get the number of the resource
 
@@ -1051,6 +1024,15 @@ The content stream, if the item represents a file.
 ### [Get-MgShareItemCount](Get-MgShareItemCount.md)
 Get the number of the resource
 
+### [Get-MgShareItemLastModifiedByUser](Get-MgShareItemLastModifiedByUser.md)
+Identity of the user who last modified the item.
+Read-only.
+
+### [Get-MgShareItemLastModifiedByUserMailboxSetting](Get-MgShareItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
 ### [Get-MgShareLastModifiedByUser](Get-MgShareLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -1074,15 +1056,6 @@ The source column for the content type column.
 
 ### [Get-MgShareListContentType](Get-MgShareListContentType.md)
 The collection of content types present in this list.
-
-### [Get-MgShareListContentTypeBase](Get-MgShareListContentTypeBase.md)
-Parent contentType from which this content type is derived.
-
-### [Get-MgShareListContentTypeBaseType](Get-MgShareListContentTypeBaseType.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgShareListContentTypeBaseTypeCount](Get-MgShareListContentTypeBaseTypeCount.md)
-Get the number of the resource
 
 ### [Get-MgShareListContentTypeColumn](Get-MgShareListContentTypeColumn.md)
 Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
@@ -1160,15 +1133,6 @@ The content stream, if the item represents a file.
 ### [Get-MgShareListItemField](Get-MgShareListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgShareListItemLastModifiedByUser](Get-MgShareListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgShareListItemLastModifiedByUserMailboxSetting](Get-MgShareListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
-
 ### [Get-MgShareListItemVersion](Get-MgShareListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
 
@@ -1177,15 +1141,6 @@ Get the number of the resource
 
 ### [Get-MgShareListItemVersionField](Get-MgShareListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
-
-### [Get-MgShareListLastModifiedByUser](Get-MgShareListLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgShareListLastModifiedByUserMailboxSetting](Get-MgShareListLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgShareListOperation](Get-MgShareListOperation.md)
 The collection of long-running operations on the list.
@@ -1231,6 +1186,15 @@ Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 The content stream, if the item represents a file.
 
 ### [Get-MgUserDriveBundleCount](Get-MgUserDriveBundleCount.md)
+Get the number of the resource
+
+### [Get-MgUserDriveContentTypeBase](Get-MgUserDriveContentTypeBase.md)
+Parent contentType from which this content type is derived.
+
+### [Get-MgUserDriveContentTypeBaseType](Get-MgUserDriveContentTypeBaseType.md)
+The collection of content types that are ancestors of this content type.
+
+### [Get-MgUserDriveContentTypeBaseTypeCount](Get-MgUserDriveContentTypeBaseTypeCount.md)
 Get the number of the resource
 
 ### [Get-MgUserDriveCount](Get-MgUserDriveCount.md)
@@ -1303,6 +1267,15 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
+### [Get-MgUserDriveItemItemLastModifiedByUser](Get-MgUserDriveItemItemLastModifiedByUser.md)
+Identity of the user who last modified the item.
+Read-only.
+
+### [Get-MgUserDriveItemItemLastModifiedByUserMailboxSetting](Get-MgUserDriveItemItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
 ### [Get-MgUserDriveItemLastModifiedByUser](Get-MgUserDriveItemLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -1346,15 +1319,6 @@ The content stream, if the item represents a file.
 
 ### [Get-MgUserDriveItemListItemField](Get-MgUserDriveItemListItemField.md)
 The values of the columns set on this list item.
-
-### [Get-MgUserDriveItemListItemLastModifiedByUser](Get-MgUserDriveItemListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgUserDriveItemListItemLastModifiedByUserMailboxSetting](Get-MgUserDriveItemListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgUserDriveItemListItemVersion](Get-MgUserDriveItemListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
@@ -1423,15 +1387,6 @@ The source column for the content type column.
 
 ### [Get-MgUserDriveListContentType](Get-MgUserDriveListContentType.md)
 The collection of content types present in this list.
-
-### [Get-MgUserDriveListContentTypeBase](Get-MgUserDriveListContentTypeBase.md)
-Parent contentType from which this content type is derived.
-
-### [Get-MgUserDriveListContentTypeBaseType](Get-MgUserDriveListContentTypeBaseType.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgUserDriveListContentTypeBaseTypeCount](Get-MgUserDriveListContentTypeBaseTypeCount.md)
-Get the number of the resource
 
 ### [Get-MgUserDriveListContentTypeColumn](Get-MgUserDriveListContentTypeColumn.md)
 Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
@@ -1503,15 +1458,6 @@ The content stream, if the item represents a file.
 ### [Get-MgUserDriveListItemField](Get-MgUserDriveListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgUserDriveListItemLastModifiedByUser](Get-MgUserDriveListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgUserDriveListItemLastModifiedByUserMailboxSetting](Get-MgUserDriveListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
-
 ### [Get-MgUserDriveListItemVersion](Get-MgUserDriveListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
 
@@ -1520,15 +1466,6 @@ Get the number of the resource
 
 ### [Get-MgUserDriveListItemVersionField](Get-MgUserDriveListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
-
-### [Get-MgUserDriveListLastModifiedByUser](Get-MgUserDriveListLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgUserDriveListLastModifiedByUserMailboxSetting](Get-MgUserDriveListLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgUserDriveListOperation](Get-MgUserDriveListOperation.md)
 The collection of long-running operations on the list.
@@ -1588,6 +1525,15 @@ Settings for the primary mailbox of the signed-in user.
 You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
 Returned only on $select.
 
+### [Get-MgUserDriveRootItemLastModifiedByUser](Get-MgUserDriveRootItemLastModifiedByUser.md)
+Identity of the user who last modified the item.
+Read-only.
+
+### [Get-MgUserDriveRootItemLastModifiedByUserMailboxSetting](Get-MgUserDriveRootItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
 ### [Get-MgUserDriveRootLastModifiedByUser](Get-MgUserDriveRootLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -1631,15 +1577,6 @@ The content stream, if the item represents a file.
 
 ### [Get-MgUserDriveRootListItemField](Get-MgUserDriveRootListItemField.md)
 The values of the columns set on this list item.
-
-### [Get-MgUserDriveRootListItemLastModifiedByUser](Get-MgUserDriveRootListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgUserDriveRootListItemLastModifiedByUserMailboxSetting](Get-MgUserDriveRootListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgUserDriveRootListItemVersion](Get-MgUserDriveRootListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.

@@ -36,87 +36,33 @@ In Azure AD B2C, this operation can currently create a socialIdentityProvider, o
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	"@odata.type" = "microsoft.graph.appleManagedIdentityProvider"
-	DisplayName = "Sign in with Apple"
-	DeveloperId = "UBF8T346G9"
-	ServiceId = "com.microsoft.rts.b2c.test.client"
-	KeyId = "99P6D879C4"
-	CertificateData = "******"
-}
-New-MgBetaIdentityProvider -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "microsoft.graph.socialIdentityProvider"
+	displayName = "Login with Amazon"
+	identityProviderType = "Amazon"
+	clientId = "56433757-cadd-4135-8431-2c9e3fd68ae8"
+	clientSecret = "000000000000"
+}
 
+New-MgBetaIdentityProvider -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	"@odata.type" = "microsoft.graph.identityProvider"
-	Name = "Login with Amazon"
-	Type = "Amazon"
-	ClientId = "56433757-cadd-4135-8431-2c9e3fd68ae8"
-	ClientSecret = "000000000000"
-}
-New-MgBetaIdentityProvider -BodyParameter $params
 ```
 
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
 $params = @{
-	"@odata.type" = "microsoft.graph.openIdConnectIdentityProvider"
-	DisplayName = "Login with the Contoso identity provider"
-	ClientId = "56433757-cadd-4135-8431-2c9e3fd68ae8"
-	ClientSecret = "12345"
-	DomainHint = "mycustomoidc"
-	MetadataUrl = "https://mycustomoidc.com/.well-known/openid-configuration"
-	ResponseMode = "form_post"
-	ResponseType = "code"
-	Scope = "openid"
+	"@odata.type" = "microsoft.graph.appleManagedIdentityProvider"
+	displayName = "Sign in with Apple"
+	developerId = "UBF8T346G9"
+	serviceId = "com.microsoft.rts.b2c.test.client"
+	keyId = "99P6D879C4"
+	certificateData = "******"
 }
+
 New-MgBetaIdentityProvider -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	"@odata.type" = "microsoft.graph.openIdConnectProvider"
-	Name = "Login with the Contoso identity provider"
-	Type = "OpenIDConnect"
-	ClientId = "56433757-cadd-4135-8431-2c9e3fd68ae8"
-	ClientSecret = "12345"
-	DomainHint = "mycustomoidc"
-	MetadataUrl = "https://mycustomoidc.com/.well-known/openid-configuration"
-	ResponseMode = "form_post"
-	ResponseType = "code"
-	Scope = "openid"
-}
-New-MgBetaIdentityProvider -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	"@odata.type" = "microsoft.graph.socialIdentityProvider"
-	DisplayName = "Login with Amazon"
-	IdentityProviderType = "Amazon"
-	ClientId = "56433757-cadd-4135-8431-2c9e3fd68ae8"
-	ClientSecret = "000000000000"
-}
-New-MgBetaIdentityProvider -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

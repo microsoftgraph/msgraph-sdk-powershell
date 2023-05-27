@@ -43,18 +43,9 @@ The operation returns an error if the message does not exist for the tenant.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+```
+
 Get-MgServiceAnnouncementMessage -ServiceUpdateMessageId $serviceUpdateMessageId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementMessage
-```
-
-
 
 ## PARAMETERS
 

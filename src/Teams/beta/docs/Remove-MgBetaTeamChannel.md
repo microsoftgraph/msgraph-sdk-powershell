@@ -32,10 +32,9 @@ Delete the channel.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-Remove-MgBetaTeamChannel -TeamId $teamId -ChannelId $channelId
 ```
 
-
+Update-MgBetaTeamChannel -TeamId $teamId -ChannelId $channelId
 
 ## PARAMETERS
 

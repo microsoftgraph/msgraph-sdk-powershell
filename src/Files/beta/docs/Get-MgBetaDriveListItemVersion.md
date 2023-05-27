@@ -38,10 +38,17 @@ The list of previous versions of the list item.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Sites
+{{ Add code here }}
 ```
 
-Get-MgBetaSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId
+{{ Add output here }}
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

@@ -45,507 +45,416 @@ You will need to register the calling bot and go through the list of permissions
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
-	CallbackUri = "https://bot.contoso.com/callback"
-	Source = @{
-		"@odata.type" = "#microsoft.graph.participantInfo"
-		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			Application = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				DisplayName = "Calling Bot"
-				Id = "2891555a-92ff-42e6-80fa-6e1300c6b5c6"
-			}
-		}
-		Region = $null
-		LanguageId = $null
-	}
-	Targets = @(
+	callbackUri = "https://bot.contoso.com/callback"
+	targets = @(
 		@{
 			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			Identity = @{
+			identity = @{
 				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
+				user = @{
 					"@odata.type" = "#microsoft.graph.identity"
-					DisplayName = "John"
-					Id = "112f7296-5fa4-42ca-bae8-6a692b15d4b8"
+					displayName = "John"
+					id = "112f7296-5fa4-42ca-bae8-6a692b15d4b8"
 				}
 			}
 		}
 	)
-	RequestedModalities = @(
+	requestedModalities = @(
 		"audio"
 	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration>"
+	callOptions = @{
+		"@odata.type" = "#microsoft.graph.outgoingCallOptions"
+		isContentSharingNotificationEnabled = $true
+	}
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
 	}
 }
+
 New-MgBetaCommunicationCall -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
-	CallbackUri = "https://bot.contoso.com/callback"
-	Targets = @(
+	callbackUri = "https://bot.contoso.com/callback"
+	source = @{
+		"@odata.type" = "#microsoft.graph.participantInfo"
+		identity = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			application = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				displayName = "Calling Bot"
+				id = "2891555a-92ff-42e6-80fa-6e1300c6b5c6"
+			}
+		}
+		region = $null
+		languageId = $null
+	}
+	targets = @(
 		@{
 			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			Identity = @{
+			identity = @{
 				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
+				user = @{
 					"@odata.type" = "#microsoft.graph.identity"
-					DisplayName = "John"
-					Id = "112f7296-5fa4-42ca-bae8-6a692b15d4b8"
+					displayName = "John"
+					id = "112f7296-5fa4-42ca-bae8-6a692b15d4b8"
 				}
 			}
 		}
 	)
-	RequestedModalities = @(
+	requestedModalities = @(
 		"audio"
 	)
-	CallOptions = @{
-		"@odata.type" = "#microsoft.graph.outgoingCallOptions"
-		IsContentSharingNotificationEnabled = $true
-	}
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "&lt;Media Session Configuration&gt;"
 	}
 }
+
 New-MgBetaCommunicationCall -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
-	CallbackUri = "https://bot.contoso.com/callback"
-	Source = @{
+	direction = "outgoing"
+	subject = "Create a group call with service hosted media"
+	callbackUri = "https://bot.contoso.com/callback"
+	source = @{
 		"@odata.type" = "#microsoft.graph.participantInfo"
-		Identity = @{
+		identity = @{
 			"@odata.type" = "#microsoft.graph.identitySet"
-			ApplicationInstance = @{
+			application = @{
 				"@odata.type" = "#microsoft.graph.identity"
-				DisplayName = "Calling Bot"
-				Id = "3d913abb-aec0-4964-8fa6-3c6850c4f278"
+				displayName = "TestBot"
+				id = "dd3885da-f9ab-486b-bfae-85de3d445555"
 			}
 		}
-		CountryCode = $null
-		EndpointType = $null
-		Region = $null
-		LanguageId = $null
 	}
-	Targets = @(
+	targets = @(
 		@{
 			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			Identity = @{
+			identity = @{
 				"@odata.type" = "#microsoft.graph.identitySet"
-				Phone = @{
+				user = @{
 					"@odata.type" = "#microsoft.graph.identity"
-					Id = "+12345678901"
+					displayName = "user1"
+					id = "98da8a1a-1b87-452c-a713-65d3f10b5555"
+				}
+			}
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			identity = @{
+				"@odata.type" = "#microsoft.graph.identitySet"
+				user = @{
+					"@odata.type" = "#microsoft.graph.identity"
+					displayName = "user2"
+					id = "bf5aae9a-d11d-47a8-93b1-782504c95555"
 				}
 			}
 		}
 	)
-	RequestedModalities = @(
+	requestedModalities = @(
 		"audio"
 	)
-	MediaConfig = @{
+	mediaConfig = @{
 		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		removeFromDefaultAudioGroup = $false
 	}
-	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
+
 New-MgBetaCommunicationCall -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
-	CallbackUri = "https://bot.contoso.com/callback"
-	Source = @{
+	direction = "outgoing"
+	subject = "Create a group call with application hosted media"
+	callbackUri = "https://bot.contoso.com/callback"
+	source = @{
 		"@odata.type" = "#microsoft.graph.participantInfo"
-		Identity = @{
+		identity = @{
 			"@odata.type" = "#microsoft.graph.identitySet"
-			ApplicationInstance = @{
+			application = @{
 				"@odata.type" = "#microsoft.graph.identity"
-				DisplayName = "Calling Bot"
-				Id = "3d913abb-aec0-4964-8fa6-3c6850c4f278"
+				displayName = "TestBot"
+				id = "dd3885da-f9ab-486b-bfae-85de3d445555"
 			}
 		}
-		CountryCode = $null
-		EndpointType = $null
-		Region = $null
-		LanguageId = $null
 	}
-	Targets = @(
+	targets = @(
 		@{
 			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			Identity = @{
+			identity = @{
 				"@odata.type" = "#microsoft.graph.identitySet"
-				Phone = @{
+				user = @{
 					"@odata.type" = "#microsoft.graph.identity"
-					Id = "+12345678901"
+					displayName = "user1"
+					id = "98da8a1a-1b87-452c-a713-65d3f10b5555"
+				}
+			}
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			identity = @{
+				"@odata.type" = "#microsoft.graph.identitySet"
+				user = @{
+					"@odata.type" = "#microsoft.graph.identity"
+					displayName = "user2"
+					id = "bf5aae9a-d11d-47a8-93b1-782504c95555"
 				}
 			}
 		}
 	)
-	RequestedModalities = @(
+	requestedModalities = @(
 		"audio"
 	)
-	MediaConfig = @{
+	mediaConfig = @{
 		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration>"
+		removeFromDefaultAudioGroup = $false
 	}
-	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
+
 New-MgBetaCommunicationCall -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	"@odata.type" = "#microsoft.graph.call"
-	Direction = "outgoing"
-	Subject = "Create a group call with app hosted media"
-	CallbackUri = "https://bot.contoso.com/callback"
-	Source = @{
-		"@odata.type" = "#microsoft.graph.participantInfo"
-		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			Application = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				DisplayName = "TestBot"
-				Id = "dd3885da-f9ab-486b-bfae-85de3d445555"
-			}
-		}
-	}
-	Targets = @(
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					DisplayName = "user1"
-					Id = "98da8a1a-1b87-452c-a713-65d3f10b5555"
-				}
-			}
-		}
-		@{
-			"@odata.type" = "#microsoft.graph.participantInfo"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					DisplayName = "user2"
-					Id = "bf5aae9a-d11d-47a8-93b1-782504c95555"
-				}
-			}
-		}
-	)
-	RequestedModalities = @(
-		"audio"
-	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration>"
-		RemoveFromDefaultAudioGroup = $false
-	}
-	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
-}
-New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	callbackUri = "https://bot.contoso.com/callback"
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		preFetchMedia = @(
+		)
+	}
+	chatInfo = @{
+		"@odata.type" = "#microsoft.graph.chatInfo"
+		threadId = "19:meeting_Win6Ydo4wsMijFjZS00ZGVjLTk5MGUtOTRjNWY2NmNkYTFm@thread.v2"
+		messageId = "0"
+	}
+	meetingInfo = @{
+		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		organizer = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			user = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
+				displayName = "Bob"
+				tenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
+			}
+		}
+		allowConversationWithoutHost = $true
+	}
+	tenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
+}
 
+New-MgBetaCommunicationCall -BodyParameter $params
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	"@odata.type" = "#microsoft.graph.call"
-	Direction = "outgoing"
-	Subject = "Create a group call with service hosted media"
-	CallbackUri = "https://bot.contoso.com/callback"
-	Source = @{
-		"@odata.type" = "#microsoft.graph.participantInfo"
-		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			Application = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				DisplayName = "TestBot"
-				Id = "dd3885da-f9ab-486b-bfae-85de3d445555"
-			}
-		}
-	}
-	Targets = @(
-		@{
-			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					DisplayName = "user1"
-					Id = "98da8a1a-1b87-452c-a713-65d3f10b5555"
-				}
-			}
-		}
-		@{
-			"@odata.type" = "#microsoft.graph.participantInfo"
-			Identity = @{
-				"@odata.type" = "#microsoft.graph.identitySet"
-				User = @{
-					"@odata.type" = "#microsoft.graph.identity"
-					DisplayName = "user2"
-					Id = "bf5aae9a-d11d-47a8-93b1-782504c95555"
-				}
-			}
-		}
-	)
-	RequestedModalities = @(
-		"audio"
-	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
-		RemoveFromDefaultAudioGroup = $false
-	}
-	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
-}
-New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	direction = "outgoing"
+	callbackUri = "https://bot.contoso.com/callback"
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+	}
+	chatInfo = @{
+		"@odata.type" = "#microsoft.graph.chatInfo"
+		threadId = "19:meeting_Win6Ydo4wsMijFjZS00ZGVjLTk5MGUtOTRjNWY2NmNkYTFm@thread.v2"
+		messageId = "0"
+	}
+	meetingInfo = @{
+		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
+		organizer = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			user = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
+				tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
+				displayName = "Bob"
+			}
+		}
+		allowConversationWithoutHost = $true
+	}
+	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
+}
 
+New-MgBetaCommunicationCall -BodyParameter $params
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	"@odata.type" = "#microsoft.graph.call"
-	CallbackUri = "https://bot.contoso.com/callback"
-	Source = @{
-		"@odata.type" = "#microsoft.graph.participantInfo"
-		Identity = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			Guest = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				DisplayName = "Guest User"
-				Id = "d7a3b999-17ac-4bca-9e77-e6a730d2ec2e"
-			}
-		}
-	}
-	RequestedModalities = @(
-		"audio"
-	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
-		PreFetchMedia = @(
-		)
-	}
-	ChatInfo = @{
-		"@odata.type" = "#microsoft.graph.chatInfo"
-		ThreadId = "19:cbee7c1c860e465f8258e3cebf7bee0d@thread.skype"
-		MessageId = "1533758867081"
-	}
-	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
-		Organizer = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			User = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				Id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
-				TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
-				DisplayName = "Bob"
-			}
-		}
-		AllowConversationWithoutHost = $true
-	}
-}
-New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	callbackUri = "https://bot.contoso.com/callback"
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		preFetchMedia = @(
+		)
+	}
+	meetingInfo = @{
+		"@odata.type" = "#microsoft.graph.joinMeetingIdMeetingInfo"
+		joinMeetingId = "1234567"
+		passcode = "psw123"
+	}
+	tenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
+}
 
+New-MgBetaCommunicationCall -BodyParameter $params
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	"@odata.type" = "#microsoft.graph.call"
-	CallbackUri = "https://bot.contoso.com/callback"
-	RequestedModalities = @(
-		"audio"
-	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
-		PreFetchMedia = @(
-		)
-	}
-	ChatInfo = @{
-		"@odata.type" = "#microsoft.graph.chatInfo"
-		ThreadId = "19:cbee7c1c860e465f8258e3cebf7bee0d@thread.skype"
-		MessageId = "1533758867081"
-	}
-	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
-		Organizer = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			User = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				Id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
-				TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
-				DisplayName = "Bob"
-			}
-		}
-		AllowConversationWithoutHost = $true
-	}
-}
-New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	callbackUri = "https://bot.contoso.com/callback"
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+		preFetchMedia = @(
+		)
+	}
+	meetingInfo = @{
+		"@odata.type" = "#microsoft.graph.joinMeetingIdMeetingInfo"
+		joinMeetingId = "1234567"
+		passcode = $null
+	}
+	tenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
+}
 
+New-MgBetaCommunicationCall -BodyParameter $params
 
 ### -------------------------- EXAMPLE 9 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	"@odata.type" = "#microsoft.graph.call"
-	Direction = "outgoing"
-	CallbackUri = "https://bot.contoso.com/callback"
-	RequestedModalities = @(
-		"audio"
-	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
-		Blob = "<Media Session Configuration>"
-	}
-	ChatInfo = @{
-		"@odata.type" = "#microsoft.graph.chatInfo"
-		ThreadId = "19:meeting_Win6Ydo4wsMijFjZS00ZGVjLTk5MGUtOTRjNWY2NmNkYTFm@thread.v2"
-		MessageId = "0"
-	}
-	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
-		Organizer = @{
-			"@odata.type" = "#microsoft.graph.identitySet"
-			User = @{
-				"@odata.type" = "#microsoft.graph.identity"
-				Id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
-				TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
-				DisplayName = "Bob"
-			}
-		}
-		AllowConversationWithoutHost = $true
-	}
-	TenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
-}
-New-MgBetaCommunicationCall -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.call"
+	callbackUri = "https://bot.contoso.com/callback"
+	source = @{
+		"@odata.type" = "#microsoft.graph.participantInfo"
+		identity = @{
+			"@odata.type" = "#microsoft.graph.identitySet"
+			applicationInstance = @{
+				"@odata.type" = "#microsoft.graph.identity"
+				displayName = "Calling Bot"
+				id = "3d913abb-aec0-4964-8fa6-3c6850c4f278"
+			}
+		}
+		countryCode = $null
+		endpointType = $null
+		region = $null
+		languageId = $null
+	}
+	targets = @(
+		@{
+			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			identity = @{
+				"@odata.type" = "#microsoft.graph.identitySet"
+				phone = @{
+					"@odata.type" = "#microsoft.graph.identity"
+					id = "+12345678901"
+				}
+			}
+		}
+	)
+	requestedModalities = @(
+		"audio"
+	)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
+	}
+	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
+}
 
+New-MgBetaCommunicationCall -BodyParameter $params
 
 ### -------------------------- EXAMPLE 10 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.call"
-	CallbackUri = "https://bot.contoso.com/callback"
-	RequestedModalities = @(
-		"audio"
-	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
-		PreFetchMedia = @(
-		)
-	}
-	ChatInfo = @{
-		"@odata.type" = "#microsoft.graph.chatInfo"
-		ThreadId = "19:meeting_Win6Ydo4wsMijFjZS00ZGVjLTk5MGUtOTRjNWY2NmNkYTFm@thread.v2"
-		MessageId = "0"
-	}
-	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.organizerMeetingInfo"
-		Organizer = @{
+	callbackUri = "https://bot.contoso.com/callback"
+	source = @{
+		"@odata.type" = "#microsoft.graph.participantInfo"
+		identity = @{
 			"@odata.type" = "#microsoft.graph.identitySet"
-			User = @{
+			applicationInstance = @{
 				"@odata.type" = "#microsoft.graph.identity"
-				Id = "5810cede-f3cc-42eb-b2c1-e9bd5d53ec96"
-				TenantId = "9f386a15-f9cc-445b-8106-ac85e314a07b"
-				DisplayName = "Bob"
+				displayName = "Calling Bot"
+				id = "3d913abb-aec0-4964-8fa6-3c6850c4f278"
 			}
 		}
-		AllowConversationWithoutHost = $true
+		countryCode = $null
+		endpointType = $null
+		region = $null
+		languageId = $null
 	}
-	TenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
-}
-New-MgBetaCommunicationCall -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 11 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	"@odata.type" = "#microsoft.graph.call"
-	CallbackUri = "https://bot.contoso.com/callback"
-	RequestedModalities = @(
+	targets = @(
+		@{
+			"@odata.type" = "#microsoft.graph.invitationParticipantInfo"
+			identity = @{
+				"@odata.type" = "#microsoft.graph.identitySet"
+				phone = @{
+					"@odata.type" = "#microsoft.graph.identity"
+					id = "+12345678901"
+				}
+			}
+		}
+	)
+	requestedModalities = @(
 		"audio"
 	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
-		PreFetchMedia = @(
-		)
+	mediaConfig = @{
+		"@odata.type" = "#microsoft.graph.appHostedMediaConfig"
+		blob = "&lt;Media Session Configuration&gt;"
 	}
-	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.joinMeetingIdMeetingInfo"
-		JoinMeetingId = "1234567"
-		Passcode = "psw123"
-	}
-	TenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
+	tenantId = "aa67bd4c-8475-432d-bd41-39f255720e0a"
 }
+
 New-MgBetaCommunicationCall -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 12 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-$params = @{
-	"@odata.type" = "#microsoft.graph.call"
-	CallbackUri = "https://bot.contoso.com/callback"
-	RequestedModalities = @(
-		"audio"
-	)
-	MediaConfig = @{
-		"@odata.type" = "#microsoft.graph.serviceHostedMediaConfig"
-		PreFetchMedia = @(
-		)
-	}
-	MeetingInfo = @{
-		"@odata.type" = "#microsoft.graph.joinMeetingIdMeetingInfo"
-		JoinMeetingId = "1234567"
-		Passcode = $null
-	}
-	TenantId = "86dc81db-c112-4228-9222-63f3esaa1edb"
-}
-New-MgBetaCommunicationCall -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 
@@ -1128,8 +1037,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1156,8 +1065,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1279,8 +1188,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Original <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -1302,8 +1211,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[SourceParticipantId <String>]`: The id of the participant that triggered the incoming call. Read-only.
@@ -1347,8 +1256,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1394,8 +1303,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LanguageId <String>]`: The language culture string. Read-only.
@@ -1411,8 +1320,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[ParticipantId <String>]`: Optional. The ID of the target participant.

@@ -48,13 +48,13 @@ Update the properties of a claimsMappingPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	DisplayName = "UpdateClaimsPolicy"
-}
-Update-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "UpdateClaimsPolicy"
+}
 
+Update-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId -BodyParameter $params
 
 ## PARAMETERS
 

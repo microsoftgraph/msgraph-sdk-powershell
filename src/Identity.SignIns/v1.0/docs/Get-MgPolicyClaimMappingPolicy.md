@@ -39,18 +39,13 @@ Retrieve the properties and relationships of a claimsMappingPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyClaimMappingPolicy
 ```
 
+$params = @{
+	displayName = "UpdateClaimsPolicy"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
-```
-
-
+Update-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId -BodyParameter $params
 
 ## PARAMETERS
 

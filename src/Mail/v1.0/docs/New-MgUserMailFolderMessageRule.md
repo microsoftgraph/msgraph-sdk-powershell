@@ -51,32 +51,32 @@ Outlook carries out those actions if an incoming message in the user's Inbox mee
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Mail
+```
+
 $params = @{
-	DisplayName = "From partner"
-	Sequence = 2
-	IsEnabled = $true
-	Conditions = @{
-		SenderContains = @(
+	displayName = "From partner"
+	sequence = 2
+	isEnabled = $true
+	conditions = @{
+		senderContains = @(
 			"adele"
 		)
 	}
-	Actions = @{
-		ForwardTo = @(
+	actions = @{
+		forwardTo = @(
 			@{
-				EmailAddress = @{
-					Name = "Alex Wilbur"
-					Address = "AlexW@contoso.onmicrosoft.com"
+				emailAddress = @{
+					name = "Alex Wilbur"
+					address = "AlexW@contoso.onmicrosoft.com"
 				}
 			}
 		)
-		StopProcessingRules = $true
+		stopProcessingRules = $true
 	}
 }
+
 # A UPN can also be used as -UserId.
 New-MgUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

@@ -43,7 +43,11 @@ Only teachers and students can perform this operation.
 Import-Module Microsoft.Graph.Education
 ```
 
-Get-MgEducationMeRubric
+$params = @{
+	displayName = "Example Credit Rubric after display name patch"
+}
+
+Update-MgEducationMeRubric -EducationRubricId $educationRubricId -BodyParameter $params
 
 ## PARAMETERS
 

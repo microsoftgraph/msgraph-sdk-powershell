@@ -39,18 +39,9 @@ Configure domain federation with organizations whose identity provider (IdP) sup
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId -Filter "domains/any(x: x/id eq 'contoso.com')"
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId
-```
-
-
+Remove-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId
 
 ## PARAMETERS
 

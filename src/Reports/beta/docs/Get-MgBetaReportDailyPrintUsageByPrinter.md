@@ -41,7 +41,7 @@ Get dailyPrintUsageByPrinter from reports
 Import-Module Microsoft.Graph.Beta.Reports
 ```
 
-Get-MgBetaReportDailyPrintUsageByPrinter
+Get-MgBetaReportDailyPrintUsageByPrinter -PrintUsageByPrinterId $printUsageByPrinterId
 
 ## PARAMETERS
 

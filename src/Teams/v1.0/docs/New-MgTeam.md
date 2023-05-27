@@ -41,243 +41,244 @@ Create a new team.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-$params = @{
-	"Template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
-	"Group@odata.bind" = "https://graph.microsoft.com/v1.0/groups('dbd8de4f-5d47-48da-87f1-594bed003375')"
-	Channels = @(
-		@{
-			DisplayName = "Class Announcements 📢"
-			IsFavoriteByDefault = $true
-		}
-		@{
-			DisplayName = "Homework ��"
-			IsFavoriteByDefault = $true
-		}
-	)
-	MemberSettings = @{
-		AllowCreateUpdateChannels = $false
-		AllowDeleteChannels = $false
-		AllowAddRemoveApps = $false
-		AllowCreateUpdateRemoveTabs = $false
-		AllowCreateUpdateRemoveConnectors = $false
-	}
-	InstalledApps = @(
-		@{
-			"TeamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('com.microsoft.teamspace.tab.vsts')"
-		}
-		@{
-			"TeamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('1542629c-01b3-4a6d-8f76-1938b779e48d')"
-		}
-	)
-}
-New-MgTeam -BodyParameter $params
 ```
 
+$params = @{
+	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
+	displayName = "My Sample Team"
+	description = "My Sample Team???s Description"
+}
 
+New-MgTeam -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-$params = @{
-	"Template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('educationClass')"
-	DisplayName = "My Class Team"
-	Description = "My Class Team’s Description"
-}
-New-MgTeam -BodyParameter $params
 ```
 
+$params = @{
+	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
+	displayName = "My Sample Team"
+	description = "My Sample Team???s Description"
+	members = @(
+		@{
+			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+			roles = @(
+				"owner"
+			)
+			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('0040b377-61d8-43db-94f5-81374122dc7e')"
+		}
+	)
+}
 
+New-MgTeam -BodyParameter $params
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
+```
+
 $params = @{
-	"Template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('educationClass')"
-	DisplayName = "My Class Team"
-	Description = "My Class Team’s Description"
-	Channels = @(
+	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
+	visibility = "Private"
+	displayName = "Sample Engineering Team"
+	description = "This is a sample engineering team, used to showcase the range of properties supported by this API"
+	channels = @(
 		@{
-			DisplayName = "Class Announcements 📢"
-			IsFavoriteByDefault = $true
+			displayName = "Announcements ????"
+			isFavoriteByDefault = $true
+			description = "This is a sample announcements channel that is favorited by default.
+Use this channel to make important team, product, and service announcements."
 		}
 		@{
-			DisplayName = "Homework ��"
-			IsFavoriteByDefault = $true
+			displayName = "Training ???????"
+			isFavoriteByDefault = $true
+			description = "This is a sample training channel, that is favorited by default, and contains an example of pinned website and YouTube tabs."
+			tabs = @(
+				@{
+					"teamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('com.microsoft.teamspace.tab.web')"
+					displayName = "A Pinned Website"
+					configuration = @{
+						contentUrl = "https://learn.microsoft.com/microsoftteams/microsoft-teams"
+					}
+				}
+				@{
+					"teamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('com.microsoft.teamspace.tab.youtube')"
+					displayName = "A Pinned YouTube Video"
+					configuration = @{
+						contentUrl = "https://tabs.teams.microsoft.com/Youtube/Home/YoutubeTab?videoId=X8krAMdGvCQ"
+						websiteUrl = "https://www.youtube.com/watch?v=X8krAMdGvCQ"
+					}
+				}
+			)
+		}
+		@{
+			displayName = "Planning ???? "
+			description = "This is a sample of a channel that is not favorited by default, these channels will appear in the more channels overflow menu."
+			isFavoriteByDefault = $false
+		}
+		@{
+			displayName = "Issues and Feedback ????"
+			description = "This is a sample of a channel that is not favorited by default, these channels will appear in the more channels overflow menu."
 		}
 	)
-	MemberSettings = @{
-		AllowCreateUpdateChannels = $false
-		AllowDeleteChannels = $false
-		AllowAddRemoveApps = $false
-		AllowCreateUpdateRemoveTabs = $false
-		AllowCreateUpdateRemoveConnectors = $false
+	memberSettings = @{
+		allowCreateUpdateChannels = $true
+		allowDeleteChannels = $true
+		allowAddRemoveApps = $true
+		allowCreateUpdateRemoveTabs = $true
+		allowCreateUpdateRemoveConnectors = $true
 	}
-	InstalledApps = @(
+	guestSettings = @{
+		allowCreateUpdateChannels = $false
+		allowDeleteChannels = $false
+	}
+	funSettings = @{
+		allowGiphy = $true
+		giphyContentRating = "Moderate"
+		allowStickersAndMemes = $true
+		allowCustomMemes = $true
+	}
+	messagingSettings = @{
+		allowUserEditMessages = $true
+		allowUserDeleteMessages = $true
+		allowOwnerDeleteMessages = $true
+		allowTeamMentions = $true
+		allowChannelMentions = $true
+	}
+	installedApps = @(
 		@{
-			"TeamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('com.microsoft.teamspace.tab.vsts')"
+			"teamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('com.microsoft.teamspace.tab.vsts')"
 		}
 		@{
-			"TeamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('1542629c-01b3-4a6d-8f76-1938b779e48d')"
+			"teamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('1542629c-01b3-4a6d-8f76-1938b779e48d')"
 		}
 	)
 }
+
 New-MgTeam -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-$params = @{
-	"Template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
-	"Group@odata.bind" = "https://graph.microsoft.com/v1.0/groups('71392b2f-1765-406e-86af-5907d9bdb2ab')"
-}
-New-MgTeam -BodyParameter $params
 ```
 
+$params = @{
+	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
+	"group@odata.bind" = "https://graph.microsoft.com/v1.0/groups('71392b2f-1765-406e-86af-5907d9bdb2ab')"
+}
 
+New-MgTeam -BodyParameter $params
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
+```
+
 $params = @{
-	"Template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
-	Visibility = "Private"
-	DisplayName = "Sample Engineering Team"
-	Description = "This is a sample engineering team, used to showcase the range of properties supported by this API"
-	Channels = @(
+	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
+	"group@odata.bind" = "https://graph.microsoft.com/v1.0/groups('dbd8de4f-5d47-48da-87f1-594bed003375')"
+	channels = @(
 		@{
-			DisplayName = "Announcements 📢"
-			IsFavoriteByDefault = $true
-			Description = "This is a sample announcements channel that is favorited by default. Use this channel to make important team, product, and service announcements."
+			displayName = "Class Announcements ????"
+			isFavoriteByDefault = $true
 		}
 		@{
-			DisplayName = "Training ��"
-			IsFavoriteByDefault = $true
-			Description = "This is a sample training channel, that is favorited by default, and contains an example of pinned website and YouTube tabs."
-			Tabs = @(
-				@{
-					"TeamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('com.microsoft.teamspace.tab.web')"
-					DisplayName = "A Pinned Website"
-					Configuration = @{
-						ContentUrl = "https://docs.microsoft.com/microsoftteams/microsoft-teams"
-					}
-				}
-				@{
-					"TeamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('com.microsoft.teamspace.tab.youtube')"
-					DisplayName = "A Pinned YouTube Video"
-					Configuration = @{
-						ContentUrl = "https://tabs.teams.microsoft.com/Youtube/Home/YoutubeTab?videoId=X8krAMdGvCQ"
-						WebsiteUrl = "https://www.youtube.com/watch?v=X8krAMdGvCQ"
-					}
-				}
-			)
-		}
-		@{
-			DisplayName = "Planning 📅 "
-			Description = "This is a sample of a channel that is not favorited by default, these channels will appear in the more channels overflow menu."
-			IsFavoriteByDefault = $false
-		}
-		@{
-			DisplayName = "Issues and Feedback �"
-			Description = "This is a sample of a channel that is not favorited by default, these channels will appear in the more channels overflow menu."
+			displayName = "Homework ???????"
+			isFavoriteByDefault = $true
 		}
 	)
-	MemberSettings = @{
-		AllowCreateUpdateChannels = $true
-		AllowDeleteChannels = $true
-		AllowAddRemoveApps = $true
-		AllowCreateUpdateRemoveTabs = $true
-		AllowCreateUpdateRemoveConnectors = $true
+	memberSettings = @{
+		allowCreateUpdateChannels = $false
+		allowDeleteChannels = $false
+		allowAddRemoveApps = $false
+		allowCreateUpdateRemoveTabs = $false
+		allowCreateUpdateRemoveConnectors = $false
 	}
-	GuestSettings = @{
-		AllowCreateUpdateChannels = $false
-		AllowDeleteChannels = $false
-	}
-	FunSettings = @{
-		AllowGiphy = $true
-		GiphyContentRating = "Moderate"
-		AllowStickersAndMemes = $true
-		AllowCustomMemes = $true
-	}
-	MessagingSettings = @{
-		AllowUserEditMessages = $true
-		AllowUserDeleteMessages = $true
-		AllowOwnerDeleteMessages = $true
-		AllowTeamMentions = $true
-		AllowChannelMentions = $true
-	}
-	InstalledApps = @(
+	installedApps = @(
 		@{
-			"TeamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('com.microsoft.teamspace.tab.vsts')"
+			"teamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('com.microsoft.teamspace.tab.vsts')"
 		}
 		@{
-			"TeamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('1542629c-01b3-4a6d-8f76-1938b779e48d')"
+			"teamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('1542629c-01b3-4a6d-8f76-1938b779e48d')"
 		}
 	)
 }
+
 New-MgTeam -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-$params = @{
-	"Template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
-	DisplayName = "My Sample Team"
-	Description = "My Sample Team’s Description"
-	Members = @(
-		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			Roles = @(
-				"owner"
-			)
-			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('0040b377-61d8-43db-94f5-81374122dc7e')"
-		}
-	)
-}
-New-MgTeam -BodyParameter $params
 ```
 
+$params = @{
+	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('educationClass')"
+	displayName = "My Class Team"
+	description = "My Class Team???s Description"
+}
 
+New-MgTeam -BodyParameter $params
 
 ### -------------------------- EXAMPLE 7 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-$params = @{
-	"Template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
-	DisplayName = "My Sample Team"
-	Description = "My Sample Team’s Description"
-}
-New-MgTeam -BodyParameter $params
 ```
 
+$params = @{
+	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('educationClass')"
+	displayName = "My Class Team"
+	description = "My Class Team???s Description"
+	channels = @(
+		@{
+			displayName = "Class Announcements ????"
+			isFavoriteByDefault = $true
+		}
+		@{
+			displayName = "Homework ???????"
+			isFavoriteByDefault = $true
+		}
+	)
+	memberSettings = @{
+		allowCreateUpdateChannels = $false
+		allowDeleteChannels = $false
+		allowAddRemoveApps = $false
+		allowCreateUpdateRemoveTabs = $false
+		allowCreateUpdateRemoveConnectors = $false
+	}
+	installedApps = @(
+		@{
+			"teamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('com.microsoft.teamspace.tab.vsts')"
+		}
+		@{
+			"teamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps('1542629c-01b3-4a6d-8f76-1938b779e48d')"
+		}
+	)
+}
 
+New-MgTeam -BodyParameter $params
 
 ### -------------------------- EXAMPLE 8 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
+```
+
 $params = @{
-	"Template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
-	DisplayName = "My Sample Team"
-	Description = "My Sample Team’s Description"
-	Members = @(
+	"template@odata.bind" = "https://graph.microsoft.com/v1.0/teamsTemplates('standard')"
+	displayName = "My Sample Team"
+	description = "My Sample Team???s Description"
+	members = @(
 		@{
 			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			Roles = @(
+			roles = @(
 				"owner"
 			)
-			"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
+			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
 		}
 	)
 }
+
 New-MgTeam -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 
@@ -1248,9 +1249,9 @@ To create the parameters described below, construct a hash table containing the 
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
                 - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
-            - `[ModifiedDateTime <DateTime?>]`: 
+            - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
             - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -2068,7 +2069,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Drive <IMicrosoftGraphDrive>]`: drive
           - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
           - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-          - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+          - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
           - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -3847,9 +3848,9 @@ To create the parameters described below, construct a hash table containing the 
                   - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
                   - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
               - `[Actions <String>]`: chatMessageActions
-              - `[ModifiedDateTime <DateTime?>]`: 
+              - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
               - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -5757,7 +5758,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Drive <IMicrosoftGraphDrive>]`: drive
     - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
     - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-    - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+    - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
     - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -6441,9 +6442,9 @@ To create the parameters described below, construct a hash table containing the 
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
                 - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
-            - `[ModifiedDateTime <DateTime?>]`: 
+            - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
             - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -7261,7 +7262,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Drive <IMicrosoftGraphDrive>]`: drive
           - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
           - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-          - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+          - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
           - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -9093,9 +9094,9 @@ To create the parameters described below, construct a hash table containing the 
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
                 - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
-            - `[ModifiedDateTime <DateTime?>]`: 
+            - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
             - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -11126,7 +11127,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
   - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
   - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-  - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+  - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
   - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
   - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -11645,9 +11646,9 @@ To create the parameters described below, construct a hash table containing the 
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
                 - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
-            - `[ModifiedDateTime <DateTime?>]`: 
+            - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
             - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -12465,7 +12466,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Drive <IMicrosoftGraphDrive>]`: drive
           - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
           - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-          - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+          - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
           - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -14315,9 +14316,9 @@ To create the parameters described below, construct a hash table containing the 
                 - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                 - `[Id <String>]`: Unique identifier for the identity.
                 - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+          - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
-            - `[ModifiedDateTime <DateTime?>]`: 
+            - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
             - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -15135,7 +15136,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Drive <IMicrosoftGraphDrive>]`: drive
           - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
           - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-          - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+          - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
           - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
           - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.

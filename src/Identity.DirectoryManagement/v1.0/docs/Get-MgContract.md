@@ -38,18 +38,9 @@ Retrieve the properties and relationships of contract object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
+```
+
 Get-MgContract -ContractId $contractId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgContract
-```
-
-
 
 ## PARAMETERS
 

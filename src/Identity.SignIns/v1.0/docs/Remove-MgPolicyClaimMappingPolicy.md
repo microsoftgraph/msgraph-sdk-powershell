@@ -32,10 +32,13 @@ Delete a claimsMappingPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
 ```
 
+$params = @{
+	displayName = "UpdateClaimsPolicy"
+}
 
+Update-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId -BodyParameter $params
 
 ## PARAMETERS
 

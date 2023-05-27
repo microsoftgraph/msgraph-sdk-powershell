@@ -41,18 +41,13 @@ An **oAuth2PermissionGrant** represents delegated permissions which have been gr
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId
 ```
 
+$params = @{
+	scope = "User.ReadBasic.All Group.ReadWrite.All"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaOauth2PermissionGrant
-```
-
-
+Update-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId -BodyParameter $params
 
 ## PARAMETERS
 

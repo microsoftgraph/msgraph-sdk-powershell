@@ -32,10 +32,17 @@ Delete an activityBasedTimeoutPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Remove-MgBetaPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId
 ```
 
+$params = @{
+	definition = @(
+		"definition-value"
+	)
+	displayName = "displayName-value"
+	isOrganizationDefault = $true
+}
 
+Update-MgBetaPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -32,10 +32,14 @@ Delete an ediscoveryCase object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Security
-Remove-MgBetaSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
 ```
 
+$params = @{
+	displayName = "My Case 1 - Renamed"
+	description = "Updated description"
+}
 
+Update-MgBetaSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 
 ## PARAMETERS
 

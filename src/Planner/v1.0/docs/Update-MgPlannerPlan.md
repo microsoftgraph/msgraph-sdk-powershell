@@ -50,13 +50,13 @@ Update the properties of a **plannerPlan** object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Planner
-$params = @{
-	Title = "title-value"
-}
-Update-MgPlannerPlan -PlannerPlanId $plannerPlanId -BodyParameter $params
 ```
 
+$params = @{
+	title = "title-value"
+}
 
+Update-MgPlannerPlan -PlannerPlanId $plannerPlanId -BodyParameter $params
 
 ## PARAMETERS
 

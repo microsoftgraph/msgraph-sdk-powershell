@@ -21,7 +21,19 @@ Get-MgBetaShareLastModifiedByUserMailboxSetting -SharedDriveItemId <String> [-Ex
  [-Property <String[]>] [<CommonParameters>]
 ```
 
+### Get1
+```
+Get-MgBetaShareLastModifiedByUserMailboxSetting -SharedDriveItemId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
 ### GetViaIdentity
+```
+Get-MgBetaShareLastModifiedByUserMailboxSetting -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity1
 ```
 Get-MgBetaShareLastModifiedByUserMailboxSetting -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -72,7 +84,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -102,7 +114,7 @@ The unique identifier of sharedDriveItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True

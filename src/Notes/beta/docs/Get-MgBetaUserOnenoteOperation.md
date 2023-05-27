@@ -40,11 +40,10 @@ If the status is `failed`, the error and `@api.diagnostics` properties provide e
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Notes
-# A UPN can also be used as -UserId.
-Get-MgBetaUserOnenoteOperation -UserId $userId -OnenoteOperationId $onenoteOperationId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgBetaUserOnenoteOperation -UserId $userId -OnenoteOperationId $onenoteOperationId
 
 ## PARAMETERS
 

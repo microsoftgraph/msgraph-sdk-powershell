@@ -41,31 +41,28 @@ Get onlineMeetings from users
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 ```
 
-Get-MgBetaCommunicationOnlineMeeting -Filter "VideoTeleconferenceId eq '123456789'"
+$params = @{
+	startDateTime = [System.DateTime]::Parse("2020-09-09T14:33:30.8546353-07:00")
+	endDateTime = [System.DateTime]::Parse("2020-09-09T15:03:30.8566356-07:00")
+	subject = "Patch Meeting Subject"
+}
+
+# A UPN can also be used as -UserId.
+Update-MgBetaUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 ```
 
-# A UPN can also be used as -UserId.
-Get-MgBetaUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-```
+$params = @{
+	lobbyBypassSettings = @{
+		isDialInBypassEnabled = $true
+	}
+}
 
 # A UPN can also be used as -UserId.
-Get-MgBetaUserOnlineMeeting -UserId $userId -Filter "JoinWebUrl eq 'https://teams.microsoft.com/l/meetup-join/19:meeting_MGQ4MDQyNTEtNTQ2NS00YjQxLTlkM2EtZWVkODYxODYzMmY2@thread.v2/0?context"
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-```
-
-# A UPN can also be used as -UserId.
-Get-MgBetaUserOnlineMeetingAttendeeReport -UserId $userId -OnlineMeetingId $onlineMeetingId
+Update-MgBetaUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
 
 ## PARAMETERS
 

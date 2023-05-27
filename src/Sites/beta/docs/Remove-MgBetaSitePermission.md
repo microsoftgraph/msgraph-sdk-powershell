@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaSitePermission
 
 ## SYNOPSIS
-Delete a permission object on a site.
+Delete navigation property permissions for sites
 
 ## SYNTAX
 
@@ -25,17 +25,22 @@ Remove-MgBetaSitePermission -InputObject <ISitesIdentity> [-IfMatch <String>] [-
 ```
 
 ## DESCRIPTION
-Delete a permission object on a site.
+Delete navigation property permissions for sites
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-Remove-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId
 ```
 
+$params = @{
+	roles = @(
+		"read"
+	)
+}
 
+Update-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params
 
 ## PARAMETERS
 

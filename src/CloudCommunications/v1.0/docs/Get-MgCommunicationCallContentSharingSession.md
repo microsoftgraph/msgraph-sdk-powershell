@@ -39,18 +39,9 @@ Retrieve the properties of a contentSharingSession object in a call.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
+```
+
 Get-MgCommunicationCallContentSharingSession -CallId $callId -ContentSharingSessionId $contentSharingSessionId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallContentSharingSession -CallId $callId
-```
-
-
 
 ## PARAMETERS
 

@@ -46,14 +46,14 @@ Use this API to create a new CalendarGroup.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Calendar
-$params = @{
-	Name = "Personal events"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserCalendarGroup -UserId $userId -BodyParameter $params
 ```
 
+$params = @{
+	name = "Personal events"
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserCalendarGroup -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

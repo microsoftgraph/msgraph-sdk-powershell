@@ -44,26 +44,9 @@ Retrieve properties and relationships for a [site][] resource.\nA **site** resou
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
+```
+
 Get-MgSite -SiteId $siteId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSite -Search "{query}"
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Sites
-Get-MgSite -Search "{query}"  -OutFile $outFileId
-```
-
-
 
 ## PARAMETERS
 

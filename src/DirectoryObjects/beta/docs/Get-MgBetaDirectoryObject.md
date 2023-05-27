@@ -39,10 +39,9 @@ Retrieve the properties and relationships of a directoryObject object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.DirectoryObjects
-Get-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
 ```
 
-
+Get-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
 
 ## PARAMETERS
 

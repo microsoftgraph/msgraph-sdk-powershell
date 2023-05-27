@@ -42,22 +42,9 @@ Create a new connectedOrganization object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.Governance
-$params = @{
-	DisplayName = "Connected organization name"
-	Description = "Connected organization description"
-	IdentitySources = @(
-		@{
-			"@odata.type" = "#microsoft.graph.domainIdentitySource"
-			DomainName = "example.com"
-			DisplayName = "example.com"
-		}
-	)
-	State = "proposed"
-}
-New-MgBetaEntitlementManagementConnectedOrganization -BodyParameter $params
 ```
 
-
+Get-MgBetaEntitlementManagementConnectedOrganization
 
 ## PARAMETERS
 

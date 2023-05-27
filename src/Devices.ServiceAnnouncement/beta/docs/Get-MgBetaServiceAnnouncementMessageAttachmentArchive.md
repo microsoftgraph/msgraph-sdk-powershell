@@ -32,18 +32,9 @@ The zip file of all attachments for a message.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
-Get-MgBetaServiceAnnouncementMessageAttachmentArchive -ServiceUpdateMessageId $serviceUpdateMessageId -OutFile $outFileId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Devices.ServiceAnnouncement
-Get-MgBetaServiceAnnouncementMessageAttachmentArchive -ServiceUpdateMessageId $serviceUpdateMessageId
-```
-
-
+Get-MgBetaServiceAnnouncementMessage
 
 ## PARAMETERS
 

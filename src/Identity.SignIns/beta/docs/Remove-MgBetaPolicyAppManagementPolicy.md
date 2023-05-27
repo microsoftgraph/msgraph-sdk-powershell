@@ -31,11 +31,17 @@ Delete an appManagementPolicy object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Remove-MgBetaPolicyAppManagementPolicy -AppManagementPolicyId $appManagementPolicyId
+{{ Add code here }}
 ```
 
+{{ Add output here }}
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

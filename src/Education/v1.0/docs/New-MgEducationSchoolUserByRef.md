@@ -44,13 +44,13 @@ Add a user to a school.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
+```
+
 $params = @{
 	"@odata.id" = "https://graph.microsoft.com/v1.0/education/users/14008"
 }
+
 New-MgEducationSchoolUserByRef -EducationSchoolId $educationSchoolId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

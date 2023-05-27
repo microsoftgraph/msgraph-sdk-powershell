@@ -41,7 +41,7 @@ Get the properties and relationships of a member of a standard tag in a team.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId
+Get-MgTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -TeamworkTagMemberId $teamworkTagMemberId
 
 ## PARAMETERS
 

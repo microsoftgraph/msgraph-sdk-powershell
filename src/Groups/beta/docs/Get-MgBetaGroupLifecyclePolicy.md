@@ -51,18 +51,15 @@ Retrieve the properties and relationships of a groupLifecyclePolicies object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Groups
-Get-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
 ```
 
+$params = @{
+	groupLifetimeInDays = 180
+	managedGroupTypes = "Selected"
+	alternateNotificationEmails = "admin@contoso.com"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Groups
-Get-MgBetaGroupLifecyclePolicy
-```
-
-
+Update-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId -BodyParameter $params
 
 ## PARAMETERS
 

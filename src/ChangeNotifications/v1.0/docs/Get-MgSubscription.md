@@ -38,18 +38,13 @@ See the table in the Permissions section for the list of resources that support 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.ChangeNotifications
-Get-MgSubscription -SubscriptionId $subscriptionId
 ```
 
+$params = @{
+	expirationDateTime = [System.DateTime]::Parse("2016-11-22T18:23:45.9356913Z")
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.ChangeNotifications
-Get-MgSubscription
-```
-
-
+Update-MgSubscription -SubscriptionId $subscriptionId -BodyParameter $params
 
 ## PARAMETERS
 

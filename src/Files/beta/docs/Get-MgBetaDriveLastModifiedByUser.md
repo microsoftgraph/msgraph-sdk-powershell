@@ -18,7 +18,19 @@ Get-MgBetaDriveLastModifiedByUser -DriveId <String> [-ExpandProperty <String[]>]
  [<CommonParameters>]
 ```
 
+### Get1
+```
+Get-MgBetaDriveLastModifiedByUser -DriveId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
+```
+
 ### GetViaIdentity
+```
+Get-MgBetaDriveLastModifiedByUser -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity1
 ```
 Get-MgBetaDriveLastModifiedByUser -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -50,7 +62,7 @@ The unique identifier of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -81,7 +93,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.IFilesIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True

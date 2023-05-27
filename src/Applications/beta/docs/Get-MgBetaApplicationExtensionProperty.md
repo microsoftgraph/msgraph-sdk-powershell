@@ -39,18 +39,9 @@ Read a directory extension definition represented by an extensionProperty object
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Applications
-Get-MgBetaApplicationExtensionProperty -ApplicationId $applicationId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Applications
 Get-MgBetaApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
-```
-
-
 
 ## PARAMETERS
 

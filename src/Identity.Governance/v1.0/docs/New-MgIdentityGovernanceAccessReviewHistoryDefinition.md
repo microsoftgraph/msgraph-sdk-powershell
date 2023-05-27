@@ -36,48 +36,36 @@ Create a new accessReviewHistoryDefinition object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
+```
+
 $params = @{
-	DisplayName = "Last quarter's group reviews April 2021"
-	Decisions = @(
+	displayName = "Last quarter's group reviews April 2021"
+	decisions = @(
 		"approve"
 		"deny"
 		"dontKnow"
 		"notReviewed"
 		"notNotified"
 	)
-	ScheduleSettings = @{
-		ReportRange = "P1M"
-		Recurrence = @{
-			Pattern = @{
-				Type = "monthly"
-				Interval = 1
-			}
-			Range = @{
-				Type = "noEnd"
-				StartDate = "2018-08-03T21:02:30.667Z"
-				Count = 
-			}
-		}
-	}
-	Scopes = @(
+	reviewHistoryPeriodStartDateTime = [System.DateTime]::Parse("2021-01-01T00:00:00Z")
+	reviewHistoryPeriodEndDateTime = [System.DateTime]::Parse("2021-04-30T23:59:59Z")
+	scopes = @(
 		@{
 			"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
-			QueryType = "MicrosoftGraph"
-			Query = "/identityGovernance/accessReviews/definitions?$filter=contains(scope/query, 'accessPackageAssignments')"
-			QueryRoot = $null
+			queryType = "MicrosoftGraph"
+			query = "/identityGovernance/accessReviews/definitions?$filter=contains(scope/query, 'accessPackageAssignments')"
+			queryRoot = $null
 		}
 		@{
 			"@odata.type" = "#microsoft.graph.accessReviewQueryScope"
-			QueryType = "MicrosoftGraph"
-			Query = "/identityGovernance/accessReviews/definitions?$filter=contains(scope/query, '/groups')"
-			QueryRoot = $null
+			queryType = "MicrosoftGraph"
+			query = "/identityGovernance/accessReviews/definitions?$filter=contains(scope/query, '/groups')"
+			queryRoot = $null
 		}
 	)
 }
+
 New-MgIdentityGovernanceAccessReviewHistoryDefinition -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

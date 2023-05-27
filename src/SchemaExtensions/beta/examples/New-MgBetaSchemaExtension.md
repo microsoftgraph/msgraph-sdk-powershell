@@ -1,85 +1,94 @@
-### Example 1: Using the New-MgBetaSchemaExtension Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.SchemaExtensions
+### Example 1: Creating a schema extension using a verified domain
+
+```powershellImport-Module Microsoft.Graph.Beta.SchemaExtensions
+
 $params = @{
-	Id = "graphlearn_courses"
-	Description = "Graph Learn training courses extensions"
-	TargetTypes = @(
+	id = "graphlearn_courses"
+	description = "Graph Learn training courses extensions"
+	targetTypes = @(
 		"Group"
 	)
-	Properties = @(
+	properties = @(
 		@{
-			Name = "courseId"
-			Type = "Integer"
+			name = "courseId"
+			type = "Integer"
 		}
 		@{
-			Name = "courseName"
-			Type = "String"
+			name = "courseName"
+			type = "String"
 		}
 		@{
-			Name = "courseType"
-			Type = "String"
+			name = "courseType"
+			type = "String"
 		}
 	)
 }
+
 New-MgBetaSchemaExtension -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgBetaSchemaExtension Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.SchemaExtensions
+This example shows how to use the New-MgBetaBetaSchemaExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Creating a schema extension using just a name
+
+```powershellImport-Module Microsoft.Graph.Beta.SchemaExtensions
+
 $params = @{
-	Id = "courses"
-	Description = "Graph Learn training courses extensions"
-	TargetTypes = @(
+	id = "courses"
+	description = "Graph Learn training courses extensions"
+	targetTypes = @(
 		"Group"
 	)
-	Properties = @(
+	properties = @(
 		@{
-			Name = "courseId"
-			Type = "Integer"
+			name = "courseId"
+			type = "Integer"
 		}
 		@{
-			Name = "courseName"
-			Type = "String"
+			name = "courseName"
+			type = "String"
 		}
 		@{
-			Name = "courseType"
-			Type = "String"
+			name = "courseType"
+			type = "String"
 		}
 	)
 }
+
 New-MgBetaSchemaExtension -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgBetaSchemaExtension Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.SchemaExtensions
+This example shows how to use the New-MgBetaBetaSchemaExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Creating a schema extension setting the owner
+
+```powershellImport-Module Microsoft.Graph.Beta.SchemaExtensions
+
 $params = @{
-	Id = "courses"
-	Description = "Graph Learn training courses extensions"
-	TargetTypes = @(
+	id = "courses"
+	description = "Graph Learn training courses extensions"
+	targetTypes = @(
 		"Group"
 	)
-	Owner = "50897f70-a455-4adf-87bc-4cf17091d5ac"
-	Properties = @(
+	owner = "50897f70-a455-4adf-87bc-4cf17091d5ac"
+	properties = @(
 		@{
-			Name = "courseId"
-			Type = "Integer"
+			name = "courseId"
+			type = "Integer"
 		}
 		@{
-			Name = "courseName"
-			Type = "String"
+			name = "courseName"
+			type = "String"
 		}
 		@{
-			Name = "courseType"
-			Type = "String"
+			name = "courseType"
+			type = "String"
 		}
 	)
 }
+
 New-MgBetaSchemaExtension -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaBetaSchemaExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

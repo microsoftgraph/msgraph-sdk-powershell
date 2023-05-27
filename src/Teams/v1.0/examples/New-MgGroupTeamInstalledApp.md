@@ -1,27 +1,17 @@
-### Example 1: List installed apps
+### Example 1: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-```powershellImport-Module Microsoft.Graph.Teams
-
-Get-MgTeamInstalledApp -TeamId $teamId
+{{ Add output here }}
 ```
-This example shows how to use the New-MgGroupTeamInstalledApp Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Get the names and other details of installed apps
+{{ Add description here }}
 
-```powershellImport-Module Microsoft.Graph.Teams
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-Get-MgTeamInstalledApp -TeamId $teamId -ExpandProperty "teamsAppDefinition"
+{{ Add output here }}
 ```
-This example shows how to use the New-MgGroupTeamInstalledApp Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Get the app installation resource based on the manifest ID of the associated app
-
-```powershellImport-Module Microsoft.Graph.Teams
-
-Get-MgTeamInstalledApp -TeamId $teamId -ExpandProperty "teamsApp,teamsAppDefinition" -Filter "teamsApp/externalId eq 'cf1ba4c7-f94e-4d80-ba90-5594b641a8ee'"
-```
-This example shows how to use the New-MgGroupTeamInstalledApp Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
+{{ Add description here }}

@@ -39,18 +39,13 @@ Retrieve the properties and relationships of an administrativeUnit object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
 ```
 
+$params = @{
+	displayName = "Greater Seattle District Technical Schools"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDirectoryAdministrativeUnit
-```
-
-
+Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
 
 ## PARAMETERS
 

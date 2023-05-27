@@ -1,7 +1,17 @@
-### Example 1: Using the Remove-MgBetaPolicyActivityBasedTimeoutPolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Remove-MgBetaPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
+$params = @{
+	definition = @(
+		"definition-value"
+	)
+	displayName = "displayName-value"
+	isOrganizationDefault = $true
+}
+
+Update-MgBetaPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaPolicyActivityBasedTimeoutPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaBetaPolicyActivityBasedTimeoutPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

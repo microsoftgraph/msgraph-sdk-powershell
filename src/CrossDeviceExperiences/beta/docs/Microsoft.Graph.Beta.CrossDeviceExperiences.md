@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
-Module Guid: ee5393ce-eb78-4f78-9747-f4162eea2855
+Module Guid: 4947bc17-90c0-444b-a436-6846c9e7a84c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.crossdeviceexperiences
 Help Version: 1.0.0.0
 Locale: en-US
@@ -49,36 +49,6 @@ Nullable.
 ### [Get-MgBetaUserDeviceExtensionCount](Get-MgBetaUserDeviceExtensionCount.md)
 Get the number of the resource
 
-### [Get-MgBetaUserDeviceListMemberOfCountAsAdministrativeUnit](Get-MgBetaUserDeviceListMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgBetaUserDeviceListMemberOfCountAsGroup](Get-MgBetaUserDeviceListMemberOfCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgBetaUserDeviceListRegisteredOwnerCountAsEndpoint](Get-MgBetaUserDeviceListRegisteredOwnerCountAsEndpoint.md)
-Get the number of the resource
-
-### [Get-MgBetaUserDeviceListRegisteredOwnerCountAsServicePrincipal](Get-MgBetaUserDeviceListRegisteredOwnerCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaUserDeviceListRegisteredOwnerCountAsUser](Get-MgBetaUserDeviceListRegisteredOwnerCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgBetaUserDeviceListRegisteredUserCountAsEndpoint](Get-MgBetaUserDeviceListRegisteredUserCountAsEndpoint.md)
-Get the number of the resource
-
-### [Get-MgBetaUserDeviceListRegisteredUserCountAsServicePrincipal](Get-MgBetaUserDeviceListRegisteredUserCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaUserDeviceListRegisteredUserCountAsUser](Get-MgBetaUserDeviceListRegisteredUserCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgBetaUserDeviceListTransitiveMemberOfCountAsAdministrativeUnit](Get-MgBetaUserDeviceListTransitiveMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgBetaUserDeviceListTransitiveMemberOfCountAsGroup](Get-MgBetaUserDeviceListTransitiveMemberOfCountAsGroup.md)
-Get the number of the resource
-
 ### [Get-MgBetaUserDeviceMemberOf](Get-MgBetaUserDeviceMemberOf.md)
 Groups and administrative units that this device is a member of.
 Read-only.
@@ -92,6 +62,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgBetaUserDeviceMemberOfCount](Get-MgBetaUserDeviceMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgBetaUserDeviceMemberOfCountAsAdministrativeUnit](Get-MgBetaUserDeviceMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgBetaUserDeviceMemberOfCountAsGroup](Get-MgBetaUserDeviceMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserDeviceRegisteredOwner](Get-MgBetaUserDeviceRegisteredOwner.md)
@@ -120,6 +96,15 @@ Supports $expand.
 ### [Get-MgBetaUserDeviceRegisteredOwnerCount](Get-MgBetaUserDeviceRegisteredOwnerCount.md)
 Get the number of the resource
 
+### [Get-MgBetaUserDeviceRegisteredOwnerCountAsEndpoint](Get-MgBetaUserDeviceRegisteredOwnerCountAsEndpoint.md)
+Get the number of the resource
+
+### [Get-MgBetaUserDeviceRegisteredOwnerCountAsServicePrincipal](Get-MgBetaUserDeviceRegisteredOwnerCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgBetaUserDeviceRegisteredOwnerCountAsUser](Get-MgBetaUserDeviceRegisteredOwnerCountAsUser.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDeviceRegisteredUser](Get-MgBetaUserDeviceRegisteredUser.md)
 Collection of registered users of the device.
 For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
@@ -146,6 +131,15 @@ Supports $expand.
 ### [Get-MgBetaUserDeviceRegisteredUserCount](Get-MgBetaUserDeviceRegisteredUserCount.md)
 Get the number of the resource
 
+### [Get-MgBetaUserDeviceRegisteredUserCountAsEndpoint](Get-MgBetaUserDeviceRegisteredUserCountAsEndpoint.md)
+Get the number of the resource
+
+### [Get-MgBetaUserDeviceRegisteredUserCountAsServicePrincipal](Get-MgBetaUserDeviceRegisteredUserCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgBetaUserDeviceRegisteredUserCountAsUser](Get-MgBetaUserDeviceRegisteredUserCountAsUser.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserDeviceTransitiveMemberOf](Get-MgBetaUserDeviceTransitiveMemberOf.md)
 Groups and administrative units that this device is a member of.
 This operation is transitive.
@@ -158,6 +152,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgBetaUserDeviceTransitiveMemberOfCount](Get-MgBetaUserDeviceTransitiveMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgBetaUserDeviceTransitiveMemberOfCountAsAdministrativeUnit](Get-MgBetaUserDeviceTransitiveMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgBetaUserDeviceTransitiveMemberOfCountAsGroup](Get-MgBetaUserDeviceTransitiveMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserDeviceUsageRights](Get-MgBetaUserDeviceUsageRights.md)

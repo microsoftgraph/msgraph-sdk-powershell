@@ -32,10 +32,15 @@ Delete a permission object on a site.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-Remove-MgSitePermission -SiteId $siteId -PermissionId $permissionId
 ```
 
+$params = @{
+	roles = @(
+		"read"
+	)
+}
 
+Update-MgSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params
 
 ## PARAMETERS
 

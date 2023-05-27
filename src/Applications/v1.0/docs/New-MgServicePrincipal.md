@@ -36,8 +36,9 @@ New-MgServicePrincipal [-AccountEnabled] [-AddIns <IMicrosoftGraphAddIn[]>]
  [-PreferredTokenSigningKeyThumbprint <String>] [-ReplyUrls <String[]>]
  [-ResourceSpecificApplicationPermissions <IMicrosoftGraphResourceSpecificPermission[]>]
  [-SamlSingleSignOnSettings <IMicrosoftGraphSamlSingleSignOnSettings>] [-ServicePrincipalNames <String[]>]
- [-ServicePrincipalType <String>] [-SignInAudience <String>] [-Tags <String[]>]
- [-TokenEncryptionKeyId <String>] [-TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]
+ [-ServicePrincipalType <String>] [-SignInAudience <String>]
+ [-Synchronization <IMicrosoftGraphSynchronization>] [-Tags <String[]>] [-TokenEncryptionKeyId <String>]
+ [-TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]
  [-TokenLifetimePolicies <IMicrosoftGraphTokenLifetimePolicy[]>]
  [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]
  [-VerifiedPublisher <IMicrosoftGraphVerifiedPublisher>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -870,6 +871,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Synchronization
+synchronization
+To construct, see NOTES section for SYNCHRONIZATION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSynchronization
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Tags
 Custom strings that can be used to categorize and identify the service principal.
 Not nullable.
@@ -1237,6 +1254,166 @@ To create the parameters described below, construct a hash table containing the 
   - `[ServicePrincipalNames <String[]>]`: Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
   - `[ServicePrincipalType <String>]`: Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
   - `[SignInAudience <String>]`: Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+  - `[Synchronization <IMicrosoftGraphSynchronization>]`: synchronization
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Jobs <IMicrosoftGraphSynchronizationJob[]>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Schedule <IMicrosoftGraphSynchronizationSchedule>]`: synchronizationSchedule
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Expiration <DateTime?>]`: 
+        - `[Interval <TimeSpan?>]`: 
+        - `[State <String>]`: synchronizationScheduleState
+      - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[Directories <IMicrosoftGraphDirectoryDefinition[]>]`: 
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+          - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
+          - `[DiscoveryDateTime <DateTime?>]`: 
+          - `[Name <String>]`: 
+          - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: 
+            - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+              - `[Anchor <Boolean?>]`: 
+              - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
+                - `[Key <String>]`: 
+                - `[Value <String>]`: 
+              - `[CaseExact <Boolean?>]`: 
+              - `[DefaultValue <String>]`: 
+              - `[FlowNullValues <Boolean?>]`: 
+              - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: 
+                - `[Key <String>]`: attributeDefinitionMetadata
+                - `[Value <String>]`: 
+              - `[Multivalued <Boolean?>]`: 
+              - `[Mutability <String>]`: mutability
+              - `[Name <String>]`: 
+              - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: 
+                - `[ReferencedObjectName <String>]`: 
+                - `[ReferencedProperty <String>]`: 
+              - `[Required <Boolean?>]`: 
+              - `[Type <String>]`: attributeType
+            - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+              - `[Key <String>]`: objectDefinitionMetadata
+              - `[Value <String>]`: 
+            - `[Name <String>]`: 
+            - `[SupportedApis <String[]>]`: 
+          - `[ReadOnly <Boolean?>]`: 
+          - `[Version <String>]`: 
+        - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
+          - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[IncludedContainers <String[]>]`: 
+          - `[Editable <Boolean?>]`: 
+          - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[IncludedGroups <String[]>]`: 
+          - `[Id <String>]`: 
+          - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
+          - `[Name <String>]`: 
+          - `[ObjectMappings <IMicrosoftGraphObjectMapping[]>]`: 
+            - `[AttributeMappings <IMicrosoftGraphAttributeMapping[]>]`: 
+              - `[DefaultValue <String>]`: 
+              - `[ExportMissingReferences <Boolean?>]`: 
+              - `[FlowBehavior <String>]`: attributeFlowBehavior
+              - `[FlowType <String>]`: attributeFlowType
+              - `[MatchingPriority <Int32?>]`: 
+              - `[Source <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Expression <String>]`: 
+                - `[Name <String>]`: 
+                - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: 
+                  - `[Key <String>]`: 
+                  - `[Value <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
+                - `[Type <String>]`: attributeMappingSourceType
+              - `[TargetAttributeName <String>]`: 
+            - `[Enabled <Boolean?>]`: 
+            - `[FlowTypes <String>]`: objectFlowTypes
+            - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: 
+              - `[Key <String>]`: objectMappingMetadata
+              - `[Value <String>]`: 
+            - `[Name <String>]`: 
+            - `[Scope <IMicrosoftGraphFilter>]`: filter
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[CategoryFilterGroups <IMicrosoftGraphFilterGroup[]>]`: 
+                - `[Clauses <IMicrosoftGraphFilterClause[]>]`: 
+                  - `[OperatorName <String>]`: 
+                  - `[SourceOperandName <String>]`: 
+                  - `[TargetOperand <IMicrosoftGraphFilterOperand>]`: filterOperand
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Values <String[]>]`: 
+                - `[Name <String>]`: 
+              - `[Groups <IMicrosoftGraphFilterGroup[]>]`: 
+              - `[InputFilterGroups <IMicrosoftGraphFilterGroup[]>]`: 
+            - `[SourceObjectName <String>]`: 
+            - `[TargetObjectName <String>]`: 
+          - `[Priority <Int32?>]`: 
+          - `[SourceDirectoryName <String>]`: 
+          - `[TargetDirectoryName <String>]`: 
+        - `[Version <String>]`: 
+      - `[Status <IMicrosoftGraphSynchronizationStatus>]`: synchronizationStatus
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Code <String>]`: synchronizationStatusCode
+        - `[CountSuccessiveCompleteFailures <Int64?>]`: 
+        - `[EscrowsPruned <Boolean?>]`: 
+        - `[LastExecution <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[ActivityIdentifier <String>]`: 
+          - `[CountEntitled <Int64?>]`: 
+          - `[CountEntitledForProvisioning <Int64?>]`: 
+          - `[CountEscrowed <Int64?>]`: 
+          - `[CountEscrowedRaw <Int64?>]`: 
+          - `[CountExported <Int64?>]`: 
+          - `[CountExports <Int64?>]`: 
+          - `[CountImported <Int64?>]`: 
+          - `[CountImportedDeltas <Int64?>]`: 
+          - `[CountImportedReferenceDeltas <Int64?>]`: 
+          - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Code <String>]`: 
+            - `[Message <String>]`: 
+            - `[TenantActionable <Boolean?>]`: 
+          - `[State <String>]`: synchronizationTaskExecutionResult
+          - `[TimeBegan <DateTime?>]`: 
+          - `[TimeEnded <DateTime?>]`: 
+        - `[LastSuccessfulExecution <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
+        - `[LastSuccessfulExecutionWithExports <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
+        - `[Progress <IMicrosoftGraphSynchronizationProgress[]>]`: 
+          - `[CompletedUnits <Int64?>]`: 
+          - `[ProgressObservationDateTime <DateTime?>]`: 
+          - `[TotalUnits <Int64?>]`: 
+          - `[Units <String>]`: 
+        - `[Quarantine <IMicrosoftGraphSynchronizationQuarantine>]`: synchronizationQuarantine
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[CurrentBegan <DateTime?>]`: 
+          - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
+          - `[NextAttempt <DateTime?>]`: 
+          - `[Reason <String>]`: quarantineReason
+          - `[SeriesBegan <DateTime?>]`: 
+          - `[SeriesCount <Int64?>]`: 
+        - `[SteadyStateFirstAchievedTime <DateTime?>]`: 
+        - `[SteadyStateLastAchievedTime <DateTime?>]`: 
+        - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: 
+          - `[Key <String>]`: 
+          - `[Value <Int64?>]`: 
+        - `[TroubleshootingUrl <String>]`: 
+      - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: 
+        - `[Name <String>]`: Name for this key-value pair
+        - `[Value <String>]`: Value for this key-value pair
+      - `[TemplateId <String>]`: 
+    - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: 
+      - `[Key <String>]`: synchronizationSecret
+      - `[Value <String>]`: 
+    - `[Templates <IMicrosoftGraphSynchronizationTemplate[]>]`: 
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[ApplicationId <String>]`: 
+      - `[Default <Boolean?>]`: 
+      - `[Description <String>]`: 
+      - `[Discoverable <Boolean?>]`: 
+      - `[FactoryTag <String>]`: 
+      - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: 
+        - `[Key <String>]`: synchronizationMetadata
+        - `[Value <String>]`: 
+      - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
   - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
   - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
   - `[TokenIssuancePolicies <IMicrosoftGraphTokenIssuancePolicy[]>]`: The tokenIssuancePolicies assigned to this service principal.
@@ -1379,6 +1556,167 @@ To create the parameters described below, construct a hash table containing the 
 `SAMLSINGLESIGNONSETTINGS <IMicrosoftGraphSamlSingleSignOnSettings>`: samlSingleSignOnSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[RelayState <String>]`: The relative URI the service provider would redirect to after completion of the single sign-on flow.
+
+`SYNCHRONIZATION <IMicrosoftGraphSynchronization>`: synchronization
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Jobs <IMicrosoftGraphSynchronizationJob[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Schedule <IMicrosoftGraphSynchronizationSchedule>]`: synchronizationSchedule
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Expiration <DateTime?>]`: 
+      - `[Interval <TimeSpan?>]`: 
+      - `[State <String>]`: synchronizationScheduleState
+    - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Directories <IMicrosoftGraphDirectoryDefinition[]>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[Discoverabilities <String>]`: directoryDefinitionDiscoverabilities
+        - `[DiscoveryDateTime <DateTime?>]`: 
+        - `[Name <String>]`: 
+        - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: 
+          - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+            - `[Anchor <Boolean?>]`: 
+            - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
+              - `[Key <String>]`: 
+              - `[Value <String>]`: 
+            - `[CaseExact <Boolean?>]`: 
+            - `[DefaultValue <String>]`: 
+            - `[FlowNullValues <Boolean?>]`: 
+            - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: 
+              - `[Key <String>]`: attributeDefinitionMetadata
+              - `[Value <String>]`: 
+            - `[Multivalued <Boolean?>]`: 
+            - `[Mutability <String>]`: mutability
+            - `[Name <String>]`: 
+            - `[ReferencedObjects <IMicrosoftGraphReferencedObject[]>]`: 
+              - `[ReferencedObjectName <String>]`: 
+              - `[ReferencedProperty <String>]`: 
+            - `[Required <Boolean?>]`: 
+            - `[Type <String>]`: attributeType
+          - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+            - `[Key <String>]`: objectDefinitionMetadata
+            - `[Value <String>]`: 
+          - `[Name <String>]`: 
+          - `[SupportedApis <String[]>]`: 
+        - `[ReadOnly <Boolean?>]`: 
+        - `[Version <String>]`: 
+      - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: 
+        - `[ContainerFilter <IMicrosoftGraphContainerFilter>]`: containerFilter
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[IncludedContainers <String[]>]`: 
+        - `[Editable <Boolean?>]`: 
+        - `[GroupFilter <IMicrosoftGraphGroupFilter>]`: groupFilter
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[IncludedGroups <String[]>]`: 
+        - `[Id <String>]`: 
+        - `[Metadata <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
+        - `[Name <String>]`: 
+        - `[ObjectMappings <IMicrosoftGraphObjectMapping[]>]`: 
+          - `[AttributeMappings <IMicrosoftGraphAttributeMapping[]>]`: 
+            - `[DefaultValue <String>]`: 
+            - `[ExportMissingReferences <Boolean?>]`: 
+            - `[FlowBehavior <String>]`: attributeFlowBehavior
+            - `[FlowType <String>]`: attributeFlowType
+            - `[MatchingPriority <Int32?>]`: 
+            - `[Source <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Expression <String>]`: 
+              - `[Name <String>]`: 
+              - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: 
+                - `[Key <String>]`: 
+                - `[Value <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
+              - `[Type <String>]`: attributeMappingSourceType
+            - `[TargetAttributeName <String>]`: 
+          - `[Enabled <Boolean?>]`: 
+          - `[FlowTypes <String>]`: objectFlowTypes
+          - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: 
+            - `[Key <String>]`: objectMappingMetadata
+            - `[Value <String>]`: 
+          - `[Name <String>]`: 
+          - `[Scope <IMicrosoftGraphFilter>]`: filter
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[CategoryFilterGroups <IMicrosoftGraphFilterGroup[]>]`: 
+              - `[Clauses <IMicrosoftGraphFilterClause[]>]`: 
+                - `[OperatorName <String>]`: 
+                - `[SourceOperandName <String>]`: 
+                - `[TargetOperand <IMicrosoftGraphFilterOperand>]`: filterOperand
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Values <String[]>]`: 
+              - `[Name <String>]`: 
+            - `[Groups <IMicrosoftGraphFilterGroup[]>]`: 
+            - `[InputFilterGroups <IMicrosoftGraphFilterGroup[]>]`: 
+          - `[SourceObjectName <String>]`: 
+          - `[TargetObjectName <String>]`: 
+        - `[Priority <Int32?>]`: 
+        - `[SourceDirectoryName <String>]`: 
+        - `[TargetDirectoryName <String>]`: 
+      - `[Version <String>]`: 
+    - `[Status <IMicrosoftGraphSynchronizationStatus>]`: synchronizationStatus
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Code <String>]`: synchronizationStatusCode
+      - `[CountSuccessiveCompleteFailures <Int64?>]`: 
+      - `[EscrowsPruned <Boolean?>]`: 
+      - `[LastExecution <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[ActivityIdentifier <String>]`: 
+        - `[CountEntitled <Int64?>]`: 
+        - `[CountEntitledForProvisioning <Int64?>]`: 
+        - `[CountEscrowed <Int64?>]`: 
+        - `[CountEscrowedRaw <Int64?>]`: 
+        - `[CountExported <Int64?>]`: 
+        - `[CountExports <Int64?>]`: 
+        - `[CountImported <Int64?>]`: 
+        - `[CountImportedDeltas <Int64?>]`: 
+        - `[CountImportedReferenceDeltas <Int64?>]`: 
+        - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Code <String>]`: 
+          - `[Message <String>]`: 
+          - `[TenantActionable <Boolean?>]`: 
+        - `[State <String>]`: synchronizationTaskExecutionResult
+        - `[TimeBegan <DateTime?>]`: 
+        - `[TimeEnded <DateTime?>]`: 
+      - `[LastSuccessfulExecution <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
+      - `[LastSuccessfulExecutionWithExports <IMicrosoftGraphSynchronizationTaskExecution>]`: synchronizationTaskExecution
+      - `[Progress <IMicrosoftGraphSynchronizationProgress[]>]`: 
+        - `[CompletedUnits <Int64?>]`: 
+        - `[ProgressObservationDateTime <DateTime?>]`: 
+        - `[TotalUnits <Int64?>]`: 
+        - `[Units <String>]`: 
+      - `[Quarantine <IMicrosoftGraphSynchronizationQuarantine>]`: synchronizationQuarantine
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[CurrentBegan <DateTime?>]`: 
+        - `[Error <IMicrosoftGraphSynchronizationError>]`: synchronizationError
+        - `[NextAttempt <DateTime?>]`: 
+        - `[Reason <String>]`: quarantineReason
+        - `[SeriesBegan <DateTime?>]`: 
+        - `[SeriesCount <Int64?>]`: 
+      - `[SteadyStateFirstAchievedTime <DateTime?>]`: 
+      - `[SteadyStateLastAchievedTime <DateTime?>]`: 
+      - `[SynchronizedEntryCountByType <IMicrosoftGraphStringKeyLongValuePair[]>]`: 
+        - `[Key <String>]`: 
+        - `[Value <Int64?>]`: 
+      - `[TroubleshootingUrl <String>]`: 
+    - `[SynchronizationJobSettings <IMicrosoftGraphKeyValuePair[]>]`: 
+      - `[Name <String>]`: Name for this key-value pair
+      - `[Value <String>]`: Value for this key-value pair
+    - `[TemplateId <String>]`: 
+  - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: 
+    - `[Key <String>]`: synchronizationSecret
+    - `[Value <String>]`: 
+  - `[Templates <IMicrosoftGraphSynchronizationTemplate[]>]`: 
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[ApplicationId <String>]`: 
+    - `[Default <Boolean?>]`: 
+    - `[Description <String>]`: 
+    - `[Discoverable <Boolean?>]`: 
+    - `[FactoryTag <String>]`: 
+    - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: 
+      - `[Key <String>]`: synchronizationMetadata
+      - `[Value <String>]`: 
+    - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
 
 `TOKENISSUANCEPOLICIES <IMicrosoftGraphTokenIssuancePolicy[]>`: The tokenIssuancePolicies assigned to this service principal.
   - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 

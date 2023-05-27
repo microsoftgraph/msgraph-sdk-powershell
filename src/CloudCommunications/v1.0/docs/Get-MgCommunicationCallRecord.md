@@ -34,34 +34,16 @@ There are two ways to get the **id** of a **callRecord**:
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallRecord -CallRecordId $callRecordId
 ```
 
-
+Get-MgCommunicationCallRecord -CallRecordId $callRecordId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallRecord -CallRecordId $callRecordId
 ```
 
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.CloudCommunications
 Get-MgCommunicationCallRecord -CallRecordId $callRecordId -ExpandProperty "sessions(`$expand=segments)"
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallRecord -CallRecordId $callRecordId
-```
-
-
 
 ## PARAMETERS
 

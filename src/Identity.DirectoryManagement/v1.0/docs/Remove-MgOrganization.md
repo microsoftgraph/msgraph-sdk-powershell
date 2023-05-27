@@ -35,20 +35,20 @@ Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
 $params = @{
-	MarketingNotificationEmails = @(
+	marketingNotificationEmails = @(
 		"marketing@contoso.com"
 	)
-	PrivacyProfile = @{
-		ContactEmail = "alice@contoso.com"
-		StatementUrl = "https://contoso.com/privacyStatement"
+	privacyProfile = @{
+		contactEmail = "alice@contoso.com"
+		statementUrl = "https://contoso.com/privacyStatement"
 	}
-	SecurityComplianceNotificationMails = @(
+	securityComplianceNotificationMails = @(
 		"security@contoso.com"
 	)
-	SecurityComplianceNotificationPhones = @(
+	securityComplianceNotificationPhones = @(
 		"(123) 456-7890"
 	)
-	TechnicalNotificationMails = @(
+	technicalNotificationMails = @(
 		"tech@contoso.com"
 	)
 }

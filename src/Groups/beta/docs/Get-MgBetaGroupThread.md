@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaGroupThread
 
 ## SYNOPSIS
-Get a thread object.
+Get a specific thread that belongs to a group.
+You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
 
 ## SYNTAX
 
@@ -30,33 +31,25 @@ Get-MgBetaGroupThread -InputObject <IGroupsIdentity> [-Property <String[]>] [<Co
 ```
 
 ## DESCRIPTION
-Get a thread object.
+Get a specific thread that belongs to a group.
+You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Groups
-Get-MgBetaGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
 ```
 
+$params = @{
+	originalStartTimeZone = "originalStartTimeZone-value"
+	originalEndTimeZone = "originalEndTimeZone-value"
+	iCalUId = "iCalUId-value"
+	reminderMinutesBeforeStart = 
+	isReminderOn = $true
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Groups
-Get-MgBetaGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Groups
-Get-MgBetaGroupThread -GroupId $groupId
-```
-
-
+Update-MgBetaGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
 
 ## PARAMETERS
 

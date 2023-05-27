@@ -42,15 +42,15 @@ Create a new externalConnection.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Search
-$params = @{
-	Id = "contosohr"
-	Name = "Contoso HR"
-	Description = "Connection to index Contoso HR system"
-}
-New-MgBetaExternalConnection -BodyParameter $params
 ```
 
+$params = @{
+	id = "contosohr"
+	name = "Contoso HR"
+	description = "Connection to index Contoso HR system"
+}
 
+New-MgBetaExternalConnection -BodyParameter $params
 
 ## PARAMETERS
 

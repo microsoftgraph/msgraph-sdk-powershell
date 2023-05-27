@@ -58,14 +58,14 @@ Use this API to create a new calendar in a calendar group for a user.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Calendar
-$params = @{
-	Name = "Marketing calendar"
-}
-# A UPN can also be used as -UserId.
-New-MgUserCalendarGroupCalendar -UserId $userId -CalendarGroupId $calendarGroupId -BodyParameter $params
 ```
 
+$params = @{
+	name = "Marketing calendar"
+}
 
+# A UPN can also be used as -UserId.
+New-MgUserCalendarGroupCalendar -UserId $userId -CalendarGroupId $calendarGroupId -BodyParameter $params
 
 ## PARAMETERS
 

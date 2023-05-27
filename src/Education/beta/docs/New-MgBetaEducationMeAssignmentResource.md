@@ -52,7 +52,115 @@ You can create the following types of assignment resources: Every resource has a
 Import-Module Microsoft.Graph.Beta.Education
 ```
 
-Get-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+$params = @{
+	distributeForStudentWork = $false
+	resource = @{
+		displayName = "Where the Wonders of Learning Never Cease | Wonderopolis"
+		link = "https://wonderopolis.org/"
+		thumbnailPreviewUrl = $null
+		"@odata.type" = "#microsoft.graph.educationLinkResource"
+	}
+}
+
+New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Education
+```
+
+$params = @{
+	distributeForStudentWork = $false
+	resource = @{
+		"@odata.type" = "microsoft.graph.educationWordResource"
+		displayName = "Issues and PR in guthub.docx"
+		fileUrl = "https://graph.microsoft.com/v1.0/drives/b!DPA6q59Tw0mtgmyXRUmrQRqBZTesG-lMkl1cBmvvMeUEWrOk89nKRpUEr4ZhNYBc/items/016XPCQEELISJB7NVNVBAK7V4UIF6Q27U2"
+	}
+}
+
+New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Education
+```
+
+$params = @{
+	distributeForStudentWork = $false
+	resource = @{
+		displayName = "article.pdf"
+		"@odata.type" = "#microsoft.graph.educationFileResource"
+	}
+}
+
+New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+
+### -------------------------- EXAMPLE 4 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Education
+```
+
+$params = @{
+	distributeForStudentWork = $false
+	resource = @{
+		"@odata.type" = "microsoft.graph.educationExcelResource"
+		displayName = "Graph Doc pages.xlsx"
+		fileUrl = "https://graph.microsoft.com/v1.0/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXoOOmEQNO79QpIMPdOmY3nf/items/01QTY63RIR7PSV4JJSFJHKNPUVUWGPW4O2"
+	}
+}
+
+New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+
+### -------------------------- EXAMPLE 5 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Education
+```
+
+$params = @{
+	distributeForStudentWork = $false
+	resource = @{
+		"@odata.type" = "microsoft.graph.educationPowerPointResource"
+		displayName = "state diagram.pptx"
+		fileUrl = "https://graph.microsoft.com/v1.0/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXoOOmEQNO79QpIMPdOmY3nf/items/01QTY63RN327OXRN6EVFE2Q5FRJZTN5EOJ"
+	}
+}
+
+New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+
+### -------------------------- EXAMPLE 6 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Education
+```
+
+$params = @{
+	distributeForStudentWork = $false
+	resource = @{
+		"@odata.type" = "microsoft.graph.educationMediaResource"
+		displayName = "homework example.PNG"
+		fileUrl = "https://graph.microsoft.com/v1.0/drives/b!OPmUsPgnBUiMIXMxWcj3neC1xck6I5NIsnFxfrLdmXoOOmEQNO79QpIMPdOmY3nf/items/01QTY63RMUWOKAGSJZ6BHINJVKNMOOJABF"
+	}
+}
+
+New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
+
+### -------------------------- EXAMPLE 7 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Education
+```
+
+$params = @{
+	distributeForStudentWork = $false
+	resource = @{
+		displayName = "Template - My Story"
+		appId = "6fbeb90c-3d55-4bd5-82c4-bfe824be4300"
+		appIconWebUrl = "https://statics.teams.cdn.office.net/evergreen-assets/ThirdPartyApps/6fbeb90c-3d55-4bd5-82c4-bfe824be4300_largeImage.png?v=2.0.2"
+		teamsEmbeddedContentUrl = "https://app.api.edu.buncee.com/player/C7B0866C9B7E485EAE21AE14DBC3FD08?embed=1&amp;render_slide_panel=1"
+		webUrl = "https://app.edu.buncee.com/buncee/C7B0866C9B7E485EAE21AE14DBC3FD08"
+		"@odata.type" = "#microsoft.graph.educationTeamsAppResource"
+	}
+}
+
+New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -229,8 +337,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[DisplayName <String>]`: Display name of resource.
@@ -257,8 +365,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[DisplayName <String>]`: Display name of resource.

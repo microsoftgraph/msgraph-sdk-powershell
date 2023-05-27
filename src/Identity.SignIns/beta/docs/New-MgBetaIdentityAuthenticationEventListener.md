@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Create a new authenticationEventListener object.
-Only the onTokenIssuanceStartListener type is supported.
+You can create one of the following subtypes that are derived from **authenticationEventListener**.
 
 ## SYNTAX
 
@@ -28,7 +28,7 @@ New-MgBetaIdentityAuthenticationEventListener -BodyParameter <IMicrosoftGraphAut
 
 ## DESCRIPTION
 Create a new authenticationEventListener object.
-Only the onTokenIssuanceStartListener type is supported.
+You can create one of the following subtypes that are derived from **authenticationEventListener**.
 
 ## EXAMPLES
 

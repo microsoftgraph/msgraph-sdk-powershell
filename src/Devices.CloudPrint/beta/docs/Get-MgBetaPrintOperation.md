@@ -39,10 +39,9 @@ Retrieve the properties and relationships of a printOperation object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
-Get-MgBetaPrintOperation -PrintOperationId $printOperationId
 ```
 
-
+Get-MgBetaPrintOperation -PrintOperationId $printOperationId
 
 ## PARAMETERS
 

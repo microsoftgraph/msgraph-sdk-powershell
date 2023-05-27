@@ -41,20 +41,20 @@ There are two scenarios where an app can get a contact in another user's contact
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.PersonalContacts
-# A UPN can also be used as -UserId.
-Get-MgBetaUserContact -UserId $userId -ContactId $contactId
 ```
 
+$params = @{
+	homeAddress = @{
+		street = "123 Some street"
+		city = "Seattle"
+		state = "WA"
+		postalCode = "98121"
+	}
+	birthday = [System.DateTime]::Parse("1974-07-22")
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.PersonalContacts
 # A UPN can also be used as -UserId.
-Get-MgBetaUserContact -UserId $userId -Property "displayName,emailAddresses"
-```
-
-
+Update-MgBetaUserContact -UserId $userId -ContactId $contactId -BodyParameter $params
 
 ## PARAMETERS
 

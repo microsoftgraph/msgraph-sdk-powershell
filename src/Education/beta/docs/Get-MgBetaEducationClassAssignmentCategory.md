@@ -48,18 +48,9 @@ Only teachers, students, and applications with application permissions can perfo
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
 Get-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
-```
-
-
 
 ## PARAMETERS
 

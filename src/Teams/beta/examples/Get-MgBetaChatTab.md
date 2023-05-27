@@ -1,21 +1,13 @@
-### Example 1: Using the Get-MgBetaChatTab Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaChatTab -ChatId $chatId -TeamsTabId $teamsTabId -ExpandProperty "teamsApp" 
+### Example 1: Update the name of a tab in a chat
+
+```powershellImport-Module Microsoft.Graph.Beta.Teams
+
+$params = @{
+	displayName = "My Contoso Tab - updated again"
+}
+
+Update-MgBetaChatTab -ChatId $chatId -TeamsTabId $teamsTabId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaChatTab Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaChatTab Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaChatTab -ChatId $chatId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.web'" 
-```
-This example shows how to use the Get-MgBetaChatTab Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgBetaChatTab Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaChatTab -ChatId $chatId -ExpandProperty "teamsApp" 
-```
-This example shows how to use the Get-MgBetaChatTab Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaChatTab Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

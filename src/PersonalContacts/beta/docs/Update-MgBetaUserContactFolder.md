@@ -54,15 +54,15 @@ Update the properties of contactfolder object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.PersonalContacts
-$params = @{
-	ParentFolderId = "parentFolderId-value"
-	DisplayName = "displayName-value"
-}
-# A UPN can also be used as -UserId.
-Update-MgBetaUserContactFolder -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
 ```
 
+$params = @{
+	parentFolderId = "parentFolderId-value"
+	displayName = "displayName-value"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgBetaUserContactFolder -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
 
 ## PARAMETERS
 

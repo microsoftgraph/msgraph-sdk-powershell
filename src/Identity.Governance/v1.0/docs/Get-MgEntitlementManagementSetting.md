@@ -24,10 +24,13 @@ Retrieve the properties of an entitlementManagementSettings object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementSetting
 ```
 
+$params = @{
+	externalUserLifecycleAction = "None"
+}
 
+Update-MgEntitlementManagementSetting -BodyParameter $params
 
 ## PARAMETERS
 

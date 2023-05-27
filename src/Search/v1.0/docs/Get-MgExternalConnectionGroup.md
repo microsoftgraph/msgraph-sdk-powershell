@@ -39,10 +39,14 @@ Get an externalGroup object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Search
-Get-MgExternalConnectionGroup -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId
 ```
 
+$params = @{
+	displayName = "Contoso Marketing"
+	description = "The product marketing team"
+}
 
+Update-MgExternalConnectionGroup -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 
 ## PARAMETERS
 

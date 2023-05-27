@@ -48,7 +48,13 @@ Create a new timeOffReason.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgTeamScheduleTimeOffReason -TeamId $teamId
+$params = @{
+	displayName = "Vacation"
+	iconType = "plane"
+	isActive = $true
+}
+
+New-MgTeamScheduleTimeOffReason -TeamId $teamId -BodyParameter $params
 
 ## PARAMETERS
 

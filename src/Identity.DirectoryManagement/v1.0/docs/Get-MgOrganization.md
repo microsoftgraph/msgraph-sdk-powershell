@@ -41,18 +41,28 @@ Since the **organization** resource supports extensions, you can also use the `G
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgOrganization -OrganizationId $organizationId
 ```
 
+$params = @{
+	marketingNotificationEmails = @(
+		"marketing@contoso.com"
+	)
+	privacyProfile = @{
+		contactEmail = "alice@contoso.com"
+		statementUrl = "https://contoso.com/privacyStatement"
+	}
+	securityComplianceNotificationMails = @(
+		"security@contoso.com"
+	)
+	securityComplianceNotificationPhones = @(
+		"(123) 456-7890"
+	)
+	technicalNotificationMails = @(
+		"tech@contoso.com"
+	)
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgOrganization
-```
-
-
+Update-MgOrganization -OrganizationId $organizationId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -48,25 +48,25 @@ Create a new timeOff instance in a schedule.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	UserId = "c5d0c76b-80c4-481c-be50-923cd8d680a1"
-	SharedTimeOff = @{
-		TimeOffReasonId = "TOR_891045ca-b5d2-406b-aa06-a3c8921245d7"
-		StartDateTime = [System.DateTime]::Parse("2019-03-11T07:00:00Z")
-		EndDateTime = [System.DateTime]::Parse("2019-03-12T07:00:00Z")
-		Theme = "white"
-	}
-	DraftTimeOff = @{
-		TimeOffReasonId = "TOR_891045ca-b5d2-406b-aa06-a3c8921245d7"
-		StartDateTime = [System.DateTime]::Parse("2019-03-11T07:00:00Z")
-		EndDateTime = [System.DateTime]::Parse("2019-03-12T07:00:00Z")
-		Theme = "pink"
-	}
-}
-New-MgBetaTeamScheduleTimeOff -TeamId $teamId -BodyParameter $params
 ```
 
+$params = @{
+	userId = "c5d0c76b-80c4-481c-be50-923cd8d680a1"
+	sharedTimeOff = @{
+		timeOffReasonId = "TOR_891045ca-b5d2-406b-aa06-a3c8921245d7"
+		startDateTime = [System.DateTime]::Parse("2019-03-11T07:00:00Z")
+		endDateTime = [System.DateTime]::Parse("2019-03-12T07:00:00Z")
+		theme = "white"
+	}
+	draftTimeOff = @{
+		timeOffReasonId = "TOR_891045ca-b5d2-406b-aa06-a3c8921245d7"
+		startDateTime = [System.DateTime]::Parse("2019-03-11T07:00:00Z")
+		endDateTime = [System.DateTime]::Parse("2019-03-12T07:00:00Z")
+		theme = "pink"
+	}
+}
 
+New-MgBetaTeamScheduleTimeOff -TeamId $teamId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -302,8 +302,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -322,8 +322,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -377,8 +377,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

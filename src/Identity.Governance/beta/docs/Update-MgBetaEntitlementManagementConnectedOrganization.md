@@ -52,15 +52,15 @@ Update a connectedOrganization object to change one or more of its properties.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.Governance
-$params = @{
-	DisplayName = "Connected organization new name"
-	Description = "Connected organization new description"
-	State = "configured"
-}
-Update-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Connected organization new name"
+	description = "Connected organization new description"
+	state = "configured"
+}
 
+Update-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -54,8 +54,12 @@ Create a new onenoteSection in the specified notebook.
 Import-Module Microsoft.Graph.Notes
 ```
 
+$params = @{
+	displayName = "Section name"
+}
+
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteNotebookSection -UserId $userId -NotebookId $notebookId
+New-MgUserOnenoteNotebookSection -UserId $userId -NotebookId $notebookId -BodyParameter $params
 
 ## PARAMETERS
 

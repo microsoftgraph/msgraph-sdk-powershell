@@ -59,15 +59,15 @@ Creates a new groupLifecyclePolicy.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Groups
-$params = @{
-	GroupLifetimeInDays = 100
-	ManagedGroupTypes = "Selected"
-	AlternateNotificationEmails = "admin@contoso.com"
-}
-New-MgBetaGroupLifecyclePolicy -BodyParameter $params
 ```
 
+$params = @{
+	groupLifetimeInDays = 100
+	managedGroupTypes = "Selected"
+	alternateNotificationEmails = "admin@contoso.com"
+}
 
+New-MgBetaGroupLifecyclePolicy -BodyParameter $params
 
 ## PARAMETERS
 

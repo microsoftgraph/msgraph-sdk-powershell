@@ -50,14 +50,14 @@ Create a new ediscoveryReviewSetQuery object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Security
-$params = @{
-	DisplayName = "My Query 1"
-	ContentQuery = "(Author="edison")"
-}
-New-MgSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "My Query 1"
+	contentQuery = "(Author="edison")"
+}
 
+New-MgSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -BodyParameter $params
 
 ## PARAMETERS
 

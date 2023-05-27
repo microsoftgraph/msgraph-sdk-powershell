@@ -43,82 +43,26 @@ In Azure AD B2C, this operation can currently get a socialIdentityProvider, open
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	clientSecret = "1111111111111"
+}
 
+Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	displayName = "Apple"
+}
 
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderId $identityProviderId
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderId $identityProviderId
-```
-
-
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider
-```
-
-
-
-### -------------------------- EXAMPLE 6 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider
-```
-
-
-
-### -------------------------- EXAMPLE 7 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider
-```
-
-
-
-### -------------------------- EXAMPLE 8 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -OutFile $outFileId
-```
-
-
-
-### -------------------------- EXAMPLE 9 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
-```
-
-
-
-### -------------------------- EXAMPLE 10 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
-```
-
-
+Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 
 ## PARAMETERS
 

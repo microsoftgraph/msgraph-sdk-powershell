@@ -48,13 +48,13 @@ Only Teachers can update these settings.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-$params = @{
-	SubmissionAnimationDisabled = $true
-}
-Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
 ```
 
+$params = @{
+	submissionAnimationDisabled = $true
+}
 
+Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -154,8 +154,8 @@ Accept wildcard characters: False
 
 ### -SubmissionAnimationDisabled
 Indicates whether turn-in celebration animation will be shown.
-A value of true indicates that the animation will not be shown.
-Default value is false.
+If true, the animation will not be shown.
+The default value is false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -227,14 +227,14 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[GradingCategories <IMicrosoftGraphEducationGradingCategory[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
-    - `[DisplayName <String>]`: 
-    - `[PercentageWeight <Int32?>]`: 
-  - `[SubmissionAnimationDisabled <Boolean?>]`: Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
+    - `[DisplayName <String>]`: The name of the grading category.
+    - `[PercentageWeight <Int32?>]`: The weight of the category; an integer between 0 and 100.
+  - `[SubmissionAnimationDisabled <Boolean?>]`: Indicates whether turn-in celebration animation will be shown. If true, the animation will not be shown. The default value is false.
 
 `GRADINGCATEGORIES <IMicrosoftGraphEducationGradingCategory[]>`: .
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DisplayName <String>]`: 
-  - `[PercentageWeight <Int32?>]`: 
+  - `[DisplayName <String>]`: The name of the grading category.
+  - `[PercentageWeight <Int32?>]`: The weight of the category; an integer between 0 and 100.
 
 `INPUTOBJECT <IEducationIdentity>`: Identity Parameter
   - `[EducationAssignmentId <String>]`: The unique identifier of educationAssignment

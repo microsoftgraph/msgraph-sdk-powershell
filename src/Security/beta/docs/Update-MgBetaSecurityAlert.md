@@ -80,50 +80,50 @@ This method updates any solution that has a record of the referenced alert ID.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Security
-$params = @{
-	AssignedTo = "String"
-	ClosedDateTime = [System.DateTime]::Parse("String (timestamp)")
-	Comments = @(
-		"String"
-	)
-	Feedback = "@odata.type: microsoft.graph.alertFeedback"
-	Status = "@odata.type: microsoft.graph.alertStatus"
-	Tags = @(
-		"String"
-	)
-	VendorInformation = @{
-		Provider = "String"
-		Vendor = "String"
-	}
-}
-Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
 ```
 
+$params = @{
+	assignedTo = "String"
+	closedDateTime = [System.DateTime]::Parse("String (timestamp)")
+	comments = @(
+		"String"
+	)
+	feedback = "@odata.type: microsoft.graph.alertFeedback"
+	status = "@odata.type: microsoft.graph.alertStatus"
+	tags = @(
+		"String"
+	)
+	vendorInformation = @{
+		provider = "String"
+		vendor = "String"
+	}
+}
 
+Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Security
-$params = @{
-	AssignedTo = "String"
-	ClosedDateTime = [System.DateTime]::Parse("String (timestamp)")
-	Comments = @(
-		"String"
-	)
-	Feedback = "@odata.type: microsoft.graph.alertFeedback"
-	Status = "@odata.type: microsoft.graph.alertStatus"
-	Tags = @(
-		"String"
-	)
-	VendorInformation = @{
-		Provider = "String"
-		Vendor = "String"
-	}
-}
-Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
 ```
 
+$params = @{
+	assignedTo = "String"
+	closedDateTime = [System.DateTime]::Parse("String (timestamp)")
+	comments = @(
+		"String"
+	)
+	feedback = "@odata.type: microsoft.graph.alertFeedback"
+	status = "@odata.type: microsoft.graph.alertStatus"
+	tags = @(
+		"String"
+	)
+	vendorInformation = @{
+		provider = "String"
+		vendor = "String"
+	}
+}
 
+Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
 
 ## PARAMETERS
 

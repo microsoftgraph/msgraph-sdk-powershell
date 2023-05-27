@@ -39,10 +39,9 @@ Retrieve the properties of a **dataPolicyOperation** object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgDataPolicyOperation -DataPolicyOperationId $dataPolicyOperationId
 ```
 
-
+Get-MgDataPolicyOperation -DataPolicyOperationId $dataPolicyOperationId
 
 ## PARAMETERS
 

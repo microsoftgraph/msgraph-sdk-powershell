@@ -32,11 +32,15 @@ Delete contactFolder other than the default contactFolder.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.PersonalContacts
-# A UPN can also be used as -UserId.
-Remove-MgBetaUserContactFolder -UserId $userId -ContactFolderId $contactFolderId
 ```
 
+$params = @{
+	parentFolderId = "parentFolderId-value"
+	displayName = "displayName-value"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgBetaUserContactFolder -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
 
 ## PARAMETERS
 

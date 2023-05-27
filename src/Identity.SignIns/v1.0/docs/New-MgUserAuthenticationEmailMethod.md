@@ -49,13 +49,13 @@ A user may only have one email authentication method.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	EmailAddress = "kim@contoso.com"
-}
-New-MgUserAuthenticationEmailMethod -UserId $userId -BodyParameter $params
 ```
 
+$params = @{
+	emailAddress = "kim@contoso.com"
+}
 
+New-MgUserAuthenticationEmailMethod -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

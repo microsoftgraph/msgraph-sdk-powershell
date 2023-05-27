@@ -32,10 +32,13 @@ Delete a tag object permanently.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-Remove-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId
 ```
 
+$params = @{
+	displayName = "Finance"
+}
 
+Update-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -32,10 +32,9 @@ Revoke the specified user's access to submit print jobs to the associated printe
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
-Remove-MgPrintShareAllowedUserByRef -PrinterShareId $printerShareId -UserId $userId
 ```
 
-
+Remove-MgPrintShareAllowedUserByRef -PrinterShareId $printerShareId -UserId $userId
 
 ## PARAMETERS
 

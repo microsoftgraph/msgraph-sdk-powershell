@@ -27,10 +27,32 @@ This default configuration may be the service default assigned by Azure AD (**is
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyCrossTenantAccessPolicyDefault
 ```
 
+$params = @{
+	b2bCollaborationOutbound = @{
+		usersAndGroups = @{
+			accessType = "blocked"
+			targets = @(
+				@{
+					target = "0be493dc-cb56-4a53-936f-9cf64410b8b0"
+					targetType = "group"
+				}
+			)
+		}
+		applications = @{
+			accessType = "blocked"
+			targets = @(
+				@{
+					target = "AllApplications"
+					targetType = "application"
+				}
+			)
+		}
+	}
+}
 
+Update-MgPolicyCrossTenantAccessPolicyDefault -BodyParameter $params
 
 ## PARAMETERS
 

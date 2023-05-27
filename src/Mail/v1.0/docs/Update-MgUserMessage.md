@@ -72,31 +72,19 @@ Update the properties of a message object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Mail
-$params = @{
-	IsRead = $true
-}
-# A UPN can also be used as -UserId.
-Update-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Mail
 $params = @{
-	Subject = "subject-value"
-	Body = @{
-		ContentType = ""
-		Content = "content-value"
+	subject = "subject-value"
+	body = @{
+		contentType = ""
+		content = "content-value"
 	}
-	InferenceClassification = "other"
+	inferenceClassification = "other"
 }
+
 # A UPN can also be used as -UserId.
 Update-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

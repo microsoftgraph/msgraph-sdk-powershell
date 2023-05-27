@@ -1,14 +1,17 @@
-### Example 1: Using the New-MgBetaPolicyFeatureRolloutPolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
 $params = @{
-	DisplayName = "PassthroughAuthentication rollout policy"
-	Description = "PassthroughAuthentication rollout policy"
-	Feature = "passthroughAuthentication"
-	IsEnabled = $true
-	IsAppliedToOrganization = $false
+	displayName = "PassthroughAuthentication rollout policy"
+	description = "PassthroughAuthentication rollout policy"
+	feature = "passthroughAuthentication"
+	isEnabled = $true
+	isAppliedToOrganization = $false
 }
+
 New-MgBetaPolicyFeatureRolloutPolicy -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaPolicyFeatureRolloutPolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaBetaPolicyFeatureRolloutPolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

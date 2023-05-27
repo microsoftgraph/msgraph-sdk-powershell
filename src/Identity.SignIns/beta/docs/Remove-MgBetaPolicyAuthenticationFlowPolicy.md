@@ -28,8 +28,8 @@ Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
 $params = @{
-	SelfServiceSignUp = @{
-		IsEnabled = $true
+	selfServiceSignUp = @{
+		isEnabled = $true
 	}
 }
 

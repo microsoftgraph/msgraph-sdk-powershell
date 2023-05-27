@@ -39,18 +39,31 @@ Get schemaExtension
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.SchemaExtensions
-Get-MgSchemaExtension -SchemaExtensionId $schemaExtensionId
 ```
 
+$params = @{
+	owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
+	properties = @(
+		@{
+			name = "courseId"
+			type = "Integer"
+		}
+		@{
+			name = "courseName"
+			type = "String"
+		}
+		@{
+			name = "courseType"
+			type = "String"
+		}
+		@{
+			name = "courseSupervisors"
+			type = "String"
+		}
+	)
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.SchemaExtensions
-Get-MgSchemaExtension -Filter "id eq 'graphlearn_test'"
-```
-
-
+Update-MgSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
 
 ## PARAMETERS
 

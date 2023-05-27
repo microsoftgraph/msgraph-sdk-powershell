@@ -50,7 +50,12 @@ Currently, only **one** task trigger can be specified per printer, but this limi
 Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-Get-MgBetaPrintPrinterTaskTrigger -PrinterId $printerId
+$params = @{
+	event = "jobStarted"
+	"definition@odata.bind" = "https://graph.microsoft.com/v1.0/print/taskDefinitions/{taskDefinitionId}"
+}
+
+New-MgBetaPrintPrinterTaskTrigger -PrinterId $printerId -BodyParameter $params
 
 ## PARAMETERS
 

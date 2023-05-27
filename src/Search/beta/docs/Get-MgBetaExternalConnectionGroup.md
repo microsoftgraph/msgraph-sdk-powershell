@@ -42,12 +42,11 @@ Import-Module Microsoft.Graph.Beta.Search
 ```
 
 $params = @{
-	Id = "31bea3d537902000"
-	DisplayName = "Contoso Marketing"
-	Description = "The product marketing team"
+	displayName = "Contoso Marketing"
+	description = "The product marketing team"
 }
 
-New-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -BodyParameter $params
+Update-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 
 ## PARAMETERS
 

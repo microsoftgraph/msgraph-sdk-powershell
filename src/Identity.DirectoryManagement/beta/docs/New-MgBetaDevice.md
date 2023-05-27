@@ -45,24 +45,23 @@ Create a new device.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-$params = @{
-	AccountEnabled = $true
-	AlternativeSecurityIds = @(
-		@{
-			Type = 99
-			IdentityProvider = "identityProvider-value"
-			Key = [System.Text.Encoding]::ASCII.GetBytes("base64Y3YxN2E1MWFlYw==")
-		}
-	)
-	ApproximateLastSignInDateTime = [System.DateTime]::Parse("2016-10-19T10:37:00Z")
-	DeviceId = "deviceId-value"
-	DeviceMetadata = "deviceMetadata-value"
-	DeviceVersion = 99
-}
-New-MgBetaDevice -BodyParameter $params
 ```
 
+$params = @{
+	accountEnabled = $false
+	alternativeSecurityIds = @(
+		@{
+			type = 2
+			key = [System.Text.Encoding]::ASCII.GetBytes("base64Y3YxN2E1MWFlYw==")
+		}
+	)
+	deviceId = "4c299165-6e8f-4b45-a5ba-c5d250a707ff"
+	displayName = "Test device"
+	operatingSystem = "linux"
+	operatingSystemVersion = "1"
+}
 
+New-MgBetaDevice -BodyParameter $params
 
 ## PARAMETERS
 

@@ -1,14 +1,17 @@
-### Example 1: Using the Update-MgBetaPolicyTokenLifetimePolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
 $params = @{
-	Definition = @(
-		"definition-value"
+	definition = @(
+		"{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"5:30:00"}}"
 	)
-	DisplayName = "displayName-value"
-	IsOrganizationDefault = $true
+	displayName = "Contoso token lifetime policy"
+	isOrganizationDefault = $true
 }
+
 Update-MgBetaPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaPolicyTokenLifetimePolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Update-MgBetaBetaPolicyTokenLifetimePolicy Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

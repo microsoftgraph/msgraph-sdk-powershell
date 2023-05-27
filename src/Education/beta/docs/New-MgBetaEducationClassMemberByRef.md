@@ -44,13 +44,13 @@ Add an educationUser member to an educationClass.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-$params = @{
-	"@odata.id" = "https://graph.microsoft.com/beta/education/users/13015"
-}
-New-MgBetaEducationClassMemberByRef -EducationClassId $educationClassId -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.id" = "https://graph.microsoft.com/v1.0/education/users/13015"
+}
 
+New-MgBetaEducationClassMemberByRef -EducationClassId $educationClassId -BodyParameter $params
 
 ## PARAMETERS
 

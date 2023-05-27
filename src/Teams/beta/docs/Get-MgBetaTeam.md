@@ -31,42 +31,23 @@ Get entity from teams by key
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeam -TeamId $teamId
 ```
 
+$params = @{
+	memberSettings = @{
+		allowCreateUpdateChannels = $true
+	}
+	messagingSettings = @{
+		allowUserEditMessages = $true
+		allowUserDeleteMessages = $true
+	}
+	funSettings = @{
+		allowGiphy = $true
+		giphyContentRating = "strict"
+	}
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeam -Filter "displayName eq 'A Contoso Team'" -Property "id,description"
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeam -Filter "startswith(displayName, 'A')" -Top 2
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeam
-```
-
-
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeam -Filter "displayName eq 'A Contoso Team'" -Property "id,description"  -OutFile $outFileId
-```
-
-
+Update-MgBetaTeam -TeamId $teamId -BodyParameter $params
 
 ## PARAMETERS
 

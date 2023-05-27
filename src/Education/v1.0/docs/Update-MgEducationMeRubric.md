@@ -58,13 +58,13 @@ That rubric can be retrieved using GET /education/classes/acdefc6b-2dc6-4e71-b1e
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-$params = @{
-	DisplayName = "Example Credit Rubric after display name patch"
-}
-Update-MgEducationMeRubric -EducationRubricId $educationRubricId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Example Credit Rubric after display name patch"
+}
 
+Update-MgEducationMeRubric -EducationRubricId $educationRubricId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -48,13 +48,13 @@ Create a new ediscoveryReviewSet object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Security
-$params = @{
-	DisplayName = "My review set 2"
-}
-New-MgSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "My review set 2"
+}
 
+New-MgSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 
 ## PARAMETERS
 

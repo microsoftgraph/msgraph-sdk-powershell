@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: b6db6022-51a8-459f-adc6-451f0c6e2a6a
+Module Guid: fb705e00-5ff1-4ee3-afca-b15be4940fae
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -197,6 +197,15 @@ This collection can't be enumerated.
 ### [Get-MgGroupSiteItemCount](Get-MgGroupSiteItemCount.md)
 Get the number of the resource
 
+### [Get-MgGroupSiteItemLastModifiedByUser](Get-MgGroupSiteItemLastModifiedByUser.md)
+Identity of the user who last modified the item.
+Read-only.
+
+### [Get-MgGroupSiteItemLastModifiedByUserMailboxSetting](Get-MgGroupSiteItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
 ### [Get-MgGroupSiteLastModifiedByUser](Get-MgGroupSiteLastModifiedByUser.md)
 Identity of the user who last modified the item.
 Read-only.
@@ -207,7 +216,7 @@ You can get or update settings for sending automatic replies to incoming message
 Returned only on $select.
 
 ### [Get-MgGroupSiteList](Get-MgGroupSiteList.md)
-Returns the metadata for a [list][].
+Get a list of rich long-running operations associated with a list.
 
 ### [Get-MgGroupSiteListColumn](Get-MgGroupSiteListColumn.md)
 The collection of field definitions for this list.
@@ -220,15 +229,6 @@ The source column for the content type column.
 
 ### [Get-MgGroupSiteListContentType](Get-MgGroupSiteListContentType.md)
 The collection of content types present in this list.
-
-### [Get-MgGroupSiteListContentTypeBase](Get-MgGroupSiteListContentTypeBase.md)
-Parent contentType from which this content type is derived.
-
-### [Get-MgGroupSiteListContentTypeBaseType](Get-MgGroupSiteListContentTypeBaseType.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgGroupSiteListContentTypeBaseTypeCount](Get-MgGroupSiteListContentTypeBaseTypeCount.md)
-Get the number of the resource
 
 ### [Get-MgGroupSiteListContentTypeColumn](Get-MgGroupSiteListContentTypeColumn.md)
 Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
@@ -303,15 +303,6 @@ The content stream, if the item represents a file.
 ### [Get-MgGroupSiteListItemField](Get-MgGroupSiteListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgGroupSiteListItemLastModifiedByUser](Get-MgGroupSiteListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgGroupSiteListItemLastModifiedByUserMailboxSetting](Get-MgGroupSiteListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
-
 ### [Get-MgGroupSiteListItemVersion](Get-MgGroupSiteListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
 
@@ -320,15 +311,6 @@ Get the number of the resource
 
 ### [Get-MgGroupSiteListItemVersionField](Get-MgGroupSiteListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
-
-### [Get-MgGroupSiteListLastModifiedByUser](Get-MgGroupSiteListLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgGroupSiteListLastModifiedByUserMailboxSetting](Get-MgGroupSiteListLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgGroupSiteListOperation](Get-MgGroupSiteListOperation.md)
 The collection of long-running operations on the list.
@@ -1016,8 +998,26 @@ Get externalColumns from sites
 ### [Get-MgSiteExternalColumnCount](Get-MgSiteExternalColumnCount.md)
 Get the number of the resource
 
+### [Get-MgSiteItemLastModifiedByUser](Get-MgSiteItemLastModifiedByUser.md)
+Identity of the user who last modified the item.
+Read-only.
+
+### [Get-MgSiteItemLastModifiedByUserMailboxSetting](Get-MgSiteItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
+### [Get-MgSiteLastModifiedByUser](Get-MgSiteLastModifiedByUser.md)
+Identity of the user who last modified the item.
+Read-only.
+
+### [Get-MgSiteLastModifiedByUserMailboxSetting](Get-MgSiteLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
+
 ### [Get-MgSiteList](Get-MgSiteList.md)
-Returns the metadata for a [list][].
+Get a list of rich long-running operations associated with a list.
 
 ### [Get-MgSiteListColumn](Get-MgSiteListColumn.md)
 The collection of field definitions for this list.
@@ -1030,15 +1030,6 @@ The source column for the content type column.
 
 ### [Get-MgSiteListContentType](Get-MgSiteListContentType.md)
 The collection of content types present in this list.
-
-### [Get-MgSiteListContentTypeBase](Get-MgSiteListContentTypeBase.md)
-Parent contentType from which this content type is derived.
-
-### [Get-MgSiteListContentTypeBaseType](Get-MgSiteListContentTypeBaseType.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgSiteListContentTypeBaseTypeCount](Get-MgSiteListContentTypeBaseTypeCount.md)
-Get the number of the resource
 
 ### [Get-MgSiteListContentTypeColumn](Get-MgSiteListContentTypeColumn.md)
 Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
@@ -1119,15 +1110,6 @@ The content stream, if the item represents a file.
 ### [Get-MgSiteListItemField](Get-MgSiteListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgSiteListItemLastModifiedByUser](Get-MgSiteListItemLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgSiteListItemLastModifiedByUserMailboxSetting](Get-MgSiteListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
-
 ### [Get-MgSiteListItemVersion](Get-MgSiteListItemVersion.md)
 Retrieve the metadata for a specific version of a ListItem.
 
@@ -1136,15 +1118,6 @@ Get the number of the resource
 
 ### [Get-MgSiteListItemVersionField](Get-MgSiteListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
-
-### [Get-MgSiteListLastModifiedByUser](Get-MgSiteListLastModifiedByUser.md)
-Identity of the user who last modified the item.
-Read-only.
-
-### [Get-MgSiteListLastModifiedByUserMailboxSetting](Get-MgSiteListLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
-Returned only on $select.
 
 ### [Get-MgSiteListOperation](Get-MgSiteListOperation.md)
 The collection of long-running operations on the list.

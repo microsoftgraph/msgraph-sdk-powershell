@@ -32,18 +32,9 @@ Delete conversation.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Groups
-Remove-MgGroupConversation -GroupId $groupId -ConversationId $conversationId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Groups
 Remove-MgGroupConversation -GroupId $groupId -ConversationId $conversationId
-```
-
-
 
 ## PARAMETERS
 

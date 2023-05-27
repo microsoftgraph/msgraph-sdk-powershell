@@ -33,12 +33,17 @@ There are two scenarios where an app can get another user's calendar:
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Calendar
-# A UPN can also be used as -UserId.
-Get-MgBetaUserDefaultCalendar -UserId $userId
+{{ Add code here }}
 ```
 
+{{ Add output here }}
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

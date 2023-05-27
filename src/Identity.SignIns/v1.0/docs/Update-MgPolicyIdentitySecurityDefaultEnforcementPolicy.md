@@ -34,13 +34,13 @@ Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	IsEnabled = $false
-}
-Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy -BodyParameter $params
 ```
 
+$params = @{
+	isEnabled = $false
+}
 
+Update-MgPolicyIdentitySecurityDefaultEnforcementPolicy -BodyParameter $params
 
 ## PARAMETERS
 

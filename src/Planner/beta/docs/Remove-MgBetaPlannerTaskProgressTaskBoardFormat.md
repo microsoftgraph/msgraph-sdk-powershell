@@ -35,10 +35,10 @@ Import-Module Microsoft.Graph.Beta.Planner
 ```
 
 $params = @{
-	OrderHint = "A6673H Ejkl!"
+	orderHint = "A6673H Ejkl!"
 }
 
-Update-MgBetaPlannerTaskProgressTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params
+Update-MgBetaPlannerTaskProgressTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 
 ## PARAMETERS
 

@@ -48,17 +48,17 @@ Update the properties of a linkedResource object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Users
-$params = @{
-	"@odata.type" = "#microsoft.graph.linkedResource"
-	WebUrl = "http://microsoft.com"
-	ApplicationName = "Microsoft"
-	DisplayName = "Microsoft"
-}
-# A UPN can also be used as -UserId.
-Update-MgUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -LinkedResourceId $linkedResourceId -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.linkedResource"
+	webUrl = "http://microsoft.com"
+	applicationName = "Microsoft"
+	displayName = "Microsoft"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -LinkedResourceId $linkedResourceId -BodyParameter $params
 
 ## PARAMETERS
 

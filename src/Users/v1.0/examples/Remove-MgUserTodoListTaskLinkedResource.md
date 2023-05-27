@@ -1,8 +1,17 @@
-### Example 1: Using the Remove-MgUserTodoListTaskLinkedResource Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Users
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Users
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.linkedResource"
+	webUrl = "http://microsoft.com"
+	applicationName = "Microsoft"
+	displayName = "Microsoft"
+}
+
 # A UPN can also be used as -UserId.
-Remove-MgUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -LinkedResourceId $linkedResourceId
+Update-MgUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -LinkedResourceId $linkedResourceId -BodyParameter $params
 ```
 This example shows how to use the Remove-MgUserTodoListTaskLinkedResource Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

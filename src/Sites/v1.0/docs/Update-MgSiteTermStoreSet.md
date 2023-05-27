@@ -84,13 +84,13 @@ Update the properties of a set object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-$params = @{
-	Description = "mySet"
-}
-Update-MgSiteTermStoreSet -SiteId $siteId -SetId $setId -BodyParameter $params
 ```
 
+$params = @{
+	description = "mySet"
+}
 
+Update-MgSiteTermStoreSet -SiteId $siteId -SetId $setId -BodyParameter $params
 
 ## PARAMETERS
 

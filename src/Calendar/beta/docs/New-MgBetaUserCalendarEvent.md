@@ -80,77 +80,77 @@ The calendar can be one for a user, or the default calendar of a Microsoft 365 g
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Calendar
-$params = @{
-	Subject = "Let's go for lunch"
-	Body = @{
-		ContentType = "HTML"
-		Content = "Does next month work for you?"
-	}
-	Start = @{
-		DateTime = "2019-03-10T12:00:00"
-		TimeZone = "Pacific Standard Time"
-	}
-	End = @{
-		DateTime = "2019-03-10T14:00:00"
-		TimeZone = "Pacific Standard Time"
-	}
-	Location = @{
-		DisplayName = "Harry's Bar"
-	}
-	Attendees = @(
-		@{
-			EmailAddress = @{
-				Address = "adelev@contoso.onmicrosoft.com"
-				Name = "Adele Vance"
-			}
-			Type = "required"
-		}
-	)
-	TransactionId = "7E163156-7762-4BEB-A1C6-729EA81755A7"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserCalendarEvent -UserId $userId -CalendarId $calendarId -BodyParameter $params
 ```
 
+$params = @{
+	subject = "Let's go for lunch"
+	body = @{
+		contentType = "HTML"
+		content = "Does mid month work for you?"
+	}
+	start = @{
+		dateTime = "2019-03-15T12:00:00"
+		timeZone = "Pacific Standard Time"
+	}
+	end = @{
+		dateTime = "2019-03-15T14:00:00"
+		timeZone = "Pacific Standard Time"
+	}
+	location = @{
+		displayName = "Harry's Bar"
+	}
+	attendees = @(
+		@{
+			emailAddress = @{
+				address = "adelev@contoso.onmicrosoft.com"
+				name = "Adele Vance"
+			}
+			type = "required"
+		}
+	)
+	transactionId = "7E163156-7762-4BEB-A1C6-729EA81755A7"
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserCalendarEvent -UserId $userId -CalendarId $calendarId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Calendar
-$params = @{
-	Subject = "Let's go for lunch"
-	Body = @{
-		ContentType = "HTML"
-		Content = "Does next month work for you?"
-	}
-	Start = @{
-		DateTime = "2019-03-10T12:00:00"
-		TimeZone = "Pacific Standard Time"
-	}
-	End = @{
-		DateTime = "2019-03-10T14:00:00"
-		TimeZone = "Pacific Standard Time"
-	}
-	Location = @{
-		DisplayName = "Harry's Bar"
-	}
-	Attendees = @(
-		@{
-			EmailAddress = @{
-				Address = "adelev@contoso.onmicrosoft.com"
-				Name = "Adele Vance"
-			}
-			Type = "required"
-		}
-	)
-	IsOnlineMeeting = $true
-	OnlineMeetingProvider = "teamsForBusiness"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserCalendarEvent -UserId $userId -CalendarId $calendarId -BodyParameter $params
 ```
 
+$params = @{
+	subject = "Let's go for lunch"
+	body = @{
+		contentType = "HTML"
+		content = "Does next month work for you?"
+	}
+	start = @{
+		dateTime = "2019-03-10T12:00:00"
+		timeZone = "Pacific Standard Time"
+	}
+	end = @{
+		dateTime = "2019-03-10T14:00:00"
+		timeZone = "Pacific Standard Time"
+	}
+	location = @{
+		displayName = "Harry's Bar"
+	}
+	attendees = @(
+		@{
+			emailAddress = @{
+				address = "adelev@contoso.onmicrosoft.com"
+				name = "Adele Vance"
+			}
+			type = "required"
+		}
+	)
+	isOnlineMeeting = $true
+	onlineMeetingProvider = "teamsForBusiness"
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserCalendarEvent -UserId $userId -CalendarId $calendarId -BodyParameter $params
 
 ## PARAMETERS
 

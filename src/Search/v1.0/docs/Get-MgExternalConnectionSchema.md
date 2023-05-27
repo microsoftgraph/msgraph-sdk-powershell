@@ -32,10 +32,9 @@ Read the properties and relationships of a schema object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Search
-Get-MgExternalConnectionSchema -ExternalConnectionId $externalConnectionId
 ```
 
-
+Get-MgExternalConnectionSchema -ExternalConnectionId $externalConnectionId
 
 ## PARAMETERS
 

@@ -52,15 +52,15 @@ Create a new ediscoveryNoncustodialDataSource object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Security
+```
+
 $params = @{
-	DataSource = @{
+	dataSource = @{
 		"@odata.type" = "microsoft.graph.security.siteSource"
 	}
 }
+
 New-MgSecurityCaseEdiscoveryCaseNoncustodialDataSource -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

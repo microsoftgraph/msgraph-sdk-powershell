@@ -1,21 +1,52 @@
-### Example 1: Using the Get-MgBetaSiteContentType Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteContentType -SiteId $siteId -OutFile $outFileId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Sites
+
+$params = @{
+	name = "updatedCt"
+	documentSet = @{
+		shouldPrefixNameToFile = $true
+		allowedContentTypes = @(
+			@{
+				id = "0x0101"
+				name = "Document"
+			}
+		)
+		defaultContents = @(
+			@{
+				fileName = "a.txt"
+				contentType = @{
+					id = "0x0101"
+				}
+			}
+			@{
+				fileName = "b.txt"
+				contentType = @{
+					id = "0x0101"
+				}
+			}
+		)
+		sharedColumns = @(
+			@{
+				name = "Description"
+				id = "cbb92da4-fd46-4c7d-af6c-3128c2a5576e"
+			}
+			@{
+				name = "Address"
+				id = "fc2e188e-ba91-48c9-9dd3-16431afddd50"
+			}
+		)
+		welcomePageColumns = @(
+			@{
+				name = "Address"
+				id = "fc2e188e-ba91-48c9-9dd3-16431afddd50"
+			}
+		)
+	}
+}
+
+Update-MgBetaSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
 ```
-This example shows how to use the Get-MgBetaSiteContentType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the Get-MgBetaSiteContentType Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId
-```
-This example shows how to use the Get-MgBetaSiteContentType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the Get-MgBetaSiteContentType Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteContentType -SiteId $siteId
-```
-This example shows how to use the Get-MgBetaSiteContentType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaSiteContentType Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

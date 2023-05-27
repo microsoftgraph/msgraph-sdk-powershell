@@ -38,19 +38,17 @@ Retrieve the properties and relationships of a **printConnector** object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintConnector -PrintConnectorId $printConnectorId
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintConnector
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ## PARAMETERS
 

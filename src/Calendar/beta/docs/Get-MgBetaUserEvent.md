@@ -41,56 +41,28 @@ An app can get an event in another user's calendar if: Because the **event** res
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Calendar
-# A UPN can also be used as -UserId.
-Get-MgBetaUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview"
 ```
 
+$params = @{
+	originalStartTimeZone = "originalStartTimeZone-value"
+	originalEndTimeZone = "originalEndTimeZone-value"
+	responseStatus = @{
+		response = ""
+		time = [System.DateTime]::Parse("datetime-value")
+	}
+	recurrence = $null
+	reminderMinutesBeforeStart = 99
+	isOnlineMeeting = $true
+	onlineMeetingProvider = "teamsForBusiness"
+	isReminderOn = $true
+	hideAttendees = $false
+	categories = @(
+		"Red category"
+	)
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Calendar
 # A UPN can also be used as -UserId.
-Get-MgBetaUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location,locations"
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Calendar
-# A UPN can also be used as -UserId.
-Get-MgBetaUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location,hideAttendees"
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Calendar
-# A UPN can also be used as -UserId.
-Get-MgBetaUserEvent -UserId $userId -EventId $eventId -Property "subject,start,end,occurrenceId,exceptionOccurrences,cancelledOccurrences" -ExpandProperty "exceptionOccurrences"
-```
-
-
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Calendar
-# A UPN can also be used as -UserId.
-Get-MgBetaUserEvent -UserId $userId -Property "subject,body,bodyPreview"
-```
-
-
-
-### -------------------------- EXAMPLE 6 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Calendar
-# A UPN can also be used as -UserId.
-Get-MgBetaUserEvent -UserId $userId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location"
-```
-
-
+Update-MgBetaUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
 
 ## PARAMETERS
 

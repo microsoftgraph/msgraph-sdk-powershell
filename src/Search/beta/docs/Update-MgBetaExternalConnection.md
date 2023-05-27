@@ -66,14 +66,14 @@ Update the properties of an externalConnection.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Search
-$params = @{
-	Name = "Contoso HR Service Tickets"
-	Description = "Connection to index HR service tickets"
-}
-Update-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
 ```
 
+$params = @{
+	name = "Contoso HR Service Tickets"
+	description = "Connection to index HR service tickets"
+}
 
+Update-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
 
 ## PARAMETERS
 

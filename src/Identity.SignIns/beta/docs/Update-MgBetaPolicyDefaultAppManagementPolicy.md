@@ -35,49 +35,49 @@ Update the properties of a tenantAppManagementPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
+```
+
 $params = @{
-	IsEnabled = $true
-	ApplicationRestrictions = @{
-		PasswordCredentials = @(
+	isEnabled = $true
+	applicationRestrictions = @{
+		passwordCredentials = @(
 			@{
-				RestrictionType = "passwordAddition"
-				MaxLifetime = $null
-				RestrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2021-01-01T10:37:00Z")
+				restrictionType = "passwordAddition"
+				maxLifetime = $null
+				restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2021-01-01T10:37:00Z")
 			}
 			@{
-				RestrictionType = "passwordLifetime"
-				MaxLifetime = "P4DT12H30M5S"
-				RestrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2017-01-01T10:37:00Z")
+				restrictionType = "passwordLifetime"
+				maxLifetime = "P4DT12H30M5S"
+				restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2017-01-01T10:37:00Z")
 			}
 			@{
-				RestrictionType = "symmetricKeyAddition"
-				MaxLifetime = $null
-				RestrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2021-01-01T10:37:00Z")
+				restrictionType = "symmetricKeyAddition"
+				maxLifetime = $null
+				restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2021-01-01T10:37:00Z")
 			}
 			@{
-				RestrictionType = "customPasswordAddition"
-				MaxLifetime = $null
-				RestrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2015-01-01T10:37:00Z")
+				restrictionType = "customPasswordAddition"
+				maxLifetime = $null
+				restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2015-01-01T10:37:00Z")
 			}
 			@{
-				RestrictionType = "symmetricKeyLifetime"
-				MaxLifetime = "P40D"
-				RestrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2015-01-01T10:37:00Z")
+				restrictionType = "symmetricKeyLifetime"
+				maxLifetime = "P40D"
+				restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2015-01-01T10:37:00Z")
 			}
 		)
-		KeyCredentials = @(
+		keyCredentials = @(
 			@{
-				RestrictionType = "asymmetricKeyLifetime"
-				MaxLifetime = "P30D"
-				RestrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2015-01-01T10:37:00Z")
+				restrictionType = "asymmetricKeyLifetime"
+				maxLifetime = "P30D"
+				restrictForAppsCreatedAfterDateTime = [System.DateTime]::Parse("2015-01-01T10:37:00Z")
 			}
 		)
 	}
 }
+
 Update-MgBetaPolicyDefaultAppManagementPolicy -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 
@@ -278,6 +278,7 @@ To create the parameters described below, construct a hash table containing the 
 `APPLICATIONRESTRICTIONS <IMicrosoftGraphAppManagementConfiguration>`: appManagementConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[KeyCredentials <IMicrosoftGraphKeyCredentialConfiguration[]>]`: Collection of keyCredential restrictions settings to be applied to an application or service principal.
+    - `[CertificateBasedApplicationConfigurationIds <String[]>]`: 
     - `[MaxLifetime <TimeSpan?>]`: 
     - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
     - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
@@ -295,6 +296,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ApplicationRestrictions <IMicrosoftGraphAppManagementConfiguration>]`: appManagementConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[KeyCredentials <IMicrosoftGraphKeyCredentialConfiguration[]>]`: Collection of keyCredential restrictions settings to be applied to an application or service principal.
+      - `[CertificateBasedApplicationConfigurationIds <String[]>]`: 
       - `[MaxLifetime <TimeSpan?>]`: 
       - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
       - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
@@ -308,6 +310,7 @@ To create the parameters described below, construct a hash table containing the 
 `SERVICEPRINCIPALRESTRICTIONS <IMicrosoftGraphAppManagementConfiguration>`: appManagementConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[KeyCredentials <IMicrosoftGraphKeyCredentialConfiguration[]>]`: Collection of keyCredential restrictions settings to be applied to an application or service principal.
+    - `[CertificateBasedApplicationConfigurationIds <String[]>]`: 
     - `[MaxLifetime <TimeSpan?>]`: 
     - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
     - `[RestrictionType <String>]`: appKeyCredentialRestrictionType

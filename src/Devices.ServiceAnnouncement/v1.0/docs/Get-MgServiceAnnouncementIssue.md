@@ -43,18 +43,9 @@ The operation returns an error if the issue does not exist for the tenant.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+```
+
 Get-MgServiceAnnouncementIssue -ServiceHealthIssueId $serviceHealthIssueId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementIssue
-```
-
-
 
 ## PARAMETERS
 

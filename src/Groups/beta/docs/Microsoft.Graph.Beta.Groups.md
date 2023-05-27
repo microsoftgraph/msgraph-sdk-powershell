@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Groups
-Module Guid: bcab44da-6050-4b32-ad79-b76a8a85dc89
+Module Guid: 12e63a0a-3d3c-4612-808d-caff2a2658e0
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -286,90 +286,6 @@ Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 ### [Get-MgBetaGroupLifecyclePolicyCount](Get-MgBetaGroupLifecyclePolicyCount.md)
 Get the number of the resource
 
-### [Get-MgBetaGroupListMemberCountAsApplication](Get-MgBetaGroupListMemberCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberCountAsDevice](Get-MgBetaGroupListMemberCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberCountAsGroup](Get-MgBetaGroupListMemberCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberCountAsOrgContact](Get-MgBetaGroupListMemberCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberCountAsServicePrincipal](Get-MgBetaGroupListMemberCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberCountAsUser](Get-MgBetaGroupListMemberCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberOfCountAsAdministrativeUnit](Get-MgBetaGroupListMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberOfCountAsGroup](Get-MgBetaGroupListMemberOfCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberWithLicenseErrorCountAsApplication](Get-MgBetaGroupListMemberWithLicenseErrorCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberWithLicenseErrorCountAsDevice](Get-MgBetaGroupListMemberWithLicenseErrorCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberWithLicenseErrorCountAsGroup](Get-MgBetaGroupListMemberWithLicenseErrorCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberWithLicenseErrorCountAsOrgContact](Get-MgBetaGroupListMemberWithLicenseErrorCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberWithLicenseErrorCountAsServicePrincipal](Get-MgBetaGroupListMemberWithLicenseErrorCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListMemberWithLicenseErrorCountAsUser](Get-MgBetaGroupListMemberWithLicenseErrorCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListOwnerCountAsApplication](Get-MgBetaGroupListOwnerCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListOwnerCountAsDevice](Get-MgBetaGroupListOwnerCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListOwnerCountAsGroup](Get-MgBetaGroupListOwnerCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListOwnerCountAsOrgContact](Get-MgBetaGroupListOwnerCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListOwnerCountAsServicePrincipal](Get-MgBetaGroupListOwnerCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListOwnerCountAsUser](Get-MgBetaGroupListOwnerCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListTransitiveMemberCountAsApplication](Get-MgBetaGroupListTransitiveMemberCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListTransitiveMemberCountAsDevice](Get-MgBetaGroupListTransitiveMemberCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListTransitiveMemberCountAsGroup](Get-MgBetaGroupListTransitiveMemberCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListTransitiveMemberCountAsOrgContact](Get-MgBetaGroupListTransitiveMemberCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListTransitiveMemberCountAsServicePrincipal](Get-MgBetaGroupListTransitiveMemberCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListTransitiveMemberCountAsUser](Get-MgBetaGroupListTransitiveMemberCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListTransitiveMemberOfCountAsAdministrativeUnit](Get-MgBetaGroupListTransitiveMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgBetaGroupListTransitiveMemberOfCountAsGroup](Get-MgBetaGroupListTransitiveMemberOfCountAsGroup.md)
-Get the number of the resource
-
 ### [Get-MgBetaGroupMember](Get-MgBetaGroupMember.md)
 Direct members of this group, who can be users, devices, other groups, or service principals.
 Supports the List members, Add member, and Remove member operations.
@@ -405,6 +321,24 @@ For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayNa
 ### [Get-MgBetaGroupMemberCount](Get-MgBetaGroupMemberCount.md)
 Get the number of the resource
 
+### [Get-MgBetaGroupMemberCountAsApplication](Get-MgBetaGroupMemberCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberCountAsDevice](Get-MgBetaGroupMemberCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberCountAsGroup](Get-MgBetaGroupMemberCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberCountAsOrgContact](Get-MgBetaGroupMemberCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberCountAsServicePrincipal](Get-MgBetaGroupMemberCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberCountAsUser](Get-MgBetaGroupMemberCountAsUser.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupMemberGroup](Get-MgBetaGroupMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
@@ -426,6 +360,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgBetaGroupMemberOfCount](Get-MgBetaGroupMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberOfCountAsAdministrativeUnit](Get-MgBetaGroupMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberOfCountAsGroup](Get-MgBetaGroupMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupMemberWithLicenseError](Get-MgBetaGroupMemberWithLicenseError.md)
@@ -451,6 +391,24 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.serviceP
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgBetaGroupMemberWithLicenseErrorCount](Get-MgBetaGroupMemberWithLicenseErrorCount.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberWithLicenseErrorCountAsApplication](Get-MgBetaGroupMemberWithLicenseErrorCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberWithLicenseErrorCountAsDevice](Get-MgBetaGroupMemberWithLicenseErrorCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberWithLicenseErrorCountAsGroup](Get-MgBetaGroupMemberWithLicenseErrorCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberWithLicenseErrorCountAsOrgContact](Get-MgBetaGroupMemberWithLicenseErrorCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberWithLicenseErrorCountAsServicePrincipal](Get-MgBetaGroupMemberWithLicenseErrorCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupMemberWithLicenseErrorCountAsUser](Get-MgBetaGroupMemberWithLicenseErrorCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupOnenoteNotebookFromWebUrl](Get-MgBetaGroupOnenoteNotebookFromWebUrl.md)
@@ -493,6 +451,24 @@ Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Suppo
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
 ### [Get-MgBetaGroupOwnerCount](Get-MgBetaGroupOwnerCount.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupOwnerCountAsApplication](Get-MgBetaGroupOwnerCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupOwnerCountAsDevice](Get-MgBetaGroupOwnerCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupOwnerCountAsGroup](Get-MgBetaGroupOwnerCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupOwnerCountAsOrgContact](Get-MgBetaGroupOwnerCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupOwnerCountAsServicePrincipal](Get-MgBetaGroupOwnerCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupOwnerCountAsUser](Get-MgBetaGroupOwnerCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupPermissionGrant](Get-MgBetaGroupPermissionGrant.md)
@@ -601,7 +577,8 @@ Invoke action getWebPartsByPosition
 Invoke action getPositionOfWebPart
 
 ### [Get-MgBetaGroupThread](Get-MgBetaGroupThread.md)
-Get a thread object.
+Get a specific thread that belongs to a group.
+You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
 
 ### [Get-MgBetaGroupThreadCount](Get-MgBetaGroupThreadCount.md)
 Get the number of the resource
@@ -685,6 +662,24 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 ### [Get-MgBetaGroupTransitiveMemberCount](Get-MgBetaGroupTransitiveMemberCount.md)
 Get the number of the resource
 
+### [Get-MgBetaGroupTransitiveMemberCountAsApplication](Get-MgBetaGroupTransitiveMemberCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupTransitiveMemberCountAsDevice](Get-MgBetaGroupTransitiveMemberCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupTransitiveMemberCountAsGroup](Get-MgBetaGroupTransitiveMemberCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupTransitiveMemberCountAsOrgContact](Get-MgBetaGroupTransitiveMemberCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupTransitiveMemberCountAsServicePrincipal](Get-MgBetaGroupTransitiveMemberCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupTransitiveMemberCountAsUser](Get-MgBetaGroupTransitiveMemberCountAsUser.md)
+Get the number of the resource
+
 ### [Get-MgBetaGroupTransitiveMemberOf](Get-MgBetaGroupTransitiveMemberOf.md)
 The groups that a group is a member of, either directly and through nested membership.
 Nullable.
@@ -696,6 +691,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgBetaGroupTransitiveMemberOfCount](Get-MgBetaGroupTransitiveMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupTransitiveMemberOfCountAsAdministrativeUnit](Get-MgBetaGroupTransitiveMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgBetaGroupTransitiveMemberOfCountAsGroup](Get-MgBetaGroupTransitiveMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgBetaGroupUserOwnedObject](Get-MgBetaGroupUserOwnedObject.md)
@@ -923,8 +924,10 @@ Users in the accepted senders list can post to conversations of the group .
 Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 
 ### [New-MgBetaGroupConversation](New-MgBetaGroupConversation.md)
-Create a new conversation by including a thread and a post.
-Use reply thread or reply post to further post to that conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ### [New-MgBetaGroupConversationThread](New-MgBetaGroupConversationThread.md)
 Create new navigation property to threads for groups
@@ -1112,7 +1115,7 @@ To learn more, see deletedItems.
 Remove a user or group from the accepted-senders list of the specified group.
 
 ### [Remove-MgBetaGroupConversation](Remove-MgBetaGroupConversation.md)
-Delete conversation.
+Delete a conversation object.
 
 ### [Remove-MgBetaGroupConversationThread](Remove-MgBetaGroupConversationThread.md)
 Delete navigation property threads for groups

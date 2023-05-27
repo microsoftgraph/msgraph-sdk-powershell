@@ -150,7 +150,17 @@ Create a new term object.
 Import-Module Microsoft.Graph.Sites
 ```
 
-Get-MgSiteTermStoreSetChild -SiteId $siteId -SetId $setId
+$params = @{
+	labels = @(
+		@{
+			languageTag = "en-US"
+			name = "Car"
+			isDefault = $true
+		}
+	)
+}
+
+New-MgSiteTermStoreSetChild -SiteId $siteId -SetId $setId -BodyParameter $params
 
 ## PARAMETERS
 

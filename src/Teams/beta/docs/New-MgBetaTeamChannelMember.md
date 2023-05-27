@@ -48,90 +48,82 @@ This operation is allowed only for channels with a **membershipType** value of `
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
-		"owner"
-	)
-	"User@odata.bind" = "https://graph.microsoft.com/beta/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
-}
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	roles = @(
+		"owner"
+	)
+	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
+}
 
+New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
-		"owner"
-	)
-	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
-}
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
 
-
+New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
-		"owner"
-	)
-	"User@odata.bind" = "https://graph.microsoft.com/beta/users('jacob@contoso.com')"
-}
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	roles = @(
+		"owner"
+	)
+	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
+}
 
+New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
-	)
-	"User@odata.bind" = "https://graph.microsoft.com/beta/users('jacob@contoso.com')"
-}
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	roles = @(
+	)
+	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users/24b3819b-4e1d-4f3e-86bd-e42b54d0b2b4"
+}
 
+New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
-	)
-	"User@odata.bind" = "https://graph.microsoft.com/beta/users/24b3819b-4e1d-4f3e-86bd-e42b54d0b2b4"
-}
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	roles = @(
+	)
+	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users/bc3598dd-cce4-4742-ae15-173429951408"
+	tenantId = "a18103d1-a6ef-4f66-ac64-e4ef42ea8681"
+}
 
+New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 6 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
-	)
-	"User@odata.bind" = "https://graph.microsoft.com/beta/users/bc3598dd-cce4-4742-ae15-173429951408"
-	TenantId = "a18103d1-a6ef-4f66-ac64-e4ef42ea8681"
-}
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	roles = @(
+	)
+	"user@odata.bind" = "https://graph.microsoft.com/beta/users('jacob@contoso.com')"
+}
 
+New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ## PARAMETERS
 

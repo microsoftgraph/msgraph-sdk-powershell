@@ -46,13 +46,13 @@ Only Teachers can update these settings.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-$params = @{
-	SubmissionAnimationDisabled = $true
-}
-Update-MgEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
 ```
 
+$params = @{
+	submissionAnimationDisabled = $true
+}
 
+Update-MgEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
 
 ## PARAMETERS
 

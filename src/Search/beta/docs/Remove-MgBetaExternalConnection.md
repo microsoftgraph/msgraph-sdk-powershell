@@ -32,10 +32,14 @@ Delete an externalConnection.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Search
-Remove-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId
 ```
 
+$params = @{
+	name = "Contoso HR Service Tickets"
+	description = "Connection to index HR service tickets"
+}
 
+Update-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
 
 ## PARAMETERS
 

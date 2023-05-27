@@ -50,17 +50,17 @@ If the size of the file attachments is more than 3 MB, create an upload session 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Users
-$params = @{
-	"@odata.type" = "#microsoft.graph.taskFileAttachment"
-	Name = "smile"
-	ContentBytes = "a0b1c76de9f7="
-	ContentType = "image/gif"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.taskFileAttachment"
+	name = "smile"
+	contentBytes = "a0b1c76de9f7="
+	contentType = "image/gif"
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 
 ## PARAMETERS
 

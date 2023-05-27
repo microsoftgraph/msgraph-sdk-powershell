@@ -43,26 +43,19 @@ Students can only see assignments assigned to them; teachers and applications wi
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-Get-MgEducationClassAssignment -EducationClassId $educationClassId
 ```
 
+$params = @{
+	displayName = "Reading and review test 09.03 #5"
+	instructions = @{
+		contentType = "text"
+		content = "Read chapter 5 and write your review"
+	}
+	dueDateTime = [System.DateTime]::Parse("2021-09-10T00:00:00Z")
+	addedStudentAction = "none"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationClassAssignment -EducationClassId $educationClassId -ExpandProperty "resources"
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
-```
-
-
+Update-MgEducationClassAssignment -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 
 ## PARAMETERS
 

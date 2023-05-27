@@ -39,18 +39,9 @@ Retrieve the properties of an applicationTemplate object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Applications
+```
+
 Get-MgBetaApplicationTemplate -ApplicationTemplateId $applicationTemplateId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Applications
-Get-MgBetaApplicationTemplate
-```
-
-
 
 ## PARAMETERS
 

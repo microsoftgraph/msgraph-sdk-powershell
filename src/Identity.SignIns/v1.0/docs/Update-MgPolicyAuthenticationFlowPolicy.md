@@ -36,15 +36,15 @@ The properties **id**, **type**, and **description** cannot be modified.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	SelfServiceSignUp = @{
-		IsEnabled = $true
-	}
-}
-Update-MgPolicyAuthenticationFlowPolicy -BodyParameter $params
 ```
 
+$params = @{
+	selfServiceSignUp = @{
+		isEnabled = $true
+	}
+}
 
+Update-MgPolicyAuthenticationFlowPolicy -BodyParameter $params
 
 ## PARAMETERS
 

@@ -44,10 +44,13 @@ Delete a set object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-Remove-MgSiteTermStoreSet -SiteId $siteId -SetId $setId
 ```
 
+$params = @{
+	description = "mySet"
+}
 
+Update-MgSiteTermStoreSet -SiteId $siteId -SetId $setId -BodyParameter $params
 
 ## PARAMETERS
 

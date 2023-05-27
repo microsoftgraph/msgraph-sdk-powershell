@@ -46,7 +46,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 throw new AuthenticationException(string.Format(CultureInfo.InvariantCulture, Core.ErrorConstants.Message.MissingSessionProperty, nameof(requestContext)));
 
             IList<DelegatingHandler> delegatingHandlers = new List<DelegatingHandler> {
-                new RequestHeaderHandler(),
                 new AuthenticationHandler(authProvider),
                 new NationalCloudHandler(),
                 new ODataQueryOptionsHandler(),
@@ -57,7 +56,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     MaxRetry = requestContext.MaxRetry,
                     RetriesTimeLimit= requestContext.RetriesTimeLimit
                 }),
-                new RedirectHandler()
+                new RedirectHandler(),
+                new RequestHeaderHandler() // Should always be last.
             };
 
             HttpClient httpClient = GraphClientFactory.Create(delegatingHandlers);

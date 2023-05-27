@@ -41,90 +41,90 @@ See examples of how to define a schema extension that describes a training cours
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.SchemaExtensions
+```
+
 $params = @{
-	Id = "graphlearn_courses"
-	Description = "Graph Learn training courses extensions"
-	TargetTypes = @(
+	id = "graphlearn_courses"
+	description = "Graph Learn training courses extensions"
+	targetTypes = @(
 		"Group"
 	)
-	Properties = @(
+	properties = @(
 		@{
-			Name = "courseId"
-			Type = "Integer"
+			name = "courseId"
+			type = "Integer"
 		}
 		@{
-			Name = "courseName"
-			Type = "String"
+			name = "courseName"
+			type = "String"
 		}
 		@{
-			Name = "courseType"
-			Type = "String"
+			name = "courseType"
+			type = "String"
 		}
 	)
 }
+
 New-MgSchemaExtension -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.SchemaExtensions
+```
+
 $params = @{
-	Id = "courses"
-	Description = "Graph Learn training courses extensions"
-	TargetTypes = @(
+	id = "courses"
+	description = "Graph Learn training courses extensions"
+	targetTypes = @(
 		"Group"
 	)
-	Properties = @(
+	properties = @(
 		@{
-			Name = "courseId"
-			Type = "Integer"
+			name = "courseId"
+			type = "Integer"
 		}
 		@{
-			Name = "courseName"
-			Type = "String"
+			name = "courseName"
+			type = "String"
 		}
 		@{
-			Name = "courseType"
-			Type = "String"
+			name = "courseType"
+			type = "String"
 		}
 	)
 }
+
 New-MgSchemaExtension -BodyParameter $params
-```
-
-
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.SchemaExtensions
+```
+
 $params = @{
-	Id = "courses"
-	Description = "Graph Learn training courses extensions"
-	TargetTypes = @(
+	id = "courses"
+	description = "Graph Learn training courses extensions"
+	targetTypes = @(
 		"Group"
 	)
-	Owner = "50897f70-a455-4adf-87bc-4cf17091d5ac"
-	Properties = @(
+	owner = "50897f70-a455-4adf-87bc-4cf17091d5ac"
+	properties = @(
 		@{
-			Name = "courseId"
-			Type = "Integer"
+			name = "courseId"
+			type = "Integer"
 		}
 		@{
-			Name = "courseName"
-			Type = "String"
+			name = "courseName"
+			type = "String"
 		}
 		@{
-			Name = "courseType"
-			Type = "String"
+			name = "courseType"
+			type = "String"
 		}
 	)
 }
+
 New-MgSchemaExtension -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

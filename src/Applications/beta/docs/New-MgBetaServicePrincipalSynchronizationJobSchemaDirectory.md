@@ -319,9 +319,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
       - `[DefaultValue <String>]`: 
       - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-      - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-        - `[Key <String>]`: Name of the metadata property.
-        - `[Value <String>]`: Value of the metadata property.
+      - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+        - `[Key <String>]`: attributeDefinitionMetadata
+        - `[Value <String>]`: 
       - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
       - `[Mutability <String>]`: mutability
       - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -330,7 +330,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
       - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
       - `[Type <String>]`: attributeType
-    - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
+    - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+      - `[Key <String>]`: objectDefinitionMetadata
+      - `[Value <String>]`: 
     - `[Name <String>]`: 
     - `[SupportedApis <String[]>]`: 
   - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -375,9 +377,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
     - `[DefaultValue <String>]`: 
     - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-    - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
-      - `[Key <String>]`: Name of the metadata property.
-      - `[Value <String>]`: Value of the metadata property.
+    - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+      - `[Key <String>]`: attributeDefinitionMetadata
+      - `[Value <String>]`: 
     - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
     - `[Mutability <String>]`: mutability
     - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -386,7 +388,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
     - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
     - `[Type <String>]`: attributeType
-  - `[Metadata <IMicrosoftGraphMetadataEntry[]>]`: 
+  - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+    - `[Key <String>]`: objectDefinitionMetadata
+    - `[Value <String>]`: 
   - `[Name <String>]`: 
   - `[SupportedApis <String[]>]`: 
 

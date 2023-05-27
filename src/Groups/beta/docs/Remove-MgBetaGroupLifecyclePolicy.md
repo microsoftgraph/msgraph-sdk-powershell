@@ -44,10 +44,15 @@ Delete a groupLifecyclePolicy.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Groups
-Remove-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
 ```
 
+$params = @{
+	groupLifetimeInDays = 180
+	managedGroupTypes = "Selected"
+	alternateNotificationEmails = "admin@contoso.com"
+}
 
+Update-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId -BodyParameter $params
 
 ## PARAMETERS
 

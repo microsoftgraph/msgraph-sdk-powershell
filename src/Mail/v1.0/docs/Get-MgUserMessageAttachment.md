@@ -41,65 +41,42 @@ An attachment can be one of the following types: All these types of attachments 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Mail
-# A UPN can also be used as -UserId.
-Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Mail
-# A UPN can also be used as -UserId.
-Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId -ExpandProperty "microsoft.graph.itemattachment/item"
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Mail
-# A UPN can also be used as -UserId.
-Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId -ExpandProperty "microsoft.graph.itemattachment/item"
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId -ExpandProperty "microsoft.graph.itemattachment/item"
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Mail
-# A UPN can also be used as -UserId.
-Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId -ExpandProperty "microsoft.graph.itemattachment/item"
 
 ### -------------------------- EXAMPLE 5 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Mail
+```
+
 # A UPN can also be used as -UserId.
 Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
-```
-
-
-
-### -------------------------- EXAMPLE 6 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Mail
-# A UPN can also be used as -UserId.
-Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId -AttachmentId $attachmentId
-```
-
-
-
-### -------------------------- EXAMPLE 7 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Mail
-# A UPN can also be used as -UserId.
-Get-MgUserMessageAttachment -UserId $userId -MessageId $messageId
-```
-
-
 
 ## PARAMETERS
 

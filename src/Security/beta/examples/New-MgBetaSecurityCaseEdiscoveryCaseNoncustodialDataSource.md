@@ -1,12 +1,15 @@
-### Example 1: Using the New-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Security
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Security
+
 $params = @{
-	DataSource = @{
+	dataSource = @{
 		"@odata.type" = "microsoft.graph.security.siteSource"
 	}
 }
+
 New-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaBetaSecurityCaseEdiscoveryCaseNoncustodialDataSource Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

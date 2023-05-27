@@ -57,19 +57,19 @@ Create a new [contentType][] in a [site][].
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-$params = @{
-	Name = "docSet"
-	Description = "custom docset"
-	Base = @{
-		Name = "Document Set"
-		Id = "0x0120D520"
-	}
-	Group = "Document Set Content Types"
-}
-New-MgSiteContentType -SiteId $siteId -BodyParameter $params
 ```
 
+$params = @{
+	name = "docSet"
+	description = "custom docset"
+	base = @{
+		name = "Document Set"
+		id = "0x0120D520"
+	}
+	group = "Document Set Content Types"
+}
 
+New-MgSiteContentType -SiteId $siteId -BodyParameter $params
 
 ## PARAMETERS
 

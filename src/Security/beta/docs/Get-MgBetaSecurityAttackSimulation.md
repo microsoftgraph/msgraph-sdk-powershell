@@ -44,10 +44,9 @@ Provides tenants capability to launch a simulated and realistic phishing attack 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Security
-Get-MgBetaSecurityAttackSimulation
 ```
 
-
+Get-MgBetaSecurityAttackSimulation
 
 ## PARAMETERS
 

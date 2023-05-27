@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSiteList
 
 ## SYNOPSIS
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ## SYNTAX
 
@@ -32,57 +32,30 @@ Get-MgBetaSiteList -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteList -SiteId $siteId
 ```
 
-
+Get-MgBetaSiteList -SiteId $siteId -ListId $listId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteList -SiteId $siteId -ListId $listId
 ```
 
-
+Get-MgBetaSiteList -SiteId $siteId -ListId $listId
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteList -SiteId $siteId -ListId $listId
 ```
 
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteList -SiteId $siteId -ListId $listId -Property "name,lastModifiedDateTime" -ExpandProperty "columns(select=name,description),items)"
-```
-
-
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteList -SiteId $siteId -ListId $listId
-```
-
-
-
-### -------------------------- EXAMPLE 6 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteList -SiteId $siteId -ListId $listId
-```
-
-
+Get-MgBetaSiteList -SiteId $siteId -ListId $listId -Property "id,name,lastModifiedDateTime" -ExpandProperty "columns(select=name,description),items)"
 
 ## PARAMETERS
 

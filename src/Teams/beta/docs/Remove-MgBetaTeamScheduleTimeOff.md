@@ -31,11 +31,17 @@ Delete a timeOff instance from a schedule.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Remove-MgBetaTeamScheduleTimeOff -TeamId $teamId -TimeOffId $timeOffId
+{{ Add code here }}
 ```
 
+{{ Add output here }}
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

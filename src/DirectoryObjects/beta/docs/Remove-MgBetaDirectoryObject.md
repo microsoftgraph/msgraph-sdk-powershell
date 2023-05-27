@@ -32,10 +32,9 @@ Delete a directory object, for example, a group, user, application, or service p
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.DirectoryObjects
-Remove-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
 ```
 
-
+Get-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
 
 ## PARAMETERS
 

@@ -32,10 +32,13 @@ Delete an accessPackageCatalog.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-Remove-MgEntitlementManagementCatalog -AccessPackageCatalogId $accessPackageCatalogId
 ```
 
+$params = @{
+	displayName = "Catalog One"
+}
 
+Update-MgEntitlementManagementCatalog -AccessPackageCatalogId $accessPackageCatalogId -BodyParameter $params
 
 ## PARAMETERS
 

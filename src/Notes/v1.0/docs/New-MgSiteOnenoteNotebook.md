@@ -56,8 +56,12 @@ Create a new OneNote notebook.
 Import-Module Microsoft.Graph.Notes
 ```
 
+$params = @{
+	displayName = "My Private notebook"
+}
+
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteNotebook -UserId $userId
+New-MgUserOnenoteNotebook -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

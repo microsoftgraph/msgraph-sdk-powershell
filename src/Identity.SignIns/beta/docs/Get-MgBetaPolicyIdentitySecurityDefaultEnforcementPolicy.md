@@ -25,10 +25,13 @@ Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Get-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy
 ```
 
+$params = @{
+	isEnabled = $false
+}
 
+Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy -BodyParameter $params
 
 ## PARAMETERS
 

@@ -45,18 +45,14 @@ If you're using the delegated token, the user will only see classes in which the
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClass
 ```
 
+$params = @{
+	description = "History - World History 1"
+	displayName = "World History Level 1"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClass -EducationClassId $educationClassId
-```
-
-
+Update-MgBetaEducationClass -EducationClassId $educationClassId -BodyParameter $params
 
 ## PARAMETERS
 

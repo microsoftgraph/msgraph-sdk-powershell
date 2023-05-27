@@ -39,18 +39,14 @@ Retrieve the properties and relationships of an externalConnection.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Search
-Get-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId
 ```
 
+$params = @{
+	name = "Contoso HR Service Tickets"
+	description = "Connection to index HR service tickets"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Search
-Get-MgBetaExternalConnection
-```
-
-
+Update-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
 
 ## PARAMETERS
 

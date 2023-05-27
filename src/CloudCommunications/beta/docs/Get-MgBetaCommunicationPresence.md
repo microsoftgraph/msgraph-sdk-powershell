@@ -39,10 +39,24 @@ Get a user's presence information.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-Get-MgBetaCommunicationPresence -PresenceId $presenceId
 ```
 
+# A UPN can also be used as -UserId.
+Get-MgBetaUserPresence -UserId $userId
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
+Get-MgBetaUserPresence -UserId $userId
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
+Get-MgBetaCommunicationPresence -PresenceId $presenceId
 
 ## PARAMETERS
 

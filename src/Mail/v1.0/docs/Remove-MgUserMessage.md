@@ -32,20 +32,19 @@ Delete eventMessage.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Mail
-# A UPN can also be used as -UserId.
-Remove-MgUserMessage -UserId $userId -MessageId $messageId
 ```
 
+$params = @{
+	subject = "subject-value"
+	body = @{
+		contentType = ""
+		content = "content-value"
+	}
+	inferenceClassification = "other"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Mail
 # A UPN can also be used as -UserId.
-Remove-MgUserMessage -UserId $userId -MessageId $messageId
-```
-
-
+Update-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -39,18 +39,22 @@ Retrieve the properties and relationships of plannerTask object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Planner
-Get-MgBetaPlannerTask -PlannerTaskId $plannerTaskId
 ```
 
+$params = @{
+	assignments = @{
+		"fbab97d0-4932-4511-b675-204639209557" = @{
+			"@odata.type" = "#microsoft.graph.plannerAssignment"
+			orderHint = "N9917 U2883!"
+		}
+	}
+	appliedCategories = @{
+		category3 = $true
+		category4 = $false
+	}
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Planner
-Get-MgBetaPlannerTask
-```
-
-
+Update-MgBetaPlannerTask -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 
 ## PARAMETERS
 

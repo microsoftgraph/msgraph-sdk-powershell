@@ -47,14 +47,14 @@ You cannot modify the **displayName** property\nonce you have created the catego
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Users
-$params = @{
-	Color = "preset15"
-}
-# A UPN can also be used as -UserId.
-Update-MgBetaUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId -BodyParameter $params
 ```
 
+$params = @{
+	color = "preset15"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgBetaUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId -BodyParameter $params
 
 ## PARAMETERS
 

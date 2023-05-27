@@ -39,18 +39,16 @@ Read the properties and relationships of a term store group object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteTermStoreGroup -SiteId $siteId -GroupId $groupId -Property "*,parentSiteId"
 ```
 
-
+Get-MgBetaSiteTermStoreGroup -SiteId $siteId -GroupId $groupId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteTermStoreGroup -SiteId $siteId -GroupId $groupId
 ```
 
-
+Get-MgBetaSiteTermStoreGroup -SiteId $siteId -GroupId $groupId -Property "*,parentSiteId"
 
 ## PARAMETERS
 

@@ -32,11 +32,14 @@ Delete a checklistItem object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Users
-# A UPN can also be used as -UserId.
-Remove-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId
 ```
 
+$params = @{
+	displayName = "buy cake"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId -BodyParameter $params
 
 ## PARAMETERS
 

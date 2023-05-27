@@ -56,13 +56,40 @@ Update an editable **secureScoreControlProfiles** property within any integrated
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Security
-$params = @{
-	ControlStateUpdates = "controlStateUpdates-value"
-}
-Update-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 ```
 
+$params = @{
+	assignedTo = ""
+	comment = "control is reviewed"
+	state = "Reviewed"
+	vendorInformation = @{
+		provider = "SecureScore"
+		providerVersion = $null
+		subProvider = $null
+		vendor = "Microsoft"
+	}
+}
 
+Update-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Security
+```
+
+$params = @{
+	assignedTo = ""
+	comment = "control is reviewed"
+	state = "Reviewed"
+	vendorInformation = @{
+		provider = "SecureScore"
+		providerVersion = $null
+		subProvider = $null
+		vendor = "Microsoft"
+	}
+}
+
+Update-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 
 ## PARAMETERS
 

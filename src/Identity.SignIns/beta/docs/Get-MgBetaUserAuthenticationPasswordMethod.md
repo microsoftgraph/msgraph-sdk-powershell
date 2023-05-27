@@ -39,20 +39,10 @@ Retrieve the properties and relationships of a password authentication method ob
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
+```
+
 # A UPN can also be used as -UserId.
 Get-MgBetaUserAuthenticationPasswordMethod -UserId $userId -PasswordAuthenticationMethodId $passwordAuthenticationMethodId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-# A UPN can also be used as -UserId.
-Get-MgBetaUserAuthenticationPasswordMethod -UserId $userId
-```
-
-
 
 ## PARAMETERS
 

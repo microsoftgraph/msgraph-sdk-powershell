@@ -39,10 +39,9 @@ Get the status of an operation that adds the large gallery view to a call.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallOperation -CallId $callId -CommsOperationId $commsOperationId
 ```
 
-
+Get-MgCommunicationCallOperation -CallId $callId -CommsOperationId $commsOperationId
 
 ## PARAMETERS
 

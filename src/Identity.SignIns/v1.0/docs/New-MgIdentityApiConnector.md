@@ -32,53 +32,36 @@ Create a new identityApiConnector object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	DisplayName = "Test API"
-	TargetUrl = "https://someapi.com/api"
-	AuthenticationConfiguration = @{
-		"@odata.type" = "#microsoft.graph.basicAuthentication"
-		Username = "MyUsername"
-		Password = "MyPassword"
-	}
-}
-New-MgIdentityApiConnector -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Test API"
+	targetUrl = "https://someapi.com/api"
+	authenticationConfiguration = @{
+		"@odata.type" = "#microsoft.graph.basicAuthentication"
+		username = "MyUsername"
+		password = "MyPassword"
+	}
+}
 
+New-MgIdentityApiConnector -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	DisplayName = "Test API"
-	TargetUrl = "https://someotherapi.com/api"
-	AuthenticationConfiguration = @{
-		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
-		Pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
-		Password = "CertificatePassword"
-	}
-}
-New-MgIdentityApiConnector -BodyParameter $params
 ```
 
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
 $params = @{
-	DisplayName = "Test API"
-	TargetUrl = "https://someotherapi.com/api"
-	AuthenticationConfiguration = @{
+	displayName = "Test API"
+	targetUrl = "https://someotherapi.com/api"
+	authenticationConfiguration = @{
 		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
-		Pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
-		Password = "CertificatePassword"
+		pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
+		password = "CertificatePassword"
 	}
 }
+
 New-MgIdentityApiConnector -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

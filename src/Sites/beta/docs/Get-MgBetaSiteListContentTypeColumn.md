@@ -41,7 +41,7 @@ Retrieve the metadata for a [site][], [list][] or [contentType][] [column][colum
 Import-Module Microsoft.Graph.Beta.Sites
 ```
 
-Get-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId
+Get-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -ColumnDefinitionId $columnDefinitionId
 
 ## PARAMETERS
 

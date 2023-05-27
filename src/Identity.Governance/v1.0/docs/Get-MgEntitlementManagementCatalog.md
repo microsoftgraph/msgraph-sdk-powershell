@@ -57,18 +57,13 @@ Retrieve the properties and relationships of an accessPackageCatalog object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementCatalog -AccessPackageCatalogId $accessPackageCatalogId
 ```
 
+$params = @{
+	displayName = "Catalog One"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementCatalog
-```
-
-
+Update-MgEntitlementManagementCatalog -AccessPackageCatalogId $accessPackageCatalogId -BodyParameter $params
 
 ## PARAMETERS
 

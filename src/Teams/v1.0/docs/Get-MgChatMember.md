@@ -38,19 +38,17 @@ Retrieve a conversationMember from a chat or channel.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatMember -ChatId $chatId -ConversationMemberId $conversationMemberId
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgChatMember -ChatId $chatId
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ## PARAMETERS
 

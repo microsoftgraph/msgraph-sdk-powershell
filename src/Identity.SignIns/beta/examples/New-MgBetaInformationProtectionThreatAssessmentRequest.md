@@ -1,55 +1,67 @@
-### Example 1: Using the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	"@odata.type" = "#microsoft.graph.emailFileAssessmentRequest"
-	RecipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
-	ExpectedAssessment = "block"
-	Category = "malware"
-	ContentData = "UmVjZWl2ZWQ6IGZyb20gTVcyUFIwME1CMDMxNC5uYW1wcmQwMC....."
-}
-New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
-```
-This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	"@odata.type" = "#microsoft.graph.fileAssessmentRequest"
-	ExpectedAssessment = "block"
-	Category = "malware"
-	FileName = "test.txt"
-	ContentData = "VGhpcyBpcyBhIHRlc3QgZmlsZQ=="
-}
-New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
-```
-This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 3: Using the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
+### Example 1: Create a mail assessment request
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.mailAssessmentRequest"
-	RecipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
-	ExpectedAssessment = "block"
-	Category = "spam"
-	MessageUri = "https://graph.microsoft.com/beta/users/c52ce8db-3e4b-4181-93c4-7d6b6bffaf60/messages/AAMkADU3MWUxOTU0LWNlOTEt="
+	recipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
+	expectedAssessment = "block"
+	category = "spam"
+	messageUri = "https://graph.microsoft.com/v1.0/users/c52ce8db-3e4b-4181-93c4-7d6b6bffaf60/messages/AAMkADU3MWUxOTU0LWNlOTEt="
 }
+
 New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 4: Using the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
+This example shows how to use the New-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Create an email assessment request
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.emailFileAssessmentRequest"
+	recipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
+	expectedAssessment = "block"
+	category = "malware"
+	contentData = "UmVjZWl2ZWQ6IGZyb20gTVcyUFIwME1CMDMxNC5uYW1wcmQwMC....."
+}
+
+New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
+```
+This example shows how to use the New-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Create a file assessment request
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.fileAssessmentRequest"
+	expectedAssessment = "block"
+	category = "malware"
+	fileName = "test.txt"
+	contentData = "VGhpcyBpcyBhIHRlc3QgZmlsZQ=="
+}
+
+New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
+```
+This example shows how to use the New-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Create an url assessment request
+
+```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.urlAssessmentRequest"
-	Url = "http://test.com"
-	ExpectedAssessment = "block"
-	Category = "phishing"
+	url = "http://test.com"
+	expectedAssessment = "block"
+	category = "phishing"
 }
+
 New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

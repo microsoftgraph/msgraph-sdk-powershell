@@ -52,14 +52,14 @@ Create a new onenoteSection in the specified notebook.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Notes
-$params = @{
-	DisplayName = "Section name"
-}
-# A UPN can also be used as -UserId.
-New-MgUserOnenoteNotebookSection -UserId $userId -NotebookId $notebookId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Section name"
+}
 
+# A UPN can also be used as -UserId.
+New-MgUserOnenoteNotebookSection -UserId $userId -NotebookId $notebookId -BodyParameter $params
 
 ## PARAMETERS
 

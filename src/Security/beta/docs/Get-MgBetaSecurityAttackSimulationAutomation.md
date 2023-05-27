@@ -39,10 +39,9 @@ Get an attack simulation automation for a tenant.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Security
-Get-MgBetaSecurityAttackSimulationAutomation
 ```
 
-
+Get-MgBetaSecurityAttackSimulationAutomation -SimulationAutomationId $simulationAutomationId
 
 ## PARAMETERS
 

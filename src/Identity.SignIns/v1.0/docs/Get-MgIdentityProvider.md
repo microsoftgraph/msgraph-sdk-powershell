@@ -43,66 +43,26 @@ In Azure AD B2C, this operation can currently get a socialIdentityProvider, or a
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	clientSecret = "1111111111111"
+}
 
+Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
+	displayName = "Apple"
+}
 
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityProvider -IdentityProviderId $identityProviderId
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityProvider
-```
-
-
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityProvider
-```
-
-
-
-### -------------------------- EXAMPLE 6 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityProvider -OutFile $outFileId
-```
-
-
-
-### -------------------------- EXAMPLE 7 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
-```
-
-
-
-### -------------------------- EXAMPLE 8 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityProvider
-```
-
-
+Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 
 ## PARAMETERS
 

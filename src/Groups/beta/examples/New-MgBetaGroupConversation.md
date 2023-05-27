@@ -1,65 +1,17 @@
-### Example 1: Using the New-MgBetaGroupConversation Cmdlet
+### Example 1: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Groups
-$params = @{
-	Topic = "New head count"
-	Threads = @(
-		@{
-			Posts = @(
-				@{
-					Body = @{
-						ContentType = "html"
-						Content = "The confirmation will come by the end of the week."
-					}
-					NewParticipants = @(
-						@{
-							EmailAddress = @{
-								Name = "Adele Vance"
-								Address = "AdeleV@contoso.onmicrosoft.com"
-							}
-						}
-					)
-				}
-			)
-		}
-	)
-}
-New-MgBetaGroupConversation -GroupId $groupId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaGroupConversation Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgBetaGroupConversation Cmdlet
+
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
 ```powershell
-Import-Module Microsoft.Graph.Beta.Groups
-$params = @{
-	Topic = "Does anyone have a second?"
-	Threads = @(
-		@{
-			Posts = @(
-				@{
-					Body = @{
-						ContentType = "HTML"
-						Content = "This is urgent!"
-					}
-					Extensions = @(
-						@{
-							"@odata.type" = "microsoft.graph.openTypeExtension"
-							ExtensionName = "Com.Contoso.Benefits"
-							CompanyName = "Contoso"
-							ExpirationDate = "2016-08-03T11:00:00.000Z"
-							TopPicks = @(
-								"Employees only"
-								"Add spouse or guest"
-								"Add family"
-							)
-						}
-					)
-				}
-			)
-		}
-	)
-}
-New-MgBetaGroupConversation -GroupId $groupId -BodyParameter $params
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
 ```
-This example shows how to use the New-MgBetaGroupConversation Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+{{ Add description here }}

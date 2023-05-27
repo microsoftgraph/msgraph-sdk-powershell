@@ -46,13 +46,13 @@ Update the navigation property buckets in planner
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Planner
-$params = @{
-	Name = "Development"
-}
-Update-MgPlannerBucket -PlannerBucketId $plannerBucketId -BodyParameter $params
 ```
 
+$params = @{
+	name = "Development"
+}
 
+Update-MgPlannerBucket -PlannerBucketId $plannerBucketId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 
 ## PARAMETERS
 

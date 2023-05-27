@@ -39,18 +39,15 @@ Read the properties and relationships of an educationSchool object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-Get-MgEducationSchool -EducationSchoolId $educationSchoolId
 ```
 
+$params = @{
+	displayName = "Fabrikam Arts High School"
+	description = "Magnate school for the arts.
+Los Angeles School District"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationSchool
-```
-
-
+Update-MgEducationSchool -EducationSchoolId $educationSchoolId -BodyParameter $params
 
 ## PARAMETERS
 

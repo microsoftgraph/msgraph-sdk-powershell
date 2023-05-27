@@ -34,161 +34,75 @@ Create a new educationRubric object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
+```
+
 $params = @{
-	DisplayName = "Example Credit Rubric"
-	Description = @{
-		Content = "This is an example of a credit rubric (no points)"
-		ContentType = "text"
+	displayName = "Example Credit Rubric"
+	description = @{
+		content = "This is an example of a credit rubric (no points)"
+		contentType = "text"
 	}
-	Levels = @(
+	levels = @(
 		@{
-			DisplayName = "Good"
-			Description = @{
-				Content = ""
-				ContentType = "text"
+			displayName = "Good"
+			description = @{
+				content = ""
+				contentType = "text"
 			}
 		}
 		@{
-			DisplayName = "Poor"
-			Description = @{
-				Content = ""
-				ContentType = "text"
+			displayName = "Poor"
+			description = @{
+				content = ""
+				contentType = "text"
 			}
 		}
 	)
-	Qualities = @(
+	qualities = @(
 		@{
-			Description = @{
-				Content = "Argument"
-				ContentType = "text"
+			description = @{
+				content = "Argument"
+				contentType = "text"
 			}
-			Criteria = @(
+			criteria = @(
 				@{
-					Description = @{
-						Content = "The essay's argument is persuasive."
-						ContentType = "text"
+					description = @{
+						content = "The essay's argument is persuasive."
+						contentType = "text"
 					}
 				}
 				@{
-					Description = @{
-						Content = "The essay's argument does not make sense."
-						ContentType = "text"
+					description = @{
+						content = "The essay's argument does not make sense."
+						contentType = "text"
 					}
 				}
 			)
 		}
 		@{
-			Description = @{
-				Content = "Spelling and Grammar"
-				ContentType = "text"
+			description = @{
+				content = "Spelling and Grammar"
+				contentType = "text"
 			}
-			Criteria = @(
+			criteria = @(
 				@{
-					Description = @{
-						Content = "The essay uses proper spelling and grammar with few or no errors."
-						ContentType = "text"
+					description = @{
+						content = "The essay uses proper spelling and grammar with few or no errors."
+						contentType = "text"
 					}
 				}
 				@{
-					Description = @{
-						Content = "The essay has numerous errors in spelling and/or grammar."
-						ContentType = "text"
+					description = @{
+						content = "The essay has numerous errors in spelling and/or grammar."
+						contentType = "text"
 					}
 				}
 			)
 		}
 	)
 }
+
 New-MgBetaEducationMeRubric -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-$params = @{
-	DisplayName = "Example Points Rubric"
-	Description = @{
-		Content = "This is an example of a rubric with points"
-		ContentType = "text"
-	}
-	Levels = @(
-		@{
-			DisplayName = "Good"
-			Description = @{
-				Content = ""
-				ContentType = "text"
-			}
-			Grading = @{
-				"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
-				MaxPoints = 
-			}
-		}
-		@{
-			DisplayName = "Poor"
-			Description = @{
-				Content = ""
-				ContentType = "text"
-			}
-			Grading = @{
-				"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
-				MaxPoints = 
-			}
-		}
-	)
-	Qualities = @(
-		@{
-			Description = @{
-				Content = "Argument"
-				ContentType = "text"
-			}
-			Criteria = @(
-				@{
-					Description = @{
-						Content = "The essay's argument is persuasive."
-						ContentType = "text"
-					}
-				}
-				@{
-					Description = @{
-						Content = "The essay's argument does not make sense."
-						ContentType = "text"
-					}
-				}
-			)
-			Weight = 50.0
-		}
-		@{
-			Description = @{
-				Content = "Spelling and Grammar"
-				ContentType = "text"
-			}
-			Criteria = @(
-				@{
-					Description = @{
-						Content = "The essay uses proper spelling and grammar with few or no errors."
-						ContentType = "text"
-					}
-				}
-				@{
-					Description = @{
-						Content = "The essay has numerous errors in spelling and/or grammar."
-						ContentType = "text"
-					}
-				}
-			)
-			Weight = 50.0
-		}
-	)
-	Grading = @{
-		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGradeType"
-	}
-}
-New-MgBetaEducationMeRubric -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 
@@ -407,8 +321,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
@@ -436,8 +350,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -450,8 +364,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

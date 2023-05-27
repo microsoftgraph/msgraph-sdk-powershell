@@ -41,20 +41,15 @@ There are two scenarios where an app can get another user's contact folder:
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.PersonalContacts
-# A UPN can also be used as -UserId.
-Get-MgUserContactFolder -UserId $userId -ContactFolderId $contactFolderId
 ```
 
+$params = @{
+	parentFolderId = "parentFolderId-value"
+	displayName = "displayName-value"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.PersonalContacts
 # A UPN can also be used as -UserId.
-Get-MgUserContactFolder -UserId $userId
-```
-
-
+Update-MgUserContactFolder -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
 
 ## PARAMETERS
 

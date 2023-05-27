@@ -36,10 +36,13 @@ Existing access tokens will continue to be valid for their lifetime, but new acc
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Remove-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId
 ```
 
+$params = @{
+	scope = "User.ReadBasic.All Group.ReadWrite.All"
+}
 
+Update-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId -BodyParameter $params
 
 ## PARAMETERS
 

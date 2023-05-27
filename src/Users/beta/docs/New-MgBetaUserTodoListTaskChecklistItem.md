@@ -46,26 +46,14 @@ Create a new checklistItem object as a subtask in a bigger todoTask.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Users
-$params = @{
-	DisplayName = "Final sign-off from the team"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Users
 $params = @{
-	DisplayName = "Final sign-off from the team"
+	displayName = "Final sign-off from the team"
 }
+
 # A UPN can also be used as -UserId.
 New-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

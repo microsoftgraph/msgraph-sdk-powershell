@@ -34,16 +34,16 @@ Import-Module Microsoft.Graph.Beta.Teams
 ```
 
 $params = @{
-	MemberSettings = @{
-		AllowCreateUpdateChannels = $true
+	memberSettings = @{
+		allowCreateUpdateChannels = $true
 	}
-	MessagingSettings = @{
-		AllowUserEditMessages = $true
-		AllowUserDeleteMessages = $true
+	messagingSettings = @{
+		allowUserEditMessages = $true
+		allowUserDeleteMessages = $true
 	}
-	FunSettings = @{
-		AllowGiphy = $true
-		GiphyContentRating = "strict"
+	funSettings = @{
+		allowGiphy = $true
+		giphyContentRating = "strict"
 	}
 }
 

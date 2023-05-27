@@ -55,14 +55,7 @@ Nullable.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaChatPinnedMessage -ChatId $chatId
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-```
-
-Get-MgBetaChatPinnedMessage -ChatId $chatId -ExpandProperty "message"
+Remove-MgBetaChatPinnedMessage -ChatId $chatId -PinnedChatMessageInfoId $pinnedChatMessageInfoId
 
 ## PARAMETERS
 

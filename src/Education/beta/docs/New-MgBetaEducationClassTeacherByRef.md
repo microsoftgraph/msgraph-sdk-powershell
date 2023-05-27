@@ -44,13 +44,13 @@ Add a teacher to a class.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-$params = @{
-	"@odata.id" = "https://graph.microsoft.com/beta/education/users/14011"
-}
-New-MgBetaEducationClassTeacherByRef -EducationClassId $educationClassId -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.id" = "https://graph.microsoft.com/v1.0/education/users/14011"
+}
 
+New-MgBetaEducationClassTeacherByRef -EducationClassId $educationClassId -BodyParameter $params
 
 ## PARAMETERS
 

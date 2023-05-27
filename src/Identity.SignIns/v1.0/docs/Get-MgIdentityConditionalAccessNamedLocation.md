@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a countryNamedLocation object.
+Retrieve the properties and relationships of an ipNamedLocation object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignInsIdent
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a countryNamedLocation object.
+Retrieve the properties and relationships of an ipNamedLocation object.
 
 ## EXAMPLES
 

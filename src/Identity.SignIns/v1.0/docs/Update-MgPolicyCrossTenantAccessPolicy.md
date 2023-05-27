@@ -35,13 +35,15 @@ Update the properties of a cross-tenant access policy.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-$params = @{
-	DisplayName = "CrossTenantAccessPolicy"
-}
-Update-MgPolicyCrossTenantAccessPolicy -BodyParameter $params
 ```
 
+$params = @{
+	allowedCloudEndpoints = @(
+		"microsoftonline.us"
+	)
+}
 
+Update-MgPolicyCrossTenantAccessPolicy -BodyParameter $params
 
 ## PARAMETERS
 

@@ -76,28 +76,28 @@ Update the properties of the event object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Calendar
+```
+
 $params = @{
-	OriginalStartTimeZone = "originalStartTimeZone-value"
-	OriginalEndTimeZone = "originalEndTimeZone-value"
-	ResponseStatus = @{
-		Response = ""
-		Time = [System.DateTime]::Parse("datetime-value")
+	originalStartTimeZone = "originalStartTimeZone-value"
+	originalEndTimeZone = "originalEndTimeZone-value"
+	responseStatus = @{
+		response = ""
+		time = [System.DateTime]::Parse("datetime-value")
 	}
-	Recurrence = $null
-	ReminderMinutesBeforeStart = 99
-	IsOnlineMeeting = $true
-	OnlineMeetingProvider = "teamsForBusiness"
-	IsReminderOn = $true
-	HideAttendees = $false
-	Categories = @(
+	recurrence = $null
+	reminderMinutesBeforeStart = 99
+	isOnlineMeeting = $true
+	onlineMeetingProvider = "teamsForBusiness"
+	isReminderOn = $true
+	hideAttendees = $false
+	categories = @(
 		"Red category"
 	)
 }
+
 # A UPN can also be used as -UserId.
 Update-MgUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

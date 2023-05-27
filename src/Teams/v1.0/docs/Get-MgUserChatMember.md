@@ -38,12 +38,17 @@ Retrieve a conversationMember from a chat or channel.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Teams
-# A UPN can also be used as -UserId.
-Get-MgUserChatMember -UserId $userId -ChatId $chatId
+{{ Add code here }}
 ```
 
+{{ Add output here }}
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

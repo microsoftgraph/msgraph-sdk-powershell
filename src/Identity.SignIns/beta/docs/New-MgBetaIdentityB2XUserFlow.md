@@ -36,57 +36,17 @@ Create a new b2xIdentityUserFlow object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	Id = "UserFlowWithAPIConnector"
-	UserFlowType = "signUpOrSignIn"
-	UserFlowTypeVersion = 1
-	ApiConnectorConfiguration = @{
-		PostFederationSignup = @{
-			"@odata.id" = "{apiConnectorId}"
-		}
-		PostAttributeCollection = @{
-			"@odata.id" = "{apiConnectorId}"
-		}
-	}
-}
-New-MgBetaIdentityB2XUserFlow -BodyParameter $params
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	Id = "Partner"
-	UserFlowType = "signUpOrSignIn"
-	UserFlowTypeVersion = 1
-	IdentityProviders = @(
-		@{
-			Id = "Facebook-OAuth"
-			Type = "Facebook"
-			Name = "Facebook"
-		}
-	)
-}
-New-MgBetaIdentityB2XUserFlow -BodyParameter $params
+{{ Add code here }}
 ```
 
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	Id = "Partner"
-	UserFlowType = "signUpOrSignIn"
-	UserFlowTypeVersion = 1
-}
-New-MgBetaIdentityB2XUserFlow -BodyParameter $params
-```
-
-
+{{ Add output here }}
 
 ## PARAMETERS
 

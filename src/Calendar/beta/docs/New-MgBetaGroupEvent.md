@@ -78,37 +78,37 @@ Use this API to create a new event.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Calendar
+```
+
 $params = @{
-	Subject = "Let's go for lunch"
-	Body = @{
-		ContentType = "HTML"
-		Content = "Does late morning work for you?"
+	subject = "Let's go for lunch"
+	body = @{
+		contentType = "HTML"
+		content = "Does late morning work for you?"
 	}
-	Start = @{
-		DateTime = "2019-06-15T12:00:00"
-		TimeZone = "Pacific Standard Time"
+	start = @{
+		dateTime = "2019-06-16T12:00:00"
+		timeZone = "Pacific Standard Time"
 	}
-	End = @{
-		DateTime = "2019-06-15T14:00:00"
-		TimeZone = "Pacific Standard Time"
+	end = @{
+		dateTime = "2019-06-16T14:00:00"
+		timeZone = "Pacific Standard Time"
 	}
-	Location = @{
-		DisplayName = "Harry's Bar"
+	location = @{
+		displayName = "Harry's Bar"
 	}
-	Attendees = @(
+	attendees = @(
 		@{
-			EmailAddress = @{
-				Address = "adelev@contoso.onmicrosoft.com"
-				Name = "Adele Vance"
+			emailAddress = @{
+				address = "adelev@contoso.onmicrosoft.com"
+				name = "Adele Vance"
 			}
-			Type = "required"
+			type = "required"
 		}
 	)
 }
+
 New-MgBetaGroupEvent -GroupId $groupId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

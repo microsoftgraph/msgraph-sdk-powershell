@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: 94f7a306-e0bb-4a89-ae2a-500e0e6d9b4d
+Module Guid: d5c8d4cc-efc8-40f0-ba0d-24920f9a9b56
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -141,7 +141,7 @@ This allows you to maintain and synchronize a local store of events in the speci
 Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
 
 ### [Get-MgGroupConversation](Get-MgGroupConversation.md)
-The group's conversations.
+Retrieve the properties and relationships of conversation object.
 
 ### [Get-MgGroupConversationCount](Get-MgGroupConversationCount.md)
 Get the number of the resource
@@ -251,90 +251,6 @@ Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 ### [Get-MgGroupLifecyclePolicyCount](Get-MgGroupLifecyclePolicyCount.md)
 Get the number of the resource
 
-### [Get-MgGroupListMemberCountAsApplication](Get-MgGroupListMemberCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberCountAsDevice](Get-MgGroupListMemberCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberCountAsGroup](Get-MgGroupListMemberCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberCountAsOrgContact](Get-MgGroupListMemberCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberCountAsServicePrincipal](Get-MgGroupListMemberCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberCountAsUser](Get-MgGroupListMemberCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberOfCountAsAdministrativeUnit](Get-MgGroupListMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberOfCountAsGroup](Get-MgGroupListMemberOfCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberWithLicenseErrorCountAsApplication](Get-MgGroupListMemberWithLicenseErrorCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberWithLicenseErrorCountAsDevice](Get-MgGroupListMemberWithLicenseErrorCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberWithLicenseErrorCountAsGroup](Get-MgGroupListMemberWithLicenseErrorCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberWithLicenseErrorCountAsOrgContact](Get-MgGroupListMemberWithLicenseErrorCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberWithLicenseErrorCountAsServicePrincipal](Get-MgGroupListMemberWithLicenseErrorCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgGroupListMemberWithLicenseErrorCountAsUser](Get-MgGroupListMemberWithLicenseErrorCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgGroupListOwnerCountAsApplication](Get-MgGroupListOwnerCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgGroupListOwnerCountAsDevice](Get-MgGroupListOwnerCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgGroupListOwnerCountAsGroup](Get-MgGroupListOwnerCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgGroupListOwnerCountAsOrgContact](Get-MgGroupListOwnerCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgGroupListOwnerCountAsServicePrincipal](Get-MgGroupListOwnerCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgGroupListOwnerCountAsUser](Get-MgGroupListOwnerCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgGroupListTransitiveMemberCountAsApplication](Get-MgGroupListTransitiveMemberCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgGroupListTransitiveMemberCountAsDevice](Get-MgGroupListTransitiveMemberCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgGroupListTransitiveMemberCountAsGroup](Get-MgGroupListTransitiveMemberCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgGroupListTransitiveMemberCountAsOrgContact](Get-MgGroupListTransitiveMemberCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgGroupListTransitiveMemberCountAsServicePrincipal](Get-MgGroupListTransitiveMemberCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgGroupListTransitiveMemberCountAsUser](Get-MgGroupListTransitiveMemberCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgGroupListTransitiveMemberOfCountAsAdministrativeUnit](Get-MgGroupListTransitiveMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgGroupListTransitiveMemberOfCountAsGroup](Get-MgGroupListTransitiveMemberOfCountAsGroup.md)
-Get the number of the resource
-
 ### [Get-MgGroupMember](Get-MgGroupMember.md)
 The members of this group, who can be users, devices, other groups, or service principals.
 Supports the List members, Add member, and Remove member operations.
@@ -370,6 +286,24 @@ For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayNa
 ### [Get-MgGroupMemberCount](Get-MgGroupMemberCount.md)
 Get the number of the resource
 
+### [Get-MgGroupMemberCountAsApplication](Get-MgGroupMemberCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberCountAsDevice](Get-MgGroupMemberCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberCountAsGroup](Get-MgGroupMemberCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberCountAsOrgContact](Get-MgGroupMemberCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberCountAsServicePrincipal](Get-MgGroupMemberCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberCountAsUser](Get-MgGroupMemberCountAsUser.md)
+Get the number of the resource
+
 ### [Get-MgGroupMemberGroup](Get-MgGroupMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
@@ -395,6 +329,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 ### [Get-MgGroupMemberOfCount](Get-MgGroupMemberOfCount.md)
 Get the number of the resource
 
+### [Get-MgGroupMemberOfCountAsAdministrativeUnit](Get-MgGroupMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberOfCountAsGroup](Get-MgGroupMemberOfCountAsGroup.md)
+Get the number of the resource
+
 ### [Get-MgGroupMemberWithLicenseError](Get-MgGroupMemberWithLicenseError.md)
 A list of group members with license errors from this group-based license assignment.
 Read-only.
@@ -418,6 +358,24 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.serviceP
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgGroupMemberWithLicenseErrorCount](Get-MgGroupMemberWithLicenseErrorCount.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberWithLicenseErrorCountAsApplication](Get-MgGroupMemberWithLicenseErrorCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberWithLicenseErrorCountAsDevice](Get-MgGroupMemberWithLicenseErrorCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberWithLicenseErrorCountAsGroup](Get-MgGroupMemberWithLicenseErrorCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberWithLicenseErrorCountAsOrgContact](Get-MgGroupMemberWithLicenseErrorCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberWithLicenseErrorCountAsServicePrincipal](Get-MgGroupMemberWithLicenseErrorCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgGroupMemberWithLicenseErrorCountAsUser](Get-MgGroupMemberWithLicenseErrorCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgGroupOnenoteNotebookFromWebUrl](Get-MgGroupOnenoteNotebookFromWebUrl.md)
@@ -464,6 +422,24 @@ Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
 ### [Get-MgGroupOwnerCount](Get-MgGroupOwnerCount.md)
+Get the number of the resource
+
+### [Get-MgGroupOwnerCountAsApplication](Get-MgGroupOwnerCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgGroupOwnerCountAsDevice](Get-MgGroupOwnerCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgGroupOwnerCountAsGroup](Get-MgGroupOwnerCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgGroupOwnerCountAsOrgContact](Get-MgGroupOwnerCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgGroupOwnerCountAsServicePrincipal](Get-MgGroupOwnerCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgGroupOwnerCountAsUser](Get-MgGroupOwnerCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgGroupPermissionGrant](Get-MgGroupPermissionGrant.md)
@@ -561,8 +537,7 @@ Invoke function getCompatibleHubContentTypes
 Invoke function getActivitiesByInterval
 
 ### [Get-MgGroupThread](Get-MgGroupThread.md)
-Get a specific thread that belongs to a group.
-You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
+Get a thread object.
 
 ### [Get-MgGroupThreadCount](Get-MgGroupThreadCount.md)
 Get the number of the resource
@@ -630,6 +605,24 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 ### [Get-MgGroupTransitiveMemberCount](Get-MgGroupTransitiveMemberCount.md)
 Get the number of the resource
 
+### [Get-MgGroupTransitiveMemberCountAsApplication](Get-MgGroupTransitiveMemberCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgGroupTransitiveMemberCountAsDevice](Get-MgGroupTransitiveMemberCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgGroupTransitiveMemberCountAsGroup](Get-MgGroupTransitiveMemberCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgGroupTransitiveMemberCountAsOrgContact](Get-MgGroupTransitiveMemberCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgGroupTransitiveMemberCountAsServicePrincipal](Get-MgGroupTransitiveMemberCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgGroupTransitiveMemberCountAsUser](Get-MgGroupTransitiveMemberCountAsUser.md)
+Get the number of the resource
+
 ### [Get-MgGroupTransitiveMemberOf](Get-MgGroupTransitiveMemberOf.md)
 The groups that a group is a member of, either directly and through nested membership.
 Nullable.
@@ -641,6 +634,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgGroupTransitiveMemberOfCount](Get-MgGroupTransitiveMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgGroupTransitiveMemberOfCountAsAdministrativeUnit](Get-MgGroupTransitiveMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgGroupTransitiveMemberOfCountAsGroup](Get-MgGroupTransitiveMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Grant-MgGroupDriveItemPermission](Grant-MgGroupDriveItemPermission.md)
@@ -773,9 +772,8 @@ Renews a group's expiration.
 When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 
 ### [Invoke-MgReplyGroupConversationThread](Invoke-MgReplyGroupConversationThread.md)
-Add an attachment when creating a group post.
-This operation limits the size of the attachment you can add to under 3 MB.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Reply to a thread in a group conversation and add a new post to it.
+You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupConversationThreadPost](Invoke-MgReplyGroupConversationThreadPost.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -790,9 +788,8 @@ See known limitations of open extensions for more information.
 The table in the Permissions section lists the resources that support open extensions.
 
 ### [Invoke-MgReplyGroupThread](Invoke-MgReplyGroupThread.md)
-Add an attachment when creating a group post.
-This operation limits the size of the attachment you can add to under 3 MB.
-An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+Reply to a thread in a group conversation and add a new post to it.
+You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation.
 
 ### [Invoke-MgReplyGroupThreadPost](Invoke-MgReplyGroupThreadPost.md)
 Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
@@ -843,10 +840,7 @@ Users in the accepted senders list can post to conversations of the group .
 Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
 
 ### [New-MgGroupConversation](New-MgGroupConversation.md)
-Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
-You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
-See known limitations of open extensions for more information.
-The table in the Permissions section lists the resources that support open extensions.
+Use reply thread or reply post to further post to that conversation.
 
 ### [New-MgGroupConversationThread](New-MgGroupConversationThread.md)
 Create a new thread in the specified conversation.
@@ -1215,7 +1209,8 @@ Unpublish a [contentType][] from a content type hub site.
 Unpublish a [contentType][] from a content type hub site.
 
 ### [Update-MgGroup](Update-MgGroup.md)
-Update the properties of a group object.
+Add a member to a security or Microsoft 365 group through the **members** navigation property.
+The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
 
 ### [Update-MgGroupConversationThread](Update-MgGroupConversationThread.md)
 Update the navigation property threads in groups

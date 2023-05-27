@@ -1,11 +1,14 @@
-### Example 1: Using the Update-MgBetaExternalConnection Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Search
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Search
+
 $params = @{
-	Name = "Contoso HR Service Tickets"
-	Description = "Connection to index HR service tickets"
+	name = "Contoso HR Service Tickets"
+	description = "Connection to index HR service tickets"
 }
+
 Update-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaExternalConnection Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Update-MgBetaBetaExternalConnection Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

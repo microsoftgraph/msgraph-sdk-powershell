@@ -36,18 +36,9 @@ Get an event object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Calendar
+```
+
 Get-MgGroupEvent -GroupId $groupId -EventId $eventId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Calendar
-Get-MgGroupEvent -GroupId $groupId
-```
-
-
 
 ## PARAMETERS
 

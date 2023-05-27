@@ -15,8 +15,9 @@ Update the navigation property details in planner
 ### UpdateExpanded (Default)
 ```
 Update-MgBetaPlannerTaskDetail -PlannerTaskId <String> -IfMatch <String> [-AdditionalProperties <Hashtable>]
- [-Checklist <Hashtable>] [-Description <String>] [-Id <String>] [-Notes <IMicrosoftGraphItemBody>]
- [-PreviewType <String>] [-References <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Checklist <Hashtable>] [-CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]
+ [-Description <String>] [-Id <String>] [-Notes <IMicrosoftGraphItemBody>] [-PreviewType <String>]
+ [-References <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -34,9 +35,10 @@ Update-MgBetaPlannerTaskDetail -InputObject <IPlannerIdentity> -IfMatch <String>
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBetaPlannerTaskDetail -InputObject <IPlannerIdentity> -IfMatch <String>
- [-AdditionalProperties <Hashtable>] [-Checklist <Hashtable>] [-Description <String>] [-Id <String>]
- [-Notes <IMicrosoftGraphItemBody>] [-PreviewType <String>] [-References <Hashtable>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Checklist <Hashtable>]
+ [-CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>] [-Description <String>]
+ [-Id <String>] [-Notes <IMicrosoftGraphItemBody>] [-PreviewType <String>] [-References <Hashtable>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,38 +49,38 @@ Update the navigation property details in planner
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Planner
-$params = @{
-	PreviewType = "noPreview"
-	References = @{
-		"Http%3A//developer%2Emicrosoft%2Ecom" = @{
-			"@odata.type" = "microsoft.graph.plannerExternalReference"
-			Alias = "Documentation"
-			PreviewPriority = " !"
-			Type = "Other"
-		}
-		"Https%3A//developer%2Emicrosoft%2Ecom/graph/graph-explorer" = @{
-			"@odata.type" = "microsoft.graph.plannerExternalReference"
-			PreviewPriority = "  !!"
-		}
-		"Http%3A//www%2Ebing%2Ecom" = $null
-	}
-	Checklist = @{
-		"95e27074-6c4a-447a-aa24-9d718a0b86fa" = @{
-			"@odata.type" = "microsoft.graph.plannerChecklistItem"
-			Title = "Update task details"
-			IsChecked = $true
-		}
-		"D280ed1a-9f6b-4f9c-a962-fb4d00dc50ff" = @{
-			"@odata.type" = "microsoft.graph.plannerChecklistItem"
-			IsChecked = $true
-		}
-		"A93c93c5-10a6-4167-9551-8bafa09967a7" = $null
-	}
-}
-Update-MgBetaPlannerTaskDetail -PlannerTaskId $plannerTaskId -BodyParameter $params
 ```
 
+$params = @{
+	previewType = "noPreview"
+	references = @{
+		"http%3A//developer%2Emicrosoft%2Ecom" = @{
+			"@odata.type" = "microsoft.graph.plannerExternalReference"
+			alias = "Documentation"
+			previewPriority = " !"
+			type = "Other"
+		}
+		"https%3A//developer%2Emicrosoft%2Ecom/en-us/graph/graph-explorer" = @{
+			"@odata.type" = "microsoft.graph.plannerExternalReference"
+			previewPriority = "  !!"
+		}
+		"http%3A//www%2Ebing%2Ecom" = $null
+	}
+	checklist = @{
+		"95e27074-6c4a-447a-aa24-9d718a0b86fa" = @{
+			"@odata.type" = "microsoft.graph.plannerChecklistItem"
+			title = "Update task details"
+			isChecked = $true
+		}
+		"d280ed1a-9f6b-4f9c-a962-fb4d00dc50ff" = @{
+			"@odata.type" = "microsoft.graph.plannerChecklistItem"
+			isChecked = $true
+		}
+		"a93c93c5-10a6-4167-9551-8bafa09967a7" = $null
+	}
+}
 
+Update-MgBetaPlannerTaskDetail -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 
 ## PARAMETERS
 
@@ -118,6 +120,22 @@ plannerChecklistItems
 
 ```yaml
 Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CompletionRequirements
+plannerTaskCompletionRequirementDetails
+To construct, see NOTES section for COMPLETIONREQUIREMENTS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Models.IMicrosoftGraphPlannerTaskCompletionRequirementDetails
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -309,6 +327,11 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[CompletionRequirements <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>]`: plannerTaskCompletionRequirementDetails
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[RequiredChecklistItemIds <String[]>]`: 
   - `[Description <String>]`: Description of the task.
   - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -317,6 +340,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[PreviewType <String>]`: plannerPreviewType
   - `[References <IMicrosoftGraphPlannerExternalReferences>]`: plannerExternalReferences
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
+
+`COMPLETIONREQUIREMENTS <IMicrosoftGraphPlannerTaskCompletionRequirementDetails>`: plannerTaskCompletionRequirementDetails
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[RequiredChecklistItemIds <String[]>]`: 
 
 `INPUTOBJECT <IPlannerIdentity>`: Identity Parameter
   - `[GroupId <String>]`: The unique identifier of group

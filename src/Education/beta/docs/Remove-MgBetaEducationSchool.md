@@ -32,10 +32,15 @@ Delete a school.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-Remove-MgBetaEducationSchool -EducationSchoolId $educationSchoolId
 ```
 
+$params = @{
+	displayName = "Fabrikam Arts High School"
+	description = "Magnate school for the arts.
+Los Angeles School District"
+}
 
+Update-MgBetaEducationSchool -EducationSchoolId $educationSchoolId -BodyParameter $params
 
 ## PARAMETERS
 

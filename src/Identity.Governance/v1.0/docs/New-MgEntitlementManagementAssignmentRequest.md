@@ -38,76 +38,100 @@ This operation is used to assign a user to an access package, update the assignm
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-$params = @{
-	RequestType = "AdminAdd"
-	Assignment = @{
-		TargetId = "46184453-e63b-4f20-86c2-c557ed5d5df9"
-		AssignmentPolicyId = "2264bf65-76ba-417b-a27d-54d291f0cbc8"
-		AccessPackageId = "a914b616-e04e-476b-aa37-91038f0b165b"
-	}
-}
-New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 ```
 
+$params = @{
+	requestType = "adminRemove"
+	assignment = @{
+		id = "a6bb6942-3ae1-4259-9908-0133aaee9377"
+	}
+}
 
+New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-$params = @{
-	RequestType = "AdminAdd"
-	Assignment = @{
-		TargetId = "46184453-e63b-4f20-86c2-c557ed5d5df9"
-		AssignmentPolicyId = "2264bf65-76ba-417b-a27d-54d291f0cbc8"
-		AccessPackageId = "a914b616-e04e-476b-aa37-91038f0b165b"
-	}
-}
-New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 ```
 
+$params = @{
+	requestType = "userAdd"
+	assignment = @{
+		accessPackageId = "d7be3253-b9c6-4fab-adef-30d30de8da2b"
+	}
+}
 
+New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-$params = @{
-	RequestType = "AdminRemove"
-	Assignment = @{
-		Id = "a6bb6942-3ae1-4259-9908-0133aaee9377"
-	}
-}
-New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.accessPackageAssignmentRequest"
+	requestType = "userAdd"
+	answers = @(
+		@{
+			"@odata.type" = "#microsoft.graph.accessPackageAnswerString"
+			displayValue = "This is the answer to a multiple choice question"
+			value = "MultipleChoiceAnswerValue"
+			answeredQuestion = @{
+				"@odata.type" = "#microsoft.graph.accessPackageMultipleChoiceQuestion"
+				id = "8fe745e7-80b2-490d-bd22-4e708c77288c"
+			}
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.accessPackageAnswerString"
+			value = "This is my answer to a text input question."
+			displayValue = "This is my answer."
+			answeredQuestion = @{
+				"@odata.type" = "#microsoft.graph.accessPackageTextInputQuestion"
+				id = "7aaa18c9-8e4f-440f-bd5a-3a7ce312cbe6"
+			}
+		}
+	)
+	assignment = @{
+		accessPackageId = "977c7ff4-ef8f-4910-9d31-49048ddf3120"
+	}
+}
 
+New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-$params = @{
-	RequestType = "userAdd"
-	Assignment = @{
-		AccessPackageId = "d7be3253-b9c6-4fab-adef-30d30de8da2b"
-	}
-}
-New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 ```
 
-
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.Governance
 $params = @{
-	RequestType = "userAdd"
-	Assignment = @{
-		AccessPackageId = "d7be3253-b9c6-4fab-adef-30d30de8da2b"
+	"@odata.type" = "#microsoft.graph.accessPackageAssignmentRequest"
+	id = "7a6ab703-0780-4b37-8445-81f679b2d75c"
+	requestType = "adminUpdate"
+	answers = @(
+		@{
+			"@odata.type" = "#microsoft.graph.accessPackageAnswerString"
+			value = "UpdatedAnswerValue"
+			answeredQuestion = @{
+				"@odata.type" = "#microsoft.graph.accessPackageMultipleChoiceQuestion"
+				id = "8fe745e7-80b2-490d-bd22-4e708c77288c"
+			}
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.accessPackageAnswerString"
+			value = "My updated answer."
+			displayValue = "This is my updated answer to the question."
+			answeredQuestion = @{
+				"@odata.type" = "#microsoft.graph.accessPackageTextInputQuestion"
+				id = "7aaa18c9-8e4f-440f-bd5a-3a7ce312cbe6"
+			}
+		}
+	)
+	assignment = @{
+		id = "44c741c1-2cf4-40db-83b6-e0112f8e5a83"
 	}
 }
+
 New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 
@@ -947,9 +971,9 @@ To create the parameters described below, construct a hash table containing the 
                   - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
                   - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
               - `[Actions <String>]`: chatMessageActions
-              - `[ModifiedDateTime <DateTime?>]`: 
+              - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
               - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -2980,7 +3004,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
     - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
     - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-    - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+    - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
     - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -3645,9 +3669,9 @@ To create the parameters described below, construct a hash table containing the 
                     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
                     - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
                 - `[Actions <String>]`: chatMessageActions
-                - `[ModifiedDateTime <DateTime?>]`: 
+                - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
                 - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -5678,7 +5702,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
       - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
       - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-      - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+      - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
       - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -6355,9 +6379,9 @@ To create the parameters described below, construct a hash table containing the 
                     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
                     - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
                 - `[Actions <String>]`: chatMessageActions
-                - `[ModifiedDateTime <DateTime?>]`: 
+                - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
                 - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -8388,7 +8412,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
       - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
       - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-      - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+      - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
       - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.

@@ -32,10 +32,14 @@ Delete an externalGroup object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Search
-Remove-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId
 ```
 
+$params = @{
+	displayName = "Contoso Marketing"
+	description = "The product marketing team"
+}
 
+Update-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 
 ## PARAMETERS
 

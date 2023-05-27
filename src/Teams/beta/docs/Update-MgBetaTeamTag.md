@@ -47,13 +47,13 @@ Update the properties of a teamworkTag object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-$params = @{
-	DisplayName = "Finance"
-}
-Update-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Finance"
+}
 
+Update-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
 
 ## PARAMETERS
 

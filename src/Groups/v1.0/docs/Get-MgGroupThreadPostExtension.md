@@ -43,10 +43,22 @@ The following table lists the three scenarios where you can get an open extensio
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Groups
-Get-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId
 ```
 
+$params = @{
+	"@odata.type" = "Microsoft.OutlookServices.OpenTypeExtension"
+	extensionName = "Com.Contoso.Estimate"
+	companyName = "Contoso"
+	expirationDate = "2016-07-30T11:00:00.000Z"
+	DealValue = 
+	topPicks = @(
+		"Employees only"
+		"Add spouse or guest"
+		"Add family"
+	)
+}
 
+Update-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId -BodyParameter $params
 
 ## PARAMETERS
 

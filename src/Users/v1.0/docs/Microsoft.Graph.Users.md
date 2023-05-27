@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: a6a39b7d-b95b-4bfd-9a3e-202f472b4f59
+Module Guid: fc82238b-adb3-49d8-b221-3b0c08d6a2de
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -28,6 +28,9 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.serviceP
 ### [Get-MgUserCreatedObjectCount](Get-MgUserCreatedObjectCount.md)
 Get the number of the resource
 
+### [Get-MgUserCreatedObjectCountAsServicePrincipal](Get-MgUserCreatedObjectCountAsServicePrincipal.md)
+Get the number of the resource
+
 ### [Get-MgUserDirectReport](Get-MgUserDirectReport.md)
 The users and contacts that report to the user.
 (The users and contacts that have their manager property set to this user.) Read-only.
@@ -41,6 +44,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.orgConta
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 
 ### [Get-MgUserDirectReportCount](Get-MgUserDirectReportCount.md)
+Get the number of the resource
+
+### [Get-MgUserDirectReportCountAsOrgContact](Get-MgUserDirectReportCountAsOrgContact.md)
+Get the number of the resource
+
+### [Get-MgUserDirectReportCountAsUser](Get-MgUserDirectReportCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgUserExtension](Get-MgUserExtension.md)
@@ -57,54 +66,6 @@ A collection of this user's license details.
 Read-only.
 
 ### [Get-MgUserLicenseDetailCount](Get-MgUserLicenseDetailCount.md)
-Get the number of the resource
-
-### [Get-MgUserListCreatedObjectCountAsServicePrincipal](Get-MgUserListCreatedObjectCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgUserListDirectReportCountAsOrgContact](Get-MgUserListDirectReportCountAsOrgContact.md)
-Get the number of the resource
-
-### [Get-MgUserListDirectReportCountAsUser](Get-MgUserListDirectReportCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgUserListMemberOfCountAsAdministrativeUnit](Get-MgUserListMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgUserListMemberOfCountAsGroup](Get-MgUserListMemberOfCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgUserListOwnedDeviceCountAsAppRoleAssignment](Get-MgUserListOwnedDeviceCountAsAppRoleAssignment.md)
-Get the number of the resource
-
-### [Get-MgUserListOwnedDeviceCountAsDevice](Get-MgUserListOwnedDeviceCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgUserListOwnedDeviceCountAsEndpoint](Get-MgUserListOwnedDeviceCountAsEndpoint.md)
-Get the number of the resource
-
-### [Get-MgUserListOwnedObjectCountAsApplication](Get-MgUserListOwnedObjectCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgUserListOwnedObjectCountAsGroup](Get-MgUserListOwnedObjectCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgUserListOwnedObjectCountAsServicePrincipal](Get-MgUserListOwnedObjectCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgUserListRegisteredDeviceCountAsAppRoleAssignment](Get-MgUserListRegisteredDeviceCountAsAppRoleAssignment.md)
-Get the number of the resource
-
-### [Get-MgUserListRegisteredDeviceCountAsDevice](Get-MgUserListRegisteredDeviceCountAsDevice.md)
-Get the number of the resource
-
-### [Get-MgUserListRegisteredDeviceCountAsEndpoint](Get-MgUserListRegisteredDeviceCountAsEndpoint.md)
-Get the number of the resource
-
-### [Get-MgUserListTransitiveMemberOfCountAsAdministrativeUnit](Get-MgUserListTransitiveMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgUserListTransitiveMemberOfCountAsGroup](Get-MgUserListTransitiveMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgUserManager](Get-MgUserManager.md)
@@ -128,6 +89,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgUserMemberOfCount](Get-MgUserMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgUserMemberOfCountAsAdministrativeUnit](Get-MgUserMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgUserMemberOfCountAsGroup](Get-MgUserMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgUserOauth2PermissionGrant](Get-MgUserOauth2PermissionGrant.md)
@@ -160,6 +127,15 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
 ### [Get-MgUserOwnedDeviceCount](Get-MgUserOwnedDeviceCount.md)
 Get the number of the resource
 
+### [Get-MgUserOwnedDeviceCountAsAppRoleAssignment](Get-MgUserOwnedDeviceCountAsAppRoleAssignment.md)
+Get the number of the resource
+
+### [Get-MgUserOwnedDeviceCountAsDevice](Get-MgUserOwnedDeviceCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgUserOwnedDeviceCountAsEndpoint](Get-MgUserOwnedDeviceCountAsEndpoint.md)
+Get the number of the resource
+
 ### [Get-MgUserOwnedObject](Get-MgUserOwnedObject.md)
 Directory objects that are owned by the user.
 Read-only.
@@ -176,6 +152,15 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
 
 ### [Get-MgUserOwnedObjectCount](Get-MgUserOwnedObjectCount.md)
+Get the number of the resource
+
+### [Get-MgUserOwnedObjectCountAsApplication](Get-MgUserOwnedObjectCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgUserOwnedObjectCountAsGroup](Get-MgUserOwnedObjectCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgUserOwnedObjectCountAsServicePrincipal](Get-MgUserOwnedObjectCountAsServicePrincipal.md)
 Get the number of the resource
 
 ### [Get-MgUserPhoto](Get-MgUserPhoto.md)
@@ -206,6 +191,15 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
 ### [Get-MgUserRegisteredDeviceCount](Get-MgUserRegisteredDeviceCount.md)
 Get the number of the resource
 
+### [Get-MgUserRegisteredDeviceCountAsAppRoleAssignment](Get-MgUserRegisteredDeviceCountAsAppRoleAssignment.md)
+Get the number of the resource
+
+### [Get-MgUserRegisteredDeviceCountAsDevice](Get-MgUserRegisteredDeviceCountAsDevice.md)
+Get the number of the resource
+
+### [Get-MgUserRegisteredDeviceCountAsEndpoint](Get-MgUserRegisteredDeviceCountAsEndpoint.md)
+Get the number of the resource
+
 ### [Get-MgUserSetting](Get-MgUserSetting.md)
 Get settings from users
 
@@ -225,47 +219,47 @@ Nullable.
 ### [Get-MgUserTodoListExtensionCount](Get-MgUserTodoListExtensionCount.md)
 Get the number of the resource
 
-### [Get-MgUserTodoListTask](Get-MgUserTodoListTask.md)
+### [Get-MgUserTodoTask](Get-MgUserTodoTask.md)
 Read the properties and relationships of a todoTask object.
 
-### [Get-MgUserTodoListTaskAttachment](Get-MgUserTodoListTaskAttachment.md)
+### [Get-MgUserTodoTaskAttachment](Get-MgUserTodoTaskAttachment.md)
 Read the properties and relationships of a taskFileAttachment object.
 
-### [Get-MgUserTodoListTaskAttachmentContent](Get-MgUserTodoListTaskAttachmentContent.md)
+### [Get-MgUserTodoTaskAttachmentContent](Get-MgUserTodoTaskAttachmentContent.md)
 Get media content for the navigation property attachments from users
 
-### [Get-MgUserTodoListTaskAttachmentCount](Get-MgUserTodoListTaskAttachmentCount.md)
+### [Get-MgUserTodoTaskAttachmentCount](Get-MgUserTodoTaskAttachmentCount.md)
 Get the number of the resource
 
-### [Get-MgUserTodoListTaskAttachmentSession](Get-MgUserTodoListTaskAttachmentSession.md)
+### [Get-MgUserTodoTaskAttachmentSession](Get-MgUserTodoTaskAttachmentSession.md)
 Get attachmentSessions from users
 
-### [Get-MgUserTodoListTaskAttachmentSessionContent](Get-MgUserTodoListTaskAttachmentSessionContent.md)
+### [Get-MgUserTodoTaskAttachmentSessionContent](Get-MgUserTodoTaskAttachmentSessionContent.md)
 The content streams that are uploaded.
 
-### [Get-MgUserTodoListTaskAttachmentSessionCount](Get-MgUserTodoListTaskAttachmentSessionCount.md)
+### [Get-MgUserTodoTaskAttachmentSessionCount](Get-MgUserTodoTaskAttachmentSessionCount.md)
 Get the number of the resource
 
-### [Get-MgUserTodoListTaskChecklistItem](Get-MgUserTodoListTaskChecklistItem.md)
+### [Get-MgUserTodoTaskChecklistItem](Get-MgUserTodoTaskChecklistItem.md)
 Read the properties and relationships of a checklistItem object.
 
-### [Get-MgUserTodoListTaskChecklistItemCount](Get-MgUserTodoListTaskChecklistItemCount.md)
+### [Get-MgUserTodoTaskChecklistItemCount](Get-MgUserTodoTaskChecklistItemCount.md)
 Get the number of the resource
 
-### [Get-MgUserTodoListTaskCount](Get-MgUserTodoListTaskCount.md)
+### [Get-MgUserTodoTaskCount](Get-MgUserTodoTaskCount.md)
 Get the number of the resource
 
-### [Get-MgUserTodoListTaskExtension](Get-MgUserTodoListTaskExtension.md)
+### [Get-MgUserTodoTaskExtension](Get-MgUserTodoTaskExtension.md)
 The collection of open extensions defined for the task.
 Nullable.
 
-### [Get-MgUserTodoListTaskExtensionCount](Get-MgUserTodoListTaskExtensionCount.md)
+### [Get-MgUserTodoTaskExtensionCount](Get-MgUserTodoTaskExtensionCount.md)
 Get the number of the resource
 
-### [Get-MgUserTodoListTaskLinkedResource](Get-MgUserTodoListTaskLinkedResource.md)
+### [Get-MgUserTodoTaskLinkedResource](Get-MgUserTodoTaskLinkedResource.md)
 Read the properties and relationships of a linkedResource object.
 
-### [Get-MgUserTodoListTaskLinkedResourceCount](Get-MgUserTodoListTaskLinkedResourceCount.md)
+### [Get-MgUserTodoTaskLinkedResourceCount](Get-MgUserTodoTaskLinkedResourceCount.md)
 Get the number of the resource
 
 ### [Get-MgUserTransitiveMemberOf](Get-MgUserTransitiveMemberOf.md)
@@ -279,6 +273,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgUserTransitiveMemberOfCount](Get-MgUserTransitiveMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgUserTransitiveMemberOfCountAsAdministrativeUnit](Get-MgUserTransitiveMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgUserTransitiveMemberOfCountAsGroup](Get-MgUserTransitiveMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [New-MgUser](New-MgUser.md)

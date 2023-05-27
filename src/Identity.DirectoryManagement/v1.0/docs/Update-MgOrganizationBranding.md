@@ -52,14 +52,14 @@ Update the properties of the default branding object specified by the organizati
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-$params = @{
-	SignInPageText = "Default"
-	UsernameHintText = "DefaultHint"
-}
-Update-MgOrganizationBranding -OrganizationId $organizationId -BodyParameter $params
 ```
 
+$params = @{
+	signInPageText = "Default"
+	usernameHintText = "DefaultHint"
+}
 
+Update-MgOrganizationBranding -OrganizationId $organizationId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -33,15 +33,15 @@ Create a new identityUserFlowAttribute object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	DisplayName = "Hobby"
-	Description = "Your hobby"
-	DataType = "string"
-}
-New-MgBetaIdentityUserFlowAttribute -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Hobby"
+	description = "Your hobby"
+	dataType = "string"
+}
 
+New-MgBetaIdentityUserFlowAttribute -BodyParameter $params
 
 ## PARAMETERS
 

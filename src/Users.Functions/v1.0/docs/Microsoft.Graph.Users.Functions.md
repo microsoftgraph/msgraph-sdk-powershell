@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Functions
-Module Guid: f7ba9afd-8403-471b-a952-9412b702f589
+Module Guid: 8572b033-dffb-47c2-b75b-7d27b10e65ea
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -136,7 +136,7 @@ Invoke function getVirtualAppointmentJoinWebUrl
 ### [Get-MgUserTodoListDelta](Get-MgUserTodoListDelta.md)
 Invoke function delta
 
-### [Get-MgUserTodoListTaskDelta](Get-MgUserTodoListTaskDelta.md)
+### [Get-MgUserTodoTaskDelta](Get-MgUserTodoTaskDelta.md)
 Invoke function delta
 
 ### [Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles](Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles.md)

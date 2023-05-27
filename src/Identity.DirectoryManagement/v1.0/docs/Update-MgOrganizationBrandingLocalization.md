@@ -51,26 +51,26 @@ Update the properties of an organizationalBrandingLocalization object for a spec
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-$params = @{
-	BackgroundColor = "#00000F"
-	SignInPageText = "Welcome to Contoso France"
-}
-Update-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
 ```
 
+$params = @{
+	backgroundColor = "#00000F"
+	signInPageText = "Welcome to Contoso France"
+}
 
+Update-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-$params = @{
-	SignInPageText = "Welcome to Contoso France."
-	UsernameHintText = " "
-}
-Update-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
 ```
 
+$params = @{
+	signInPageText = "Welcome to Contoso France."
+	usernameHintText = " "
+}
 
+Update-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
 
 ## PARAMETERS
 

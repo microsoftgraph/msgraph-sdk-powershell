@@ -50,47 +50,47 @@ The duration of a shift cannot be less than 1 minute or longer than 24 hours.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
+```
+
 $params = @{
-	Id = "SHFT_577b75d2-a927-48c0-a5d1-dc984894e7b8"
-	UserId = "c5d0c76b-80c4-481c-be50-923cd8d680a1"
-	SchedulingGroupId = "TAG_228940ed-ff84-4e25-b129-1b395cf78be0"
-	SharedShift = @{
-		DisplayName = "Day shift"
-		Notes = "Please do inventory as part of your shift."
-		StartDateTime = [System.DateTime]::Parse("2019-03-11T15:00:00Z")
-		EndDateTime = [System.DateTime]::Parse("2019-03-12T00:00:00Z")
-		Theme = "blue"
-		Activities = @(
+	id = "SHFT_577b75d2-a927-48c0-a5d1-dc984894e7b8"
+	userId = "c5d0c76b-80c4-481c-be50-923cd8d680a1"
+	schedulingGroupId = "TAG_228940ed-ff84-4e25-b129-1b395cf78be0"
+	sharedShift = @{
+		displayName = "Day shift"
+		notes = "Please do inventory as part of your shift."
+		startDateTime = [System.DateTime]::Parse("2019-03-11T15:00:00Z")
+		endDateTime = [System.DateTime]::Parse("2019-03-12T00:00:00Z")
+		theme = "blue"
+		activities = @(
 			@{
-				IsPaid = $true
-				StartDateTime = [System.DateTime]::Parse("2019-03-11T15:00:00Z")
-				EndDateTime = [System.DateTime]::Parse("2019-03-11T15:15:00Z")
-				Code = ""
-				DisplayName = "Lunch"
+				isPaid = $true
+				startDateTime = [System.DateTime]::Parse("2019-03-11T15:00:00Z")
+				endDateTime = [System.DateTime]::Parse("2019-03-11T15:15:00Z")
+				code = ""
+				displayName = "Lunch"
 			}
 		)
 	}
-	DraftShift = @{
-		DisplayName = "Day shift"
-		Notes = "Please do inventory as part of your shift."
-		StartDateTime = [System.DateTime]::Parse("2019-03-11T15:00:00Z")
-		EndDateTime = [System.DateTime]::Parse("2019-03-12T00:00:00Z")
-		Theme = "blue"
-		Activities = @(
+	draftShift = @{
+		displayName = "Day shift"
+		notes = "Please do inventory as part of your shift."
+		startDateTime = [System.DateTime]::Parse("2019-03-11T15:00:00Z")
+		endDateTime = [System.DateTime]::Parse("2019-03-12T00:00:00Z")
+		theme = "blue"
+		activities = @(
 			@{
-				IsPaid = $true
-				StartDateTime = [System.DateTime]::Parse("2019-03-11T15:00:00Z")
-				EndDateTime = [System.DateTime]::Parse("2019-03-11T15:30:00Z")
-				Code = ""
-				DisplayName = "Lunch"
+				isPaid = $true
+				startDateTime = [System.DateTime]::Parse("2019-03-11T15:00:00Z")
+				endDateTime = [System.DateTime]::Parse("2019-03-11T15:30:00Z")
+				code = ""
+				displayName = "Lunch"
 			}
 		)
 	}
 }
+
 New-MgBetaTeamScheduleShift -TeamId $teamId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 
@@ -340,8 +340,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -369,8 +369,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -432,8 +432,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

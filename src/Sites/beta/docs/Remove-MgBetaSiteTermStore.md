@@ -35,7 +35,7 @@ Import-Module Microsoft.Graph.Beta.Sites
 ```
 
 $params = @{
-	DefaultLanguageTag = "en-US"
+	defaultLanguageTag = "en-US"
 }
 
 Update-MgBetaSiteTermStore -SiteId $siteId -BodyParameter $params

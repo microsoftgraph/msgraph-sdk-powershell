@@ -56,14 +56,15 @@ If the file doesn't exist or isn't in that folder, the `POST` request will fail.
 Import-Module Microsoft.Graph.Education
 ```
 
-Get-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
+$params = @{
+	"@odata.type" = "#microsoft.graph.educationFeedbackResourceOutcome"
+	feedbackResource = @{
+		"@odata.type" = "#microsoft.graph.educationWordResource"
+		displayName = "Document1.docx"
+	}
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Education
-```
-
-Get-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -Filter "isof('microsoft.graph.educationFeedbackResourceOutcome')"
+New-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 
 ## PARAMETERS
 

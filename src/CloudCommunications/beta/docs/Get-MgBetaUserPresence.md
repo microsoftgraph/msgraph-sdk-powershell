@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserPresence
 
 ## SYNOPSIS
-Set a presence status message for a user.
-An optional expiration date and time can be supplied.
+Get a user's presence information.
 
 ## SYNTAX
 
@@ -26,27 +25,31 @@ Get-MgBetaUserPresence -InputObject <ICloudCommunicationsIdentity> [-ExpandPrope
 ```
 
 ## DESCRIPTION
-Set a presence status message for a user.
-An optional expiration date and time can be supplied.
+Get a user's presence information.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-Get-MgBetaUserPresence -UserId $userId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgBetaUserPresence -UserId $userId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-# A UPN can also be used as -UserId.
-Get-MgBetaUserPresence -UserId $userId
 ```
 
+Get-MgBetaUserPresence -UserId $userId
 
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
+Get-MgBetaCommunicationPresence -PresenceId $presenceId
 
 ## PARAMETERS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: 2ec9a0b8-50b2-4698-9ee8-ef700ece52bb
+Module Guid: ecf4892a-839b-4906-9f0e-026c127f02d4
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -271,6 +271,15 @@ This collection cannot be enumerated.
 ### [Get-MgBetaGroupSiteItemCount](Get-MgBetaGroupSiteItemCount.md)
 Get the number of the resource
 
+### [Get-MgBetaGroupSiteItemLastModifiedByUser](Get-MgBetaGroupSiteItemLastModifiedByUser.md)
+Get lastModifiedByUser from groups
+
+### [Get-MgBetaGroupSiteItemLastModifiedByUserMailboxSetting](Get-MgBetaGroupSiteItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
 ### [Get-MgBetaGroupSiteLastModifiedByUser](Get-MgBetaGroupSiteLastModifiedByUser.md)
 Get lastModifiedByUser from groups
 
@@ -281,7 +290,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaGroupSiteList](Get-MgBetaGroupSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaGroupSiteListActivity](Get-MgBetaGroupSiteListActivity.md)
 The recent activities that took place within this list.
@@ -297,15 +306,6 @@ The source column for content type column.
 
 ### [Get-MgBetaGroupSiteListContentType](Get-MgBetaGroupSiteListContentType.md)
 Get contentTypes from groups
-
-### [Get-MgBetaGroupSiteListContentTypeBase](Get-MgBetaGroupSiteListContentTypeBase.md)
-Parent contentType from which this content type is derived.
-
-### [Get-MgBetaGroupSiteListContentTypeBaseType](Get-MgBetaGroupSiteListContentTypeBaseType.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgBetaGroupSiteListContentTypeBaseTypeCount](Get-MgBetaGroupSiteListContentTypeBaseTypeCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaGroupSiteListContentTypeColumn](Get-MgBetaGroupSiteListContentTypeColumn.md)
 Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
@@ -368,9 +368,6 @@ Get listItem from groups
 ### [Get-MgBetaGroupSiteListItemAnalytic](Get-MgBetaGroupSiteListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgBetaGroupSiteListItemCount](Get-MgBetaGroupSiteListItemCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaGroupSiteListItemCreatedByUser](Get-MgBetaGroupSiteListItemCreatedByUser.md)
 Get createdByUser from groups
 
@@ -398,15 +395,6 @@ The content stream, if the item represents a file.
 ### [Get-MgBetaGroupSiteListItemField](Get-MgBetaGroupSiteListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgBetaGroupSiteListItemLastModifiedByUser](Get-MgBetaGroupSiteListItemLastModifiedByUser.md)
-Get lastModifiedByUser from groups
-
-### [Get-MgBetaGroupSiteListItemLastModifiedByUserMailboxSetting](Get-MgBetaGroupSiteListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
-
 ### [Get-MgBetaGroupSiteListItemVersion](Get-MgBetaGroupSiteListItemVersion.md)
 The list of previous versions of the list item.
 
@@ -415,15 +403,6 @@ Get the number of the resource
 
 ### [Get-MgBetaGroupSiteListItemVersionField](Get-MgBetaGroupSiteListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
-
-### [Get-MgBetaGroupSiteListLastModifiedByUser](Get-MgBetaGroupSiteListLastModifiedByUser.md)
-Get lastModifiedByUser from groups
-
-### [Get-MgBetaGroupSiteListLastModifiedByUserMailboxSetting](Get-MgBetaGroupSiteListLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
 
 ### [Get-MgBetaGroupSiteListOperation](Get-MgBetaGroupSiteListOperation.md)
 The collection of long running operations for the list.
@@ -1171,8 +1150,26 @@ The collection of column definitions available in the site that are referenced f
 ### [Get-MgBetaSiteExternalColumnCount](Get-MgBetaSiteExternalColumnCount.md)
 Get the number of the resource
 
+### [Get-MgBetaSiteItemLastModifiedByUser](Get-MgBetaSiteItemLastModifiedByUser.md)
+Get lastModifiedByUser from sites
+
+### [Get-MgBetaSiteItemLastModifiedByUserMailboxSetting](Get-MgBetaSiteItemLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
+### [Get-MgBetaSiteLastModifiedByUser](Get-MgBetaSiteLastModifiedByUser.md)
+Get lastModifiedByUser from sites
+
+### [Get-MgBetaSiteLastModifiedByUserMailboxSetting](Get-MgBetaSiteLastModifiedByUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
+
 ### [Get-MgBetaSiteList](Get-MgBetaSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaSiteListActivity](Get-MgBetaSiteListActivity.md)
 The recent activities that took place within this list.
@@ -1188,15 +1185,6 @@ The source column for content type column.
 
 ### [Get-MgBetaSiteListContentType](Get-MgBetaSiteListContentType.md)
 Get contentTypes from sites
-
-### [Get-MgBetaSiteListContentTypeBase](Get-MgBetaSiteListContentTypeBase.md)
-Parent contentType from which this content type is derived.
-
-### [Get-MgBetaSiteListContentTypeBaseType](Get-MgBetaSiteListContentTypeBaseType.md)
-The collection of content types that are ancestors of this content type.
-
-### [Get-MgBetaSiteListContentTypeBaseTypeCount](Get-MgBetaSiteListContentTypeBaseTypeCount.md)
-Get the number of the resource
 
 ### [Get-MgBetaSiteListContentTypeColumn](Get-MgBetaSiteListContentTypeColumn.md)
 Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
@@ -1265,9 +1253,6 @@ Get listItem from sites
 ### [Get-MgBetaSiteListItemAnalytic](Get-MgBetaSiteListItemAnalytic.md)
 Analytics about the view activities that took place on this item.
 
-### [Get-MgBetaSiteListItemCount](Get-MgBetaSiteListItemCount.md)
-Get the number of the resource
-
 ### [Get-MgBetaSiteListItemCreatedByUser](Get-MgBetaSiteListItemCreatedByUser.md)
 Get createdByUser from sites
 
@@ -1298,15 +1283,6 @@ The content stream, if the item represents a file.
 ### [Get-MgBetaSiteListItemField](Get-MgBetaSiteListItemField.md)
 The values of the columns set on this list item.
 
-### [Get-MgBetaSiteListItemLastModifiedByUser](Get-MgBetaSiteListItemLastModifiedByUser.md)
-Get lastModifiedByUser from sites
-
-### [Get-MgBetaSiteListItemLastModifiedByUserMailboxSetting](Get-MgBetaSiteListItemLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
-
 ### [Get-MgBetaSiteListItemVersion](Get-MgBetaSiteListItemVersion.md)
 The list of previous versions of the list item.
 
@@ -1315,15 +1291,6 @@ Get the number of the resource
 
 ### [Get-MgBetaSiteListItemVersionField](Get-MgBetaSiteListItemVersionField.md)
 A collection of the fields and values for this version of the list item.
-
-### [Get-MgBetaSiteListLastModifiedByUser](Get-MgBetaSiteListLastModifiedByUser.md)
-Get lastModifiedByUser from sites
-
-### [Get-MgBetaSiteListLastModifiedByUserMailboxSetting](Get-MgBetaSiteListLastModifiedByUserMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
 
 ### [Get-MgBetaSiteListOperation](Get-MgBetaSiteListOperation.md)
 The collection of long running operations for the list.
@@ -2345,7 +2312,7 @@ Delete navigation property webparts for groups
 Delete navigation property webParts for groups
 
 ### [Remove-MgBetaGroupSitePermission](Remove-MgBetaGroupSitePermission.md)
-Delete a permission object on a site.
+Delete navigation property permissions for groups
 
 ### [Remove-MgBetaGroupSiteTermStore](Remove-MgBetaGroupSiteTermStore.md)
 Delete navigation property termStore for groups
@@ -2519,7 +2486,7 @@ Delete navigation property webparts for sites
 Delete navigation property webParts for sites
 
 ### [Remove-MgBetaSitePermission](Remove-MgBetaSitePermission.md)
-Delete a permission object on a site.
+Delete navigation property permissions for sites
 
 ### [Remove-MgBetaSiteTermStore](Remove-MgBetaSiteTermStore.md)
 Delete navigation property termStore for sites

@@ -32,10 +32,16 @@ Delete a featureRolloutPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Remove-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId
 ```
 
+$params = @{
+	displayName = "PasswordHashSync Rollout Policy"
+	description = "PasswordHashSync Rollout Policy"
+	isEnabled = $true
+	isAppliedToOrganization = $false
+}
 
+Update-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -BodyParameter $params
 
 ## PARAMETERS
 

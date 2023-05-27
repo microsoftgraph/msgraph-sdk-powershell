@@ -44,10 +44,13 @@ Delete calendarPermission.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Calendar
-Remove-MgUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId
 ```
 
+$params = @{
+	role = "write"
+}
 
+Update-MgUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId -BodyParameter $params
 
 ## PARAMETERS
 

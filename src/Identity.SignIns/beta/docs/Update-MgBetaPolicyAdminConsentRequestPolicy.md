@@ -33,10 +33,17 @@ Update the properties of an adminConsentRequestPolicy object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
+{{ Add code here }}
 ```
 
-Get-MgBetaPolicyAdminConsentRequestPolicy
+{{ Add output here }}
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

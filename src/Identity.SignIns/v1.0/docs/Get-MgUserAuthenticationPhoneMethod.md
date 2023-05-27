@@ -41,20 +41,15 @@ This method is available only for standard Azure AD and B2B users, but not B2C u
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-# A UPN can also be used as -UserId.
-Get-MgUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId
 ```
 
+$params = @{
+	phoneNumber = "+1 2065555554"
+	phoneType = "mobile"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
 # A UPN can also be used as -UserId.
-Get-MgUserAuthenticationPhoneMethod -UserId $userId
-```
-
-
+Update-MgUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId -BodyParameter $params
 
 ## PARAMETERS
 

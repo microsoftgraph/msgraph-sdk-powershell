@@ -39,18 +39,9 @@ Retrieve the properties and relationships of a print service.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
+```
+
 Get-MgPrintService -PrintServiceId $printServiceId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Devices.CloudPrint
-Get-MgPrintService
-```
-
-
 
 ## PARAMETERS
 

@@ -46,10 +46,9 @@ The group's profile photo.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Groups
-Get-MgBetaGroupPhoto -GroupId $groupId
 ```
 
-
+Get-MgBetaGroupPhoto -GroupId $groupId
 
 ## PARAMETERS
 

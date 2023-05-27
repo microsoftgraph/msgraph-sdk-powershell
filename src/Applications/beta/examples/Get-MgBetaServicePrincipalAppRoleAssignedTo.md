@@ -1,7 +1,9 @@
-### Example 1: Using the Get-MgBetaServicePrincipalAppRoleAssignedTo Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Applications
-Get-MgBetaServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Applications
+
+Remove-MgBetaServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -AppRoleAssignmentId $appRoleAssignmentId
 ```
-This example shows how to use the Get-MgBetaServicePrincipalAppRoleAssignedTo Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaServicePrincipalAppRoleAssignedTo Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

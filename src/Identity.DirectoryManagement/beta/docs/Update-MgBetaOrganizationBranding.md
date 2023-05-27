@@ -71,14 +71,14 @@ Update the properties of the default branding object specified by the organizati
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-$params = @{
-	SignInPageText = "Default"
-	UsernameHintText = "DefaultHint"
-}
-Update-MgBetaOrganizationBranding -OrganizationId $organizationId -BodyParameter $params
 ```
 
+$params = @{
+	signInPageText = "Default"
+	usernameHintText = "DefaultHint"
+}
 
+Update-MgBetaOrganizationBranding -OrganizationId $organizationId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -799,6 +799,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[AdministrativeUnitId <String>]`: The unique identifier of administrativeUnit
   - `[AllowedValueId <String>]`: The unique identifier of allowedValue
   - `[AttributeSetId <String>]`: The unique identifier of attributeSet
+  - `[CertificateAuthorityAsEntityId <String>]`: The unique identifier of certificateAuthorityAsEntity
+  - `[CertificateBasedApplicationConfigurationId <String>]`: The unique identifier of certificateBasedApplicationConfiguration
   - `[CommandId <String>]`: The unique identifier of command
   - `[ContractId <String>]`: The unique identifier of contract
   - `[CustomSecurityAttributeDefinitionId <String>]`: The unique identifier of customSecurityAttributeDefinition

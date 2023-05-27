@@ -44,15 +44,15 @@ Create an outlookCategory object in the user's master list of categories.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Users
-$params = @{
-	DisplayName = "Project expenses"
-	Color = "preset9"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserOutlookMasterCategory -UserId $userId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Project expenses"
+	color = "preset9"
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserOutlookMasterCategory -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

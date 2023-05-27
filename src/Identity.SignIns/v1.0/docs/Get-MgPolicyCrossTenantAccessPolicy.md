@@ -24,10 +24,15 @@ Read the properties and relationships of a crossTenantAccessPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyCrossTenantAccessPolicy
 ```
 
+$params = @{
+	allowedCloudEndpoints = @(
+		"microsoftonline.us"
+	)
+}
 
+Update-MgPolicyCrossTenantAccessPolicy -BodyParameter $params
 
 ## PARAMETERS
 

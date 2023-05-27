@@ -8,8 +8,9 @@ schema: 2.0.0
 # New-MgBetaUserMessageAttachment
 
 ## SYNOPSIS
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ## SYNTAX
 
@@ -40,75 +41,44 @@ New-MgBetaUserMessageAttachment -InputObject <IMailIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Use this API to create a new Attachment.
+Use this API to add an attachment to a message.
 An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource.
+You can add an attachment to an existing message by posting to its attachments collection, or to a new \nmessage that is being drafted, or created and sent on the fly.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	"@odata.type" = "#Microsoft.OutlookServices.FileAttachment"
-	Name = "name-value"
-	ContentType = "contentType-value"
-	IsInline = $false
-	ContentLocation = "contentLocation-value"
-	ContentBytes = "contentBytes-value"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "microsoft.graph.fileAttachment"
+	name = "name-value"
+	contentType = "contentType-value"
+	isInline = $false
+	contentLocation = "contentLocation-value"
+	contentBytes = "base64-contentBytes-value"
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	"@odata.type" = "#microsoft.graph.fileAttachment"
-	Name = "smile"
-	ContentBytes = "a0b1c76de9f7="
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
+Import-Module Microsoft.Graph.Beta.Calendar
 ```
 
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
-	"@odata.type" = "#microsoft.graph.itemAttachment"
-	Name = "Holiday event"
-	Item = @{
-		"@odata.type" = "microsoft.graph.event"
-		Subject = "Discuss gifts for children"
+	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"
+	name = "name-value"
+	item = @{
+		"@odata.type" = "microsoft.graph.message"
 	}
 }
+
 # A UPN can also be used as -UserId.
-New-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	"@odata.type" = "#microsoft.graph.referenceAttachment"
-	Name = "Personal pictures"
-	SourceUrl = "https://contoso.com/personal/mario_contoso_net/Documents/Pics"
-	ProviderType = "oneDriveConsumer"
-	Permission = "Edit"
-	IsFolder = "True"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
-```
-
-
+New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 
 ## PARAMETERS
 

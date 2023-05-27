@@ -64,22 +64,22 @@ Update the navigation property tasks in planner
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Planner
-$params = @{
-	Assignments = @{
-		"Fbab97d0-4932-4511-b675-204639209557" = @{
-			"@odata.type" = "#microsoft.graph.plannerAssignment"
-			OrderHint = "N9917 U2883!"
-		}
-	}
-	AppliedCategories = @{
-		Category3 = $true
-		Category4 = $false
-	}
-}
-Update-MgPlannerTask -PlannerTaskId $plannerTaskId -BodyParameter $params
 ```
 
+$params = @{
+	assignments = @{
+		"fbab97d0-4932-4511-b675-204639209557" = @{
+			"@odata.type" = "#microsoft.graph.plannerAssignment"
+			orderHint = "N9917 U2883!"
+		}
+	}
+	appliedCategories = @{
+		category3 = $true
+		category4 = $false
+	}
+}
 
+Update-MgPlannerTask -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 
 ## PARAMETERS
 

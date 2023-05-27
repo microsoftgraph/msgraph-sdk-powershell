@@ -32,10 +32,17 @@ Delete a tokenLifetimePolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Remove-MgBetaPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId
 ```
 
+$params = @{
+	definition = @(
+		"{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"5:30:00"}}"
+	)
+	displayName = "Contoso token lifetime policy"
+	isOrganizationDefault = $true
+}
 
+Update-MgBetaPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId -BodyParameter $params
 
 ## PARAMETERS
 

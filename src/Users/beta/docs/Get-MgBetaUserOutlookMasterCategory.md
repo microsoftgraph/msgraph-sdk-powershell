@@ -37,20 +37,14 @@ Get the properties and relationships of the specified outlookCategory object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Users
-# A UPN can also be used as -UserId.
-Get-MgBetaUserOutlookMasterCategory -UserId $userId
 ```
 
+$params = @{
+	color = "preset15"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Users
 # A UPN can also be used as -UserId.
-Get-MgBetaUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId
-```
-
-
+Update-MgBetaUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId -BodyParameter $params
 
 ## PARAMETERS
 

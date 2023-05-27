@@ -48,14 +48,14 @@ Currently, only **one** task trigger can be specified per printer, but this limi
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
-$params = @{
-	Event = "jobStarted"
-	"Definition@odata.bind" = "https://graph.microsoft.com/v1.0/print/taskDefinitions/{taskDefinitionId}"
-}
-New-MgPrintPrinterTaskTrigger -PrinterId $printerId -BodyParameter $params
 ```
 
+$params = @{
+	event = "jobStarted"
+	"definition@odata.bind" = "https://graph.microsoft.com/v1.0/print/taskDefinitions/{taskDefinitionId}"
+}
 
+New-MgPrintPrinterTaskTrigger -PrinterId $printerId -BodyParameter $params
 
 ## PARAMETERS
 

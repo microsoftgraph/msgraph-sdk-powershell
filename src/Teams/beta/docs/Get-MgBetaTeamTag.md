@@ -39,18 +39,13 @@ Read the properties and relationships of a tag object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId
 ```
 
+$params = @{
+	displayName = "Finance"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeamTag -TeamId $teamId
-```
-
-
+Update-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -41,34 +41,16 @@ This operation provides the health information of a specified service for a tena
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId
 ```
 
-
+Get-MgServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+```
+
 Get-MgServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId -ExpandProperty "issues"
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementHealthOverview
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
-Get-MgServiceAnnouncementHealthOverview -ExpandProperty "issues"
-```
-
-
 
 ## PARAMETERS
 

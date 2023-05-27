@@ -32,11 +32,17 @@ Delete the specified messageRule object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Remove-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId
 ```
 
+$params = @{
+	displayName = "Important from partner"
+	actions = @{
+		markImportance = "high"
+	}
+}
 
+# A UPN can also be used as -UserId.
+Update-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId -BodyParameter $params
 
 ## PARAMETERS
 

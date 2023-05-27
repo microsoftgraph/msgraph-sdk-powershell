@@ -56,15 +56,15 @@ Update an application permission object on a site.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
+```
+
 $params = @{
-	Roles = @(
+	roles = @(
 		"read"
 	)
 }
+
 Update-MgSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

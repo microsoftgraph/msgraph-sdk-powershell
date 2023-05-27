@@ -32,11 +32,10 @@ Delete an existing user activity for your app.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CrossDeviceExperiences
-# A UPN can also be used as -UserId.
-Remove-MgBetaUserActivity -UserId $userId -UserActivityId $userActivityId
 ```
 
-
+# A UPN can also be used as -UserId.
+Remove-MgBetaUserActivity -UserId $userId -UserActivityId $userActivityId
 
 ## PARAMETERS
 

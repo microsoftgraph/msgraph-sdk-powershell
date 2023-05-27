@@ -34,19 +34,10 @@ A Drive is the top-level container for a file system, such as OneDrive or ShareP
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Files
-Get-MgUserDefaultDrive -UserId $userId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Files
 # A UPN can also be used as -UserId.
 Get-MgUserDefaultDrive -UserId $userId
-```
-
-
 
 ## PARAMETERS
 

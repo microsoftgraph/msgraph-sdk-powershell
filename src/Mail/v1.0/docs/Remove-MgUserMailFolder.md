@@ -36,11 +36,14 @@ You can specify a mail folder by its folder ID, or by its well-known folder name
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Mail
-# A UPN can also be used as -UserId.
-Remove-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId
 ```
 
+$params = @{
+	displayName = "displayName-value"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 
 ## PARAMETERS
 

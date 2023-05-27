@@ -71,34 +71,24 @@ Add a contact to the root Contacts folder or to the contacts endpoint of another
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.PersonalContacts
-$params = @{
-	GivenName = "Pavel"
-	Surname = "Bansky"
-	EmailAddresses = @(
-		@{
-			Address = "pavelb@contoso.onmicrosoft.com"
-			Name = "Pavel Bansky"
-			Type = "personal"
-		}
-		@{
-			Address = "pavelb@fabrikam.onmicrosoft.com"
-			Name = "Pavel Bansky"
-			Type = "other"
-			OtherLabel = "Volunteer work"
-		}
-	)
-	Phones = @(
-		@{
-			Number = "+1 732 555 0102"
-			Type = "business"
-		}
-	)
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserContact -UserId $userId -BodyParameter $params
 ```
 
+$params = @{
+	givenName = "Pavel"
+	surname = "Bansky"
+	emailAddresses = @(
+		@{
+			address = "pavelb@fabrikam.onmicrosoft.com"
+			name = "Pavel Bansky"
+		}
+	)
+	businessPhones = @(
+		"+1 732 555 0102"
+	)
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserContact -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

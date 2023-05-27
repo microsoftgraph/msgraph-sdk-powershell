@@ -1,8 +1,28 @@
-### Example 1: Using the Remove-MgUserEvent Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Calendar
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Calendar
+
+$params = @{
+	originalStartTimeZone = "originalStartTimeZone-value"
+	originalEndTimeZone = "originalEndTimeZone-value"
+	responseStatus = @{
+		response = ""
+		time = [System.DateTime]::Parse("datetime-value")
+	}
+	recurrence = $null
+	reminderMinutesBeforeStart = 99
+	isOnlineMeeting = $true
+	onlineMeetingProvider = "teamsForBusiness"
+	isReminderOn = $true
+	hideAttendees = $false
+	categories = @(
+		"Red category"
+	)
+}
+
 # A UPN can also be used as -UserId.
-Remove-MgUserEvent -UserId $userId -EventId $eventId
+Update-MgUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 This example shows how to use the Remove-MgUserEvent Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

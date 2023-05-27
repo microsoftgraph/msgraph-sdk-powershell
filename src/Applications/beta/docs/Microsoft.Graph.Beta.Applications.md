@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Applications
-Module Guid: 171417ae-9035-4329-b6fb-6ceda94332b6
+Module Guid: 69a1dbea-8c67-459b-9138-c3625e802bba
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -119,15 +119,6 @@ Get homeRealmDiscoveryPolicies from applications
 ### [Get-MgBetaApplicationHomeRealmDiscoveryPolicyCount](Get-MgBetaApplicationHomeRealmDiscoveryPolicyCount.md)
 Get the number of the resource
 
-### [Get-MgBetaApplicationListOwnerCountAsEndpoint](Get-MgBetaApplicationListOwnerCountAsEndpoint.md)
-Get the number of the resource
-
-### [Get-MgBetaApplicationListOwnerCountAsServicePrincipal](Get-MgBetaApplicationListOwnerCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaApplicationListOwnerCountAsUser](Get-MgBetaApplicationListOwnerCountAsUser.md)
-Get the number of the resource
-
 ### [Get-MgBetaApplicationLogo](Get-MgBetaApplicationLogo.md)
 The main logo for the application.
 Not nullable.
@@ -161,6 +152,15 @@ Nullable.
 Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgBetaApplicationOwnerCount](Get-MgBetaApplicationOwnerCount.md)
+Get the number of the resource
+
+### [Get-MgBetaApplicationOwnerCountAsEndpoint](Get-MgBetaApplicationOwnerCountAsEndpoint.md)
+Get the number of the resource
+
+### [Get-MgBetaApplicationOwnerCountAsServicePrincipal](Get-MgBetaApplicationOwnerCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgBetaApplicationOwnerCountAsUser](Get-MgBetaApplicationOwnerCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgBetaApplicationSynchronization](Get-MgBetaApplicationSynchronization.md)
@@ -399,6 +399,9 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.serviceP
 ### [Get-MgBetaServicePrincipalCreatedObjectCount](Get-MgBetaServicePrincipalCreatedObjectCount.md)
 Get the number of the resource
 
+### [Get-MgBetaServicePrincipalCreatedObjectCountAsServicePrincipal](Get-MgBetaServicePrincipalCreatedObjectCountAsServicePrincipal.md)
+Get the number of the resource
+
 ### [Get-MgBetaServicePrincipalDelegatedPermissionClassification](Get-MgBetaServicePrincipalDelegatedPermissionClassification.md)
 The permission classifications for delegated permissions exposed by the app that this service principal represents.
 Supports $expand.
@@ -431,42 +434,6 @@ Get licenseDetails from servicePrincipals
 ### [Get-MgBetaServicePrincipalLicenseDetailCount](Get-MgBetaServicePrincipalLicenseDetailCount.md)
 Get the number of the resource
 
-### [Get-MgBetaServicePrincipalListCreatedObjectCountAsServicePrincipal](Get-MgBetaServicePrincipalListCreatedObjectCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaServicePrincipalListMemberOfCountAsAdministrativeUnit](Get-MgBetaServicePrincipalListMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgBetaServicePrincipalListMemberOfCountAsGroup](Get-MgBetaServicePrincipalListMemberOfCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgBetaServicePrincipalListOwnedObjectCountAsApplication](Get-MgBetaServicePrincipalListOwnedObjectCountAsApplication.md)
-Get the number of the resource
-
-### [Get-MgBetaServicePrincipalListOwnedObjectCountAsEndpoint](Get-MgBetaServicePrincipalListOwnedObjectCountAsEndpoint.md)
-Get the number of the resource
-
-### [Get-MgBetaServicePrincipalListOwnedObjectCountAsGroup](Get-MgBetaServicePrincipalListOwnedObjectCountAsGroup.md)
-Get the number of the resource
-
-### [Get-MgBetaServicePrincipalListOwnedObjectCountAsServicePrincipal](Get-MgBetaServicePrincipalListOwnedObjectCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaServicePrincipalListOwnerCountAsEndpoint](Get-MgBetaServicePrincipalListOwnerCountAsEndpoint.md)
-Get the number of the resource
-
-### [Get-MgBetaServicePrincipalListOwnerCountAsServicePrincipal](Get-MgBetaServicePrincipalListOwnerCountAsServicePrincipal.md)
-Get the number of the resource
-
-### [Get-MgBetaServicePrincipalListOwnerCountAsUser](Get-MgBetaServicePrincipalListOwnerCountAsUser.md)
-Get the number of the resource
-
-### [Get-MgBetaServicePrincipalListTransitiveMemberOfCountAsAdministrativeUnit](Get-MgBetaServicePrincipalListTransitiveMemberOfCountAsAdministrativeUnit.md)
-Get the number of the resource
-
-### [Get-MgBetaServicePrincipalListTransitiveMemberOfCountAsGroup](Get-MgBetaServicePrincipalListTransitiveMemberOfCountAsGroup.md)
-Get the number of the resource
-
 ### [Get-MgBetaServicePrincipalMemberGroup](Get-MgBetaServicePrincipalMemberGroup.md)
 Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of.
 This function is transitive.
@@ -487,6 +454,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgBetaServicePrincipalMemberOfCount](Get-MgBetaServicePrincipalMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgBetaServicePrincipalMemberOfCountAsAdministrativeUnit](Get-MgBetaServicePrincipalMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgBetaServicePrincipalMemberOfCountAsGroup](Get-MgBetaServicePrincipalMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgBetaServicePrincipalOauth2PermissionGrant](Get-MgBetaServicePrincipalOauth2PermissionGrant.md)
@@ -518,6 +491,18 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.serviceP
 ### [Get-MgBetaServicePrincipalOwnedObjectCount](Get-MgBetaServicePrincipalOwnedObjectCount.md)
 Get the number of the resource
 
+### [Get-MgBetaServicePrincipalOwnedObjectCountAsApplication](Get-MgBetaServicePrincipalOwnedObjectCountAsApplication.md)
+Get the number of the resource
+
+### [Get-MgBetaServicePrincipalOwnedObjectCountAsEndpoint](Get-MgBetaServicePrincipalOwnedObjectCountAsEndpoint.md)
+Get the number of the resource
+
+### [Get-MgBetaServicePrincipalOwnedObjectCountAsGroup](Get-MgBetaServicePrincipalOwnedObjectCountAsGroup.md)
+Get the number of the resource
+
+### [Get-MgBetaServicePrincipalOwnedObjectCountAsServicePrincipal](Get-MgBetaServicePrincipalOwnedObjectCountAsServicePrincipal.md)
+Get the number of the resource
+
 ### [Get-MgBetaServicePrincipalOwner](Get-MgBetaServicePrincipalOwner.md)
 Directory objects that are owners of this servicePrincipal.
 The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
@@ -542,6 +527,15 @@ Nullable.
 Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
 
 ### [Get-MgBetaServicePrincipalOwnerCount](Get-MgBetaServicePrincipalOwnerCount.md)
+Get the number of the resource
+
+### [Get-MgBetaServicePrincipalOwnerCountAsEndpoint](Get-MgBetaServicePrincipalOwnerCountAsEndpoint.md)
+Get the number of the resource
+
+### [Get-MgBetaServicePrincipalOwnerCountAsServicePrincipal](Get-MgBetaServicePrincipalOwnerCountAsServicePrincipal.md)
+Get the number of the resource
+
+### [Get-MgBetaServicePrincipalOwnerCountAsUser](Get-MgBetaServicePrincipalOwnerCountAsUser.md)
 Get the number of the resource
 
 ### [Get-MgBetaServicePrincipalPasswordSingleSignOnCredential](Get-MgBetaServicePrincipalPasswordSingleSignOnCredential.md)
@@ -610,6 +604,12 @@ Get the item of type microsoft.graph.directoryObject as microsoft.graph.administ
 Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
 
 ### [Get-MgBetaServicePrincipalTransitiveMemberOfCount](Get-MgBetaServicePrincipalTransitiveMemberOfCount.md)
+Get the number of the resource
+
+### [Get-MgBetaServicePrincipalTransitiveMemberOfCountAsAdministrativeUnit](Get-MgBetaServicePrincipalTransitiveMemberOfCountAsAdministrativeUnit.md)
+Get the number of the resource
+
+### [Get-MgBetaServicePrincipalTransitiveMemberOfCountAsGroup](Get-MgBetaServicePrincipalTransitiveMemberOfCountAsGroup.md)
 Get the number of the resource
 
 ### [Get-MgBetaServicePrincipalUserOwnedObject](Get-MgBetaServicePrincipalUserOwnedObject.md)
@@ -1008,6 +1008,9 @@ Assign a connectorGroup to an application.
 The main logo for the application.
 Not nullable.
 
+### [Set-MgBetaApplicationSynchronization](Set-MgBetaApplicationSynchronization.md)
+Update the navigation property synchronization in applications
+
 ### [Set-MgBetaApplicationSynchronizationSecret](Set-MgBetaApplicationSynchronizationSecret.md)
 Update property secrets value.
 
@@ -1018,6 +1021,9 @@ For more information, including prerequisites to setting a verified publisher, s
 ### [Set-MgBetaOnPremisePublishingProfileConnectorGroupApplicationLogo](Set-MgBetaOnPremisePublishingProfileConnectorGroupApplicationLogo.md)
 The main logo for the application.
 Not nullable.
+
+### [Set-MgBetaServicePrincipalSynchronization](Set-MgBetaServicePrincipalSynchronization.md)
+Update the navigation property synchronization in servicePrincipals
 
 ### [Set-MgBetaServicePrincipalSynchronizationSecret](Set-MgBetaServicePrincipalSynchronizationSecret.md)
 Update property secrets value.
@@ -1035,12 +1041,6 @@ If the job is in a paused state, it will continue processing changes from the po
 If the job is in quarantine, the quarantine status will be cleared.
 Do not create scripts to call the start job continuously while it's running because that can cause the service to stop running.
 Use the start job only when the job is currently paused or in quarantine.
-
-### [Stop-MgBetaApplicationSynchronizationJob](Stop-MgBetaApplicationSynchronizationJob.md)
-Invoke action stop
-
-### [Stop-MgBetaServicePrincipalSynchronizationJob](Stop-MgBetaServicePrincipalSynchronizationJob.md)
-Invoke action stop
 
 ### [Suspend-MgBetaApplicationSynchronizationJob](Suspend-MgBetaApplicationSynchronizationJob.md)
 Temporarily stop a running synchronization job.
@@ -1086,9 +1086,6 @@ Update the navigation property extensionProperties in applications
 
 ### [Update-MgBetaApplicationFederatedIdentityCredential](Update-MgBetaApplicationFederatedIdentityCredential.md)
 Update the properties of a federatedIdentityCredential object.
-
-### [Update-MgBetaApplicationSynchronization](Update-MgBetaApplicationSynchronization.md)
-Update the navigation property synchronization in applications
 
 ### [Update-MgBetaApplicationSynchronizationJob](Update-MgBetaApplicationSynchronizationJob.md)
 Update the navigation property jobs in applications
@@ -1158,9 +1155,6 @@ Update the navigation property licenseDetails in servicePrincipals
 
 ### [Update-MgBetaServicePrincipalPasswordSingleSignOnCredential](Update-MgBetaServicePrincipalPasswordSingleSignOnCredential.md)
 Update single sign-on credentials using a password for a user or group.
-
-### [Update-MgBetaServicePrincipalSynchronization](Update-MgBetaServicePrincipalSynchronization.md)
-Update the navigation property synchronization in servicePrincipals
 
 ### [Update-MgBetaServicePrincipalSynchronizationJob](Update-MgBetaServicePrincipalSynchronizationJob.md)
 Update the navigation property jobs in servicePrincipals

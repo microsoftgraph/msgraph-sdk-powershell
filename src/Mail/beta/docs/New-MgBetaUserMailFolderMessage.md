@@ -76,22 +76,22 @@ Use this API to create a new Message in a mailfolder.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	ReceivedDateTime = [System.DateTime]::Parse("2016-10-19T10:37:00Z")
-	SentDateTime = [System.DateTime]::Parse("2016-10-19T10:37:00Z")
-	HasAttachments = $true
-	Subject = "subject-value"
-	Body = @{
-		ContentType = ""
-		Content = "content-value"
-	}
-	BodyPreview = "bodyPreview-value"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserMailFolderMessage -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 ```
 
+$params = @{
+	receivedDateTime = [System.DateTime]::Parse("datetime-value")
+	sentDateTime = [System.DateTime]::Parse("datetime-value")
+	hasAttachments = $true
+	subject = "subject-value"
+	body = @{
+		contentType = ""
+		content = "content-value"
+	}
+	bodyPreview = "bodyPreview-value"
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserMailFolderMessage -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 
 ## PARAMETERS
 

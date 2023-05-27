@@ -43,74 +43,19 @@ Nullable.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserMessage -UserId $userId -MessageId $messageId
 ```
 
+$params = @{
+	subject = "subject-value"
+	body = @{
+		contentType = ""
+		content = "content-value"
+	}
+	inferenceClassification = "other"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
 # A UPN can also be used as -UserId.
-Get-MgBetaUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "mentions"
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserMessage -UserId $userId -MessageId $messageId -Property "subject,body,bodyPreview,uniqueBody"
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserMessage -UserId $userId -MessageId $messageId -Property "internetMessageHeaders"
-```
-
-
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserMessage -UserId $userId -MessageId $messageId
-```
-
-
-
-### -------------------------- EXAMPLE 6 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserMessage -UserId $userId -Property "subject,body,bodyPreview,uniqueBody"
-```
-
-
-
-### -------------------------- EXAMPLE 7 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserMessage -UserId $userId -Property "sender,subject"
-```
-
-
-
-### -------------------------- EXAMPLE 8 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserMessage -UserId $userId -Filter "MentionsPreview/IsMentioned eq true" -Property "Subject,Sender,ReceivedDateTime,MentionsPreview"
-```
-
-
+Update-MgBetaUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 
 ## PARAMETERS
 

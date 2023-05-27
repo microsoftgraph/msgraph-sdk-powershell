@@ -41,21 +41,14 @@ Retrieve the app installed in the specified team.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeamInstalledApp -TeamId $teamId
+Get-MgBetaTeamInstalledApp -TeamId $teamId -TeamsAppInstallationId $teamsAppInstallationId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeamInstalledApp -TeamId $teamId -ExpandProperty "teamsAppDefinition"
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-```
-
-Get-MgBetaTeamInstalledApp -TeamId $teamId -ExpandProperty "teamsApp,teamsAppDefinition" -Filter "teamsApp/externalId eq 'cf1ba4c7-f94e-4d80-ba90-5594b641a8ee'"
+Get-MgBetaTeamInstalledApp -TeamId $teamId -TeamsAppInstallationId $teamsAppInstallationId -ExpandProperty "teamsAppDefinition"
 
 ## PARAMETERS
 

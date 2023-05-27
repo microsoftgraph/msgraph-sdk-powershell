@@ -32,11 +32,14 @@ Delete a focused Inbox override specified by its ID.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Remove-MgBetaUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId
 ```
 
+$params = @{
+	classifyAs = "focused"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgBetaUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -39,18 +39,9 @@ Retrieve the metadata for a specific version of a ListItem.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-Get-MgSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Sites
 Get-MgSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -ListItemVersionId $listItemVersionId -ExpandProperty "fields"
-```
-
-
 
 ## PARAMETERS
 

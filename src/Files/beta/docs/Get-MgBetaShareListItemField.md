@@ -43,15 +43,17 @@ The values of the columns set on this list item.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Sites
+{{ Add code here }}
 ```
 
-$params = @{
-	Color = "Fuchsia"
-	Quantity = 
-}
+{{ Add output here }}
 
-Update-MgBetaSiteListItemField -SiteId $siteId -ListId $listId -ListItemId $listItemId -BodyParameter $params
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

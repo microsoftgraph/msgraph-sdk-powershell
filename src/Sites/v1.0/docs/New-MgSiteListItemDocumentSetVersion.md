@@ -52,14 +52,14 @@ Create a new version of a document set item in a list.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-$params = @{
-	Comment = "v1"
-	ShouldCaptureMinorVersion = $false
-}
-New-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -BodyParameter $params
 ```
 
+$params = @{
+	comment = "v1"
+	shouldCaptureMinorVersion = $false
+}
 
+New-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -BodyParameter $params
 
 ## PARAMETERS
 

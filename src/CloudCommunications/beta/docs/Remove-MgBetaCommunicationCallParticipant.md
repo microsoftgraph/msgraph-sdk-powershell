@@ -40,26 +40,9 @@ When an invited participant is removed, any outstanding add participant request 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
-Remove-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-Remove-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-Remove-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
-```
-
-
+Get-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 
 ## PARAMETERS
 

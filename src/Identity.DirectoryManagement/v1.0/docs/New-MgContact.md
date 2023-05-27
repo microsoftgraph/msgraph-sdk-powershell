@@ -54,7 +54,7 @@ Get-MgContact -Filter "startswith(displayName,'A')" -CountVariable CountVar -Top
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-Get-MgContact -Search "displayName:wa" -CountVariable CountVar -ConsistencyLevel eventual
+Get-MgContact -Search '"displayName:wa"' -CountVariable CountVar -ConsistencyLevel eventual
 
 ## PARAMETERS
 

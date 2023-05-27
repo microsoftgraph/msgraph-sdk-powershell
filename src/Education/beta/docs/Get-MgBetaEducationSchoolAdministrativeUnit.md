@@ -31,11 +31,17 @@ Retrieve the simple directory **administrativeUnit** that corresponds to this **
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationSchoolAdministrativeUnit -EducationSchoolId $educationSchoolId
+{{ Add code here }}
 ```
 
+{{ Add output here }}
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

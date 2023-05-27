@@ -8,8 +8,10 @@ schema: 2.0.0
 # New-MgBetaGroupConversation
 
 ## SYNOPSIS
-Create a new conversation by including a thread and a post.
-Use reply thread or reply post to further post to that conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## SYNTAX
 
@@ -42,77 +44,26 @@ New-MgBetaGroupConversation -InputObject <IGroupsIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Create a new conversation by including a thread and a post.
-Use reply thread or reply post to further post to that conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Groups
-$params = @{
-	Topic = "New head count"
-	Threads = @(
-		@{
-			Posts = @(
-				@{
-					Body = @{
-						ContentType = "html"
-						Content = "The confirmation will come by the end of the week."
-					}
-					NewParticipants = @(
-						@{
-							EmailAddress = @{
-								Name = "Adele Vance"
-								Address = "AdeleV@contoso.onmicrosoft.com"
-							}
-						}
-					)
-				}
-			)
-		}
-	)
-}
-New-MgBetaGroupConversation -GroupId $groupId -BodyParameter $params
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Groups
-$params = @{
-	Topic = "Does anyone have a second?"
-	Threads = @(
-		@{
-			Posts = @(
-				@{
-					Body = @{
-						ContentType = "HTML"
-						Content = "This is urgent!"
-					}
-					Extensions = @(
-						@{
-							"@odata.type" = "microsoft.graph.openTypeExtension"
-							ExtensionName = "Com.Contoso.Benefits"
-							CompanyName = "Contoso"
-							ExpirationDate = "2016-08-03T11:00:00.000Z"
-							TopPicks = @(
-								"Employees only"
-								"Add spouse or guest"
-								"Add family"
-							)
-						}
-					)
-				}
-			)
-		}
-	)
-}
-New-MgBetaGroupConversation -GroupId $groupId -BodyParameter $params
+{{ Add code here }}
 ```
 
-
+{{ Add output here }}
 
 ## PARAMETERS
 

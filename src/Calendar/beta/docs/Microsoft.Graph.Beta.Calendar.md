@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Calendar
-Module Guid: 09e40428-46dc-4d5f-b428-fffa8dc7f80e
+Module Guid: 541eeb43-97bc-4a71-945f-10e61591c31e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.calendar
 Help Version: 1.0.0.0
 Locale: en-US
@@ -175,7 +175,7 @@ Get the item of type microsoft.graph.place as microsoft.graph.room
 ### [Get-MgBetaPlaceCount](Get-MgBetaPlaceCount.md)
 Get the number of the resource
 
-### [Get-MgBetaPlaceListPlaceCountAsRoom](Get-MgBetaPlaceListPlaceCountAsRoom.md)
+### [Get-MgBetaPlacePlaceCountAsRoom](Get-MgBetaPlacePlaceCountAsRoom.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserCalendar](Get-MgBetaUserCalendar.md)

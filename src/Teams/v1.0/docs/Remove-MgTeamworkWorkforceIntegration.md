@@ -32,10 +32,21 @@ Delete an instance of a workforceIntegration.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-Remove-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId
 ```
 
+$params = @{
+	displayName = "displayName-value"
+	apiVersion = 99
+	encryption = @{
+		protocol = "protocol-value"
+		secret = "secret-value"
+	}
+	isActive = $true
+	url = "url-value"
+	supportedEntities = "supportedEntities-value"
+}
 
+Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -74,13 +74,13 @@ Update the permissions assigned to an existing sharee or delegate, through the c
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Calendar
-$params = @{
-	Role = "write"
-}
-Update-MgBetaUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId -BodyParameter $params
 ```
 
+$params = @{
+	role = "write"
+}
 
+Update-MgBetaUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId -BodyParameter $params
 
 ## PARAMETERS
 

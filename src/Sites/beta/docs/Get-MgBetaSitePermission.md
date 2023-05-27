@@ -39,18 +39,15 @@ Retrieve the properties and relationships of a permission object on a site.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId
 ```
 
+$params = @{
+	roles = @(
+		"read"
+	)
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSitePermission -SiteId $siteId
-```
-
-
+Update-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params
 
 ## PARAMETERS
 

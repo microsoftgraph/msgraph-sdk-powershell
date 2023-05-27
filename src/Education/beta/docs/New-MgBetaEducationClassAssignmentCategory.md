@@ -75,7 +75,11 @@ Only teachers can perform this operation.
 Import-Module Microsoft.Graph.Beta.Education
 ```
 
-Get-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId
+$params = @{
+	displayName = "Quizzes"
+}
+
+New-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId -BodyParameter $params
 
 ## PARAMETERS
 

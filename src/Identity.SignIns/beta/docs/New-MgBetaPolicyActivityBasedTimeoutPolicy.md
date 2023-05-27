@@ -34,17 +34,17 @@ Create a new activityBasedTimeoutPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	Definition = @(
-		"definition-value"
-	)
-	DisplayName = "displayName-value"
-	IsOrganizationDefault = $true
-}
-New-MgBetaPolicyActivityBasedTimeoutPolicy -BodyParameter $params
 ```
 
+$params = @{
+	definition = @(
+		"definition-value"
+	)
+	displayName = "displayName-value"
+	isOrganizationDefault = $true
+}
 
+New-MgBetaPolicyActivityBasedTimeoutPolicy -BodyParameter $params
 
 ## PARAMETERS
 

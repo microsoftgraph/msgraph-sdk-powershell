@@ -39,29 +39,10 @@ Retrieve the properties and relationships of a notebook object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Notes
+```
+
 # A UPN can also be used as -UserId.
 Get-MgBetaUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Notes
-# A UPN can also be used as -UserId.
-Get-MgBetaUserOnenoteNotebook -UserId $userId
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Notes
-# A UPN can also be used as -UserId.
-Get-MgBetaUserOnenoteNotebook -UserId $userId -NotebookId $notebookId
-```
-
-
 
 ## PARAMETERS
 

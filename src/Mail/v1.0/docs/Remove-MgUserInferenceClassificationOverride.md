@@ -32,11 +32,14 @@ Delete an override specified by its ID.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Mail
-# A UPN can also be used as -UserId.
-Remove-MgUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId
 ```
 
+$params = @{
+	classifyAs = "focused"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
 
 ## PARAMETERS
 

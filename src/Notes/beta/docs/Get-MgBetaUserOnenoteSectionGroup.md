@@ -46,20 +46,10 @@ Retrieve the properties and relationships of a sectionGroup object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Notes
+```
+
 # A UPN can also be used as -UserId.
 Get-MgBetaUserOnenoteSectionGroup -UserId $userId -SectionGroupId $sectionGroupId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Notes
-# A UPN can also be used as -UserId.
-Get-MgBetaUserOnenoteSectionGroup -UserId $userId
-```
-
-
 
 ## PARAMETERS
 

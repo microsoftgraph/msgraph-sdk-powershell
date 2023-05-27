@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgBetaUserMailFolderChildFolder
 
 ## SYNOPSIS
-Create a new mailSearchFolder in the specified user's mailbox.
+Use this API to create a new child mailFolder.
+If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 
 ## SYNTAX
 
@@ -53,40 +54,28 @@ New-MgBetaUserMailFolderChildFolder -InputObject <IMailIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Create a new mailSearchFolder in the specified user's mailbox.
+Use this API to create a new child mailFolder.
+If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	DisplayName = "displayName-value"
-	IsHidden = $true
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
 	"@odata.type" = "microsoft.graph.mailSearchFolder"
-	DisplayName = "Weekly digests"
-	IncludeNestedFolders = $true
-	SourceFolderIds = @(
+	displayName = "Weekly digests"
+	includeNestedFolders = $true
+	sourceFolderIds = @(
 		"AQMkADYAAAIBDAAAAA=="
 	)
-	FilterQuery = "contains(subject, 'weekly digest')"
+	filterQuery = "contains(subject, 'weekly digest')"
 }
+
 # A UPN can also be used as -UserId.
 New-MgBetaUserMailFolderChildFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

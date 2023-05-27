@@ -41,7 +41,7 @@ Retrieve the properties and relationships of an openShiftChangeRequest object.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeamScheduleOpenShiftChangeRequest -TeamId $teamId
+Get-MgBetaTeamScheduleOpenShiftChangeRequest -TeamId $teamId -OpenShiftChangeRequestId $openShiftChangeRequestId
 
 ## PARAMETERS
 

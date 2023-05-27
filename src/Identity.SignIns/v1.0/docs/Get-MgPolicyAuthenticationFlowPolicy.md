@@ -24,10 +24,15 @@ Read the properties and relationships of an authenticationFlowsPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgPolicyAuthenticationFlowPolicy
 ```
 
+$params = @{
+	selfServiceSignUp = @{
+		isEnabled = $true
+	}
+}
 
+Update-MgPolicyAuthenticationFlowPolicy -BodyParameter $params
 
 ## PARAMETERS
 

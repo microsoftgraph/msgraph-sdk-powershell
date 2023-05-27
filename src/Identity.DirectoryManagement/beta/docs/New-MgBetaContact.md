@@ -56,7 +56,7 @@ Get-MgBetaContact -Filter "startswith(displayName,'A')" -CountVariable CountVar 
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-Get-MgBetaContact -Search "displayName:wa" -CountVariable CountVar -ConsistencyLevel eventual
+Get-MgBetaContact -Search '"displayName:wa"' -CountVariable CountVar -ConsistencyLevel eventual
 
 ## PARAMETERS
 

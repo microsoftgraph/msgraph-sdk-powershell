@@ -32,10 +32,9 @@ Delete an event object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Calendar
-Remove-MgBetaGroupEvent -GroupId $groupId -EventId $eventId
 ```
 
-
+Get-MgBetaGroupEvent -GroupId $groupId -EventId $eventId
 
 ## PARAMETERS
 

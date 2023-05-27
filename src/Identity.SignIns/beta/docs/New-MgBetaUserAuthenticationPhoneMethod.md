@@ -56,15 +56,15 @@ Additionally, if a user is enabled by policy to use SMS sign-in and a `mobile` n
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	PhoneNumber = "+1 2065555555"
-	PhoneType = "mobile"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserAuthenticationPhoneMethod -UserId $userId -BodyParameter $params
 ```
 
+$params = @{
+	phoneNumber = "+1 2065555555"
+	phoneType = "mobile"
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserAuthenticationPhoneMethod -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

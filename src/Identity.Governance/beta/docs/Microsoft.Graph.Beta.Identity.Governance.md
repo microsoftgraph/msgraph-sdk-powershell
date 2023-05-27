@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Governance
-Module Guid: ed44fc7e-287e-41dd-b86e-b46e398f0832
+Module Guid: ced3bb8d-ea17-4258-b911-1cf53270cc6b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -199,7 +199,7 @@ Get the number of the resource
 Retrieve the properties and relationships of an accessPackageCatalog object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
 Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
@@ -569,12 +569,6 @@ The unique identifier of the Azure AD identity that last modified the workflow o
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScopeCount](Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScopeCount.md)
 Get the number of the resource
-
-### [Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScopeMailboxSetting](Get-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScopeMailboxSetting.md)
-Settings for the primary mailbox of the signed-in user.
-You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
-For more information, see User preferences for languages and regional formats.
-Returned only on $select.
 
 ### [Get-MgBetaIdentityGovernanceLifecycleWorkflowLastModifiedBy](Get-MgBetaIdentityGovernanceLifecycleWorkflowLastModifiedBy.md)
 The user who last modified the workflow.
@@ -2885,14 +2879,14 @@ Delete an accessPackageCatalog.
 Delete navigation property accessPackageCustomWorkflowExtensions for identityGovernance
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
-Delete an accessPackageAssignmentRequestWorkflowExtension object.
+Delete a customAccessPackageWorkflowExtension object.
 The custom workflow extension must first be removed from any associated policies before it can be deleted.
 Follow these steps to remove the custom workflow extension from any associated policies:\n1.
 First retrieve the accessPackageCatalogId by calling the Get accessPackageAssignmentPolicies operation and appending `?$expand=accessPackage($expand=accessPackageCatalog)` to the query.
 For example, `https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies?$expand=accessPackage($expand=accessPackageCatalog)`.\n2.
-Use the access package catalog ID and retrieve the ID of the **accessPackageCustomWorkflowExtension** object that you want to delete by running the List accessPackageCustomWorkflowExtensions operation.\n3.
+Use the access package catalog ID and retrieve the ID of the **customAccessPackageWorkflowExtension** object that you want to delete by running the LIST customAccessPackageWorkflowExtensions operation.\n3.
 Call the Update accessPackageAssignmentPolicy operation to remove the custom workflow extension object from the policy.
-For an example, see Example 3: Remove the customExtensionStageSettings from a policy.
+For an example, see Example 2: Remove the customExtensionHandlers and verifiableCredentialSettings from a policy.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.
@@ -3772,9 +3766,6 @@ Update property mailboxSettings value.
 
 ### [Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask](Update-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItemWorkflowTask.md)
 Update the navigation property tasks in identityGovernance
-
-### [Update-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScopeMailboxSetting](Update-MgBetaIdentityGovernanceLifecycleWorkflowExecutionScopeMailboxSetting.md)
-Update property mailboxSettings value.
 
 ### [Update-MgBetaIdentityGovernanceLifecycleWorkflowLastModifiedByMailboxSetting](Update-MgBetaIdentityGovernanceLifecycleWorkflowLastModifiedByMailboxSetting.md)
 Update property mailboxSettings value.

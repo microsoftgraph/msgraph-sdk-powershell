@@ -39,26 +39,13 @@ Retrieve the properties and relationships of an accessPackage object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackage -AccessPackageId $accessPackageId
 ```
 
+$params = @{
+	displayName = "Access Package New Name"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackage -AccessPackageId $accessPackageId
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAccessPackage
-```
-
-
+Update-MgEntitlementManagementAccessPackage -AccessPackageId $accessPackageId -BodyParameter $params
 
 ## PARAMETERS
 

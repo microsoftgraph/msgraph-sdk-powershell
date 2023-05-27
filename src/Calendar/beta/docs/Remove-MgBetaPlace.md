@@ -35,11 +35,11 @@ Import-Module Microsoft.Graph.Beta.Calendar
 
 $params = @{
 	"@odata.type" = "microsoft.graph.room"
-	Nickname = "Conf Room"
-	Building = "1"
-	Label = "100"
-	Capacity = 
-	IsWheelChairAccessible = $false
+	nickname = "Conf Room"
+	building = "1"
+	label = "100"
+	capacity = 
+	isWheelChairAccessible = $false
 }
 
 Update-MgBetaPlace -PlaceId $placeId -BodyParameter $params

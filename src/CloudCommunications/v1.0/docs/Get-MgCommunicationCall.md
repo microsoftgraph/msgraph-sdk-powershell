@@ -32,18 +32,16 @@ Retrieve the properties and relationships of a call object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCall -CallId $callId
 ```
 
-
+Get-MgCommunicationCall -CallId $callId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCall -CallId $callId
 ```
 
-
+Get-MgCommunicationCall -CallId $callId
 
 ## PARAMETERS
 

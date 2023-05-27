@@ -31,15 +31,15 @@ Create a new plannerBucket object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Planner
-$params = @{
-	Name = "Advertising"
-	PlanId = "xqQg5FS2LkCp935s-FIFm2QAFkHM"
-	OrderHint = " !"
-}
-New-MgPlannerBucket -BodyParameter $params
 ```
 
+$params = @{
+	name = "Advertising"
+	planId = "xqQg5FS2LkCp935s-FIFm2QAFkHM"
+	orderHint = " !"
+}
 
+New-MgPlannerBucket -BodyParameter $params
 
 ## PARAMETERS
 

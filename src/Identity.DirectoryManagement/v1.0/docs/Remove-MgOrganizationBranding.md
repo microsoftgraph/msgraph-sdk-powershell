@@ -37,8 +37,8 @@ Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
 $params = @{
-	SignInPageText = "Default"
-	UsernameHintText = "DefaultHint"
+	signInPageText = "Default"
+	usernameHintText = "DefaultHint"
 }
 
 Update-MgOrganizationBranding -OrganizationId $organizationId -BodyParameter $params

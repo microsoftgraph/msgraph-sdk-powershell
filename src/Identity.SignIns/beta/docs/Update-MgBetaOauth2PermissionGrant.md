@@ -48,13 +48,13 @@ An **oAuth2PermissionGrant** can be updated to change which delegated permission
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	Scope = "User.ReadBasic.All Group.ReadWrite.All"
-}
-Update-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId -BodyParameter $params
 ```
 
+$params = @{
+	scope = "User.ReadBasic.All Group.ReadWrite.All"
+}
 
+Update-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId -BodyParameter $params
 
 ## PARAMETERS
 

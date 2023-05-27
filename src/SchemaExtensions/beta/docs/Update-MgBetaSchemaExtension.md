@@ -66,60 +66,31 @@ For more information, see the Extensions section in Known issues with Microsoft 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.SchemaExtensions
+```
+
 $params = @{
-	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
-	Properties = @(
+	owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
+	properties = @(
 		@{
-			Name = "courseId"
-			Type = "Integer"
+			name = "courseId"
+			type = "Integer"
 		}
 		@{
-			Name = "courseName"
-			Type = "String"
+			name = "courseName"
+			type = "String"
 		}
 		@{
-			Name = "courseType"
-			Type = "String"
+			name = "courseType"
+			type = "String"
 		}
 		@{
-			Name = "courseSupervisors"
-			Type = "String"
+			name = "courseSupervisors"
+			type = "String"
 		}
 	)
 }
+
 Update-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.SchemaExtensions
-$params = @{
-	Owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
-	Properties = @(
-		@{
-			Name = "courseId"
-			Type = "Integer"
-		}
-		@{
-			Name = "courseName"
-			Type = "String"
-		}
-		@{
-			Name = "courseType"
-			Type = "String"
-		}
-		@{
-			Name = "courseSupervisors"
-			Type = "String"
-		}
-	)
-}
-Update-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

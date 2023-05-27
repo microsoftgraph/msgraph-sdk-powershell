@@ -43,11 +43,14 @@ Nullable.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-# A UPN can also be used as -UserId.
-Get-MgBetaUserInferenceClassificationOverride -UserId $userId
 ```
 
+$params = @{
+	classifyAs = "focused"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgBetaUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
 
 ## PARAMETERS
 

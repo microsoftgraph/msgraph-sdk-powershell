@@ -47,50 +47,36 @@ An attachment can be one of the following types: All these types of attachment r
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Calendar
-$params = @{
-	"@odata.type" = "#microsoft.graph.fileAttachment"
-	Name = "menu.txt"
-	ContentBytes = "base64bWFjIGFuZCBjaGVlc2UgdG9kYXk="
-}
-# A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+Import-Module Microsoft.Graph.Mail
 ```
 
+$params = @{
+	"@odata.type" = "microsoft.graph.fileAttachment"
+	name = "name-value"
+	contentType = "contentType-value"
+	isInline = $false
+	contentLocation = "contentLocation-value"
+	contentBytes = "base64-contentBytes-value"
+}
 
+# A UPN can also be used as -UserId.
+New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Calendar
-$params = @{
-	"@odata.type" = "#microsoft.graph.itemAttachment"
-	Name = "Holiday event"
-	Item = @{
-		"@odata.type" = "microsoft.graph.event"
-		Subject = "Discuss gifts for children"
-	}
-}
-# A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Calendar
 $params = @{
 	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"
-	Name = "name-value"
-	Item = @{
+	name = "name-value"
+	item = @{
 		"@odata.type" = "microsoft.graph.message"
 	}
 }
+
 # A UPN can also be used as -UserId.
 New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

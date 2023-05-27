@@ -32,11 +32,10 @@ Delete an attachment from a user calendar event, mail message, or group post.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Calendar
-# A UPN can also be used as -UserId.
-Remove-MgUserEventAttachment -UserId $userId -EventId $eventId -AttachmentId $attachmentId
 ```
 
-
+# A UPN can also be used as -UserId.
+Remove-MgUserEventAttachment -UserId $userId -EventId $eventId -AttachmentId $attachmentId
 
 ## PARAMETERS
 

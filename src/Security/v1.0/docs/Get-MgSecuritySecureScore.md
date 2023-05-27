@@ -39,18 +39,9 @@ Retrieve the properties and relationships of a secureScore object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Security
+```
+
 Get-MgSecuritySecureScore -SecureScoreId $secureScoreId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Security
-Get-MgSecuritySecureScore -Top 1
-```
-
-
 
 ## PARAMETERS
 

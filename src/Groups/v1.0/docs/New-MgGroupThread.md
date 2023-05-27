@@ -54,29 +54,29 @@ Note: You can also start a new thread in an existing conversation.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Groups
+```
+
 $params = @{
-	Topic = "New Conversation Thread Topic"
-	Posts = @(
+	topic = "New Conversation Thread Topic"
+	posts = @(
 		@{
-			Body = @{
-				ContentType = "html"
-				Content = "this is body content"
+			body = @{
+				contentType = "html"
+				content = "this is body content"
 			}
-			NewParticipants = @(
+			newParticipants = @(
 				@{
-					EmailAddress = @{
-						Name = "Alex Darrow"
-						Address = "alexd@contoso.com"
+					emailAddress = @{
+						name = "Alex Darrow"
+						address = "alexd@contoso.com"
 					}
 				}
 			)
 		}
 	)
 }
+
 New-MgGroupThread -GroupId $groupId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

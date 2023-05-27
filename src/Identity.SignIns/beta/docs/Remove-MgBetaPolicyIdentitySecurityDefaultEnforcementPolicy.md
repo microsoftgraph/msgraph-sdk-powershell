@@ -28,7 +28,7 @@ Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
 $params = @{
-	IsEnabled = $false
+	isEnabled = $false
 }
 
 Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy -BodyParameter $params

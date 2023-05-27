@@ -55,8 +55,12 @@ Create a new onenoteSection in the specified section group.
 Import-Module Microsoft.Graph.Notes
 ```
 
+$params = @{
+	displayName = "Section name"
+}
+
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteSectionGroupSection -UserId $userId -SectionGroupId $sectionGroupId
+New-MgUserOnenoteSectionGroupSection -UserId $userId -SectionGroupId $sectionGroupId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -39,18 +39,9 @@ Retrieve the properties of a contentSharingSession object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
 Get-MgBetaCommunicationCallContentSharingSession -CallId $callId -ContentSharingSessionId $contentSharingSessionId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-Get-MgBetaCommunicationCallContentSharingSession -CallId $callId
-```
-
-
 
 ## PARAMETERS
 

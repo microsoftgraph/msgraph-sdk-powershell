@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 8275d0f0-7430-4b74-872b-4c2d27533079
+Module Guid: 56ed9c26-04cc-4575-b382-2aaba3f0ab0f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -70,12 +70,6 @@ Get the number of the resource
 
 ### [Get-MgDeviceAppManagementiOSManagedAppProtectionDeploymentSummary](Get-MgDeviceAppManagementiOSManagedAppProtectionDeploymentSummary.md)
 Navigation property to deployment summary of the configuration.
-
-### [Get-MgDeviceAppManagementListMobileAppCountAsManagedMobileLobApp](Get-MgDeviceAppManagementListMobileAppCountAsManagedMobileLobApp.md)
-Get the number of the resource
-
-### [Get-MgDeviceAppManagementListMobileAppCountAsMobileLobApp](Get-MgDeviceAppManagementListMobileAppCountAsMobileLobApp.md)
-Get the number of the resource
 
 ### [Get-MgDeviceAppManagementManagedAppPolicy](Get-MgDeviceAppManagementManagedAppPolicy.md)
 Managed app policies.
@@ -225,6 +219,12 @@ Get the number of the resource
 App configuration user status summary.
 
 ### [Get-MgDeviceAppManagementMobileAppCount](Get-MgDeviceAppManagementMobileAppCount.md)
+Get the number of the resource
+
+### [Get-MgDeviceAppManagementMobileAppCountAsManagedMobileLobApp](Get-MgDeviceAppManagementMobileAppCountAsManagedMobileLobApp.md)
+Get the number of the resource
+
+### [Get-MgDeviceAppManagementMobileAppCountAsMobileLobApp](Get-MgDeviceAppManagementMobileAppCountAsMobileLobApp.md)
 Get the number of the resource
 
 ### [Get-MgDeviceAppManagementTargetedManagedAppConfiguration](Get-MgDeviceAppManagementTargetedManagedAppConfiguration.md)

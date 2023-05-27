@@ -48,21 +48,11 @@ Install a teamsApp to the specified chat.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgChatInstalledApp -ChatId $chatId
+$params = @{
+	"teamsApp@odata.bind" = "https://graph.microsoft.com/v1.0/appCatalogs/teamsApps/12345678-9abc-def0-123456789a"
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-```
-
-Get-MgChatInstalledApp -ChatId $chatId -ExpandProperty "teamsAppDefinition(`$expand=bot)"
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-```
-
-Get-MgChatInstalledApp -ChatId $chatId -ExpandProperty "teamsApp,teamsAppDefinition" -Filter "teamsApp/externalId eq 'cf1ba4c7-f94e-4d80-ba90-5594b641a8ee'"
+New-MgChatInstalledApp -ChatId $chatId -BodyParameter $params
 
 ## PARAMETERS
 

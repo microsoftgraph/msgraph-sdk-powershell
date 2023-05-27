@@ -53,15 +53,15 @@ If the user requires a new Temporary Access Pass while the current Temporary Acc
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	StartDateTime = [System.DateTime]::Parse("2022-06-05T00:00:00.000Z")
-	LifetimeInMinutes = 60
-	IsUsableOnce = $false
-}
-New-MgBetaUserAuthenticationTemporaryAccessPassMethod -UserId $userId -BodyParameter $params
 ```
 
+$params = @{
+	startDateTime = [System.DateTime]::Parse("2022-06-05T00:00:00.000Z")
+	lifetimeInMinutes = 60
+	isUsableOnce = $false
+}
 
+New-MgBetaUserAuthenticationTemporaryAccessPassMethod -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

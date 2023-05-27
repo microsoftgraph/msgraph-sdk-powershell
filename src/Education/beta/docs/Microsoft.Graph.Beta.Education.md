@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Education
-Module Guid: 5e057b01-57db-4f60-92da-a61e5245933e
+Module Guid: 909c49a0-0412-4ff6-8b48-a178e13c8b00
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -720,6 +720,10 @@ Delete ref of navigation property categories for education
 ### [Remove-MgBetaEducationClassAssignmentDefault](Remove-MgBetaEducationClassAssignmentDefault.md)
 Delete navigation property assignmentDefaults for education
 
+### [Remove-MgBetaEducationClassAssignmentGradingCategory](Remove-MgBetaEducationClassAssignmentGradingCategory.md)
+Remove a gradingCategory from an educationAssignment.
+Only teachers can perform this operation.
+
 ### [Remove-MgBetaEducationClassAssignmentResource](Remove-MgBetaEducationClassAssignmentResource.md)
 Delete a specific educationAssignmentResource attached to an assignment.
 Only teachers in the class can remove a resource.
@@ -770,6 +774,10 @@ Delete navigation property assignments for education
 
 ### [Remove-MgBetaEducationMeAssignmentCategoryByRef](Remove-MgBetaEducationMeAssignmentCategoryByRef.md)
 Delete ref of navigation property categories for education
+
+### [Remove-MgBetaEducationMeAssignmentGradingCategory](Remove-MgBetaEducationMeAssignmentGradingCategory.md)
+Remove a gradingCategory from an educationAssignment.
+Only teachers can perform this operation.
 
 ### [Remove-MgBetaEducationMeAssignmentResource](Remove-MgBetaEducationMeAssignmentResource.md)
 Delete a specific educationAssignmentResource attached to an assignment.
@@ -831,6 +839,10 @@ Delete navigation property assignments for education
 
 ### [Remove-MgBetaEducationUserAssignmentCategoryByRef](Remove-MgBetaEducationUserAssignmentCategoryByRef.md)
 Delete ref of navigation property categories for education
+
+### [Remove-MgBetaEducationUserAssignmentGradingCategory](Remove-MgBetaEducationUserAssignmentGradingCategory.md)
+Remove a gradingCategory from an educationAssignment.
+Only teachers can perform this operation.
 
 ### [Remove-MgBetaEducationUserAssignmentResource](Remove-MgBetaEducationUserAssignmentResource.md)
 Delete a specific educationAssignmentResource attached to an assignment.
@@ -1064,7 +1076,7 @@ Update the navigation property errors in education
 Update the navigation property profileStatus in education
 
 ### [Update-MgBetaEducationUser](Update-MgBetaEducationUser.md)
-Update the relatedContact collection of an educationUser object.
+Update the properties of an **educationuser** object.
 
 ### [Update-MgBetaEducationUserAssignment](Update-MgBetaEducationUserAssignment.md)
 Update the navigation property assignments in education

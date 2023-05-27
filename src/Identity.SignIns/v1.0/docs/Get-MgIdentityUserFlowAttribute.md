@@ -39,18 +39,13 @@ Retrieve the properties and relationships of a identityUserFlowAttribute object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId
 ```
 
+$params = @{
+	description = "Your new hobby"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgIdentityUserFlowAttribute
-```
-
-
+Update-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId -BodyParameter $params
 
 ## PARAMETERS
 

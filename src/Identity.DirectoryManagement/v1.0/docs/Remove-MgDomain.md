@@ -31,10 +31,17 @@ Deletes a domain from a tenant.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Remove-MgDomain -DomainId $domainId
 ```
 
+$params = @{
+	isDefault = $true
+	supportedServices = @(
+		"Email"
+		"OfficeCommunicationsOnline"
+	)
+}
 
+Update-MgDomain -DomainId $domainId -BodyParameter $params
 
 ## PARAMETERS
 

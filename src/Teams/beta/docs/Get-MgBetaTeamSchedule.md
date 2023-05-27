@@ -40,10 +40,9 @@ Clients can also inspect the configuration of the schedule.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Teams
-Get-MgBetaTeamSchedule -TeamId $teamId
 ```
 
-
+Get-MgBetaTeamSchedule -TeamId $teamId
 
 ## PARAMETERS
 

@@ -1,11 +1,9 @@
 ### Example 1: Code snippet
 
-```powershell
-Import-Module Microsoft.Graph.Beta.DirectoryObjects
+```powershellImport-Module Microsoft.Graph.Beta.DirectoryObjects
 
-Remove-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
+Get-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
 ```
-This example shows how to use the Update-MgBetaDirectoryObject Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Update-MgBetaBetaDirectoryObject Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

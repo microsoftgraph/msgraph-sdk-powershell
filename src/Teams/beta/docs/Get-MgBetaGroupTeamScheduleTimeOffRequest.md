@@ -41,7 +41,7 @@ Retrieve the properties and relationships of a timeoffrequest object.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeamScheduleTimeOffRequest -TeamId $teamId
+Get-MgBetaTeamScheduleTimeOffRequest -TeamId $teamId -TimeOffRequestId $timeOffRequestId
 
 ## PARAMETERS
 

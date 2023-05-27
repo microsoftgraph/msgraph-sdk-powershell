@@ -41,14 +41,11 @@ Retrieve the properties and relationships of the specified tab in a chat.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaChatTab -ChatId $chatId -ExpandProperty "teamsApp"
+$params = @{
+	displayName = "My Contoso Tab - updated again"
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-```
-
-Get-MgBetaChatTab -ChatId $chatId -ExpandProperty "teamsApp" -Filter "teamsApp/id eq 'com.microsoft.teamspace.tab.web'"
+Update-MgBetaChatTab -ChatId $chatId -TeamsTabId $teamsTabId -BodyParameter $params
 
 ## PARAMETERS
 

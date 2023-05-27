@@ -50,16 +50,16 @@ For details about how to use this API to add pull printing support to Universal 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Devices.CloudPrint
-$params = @{
-	Status = @{
-		State = "completed"
-		Description = "completed"
-	}
-}
-Update-MgPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId -PrintTaskId $printTaskId -BodyParameter $params
 ```
 
+$params = @{
+	status = @{
+		state = "completed"
+		description = "completed"
+	}
+}
 
+Update-MgPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId -PrintTaskId $printTaskId -BodyParameter $params
 
 ## PARAMETERS
 

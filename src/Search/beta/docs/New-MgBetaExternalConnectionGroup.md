@@ -46,15 +46,15 @@ Create a new externalGroup object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Search
-$params = @{
-	Id = "31bea3d537902000"
-	DisplayName = "Contoso Marketing"
-	Description = "The product marketing team"
-}
-New-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -BodyParameter $params
 ```
 
+$params = @{
+	id = "31bea3d537902000"
+	displayName = "Contoso Marketing"
+	description = "The product marketing team"
+}
 
+New-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -BodyParameter $params
 
 ## PARAMETERS
 

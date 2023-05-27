@@ -56,8 +56,12 @@ Create a new section group in the specified notebook.
 Import-Module Microsoft.Graph.Notes
 ```
 
+$params = @{
+	displayName = "Section group name"
+}
+
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteNotebookSectionGroup -UserId $userId -NotebookId $notebookId
+New-MgUserOnenoteNotebookSectionGroup -UserId $userId -NotebookId $notebookId -BodyParameter $params
 
 ## PARAMETERS
 

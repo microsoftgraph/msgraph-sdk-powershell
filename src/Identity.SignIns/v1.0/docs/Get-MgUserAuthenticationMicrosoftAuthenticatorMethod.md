@@ -39,10 +39,9 @@ Read the properties and relationships of a microsoftAuthenticatorAuthenticationM
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgUserAuthenticationMicrosoftAuthenticatorMethod -UserId $userId
 ```
 
-
+Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod -UserId $userId -MicrosoftAuthenticatorAuthenticationMethodId $microsoftAuthenticatorAuthenticationMethodId
 
 ## PARAMETERS
 

@@ -1,28 +1,34 @@
-### Example 1: Using the New-MgBetaTeamMember Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+### Example 1: Add a member to a team
+
+```powershellImport-Module Microsoft.Graph.Beta.Teams
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
+	roles = @(
 		"owner"
 	)
-	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
+	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
 }
+
 New-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaTeamMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-### Example 2: Using the New-MgBetaTeamMember Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+This example shows how to use the New-MgBetaBetaTeamMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Add a member to a team using user principal name
+
+```powershellImport-Module Microsoft.Graph.Beta.Teams
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	Roles = @(
+	roles = @(
 		"owner"
 	)
-	"User@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
+	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
 }
+
 New-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaTeamMember Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the New-MgBetaBetaTeamMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

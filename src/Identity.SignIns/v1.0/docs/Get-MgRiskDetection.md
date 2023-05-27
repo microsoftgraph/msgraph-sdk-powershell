@@ -39,18 +39,9 @@ Read the properties and relationships of a riskDetection object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
+```
+
 Get-MgRiskDetection -RiskDetectionId $riskDetectionId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgRiskDetection
-```
-
-
 
 ## PARAMETERS
 

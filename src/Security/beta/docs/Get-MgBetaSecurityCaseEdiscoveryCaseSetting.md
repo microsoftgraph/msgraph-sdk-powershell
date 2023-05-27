@@ -32,10 +32,22 @@ Read the properties and relationships of an ediscoveryCaseSettings object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Security
-Get-MgBetaSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.security.ediscoveryCaseSettings"
+	redundancyDetection = @{
+		"@odata.type" = "microsoft.graph.security.redundancyDetectionSettings"
+	}
+	topicModeling = @{
+		"@odata.type" = "microsoft.graph.security.topicModelingSettings"
+	}
+	ocr = @{
+		"@odata.type" = "microsoft.graph.security.ocrSettings"
+	}
+}
 
+Update-MgBetaSecurityCaseEdiscoveryCaseSetting -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -34,17 +34,17 @@ Create a new featureRolloutPolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	DisplayName = "PassthroughAuthentication rollout policy"
-	Description = "PassthroughAuthentication rollout policy"
-	Feature = "passthroughAuthentication"
-	IsEnabled = $true
-	IsAppliedToOrganization = $false
-}
-New-MgBetaPolicyFeatureRolloutPolicy -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "PassthroughAuthentication rollout policy"
+	description = "PassthroughAuthentication rollout policy"
+	feature = "passthroughAuthentication"
+	isEnabled = $true
+	isAppliedToOrganization = $false
+}
 
+New-MgBetaPolicyFeatureRolloutPolicy -BodyParameter $params
 
 ## PARAMETERS
 

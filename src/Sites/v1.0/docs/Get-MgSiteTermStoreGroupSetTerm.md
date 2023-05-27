@@ -58,10 +58,19 @@ Read the properties and relationships of a term object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-Get-MgSiteTermStoreGroupSetTerm -SiteId $siteId -GroupId $groupId -SetId $setId -TermId $termId
 ```
 
+$params = @{
+	labels = @(
+		@{
+			name = "changedLabel"
+			languageTag = "en-US"
+			isDefault = $true
+		}
+	)
+}
 
+Update-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId -BodyParameter $params
 
 ## PARAMETERS
 

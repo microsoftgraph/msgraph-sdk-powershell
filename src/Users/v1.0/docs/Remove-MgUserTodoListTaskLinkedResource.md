@@ -33,11 +33,17 @@ Deletes a linkedResource object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Users
-# A UPN can also be used as -UserId.
-Remove-MgUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -LinkedResourceId $linkedResourceId
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.linkedResource"
+	webUrl = "http://microsoft.com"
+	applicationName = "Microsoft"
+	displayName = "Microsoft"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgUserTodoListTaskLinkedResource -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -LinkedResourceId $linkedResourceId -BodyParameter $params
 
 ## PARAMETERS
 

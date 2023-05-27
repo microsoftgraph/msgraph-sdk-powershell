@@ -18,7 +18,19 @@ Get-MgBetaGroupSiteContentTypeBaseTypeCount -ContentTypeId <String> -GroupId <St
  [-Filter <String>] [-Search <String>] [<CommonParameters>]
 ```
 
+### Get1
+```
+Get-MgBetaGroupSiteContentTypeBaseTypeCount -ContentTypeId <String> -GroupId <String> -ListId <String>
+ [-SiteId <String>] [-Filter <String>] [-Search <String>] [<CommonParameters>]
+```
+
 ### GetViaIdentity
+```
+Get-MgBetaGroupSiteContentTypeBaseTypeCount -InputObject <ISitesIdentity> [-Filter <String>]
+ [-Search <String>] [<CommonParameters>]
+```
+
+### GetViaIdentity1
 ```
 Get-MgBetaGroupSiteContentTypeBaseTypeCount -InputObject <ISitesIdentity> [-Filter <String>]
  [-Search <String>] [<CommonParameters>]
@@ -50,7 +62,7 @@ The unique identifier of contentType
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -80,7 +92,7 @@ The unique identifier of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -96,13 +108,28 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ListId
+The unique identifier of list
+
+```yaml
+Type: System.String
+Parameter Sets: Get1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -126,7 +153,7 @@ The unique identifier of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: False

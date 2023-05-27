@@ -1,11 +1,9 @@
 ### Example 1: Code snippet
 
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+```powershellImport-Module Microsoft.Graph.Beta.Teams
 
-Get-MgBetaTeamScheduleOfferShiftRequest -TeamId $teamId
+Get-MgBetaTeamScheduleOfferShiftRequest -TeamId $teamId -OfferShiftRequestId $offerShiftRequestId
 ```
-This example shows how to use the Get-MgBetaGroupTeamScheduleOfferShiftRequest Cmdlet.
-
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Get-MgBetaBetaGroupTeamScheduleOfferShiftRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

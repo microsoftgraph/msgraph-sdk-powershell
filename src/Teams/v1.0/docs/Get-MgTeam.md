@@ -31,10 +31,23 @@ Get entity from teams by key
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-Get-MgTeam -TeamId $teamId
 ```
 
+$params = @{
+	memberSettings = @{
+		allowCreateUpdateChannels = $true
+	}
+	messagingSettings = @{
+		allowUserEditMessages = $true
+		allowUserDeleteMessages = $true
+	}
+	funSettings = @{
+		allowGiphy = $true
+		giphyContentRating = "strict"
+	}
+}
 
+Update-MgTeam -TeamId $teamId -BodyParameter $params
 
 ## PARAMETERS
 

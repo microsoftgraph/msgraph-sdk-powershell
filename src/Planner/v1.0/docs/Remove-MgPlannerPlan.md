@@ -32,10 +32,13 @@ Delete a plannerPlan object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Planner
-Remove-MgPlannerPlan -PlannerPlanId $plannerPlanId-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 ```
 
+$params = @{
+	title = "title-value"
+}
 
+Update-MgPlannerPlan -PlannerPlanId $plannerPlanId -BodyParameter $params
 
 ## PARAMETERS
 

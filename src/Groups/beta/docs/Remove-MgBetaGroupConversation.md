@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaGroupConversation
 
 ## SYNOPSIS
-Delete conversation.
+Delete a conversation object.
 
 ## SYNTAX
 
@@ -25,25 +25,16 @@ Remove-MgBetaGroupConversation -InputObject <IGroupsIdentity> [-IfMatch <String>
 ```
 
 ## DESCRIPTION
-Delete conversation.
+Delete a conversation object.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Groups
-Remove-MgBetaGroupConversation -GroupId $groupId -ConversationId $conversationId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Groups
 Remove-MgBetaGroupConversation -GroupId $groupId -ConversationId $conversationId
-```
-
-
 
 ## PARAMETERS
 

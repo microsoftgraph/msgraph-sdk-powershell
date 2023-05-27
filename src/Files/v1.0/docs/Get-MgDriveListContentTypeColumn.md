@@ -38,10 +38,17 @@ Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Sites
+{{ Add code here }}
 ```
 
-Get-MgSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId
+{{ Add output here }}
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

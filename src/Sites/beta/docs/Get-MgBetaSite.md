@@ -12,11 +12,10 @@ Retrieve properties and relationships for a [site][] resource.\nA **site** resou
 
 ## SYNTAX
 
-### List (Default)
+### Get2 (Default)
 ```
-Get-MgBetaSite [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
- [<CommonParameters>]
+Get-MgBetaSite [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -30,6 +29,13 @@ Get-MgBetaSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Prop
  [<CommonParameters>]
 ```
 
+### List
+```
+Get-MgBetaSite [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
+ [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Retrieve properties and relationships for a [site][] resource.\nA **site** resource represents a team site in SharePoint.
 
@@ -38,50 +44,9 @@ Retrieve properties and relationships for a [site][] resource.\nA **site** resou
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSite
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
 Get-MgBetaSite -SiteId $siteId
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSite -Search "{query}"  -OutFile $outFileId
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSite -Search "{query}"
-```
-
-
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSite -Property "siteCollection,webUrl" -Filter "siteCollection/root ne null"
-```
-
-
-
-### -------------------------- EXAMPLE 6 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSite -OutFile $outFileId
-```
-
-
 
 ## PARAMETERS
 
@@ -91,6 +56,21 @@ List all pages.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Count
+Include count of items
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Get2
 Aliases:
 
 Required: False
@@ -121,7 +101,7 @@ Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: (All)
+Parameter Sets: Get, GetViaIdentity, List
 Aliases: Expand
 
 Required: False
@@ -136,7 +116,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: Get2, List
 Aliases:
 
 Required: False
@@ -197,7 +177,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: Get2, List
 Aliases:
 
 Required: False
@@ -227,7 +207,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: Get2, List
 Aliases:
 
 Required: False
@@ -242,7 +222,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: Get2, List
 Aliases: OrderBy
 
 Required: False
@@ -257,7 +237,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: Get2, List
 Aliases: Limit
 
 Required: False

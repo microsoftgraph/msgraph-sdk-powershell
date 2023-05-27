@@ -39,10 +39,13 @@ Read the properties and relationships of a set object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Sites
-Get-MgBetaSiteTermStoreSet -SiteId $siteId -SetId $setId
 ```
 
+$params = @{
+	description = "mySet"
+}
 
+Update-MgBetaSiteTermStoreSet -SiteId $siteId -SetId $setId -BodyParameter $params
 
 ## PARAMETERS
 

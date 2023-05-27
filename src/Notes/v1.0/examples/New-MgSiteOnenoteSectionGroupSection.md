@@ -2,8 +2,12 @@
 
 ```powershellImport-Module Microsoft.Graph.Notes
 
+$params = @{
+	displayName = "Section name"
+}
+
 # A UPN can also be used as -UserId.
-Get-MgUserOnenoteSectionGroupSection -UserId $userId -SectionGroupId $sectionGroupId
+New-MgUserOnenoteSectionGroupSection -UserId $userId -SectionGroupId $sectionGroupId -BodyParameter $params
 ```
 This example shows how to use the New-MgSiteOnenoteSectionGroupSection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

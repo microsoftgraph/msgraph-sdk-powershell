@@ -36,20 +36,14 @@ Retrieve the properties and relationships of a calendar group object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Calendar
-# A UPN can also be used as -UserId.
-Get-MgUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId
 ```
 
+$params = @{
+	name = "name-value"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Calendar
 # A UPN can also be used as -UserId.
-Get-MgUserCalendarGroup -UserId $userId
-```
-
-
+Update-MgUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId -BodyParameter $params
 
 ## PARAMETERS
 

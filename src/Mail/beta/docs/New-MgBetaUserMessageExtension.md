@@ -49,19 +49,17 @@ The table in the Permissions section lists the resources that support open exten
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	"@odata.type" = "microsoft.graph.openTypeExtension"
-	ExtensionName = "Com.Contoso.Referral"
-	CompanyName = "Wingtip Toys"
-	DealValue = 
-	ExpirationDate = "2015-12-03T10:00:00.000Z"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserMessageExtension -UserId $userId -MessageId $messageId -BodyParameter $params
+{{ Add code here }}
 ```
 
+{{ Add output here }}
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

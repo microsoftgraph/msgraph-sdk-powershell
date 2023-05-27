@@ -40,11 +40,15 @@ Have the user change their default authentication method, and then delete the nu
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-# A UPN can also be used as -UserId.
-Remove-MgBetaUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId
 ```
 
+$params = @{
+	phoneNumber = "+1 2065555554"
+	phoneType = "mobile"
+}
 
+# A UPN can also be used as -UserId.
+Update-MgBetaUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId -BodyParameter $params
 
 ## PARAMETERS
 

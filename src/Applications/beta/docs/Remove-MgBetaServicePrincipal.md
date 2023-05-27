@@ -32,10 +32,16 @@ Delete a servicePrincipal object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Applications
-Remove-MgBetaServicePrincipal -ServicePrincipalId $servicePrincipalId
 ```
 
+Get-MgBetaServicePrincipal -ServicePrincipalId $servicePrincipalId
 
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Applications
+```
+
+Get-MgBetaServicePrincipal -ServicePrincipalId $servicePrincipalId -Property "id,appId,displayName,appRoles,oauth2PermissionScopes"
 
 ## PARAMETERS
 

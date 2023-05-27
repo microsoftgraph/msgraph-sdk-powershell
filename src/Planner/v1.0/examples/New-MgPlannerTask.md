@@ -1,18 +1,21 @@
-### Example 1: Using the New-MgPlannerTask Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Planner
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Planner
+
 $params = @{
-	PlanId = "xqQg5FS2LkCp935s-FIFm2QAFkHM"
-	BucketId = "hsOf2dhOJkqyYYZEtdzDe2QAIUCR"
-	Title = "Update client list"
-	Assignments = @{
-		"Fbab97d0-4932-4511-b675-204639209557" = @{
+	planId = "xqQg5FS2LkCp935s-FIFm2QAFkHM"
+	bucketId = "hsOf2dhOJkqyYYZEtdzDe2QAIUCR"
+	title = "Update client list"
+	assignments = @{
+		"fbab97d0-4932-4511-b675-204639209557" = @{
 			"@odata.type" = "#microsoft.graph.plannerAssignment"
-			OrderHint = " !"
+			orderHint = " !"
 		}
 	}
 }
+
 New-MgPlannerTask -BodyParameter $params
 ```
 This example shows how to use the New-MgPlannerTask Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

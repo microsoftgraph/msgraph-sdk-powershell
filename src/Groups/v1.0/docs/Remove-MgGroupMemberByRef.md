@@ -34,10 +34,9 @@ You can't remove a member from groups with dynamic memberships.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Groups
-Remove-MgGroupMemberByRef -GroupId $groupId -DirectoryObjectId $directoryObjectId
 ```
 
-
+Remove-MgGroupMemberByRef -GroupId $groupId -DirectoryObjectId $directoryObjectId
 
 ## PARAMETERS
 

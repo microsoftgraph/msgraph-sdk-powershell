@@ -38,18 +38,9 @@ Retrieve the properties and relationships of a timeoffrequest object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
+```
+
 Get-MgTeamScheduleTimeOffRequest -TeamId $teamId -TimeOffRequestId $timeOffRequestId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamScheduleTimeOffRequest -TeamId $teamId
-```
-
-
 
 ## PARAMETERS
 

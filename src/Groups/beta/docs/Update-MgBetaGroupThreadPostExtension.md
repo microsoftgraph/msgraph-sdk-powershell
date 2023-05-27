@@ -46,22 +46,22 @@ See the table in the Permissions section for the list of resources that support 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Groups
+```
+
 $params = @{
-	"@odata.type" = "#microsoft.outlookServices.openTypeExtension"
-	ExtensionName = "Com.Contoso.Estimate"
-	CompanyName = "Contoso"
-	ExpirationDate = "2016-07-30T11:00:00.000Z"
+	"@odata.type" = "Microsoft.OutlookServices.OpenTypeExtension"
+	extensionName = "Com.Contoso.Estimate"
+	companyName = "Contoso"
+	expirationDate = "2016-07-30T11:00:00.000Z"
 	DealValue = 
-	TopPicks = @(
+	topPicks = @(
 		"Employees only"
 		"Add spouse or guest"
 		"Add family"
 	)
 }
+
 Update-MgBetaGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

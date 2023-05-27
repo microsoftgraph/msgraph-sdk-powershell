@@ -32,10 +32,9 @@ Get this organizational contact's manager.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgContactManager -OrgContactId $orgContactId
 ```
 
-
+Get-MgContactManager -OrgContactId $orgContactId
 
 ## PARAMETERS
 

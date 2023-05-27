@@ -39,18 +39,31 @@ Get the properties of the specified schemaExtension definition.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.SchemaExtensions
-Get-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId
 ```
 
+$params = @{
+	owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
+	properties = @(
+		@{
+			name = "courseId"
+			type = "Integer"
+		}
+		@{
+			name = "courseName"
+			type = "String"
+		}
+		@{
+			name = "courseType"
+			type = "String"
+		}
+		@{
+			name = "courseSupervisors"
+			type = "String"
+		}
+	)
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.SchemaExtensions
-Get-MgBetaSchemaExtension -Filter "id eq 'graphlearn_test'"
-```
-
-
+Update-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
 
 ## PARAMETERS
 

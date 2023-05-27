@@ -37,10 +37,9 @@ Admins can approve or reject these apps via this API or the Microsoft Teams admi
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-New-MgAppCatalogTeamApp -Requiresreview true
 ```
 
-
+New-MgAppCatalogTeamApp -Requiresreview true
 
 ## PARAMETERS
 

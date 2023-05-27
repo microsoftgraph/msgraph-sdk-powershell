@@ -20,7 +20,19 @@ Get-MgDriveLastModifiedByUserMailboxSetting -DriveId <String> [-ExpandProperty <
  [-Property <String[]>] [<CommonParameters>]
 ```
 
+### Get1
+```
+Get-MgDriveLastModifiedByUserMailboxSetting -DriveId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
 ### GetViaIdentity
+```
+Get-MgDriveLastModifiedByUserMailboxSetting -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity1
 ```
 Get-MgDriveLastModifiedByUserMailboxSetting -InputObject <IFilesIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -54,7 +66,7 @@ The unique identifier of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -85,7 +97,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True

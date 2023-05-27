@@ -60,14 +60,14 @@ Update the properties of an externalConnection object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Search
-$params = @{
-	Name = "Contoso HR Service Tickets"
-	Description = "Connection to index HR service tickets"
-}
-Update-MgExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
 ```
 
+$params = @{
+	name = "Contoso HR Service Tickets"
+	description = "Connection to index HR service tickets"
+}
 
+Update-MgExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Compliance
-Module Guid: c9e0859a-16da-4dca-b57f-c9cd26d5db0d
+Module Guid: 74ffc7cd-13b2-4801-877c-0409c18f62cb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.compliance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -116,9 +116,6 @@ This is the container for a mailbox and OneDrive for Business site.
 ### [Get-MgBetaComplianceEdiscoveryCaseLegalHoldUserSourceCount](Get-MgBetaComplianceEdiscoveryCaseLegalHoldUserSourceCount.md)
 Get the number of the resource
 
-### [Get-MgBetaComplianceEdiscoveryCaseListOperationCountAsCaseExportOperation](Get-MgBetaComplianceEdiscoveryCaseListOperationCountAsCaseExportOperation.md)
-Get the number of the resource
-
 ### [Get-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource](Get-MgBetaComplianceEdiscoveryCaseNoncustodialDataSource.md)
 Read the properties and relationships of a noncustodialDataSource object.
 
@@ -139,6 +136,9 @@ Nullable.
 Get the item of type microsoft.graph.ediscovery.caseOperation as microsoft.graph.ediscovery.caseExportOperation
 
 ### [Get-MgBetaComplianceEdiscoveryCaseOperationCount](Get-MgBetaComplianceEdiscoveryCaseOperationCount.md)
+Get the number of the resource
+
+### [Get-MgBetaComplianceEdiscoveryCaseOperationCountAsCaseExportOperation](Get-MgBetaComplianceEdiscoveryCaseOperationCountAsCaseExportOperation.md)
 Get the number of the resource
 
 ### [Get-MgBetaComplianceEdiscoveryCaseReviewSet](Get-MgBetaComplianceEdiscoveryCaseReviewSet.md)

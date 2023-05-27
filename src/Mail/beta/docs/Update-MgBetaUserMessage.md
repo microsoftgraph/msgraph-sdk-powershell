@@ -76,31 +76,19 @@ Update the properties of an eventMessage object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Mail
-$params = @{
-	IsRead = "true"
-}
-# A UPN can also be used as -UserId.
-Update-MgBetaUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Mail
 $params = @{
-	Subject = "subject-value"
-	Body = @{
-		ContentType = ""
-		Content = "content-value"
+	subject = "subject-value"
+	body = @{
+		contentType = ""
+		content = "content-value"
 	}
-	InferenceClassification = "other"
+	inferenceClassification = "other"
 }
+
 # A UPN can also be used as -UserId.
 Update-MgBetaUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

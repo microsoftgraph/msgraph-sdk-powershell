@@ -1,14 +1,17 @@
-### Example 1: Using the New-MgPolicyTokenLifetimePolicy Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.SignIns
+
 $params = @{
-	Definition = @(
-		"definition-value"
+	definition = @(
+		"{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"8:00:00"}}"
 	)
-	DisplayName = "displayName-value"
-	IsOrganizationDefault = $true
+	displayName = "Contoso token lifetime policy"
+	isOrganizationDefault = $true
 }
+
 New-MgPolicyTokenLifetimePolicy -BodyParameter $params
 ```
 This example shows how to use the New-MgPolicyTokenLifetimePolicy Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

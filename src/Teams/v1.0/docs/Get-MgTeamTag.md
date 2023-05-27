@@ -41,7 +41,11 @@ Read the properties and relationships of a tag object.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgTeamTag -TeamId $teamId
+$params = @{
+	displayName = "Finance"
+}
+
+Update-MgTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
 
 ## PARAMETERS
 

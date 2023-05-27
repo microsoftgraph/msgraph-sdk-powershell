@@ -49,67 +49,36 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Calendar
-$params = @{
-	"@odata.type" = "#microsoft.graph.fileAttachment"
-	Name = "menu.txt"
-	ContentBytes = "bWFjIGFuZCBjaGVlc2UgdG9kYXk="
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
+Import-Module Microsoft.Graph.Beta.Mail
 ```
 
+$params = @{
+	"@odata.type" = "microsoft.graph.fileAttachment"
+	name = "name-value"
+	contentType = "contentType-value"
+	isInline = $false
+	contentLocation = "contentLocation-value"
+	contentBytes = "base64-contentBytes-value"
+}
 
+# A UPN can also be used as -UserId.
+New-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Calendar
-$params = @{
-	"@odata.type" = "#microsoft.graph.itemAttachment"
-	Name = "Holiday event"
-	Item = @{
-		"@odata.type" = "microsoft.graph.event"
-		Subject = "Discuss gifts for children"
-	}
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 ```
 
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Calendar
 $params = @{
 	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"
-	Name = "name-value"
-	Item = @{
+	name = "name-value"
+	item = @{
 		"@odata.type" = "microsoft.graph.message"
 	}
 }
+
 # A UPN can also be used as -UserId.
 New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Calendar
-$params = @{
-	"@odata.type" = "#microsoft.graph.referenceAttachment"
-	Name = "Personal pictures"
-	SourceUrl = "https://contoso.com/personal/mario_contoso_net/Documents/Pics"
-	ProviderType = "oneDriveConsumer"
-	Permission = "Edit"
-	IsFolder = "True"
-}
-# A UPN can also be used as -UserId.
-New-MgBetaUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

@@ -42,163 +42,288 @@ The request will include a reference to the accessPackage that will contain this
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-$params = @{
-	DisplayName = "policy for external access requests"
-	Description = "policy for users from connected organizations to request access, with two stages of approval."
-	AllowedTargetScope = "allConfiguredConnectedOrganizationUsers"
-	SpecificAllowedTargets = @(
-	)
-	Expiration = @{
-		Type = "noExpiration"
-	}
-	RequestorSettings = @{
-		EnableTargetsToSelfAddAccess = $true
-		EnableTargetsToSelfUpdateAccess = $true
-		EnableTargetsToSelfRemoveAccess = $true
-		AllowCustomAssignmentSchedule = $false
-		EnableOnBehalfRequestorsToAddAccess = $false
-		EnableOnBehalfRequestorsToUpdateAccess = $false
-		EnableOnBehalfRequestorsToRemoveAccess = $false
-		OnBehalfRequestors = @(
-		)
-	}
-	RequestApprovalSettings = @{
-		IsApprovalRequiredForAdd = $true
-		IsApprovalRequiredForUpdate = $false
-		Stages = @(
-			@{
-				DurationBeforeAutomaticDenial = "P14D"
-				IsApproverJustificationRequired = $false
-				IsEscalationEnabled = $false
-				DurationBeforeEscalation = "PT0S"
-				PrimaryApprovers = @(
-					@{
-						"@odata.type" = "#microsoft.graph.internalSponsors"
-					}
-				)
-				FallbackPrimaryApprovers = @(
-					@{
-						"@odata.type" = "#microsoft.graph.singleUser"
-						UserId = "7deff43e-1f17-44ef-9e5f-d516b0ba11d4"
-					}
-					@{
-						"@odata.type" = "#microsoft.graph.groupMembers"
-						GroupId = "1623f912-5e86-41c2-af47-39dd67582b66"
-					}
-				)
-				EscalationApprovers = @(
-				)
-				FallbackEscalationApprovers = @(
-				)
-			}
-			@{
-				DurationBeforeAutomaticDenial = "P14D"
-				IsApproverJustificationRequired = $false
-				IsEscalationEnabled = $false
-				DurationBeforeEscalation = "PT0S"
-				PrimaryApprovers = @(
-				)
-				FallbackPrimaryApprovers = @(
-					@{
-						"@odata.type" = "#microsoft.graph.singleUser"
-						UserId = "46184453-e63b-4f20-86c2-c557ed5d5df9"
-					}
-					@{
-						"@odata.type" = "#microsoft.graph.groupMembers"
-						GroupId = "1623f912-5e86-41c2-af47-39dd67582b66"
-					}
-				)
-				EscalationApprovers = @(
-				)
-				FallbackEscalationApprovers = @(
-				)
-			}
-		)
-	}
-	ReviewSettings = @{
-		IsEnabled = $true
-		ExpirationBehavior = "keepAccess"
-		IsRecommendationEnabled = $true
-		IsReviewerJustificationRequired = $true
-		IsSelfReview = $false
-		Schedule = @{
-			StartDateTime = [System.DateTime]::Parse("2022-07-02T06:59:59.998Z")
-			Expiration = @{
-				Duration = "P14D"
-				Type = "afterDuration"
-			}
-			Recurrence = @{
-				Pattern = @{
-					Type = "absoluteMonthly"
-					Interval = 3
-					Month = 0
-					DayOfMonth = 0
-					DaysOfWeek = @(
-					)
-				}
-				Range = @{
-					Type = "noEnd"
-					NumberOfOccurrences = 0
-				}
-			}
-		}
-		PrimaryReviewers = @(
-			@{
-				"@odata.type" = "#microsoft.graph.groupMembers"
-				GroupId = "1623f912-5e86-41c2-af47-39dd67582b66"
-			}
-		)
-		FallbackReviewers = @(
-		)
-	}
-	AccessPackage = @{
-		Id = "a2e1ca1e-4e56-47d2-9daa-e2ba8d12a82b"
-	}
-}
-New-MgEntitlementManagementAssignmentPolicy -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "New Policy"
+	description = "policy for assignment"
+	allowedTargetScope = "notSpecified"
+	specificAllowedTargets = @(
+	)
+	expiration = @{
+		endDateTime = $null
+		duration = $null
+		type = "noExpiration"
+	}
+	requestorSettings = @{
+		enableTargetsToSelfAddAccess = $false
+		enableTargetsToSelfUpdateAccess = $false
+		enableTargetsToSelfRemoveAccess = $false
+		allowCustomAssignmentSchedule = $true
+		enableOnBehalfRequestorsToAddAccess = $false
+		enableOnBehalfRequestorsToUpdateAccess = $false
+		enableOnBehalfRequestorsToRemoveAccess = $false
+		onBehalfRequestors = @(
+		)
+	}
+	requestApprovalSettings = @{
+		isApprovalRequiredForAdd = $false
+		isApprovalRequiredForUpdate = $false
+		stages = @(
+		)
+	}
+	accessPackage = @{
+		id = "a2e1ca1e-4e56-47d2-9daa-e2ba8d12a82b"
+	}
+}
 
+New-MgEntitlementManagementAssignmentPolicy -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
-$params = @{
-	DisplayName = "New Policy"
-	Description = "policy for assignment"
-	AllowedTargetScope = "notSpecified"
-	SpecificAllowedTargets = @(
-	)
-	Expiration = @{
-		EndDateTime = $null
-		Duration = $null
-		Type = "noExpiration"
-	}
-	RequestorSettings = @{
-		EnableTargetsToSelfAddAccess = $false
-		EnableTargetsToSelfUpdateAccess = $false
-		EnableTargetsToSelfRemoveAccess = $false
-		AllowCustomAssignmentSchedule = $true
-		EnableOnBehalfRequestorsToAddAccess = $false
-		EnableOnBehalfRequestorsToUpdateAccess = $false
-		EnableOnBehalfRequestorsToRemoveAccess = $false
-		OnBehalfRequestors = @(
-		)
-	}
-	RequestApprovalSettings = @{
-		IsApprovalRequiredForAdd = $false
-		IsApprovalRequiredForUpdate = $false
-		Stages = @(
-		)
-	}
-	AccessPackage = @{
-		Id = "a2e1ca1e-4e56-47d2-9daa-e2ba8d12a82b"
-	}
-}
-New-MgEntitlementManagementAssignmentPolicy -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "policy for external access requests"
+	description = "policy for users from connected organizations to request access, with two stages of approval."
+	allowedTargetScope = "allConfiguredConnectedOrganizationUsers"
+	specificAllowedTargets = @(
+	)
+	expiration = @{
+		type = "noExpiration"
+	}
+	requestorSettings = @{
+		enableTargetsToSelfAddAccess = $true
+		enableTargetsToSelfUpdateAccess = $true
+		enableTargetsToSelfRemoveAccess = $true
+		allowCustomAssignmentSchedule = $false
+		enableOnBehalfRequestorsToAddAccess = $false
+		enableOnBehalfRequestorsToUpdateAccess = $false
+		enableOnBehalfRequestorsToRemoveAccess = $false
+		onBehalfRequestors = @(
+		)
+	}
+	requestApprovalSettings = @{
+		isApprovalRequiredForAdd = $true
+		isApprovalRequiredForUpdate = $false
+		stages = @(
+			@{
+				durationBeforeAutomaticDenial = "P14D"
+				isApproverJustificationRequired = $false
+				isEscalationEnabled = $false
+				durationBeforeEscalation = "PT0S"
+				primaryApprovers = @(
+					@{
+						"@odata.type" = "#microsoft.graph.internalSponsors"
+					}
+				)
+				fallbackPrimaryApprovers = @(
+					@{
+						"@odata.type" = "#microsoft.graph.singleUser"
+						userId = "7deff43e-1f17-44ef-9e5f-d516b0ba11d4"
+					}
+					@{
+						"@odata.type" = "#microsoft.graph.groupMembers"
+						groupId = "1623f912-5e86-41c2-af47-39dd67582b66"
+					}
+				)
+				escalationApprovers = @(
+				)
+				fallbackEscalationApprovers = @(
+				)
+			}
+			@{
+				durationBeforeAutomaticDenial = "P14D"
+				isApproverJustificationRequired = $false
+				isEscalationEnabled = $false
+				durationBeforeEscalation = "PT0S"
+				primaryApprovers = @(
+				)
+				fallbackPrimaryApprovers = @(
+					@{
+						"@odata.type" = "#microsoft.graph.singleUser"
+						userId = "46184453-e63b-4f20-86c2-c557ed5d5df9"
+					}
+					@{
+						"@odata.type" = "#microsoft.graph.groupMembers"
+						groupId = "1623f912-5e86-41c2-af47-39dd67582b66"
+					}
+				)
+				escalationApprovers = @(
+				)
+				fallbackEscalationApprovers = @(
+				)
+			}
+		)
+	}
+	reviewSettings = @{
+		isEnabled = $true
+		expirationBehavior = "keepAccess"
+		isRecommendationEnabled = $true
+		isReviewerJustificationRequired = $true
+		isSelfReview = $false
+		schedule = @{
+			startDateTime = [System.DateTime]::Parse("2022-07-02T06:59:59.998Z")
+			expiration = @{
+				duration = "P14D"
+				type = "afterDuration"
+			}
+			recurrence = @{
+				pattern = @{
+					type = "absoluteMonthly"
+					interval = 3
+					month = 0
+					dayOfMonth = 0
+					daysOfWeek = @(
+					)
+				}
+				range = @{
+					type = "noEnd"
+					numberOfOccurrences = 0
+				}
+			}
+		}
+		primaryReviewers = @(
+			@{
+				"@odata.type" = "#microsoft.graph.groupMembers"
+				groupId = "1623f912-5e86-41c2-af47-39dd67582b66"
+			}
+		)
+		fallbackReviewers = @(
+		)
+	}
+	accessPackage = @{
+		id = "a2e1ca1e-4e56-47d2-9daa-e2ba8d12a82b"
+	}
+}
 
+New-MgEntitlementManagementAssignmentPolicy -BodyParameter $params
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+```
+
+$params = @{
+	displayName = "Sales department users"
+	description = "All users from sales department"
+	allowedTargetScope = "specificDirectoryUsers"
+	specificAllowedTargets = @(
+		@{
+			"@odata.type" = "#microsoft.graph.attributeRuleMembers"
+			description = "Membership rule for all users from sales department"
+			membershipRule = "(user.department -eq "Sales")"
+		}
+	)
+	automaticRequestSettings = @{
+		requestAccessForAllowedTargets = $true
+	}
+	accessPackage = @{
+		id = "8a36831e-1527-4b2b-aff2-81259a8d8e76"
+	}
+}
+
+New-MgEntitlementManagementAssignmentPolicy -BodyParameter $params
+
+### -------------------------- EXAMPLE 4 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Identity.Governance
+```
+
+$params = @{
+	displayName = "A Policy With Questions"
+	description = ""
+	allowedTargetScope = "allMemberUsers"
+	expiration = @{
+		type = "noExpiration"
+	}
+	requestorSettings = @{
+		enableTargetsToSelfAddAccess = "true"
+		enableTargetsToSelfUpdateAccess = "true"
+		enableTargetsToSelfRemoveAccess = "true"
+	}
+	requestApprovalSettings = @{
+		isApprovalRequiredForAdd = "true"
+		isApprovalRequiredForUpdate = "true"
+		stages = @(
+			@{
+				durationBeforeAutomaticDenial = "P7D"
+				isApproverJustificationRequired = "false"
+				isEscalationEnabled = "false"
+				fallbackPrimaryApprovers = @(
+				)
+				escalationApprovers = @(
+				)
+				fallbackEscalationApprovers = @(
+				)
+				primaryApprovers = @(
+					@{
+						"@odata.type" = "#microsoft.graph.singleUser"
+						userId = "08a551cb-575a-4343-b914-f6e42798bd20"
+					}
+				)
+			}
+		)
+	}
+	questions = @(
+		@{
+			"@odata.type" = "#microsoft.graph.accessPackageMultipleChoiceQuestion"
+			sequence = "1"
+			isRequired = "true"
+			isAnswerEditable = "true"
+			text = "What country are you working from?"
+			isMultipleSelectionAllowed = "false"
+			choices = @(
+				@{
+					"@odata.type" = "microsoft.graph.accessPackageAnswerChoice"
+					actualValue = "KE"
+					text = "Kenya"
+				}
+				@{
+					"@odata.type" = "microsoft.graph.accessPackageAnswerChoice"
+					actualValue = "US"
+					text = "United States"
+				}
+				@{
+					"@odata.type" = "microsoft.graph.accessPackageAnswerChoice"
+					actualValue = "GY"
+					text = "Guyana"
+				}
+				@{
+					"@odata.type" = "microsoft.graph.accessPackageAnswerChoice"
+					actualValue = "BD"
+					text = "Bangladesh"
+				}
+				@{
+					"@odata.type" = "microsoft.graph.accessPackageAnswerChoice"
+					actualValue = "JP"
+					text = "Japan"
+				}
+			)
+		}
+		@{
+			"@odata.type" = "#microsoft.graph.accessPackageTextInputQuestion"
+			sequence = "2"
+			isRequired = "true"
+			isAnswerEditable = "true"
+			text = "What do you do for work?"
+			localizations = @(
+				@{
+					languageCode = "fr-CA"
+					text = "Que fais-tu comme travail?"
+				}
+			)
+			isSingleLineQuestion = "false"
+			regexPattern = "[a-zA-Z]+[a-zA-Z\s]*"
+		}
+	)
+	accessPackage = @{
+		id = "977c7ff4-ef8f-4910-9d31-49048ddf3120"
+	}
+}
+
+New-MgEntitlementManagementAssignmentPolicy -BodyParameter $params
 
 ## PARAMETERS
 
@@ -1096,9 +1221,9 @@ To create the parameters described below, construct a hash table containing the 
                   - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                   - `[Id <String>]`: Unique identifier for the identity.
                   - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+            - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
               - `[Actions <String>]`: chatMessageActions
-              - `[ModifiedDateTime <DateTime?>]`: 
+              - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
               - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -3129,7 +3254,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
     - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
     - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-    - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+    - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
     - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
     - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -3722,9 +3847,9 @@ To create the parameters described below, construct a hash table containing the 
                     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
                     - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
                 - `[Actions <String>]`: chatMessageActions
-                - `[ModifiedDateTime <DateTime?>]`: 
+                - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
                 - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -5755,7 +5880,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
       - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
       - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-      - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+      - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
       - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -6459,9 +6584,9 @@ To create the parameters described below, construct a hash table containing the 
                     - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
                     - `[Id <String>]`: Unique identifier for the identity.
                     - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
-              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: 
+              - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
                 - `[Actions <String>]`: chatMessageActions
-                - `[ModifiedDateTime <DateTime?>]`: 
+                - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
                 - `[Reaction <IMicrosoftGraphChatMessageReaction>]`: chatMessageReaction
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -8492,7 +8617,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
       - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
       - `[Events <IMicrosoftGraphEvent[]>]`: The group's calendar events.
-      - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+      - `[ExpirationDateTime <DateTime?>]`: Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
       - `[Extensions <IMicrosoftGraphExtension[]>]`: The collection of open extensions defined for the group. Read-only. Nullable.
       - `[GroupLifecyclePolicies <IMicrosoftGraphGroupLifecyclePolicy[]>]`: The collection of lifecycle policies for this group. Read-only. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.

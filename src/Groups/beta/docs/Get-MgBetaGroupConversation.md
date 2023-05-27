@@ -38,26 +38,9 @@ Get a conversation object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Groups
-Get-MgBetaGroupConversation -GroupId $groupId -ConversationId $conversationId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Groups
-Get-MgBetaGroupConversation -GroupId $groupId
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Groups
-Get-MgBetaGroupConversation -GroupId $groupId -ConversationId $conversationId
-```
-
-
+Remove-MgBetaGroupConversation -GroupId $groupId -ConversationId $conversationId
 
 ## PARAMETERS
 

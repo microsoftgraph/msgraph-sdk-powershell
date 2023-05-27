@@ -37,61 +37,61 @@ A threat assessment request can be one of the following types:
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	"@odata.type" = "#microsoft.graph.emailFileAssessmentRequest"
-	RecipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
-	ExpectedAssessment = "block"
-	Category = "malware"
-	ContentData = "UmVjZWl2ZWQ6IGZyb20gTVcyUFIwME1CMDMxNC5uYW1wcmQwMC....."
-}
-New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.mailAssessmentRequest"
+	recipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
+	expectedAssessment = "block"
+	category = "spam"
+	messageUri = "https://graph.microsoft.com/v1.0/users/c52ce8db-3e4b-4181-93c4-7d6b6bffaf60/messages/AAMkADU3MWUxOTU0LWNlOTEt="
+}
 
+New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	"@odata.type" = "#microsoft.graph.fileAssessmentRequest"
-	ExpectedAssessment = "block"
-	Category = "malware"
-	FileName = "test.txt"
-	ContentData = "VGhpcyBpcyBhIHRlc3QgZmlsZQ=="
-}
-New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.emailFileAssessmentRequest"
+	recipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
+	expectedAssessment = "block"
+	category = "malware"
+	contentData = "UmVjZWl2ZWQ6IGZyb20gTVcyUFIwME1CMDMxNC5uYW1wcmQwMC....."
+}
 
+New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	"@odata.type" = "#microsoft.graph.mailAssessmentRequest"
-	RecipientEmail = "tifc@a830edad9050849EQTPWBJZXODQ.onmicrosoft.com"
-	ExpectedAssessment = "block"
-	Category = "spam"
-	MessageUri = "https://graph.microsoft.com/beta/users/c52ce8db-3e4b-4181-93c4-7d6b6bffaf60/messages/AAMkADU3MWUxOTU0LWNlOTEt="
-}
-New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.fileAssessmentRequest"
+	expectedAssessment = "block"
+	category = "malware"
+	fileName = "test.txt"
+	contentData = "VGhpcyBpcyBhIHRlc3QgZmlsZQ=="
+}
 
+New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 
 ### -------------------------- EXAMPLE 4 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	"@odata.type" = "#microsoft.graph.urlAssessmentRequest"
-	Url = "http://test.com"
-	ExpectedAssessment = "block"
-	Category = "phishing"
-}
-New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
 
+$params = @{
+	"@odata.type" = "#microsoft.graph.urlAssessmentRequest"
+	url = "http://test.com"
+	expectedAssessment = "block"
+	category = "phishing"
+}
 
+New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 
 ## PARAMETERS
 
@@ -327,8 +327,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -345,8 +345,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

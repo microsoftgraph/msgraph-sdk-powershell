@@ -32,10 +32,34 @@ Deletes an identityApiConnector object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-Remove-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId
 ```
 
+$params = @{
+	displayName = "New Test API"
+	targetUrl = "https://otherapi.com/api/endpoint"
+	authenticationConfiguration = @{
+		"@odata.type" = "microsoft.graph.basicAuthentication"
+		username = "&lt;NEW_USERNAME&gt;"
+		password = "&lt;NEW_PASSWORD&gt;"
+	}
+}
 
+Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+```
+
+$params = @{
+	authenticationConfiguration = @{
+		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
+		pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
+		password = "secret"
+	}
+}
+
+Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 
 ## PARAMETERS
 

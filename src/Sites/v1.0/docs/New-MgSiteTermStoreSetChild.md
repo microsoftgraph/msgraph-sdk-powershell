@@ -148,19 +148,19 @@ Create a new term object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
+```
+
 $params = @{
-	Labels = @(
+	labels = @(
 		@{
-			LanguageTag = "en-US"
-			Name = "Car"
-			IsDefault = $true
+			languageTag = "en-US"
+			name = "Car"
+			isDefault = $true
 		}
 	)
 }
+
 New-MgSiteTermStoreSetChild -SiteId $siteId -SetId $setId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

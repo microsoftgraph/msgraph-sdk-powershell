@@ -34,15 +34,15 @@ Use this API to create a new administrativeUnit.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-$params = @{
-	DisplayName = "Seattle District Technical Schools"
-	Description = "Seattle district technical schools administration"
-	Visibility = "HiddenMembership"
-}
-New-MgDirectoryAdministrativeUnit -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Seattle District Technical Schools"
+	description = "Seattle district technical schools administration"
+	visibility = "HiddenMembership"
+}
 
+New-MgDirectoryAdministrativeUnit -BodyParameter $params
 
 ## PARAMETERS
 

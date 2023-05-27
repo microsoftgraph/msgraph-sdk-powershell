@@ -54,14 +54,14 @@ Create a new OneNote notebook.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Notes
-$params = @{
-	DisplayName = "My Private notebook"
-}
-# A UPN can also be used as -UserId.
-New-MgUserOnenoteNotebook -UserId $userId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "My Private notebook"
+}
 
+# A UPN can also be used as -UserId.
+New-MgUserOnenoteNotebook -UserId $userId -BodyParameter $params
 
 ## PARAMETERS
 

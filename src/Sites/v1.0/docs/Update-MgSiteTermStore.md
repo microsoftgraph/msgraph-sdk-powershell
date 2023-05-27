@@ -72,13 +72,13 @@ Update the properties of a store object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-$params = @{
-	DefaultLanguageTag = "en-US"
-}
-Update-MgSiteTermStore -SiteId $siteId -BodyParameter $params
 ```
 
+$params = @{
+	defaultLanguageTag = "en-US"
+}
 
+Update-MgSiteTermStore -SiteId $siteId -BodyParameter $params
 
 ## PARAMETERS
 

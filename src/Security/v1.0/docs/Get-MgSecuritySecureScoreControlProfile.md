@@ -39,18 +39,40 @@ Retrieve the properties and relationships of an securescorecontrolprofile object
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Security
-Get-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId
 ```
 
+$params = @{
+	assignedTo = ""
+	comment = "control is reviewed"
+	state = "Reviewed"
+	vendorInformation = @{
+		provider = "SecureScore"
+		providerVersion = $null
+		subProvider = $null
+		vendor = "Microsoft"
+	}
+}
 
+Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Security
-Get-MgSecuritySecureScoreControlProfile
 ```
 
+$params = @{
+	assignedTo = ""
+	comment = "control is reviewed"
+	state = "Reviewed"
+	vendorInformation = @{
+		provider = "SecureScore"
+		providerVersion = $null
+		subProvider = $null
+		vendor = "Microsoft"
+	}
+}
 
+Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 
 ## PARAMETERS
 

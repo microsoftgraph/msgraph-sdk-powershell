@@ -32,10 +32,9 @@ Delete a samlOrWsFedExternalDomainFederation object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Remove-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId
 ```
 
-
+Remove-MgDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId
 
 ## PARAMETERS
 

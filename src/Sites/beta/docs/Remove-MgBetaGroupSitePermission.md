@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaGroupSitePermission
 
 ## SYNOPSIS
-Delete a permission object on a site.
+Delete navigation property permissions for groups
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaGroupSitePermission -InputObject <ISitesIdentity> [-IfMatch <String
 ```
 
 ## DESCRIPTION
-Delete a permission object on a site.
+Delete navigation property permissions for groups
 
 ## EXAMPLES
 

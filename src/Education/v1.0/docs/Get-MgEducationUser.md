@@ -51,18 +51,16 @@ Read the properties and relationships of an educationUser object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-Get-MgEducationUser -EducationUserId $educationUserId
 ```
 
+$params = @{
+	displayName = "Rogelio Cazares"
+	givenName = "Rogelio"
+	middleName = "Fernando"
+	surname = "Cazares"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationUser
-```
-
-
+Update-MgEducationUser -EducationUserId $educationUserId -BodyParameter $params
 
 ## PARAMETERS
 

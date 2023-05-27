@@ -100,197 +100,130 @@ If you're organizing an event that involves a meeting location: Additionally, if
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Calendar
-$params = @{
-	Subject = "Plan summer company picnic"
-	Body = @{
-		ContentType = "HTML"
-		Content = "Let's kick-start this event planning!"
-	}
-	Start = @{
-		DateTime = "2017-08-30T11:00:00"
-		TimeZone = "Pacific Standard Time"
-	}
-	End = @{
-		DateTime = "2017-08-30T12:00:00"
-		TimeZone = "Pacific Standard Time"
-	}
-	Attendees = @(
-		@{
-			EmailAddress = @{
-				Address = "DanaS@contoso.onmicrosoft.com"
-				Name = "Dana Swope"
-			}
-			Type = "Required"
-		}
-		@{
-			EmailAddress = @{
-				Address = "AlexW@contoso.onmicrosoft.com"
-				Name = "Alex Wilber"
-			}
-			Type = "Required"
-		}
-	)
-	Location = @{
-		DisplayName = "Conf Room 3; Fourth Coffee; Home Office"
-		LocationType = "Default"
-	}
-	Locations = @(
-		@{
-			DisplayName = "Conf Room 3"
-		}
-		@{
-			DisplayName = "Fourth Coffee"
-			Address = @{
-				Street = "4567 Main St"
-				City = "Redmond"
-				State = "WA"
-				CountryOrRegion = "US"
-				PostalCode = "32008"
-			}
-			Coordinates = @{
-				Latitude = 47.672
-				Longitude = -102.103
-			}
-		}
-		@{
-			DisplayName = "Home Office"
-		}
-	)
-	AllowNewTimeProposals = $true
-}
-# A UPN can also be used as -UserId.
-New-MgUserEvent -UserId $userId -BodyParameter $params
 ```
 
+$params = @{
+	subject = "Let's go for lunch"
+	body = @{
+		contentType = "HTML"
+		content = "Does noon work for you?"
+	}
+	start = @{
+		dateTime = "2017-04-15T12:00:00"
+		timeZone = "Pacific Standard Time"
+	}
+	end = @{
+		dateTime = "2017-04-15T14:00:00"
+		timeZone = "Pacific Standard Time"
+	}
+	location = @{
+		displayName = "Harry's Bar"
+	}
+	attendees = @(
+		@{
+			emailAddress = @{
+				address = "samanthab@contoso.onmicrosoft.com"
+				name = "Samantha Booth"
+			}
+			type = "required"
+		}
+	)
+	allowNewTimeProposals = $true
+	transactionId = "7E163156-7762-4BEB-A1C6-729EA81755A7"
+}
 
+# A UPN can also be used as -UserId.
+New-MgUserEvent -UserId $userId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Calendar
-$params = @{
-	Subject = "Let's go for lunch"
-	Body = @{
-		ContentType = "HTML"
-		Content = "Does noon work for you?"
-	}
-	Start = @{
-		DateTime = "2017-04-15T12:00:00"
-		TimeZone = "Pacific Standard Time"
-	}
-	End = @{
-		DateTime = "2017-04-15T14:00:00"
-		TimeZone = "Pacific Standard Time"
-	}
-	Location = @{
-		DisplayName = "Harry's Bar"
-	}
-	Attendees = @(
-		@{
-			EmailAddress = @{
-				Address = "samanthab@contoso.onmicrosoft.com"
-				Name = "Samantha Booth"
-			}
-			Type = "required"
-		}
-	)
-	AllowNewTimeProposals = $true
-	TransactionId = "7E163156-7762-4BEB-A1C6-729EA81755A7"
-}
-# A UPN can also be used as -UserId.
-New-MgUserEvent -UserId $userId -BodyParameter $params
 ```
 
+$params = @{
+	subject = "Let's go for lunch"
+	body = @{
+		contentType = "HTML"
+		content = "Does noon time work for you?"
+	}
+	start = @{
+		dateTime = "2017-09-04T12:00:00"
+		timeZone = "Pacific Standard Time"
+	}
+	end = @{
+		dateTime = "2017-09-04T14:00:00"
+		timeZone = "Pacific Standard Time"
+	}
+	recurrence = @{
+		pattern = @{
+			type = "weekly"
+			interval = 1
+			daysOfWeek = @(
+				"Monday"
+			)
+		}
+		range = @{
+			type = "endDate"
+			startDate = "2017-09-04"
+			endDate = "2017-12-31"
+		}
+	}
+	location = @{
+		displayName = "Harry's Bar"
+	}
+	attendees = @(
+		@{
+			emailAddress = @{
+				address = "AdeleV@contoso.onmicrosoft.com"
+				name = "Adele Vance"
+			}
+			type = "required"
+		}
+	)
+	allowNewTimeProposals = $true
+}
 
+# A UPN can also be used as -UserId.
+New-MgUserEvent -UserId $userId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 3 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Calendar
-$params = @{
-	Subject = "Let's go for lunch"
-	Body = @{
-		ContentType = "HTML"
-		Content = "Does noon work for you?"
-	}
-	Start = @{
-		DateTime = "2017-04-15T12:00:00"
-		TimeZone = "Pacific Standard Time"
-	}
-	End = @{
-		DateTime = "2017-04-15T14:00:00"
-		TimeZone = "Pacific Standard Time"
-	}
-	Location = @{
-		DisplayName = "Harry's Bar"
-	}
-	Attendees = @(
-		@{
-			EmailAddress = @{
-				Address = "samanthab@contoso.onmicrosoft.com"
-				Name = "Samantha Booth"
-			}
-			Type = "required"
-		}
-	)
-	AllowNewTimeProposals = $true
-	IsOnlineMeeting = $true
-	OnlineMeetingProvider = "teamsForBusiness"
-}
-# A UPN can also be used as -UserId.
-New-MgUserEvent -UserId $userId -BodyParameter $params
 ```
 
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Calendar
 $params = @{
-	Subject = "Let's go for lunch"
-	Body = @{
-		ContentType = "HTML"
-		Content = "Does noon time work for you?"
+	subject = "Let's go for lunch"
+	body = @{
+		contentType = "HTML"
+		content = "Does noon work for you?"
 	}
-	Start = @{
-		DateTime = "2017-09-04T12:00:00"
-		TimeZone = "Pacific Standard Time"
+	start = @{
+		dateTime = "2017-04-15T12:00:00"
+		timeZone = "Pacific Standard Time"
 	}
-	End = @{
-		DateTime = "2017-09-04T14:00:00"
-		TimeZone = "Pacific Standard Time"
+	end = @{
+		dateTime = "2017-04-15T14:00:00"
+		timeZone = "Pacific Standard Time"
 	}
-	Recurrence = @{
-		Pattern = @{
-			Type = "weekly"
-			Interval = 1
-			DaysOfWeek = @(
-				"Monday"
-			)
-		}
-		Range = @{
-			Type = "endDate"
-			StartDate = "2017-09-04"
-			EndDate = "2017-12-31"
-		}
+	location = @{
+		displayName = "Harry's Bar"
 	}
-	Location = @{
-		DisplayName = "Harry's Bar"
-	}
-	Attendees = @(
+	attendees = @(
 		@{
-			EmailAddress = @{
-				Address = "AdeleV@contoso.onmicrosoft.com"
-				Name = "Adele Vance"
+			emailAddress = @{
+				address = "samanthab@contoso.onmicrosoft.com"
+				name = "Samantha Booth"
 			}
-			Type = "required"
+			type = "required"
 		}
 	)
-	AllowNewTimeProposals = $true
+	allowNewTimeProposals = $true
+	isOnlineMeeting = $true
+	onlineMeetingProvider = "teamsForBusiness"
 }
+
 # A UPN can also be used as -UserId.
 New-MgUserEvent -UserId $userId -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

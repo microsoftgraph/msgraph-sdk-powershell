@@ -33,17 +33,17 @@ Create a new tokenIssuancePolicy object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	Definition = @(
-		"definition-value"
-	)
-	DisplayName = "displayName-value"
-	IsOrganizationDefault = $true
-}
-New-MgBetaPolicyTokenIssuancePolicy -BodyParameter $params
 ```
 
+$params = @{
+	definition = @(
+		"definition-value"
+	)
+	displayName = "displayName-value"
+	isOrganizationDefault = $true
+}
 
+New-MgBetaPolicyTokenIssuancePolicy -BodyParameter $params
 
 ## PARAMETERS
 

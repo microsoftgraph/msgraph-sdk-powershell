@@ -32,10 +32,14 @@ Deletes an externalConnection object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Search
-Remove-MgExternalConnection -ExternalConnectionId $externalConnectionId
 ```
 
+$params = @{
+	name = "Contoso HR Service Tickets"
+	description = "Connection to index HR service tickets"
+}
 
+Update-MgExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
 
 ## PARAMETERS
 

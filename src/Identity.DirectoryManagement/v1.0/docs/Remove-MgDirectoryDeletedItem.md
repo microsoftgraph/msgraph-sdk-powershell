@@ -38,10 +38,9 @@ Soft-deleted administrative units will be permanently deleted 30 days after init
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Remove-MgDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
 ```
 
-
+Get-MgDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
 
 ## PARAMETERS
 

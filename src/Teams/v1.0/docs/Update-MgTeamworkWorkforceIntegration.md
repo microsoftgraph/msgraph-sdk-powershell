@@ -48,21 +48,21 @@ Update the properties of a workforceIntegration object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-$params = @{
-	DisplayName = "displayName-value"
-	ApiVersion = 99
-	Encryption = @{
-		Protocol = "protocol-value"
-		Secret = "secret-value"
-	}
-	IsActive = $true
-	Url = "url-value"
-	SupportedEntities = "supportedEntities-value"
-}
-Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "displayName-value"
+	apiVersion = 99
+	encryption = @{
+		protocol = "protocol-value"
+		secret = "secret-value"
+	}
+	isActive = $true
+	url = "url-value"
+	supportedEntities = "supportedEntities-value"
+}
 
+Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
 
 ## PARAMETERS
 

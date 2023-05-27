@@ -39,20 +39,13 @@ Retrieve a user's single email authentication method object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-# A UPN can also be used as -UserId.
-Get-MgUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId
 ```
 
+$params = @{
+	emailAddress = "kim@contoso.com"
+}
 
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-# A UPN can also be used as -UserId.
-Get-MgUserAuthenticationEmailMethod -UserId $userId
-```
-
-
+Update-MgUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId -BodyParameter $params
 
 ## PARAMETERS
 

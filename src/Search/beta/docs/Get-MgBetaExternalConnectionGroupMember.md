@@ -43,36 +43,7 @@ You can add Azure Active Directory users, Azure Active Directory groups, or othe
 Import-Module Microsoft.Graph.Beta.Search
 ```
 
-$params = @{
-	Id = "e811976d-83df-4cbd-8b9b-5215b18aa874"
-	Type = "user"
-}
-
-New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Search
-```
-
-$params = @{
-	Id = "e5477431-1038-484e-bf69-1dfedb97a110"
-	Type = "group"
-}
-
-New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Search
-```
-
-$params = @{
-	Id = "1431b9c38ee647f6a"
-	Type = "externalGroup"
-}
-
-New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
+Remove-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -IdentityId $identityId
 
 ## PARAMETERS
 

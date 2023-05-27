@@ -41,7 +41,7 @@ The list of previous versions of the list item.
 Import-Module Microsoft.Graph.Beta.Sites
 ```
 
-Get-MgBetaSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId
+Get-MgBetaSiteListItemVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -ListItemVersionId $listItemVersionId -ExpandProperty "fields"
 
 ## PARAMETERS
 

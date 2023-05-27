@@ -56,40 +56,40 @@ Update an editable **secureScoreControlProfile** object within any integrated so
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Security
-$params = @{
-	AssignedTo = ""
-	Comment = "control is reviewed"
-	State = "Reviewed"
-	VendorInformation = @{
-		Provider = "SecureScore"
-		ProviderVersion = $null
-		SubProvider = $null
-		Vendor = "Microsoft"
-	}
-}
-Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 ```
 
+$params = @{
+	assignedTo = ""
+	comment = "control is reviewed"
+	state = "Reviewed"
+	vendorInformation = @{
+		provider = "SecureScore"
+		providerVersion = $null
+		subProvider = $null
+		vendor = "Microsoft"
+	}
+}
 
+Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Security
-$params = @{
-	AssignedTo = ""
-	Comment = "control is reviewed"
-	State = "Reviewed"
-	VendorInformation = @{
-		Provider = "SecureScore"
-		ProviderVersion = $null
-		SubProvider = $null
-		Vendor = "Microsoft"
-	}
-}
-Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 ```
 
+$params = @{
+	assignedTo = ""
+	comment = "control is reviewed"
+	state = "Reviewed"
+	vendorInformation = @{
+		provider = "SecureScore"
+		providerVersion = $null
+		subProvider = $null
+		vendor = "Microsoft"
+	}
+}
 
+Update-MgSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 
 ## PARAMETERS
 

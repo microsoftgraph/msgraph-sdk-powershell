@@ -51,26 +51,9 @@ In Azure AD entitlement management, retrieve the properties and relationships of
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.Governance
+```
+
 Get-MgEntitlementManagementAssignment -AccessPackageAssignmentId $accessPackageAssignmentId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAssignment -AccessPackageAssignmentId $accessPackageAssignmentId
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.Governance
-Get-MgEntitlementManagementAssignment
-```
-
-
 
 ## PARAMETERS
 

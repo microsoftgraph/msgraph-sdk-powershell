@@ -33,11 +33,10 @@ Delete a taskFileAttachment object from a todoTask resource.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Users
-# A UPN can also be used as -UserId.
-Remove-MgBetaUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -AttachmentBaseId $attachmentBaseId
 ```
 
-
+# A UPN can also be used as -UserId.
+Remove-MgBetaUserTodoListTaskAttachment -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -AttachmentBaseId $attachmentBaseId
 
 ## PARAMETERS
 

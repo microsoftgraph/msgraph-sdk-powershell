@@ -41,18 +41,9 @@ For descriptions of each of the endpoints, see printUsageByPrinter.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Reports
+```
+
 Get-MgReportDailyPrintUsageByPrinter -PrintUsageByPrinterId $printUsageByPrinterId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Reports
-Get-MgReportDailyPrintUsageByPrinter
-```
-
-
 
 ## PARAMETERS
 

@@ -39,10 +39,9 @@ Measurements of tenants’ security posture to help protect them from threats.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Security
-Get-MgBetaSecuritySecureScore -Top 1
 ```
 
-
+Get-MgBetaSecuritySecureScore -SecureScoreId $secureScoreId
 
 ## PARAMETERS
 

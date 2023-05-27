@@ -34,10 +34,13 @@ Only teachers can perform this operation.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-Get-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId
 ```
 
+$params = @{
+	submissionAnimationDisabled = $true
+}
 
+Update-MgBetaEducationClassAssignmentSetting -EducationClassId $educationClassId -BodyParameter $params
 
 ## PARAMETERS
 

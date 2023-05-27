@@ -34,7 +34,7 @@ Import-Module Microsoft.Graph.Beta.Teams
 ```
 
 $params = @{
-	Topic = "Group chat title update"
+	topic = "Group chat title update"
 }
 
 Update-MgBetaChat -ChatId $chatId -BodyParameter $params

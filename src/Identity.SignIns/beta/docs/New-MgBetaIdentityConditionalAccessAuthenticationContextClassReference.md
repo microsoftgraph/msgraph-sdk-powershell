@@ -33,16 +33,9 @@ Create a new authenticationContextClassReference.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	Id = "c1"
-	DisplayName = "Contoso medium"
-	Description = "Medium protection level defined for Contoso policy"
-	IsAvailable = $true
-}
-New-MgBetaIdentityConditionalAccessAuthenticationContextClassReference -BodyParameter $params
 ```
 
-
+Get-MgBetaIdentityConditionalAccessAuthenticationContextClassReference
 
 ## PARAMETERS
 

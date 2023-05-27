@@ -32,10 +32,16 @@ Delete a user.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Education
-Remove-MgBetaEducationUser -EducationUserId $educationUserId
 ```
 
+$params = @{
+	displayName = "Rogelio Cazares"
+	givenName = "Rogelio"
+	middleName = "Fernando"
+	surname = "Cazares"
+}
 
+Update-MgBetaEducationUser -EducationUserId $educationUserId -BodyParameter $params
 
 ## PARAMETERS
 
