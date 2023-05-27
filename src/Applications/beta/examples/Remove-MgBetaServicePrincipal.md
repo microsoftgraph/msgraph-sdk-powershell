@@ -1,17 +1,8 @@
-### Example 1: Retrieve a service principal by its ID
+### Example 1: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Applications
 
-Get-MgBetaServicePrincipal -ServicePrincipalId $servicePrincipalId
-```
-This example shows how to use the Remove-MgBetaBetaServicePrincipal Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 2: Retrieve the specific properties of a service principal
-
-```powershellImport-Module Microsoft.Graph.Beta.Applications
-
-Get-MgBetaServicePrincipal -ServicePrincipalId $servicePrincipalId -Property "id,appId,displayName,appRoles,oauth2PermissionScopes"
+Remove-MgBetaServicePrincipal -ServicePrincipalId $servicePrincipalId
 ```
 This example shows how to use the Remove-MgBetaBetaServicePrincipal Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

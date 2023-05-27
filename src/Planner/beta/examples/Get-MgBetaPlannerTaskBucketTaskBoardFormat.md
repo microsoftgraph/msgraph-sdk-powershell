@@ -2,11 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Planner
 
-$params = @{
-	orderHint = "A6673H Ejkl!"
-}
-
-Update-MgBetaPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
+Get-MgBetaPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId
 ```
 This example shows how to use the Get-MgBetaBetaPlannerTaskBucketTaskBoardFormat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -1,21 +1,47 @@
 ### Example 1: Code snippet
 
+```powershellImport-Module Microsoft.Graph.Mail
+
+# A UPN can also be used as -UserId.
+Get-MgUserMessageExtension -UserId $userId -MessageId $messageId -ExtensionId $extensionId
+```
+This example shows how to use the Get-MgGroupThreadPostExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Calendar
+
+Get-MgGroupEventExtension -GroupId $groupId -EventId $eventId -ExtensionId $extensionId
+```
+This example shows how to use the Get-MgGroupThreadPostExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 3: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Mail
+
+# A UPN can also be used as -UserId.
+Get-MgUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "extensions(`$filter=id eq 'Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')"
+```
+This example shows how to use the Get-MgGroupThreadPostExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 4: Code snippet
+
 ```powershellImport-Module Microsoft.Graph.Groups
 
-$params = @{
-	"@odata.type" = "Microsoft.OutlookServices.OpenTypeExtension"
-	extensionName = "Com.Contoso.Estimate"
-	companyName = "Contoso"
-	expirationDate = "2016-07-30T11:00:00.000Z"
-	DealValue = 
-	topPicks = @(
-		"Employees only"
-		"Add spouse or guest"
-		"Add family"
-	)
-}
+Get-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId
+```
+This example shows how to use the Get-MgGroupThreadPostExtension Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-Update-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId -BodyParameter $params
+### Example 5: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Mail
+
+# A UPN can also be used as -UserId.
+Get-MgUserMessage -UserId $userId -Filter "Extensions/any(f:f/id eq 'Com.Contoso.Referral')" -ExpandProperty "Extensions(`$filter=id eq 'Com.Contoso.Referral')"
 ```
 This example shows how to use the Get-MgGroupThreadPostExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

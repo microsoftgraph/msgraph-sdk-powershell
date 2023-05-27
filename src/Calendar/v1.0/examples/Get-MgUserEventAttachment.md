@@ -3,7 +3,7 @@
 ```powershellImport-Module Microsoft.Graph.Calendar
 
 # A UPN can also be used as -UserId.
-Remove-MgUserEventAttachment -UserId $userId -EventId $eventId -AttachmentId $attachmentId
+Get-MgUserEventAttachment -UserId $userId -EventId $eventId
 ```
 This example shows how to use the Get-MgUserEventAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

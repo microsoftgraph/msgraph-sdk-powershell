@@ -1,4 +1,22 @@
-### Example 1: Code snippet
+### Example 1: Admin requests a direct assignment for a user already in the directory
+
+```powershellImport-Module Microsoft.Graph.Identity.Governance
+
+$params = @{
+	requestType = "adminAdd"
+	assignment = @{
+		targetId = "46184453-e63b-4f20-86c2-c557ed5d5df9"
+		assignmentPolicyId = "2264bf65-76ba-417b-a27d-54d291f0cbc8"
+		accessPackageId = "a914b616-e04e-476b-aa37-91038f0b165b"
+	}
+}
+
+New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
+```
+This example shows how to use the New-MgEntitlementManagementAssignmentRequest Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Remove an assignment
 
 ```powershellImport-Module Microsoft.Graph.Identity.Governance
 
@@ -14,7 +32,7 @@ New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 This example shows how to use the New-MgEntitlementManagementAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Code snippet
+### Example 3: Request an assignment
 
 ```powershellImport-Module Microsoft.Graph.Identity.Governance
 
@@ -30,7 +48,7 @@ New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 This example shows how to use the New-MgEntitlementManagementAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Code snippet
+### Example 4: Request an assignment by providing answers to questions
 
 ```powershellImport-Module Microsoft.Graph.Identity.Governance
 
@@ -67,7 +85,7 @@ New-MgEntitlementManagementAssignmentRequest -BodyParameter $params
 This example shows how to use the New-MgEntitlementManagementAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Code snippet
+### Example 5: Request an update to answers for an assignment
 
 ```powershellImport-Module Microsoft.Graph.Identity.Governance
 

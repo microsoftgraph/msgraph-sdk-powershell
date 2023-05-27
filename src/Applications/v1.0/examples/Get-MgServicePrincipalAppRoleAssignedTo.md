@@ -2,7 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Applications
 
-Remove-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -AppRoleAssignmentId $appRoleAssignmentId
+Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId
 ```
 This example shows how to use the Get-MgServicePrincipalAppRoleAssignedTo Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -2,17 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Sites
 
-$params = @{
-	labels = @(
-		@{
-			name = "changedLabel"
-			languageTag = "en-US"
-			isDefault = $true
-		}
-	)
-}
-
-Update-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId -BodyParameter $params
+Remove-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId
 ```
 This example shows how to use the Remove-MgSiteTermStoreSetTerm Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

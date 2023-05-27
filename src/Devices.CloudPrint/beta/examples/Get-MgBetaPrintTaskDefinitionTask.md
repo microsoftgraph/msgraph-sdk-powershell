@@ -2,14 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Devices.CloudPrint
 
-$params = @{
-	status = @{
-		state = "completed"
-		description = "completed"
-	}
-}
-
-Update-MgBetaPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId -PrintTaskId $printTaskId -BodyParameter $params
+Get-MgBetaPrintTaskDefinitionTask -PrintTaskDefinitionId $printTaskDefinitionId -PrintTaskId $printTaskId
 ```
 This example shows how to use the Get-MgBetaBetaPrintTaskDefinitionTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

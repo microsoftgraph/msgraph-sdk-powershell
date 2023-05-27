@@ -307,6 +307,8 @@ $params = @{
 	)
 	reactions = @(
 	)
+	messageHistory = @(
+	)
 }
 
 New-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -BodyParameter $params
