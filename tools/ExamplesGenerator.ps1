@@ -233,8 +233,12 @@ function Start-WebScrapping {
     )  
     $ExampleFile = "$GraphProfilePath/$Command.md"
     $url = $ExternalDocUrl
-	
-    $Description = "This example shows how to use the $Command Cmdlet.`r`n`r`To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference)."
+    $DescriptionCommand = $Command
+	if($GraphProfile -eq "beta"){
+        $DescriptionCommand= $Command.Replace("-MgBeta", "-Mg")
+    }
+    
+    $Description = "This example shows how to use the $DescriptionCommand Cmdlet.`r`n`r`To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference)."
     $WebResponse = Invoke-WebRequest -Uri $url
     $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
     $ExampleList = New-Object -TypeName 'System.Collections.ArrayList';
@@ -277,7 +281,10 @@ function Update-ExampleFile {
         [ValidateNotNullOrEmpty()]
         [string] $ExternalDocUrl = "https://learn.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=powershell"
     ) 
-    
+    $CommandPattern = $Command
+    if($GraphProfile -eq "beta"){
+        $CommandPattern = $Command.Replace("-MgBeta", "-Mg")
+    }
     $Content = Get-Content -Path $ExampleFile
     $SearchText = "Example"
     $SearchTextForNewImports = "{{ Add description here }}"
@@ -303,12 +310,15 @@ function Update-ExampleFile {
     $HeadCount = $HeaderList.Count
     $ExampleCount = $ExampleList.Count
     $WrongExamplesCount = 0;
+    $SkippedExample = -1
+    $ContainsRightExamples = $False
+
     #===========================Importing new examples into files ============================================#  
     if ($ReplaceEverything -and $ExampleCount -gt 0 -and $HeadCount -eq $ExampleCount) {
         Clear-Content $ExampleFile -Force
         for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
             $CodeValue = $ExampleList[$d].Trim()
-            if($CodeValue.Contains($Command)){
+            if($CodeValue.Contains($CommandPattern)){
             $TitleValue = "### " + $HeaderList[$d].Trim()
             $Code = "``````powershell`r$CodeValue`r`n``````"
 	
@@ -319,12 +329,16 @@ function Update-ExampleFile {
                 $TotalText = $TotalText.Replace("Microsoft.Graph", "Microsoft.Graph.Beta")
             }
             Add-Content -Path $ExampleFile -Value $TotalText
+            $ContainsRightExamples = $True
             }else{    
                 $WrongExamplesCount++
+                $SkippedExample++
                
             }
         }
     }
+    #The code below updates existing examples
+    #------------------------------------------------------------#
     $PatternToSearch = "Import-Module Microsoft.Graph.$Module"
     if(($Content | Select-String -pattern $SearchText) -and ($Content | Select-String -pattern "This example shows")){
         $ContainsPatternToSearch = $False
@@ -335,12 +349,14 @@ function Update-ExampleFile {
         }
         if($ContainsPatternToSearch){
             Clear-Content $ExampleFile -Force
-           #Replace everything
+          
            for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
+            #We should only add the correct examples from external docs link
+            if($ExampleList[$d].Contains($CommandPattern)){
             $CodeValue = $ExampleList[$d].Trim()
             $TitleValue = "### " + $HeaderList[$d].Trim()
             $Code = "``````powershell`r$CodeValue`r`n``````"
-    
+           
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
             if($GraphProfile -eq "beta"){
                 #Replace examples to match the new beta naming convention
@@ -348,7 +364,13 @@ function Update-ExampleFile {
                 $TotalText = $TotalText.Replace("Microsoft.Graph", "Microsoft.Graph.Beta")
             }
             Add-Content -Path $ExampleFile -Value $TotalText
+        }else{
+            $SkippedExample++
+            
         }
+
+        }
+
 
         }else{
             Clear-Content $ExampleFile -Force
@@ -358,7 +380,37 @@ function Update-ExampleFile {
         }
         
     }
-    if($WrongExamplesCount -gt 0){
+    #The code below corrects the numbering of the example headers/title if there is a situation where
+    #some examples are wrong(which are left out) and some are right
+    #-----------------------------------------------------------------------------------------------#
+    $AvailableCorrectExamples = 1
+    if($SkippedExample -gt -1){
+        $NewContent = Get-Content -Path $ExampleFile
+        foreach($C in $NewContent){
+            if($C.Contains("Example")){
+                $SearchString = $c.Split(":") 
+                $StringToReplace =  $SearchString[0]           
+                $ReplacementString = "### Example $AvailableCorrectExamples"
+                (Get-Content -Path $ExampleFile) -replace $StringToReplace, $ReplacementString | Set-Content $ExampleFile
+                $AvailableCorrectExamples++
+            }
+        }
+        if(-not(Test-Path -PathType Container $FolderForExamplesToBeReviewed)){
+            New-Item -ItemType Directory -Force -Path $FolderForExamplesToBeReviewed
+        }
+        if (-not (Test-Path "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed")) {
+            "Command, ExternalDocsUrl, ApiVersion" | Out-File -FilePath  "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -Encoding ASCII
+        }
+
+        $File = Get-Content "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed"
+        $containsWord = $File | % { $_ -match "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" }
+        if (-not($containsWord -contains $true)) {
+            "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" | Out-File -FilePath "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -Append -Encoding ASCII
+        }
+    }
+    #-----------------------------------------------------------------------------------------------------------------------------------------------------------------#
+    if(($WrongExamplesCount -gt 0) -and -not($ContainsRightExamples)){
+        Clear-Content $ExampleFile -Force
         $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
         Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
         #Log api path api version and equivalent external doc url giving wron examples
@@ -442,4 +494,4 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
 #Write-Host -ForegroundColor Green "-------------Done-------------"
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://learn.microsoft.com/en-us/graph/api/federatedidentitycredential-delete?view=graph-rest-1.0&tabs=powershell" -GraphCommand "Remove-MgBetaApplicationFederatedIdentityCredential" -GraphModule "Applications" -Profile "beta"
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0" -GraphCommand "Get-MgBetaCommunicationCallAudioRoutingGroup" -GraphModule "CloudCommunications" -Profile "beta"
