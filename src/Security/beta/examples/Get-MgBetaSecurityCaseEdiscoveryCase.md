@@ -2,13 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Security
 
-$params = @{
-	displayName = "My Case 1 - Renamed"
-	description = "Updated description"
-}
-
-Update-MgBetaSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+Get-MgBetaSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
 ```
-This example shows how to use the Get-MgBetaBetaSecurityCaseEdiscoveryCase Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCase Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

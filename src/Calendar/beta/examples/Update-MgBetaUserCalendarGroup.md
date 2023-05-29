@@ -9,6 +9,6 @@ $params = @{
 # A UPN can also be used as -UserId.
 Update-MgBetaUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaUserCalendarGroup Cmdlet.
+This example shows how to use the Update-MgBetaUserCalendarGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

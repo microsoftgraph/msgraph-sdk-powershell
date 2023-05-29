@@ -8,6 +8,6 @@ $params = @{
 
 New-MgBetaApplicationTokenIssuancePolicyByRef -ApplicationId $applicationId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaApplicationTokenIssuancePolicyByRef Cmdlet.
+This example shows how to use the New-MgBetaApplicationTokenIssuancePolicyByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

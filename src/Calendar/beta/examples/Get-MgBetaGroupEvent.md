@@ -4,6 +4,6 @@
 
 Get-MgBetaGroupEvent -GroupId $groupId -EventId $eventId
 ```
-This example shows how to use the Get-MgBetaBetaGroupEvent Cmdlet.
+This example shows how to use the Get-MgBetaGroupEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -12,6 +12,6 @@ $params = @{
 
 Update-MgBetaDomain -DomainId $domainId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaDomain Cmdlet.
+This example shows how to use the Update-MgBetaDomain Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

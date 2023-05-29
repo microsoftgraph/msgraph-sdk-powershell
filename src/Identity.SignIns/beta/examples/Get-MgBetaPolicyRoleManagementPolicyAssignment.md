@@ -4,7 +4,7 @@
 
 Get-MgBetaPolicyRoleManagementPolicyAssignment -UnifiedRoleManagementPolicyAssignmentId $unifiedRoleManagementPolicyAssignmentId
 ```
-This example shows how to use the Get-MgBetaBetaPolicyRoleManagementPolicyAssignment Cmdlet.
+This example shows how to use the Get-MgBetaPolicyRoleManagementPolicyAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Retrieve a role management policy assignment and expand the policy and its associated rules
@@ -13,6 +13,6 @@ This example shows how to use the Get-MgBetaBetaPolicyRoleManagementPolicyAssign
 
 Get-MgBetaPolicyRoleManagementPolicyAssignment -UnifiedRoleManagementPolicyAssignmentId $unifiedRoleManagementPolicyAssignmentId -ExpandProperty "policy(`$expand=rules)"
 ```
-This example shows how to use the Get-MgBetaBetaPolicyRoleManagementPolicyAssignment Cmdlet.
+This example shows how to use the Get-MgBetaPolicyRoleManagementPolicyAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

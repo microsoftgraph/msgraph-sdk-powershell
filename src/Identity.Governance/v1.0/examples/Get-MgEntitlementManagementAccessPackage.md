@@ -2,11 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Identity.Governance
 
-$params = @{
-	displayName = "Access Package New Name"
-}
-
-Update-MgEntitlementManagementAccessPackage -AccessPackageId $accessPackageId -BodyParameter $params
+Get-MgEntitlementManagementAccessPackage -AccessPackageId $accessPackageId
 ```
 This example shows how to use the Get-MgEntitlementManagementAccessPackage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -2,12 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Mail
 
-$params = @{
-	displayName = "displayName-value"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+Remove-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId
 ```
 This example shows how to use the Remove-MgUserMailFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

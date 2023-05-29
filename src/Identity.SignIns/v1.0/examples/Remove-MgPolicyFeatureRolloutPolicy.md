@@ -2,14 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
-$params = @{
-	displayName = "PasswordHashSync Rollout Policy"
-	description = "PasswordHashSync Rollout Policy"
-	isEnabled = $true
-	isAppliedToOrganization = $false
-}
-
-Update-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -BodyParameter $params
+Remove-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId
 ```
 This example shows how to use the Remove-MgPolicyFeatureRolloutPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

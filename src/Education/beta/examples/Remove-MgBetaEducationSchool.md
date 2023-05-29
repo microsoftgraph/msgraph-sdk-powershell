@@ -2,13 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Education
 
-$params = @{
-	displayName = "Fabrikam Arts High School"
-	description = "Magnate school for the arts. Los Angeles School District"
-}
-
-Update-MgBetaEducationSchool -EducationSchoolId $educationSchoolId -BodyParameter $params
+Remove-MgBetaEducationSchool -EducationSchoolId $educationSchoolId
 ```
-This example shows how to use the Remove-MgBetaBetaEducationSchool Cmdlet.
+This example shows how to use the Remove-MgBetaEducationSchool Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

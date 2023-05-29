@@ -9,6 +9,6 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgBetaUserOnenoteNotebook -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaUserOnenoteNotebook Cmdlet.
+This example shows how to use the New-MgBetaUserOnenoteNotebook Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

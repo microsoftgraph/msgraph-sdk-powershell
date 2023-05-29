@@ -2,7 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Identity.Governance
 
-Get-MgEntitlementManagementAssignmentRequest -AccessPackageAssignmentRequestId $accessPackageAssignmentRequestId
+Remove-MgEntitlementManagementAssignmentRequest -AccessPackageAssignmentRequestId $accessPackageAssignmentRequestId
 ```
 This example shows how to use the Remove-MgEntitlementManagementAssignmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

@@ -14,6 +14,6 @@ $params = @{
 
 New-MgBetaGroupSetting -GroupId $groupId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaGroupSetting Cmdlet.
+This example shows how to use the New-MgBetaGroupSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

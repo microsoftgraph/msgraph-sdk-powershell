@@ -24,7 +24,7 @@ $params = @{
 
 New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Create a group chat
@@ -61,7 +61,7 @@ $params = @{
 
 New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Create a one-on-one chat using user principal name
@@ -90,7 +90,7 @@ $params = @{
 
 New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Create a group chat with tenant guest user
@@ -127,7 +127,7 @@ $params = @{
 
 New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 5: Create a one-on-one chat with a federated user (outside of own organization)
@@ -157,6 +157,6 @@ $params = @{
 
 New-MgBetaChat -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaChat Cmdlet.
+This example shows how to use the New-MgBetaChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -2,8 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Applications
 
-Get-MgBetaApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
+Remove-MgBetaApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
 ```
-This example shows how to use the Remove-MgBetaBetaApplicationExtensionProperty Cmdlet.
+This example shows how to use the Remove-MgBetaApplicationExtensionProperty Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

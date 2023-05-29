@@ -2,13 +2,9 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Mail
 
-$params = @{
-	displayName = "displayName-value"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+Remove-MgBetaUserMailFolder -UserId $userId -MailFolderId $mailFolderId
 ```
-This example shows how to use the Remove-MgBetaBetaUserMailFolder Cmdlet.
+This example shows how to use the Remove-MgBetaUserMailFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

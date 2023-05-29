@@ -10,6 +10,6 @@ $params = @{
 
 New-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaExternalConnectionGroup Cmdlet.
+This example shows how to use the New-MgBetaExternalConnectionGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

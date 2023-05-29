@@ -2,14 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Groups
 
-$params = @{
-	groupLifetimeInDays = 180
-	managedGroupTypes = "Selected"
-	alternateNotificationEmails = "admin@contoso.com"
-}
-
-Update-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId -BodyParameter $params
+Get-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
 ```
-This example shows how to use the Get-MgBetaBetaGroupLifecyclePolicy Cmdlet.
+This example shows how to use the Get-MgBetaGroupLifecyclePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

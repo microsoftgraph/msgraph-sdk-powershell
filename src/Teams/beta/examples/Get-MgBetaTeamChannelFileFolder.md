@@ -4,6 +4,6 @@
 
 Get-MgBetaTeamChannelFileFolder -TeamId $teamId -ChannelId $channelId
 ```
-This example shows how to use the Get-MgBetaBetaTeamChannelFileFolder Cmdlet.
+This example shows how to use the Get-MgBetaTeamChannelFileFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

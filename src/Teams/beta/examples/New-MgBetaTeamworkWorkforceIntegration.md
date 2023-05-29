@@ -16,6 +16,6 @@ $params = @{
 
 New-MgBetaTeamworkWorkforceIntegration -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeamworkWorkforceIntegration Cmdlet.
+This example shows how to use the New-MgBetaTeamworkWorkforceIntegration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

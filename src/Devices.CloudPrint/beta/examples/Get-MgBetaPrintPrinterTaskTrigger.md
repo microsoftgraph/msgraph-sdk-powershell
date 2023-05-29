@@ -4,6 +4,6 @@
 
 Get-MgBetaPrintPrinterTaskTrigger -PrinterId $printerId -PrintTaskTriggerId $printTaskTriggerId
 ```
-This example shows how to use the Get-MgBetaBetaPrintPrinterTaskTrigger Cmdlet.
+This example shows how to use the Get-MgBetaPrintPrinterTaskTrigger Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

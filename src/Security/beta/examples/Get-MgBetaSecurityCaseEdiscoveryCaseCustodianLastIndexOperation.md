@@ -4,6 +4,6 @@
 
 Get-MgBetaSecurityCaseEdiscoveryCaseCustodianLastIndexOperation -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryCustodianId $ediscoveryCustodianId
 ```
-This example shows how to use the Get-MgBetaBetaSecurityCaseEdiscoveryCaseCustodianLastIndexOperation Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseCustodianLastIndexOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

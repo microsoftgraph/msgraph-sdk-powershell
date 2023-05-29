@@ -26,6 +26,6 @@ $params = @{
 
 Update-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaSchemaExtension Cmdlet.
+This example shows how to use the Update-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

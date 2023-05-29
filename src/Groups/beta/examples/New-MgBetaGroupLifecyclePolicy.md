@@ -10,6 +10,6 @@ $params = @{
 
 New-MgBetaGroupLifecyclePolicy -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaGroupLifecyclePolicy Cmdlet.
+This example shows how to use the New-MgBetaGroupLifecyclePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

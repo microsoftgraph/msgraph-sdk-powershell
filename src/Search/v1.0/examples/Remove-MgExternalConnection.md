@@ -2,12 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Search
 
-$params = @{
-	name = "Contoso HR Service Tickets"
-	description = "Connection to index HR service tickets"
-}
-
-Update-MgExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
+Remove-MgExternalConnection -ExternalConnectionId $externalConnectionId
 ```
 This example shows how to use the Remove-MgExternalConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

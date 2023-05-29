@@ -8,6 +8,6 @@ $params = @{
 
 New-MgBetaEducationSchoolUserByRef -EducationSchoolId $educationSchoolId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationSchoolUserByRef Cmdlet.
+This example shows how to use the New-MgBetaEducationSchoolUserByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -4,6 +4,6 @@
 
 Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId
 ```
-This example shows how to use the Get-MgBetaBetaSecurityCaseEdiscoveryCaseReviewSet Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseReviewSet Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

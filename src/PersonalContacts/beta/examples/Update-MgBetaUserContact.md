@@ -15,6 +15,6 @@ $params = @{
 # A UPN can also be used as -UserId.
 Update-MgBetaUserContact -UserId $userId -ContactId $contactId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaUserContact Cmdlet.
+This example shows how to use the Update-MgBetaUserContact Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

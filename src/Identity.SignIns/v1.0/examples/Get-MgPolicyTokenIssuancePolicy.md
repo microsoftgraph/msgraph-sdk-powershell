@@ -2,15 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
-$params = @{
-	definition = @(
-		"definition-value"
-	)
-	displayName = "displayName-value"
-	isOrganizationDefault = $true
-}
-
-Update-MgPolicyTokenIssuancePolicy -TokenIssuancePolicyId $tokenIssuancePolicyId -BodyParameter $params
+Get-MgPolicyTokenIssuancePolicy
 ```
 This example shows how to use the Get-MgPolicyTokenIssuancePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

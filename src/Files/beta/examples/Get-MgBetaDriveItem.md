@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
+### Example 1: Get a bundle and its children in a single call
+
 ```powershell
-PS C:\> {{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Files
 
-{{ Add output here }}
+Get-MgBetaDriveItem -DriveId $driveId -DriveItemId $driveItemId -ExpandProperty "children"
 ```
+This example shows how to use the Get-MgBetaDriveItem Cmdlet.
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

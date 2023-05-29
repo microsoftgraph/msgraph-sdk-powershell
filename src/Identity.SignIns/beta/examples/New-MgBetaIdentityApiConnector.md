@@ -14,7 +14,7 @@ $params = @{
 
 New-MgBetaIdentityApiConnector -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityApiConnector Cmdlet.
+This example shows how to use the New-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Create an API connector with client certificate authentication
@@ -33,6 +33,6 @@ $params = @{
 
 New-MgBetaIdentityApiConnector -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityApiConnector Cmdlet.
+This example shows how to use the New-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

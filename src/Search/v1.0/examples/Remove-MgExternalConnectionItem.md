@@ -2,7 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Search
 
-Get-MgExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId
+Remove-MgExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId
 ```
 This example shows how to use the Remove-MgExternalConnectionItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

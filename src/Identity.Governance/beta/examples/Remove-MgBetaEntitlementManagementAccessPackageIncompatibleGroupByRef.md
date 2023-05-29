@@ -4,6 +4,6 @@
 
 Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef -AccessPackageId $accessPackageId -GroupId $groupId
 ```
-This example shows how to use the Remove-MgBetaBetaEntitlementManagementAccessPackageIncompatibleGroupByRef Cmdlet.
+This example shows how to use the Remove-MgBetaEntitlementManagementAccessPackageIncompatibleGroupByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

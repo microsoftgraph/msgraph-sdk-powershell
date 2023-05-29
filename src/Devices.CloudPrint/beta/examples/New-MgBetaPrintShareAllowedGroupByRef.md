@@ -8,6 +8,6 @@ $params = @{
 
 New-MgBetaPrintShareAllowedGroupByRef -PrinterShareId $printerShareId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaPrintShareAllowedGroupByRef Cmdlet.
+This example shows how to use the New-MgBetaPrintShareAllowedGroupByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

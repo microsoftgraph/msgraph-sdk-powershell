@@ -10,6 +10,6 @@ $params = @{
 
 Update-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaEntitlementManagementConnectedOrganization Cmdlet.
+This example shows how to use the Update-MgBetaEntitlementManagementConnectedOrganization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

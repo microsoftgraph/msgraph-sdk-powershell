@@ -4,6 +4,6 @@
 
 Get-MgBetaCommunicationCallContentSharingSession -CallId $callId -ContentSharingSessionId $contentSharingSessionId
 ```
-This example shows how to use the Get-MgBetaBetaCommunicationCallContentSharingSession Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCallContentSharingSession Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

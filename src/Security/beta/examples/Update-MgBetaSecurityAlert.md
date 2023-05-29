@@ -21,7 +21,7 @@ $params = @{
 
 Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaSecurityAlert Cmdlet.
+This example shows how to use the Update-MgBetaSecurityAlert Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Request with Prefer header
@@ -47,6 +47,6 @@ $params = @{
 
 Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaSecurityAlert Cmdlet.
+This example shows how to use the Update-MgBetaSecurityAlert Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

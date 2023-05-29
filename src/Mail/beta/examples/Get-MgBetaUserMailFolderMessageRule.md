@@ -2,16 +2,9 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Mail
 
-$params = @{
-	displayName = "Important from partner"
-	actions = @{
-		markImportance = "high"
-	}
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId -BodyParameter $params
+Get-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -MessageRuleId $messageRuleId
 ```
-This example shows how to use the Get-MgBetaBetaUserMailFolderMessageRule Cmdlet.
+This example shows how to use the Get-MgBetaUserMailFolderMessageRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

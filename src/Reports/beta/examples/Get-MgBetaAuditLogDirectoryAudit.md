@@ -4,6 +4,6 @@
 
 Get-MgBetaAuditLogDirectoryAudit -DirectoryAuditId $directoryAuditId
 ```
-This example shows how to use the Get-MgBetaBetaAuditLogDirectoryAudit Cmdlet.
+This example shows how to use the Get-MgBetaAuditLogDirectoryAudit Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

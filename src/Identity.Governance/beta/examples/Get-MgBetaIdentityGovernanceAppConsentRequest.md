@@ -4,6 +4,6 @@
 
 Get-MgBetaIdentityGovernanceAppConsentRequest -AppConsentRequestId $appConsentRequestId
 ```
-This example shows how to use the Get-MgBetaBetaIdentityGovernanceAppConsentRequest Cmdlet.
+This example shows how to use the Get-MgBetaIdentityGovernanceAppConsentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
