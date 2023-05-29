@@ -304,6 +304,8 @@ function Update-ExampleFile {
     $HeadCount = $HeaderList.Count
     $ExampleCount = $ExampleList.Count
     $WrongExamplesCount = 0;
+    $SkippedExample = -1
+    $ContainsRightExamples = $False
     #===========================Importing new examples into files ============================================#  
     if ($ReplaceEverything -and $ExampleCount -gt 0 -and $HeadCount -eq $ExampleCount) {
         Clear-Content $ExampleFile -Force
@@ -315,12 +317,16 @@ function Update-ExampleFile {
 	
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
             Add-Content -Path $ExampleFile -Value $TotalText
+            $ContainsRightExamples = $True
             }else{    
                 $WrongExamplesCount++
+                $SkippedExample++
                
             }
         }
     }
+    #The code below updates existing examples
+    #------------------------------------------------------------#
     $PatternToSearch = "Import-Module Microsoft.Graph.$Module"
     if(($Content | Select-String -pattern $SearchText) -and ($Content | Select-String -pattern "This example shows")){
         $ContainsPatternToSearch = $False
@@ -331,14 +337,17 @@ function Update-ExampleFile {
         }
         if($ContainsPatternToSearch){
             Clear-Content $ExampleFile -Force
-           #Replace everything
            for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
+            if($ExampleList[$d].Contains($Command)){
             $CodeValue = $ExampleList[$d].Trim()
             $TitleValue = "### " + $HeaderList[$d].Trim()
             $Code = "``````powershell`r$CodeValue`r`n``````"
     
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
             Add-Content -Path $ExampleFile -Value $TotalText
+            }else{
+                $SkippedExample++ 
+            }
         }
 
         }else{
@@ -349,7 +358,36 @@ function Update-ExampleFile {
         }
         
     }
-    if($WrongExamplesCount -gt 0){
+    #The code below corrects the numbering of the example headers/title if there is a situation where
+    #some examples are wrong(which are left out) and some are right
+    #-----------------------------------------------------------------------------------------------#
+    $AvailableCorrectExamples = 1
+    if($SkippedExample -gt -1){
+        $NewContent = Get-Content -Path $ExampleFile
+        foreach($C in $NewContent){
+            if($C.Contains("Example")){
+                $SearchString = $c.Split(":") 
+                $StringToReplace =  $SearchString[0]           
+                $ReplacementString = "### Example $AvailableCorrectExamples"
+                (Get-Content -Path $ExampleFile) -replace $StringToReplace, $ReplacementString | Set-Content $ExampleFile
+                $AvailableCorrectExamples++
+            }
+        }
+        if(-not(Test-Path -PathType Container $FolderForExamplesToBeReviewed)){
+            New-Item -ItemType Directory -Force -Path $FolderForExamplesToBeReviewed
+        }
+        if (-not (Test-Path "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed")) {
+            "Command, ExternalDocsUrl, ApiVersion" | Out-File -FilePath  "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -Encoding ASCII
+        }
+
+        $File = Get-Content "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed"
+        $containsWord = $File | % { $_ -match "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" }
+        if (-not($containsWord -contains $true)) {
+            "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" | Out-File -FilePath "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -Append -Encoding ASCII
+        }
+    }
+    #-----------------------------------------------------------------------------------------------------------------------------------------------------------------#
+    if(($WrongExamplesCount -gt 0) -and -not($ContainsRightExamples)){
         $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
         Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
         #Log api path api version and equivalent external doc url giving wron examples
