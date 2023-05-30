@@ -19,6 +19,11 @@ require:
 directive:
 # Remove invalid paths.
   - remove-path-by-operation: ^solution\.solutionsRoot.*$
+# Remove cmdlets
+  - where:
+      subject: ^(.*)VirtualEvent$
+      variant: ^Get$|^Delete$|^Update$|^UpdateExpanded$
+    remove: true
 # Rename cmdlets
   - where:
       subject: ^Solution(.*)$
