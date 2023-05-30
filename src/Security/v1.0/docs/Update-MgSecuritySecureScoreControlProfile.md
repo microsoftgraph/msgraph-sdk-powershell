@@ -385,7 +385,7 @@ Accept wildcard characters: False
 ```
 
 ### -Threats
-List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
 
 ```yaml
 Type: System.String[]
@@ -539,7 +539,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Remediation <String>]`: Description of what the control will help remediate.
   - `[RemediationImpact <String>]`: Description of the impact on users of the remediation.
   - `[Service <String>]`: Service that owns the control (Exchange, Sharepoint, Azure AD).
-  - `[Threats <String[]>]`: List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+  - `[Threats <String[]>]`: List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
   - `[Tier <String>]`: 
   - `[Title <String>]`: 
   - `[UserImpact <String>]`: 

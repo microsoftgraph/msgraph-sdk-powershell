@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Sites
-Module Guid: fb705e00-5ff1-4ee3-afca-b15be4940fae
+Module Guid: 42c8d0da-9302-4489-98c5-ac6a76bf7b2c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.sites
 Help Version: 1.0.0.0
 Locale: en-US

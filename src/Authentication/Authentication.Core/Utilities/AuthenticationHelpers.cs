@@ -2,11 +2,13 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 using Azure.Core;
+using Azure.Core.Diagnostics;
 using Azure.Identity;
 using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Identity.Client;
 using Microsoft.Identity.Client.Extensions.Msal;
 using System;
+using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -201,8 +203,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 try
                 {
-                    signInAuthContext = await SignInAsync(authContext, cancellationToken).ConfigureAwait(false);
-                    retrySignIn = false;
+                    // Write MSAL logs to debug stream.
+                    using (AzureEventSourceListener listener = new AzureEventSourceListener(
+                        (args, message) => GraphSession.Instance.OutputWriter.WriteDebug($"{message}"),
+                        level: EventLevel.Informational))
+                    {
+                        signInAuthContext = await SignInAsync(authContext, cancellationToken).ConfigureAwait(false);
+                        retrySignIn = false;
+                    };
                 }
                 catch (AuthenticationFailedException authEx)
                 {

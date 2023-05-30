@@ -4061,11 +4061,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update ipNamedlocation
-      description: Update the properties of an ipNamedLocation object.
+      summary: Update countryNamedLocation
+      description: Update the properties of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -4096,11 +4096,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete namedLocation
-      description: Delete a namedLocation object.
+      summary: Delete countryNamedLocation
+      description: Delete a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -24452,13 +24452,13 @@ components:
       properties:
         allowedToCreateApps:
           type: boolean
-          description: Indicates whether the default user role can create applications.
+          description: Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Azure portal.
         allowedToCreateSecurityGroups:
           type: boolean
-          description: 'Indicates whether the default user role can create security groups. This setting corresponds to the The Users can create security groups in Azure portals, API or PowerShell setting in the group settings menu in the Azure portal.'
+          description: 'Indicates whether the default user role can create security groups. This setting corresponds to the following menus in the Azure portal:  The Users can create security groups in Azure portals, API or PowerShell setting in the Group settings menu.  Users can create security groups setting in the User settings menu.'
         allowedToCreateTenants:
           type: boolean
-          description: Indicates whether the default user role can create tenants.
+          description: 'Indicates whether the default user role can create tenants. This setting corresponds to the Restrict non-admin users from creating tenants setting in the User settings menu in the Azure portal.  When this setting is false, users assigned the Tenant Creator role can still create tenants.'
           nullable: true
         allowedToReadBitlockerKeysForOwnedDevice:
           type: boolean
@@ -28246,7 +28246,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
+              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string

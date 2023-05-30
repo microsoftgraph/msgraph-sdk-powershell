@@ -200,7 +200,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[SharePointOneDriveOptions <IMicrosoftGraphSharePointOneDriveOptions>]`: sharePointOneDriveOptions
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IncludeContent <String>]`: searchContent
-    - `[Size <Int32?>]`: The size of the page to be retrieved. Optional.
+    - `[Size <Int32?>]`: The size of the page to be retrieved. The maximum value is 500. Optional.
     - `[SortProperties <IMicrosoftGraphSortProperty[]>]`: Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
       - `[IsDescending <Boolean?>]`: True if the sort order is descending. Default is false, with the sort order as ascending. Optional.
       - `[Name <String>]`: The name of the property to sort on. Required.
@@ -244,7 +244,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SharePointOneDriveOptions <IMicrosoftGraphSharePointOneDriveOptions>]`: sharePointOneDriveOptions
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IncludeContent <String>]`: searchContent
-  - `[Size <Int32?>]`: The size of the page to be retrieved. Optional.
+  - `[Size <Int32?>]`: The size of the page to be retrieved. The maximum value is 500. Optional.
   - `[SortProperties <IMicrosoftGraphSortProperty[]>]`: Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
     - `[IsDescending <Boolean?>]`: True if the sort order is descending. Default is false, with the sort order as ascending. Optional.
     - `[Name <String>]`: The name of the property to sort on. Required.

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: bf5b1474-7ab1-4850-b49f-87b5f969f94e
+Module Guid: 4c48996f-9005-4999-aaec-169f824ce53d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -731,7 +731,7 @@ Delete navigation property conditionalAccess for identity
 Delete navigation property authenticationContextClassReferences for identity
 
 ### [Remove-MgIdentityConditionalAccessNamedLocation](Remove-MgIdentityConditionalAccessNamedLocation.md)
-Delete a namedLocation object.
+Delete a countryNamedLocation object.
 
 ### [Remove-MgIdentityConditionalAccessPolicy](Remove-MgIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
@@ -946,7 +946,7 @@ Update the navigation property conditionalAccess in identity
 Update the navigation property authenticationContextClassReferences in identity
 
 ### [Update-MgIdentityConditionalAccessNamedLocation](Update-MgIdentityConditionalAccessNamedLocation.md)
-Update the properties of an ipNamedLocation object.
+Update the properties of a countryNamedLocation object.
 
 ### [Update-MgIdentityConditionalAccessPolicy](Update-MgIdentityConditionalAccessPolicy.md)
 Update the properties of a conditionalAccessPolicy object.

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: 6516ecfa-e05f-4225-a748-4b52d5005608
+Module Guid: 466134f1-f584-436f-afff-90e3d9011dce
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -183,8 +183,8 @@ Create new navigation property to operations for external
 Create a new industryDataConnector object.
 
 ### [New-MgBetaExternalIndustryDataInboundFlow](New-MgBetaExternalIndustryDataInboundFlow.md)
-Create a new inboundFlow object.
-The following prerequisite resources are required when you create an **inboundFlow**:
+Create a new inboundFileFlow object.
+The following prerequisite resources are required when you create an **inboundFileFlow**:
 
 ### [New-MgBetaExternalIndustryDataOperation](New-MgBetaExternalIndustryDataOperation.md)
 Create new navigation property to operations for external
@@ -238,7 +238,7 @@ Delete navigation property schema for external
 Delete an industryDataConnector object.
 
 ### [Remove-MgBetaExternalIndustryDataInboundFlow](Remove-MgBetaExternalIndustryDataInboundFlow.md)
-Delete an inboundFileFlow object.
+Delete an inboundFlow object.
 
 ### [Remove-MgBetaExternalIndustryDataOperation](Remove-MgBetaExternalIndustryDataOperation.md)
 Delete navigation property operations for external
