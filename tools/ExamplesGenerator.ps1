@@ -7,7 +7,7 @@ Param(
     [hashtable]$BetaCommandGetVariantList= @{},
     [hashtable]$V1CommandListVariantList= @{},
     [hashtable]$BetaCommandListVariantList= @{},
-    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\\ModulesMapping.jsonc"),
+    [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $FolderForExamplesToBeReviewed = (Join-Path $PSScriptRoot "..\examplesreport"),
     [string] $ExamplesToBeReviewed = "ExamplesToBeReviewed.csv",
     $MetaDataJsonFile = (Join-Path $PSScriptRoot "../src/Authentication/Authentication/custom/common/MgCommandMetadata.json")
