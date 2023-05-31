@@ -24,7 +24,7 @@ function Start-Generator {
     )
 
     $GraphMapping = @{
-        "v1.0" = "examples\v1.0"
+        #"v1.0" = "examples\v1.0"
         "beta" = "examples\v1.0-beta"
     }
     if ($GenerationMode -eq "auto") {
@@ -87,16 +87,19 @@ function Get-Files {
                 #Extract command over here
                 $Command = [System.IO.Path]::GetFileNameWithoutExtension($File)
                     #Extract URI path
-                    $UriPath = $null
+                    $CommandValue = $null
                     if($GraphProfile -eq "beta"){
-                        $UriPath = $BetaCommandGetVariantList[$Command]
+                        $CommandValue = $BetaCommandGetVariantList[$Command]
+                        
                     }else{
-                        $UriPath = $V1CommandGetVariantList[$Command]
+                        $CommandValue = $V1CommandGetVariantList[$Command]
                     }
                         
-                    if ($UriPath) {
-                        $Method = $UriPaths.Method
-                        Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $UriPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method -Module $Module
+                    if ($CommandValue) {
+                        $CommandValueParams = $CommandValue.Split(",")
+                         $ApiPath = $CommandValueParams[0]
+                         $Method = $CommandValueParams[1]
+                        Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $ApiPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method.Trim() -Module $Module
                     }
 
             }
@@ -139,94 +142,54 @@ function Get-ExternalDocsUrl {
     
             if ($OpenApiContent.openapi && $OpenApiContent.info.version) {
                 foreach ($Path in $OpenApiContent.paths) {
-                    $MethodName = $Method | Out-String
-                    $ExternalDocUrl = $Path[$UriPath].values.externalDocs.url
-                     
-                    if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                        $PathSplit = $UriPath.Split("/")
-                        $PathToAppend = $PathSplit[$PathSplit.Count - 1]
-                        if ($PathToAppend.StartsWith("{") -or $PathToAppend.StartsWith("$")) {
-                            #skip
-                        }
-                        else {
-                            $PathRebuild = "/" + $PathSplit[0]
-                            for ($i = 1; $i -lt $PathSplit.Count - 1; $i++) {
-                                $PathRebuild += $PathSplit[$i] + "/" 
-                            }
-                            $RebuiltPath = $PathRebuild + "microsoft.graph." + $PathToAppend
-                            $ExternalDocUrl = $path[$RebuiltPath].get.externalDocs.url
+                    $ExternalDocUrl = $null
+                    switch($Method){
+                        "GET" {
+                            $ExternalDocUrl = $path[$UriPath].get.externalDocs.url
                             if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                                $GetPath = $null
-                                if($GraphProfile -eq "beta"){
-                                    $GetPath = $BetaCommandListVariantList[$Command]
-                                }else{
-                                    $GetPath = $V1CommandListVariantList[$Command]
-                                } 
-                                if(-not([string]::IsNullOrEmpty($GetPath))){
-                                    $ExternalDocUrl = $Path[$GetPath].get.externalDocs.url
-                                }
-                                  
+                                $GETApiPath = Extract-PathFromListVariant -GraphProfile $GraphProfile -Command $Command
+                                if(-not([string]::IsNullOrEmpty($GETApiPath))){
+                                    $ExternalDocUrl = $Path[$GETApiPath].get.externalDocs.url
+                                }      
                             }
                         }
-                    }
-                    if ($MethodName -eq "POST") {
-                        $ExternalDocUrl = $Path[$UriPath].post.externalDocs.url
-                        if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                            $PostPath = $null
-                            if($GraphProfile -eq "beta"){
-                                $PostPath = $BetaCommandListVariantList[$Command]
-                            }else{
-                                $PostPath = $V1CommandListVariantList[$Command]
+                        "POST" {
+                            $ExternalDocUrl = $Path[$UriPath].post.externalDocs.url
+                            if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
+                                $POSTApiPath = Extract-PathFromListVariant -GraphProfile $GraphProfile -Command $Command
+                                if(-not([string]::IsNullOrEmpty($POSTApiPath))){
+                                    $ExternalDocUrl = $Path[$POSTApiPath].post.externalDocs.url
+                                }      
+                            }  
+                        }
+                        "PATCH" {
+                            $ExternalDocUrl = $Path[$UriPath].patch.externalDocs.url 
+                            if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
+                                $PATCHApiPath = Extract-PathFromListVariant -GraphProfile $GraphProfile -Command $Command
+                                if(-not([string]::IsNullOrEmpty($PATCHApiPath))){
+                                    $ExternalDocUrl = $Path[$PATCHApiPath].patch.externalDocs.url
+                                }      
                             }
-                            if(-not([string]::IsNullOrEmpty($PostPath))){ 
-                                $ExternalDocUrl = $Path[$PostPath].post.externalDocs.url
-                            }  
-                        } 
-                    }
-                
-                    if ($MethodName -eq "PATCH") {
-                        $ExternalDocUrl = $Path[$UriPath].patch.externalDocs.url 
-                        if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                            $PatchPath = $null
-                            if($GraphProfile -eq "beta"){
-                                $PatchPath = $BetaCommandListVariantList[$Command]
-                            }else{
-                                $PatchPath = $V1CommandListVariantList[$Command]
+                        }
+                        "DELETE" {
+                            $ExternalDocUrl = $Path[$UriPath].delete.externalDocs.url
+                            if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
+                                $DELETEApiPath = Extract-PathFromListVariant -GraphProfile $GraphProfile -Command $Command
+                                if(-not([string]::IsNullOrEmpty($DELETEApiPath))){
+                                    $ExternalDocUrl = $Path[$DELETEApiPath].delete.externalDocs.url
+                                }      
+                            }
+                        }
+                        "PUT" {
+                            $ExternalDocUrl = $Path[$UriPath].put.externalDocs.url
+                            if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
+                                $PUTApiPath = Extract-PathFromListVariant -GraphProfile $GraphProfile -Command $Command
+                                if(-not([string]::IsNullOrEmpty($PUTApiPath))){
+                                    $ExternalDocUrl = $Path[$PUTApiPath].put.externalDocs.url
+                                }      
                             } 
-                            if(-not([string]::IsNullOrEmpty($PatchPath))){ 
-                                $ExternalDocUrl = $Path[$PatchPath].post.externalDocs.url
-                            }  
-                        } 
-                    }
-                
-                    if ($MethodName -eq "DELETE") {
-                        $ExternalDocUrl = $Path[$UriPath].delete.externalDocs.url
-                        if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                            $DeletePath = $null
-                            if($GraphProfile -eq "beta"){
-                                $DeletePath = $BetaCommandListVariantList[$Command]
-                            }else{
-                                $DeletePath = $V1CommandListVariantList[$Command]
-                            } 
-                            if(-not([string]::IsNullOrEmpty($DeletePath))){ 
-                                $ExternalDocUrl = $Path[$DeletePath].post.externalDocs.url
-                            }  
-                        } 
-                    }
-    
-                    if ($MethodName -eq "PUT") {
-                        $ExternalDocUrl = $Path[$UriPath].put.externalDocs.url
-                        if ([string]::IsNullOrEmpty($ExternalDocUrl)) {
-                            $PutPath = $null
-                            if($GraphProfile -eq "beta"){
-                                $PutPath = $BetaCommandListVariantList[$Command]
-                            }else{
-                                $PutPath = $V1CommandListVariantList[$Command]
-                            } 
-                            if(-not([string]::IsNullOrEmpty($PutPath))){ 
-                                $ExternalDocUrl = $Path[$PutPath].post.externalDocs.url
-                            }  
-                        } 
+                        }
+
                     }
                     if (-not([string]::IsNullOrEmpty($ExternalDocUrl))) {
                         Start-WebScrapping -GraphProfile $GraphProfile -ExternalDocUrl $ExternalDocUrl -Command $Command -GraphProfilePath $GraphProfilePath -UriPath $UriPath -Module $Module
@@ -237,6 +200,25 @@ function Get-ExternalDocsUrl {
         }
     }
 
+}
+function Extract-PathFromListVariant{
+    param(
+        [ValidateSet("beta", "v1.0")]
+        [string] $GraphProfile = "v1.0", 
+        [string] $Command = "Get-MgUser"
+    )
+    $ListApiPath = $null
+    $ListCommandValue = $null
+    if($GraphProfile -eq "beta"){
+        $ListCommandValue = $BetaCommandListVariantList[$Command]
+    }else{
+        $ListCommandValue = $V1CommandListVariantList[$Command]
+    } 
+    if(-not([string]::IsNullOrEmpty($ListCommandValue))){
+        $ListCommandValueParams = $ListCommandValue.Split(",")
+        $ListApiPath = $ListCommandValueParams[0]
+    }
+    return $ListApiPath
 }
 function Start-WebScrapping {
     param(
@@ -322,6 +304,8 @@ function Update-ExampleFile {
     $HeadCount = $HeaderList.Count
     $ExampleCount = $ExampleList.Count
     $WrongExamplesCount = 0;
+    $SkippedExample = -1
+    $ContainsRightExamples = $False
     #===========================Importing new examples into files ============================================#  
     if ($ReplaceEverything -and $ExampleCount -gt 0 -and $HeadCount -eq $ExampleCount) {
         Clear-Content $ExampleFile -Force
@@ -333,12 +317,16 @@ function Update-ExampleFile {
 	
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
             Add-Content -Path $ExampleFile -Value $TotalText
+            $ContainsRightExamples = $True
             }else{    
                 $WrongExamplesCount++
+                $SkippedExample++
                
             }
         }
     }
+    #The code below updates existing examples
+    #------------------------------------------------------------#
     $PatternToSearch = "Import-Module Microsoft.Graph.$Module"
     if(($Content | Select-String -pattern $SearchText) -and ($Content | Select-String -pattern "This example shows")){
         $ContainsPatternToSearch = $False
@@ -349,14 +337,17 @@ function Update-ExampleFile {
         }
         if($ContainsPatternToSearch){
             Clear-Content $ExampleFile -Force
-           #Replace everything
            for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
+            if($ExampleList[$d].Contains($Command)){
             $CodeValue = $ExampleList[$d].Trim()
             $TitleValue = "### " + $HeaderList[$d].Trim()
             $Code = "``````powershell`r$CodeValue`r`n``````"
     
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
             Add-Content -Path $ExampleFile -Value $TotalText
+            }else{
+                $SkippedExample++ 
+            }
         }
 
         }else{
@@ -367,7 +358,36 @@ function Update-ExampleFile {
         }
         
     }
-    if($WrongExamplesCount -gt 0){
+    #The code below corrects the numbering of the example headers/title if there is a situation where
+    #some examples are wrong(which are left out) and some are right
+    #-----------------------------------------------------------------------------------------------#
+    $AvailableCorrectExamples = 1
+    if($SkippedExample -gt -1){
+        $NewContent = Get-Content -Path $ExampleFile
+        foreach($C in $NewContent){
+            if($C.Contains("Example")){
+                $SearchString = $c.Split(":") 
+                $StringToReplace =  $SearchString[0]           
+                $ReplacementString = "### Example $AvailableCorrectExamples"
+                (Get-Content -Path $ExampleFile) -replace $StringToReplace, $ReplacementString | Set-Content $ExampleFile
+                $AvailableCorrectExamples++
+            }
+        }
+        if(-not(Test-Path -PathType Container $FolderForExamplesToBeReviewed)){
+            New-Item -ItemType Directory -Force -Path $FolderForExamplesToBeReviewed
+        }
+        if (-not (Test-Path "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed")) {
+            "Command, ExternalDocsUrl, ApiVersion" | Out-File -FilePath  "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -Encoding ASCII
+        }
+
+        $File = Get-Content "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed"
+        $containsWord = $File | % { $_ -match "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" }
+        if (-not($containsWord -contains $true)) {
+            "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" | Out-File -FilePath "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -Append -Encoding ASCII
+        }
+    }
+    #-----------------------------------------------------------------------------------------------------------------------------------------------------------------#
+    if(($WrongExamplesCount -gt 0) -and -not($ContainsRightExamples)){
         $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
         Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
         #Log api path api version and equivalent external doc url giving wron examples
@@ -397,19 +417,20 @@ foreach($Data in $DeserializedContent)
     if($Data.ApiVersion -eq "beta")
     {        
         if((-not($Data.Variants[0].Contains("List")))){
-            $Beta = $BetaCommandGetVariantList.Add($Data.Command, $Data.Uri)        
+            $BetaAPIPathAndMethod = $Data.Uri,$Data.Method -join ","
+            $Beta = $BetaCommandGetVariantList.Add($Data.Command, $BetaAPIPathAndMethod)        
         }else{
-            $Beta1 = $BetaCommandListVariantList.Add($Data.Command, $Data.Uri) 
+            $Beta1 = $BetaCommandListVariantList.Add($Data.Command, $BetaAPIPathAndMethod) 
         }   
     }
 
     if($Data.ApiVersion -eq "v1.0")
     {
-        
+        $V1APIPathAndMethod = $Data.Uri,$Data.Method -join ","
         if((-not($Data.Variants[0].Contains("List")))){
-            $V1 = $V1CommandGetVariantList.Add($Data.Command, $Data.Uri)        
+            $V1 = $V1CommandGetVariantList.Add($Data.Command, $V1APIPathAndMethod)        
         }else{
-            $V11 = $V1CommandListVariantList.Add($Data.Command, $Data.Uri)
+            $V11 = $V1CommandListVariantList.Add($Data.Command, $V1APIPathAndMethod)
         }   
     }
 }

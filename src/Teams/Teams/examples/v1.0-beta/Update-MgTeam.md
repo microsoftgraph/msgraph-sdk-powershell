@@ -1,24 +1,23 @@
-### Example 1: Using the Update-MgTeam Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Teams
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Teams
+
 $params = @{
-	IsMembershipLimitedToOwners = $true
-	MemberSettings = @{
-		AllowCreateUpdateChannels = $true
+	memberSettings = @{
+		allowCreateUpdateChannels = $true
 	}
-	MessagingSettings = @{
-		AllowUserEditMessages = $true
-		AllowUserDeleteMessages = $true
+	messagingSettings = @{
+		allowUserEditMessages = $true
+		allowUserDeleteMessages = $true
 	}
-	FunSettings = @{
-		AllowGiphy = $true
-		GiphyContentRating = "strict"
-	}
-	DiscoverySettings = @{
-		ShowInTeamsSearchAndSuggestions = $true
+	funSettings = @{
+		allowGiphy = $true
+		giphyContentRating = "strict"
 	}
 }
+
 Update-MgTeam -TeamId $teamId -BodyParameter $params
 ```
 This example shows how to use the Update-MgTeam Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
