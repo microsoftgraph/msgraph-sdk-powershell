@@ -1,21 +1,23 @@
-### Example 1: Using the New-MgDevice Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Identity.DirectoryManagement
+
 $params = @{
-	AccountEnabled = $true
-	AlternativeSecurityIds = @(
+	accountEnabled = $false
+	alternativeSecurityIds = @(
 		@{
-			Type = 99
-			IdentityProvider = "identityProvider-value"
-			Key = [System.Text.Encoding]::ASCII.GetBytes("base64Y3YxN2E1MWFlYw==")
+			type = 2
+			key = [System.Text.Encoding]::ASCII.GetBytes("base64Y3YxN2E1MWFlYw==")
 		}
 	)
-	ApproximateLastSignInDateTime = [System.DateTime]::Parse("2016-10-19T10:37:00Z")
-	DeviceId = "deviceId-value"
-	DeviceMetadata = "deviceMetadata-value"
-	DeviceVersion = 99
+	deviceId = "4c299165-6e8f-4b45-a5ba-c5d250a707ff"
+	displayName = "Test device"
+	operatingSystem = "linux"
+	operatingSystemVersion = "1"
 }
+
 New-MgDevice -BodyParameter $params
 ```
 This example shows how to use the New-MgDevice Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
