@@ -150,6 +150,17 @@ jobs:
             git commit -m 'Adds generated module artifacts'
             git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
             git status
+      - task: Bash@3
+        displayName: Sync with generation branch
+        enabled: true
+        env:
+          GITHUB_TOKEN: $(GITHUB_TOKEN)
+        inputs:
+          targetType: inline
+          script: |
+            git merge $(GenerationBranch) -s ours
+            git push "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git"
+            git status
       - ${{ if eq(parameters.CreatePullRequest, true) }}:
           - template: common-templates/create-pr.yml
             parameters:
