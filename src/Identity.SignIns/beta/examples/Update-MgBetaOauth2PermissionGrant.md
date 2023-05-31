@@ -8,6 +8,6 @@ $params = @{
 
 Update-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaOauth2PermissionGrant Cmdlet.
+This example shows how to use the Update-MgBetaOauth2PermissionGrant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

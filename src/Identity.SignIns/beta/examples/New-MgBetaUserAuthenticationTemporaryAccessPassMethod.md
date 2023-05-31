@@ -10,6 +10,6 @@ $params = @{
 
 New-MgBetaUserAuthenticationTemporaryAccessPassMethod -UserId $userId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaUserAuthenticationTemporaryAccessPassMethod Cmdlet.
+This example shows how to use the New-MgBetaUserAuthenticationTemporaryAccessPassMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

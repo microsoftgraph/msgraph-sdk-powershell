@@ -12,7 +12,7 @@ $params = @{
 
 New-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeamMember Cmdlet.
+This example shows how to use the New-MgBetaTeamMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Add a member to a team using user principal name
@@ -29,6 +29,6 @@ $params = @{
 
 New-MgBetaTeamMember -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeamMember Cmdlet.
+This example shows how to use the New-MgBetaTeamMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

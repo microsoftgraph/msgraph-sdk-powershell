@@ -4,6 +4,6 @@
 
 Get-MgBetaServiceAnnouncementIssue -ServiceHealthIssueId $serviceHealthIssueId
 ```
-This example shows how to use the Get-MgBetaBetaServiceAnnouncementIssue Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementIssue Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

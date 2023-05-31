@@ -22,6 +22,6 @@ $params = @{
 
 New-MgBetaEducationClassAssignment -EducationClassId $educationClassId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignment Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

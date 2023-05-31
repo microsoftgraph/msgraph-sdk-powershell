@@ -2,13 +2,9 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Users
 
-$params = @{
-	displayName = "buy cake"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId -BodyParameter $params
+Remove-MgBetaUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId
 ```
-This example shows how to use the Remove-MgBetaBetaUserTodoListTaskChecklistItem Cmdlet.
+This example shows how to use the Remove-MgBetaUserTodoListTaskChecklistItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

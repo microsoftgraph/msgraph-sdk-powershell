@@ -14,6 +14,6 @@ $params = @{
 
 New-MgBetaSiteContentType -SiteId $siteId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaSiteContentType Cmdlet.
+This example shows how to use the New-MgBetaSiteContentType Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

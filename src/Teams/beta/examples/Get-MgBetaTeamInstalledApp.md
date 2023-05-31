@@ -4,7 +4,7 @@
 
 Get-MgBetaTeamInstalledApp -TeamId $teamId -TeamsAppInstallationId $teamsAppInstallationId
 ```
-This example shows how to use the Get-MgBetaBetaTeamInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaTeamInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Get the names and other details of the installed app
@@ -13,6 +13,6 @@ This example shows how to use the Get-MgBetaBetaTeamInstalledApp Cmdlet.
 
 Get-MgBetaTeamInstalledApp -TeamId $teamId -TeamsAppInstallationId $teamsAppInstallationId -ExpandProperty "teamsAppDefinition"
 ```
-This example shows how to use the Get-MgBetaBetaTeamInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaTeamInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

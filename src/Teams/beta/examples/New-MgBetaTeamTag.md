@@ -16,6 +16,6 @@ $params = @{
 
 New-MgBetaTeamTag -TeamId $teamId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeamTag Cmdlet.
+This example shows how to use the New-MgBetaTeamTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

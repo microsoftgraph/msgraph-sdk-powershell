@@ -9,6 +9,6 @@ $params = @{
 
 Update-MgBetaExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaExternalConnection Cmdlet.
+This example shows how to use the Update-MgBetaExternalConnection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

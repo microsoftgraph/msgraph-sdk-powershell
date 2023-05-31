@@ -2,14 +2,9 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.PersonalContacts
 
-$params = @{
-	parentFolderId = "parentFolderId-value"
-	displayName = "displayName-value"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserContactFolder -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
+Remove-MgBetaUserContactFolder -UserId $userId -ContactFolderId $contactFolderId
 ```
-This example shows how to use the Remove-MgBetaBetaUserContactFolder Cmdlet.
+This example shows how to use the Remove-MgBetaUserContactFolder Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

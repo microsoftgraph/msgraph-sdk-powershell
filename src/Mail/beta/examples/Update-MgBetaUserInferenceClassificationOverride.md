@@ -9,6 +9,6 @@ $params = @{
 # A UPN can also be used as -UserId.
 Update-MgBetaUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaUserInferenceClassificationOverride Cmdlet.
+This example shows how to use the Update-MgBetaUserInferenceClassificationOverride Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

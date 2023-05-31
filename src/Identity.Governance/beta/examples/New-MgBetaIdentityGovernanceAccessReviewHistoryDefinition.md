@@ -31,6 +31,6 @@ $params = @{
 
 New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityGovernanceAccessReviewHistoryDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewHistoryDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

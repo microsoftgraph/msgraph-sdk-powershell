@@ -4,6 +4,6 @@
 
 Get-MgBetaExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId
 ```
-This example shows how to use the Get-MgBetaBetaExternalConnectionItem Cmdlet.
+This example shows how to use the Get-MgBetaExternalConnectionItem Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

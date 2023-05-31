@@ -9,7 +9,7 @@ $params = @{
 
 Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaIdentityProvider Cmdlet.
+This example shows how to use the Update-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Update a specific <strong>Apple identity provider</strong> (only for Azure AD B2C)
@@ -23,6 +23,6 @@ $params = @{
 
 Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaIdentityProvider Cmdlet.
+This example shows how to use the Update-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

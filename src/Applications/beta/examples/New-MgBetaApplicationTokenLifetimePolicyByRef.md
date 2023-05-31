@@ -8,6 +8,6 @@ $params = @{
 
 New-MgBetaApplicationTokenLifetimePolicyByRef -ApplicationId $applicationId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaApplicationTokenLifetimePolicyByRef Cmdlet.
+This example shows how to use the New-MgBetaApplicationTokenLifetimePolicyByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

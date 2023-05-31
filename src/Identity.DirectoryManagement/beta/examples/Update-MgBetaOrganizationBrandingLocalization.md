@@ -9,7 +9,7 @@ $params = @{
 
 Update-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaOrganizationBrandingLocalization Cmdlet.
+This example shows how to use the Update-MgBetaOrganizationBrandingLocalization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Code snippet
@@ -23,6 +23,6 @@ $params = @{
 
 Update-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaOrganizationBrandingLocalization Cmdlet.
+This example shows how to use the Update-MgBetaOrganizationBrandingLocalization Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

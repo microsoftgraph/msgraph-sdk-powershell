@@ -4,6 +4,6 @@
 
 Remove-MgBetaDirectoryRoleMemberByRef -DirectoryRoleId $directoryRoleId -DirectoryObjectId $directoryObjectId
 ```
-This example shows how to use the Remove-MgBetaBetaDirectoryRoleMemberByRef Cmdlet.
+This example shows how to use the Remove-MgBetaDirectoryRoleMemberByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

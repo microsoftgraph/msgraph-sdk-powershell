@@ -8,6 +8,6 @@ $params = @{
 
 Update-MgBetaChatTab -ChatId $chatId -TeamsTabId $teamsTabId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaChatTab Cmdlet.
+This example shows how to use the Update-MgBetaChatTab Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

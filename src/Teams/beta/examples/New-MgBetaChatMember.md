@@ -1,4 +1,4 @@
-### Example 1: Add a single member to a chat and specify the timespan for the conversation history
+### Example 1: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -13,10 +13,10 @@ $params = @{
 
 New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Adding a single member to a Microsoft Teams chat, sharing no chat history
+### Example 2: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -30,10 +30,10 @@ $params = @{
 
 New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Adding a single member to a Microsoft Teams chat, sharing the whole history of the chat
+### Example 3: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -48,10 +48,10 @@ $params = @{
 
 New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Add a single member to a chat using user principal name
+### Example 4: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -66,6 +66,6 @@ $params = @{
 
 New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaChatMember Cmdlet.
+This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -18,6 +18,6 @@ $params = @{
 
 New-MgBetaSitePermission -SiteId $siteId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaSitePermission Cmdlet.
+This example shows how to use the New-MgBetaSitePermission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

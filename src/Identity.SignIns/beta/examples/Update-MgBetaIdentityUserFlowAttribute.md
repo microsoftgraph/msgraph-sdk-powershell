@@ -8,6 +8,6 @@ $params = @{
 
 Update-MgBetaIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaIdentityUserFlowAttribute Cmdlet.
+This example shows how to use the Update-MgBetaIdentityUserFlowAttribute Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

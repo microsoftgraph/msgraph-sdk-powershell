@@ -2,8 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Sites
 
-Get-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -ColumnDefinitionId $columnDefinitionId
+Remove-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -ColumnDefinitionId $columnDefinitionId
 ```
-This example shows how to use the Remove-MgBetaBetaSiteContentTypeColumn Cmdlet.
+This example shows how to use the Remove-MgBetaSiteContentTypeColumn Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

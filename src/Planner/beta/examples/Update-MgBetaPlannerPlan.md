@@ -8,6 +8,6 @@ $params = @{
 
 Update-MgBetaPlannerPlan -PlannerPlanId $plannerPlanId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaPlannerPlan Cmdlet.
+This example shows how to use the Update-MgBetaPlannerPlan Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -18,7 +18,7 @@ $params = @{
 
 Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaTeamChannelMessage Cmdlet.
+This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Update any property of a message using delegated permissions
@@ -51,11 +51,13 @@ $params = @{
 	)
 	reactions = @(
 	)
+	messageHistory = @(
+	)
 }
 
 Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaTeamChannelMessage Cmdlet.
+This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Update the mentions of a message using delegated permissions
@@ -121,11 +123,13 @@ $params = @{
 	)
 	reactions = @(
 	)
+	messageHistory = @(
+	)
 }
 
 Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaTeamChannelMessage Cmdlet.
+This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Update the content with attachments of a message using delegated permissions
@@ -221,11 +225,13 @@ $params = @{
 	)
 	reactions = @(
 	)
+	messageHistory = @(
+	)
 }
 
 Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaTeamChannelMessage Cmdlet.
+This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 5: Update the reactions in a message using delegated permissions
@@ -425,10 +431,140 @@ $params = @{
 			}
 		}
 	)
+	messageHistory = @(
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:30.489Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "angry"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "f1b66449-b46d-49b0-9c3c-53c10a5c818e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:32.489Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "laugh"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "03a02232-d8f5-4970-a77e-6e8c76ce7a4e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T02:17:14.67Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "like"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "f1b66449-b46d-49b0-9c3c-53c10a5c818e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T02:34:40.3Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "like"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "4c9041b7-449a-40f7-8855-56da239b9fd1"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:25.489Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "like"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "03a02232-d8f5-4970-a77e-6e8c76ce7a4e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:31.489Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "heart"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "03a02232-d8f5-4970-a77e-6e8c76ce7a4e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:33.489Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "sad"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "03a02232-d8f5-4970-a77e-6e8c76ce7a4e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:34.489Z")
+			actions = "surprised"
+			reaction = @{
+				reactionType = "sad"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "03a02232-d8f5-4970-a77e-6e8c76ce7a4e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+	)
 }
 
 Update-MgBetaTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaTeamChannelMessage Cmdlet.
+This example shows how to use the Update-MgBetaTeamChannelMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

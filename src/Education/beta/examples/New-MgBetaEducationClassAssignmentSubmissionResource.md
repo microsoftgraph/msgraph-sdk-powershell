@@ -12,7 +12,7 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Create an educationLinkResource
@@ -29,7 +29,7 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Create an educationFileResource
@@ -46,7 +46,7 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Create an educationExcelResource
@@ -63,7 +63,7 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 5: Create an educationPowerPointResource
@@ -80,7 +80,7 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 6: Create an educationMediaResource
@@ -97,6 +97,6 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentSubmissionResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentSubmissionResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentSubmissionResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

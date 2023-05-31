@@ -4,6 +4,6 @@
 
 Get-MgBetaTeamScheduleTimeOffRequest -TeamId $teamId -TimeOffRequestId $timeOffRequestId
 ```
-This example shows how to use the Get-MgBetaBetaTeamScheduleTimeOffRequest Cmdlet.
+This example shows how to use the Get-MgBetaTeamScheduleTimeOffRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

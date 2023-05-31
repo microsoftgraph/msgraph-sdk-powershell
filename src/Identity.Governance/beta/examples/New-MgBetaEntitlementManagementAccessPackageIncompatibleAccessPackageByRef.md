@@ -8,6 +8,6 @@ $params = @{
 
 New-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId $accessPackageId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef Cmdlet.
+This example shows how to use the New-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

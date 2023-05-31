@@ -9,6 +9,6 @@ $params = @{
 
 New-MgBetaPrintPrinterTaskTrigger -PrinterId $printerId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaPrintPrinterTaskTrigger Cmdlet.
+This example shows how to use the New-MgBetaPrintPrinterTaskTrigger Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -9,6 +9,6 @@ $params = @{
 
 Update-MgBetaSiteListItemField -SiteId $siteId -ListId $listId -ListItemId $listItemId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaSiteListItemField Cmdlet.
+This example shows how to use the Update-MgBetaSiteListItemField Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

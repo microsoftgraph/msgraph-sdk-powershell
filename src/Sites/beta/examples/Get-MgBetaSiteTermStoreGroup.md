@@ -4,7 +4,7 @@
 
 Get-MgBetaSiteTermStoreGroup -SiteId $siteId -GroupId $groupId
 ```
-This example shows how to use the Get-MgBetaBetaSiteTermStoreGroup Cmdlet.
+This example shows how to use the Get-MgBetaSiteTermStoreGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Get a site collection termStore group and its parent site ID
@@ -13,6 +13,6 @@ This example shows how to use the Get-MgBetaBetaSiteTermStoreGroup Cmdlet.
 
 Get-MgBetaSiteTermStoreGroup -SiteId $siteId -GroupId $groupId -Property "*,parentSiteId"
 ```
-This example shows how to use the Get-MgBetaBetaSiteTermStoreGroup Cmdlet.
+This example shows how to use the Get-MgBetaSiteTermStoreGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
