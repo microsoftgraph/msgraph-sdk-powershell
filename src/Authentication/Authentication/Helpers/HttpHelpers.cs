@@ -6,6 +6,7 @@ using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using Microsoft.Graph.PowerShell.Authentication.Handlers;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Net;
 using System.Net.Http;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
@@ -60,7 +61,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 new RequestHeaderHandler() // Should always be last.
             };
 
-            HttpClient httpClient = GraphClientFactory.Create(delegatingHandlers);
+            HttpClient httpClient = RuntimeUtils.IsPsCore()
+                ? GraphClientFactory.Create(delegatingHandlers)
+                : GraphClientFactory.Create(delegatingHandlers, finalHandler: new HttpClientHandler
+                {
+                    AllowAutoRedirect = false,
+                    AutomaticDecompression = DecompressionMethods.None
+                });
             httpClient.Timeout = requestContext.ClientTimeout;
             return httpClient;
         }
