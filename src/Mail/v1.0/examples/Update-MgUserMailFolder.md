@@ -3,7 +3,8 @@
 ```powershellImport-Module Microsoft.Graph.Mail
 
 $params = @{
-	displayName = "displayName-value"
+	"@odata.type" = "microsoft.graph.mailSearchFolder"
+	filterQuery = "contains(subject, 'Analytics')"
 }
 
 # A UPN can also be used as -UserId.
