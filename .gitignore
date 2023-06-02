@@ -365,3 +365,6 @@ coverage.xml
 
 #Wrong Examples report Folder
 examplesreport/
+
+# Code sign summary
+CodeSignSummary-*.md
