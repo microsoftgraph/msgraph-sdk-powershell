@@ -1,13 +1,17 @@
-﻿using Microsoft.Graph.PowerShell.Authentication.Helpers;
+﻿// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Management.Automation;
 using System.Reflection;
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
-    // Implementation is based on https://github.com/daxian-dbw/PowerShell-ALC-Samples/tree/main/Targeting-NetStandard2.0/scenario-2.
     public class ModuleInitializer : IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {
         private static readonly string s_dependencyFolder;
@@ -56,9 +60,18 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 : IsAssemblyPresent(assemblyName);
         }
 
+        /// <summary>
+        /// Checks to see if the assembly is present in the shared or PSEdition dependencies folder.
+        /// Check is done by first matching the assembly by its full name; otherwise, we match using the assembly name.
+        /// </summary>
+        /// <param name="assemblyName"><see cref="AssemblyName"/> to match.</param>
+        /// <returns>True if assembly is present in dependencies folder; otherwise False.</returns>
         private static bool IsAssemblyPresent(AssemblyName assemblyName)
         {
-            return s_dependencies.Contains(assemblyName.FullName) || s_psEditionDependencies.Contains(assemblyName.FullName);
+            if (s_dependencies.Contains(assemblyName.FullName) || s_psEditionDependencies.Contains(assemblyName.FullName))
+                return true;
+            else
+                return !string.IsNullOrEmpty(s_dependencies.SingleOrDefault((x) => x.StartsWith(assemblyName.Name))) || !string.IsNullOrEmpty(s_psEditionDependencies.SingleOrDefault((x) => x.StartsWith(assemblyName.Name)));
         }
 
         private static string GetRequiredAssemblyPath(AssemblyName assemblyName)
