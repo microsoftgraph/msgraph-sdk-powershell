@@ -32,24 +32,23 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         public async Task ShouldUseDelegateAuthProviderWhenUserAccessTokenIsProvidedAsync()
         {
             // Arrange
-            string accessToken = "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiVGVzdCIsIklzc3VlciI6Iklzc3VlciIsIlVzZXJuYW1lIjoiVGVzdCIsImV4cCI6MTY3ODQ4ODgxNiwiaWF0IjoxNjc4NDg4ODE2fQ.hpYypwHAV8H3jb4KuTiLpgLWy9A8H2d9HG7SxJ8Kpn0";
-            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(accessToken));
+            string dummyAccessToken = "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiVGVzdCIsIklzc3VlciI6Iklzc3VlciIsIlVzZXJuYW1lIjoiVGVzdCIsImV4cCI6MTY3ODQ4ODgxNiwiaWF0IjoxNjc4NDg4ODE2fQ.hpYypwHAV8H3jb4KuTiLpgLWy9A8H2d9HG7SxJ8Kpn0";
+            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(dummyAccessToken));
             AuthContext userProvidedAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.UserProvidedAccessToken,
                 ContextScope = ContextScope.Process
             };
 
-            IAuthenticationProvider authProvider = await AuthenticationHelpers.GetAuthenticationProviderAsync(userProvidedAuthContext);
+            AzureIdentityAccessTokenProvider authProvider = await AuthenticationHelpers.GetAuthenticationProviderAsync(userProvidedAuthContext);
             HttpRequestMessage requestMessage = new HttpRequestMessage();
 
             // Act
-            await authProvider.AuthenticateRequestAsync(requestMessage);
+            var accessToken = await authProvider.GetAuthorizationTokenAsync(requestMessage.RequestUri);
 
             // Assert
-            Assert.IsType<AzureIdentityAuthProvider>(authProvider);
-            Assert.Equal("Bearer", requestMessage.Headers.Authorization.Scheme);
-            Assert.Equal(accessToken, requestMessage.Headers.Authorization.Parameter);
+            Assert.IsType<AzureIdentityAccessTokenProvider>(authProvider);
+            Assert.Equal(dummyAccessToken, accessToken);
 
             // reset static instance.
             GraphSession.Reset();

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <version>2.0.0-preview7</version>
+    <version>2.0.0-rc3</version>
     <id>Microsoft.Graph.Authentication</id>
     <description>Microsoft Graph PowerShell authentication module</description>
     <authors>Microsoft</authors>
@@ -40,6 +40,12 @@
     <file src="artifacts\Dependencies\System.Text.Encodings.Web.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.Text.Json.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.Threading.Tasks.Extensions.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Abstractions.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Authentication.Azure.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Http.HttpClientLibrary.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Serialization.Form.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Serialization.Json.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\Microsoft.Kiota.Serialization.Text.dll" target="Dependencies" />
     <!-- Core-->
     <file src="artifacts\Dependencies\Core\Azure.Core.dll" target="Dependencies\Core" />
     <file src="artifacts\Dependencies\Core\Azure.Identity.dll" target="Dependencies\Core" />
