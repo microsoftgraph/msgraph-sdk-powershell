@@ -1,4 +1,4 @@
-### Example 1: Code snippet
+### Example 1: Add a single member to a chat and specify the timespan for the conversation history
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -16,7 +16,7 @@ New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Code snippet
+### Example 2: Add a single member to a Microsoft Teams chat, sharing no chat history
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -33,7 +33,7 @@ New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Code snippet
+### Example 3: Add a single member to a Microsoft Teams chat, sharing the whole history of the chat
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -51,7 +51,7 @@ New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
 This example shows how to use the New-MgBetaChatMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Code snippet
+### Example 4: Add a single member to a chat using user principal name
 
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
@@ -62,6 +62,41 @@ $params = @{
 	roles = @(
 		"owner"
 	)
+}
+
+New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
+```
+This example shows how to use the New-MgBetaChatMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 5: Add an in-tenant guest user to a chat, sharing no chat history
+
+```powershellImport-Module Microsoft.Graph.Beta.Teams
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users/8ba98gf6-7fc2-4eb2-c7f2-aef9f21fd98g"
+	roles = @(
+		"guest"
+	)
+}
+
+New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
+```
+This example shows how to use the New-MgBetaChatMember Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 6: Add a out-of-tenant external user to a chat, sharing no chat history
+
+```powershellImport-Module Microsoft.Graph.Beta.Teams
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users/82af01c5-f7cc-4a2e-a728-3a5df21afd9d"
+	roles = @(
+		"owner"
+	)
+	tenantId = "4dc1fe35-8ac6-4f0d-904a-7ebcd364bea1"
 }
 
 New-MgBetaChatMember -ChatId $chatId -BodyParameter $params
