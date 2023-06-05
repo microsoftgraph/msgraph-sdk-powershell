@@ -10,15 +10,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
     {
         private InMemoryTokenCacheOptions InMemoryTokenCacheOptions { get; set; }
         protected byte[] _tokenCacheDataToFlush;
+
+        public InMemoryTokenCache()
+        {
+            InMemoryTokenCacheOptions = new InMemoryTokenCacheOptions();
+        }
         public InMemoryTokenCache(byte[] tokenCache)
         {
             InMemoryTokenCacheOptions = new InMemoryTokenCacheOptions(tokenCache);
         }
 
-        public InMemoryTokenCache(InMemoryTokenCacheOptions options = null)
-        {
-            InMemoryTokenCacheOptions = options ?? new InMemoryTokenCacheOptions();
-        }
         internal void UpdateTokenDataWithoutFlush(byte[] data)
         {
             _tokenCacheDataToFlush = data;
@@ -28,6 +29,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
         {
             return InMemoryTokenCacheOptions.TokenCache.ToArray();
         }
+
         internal void FlushTokenData()
         {
             if (_tokenCacheDataToFlush != null)

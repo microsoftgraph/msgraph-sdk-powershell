@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         {
             GraphSession.Initialize(() => new GraphSession());
             GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
-            
+
             Assert.NotNull(GraphSession.Instance.InMemoryTokenCache);
             Assert.NotNull(GraphSession.Instance.InMemoryTokenCache.ReadTokenData());
             Assert.Empty(GraphSession.Instance.InMemoryTokenCache.ReadTokenData());
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             GraphSession.Initialize(() => new GraphSession());
             string mockCacheData = "mockCacheData";
             byte[] mockCacheDataBytes = Encoding.UTF8.GetBytes(mockCacheData);
-            
+
             GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(mockCacheDataBytes);
             var cachedBytes = GraphSession.Instance.InMemoryTokenCache.ReadTokenData();
 
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             GraphSession.Initialize(() => new GraphSession());
             string mockCacheData = "intialTokenData";
             byte[] mockCacheDataBytes = Encoding.UTF8.GetBytes(mockCacheData);
-            
+
             GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(mockCacheDataBytes);
             GraphSession.Instance.InMemoryTokenCache.UpdateTokenDataWithoutFlush(Encoding.UTF8.GetBytes("updatedTokenData"));
             var cachedBytes = GraphSession.Instance.InMemoryTokenCache.ReadTokenData();
@@ -70,14 +70,14 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
 
             GraphSession.Reset();
         }
-        
+
         [Fact]
         public void UpdateTokenDataWithFlushShouldOverwroteInitializedTokenData()
         {
             GraphSession.Initialize(() => new GraphSession());
             string mockCacheData = "intialTokenData";
             byte[] mockCacheDataBytes = Encoding.UTF8.GetBytes(mockCacheData);
-            
+
             GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(mockCacheDataBytes);
             string updatedTokenData = "updatedTokenData";
             byte[] updatedTokenDataBytes = Encoding.UTF8.GetBytes(updatedTokenData);
@@ -107,13 +107,13 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             GraphSession.Instance.InMemoryTokenCache.FlushTokenData();
             GraphSession.Instance.InMemoryTokenCache.ClearCache();
             var cachedBytes = GraphSession.Instance.InMemoryTokenCache.ReadTokenData();
-            
+
 
             Assert.NotNull(GraphSession.Instance.InMemoryTokenCache);
             Assert.NotNull(cachedBytes);
             Assert.Empty(cachedBytes);
 
             GraphSession.Reset();
-        }        
+        }
     }
 }

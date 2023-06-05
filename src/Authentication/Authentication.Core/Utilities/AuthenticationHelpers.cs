@@ -397,7 +397,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         public static async Task<IAuthContext> LogoutAsync()
         {
             var authContext = GraphSession.Instance.AuthContext;
-            GraphSession.Instance.InMemoryTokenCache.ClearCache();
+            GraphSession.Instance.InMemoryTokenCache?.ClearCache();
             GraphSession.Instance.AuthContext = null;
             GraphSession.Instance.GraphHttpClient = null;
             await DeleteAuthRecordAsync().ConfigureAwait(false);

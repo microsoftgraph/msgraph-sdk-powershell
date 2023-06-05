@@ -11,8 +11,7 @@
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Azure.Core" Version="1.32.0" />
-    <PackageReference Include="Azure.Identity" Version="1.9.0" />
+    <PackageReference Include="Azure.Identity" Version="1.8.2" />
     <PackageReference Include="Microsoft.Graph.Core" Version="3.0.7" />
     <PackageReference Include="Microsoft.Identity.Client" Version="4.54.1" />
     <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="2.31.0" />
