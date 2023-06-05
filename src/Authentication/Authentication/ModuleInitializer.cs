@@ -12,6 +12,9 @@ using System.Reflection;
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
+    /// <summary>
+    /// This class is used to load the dependencies of the module into the current AppDomain.
+    /// </summary>
     public class ModuleInitializer : IModuleAssemblyInitializer, IModuleAssemblyCleanup
     {
         private static readonly string s_dependencyFolder;
@@ -28,33 +31,44 @@ namespace Microsoft.Graph.PowerShell.Authentication
             s_psEditionDependencies = new HashSet<string>(StringComparer.Ordinal);
             s_proxy = AssemblyLoadContextProxy.CreateLoadContext("msgraph-load-context");
 
+            // Add shared dependencies.
             foreach (string filePath in Directory.EnumerateFiles(s_dependencyFolder, "*.dll"))
             {
                 s_dependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
             }
 
+            // Add the dependencies for the current PowerShell edition. Can be either Desktop (PS 5.1) or Core (PS 7+).
             foreach (string filePath in Directory.EnumerateFiles(s_psEditionDependencyFolder, "*.dll"))
             {
                 s_psEditionDependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
             }
         }
+
+        /// <inheritDoc/>
         public void OnImport()
         {
             AppDomain.CurrentDomain.AssemblyResolve += ResolvingHandler;
         }
 
+        /// <inheritDoc/>
         public void OnRemove(PSModuleInfo psModuleInfo)
         {
             AppDomain.CurrentDomain.AssemblyResolve -= ResolvingHandler;
         }
 
+        /// <summary>
+        /// Checks to see if the requested assembly matches the assemblies in our dependencies folder.
+        /// The requesting assembly is always available in .NET, but could be null in .NET Framework.
+        /// - When the requesting assembly is available, we check whether the loading request came from this
+        ///   module (the 'Microsoft.Graph*' assembly in this case), so as to make sure we only act on the request
+        ///   from this module.
+        /// - When the requesting assembly is not available, we just have to depend on the assembly name only.
+        /// </summary>
+        /// <param name="assemblyName"><see cref="AssemblyName"/> being requested.</param>
+        /// <param name="requestingAssembly">The requesting <see cref="Assembly"/>.</param>
+        /// <returns>True if assembly is present and matches in dependencies folder; otherwise False.</returns>
         private static bool IsAssemblyMatching(AssemblyName assemblyName, Assembly requestingAssembly)
         {
-            // The requesting assembly is always available in .NET, but could be null in .NET Framework.
-            // - When the requesting assembly is available, we check whether the loading request came from this
-            //   module (the 'Microsoft.Graph*' assembly in this case), so as to make sure we only act on the request
-            //   from this module.
-            // - When the requesting assembly is not available, we just have to depend on the assembly name only.
             return requestingAssembly != null
                 ? requestingAssembly.FullName.StartsWith("Microsoft") && IsAssemblyPresent(assemblyName)
                 : IsAssemblyPresent(assemblyName);
@@ -74,6 +88,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 return !string.IsNullOrEmpty(s_dependencies.SingleOrDefault((x) => x.StartsWith(assemblyName.Name))) || !string.IsNullOrEmpty(s_psEditionDependencies.SingleOrDefault((x) => x.StartsWith(assemblyName.Name)));
         }
 
+        /// <summary>
+        /// Gets the full path of the assembly from the dependencies folder.
+        /// </summary>
+        /// <param name="assemblyName"><see cref="AssemblyName"/> to find.</param>
+        /// <returns>A <see cref="string"/> representing the full path of the assembly from the dependencies folder; otherwise <see cref="null"/>.</returns>
         private static string GetRequiredAssemblyPath(AssemblyName assemblyName)
         {
             string fileName = assemblyName.Name + ".dll";
@@ -87,6 +106,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
         }
 
 
+        /// <summary>
+        /// Resolves the assembly reference from the dependencies folder.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="args">The event data.</param>
         internal static Assembly ResolvingHandler(object sender, ResolveEventArgs args)
         {
             var assemblyName = new AssemblyName(args.Name);
@@ -95,7 +119,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
                 string filePath = GetRequiredAssemblyPath(assemblyName);
                 if (!string.IsNullOrEmpty(filePath))
                 {
-                    Console.WriteLine($"<*** Fall in 'ResolvingHandler': {assemblyName.FullName} requested by {args.RequestingAssembly?.FullName} from {filePath} -- Loaded! ***>");
                     // - In .NET, load the assembly into the custom assembly load context.
                     // - In .NET Framework, assembly conflict is not a problem, so we load the assembly
                     //   by 'Assembly.LoadFrom', the same as what powershell.exe would do.
@@ -104,14 +127,13 @@ namespace Microsoft.Graph.PowerShell.Authentication
                         : Assembly.LoadFrom(filePath);
                 }
             }
-            else
-            {
-                Console.WriteLine($"<*** Failed to match in 'ResolvingHandler': {assemblyName.FullName} requested by {args.RequestingAssembly?.FullName} ***>");
-            }
             return null;
         }
     }
 
+    /// <summary>
+    /// An encapsulation of reflection API calls to create a custom AssemblyLoadContext. <see cref="AssemblyLoadContext"/> type is not available when targeting netstandard2.0 .NET Framework.
+    /// </summary>
     internal class AssemblyLoadContextProxy
     {
         private readonly object _customContext;
