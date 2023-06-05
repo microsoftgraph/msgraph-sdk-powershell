@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Microsoft.Graph.PowerShell.Authentication
 {
-    public class GraphOption : IGraphOption
+    internal class GraphOption : IGraphOption
     {
         public bool EnableWAMForMSGraph { get; set; }
     }
