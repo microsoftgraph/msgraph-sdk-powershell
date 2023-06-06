@@ -7,6 +7,7 @@ namespace Microsoft.Graph.PowerShell
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Net.Http;
     using System.Net.Http.Headers;
@@ -17,22 +18,54 @@ namespace Microsoft.Graph.PowerShell
 
     public static class HttpMessageLogFormatter
     {
+        internal static async Task<HttpRequestMessage> CloneAsync(this HttpRequestMessage originalRequest)
+        {
+            var newRequest = new HttpRequestMessage(originalRequest.Method, originalRequest.RequestUri);
+
+            // Copy requestClone headers.
+            foreach (var header in originalRequest.Headers)
+                newRequest.Headers.TryAddWithoutValidation(header.Key, header.Value);
+
+            // Copy requestClone properties.
+            foreach (var property in originalRequest.Properties)
+                newRequest.Properties.Add(property);
+
+            // Set Content if previous requestClone had one.
+            if (originalRequest.Content != null)
+            {
+                // HttpClient doesn't rewind streams and we have to explicitly do so.
+                await originalRequest.Content.ReadAsStreamAsync().ContinueWith(t =>
+                {
+                    if (t.Result.CanSeek)
+                        t.Result.Seek(0, SeekOrigin.Begin);
+
+                    newRequest.Content = new StreamContent(t.Result);
+                }).ConfigureAwait(false);
+
+                // Copy content headers.
+                if (originalRequest.Content.Headers != null)
+                    foreach (var contentHeader in originalRequest.Content.Headers)
+                        newRequest.Content.Headers.TryAddWithoutValidation(contentHeader.Key, contentHeader.Value);
+            }
+            return newRequest;
+        }
+
         public static async Task<string> GetHttpRequestLogAsync(HttpRequestMessage request)
         {
             if (request == null) return string.Empty;
-
+            var requestClone = await request.CloneAsync().ConfigureAwait(false);
             string body = string.Empty;
             try
             {
-                body = (request.Content == null) ? string.Empty : FormatString(await request.Content.ReadAsStringAsync());
+                body = (requestClone.Content == null) ? string.Empty : FormatString(await requestClone.Content.ReadAsStringAsync());
             }
             catch { }
 
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"============================ HTTP REQUEST ============================{Environment.NewLine}");
-            stringBuilder.AppendLine($"HTTP Method:{Environment.NewLine}{request.Method.ToString()}{Environment.NewLine}");
-            stringBuilder.AppendLine($"Absolute Uri:{Environment.NewLine}{request.RequestUri.ToString()}{Environment.NewLine}");
-            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(ConvertHttpHeadersToCollection(request.Headers))}{Environment.NewLine}");
+            stringBuilder.AppendLine($"HTTP Method:{Environment.NewLine}{requestClone.Method.ToString()}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Absolute Uri:{Environment.NewLine}{requestClone.RequestUri.ToString()}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(ConvertHttpHeadersToCollection(requestClone.Headers))}{Environment.NewLine}");
             stringBuilder.AppendLine($"Body:{Environment.NewLine}{SanitizeBody(body)}{Environment.NewLine}");
             return stringBuilder.ToString();
         }
