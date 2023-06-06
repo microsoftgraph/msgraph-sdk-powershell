@@ -2749,11 +2749,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: chat.message_CreateReply
       parameters:
         - name: chat-id
@@ -5995,11 +5995,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: group.team.channel_DeleteMember
       parameters:
         - name: group-id
@@ -6219,11 +6219,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: group.team.channel_CreateMessage
       parameters:
         - name: group-id
@@ -7072,11 +7072,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: group.team.channel.message_CreateReply
       parameters:
         - name: group-id
@@ -11014,11 +11014,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: group.team.primaryChannel_DeleteMember
       parameters:
         - name: group-id
@@ -11214,11 +11214,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: group.team.primaryChannel_CreateMessage
       parameters:
         - name: group-id
@@ -11963,11 +11963,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_CreateReply
       parameters:
         - name: group-id
@@ -18153,11 +18153,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: team.channel_DeleteMember
       parameters:
         - name: team-id
@@ -18441,11 +18441,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: team.channel_CreateMessage
       parameters:
         - name: team-id
@@ -19368,11 +19368,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: team.channel.message_CreateReply
       parameters:
         - name: team-id
@@ -24288,11 +24288,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: team.primaryChannel_DeleteMember
       parameters:
         - name: team-id
@@ -24544,11 +24544,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: team.primaryChannel_CreateMessage
       parameters:
         - name: team-id
@@ -25351,11 +25351,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: team.primaryChannel.message_CreateReply
       parameters:
         - name: team-id
@@ -32092,11 +32092,11 @@ paths:
     delete:
       tags:
         - teamwork.deletedTeam
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_DeleteMember
       parameters:
         - name: deletedTeam-id
@@ -32380,11 +32380,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_CreateMessage
       parameters:
         - name: deletedTeam-id
@@ -33307,11 +33307,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message_CreateReply
       parameters:
         - name: deletedTeam-id
@@ -38576,11 +38576,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.chat.message_CreateReply
       parameters:
         - name: user-id
@@ -41671,11 +41671,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_DeleteMember
       parameters:
         - name: user-id
@@ -41919,11 +41919,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_CreateMessage
       parameters:
         - name: user-id
@@ -42876,11 +42876,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_CreateReply
       parameters:
         - name: user-id
@@ -47394,11 +47394,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_DeleteMember
       parameters:
         - name: user-id
@@ -47618,11 +47618,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_CreateMessage
       parameters:
         - name: user-id
@@ -48471,11 +48471,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_CreateReply
       parameters:
         - name: user-id
@@ -55518,7 +55518,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
+              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string

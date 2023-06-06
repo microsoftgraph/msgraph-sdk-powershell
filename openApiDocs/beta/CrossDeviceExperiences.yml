@@ -9299,7 +9299,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             mailboxType:
               type: string
@@ -9399,6 +9399,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStep'
+              description: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -12929,11 +12930,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -20393,6 +20394,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.synchronizationMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -28587,6 +28589,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.objectMappingMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -28635,7 +28638,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadataEntry'
-          description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
+          description: Metadata for the given object.
         multivalued:
           type: boolean
           description: true if an attribute can have multiple values. Default is false.
@@ -28665,6 +28668,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -29066,6 +29070,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object

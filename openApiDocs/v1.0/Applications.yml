@@ -16765,7 +16765,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.'
+          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -19890,7 +19890,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string
@@ -25010,7 +25010,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
+              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string

@@ -742,11 +742,11 @@ paths:
     patch:
       tags:
         - groups.group
-      summary: Add members
-      description: Add a member to a security or Microsoft 365 group through the **members** navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
+      summary: Update group
+      description: Update the properties of a group object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-update?view=graph-rest-1.0
       operationId: group_UpdateGroup
       parameters:
         - name: group-id
@@ -4887,11 +4887,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create conversation
-      description: Use reply thread or reply post to further post to that conversation.
+      summary: Create open extension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -4924,10 +4924,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Retrieve the properties and relationships of conversation object.
+      description: The group's conversations.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -5328,10 +5328,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -5380,11 +5380,11 @@ paths:
     get:
       tags:
         - groups.conversation
-      summary: Get post
-      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the **post** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **post** instance."
+      summary: List posts
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
       operationId: group.conversation.thread_ListPost
       parameters:
         - name: group-id
@@ -28818,11 +28818,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversation thread
-      description: Get a thread object.
+      summary: Get conversationThread
+      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -28917,11 +28917,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversation thread
+      summary: Delete conversationThread
       description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -28957,10 +28957,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -29001,11 +29001,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get post
-      description: "Get the properties and relationships of a post in a specified thread. You can specify both the parent \nconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the **post** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **post** instance."
+      summary: List posts
+      description: "Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0
       operationId: group.thread_ListPost
       parameters:
         - name: group-id
@@ -36816,7 +36816,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
+              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -38940,7 +38940,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.'
+          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:

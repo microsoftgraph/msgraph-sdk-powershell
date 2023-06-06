@@ -1029,12 +1029,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/administrativeUnits/{administrativeUnit-id}/members/$count':
     get:
       tags:
@@ -1773,12 +1767,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1814,12 +1802,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -3151,12 +3133,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/contacts/{orgContact-id}/directReports/$count':
     get:
       tags:
@@ -3374,12 +3350,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3415,12 +3385,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/contacts/{orgContact-id}/manager':
     get:
       tags:
@@ -8002,12 +7966,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/devices/{device-id}/registeredOwners/$count':
     get:
       tags:
@@ -8419,12 +8377,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -8460,12 +8412,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/devices/{device-id}/registeredUsers':
     get:
       tags:
@@ -8796,12 +8742,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/devices/{device-id}/registeredUsers/$count':
     get:
       tags:
@@ -9213,12 +9153,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -9254,12 +9188,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/devices/{device-id}/transitiveMemberOf':
     get:
       tags:
@@ -11483,12 +11411,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/directory/administrativeUnits/{administrativeUnit-id}/members/$count':
     get:
       tags:
@@ -12227,12 +12149,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -12268,12 +12184,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/directory/administrativeUnits/{administrativeUnit-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -13119,8 +13029,11 @@ paths:
     get:
       tags:
         - directory.attributeSet
-      summary: Get attributeSets from directory
-      description: Group of related custom security attribute definitions.
+      summary: Get attributeSet
+      description: Read the properties and relationships of an attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attributeset-get?view=graph-rest-1.0
       operationId: directory_GetAttributeSet
       parameters:
         - name: attributeSet-id
@@ -13170,7 +13083,11 @@ paths:
     patch:
       tags:
         - directory.attributeSet
-      summary: Update the navigation property attributeSets in directory
+      summary: Update attributeSet
+      description: Update the properties of an attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attributeset-update?view=graph-rest-1.0
       operationId: directory_UpdateAttributeSet
       parameters:
         - name: attributeSet-id
@@ -15052,12 +14969,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   /directory/deletedItems/$count:
     get:
       tags:
@@ -15655,12 +15566,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -15678,12 +15583,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   /directory/deletedItems/microsoft.graph.validateProperties:
     post:
       tags:
@@ -17012,6 +16911,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action complete
+      description: Complete an impactedResource object and update its **status** to `completedByUser`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/impactedresource-complete?view=graph-rest-1.0
       operationId: directory.impactedResource_complete
       parameters:
         - name: impactedResource-id
@@ -17037,6 +16940,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action dismiss
+      description: Dismiss an impactedResources object and update its status to `dismissed`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/impactedresource-dismiss?view=graph-rest-1.0
       operationId: directory.impactedResource_dismiss
       parameters:
         - name: impactedResource-id
@@ -17075,6 +16982,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action postpone
+      description: 'Postpone action on an impactedResource object to a specified future date and time by marking its **status** as `postponed`. On the specified date and time, Azure AD will automatically mark the status of the **impactedResource** object to `active`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/impactedresource-postpone?view=graph-rest-1.0
       operationId: directory.impactedResource_postpone
       parameters:
         - name: impactedResource-id
@@ -17114,6 +17025,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action reactivate
+      description: 'Reactivate an accidentally dismissed, completed, or postponed **impactedResource** object. This action updates the **status** of the resource to `active`. This method is relevant only if the status of the **impactedResource** object is `dismissed`, `postponed`, or `completedByUser`. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/impactedresource-reactivate?view=graph-rest-1.0
       operationId: directory.impactedResource_reactivate
       parameters:
         - name: impactedResource-id
@@ -18294,8 +18209,11 @@ paths:
     get:
       tags:
         - directory.recommendation
-      summary: Get recommendations from directory
-      description: List of recommended improvements to improve tenant posture.
+      summary: Get recommendation
+      description: Read the properties and relationships of a recommendation object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/recommendation-get?view=graph-rest-1.0
       operationId: directory_GetRecommendation
       parameters:
         - name: recommendation-id
@@ -18708,6 +18626,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action complete
+      description: Complete an impactedResource object and update its **status** to `completedByUser`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/impactedresource-complete?view=graph-rest-1.0
       operationId: directory.recommendation.impactedResource_complete
       parameters:
         - name: recommendation-id
@@ -18741,6 +18663,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action dismiss
+      description: Dismiss an impactedResources object and update its status to `dismissed`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/impactedresource-dismiss?view=graph-rest-1.0
       operationId: directory.recommendation.impactedResource_dismiss
       parameters:
         - name: recommendation-id
@@ -18787,6 +18713,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action postpone
+      description: 'Postpone action on an impactedResource object to a specified future date and time by marking its **status** as `postponed`. On the specified date and time, Azure AD will automatically mark the status of the **impactedResource** object to `active`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/impactedresource-postpone?view=graph-rest-1.0
       operationId: directory.recommendation.impactedResource_postpone
       parameters:
         - name: recommendation-id
@@ -18834,6 +18764,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action reactivate
+      description: 'Reactivate an accidentally dismissed, completed, or postponed **impactedResource** object. This action updates the **status** of the resource to `active`. This method is relevant only if the status of the **impactedResource** object is `dismissed`, `postponed`, or `completedByUser`. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/impactedresource-reactivate?view=graph-rest-1.0
       operationId: directory.recommendation.impactedResource_reactivate
       parameters:
         - name: recommendation-id
@@ -18889,6 +18823,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action complete
+      description: Complete a recommendation object and update its **status** to `completedByUser`.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/recommendation-complete?view=graph-rest-1.0
       operationId: directory.recommendation_complete
       parameters:
         - name: recommendation-id
@@ -18914,6 +18852,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action dismiss
+      description: Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its **status** to `dismissed` .
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/recommendation-dismiss?view=graph-rest-1.0
       operationId: directory.recommendation_dismiss
       parameters:
         - name: recommendation-id
@@ -18952,6 +18894,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action postpone
+      description: 'Postpone action on a recommendation object to a specified future date and time by marking its **status** as `postponed`. On the date and time provided, Azure AD will automatically update the **status** of the **recommendation** object to `active` again.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/recommendation-postpone?view=graph-rest-1.0
       operationId: directory.recommendation_postpone
       parameters:
         - name: recommendation-id
@@ -18991,6 +18937,10 @@ paths:
       tags:
         - directory.Actions
       summary: Invoke action reactivate
+      description: 'Reactivate a completed, dismissed, or postponed recommendation object. This action updates the **status** of the recommendation to `active`. This method only works when the **status** of the recommendation is `completedByUser`, `dismissed`, or `postponed`.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/recommendation-reactivate?view=graph-rest-1.0
       operationId: directory.recommendation_reactivate
       parameters:
         - name: recommendation-id
@@ -19981,12 +19931,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/directoryRoles/{directoryRole-id}/members/$count':
     get:
       tags:
@@ -20728,12 +20672,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -20769,12 +20707,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/directoryRoles/{directoryRole-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -24863,6 +24795,7 @@ paths:
                 - bannerLogo
                 - bannerLogoRelativeUrl
                 - cdnList
+                - contentCustomization
                 - customAccountResetCredentialsUrl
                 - customCannotAccessYourAccountText
                 - customCannotAccessYourAccountUrl
@@ -25320,6 +25253,8 @@ paths:
                 - bannerLogoRelativeUrl desc
                 - cdnList
                 - cdnList desc
+                - contentCustomization
+                - contentCustomization desc
                 - customAccountResetCredentialsUrl
                 - customAccountResetCredentialsUrl desc
                 - customCannotAccessYourAccountText
@@ -25386,6 +25321,7 @@ paths:
                 - bannerLogo
                 - bannerLogoRelativeUrl
                 - cdnList
+                - contentCustomization
                 - customAccountResetCredentialsUrl
                 - customCannotAccessYourAccountText
                 - customCannotAccessYourAccountUrl
@@ -25511,6 +25447,7 @@ paths:
                 - bannerLogo
                 - bannerLogoRelativeUrl
                 - cdnList
+                - contentCustomization
                 - customAccountResetCredentialsUrl
                 - customCannotAccessYourAccountText
                 - customCannotAccessYourAccountUrl
@@ -26865,11 +26802,11 @@ paths:
               enum:
                 - id
                 - microsoftApplicationDataAccess
+                - profileCardProperties
+                - pronouns
                 - contactInsights
                 - itemInsights
                 - peopleInsights
-                - profileCardProperties
-                - pronouns
               type: string
         - name: $expand
           in: query
@@ -26883,11 +26820,11 @@ paths:
               enum:
                 - '*'
                 - microsoftApplicationDataAccess
+                - profileCardProperties
+                - pronouns
                 - contactInsights
                 - itemInsights
                 - peopleInsights
-                - profileCardProperties
-                - pronouns
               type: string
       responses:
         2XX:
@@ -28458,12 +28395,6 @@ paths:
           $ref: '#/components/responses/microsoft.graph.scopedRoleMembershipCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -28498,12 +28429,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/scopedRoleMemberOf/{scopedRoleMembership-id}':
     get:
@@ -28565,12 +28490,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -28610,12 +28529,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -28650,12 +28563,6 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/scopedRoleMemberOf/$count':
     get:
@@ -28679,12 +28586,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
 components:
   schemas:
     microsoft.graph.administrativeUnit:
@@ -30815,17 +30716,17 @@ components:
               description: 'Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.'
             isSearchable:
               type: boolean
-              description: Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
+              description: Indicates whether custom security attribute values are indexed for searching on objects that are assigned attribute values. Cannot be changed later.
               nullable: true
             name:
               type: string
               description: Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
             status:
               type: string
-              description: Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
+              description: 'Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.'
             type:
               type: string
-              description: 'Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.'
+              description: 'Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.'
             usePreDefinedValuesOnly:
               type: boolean
               description: 'Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.'
@@ -30834,7 +30735,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.allowedValue'
-              description: 'Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
+              description: 'Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -31410,12 +31311,6 @@ components:
           properties:
             microsoftApplicationDataAccess:
               $ref: '#/components/schemas/microsoft.graph.microsoftApplicationDataAccessSettings'
-            contactInsights:
-              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
-            itemInsights:
-              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
-            peopleInsights:
-              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
             profileCardProperties:
               type: array
               items:
@@ -31424,6 +31319,12 @@ components:
               x-ms-navigationProperty: true
             pronouns:
               $ref: '#/components/schemas/microsoft.graph.pronounsSettings'
+            contactInsights:
+              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
+            itemInsights:
+              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
+            peopleInsights:
+              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
           additionalProperties:
             type: object
     microsoft.graph.insightsSettings:
@@ -31728,7 +31629,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.'
+          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -31993,6 +31894,9 @@ components:
           type: string
           description: 'The internal url of the application. For example, https://intranet/.'
           nullable: true
+        isAccessibleViaZTNAClient:
+          type: boolean
+          nullable: true
         isBackendCertificateValidationEnabled:
           type: boolean
           description: 'Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.'
@@ -32078,7 +31982,7 @@ components:
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
             isMultiValued:
               type: boolean
-              description: 'Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).'
+              description: 'Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false.'
             isSyncedFromOnPremises:
               type: boolean
               description: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
@@ -34280,7 +34184,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             mailboxType:
               type: string
@@ -34380,6 +34284,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStep'
+              description: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -35527,6 +35432,10 @@ components:
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            broadcastRecording:
+              type: string
+              format: base64url
+              nullable: true
             broadcastSettings:
               $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
             capabilities:
@@ -35613,6 +35522,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
             registration:
               $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
+            recordings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecording'
+              x-ms-navigationProperty: true
             transcripts:
               type: array
               items:
@@ -35850,11 +35764,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -35901,11 +35815,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -36441,6 +36355,8 @@ components:
                 type: string
                 nullable: true
               description: A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
+            contentCustomization:
+              $ref: '#/components/schemas/microsoft.graph.contentCustomization'
             customAccountResetCredentialsUrl:
               type: string
               description: 'A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.'
@@ -36578,6 +36494,12 @@ components:
           minimum: -2147483648
           type: integer
           description: The number of units that are enabled for the active subscription of the service SKU.
+          format: int32
+          nullable: true
+        lockedOut:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
           format: int32
           nullable: true
         suspended:
@@ -37416,6 +37338,8 @@ components:
               description: The machine name the connector is installed and running on.
             status:
               $ref: '#/components/schemas/microsoft.graph.connectorStatus'
+            version:
+              type: string
             memberOf:
               type: array
               items:
@@ -39077,7 +39001,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
+              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -43612,6 +43536,23 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.callRecording:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callRecording
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.callTranscript:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -43674,6 +43615,8 @@ components:
           type: boolean
           description: Indicates whether the credential preferences of the system are enabled.
           nullable: true
+        userPreferredMethodForSecondaryAuthentication:
+          $ref: '#/components/schemas/microsoft.graph.userDefaultAuthenticationMethodType'
       additionalProperties:
         type: object
     microsoft.graph.emailAuthenticationMethod:
@@ -44416,6 +44359,19 @@ components:
           description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
       additionalProperties:
         type: object
+    microsoft.graph.contentCustomization:
+      title: contentCustomization
+      type: object
+      properties:
+        attributeCollection:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValue'
+        attributeCollectionRelativeUrl:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.loginPageLayoutConfiguration:
       title: loginPageLayoutConfiguration
       type: object
@@ -44750,6 +44706,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.synchronizationMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -49697,6 +49654,17 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.userDefaultAuthenticationMethodType:
+      title: userDefaultAuthenticationMethodType
+      enum:
+        - push
+        - oath
+        - voiceMobile
+        - voiceAlternateMobile
+        - voiceOffice
+        - sms
+        - unknownFutureValue
+      type: string
     microsoft.graph.attestationLevel:
       title: attestationLevel
       enum:
@@ -55033,6 +55001,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.objectMappingMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -55081,7 +55050,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadataEntry'
-          description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
+          description: Metadata for the given object.
         multivalued:
           type: boolean
           description: true if an attribute can have multiple values. Default is false.
@@ -55111,6 +55080,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -55571,6 +55541,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
