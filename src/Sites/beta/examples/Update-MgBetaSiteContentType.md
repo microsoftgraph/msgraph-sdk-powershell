@@ -1,52 +1,17 @@
-### Example 1: Code snippet
+### Example 1: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-```powershellImport-Module Microsoft.Graph.Beta.Sites
-
-$params = @{
-	name = "updatedCt"
-	documentSet = @{
-		shouldPrefixNameToFile = $true
-		allowedContentTypes = @(
-			@{
-				id = "0x0101"
-				name = "Document"
-			}
-		)
-		defaultContents = @(
-			@{
-				fileName = "a.txt"
-				contentType = @{
-					id = "0x0101"
-				}
-			}
-			@{
-				fileName = "b.txt"
-				contentType = @{
-					id = "0x0101"
-				}
-			}
-		)
-		sharedColumns = @(
-			@{
-				name = "Description"
-				id = "cbb92da4-fd46-4c7d-af6c-3128c2a5576e"
-			}
-			@{
-				name = "Address"
-				id = "fc2e188e-ba91-48c9-9dd3-16431afddd50"
-			}
-		)
-		welcomePageColumns = @(
-			@{
-				name = "Address"
-				id = "fc2e188e-ba91-48c9-9dd3-16431afddd50"
-			}
-		)
-	}
-}
-
-Update-MgBetaSiteContentType -SiteId $siteId -ContentTypeId $contentTypeId -BodyParameter $params
+{{ Add output here }}
 ```
-This example shows how to use the Update-MgBetaSiteContentType Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}

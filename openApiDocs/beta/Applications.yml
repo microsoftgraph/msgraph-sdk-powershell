@@ -9837,6 +9837,8 @@ paths:
                 - machineName desc
                 - status
                 - status desc
+                - version
+                - version desc
               type: string
         - name: $select
           in: query
@@ -9852,6 +9854,7 @@ paths:
                 - externalIp
                 - machineName
                 - status
+                - version
                 - memberOf
               type: string
         - name: $expand
@@ -10002,6 +10005,8 @@ paths:
                 - machineName desc
                 - status
                 - status desc
+                - version
+                - version desc
               type: string
       responses:
         2XX:
@@ -10106,6 +10111,8 @@ paths:
                 - machineName desc
                 - status
                 - status desc
+                - version
+                - version desc
               type: string
         - name: $select
           in: query
@@ -10121,6 +10128,7 @@ paths:
                 - externalIp
                 - machineName
                 - status
+                - version
                 - memberOf
               type: string
         - name: $expand
@@ -10217,6 +10225,7 @@ paths:
                 - externalIp
                 - machineName
                 - status
+                - version
                 - memberOf
               type: string
         - name: $expand
@@ -21313,7 +21322,7 @@ components:
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
             isMultiValued:
               type: boolean
-              description: 'Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).'
+              description: 'Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false.'
             isSyncedFromOnPremises:
               type: boolean
               description: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
@@ -22619,7 +22628,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadataEntry'
-          description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
+          description: Metadata for the given object.
         multivalued:
           type: boolean
           description: true if an attribute can have multiple values. Default is false.
@@ -22939,6 +22948,8 @@ components:
               description: The machine name the connector is installed and running on.
             status:
               $ref: '#/components/schemas/microsoft.graph.connectorStatus'
+            version:
+              type: string
             memberOf:
               type: array
               items:
@@ -23887,6 +23898,9 @@ components:
         internalUrl:
           type: string
           description: 'The internal url of the application. For example, https://intranet/.'
+          nullable: true
+        isAccessibleViaZTNAClient:
+          type: boolean
           nullable: true
         isBackendCertificateValidationEnabled:
           type: boolean
@@ -25374,7 +25388,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             mailboxType:
               type: string
@@ -25627,6 +25641,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStep'
+              description: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -27791,6 +27806,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -27867,6 +27883,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.synchronizationMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -28815,11 +28832,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -35735,6 +35752,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -41458,6 +41476,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.objectMappingMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
