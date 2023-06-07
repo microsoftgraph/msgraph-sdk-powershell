@@ -8939,7 +8939,11 @@ paths:
     get:
       tags:
         - security.triggersRoot
-      summary: Get retentionEvents from security
+      summary: List retentionEvents
+      description: Get a list of the retentionEvent objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionevent-list?view=graph-rest-1.0
       operationId: security.trigger_ListRetentionEvent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9031,7 +9035,11 @@ paths:
     post:
       tags:
         - security.triggersRoot
-      summary: Create new navigation property to retentionEvents for security
+      summary: Create retentionEvent
+      description: Create a new retentionEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionevent-post?view=graph-rest-1.0
       operationId: security.trigger_CreateRetentionEvent
       requestBody:
         description: New navigation property
@@ -9054,7 +9062,11 @@ paths:
     get:
       tags:
         - security.triggersRoot
-      summary: Get retentionEvents from security
+      summary: Get retentionEvent
+      description: Read the properties and relationships of a retentionEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-1.0
       operationId: security.trigger_GetRetentionEvent
       parameters:
         - name: retentionEvent-id
@@ -9146,7 +9158,11 @@ paths:
     delete:
       tags:
         - security.triggersRoot
-      summary: Delete navigation property retentionEvents for security
+      summary: Delete retentionEvent
+      description: Delete a retentionEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionevent-delete?view=graph-rest-1.0
       operationId: security.trigger_DeleteRetentionEvent
       parameters:
         - name: retentionEvent-id
@@ -9326,7 +9342,11 @@ paths:
     get:
       tags:
         - security.triggerTypesRoot
-      summary: Get retentionEventTypes from security
+      summary: List retentionEventTypes
+      description: Get a list of the retentionEventType objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentioneventtype-list?view=graph-rest-1.0
       operationId: security.triggerType_ListRetentionEventType
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9401,7 +9421,11 @@ paths:
     post:
       tags:
         - security.triggerTypesRoot
-      summary: Create new navigation property to retentionEventTypes for security
+      summary: Create retentionEventType
+      description: Create a new retentionEventType object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentioneventtype-post?view=graph-rest-1.0
       operationId: security.triggerType_CreateRetentionEventType
       requestBody:
         description: New navigation property
@@ -9424,7 +9448,11 @@ paths:
     get:
       tags:
         - security.triggerTypesRoot
-      summary: Get retentionEventTypes from security
+      summary: Get retentionEventType
+      description: Read the properties and relationships of a retentionEventType object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-1.0
       operationId: security.triggerType_GetRetentionEventType
       parameters:
         - name: retentionEventType-id
@@ -9509,7 +9537,11 @@ paths:
     delete:
       tags:
         - security.triggerTypesRoot
-      summary: Delete navigation property retentionEventTypes for security
+      summary: Delete retentionEventType
+      description: Delete a retentionEventType object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentioneventtype-delete?view=graph-rest-1.0
       operationId: security.triggerType_DeleteRetentionEventType
       parameters:
         - name: retentionEventType-id
@@ -11804,6 +11836,7 @@ components:
         - appGovernancePolicy
         - appGovernanceDetection
         - unknownFutureValue
+        - microsoftDefenderForCloud
       type: string
     microsoft.graph.security.alertDetermination:
       title: alertDetermination
@@ -11832,8 +11865,13 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: The time the evidence was created and added to the alert.
+          description: 'The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        detailedRoles:
+          type: array
+          items:
+            type: string
+            nullable: true
         remediationStatus:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceRemediationStatus'
         remediationStatusDetails:
@@ -11844,13 +11882,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.evidenceRole'
-          description: 'The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role ''Attacker''.'
+          description: 'One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.'
         tags:
           type: array
           items:
             type: string
             nullable: true
-          description: 'Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.'
+          description: 'Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.'
         verdict:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceVerdict'
       additionalProperties:
@@ -11868,6 +11906,7 @@ components:
         - microsoftAppGovernance
         - dataLossPrevention
         - unknownFutureValue
+        - microsoftDefenderForCloud
       type: string
     microsoft.graph.security.alertSeverity:
       title: alertSeverity
@@ -13508,6 +13547,7 @@ components:
         - inProgress
         - redirected
         - unknownFutureValue
+        - awaitingAction
       type: string
     microsoft.graph.security.huntingRowResult:
       title: huntingRowResult
@@ -17713,7 +17753,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string
