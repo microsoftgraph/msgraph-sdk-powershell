@@ -34,7 +34,7 @@ Delete an event object.
 Import-Module Microsoft.Graph.Calendar
 ```
 
-Get-MgGroupEvent -GroupId $groupId -EventId $eventId
+Remove-MgGroupEvent -GroupId $groupId -EventId $eventId
 
 ## PARAMETERS
 

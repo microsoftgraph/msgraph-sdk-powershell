@@ -42,7 +42,14 @@ When an invited participant is removed, any outstanding add participant request 
 Import-Module Microsoft.Graph.CloudCommunications
 ```
 
-Get-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
+Remove-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+```
+
+Remove-MgCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 
 ## PARAMETERS
 

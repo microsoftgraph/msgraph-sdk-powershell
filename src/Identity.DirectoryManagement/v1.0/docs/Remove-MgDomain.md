@@ -33,15 +33,7 @@ Deletes a domain from a tenant.
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-$params = @{
-	isDefault = $true
-	supportedServices = @(
-		"Email"
-		"OfficeCommunicationsOnline"
-	)
-}
-
-Update-MgDomain -DomainId $domainId -BodyParameter $params
+Remove-MgDomain -DomainId $domainId
 
 ## PARAMETERS
 

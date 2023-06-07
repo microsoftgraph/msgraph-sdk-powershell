@@ -39,18 +39,16 @@ Assignments belonging to the user.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-Get-MgEducationUserAssignment -EducationUserId $educationUserId -ExpandProperty "submissions"
 ```
 
-
+Get-MgEducationUserAssignment -EducationUserId $educationUserId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-Get-MgEducationUserAssignment -EducationUserId $educationUserId
 ```
 
-
+Get-MgEducationUserAssignment -EducationUserId $educationUserId -ExpandProperty "submissions"
 
 ## PARAMETERS
 

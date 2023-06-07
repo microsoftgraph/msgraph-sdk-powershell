@@ -34,7 +34,7 @@ Uninstall an app installed within a chat.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
+Remove-MgBetaChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
 
 ## PARAMETERS
 

@@ -40,44 +40,17 @@ Get outcomes from education
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Education
+{{ Add code here }}
 ```
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.educationFeedbackOutcome"
-}
 
-Update-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Education
+{{ Add code here }}
 ```
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.educationPointsOutcome"
-	points = @{
-		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGrade"
-		points = 
-	}
-}
 
-Update-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Education
-```
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.educationRubricOutcome"
-	rubricQualityFeedback = @(
-	)
-	rubricQualitySelectedLevels = @(
-	)
-}
-
-Update-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
 
 ## PARAMETERS
 

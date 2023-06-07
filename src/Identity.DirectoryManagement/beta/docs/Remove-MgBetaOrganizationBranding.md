@@ -33,15 +33,17 @@ To delete the organizationalBranding object, all images (Stream types) must firs
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+{{ Add code here }}
 ```
 
-$params = @{
-	signInPageText = "Default"
-	usernameHintText = "DefaultHint"
-}
+{{ Add output here }}
 
-Update-MgBetaOrganizationBranding -OrganizationId $organizationId -BodyParameter $params
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

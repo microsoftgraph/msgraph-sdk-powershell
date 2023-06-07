@@ -41,7 +41,7 @@ Read the properties and relationships of a microsoftAuthenticatorAuthenticationM
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod -UserId $userId -MicrosoftAuthenticatorAuthenticationMethodId $microsoftAuthenticatorAuthenticationMethodId
+Get-MgUserAuthenticationMicrosoftAuthenticatorMethod -UserId $userId -MicrosoftAuthenticatorAuthenticationMethodId $microsoftAuthenticatorAuthenticationMethodId
 
 ## PARAMETERS
 

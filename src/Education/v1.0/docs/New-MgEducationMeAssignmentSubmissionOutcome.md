@@ -51,18 +51,17 @@ If the file doesn't exist or isn't in that folder, the `POST` request will fail.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Education
+{{ Add code here }}
 ```
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.educationFeedbackResourceOutcome"
-	feedbackResource = @{
-		"@odata.type" = "#microsoft.graph.educationWordResource"
-		displayName = "Document1.docx"
-	}
-}
 
-New-MgEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

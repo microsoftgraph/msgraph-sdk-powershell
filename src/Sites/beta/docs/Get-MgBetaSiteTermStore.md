@@ -34,11 +34,7 @@ Read the properties and relationships of a store object.
 Import-Module Microsoft.Graph.Beta.Sites
 ```
 
-$params = @{
-	defaultLanguageTag = "en-US"
-}
-
-Update-MgBetaSiteTermStore -SiteId $siteId -BodyParameter $params
+Get-MgBetaSiteTermStore -SiteId $siteId
 
 ## PARAMETERS
 

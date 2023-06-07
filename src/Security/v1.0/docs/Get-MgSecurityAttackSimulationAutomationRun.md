@@ -38,17 +38,10 @@ A collection of simulation automation runs.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Security
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgSecurityAttackSimulationAutomationRun -SimulationAutomationId $simulationAutomationId
 
 ## PARAMETERS
 

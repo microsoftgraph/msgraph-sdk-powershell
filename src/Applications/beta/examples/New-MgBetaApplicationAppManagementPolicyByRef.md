@@ -8,6 +8,6 @@ $params = @{
 
 New-MgBetaApplicationAppManagementPolicyByRef -ApplicationId $applicationId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaApplicationAppManagementPolicyByRef Cmdlet.
+This example shows how to use the New-MgBetaApplicationAppManagementPolicyByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

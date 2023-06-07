@@ -34,7 +34,7 @@ Uninstall an app from the personal scope of the specified user.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaUserTeamworkInstalledApp -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId
+Remove-MgBetaUserTeamworkInstalledApp -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId
 
 ## PARAMETERS
 

@@ -2911,8 +2911,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get authenticationContextClassReferences from identity
-      description: Read-only. Nullable. Returns a collection of the specified authentication context class references.
+      summary: Get authenticationContextClassReference
+      description: Retrieve the properties and relationships of a authenticationContextClassReference object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationcontextclassreference-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetAuthenticationContextClassReference
       parameters:
         - name: authenticationContextClassReference-id
@@ -2963,7 +2966,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update the navigation property authenticationContextClassReferences in identity
+      summary: Update authenticationContextClassReference
+      description: 'Create an authenticationContextClassReference object, if the ID has not been used. If ID has been used, this call updates the authenticationContextClassReference object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationcontextclassreference-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateAuthenticationContextClassReference
       parameters:
         - name: authenticationContextClassReference-id
@@ -2994,7 +3001,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete navigation property authenticationContextClassReferences for identity
+      summary: Delete authenticationContextClassReference
+      description: Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/authenticationcontextclassreference-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteAuthenticationContextClassReference
       parameters:
         - name: authenticationContextClassReference-id
@@ -12269,11 +12280,11 @@ paths:
     patch:
       tags:
         - policies.crossTenantAccessPolicy
-      summary: Create identitySynchronization
-      description: Create a cross-tenant user synchronization policy for a partner-specific configuration.
+      summary: Update crossTenantIdentitySyncPolicyPartner
+      description: Update the user synchronization policy of a partner-specific configuration.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0
       operationId: policy.crossTenantAccessPolicy.partner_UpdateIdentitySynchronization
       parameters:
         - name: crossTenantAccessPolicyConfigurationPartner-tenantId
@@ -23086,7 +23097,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string

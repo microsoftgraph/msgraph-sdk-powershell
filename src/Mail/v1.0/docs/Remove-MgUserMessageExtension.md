@@ -37,37 +37,7 @@ Import-Module Microsoft.Graph.Mail
 ```
 
 # A UPN can also be used as -UserId.
-Get-MgUserMessageExtension -UserId $userId -MessageId $messageId -ExtensionId $extensionId
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Calendar
-```
-
-Get-MgGroupEventExtension -GroupId $groupId -EventId $eventId -ExtensionId $extensionId
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Mail
-```
-
-# A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "extensions(`$filter=id eq 'Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')"
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Groups
-```
-
-Get-MgGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Mail
-```
-
-# A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -Filter "Extensions/any(f:f/id eq 'Com.Contoso.Referral')" -ExpandProperty "Extensions(`$filter=id eq 'Com.Contoso.Referral')"
+Remove-MgUserMessageExtension -UserId $userId -MessageId $messageId -ExtensionId $extensionId
 
 ## PARAMETERS
 

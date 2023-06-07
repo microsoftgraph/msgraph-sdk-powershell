@@ -34,28 +34,8 @@ Delete an onlineMeeting object.
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 ```
 
-$params = @{
-	startDateTime = [System.DateTime]::Parse("2020-09-09T14:33:30.8546353-07:00")
-	endDateTime = [System.DateTime]::Parse("2020-09-09T15:03:30.8566356-07:00")
-	subject = "Patch Meeting Subject"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-```
-
-$params = @{
-	lobbyBypassSettings = @{
-		isDialInBypassEnabled = $true
-	}
-}
-
-# A UPN can also be used as -UserId.
-Update-MgBetaUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
+Remove-MgBetaUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId
 
 ## PARAMETERS
 
@@ -191,6 +171,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallRecordingId <String>]`: The unique identifier of callRecording
   - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession

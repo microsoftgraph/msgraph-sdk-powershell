@@ -41,13 +41,7 @@ Retrieve the properties and relationships of the school object.
 Import-Module Microsoft.Graph.Beta.Education
 ```
 
-$params = @{
-	displayName = "Fabrikam Arts High School"
-	description = "Magnate school for the arts.
-Los Angeles School District"
-}
-
-Update-MgBetaEducationSchool -EducationSchoolId $educationSchoolId -BodyParameter $params
+Get-MgBetaEducationSchool -EducationSchoolId $educationSchoolId
 
 ## PARAMETERS
 

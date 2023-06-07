@@ -41,11 +41,7 @@ Conceptual container for user and group directory objects.
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-$params = @{
-	displayName = "Greater Seattle District Technical Schools"
-}
-
-Update-MgBetaDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
+Get-MgBetaDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
 
 ## PARAMETERS
 

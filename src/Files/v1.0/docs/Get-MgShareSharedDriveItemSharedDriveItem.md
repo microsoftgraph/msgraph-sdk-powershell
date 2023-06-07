@@ -45,20 +45,6 @@ Import-Module Microsoft.Graph.Files
 
 Get-MgShareSharedDriveItemSharedDriveItem -SharedDriveItemId $sharedDriveItemId
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Files
-```
-
-Get-MgShareDriveItem -SharedDriveItemId $sharedDriveItemId
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Files
-```
-
-Get-MgShareDriveItem -SharedDriveItemId $sharedDriveItemId -ExpandProperty "children"
-
 ## PARAMETERS
 
 ### -All

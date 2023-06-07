@@ -34,12 +34,7 @@ Delete an ediscoveryCase object.
 Import-Module Microsoft.Graph.Security
 ```
 
-$params = @{
-	displayName = "My Case 1 - Renamed"
-	description = "Updated description"
-}
-
-Update-MgSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+Remove-MgSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
 
 ## PARAMETERS
 

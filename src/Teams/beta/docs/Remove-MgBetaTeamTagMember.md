@@ -34,7 +34,7 @@ Delete a member from a standard tag in a team.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -TeamworkTagMemberId $teamworkTagMemberId
+Remove-MgBetaTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -TeamworkTagMemberId $teamworkTagMemberId
 
 ## PARAMETERS
 

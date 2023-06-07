@@ -34,12 +34,8 @@ Delete a checklistItem object.
 Import-Module Microsoft.Graph.Users
 ```
 
-$params = @{
-	displayName = "buy cake"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId -BodyParameter $params
+Remove-MgUserTodoListTaskChecklistItem -UserId $userId -TodoTaskListId $todoTaskListId -TodoTaskId $todoTaskId -ChecklistItemId $checklistItemId
 
 ## PARAMETERS
 

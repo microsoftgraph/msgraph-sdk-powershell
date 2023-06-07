@@ -34,7 +34,7 @@ Delete an externalitem.
 Import-Module Microsoft.Graph.Beta.Search
 ```
 
-Get-MgBetaExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId
+Remove-MgBetaExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId
 
 ## PARAMETERS
 

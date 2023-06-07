@@ -41,14 +41,7 @@ Get a conversationMember from a team.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	roles = @(
-		"owner"
-	)
-}
-
-Update-MgBetaTeamMember -TeamId $teamId -ConversationMemberId $conversationMemberId -BodyParameter $params
+Get-MgBetaTeamMember -TeamId $teamId -ConversationMemberId $conversationMemberId
 
 ## PARAMETERS
 

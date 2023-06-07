@@ -34,7 +34,7 @@ Delete the channel.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Update-MgTeamChannel -TeamId $teamId -ChannelId $channelId
+Remove-MgTeamChannel -TeamId $teamId -ChannelId $channelId
 
 ## PARAMETERS
 

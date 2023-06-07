@@ -31,17 +31,17 @@ The attachment content.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+{{ Add code here }}
 ```
 
-Get-MgServiceAnnouncementMessageAttachment -ServiceUpdateMessageId $serviceUpdateMessageId
+
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+{{ Add code here }}
 ```
 
-Get-MgServiceAnnouncementMessageAttachmentArchive -ServiceUpdateMessageId $serviceUpdateMessageId
+
 
 ## PARAMETERS
 

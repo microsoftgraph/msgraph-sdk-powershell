@@ -43,13 +43,6 @@ Import-Module Microsoft.Graph.CloudCommunications
 
 Get-MgUserPresence -UserId $userId
 
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-```
-
-Get-MgCommunicationPresence -PresenceId $presenceId
-
 ## PARAMETERS
 
 ### -ExpandProperty

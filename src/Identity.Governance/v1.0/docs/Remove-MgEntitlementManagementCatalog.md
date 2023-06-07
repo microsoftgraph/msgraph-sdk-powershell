@@ -34,11 +34,7 @@ Delete an accessPackageCatalog.
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-$params = @{
-	displayName = "Catalog One"
-}
-
-Update-MgEntitlementManagementCatalog -AccessPackageCatalogId $accessPackageCatalogId -BodyParameter $params
+Remove-MgEntitlementManagementCatalog -AccessPackageCatalogId $accessPackageCatalogId
 
 ## PARAMETERS
 

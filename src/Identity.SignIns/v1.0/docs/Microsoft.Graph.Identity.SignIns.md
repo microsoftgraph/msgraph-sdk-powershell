@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 4c48996f-9005-4999-aaec-169f824ce53d
+Module Guid: 4e9cb4d7-e203-449d-a8fa-cf34338f07b3
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -90,9 +90,7 @@ The user attribute that you want to add to your user flow.
 the entry point for the Conditional Access (CA) object model.
 
 ### [Get-MgIdentityConditionalAccessAuthenticationContextClassReference](Get-MgIdentityConditionalAccessAuthenticationContextClassReference.md)
-Read-only.
-Nullable.
-Returns a collection of the specified authentication context class references.
+Retrieve the properties and relationships of a authenticationContextClassReference object.
 
 ### [Get-MgIdentityConditionalAccessAuthenticationContextClassReferenceCount](Get-MgIdentityConditionalAccessAuthenticationContextClassReferenceCount.md)
 Get the number of the resource
@@ -728,7 +726,7 @@ Delete an identityUserFlowAttributeAssignment object.
 Delete navigation property conditionalAccess for identity
 
 ### [Remove-MgIdentityConditionalAccessAuthenticationContextClassReference](Remove-MgIdentityConditionalAccessAuthenticationContextClassReference.md)
-Delete navigation property authenticationContextClassReferences for identity
+Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
 
 ### [Remove-MgIdentityConditionalAccessNamedLocation](Remove-MgIdentityConditionalAccessNamedLocation.md)
 Delete a countryNamedLocation object.
@@ -943,7 +941,8 @@ Update the properties of a identityUserFlowAttributeAssignment object.
 Update the navigation property conditionalAccess in identity
 
 ### [Update-MgIdentityConditionalAccessAuthenticationContextClassReference](Update-MgIdentityConditionalAccessAuthenticationContextClassReference.md)
-Update the navigation property authenticationContextClassReferences in identity
+Create an authenticationContextClassReference object, if the ID has not been used.
+If ID has been used, this call updates the authenticationContextClassReference object.
 
 ### [Update-MgIdentityConditionalAccessNamedLocation](Update-MgIdentityConditionalAccessNamedLocation.md)
 Update the properties of a countryNamedLocation object.
@@ -1027,7 +1026,7 @@ Update the default configuration of a cross-tenant access policy.
 Update the properties of a partner-specific configuration.
 
 ### [Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization](Update-MgPolicyCrossTenantAccessPolicyPartnerIdentitySynchronization.md)
-Create a cross-tenant user synchronization policy for a partner-specific configuration.
+Update the user synchronization policy of a partner-specific configuration.
 
 ### [Update-MgPolicyDefaultAppManagementPolicy](Update-MgPolicyDefaultAppManagementPolicy.md)
 Update the properties of a tenantAppManagementPolicy object.

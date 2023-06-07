@@ -1,52 +1,17 @@
-### Example 1: Request without Prefer header
+### Example 1: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-```powershellImport-Module Microsoft.Graph.Beta.Security
-
-$params = @{
-	assignedTo = "String"
-	closedDateTime = [System.DateTime]::Parse("String (timestamp)")
-	comments = @(
-		"String"
-	)
-	feedback = "@odata.type: microsoft.graph.alertFeedback"
-	status = "@odata.type: microsoft.graph.alertStatus"
-	tags = @(
-		"String"
-	)
-	vendorInformation = @{
-		provider = "String"
-		vendor = "String"
-	}
-}
-
-Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaBetaSecurityAlert Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: Request with Prefer header
+{{ Add description here }}
 
-```powershellImport-Module Microsoft.Graph.Beta.Security
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-$params = @{
-	assignedTo = "String"
-	closedDateTime = [System.DateTime]::Parse("String (timestamp)")
-	comments = @(
-		"String"
-	)
-	feedback = "@odata.type: microsoft.graph.alertFeedback"
-	status = "@odata.type: microsoft.graph.alertStatus"
-	tags = @(
-		"String"
-	)
-	vendorInformation = @{
-		provider = "String"
-		vendor = "String"
-	}
-}
-
-Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
+{{ Add output here }}
 ```
-This example shows how to use the Get-MgBetaBetaSecurityAlert Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
+{{ Add description here }}

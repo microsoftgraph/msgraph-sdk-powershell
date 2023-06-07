@@ -34,7 +34,7 @@ Delete a version of a document set in a list.
 Import-Module Microsoft.Graph.Sites
 ```
 
-Get-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -DocumentSetVersionId $documentSetVersionId
+Remove-MgSiteListItemDocumentSetVersion -SiteId $siteId -ListId $listId -ListItemId $listItemId -DocumentSetVersionId $documentSetVersionId
 
 ## PARAMETERS
 

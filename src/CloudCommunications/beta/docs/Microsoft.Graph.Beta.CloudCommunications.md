@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CloudCommunications
-Module Guid: fe080b77-db6f-43b7-ae48-b94bc246bd7d
+Module Guid: f132e783-5a27-4972-8074-6a3f52694879
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -106,12 +106,21 @@ Get the number of the resource
 The content stream of the attendee report of a Teams live event.
 Read-only.
 
+### [Get-MgBetaCommunicationOnlineMeetingBroadcastRecording](Get-MgBetaCommunicationOnlineMeetingBroadcastRecording.md)
+Get broadcastRecording for the navigation property onlineMeetings from communications
+
 ### [Get-MgBetaCommunicationOnlineMeetingCount](Get-MgBetaCommunicationOnlineMeetingCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaCommunicationOnlineMeetingRecording](Get-MgBetaCommunicationOnlineMeetingRecording.md)
 The content stream of the recording of a Teams live event.
 Read-only.
+
+### [Get-MgBetaCommunicationOnlineMeetingRecordingContent](Get-MgBetaCommunicationOnlineMeetingRecordingContent.md)
+Get content for the navigation property recordings from communications
+
+### [Get-MgBetaCommunicationOnlineMeetingRecordingCount](Get-MgBetaCommunicationOnlineMeetingRecordingCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaCommunicationOnlineMeetingRegistration](Get-MgBetaCommunicationOnlineMeetingRegistration.md)
 Get the externalMeetingRegistration details associated with an onlineMeeting.
@@ -184,12 +193,21 @@ Get the number of the resource
 The content stream of the attendee report of a Teams live event.
 Read-only.
 
+### [Get-MgBetaUserOnlineMeetingBroadcastRecording](Get-MgBetaUserOnlineMeetingBroadcastRecording.md)
+Get broadcastRecording for the navigation property onlineMeetings from users
+
 ### [Get-MgBetaUserOnlineMeetingCount](Get-MgBetaUserOnlineMeetingCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserOnlineMeetingRecording](Get-MgBetaUserOnlineMeetingRecording.md)
 The content stream of the recording of a Teams live event.
 Read-only.
+
+### [Get-MgBetaUserOnlineMeetingRecordingContent](Get-MgBetaUserOnlineMeetingRecordingContent.md)
+Get content for the navigation property recordings from users
+
+### [Get-MgBetaUserOnlineMeetingRecordingCount](Get-MgBetaUserOnlineMeetingRecordingCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaUserOnlineMeetingRegistration](Get-MgBetaUserOnlineMeetingRegistration.md)
 Get the externalMeetingRegistration details associated with an onlineMeeting.
@@ -350,6 +368,9 @@ Create new navigation property to attendanceReports for communications
 ### [New-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord](New-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
 Create new navigation property to attendanceRecords for communications
 
+### [New-MgBetaCommunicationOnlineMeetingRecording](New-MgBetaCommunicationOnlineMeetingRecording.md)
+Create new navigation property to recordings for communications
+
 ### [New-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](New-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
 
@@ -370,6 +391,9 @@ Create new navigation property to attendanceReports for users
 
 ### [New-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord](New-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord.md)
 Create new navigation property to attendanceRecords for users
+
+### [New-MgBetaUserOnlineMeetingRecording](New-MgBetaUserOnlineMeetingRecording.md)
+Create new navigation property to recordings for users
 
 ### [New-MgBetaUserOnlineMeetingRegistrationCustomQuestion](New-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -412,8 +436,11 @@ Delete navigation property attendanceReports for communications
 ### [Remove-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Remove-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
 Delete navigation property attendanceRecords for communications
 
+### [Remove-MgBetaCommunicationOnlineMeetingRecording](Remove-MgBetaCommunicationOnlineMeetingRecording.md)
+Delete navigation property recordings for communications
+
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistration](Remove-MgBetaCommunicationOnlineMeetingRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ### [Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -439,8 +466,11 @@ Delete navigation property attendanceReports for users
 ### [Remove-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord](Remove-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord.md)
 Delete navigation property attendanceRecords for users
 
+### [Remove-MgBetaUserOnlineMeetingRecording](Remove-MgBetaUserOnlineMeetingRecording.md)
+Delete navigation property recordings for users
+
 ### [Remove-MgBetaUserOnlineMeetingRegistration](Remove-MgBetaUserOnlineMeetingRegistration.md)
-Disable and delete the externalMeetingRegistration of an onlineMeeting.
+Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
 
 ### [Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion](Remove-MgBetaUserOnlineMeetingRegistrationCustomQuestion.md)
 Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
@@ -468,9 +498,15 @@ Read-only.
 The content stream of the attendee report of a Teams live event.
 Read-only.
 
+### [Set-MgBetaCommunicationOnlineMeetingBroadcastRecording](Set-MgBetaCommunicationOnlineMeetingBroadcastRecording.md)
+Update broadcastRecording for the navigation property onlineMeetings in communications
+
 ### [Set-MgBetaCommunicationOnlineMeetingRecording](Set-MgBetaCommunicationOnlineMeetingRecording.md)
 The content stream of the recording of a Teams live event.
 Read-only.
+
+### [Set-MgBetaCommunicationOnlineMeetingRecordingContent](Set-MgBetaCommunicationOnlineMeetingRecordingContent.md)
+Update content for the navigation property recordings in communications
 
 ### [Set-MgBetaCommunicationOnlineMeetingTranscriptContent](Set-MgBetaCommunicationOnlineMeetingTranscriptContent.md)
 A field that represents the content of the transcript.
@@ -503,9 +539,15 @@ Read-only.
 The content stream of the attendee report of a Teams live event.
 Read-only.
 
+### [Set-MgBetaUserOnlineMeetingBroadcastRecording](Set-MgBetaUserOnlineMeetingBroadcastRecording.md)
+Update broadcastRecording for the navigation property onlineMeetings in users
+
 ### [Set-MgBetaUserOnlineMeetingRecording](Set-MgBetaUserOnlineMeetingRecording.md)
 The content stream of the recording of a Teams live event.
 Read-only.
+
+### [Set-MgBetaUserOnlineMeetingRecordingContent](Set-MgBetaUserOnlineMeetingRecordingContent.md)
+Update content for the navigation property recordings in users
 
 ### [Set-MgBetaUserOnlineMeetingTranscriptContent](Set-MgBetaUserOnlineMeetingTranscriptContent.md)
 A field that represents the content of the transcript.
@@ -556,6 +598,9 @@ Update the navigation property attendanceReports in communications
 ### [Update-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord](Update-MgBetaCommunicationOnlineMeetingAttendanceReportAttendanceRecord.md)
 Update the navigation property attendanceRecords in communications
 
+### [Update-MgBetaCommunicationOnlineMeetingRecording](Update-MgBetaCommunicationOnlineMeetingRecording.md)
+Update the navigation property recordings in communications
+
 ### [Update-MgBetaCommunicationOnlineMeetingRegistration](Update-MgBetaCommunicationOnlineMeetingRegistration.md)
 Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
 
@@ -583,6 +628,9 @@ Update the navigation property attendanceReports in users
 
 ### [Update-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord](Update-MgBetaUserOnlineMeetingAttendanceReportAttendanceRecord.md)
 Update the navigation property attendanceRecords in users
+
+### [Update-MgBetaUserOnlineMeetingRecording](Update-MgBetaUserOnlineMeetingRecording.md)
+Update the navigation property recordings in users
 
 ### [Update-MgBetaUserOnlineMeetingRegistration](Update-MgBetaUserOnlineMeetingRegistration.md)
 Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.

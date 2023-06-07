@@ -31,17 +31,10 @@ Retrieve the properties and relationships of a **plannerPlanDetails** object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Planner
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgBetaPlannerPlanDetail -PlannerPlanId $plannerPlanId
 
 ## PARAMETERS
 

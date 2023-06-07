@@ -34,11 +34,7 @@ Delete **plannerBucket**.
 Import-Module Microsoft.Graph.Beta.Planner
 ```
 
-$params = @{
-	name = "Development"
-}
-
-Update-MgBetaPlannerBucket -PlannerBucketId $plannerBucketId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
+Remove-MgBetaPlannerBucket -PlannerBucketId $plannerBucketId-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 
 ## PARAMETERS
 

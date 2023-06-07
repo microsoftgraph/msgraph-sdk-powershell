@@ -2,8 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.DirectoryObjects
 
-Get-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
+Remove-MgBetaDirectoryObject -DirectoryObjectId $directoryObjectId
 ```
-This example shows how to use the Remove-MgBetaBetaDirectoryObject Cmdlet.
+This example shows how to use the Remove-MgBetaDirectoryObject Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

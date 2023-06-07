@@ -34,11 +34,7 @@ Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat*
 Import-Module Microsoft.Graph.Planner
 ```
 
-$params = @{
-	orderHint = "A6673H Ejkl!"
-}
-
-Update-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
+Get-MgPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId
 
 ## PARAMETERS
 

@@ -8,6 +8,6 @@ $params = @{
 
 Update-MgBetaEntitlementManagementSetting -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaEntitlementManagementSetting Cmdlet.
+This example shows how to use the Update-MgBetaEntitlementManagementSetting Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

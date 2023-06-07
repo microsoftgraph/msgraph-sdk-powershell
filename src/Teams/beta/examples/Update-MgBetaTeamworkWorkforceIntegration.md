@@ -16,6 +16,6 @@ $params = @{
 
 Update-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaTeamworkWorkforceIntegration Cmdlet.
+This example shows how to use the Update-MgBetaTeamworkWorkforceIntegration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

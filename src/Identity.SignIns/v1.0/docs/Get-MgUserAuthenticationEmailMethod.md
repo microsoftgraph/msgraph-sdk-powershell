@@ -41,11 +41,8 @@ Retrieve a user's single email authentication method object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	emailAddress = "kim@contoso.com"
-}
-
-Update-MgUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId -BodyParameter $params
+# A UPN can also be used as -UserId.
+Get-MgUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId
 
 ## PARAMETERS
 

@@ -34,17 +34,8 @@ Delete eventMessage.
 Import-Module Microsoft.Graph.Mail
 ```
 
-$params = @{
-	subject = "subject-value"
-	body = @{
-		contentType = ""
-		content = "content-value"
-	}
-	inferenceClassification = "other"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+Remove-MgUserMessage -UserId $userId -MessageId $messageId
 
 ## PARAMETERS
 

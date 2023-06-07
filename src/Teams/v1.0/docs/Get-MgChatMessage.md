@@ -49,20 +49,6 @@ Import-Module Microsoft.Graph.Teams
 
 Get-MgChatMessage -ChatId $chatId -ChatMessageId $chatMessageId
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-```
-
-Get-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-```
-
-Get-MgTeamChannelMessageReply -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -ChatMessageId1 $chatMessageId1
-
 ## PARAMETERS
 
 ### -All

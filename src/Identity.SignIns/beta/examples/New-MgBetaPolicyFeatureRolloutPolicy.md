@@ -12,6 +12,6 @@ $params = @{
 
 New-MgBetaPolicyFeatureRolloutPolicy -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaPolicyFeatureRolloutPolicy Cmdlet.
+This example shows how to use the New-MgBetaPolicyFeatureRolloutPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

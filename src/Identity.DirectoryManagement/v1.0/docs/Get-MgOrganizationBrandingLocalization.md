@@ -43,24 +43,14 @@ To retrieve a localization branding object, specify the value of **id** in the U
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-$params = @{
-	backgroundColor = "#00000F"
-	signInPageText = "Welcome to Contoso France"
-}
-
-Update-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
+Get-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-$params = @{
-	signInPageText = "Welcome to Contoso France."
-	usernameHintText = " "
-}
-
-Update-MgOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
+Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgIdentityConditionalAccessAuthenticationContextClassReference
 
 ## SYNOPSIS
-Delete navigation property authenticationContextClassReferences for identity
+Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgIdentityConditionalAccessAuthenticationContextClassReference -InputObje
 ```
 
 ## DESCRIPTION
-Delete navigation property authenticationContextClassReferences for identity
+Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
 
 ## EXAMPLES
 

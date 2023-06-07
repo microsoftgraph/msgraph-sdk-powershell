@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.DirectoryManagement
-Module Guid: 9276e71b-b316-4761-88bb-88af1fb1afdc
+Module Guid: c281ae7a-b1e8-4dd2-9ba7-03d68bbcac7b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,13 +12,13 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Beta.Identity.DirectoryManagement Cmdlets
 ### [Complete-MgBetaDirectoryImpactedResource](Complete-MgBetaDirectoryImpactedResource.md)
-Invoke action complete
+Complete an impactedResource object and update its **status** to `completedByUser`.
 
 ### [Complete-MgBetaDirectoryRecommendation](Complete-MgBetaDirectoryRecommendation.md)
-Invoke action complete
+Complete a recommendation object and update its **status** to `completedByUser`.
 
 ### [Complete-MgBetaDirectoryRecommendationImpactedResource](Complete-MgBetaDirectoryRecommendationImpactedResource.md)
-Invoke action complete
+Complete an impactedResource object and update its **status** to `completedByUser`.
 
 ### [Confirm-MgBetaAdministrativeUnitMemberGroup](Confirm-MgBetaAdministrativeUnitMemberGroup.md)
 Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member.
@@ -576,7 +576,7 @@ Retrieve a list of recently deleted application and group objects owned by the s
 This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn't support pagination.
 
 ### [Get-MgBetaDirectoryAttributeSet](Get-MgBetaDirectoryAttributeSet.md)
-Group of related custom security attribute definitions.
+Read the properties and relationships of an attributeSet object.
 
 ### [Get-MgBetaDirectoryAttributeSetCount](Get-MgBetaDirectoryAttributeSetCount.md)
 Get the number of the resource
@@ -728,7 +728,7 @@ Read-only.
 Get the number of the resource
 
 ### [Get-MgBetaDirectoryRecommendation](Get-MgBetaDirectoryRecommendation.md)
-List of recommended improvements to improve tenant posture.
+Read the properties and relationships of a recommendation object.
 
 ### [Get-MgBetaDirectoryRecommendationCount](Get-MgBetaDirectoryRecommendationCount.md)
 Get the number of the resource
@@ -1085,13 +1085,13 @@ Get the number of the resource
 Invoke function availableProviderTypes
 
 ### [Invoke-MgBetaDismissDirectoryImpactedResource](Invoke-MgBetaDismissDirectoryImpactedResource.md)
-Invoke action dismiss
+Dismiss an impactedResources object and update its status to `dismissed`.
 
 ### [Invoke-MgBetaDismissDirectoryRecommendation](Invoke-MgBetaDismissDirectoryRecommendation.md)
-Invoke action dismiss
+Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its **status** to `dismissed` .
 
 ### [Invoke-MgBetaDismissDirectoryRecommendationImpactedResource](Invoke-MgBetaDismissDirectoryRecommendationImpactedResource.md)
-Invoke action dismiss
+Dismiss an impactedResources object and update its status to `dismissed`.
 
 ### [Invoke-MgBetaForceDomainDelete](Invoke-MgBetaForceDomainDelete.md)
 Deletes a domain using an asynchronous operation.
@@ -1101,26 +1101,35 @@ To verify deletion of a domain, you can perform a get domain.
 If the domain was successfully deleted, a 404 HTTP response code will be returned in the response.
 
 ### [Invoke-MgBetaPostponeDirectoryImpactedResource](Invoke-MgBetaPostponeDirectoryImpactedResource.md)
-Invoke action postpone
+Postpone action on an impactedResource object to a specified future date and time by marking its **status** as `postponed`.
+On the specified date and time, Azure AD will automatically mark the status of the **impactedResource** object to `active`.
 
 ### [Invoke-MgBetaPostponeDirectoryRecommendation](Invoke-MgBetaPostponeDirectoryRecommendation.md)
-Invoke action postpone
+Postpone action on a recommendation object to a specified future date and time by marking its **status** as `postponed`.
+On the date and time provided, Azure AD will automatically update the **status** of the **recommendation** object to `active` again.
 
 ### [Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource](Invoke-MgBetaPostponeDirectoryRecommendationImpactedResource.md)
-Invoke action postpone
+Postpone action on an impactedResource object to a specified future date and time by marking its **status** as `postponed`.
+On the specified date and time, Azure AD will automatically mark the status of the **impactedResource** object to `active`.
 
 ### [Invoke-MgBetaPromoteDomain](Invoke-MgBetaPromoteDomain.md)
 Promote a verified subdomain to the root domain.
 A verified domain has its **isVerified** property set to `true`.
 
 ### [Invoke-MgBetaReactivateDirectoryImpactedResource](Invoke-MgBetaReactivateDirectoryImpactedResource.md)
-Invoke action reactivate
+Reactivate an accidentally dismissed, completed, or postponed **impactedResource** object.
+This action updates the **status** of the resource to `active`.
+This method is relevant only if the status of the **impactedResource** object is `dismissed`, `postponed`, or `completedByUser`.
 
 ### [Invoke-MgBetaReactivateDirectoryRecommendation](Invoke-MgBetaReactivateDirectoryRecommendation.md)
-Invoke action reactivate
+Reactivate a completed, dismissed, or postponed recommendation object.
+This action updates the **status** of the recommendation to `active`.
+This method only works when the **status** of the recommendation is `completedByUser`, `dismissed`, or `postponed`.
 
 ### [Invoke-MgBetaReactivateDirectoryRecommendationImpactedResource](Invoke-MgBetaReactivateDirectoryRecommendationImpactedResource.md)
-Invoke action reactivate
+Reactivate an accidentally dismissed, completed, or postponed **impactedResource** object.
+This action updates the **status** of the resource to `active`.
+This method is relevant only if the status of the **impactedResource** object is `dismissed`, `postponed`, or `completedByUser`.
 
 ### [Invoke-MgBetaRetryContactServiceProvisioning](Invoke-MgBetaRetryContactServiceProvisioning.md)
 Invoke action retryServiceProvisioning
@@ -1726,7 +1735,7 @@ Update the navigation property extensions in directory
 Update the navigation property scopedRoleMembers in directory
 
 ### [Update-MgBetaDirectoryAttributeSet](Update-MgBetaDirectoryAttributeSet.md)
-Update the navigation property attributeSets in directory
+Update the properties of an attributeSet object.
 
 ### [Update-MgBetaDirectoryCertificateAuthority](Update-MgBetaDirectoryCertificateAuthority.md)
 Update the navigation property certificateAuthorities in directory

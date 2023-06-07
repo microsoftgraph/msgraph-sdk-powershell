@@ -4,6 +4,6 @@
 
 Get-MgBetaRiskyServicePrincipal -RiskyServicePrincipalId $riskyServicePrincipalId
 ```
-This example shows how to use the Get-MgBetaBetaRiskyServicePrincipal Cmdlet.
+This example shows how to use the Get-MgBetaRiskyServicePrincipal Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

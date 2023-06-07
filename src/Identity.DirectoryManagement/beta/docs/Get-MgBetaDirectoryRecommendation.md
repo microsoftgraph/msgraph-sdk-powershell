@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDirectoryRecommendation
 
 ## SYNOPSIS
-List of recommended improvements to improve tenant posture.
+Read the properties and relationships of a recommendation object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaDirectoryRecommendation -InputObject <IIdentityDirectoryManagementIden
 ```
 
 ## DESCRIPTION
-List of recommended improvements to improve tenant posture.
+Read the properties and relationships of a recommendation object.
 
 ## EXAMPLES
 

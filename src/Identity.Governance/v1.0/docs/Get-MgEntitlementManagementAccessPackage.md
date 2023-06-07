@@ -41,11 +41,7 @@ Retrieve the properties and relationships of an accessPackage object.
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-$params = @{
-	displayName = "Access Package New Name"
-}
-
-Update-MgEntitlementManagementAccessPackage -AccessPackageId $accessPackageId -BodyParameter $params
+Get-MgEntitlementManagementAccessPackage -AccessPackageId $accessPackageId
 
 ## PARAMETERS
 

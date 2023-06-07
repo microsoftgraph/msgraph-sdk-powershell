@@ -34,7 +34,7 @@ Delete navigation property deletedItems for directory
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-Get-MgBetaDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
+Remove-MgBetaDirectoryDeletedItem -DirectoryObjectId $directoryObjectId
 
 ## PARAMETERS
 

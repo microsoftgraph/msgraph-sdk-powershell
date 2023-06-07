@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: 466134f1-f584-436f-afff-90e3d9011dce
+Module Guid: 37e5e6e8-75a3-4e53-9d78-7bd4625bcd8e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -183,8 +183,8 @@ Create new navigation property to operations for external
 Create a new industryDataConnector object.
 
 ### [New-MgBetaExternalIndustryDataInboundFlow](New-MgBetaExternalIndustryDataInboundFlow.md)
-Create a new inboundFileFlow object.
-The following prerequisite resources are required when you create an **inboundFileFlow**:
+Create a new inboundFlow object.
+The following prerequisite resources are required when you create an **inboundFlow**:
 
 ### [New-MgBetaExternalIndustryDataOperation](New-MgBetaExternalIndustryDataOperation.md)
 Create new navigation property to operations for external
@@ -235,7 +235,7 @@ Delete navigation property quota for external
 Delete navigation property schema for external
 
 ### [Remove-MgBetaExternalIndustryDataConnector](Remove-MgBetaExternalIndustryDataConnector.md)
-Delete an industryDataConnector object.
+Delete an azureDataLakeConnector object.
 
 ### [Remove-MgBetaExternalIndustryDataInboundFlow](Remove-MgBetaExternalIndustryDataInboundFlow.md)
 Delete an inboundFlow object.
@@ -298,7 +298,7 @@ Update the properties of a schema for an externalConnection.
 Update the properties of an industryDataConnector object.
 
 ### [Update-MgBetaExternalIndustryDataInboundFlow](Update-MgBetaExternalIndustryDataInboundFlow.md)
-Update the properties of an inboundFileFlow object.
+Update the properties of an inboundFlow object.
 
 ### [Update-MgBetaExternalIndustryDataOperation](Update-MgBetaExternalIndustryDataOperation.md)
 Update the navigation property operations in external
@@ -325,5 +325,5 @@ Update the properties of a bookmark object.
 Update search
 
 ### [Update-MgBetaSearchQna](Update-MgBetaSearchQna.md)
-Update the navigation property qnas in search
+Update the properties of a qna object.
 

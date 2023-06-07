@@ -40,11 +40,7 @@ See the table in the Permissions section for the list of resources that support 
 Import-Module Microsoft.Graph.ChangeNotifications
 ```
 
-$params = @{
-	expirationDateTime = [System.DateTime]::Parse("2016-11-22T18:23:45.9356913Z")
-}
-
-Update-MgSubscription -SubscriptionId $subscriptionId -BodyParameter $params
+Get-MgSubscription -SubscriptionId $subscriptionId
 
 ## PARAMETERS
 

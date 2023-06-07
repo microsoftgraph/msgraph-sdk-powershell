@@ -105,6 +105,37 @@ $params = @{
 
 New-MgChatMember -ChatId $chatId -BodyParameter $params
 
+### -------------------------- EXAMPLE 5 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users/8ba98gf6-7fc2-4eb2-c7f2-aef9f21fd98g"
+	roles = @(
+		"guest"
+	)
+}
+
+New-MgChatMember -ChatId $chatId -BodyParameter $params
+
+### -------------------------- EXAMPLE 6 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+$params = @{
+	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
+	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users/82af01c5-f7cc-4a2e-a728-3a5df21afd9d"
+	roles = @(
+		"owner"
+	)
+	tenantId = "4dc1fe35-8ac6-4f0d-904a-7ebcd364bea1"
+}
+
+New-MgChatMember -ChatId $chatId -BodyParameter $params
+
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -202,9 +233,10 @@ Accept wildcard characters: False
 
 ### -Roles
 The roles for that user.
-This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values.
-Similarly, if the member is a guest, the roles property contains guest as one of the values.
+This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values.
+Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values.
 A basic member should not have any values specified in the roles property.
+An Out-of-tenant external member is assigned the owner role.
 
 ```yaml
 Type: System.String[]
@@ -291,7 +323,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the user.
-  - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
+  - `[Roles <String[]>]`: The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
   - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
 
 `INPUTOBJECT <ITeamsIdentity>`: Identity Parameter

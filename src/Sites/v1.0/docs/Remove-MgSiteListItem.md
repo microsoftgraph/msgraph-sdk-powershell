@@ -34,7 +34,7 @@ Removes an item from a [list][].
 Import-Module Microsoft.Graph.Sites
 ```
 
-Get-MgSiteListItem -SiteId $siteId -ListId $listId -ListItemId $listItemId -ExpandProperty "fields"
+Remove-MgSiteListItem -SiteId $siteId -ListId $listId -ListItemId $listItemId
 
 ## PARAMETERS
 

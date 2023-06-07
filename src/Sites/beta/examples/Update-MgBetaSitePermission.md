@@ -10,6 +10,6 @@ $params = @{
 
 Update-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaSitePermission Cmdlet.
+This example shows how to use the Update-MgBetaSitePermission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

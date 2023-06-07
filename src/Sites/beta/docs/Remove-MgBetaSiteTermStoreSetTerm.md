@@ -31,17 +31,10 @@ Delete a term object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Sites
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Remove-MgBetaSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId
 
 ## PARAMETERS
 

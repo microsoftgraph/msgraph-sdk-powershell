@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: b8bfb406-f7f4-4dfb-a8dc-644f23a8f273
+Module Guid: 0d94ce5f-f39f-4993-bdec-2c0a08df3fa6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -38,6 +38,13 @@ Get the number of the resource
 Read the properties of an identityApiConnector object.
 
 ### [Get-MgBetaIdentityApiConnectorCount](Get-MgBetaIdentityApiConnectorCount.md)
+Get the number of the resource
+
+### [Get-MgBetaIdentityAuthenticationEventFlow](Get-MgBetaIdentityAuthenticationEventFlow.md)
+Retrieve the properties and relationships of a specific authenticationEventsFlow object by ID.
+Only externalUsersSelfServiceSignupEventsFlow object types are available.
+
+### [Get-MgBetaIdentityAuthenticationEventFlowCount](Get-MgBetaIdentityAuthenticationEventFlowCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityAuthenticationEventListener](Get-MgBetaIdentityAuthenticationEventListener.md)
@@ -189,7 +196,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocation](Get-MgBetaIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of a namedLocation object.
+Retrieve the properties and relationships of an ipNamedLocation object.
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocationCount](Get-MgBetaIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -600,7 +607,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaRiskDetection](Get-MgBetaRiskDetection.md)
-Retrieve the properties of a **riskDetection** object.
+Retrieve the properties of a collection of **riskDetection** objects.
 
 ### [Get-MgBetaRiskDetectionCount](Get-MgBetaRiskDetectionCount.md)
 Get the number of the resource
@@ -857,6 +864,10 @@ Add new entity to dataPolicyOperations
 
 ### [New-MgBetaIdentityApiConnector](New-MgBetaIdentityApiConnector.md)
 Create a new identityApiConnector object.
+
+### [New-MgBetaIdentityAuthenticationEventFlow](New-MgBetaIdentityAuthenticationEventFlow.md)
+Create a new authenticationEventsFlow object that is of the type specified in the request body.
+You can create only an externalUsersSelfServiceSignupEventsFlow object type.
 
 ### [New-MgBetaIdentityAuthenticationEventListener](New-MgBetaIdentityAuthenticationEventListener.md)
 Create a new authenticationEventListener object.
@@ -1129,6 +1140,10 @@ Delete entity from dataPolicyOperations
 ### [Remove-MgBetaIdentityApiConnector](Remove-MgBetaIdentityApiConnector.md)
 Deletes an identityApiConnector object.
 
+### [Remove-MgBetaIdentityAuthenticationEventFlow](Remove-MgBetaIdentityAuthenticationEventFlow.md)
+Delete a specific authenticationEventsFlow resource by ID.
+Only externalUsersSelfServiceSignupEventsFlow object types are available.
+
 ### [Remove-MgBetaIdentityAuthenticationEventListener](Remove-MgBetaIdentityAuthenticationEventListener.md)
 Deletes an authenticationEventListener object.
 
@@ -1178,7 +1193,7 @@ Delete navigation property userAttributeAssignments for identity
 Delete navigation property conditionalAccess for identity
 
 ### [Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference](Remove-MgBetaIdentityConditionalAccessAuthenticationContextClassReference.md)
-Delete navigation property authenticationContextClassReferences for identity
+Delete an authenticationContextClassReference object that's not published or used by a conditional access policy.
 
 ### [Remove-MgBetaIdentityConditionalAccessAuthenticationStrength](Remove-MgBetaIdentityConditionalAccessAuthenticationStrength.md)
 Delete navigation property authenticationStrengths for identity
@@ -1510,6 +1525,10 @@ Update entity in dataPolicyOperations
 ### [Update-MgBetaIdentityApiConnector](Update-MgBetaIdentityApiConnector.md)
 Update the properties of an identityApiConnector object.
 
+### [Update-MgBetaIdentityAuthenticationEventFlow](Update-MgBetaIdentityAuthenticationEventFlow.md)
+Update the properties of an authenticationEventsFlow object.
+Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
+
 ### [Update-MgBetaIdentityAuthenticationEventListener](Update-MgBetaIdentityAuthenticationEventListener.md)
 Update the properties of an authenticationEventListener object.
 You must specify the **@odata.type** property and the value of the authenticationEventListener object type to update.
@@ -1570,7 +1589,7 @@ Update the properties of an authenticationCombinationConfiguration object.
 In use, only fido2combinationConfigurations may be updated as they are the only type of authenticationCombinationConfiguration that may be created.
 
 ### [Update-MgBetaIdentityConditionalAccessNamedLocation](Update-MgBetaIdentityConditionalAccessNamedLocation.md)
-Update the properties of an ipNamedLocation object.
+Update the properties of a countryNamedLocation object.
 
 ### [Update-MgBetaIdentityConditionalAccessPolicy](Update-MgBetaIdentityConditionalAccessPolicy.md)
 Update the properties of a conditionalAccessPolicy object.

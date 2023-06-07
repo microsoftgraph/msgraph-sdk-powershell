@@ -35,12 +35,7 @@ Delete an ediscoveryReviewSetQuery object.
 Import-Module Microsoft.Graph.Beta.Security
 ```
 
-$params = @{
-	displayName = "My Query 1 (update)"
-	contentQuery = "(Author="edisons")"
-}
-
-Update-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -EdiscoveryReviewSetQueryId $ediscoveryReviewSetQueryId -BodyParameter $params
+Remove-MgBetaSecurityCaseEdiscoveryCaseReviewSetQuery -EdiscoveryCaseId $ediscoveryCaseId -EdiscoveryReviewSetId $ediscoveryReviewSetId -EdiscoveryReviewSetQueryId $ediscoveryReviewSetQueryId
 
 ## PARAMETERS
 

@@ -45,20 +45,7 @@ The following table lists the three scenarios where you can get an open extensio
 Import-Module Microsoft.Graph.Beta.Groups
 ```
 
-$params = @{
-	"@odata.type" = "Microsoft.OutlookServices.OpenTypeExtension"
-	extensionName = "Com.Contoso.Estimate"
-	companyName = "Contoso"
-	expirationDate = "2016-07-30T11:00:00.000Z"
-	DealValue = 
-	topPicks = @(
-		"Employees only"
-		"Add spouse or guest"
-		"Add family"
-	)
-}
-
-Update-MgBetaGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId -BodyParameter $params
+Get-MgBetaGroupThreadPostExtension -GroupId $groupId -ConversationThreadId $conversationThreadId -PostId $postId -ExtensionId $extensionId
 
 ## PARAMETERS
 

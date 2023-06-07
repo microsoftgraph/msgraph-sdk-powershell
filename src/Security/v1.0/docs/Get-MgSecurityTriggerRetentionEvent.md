@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityTriggerRetentionEvent
 
 ## SYNOPSIS
-Get retentionEvents from security
+Read the properties and relationships of a retentionEvent object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityTriggerRetentionEvent -InputObject <ISecurityIdentity> [-ExpandPro
 ```
 
 ## DESCRIPTION
-Get retentionEvents from security
+Read the properties and relationships of a retentionEvent object.
 
 ## EXAMPLES
 

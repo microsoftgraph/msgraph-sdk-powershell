@@ -2,11 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Sites
 
-$params = @{
-	defaultLanguageTag = "en-US"
-}
-
-Update-MgSiteTermStore -SiteId $siteId -BodyParameter $params
+Get-MgSiteTermStore -SiteId $siteId
 ```
 This example shows how to use the Get-MgSiteTermStore Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

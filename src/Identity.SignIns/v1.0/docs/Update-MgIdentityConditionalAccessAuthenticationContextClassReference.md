@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgIdentityConditionalAccessAuthenticationContextClassReference
 
 ## SYNOPSIS
-Update the navigation property authenticationContextClassReferences in identity
+Create an authenticationContextClassReference object, if the ID has not been used.
+If ID has been used, this call updates the authenticationContextClassReference object.
 
 ## SYNTAX
 
@@ -40,7 +41,8 @@ Update-MgIdentityConditionalAccessAuthenticationContextClassReference -InputObje
 ```
 
 ## DESCRIPTION
-Update the navigation property authenticationContextClassReferences in identity
+Create an authenticationContextClassReference object, if the ID has not been used.
+If ID has been used, this call updates the authenticationContextClassReference object.
 
 ## EXAMPLES
 

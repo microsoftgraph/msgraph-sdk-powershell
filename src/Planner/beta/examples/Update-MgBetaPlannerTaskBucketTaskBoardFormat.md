@@ -8,6 +8,6 @@ $params = @{
 
 Update-MgBetaPlannerTaskBucketTaskBoardFormat -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 ```
-This example shows how to use the Update-MgBetaBetaPlannerTaskBucketTaskBoardFormat Cmdlet.
+This example shows how to use the Update-MgBetaPlannerTaskBucketTaskBoardFormat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

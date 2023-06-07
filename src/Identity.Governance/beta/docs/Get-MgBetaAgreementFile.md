@@ -40,10 +40,17 @@ The file information is specified through the agreementFile object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.Governance
+{{ Add code here }}
 ```
 
-Get-MgBetaIdentityGovernanceTermOfUseAgreementFile -AgreementId $agreementId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

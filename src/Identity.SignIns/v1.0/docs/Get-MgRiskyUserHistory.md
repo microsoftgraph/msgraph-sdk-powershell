@@ -39,18 +39,9 @@ The activity related to user risk level change
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.SignIns
-Get-MgRiskyUserHistory -RiskyUserId $riskyUserId
 ```
 
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
 Get-MgRiskyUserHistory -RiskyUserId $riskyUserId
-```
-
-
 
 ## PARAMETERS
 

@@ -314,9 +314,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
           - `[DefaultValue <String>]`: 
           - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-          - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+          - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
             - `[Key <String>]`: attributeDefinitionMetadata
-            - `[Value <String>]`: 
+            - `[Value <String>]`: Value of the metadata property.
           - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
           - `[Mutability <String>]`: mutability
           - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -327,7 +327,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Type <String>]`: attributeType
         - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
           - `[Key <String>]`: objectDefinitionMetadata
-          - `[Value <String>]`: 
+          - `[Value <String>]`: Value of the metadata property.
         - `[Name <String>]`: 
         - `[SupportedApis <String[]>]`: 
       - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -363,7 +363,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[FlowTypes <String>]`: objectFlowTypes
         - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
           - `[Key <String>]`: objectMappingMetadata
-          - `[Value <String>]`: 
+          - `[Value <String>]`: Value of the metadata property.
         - `[Name <String>]`: Human-friendly name of the object mapping.
         - `[Scope <IMicrosoftGraphFilter>]`: filter
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -487,9 +487,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
         - `[DefaultValue <String>]`: 
         - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-        - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+        - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
           - `[Key <String>]`: attributeDefinitionMetadata
-          - `[Value <String>]`: 
+          - `[Value <String>]`: Value of the metadata property.
         - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
         - `[Mutability <String>]`: mutability
         - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -500,7 +500,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Type <String>]`: attributeType
       - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
         - `[Key <String>]`: objectDefinitionMetadata
-        - `[Value <String>]`: 
+        - `[Value <String>]`: Value of the metadata property.
       - `[Name <String>]`: 
       - `[SupportedApis <String[]>]`: 
     - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -536,7 +536,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[FlowTypes <String>]`: objectFlowTypes
       - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
         - `[Key <String>]`: objectMappingMetadata
-        - `[Value <String>]`: 
+        - `[Value <String>]`: Value of the metadata property.
       - `[Name <String>]`: Human-friendly name of the object mapping.
       - `[Scope <IMicrosoftGraphFilter>]`: filter
         - `[(Any) <Object>]`: This indicates any property can be added to this object.

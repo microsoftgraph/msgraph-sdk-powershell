@@ -38,12 +38,8 @@ You can specify a mail folder by its folder ID, or by its well-known folder name
 Import-Module Microsoft.Graph.Mail
 ```
 
-$params = @{
-	displayName = "displayName-value"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
+Remove-MgUserMailFolder -UserId $userId -MailFolderId $mailFolderId
 
 ## PARAMETERS
 

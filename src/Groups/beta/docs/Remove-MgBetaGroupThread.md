@@ -34,15 +34,7 @@ Delete a thread object.
 Import-Module Microsoft.Graph.Beta.Groups
 ```
 
-$params = @{
-	originalStartTimeZone = "originalStartTimeZone-value"
-	originalEndTimeZone = "originalEndTimeZone-value"
-	iCalUId = "iCalUId-value"
-	reminderMinutesBeforeStart = 
-	isReminderOn = $true
-}
-
-Update-MgBetaGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
+Remove-MgBetaGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
 
 ## PARAMETERS
 

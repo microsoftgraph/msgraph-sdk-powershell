@@ -1,9 +1,22 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.CloudCommunications
+```powershell
+Import-Module Microsoft.Graph.Beta.CloudCommunications
 
-Get-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
+Remove-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 ```
-This example shows how to use the Remove-MgBetaBetaCommunicationCallParticipant Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+This example shows how to use the Remove-MgBetaCommunicationCallParticipant Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+### Example 2: Code snippet
+
+```powershell
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+
+Remove-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
+```
+This example shows how to use the Remove-MgBetaCommunicationCallParticipant Cmdlet.
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

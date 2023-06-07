@@ -34,12 +34,8 @@ Delete an override specified by its ID.
 Import-Module Microsoft.Graph.Mail
 ```
 
-$params = @{
-	classifyAs = "focused"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
+Remove-MgUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId
 
 ## PARAMETERS
 

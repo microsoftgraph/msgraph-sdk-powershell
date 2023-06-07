@@ -41,13 +41,7 @@ Retrieve the properties and relationships of a connectedOrganization object.
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-$params = @{
-	displayName = "Connected organization new name"
-	description = "Connected organization new description"
-	state = "configured"
-}
-
-Update-MgEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId -BodyParameter $params
+Get-MgEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId
 
 ## PARAMETERS
 

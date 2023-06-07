@@ -36,7 +36,7 @@ You can delete only directory extensions that aren't synced from on-premises act
 Import-Module Microsoft.Graph.Beta.Applications
 ```
 
-Get-MgBetaApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
+Remove-MgBetaApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
 
 ## PARAMETERS
 

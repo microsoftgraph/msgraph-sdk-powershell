@@ -4,6 +4,6 @@
 
 Remove-MgBetaApplicationOwnerByRef -ApplicationId $applicationId -DirectoryObjectId $directoryObjectId
 ```
-This example shows how to use the Remove-MgBetaBetaApplicationOwnerByRef Cmdlet.
+This example shows how to use the Remove-MgBetaApplicationOwnerByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

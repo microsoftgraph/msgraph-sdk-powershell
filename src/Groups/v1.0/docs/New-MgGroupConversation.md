@@ -8,7 +8,10 @@ schema: 2.0.0
 # New-MgGroupConversation
 
 ## SYNOPSIS
-Use reply thread or reply post to further post to that conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## SYNTAX
 
@@ -40,23 +43,43 @@ New-MgGroupConversation -InputObject <IGroupsIdentity> [-AdditionalProperties <H
 ```
 
 ## DESCRIPTION
-Use reply thread or reply post to further post to that conversation.
+Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource.
+You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources.
+See known limitations of open extensions for more information.
+The table in the Permissions section lists the resources that support open extensions.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Groups
 ```
 
-{{ Add output here }}
+$params = @{
+	topic = "Take your wellness days and rest"
+	threads = @(
+		@{
+			posts = @(
+				@{
+					body = @{
+						contentType = "html"
+						content = "Contoso cares about you: Rest and Recharge"
+					}
+					newParticipants = @(
+						@{
+							emailAddress = @{
+								name = "Adele Vance"
+								address = "AdeleV@contoso.onmicrosoft.com"
+							}
+						}
+					)
+				}
+			)
+		}
+	)
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+New-MgGroupConversation -GroupId $groupId -BodyParameter $params
 
 ## PARAMETERS
 

@@ -45,11 +45,10 @@ Supports $expand.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Users
-# A UPN can also be used as -UserId.
-Get-MgUserRegisteredDevice -UserId $userId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgUserRegisteredDevice -UserId $userId
 
 ## PARAMETERS
 

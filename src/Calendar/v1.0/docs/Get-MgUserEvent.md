@@ -45,26 +45,16 @@ There are two scenarios where an app can get an event in another user's calendar
 Import-Module Microsoft.Graph.Calendar
 ```
 
-$params = @{
-	originalStartTimeZone = "originalStartTimeZone-value"
-	originalEndTimeZone = "originalEndTimeZone-value"
-	responseStatus = @{
-		response = ""
-		time = [System.DateTime]::Parse("datetime-value")
-	}
-	recurrence = $null
-	reminderMinutesBeforeStart = 99
-	isOnlineMeeting = $true
-	onlineMeetingProvider = "teamsForBusiness"
-	isReminderOn = $true
-	hideAttendees = $false
-	categories = @(
-		"Red category"
-	)
-}
+# A UPN can also be used as -UserId.
+Get-MgUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location,hideAttendees"
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Calendar
+```
 
 # A UPN can also be used as -UserId.
-Update-MgUserEvent -UserId $userId -EventId $eventId -BodyParameter $params
+Get-MgUserEvent -UserId $userId -EventId $eventId -Property "subject,body,bodyPreview,organizer,attendees,start,end,location,locations"
 
 ## PARAMETERS
 

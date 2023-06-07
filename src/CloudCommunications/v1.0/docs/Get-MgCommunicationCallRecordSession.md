@@ -45,18 +45,16 @@ Nullable.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallRecordSession -CallRecordId $callRecordId -ExpandProperty "segments"
 ```
 
-
+Get-MgCommunicationCallRecordSession -CallRecordId $callRecordId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
-Get-MgCommunicationCallRecordSession -CallRecordId $callRecordId
 ```
 
-
+Get-MgCommunicationCallRecordSession -CallRecordId $callRecordId -ExpandProperty "segments"
 
 ## PARAMETERS
 

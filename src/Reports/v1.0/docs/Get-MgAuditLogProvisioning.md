@@ -39,18 +39,16 @@ Get provisioning from auditLogs
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogProvisioning
 ```
 
-
+Get-MgAuditLogProvisioning
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Reports
-Get-MgAuditLogProvisioning
 ```
 
-
+Get-MgAuditLogProvisioning
 
 ## PARAMETERS
 

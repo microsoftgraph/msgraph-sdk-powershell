@@ -43,11 +43,7 @@ An **oAuth2PermissionGrant** represents delegated permissions which have been gr
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	scope = "User.ReadBasic.All Group.ReadWrite.All"
-}
-
-Update-MgOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId -BodyParameter $params
+Get-MgOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId
 
 ## PARAMETERS
 

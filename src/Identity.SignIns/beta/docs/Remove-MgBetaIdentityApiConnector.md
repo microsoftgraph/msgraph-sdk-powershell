@@ -34,32 +34,7 @@ Deletes an identityApiConnector object.
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
-$params = @{
-	displayName = "New Test API"
-	targetUrl = "https://otherapi.com/api/endpoint"
-	authenticationConfiguration = @{
-		"@odata.type" = "microsoft.graph.basicAuthentication"
-		username = "&lt;NEW_USERNAME&gt;"
-		password = "&lt;NEW_PASSWORD&gt;"
-	}
-}
-
-Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.SignIns
-```
-
-$params = @{
-	authenticationConfiguration = @{
-		"@odata.type" = "#microsoft.graph.pkcs12Certificate"
-		pkcs12Value = "eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ...kDJ04sJShkkgjL9Bm49plA"
-		password = "secret"
-	}
-}
-
-Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
+Remove-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId
 
 ## PARAMETERS
 
@@ -181,6 +156,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
+  - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow
   - `[AuthenticationMethodConfigurationId <String>]`: The unique identifier of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: The unique identifier of authenticationMethod
   - `[AuthenticationMethodModeDetailId <String>]`: The unique identifier of authenticationMethodModeDetail

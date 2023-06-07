@@ -31,10 +31,17 @@ The zip file that contains all attachments for a message.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Devices.ServiceAnnouncement
+{{ Add code here }}
 ```
 
-Get-MgServiceAnnouncementMessage
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

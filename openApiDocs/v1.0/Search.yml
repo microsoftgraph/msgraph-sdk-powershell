@@ -2562,10 +2562,12 @@ components:
           type: array
           items:
             type: string
+          description: Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
         limit:
           maximum: 32767
           minimum: -32768
           type: integer
+          description: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
           format: int16
       additionalProperties:
         type: object
@@ -2971,6 +2973,7 @@ components:
           nullable: true
         isCollapsed:
           type: boolean
+          description: Indicates whether the current result is collapsed when the collapseProperties property is used.
           nullable: true
         rank:
           maximum: 2147483647

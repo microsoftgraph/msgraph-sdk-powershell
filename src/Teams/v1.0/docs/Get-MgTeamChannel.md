@@ -57,40 +57,14 @@ List of channels either hosted in or shared with the team (incoming channels).
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannel -TeamId $teamId -ChannelId $channelId
+{{ Add code here }}
 ```
 
 
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannel -TeamId $teamId
-```
-
-
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannel -TeamId $teamId -Filter "membershipType eq 'shared'"
-```
-
-
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannel -TeamId $teamId
-```
-
-
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-Get-MgTeamChannel -TeamId $teamId -Filter "membershipType eq 'private'"
+{{ Add code here }}
 ```
 
 

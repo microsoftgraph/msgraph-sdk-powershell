@@ -57,11 +57,7 @@ Get the specified permissions object of a user or group calendar that has been s
 Import-Module Microsoft.Graph.Beta.Calendar
 ```
 
-$params = @{
-	role = "write"
-}
-
-Update-MgBetaUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId -BodyParameter $params
+Get-MgBetaUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId
 
 ## PARAMETERS
 

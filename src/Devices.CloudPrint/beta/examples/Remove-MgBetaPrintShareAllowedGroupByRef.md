@@ -4,6 +4,6 @@
 
 Remove-MgBetaPrintShareAllowedGroupByRef -PrinterShareId $printerShareId -GroupId $groupId
 ```
-This example shows how to use the Remove-MgBetaBetaPrintShareAllowedGroupByRef Cmdlet.
+This example shows how to use the Remove-MgBetaPrintShareAllowedGroupByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -44,11 +44,17 @@ Nullable.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+{{ Add code here }}
 ```
 
-# A UPN can also be used as -UserId.
-Remove-MgUserEventAttachment -UserId $userId -EventId $eventId -AttachmentId $attachmentId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

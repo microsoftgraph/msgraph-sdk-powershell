@@ -38,17 +38,17 @@ Retrieve the properties and relationships of a printer share.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Devices.CloudPrint
 ```
 
-{{ Add output here }}
+Get-MgPrintShare -PrinterShareId $printerShareId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Devices.CloudPrint
 ```
 
-{{ Add output here }}
+Get-MgPrintShare -PrinterShareId $printerShareId -Property "id,displayName,capabilities"
 
 ## PARAMETERS
 

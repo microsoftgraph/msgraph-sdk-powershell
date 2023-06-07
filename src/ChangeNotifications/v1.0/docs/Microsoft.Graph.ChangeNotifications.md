@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.ChangeNotifications
-Module Guid: 0f8ec3eb-4f8a-4d72-9e4e-8afc0942c65d
+Module Guid: 9c88c68d-8e2e-4ac9-9784-5caafc0c1818
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.changenotifications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -20,10 +20,9 @@ Reauthorize a subscription when you receive a **reauthorizationRequired** challe
 
 ### [New-MgSubscription](New-MgSubscription.md)
 Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph.
-See the table in the Permissions section for the list of resources that support subscribing to change notifications.
-Some resources support the option to include encrypted resource data in change notifications.
-These resources include chatMessage, contact, event, message, and presence.
-For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.
+To identify the resources for which you can create subscriptions and the limitations on subscriptions, see Set up notifications for changes in resource data: Supported resources.
+Some resources support rich notifications, that is, notifications that include resource data.
+For more information about these resources, see Set up change notifications that include resource data: Supported resources.
 
 ### [Remove-MgSubscription](Remove-MgSubscription.md)
 Delete a subscription.

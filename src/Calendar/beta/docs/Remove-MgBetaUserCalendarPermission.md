@@ -46,11 +46,7 @@ Delete calendarPermission.
 Import-Module Microsoft.Graph.Beta.Calendar
 ```
 
-$params = @{
-	role = "write"
-}
-
-Update-MgBetaUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId -BodyParameter $params
+Remove-MgBetaUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId
 
 ## PARAMETERS
 

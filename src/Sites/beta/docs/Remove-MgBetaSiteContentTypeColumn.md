@@ -34,7 +34,7 @@ Remove a [column][columndefinition] from a [site][], [list][] or [content type][
 Import-Module Microsoft.Graph.Beta.Sites
 ```
 
-Get-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -ColumnDefinitionId $columnDefinitionId
+Remove-MgBetaSiteContentTypeColumn -SiteId $siteId -ContentTypeId $contentTypeId -ColumnDefinitionId $columnDefinitionId
 
 ## PARAMETERS
 

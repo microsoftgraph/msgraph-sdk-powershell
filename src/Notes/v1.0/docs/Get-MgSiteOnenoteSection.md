@@ -38,11 +38,17 @@ Retrieve the properties and relationships of a onenoteSection object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Notes
+{{ Add code here }}
 ```
 
-# A UPN can also be used as -UserId.
-Get-MgUserOnenoteSection -UserId $userId -OnenoteSectionId $onenoteSectionId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

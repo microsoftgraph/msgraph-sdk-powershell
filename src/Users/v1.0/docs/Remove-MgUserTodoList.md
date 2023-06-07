@@ -34,12 +34,8 @@ Deletes a todoTaskList object.
 Import-Module Microsoft.Graph.Users
 ```
 
-$params = @{
-	displayName = "Vacation Plan"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId -BodyParameter $params
+Remove-MgUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId
 
 ## PARAMETERS
 

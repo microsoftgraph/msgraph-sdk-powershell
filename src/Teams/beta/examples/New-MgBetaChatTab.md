@@ -15,6 +15,6 @@ $params = @{
 
 New-MgBetaChatTab -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaChatTab Cmdlet.
+This example shows how to use the New-MgBetaChatTab Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

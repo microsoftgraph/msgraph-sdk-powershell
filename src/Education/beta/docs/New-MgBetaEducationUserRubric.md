@@ -49,76 +49,17 @@ Create a new educationRubric object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Education
+{{ Add code here }}
 ```
 
-$params = @{
-	displayName = "Example Credit Rubric"
-	description = @{
-		content = "This is an example of a credit rubric (no points)"
-		contentType = "text"
-	}
-	levels = @(
-		@{
-			displayName = "Good"
-			description = @{
-				content = ""
-				contentType = "text"
-			}
-		}
-		@{
-			displayName = "Poor"
-			description = @{
-				content = ""
-				contentType = "text"
-			}
-		}
-	)
-	qualities = @(
-		@{
-			description = @{
-				content = "Argument"
-				contentType = "text"
-			}
-			criteria = @(
-				@{
-					description = @{
-						content = "The essay's argument is persuasive."
-						contentType = "text"
-					}
-				}
-				@{
-					description = @{
-						content = "The essay's argument does not make sense."
-						contentType = "text"
-					}
-				}
-			)
-		}
-		@{
-			description = @{
-				content = "Spelling and Grammar"
-				contentType = "text"
-			}
-			criteria = @(
-				@{
-					description = @{
-						content = "The essay uses proper spelling and grammar with few or no errors."
-						contentType = "text"
-					}
-				}
-				@{
-					description = @{
-						content = "The essay has numerous errors in spelling and/or grammar."
-						contentType = "text"
-					}
-				}
-			)
-		}
-	)
-}
 
-New-MgBetaEducationMeRubric -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 
@@ -370,8 +311,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Description <IMicrosoftGraphEducationItemBody>]`: educationItemBody
@@ -399,8 +340,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -428,8 +369,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

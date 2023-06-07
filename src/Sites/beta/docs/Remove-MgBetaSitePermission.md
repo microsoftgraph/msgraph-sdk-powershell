@@ -34,13 +34,7 @@ Delete navigation property permissions for sites
 Import-Module Microsoft.Graph.Beta.Sites
 ```
 
-$params = @{
-	roles = @(
-		"read"
-	)
-}
-
-Update-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params
+Remove-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId
 
 ## PARAMETERS
 

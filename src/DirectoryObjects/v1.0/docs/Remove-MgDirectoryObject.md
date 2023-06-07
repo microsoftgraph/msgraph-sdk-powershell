@@ -34,7 +34,7 @@ Delete a directory object, for example, a group, user, application, or service p
 Import-Module Microsoft.Graph.DirectoryObjects
 ```
 
-Get-MgDirectoryObject -DirectoryObjectId $directoryObjectId
+Remove-MgDirectoryObject -DirectoryObjectId $directoryObjectId
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaDirectoryAttributeSet
 
 ## SYNOPSIS
-Update the navigation property attributeSets in directory
+Update the properties of an attributeSet object.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgBetaDirectoryAttributeSet -InputObject <IIdentityDirectoryManagementIde
 ```
 
 ## DESCRIPTION
-Update the navigation property attributeSets in directory
+Update the properties of an attributeSet object.
 
 ## EXAMPLES
 

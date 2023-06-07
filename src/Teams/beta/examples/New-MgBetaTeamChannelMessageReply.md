@@ -11,6 +11,6 @@ $params = @{
 
 New-MgBetaTeamChannelMessageReply -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeamChannelMessageReply Cmdlet.
+This example shows how to use the New-MgBetaTeamChannelMessageReply Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -34,11 +34,7 @@ Delete a plannerPlan object.
 Import-Module Microsoft.Graph.Planner
 ```
 
-$params = @{
-	title = "title-value"
-}
-
-Update-MgPlannerPlan -PlannerPlanId $plannerPlanId -BodyParameter $params
+Remove-MgPlannerPlan -PlannerPlanId $plannerPlanId-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 
 ## PARAMETERS
 

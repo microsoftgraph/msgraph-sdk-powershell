@@ -2,7 +2,7 @@
 
 ```powershellImport-Module Microsoft.Graph.Education
 
-Get-MgEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
+Remove-MgEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
 ```
 This example shows how to use the Remove-MgEducationClassAssignmentCategory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

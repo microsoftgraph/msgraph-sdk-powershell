@@ -31,17 +31,10 @@ Delete a tag object permanently.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Teams
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Remove-MgTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId
 
 ## PARAMETERS
 

@@ -36,17 +36,10 @@ Retrieve the properties and relationships of a shift object by ID.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Teams
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgTeamScheduleShift -TeamId $teamId -ShiftId $shiftId
 
 ## PARAMETERS
 

@@ -27,13 +27,7 @@ Read the properties and relationships of an authenticationFlowsPolicy object.
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
-$params = @{
-	selfServiceSignUp = @{
-		isEnabled = $true
-	}
-}
-
-Update-MgBetaPolicyAuthenticationFlowPolicy -BodyParameter $params
+Get-MgBetaPolicyAuthenticationFlowPolicy
 
 ## PARAMETERS
 

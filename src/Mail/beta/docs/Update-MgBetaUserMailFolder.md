@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaUserMailFolder
 
 ## SYNOPSIS
-Update the properties of mailFolder object.
+Update the writable properties of a mailSearchFolder object.
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ Update-MgBetaUserMailFolder -InputObject <IMailIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Update the properties of mailFolder object.
+Update the writable properties of a mailSearchFolder object.
 
 ## EXAMPLES
 
@@ -63,7 +63,8 @@ Import-Module Microsoft.Graph.Beta.Mail
 ```
 
 $params = @{
-	displayName = "displayName-value"
+	"@odata.type" = "microsoft.graph.mailSearchFolder"
+	filterQuery = "contains(subject, 'Analytics')"
 }
 
 # A UPN can also be used as -UserId.

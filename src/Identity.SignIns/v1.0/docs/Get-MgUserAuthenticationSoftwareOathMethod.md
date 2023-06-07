@@ -41,7 +41,8 @@ Retrieve a user's single Software OATH token authentication method object and it
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Remove-MgUserAuthenticationSoftwareOathMethod -UserId $userId -SoftwareOathAuthenticationMethodId $softwareOathAuthenticationMethodId
+# A UPN can also be used as -UserId.
+Get-MgUserAuthenticationSoftwareOathMethod -UserId $userId -SoftwareOathAuthenticationMethodId $softwareOathAuthenticationMethodId
 
 ## PARAMETERS
 

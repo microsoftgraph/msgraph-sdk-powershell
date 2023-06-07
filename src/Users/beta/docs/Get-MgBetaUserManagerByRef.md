@@ -31,18 +31,17 @@ Optionally, you can expand the manager's chain up to the root node.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Users
+{{ Add code here }}
 ```
 
-Get-MgBetaUserManager -UserId $userId
+
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Users
+{{ Add code here }}
 ```
 
-# A UPN can also be used as -UserId.
-Get-MgBetaUser -UserId $userId -ExpandProperty "manager(`$levels=max;`$select=id,displayName)" -Property "id,displayName" -ConsistencyLevel eventual
+
 
 ## PARAMETERS
 

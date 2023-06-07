@@ -36,11 +36,7 @@ Only custom user flow attributes can be deleted.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	description = "Your new hobby"
-}
-
-Update-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId -BodyParameter $params
+Remove-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId
 
 ## PARAMETERS
 

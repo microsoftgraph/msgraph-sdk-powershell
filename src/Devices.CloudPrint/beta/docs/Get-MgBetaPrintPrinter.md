@@ -38,17 +38,17 @@ Retrieve the properties and relationships of a printer object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-{{ Add output here }}
+Get-MgBetaPrintPrinter -PrinterId $printerId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-{{ Add output here }}
+Get-MgBetaPrintPrinter -PrinterId $printerId -Property "id,displayName,capabilities"
 
 ## PARAMETERS
 

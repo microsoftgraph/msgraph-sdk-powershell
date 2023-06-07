@@ -45,24 +45,21 @@ In Azure AD B2C, this operation can currently get a socialIdentityProvider, open
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
-	clientSecret = "1111111111111"
-}
-
-Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
-	displayName = "Apple"
-}
+Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 
-Update-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
+```
+
+Get-MgBetaIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 
 ## PARAMETERS
 
@@ -274,6 +271,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AuthenticationCombinationConfigurationId <String>]`: The unique identifier of authenticationCombinationConfiguration
   - `[AuthenticationContextClassReferenceId <String>]`: The unique identifier of authenticationContextClassReference
   - `[AuthenticationEventListenerId <String>]`: The unique identifier of authenticationEventListener
+  - `[AuthenticationEventsFlowId <String>]`: The unique identifier of authenticationEventsFlow
   - `[AuthenticationMethodConfigurationId <String>]`: The unique identifier of authenticationMethodConfiguration
   - `[AuthenticationMethodId <String>]`: The unique identifier of authenticationMethod
   - `[AuthenticationMethodModeDetailId <String>]`: The unique identifier of authenticationMethodModeDetail

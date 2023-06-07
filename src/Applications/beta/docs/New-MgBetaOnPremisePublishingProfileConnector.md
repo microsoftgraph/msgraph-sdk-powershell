@@ -16,7 +16,8 @@ Create new navigation property to connectors for onPremisesPublishingProfiles
 ```
 New-MgBetaOnPremisePublishingProfileConnector -OnPremisesPublishingProfileId <String>
  [-AdditionalProperties <Hashtable>] [-ExternalIP <String>] [-Id <String>] [-MachineName <String>]
- [-MemberOf <IMicrosoftGraphConnectorGroup[]>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MemberOf <IMicrosoftGraphConnectorGroup[]>] [-Status <String>] [-Version <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -35,7 +36,8 @@ New-MgBetaOnPremisePublishingProfileConnector -InputObject <IApplicationsIdentit
 ```
 New-MgBetaOnPremisePublishingProfileConnector -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ExternalIP <String>] [-Id <String>] [-MachineName <String>]
- [-MemberOf <IMicrosoftGraphConnectorGroup[]>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MemberOf <IMicrosoftGraphConnectorGroup[]>] [-Status <String>] [-Version <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -200,6 +202,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Version
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -331,7 +348,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
         - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
         - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
-        - `[IsMultiValued <Boolean?>]`: Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).
+        - `[IsMultiValued <Boolean?>]`: Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false.
         - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
         - `[Name <String>]`: Name of the extension property. Not nullable. Supports $filter (eq).
         - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
@@ -380,6 +397,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[ExternalAuthenticationType <String>]`: externalAuthenticationType
         - `[ExternalUrl <String>]`: The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.
         - `[InternalUrl <String>]`: The internal url of the application. For example, https://intranet/.
+        - `[IsAccessibleViaZtnaClient <Boolean?>]`: 
         - `[IsBackendCertificateValidationEnabled <Boolean?>]`: Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
         - `[IsHttpOnlyCookieEnabled <Boolean?>]`: Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
         - `[IsOnPremPublishingEnabled <Boolean?>]`: Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
@@ -493,9 +511,9 @@ To create the parameters described below, construct a hash table containing the 
                   - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
                   - `[DefaultValue <String>]`: 
                   - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-                  - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+                  - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
                     - `[Key <String>]`: attributeDefinitionMetadata
-                    - `[Value <String>]`: 
+                    - `[Value <String>]`: Value of the metadata property.
                   - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
                   - `[Mutability <String>]`: mutability
                   - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -506,7 +524,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[Type <String>]`: attributeType
                 - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
                   - `[Key <String>]`: objectDefinitionMetadata
-                  - `[Value <String>]`: 
+                  - `[Value <String>]`: Value of the metadata property.
                 - `[Name <String>]`: 
                 - `[SupportedApis <String[]>]`: 
               - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -542,7 +560,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[FlowTypes <String>]`: objectFlowTypes
                 - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
                   - `[Key <String>]`: objectMappingMetadata
-                  - `[Value <String>]`: 
+                  - `[Value <String>]`: Value of the metadata property.
                 - `[Name <String>]`: Human-friendly name of the object mapping.
                 - `[Scope <IMicrosoftGraphFilter>]`: filter
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -624,7 +642,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
           - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
             - `[Key <String>]`: synchronizationMetadata
-            - `[Value <String>]`: 
+            - `[Value <String>]`: Value of the metadata property.
           - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
       - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
       - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
@@ -673,6 +691,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Name <String>]`: The name associated with the connectorGroup.
     - `[Region <String>]`: connectorGroupRegion
   - `[Status <String>]`: connectorStatus
+  - `[Version <String>]`: 
 
 `INPUTOBJECT <IApplicationsIdentity>`: Identity Parameter
   - `[AppManagementPolicyId <String>]`: The unique identifier of appManagementPolicy
@@ -777,7 +796,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
       - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
-      - `[IsMultiValued <Boolean?>]`: Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).
+      - `[IsMultiValued <Boolean?>]`: Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false.
       - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
       - `[Name <String>]`: Name of the extension property. Not nullable. Supports $filter (eq).
       - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
@@ -826,6 +845,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[ExternalAuthenticationType <String>]`: externalAuthenticationType
       - `[ExternalUrl <String>]`: The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.
       - `[InternalUrl <String>]`: The internal url of the application. For example, https://intranet/.
+      - `[IsAccessibleViaZtnaClient <Boolean?>]`: 
       - `[IsBackendCertificateValidationEnabled <Boolean?>]`: Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
       - `[IsHttpOnlyCookieEnabled <Boolean?>]`: Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
       - `[IsOnPremPublishingEnabled <Boolean?>]`: Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.
@@ -939,9 +959,9 @@ To create the parameters described below, construct a hash table containing the 
                 - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
                 - `[DefaultValue <String>]`: 
                 - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-                - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+                - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
                   - `[Key <String>]`: attributeDefinitionMetadata
-                  - `[Value <String>]`: 
+                  - `[Value <String>]`: Value of the metadata property.
                 - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
                 - `[Mutability <String>]`: mutability
                 - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -952,7 +972,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Type <String>]`: attributeType
               - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
                 - `[Key <String>]`: objectDefinitionMetadata
-                - `[Value <String>]`: 
+                - `[Value <String>]`: Value of the metadata property.
               - `[Name <String>]`: 
               - `[SupportedApis <String[]>]`: 
             - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -988,7 +1008,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[FlowTypes <String>]`: objectFlowTypes
               - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
                 - `[Key <String>]`: objectMappingMetadata
-                - `[Value <String>]`: 
+                - `[Value <String>]`: Value of the metadata property.
               - `[Name <String>]`: Human-friendly name of the object mapping.
               - `[Scope <IMicrosoftGraphFilter>]`: filter
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1070,7 +1090,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
         - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
           - `[Key <String>]`: synchronizationMetadata
-          - `[Value <String>]`: 
+          - `[Value <String>]`: Value of the metadata property.
         - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
     - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
     - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
@@ -1121,6 +1141,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[MachineName <String>]`: The machine name the connector is installed and running on.
     - `[MemberOf <IMicrosoftGraphConnectorGroup[]>]`: The connectorGroup that the connector is a member of. Read-only.
     - `[Status <String>]`: connectorStatus
+    - `[Version <String>]`: 
   - `[Name <String>]`: The name associated with the connectorGroup.
   - `[Region <String>]`: connectorGroupRegion
 

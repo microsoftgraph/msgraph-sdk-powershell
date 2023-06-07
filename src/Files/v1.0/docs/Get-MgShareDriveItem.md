@@ -36,16 +36,9 @@ To use a sharing URL with this API, your app needs to transform the URL into a s
 Import-Module Microsoft.Graph.Files
 ```
 
-Get-MgShareSharedDriveItemSharedDriveItem -SharedDriveItemId $sharedDriveItemId
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Files
-```
-
 Get-MgShareDriveItem -SharedDriveItemId $sharedDriveItemId
 
-### -------------------------- EXAMPLE 3 --------------------------
+### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Files
 ```

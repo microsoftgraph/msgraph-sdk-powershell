@@ -47,36 +47,17 @@ An attachment can be one of the following types: All these types of attachment r
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Mail
+{{ Add code here }}
 ```
 
-$params = @{
-	"@odata.type" = "microsoft.graph.fileAttachment"
-	name = "name-value"
-	contentType = "contentType-value"
-	isInline = $false
-	contentLocation = "contentLocation-value"
-	contentBytes = "base64-contentBytes-value"
-}
 
-# A UPN can also be used as -UserId.
-New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Calendar
+{{ Add code here }}
 ```
 
-$params = @{
-	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"
-	name = "name-value"
-	item = @{
-		"@odata.type" = "microsoft.graph.message"
-	}
-}
 
-# A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
 
 ## PARAMETERS
 

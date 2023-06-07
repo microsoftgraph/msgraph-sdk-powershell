@@ -1,17 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
+### Example 1: Get a printer
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Beta.Devices.CloudPrint
+
+Get-MgBetaPrintPrinter -PrinterId $printerId
 ```
+This example shows how to use the Get-MgBetaPrintPrinter Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Get a printer and its capabilities
 
-### Example 2: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Beta.Devices.CloudPrint
 
-{{ Add output here }}
+Get-MgBetaPrintPrinter -PrinterId $printerId -Property "id,displayName,capabilities"
 ```
+This example shows how to use the Get-MgBetaPrintPrinter Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}

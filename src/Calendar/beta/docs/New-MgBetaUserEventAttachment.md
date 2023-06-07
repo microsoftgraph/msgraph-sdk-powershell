@@ -49,23 +49,6 @@ If an organizer adds an attachment to a meeting event, the organizer can subsequ
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Mail
-```
-
-$params = @{
-	"@odata.type" = "microsoft.graph.fileAttachment"
-	name = "name-value"
-	contentType = "contentType-value"
-	isInline = $false
-	contentLocation = "contentLocation-value"
-	contentBytes = "base64-contentBytes-value"
-}
-
-# A UPN can also be used as -UserId.
-New-MgBetaUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
 Import-Module Microsoft.Graph.Beta.Calendar
 ```
 

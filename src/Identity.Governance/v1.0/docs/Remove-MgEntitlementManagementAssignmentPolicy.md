@@ -34,7 +34,7 @@ In Azure AD entitlement management, delete an accessPackageAssignmentPolicy.
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-Get-MgEntitlementManagementAssignmentPolicy -AccessPackageAssignmentPolicyId $accessPackageAssignmentPolicyId
+Remove-MgEntitlementManagementAssignmentPolicy -AccessPackageAssignmentPolicyId $accessPackageAssignmentPolicyId
 
 ## PARAMETERS
 

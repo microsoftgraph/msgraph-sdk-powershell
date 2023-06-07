@@ -36,12 +36,7 @@ Because a class is also a universal group, deleting a class deletes the group.
 Import-Module Microsoft.Graph.Beta.Education
 ```
 
-$params = @{
-	description = "History - World History 1"
-	displayName = "World History Level 1"
-}
-
-Update-MgBetaEducationClass -EducationClassId $educationClassId -BodyParameter $params
+Remove-MgBetaEducationClass -EducationClassId $educationClassId
 
 ## PARAMETERS
 

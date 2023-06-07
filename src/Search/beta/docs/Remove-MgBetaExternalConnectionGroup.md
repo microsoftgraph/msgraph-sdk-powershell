@@ -34,12 +34,7 @@ Delete an externalGroup object.
 Import-Module Microsoft.Graph.Beta.Search
 ```
 
-$params = @{
-	displayName = "Contoso Marketing"
-	description = "The product marketing team"
-}
-
-Update-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
+Remove-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId
 
 ## PARAMETERS
 

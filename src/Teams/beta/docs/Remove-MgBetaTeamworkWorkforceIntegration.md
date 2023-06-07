@@ -34,19 +34,7 @@ Delete an instance of a workforceIntegration.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-$params = @{
-	displayName = "displayName-value"
-	apiVersion = 99
-	encryption = @{
-		protocol = "protocol-value"
-		secret = "secret-value"
-	}
-	isActive = $true
-	url = "url-value"
-	supportedEntities = "supportedEntities-value"
-}
-
-Update-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
+Remove-MgBetaTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId
 
 ## PARAMETERS
 

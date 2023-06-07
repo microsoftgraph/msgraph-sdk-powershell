@@ -43,13 +43,8 @@ This method is available only for standard Azure AD and B2B users, but not B2C u
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	phoneNumber = "+1 2065555554"
-	phoneType = "mobile"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId -BodyParameter $params
+Get-MgUserAuthenticationPhoneMethod -UserId $userId -PhoneAuthenticationMethodId $phoneAuthenticationMethodId
 
 ## PARAMETERS
 

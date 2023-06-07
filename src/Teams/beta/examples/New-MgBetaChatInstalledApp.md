@@ -8,6 +8,6 @@ $params = @{
 
 New-MgBetaChatInstalledApp -ChatId $chatId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaChatInstalledApp Cmdlet.
+This example shows how to use the New-MgBetaChatInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

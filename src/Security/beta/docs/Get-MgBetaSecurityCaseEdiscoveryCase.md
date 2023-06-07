@@ -41,12 +41,7 @@ Read the properties and relationships of an ediscoveryCase object.
 Import-Module Microsoft.Graph.Beta.Security
 ```
 
-$params = @{
-	displayName = "My Case 1 - Renamed"
-	description = "Updated description"
-}
-
-Update-MgBetaSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
+Get-MgBetaSecurityCaseEdiscoveryCase -EdiscoveryCaseId $ediscoveryCaseId
 
 ## PARAMETERS
 

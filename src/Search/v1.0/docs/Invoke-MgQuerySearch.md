@@ -160,8 +160,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Field <String>]`: Computes aggregation on the field while the field exists in current entity type. Required.
       - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
     - `[CollapseProperties <IMicrosoftGraphCollapseProperty[]>]`: 
-      - `[Fields <String[]>]`: 
-      - `[Limit <Int32?>]`: 
+      - `[Fields <String[]>]`: Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
+      - `[Limit <Int32?>]`: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
     - `[ContentSources <String[]>]`: 
     - `[EnableTopResults <Boolean?>]`: 
     - `[EntityTypes <String[]>]`: 
@@ -202,8 +202,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Field <String>]`: Computes aggregation on the field while the field exists in current entity type. Required.
     - `[Size <Int32?>]`: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
   - `[CollapseProperties <IMicrosoftGraphCollapseProperty[]>]`: 
-    - `[Fields <String[]>]`: 
-    - `[Limit <Int32?>]`: 
+    - `[Fields <String[]>]`: Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
+    - `[Limit <Int32?>]`: Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
   - `[ContentSources <String[]>]`: 
   - `[EnableTopResults <Boolean?>]`: 
   - `[EntityTypes <String[]>]`: 

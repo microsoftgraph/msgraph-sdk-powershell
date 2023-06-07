@@ -40,14 +40,17 @@ Only teachers and students can perform this operation.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Education
+{{ Add code here }}
 ```
 
-$params = @{
-	displayName = "Example Credit Rubric after display name patch"
-}
 
-Update-MgEducationMeRubric -EducationRubricId $educationRubricId -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

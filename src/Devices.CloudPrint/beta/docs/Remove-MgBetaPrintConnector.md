@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaPrintConnector
 
 ## SYNOPSIS
-Delete (unregister) a **printConnector**.
+Delete (unregister) a printConnector.
 
 ## SYNTAX
 
@@ -25,23 +25,16 @@ Remove-MgBetaPrintConnector -InputObject <IDevicesCloudPrintIdentity> [-IfMatch 
 ```
 
 ## DESCRIPTION
-Delete (unregister) a **printConnector**.
+Delete (unregister) a printConnector.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Remove-MgBetaPrintConnector -PrintConnectorId $printConnectorId
 
 ## PARAMETERS
 

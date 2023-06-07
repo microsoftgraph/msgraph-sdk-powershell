@@ -36,14 +36,7 @@ For details about how to use this API to add pull printing support to Universal 
 Import-Module Microsoft.Graph.Devices.CloudPrint
 ```
 
-$params = @{
-	displayName = "Test TaskDefinitionName"
-	createdBy = @{
-		displayName = "Requesting App Display Name"
-	}
-}
-
-Update-MgPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId -BodyParameter $params
+Remove-MgPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId
 
 ## PARAMETERS
 

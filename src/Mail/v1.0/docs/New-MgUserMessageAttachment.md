@@ -62,22 +62,6 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgUserMessageAttachment -UserId $userId -MessageId $messageId -BodyParameter $params
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Calendar
-```
-
-$params = @{
-	"@odata.type" = "#Microsoft.OutlookServices.ItemAttachment"
-	name = "name-value"
-	item = @{
-		"@odata.type" = "microsoft.graph.message"
-	}
-}
-
-# A UPN can also be used as -UserId.
-New-MgUserEventAttachment -UserId $userId -EventId $eventId -BodyParameter $params
-
 ## PARAMETERS
 
 ### -AdditionalProperties

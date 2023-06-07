@@ -96,10 +96,17 @@ Children terms of set in term [store].
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Sites
+{{ Add code here }}
 ```
 
-Get-MgSiteTermStoreSetChild -SiteId $siteId -SetId $setId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

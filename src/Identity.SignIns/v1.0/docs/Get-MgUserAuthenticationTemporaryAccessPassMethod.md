@@ -41,7 +41,7 @@ Retrieve a user's single temporaryAccessPassAuthenticationMethod object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Remove-MgUserAuthenticationTemporaryAccessPassMethod -UserId $userId -TemporaryAccessPassAuthenticationMethodId $temporaryAccessPassAuthenticationMethodId
+Get-MgUserAuthenticationTemporaryAccessPassMethod -UserId $userId -TemporaryAccessPassAuthenticationMethodId $temporaryAccessPassAuthenticationMethodId
 
 ## PARAMETERS
 

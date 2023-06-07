@@ -46,14 +46,7 @@ Delete a group object in a term [store].
 Import-Module Microsoft.Graph.Sites
 ```
 
-Get-MgSiteTermStoreGroup -SiteId $siteId -GroupId $groupId
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Sites
-```
-
-Get-MgSiteTermStoreGroup -SiteId $siteId -GroupId $groupId -Property "*,parentSiteId"
+Remove-MgSiteTermStoreGroup -SiteId $siteId -GroupId $groupId
 
 ## PARAMETERS
 

@@ -51,11 +51,10 @@ The list of associatedTeamInfo objects that a user is associated with.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Teams
-# A UPN can also be used as -UserId.
-Get-MgUserTeamworkAssociatedTeam -UserId $userId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgUserTeamworkAssociatedTeam -UserId $userId
 
 ## PARAMETERS
 

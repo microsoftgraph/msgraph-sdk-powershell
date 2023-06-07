@@ -26,11 +26,7 @@ Retrieve the properties of an entitlementManagementSettings object.
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-$params = @{
-	externalUserLifecycleAction = "None"
-}
-
-Update-MgEntitlementManagementSetting -BodyParameter $params
+Get-MgEntitlementManagementSetting
 
 ## PARAMETERS
 

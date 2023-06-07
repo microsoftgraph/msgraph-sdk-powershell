@@ -34,14 +34,7 @@ Delete a servicePrincipal object.
 Import-Module Microsoft.Graph.Applications
 ```
 
-Get-MgServicePrincipal -ServicePrincipalId $servicePrincipalId
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Applications
-```
-
-Get-MgServicePrincipal -ServicePrincipalId $servicePrincipalId -Property "id,appId,displayName,appRoles,oauth2PermissionScopes"
+Remove-MgServicePrincipal -ServicePrincipalId $servicePrincipalId
 
 ## PARAMETERS
 

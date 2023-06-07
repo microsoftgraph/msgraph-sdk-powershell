@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgBetaUserManagerByRef
 
 ## SYNOPSIS
-Use this API to assign a user's manager.
+Assign a user's manager.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Set-MgBetaUserManagerByRef -InputObject <IUsersIdentity> -OdataId <String> [-Add
 ```
 
 ## DESCRIPTION
-Use this API to assign a user's manager.
+Assign a user's manager.
 
 ## EXAMPLES
 

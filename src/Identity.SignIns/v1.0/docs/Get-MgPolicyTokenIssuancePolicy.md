@@ -41,15 +41,7 @@ The policy that specifies the characteristics of SAML tokens issued by Azure AD.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	definition = @(
-		"definition-value"
-	)
-	displayName = "displayName-value"
-	isOrganizationDefault = $true
-}
-
-Update-MgPolicyTokenIssuancePolicy -TokenIssuancePolicyId $tokenIssuancePolicyId -BodyParameter $params
+Get-MgPolicyTokenIssuancePolicy
 
 ## PARAMETERS
 

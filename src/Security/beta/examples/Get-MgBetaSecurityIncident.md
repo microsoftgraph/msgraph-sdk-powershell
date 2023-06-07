@@ -2,16 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Security
 
-$params = @{
-	classification = "TruePositive"
-	determination = "MultiStagedAttack"
-	customTags = @(
-		"Demo"
-	)
-}
-
-Update-MgBetaSecurityIncident -IncidentId $incidentId -BodyParameter $params
+Get-MgBetaSecurityIncident -IncidentId $incidentId
 ```
-This example shows how to use the Get-MgBetaBetaSecurityIncident Cmdlet.
+This example shows how to use the Get-MgBetaSecurityIncident Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -9,6 +9,6 @@ $params = @{
 
 Update-MgBetaEducationSchool -EducationSchoolId $educationSchoolId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaEducationSchool Cmdlet.
+This example shows how to use the Update-MgBetaEducationSchool Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

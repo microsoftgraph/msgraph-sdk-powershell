@@ -26,13 +26,7 @@ Read the properties and relationships of a crossTenantAccessPolicy object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	allowedCloudEndpoints = @(
-		"microsoftonline.us"
-	)
-}
-
-Update-MgPolicyCrossTenantAccessPolicy -BodyParameter $params
+Get-MgPolicyCrossTenantAccessPolicy
 
 ## PARAMETERS
 

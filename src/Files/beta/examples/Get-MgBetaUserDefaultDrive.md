@@ -5,6 +5,6 @@
 # A UPN can also be used as -UserId.
 Get-MgBetaUserDefaultDrive -UserId $userId
 ```
-This example shows how to use the Get-MgBetaBetaUserDefaultDrive Cmdlet.
+This example shows how to use the Get-MgBetaUserDefaultDrive Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

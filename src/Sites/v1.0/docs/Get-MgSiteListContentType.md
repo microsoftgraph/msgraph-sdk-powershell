@@ -39,10 +39,9 @@ The collection of content types present in this list.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-Get-MgSiteListContentType -SiteId $siteId -ListId $listId
 ```
 
-
+Get-MgSiteListContentType -SiteId $siteId -ListId $listId
 
 ## PARAMETERS
 

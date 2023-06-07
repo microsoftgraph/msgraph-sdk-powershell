@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaSiteList
 
 ## SYNOPSIS
-Return the metadata for a [list][].
+Get the list of richLongRunningOperations associated with a list.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaSiteList -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Return the metadata for a [list][].
+Get the list of richLongRunningOperations associated with a list.
 
 ## EXAMPLES
 
@@ -42,20 +42,6 @@ Import-Module Microsoft.Graph.Beta.Sites
 ```
 
 Get-MgBetaSiteList -SiteId $siteId -ListId $listId
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-```
-
-Get-MgBetaSiteList -SiteId $siteId -ListId $listId
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Sites
-```
-
-Get-MgBetaSiteList -SiteId $siteId -ListId $listId -Property "id,name,lastModifiedDateTime" -ExpandProperty "columns(select=name,description),items)"
 
 ## PARAMETERS
 

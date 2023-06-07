@@ -39,10 +39,9 @@ The collection of column definitions reusable across lists under this site.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-Get-MgSiteColumn -SiteId $siteId
 ```
 
-
+Get-MgSiteColumn -SiteId $siteId
 
 ## PARAMETERS
 

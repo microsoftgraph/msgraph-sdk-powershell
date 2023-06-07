@@ -34,12 +34,8 @@ Delete the specified outlookCategory object.
 Import-Module Microsoft.Graph.Users
 ```
 
-$params = @{
-	color = "preset15"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId -BodyParameter $params
+Remove-MgUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId
 
 ## PARAMETERS
 

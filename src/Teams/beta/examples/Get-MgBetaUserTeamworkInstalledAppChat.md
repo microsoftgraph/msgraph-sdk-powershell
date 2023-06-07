@@ -4,6 +4,6 @@
 
 Get-MgBetaUserTeamworkInstalledAppChat -UserId $userId -UserScopeTeamsAppInstallationId $userScopeTeamsAppInstallationId
 ```
-This example shows how to use the Get-MgBetaBetaUserTeamworkInstalledAppChat Cmdlet.
+This example shows how to use the Get-MgBetaUserTeamworkInstalledAppChat Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

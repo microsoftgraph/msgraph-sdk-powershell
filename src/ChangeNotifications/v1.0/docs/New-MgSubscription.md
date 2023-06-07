@@ -9,10 +9,9 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph.
-See the table in the Permissions section for the list of resources that support subscribing to change notifications.
-Some resources support the option to include encrypted resource data in change notifications.
-These resources include chatMessage, contact, event, message, and presence.
-For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.
+To identify the resources for which you can create subscriptions and the limitations on subscriptions, see Set up notifications for changes in resource data: Supported resources.
+Some resources support rich notifications, that is, notifications that include resource data.
+For more information about these resources, see Set up change notifications that include resource data: Supported resources.
 
 ## SYNTAX
 
@@ -33,10 +32,9 @@ New-MgSubscription -BodyParameter <IMicrosoftGraphSubscription> [-Confirm] [-Wha
 
 ## DESCRIPTION
 Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph.
-See the table in the Permissions section for the list of resources that support subscribing to change notifications.
-Some resources support the option to include encrypted resource data in change notifications.
-These resources include chatMessage, contact, event, message, and presence.
-For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.
+To identify the resources for which you can create subscriptions and the limitations on subscriptions, see Set up notifications for changes in resource data: Supported resources.
+Some resources support rich notifications, that is, notifications that include resource data.
+For more information about these resources, see Set up change notifications that include resource data: Supported resources.
 
 ## EXAMPLES
 

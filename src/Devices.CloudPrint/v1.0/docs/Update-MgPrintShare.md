@@ -57,17 +57,16 @@ For example, if a physical printer device breaks, an administrator can register 
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Devices.CloudPrint
 ```
 
-{{ Add output here }}
+$params = @{
+	displayName = "PrinterShare Name"
+	"printer@odata.bind" = "https://graph.microsoft.com/v1.0/print/printers/{printerId}"
+	allowAllUsers = $false
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Update-MgPrintShare -PrinterShareId $printerShareId -BodyParameter $params
 
 ## PARAMETERS
 

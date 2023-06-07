@@ -10,6 +10,6 @@ $params = @{
 
 New-MgBetaSecurityCaseEdiscoveryCase -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaSecurityCaseEdiscoveryCase Cmdlet.
+This example shows how to use the New-MgBetaSecurityCaseEdiscoveryCase Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

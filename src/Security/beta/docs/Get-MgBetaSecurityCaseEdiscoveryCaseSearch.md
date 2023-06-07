@@ -41,11 +41,7 @@ Read the properties and relationships of an ediscoverySearch object.
 Import-Module Microsoft.Graph.Beta.Security
 ```
 
-$params = @{
-	displayName = "Teams search"
-}
-
-Update-MgBetaSecurityCaseEdiscoveryCaseSearch -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId -BodyParameter $params
+Get-MgBetaSecurityCaseEdiscoveryCaseSearch -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId
 
 ## PARAMETERS
 

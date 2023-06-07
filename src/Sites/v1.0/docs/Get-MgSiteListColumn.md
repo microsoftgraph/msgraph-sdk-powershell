@@ -39,10 +39,9 @@ The collection of field definitions for this list.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-Get-MgSiteListColumn -SiteId $siteId -ListId $listId
 ```
 
-
+Get-MgSiteListColumn -SiteId $siteId -ListId $listId
 
 ## PARAMETERS
 

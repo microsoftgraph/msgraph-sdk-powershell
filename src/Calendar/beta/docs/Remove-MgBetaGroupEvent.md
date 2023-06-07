@@ -34,7 +34,7 @@ Delete an event object.
 Import-Module Microsoft.Graph.Beta.Calendar
 ```
 
-Get-MgBetaGroupEvent -GroupId $groupId -EventId $eventId
+Remove-MgBetaGroupEvent -GroupId $groupId -EventId $eventId
 
 ## PARAMETERS
 

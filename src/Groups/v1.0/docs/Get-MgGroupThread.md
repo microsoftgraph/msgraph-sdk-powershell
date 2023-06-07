@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupThread
 
 ## SYNOPSIS
-Get a thread object.
+Get a specific thread that belongs to a group.
+You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
 
 ## SYNTAX
 
@@ -29,7 +30,8 @@ Get-MgGroupThread -InputObject <IGroupsIdentity> [-Property <String[]>] [<Common
 ```
 
 ## DESCRIPTION
-Get a thread object.
+Get a specific thread that belongs to a group.
+You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation.
 
 ## EXAMPLES
 
@@ -38,15 +40,7 @@ Get a thread object.
 Import-Module Microsoft.Graph.Groups
 ```
 
-$params = @{
-	originalStartTimeZone = "originalStartTimeZone-value"
-	originalEndTimeZone = "originalEndTimeZone-value"
-	iCalUId = "iCalUId-value"
-	reminderMinutesBeforeStart = 
-	isReminderOn = $true
-}
-
-Update-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId -BodyParameter $params
+Get-MgGroupThread -GroupId $groupId -ConversationThreadId $conversationThreadId
 
 ## PARAMETERS
 

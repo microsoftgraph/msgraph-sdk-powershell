@@ -34,12 +34,8 @@ Delete a focused Inbox override specified by its ID.
 Import-Module Microsoft.Graph.Beta.Mail
 ```
 
-$params = @{
-	classifyAs = "focused"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
+Remove-MgBetaUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId
 
 ## PARAMETERS
 

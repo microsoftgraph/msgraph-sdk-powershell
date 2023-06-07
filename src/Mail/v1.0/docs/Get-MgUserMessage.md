@@ -45,17 +45,24 @@ Nullable.
 Import-Module Microsoft.Graph.Mail
 ```
 
-$params = @{
-	subject = "subject-value"
-	body = @{
-		contentType = ""
-		content = "content-value"
-	}
-	inferenceClassification = "other"
-}
+# A UPN can also be used as -UserId.
+Get-MgUserMessageExtension -UserId $userId -MessageId $messageId -ExtensionId $extensionId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Mail
+```
 
 # A UPN can also be used as -UserId.
-Update-MgUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+Get-MgUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "extensions(`$filter=id eq 'Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')"
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Mail
+```
+
+# A UPN can also be used as -UserId.
+Get-MgUserMessage -UserId $userId -Filter "Extensions/any(f:f/id eq 'Com.Contoso.Referral')" -ExpandProperty "Extensions(`$filter=id eq 'Com.Contoso.Referral')"
 
 ## PARAMETERS
 

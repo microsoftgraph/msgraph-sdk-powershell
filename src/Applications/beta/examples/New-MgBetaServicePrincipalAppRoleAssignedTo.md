@@ -10,6 +10,6 @@ $params = @{
 
 New-MgBetaServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaServicePrincipalAppRoleAssignedTo Cmdlet.
+This example shows how to use the New-MgBetaServicePrincipalAppRoleAssignedTo Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

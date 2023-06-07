@@ -36,7 +36,7 @@ This operation is allowed only for channels with a **membershipType** value of `
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Get-MgBetaTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
+Remove-MgBetaTeamChannelSharedWithTeam -TeamId $teamId -ChannelId $channelId -SharedWithChannelTeamInfoId $sharedWithChannelTeamInfoId
 
 ## PARAMETERS
 

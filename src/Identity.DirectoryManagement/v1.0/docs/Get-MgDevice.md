@@ -40,21 +40,14 @@ Get the properties and relationships of a device object.
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-$params = @{
-	accountEnabled = $false
-}
-
-Update-MgDevice -DeviceId $deviceId -BodyParameter $params
+Get-MgDevice -DeviceId $deviceId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-$params = @{
-}
-
-Update-MgDevice -DeviceId $deviceId -BodyParameter $params
+Get-MgDevice -DeviceId $deviceId -Property "id,extensionAttributes"
 
 ## PARAMETERS
 

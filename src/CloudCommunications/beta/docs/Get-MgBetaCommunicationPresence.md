@@ -41,21 +41,6 @@ Get a user's presence information.
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 ```
 
-# A UPN can also be used as -UserId.
-Get-MgBetaUserPresence -UserId $userId
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-```
-
-Get-MgBetaUserPresence -UserId $userId
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.CloudCommunications
-```
-
 Get-MgBetaCommunicationPresence -PresenceId $presenceId
 
 ## PARAMETERS
@@ -267,6 +252,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallRecordingId <String>]`: The unique identifier of callRecording
   - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession

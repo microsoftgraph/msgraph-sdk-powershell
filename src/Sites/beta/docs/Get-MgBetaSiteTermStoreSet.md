@@ -41,11 +41,7 @@ Read the properties and relationships of a set object.
 Import-Module Microsoft.Graph.Beta.Sites
 ```
 
-$params = @{
-	description = "mySet"
-}
-
-Update-MgBetaSiteTermStoreSet -SiteId $siteId -SetId $setId -BodyParameter $params
+Get-MgBetaSiteTermStoreSet -SiteId $siteId -SetId $setId
 
 ## PARAMETERS
 

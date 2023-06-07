@@ -15,7 +15,19 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-MgBetaCommunicationOnline
 }
 
 Describe 'Get-MgBetaCommunicationOnlineMeetingRecording' {
+    It 'List' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'Get1' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
     It 'Get' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'GetViaIdentity1' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 

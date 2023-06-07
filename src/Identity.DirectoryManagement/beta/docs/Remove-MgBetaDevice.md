@@ -34,21 +34,7 @@ Delete a registered device.
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-$params = @{
-	accountEnabled = $false
-}
-
-Update-MgBetaDevice -DeviceId $deviceId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-```
-
-$params = @{
-}
-
-Update-MgBetaDevice -DeviceId $deviceId -BodyParameter $params
+Remove-MgBetaDevice -DeviceId $deviceId
 
 ## PARAMETERS
 

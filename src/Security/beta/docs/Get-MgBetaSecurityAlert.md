@@ -38,51 +38,17 @@ Retrieve the properties and relationships of an alert object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Security
+{{ Add code here }}
 ```
 
-$params = @{
-	assignedTo = "String"
-	closedDateTime = [System.DateTime]::Parse("String (timestamp)")
-	comments = @(
-		"String"
-	)
-	feedback = "@odata.type: microsoft.graph.alertFeedback"
-	status = "@odata.type: microsoft.graph.alertStatus"
-	tags = @(
-		"String"
-	)
-	vendorInformation = @{
-		provider = "String"
-		vendor = "String"
-	}
-}
-
-Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
+{{ Add output here }}
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Security
+{{ Add code here }}
 ```
 
-$params = @{
-	assignedTo = "String"
-	closedDateTime = [System.DateTime]::Parse("String (timestamp)")
-	comments = @(
-		"String"
-	)
-	feedback = "@odata.type: microsoft.graph.alertFeedback"
-	status = "@odata.type: microsoft.graph.alertStatus"
-	tags = @(
-		"String"
-	)
-	vendorInformation = @{
-		provider = "String"
-		vendor = "String"
-	}
-}
-
-Update-MgBetaSecurityAlert -AlertId $alertId -BodyParameter $params
+{{ Add output here }}
 
 ## PARAMETERS
 

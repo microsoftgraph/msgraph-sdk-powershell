@@ -37,41 +37,7 @@ This can only be done by a teacher.
 Import-Module Microsoft.Graph.Beta.Education
 ```
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.educationFeedbackOutcome"
-}
-
-Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-```
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.educationPointsOutcome"
-	points = @{
-		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGrade"
-		points = 
-	}
-}
-
-Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Education
-```
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.educationRubricOutcome"
-	rubricQualityFeedback = @(
-	)
-	rubricQualitySelectedLevels = @(
-	)
-}
-
-Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
+Remove-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId
 
 ## PARAMETERS
 

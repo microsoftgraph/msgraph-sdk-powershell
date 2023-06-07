@@ -31,17 +31,10 @@ Delete (unregister) a printer.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Devices.CloudPrint
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Remove-MgPrintPrinter -PrinterId $printerId
 
 ## PARAMETERS
 

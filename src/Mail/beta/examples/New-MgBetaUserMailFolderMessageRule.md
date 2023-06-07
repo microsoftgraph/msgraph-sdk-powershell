@@ -27,6 +27,6 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgBetaUserMailFolderMessageRule -UserId $userId -MailFolderId $mailFolderId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaUserMailFolderMessageRule Cmdlet.
+This example shows how to use the New-MgBetaUserMailFolderMessageRule Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

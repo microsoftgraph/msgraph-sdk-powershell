@@ -8,7 +8,7 @@ schema: 2.0.0
 # Complete-MgBetaDirectoryRecommendation
 
 ## SYNOPSIS
-Invoke action complete
+Complete a recommendation object and update its **status** to `completedByUser`.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Complete-MgBetaDirectoryRecommendation -InputObject <IIdentityDirectoryManagemen
 ```
 
 ## DESCRIPTION
-Invoke action complete
+Complete a recommendation object and update its **status** to `completedByUser`.
 
 ## EXAMPLES
 

@@ -47,10 +47,9 @@ Supports $expand.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Groups
-Get-MgGroupMemberOf -GroupId $groupId
 ```
 
-
+Get-MgGroupMemberOf -GroupId $groupId
 
 ## PARAMETERS
 

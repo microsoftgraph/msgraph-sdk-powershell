@@ -14,7 +14,7 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Create an educationWordResource
@@ -32,7 +32,7 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Create an educationFileResource
@@ -49,7 +49,7 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Create an educationExcelResource
@@ -67,7 +67,7 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 5: Create an educationPowerPointResource
@@ -85,7 +85,7 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 6: Create an educationMediaResource
@@ -103,7 +103,7 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 7: Create an educationTeamsAppResource
@@ -124,6 +124,6 @@ $params = @{
 
 New-MgBetaEducationClassAssignmentResource -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationClassAssignmentResource Cmdlet.
+This example shows how to use the New-MgBetaEducationClassAssignmentResource Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

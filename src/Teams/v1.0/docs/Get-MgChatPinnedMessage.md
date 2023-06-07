@@ -55,7 +55,14 @@ Nullable.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Remove-MgChatPinnedMessage -ChatId $chatId -PinnedChatMessageInfoId $pinnedChatMessageInfoId
+Get-MgChatPinnedMessage -ChatId $chatId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+Get-MgChatPinnedMessage -ChatId $chatId -ExpandProperty "message"
 
 ## PARAMETERS
 

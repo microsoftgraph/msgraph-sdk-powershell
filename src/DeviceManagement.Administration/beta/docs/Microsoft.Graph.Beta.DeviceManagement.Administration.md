@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
-Module Guid: 03bc3a8c-6612-489b-a3c5-030111b99375
+Module Guid: efe11c37-1a15-493c-8b7e-4f9320ed343f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -452,7 +452,10 @@ Get the number of the resource
 Cloud PC related reports.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportExportJob](Get-MgBetaDeviceManagementVirtualEndpointReportExportJob.md)
-The export jobs created for downloading reports.
+Read the properties and relationships of a cloudPcExportJob object.
+You can download a report by first creating a new cloudPcExportJob resource to initiate downloading.
+Use this GET operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
+When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property.
 
 ### [Get-MgBetaDeviceManagementVirtualEndpointReportExportJobCount](Get-MgBetaDeviceManagementVirtualEndpointReportExportJobCount.md)
 Get the number of the resource

@@ -41,15 +41,7 @@ Retrieve the properties and relationships of a tokenLifetimePolicy object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	definition = @(
-		"{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"5:30:00"}}"
-	)
-	displayName = "Contoso token lifetime policy"
-	isOrganizationDefault = $true
-}
-
-Update-MgPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId -BodyParameter $params
+Get-MgPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId
 
 ## PARAMETERS
 

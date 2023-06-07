@@ -36,11 +36,7 @@ Only teachers can perform this operation.
 Import-Module Microsoft.Graph.Beta.Education
 ```
 
-$params = @{
-	displayName = "Example Credit Rubric after display name patch"
-}
-
-Update-MgBetaEducationMeRubric -EducationRubricId $educationRubricId -BodyParameter $params
+Remove-MgBetaEducationMeRubric -EducationRubricId $educationRubricId
 
 ## PARAMETERS
 

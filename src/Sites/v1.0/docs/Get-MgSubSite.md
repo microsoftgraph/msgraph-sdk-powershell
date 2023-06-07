@@ -39,10 +39,9 @@ The collection of the sub-sites under this site.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Sites
-Get-MgSubSite -SiteId $siteId
 ```
 
-
+Get-MgSubSite -SiteId $siteId
 
 ## PARAMETERS
 

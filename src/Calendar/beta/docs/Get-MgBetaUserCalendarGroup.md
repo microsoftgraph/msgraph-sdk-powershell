@@ -39,12 +39,8 @@ Retrieve the properties and relationships of a calendar group object.
 Import-Module Microsoft.Graph.Beta.Calendar
 ```
 
-$params = @{
-	name = "name-value"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId -BodyParameter $params
+Get-MgBetaUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId
 
 ## PARAMETERS
 

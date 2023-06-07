@@ -14,7 +14,7 @@ $params = @{
 
 Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaIdentityApiConnector Cmdlet.
+This example shows how to use the Update-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Changing API connector to use client certificate authentication
@@ -31,6 +31,6 @@ $params = @{
 
 Update-MgBetaIdentityApiConnector -IdentityApiConnectorId $identityApiConnectorId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaIdentityApiConnector Cmdlet.
+This example shows how to use the Update-MgBetaIdentityApiConnector Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

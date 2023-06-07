@@ -9,7 +9,7 @@ $params = @{
 
 New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaExternalConnectionGroupMember Cmdlet.
+This example shows how to use the New-MgBetaExternalConnectionGroupMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Add an Azure Active Directory group as a member
@@ -23,7 +23,7 @@ $params = @{
 
 New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaExternalConnectionGroupMember Cmdlet.
+This example shows how to use the New-MgBetaExternalConnectionGroupMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Add another external group as a member
@@ -37,6 +37,6 @@ $params = @{
 
 New-MgBetaExternalConnectionGroupMember -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaExternalConnectionGroupMember Cmdlet.
+This example shows how to use the New-MgBetaExternalConnectionGroupMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -35,31 +35,17 @@ A smaller image will reduce bandwidth requirements and make the page load faster
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+{{ Add code here }}
 ```
 
-Get-MgOrganizationBranding -OrganizationId $organizationId
+
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
+{{ Add code here }}
 ```
 
-Get-MgOrganizationBranding -OrganizationId $organizationId
 
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-```
-
-Get-MgOrganizationBranding -OrganizationId $organizationId
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.DirectoryManagement
-```
-
-Get-MgOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 
 ## PARAMETERS
 

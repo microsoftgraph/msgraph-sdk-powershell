@@ -36,29 +36,7 @@ If a configuration includes a user synchronization policy, you must first delete
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	inboundTrust = @{
-		isMfaAccepted = $true
-		isCompliantDeviceAccepted = $true
-		isHybridAzureADJoinedDeviceAccepted = $true
-	}
-}
-
-Update-MgPolicyCrossTenantAccessPolicyPartner -CrossTenantAccessPolicyConfigurationPartnerTenantId $crossTenantAccessPolicyConfigurationPartnerTenantId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-```
-
-$params = @{
-	automaticUserConsentSettings = @{
-		inboundAllowed = $true
-		outboundAllowed = $true
-	}
-}
-
-Update-MgPolicyCrossTenantAccessPolicyPartner -CrossTenantAccessPolicyConfigurationPartnerTenantId $crossTenantAccessPolicyConfigurationPartnerTenantId -BodyParameter $params
+Remove-MgPolicyCrossTenantAccessPolicyPartner -CrossTenantAccessPolicyConfigurationPartnerTenantId $crossTenantAccessPolicyConfigurationPartnerTenantId
 
 ## PARAMETERS
 

@@ -41,12 +41,7 @@ Read the properties and relationships of an externalConnection object.
 Import-Module Microsoft.Graph.Search
 ```
 
-$params = @{
-	name = "Contoso HR Service Tickets"
-	description = "Connection to index HR service tickets"
-}
-
-Update-MgExternalConnection -ExternalConnectionId $externalConnectionId -BodyParameter $params
+Get-MgExternalConnection -ExternalConnectionId $externalConnectionId
 
 ## PARAMETERS
 

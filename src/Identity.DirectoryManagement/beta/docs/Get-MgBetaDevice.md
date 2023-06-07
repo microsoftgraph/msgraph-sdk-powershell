@@ -42,21 +42,14 @@ Since the **device** resource supports extensions, you can also use the `GET` op
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-$params = @{
-	accountEnabled = $false
-}
-
-Update-MgBetaDevice -DeviceId $deviceId -BodyParameter $params
+Get-MgBetaDevice -DeviceId $deviceId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-$params = @{
-}
-
-Update-MgBetaDevice -DeviceId $deviceId -BodyParameter $params
+Get-MgBetaDevice -DeviceId $deviceId -Property "id,extensionAttributes"
 
 ## PARAMETERS
 

@@ -442,11 +442,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[DetectorId <String>]`: The ID of the detector that triggered the alert.
   - `[Determination <String>]`: alertDetermination
   - `[Evidence <IMicrosoftGraphSecurityAlertEvidence[]>]`: Collection of evidence related to the alert.
-    - `[CreatedDateTime <DateTime?>]`: The time the evidence was created and added to the alert.
+    - `[CreatedDateTime <DateTime?>]`: The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[DetailedRoles <String[]>]`: 
     - `[RemediationStatus <String>]`: evidenceRemediationStatus
     - `[RemediationStatusDetails <String>]`: Details about the remediation status.
-    - `[Roles <String[]>]`: The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
-    - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
+    - `[Roles <String[]>]`: One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
+    - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
     - `[Verdict <String>]`: evidenceVerdict
   - `[FirstActivityDateTime <DateTime?>]`: The earliest activity associated with the alert.
   - `[IncidentId <String>]`: Unique identifier to represent the incident this alert resource is associated with.
@@ -486,11 +487,12 @@ To create the parameters described below, construct a hash table containing the 
     - `[DetectorId <String>]`: The ID of the detector that triggered the alert.
     - `[Determination <String>]`: alertDetermination
     - `[Evidence <IMicrosoftGraphSecurityAlertEvidence[]>]`: Collection of evidence related to the alert.
-      - `[CreatedDateTime <DateTime?>]`: The time the evidence was created and added to the alert.
+      - `[CreatedDateTime <DateTime?>]`: The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[DetailedRoles <String[]>]`: 
       - `[RemediationStatus <String>]`: evidenceRemediationStatus
       - `[RemediationStatusDetails <String>]`: Details about the remediation status.
-      - `[Roles <String[]>]`: The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
-      - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
+      - `[Roles <String[]>]`: One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
+      - `[Tags <String[]>]`: Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
       - `[Verdict <String>]`: evidenceVerdict
     - `[FirstActivityDateTime <DateTime?>]`: The earliest activity associated with the alert.
     - `[IncidentId <String>]`: Unique identifier to represent the incident this alert resource is associated with.

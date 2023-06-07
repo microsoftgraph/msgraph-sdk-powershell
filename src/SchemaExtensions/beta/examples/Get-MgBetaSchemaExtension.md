@@ -2,30 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.SchemaExtensions
 
-$params = @{
-	owner = "ef4cb9a8-97c3-4ca7-854b-5cb5ced376fa"
-	properties = @(
-		@{
-			name = "courseId"
-			type = "Integer"
-		}
-		@{
-			name = "courseName"
-			type = "String"
-		}
-		@{
-			name = "courseType"
-			type = "String"
-		}
-		@{
-			name = "courseSupervisors"
-			type = "String"
-		}
-	)
-}
-
-Update-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId -BodyParameter $params
+Get-MgBetaSchemaExtension -SchemaExtensionId $schemaExtensionId
 ```
-This example shows how to use the Get-MgBetaBetaSchemaExtension Cmdlet.
+This example shows how to use the Get-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -46,11 +46,7 @@ Delete calendarPermission.
 Import-Module Microsoft.Graph.Calendar
 ```
 
-$params = @{
-	role = "write"
-}
-
-Update-MgUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId -BodyParameter $params
+Remove-MgUserCalendarPermission -UserId $userId -CalendarPermissionId $calendarPermissionId
 
 ## PARAMETERS
 

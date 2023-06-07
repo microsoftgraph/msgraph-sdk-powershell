@@ -12,7 +12,7 @@ $params = @{
 
 New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Create an email assessment request
@@ -29,7 +29,7 @@ $params = @{
 
 New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Create a file assessment request
@@ -46,7 +46,7 @@ $params = @{
 
 New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Create an url assessment request
@@ -62,6 +62,6 @@ $params = @{
 
 New-MgBetaInformationProtectionThreatAssessmentRequest -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the New-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

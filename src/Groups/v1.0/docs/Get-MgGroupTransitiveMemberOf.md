@@ -41,10 +41,9 @@ Nullable.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Groups
-Get-MgGroupTransitiveMemberOf -GroupId $groupId
 ```
 
-
+Get-MgGroupTransitiveMemberOf -GroupId $groupId
 
 ## PARAMETERS
 

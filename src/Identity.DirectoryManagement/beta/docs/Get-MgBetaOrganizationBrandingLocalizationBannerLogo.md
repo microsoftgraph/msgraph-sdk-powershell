@@ -35,10 +35,17 @@ We recommend using a transparent image with no padding around the logo.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+{{ Add code here }}
 ```
 
-Get-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

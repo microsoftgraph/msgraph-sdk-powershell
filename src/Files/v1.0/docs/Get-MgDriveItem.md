@@ -38,17 +38,10 @@ Retrieve the metadata for a [bundle][] based on the unique ID of the bundle.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Files
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgDriveItem -DriveId $driveId -DriveItemId $driveItemId -ExpandProperty "children"
 
 ## PARAMETERS
 

@@ -16,6 +16,6 @@ $params = @{
 
 New-MgBetaPlannerTask -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaPlannerTask Cmdlet.
+This example shows how to use the New-MgBetaPlannerTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

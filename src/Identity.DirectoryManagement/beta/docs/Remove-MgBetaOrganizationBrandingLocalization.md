@@ -36,24 +36,7 @@ To delete the organizationalBrandingLocalization object, all images (Stream type
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-$params = @{
-	backgroundColor = "#00000F"
-	signInPageText = "Welcome to Contoso France"
-}
-
-Update-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
-```
-
-$params = @{
-	signInPageText = "Welcome to Contoso France."
-	usernameHintText = " "
-}
-
-Update-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId -BodyParameter $params
+Remove-MgBetaOrganizationBrandingLocalization -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 
 ## PARAMETERS
 

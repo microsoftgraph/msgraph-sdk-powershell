@@ -36,7 +36,7 @@ This method does not delete the rubric itself and can only be performed by teach
 Import-Module Microsoft.Graph.Beta.Education
 ```
 
-Get-MgBetaEducationClassAssignmentRubric -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+Remove-MgBetaEducationClassAssignmentRubricByRef -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
 
 ## PARAMETERS
 

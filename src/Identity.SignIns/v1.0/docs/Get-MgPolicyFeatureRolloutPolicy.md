@@ -41,14 +41,14 @@ Retrieve the properties and relationships of a featureRolloutPolicy object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	displayName = "PasswordHashSync Rollout Policy"
-	description = "PasswordHashSync Rollout Policy"
-	isEnabled = $true
-	isAppliedToOrganization = $false
-}
+Get-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId
 
-Update-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -BodyParameter $params
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Identity.SignIns
+```
+
+Get-MgPolicyFeatureRolloutPolicy -FeatureRolloutPolicyId $featureRolloutPolicyId -ExpandProperty "appliesTo"
 
 ## PARAMETERS
 

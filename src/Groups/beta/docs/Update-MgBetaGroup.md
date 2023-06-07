@@ -2028,7 +2028,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Approval <IMicrosoftGraphApproval>]`: approval
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
-            - `[Steps <IMicrosoftGraphApprovalStep[]>]`: 
+            - `[Steps <IMicrosoftGraphApprovalStep[]>]`: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
               - `[AssignedToMe <Boolean?>]`: Indicates whether the step is assigned to the calling user to review. Read-only.
               - `[DisplayName <String>]`: The label provided by the policy creator to identify an approval step. Read-only.
@@ -2045,8 +2045,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
           - `[Id <String>]`: 
           - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-            - `[Key <String>]`: Key.
-            - `[Value <String>]`: Value.
+            - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+            - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           - `[Type <String>]`: 
         - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
         - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -2232,9 +2232,9 @@ To create the parameters described below, construct a hash table containing the 
                     - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
                     - `[DefaultValue <String>]`: 
                     - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-                    - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+                    - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
                       - `[Key <String>]`: attributeDefinitionMetadata
-                      - `[Value <String>]`: 
+                      - `[Value <String>]`: Value of the metadata property.
                     - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
                     - `[Mutability <String>]`: mutability
                     - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -2245,7 +2245,7 @@ To create the parameters described below, construct a hash table containing the 
                     - `[Type <String>]`: attributeType
                   - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
                     - `[Key <String>]`: objectDefinitionMetadata
-                    - `[Value <String>]`: 
+                    - `[Value <String>]`: Value of the metadata property.
                   - `[Name <String>]`: 
                   - `[SupportedApis <String[]>]`: 
                 - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -2281,7 +2281,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[FlowTypes <String>]`: objectFlowTypes
                   - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
                     - `[Key <String>]`: objectMappingMetadata
-                    - `[Value <String>]`: 
+                    - `[Value <String>]`: Value of the metadata property.
                   - `[Name <String>]`: Human-friendly name of the object mapping.
                   - `[Scope <IMicrosoftGraphFilter>]`: filter
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -2363,7 +2363,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
             - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
               - `[Key <String>]`: synchronizationMetadata
-              - `[Value <String>]`: 
+              - `[Value <String>]`: Value of the metadata property.
             - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
         - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
         - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
@@ -5291,7 +5291,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Address <String>]`: The email address.
           - `[Rank <Double?>]`: The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.
         - `[GivenName <String>]`: The person's given name.
-        - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
+        - `[IsFavorite <Boolean?>]`: True if the user has flagged this person as a favorite.
         - `[MailboxType <String>]`: The type of mailbox that is represented by the person's email address.
         - `[OfficeLocation <String>]`: The location of the person's office.
         - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
@@ -6873,7 +6873,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Approval <IMicrosoftGraphApproval>]`: approval
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[Steps <IMicrosoftGraphApprovalStep[]>]`: 
+          - `[Steps <IMicrosoftGraphApprovalStep[]>]`: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[AssignedToMe <Boolean?>]`: Indicates whether the step is assigned to the calling user to review. Read-only.
             - `[DisplayName <String>]`: The label provided by the policy creator to identify an approval step. Read-only.
@@ -6890,8 +6890,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
         - `[Id <String>]`: 
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
         - `[Type <String>]`: 
       - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
       - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -7087,9 +7087,9 @@ To create the parameters described below, construct a hash table containing the 
                   - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
                   - `[DefaultValue <String>]`: 
                   - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-                  - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+                  - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
                     - `[Key <String>]`: attributeDefinitionMetadata
-                    - `[Value <String>]`: 
+                    - `[Value <String>]`: Value of the metadata property.
                   - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
                   - `[Mutability <String>]`: mutability
                   - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -7100,7 +7100,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[Type <String>]`: attributeType
                 - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
                   - `[Key <String>]`: objectDefinitionMetadata
-                  - `[Value <String>]`: 
+                  - `[Value <String>]`: Value of the metadata property.
                 - `[Name <String>]`: 
                 - `[SupportedApis <String[]>]`: 
               - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -7136,7 +7136,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[FlowTypes <String>]`: objectFlowTypes
                 - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
                   - `[Key <String>]`: objectMappingMetadata
-                  - `[Value <String>]`: 
+                  - `[Value <String>]`: Value of the metadata property.
                 - `[Name <String>]`: Human-friendly name of the object mapping.
                 - `[Scope <IMicrosoftGraphFilter>]`: filter
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -7218,7 +7218,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
           - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
             - `[Key <String>]`: synchronizationMetadata
-            - `[Value <String>]`: 
+            - `[Value <String>]`: Value of the metadata property.
           - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
       - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
       - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
@@ -10605,7 +10605,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Address <String>]`: The email address.
         - `[Rank <Double?>]`: The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.
       - `[GivenName <String>]`: The person's given name.
-      - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
+      - `[IsFavorite <Boolean?>]`: True if the user has flagged this person as a favorite.
       - `[MailboxType <String>]`: The type of mailbox that is represented by the person's email address.
       - `[OfficeLocation <String>]`: The location of the person's office.
       - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
@@ -11562,7 +11562,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Approval <IMicrosoftGraphApproval>]`: approval
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[Steps <IMicrosoftGraphApprovalStep[]>]`: 
+          - `[Steps <IMicrosoftGraphApprovalStep[]>]`: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[AssignedToMe <Boolean?>]`: Indicates whether the step is assigned to the calling user to review. Read-only.
             - `[DisplayName <String>]`: The label provided by the policy creator to identify an approval step. Read-only.
@@ -11579,8 +11579,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
         - `[Id <String>]`: 
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
         - `[Type <String>]`: 
       - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
       - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -11776,9 +11776,9 @@ To create the parameters described below, construct a hash table containing the 
                   - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
                   - `[DefaultValue <String>]`: 
                   - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-                  - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+                  - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
                     - `[Key <String>]`: attributeDefinitionMetadata
-                    - `[Value <String>]`: 
+                    - `[Value <String>]`: Value of the metadata property.
                   - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
                   - `[Mutability <String>]`: mutability
                   - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -11789,7 +11789,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[Type <String>]`: attributeType
                 - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
                   - `[Key <String>]`: objectDefinitionMetadata
-                  - `[Value <String>]`: 
+                  - `[Value <String>]`: Value of the metadata property.
                 - `[Name <String>]`: 
                 - `[SupportedApis <String[]>]`: 
               - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -11825,7 +11825,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[FlowTypes <String>]`: objectFlowTypes
                 - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
                   - `[Key <String>]`: objectMappingMetadata
-                  - `[Value <String>]`: 
+                  - `[Value <String>]`: Value of the metadata property.
                 - `[Name <String>]`: Human-friendly name of the object mapping.
                 - `[Scope <IMicrosoftGraphFilter>]`: filter
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -11907,7 +11907,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
           - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
             - `[Key <String>]`: synchronizationMetadata
-            - `[Value <String>]`: 
+            - `[Value <String>]`: Value of the metadata property.
           - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
       - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
       - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
@@ -15294,7 +15294,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Address <String>]`: The email address.
         - `[Rank <Double?>]`: The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.
       - `[GivenName <String>]`: The person's given name.
-      - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
+      - `[IsFavorite <Boolean?>]`: True if the user has flagged this person as a favorite.
       - `[MailboxType <String>]`: The type of mailbox that is represented by the person's email address.
       - `[OfficeLocation <String>]`: The location of the person's office.
       - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
@@ -16809,7 +16809,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Approval <IMicrosoftGraphApproval>]`: approval
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
-          - `[Steps <IMicrosoftGraphApprovalStep[]>]`: 
+          - `[Steps <IMicrosoftGraphApprovalStep[]>]`: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
             - `[AssignedToMe <Boolean?>]`: Indicates whether the step is assigned to the calling user to review. Read-only.
             - `[DisplayName <String>]`: The label provided by the policy creator to identify an approval step. Read-only.
@@ -16826,8 +16826,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
         - `[Id <String>]`: 
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+          - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
         - `[Type <String>]`: 
       - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
       - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -17023,9 +17023,9 @@ To create the parameters described below, construct a hash table containing the 
                   - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
                   - `[DefaultValue <String>]`: 
                   - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-                  - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+                  - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
                     - `[Key <String>]`: attributeDefinitionMetadata
-                    - `[Value <String>]`: 
+                    - `[Value <String>]`: Value of the metadata property.
                   - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
                   - `[Mutability <String>]`: mutability
                   - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -17036,7 +17036,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[Type <String>]`: attributeType
                 - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
                   - `[Key <String>]`: objectDefinitionMetadata
-                  - `[Value <String>]`: 
+                  - `[Value <String>]`: Value of the metadata property.
                 - `[Name <String>]`: 
                 - `[SupportedApis <String[]>]`: 
               - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -17072,7 +17072,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[FlowTypes <String>]`: objectFlowTypes
                 - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
                   - `[Key <String>]`: objectMappingMetadata
-                  - `[Value <String>]`: 
+                  - `[Value <String>]`: Value of the metadata property.
                 - `[Name <String>]`: Human-friendly name of the object mapping.
                 - `[Scope <IMicrosoftGraphFilter>]`: filter
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -17154,7 +17154,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
           - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
             - `[Key <String>]`: synchronizationMetadata
-            - `[Value <String>]`: 
+            - `[Value <String>]`: Value of the metadata property.
           - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
       - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
       - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
@@ -20452,7 +20452,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Address <String>]`: The email address.
         - `[Rank <Double?>]`: The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.
       - `[GivenName <String>]`: The person's given name.
-      - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
+      - `[IsFavorite <Boolean?>]`: True if the user has flagged this person as a favorite.
       - `[MailboxType <String>]`: The type of mailbox that is represented by the person's email address.
       - `[OfficeLocation <String>]`: The location of the person's office.
       - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
@@ -21510,7 +21510,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Approval <IMicrosoftGraphApproval>]`: approval
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
-              - `[Steps <IMicrosoftGraphApprovalStep[]>]`: 
+              - `[Steps <IMicrosoftGraphApprovalStep[]>]`: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
                 - `[Id <String>]`: The unique identifier for an entity. Read-only.
                 - `[AssignedToMe <Boolean?>]`: Indicates whether the step is assigned to the calling user to review. Read-only.
                 - `[DisplayName <String>]`: The label provided by the policy creator to identify an approval step. Read-only.
@@ -21527,8 +21527,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[AddIns <IMicrosoftGraphAddIn[]>]`: Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
             - `[Id <String>]`: 
             - `[Properties <IMicrosoftGraphKeyValue[]>]`: 
-              - `[Key <String>]`: Key.
-              - `[Value <String>]`: Value.
+              - `[Key <String>]`: Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.
+              - `[Value <String>]`: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
             - `[Type <String>]`: 
           - `[AlternativeNames <String[]>]`: Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
           - `[AppDescription <String>]`: The description exposed by the associated application.
@@ -21724,9 +21724,9 @@ To create the parameters described below, construct a hash table containing the 
                       - `[CaseExact <Boolean?>]`: true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.
                       - `[DefaultValue <String>]`: 
                       - `[FlowNullValues <Boolean?>]`: 'true' to allow null values for attributes.
-                      - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+                      - `[Metadata <IMicrosoftGraphAttributeDefinitionMetadataEntry[]>]`: Metadata for the given object.
                         - `[Key <String>]`: attributeDefinitionMetadata
-                        - `[Value <String>]`: 
+                        - `[Value <String>]`: Value of the metadata property.
                       - `[Multivalued <Boolean?>]`: true if an attribute can have multiple values. Default is false.
                       - `[Mutability <String>]`: mutability
                       - `[Name <String>]`: Name of the attribute. Must be unique within the object definition. Not nullable.
@@ -21737,7 +21737,7 @@ To create the parameters described below, construct a hash table containing the 
                       - `[Type <String>]`: attributeType
                     - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
                       - `[Key <String>]`: objectDefinitionMetadata
-                      - `[Value <String>]`: 
+                      - `[Value <String>]`: Value of the metadata property.
                     - `[Name <String>]`: 
                     - `[SupportedApis <String[]>]`: 
                   - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
@@ -21773,7 +21773,7 @@ To create the parameters described below, construct a hash table containing the 
                     - `[FlowTypes <String>]`: objectFlowTypes
                     - `[Metadata <IMicrosoftGraphObjectMappingMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
                       - `[Key <String>]`: objectMappingMetadata
-                      - `[Value <String>]`: 
+                      - `[Value <String>]`: Value of the metadata property.
                     - `[Name <String>]`: Human-friendly name of the object mapping.
                     - `[Scope <IMicrosoftGraphFilter>]`: filter
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -21855,7 +21855,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[FactoryTag <String>]`: One of the well-known factory tags supported by the synchronization engine. The factoryTag tells the synchronization engine which implementation to use when processing jobs based on this template.
               - `[Metadata <IMicrosoftGraphSynchronizationMetadataEntry[]>]`: Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
                 - `[Key <String>]`: synchronizationMetadata
-                - `[Value <String>]`: 
+                - `[Value <String>]`: Value of the metadata property.
               - `[Schema <IMicrosoftGraphSynchronizationSchema>]`: synchronizationSchema
           - `[Tags <String[]>]`: Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
           - `[TokenEncryptionKeyId <String>]`: Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
@@ -24589,7 +24589,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Address <String>]`: The email address.
             - `[Rank <Double?>]`: The rank of the email address. A rank is used as a sort key, in relation to the other returned results. A higher rank value corresponds to a more relevant result. Relevance is determined by communication, collaboration, and business relationship signals.
           - `[GivenName <String>]`: The person's given name.
-          - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
+          - `[IsFavorite <Boolean?>]`: True if the user has flagged this person as a favorite.
           - `[MailboxType <String>]`: The type of mailbox that is represented by the person's email address.
           - `[OfficeLocation <String>]`: The location of the person's office.
           - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.

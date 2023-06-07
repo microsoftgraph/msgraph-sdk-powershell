@@ -45,16 +45,17 @@ Create a new timeOffReason.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Teams
+{{ Add code here }}
 ```
 
-$params = @{
-	displayName = "Vacation"
-	iconType = "plane"
-	isActive = $true
-}
 
-New-MgTeamScheduleTimeOffReason -TeamId $teamId -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

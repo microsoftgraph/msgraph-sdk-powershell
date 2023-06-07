@@ -4,6 +4,6 @@
 
 Remove-MgBetaChatPinnedMessage -ChatId $chatId -PinnedChatMessageInfoId $pinnedChatMessageInfoId
 ```
-This example shows how to use the Remove-MgBetaBetaChatPinnedMessage Cmdlet.
+This example shows how to use the Remove-MgBetaChatPinnedMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

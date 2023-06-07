@@ -38,24 +38,7 @@ In Azure AD B2C, this operation can currently delete a socialIdentityProvider, o
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
-	clientSecret = "1111111111111"
-}
-
-Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Identity.SignIns
-```
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.socialIdentityProvider"
-	displayName = "Apple"
-}
-
-Update-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId -BodyParameter $params
+Remove-MgIdentityProvider -IdentityProviderBaseId $identityProviderBaseId
 
 ## PARAMETERS
 

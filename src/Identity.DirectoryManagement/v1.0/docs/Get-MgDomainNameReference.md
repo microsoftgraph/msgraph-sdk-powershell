@@ -45,10 +45,9 @@ For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /d
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDomainNameReference -DomainId $domainId
 ```
 
-
+Get-MgDomainNameReference -DomainId $domainId
 
 ## PARAMETERS
 

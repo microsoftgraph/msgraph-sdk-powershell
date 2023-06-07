@@ -40,10 +40,9 @@ Get transitiveMemberOf from servicePrincipals
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalTransitiveMemberOf -ServicePrincipalId $servicePrincipalId
 ```
 
-
+Get-MgServicePrincipalTransitiveMemberOf -ServicePrincipalId $servicePrincipalId
 
 ## PARAMETERS
 

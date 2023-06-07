@@ -45,10 +45,9 @@ Supports $expand.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgContactMemberOf -OrgContactId $orgContactId
 ```
 
-
+Get-MgContactMemberOf -OrgContactId $orgContactId
 
 ## PARAMETERS
 

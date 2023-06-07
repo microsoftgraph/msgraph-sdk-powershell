@@ -26,7 +26,7 @@ $params = @{
 
 New-MgBetaSchemaExtension -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaSchemaExtension Cmdlet.
+This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Creating a schema extension using just a name
@@ -57,7 +57,7 @@ $params = @{
 
 New-MgBetaSchemaExtension -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaSchemaExtension Cmdlet.
+This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Creating a schema extension setting the owner
@@ -89,6 +89,6 @@ $params = @{
 
 New-MgBetaSchemaExtension -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaSchemaExtension Cmdlet.
+This example shows how to use the New-MgBetaSchemaExtension Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

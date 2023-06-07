@@ -2,15 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Education
 
-$params = @{
-	displayName = "Rogelio Cazares"
-	givenName = "Rogelio"
-	middleName = "Fernando"
-	surname = "Cazares"
-}
-
-Update-MgBetaEducationUser -EducationUserId $educationUserId -BodyParameter $params
+Remove-MgBetaEducationUser -EducationUserId $educationUserId
 ```
-This example shows how to use the Remove-MgBetaBetaEducationUser Cmdlet.
+This example shows how to use the Remove-MgBetaEducationUser Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

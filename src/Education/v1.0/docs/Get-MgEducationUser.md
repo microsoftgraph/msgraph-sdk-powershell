@@ -53,14 +53,7 @@ Read the properties and relationships of an educationUser object.
 Import-Module Microsoft.Graph.Education
 ```
 
-$params = @{
-	displayName = "Rogelio Cazares"
-	givenName = "Rogelio"
-	middleName = "Fernando"
-	surname = "Cazares"
-}
-
-Update-MgEducationUser -EducationUserId $educationUserId -BodyParameter $params
+Get-MgEducationUser -EducationUserId $educationUserId
 
 ## PARAMETERS
 

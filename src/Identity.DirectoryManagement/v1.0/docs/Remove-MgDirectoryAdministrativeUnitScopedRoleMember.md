@@ -34,7 +34,7 @@ Remove an Azure Active Directory (Azure AD) role assignment with administrative 
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-Get-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId -ScopedRoleMembershipId $scopedRoleMembershipId
+Remove-MgDirectoryAdministrativeUnitScopedRoleMember -AdministrativeUnitId $administrativeUnitId -ScopedRoleMembershipId $scopedRoleMembershipId
 
 ## PARAMETERS
 

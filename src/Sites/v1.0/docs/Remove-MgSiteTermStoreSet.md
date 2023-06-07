@@ -46,11 +46,7 @@ Delete a set object.
 Import-Module Microsoft.Graph.Sites
 ```
 
-$params = @{
-	description = "mySet"
-}
-
-Update-MgSiteTermStoreSet -SiteId $siteId -SetId $setId -BodyParameter $params
+Remove-MgSiteTermStoreSet -SiteId $siteId -SetId $setId
 
 ## PARAMETERS
 

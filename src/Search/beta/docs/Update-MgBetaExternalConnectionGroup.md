@@ -45,17 +45,15 @@ Update the navigation property groups in external
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Search
 ```
 
-{{ Add output here }}
+$params = @{
+	displayName = "Contoso Marketing"
+	description = "The product marketing team"
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Update-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
 
 ## PARAMETERS
 

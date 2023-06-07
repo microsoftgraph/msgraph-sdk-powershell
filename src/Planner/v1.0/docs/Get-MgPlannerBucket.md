@@ -41,11 +41,7 @@ Retrieve the properties and relationships of a plannerBucket object.
 Import-Module Microsoft.Graph.Planner
 ```
 
-$params = @{
-	name = "Development"
-}
-
-Update-MgPlannerBucket -PlannerBucketId $plannerBucketId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
+Get-MgPlannerBucket -PlannerBucketId $plannerBucketId
 
 ## PARAMETERS
 

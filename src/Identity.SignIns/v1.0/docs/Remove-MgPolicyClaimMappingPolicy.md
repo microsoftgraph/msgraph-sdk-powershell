@@ -34,11 +34,7 @@ Delete a claimsMappingPolicy object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	displayName = "UpdateClaimsPolicy"
-}
-
-Update-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId -BodyParameter $params
+Remove-MgPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
 
 ## PARAMETERS
 

@@ -34,13 +34,7 @@ Delete a connectedOrganization object.
 Import-Module Microsoft.Graph.Beta.Identity.Governance
 ```
 
-$params = @{
-	displayName = "Connected organization new name"
-	description = "Connected organization new description"
-	state = "configured"
-}
-
-Update-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId -BodyParameter $params
+Remove-MgBetaEntitlementManagementConnectedOrganization -ConnectedOrganizationId $connectedOrganizationId
 
 ## PARAMETERS
 

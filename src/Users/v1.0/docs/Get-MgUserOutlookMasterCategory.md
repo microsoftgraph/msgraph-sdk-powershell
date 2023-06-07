@@ -39,12 +39,8 @@ Get the properties and relationships of the specified outlookCategory object.
 Import-Module Microsoft.Graph.Users
 ```
 
-$params = @{
-	color = "preset15"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId -BodyParameter $params
+Get-MgUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId
 
 ## PARAMETERS
 

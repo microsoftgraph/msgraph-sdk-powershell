@@ -10,7 +10,7 @@ $params = @{
 
 New-MgBetaTeam -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeam Cmdlet.
+This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Code snippet
@@ -34,7 +34,7 @@ $params = @{
 
 New-MgBetaTeam -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeam Cmdlet.
+This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Code snippet
@@ -120,7 +120,7 @@ $params = @{
 
 New-MgBetaTeam -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeam Cmdlet.
+This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Code snippet
@@ -134,7 +134,7 @@ $params = @{
 
 New-MgBetaTeam -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeam Cmdlet.
+This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 5: Code snippet
@@ -173,7 +173,7 @@ $params = @{
 
 New-MgBetaTeam -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeam Cmdlet.
+This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 6: Code snippet
@@ -188,7 +188,7 @@ $params = @{
 
 New-MgBetaTeam -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeam Cmdlet.
+This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 7: Code snippet
@@ -228,7 +228,7 @@ $params = @{
 
 New-MgBetaTeam -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeam Cmdlet.
+This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 8: Code snippet
@@ -252,6 +252,6 @@ $params = @{
 
 New-MgBetaTeam -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaTeam Cmdlet.
+This example shows how to use the New-MgBetaTeam Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

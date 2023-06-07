@@ -38,17 +38,17 @@ Get a conversationMember from a team.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Teams
+{{ Add code here }}
 ```
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	roles = @(
-		"owner"
-	)
-}
 
-Update-MgTeamMember -TeamId $teamId -ConversationMemberId $conversationMemberId -BodyParameter $params
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityTriggerTypeRetentionEventType
 
 ## SYNOPSIS
-Create new navigation property to retentionEventTypes for security
+Create a new retentionEventType object.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ New-MgSecurityTriggerTypeRetentionEventType -BodyParameter <IMicrosoftGraphSecur
 ```
 
 ## DESCRIPTION
-Create new navigation property to retentionEventTypes for security
+Create a new retentionEventType object.
 
 ## EXAMPLES
 

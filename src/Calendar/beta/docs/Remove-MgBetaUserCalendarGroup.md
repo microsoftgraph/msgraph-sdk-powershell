@@ -34,12 +34,8 @@ Delete a calendar group other than the default calendar group.
 Import-Module Microsoft.Graph.Beta.Calendar
 ```
 
-$params = @{
-	name = "name-value"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId -BodyParameter $params
+Remove-MgBetaUserCalendarGroup -UserId $userId -CalendarGroupId $calendarGroupId
 
 ## PARAMETERS
 

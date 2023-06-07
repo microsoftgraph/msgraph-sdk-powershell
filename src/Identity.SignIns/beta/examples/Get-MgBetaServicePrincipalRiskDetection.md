@@ -4,6 +4,6 @@
 
 Get-MgBetaServicePrincipalRiskDetection -ServicePrincipalRiskDetectionId $servicePrincipalRiskDetectionId
 ```
-This example shows how to use the Get-MgBetaBetaServicePrincipalRiskDetection Cmdlet.
+This example shows how to use the Get-MgBetaServicePrincipalRiskDetection Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

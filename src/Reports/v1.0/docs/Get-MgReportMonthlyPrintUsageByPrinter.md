@@ -39,10 +39,9 @@ Get monthlyPrintUsageByPrinter from reports
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Reports
-Get-MgReportMonthlyPrintUsageByPrinter
 ```
 
-
+Get-MgReportMonthlyPrintUsageByPrinter
 
 ## PARAMETERS
 

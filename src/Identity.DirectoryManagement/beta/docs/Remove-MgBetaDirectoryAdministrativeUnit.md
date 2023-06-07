@@ -31,17 +31,10 @@ Delete navigation property administrativeUnits for directory
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Remove-MgBetaDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
 
 ## PARAMETERS
 

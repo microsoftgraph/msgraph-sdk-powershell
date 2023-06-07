@@ -43,10 +43,9 @@ Supports $expand.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
-Get-MgDomainVerificationDnsRecord -DomainId $domainId
 ```
 
-
+Get-MgDomainVerificationDnsRecord -DomainId $domainId
 
 ## PARAMETERS
 

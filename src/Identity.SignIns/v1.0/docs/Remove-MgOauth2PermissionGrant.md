@@ -38,11 +38,7 @@ Existing access tokens will continue to be valid for their lifetime, but new acc
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	scope = "User.ReadBasic.All Group.ReadWrite.All"
-}
-
-Update-MgOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId -BodyParameter $params
+Remove-MgOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId
 
 ## PARAMETERS
 

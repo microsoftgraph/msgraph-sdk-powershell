@@ -42,12 +42,28 @@ To retrieve Stream types of the default branding, for example, **bannerLogo** an
 Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 ```
 
-$params = @{
-	signInPageText = "Default"
-	usernameHintText = "DefaultHint"
-}
+Get-MgBetaOrganizationBranding -OrganizationId $organizationId
 
-Update-MgBetaOrganizationBranding -OrganizationId $organizationId -BodyParameter $params
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+```
+
+Get-MgBetaOrganizationBranding -OrganizationId $organizationId
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+```
+
+Get-MgBetaOrganizationBranding -OrganizationId $organizationId
+
+### -------------------------- EXAMPLE 4 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
+```
+
+Get-MgBetaOrganizationBrandingLocalizationBannerLogo -OrganizationId $organizationId -OrganizationalBrandingLocalizationId $organizationalBrandingLocalizationId
 
 ## PARAMETERS
 

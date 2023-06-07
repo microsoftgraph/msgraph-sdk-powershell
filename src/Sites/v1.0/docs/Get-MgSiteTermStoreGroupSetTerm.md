@@ -60,17 +60,7 @@ Read the properties and relationships of a term object.
 Import-Module Microsoft.Graph.Sites
 ```
 
-$params = @{
-	labels = @(
-		@{
-			name = "changedLabel"
-			languageTag = "en-US"
-			isDefault = $true
-		}
-	)
-}
-
-Update-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId -BodyParameter $params
+Get-MgSiteTermStoreGroupSetTerm -SiteId $siteId -GroupId $groupId -SetId $setId -TermId $termId
 
 ## PARAMETERS
 

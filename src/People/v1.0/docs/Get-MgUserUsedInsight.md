@@ -39,20 +39,18 @@ Calculated relationship identifying the latest documents viewed or modified by a
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.People
-# A UPN can also be used as -UserId.
-Get-MgUserUsedInsight -UserId $userId -Sort "LastUsed/LastAccessedDateTime desc"
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgUserUsedInsight -UserId $userId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.People
-# A UPN can also be used as -UserId.
-Get-MgUserUsedInsight -UserId $userId
 ```
 
-
+# A UPN can also be used as -UserId.
+Get-MgUserUsedInsight -UserId $userId -Sort "LastUsed/LastAccessedDateTime desc"
 
 ## PARAMETERS
 

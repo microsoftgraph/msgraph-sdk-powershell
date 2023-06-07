@@ -57,10 +57,17 @@ Indicates which terms have been pinned or reused directly under the set.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Sites
+{{ Add code here }}
 ```
 
-Get-MgSiteTermStoreSetRelation -SiteId $siteId -SetId $setId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

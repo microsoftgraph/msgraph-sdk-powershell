@@ -45,15 +45,7 @@ Microsoft 365 Defender correlates alerts with the same attack techniques or the 
 Import-Module Microsoft.Graph.Beta.Security
 ```
 
-$params = @{
-	classification = "TruePositive"
-	determination = "MultiStagedAttack"
-	customTags = @(
-		"Demo"
-	)
-}
-
-Update-MgBetaSecurityIncident -IncidentId $incidentId -BodyParameter $params
+Get-MgBetaSecurityIncident -IncidentId $incidentId
 
 ## PARAMETERS
 

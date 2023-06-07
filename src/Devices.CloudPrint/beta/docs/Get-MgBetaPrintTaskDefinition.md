@@ -55,14 +55,7 @@ For details about how to use this API to add pull printing support to Universal 
 Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-$params = @{
-	displayName = "Test TaskDefinitionName"
-	createdBy = @{
-		displayName = "Requesting App Display Name"
-	}
-}
-
-Update-MgBetaPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId -BodyParameter $params
+Get-MgBetaPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId
 
 ## PARAMETERS
 

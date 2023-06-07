@@ -34,11 +34,7 @@ Delete a tag object permanently.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-$params = @{
-	displayName = "Finance"
-}
-
-Update-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
+Remove-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId
 
 ## PARAMETERS
 

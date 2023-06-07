@@ -4,6 +4,6 @@
 
 Get-MgBetaChatInstalledApp -ChatId $chatId -TeamsAppInstallationId $teamsAppInstallationId
 ```
-This example shows how to use the Get-MgBetaBetaChatInstalledApp Cmdlet.
+This example shows how to use the Get-MgBetaChatInstalledApp Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

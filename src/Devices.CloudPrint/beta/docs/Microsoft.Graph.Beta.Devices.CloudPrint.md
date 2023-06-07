@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.CloudPrint
-Module Guid: a5e4374a-8377-4d2f-8e75-e4918d020aa1
+Module Guid: e0da5c43-aae5-4d37-a11f-1123a4d807b9
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.cloudprint
 Help Version: 1.0.0.0
 Locale: en-US
@@ -359,7 +359,7 @@ For details about how to use this API to add pull printing support to Universal 
 Create new navigation property to tasks for print
 
 ### [Remove-MgBetaPrintConnector](Remove-MgBetaPrintConnector.md)
-Delete (unregister) a **printConnector**.
+Delete (unregister) a printConnector.
 
 ### [Remove-MgBetaPrintOperation](Remove-MgBetaPrintOperation.md)
 Delete navigation property operations for print

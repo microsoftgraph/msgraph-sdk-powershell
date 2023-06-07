@@ -41,38 +41,7 @@ Get secureScoreControlProfiles from security
 Import-Module Microsoft.Graph.Beta.Security
 ```
 
-$params = @{
-	assignedTo = ""
-	comment = "control is reviewed"
-	state = "Reviewed"
-	vendorInformation = @{
-		provider = "SecureScore"
-		providerVersion = $null
-		subProvider = $null
-		vendor = "Microsoft"
-	}
-}
-
-Update-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Security
-```
-
-$params = @{
-	assignedTo = ""
-	comment = "control is reviewed"
-	state = "Reviewed"
-	vendorInformation = @{
-		provider = "SecureScore"
-		providerVersion = $null
-		subProvider = $null
-		vendor = "Microsoft"
-	}
-}
-
-Update-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
+Get-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId
 
 ## PARAMETERS
 

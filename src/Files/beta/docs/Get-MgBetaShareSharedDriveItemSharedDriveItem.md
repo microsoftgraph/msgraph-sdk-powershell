@@ -45,20 +45,6 @@ Import-Module Microsoft.Graph.Beta.Files
 
 Get-MgBetaShareSharedDriveItemSharedDriveItem -SharedDriveItemId $sharedDriveItemId
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Files
-```
-
-Get-MgBetaShareDriveItem -SharedDriveItemId $sharedDriveItemId
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Files
-```
-
-Get-MgBetaShareDriveItem -SharedDriveItemId $sharedDriveItemId -ExpandProperty "children"
-
 ## PARAMETERS
 
 ### -All

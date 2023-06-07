@@ -4,6 +4,6 @@
 
 Remove-MgBetaServicePrincipalClaimMappingPolicyByRef -ServicePrincipalId $servicePrincipalId -ClaimsMappingPolicyId $claimsMappingPolicyId
 ```
-This example shows how to use the Remove-MgBetaBetaServicePrincipalClaimMappingPolicyByRef Cmdlet.
+This example shows how to use the Remove-MgBetaServicePrincipalClaimMappingPolicyByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

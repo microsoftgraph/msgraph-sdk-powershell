@@ -43,20 +43,6 @@ Import-Module Microsoft.Graph.Sites
 
 Get-MgSiteList -SiteId $siteId -ListId $listId
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Sites
-```
-
-Get-MgSiteList -SiteId $siteId -ListId $listId
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Sites
-```
-
-Get-MgSiteList -SiteId $siteId -ListId $listId -Property "id,name,lastModifiedDateTime" -ExpandProperty "columns(select=name,description),items)"
-
 ## PARAMETERS
 
 ### -All

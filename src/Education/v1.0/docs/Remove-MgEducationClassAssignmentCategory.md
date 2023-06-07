@@ -36,7 +36,7 @@ Only teachers can perform this operation.
 Import-Module Microsoft.Graph.Education
 ```
 
-Get-MgEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
+Remove-MgEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
 
 ## PARAMETERS
 

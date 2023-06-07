@@ -36,11 +36,7 @@ You cannot delete an access package if it has any **accessPackageAssignment**.
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-$params = @{
-	displayName = "Access Package New Name"
-}
-
-Update-MgEntitlementManagementAccessPackage -AccessPackageId $accessPackageId -BodyParameter $params
+Remove-MgEntitlementManagementAccessPackage -AccessPackageId $accessPackageId
 
 ## PARAMETERS
 

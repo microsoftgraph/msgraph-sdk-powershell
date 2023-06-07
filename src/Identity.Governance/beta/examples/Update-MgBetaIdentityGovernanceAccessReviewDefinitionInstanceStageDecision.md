@@ -9,7 +9,7 @@ $params = @{
 
 Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
+This example shows how to use the Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Update a decision on an stage in a multi-stage access review
@@ -23,6 +23,6 @@ $params = @{
 
 Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision -AccessReviewScheduleDefinitionId $accessReviewScheduleDefinitionId -AccessReviewInstanceId $accessReviewInstanceId -AccessReviewStageId $accessReviewStageId -AccessReviewInstanceDecisionItemId $accessReviewInstanceDecisionItemId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
+This example shows how to use the Update-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceStageDecision Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

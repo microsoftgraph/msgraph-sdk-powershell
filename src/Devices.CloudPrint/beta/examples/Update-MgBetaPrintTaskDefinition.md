@@ -11,6 +11,6 @@ $params = @{
 
 Update-MgBetaPrintTaskDefinition -PrintTaskDefinitionId $printTaskDefinitionId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaPrintTaskDefinition Cmdlet.
+This example shows how to use the Update-MgBetaPrintTaskDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

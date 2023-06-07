@@ -27,13 +27,7 @@ Read the properties and relationships of a crossTenantAccessPolicy object.
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
-$params = @{
-	allowedCloudEndpoints = @(
-		"microsoftonline.us"
-	)
-}
-
-Update-MgBetaPolicyCrossTenantAccessPolicy -BodyParameter $params
+Get-MgBetaPolicyCrossTenantAccessPolicy
 
 ## PARAMETERS
 

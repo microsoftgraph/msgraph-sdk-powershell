@@ -2,8 +2,9 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 
-Remove-MgBetaUserAuthenticationSoftwareOathMethod -UserId $userId -SoftwareOathAuthenticationMethodId $softwareOathAuthenticationMethodId
+# A UPN can also be used as -UserId.
+Get-MgBetaUserAuthenticationSoftwareOathMethod -UserId $userId -SoftwareOathAuthenticationMethodId $softwareOathAuthenticationMethodId
 ```
-This example shows how to use the Get-MgBetaBetaUserAuthenticationSoftwareOathMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationSoftwareOathMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

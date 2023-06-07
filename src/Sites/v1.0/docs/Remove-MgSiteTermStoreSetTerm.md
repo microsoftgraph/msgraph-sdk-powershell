@@ -46,17 +46,7 @@ Delete a term object.
 Import-Module Microsoft.Graph.Sites
 ```
 
-$params = @{
-	labels = @(
-		@{
-			name = "changedLabel"
-			languageTag = "en-US"
-			isDefault = $true
-		}
-	)
-}
-
-Update-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId -BodyParameter $params
+Remove-MgSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId
 
 ## PARAMETERS
 

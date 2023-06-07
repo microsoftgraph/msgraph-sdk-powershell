@@ -11415,10 +11415,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Get a conversation object.
+      description: Retrieve the properties and relationships of conversation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -11469,10 +11469,10 @@ paths:
       tags:
         - groups.conversation
       summary: Delete conversation
-      description: Delete a conversation object.
+      description: Delete conversation.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -11815,10 +11815,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -14322,10 +14322,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.conversation.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -14809,10 +14809,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.conversation.thread.post_reply
       parameters:
         - name: group-id
@@ -42069,11 +42069,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversation thread
-      description: Get a thread object.
+      summary: Get conversationThread
+      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -42209,10 +42209,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
+      description: "Add an attachment when creating a group post.  This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -44436,10 +44436,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -44867,10 +44867,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.thread.post_reply
       parameters:
         - name: group-id
@@ -53635,6 +53635,9 @@ components:
           type: string
           description: 'The internal url of the application. For example, https://intranet/.'
           nullable: true
+        isAccessibleViaZTNAClient:
+          type: boolean
+          nullable: true
         isBackendCertificateValidationEnabled:
           type: boolean
           description: 'Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.'
@@ -53720,7 +53723,7 @@ components:
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
             isMultiValued:
               type: boolean
-              description: 'Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).'
+              description: 'Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false.'
             isSyncedFromOnPremises:
               type: boolean
               description: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
@@ -55063,7 +55066,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             mailboxType:
               type: string
@@ -55163,6 +55166,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStep'
+              description: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -59701,6 +59705,8 @@ components:
               description: The machine name the connector is installed and running on.
             status:
               $ref: '#/components/schemas/microsoft.graph.connectorStatus'
+            version:
+              type: string
             memberOf:
               type: array
               items:
@@ -59841,11 +59847,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -66227,6 +66233,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.synchronizationMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -73117,6 +73124,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.objectMappingMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -73165,7 +73173,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadataEntry'
-          description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
+          description: Metadata for the given object.
         multivalued:
           type: boolean
           description: true if an attribute can have multiple values. Default is false.
@@ -73195,6 +73203,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -73444,6 +73453,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadata'
         value:
           type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object

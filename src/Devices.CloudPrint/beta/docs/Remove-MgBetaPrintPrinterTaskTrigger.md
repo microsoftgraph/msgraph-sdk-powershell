@@ -34,7 +34,7 @@ Delete a printer's task trigger to prevent related print events from triggering 
 Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-Get-MgBetaPrintPrinterTaskTrigger -PrinterId $printerId -PrintTaskTriggerId $printTaskTriggerId
+Remove-MgBetaPrintPrinterTaskTrigger -PrinterId $printerId -PrintTaskTriggerId $printTaskTriggerId
 
 ## PARAMETERS
 

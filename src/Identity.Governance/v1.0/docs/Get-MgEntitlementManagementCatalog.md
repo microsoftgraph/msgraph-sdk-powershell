@@ -59,11 +59,7 @@ Retrieve the properties and relationships of an accessPackageCatalog object.
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-$params = @{
-	displayName = "Catalog One"
-}
-
-Update-MgEntitlementManagementCatalog -AccessPackageCatalogId $accessPackageCatalogId -BodyParameter $params
+Get-MgEntitlementManagementCatalog -AccessPackageCatalogId $accessPackageCatalogId
 
 ## PARAMETERS
 

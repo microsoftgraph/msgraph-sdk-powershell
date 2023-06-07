@@ -45,10 +45,9 @@ Supports $expand.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Applications
-Get-MgServicePrincipalMemberOf -ServicePrincipalId $servicePrincipalId
 ```
 
-
+Get-MgServicePrincipalMemberOf -ServicePrincipalId $servicePrincipalId
 
 ## PARAMETERS
 

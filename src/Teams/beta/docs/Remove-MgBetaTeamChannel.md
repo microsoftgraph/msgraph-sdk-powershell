@@ -34,7 +34,7 @@ Delete the channel.
 Import-Module Microsoft.Graph.Beta.Teams
 ```
 
-Update-MgBetaTeamChannel -TeamId $teamId -ChannelId $channelId
+Remove-MgBetaTeamChannel -TeamId $teamId -ChannelId $channelId
 
 ## PARAMETERS
 

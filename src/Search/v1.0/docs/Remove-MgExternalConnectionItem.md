@@ -34,7 +34,7 @@ Delete an externalItem object.
 Import-Module Microsoft.Graph.Search
 ```
 
-Get-MgExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId
+Remove-MgExternalConnectionItem -ExternalConnectionId $externalConnectionId -ExternalItemId $externalItemId
 
 ## PARAMETERS
 

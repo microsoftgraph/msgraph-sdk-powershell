@@ -34,7 +34,7 @@ Delete a b2xIdentityUserFlow object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Get-MgIdentityB2XUserFlow -B2xIdentityUserFlowId $b2xIdentityUserFlowId
+Remove-MgIdentityB2XUserFlow -B2xIdentityUserFlowId $b2xIdentityUserFlowId
 
 ## PARAMETERS
 

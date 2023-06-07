@@ -50,10 +50,17 @@ Get posts from groups
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Groups
+{{ Add code here }}
 ```
 
-Get-MgGroupThreadPost -GroupId $groupId -ConversationThreadId $conversationThreadId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

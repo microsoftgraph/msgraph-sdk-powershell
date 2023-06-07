@@ -4,6 +4,6 @@
 
 Remove-MgBetaUserAuthenticationSoftwareOathMethod -UserId $userId -SoftwareOathAuthenticationMethodId $softwareOathAuthenticationMethodId
 ```
-This example shows how to use the Remove-MgBetaBetaUserAuthenticationSoftwareOathMethod Cmdlet.
+This example shows how to use the Remove-MgBetaUserAuthenticationSoftwareOathMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

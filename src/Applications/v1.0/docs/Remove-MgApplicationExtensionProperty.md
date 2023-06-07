@@ -36,7 +36,7 @@ You can delete only directory extensions that aren't synced from on-premises act
 Import-Module Microsoft.Graph.Applications
 ```
 
-Get-MgApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
+Remove-MgApplicationExtensionProperty -ApplicationId $applicationId -ExtensionPropertyId $extensionPropertyId
 
 ## PARAMETERS
 

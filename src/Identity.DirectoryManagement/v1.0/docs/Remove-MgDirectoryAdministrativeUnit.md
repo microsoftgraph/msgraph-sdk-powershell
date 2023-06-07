@@ -34,11 +34,7 @@ Delete an administrativeUnit.
 Import-Module Microsoft.Graph.Identity.DirectoryManagement
 ```
 
-$params = @{
-	displayName = "Greater Seattle District Technical Schools"
-}
-
-Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
+Remove-MgDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
 
 ## PARAMETERS
 

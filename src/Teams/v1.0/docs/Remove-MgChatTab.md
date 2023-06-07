@@ -34,11 +34,7 @@ Remove (unpin) a tab from the specified chat.
 Import-Module Microsoft.Graph.Teams
 ```
 
-$params = @{
-	displayName = "My Contoso Tab - updated again"
-}
-
-Update-MgChatTab -ChatId $chatId -TeamsTabId $teamsTabId -BodyParameter $params
+Remove-MgChatTab -ChatId $chatId -TeamsTabId $teamsTabId
 
 ## PARAMETERS
 

@@ -39,18 +39,9 @@ Classes for which the user is a teacher.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
+```
+
 Get-MgEducationUserTaughtClass -EducationUserId $educationUserId
-```
-
-
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Education
-Get-MgEducationUserTaughtClass -EducationUserId $educationUserId -OutFile $outFileId
-```
-
-
 
 ## PARAMETERS
 

@@ -43,13 +43,8 @@ There are two scenarios where an app can get another user's contact folder:
 Import-Module Microsoft.Graph.PersonalContacts
 ```
 
-$params = @{
-	parentFolderId = "parentFolderId-value"
-	displayName = "displayName-value"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserContactFolder -UserId $userId -ContactFolderId $contactFolderId -BodyParameter $params
+Get-MgUserContactFolder -UserId $userId -ContactFolderId $contactFolderId
 
 ## PARAMETERS
 

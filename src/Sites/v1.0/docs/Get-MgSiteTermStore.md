@@ -52,11 +52,7 @@ Read the properties and relationships of a store object.
 Import-Module Microsoft.Graph.Sites
 ```
 
-$params = @{
-	defaultLanguageTag = "en-US"
-}
-
-Update-MgSiteTermStore -SiteId $siteId -BodyParameter $params
+Get-MgSiteTermStore -SiteId $siteId
 
 ## PARAMETERS
 

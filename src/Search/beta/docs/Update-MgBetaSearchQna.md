@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaSearchQna
 
 ## SYNOPSIS
-Update the navigation property qnas in search
+Update the properties of a qna object.
 
 ## SYNTAX
 
@@ -49,7 +49,7 @@ Update-MgBetaSearchQna -InputObject <ISearchIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Update the navigation property qnas in search
+Update the properties of a qna object.
 
 ## EXAMPLES
 

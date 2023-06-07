@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaDirectoryAttributeSet
 
 ## SYNOPSIS
-Group of related custom security attribute definitions.
+Read the properties and relationships of an attributeSet object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaDirectoryAttributeSet -InputObject <IIdentityDirectoryManagementIdenti
 ```
 
 ## DESCRIPTION
-Group of related custom security attribute definitions.
+Read the properties and relationships of an attributeSet object.
 
 ## EXAMPLES
 

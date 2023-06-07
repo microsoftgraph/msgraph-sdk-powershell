@@ -38,10 +38,17 @@ The collection of field definitions for this list.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Sites
+{{ Add code here }}
 ```
 
-Get-MgSiteListColumn -SiteId $siteId -ListId $listId
+{{ Add output here }}
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+{{ Add output here }}
 
 ## PARAMETERS
 

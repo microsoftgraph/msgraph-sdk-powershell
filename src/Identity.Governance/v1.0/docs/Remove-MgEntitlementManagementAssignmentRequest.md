@@ -38,7 +38,7 @@ You cannot delete an access package assignment request if it has any **accessPac
 Import-Module Microsoft.Graph.Identity.Governance
 ```
 
-Get-MgEntitlementManagementAssignmentRequest -AccessPackageAssignmentRequestId $accessPackageAssignmentRequestId
+Remove-MgEntitlementManagementAssignmentRequest -AccessPackageAssignmentRequestId $accessPackageAssignmentRequestId
 
 ## PARAMETERS
 

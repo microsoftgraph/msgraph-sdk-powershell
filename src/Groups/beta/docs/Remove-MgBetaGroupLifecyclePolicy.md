@@ -46,13 +46,7 @@ Delete a groupLifecyclePolicy.
 Import-Module Microsoft.Graph.Beta.Groups
 ```
 
-$params = @{
-	groupLifetimeInDays = 180
-	managedGroupTypes = "Selected"
-	alternateNotificationEmails = "admin@contoso.com"
-}
-
-Update-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId -BodyParameter $params
+Remove-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
 
 ## PARAMETERS
 

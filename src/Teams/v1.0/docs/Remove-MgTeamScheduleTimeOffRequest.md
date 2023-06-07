@@ -34,7 +34,7 @@ Delete a timeOffRequest object.
 Import-Module Microsoft.Graph.Teams
 ```
 
-Get-MgTeamScheduleTimeOffRequest -TeamId $teamId -TimeOffRequestId $timeOffRequestId
+Remove-MgTeamScheduleTimeOffRequest -TeamId $teamId -TimeOffRequestId $timeOffRequestId
 
 ## PARAMETERS
 

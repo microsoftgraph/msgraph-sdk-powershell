@@ -42,7 +42,14 @@ When an invited participant is removed, any outstanding add participant request 
 Import-Module Microsoft.Graph.Beta.CloudCommunications
 ```
 
-Get-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
+Remove-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Beta.CloudCommunications
+```
+
+Remove-MgBetaCommunicationCallParticipant -CallId $callId -ParticipantId $participantId
 
 ## PARAMETERS
 
@@ -178,6 +185,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AudioRoutingGroupId <String>]`: The unique identifier of audioRoutingGroup
   - `[CallId <String>]`: The unique identifier of call
   - `[CallRecordId <String>]`: The unique identifier of callRecord
+  - `[CallRecordingId <String>]`: The unique identifier of callRecording
   - `[CallTranscriptId <String>]`: The unique identifier of callTranscript
   - `[CommsOperationId <String>]`: The unique identifier of commsOperation
   - `[ContentSharingSessionId <String>]`: The unique identifier of contentSharingSession

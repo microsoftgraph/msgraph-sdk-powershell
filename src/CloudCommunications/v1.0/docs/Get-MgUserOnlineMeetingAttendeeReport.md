@@ -39,20 +39,6 @@ Import-Module Microsoft.Graph.CloudCommunications
 # A UPN can also be used as -UserId.
 Get-MgUserOnlineMeetingAttendeeReport -UserId $userId -OnlineMeetingId $onlineMeetingId
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
-
 ## PARAMETERS
 
 ### -InputObject

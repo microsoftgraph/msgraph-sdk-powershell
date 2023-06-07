@@ -31,17 +31,10 @@ Revoke the specified user's access to submit print jobs to the associated printe
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Devices.CloudPrint
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Remove-MgBetaPrintShareAllowedUserByRef -PrinterShareId $printerShareId -UserId $userId
 
 ## PARAMETERS
 

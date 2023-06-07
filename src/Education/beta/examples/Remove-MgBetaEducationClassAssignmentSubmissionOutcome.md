@@ -1,47 +1,9 @@
-### Example 1: Update a feedback outcome
+### Example 1: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.Beta.Education
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.educationFeedbackOutcome"
-}
-
-Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
+Remove-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId
 ```
-This example shows how to use the Remove-MgBetaBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 2: Update a points outcome
-
-```powershellImport-Module Microsoft.Graph.Beta.Education
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.educationPointsOutcome"
-	points = @{
-		"@odata.type" = "#microsoft.graph.educationAssignmentPointsGrade"
-		points = 
-	}
-}
-
-Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
-```
-This example shows how to use the Remove-MgBetaBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 3: Update a rubric outcome
-
-```powershellImport-Module Microsoft.Graph.Beta.Education
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.educationRubricOutcome"
-	rubricQualityFeedback = @(
-	)
-	rubricQualitySelectedLevels = @(
-	)
-}
-
-Update-MgBetaEducationClassAssignmentSubmissionOutcome -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -EducationOutcomeId $educationOutcomeId -BodyParameter $params
-```
-This example shows how to use the Remove-MgBetaBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
+This example shows how to use the Remove-MgBetaEducationClassAssignmentSubmissionOutcome Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

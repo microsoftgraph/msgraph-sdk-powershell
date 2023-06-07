@@ -36,14 +36,7 @@ For group calls, this will only delete your call leg and the underlying group ca
 Import-Module Microsoft.Graph.CloudCommunications
 ```
 
-Get-MgCommunicationCall -CallId $callId
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.CloudCommunications
-```
-
-Get-MgCommunicationCall -CallId $callId
+Remove-MgCommunicationCall -CallId $callId
 
 ## PARAMETERS
 

@@ -12,6 +12,6 @@ $params = @{
 
 Update-MgBetaPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaPolicyTokenLifetimePolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyTokenLifetimePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

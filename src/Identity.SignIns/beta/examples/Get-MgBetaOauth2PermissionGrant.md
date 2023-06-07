@@ -2,12 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 
-$params = @{
-	scope = "User.ReadBasic.All Group.ReadWrite.All"
-}
-
-Update-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId -BodyParameter $params
+Get-MgBetaOauth2PermissionGrant -OAuth2PermissionGrantId $oAuth2PermissionGrantId
 ```
-This example shows how to use the Get-MgBetaBetaOauth2PermissionGrant Cmdlet.
+This example shows how to use the Get-MgBetaOauth2PermissionGrant Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

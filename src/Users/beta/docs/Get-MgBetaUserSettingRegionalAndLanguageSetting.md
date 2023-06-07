@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserSettingRegionalAndLanguageSetting
 
 ## SYNOPSIS
-Get the properties of a regionalAndLanguageSettings object.
+Retrieve the properties of a user's regionalAndLanguageSettings.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaUserSettingRegionalAndLanguageSetting -InputObject <IUsersIdentity> [-
 ```
 
 ## DESCRIPTION
-Get the properties of a regionalAndLanguageSettings object.
+Retrieve the properties of a user's regionalAndLanguageSettings.
 
 ## EXAMPLES
 

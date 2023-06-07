@@ -41,12 +41,8 @@ Read the properties and relationships of a todoTaskList object.
 Import-Module Microsoft.Graph.Beta.Users
 ```
 
-$params = @{
-	displayName = "Vacation Plan"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId -BodyParameter $params
+Get-MgBetaUserTodoList -UserId $userId -TodoTaskListId $todoTaskListId
 
 ## PARAMETERS
 

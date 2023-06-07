@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users
-Module Guid: e8e68804-ac20-46b8-a1eb-ef7ad96e2c08
+Module Guid: 55042c33-ceb2-48c8-bddd-dc7d5f88bd26
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -274,7 +274,7 @@ Read the properties and relationships of a contactMergeSuggestions object.
 Get the user-customizable privacy settings for itemInsights and meeting hours insights.
 
 ### [Get-MgBetaUserSettingRegionalAndLanguageSetting](Get-MgBetaUserSettingRegionalAndLanguageSetting.md)
-Get the properties of a regionalAndLanguageSettings object.
+Retrieve the properties of a user's regionalAndLanguageSettings.
 
 ### [Get-MgBetaUserSettingShiftPreference](Get-MgBetaUserSettingShiftPreference.md)
 Retrieve the properties and relationships of a shiftPreferences object by ID.
@@ -532,7 +532,7 @@ Delete navigation property extensions for users
 Deletes a linkedResource object.
 
 ### [Set-MgBetaUserManagerByRef](Set-MgBetaUserManagerByRef.md)
-Use this API to assign a user's manager.
+Assign a user's manager.
 
 ### [Set-MgBetaUserPhotoContent](Set-MgBetaUserPhotoContent.md)
 Update media content for the navigation property photo in users

@@ -35,17 +35,20 @@ Create a new custom authenticationStrengthPolicy object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
-{{ Add output here }}
+$params = @{
+	"@odata.type" = "#microsoft.graph.authenticationStrengthPolicy"
+	displayName = "Contoso authentication level"
+	description = "The only authentication level allowed to access our secret apps"
+	allowedCombinations = @(
+		"password, hardwareOath"
+		"password, sms"
+	)
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+New-MgBetaPolicyAuthenticationStrengthPolicy -BodyParameter $params
 
 ## PARAMETERS
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: c318e69c-25be-4e71-b6ee-d47794aefdbe
+Module Guid: 3d9d6cbf-35a0-4001-97f3-0a4d05bcb256
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -216,7 +216,7 @@ Get the number of the resource
 Get triggers from security
 
 ### [Get-MgSecurityTriggerRetentionEvent](Get-MgSecurityTriggerRetentionEvent.md)
-Get retentionEvents from security
+Read the properties and relationships of a retentionEvent object.
 
 ### [Get-MgSecurityTriggerRetentionEventCount](Get-MgSecurityTriggerRetentionEventCount.md)
 Get the number of the resource
@@ -228,7 +228,7 @@ Specifies the event that will start the retention period for labels that use thi
 Get triggerTypes from security
 
 ### [Get-MgSecurityTriggerTypeRetentionEventType](Get-MgSecurityTriggerTypeRetentionEventType.md)
-Get retentionEventTypes from security
+Read the properties and relationships of a retentionEventType object.
 
 ### [Get-MgSecurityTriggerTypeRetentionEventTypeCount](Get-MgSecurityTriggerTypeRetentionEventTypeCount.md)
 Get the number of the resource
@@ -309,10 +309,10 @@ Create new navigation property to secureScores for security
 Create new navigation property to secureScoreControlProfiles for security
 
 ### [New-MgSecurityTriggerRetentionEvent](New-MgSecurityTriggerRetentionEvent.md)
-Create new navigation property to retentionEvents for security
+Create a new retentionEvent object.
 
 ### [New-MgSecurityTriggerTypeRetentionEventType](New-MgSecurityTriggerTypeRetentionEventType.md)
-Create new navigation property to retentionEventTypes for security
+Create a new retentionEventType object.
 
 ### [Publish-MgSecurityCaseEdiscoveryCaseCustodian](Publish-MgSecurityCaseEdiscoveryCaseCustodian.md)
 Release a custodian from a case.
@@ -404,13 +404,13 @@ Delete navigation property secureScoreControlProfiles for security
 Delete navigation property triggers for security
 
 ### [Remove-MgSecurityTriggerRetentionEvent](Remove-MgSecurityTriggerRetentionEvent.md)
-Delete navigation property retentionEvents for security
+Delete a retentionEvent object.
 
 ### [Remove-MgSecurityTriggerType](Remove-MgSecurityTriggerType.md)
 Delete navigation property triggerTypes for security
 
 ### [Remove-MgSecurityTriggerTypeRetentionEventType](Remove-MgSecurityTriggerTypeRetentionEventType.md)
-Delete navigation property retentionEventTypes for security
+Delete a retentionEventType object.
 
 ### [Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault](Reset-MgSecurityCaseEdiscoveryCaseSettingToDefault.md)
 Reset a caseSettings object to the default values.

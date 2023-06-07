@@ -67,6 +67,6 @@ $params = @{
 
 New-MgBetaEducationUser -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaEducationUser Cmdlet.
+This example shows how to use the New-MgBetaEducationUser Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

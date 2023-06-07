@@ -34,11 +34,7 @@ Deletes a user's emailAuthenticationMethod object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	emailAddress = "kim@contoso.com"
-}
-
-Update-MgUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId -BodyParameter $params
+Remove-MgUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId
 
 ## PARAMETERS
 

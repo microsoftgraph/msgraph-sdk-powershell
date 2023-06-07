@@ -57,17 +57,16 @@ Only the **roles** property can be modified this way.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Files
 ```
 
-{{ Add output here }}
+$params = @{
+	roles = @(
+		"read"
+	)
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Update-MgBetaDriveItemPermission -DriveId $driveId -DriveItemId $driveItemId -PermissionId $permissionId -BodyParameter $params
 
 ## PARAMETERS
 

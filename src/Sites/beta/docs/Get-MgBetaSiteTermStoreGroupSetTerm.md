@@ -41,17 +41,7 @@ Read the properties and relationships of a term object.
 Import-Module Microsoft.Graph.Beta.Sites
 ```
 
-$params = @{
-	labels = @(
-		@{
-			name = "changedLabel"
-			languageTag = "en-US"
-			isDefault = $true
-		}
-	)
-}
-
-Update-MgBetaSiteTermStoreSetTerm -SiteId $siteId -SetId $setId -TermId $termId -BodyParameter $params
+Get-MgBetaSiteTermStoreGroupSetTerm -SiteId $siteId -GroupId $groupId -SetId $setId -TermId $termId
 
 ## PARAMETERS
 

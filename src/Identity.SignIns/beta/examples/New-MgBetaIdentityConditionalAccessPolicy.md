@@ -39,7 +39,7 @@ $params = @{
 
 New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityConditionalAccessPolicy Cmdlet.
+This example shows how to use the New-MgBetaIdentityConditionalAccessPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Block access to Exchange Online from non-trusted regions
@@ -79,7 +79,7 @@ $params = @{
 
 New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityConditionalAccessPolicy Cmdlet.
+This example shows how to use the New-MgBetaIdentityConditionalAccessPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Use all conditions and controls
@@ -188,7 +188,7 @@ $params = @{
 
 New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityConditionalAccessPolicy Cmdlet.
+This example shows how to use the New-MgBetaIdentityConditionalAccessPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Require MFA to Exchange Online from non-compliant devices
@@ -220,6 +220,6 @@ $params = @{
 
 New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityConditionalAccessPolicy Cmdlet.
+This example shows how to use the New-MgBetaIdentityConditionalAccessPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

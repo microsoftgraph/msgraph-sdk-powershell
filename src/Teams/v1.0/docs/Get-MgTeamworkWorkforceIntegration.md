@@ -41,19 +41,7 @@ Retrieve the properties and relationships of a workforceIntegration object.
 Import-Module Microsoft.Graph.Teams
 ```
 
-$params = @{
-	displayName = "displayName-value"
-	apiVersion = 99
-	encryption = @{
-		protocol = "protocol-value"
-		secret = "secret-value"
-	}
-	isActive = $true
-	url = "url-value"
-	supportedEntities = "supportedEntities-value"
-}
-
-Update-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId -BodyParameter $params
+Get-MgTeamworkWorkforceIntegration -WorkforceIntegrationId $workforceIntegrationId
 
 ## PARAMETERS
 

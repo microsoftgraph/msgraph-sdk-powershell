@@ -43,7 +43,7 @@ Supports $expand.
 Import-Module Microsoft.Graph.Applications
 ```
 
-Remove-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId -AppRoleAssignmentId $appRoleAssignmentId
+Get-MgServicePrincipalAppRoleAssignedTo -ServicePrincipalId $servicePrincipalId
 
 ## PARAMETERS
 

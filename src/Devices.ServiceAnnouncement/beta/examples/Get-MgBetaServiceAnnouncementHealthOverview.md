@@ -4,7 +4,7 @@
 
 Get-MgBetaServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId
 ```
-This example shows how to use the Get-MgBetaBetaServiceAnnouncementHealthOverview Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementHealthOverview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Include navigation property issues
@@ -13,6 +13,6 @@ This example shows how to use the Get-MgBetaBetaServiceAnnouncementHealthOvervie
 
 Get-MgBetaServiceAnnouncementHealthOverview -ServiceHealthId $serviceHealthId -ExpandProperty "issues"
 ```
-This example shows how to use the Get-MgBetaBetaServiceAnnouncementHealthOverview Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementHealthOverview Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

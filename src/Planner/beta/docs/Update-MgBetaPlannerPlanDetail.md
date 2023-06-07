@@ -46,17 +46,21 @@ Update the navigation property details in planner
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Planner
 ```
 
-{{ Add output here }}
+$params = @{
+	sharedWith = @{
+		"6463a5ce-2119-4198-9f2a-628761df4a62" = $true
+		"d95e6152-f683-4d78-9ff5-67ad180fea4a" = $false
+	}
+	categoryDescriptions = @{
+		category1 = "Indoors"
+		category3 = $null
+	}
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Update-MgBetaPlannerPlanDetail -PlannerPlanId $plannerPlanId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
 
 ## PARAMETERS
 

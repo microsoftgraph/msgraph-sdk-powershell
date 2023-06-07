@@ -34,7 +34,7 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgBetaUserCalendarEvent -UserId $userId -CalendarId $calendarId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaUserCalendarEvent Cmdlet.
+This example shows how to use the New-MgBetaUserCalendarEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Create and enable an event as an online meeting
@@ -74,6 +74,6 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgBetaUserCalendarEvent -UserId $userId -CalendarId $calendarId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaUserCalendarEvent Cmdlet.
+This example shows how to use the New-MgBetaUserCalendarEvent Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -57,10 +57,17 @@ All sets under the group in a term [store].
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Sites
+{{ Add code here }}
 ```
 
-Get-MgSiteTermStoreGroupSet -SiteId $siteId -GroupId $groupId
+
+
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+{{ Add code here }}
+```
+
+
 
 ## PARAMETERS
 

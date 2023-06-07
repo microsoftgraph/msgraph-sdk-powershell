@@ -44,11 +44,28 @@ To access a chat, at least one chat member must belong to the tenant the request
 Import-Module Microsoft.Graph.Teams
 ```
 
-$params = @{
-	topic = "Group chat title update"
-}
+Get-MgChat -ChatId $chatId
 
-Update-MgChat -ChatId $chatId -BodyParameter $params
+### -------------------------- EXAMPLE 2 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+Get-MgChat -ChatId $chatId -ExpandProperty "members"
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+Get-MgChat -ChatId $chatId
+
+### -------------------------- EXAMPLE 4 --------------------------
+```powershell
+Import-Module Microsoft.Graph.Teams
+```
+
+Get-MgChat -ChatId $chatId -ExpandProperty "lastMessagePreview"
 
 ## PARAMETERS
 

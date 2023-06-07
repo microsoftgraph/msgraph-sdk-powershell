@@ -9,6 +9,6 @@ $params = @{
 
 Update-MgBetaOrganizationBranding -OrganizationId $organizationId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaOrganizationBranding Cmdlet.
+This example shows how to use the Update-MgBetaOrganizationBranding Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

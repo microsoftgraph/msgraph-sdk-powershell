@@ -2,13 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Search
 
-$params = @{
-	displayName = "Contoso Marketing"
-	description = "The product marketing team"
-}
-
-Update-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId -BodyParameter $params
+Get-MgBetaExternalConnectionGroup -ExternalConnectionId $externalConnectionId -ExternalGroupId $externalGroupId
 ```
-This example shows how to use the Get-MgBetaBetaExternalConnectionGroup Cmdlet.
+This example shows how to use the Get-MgBetaExternalConnectionGroup Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

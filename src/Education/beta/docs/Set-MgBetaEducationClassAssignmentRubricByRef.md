@@ -50,7 +50,11 @@ Only teachers can perform this operation.
 Import-Module Microsoft.Graph.Beta.Education
 ```
 
-Get-MgBetaEducationClassAssignmentRubric -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId
+$params = @{
+	"@odata.id" = "https://graph.microsoft.com/v1.0/education/me/rubrics/ceb3863e-6912-4ea9-ac41-3c2bb7b6672d"
+}
+
+Set-MgBetaEducationClassAssignmentRubricByRef -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -BodyParameter $params
 
 ## PARAMETERS
 

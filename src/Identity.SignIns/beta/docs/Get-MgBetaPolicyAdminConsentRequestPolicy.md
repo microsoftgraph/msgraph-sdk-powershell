@@ -24,17 +24,10 @@ Read the properties and relationships of an adminConsentRequestPolicy object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgBetaPolicyAdminConsentRequestPolicy
 
 ## PARAMETERS
 

@@ -58,98 +58,17 @@ If you're creating a private channel, you can add a maximum of 200 members.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Teams
+{{ Add code here }}
 ```
 
-$params = @{
-	displayName = "Architecture Discussion"
-	description = "This channel is where we debate all future architecture plans"
-	membershipType = "standard"
-}
 
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Teams
+{{ Add code here }}
 ```
 
-$params = @{
-	"@odata.type" = "#Microsoft.Graph.channel"
-	membershipType = "private"
-	displayName = "My First Private Channel"
-	description = "This is my first private channels"
-	members = @(
-		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('62855810-484b-4823-9e01-60667f8b12ae')"
-			roles = @(
-				"owner"
-			)
-		}
-	)
-}
 
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-```
-
-$params = @{
-	"@microsoft.graph.channelCreationMode" = "migration"
-	displayName = "Import_150958_99z"
-	description = "Import_150958_99z"
-	createdDateTime = [System.DateTime]::Parse("2020-03-14T11:22:17.067Z")
-}
-
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-```
-
-$params = @{
-	"@odata.type" = "#Microsoft.Graph.channel"
-	membershipType = "private"
-	displayName = "My First Private Channel"
-	description = "This is my first private channels"
-	members = @(
-		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
-			roles = @(
-				"owner"
-			)
-		}
-	)
-}
-
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Teams
-```
-
-$params = @{
-	displayName = "My First Shared Channel"
-	description = "This is my first shared channel"
-	membershipType = "shared"
-	members = @(
-		@{
-			"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-			"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('7640023f-fe43-573f-9ff4-84a9efe4acd6')"
-			roles = @(
-				"owner"
-			)
-		}
-	)
-}
-
-New-MgTeamChannel -TeamId $teamId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -895,7 +814,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of all the members in the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[DisplayName <String>]`: The display name of the user.
-          - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
+          - `[Roles <String[]>]`: The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
           - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
         - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -3485,7 +3404,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of all the members in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[DisplayName <String>]`: The display name of the user.
-        - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
+        - `[Roles <String[]>]`: The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
         - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
       - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -5724,7 +5643,7 @@ To create the parameters described below, construct a hash table containing the 
 `MEMBERS <IMicrosoftGraphConversationMember[]>`: A collection of membership records associated with the channel.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the user.
-  - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
+  - `[Roles <String[]>]`: The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
   - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
 
 `MESSAGES <IMicrosoftGraphChatMessage[]>`: A collection of all the messages in the channel. A navigation property. Nullable.
@@ -6215,7 +6134,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of all the members in the chat. Nullable.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[DisplayName <String>]`: The display name of the user.
-              - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
+              - `[Roles <String[]>]`: The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
               - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
             - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the chat. Nullable.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.

@@ -4,6 +4,6 @@
 
 Remove-MgBetaDirectoryFederationConfiguration -IdentityProviderBaseId $identityProviderBaseId
 ```
-This example shows how to use the Remove-MgBetaBetaDirectoryFederationConfiguration Cmdlet.
+This example shows how to use the Remove-MgBetaDirectoryFederationConfiguration Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

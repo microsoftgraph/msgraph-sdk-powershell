@@ -11,6 +11,6 @@ $params = @{
 
 New-MgBetaPolicyClaimMappingPolicy -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaPolicyClaimMappingPolicy Cmdlet.
+This example shows how to use the New-MgBetaPolicyClaimMappingPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -30,6 +30,6 @@ $params = @{
 
 New-MgBetaPolicyCrossTenantAccessPolicyPartner -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaPolicyCrossTenantAccessPolicyPartner Cmdlet.
+This example shows how to use the New-MgBetaPolicyCrossTenantAccessPolicyPartner Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

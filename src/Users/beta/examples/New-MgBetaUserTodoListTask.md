@@ -19,6 +19,6 @@ $params = @{
 # A UPN can also be used as -UserId.
 New-MgBetaUserTodoListTask -UserId $userId -TodoTaskListId $todoTaskListId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaUserTodoListTask Cmdlet.
+This example shows how to use the New-MgBetaUserTodoListTask Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

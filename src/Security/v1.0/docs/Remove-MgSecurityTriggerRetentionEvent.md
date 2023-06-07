@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityTriggerRetentionEvent
 
 ## SYNOPSIS
-Delete navigation property retentionEvents for security
+Delete a retentionEvent object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSecurityTriggerRetentionEvent -InputObject <ISecurityIdentity> [-IfMatc
 ```
 
 ## DESCRIPTION
-Delete navigation property retentionEvents for security
+Delete a retentionEvent object.
 
 ## EXAMPLES
 

@@ -39,10 +39,9 @@ Assignments belonging to the user.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Education
-Get-MgEducationMeAssignment
 ```
 
-
+Get-MgEducationMeAssignment
 
 ## PARAMETERS
 

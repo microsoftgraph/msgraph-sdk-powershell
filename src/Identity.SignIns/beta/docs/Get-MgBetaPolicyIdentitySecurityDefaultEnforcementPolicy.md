@@ -27,11 +27,7 @@ Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
 ```
 
-$params = @{
-	isEnabled = $false
-}
-
-Update-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy -BodyParameter $params
+Get-MgBetaPolicyIdentitySecurityDefaultEnforcementPolicy
 
 ## PARAMETERS
 

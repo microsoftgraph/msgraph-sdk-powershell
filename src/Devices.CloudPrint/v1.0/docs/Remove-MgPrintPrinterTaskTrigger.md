@@ -34,7 +34,7 @@ Delete the task trigger of a printer to prevent related print events from trigge
 Import-Module Microsoft.Graph.Devices.CloudPrint
 ```
 
-Get-MgPrintPrinterTaskTrigger -PrinterId $printerId -PrintTaskTriggerId $printTaskTriggerId
+Remove-MgPrintPrinterTaskTrigger -PrinterId $printerId -PrintTaskTriggerId $printTaskTriggerId
 
 ## PARAMETERS
 

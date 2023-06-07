@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: 80c19f74-b8b5-4289-9e06-c9765637cf41
+Module Guid: 8e242aab-79e7-4dd1-985a-7ff3b961cdf4
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -132,7 +132,8 @@ Use this API to create a new mail folder in the root folder of the user's mailbo
 If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 
 ### [New-MgUserMailFolderChildFolder](New-MgUserMailFolderChildFolder.md)
-Create a new mailSearchFolder in the specified user's mailbox.
+Use this API to create a new child mailFolder.
+If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
 
 ### [New-MgUserMailFolderChildFolderMessage](New-MgUserMailFolderChildFolderMessage.md)
 Use this API to create a new Message in a mailfolder.

@@ -18,6 +18,6 @@ $params = @{
 
 New-MgBetaDevice -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaDevice Cmdlet.
+This example shows how to use the New-MgBetaDevice Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

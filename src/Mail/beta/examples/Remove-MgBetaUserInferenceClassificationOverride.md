@@ -2,13 +2,9 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Mail
 
-$params = @{
-	classifyAs = "focused"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
+Remove-MgBetaUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId
 ```
-This example shows how to use the Remove-MgBetaBetaUserInferenceClassificationOverride Cmdlet.
+This example shows how to use the Remove-MgBetaUserInferenceClassificationOverride Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

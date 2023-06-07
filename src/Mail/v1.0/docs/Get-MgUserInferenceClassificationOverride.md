@@ -45,12 +45,8 @@ Nullable.
 Import-Module Microsoft.Graph.Mail
 ```
 
-$params = @{
-	classifyAs = "focused"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserInferenceClassificationOverride -UserId $userId -InferenceClassificationOverrideId $inferenceClassificationOverrideId -BodyParameter $params
+Get-MgUserInferenceClassificationOverride -UserId $userId
 
 ## PARAMETERS
 

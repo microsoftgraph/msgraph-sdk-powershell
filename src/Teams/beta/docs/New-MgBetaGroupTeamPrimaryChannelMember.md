@@ -47,83 +47,17 @@ This operation is allowed only for channels with a **membershipType** value of `
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+{{ Add code here }}
 ```
 
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	roles = @(
-		"owner"
-	)
-	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('8b081ef6-4792-4def-b2c9-c363a1bf41d5')"
-}
 
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
-Import-Module Microsoft.Graph.Beta.Teams
+{{ Add code here }}
 ```
 
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId
 
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-```
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	roles = @(
-		"owner"
-	)
-	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users('jacob@contoso.com')"
-}
-
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
-
-### -------------------------- EXAMPLE 4 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-```
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	roles = @(
-	)
-	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users/24b3819b-4e1d-4f3e-86bd-e42b54d0b2b4"
-}
-
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
-
-### -------------------------- EXAMPLE 5 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-```
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	roles = @(
-	)
-	"user@odata.bind" = "https://graph.microsoft.com/v1.0/users/bc3598dd-cce4-4742-ae15-173429951408"
-	tenantId = "a18103d1-a6ef-4f66-ac64-e4ef42ea8681"
-}
-
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
-
-### -------------------------- EXAMPLE 6 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Teams
-```
-
-$params = @{
-	"@odata.type" = "#microsoft.graph.aadUserConversationMember"
-	roles = @(
-	)
-	"user@odata.bind" = "https://graph.microsoft.com/beta/users('jacob@contoso.com')"
-}
-
-New-MgBetaTeamChannelMember -TeamId $teamId -ChannelId $channelId -BodyParameter $params
 
 ## PARAMETERS
 
@@ -222,9 +156,10 @@ Accept wildcard characters: False
 
 ### -Roles
 The roles for that user.
-This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values.
-Similarly, if the member is a guest, the roles property contains guest as one of the values.
+This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values.
+Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values.
 A basic member should not have any values specified in the roles property.
+An Out-of-tenant external member is assigned the owner role.
 
 ```yaml
 Type: System.String[]
@@ -311,7 +246,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DisplayName <String>]`: The display name of the user.
-  - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
+  - `[Roles <String[]>]`: The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.
   - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
 
 `INPUTOBJECT <ITeamsIdentity>`: Identity Parameter

@@ -45,28 +45,32 @@ For details, see Online meeting artifacts and permissions.
 Import-Module Microsoft.Graph.CloudCommunications
 ```
 
-$params = @{
-	startDateTime = [System.DateTime]::Parse("2020-09-09T14:33:30.8546353-07:00")
-	endDateTime = [System.DateTime]::Parse("2020-09-09T15:03:30.8566356-07:00")
-	subject = "Patch Meeting Subject"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
+Get-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId
 
 ### -------------------------- EXAMPLE 2 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.CloudCommunications
 ```
 
-$params = @{
-	lobbyBypassSettings = @{
-		isDialInBypassEnabled = $true
-	}
-}
+# A UPN can also be used as -UserId.
+Get-MgUserOnlineMeeting -UserId $userId -Filter "JoinWebUrl eq 'https://teams.microsoft.com/l/meetup-join/19:meeting_MGQ4MDQyNTEtNTQ2NS00YjQxLTlkM2EtZWVkODYxODYzMmY2@thread.v2/0?context"
+
+### -------------------------- EXAMPLE 3 --------------------------
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+```
 
 # A UPN can also be used as -UserId.
-Update-MgUserOnlineMeeting -UserId $userId -OnlineMeetingId $onlineMeetingId -BodyParameter $params
+Get-MgUserOnlineMeeting -UserId $userId -Filter "joinMeetingIdSettings/joinMeetingId eq '1234567890'"
+
+### -------------------------- EXAMPLE 4 --------------------------
+```powershell
+Import-Module Microsoft.Graph.CloudCommunications
+```
+
+# A UPN can also be used as -UserId.
+Get-MgUserOnlineMeetingAttendeeReport -UserId $userId -OnlineMeetingId $onlineMeetingId
 
 ## PARAMETERS
 

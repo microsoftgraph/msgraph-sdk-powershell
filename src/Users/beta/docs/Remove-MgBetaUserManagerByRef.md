@@ -34,15 +34,7 @@ Remove a user's manager.
 Import-Module Microsoft.Graph.Beta.Users
 ```
 
-Get-MgBetaUserManager -UserId $userId
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Beta.Users
-```
-
-# A UPN can also be used as -UserId.
-Get-MgBetaUser -UserId $userId -ExpandProperty "manager(`$levels=max;`$select=id,displayName)" -Property "id,displayName" -ConsistencyLevel eventual
+Remove-MgBetaUserManagerByRef -UserId $userId
 
 ## PARAMETERS
 

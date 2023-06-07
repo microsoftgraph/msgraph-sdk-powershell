@@ -53,13 +53,7 @@ Retrieve the properties and relationships of a groupLifecyclePolicies object.
 Import-Module Microsoft.Graph.Beta.Groups
 ```
 
-$params = @{
-	groupLifetimeInDays = 180
-	managedGroupTypes = "Selected"
-	alternateNotificationEmails = "admin@contoso.com"
-}
-
-Update-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId -BodyParameter $params
+Get-MgBetaGroupLifecyclePolicy -GroupLifecyclePolicyId $groupLifecyclePolicyId
 
 ## PARAMETERS
 

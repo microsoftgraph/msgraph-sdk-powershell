@@ -41,11 +41,7 @@ Retrieve the properties and relationships of a identityUserFlowAttribute object.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-$params = @{
-	description = "Your new hobby"
-}
-
-Update-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId -BodyParameter $params
+Get-MgIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId
 
 ## PARAMETERS
 
