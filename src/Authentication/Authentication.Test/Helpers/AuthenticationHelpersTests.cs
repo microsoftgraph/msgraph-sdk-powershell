@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             };
 
             AzureIdentityAccessTokenProvider authProvider = await AuthenticationHelpers.GetAuthenticationProviderAsync(userProvidedAuthContext);
-            HttpRequestMessage requestMessage = new HttpRequestMessage();
+            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, "https://graph.microsoft.com/v1.0/me");
 
             // Act
             var accessToken = await authProvider.GetAuthorizationTokenAsync(requestMessage.RequestUri);
