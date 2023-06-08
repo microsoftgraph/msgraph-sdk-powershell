@@ -23,7 +23,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     /// </summary>
     public static class AuthenticationHelpers
     {
-        static ReaderWriterLockSlim _cacheLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+        static readonly ReaderWriterLockSlim _cacheLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
 
         /// <summary>
         /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
@@ -71,7 +71,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                         //https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/MSAL.NET-uses-web-browser
                         IPublicClientApplication publicClientApp = PublicClientApplicationBuilder
                             .Create(authContext.ClientId)
-                            .WithTenantId(authContext.TenantId)
                             .WithAuthority(authorityUrl)
                             .WithClientCapabilities(new[] { "cp1" })
                             .WithDefaultRedirectUri()
@@ -98,7 +97,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                     {
                         IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
                             .Create(authContext.ClientId)
-                            .WithTenantId(authContext.TenantId)
                             .WithAuthority(authorityUrl)
                             .WithCertificate(GetCertificate(authContext))
                             .Build();
