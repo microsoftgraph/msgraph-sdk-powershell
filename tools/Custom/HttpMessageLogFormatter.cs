@@ -41,11 +41,6 @@ namespace NamespacePrefixPlaceholder.PowerShell
 
                     newRequest.Content = new StreamContent(t.Result);
                 }).ConfigureAwait(false);
-
-                // Copy content headers.
-                if (originalRequest.Content.Headers != null)
-                    foreach (var contentHeader in originalRequest.Content.Headers)
-                        newRequest.Content.Headers.TryAddWithoutValidation(contentHeader.Key, contentHeader.Value);
             }
             return newRequest;
         }
