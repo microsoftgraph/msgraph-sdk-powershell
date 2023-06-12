@@ -14,9 +14,9 @@ using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -131,7 +131,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
                 if (GraphSession.Instance.GraphOption.EnableWAMForMSGraph)
                 {
-                    IAuthRecord authRecord;
                     //authRecord = interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
                     [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
                     IntPtr parentWindowHandle = GetForegroundWindow();
@@ -144,12 +143,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                                                 .WithParentActivityOrWindow(parentWindowHandle)
                                                 .ExecuteAsync();
                         });
-                    authRecord.Username = authResult.Account.Username;
-                    authRecord.Authority = authResult.Account.Environment;
-                    authRecord.AccountId = authResult.Account.HomeAccountId;
-                    authRecord.TenantId = authResult.TenantId;
-                    authRecord.ClientId = authContext.ClientId;
-                    await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
+                    AuthRecord authRecord = new()
+                    {
+                        Username = authResult.Account.Username,
+                        Authority = authResult.Account.Environment,
+                        TenantId = authResult.TenantId,
+                        ClientId = authContext.ClientId
+                    };
                 }
                 else
                 {
@@ -456,19 +456,24 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 await authRecord.SerializeAsync(authRecordStream).ConfigureAwait(false);
         }
 
-        public static async Task WriteAuthRecordAsync(IAuthRecord authRecord)
-        {
-            // Try to create directory if it doesn't exist.
-            Directory.CreateDirectory(Constants.GraphDirectoryPath);
-            using (FileStream authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Create, FileAccess.Write))
-                await authRecord.SerializeAsync(authRecordStream).ConfigureAwait(false);
-        }
-
         public static Task DeleteAuthRecordAsync()
         {
             if (File.Exists(Constants.AuthRecordPath))
                 File.Delete(Constants.AuthRecordPath);
             return Task.CompletedTask;
+        }
+
+        public class AuthRecord : IAuthRecord
+        {
+            public AuthRecord()
+            {
+            }
+            public string Authority { get; set; }
+            public string ClientId { get; set; }
+            public string HomeAccountId { get; set; }
+            public string TenantId { get; set; }
+            public string Username { get; set; }
+            public string Version { get; set; } = "1.0";
         }
     }
 }
