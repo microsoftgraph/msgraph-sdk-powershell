@@ -1,9 +1,6 @@
 ﻿using Microsoft.Graph.PowerShell.Authentication.Handlers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -37,7 +34,9 @@ namespace Microsoft.Graph.Authentication.Test.Handlers
             // Assert
             Assert.NotNull(sentRequest);
             Assert.Equal(requestUrl, sentRequest.RequestUri);
+# if NET6_0_OR_GREATER
             Assert.Equal(sentRequest.Version, new Version(2, 0));
+# endif
         }
 
         public void Dispose()
