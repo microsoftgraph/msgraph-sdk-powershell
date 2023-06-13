@@ -16,8 +16,8 @@ Update the navigation property userExperienceAnalyticsDeviceStartupProcessPerfor
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
  -UserExperienceAnalyticsDeviceStartupProcessPerformanceId <String> [-AdditionalProperties <Hashtable>]
- [-DeviceCount <Int64>] [-Id <String>] [-MedianImpactInMS <Int32>] [-MedianImpactInMs2 <Int64>]
- [-ProcessName <String>] [-ProductName <String>] [-Publisher <String>] [-TotalImpactInMS <Int32>]
+ [-DeviceCount <Int64>] [-Id <String>] [-MedianImpactInMS <Int64>] [-MedianImpactInMs2 <Int64>]
+ [-ProcessName <String>] [-ProductName <String>] [-Publisher <String>] [-TotalImpactInMS <Int64>]
  [-TotalImpactInMs2 <Int64>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -41,8 +41,8 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerforman
 ```
 Update-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-DeviceCount <Int64>]
- [-Id <String>] [-MedianImpactInMS <Int32>] [-MedianImpactInMs2 <Int64>] [-ProcessName <String>]
- [-ProductName <String>] [-Publisher <String>] [-TotalImpactInMS <Int32>] [-TotalImpactInMs2 <Int64>]
+ [-Id <String>] [-MedianImpactInMS <Int64>] [-MedianImpactInMs2 <Int64>] [-ProcessName <String>]
+ [-ProductName <String>] [-Publisher <String>] [-TotalImpactInMS <Int64>] [-TotalImpactInMs2 <Int64>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 User experience analytics device startup process median impact in milliseconds.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 User experience analytics device startup process total impact in milliseconds.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -322,12 +322,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DeviceCount <Int64?>]`: User experience analytics device startup process summarized count.
-  - `[MedianImpactInMS <Int32?>]`: User experience analytics device startup process median impact in milliseconds.
+  - `[MedianImpactInMS <Int64?>]`: User experience analytics device startup process median impact in milliseconds.
   - `[MedianImpactInMs2 <Int64?>]`: User experience analytics device startup process median impact in milliseconds.
   - `[ProcessName <String>]`: User experience analytics device startup process name.
   - `[ProductName <String>]`: The user experience analytics device startup process product name.
   - `[Publisher <String>]`: The User experience analytics device startup process publisher.
-  - `[TotalImpactInMS <Int32?>]`: User experience analytics device startup process total impact in milliseconds.
+  - `[TotalImpactInMS <Int64?>]`: User experience analytics device startup process total impact in milliseconds.
   - `[TotalImpactInMs2 <Int64?>]`: User experience analytics device startup process total impact in milliseconds.
 
 `INPUTOBJECT <IDeviceManagementIdentity>`: Identity Parameter
@@ -420,6 +420,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SecurityBaselineSettingStateId <String>]`: The unique identifier of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: The unique identifier of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: The unique identifier of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyCorrelationGroupOverviewId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyCorrelationGroupOverview
   - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyDevice
   - `[UserExperienceAnalyticsAnomalyId <String>]`: The unique identifier of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails

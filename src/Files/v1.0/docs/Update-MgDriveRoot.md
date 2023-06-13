@@ -2959,7 +2959,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[DisplayName <String>]`: The person's display name.
             - `[GivenName <String>]`: The person's given name.
             - `[ImAddress <String>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
-            - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
+            - `[IsFavorite <Boolean?>]`: True if the user has flagged this person as a favorite.
             - `[JobTitle <String>]`: The person's job title.
             - `[OfficeLocation <String>]`: The location of the person's office.
             - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
@@ -5587,7 +5587,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[DisplayName <String>]`: The person's display name.
       - `[GivenName <String>]`: The person's given name.
       - `[ImAddress <String>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
-      - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
+      - `[IsFavorite <Boolean?>]`: True if the user has flagged this person as a favorite.
       - `[JobTitle <String>]`: The person's job title.
       - `[OfficeLocation <String>]`: The location of the person's office.
       - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
@@ -8189,7 +8189,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[DisplayName <String>]`: The person's display name.
       - `[GivenName <String>]`: The person's given name.
       - `[ImAddress <String>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
-      - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
+      - `[IsFavorite <Boolean?>]`: True if the user has flagged this person as a favorite.
       - `[JobTitle <String>]`: The person's job title.
       - `[OfficeLocation <String>]`: The location of the person's office.
       - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
@@ -11190,7 +11190,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: The person's display name.
     - `[GivenName <String>]`: The person's given name.
     - `[ImAddress <String>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
-    - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
+    - `[IsFavorite <Boolean?>]`: True if the user has flagged this person as a favorite.
     - `[JobTitle <String>]`: The person's job title.
     - `[OfficeLocation <String>]`: The location of the person's office.
     - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
@@ -13856,7 +13856,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DisplayName <String>]`: The person's display name.
     - `[GivenName <String>]`: The person's given name.
     - `[ImAddress <String>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
-    - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
+    - `[IsFavorite <Boolean?>]`: True if the user has flagged this person as a favorite.
     - `[JobTitle <String>]`: The person's job title.
     - `[OfficeLocation <String>]`: The location of the person's office.
     - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.
@@ -16415,7 +16415,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[DisplayName <String>]`: The person's display name.
       - `[GivenName <String>]`: The person's given name.
       - `[ImAddress <String>]`: The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
-      - `[IsFavorite <Boolean?>]`: true if the user has flagged this person as a favorite.
+      - `[IsFavorite <Boolean?>]`: True if the user has flagged this person as a favorite.
       - `[JobTitle <String>]`: The person's job title.
       - `[OfficeLocation <String>]`: The location of the person's office.
       - `[PersonNotes <String>]`: Free-form notes that the user has taken about this person.

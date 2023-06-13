@@ -224,13 +224,13 @@ To create the parameters described below, construct a hash table containing the 
             - `[Rules <String[]>]`: Overridden rules. These are used as rules for the override instead of the default rules.
         - `[Assignments <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
         - `[CheckLists <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
-        - `[CompletionRequirements <String[]>]`: 
+        - `[CompletionRequirements <String[]>]`: Rules and restrictions for completion requirements of the task. Accepted values are allow, add, remove, edit, and block.
         - `[Delete <String[]>]`: Rules and restrictions for deleting the task. Accepted values are allow and block.
         - `[DueDate <String[]>]`: Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
         - `[Move <String[]>]`: Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
         - `[Notes <String[]>]`: Rules and restrictions for changing the notes of the task. Accepted values are allow and block.
         - `[Order <String[]>]`: Rules and restrictions for changing the order of the task. Accepted values are allow and block.
-        - `[PercentComplete <String[]>]`: Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
+        - `[PercentComplete <String[]>]`: Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, overrideRequirements, setToNotStarted, setToInProgress, and block.
         - `[PreviewType <String[]>]`: Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.
         - `[Priority <String[]>]`: Rules and restrictions for changing the priority of the task. Accepted values are allow and block.
         - `[References <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
@@ -255,13 +255,13 @@ To create the parameters described below, construct a hash table containing the 
           - `[Rules <String[]>]`: Overridden rules. These are used as rules for the override instead of the default rules.
       - `[Assignments <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
       - `[CheckLists <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
-      - `[CompletionRequirements <String[]>]`: 
+      - `[CompletionRequirements <String[]>]`: Rules and restrictions for completion requirements of the task. Accepted values are allow, add, remove, edit, and block.
       - `[Delete <String[]>]`: Rules and restrictions for deleting the task. Accepted values are allow and block.
       - `[DueDate <String[]>]`: Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
       - `[Move <String[]>]`: Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
       - `[Notes <String[]>]`: Rules and restrictions for changing the notes of the task. Accepted values are allow and block.
       - `[Order <String[]>]`: Rules and restrictions for changing the order of the task. Accepted values are allow and block.
-      - `[PercentComplete <String[]>]`: Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
+      - `[PercentComplete <String[]>]`: Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, overrideRequirements, setToNotStarted, setToInProgress, and block.
       - `[PreviewType <String[]>]`: Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.
       - `[Priority <String[]>]`: Rules and restrictions for changing the priority of the task. Accepted values are allow and block.
       - `[References <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules

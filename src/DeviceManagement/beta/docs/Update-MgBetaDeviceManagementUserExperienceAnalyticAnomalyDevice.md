@@ -17,8 +17,9 @@ Update the navigation property userExperienceAnalyticsAnomalyDevice in deviceMan
 Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice
  -UserExperienceAnalyticsAnomalyDeviceId <String> [-AdditionalProperties <Hashtable>] [-AnomalyId <String>]
  [-AnomalyOnDeviceFirstOccurrenceDateTime <DateTime>] [-AnomalyOnDeviceLatestOccurrenceDateTime <DateTime>]
- [-DeviceId <String>] [-DeviceManufacturer <String>] [-DeviceModel <String>] [-DeviceName <String>]
- [-Id <String>] [-OSName <String>] [-OSVersion <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CorrelationGroupId <String>] [-DeviceId <String>] [-DeviceManufacturer <String>] [-DeviceModel <String>]
+ [-DeviceName <String>] [-DeviceStatus <UserExperienceAnalyticsDeviceStatus>] [-Id <String>]
+ [-OSName <String>] [-OSVersion <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -41,8 +42,9 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice -InputObject <I
 Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AnomalyId <String>]
  [-AnomalyOnDeviceFirstOccurrenceDateTime <DateTime>] [-AnomalyOnDeviceLatestOccurrenceDateTime <DateTime>]
- [-DeviceId <String>] [-DeviceManufacturer <String>] [-DeviceModel <String>] [-DeviceName <String>]
- [-Id <String>] [-OSName <String>] [-OSVersion <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CorrelationGroupId <String>] [-DeviceId <String>] [-DeviceManufacturer <String>] [-DeviceModel <String>]
+ [-DeviceName <String>] [-DeviceStatus <UserExperienceAnalyticsDeviceStatus>] [-Id <String>]
+ [-OSName <String>] [-OSVersion <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -142,6 +144,21 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -CorrelationGroupId
+The unique identifier of the correlation group.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DeviceId
 The unique identifier of the device.
 
@@ -192,6 +209,22 @@ The name of the device.
 
 ```yaml
 Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeviceStatus
+Indicates the status of the device in the correlation group.
+Eg: Device status can be anomalous, affected, at risk.
+
+```yaml
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsDeviceStatus
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -338,10 +371,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[AnomalyId <String>]`: The unique identifier of the anomaly.
   - `[AnomalyOnDeviceFirstOccurrenceDateTime <DateTime?>]`: Indicates the first occurance date and time for the anomaly on the device.
   - `[AnomalyOnDeviceLatestOccurrenceDateTime <DateTime?>]`: Indicates the latest occurance date and time for the anomaly on the device.
+  - `[CorrelationGroupId <String>]`: The unique identifier of the correlation group.
   - `[DeviceId <String>]`: The unique identifier of the device.
   - `[DeviceManufacturer <String>]`: The manufacturer name of the device.
   - `[DeviceModel <String>]`: The model name of the device.
   - `[DeviceName <String>]`: The name of the device.
+  - `[DeviceStatus <UserExperienceAnalyticsDeviceStatus?>]`: Indicates the status of the device in the correlation group. Eg: Device status can be anomalous, affected, at risk.
   - `[OSName <String>]`: The name of the OS installed on the device.
   - `[OSVersion <String>]`: The OS version installed on the device.
 
@@ -435,6 +470,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SecurityBaselineSettingStateId <String>]`: The unique identifier of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: The unique identifier of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: The unique identifier of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyCorrelationGroupOverviewId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyCorrelationGroupOverview
   - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyDevice
   - `[UserExperienceAnalyticsAnomalyId <String>]`: The unique identifier of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails

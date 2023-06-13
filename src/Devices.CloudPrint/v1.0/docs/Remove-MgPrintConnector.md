@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPrintConnector
 
 ## SYNOPSIS
-Delete (unregister) a **printConnector**.
+Delete (unregister) a printConnector.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgPrintConnector -InputObject <IDevicesCloudPrintIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-Delete (unregister) a **printConnector**.
+Delete (unregister) a printConnector.
 
 ## EXAMPLES
 

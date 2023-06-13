@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgBetaPolicyRoleManagementPolicy
 
 ## SYNOPSIS
-Retrieve the details of a role management policy.
-To read a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.
+Represents the role management policies.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgBetaPolicyRoleManagementPolicy -InputObject <IIdentitySignInsIdentity> [-E
 ```
 
 ## DESCRIPTION
-Retrieve the details of a role management policy.
-To read a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.
+Represents the role management policies.
 
 ## EXAMPLES
 

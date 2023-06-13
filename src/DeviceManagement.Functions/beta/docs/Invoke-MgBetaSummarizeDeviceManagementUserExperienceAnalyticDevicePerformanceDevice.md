@@ -14,9 +14,9 @@ Invoke function summarizeDevicePerformanceDevices
 
 ### Summarize (Default)
 ```
-Invoke-MgBetaSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice -SummarizeBy <String>
- [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [<CommonParameters>]
+Invoke-MgBetaSummarizeDeviceManagementUserExperienceAnalyticDevicePerformanceDevice
+ -SummarizeBy <UserExperienceAnalyticsSummarizedBy> [-Count] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ### SummarizeViaIdentity
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 Usage: summarizeBy='{summarizeBy}'
 
 ```yaml
-Type: System.String
+Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsSummarizedBy
 Parameter Sets: Summarize
 Aliases:
 
@@ -228,7 +228,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SecretReferenceValueId <String>]`: Usage: secretReferenceValueId='{secretReferenceValueId}'
   - `[ServicePlanId <String>]`: Usage: servicePlanId='{servicePlanId}'
   - `[SubscriptionId <String>]`: Usage: subscriptionId='{subscriptionId}'
-  - `[SummarizeBy <String>]`: Usage: summarizeBy='{summarizeBy}'
+  - `[SummarizeBy <UserExperienceAnalyticsSummarizedBy?>]`: Usage: summarizeBy='{summarizeBy}'
   - `[TemplateId <String>]`: Usage: templateId='{templateId}'
   - `[Upn <String>]`: Usage: upn='{upn}'
   - `[Userid <String>]`: Usage: userid='{userid}'

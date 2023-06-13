@@ -196,7 +196,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowRecording
-.
+Indicates whether recording is enabled for the meeting.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowTranscription
-.
+Indicates whether transcription is enabled for the meeting.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -886,8 +886,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[EmailAddress <String>]`: Email address of the user associated with this attendance record.
     - `[Identity <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
     - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
     - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
@@ -911,9 +911,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
   - `[AllowMeetingChat <String>]`: meetingChatMode
   - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-  - `[AllowRecording <Boolean?>]`: 
+  - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
   - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-  - `[AllowTranscription <Boolean?>]`: 
+  - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
   - `[AllowedPresenters <String>]`: onlineMeetingPresenters
   - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
   - `[AnonymizeIdentityForRoles <String[]>]`: 
@@ -928,8 +928,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[EmailAddress <String>]`: Email address of the user associated with this attendance record.
       - `[Identity <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
       - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
       - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
@@ -1120,8 +1120,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[EmailAddress <String>]`: Email address of the user associated with this attendance record.
     - `[Identity <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
     - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
     - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
@@ -1136,8 +1136,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[Role <String>]`: onlineMeetingRole

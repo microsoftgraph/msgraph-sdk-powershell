@@ -16,10 +16,9 @@ Create new navigation property to userExperienceAnalyticsAppHealthDevicePerforma
 ```
 New-MgBetaDeviceManagementUserExperienceAnalyticAppHealthDevicePerformance [-AdditionalProperties <Hashtable>]
  [-AppCrashCount <Int32>] [-AppHangCount <Int32>] [-CrashedAppCount <Int32>] [-DeviceAppHealthScore <Double>]
- [-DeviceAppHealthStatus <String>] [-DeviceDisplayName <String>] [-DeviceId <String>]
- [-DeviceManufacturer <String>] [-DeviceModel <String>] [-HealthStatus <UserExperienceAnalyticsHealthState>]
- [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>] [-ProcessedDateTime <DateTime>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DeviceDisplayName <String>] [-DeviceId <String>] [-DeviceManufacturer <String>] [-DeviceModel <String>]
+ [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>]
+ [-ProcessedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -135,21 +134,6 @@ Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 ```yaml
 Type: System.Double
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DeviceAppHealthStatus
-The overall app health status of the device.
-
-```yaml
-Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -340,7 +324,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppHangCount <Int32?>]`: The number of app hangs for the device. Valid values -2147483648 to 2147483647
   - `[CrashedAppCount <Int32?>]`: The number of distinct app crashes for the device. Valid values -2147483648 to 2147483647
   - `[DeviceAppHealthScore <Double?>]`: The app health score of the device. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-  - `[DeviceAppHealthStatus <String>]`: The overall app health status of the device.
   - `[DeviceDisplayName <String>]`: The name of the device.
   - `[DeviceId <String>]`: The id of the device.
   - `[DeviceManufacturer <String>]`: The manufacturer name of the device.

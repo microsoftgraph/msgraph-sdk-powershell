@@ -549,6 +549,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AuditEventId <String>]`: The unique identifier of auditEvent
   - `[CartToClassAssociationId <String>]`: The unique identifier of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: The unique identifier of cloudPcAuditEvent
+  - `[CloudPcBulkActionId <String>]`: The unique identifier of cloudPcBulkAction
   - `[CloudPcDeviceImageId <String>]`: The unique identifier of cloudPcDeviceImage
   - `[CloudPcExportJobId <String>]`: The unique identifier of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: The unique identifier of cloudPcExternalPartnerSetting

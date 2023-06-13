@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-The user experience analytics application performance entity contains app performance by app version details.
+The user experience analytics application performance entity contains application performance by application version details.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -268,7 +268,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>`: The user experience analytics application performance entity contains app performance by app version details.
+`BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>`: The user experience analytics application performance entity contains application performance by application version details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[AppCrashCount <Int32?>]`: The number of crashes for the app. Valid values -2147483648 to 2147483647

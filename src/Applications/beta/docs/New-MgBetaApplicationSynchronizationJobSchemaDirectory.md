@@ -309,7 +309,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
   - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: Collection of objects supported by the directory.
-    - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+    - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
       - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
       - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
         - `[Key <String>]`: Key.
@@ -328,11 +328,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
       - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
       - `[Type <String>]`: attributeType
-    - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+    - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
       - `[Key <String>]`: objectDefinitionMetadata
       - `[Value <String>]`: Value of the metadata property.
-    - `[Name <String>]`: 
-    - `[SupportedApis <String[]>]`: 
+    - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+    - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
   - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
   - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
 
@@ -367,7 +367,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[UserId <String>]`: The unique identifier of user
 
 `OBJECTS <IMicrosoftGraphObjectDefinition[]>`: Collection of objects supported by the directory.
-  - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+  - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
     - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
     - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
       - `[Key <String>]`: Key.
@@ -386,11 +386,11 @@ To create the parameters described below, construct a hash table containing the 
       - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
     - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
     - `[Type <String>]`: attributeType
-  - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+  - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
     - `[Key <String>]`: objectDefinitionMetadata
     - `[Value <String>]`: Value of the metadata property.
-  - `[Name <String>]`: 
-  - `[SupportedApis <String[]>]`: 
+  - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+  - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
 
 ## RELATED LINKS
 

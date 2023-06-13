@@ -367,6 +367,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SecurityBaselineSettingStateId <String>]`: The unique identifier of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: The unique identifier of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: The unique identifier of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyCorrelationGroupOverviewId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyCorrelationGroupOverview
   - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyDevice
   - `[UserExperienceAnalyticsAnomalyId <String>]`: The unique identifier of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails

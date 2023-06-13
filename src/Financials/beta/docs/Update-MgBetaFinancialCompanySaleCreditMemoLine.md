@@ -581,10 +581,10 @@ To create the parameters described below, construct a hash table containing the 
 
 `ACCOUNT <IMicrosoftGraphAccount>`: account
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Blocked <Boolean?>]`: 
   - `[Category <String>]`: 
   - `[DisplayName <String>]`: 
+  - `[Id <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
   - `[Number <String>]`: 
   - `[SubCategory <String>]`: 
@@ -594,10 +594,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Account <IMicrosoftGraphAccount>]`: account
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Blocked <Boolean?>]`: 
     - `[Category <String>]`: 
     - `[DisplayName <String>]`: 
+    - `[Id <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
     - `[Number <String>]`: 
     - `[SubCategory <String>]`: 
@@ -612,27 +612,27 @@ To create the parameters described below, construct a hash table containing the 
   - `[InvoiceDiscountAllocation <Decimal?>]`: 
   - `[Item <IMicrosoftGraphItem>]`: item
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[BaseUnitOfMeasureId <String>]`: 
     - `[Blocked <Boolean?>]`: 
     - `[DisplayName <String>]`: 
     - `[Gtin <String>]`: 
+    - `[Id <String>]`: 
     - `[Inventory <Decimal?>]`: 
     - `[ItemCategory <IMicrosoftGraphItemCategory>]`: itemCategory
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Code <String>]`: 
       - `[DisplayName <String>]`: 
+      - `[Id <String>]`: 
       - `[LastModifiedDateTime <DateTime?>]`: 
     - `[ItemCategoryCode <String>]`: 
     - `[ItemCategoryId <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
     - `[Number <String>]`: 
     - `[Picture <IMicrosoftGraphPicture[]>]`: 
-      - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Content <Byte[]>]`: 
       - `[ContentType <String>]`: 
       - `[Height <Int32?>]`: 
+      - `[Id <String>]`: 
       - `[Width <Int32?>]`: 
     - `[PriceIncludesTax <Boolean?>]`: 
     - `[TaxGroupCode <String>]`: 
@@ -694,27 +694,27 @@ To create the parameters described below, construct a hash table containing the 
 
 `ITEM <IMicrosoftGraphItem>`: item
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[BaseUnitOfMeasureId <String>]`: 
   - `[Blocked <Boolean?>]`: 
   - `[DisplayName <String>]`: 
   - `[Gtin <String>]`: 
+  - `[Id <String>]`: 
   - `[Inventory <Decimal?>]`: 
   - `[ItemCategory <IMicrosoftGraphItemCategory>]`: itemCategory
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Code <String>]`: 
     - `[DisplayName <String>]`: 
+    - `[Id <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
   - `[ItemCategoryCode <String>]`: 
   - `[ItemCategoryId <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
   - `[Number <String>]`: 
   - `[Picture <IMicrosoftGraphPicture[]>]`: 
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Content <Byte[]>]`: 
     - `[ContentType <String>]`: 
     - `[Height <Int32?>]`: 
+    - `[Id <String>]`: 
     - `[Width <Int32?>]`: 
   - `[PriceIncludesTax <Boolean?>]`: 
   - `[TaxGroupCode <String>]`: 

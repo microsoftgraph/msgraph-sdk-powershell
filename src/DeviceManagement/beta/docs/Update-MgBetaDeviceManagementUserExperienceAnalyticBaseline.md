@@ -364,7 +364,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the user experience analytics category.
     - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
-    - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity
+    - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
     - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
   - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category.
@@ -377,7 +377,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the user experience analytics category.
     - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
-    - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity
+    - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
     - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
   - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category.
@@ -390,7 +390,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the user experience analytics category.
     - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
-    - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity
+    - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
     - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
   - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category.
@@ -406,7 +406,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the user experience analytics category.
       - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
-      - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity
+      - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
       - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
       - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
     - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category.
@@ -428,7 +428,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the user experience analytics category.
     - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
-    - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity
+    - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
     - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
   - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category.
@@ -526,6 +526,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SecurityBaselineSettingStateId <String>]`: The unique identifier of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: The unique identifier of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: The unique identifier of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyCorrelationGroupOverviewId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyCorrelationGroupOverview
   - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyDevice
   - `[UserExperienceAnalyticsAnomalyId <String>]`: The unique identifier of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails
@@ -576,7 +577,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the user experience analytics category.
     - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
-    - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity
+    - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
     - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
   - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category.
@@ -589,7 +590,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the user experience analytics category.
     - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
-    - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity
+    - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
     - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
   - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category.
@@ -602,7 +603,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the user experience analytics category.
     - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
-    - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity
+    - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
     - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
   - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category.

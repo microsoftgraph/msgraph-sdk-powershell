@@ -164,13 +164,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The user experience analytics insights.
     - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
-    - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity
+    - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
     - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
 
 `INSIGHTS <IMicrosoftGraphUserExperienceAnalyticsInsight[]>`: The user experience analytics insights.
   - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
-  - `[Severity <String>]`: userExperienceAnalyticsInsightSeverity
+  - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
   - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
   - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
 

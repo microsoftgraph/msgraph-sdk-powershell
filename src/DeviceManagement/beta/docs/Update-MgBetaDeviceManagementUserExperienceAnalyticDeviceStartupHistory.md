@@ -288,7 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -RestartCategory
-Operating System restart category
+Operating System restart category.
 
 ```yaml
 Type: Microsoft.Graph.Beta.PowerShell.Support.UserExperienceAnalyticsOperatingSystemRestartCategory
@@ -460,7 +460,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsFirstLogin <Boolean?>]`: The user experience analytics device first login.
   - `[OperatingSystemVersion <String>]`: The user experience analytics device boot record's operating system version.
   - `[ResponsiveDesktopTimeInMS <Int32?>]`: The user experience analytics responsive desktop time in milliseconds.
-  - `[RestartCategory <UserExperienceAnalyticsOperatingSystemRestartCategory?>]`: Operating System restart category
+  - `[RestartCategory <UserExperienceAnalyticsOperatingSystemRestartCategory?>]`: Operating System restart category.
   - `[RestartFaultBucket <String>]`: OS restart fault bucket. The fault bucket is used to find additional information about a system crash.
   - `[RestartStopCode <String>]`: OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason.
   - `[StartTime <DateTime?>]`: The user experience analytics device boot start time.
@@ -557,6 +557,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SecurityBaselineSettingStateId <String>]`: The unique identifier of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: The unique identifier of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: The unique identifier of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyCorrelationGroupOverviewId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyCorrelationGroupOverview
   - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyDevice
   - `[UserExperienceAnalyticsAnomalyId <String>]`: The unique identifier of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails

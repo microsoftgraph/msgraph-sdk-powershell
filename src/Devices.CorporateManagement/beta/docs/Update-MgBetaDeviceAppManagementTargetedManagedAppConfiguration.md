@@ -482,7 +482,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[MinDeviceOccurrence <Int32?>]`: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
       - `[OffsetUri <String>]`: Offset CSP Path from Base
       - `[ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]`: List of referred setting information.
-        - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting
+        - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting.
       - `[RootDefinitionId <String>]`: Root setting definition id if the setting is a child setting.
       - `[SettingUsage <DeviceManagementConfigurationSettingUsage?>]`: Supported setting types
       - `[UxBehavior <DeviceManagementConfigurationControlType?>]`: Setting control type representation in the UX
@@ -550,14 +550,13 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppLogCollectionRequestId <String>]`: The unique identifier of appLogCollectionRequest
   - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: The unique identifier of assignmentFilterEvaluationStatusDetails
   - `[BundleId <String>]`: Usage: bundleId='{bundleId}'
-  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: The unique identifier of defaultManagedAppProtection
   - `[DetectedAppId <String>]`: The unique identifier of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: The unique identifier of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: The unique identifier of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: The unique identifier of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: The unique identifier of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: Usage: deviceId='{deviceId}'
+  - `[DeviceId <String>]`: Property in multi-part unique identifier of deviceHealthScriptPolicyState
   - `[DeviceInstallStateId <String>]`: The unique identifier of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: The unique identifier of deviceLogCollectionResponse
   - `[DeviceManagementConfigurationSettingDefinitionId <String>]`: The unique identifier of deviceManagementConfigurationSettingDefinition
@@ -587,7 +586,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[MobileAppAssignmentId <String>]`: The unique identifier of mobileAppAssignment
   - `[MobileAppCategoryId <String>]`: The unique identifier of mobileAppCategory
   - `[MobileAppId <String>]`: The unique identifier of mobileApp
-  - `[MobileAppInstallStatusId <String>]`: The unique identifier of mobileAppInstallStatus
   - `[MobileAppIntentAndStateId <String>]`: The unique identifier of mobileAppIntentAndState
   - `[MobileAppProvisioningConfigGroupAssignmentId <String>]`: The unique identifier of mobileAppProvisioningConfigGroupAssignment
   - `[MobileAppRelationshipId <String>]`: The unique identifier of mobileAppRelationship
@@ -598,13 +596,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[PolicySetItemId <String>]`: The unique identifier of policySetItem
   - `[SecurityBaselineSettingStateId <String>]`: The unique identifier of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: The unique identifier of securityBaselineState
-  - `[Status <String>]`: Usage: status='{status}'
   - `[TargetedManagedAppConfigurationId <String>]`: The unique identifier of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: The unique identifier of targetedManagedAppPolicyAssignment
-  - `[UserAppInstallStatusId <String>]`: The unique identifier of userAppInstallStatus
   - `[UserId <String>]`: The unique identifier of user
   - `[UserInstallStateSummaryId <String>]`: The unique identifier of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: Usage: userPrincipalName='{userPrincipalName}'
   - `[VppTokenId <String>]`: The unique identifier of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: The unique identifier of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: The unique identifier of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -641,7 +636,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[MinDeviceOccurrence <Int32?>]`: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
     - `[OffsetUri <String>]`: Offset CSP Path from Base
     - `[ReferredSettingInformationList <IMicrosoftGraphDeviceManagementConfigurationReferredSettingInformation[]>]`: List of referred setting information.
-      - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting
+      - `[SettingDefinitionId <String>]`: Setting definition id that is being referred to a setting. Applicable for reusable setting.
     - `[RootDefinitionId <String>]`: Root setting definition id if the setting is a child setting.
     - `[SettingUsage <DeviceManagementConfigurationSettingUsage?>]`: Supported setting types
     - `[UxBehavior <DeviceManagementConfigurationControlType?>]`: Setting control type representation in the UX

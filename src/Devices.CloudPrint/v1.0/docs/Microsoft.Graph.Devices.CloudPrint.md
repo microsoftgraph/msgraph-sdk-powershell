@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CloudPrint
-Module Guid: dc66cd50-1bdd-4ba8-bdfc-4c3818809f3c
+Module Guid: 5fd6040f-c325-447a-894a-1bbe0229ce9e
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devices.cloudprint
 Help Version: 1.0.0.0
 Locale: en-US
@@ -268,7 +268,7 @@ For details about how to use this API to add pull printing support to Universal 
 Create new navigation property to tasks for print
 
 ### [Remove-MgPrintConnector](Remove-MgPrintConnector.md)
-Delete (unregister) a **printConnector**.
+Delete (unregister) a printConnector.
 
 ### [Remove-MgPrintOperation](Remove-MgPrintOperation.md)
 Delete navigation property operations for print

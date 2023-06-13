@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Search
-Module Guid: 37e5e6e8-75a3-4e53-9d78-7bd4625bcd8e
+Module Guid: c68442a5-6835-4755-91a1-89a7c3caa8bc
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -80,7 +80,7 @@ Get the number of the resource
 The sourceSystemDefinition this connector is connected to.
 
 ### [Get-MgBetaExternalIndustryDataInboundFlow](Get-MgBetaExternalIndustryDataInboundFlow.md)
-Read the properties and relationships of an inboundFileFlow object.
+Read the properties and relationships of an inboundFlow object.
 
 ### [Get-MgBetaExternalIndustryDataInboundFlowCount](Get-MgBetaExternalIndustryDataInboundFlowCount.md)
 Get the number of the resource
@@ -183,8 +183,8 @@ Create new navigation property to operations for external
 Create a new industryDataConnector object.
 
 ### [New-MgBetaExternalIndustryDataInboundFlow](New-MgBetaExternalIndustryDataInboundFlow.md)
-Create a new inboundFlow object.
-The following prerequisite resources are required when you create an **inboundFlow**:
+Create a new inboundFileFlow object.
+The following prerequisite resources are required when you create an **inboundFileFlow**:
 
 ### [New-MgBetaExternalIndustryDataOperation](New-MgBetaExternalIndustryDataOperation.md)
 Create new navigation property to operations for external
@@ -235,7 +235,7 @@ Delete navigation property quota for external
 Delete navigation property schema for external
 
 ### [Remove-MgBetaExternalIndustryDataConnector](Remove-MgBetaExternalIndustryDataConnector.md)
-Delete an azureDataLakeConnector object.
+Delete an industryDataConnector object.
 
 ### [Remove-MgBetaExternalIndustryDataInboundFlow](Remove-MgBetaExternalIndustryDataInboundFlow.md)
 Delete an inboundFlow object.

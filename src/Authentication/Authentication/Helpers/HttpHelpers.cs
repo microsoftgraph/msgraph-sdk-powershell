@@ -1,11 +1,15 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+using Microsoft.Graph.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using Microsoft.Graph.PowerShell.Authentication.Handlers;
+using Microsoft.Kiota.Http.HttpClientLibrary.Middleware;
+using Microsoft.Kiota.Http.HttpClientLibrary.Middleware.Options;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Net;
 using System.Net.Http;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
@@ -27,7 +31,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
             var requestUserAgent = new RequestUserAgent(GraphSession.Instance.AuthContext?.PSHostVersion, null);
 
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthenticationProviderAsync(GraphSession.Instance.AuthContext).ConfigureAwait(false).GetAwaiter().GetResult();
+            AzureIdentityAccessTokenProvider authProvider = AuthenticationHelpers.GetAuthenticationProviderAsync(GraphSession.Instance.AuthContext).ConfigureAwait(false).GetAwaiter().GetResult();
             var newHttpClient = GetGraphHttpClient(authProvider, GraphSession.Instance.RequestContext);
             newHttpClient.DefaultRequestHeaders.UserAgent.ParseAdd(requestUserAgent.UserAgent);
             GraphSession.Instance.GraphHttpClient = newHttpClient;
@@ -40,7 +44,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// </summary>
         /// <param name="authProvider">Custom AuthProvider</param>
         /// <returns></returns>
-        private static HttpClient GetGraphHttpClient(IAuthenticationProvider authProvider, IRequestContext requestContext)
+        private static HttpClient GetGraphHttpClient(AzureIdentityAccessTokenProvider authProvider, IRequestContext requestContext)
         {
             if (requestContext is null)
                 throw new AuthenticationException(string.Format(CultureInfo.InvariantCulture, Core.ErrorConstants.Message.MissingSessionProperty, nameof(requestContext)));
@@ -60,7 +64,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 new RequestHeaderHandler() // Should always be last.
             };
 
-            HttpClient httpClient = GraphClientFactory.Create(delegatingHandlers);
+            HttpClient httpClient = RuntimeUtils.IsPsCore()
+                ? GraphClientFactory.Create(delegatingHandlers)
+                : GraphClientFactory.Create(delegatingHandlers, finalHandler: new HttpClientHandler
+                {
+                    AllowAutoRedirect = false,
+                    AutomaticDecompression = DecompressionMethods.None
+                });
             httpClient.Timeout = requestContext.ClientTimeout;
             return httpClient;
         }

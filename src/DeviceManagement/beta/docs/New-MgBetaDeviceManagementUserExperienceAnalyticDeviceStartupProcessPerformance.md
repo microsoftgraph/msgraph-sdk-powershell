@@ -15,9 +15,9 @@ Create new navigation property to userExperienceAnalyticsDeviceStartupProcessPer
 ### CreateExpanded (Default)
 ```
 New-MgBetaDeviceManagementUserExperienceAnalyticDeviceStartupProcessPerformance
- [-AdditionalProperties <Hashtable>] [-DeviceCount <Int64>] [-Id <String>] [-MedianImpactInMS <Int32>]
+ [-AdditionalProperties <Hashtable>] [-DeviceCount <Int64>] [-Id <String>] [-MedianImpactInMS <Int64>]
  [-MedianImpactInMs2 <Int64>] [-ProcessName <String>] [-ProductName <String>] [-Publisher <String>]
- [-TotalImpactInMS <Int32>] [-TotalImpactInMs2 <Int64>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TotalImpactInMS <Int64>] [-TotalImpactInMs2 <Int64>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 User experience analytics device startup process median impact in milliseconds.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 User experience analytics device startup process total impact in milliseconds.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -270,12 +270,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[DeviceCount <Int64?>]`: User experience analytics device startup process summarized count.
-  - `[MedianImpactInMS <Int32?>]`: User experience analytics device startup process median impact in milliseconds.
+  - `[MedianImpactInMS <Int64?>]`: User experience analytics device startup process median impact in milliseconds.
   - `[MedianImpactInMs2 <Int64?>]`: User experience analytics device startup process median impact in milliseconds.
   - `[ProcessName <String>]`: User experience analytics device startup process name.
   - `[ProductName <String>]`: The user experience analytics device startup process product name.
   - `[Publisher <String>]`: The User experience analytics device startup process publisher.
-  - `[TotalImpactInMS <Int32?>]`: User experience analytics device startup process total impact in milliseconds.
+  - `[TotalImpactInMS <Int64?>]`: User experience analytics device startup process total impact in milliseconds.
   - `[TotalImpactInMs2 <Int64?>]`: User experience analytics device startup process total impact in milliseconds.
 
 ## RELATED LINKS

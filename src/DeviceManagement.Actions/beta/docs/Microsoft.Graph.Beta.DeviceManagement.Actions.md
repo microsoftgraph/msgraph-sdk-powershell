@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
-Module Guid: fa6fe0c6-0892-4864-bda9-b1733d55f4d5
+Module Guid: 81f5e4fe-80e0-4a39-9a97-b4e5f97fcb38
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -309,6 +309,12 @@ Invoke action getUnhealthyFirewallSummaryReport
 
 ### [Get-MgBetaDeviceManagementReportUserInstallStatusReport](Get-MgBetaDeviceManagementReportUserInstallStatusReport.md)
 Invoke action getUserInstallStatusReport
+
+### [Get-MgBetaDeviceManagementReportWindowsDriverUpdateAlertPerPolicyPerDeviceReport](Get-MgBetaDeviceManagementReportWindowsDriverUpdateAlertPerPolicyPerDeviceReport.md)
+Invoke action getWindowsDriverUpdateAlertsPerPolicyPerDeviceReport
+
+### [Get-MgBetaDeviceManagementReportWindowsDriverUpdateAlertSummaryReport](Get-MgBetaDeviceManagementReportWindowsDriverUpdateAlertSummaryReport.md)
+Invoke action getWindowsDriverUpdateAlertSummaryReport
 
 ### [Get-MgBetaDeviceManagementReportWindowsQualityUpdateAlertPerPolicyPerDeviceReport](Get-MgBetaDeviceManagementReportWindowsQualityUpdateAlertPerPolicyPerDeviceReport.md)
 Invoke action getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport

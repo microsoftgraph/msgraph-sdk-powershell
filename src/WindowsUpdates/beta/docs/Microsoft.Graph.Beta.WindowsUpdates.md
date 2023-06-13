@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.WindowsUpdates
-Module Guid: 65ca946a-7d9a-4c9b-8259-3c680cd6a8f9
+Module Guid: af96ac2a-9181-43d6-8488-9ec88fe78000
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.windowsupdates
 Help Version: 1.0.0.0
 Locale: en-US
@@ -99,7 +99,7 @@ Specifies the assets to include in the audience.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChange](Get-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Read the properties and relationships of a complianceChange object.
+Read the properties and relationships of a contentApproval object.
 
 ### [Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount](Get-MgBetaWindowsUpdatesPolicyComplianceChangeCount.md)
 Get the number of the resource
@@ -111,13 +111,13 @@ The policy this compliance change is a member of.
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesResourceConnection](Get-MgBetaWindowsUpdatesResourceConnection.md)
-Read the properties and relationships of a resourceConnection object.
+Read the properties and relationships of an operationalInsightsConnection object.
 
 ### [Get-MgBetaWindowsUpdatesResourceConnectionCount](Get-MgBetaWindowsUpdatesResourceConnectionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAsset](Get-MgBetaWindowsUpdatesUpdatableAsset.md)
-Read the properties and relationships of an updatableAssetGroup object.
+Read the properties of an azureADDevice object.
 
 ### [Get-MgBetaWindowsUpdatesUpdatableAssetCount](Get-MgBetaWindowsUpdatesUpdatableAssetCount.md)
 Get the number of the resource
@@ -228,13 +228,14 @@ Remove members of the same type from an updatableAssetGroup.
 You can also use the method removeMembers to remove members.
 
 ### [Remove-MgBetaWindowsUpdatesPolicyComplianceChange](Remove-MgBetaWindowsUpdatesPolicyComplianceChange.md)
-Delete a complianceChange object.
+Delete a contentApproval object.
 
 ### [Remove-MgBetaWindowsUpdatesResourceConnection](Remove-MgBetaWindowsUpdatesResourceConnection.md)
-Delete a resourceConnection object.
+Delete an operationalInsightsConnection object.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAsset](Remove-MgBetaWindowsUpdatesUpdatableAsset.md)
-Delete an updatableAsset object.
+Delete an updatableAssetGroup object.
+When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
 
 ### [Remove-MgBetaWindowsUpdatesUpdatableAssetMember](Remove-MgBetaWindowsUpdatesUpdatableAssetMember.md)
 Remove members from an updatableAssetGroup.

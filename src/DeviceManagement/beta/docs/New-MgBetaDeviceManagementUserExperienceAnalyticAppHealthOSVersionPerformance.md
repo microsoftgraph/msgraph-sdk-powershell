@@ -16,8 +16,8 @@ Create new navigation property to userExperienceAnalyticsAppHealthOSVersionPerfo
 ```
 New-MgBetaDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance [-ActiveDeviceCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>]
- [-OSBuildNumber <String>] [-OSVersion <String>] [-OSVersionAppHealthScore <Double>]
- [-OSVersionAppHealthStatus <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OSBuildNumber <String>] [-OSVersion <String>] [-OSVersionAppHealthScore <Double>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -173,21 +173,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -OSVersionAppHealthStatus
-The overall app health status of the OS version.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -247,7 +232,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OSBuildNumber <String>]`: The OS build number installed on the device.
   - `[OSVersion <String>]`: The OS version installed on the device.
   - `[OSVersionAppHealthScore <Double?>]`: The app health score of the OS version. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-  - `[OSVersionAppHealthStatus <String>]`: The overall app health status of the OS version.
 
 ## RELATED LINKS
 

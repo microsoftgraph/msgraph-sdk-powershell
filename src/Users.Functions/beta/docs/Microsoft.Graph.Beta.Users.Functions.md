@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users.Functions
-Module Guid: db48e20c-0aab-44d8-bd00-deccfb178618
+Module Guid: 2b941a08-1c97-4521-97ba-146baf2a0335
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -183,9 +183,6 @@ Invoke function getFileVaultKey
 
 ### [Get-MgBetaUserManagedDeviceNonCompliantSetting](Get-MgBetaUserManagedDeviceNonCompliantSetting.md)
 Invoke function getNonCompliantSettings
-
-### [Get-MgBetaUserManagedDeviceOemWarranty](Get-MgBetaUserManagedDeviceOemWarranty.md)
-Invoke function getOemWarranty
 
 ### [Get-MgBetaUserManagedDeviceWithAppFailure](Get-MgBetaUserManagedDeviceWithAppFailure.md)
 Retrieves the list of devices with failed apps

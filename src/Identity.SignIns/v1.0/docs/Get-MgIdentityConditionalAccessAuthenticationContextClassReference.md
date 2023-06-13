@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgIdentityConditionalAccessAuthenticationContextClassReference
 
 ## SYNOPSIS
-Retrieve the properties and relationships of a authenticationContextClassReference object.
+Read-only.
+Nullable.
+Returns a collection of the specified authentication context class references.
 
 ## SYNTAX
 
@@ -33,7 +35,9 @@ Get-MgIdentityConditionalAccessAuthenticationContextClassReference -InputObject 
 ```
 
 ## DESCRIPTION
-Retrieve the properties and relationships of a authenticationContextClassReference object.
+Read-only.
+Nullable.
+Returns a collection of the specified authentication context class references.
 
 ## EXAMPLES
 

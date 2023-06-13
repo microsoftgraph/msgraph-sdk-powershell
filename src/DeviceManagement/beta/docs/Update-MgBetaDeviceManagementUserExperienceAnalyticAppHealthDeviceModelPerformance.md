@@ -18,7 +18,7 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerforman
  -UserExperienceAnalyticsAppHealthDeviceModelPerformanceId <String> [-ActiveDeviceCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-DeviceManufacturer <String>] [-DeviceModel <String>]
  [-HealthStatus <UserExperienceAnalyticsHealthState>] [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>]
- [-ModelAppHealthScore <Double>] [-ModelAppHealthStatus <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ModelAppHealthScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -42,8 +42,8 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerforman
 Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthDeviceModelPerformance
  -InputObject <IDeviceManagementIdentity> [-ActiveDeviceCount <Int32>] [-AdditionalProperties <Hashtable>]
  [-DeviceManufacturer <String>] [-DeviceModel <String>] [-HealthStatus <UserExperienceAnalyticsHealthState>]
- [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>] [-ModelAppHealthScore <Double>]
- [-ModelAppHealthStatus <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>] [-ModelAppHealthScore <Double>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -223,21 +223,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ModelAppHealthStatus
-The overall app health status of the device model.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserExperienceAnalyticsAppHealthDeviceModelPerformanceId
 The unique identifier of userExperienceAnalyticsAppHealthDeviceModelPerformance
 
@@ -315,7 +300,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
   - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
   - `[ModelAppHealthScore <Double?>]`: The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-  - `[ModelAppHealthStatus <String>]`: The overall app health status of the device model.
 
 `INPUTOBJECT <IDeviceManagementIdentity>`: Identity Parameter
   - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: The unique identifier of advancedThreatProtectionOnboardingDeviceSettingState
@@ -407,6 +391,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SecurityBaselineSettingStateId <String>]`: The unique identifier of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: The unique identifier of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: The unique identifier of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyCorrelationGroupOverviewId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyCorrelationGroupOverview
   - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyDevice
   - `[UserExperienceAnalyticsAnomalyId <String>]`: The unique identifier of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails

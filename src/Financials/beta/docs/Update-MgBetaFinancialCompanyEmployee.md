@@ -220,8 +220,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique identifier for an entity.
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -495,7 +494,6 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphEmployee>`: employee
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Address <IMicrosoftGraphPostalAddressType>]`: postalAddressType
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: 
@@ -508,6 +506,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Email <String>]`: 
   - `[EmploymentDate <DateTime?>]`: 
   - `[GivenName <String>]`: 
+  - `[Id <String>]`: 
   - `[JobTitle <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
   - `[MiddleName <String>]`: 
@@ -516,10 +515,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[PersonalEmail <String>]`: 
   - `[PhoneNumber <String>]`: 
   - `[Picture <IMicrosoftGraphPicture[]>]`: 
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Content <Byte[]>]`: 
     - `[ContentType <String>]`: 
     - `[Height <Int32?>]`: 
+    - `[Id <String>]`: 
     - `[Width <Int32?>]`: 
   - `[StatisticsGroupCode <String>]`: 
   - `[Status <String>]`: 
@@ -565,10 +564,10 @@ To create the parameters described below, construct a hash table containing the 
   - `[VendorId <String>]`: The unique identifier of vendor
 
 `PICTURE <IMicrosoftGraphPicture[]>`: .
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Content <Byte[]>]`: 
   - `[ContentType <String>]`: 
   - `[Height <Int32?>]`: 
+  - `[Id <String>]`: 
   - `[Width <Int32?>]`: 
 
 ## RELATED LINKS

@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-The user experience analytics metric for work from anywhere report
+The user experience analytics metric for work from anywhere report.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -161,7 +161,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric>`: The user experience analytics metric for work from anywhere report
+`BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric>`: The user experience analytics metric for work from anywhere report.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[MetricDevices <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice[]>]`: The work from anywhere metric devices.
@@ -197,7 +197,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[StorageCheckFailed <Boolean?>]`: The user experience work from anywhere device, Is storage hardware check failed for device to upgrade to the latest version of windows.
     - `[TenantAttached <Boolean?>]`: The user experience work from anywhere device's tenantAttached.
     - `[TpmCheckFailed <Boolean?>]`: The user experience work from anywhere device, Is Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows.
-    - `[UpgradeEligibility <OperatingSystemUpgradeEligibility?>]`: Work From Anywhere windows device upgrade eligibility status
+    - `[UpgradeEligibility <OperatingSystemUpgradeEligibility?>]`: Work From Anywhere windows device upgrade eligibility status.
     - `[WindowsScore <Double?>]`: The user experience work from anywhere per device windows score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
     - `[WorkFromAnywhereScore <Double?>]`: The user experience work from anywhere per device overall score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
@@ -234,7 +234,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[StorageCheckFailed <Boolean?>]`: The user experience work from anywhere device, Is storage hardware check failed for device to upgrade to the latest version of windows.
   - `[TenantAttached <Boolean?>]`: The user experience work from anywhere device's tenantAttached.
   - `[TpmCheckFailed <Boolean?>]`: The user experience work from anywhere device, Is Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows.
-  - `[UpgradeEligibility <OperatingSystemUpgradeEligibility?>]`: Work From Anywhere windows device upgrade eligibility status
+  - `[UpgradeEligibility <OperatingSystemUpgradeEligibility?>]`: Work From Anywhere windows device upgrade eligibility status.
   - `[WindowsScore <Double?>]`: The user experience work from anywhere per device windows score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[WorkFromAnywhereScore <Double?>]`: The user experience work from anywhere per device overall score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 

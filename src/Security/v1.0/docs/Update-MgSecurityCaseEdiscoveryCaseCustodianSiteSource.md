@@ -2564,7 +2564,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
       - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
       - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
-      - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+      - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
       - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
       - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -5194,7 +5194,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
     - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
     - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
-    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
     - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
     - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaIdentityConditionalAccessNamedLocation
 
 ## SYNOPSIS
-Delete a namedLocation object.
+Delete an ipNamedLocation object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaIdentityConditionalAccessNamedLocation -InputObject <IIdentitySignI
 ```
 
 ## DESCRIPTION
-Delete a namedLocation object.
+Delete an ipNamedLocation object.
 
 ## EXAMPLES
 

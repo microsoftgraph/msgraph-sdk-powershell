@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Devices.CorporateManagement
-Module Guid: a50ba2ec-b647-4709-b727-8f177cd45ddc
+Module Guid: 0b180999-8e49-43bf-a36b-0b34230746b6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -272,46 +272,10 @@ Get the number of the resource
 ### [Get-MgBetaDeviceAppManagementMobileAppCountAsMobileLobApp](Get-MgBetaDeviceAppManagementMobileAppCountAsMobileLobApp.md)
 Get the number of the resource
 
-### [Get-MgBetaDeviceAppManagementMobileAppDeviceStatus](Get-MgBetaDeviceAppManagementMobileAppDeviceStatus.md)
-The list of installation states for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppDeviceStatusApp](Get-MgBetaDeviceAppManagementMobileAppDeviceStatusApp.md)
-The navigation link to the mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppDeviceStatusCount](Get-MgBetaDeviceAppManagementMobileAppDeviceStatusCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppInstallSummary](Get-MgBetaDeviceAppManagementMobileAppInstallSummary.md)
-Mobile App Install Summary.
-
-### [Get-MgBetaDeviceAppManagementMobileAppRelatedAppState](Get-MgBetaDeviceAppManagementMobileAppRelatedAppState.md)
-Invoke function getRelatedAppStates
-
 ### [Get-MgBetaDeviceAppManagementMobileAppRelationship](Get-MgBetaDeviceAppManagementMobileAppRelationship.md)
 List of relationships for this mobile app.
 
 ### [Get-MgBetaDeviceAppManagementMobileAppRelationshipCount](Get-MgBetaDeviceAppManagementMobileAppRelationshipCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppTopMobileApp](Get-MgBetaDeviceAppManagementMobileAppTopMobileApp.md)
-Invoke function getTopMobileApps
-
-### [Get-MgBetaDeviceAppManagementMobileAppUserStatus](Get-MgBetaDeviceAppManagementMobileAppUserStatus.md)
-The list of installation states for this mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppUserStatusApp](Get-MgBetaDeviceAppManagementMobileAppUserStatusApp.md)
-The navigation link to the mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppUserStatusCount](Get-MgBetaDeviceAppManagementMobileAppUserStatusCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatus](Get-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatus.md)
-The install state of the app on devices.
-
-### [Get-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatusApp](Get-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatusApp.md)
-The navigation link to the mobile app.
-
-### [Get-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatusCount](Get-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatusCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceAppManagementPolicySet](Get-MgBetaDeviceAppManagementPolicySet.md)
@@ -729,17 +693,8 @@ Create new navigation property to deviceStatuses for deviceAppManagement
 ### [New-MgBetaDeviceAppManagementMobileAppConfigurationUserStatus](New-MgBetaDeviceAppManagementMobileAppConfigurationUserStatus.md)
 Create new navigation property to userStatuses for deviceAppManagement
 
-### [New-MgBetaDeviceAppManagementMobileAppDeviceStatus](New-MgBetaDeviceAppManagementMobileAppDeviceStatus.md)
-Create new navigation property to deviceStatuses for deviceAppManagement
-
 ### [New-MgBetaDeviceAppManagementMobileAppRelationship](New-MgBetaDeviceAppManagementMobileAppRelationship.md)
 Create new navigation property to relationships for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppUserStatus](New-MgBetaDeviceAppManagementMobileAppUserStatus.md)
-Create new navigation property to userStatuses for deviceAppManagement
-
-### [New-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatus](New-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatus.md)
-Create new navigation property to deviceStatuses for deviceAppManagement
 
 ### [New-MgBetaDeviceAppManagementPolicySet](New-MgBetaDeviceAppManagementPolicySet.md)
 Create new navigation property to policySets for deviceAppManagement
@@ -981,20 +936,8 @@ Delete navigation property userStatuses for deviceAppManagement
 ### [Remove-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary](Remove-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary.md)
 Delete navigation property userStatusSummary for deviceAppManagement
 
-### [Remove-MgBetaDeviceAppManagementMobileAppDeviceStatus](Remove-MgBetaDeviceAppManagementMobileAppDeviceStatus.md)
-Delete navigation property deviceStatuses for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppInstallSummary](Remove-MgBetaDeviceAppManagementMobileAppInstallSummary.md)
-Delete navigation property installSummary for deviceAppManagement
-
 ### [Remove-MgBetaDeviceAppManagementMobileAppRelationship](Remove-MgBetaDeviceAppManagementMobileAppRelationship.md)
 Delete navigation property relationships for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppUserStatus](Remove-MgBetaDeviceAppManagementMobileAppUserStatus.md)
-Delete navigation property userStatuses for deviceAppManagement
-
-### [Remove-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatus](Remove-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatus.md)
-Delete navigation property deviceStatuses for deviceAppManagement
 
 ### [Remove-MgBetaDeviceAppManagementPolicySet](Remove-MgBetaDeviceAppManagementPolicySet.md)
 Delete navigation property policySets for deviceAppManagement
@@ -1293,20 +1236,8 @@ Update the navigation property userStatuses in deviceAppManagement
 ### [Update-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary](Update-MgBetaDeviceAppManagementMobileAppConfigurationUserStatusSummary.md)
 Update the navigation property userStatusSummary in deviceAppManagement
 
-### [Update-MgBetaDeviceAppManagementMobileAppDeviceStatus](Update-MgBetaDeviceAppManagementMobileAppDeviceStatus.md)
-Update the navigation property deviceStatuses in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppInstallSummary](Update-MgBetaDeviceAppManagementMobileAppInstallSummary.md)
-Update the navigation property installSummary in deviceAppManagement
-
 ### [Update-MgBetaDeviceAppManagementMobileAppRelationship](Update-MgBetaDeviceAppManagementMobileAppRelationship.md)
 Update the navigation property relationships in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppUserStatus](Update-MgBetaDeviceAppManagementMobileAppUserStatus.md)
-Update the navigation property userStatuses in deviceAppManagement
-
-### [Update-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatus](Update-MgBetaDeviceAppManagementMobileAppUserStatusDeviceStatus.md)
-Update the navigation property deviceStatuses in deviceAppManagement
 
 ### [Update-MgBetaDeviceAppManagementMultipleMobileAppRelationship](Update-MgBetaDeviceAppManagementMultipleMobileAppRelationship.md)
 Invoke action updateRelationships

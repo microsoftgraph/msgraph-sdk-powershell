@@ -331,7 +331,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[RequiredChecklistItemIds <String[]>]`: 
+      - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
   - `[Description <String>]`: Description of the task.
   - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -345,7 +345,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[RequiredChecklistItemIds <String[]>]`: 
+    - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
 
 `INPUTOBJECT <IPlannerIdentity>`: Identity Parameter
   - `[GroupId <String>]`: The unique identifier of group

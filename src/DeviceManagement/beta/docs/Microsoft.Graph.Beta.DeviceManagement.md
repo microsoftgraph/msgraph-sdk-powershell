@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement
-Module Guid: 943f7f16-b212-400b-ac8a-a99ff6abbb9e
+Module Guid: 56d1b888-541c-496d-b31a-f47b0c48dd10
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -849,6 +849,12 @@ Get the number of the resource
 ### [Get-MgBetaDeviceManagementUserExperienceAnalyticAnomaly](Get-MgBetaDeviceManagementUserExperienceAnalyticAnomaly.md)
 The user experience analytics anomaly entity contains anomaly details.
 
+### [Get-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCorrelationGroupOverview](Get-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCorrelationGroupOverview.md)
+The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
+
+### [Get-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCorrelationGroupOverviewCount](Get-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCorrelationGroupOverviewCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCount](Get-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCount.md)
 Get the number of the resource
 
@@ -1512,6 +1518,9 @@ Create new navigation property to troubleshootingEvents for deviceManagement
 ### [New-MgBetaDeviceManagementUserExperienceAnalyticAnomaly](New-MgBetaDeviceManagementUserExperienceAnalyticAnomaly.md)
 Create new navigation property to userExperienceAnalyticsAnomaly for deviceManagement
 
+### [New-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCorrelationGroupOverview](New-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCorrelationGroupOverview.md)
+Create new navigation property to userExperienceAnalyticsAnomalyCorrelationGroupOverview for deviceManagement
+
 ### [New-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice](New-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice.md)
 Create new navigation property to userExperienceAnalyticsAnomalyDevice for deviceManagement
 
@@ -2060,6 +2069,9 @@ Delete navigation property troubleshootingEvents for deviceManagement
 
 ### [Remove-MgBetaDeviceManagementUserExperienceAnalyticAnomaly](Remove-MgBetaDeviceManagementUserExperienceAnalyticAnomaly.md)
 Delete navigation property userExperienceAnalyticsAnomaly for deviceManagement
+
+### [Remove-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCorrelationGroupOverview](Remove-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCorrelationGroupOverview.md)
+Delete navigation property userExperienceAnalyticsAnomalyCorrelationGroupOverview for deviceManagement
 
 ### [Remove-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice](Remove-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice.md)
 Delete navigation property userExperienceAnalyticsAnomalyDevice for deviceManagement
@@ -2624,6 +2636,9 @@ Update the navigation property troubleshootingEvents in deviceManagement
 
 ### [Update-MgBetaDeviceManagementUserExperienceAnalyticAnomaly](Update-MgBetaDeviceManagementUserExperienceAnalyticAnomaly.md)
 Update the navigation property userExperienceAnalyticsAnomaly in deviceManagement
+
+### [Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCorrelationGroupOverview](Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyCorrelationGroupOverview.md)
+Update the navigation property userExperienceAnalyticsAnomalyCorrelationGroupOverview in deviceManagement
 
 ### [Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice](Update-MgBetaDeviceManagementUserExperienceAnalyticAnomalyDevice.md)
 Update the navigation property userExperienceAnalyticsAnomalyDevice in deviceManagement

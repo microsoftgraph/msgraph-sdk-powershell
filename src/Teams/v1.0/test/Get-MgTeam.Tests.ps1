@@ -15,6 +15,10 @@ if(($null -eq $TestName) -or ($TestName -contains 'Get-MgTeam'))
 }
 
 Describe 'Get-MgTeam' {
+    It 'List' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
     It 'Get' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }

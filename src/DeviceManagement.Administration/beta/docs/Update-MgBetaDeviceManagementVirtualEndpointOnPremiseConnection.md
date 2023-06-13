@@ -487,6 +487,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[EndDateTime <DateTime?>]`: The end time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[HealthChecks <IMicrosoftGraphCloudPcOnPremisesConnectionHealthCheck[]>]`: All checks that are done on the connection.
       - `[AdditionalDetails <String>]`: Additional details about the health check or the recommended action.
+      - `[CorrelationId <String>]`: The unique identifier of the health check item-related activities. This identifier can be useful in troubleshooting.
       - `[DisplayName <String>]`: The display name for this health check item.
       - `[EndDateTime <DateTime?>]`: The end time of the health check item. Read-only.
       - `[ErrorType <String>]`: cloudPcOnPremisesConnectionHealthCheckErrorType
@@ -510,6 +511,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[EndDateTime <DateTime?>]`: The end time of the connection health check. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[HealthChecks <IMicrosoftGraphCloudPcOnPremisesConnectionHealthCheck[]>]`: All checks that are done on the connection.
     - `[AdditionalDetails <String>]`: Additional details about the health check or the recommended action.
+    - `[CorrelationId <String>]`: The unique identifier of the health check item-related activities. This identifier can be useful in troubleshooting.
     - `[DisplayName <String>]`: The display name for this health check item.
     - `[EndDateTime <DateTime?>]`: The end time of the health check item. Read-only.
     - `[ErrorType <String>]`: cloudPcOnPremisesConnectionHealthCheckErrorType
@@ -522,6 +524,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AuditEventId <String>]`: The unique identifier of auditEvent
   - `[CartToClassAssociationId <String>]`: The unique identifier of cartToClassAssociation
   - `[CloudPcAuditEventId <String>]`: The unique identifier of cloudPcAuditEvent
+  - `[CloudPcBulkActionId <String>]`: The unique identifier of cloudPcBulkAction
   - `[CloudPcDeviceImageId <String>]`: The unique identifier of cloudPcDeviceImage
   - `[CloudPcExportJobId <String>]`: The unique identifier of cloudPcExportJob
   - `[CloudPcExternalPartnerSettingId <String>]`: The unique identifier of cloudPcExternalPartnerSetting

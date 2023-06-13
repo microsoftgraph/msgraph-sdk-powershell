@@ -174,8 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Id
-The unique identifier for an entity.
-Read-only.
+.
 
 ```yaml
 Type: System.String
@@ -487,27 +486,27 @@ To create the parameters described below, construct a hash table containing the 
 
 `BODYPARAMETER <IMicrosoftGraphItem>`: item
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[BaseUnitOfMeasureId <String>]`: 
   - `[Blocked <Boolean?>]`: 
   - `[DisplayName <String>]`: 
   - `[Gtin <String>]`: 
+  - `[Id <String>]`: 
   - `[Inventory <Decimal?>]`: 
   - `[ItemCategory <IMicrosoftGraphItemCategory>]`: itemCategory
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Code <String>]`: 
     - `[DisplayName <String>]`: 
+    - `[Id <String>]`: 
     - `[LastModifiedDateTime <DateTime?>]`: 
   - `[ItemCategoryCode <String>]`: 
   - `[ItemCategoryId <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
   - `[Number <String>]`: 
   - `[Picture <IMicrosoftGraphPicture[]>]`: 
-    - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Content <Byte[]>]`: 
     - `[ContentType <String>]`: 
     - `[Height <Int32?>]`: 
+    - `[Id <String>]`: 
     - `[Width <Int32?>]`: 
   - `[PriceIncludesTax <Boolean?>]`: 
   - `[TaxGroupCode <String>]`: 
@@ -556,16 +555,16 @@ To create the parameters described below, construct a hash table containing the 
 
 `ITEMCATEGORY <IMicrosoftGraphItemCategory>`: itemCategory
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Code <String>]`: 
   - `[DisplayName <String>]`: 
+  - `[Id <String>]`: 
   - `[LastModifiedDateTime <DateTime?>]`: 
 
 `PICTURE <IMicrosoftGraphPicture[]>`: .
-  - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Content <Byte[]>]`: 
   - `[ContentType <String>]`: 
   - `[Height <Int32?>]`: 
+  - `[Id <String>]`: 
   - `[Width <Int32?>]`: 
 
 ## RELATED LINKS

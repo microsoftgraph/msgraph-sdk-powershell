@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaPolicyRoleManagementPolicyAssignment
 
 ## SYNOPSIS
-Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
+Represents the role management policy assignments.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaPolicyRoleManagementPolicyAssignment -InputObject <IIdentitySignInsIde
 ```
 
 ## DESCRIPTION
-Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
+Represents the role management policy assignments.
 
 ## EXAMPLES
 

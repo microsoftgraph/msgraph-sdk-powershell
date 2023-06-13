@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: d007ddea-b8ae-4f02-a0f4-9df886c8ca06
+Module Guid: 966e3b4f-0a35-4c99-a805-0bd6a3076492
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -342,10 +342,10 @@ Postpone a reminder for an event in a user calendar until a new time.
 Postpone a reminder for an event in a user calendar until a new time.
 
 ### [Invoke-MgSoftUserChatMessageDelete](Invoke-MgSoftUserChatMessageDelete.md)
-Invoke action softDelete
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftUserChatMessageReplyDelete](Invoke-MgSoftUserChatMessageReplyDelete.md)
-Invoke action softDelete
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgTranslateUserExchangeId](Invoke-MgTranslateUserExchangeId.md)
 Translate identifiers of Outlook-related resources between formats.
@@ -603,7 +603,9 @@ This will create a new version with the contents of the previous version, but pr
 Recover passcode
 
 ### [Revoke-MgUserSignInSession](Revoke-MgUserSignInSession.md)
-Invoke action revokeSignInSessions
+Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user's browser), by resetting the **signInSessionsValidFromDateTime** user property to the current date-time.
+Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.
+This operation prevents access to the organization's data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
 
 ### [Send-MgUserChatActivityNotification](Send-MgUserChatActivityNotification.md)
 Send an activity feed notification in scope of a chat.
@@ -693,10 +695,10 @@ However, you can validate both the mail nickname and the display name and receiv
 To learn more about configuring naming policies, see Configure naming policy.
 
 ### [Undo-MgUserChatMessageReplySoftDelete](Undo-MgUserChatMessageReplySoftDelete.md)
-Invoke action undoSoftDelete
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgUserChatMessageSoftDelete](Undo-MgUserChatMessageSoftDelete.md)
-Invoke action undoSoftDelete
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Unpublish-MgUserDriveListContentType](Unpublish-MgUserDriveListContentType.md)
 Unpublish a [contentType][] from a content type hub site.

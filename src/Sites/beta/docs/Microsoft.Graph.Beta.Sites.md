@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: 81afa19b-1af0-4174-a87a-b6a48eb4f627
+Module Guid: 7c8a8898-d407-46e4-974d-09db29e4c1b0
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -290,7 +290,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaGroupSiteList](Get-MgBetaGroupSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaGroupSiteListActivity](Get-MgBetaGroupSiteListActivity.md)
 The recent activities that took place within this list.
@@ -1169,7 +1169,7 @@ For more information, see User preferences for languages and regional formats.
 Returned only on $select.
 
 ### [Get-MgBetaSiteList](Get-MgBetaSiteList.md)
-Get the list of richLongRunningOperations associated with a list.
+Return the metadata for a [list][].
 
 ### [Get-MgBetaSiteListActivity](Get-MgBetaSiteListActivity.md)
 The recent activities that took place within this list.

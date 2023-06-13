@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Governance
-Module Guid: 98dea723-953f-4533-bd6b-17699a5109cf
+Module Guid: 06923603-e041-41d0-a11a-06a09c3796cb
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -197,7 +197,7 @@ Get the number of the resource
 Retrieve the properties and relationships of an accessPackageCatalog object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
 Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
@@ -936,7 +936,7 @@ Get operations from identityGovernance
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreement](Get-MgBetaIdentityGovernanceTermsOfUseAgreement.md)
-Retrieve all localized files related to an agreement.
+Retrieve the properties and relationships of an agreement object.
 
 ### [Get-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance](Get-MgBetaIdentityGovernanceTermsOfUseAgreementAcceptance.md)
 Represents the current status of a user's response to a company's customizable terms of use agreement.
@@ -2877,14 +2877,14 @@ Delete an accessPackageCatalog.
 Delete navigation property accessPackageCustomWorkflowExtensions for identityGovernance
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Remove-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
-Delete a customAccessPackageWorkflowExtension object.
+Delete an accessPackageAssignmentWorkflowExtension object.
 The custom workflow extension must first be removed from any associated policies before it can be deleted.
 Follow these steps to remove the custom workflow extension from any associated policies:\n1.
 First retrieve the accessPackageCatalogId by calling the Get accessPackageAssignmentPolicies operation and appending `?$expand=accessPackage($expand=accessPackageCatalog)` to the query.
 For example, `https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies?$expand=accessPackage($expand=accessPackageCatalog)`.\n2.
-Use the access package catalog ID and retrieve the ID of the **customAccessPackageWorkflowExtension** object that you want to delete by running the LIST customAccessPackageWorkflowExtensions operation.\n3.
+Use the access package catalog ID and retrieve the ID of the **accessPackageCustomWorkflowExtension** object that you want to delete by running the List accessPackageCustomWorkflowExtensions operation.\n3.
 Call the Update accessPackageAssignmentPolicy operation to remove the custom workflow extension object from the policy.
-For an example, see Example 2: Remove the customExtensionHandlers and verifiableCredentialSettings from a policy.
+For an example, see Example 3: Remove the customExtensionStageSettings from a policy.
 
 ### [Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef](Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef.md)
 Remove an access package from the list of access packages that have been marked as incompatible on an accessPackage.

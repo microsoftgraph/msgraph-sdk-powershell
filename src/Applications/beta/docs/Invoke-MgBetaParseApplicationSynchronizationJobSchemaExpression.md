@@ -270,12 +270,12 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Definition <IMicrosoftGraphObjectDefinition>]`: objectDefinition
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
-      - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+      - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
+      - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
         - `[Key <String>]`: objectDefinitionMetadata
         - `[Value <String>]`: Value of the metadata property.
-      - `[Name <String>]`: 
-      - `[SupportedApis <String[]>]`: 
+      - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+      - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
     - `[Properties <IMicrosoftGraphStringKeyObjectValuePair[]>]`: Property values of the test object.
       - `[Key <String>]`: Key.
 
@@ -334,7 +334,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Definition <IMicrosoftGraphObjectDefinition>]`: objectDefinition
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+    - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
       - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
       - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
         - `[Key <String>]`: Key.
@@ -353,11 +353,11 @@ To create the parameters described below, construct a hash table containing the 
         - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
       - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
       - `[Type <String>]`: attributeType
-    - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+    - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
       - `[Key <String>]`: objectDefinitionMetadata
       - `[Value <String>]`: Value of the metadata property.
-    - `[Name <String>]`: 
-    - `[SupportedApis <String[]>]`: 
+    - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+    - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
   - `[Properties <IMicrosoftGraphStringKeyObjectValuePair[]>]`: Property values of the test object.
     - `[Key <String>]`: Key.
 

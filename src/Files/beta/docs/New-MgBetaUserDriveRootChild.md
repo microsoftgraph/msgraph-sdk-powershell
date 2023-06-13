@@ -1015,8 +1015,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
       - `[Participants <IMicrosoftGraphIdentitySet[]>]`: The identities of the users participating in this comment thread.
@@ -1350,7 +1350,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
                 - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: Collection of objects supported by the directory.
-                  - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+                  - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
                     - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
                     - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
                       - `[Key <String>]`: Key.
@@ -1369,11 +1369,11 @@ To create the parameters described below, construct a hash table containing the 
                       - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
                     - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
                     - `[Type <String>]`: attributeType
-                  - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+                  - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
                     - `[Key <String>]`: objectDefinitionMetadata
                     - `[Value <String>]`: Value of the metadata property.
-                  - `[Name <String>]`: 
-                  - `[SupportedApis <String[]>]`: 
+                  - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+                  - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
                 - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
                 - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
               - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
@@ -1396,9 +1396,9 @@ To create the parameters described below, construct a hash table containing the 
                     - `[MatchingPriority <Int32?>]`: If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
                     - `[Source <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[Expression <String>]`: 
-                      - `[Name <String>]`: 
-                      - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: 
+                      - `[Expression <String>]`: Equivalent expression representation of this attributeMappingSource object.
+                      - `[Name <String>]`: Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
+                      - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
                         - `[Key <String>]`: The name of the parameter.
                         - `[Value <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                       - `[Type <String>]`: attributeMappingSourceType
@@ -1601,7 +1601,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Hostnames <String[]>]`: List of hostNames for the device.
             - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
             - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-            - `[IsManagementRestricted <Boolean?>]`: 
+            - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
             - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
             - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
             - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
@@ -1952,13 +1952,13 @@ To create the parameters described below, construct a hash table containing the 
               - `[User <IMicrosoftGraphIdentity>]`: identity
               - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                - `[Id <String>]`: Unique identifier for the identity.
+                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                - `[Id <String>]`: The identifier of the identity. This property is read-only.
                 - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
               - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                - `[Id <String>]`: Unique identifier for the identity.
+                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
             - `[Actions <String>]`: chatMessageActions
             - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -1996,8 +1996,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
           - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[UserIdentityType <String>]`: teamworkUserIdentityType
         - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
           - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -2886,8 +2886,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Group <IMicrosoftGraphIdentity>]`: identity
             - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[LoginName <String>]`: The sign in name of the SharePoint identity.
             - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
           - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -3000,7 +3000,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
       - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
       - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
-      - `[IsManagementRestricted <Boolean?>]`: 
+      - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
       - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
       - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
       - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
@@ -3089,7 +3089,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[IsArchived <Boolean?>]`: When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
         - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
         - `[IsFavorite <Boolean?>]`: 
-        - `[IsManagementRestricted <Boolean?>]`: 
+        - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
         - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3183,7 +3183,7 @@ To create the parameters described below, construct a hash table containing the 
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
                     - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                      - `[RequiredChecklistItemIds <String[]>]`: 
+                      - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
                   - `[Description <String>]`: Description of the task.
                   - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                   - `[PreviewType <String>]`: plannerPreviewType
@@ -4106,7 +4106,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
         - `[ManagedDeviceIdentifier <String>]`: Device identifier created or collected by Intune.
         - `[UserId <String>]`: Identifier for the user that tried to enroll the device.
-      - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+      - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
       - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
       - `[Notifications <IMicrosoftGraphNotification[]>]`: 
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -4144,9 +4144,9 @@ To create the parameters described below, construct a hash table containing the 
         - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
         - `[AllowMeetingChat <String>]`: meetingChatMode
         - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-        - `[AllowRecording <Boolean?>]`: 
+        - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
         - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-        - `[AllowTranscription <Boolean?>]`: 
+        - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
         - `[AllowedPresenters <String>]`: onlineMeetingPresenters
         - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
         - `[AnonymizeIdentityForRoles <String[]>]`: 
@@ -4344,8 +4344,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
           - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
             - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
           - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -5713,8 +5713,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
       - `[DriveItem <IMicrosoftGraphDriveItem>]`: driveItem
@@ -6019,7 +6019,7 @@ To create the parameters described below, construct a hash table containing the 
                     - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                     - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
                     - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: Collection of objects supported by the directory.
-                      - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+                      - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
                         - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
                         - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
                           - `[Key <String>]`: Key.
@@ -6038,11 +6038,11 @@ To create the parameters described below, construct a hash table containing the 
                           - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
                         - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
                         - `[Type <String>]`: attributeType
-                      - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+                      - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
                         - `[Key <String>]`: objectDefinitionMetadata
                         - `[Value <String>]`: Value of the metadata property.
-                      - `[Name <String>]`: 
-                      - `[SupportedApis <String[]>]`: 
+                      - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+                      - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
                     - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
                     - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
                   - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
@@ -6065,9 +6065,9 @@ To create the parameters described below, construct a hash table containing the 
                         - `[MatchingPriority <Int32?>]`: If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
                         - `[Source <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                          - `[Expression <String>]`: 
-                          - `[Name <String>]`: 
-                          - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: 
+                          - `[Expression <String>]`: Equivalent expression representation of this attributeMappingSource object.
+                          - `[Name <String>]`: Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
+                          - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
                             - `[Key <String>]`: The name of the parameter.
                             - `[Value <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                           - `[Type <String>]`: attributeMappingSourceType
@@ -6270,7 +6270,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Hostnames <String[]>]`: List of hostNames for the device.
                 - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
                 - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-                - `[IsManagementRestricted <Boolean?>]`: 
+                - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
                 - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
                 - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
                 - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
@@ -6621,13 +6621,13 @@ To create the parameters described below, construct a hash table containing the 
                   - `[User <IMicrosoftGraphIdentity>]`: identity
                   - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                    - `[Id <String>]`: Unique identifier for the identity.
+                    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                    - `[Id <String>]`: The identifier of the identity. This property is read-only.
                     - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
                   - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                    - `[Id <String>]`: Unique identifier for the identity.
+                    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                    - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
                 - `[Actions <String>]`: chatMessageActions
                 - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -6665,8 +6665,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
               - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                - `[Id <String>]`: Unique identifier for the identity.
+                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                - `[Id <String>]`: The identifier of the identity. This property is read-only.
                 - `[UserIdentityType <String>]`: teamworkUserIdentityType
             - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
               - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -7570,8 +7570,8 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Group <IMicrosoftGraphIdentity>]`: identity
                 - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                  - `[Id <String>]`: Unique identifier for the identity.
+                  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                  - `[Id <String>]`: The identifier of the identity. This property is read-only.
                   - `[LoginName <String>]`: The sign in name of the SharePoint identity.
                 - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
               - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -7684,7 +7684,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
           - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
           - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
-          - `[IsManagementRestricted <Boolean?>]`: 
+          - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
           - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
           - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
           - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
@@ -7773,7 +7773,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[IsArchived <Boolean?>]`: When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
             - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
             - `[IsFavorite <Boolean?>]`: 
-            - `[IsManagementRestricted <Boolean?>]`: 
+            - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
             - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
             - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -7867,7 +7867,7 @@ To create the parameters described below, construct a hash table containing the 
                         - `[(Any) <Object>]`: This indicates any property can be added to this object.
                         - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                          - `[RequiredChecklistItemIds <String[]>]`: 
+                          - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
                       - `[Description <String>]`: Description of the task.
                       - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                       - `[PreviewType <String>]`: plannerPreviewType
@@ -8790,7 +8790,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
             - `[ManagedDeviceIdentifier <String>]`: Device identifier created or collected by Intune.
             - `[UserId <String>]`: Identifier for the user that tried to enroll the device.
-          - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+          - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
           - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
           - `[Notifications <IMicrosoftGraphNotification[]>]`: 
             - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -8828,9 +8828,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
             - `[AllowMeetingChat <String>]`: meetingChatMode
             - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-            - `[AllowRecording <Boolean?>]`: 
+            - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
             - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-            - `[AllowTranscription <Boolean?>]`: 
+            - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
             - `[AllowedPresenters <String>]`: onlineMeetingPresenters
             - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
             - `[AnonymizeIdentityForRoles <String[]>]`: 
@@ -9028,8 +9028,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
               - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                - `[Id <String>]`: Unique identifier for the identity.
+                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                - `[Id <String>]`: The identifier of the identity. This property is read-only.
                 - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
                 - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
               - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -10410,8 +10410,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedByUser <IMicrosoftGraphUser>]`: user
@@ -10713,7 +10713,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
               - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
               - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: Collection of objects supported by the directory.
-                - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+                - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
                   - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
                   - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
                     - `[Key <String>]`: Key.
@@ -10732,11 +10732,11 @@ To create the parameters described below, construct a hash table containing the 
                     - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
                   - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
                   - `[Type <String>]`: attributeType
-                - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+                - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
                   - `[Key <String>]`: objectDefinitionMetadata
                   - `[Value <String>]`: Value of the metadata property.
-                - `[Name <String>]`: 
-                - `[SupportedApis <String[]>]`: 
+                - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+                - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
               - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
               - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
             - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
@@ -10759,9 +10759,9 @@ To create the parameters described below, construct a hash table containing the 
                   - `[MatchingPriority <Int32?>]`: If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
                   - `[Source <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[Expression <String>]`: 
-                    - `[Name <String>]`: 
-                    - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: 
+                    - `[Expression <String>]`: Equivalent expression representation of this attributeMappingSource object.
+                    - `[Name <String>]`: Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
+                    - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
                       - `[Key <String>]`: The name of the parameter.
                       - `[Value <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                     - `[Type <String>]`: attributeMappingSourceType
@@ -10964,7 +10964,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Hostnames <String[]>]`: List of hostNames for the device.
           - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
           - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-          - `[IsManagementRestricted <Boolean?>]`: 
+          - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
           - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
           - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
           - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
@@ -11315,13 +11315,13 @@ To create the parameters described below, construct a hash table containing the 
             - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
             - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
           - `[Actions <String>]`: chatMessageActions
           - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -11359,8 +11359,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
         - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[UserIdentityType <String>]`: teamworkUserIdentityType
       - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -12293,8 +12293,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Group <IMicrosoftGraphIdentity>]`: identity
           - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[LoginName <String>]`: The sign in name of the SharePoint identity.
           - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
         - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -12407,7 +12407,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
     - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
-    - `[IsManagementRestricted <Boolean?>]`: 
+    - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
     - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
     - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
@@ -12496,7 +12496,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsArchived <Boolean?>]`: When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
       - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
       - `[IsFavorite <Boolean?>]`: 
-      - `[IsManagementRestricted <Boolean?>]`: 
+      - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
       - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12590,7 +12590,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[RequiredChecklistItemIds <String[]>]`: 
+                    - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
                 - `[Description <String>]`: Description of the task.
                 - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
@@ -13513,7 +13513,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
       - `[ManagedDeviceIdentifier <String>]`: Device identifier created or collected by Intune.
       - `[UserId <String>]`: Identifier for the user that tried to enroll the device.
-    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
     - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
     - `[Notifications <IMicrosoftGraphNotification[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -13551,9 +13551,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
       - `[AllowMeetingChat <String>]`: meetingChatMode
       - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-      - `[AllowRecording <Boolean?>]`: 
+      - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
       - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-      - `[AllowTranscription <Boolean?>]`: 
+      - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
       - `[AllowedPresenters <String>]`: onlineMeetingPresenters
       - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       - `[AnonymizeIdentityForRoles <String[]>]`: 
@@ -13751,8 +13751,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
         - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
           - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
         - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -15107,8 +15107,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedByUser <IMicrosoftGraphUser>]`: user
@@ -15410,7 +15410,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
               - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
               - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: Collection of objects supported by the directory.
-                - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+                - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
                   - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
                   - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
                     - `[Key <String>]`: Key.
@@ -15429,11 +15429,11 @@ To create the parameters described below, construct a hash table containing the 
                     - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
                   - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
                   - `[Type <String>]`: attributeType
-                - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+                - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
                   - `[Key <String>]`: objectDefinitionMetadata
                   - `[Value <String>]`: Value of the metadata property.
-                - `[Name <String>]`: 
-                - `[SupportedApis <String[]>]`: 
+                - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+                - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
               - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
               - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
             - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
@@ -15456,9 +15456,9 @@ To create the parameters described below, construct a hash table containing the 
                   - `[MatchingPriority <Int32?>]`: If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
                   - `[Source <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[Expression <String>]`: 
-                    - `[Name <String>]`: 
-                    - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: 
+                    - `[Expression <String>]`: Equivalent expression representation of this attributeMappingSource object.
+                    - `[Name <String>]`: Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
+                    - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
                       - `[Key <String>]`: The name of the parameter.
                       - `[Value <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                     - `[Type <String>]`: attributeMappingSourceType
@@ -15661,7 +15661,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Hostnames <String[]>]`: List of hostNames for the device.
           - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
           - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-          - `[IsManagementRestricted <Boolean?>]`: 
+          - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
           - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
           - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
           - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
@@ -16012,13 +16012,13 @@ To create the parameters described below, construct a hash table containing the 
             - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
             - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
           - `[Actions <String>]`: chatMessageActions
           - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -16056,8 +16056,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
         - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[UserIdentityType <String>]`: teamworkUserIdentityType
       - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -16990,8 +16990,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Group <IMicrosoftGraphIdentity>]`: identity
           - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[LoginName <String>]`: The sign in name of the SharePoint identity.
           - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
         - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -17104,7 +17104,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
     - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
-    - `[IsManagementRestricted <Boolean?>]`: 
+    - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
     - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
     - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
@@ -17193,7 +17193,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsArchived <Boolean?>]`: When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
       - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
       - `[IsFavorite <Boolean?>]`: 
-      - `[IsManagementRestricted <Boolean?>]`: 
+      - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
       - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -17287,7 +17287,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[RequiredChecklistItemIds <String[]>]`: 
+                    - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
                 - `[Description <String>]`: Description of the task.
                 - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
@@ -18210,7 +18210,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
       - `[ManagedDeviceIdentifier <String>]`: Device identifier created or collected by Intune.
       - `[UserId <String>]`: Identifier for the user that tried to enroll the device.
-    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
     - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
     - `[Notifications <IMicrosoftGraphNotification[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -18248,9 +18248,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
       - `[AllowMeetingChat <String>]`: meetingChatMode
       - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-      - `[AllowRecording <Boolean?>]`: 
+      - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
       - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-      - `[AllowTranscription <Boolean?>]`: 
+      - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
       - `[AllowedPresenters <String>]`: onlineMeetingPresenters
       - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       - `[AnonymizeIdentityForRoles <String[]>]`: 
@@ -18448,8 +18448,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
         - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
           - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
         - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -19796,8 +19796,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -19890,8 +19890,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
       - `[CreatedDateTime <DateTime?>]`: The request creation date time.
@@ -20107,7 +20107,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
             - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: Collection of objects supported by the directory.
-              - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+              - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
                 - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
                 - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
                   - `[Key <String>]`: Key.
@@ -20126,11 +20126,11 @@ To create the parameters described below, construct a hash table containing the 
                   - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
                 - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
                 - `[Type <String>]`: attributeType
-              - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+              - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
                 - `[Key <String>]`: objectDefinitionMetadata
                 - `[Value <String>]`: Value of the metadata property.
-              - `[Name <String>]`: 
-              - `[SupportedApis <String[]>]`: 
+              - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+              - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
             - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
             - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
           - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
@@ -20153,9 +20153,9 @@ To create the parameters described below, construct a hash table containing the 
                 - `[MatchingPriority <Int32?>]`: If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
                 - `[Source <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Expression <String>]`: 
-                  - `[Name <String>]`: 
-                  - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: 
+                  - `[Expression <String>]`: Equivalent expression representation of this attributeMappingSource object.
+                  - `[Name <String>]`: Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
+                  - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
                     - `[Key <String>]`: The name of the parameter.
                     - `[Value <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                   - `[Type <String>]`: attributeMappingSourceType
@@ -20358,7 +20358,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Hostnames <String[]>]`: List of hostNames for the device.
         - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
         - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-        - `[IsManagementRestricted <Boolean?>]`: 
+        - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
         - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
         - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
@@ -20709,13 +20709,13 @@ To create the parameters described below, construct a hash table containing the 
           - `[User <IMicrosoftGraphIdentity>]`: identity
           - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
           - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
         - `[Actions <String>]`: chatMessageActions
         - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -20753,8 +20753,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
       - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[UserIdentityType <String>]`: teamworkUserIdentityType
     - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -21225,8 +21225,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Group <IMicrosoftGraphIdentity>]`: identity
             - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[LoginName <String>]`: The sign in name of the SharePoint identity.
             - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
           - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -22224,7 +22224,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
   - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
-  - `[IsManagementRestricted <Boolean?>]`: 
+  - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
   - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
   - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
@@ -22313,7 +22313,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsArchived <Boolean?>]`: When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
     - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
     - `[IsFavorite <Boolean?>]`: 
-    - `[IsManagementRestricted <Boolean?>]`: 
+    - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
     - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -22407,7 +22407,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[RequiredChecklistItemIds <String[]>]`: 
+                  - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
               - `[Description <String>]`: Description of the task.
               - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
               - `[PreviewType <String>]`: plannerPreviewType
@@ -23326,7 +23326,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
     - `[ManagedDeviceIdentifier <String>]`: Device identifier created or collected by Intune.
     - `[UserId <String>]`: Identifier for the user that tried to enroll the device.
-  - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+  - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
   - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
   - `[Notifications <IMicrosoftGraphNotification[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -23364,9 +23364,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
     - `[AllowMeetingChat <String>]`: meetingChatMode
     - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-    - `[AllowRecording <Boolean?>]`: 
+    - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
     - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-    - `[AllowTranscription <Boolean?>]`: 
+    - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
     - `[AllowedPresenters <String>]`: onlineMeetingPresenters
     - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
     - `[AnonymizeIdentityForRoles <String[]>]`: 
@@ -23564,8 +23564,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
       - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
         - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
       - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -24557,8 +24557,8 @@ To create the parameters described below, construct a hash table containing the 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -24651,8 +24651,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
       - `[CreatedDateTime <DateTime?>]`: The request creation date time.
@@ -24868,7 +24868,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
             - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: Collection of objects supported by the directory.
-              - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+              - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
                 - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
                 - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
                   - `[Key <String>]`: Key.
@@ -24887,11 +24887,11 @@ To create the parameters described below, construct a hash table containing the 
                   - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
                 - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
                 - `[Type <String>]`: attributeType
-              - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+              - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
                 - `[Key <String>]`: objectDefinitionMetadata
                 - `[Value <String>]`: Value of the metadata property.
-              - `[Name <String>]`: 
-              - `[SupportedApis <String[]>]`: 
+              - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+              - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
             - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
             - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
           - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
@@ -24914,9 +24914,9 @@ To create the parameters described below, construct a hash table containing the 
                 - `[MatchingPriority <Int32?>]`: If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
                 - `[Source <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[Expression <String>]`: 
-                  - `[Name <String>]`: 
-                  - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: 
+                  - `[Expression <String>]`: Equivalent expression representation of this attributeMappingSource object.
+                  - `[Name <String>]`: Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
+                  - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
                     - `[Key <String>]`: The name of the parameter.
                     - `[Value <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                   - `[Type <String>]`: attributeMappingSourceType
@@ -25119,7 +25119,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Hostnames <String[]>]`: List of hostNames for the device.
         - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
         - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-        - `[IsManagementRestricted <Boolean?>]`: 
+        - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
         - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
         - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
         - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
@@ -25470,13 +25470,13 @@ To create the parameters described below, construct a hash table containing the 
           - `[User <IMicrosoftGraphIdentity>]`: identity
           - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
             - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
           - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-            - `[Id <String>]`: Unique identifier for the identity.
+            - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+            - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
         - `[Actions <String>]`: chatMessageActions
         - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -25514,8 +25514,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
       - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[UserIdentityType <String>]`: teamworkUserIdentityType
     - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -25986,8 +25986,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Group <IMicrosoftGraphIdentity>]`: identity
             - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[LoginName <String>]`: The sign in name of the SharePoint identity.
             - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
           - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -26985,7 +26985,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
   - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
-  - `[IsManagementRestricted <Boolean?>]`: 
+  - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
   - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
   - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
   - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
@@ -27074,7 +27074,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[IsArchived <Boolean?>]`: When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
     - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
     - `[IsFavorite <Boolean?>]`: 
-    - `[IsManagementRestricted <Boolean?>]`: 
+    - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
     - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -27168,7 +27168,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                  - `[RequiredChecklistItemIds <String[]>]`: 
+                  - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
               - `[Description <String>]`: Description of the task.
               - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
               - `[PreviewType <String>]`: plannerPreviewType
@@ -28087,7 +28087,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
     - `[ManagedDeviceIdentifier <String>]`: Device identifier created or collected by Intune.
     - `[UserId <String>]`: Identifier for the user that tried to enroll the device.
-  - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+  - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
   - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
   - `[Notifications <IMicrosoftGraphNotification[]>]`: 
     - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -28125,9 +28125,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
     - `[AllowMeetingChat <String>]`: meetingChatMode
     - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-    - `[AllowRecording <Boolean?>]`: 
+    - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
     - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-    - `[AllowTranscription <Boolean?>]`: 
+    - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
     - `[AllowedPresenters <String>]`: onlineMeetingPresenters
     - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
     - `[AnonymizeIdentityForRoles <String[]>]`: 
@@ -28325,8 +28325,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
       - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
         - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
       - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -29259,8 +29259,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedByUser <IMicrosoftGraphUser>]`: user
@@ -29562,7 +29562,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[DiscoveryDateTime <DateTime?>]`: Represents the discovery date and time using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
               - `[Name <String>]`: Name of the directory. Must be unique within the synchronization schema. Not nullable.
               - `[Objects <IMicrosoftGraphObjectDefinition[]>]`: Collection of objects supported by the directory.
-                - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: 
+                - `[Attributes <IMicrosoftGraphAttributeDefinition[]>]`: Defines attributes of the object.
                   - `[Anchor <Boolean?>]`: true if the attribute should be used as the anchor for the object. Anchor attributes must have a unique value identifying an object, and must be immutable. Default is false. One, and only one, of the object's attributes must be designated as the anchor to support synchronization.
                   - `[ApiExpressions <IMicrosoftGraphStringKeyStringValuePair[]>]`: 
                     - `[Key <String>]`: Key.
@@ -29581,11 +29581,11 @@ To create the parameters described below, construct a hash table containing the 
                     - `[ReferencedProperty <String>]`: Currently not supported. Name of the property in the referenced object, the value for which is used as the reference.
                   - `[Required <Boolean?>]`: true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.
                   - `[Type <String>]`: attributeType
-                - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: 
+                - `[Metadata <IMicrosoftGraphObjectDefinitionMetadataEntry[]>]`: Metadata for the given object.
                   - `[Key <String>]`: objectDefinitionMetadata
                   - `[Value <String>]`: Value of the metadata property.
-                - `[Name <String>]`: 
-                - `[SupportedApis <String[]>]`: 
+                - `[Name <String>]`: Name of the object. Must be unique within a directory definition. Not nullable.
+                - `[SupportedApis <String[]>]`: The API that the provisioning service queries to retrieve data for synchronization.
               - `[ReadOnly <Boolean?>]`: Whether this object is read-only.
               - `[Version <String>]`: Read only value that indicates version discovered. null if discovery has not yet occurred.
             - `[SynchronizationRules <IMicrosoftGraphSynchronizationRule[]>]`: A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.
@@ -29608,9 +29608,9 @@ To create the parameters described below, construct a hash table containing the 
                   - `[MatchingPriority <Int32?>]`: If higher than 0, this attribute will be used to perform an initial match of the objects between source and target directories. The synchronization engine will try to find the matching object using attribute with lowest value of matching priority first. If not found, the attribute with the next matching priority will be used, and so on a until match is found or no more matching attributes are left. Only attributes that are expected to have unique values, such as email, should be used as matching attributes.
                   - `[Source <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[Expression <String>]`: 
-                    - `[Name <String>]`: 
-                    - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: 
+                    - `[Expression <String>]`: Equivalent expression representation of this attributeMappingSource object.
+                    - `[Name <String>]`: Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
+                    - `[Parameters <IMicrosoftGraphStringKeyAttributeMappingSourceValuePair[]>]`: If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
                       - `[Key <String>]`: The name of the parameter.
                       - `[Value <IMicrosoftGraphAttributeMappingSource>]`: attributeMappingSource
                     - `[Type <String>]`: attributeMappingSourceType
@@ -29813,7 +29813,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Hostnames <String[]>]`: List of hostNames for the device.
           - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
           - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-          - `[IsManagementRestricted <Boolean?>]`: 
+          - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
           - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
           - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
           - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
@@ -30164,13 +30164,13 @@ To create the parameters described below, construct a hash table containing the 
             - `[User <IMicrosoftGraphIdentity>]`: identity
             - `[Conversation <IMicrosoftGraphTeamworkConversationIdentity>]`: teamworkConversationIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
               - `[ConversationIdentityType <String>]`: teamworkConversationIdentityType
             - `[Tag <IMicrosoftGraphTeamworkTagIdentity>]`: teamworkTagIdentity
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-              - `[Id <String>]`: Unique identifier for the identity.
+              - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+              - `[Id <String>]`: The identifier of the identity. This property is read-only.
         - `[MessageHistory <IMicrosoftGraphChatMessageHistoryItem[]>]`: List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
           - `[Actions <String>]`: chatMessageActions
           - `[ModifiedDateTime <DateTime?>]`: The date and time when the message was modified.
@@ -30208,8 +30208,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[JoinWebUrl <String>]`: The URL which can be clicked on to join or uniquely identify the meeting.
         - `[Organizer <IMicrosoftGraphTeamworkUserIdentity>]`: teamworkUserIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[UserIdentityType <String>]`: teamworkUserIdentityType
       - `[Operations <IMicrosoftGraphTeamsAsyncOperation[]>]`: A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -30632,8 +30632,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Group <IMicrosoftGraphIdentity>]`: identity
               - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-                - `[Id <String>]`: Unique identifier for the identity.
+                - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+                - `[Id <String>]`: The identifier of the identity. This property is read-only.
                 - `[LoginName <String>]`: The sign in name of the SharePoint identity.
               - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
             - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -31637,7 +31637,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
     - `[Interests <String[]>]`: A list for the user to describe their interests. Returned only on $select.
     - `[IsLicenseReconciliationNeeded <Boolean?>]`: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
-    - `[IsManagementRestricted <Boolean?>]`: 
+    - `[IsManagementRestricted <Boolean?>]`: true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
     - `[IsResourceAccount <Boolean?>]`: Do not use – reserved for future use.
     - `[JobTitle <String>]`: The user's job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: 
@@ -31726,7 +31726,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[IsArchived <Boolean?>]`: When a group is associated with a team, this property determines whether the team is in read-only mode. To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
       - `[IsAssignableToRole <Boolean?>]`: Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
       - `[IsFavorite <Boolean?>]`: 
-      - `[IsManagementRestricted <Boolean?>]`: 
+      - `[IsManagementRestricted <Boolean?>]`: Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
       - `[IsSubscribedByMail <Boolean?>]`: Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[LicenseProcessingState <IMicrosoftGraphLicenseProcessingState>]`: licenseProcessingState
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -31820,7 +31820,7 @@ To create the parameters described below, construct a hash table containing the 
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
                     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                    - `[RequiredChecklistItemIds <String[]>]`: 
+                    - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
                 - `[Description <String>]`: Description of the task.
                 - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
                 - `[PreviewType <String>]`: plannerPreviewType
@@ -32739,7 +32739,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
       - `[ManagedDeviceIdentifier <String>]`: Device identifier created or collected by Intune.
       - `[UserId <String>]`: Identifier for the user that tried to enroll the device.
-    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
     - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
     - `[Notifications <IMicrosoftGraphNotification[]>]`: 
       - `[Id <String>]`: The unique identifier for an entity. Read-only.
@@ -32777,9 +32777,9 @@ To create the parameters described below, construct a hash table containing the 
       - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
       - `[AllowMeetingChat <String>]`: meetingChatMode
       - `[AllowParticipantsToChangeName <Boolean?>]`: Specifies if participants are allowed to rename themselves in an instance of the meeting.
-      - `[AllowRecording <Boolean?>]`: 
+      - `[AllowRecording <Boolean?>]`: Indicates whether recording is enabled for the meeting.
       - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
-      - `[AllowTranscription <Boolean?>]`: 
+      - `[AllowTranscription <Boolean?>]`: Indicates whether transcription is enabled for the meeting.
       - `[AllowedPresenters <String>]`: onlineMeetingPresenters
       - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
       - `[AnonymizeIdentityForRoles <String[]>]`: 
@@ -32977,8 +32977,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[AccessReviewId <String>]`: The identifier of the accessReviewInstance parent. Supports $select. Read-only.
         - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-          - `[Id <String>]`: Unique identifier for the identity.
+          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+          - `[Id <String>]`: The identifier of the identity. This property is read-only.
           - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
           - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
         - `[AppliedDateTime <DateTime?>]`: The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
@@ -33997,8 +33997,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[GrantedToIdentities <IMicrosoftGraphIdentitySet[]>]`: 
@@ -34009,8 +34009,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Group <IMicrosoftGraphIdentity>]`: identity
     - `[SiteGroup <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[LoginName <String>]`: The sign in name of the SharePoint identity.
     - `[SiteUser <IMicrosoftGraphSharePointIdentity>]`: sharePointIdentity
   - `[GrantedToV2 <IMicrosoftGraphSharePointIdentitySet>]`: sharePointIdentitySet
@@ -34074,8 +34074,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -34165,8 +34165,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LabelAppliedDateTime <DateTime?>]`: 
@@ -34190,8 +34190,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Scope <String>]`: Indicates the scope of how the item is shared: anonymous, organization, or users. Read-only.
@@ -34253,8 +34253,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: Date and time the version was last modified. Read-only.

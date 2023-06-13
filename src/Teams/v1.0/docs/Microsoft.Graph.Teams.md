@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 6d22b749-f893-4581-a8b5-a7f0b89165b1
+Module Guid: ee31b186-8097-484c-ae65-3270f442d5b2
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -103,7 +103,7 @@ Null if no messages have been sent in the chat.
 Currently, only the list chats operation supports this property.
 
 ### [Get-MgChatMember](Get-MgChatMember.md)
-Retrieve a conversationMember from a chat or channel.
+Retrieve a conversationMember from a chat.
 
 ### [Get-MgChatMemberCount](Get-MgChatMemberCount.md)
 Get the number of the resource
@@ -407,7 +407,7 @@ The template this team was created from.
 See available templates.
 
 ### [Get-MgTeam](Get-MgTeam.md)
-Get entity from teams by key
+Retrieve the properties and relationships of the specified team.
 
 ### [Get-MgTeamAllChannelCount](Get-MgTeamAllChannelCount.md)
 Get the number of the resource
@@ -788,7 +788,7 @@ Null if no messages have been sent in the chat.
 Currently, only the list chats operation supports this property.
 
 ### [Get-MgUserChatMember](Get-MgUserChatMember.md)
-Retrieve a conversationMember from a chat or channel.
+Retrieve a conversationMember from a chat.
 
 ### [Get-MgUserChatMemberCount](Get-MgUserChatMemberCount.md)
 Get the number of the resource
@@ -897,28 +897,28 @@ For each shift, openshift and timeOff instance in the specified time range, the 
 The **notifyTeam** parameter further specifies which employees can view the item.
 
 ### [Invoke-MgSoftChatMessageDelete](Invoke-MgSoftChatMessageDelete.md)
-Invoke action softDelete
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftChatMessageReplyDelete](Invoke-MgSoftChatMessageReplyDelete.md)
-Invoke action softDelete
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamChannelMessageDelete](Invoke-MgSoftTeamChannelMessageDelete.md)
-Invoke action softDelete
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamChannelMessageReplyDelete](Invoke-MgSoftTeamChannelMessageReplyDelete.md)
-Invoke action softDelete
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamPrimaryChannelMessageDelete](Invoke-MgSoftTeamPrimaryChannelMessageDelete.md)
-Invoke action softDelete
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamPrimaryChannelMessageReplyDelete](Invoke-MgSoftTeamPrimaryChannelMessageReplyDelete.md)
-Invoke action softDelete
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamworkDeletedTeamChannelMessageDelete](Invoke-MgSoftTeamworkDeletedTeamChannelMessageDelete.md)
-Invoke action softDelete
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgSoftTeamworkDeletedTeamChannelMessageReplyDelete](Invoke-MgSoftTeamworkDeletedTeamChannelMessageReplyDelete.md)
-Invoke action softDelete
+Delete a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Invoke-MgUnarchiveTeam](Invoke-MgUnarchiveTeam.md)
 Restore an archived team.
@@ -954,7 +954,7 @@ This API can't create a new chat; you must use the list chats method to retrieve
 Create new navigation property to hostedContents for chats
 
 ### [New-MgChatMessageReply](New-MgChatMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgChatMessageReplyHostedContent](New-MgChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -978,13 +978,13 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamChannelMessage](New-MgGroupTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgGroupTeamChannelMessageHostedContent](New-MgGroupTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamChannelMessageReply](New-MgGroupTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamChannelMessageReplyHostedContent](New-MgGroupTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1009,13 +1009,13 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamPrimaryChannelMessage](New-MgGroupTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgGroupTeamPrimaryChannelMessageHostedContent](New-MgGroupTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamPrimaryChannelMessageReply](New-MgGroupTeamPrimaryChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamPrimaryChannelMessageReplyHostedContent](New-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1080,13 +1080,13 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgTeamChannelMessageHostedContent](New-MgTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamChannelMessageReply](New-MgTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamChannelMessageReplyHostedContent](New-MgTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1117,13 +1117,13 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgTeamPrimaryChannelMessageHostedContent](New-MgTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamPrimaryChannelMessageReply](New-MgTeamPrimaryChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamPrimaryChannelMessageReplyHostedContent](New-MgTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1185,13 +1185,13 @@ Add a conversationMember to a channel.
 This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamworkDeletedTeamChannelMessage](New-MgTeamworkDeletedTeamChannelMessage.md)
-Send a new chatMessage in the specified channel or a chat.
+Send a new chatMessage in the specified channel.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageHostedContent](New-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teamwork
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReply](New-MgTeamworkDeletedTeamChannelMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teamwork
@@ -1222,7 +1222,7 @@ This API can't create a new chat; you must use the list chats method to retrieve
 Create new navigation property to hostedContents for users
 
 ### [New-MgUserChatMessageReply](New-MgUserChatMessageReply.md)
-Send a new reply to a chatMessage in a specified channel.
+Create a new reply to a chatMessage in a specified channel.
 
 ### [New-MgUserChatMessageReplyHostedContent](New-MgUserChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for users
@@ -1279,6 +1279,7 @@ Delete the channel.
 
 ### [Remove-MgGroupTeamChannelMember](Remove-MgGroupTeamChannelMember.md)
 Delete a conversationMember from a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Remove-MgGroupTeamChannelMessage](Remove-MgGroupTeamChannelMessage.md)
 Delete navigation property messages for groups
@@ -1319,6 +1320,7 @@ Delete navigation property primaryChannel for groups
 
 ### [Remove-MgGroupTeamPrimaryChannelMember](Remove-MgGroupTeamPrimaryChannelMember.md)
 Delete a conversationMember from a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Remove-MgGroupTeamPrimaryChannelMessage](Remove-MgGroupTeamPrimaryChannelMessage.md)
 Delete navigation property messages for groups
@@ -1391,6 +1393,7 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### [Remove-MgTeamChannelMember](Remove-MgTeamChannelMember.md)
 Delete a conversationMember from a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Remove-MgTeamChannelMessageReplyHostedContent](Remove-MgTeamChannelMessageReplyHostedContent.md)
 Delete navigation property hostedContents for teams
@@ -1426,6 +1429,7 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### [Remove-MgTeamPrimaryChannelMember](Remove-MgTeamPrimaryChannelMember.md)
 Delete a conversationMember from a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Remove-MgTeamPrimaryChannelMessageReplyHostedContent](Remove-MgTeamPrimaryChannelMessageReplyHostedContent.md)
 Delete navigation property hostedContents for teams
@@ -1489,6 +1493,7 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### [Remove-MgTeamworkDeletedTeamChannelMember](Remove-MgTeamworkDeletedTeamChannelMember.md)
 Delete a conversationMember from a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Remove-MgTeamworkDeletedTeamChannelMessage](Remove-MgTeamworkDeletedTeamChannelMessage.md)
 Delete navigation property messages for teamwork
@@ -1635,28 +1640,28 @@ Update media content for the navigation property hostedContents in users
 Update media content for the navigation property hostedContents in users
 
 ### [Undo-MgChatMessageReplySoftDelete](Undo-MgChatMessageReplySoftDelete.md)
-Invoke action undoSoftDelete
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgChatMessageSoftDelete](Undo-MgChatMessageSoftDelete.md)
-Invoke action undoSoftDelete
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamChannelMessageReplySoftDelete](Undo-MgTeamChannelMessageReplySoftDelete.md)
-Invoke action undoSoftDelete
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamChannelMessageSoftDelete](Undo-MgTeamChannelMessageSoftDelete.md)
-Invoke action undoSoftDelete
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamPrimaryChannelMessageReplySoftDelete](Undo-MgTeamPrimaryChannelMessageReplySoftDelete.md)
-Invoke action undoSoftDelete
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamPrimaryChannelMessageSoftDelete](Undo-MgTeamPrimaryChannelMessageSoftDelete.md)
-Invoke action undoSoftDelete
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete](Undo-MgTeamworkDeletedTeamChannelMessageReplySoftDelete.md)
-Invoke action undoSoftDelete
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Undo-MgTeamworkDeletedTeamChannelMessageSoftDelete](Undo-MgTeamworkDeletedTeamChannelMessageSoftDelete.md)
-Invoke action undoSoftDelete
+Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
 
 ### [Update-MgAppCatalogTeamApp](Update-MgAppCatalogTeamApp.md)
 Update the navigation property teamsApps in appCatalogs
@@ -1701,7 +1706,8 @@ Update the properties of the specified tab in a chat.
 Update the properties of the specified channel.
 
 ### [Update-MgGroupTeamChannelMember](Update-MgGroupTeamChannelMember.md)
-Update the role of a conversationMember in a team or channel.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Update-MgGroupTeamChannelMessage](Update-MgGroupTeamChannelMessage.md)
 Update a chatMessage object.
@@ -1739,7 +1745,8 @@ Update the navigation property photo in groups
 Update the navigation property primaryChannel in groups
 
 ### [Update-MgGroupTeamPrimaryChannelMember](Update-MgGroupTeamPrimaryChannelMember.md)
-Update the role of a conversationMember in a team or channel.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Update-MgGroupTeamPrimaryChannelMessage](Update-MgGroupTeamPrimaryChannelMessage.md)
 Update a chatMessage object.
@@ -1809,7 +1816,8 @@ Update the properties of the specified team.
 Update the properties of the specified channel.
 
 ### [Update-MgTeamChannelMember](Update-MgTeamChannelMember.md)
-Update the role of a conversationMember in a team or channel.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Update-MgTeamChannelMessage](Update-MgTeamChannelMessage.md)
 Update a chatMessage object.
@@ -1847,7 +1855,8 @@ Update the navigation property photo in teams
 Update the navigation property primaryChannel in teams
 
 ### [Update-MgTeamPrimaryChannelMember](Update-MgTeamPrimaryChannelMember.md)
-Update the role of a conversationMember in a team or channel.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Update-MgTeamPrimaryChannelMessage](Update-MgTeamPrimaryChannelMessage.md)
 Update a chatMessage object.
@@ -1917,7 +1926,8 @@ Update the navigation property deletedTeams in teamwork
 Update the navigation property channels in teamwork
 
 ### [Update-MgTeamworkDeletedTeamChannelMember](Update-MgTeamworkDeletedTeamChannelMember.md)
-Update the role of a conversationMember in a team or channel.
+Update the role of a conversationMember in a channel.
+This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Update-MgTeamworkDeletedTeamChannelMessage](Update-MgTeamworkDeletedTeamChannelMessage.md)
 Update a chatMessage object.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaUserMailFolder
 
 ## SYNOPSIS
-Update the writable properties of a mailSearchFolder object.
+Update the properties of mailFolder object.
 
 ## SYNTAX
 
@@ -53,7 +53,7 @@ Update-MgBetaUserMailFolder -InputObject <IMailIdentity> [-AdditionalProperties 
 ```
 
 ## DESCRIPTION
-Update the writable properties of a mailSearchFolder object.
+Update the properties of mailFolder object.
 
 ## EXAMPLES
 

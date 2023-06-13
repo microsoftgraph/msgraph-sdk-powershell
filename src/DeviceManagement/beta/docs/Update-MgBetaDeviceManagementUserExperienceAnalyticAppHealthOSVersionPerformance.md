@@ -17,8 +17,8 @@ Update the navigation property userExperienceAnalyticsAppHealthOSVersionPerforma
 Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance
  -UserExperienceAnalyticsAppHealthOSVersionPerformanceId <String> [-ActiveDeviceCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>]
- [-OSBuildNumber <String>] [-OSVersion <String>] [-OSVersionAppHealthScore <Double>]
- [-OSVersionAppHealthStatus <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OSBuildNumber <String>] [-OSVersion <String>] [-OSVersionAppHealthScore <Double>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -42,8 +42,7 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance
 Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthOSVersionPerformance
  -InputObject <IDeviceManagementIdentity> [-ActiveDeviceCount <Int32>] [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>] [-OSBuildNumber <String>] [-OSVersion <String>]
- [-OSVersionAppHealthScore <Double>] [-OSVersionAppHealthStatus <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-OSVersionAppHealthScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -208,21 +207,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -OSVersionAppHealthStatus
-The overall app health status of the OS version.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserExperienceAnalyticsAppHealthOSVersionPerformanceId
 The unique identifier of userExperienceAnalyticsAppHealthOSVersionPerformance
 
@@ -299,7 +283,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[OSBuildNumber <String>]`: The OS build number installed on the device.
   - `[OSVersion <String>]`: The OS version installed on the device.
   - `[OSVersionAppHealthScore <Double?>]`: The app health score of the OS version. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-  - `[OSVersionAppHealthStatus <String>]`: The overall app health status of the OS version.
 
 `INPUTOBJECT <IDeviceManagementIdentity>`: Identity Parameter
   - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: The unique identifier of advancedThreatProtectionOnboardingDeviceSettingState
@@ -391,6 +374,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SecurityBaselineSettingStateId <String>]`: The unique identifier of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: The unique identifier of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: The unique identifier of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyCorrelationGroupOverviewId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyCorrelationGroupOverview
   - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyDevice
   - `[UserExperienceAnalyticsAnomalyId <String>]`: The unique identifier of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails

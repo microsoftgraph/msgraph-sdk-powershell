@@ -121,7 +121,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SecretReferenceValueId <String>]`: Usage: secretReferenceValueId='{secretReferenceValueId}'
   - `[ServicePlanId <String>]`: Usage: servicePlanId='{servicePlanId}'
   - `[SubscriptionId <String>]`: Usage: subscriptionId='{subscriptionId}'
-  - `[SummarizeBy <String>]`: Usage: summarizeBy='{summarizeBy}'
+  - `[SummarizeBy <UserExperienceAnalyticsSummarizedBy?>]`: Usage: summarizeBy='{summarizeBy}'
   - `[TemplateId <String>]`: Usage: templateId='{templateId}'
   - `[Upn <String>]`: Usage: upn='{upn}'
   - `[Userid <String>]`: Usage: userid='{userid}'

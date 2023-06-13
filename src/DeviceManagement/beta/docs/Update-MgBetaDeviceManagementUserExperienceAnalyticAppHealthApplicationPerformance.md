@@ -17,9 +17,9 @@ Update the navigation property userExperienceAnalyticsAppHealthApplicationPerfor
 Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
  -UserExperienceAnalyticsAppHealthApplicationPerformanceId <String> [-ActiveDeviceCount <Int32>]
  [-AdditionalProperties <Hashtable>] [-AppCrashCount <Int32>] [-AppDisplayName <String>]
- [-AppHangCount <Int32>] [-AppHealthScore <Double>] [-AppHealthStatus <String>] [-AppName <String>]
- [-AppPublisher <String>] [-AppUsageDuration <Int32>] [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppHangCount <Int32>] [-AppHealthScore <Double>] [-AppName <String>] [-AppPublisher <String>]
+ [-AppUsageDuration <Int32>] [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -43,8 +43,8 @@ Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthApplicationPerforman
 Update-MgBetaDeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance
  -InputObject <IDeviceManagementIdentity> [-ActiveDeviceCount <Int32>] [-AdditionalProperties <Hashtable>]
  [-AppCrashCount <Int32>] [-AppDisplayName <String>] [-AppHangCount <Int32>] [-AppHealthScore <Double>]
- [-AppHealthStatus <String>] [-AppName <String>] [-AppPublisher <String>] [-AppUsageDuration <Int32>]
- [-Id <String>] [-MeanTimeToFailureInMinutes <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AppName <String>] [-AppPublisher <String>] [-AppUsageDuration <Int32>] [-Id <String>]
+ [-MeanTimeToFailureInMinutes <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -162,21 +162,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AppHealthStatus
-The overall health status of the app.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -AppName
 The name of the application.
 
@@ -224,7 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-The user experience analytics application performance entity contains app performance details.
+The user experience analytics application performance entity contains application performance details.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -355,7 +340,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-`BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance>`: The user experience analytics application performance entity contains app performance details.
+`BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance>`: The user experience analytics application performance entity contains application performance details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
   - `[ActiveDeviceCount <Int32?>]`: The number of devices where the app has been active. Valid values -2147483648 to 2147483647
@@ -363,7 +348,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppDisplayName <String>]`: The friendly name of the application.
   - `[AppHangCount <Int32?>]`: The number of hangs for the app. Valid values -2147483648 to 2147483647
   - `[AppHealthScore <Double?>]`: The health score of the app. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-  - `[AppHealthStatus <String>]`: The overall health status of the app.
   - `[AppName <String>]`: The name of the application.
   - `[AppPublisher <String>]`: The publisher of the application.
   - `[AppUsageDuration <Int32?>]`: The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
@@ -459,6 +443,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SecurityBaselineSettingStateId <String>]`: The unique identifier of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: The unique identifier of securityBaselineState
   - `[SettingStateDeviceSummaryId <String>]`: The unique identifier of settingStateDeviceSummary
+  - `[UserExperienceAnalyticsAnomalyCorrelationGroupOverviewId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyCorrelationGroupOverview
   - `[UserExperienceAnalyticsAnomalyDeviceId <String>]`: The unique identifier of userExperienceAnalyticsAnomalyDevice
   - `[UserExperienceAnalyticsAnomalyId <String>]`: The unique identifier of userExperienceAnalyticsAnomaly
   - `[UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetailsId <String>]`: The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails

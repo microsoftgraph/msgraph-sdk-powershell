@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: 0d94ce5f-f39f-4993-bdec-2c0a08df3fa6
+Module Guid: 645be35f-7f41-4995-9184-75b64f655116
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -196,7 +196,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocation](Get-MgBetaIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of an ipNamedLocation object.
+Retrieve the properties and relationships of a namedLocation object.
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocationCount](Get-MgBetaIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -217,7 +217,8 @@ Get the number of the resource
 Read the properties and relationships of a continuousAccessEvaluationPolicy object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtension](Get-MgBetaIdentityCustomAuthenticationExtension.md)
-Read the properties and relationships of a customAuthenticationExtension object.
+Read the properties and relationships of an authenticationEventListener object.
+The **@odata.type** property in the response object indicates the type of the authenticationEventListener object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtensionCount](Get-MgBetaIdentityCustomAuthenticationExtensionCount.md)
 Get the number of the resource
@@ -533,11 +534,10 @@ Automatically expanded on GET.
 Get the number of the resource
 
 ### [Get-MgBetaPolicyRoleManagementPolicy](Get-MgBetaPolicyRoleManagementPolicy.md)
-Retrieve the details of a role management policy.
-To read a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.
+Represents the role management policies.
 
 ### [Get-MgBetaPolicyRoleManagementPolicyAssignment](Get-MgBetaPolicyRoleManagementPolicyAssignment.md)
-Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
+Represents the role management policy assignments.
 
 ### [Get-MgBetaPolicyRoleManagementPolicyAssignmentCount](Get-MgBetaPolicyRoleManagementPolicyAssignmentCount.md)
 Get the number of the resource
@@ -1208,7 +1208,7 @@ Delete navigation property policies for identity
 Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
 
 ### [Remove-MgBetaIdentityConditionalAccessNamedLocation](Remove-MgBetaIdentityConditionalAccessNamedLocation.md)
-Delete a namedLocation object.
+Delete an ipNamedLocation object.
 
 ### [Remove-MgBetaIdentityConditionalAccessPolicy](Remove-MgBetaIdentityConditionalAccessPolicy.md)
 Delete a conditionalAccessPolicy object.
@@ -1589,7 +1589,7 @@ Update the properties of an authenticationCombinationConfiguration object.
 In use, only fido2combinationConfigurations may be updated as they are the only type of authenticationCombinationConfiguration that may be created.
 
 ### [Update-MgBetaIdentityConditionalAccessNamedLocation](Update-MgBetaIdentityConditionalAccessNamedLocation.md)
-Update the properties of a countryNamedLocation object.
+Update the properties of an ipNamedLocation object.
 
 ### [Update-MgBetaIdentityConditionalAccessPolicy](Update-MgBetaIdentityConditionalAccessPolicy.md)
 Update the properties of a conditionalAccessPolicy object.

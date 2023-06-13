@@ -252,8 +252,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[CreatedDateTime <DateTime?>]`: The date and time when the plan configuration was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -285,13 +285,13 @@ To create the parameters described below, construct a hash table containing the 
               - `[Rules <String[]>]`: Overridden rules. These are used as rules for the override instead of the default rules.
           - `[Assignments <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
           - `[CheckLists <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
-          - `[CompletionRequirements <String[]>]`: 
+          - `[CompletionRequirements <String[]>]`: Rules and restrictions for completion requirements of the task. Accepted values are allow, add, remove, edit, and block.
           - `[Delete <String[]>]`: Rules and restrictions for deleting the task. Accepted values are allow and block.
           - `[DueDate <String[]>]`: Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
           - `[Move <String[]>]`: Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
           - `[Notes <String[]>]`: Rules and restrictions for changing the notes of the task. Accepted values are allow and block.
           - `[Order <String[]>]`: Rules and restrictions for changing the order of the task. Accepted values are allow and block.
-          - `[PercentComplete <String[]>]`: Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
+          - `[PercentComplete <String[]>]`: Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, overrideRequirements, setToNotStarted, setToInProgress, and block.
           - `[PreviewType <String[]>]`: Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.
           - `[Priority <String[]>]`: Rules and restrictions for changing the priority of the task. Accepted values are allow and block.
           - `[References <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
@@ -345,7 +345,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[RequiredChecklistItemIds <String[]>]`: 
+          - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
       - `[Description <String>]`: Description of the task.
       - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -432,8 +432,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The date and time when the plan configuration was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -466,13 +466,13 @@ To create the parameters described below, construct a hash table containing the 
             - `[Rules <String[]>]`: Overridden rules. These are used as rules for the override instead of the default rules.
         - `[Assignments <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
         - `[CheckLists <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
-        - `[CompletionRequirements <String[]>]`: 
+        - `[CompletionRequirements <String[]>]`: Rules and restrictions for completion requirements of the task. Accepted values are allow, add, remove, edit, and block.
         - `[Delete <String[]>]`: Rules and restrictions for deleting the task. Accepted values are allow and block.
         - `[DueDate <String[]>]`: Rules and restrictions for changing the due date of the task. Accepted values are allow and block.
         - `[Move <String[]>]`: Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.
         - `[Notes <String[]>]`: Rules and restrictions for changing the notes of the task. Accepted values are allow and block.
         - `[Order <String[]>]`: Rules and restrictions for changing the order of the task. Accepted values are allow and block.
-        - `[PercentComplete <String[]>]`: Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
+        - `[PercentComplete <String[]>]`: Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, overrideRequirements, setToNotStarted, setToInProgress, and block.
         - `[PreviewType <String[]>]`: Rules and restrictions for changing the preview type of the task. Accepted values are allow and block.
         - `[Priority <String[]>]`: Rules and restrictions for changing the priority of the task. Accepted values are allow and block.
         - `[References <IMicrosoftGraphPlannerFieldRules>]`: plannerFieldRules
@@ -505,8 +505,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CompletedDateTime <DateTime?>]`: Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -534,7 +534,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ChecklistRequirement <IMicrosoftGraphPlannerChecklistRequirement>]`: plannerChecklistRequirement
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[RequiredChecklistItemIds <String[]>]`: 
+        - `[RequiredChecklistItemIds <String[]>]`: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
     - `[Description <String>]`: Description of the task.
     - `[Notes <IMicrosoftGraphItemBody>]`: itemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -508,7 +508,9 @@ Accept wildcard characters: False
 ```
 
 ### -IsManagementRestricted
-.
+true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage.
+Default value is false.
+Read-only.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -1030,7 +1032,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Hostnames <String[]>]`: List of hostNames for the device.
   - `[IsCompliant <Boolean?>]`: true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
   - `[IsManaged <Boolean?>]`: true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-  - `[IsManagementRestricted <Boolean?>]`: 
+  - `[IsManagementRestricted <Boolean?>]`: true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.
   - `[IsRooted <Boolean?>]`: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
   - `[Kind <String>]`: Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.
   - `[ManagementType <String>]`: Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.

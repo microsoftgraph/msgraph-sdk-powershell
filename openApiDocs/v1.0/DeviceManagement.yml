@@ -14040,7 +14040,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string
