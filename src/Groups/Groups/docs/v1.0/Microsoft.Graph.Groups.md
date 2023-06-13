@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: bf3e11c5-8c23-46e8-8457-123390348afd
+Module Guid: a3d5ccf9-d04d-4bb6-ab9c-8aa63e968018
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -51,6 +51,12 @@ Invoke action checkMemberObjects
 Invoke action checkMemberGroups
 
 ### [Confirm-MgGroupPermissionGrantMemberObject](Confirm-MgGroupPermissionGrantMemberObject.md)
+Invoke action checkMemberObjects
+
+### [Confirm-MgGroupSettingTemplateMemberGroup](Confirm-MgGroupSettingTemplateMemberGroup.md)
+Invoke action checkMemberGroups
+
+### [Confirm-MgGroupSettingTemplateMemberObject](Confirm-MgGroupSettingTemplateMemberObject.md)
 Invoke action checkMemberObjects
 
 ### [Copy-MgGroupDriveItem](Copy-MgGroupDriveItem.md)
@@ -356,6 +362,25 @@ Nullable
 ### [Get-MgGroupSetting](Get-MgGroupSetting.md)
 Settings that can govern this group's behavior, like whether members can invite guest users to the group.
 Nullable.
+
+### [Get-MgGroupSettingTemplateAvailableExtensionProperty](Get-MgGroupSettingTemplateAvailableExtensionProperty.md)
+Invoke action getAvailableExtensionProperties
+
+### [Get-MgGroupSettingTemplateById](Get-MgGroupSettingTemplateById.md)
+Invoke action getByIds
+
+### [Get-MgGroupSettingTemplateDelta](Get-MgGroupSettingTemplateDelta.md)
+Invoke function delta
+
+### [Get-MgGroupSettingTemplateGroupSettingTemplateGroupSettingTemplate](Get-MgGroupSettingTemplateGroupSettingTemplateGroupSettingTemplate.md)
+A group setting template represents a template of settings from which settings may be created within a tenant.
+This operation allows retrieval of the properties of the groupSettingTemplate object, including the available settings and their defaults.
+
+### [Get-MgGroupSettingTemplateMemberGroup](Get-MgGroupSettingTemplateMemberGroup.md)
+Invoke action getMemberGroups
+
+### [Get-MgGroupSettingTemplateMemberObject](Get-MgGroupSettingTemplateMemberObject.md)
+Invoke action getMemberObjects
 
 ### [Get-MgGroupSiteActivityByInterval](Get-MgGroupSiteActivityByInterval.md)
 Invoke function getActivitiesByInterval
@@ -693,6 +718,9 @@ Create new navigation property ref to rejectedSenders for groups
 ### [New-MgGroupSetting](New-MgGroupSetting.md)
 Create new navigation property to settings for groups
 
+### [New-MgGroupSettingTemplateGroupSettingTemplateGroupSettingTemplate](New-MgGroupSettingTemplateGroupSettingTemplateGroupSettingTemplate.md)
+Add new entity to groupSettingTemplates
+
 ### [New-MgGroupThread](New-MgGroupThread.md)
 Create new navigation property to threads for groups
 
@@ -805,6 +833,9 @@ Delete ref of navigation property rejectedSenders for groups
 ### [Remove-MgGroupSetting](Remove-MgGroupSetting.md)
 Delete navigation property settings for groups
 
+### [Remove-MgGroupSettingTemplateGroupSettingTemplateGroupSettingTemplate](Remove-MgGroupSettingTemplateGroupSettingTemplateGroupSettingTemplate.md)
+Delete entity from groupSettingTemplates
+
 ### [Remove-MgGroupSite](Remove-MgGroupSite.md)
 Invoke action remove
 
@@ -868,6 +899,9 @@ Invoke action restoreVersion
 ### [Restore-MgGroupDriveRootVersion](Restore-MgGroupDriveRootVersion.md)
 Invoke action restoreVersion
 
+### [Restore-MgGroupSettingTemplate](Restore-MgGroupSettingTemplate.md)
+Invoke action restore
+
 ### [Restore-MgGroupSiteListItemDocumentSetVersion](Restore-MgGroupSiteListItemDocumentSetVersion.md)
 Invoke action restore
 
@@ -908,6 +942,9 @@ Invoke action validatePermission
 Invoke action validateProperties
 
 ### [Test-MgGroupProperty](Test-MgGroupProperty.md)
+Invoke action validateProperties
+
+### [Test-MgGroupSettingTemplateProperty](Test-MgGroupSettingTemplateProperty.md)
 Invoke action validateProperties
 
 ### [Test-MgGroupSiteContentTypePublished](Test-MgGroupSiteContentTypePublished.md)
@@ -966,6 +1003,9 @@ Update the navigation property photo in groups
 
 ### [Update-MgGroupSetting](Update-MgGroupSetting.md)
 Update the navigation property settings in groups
+
+### [Update-MgGroupSettingTemplateGroupSettingTemplateGroupSettingTemplate](Update-MgGroupSettingTemplateGroupSettingTemplateGroupSettingTemplate.md)
+Update entity in groupSettingTemplates
 
 ### [Update-MgGroupThread](Update-MgGroupThread.md)
 Update the navigation property threads in groups

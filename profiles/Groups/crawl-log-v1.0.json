@@ -1728,6 +1728,50 @@
     "/groupSettings/{groupSetting-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groupSettingTemplates": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groupSettingTemplates/{groupSettingTemplate-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groupSettingTemplates/{groupSettingTemplate-id}/microsoft.graph.checkMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groupSettingTemplates/{groupSettingTemplate-id}/microsoft.graph.checkMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groupSettingTemplates/{groupSettingTemplate-id}/microsoft.graph.getMemberGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groupSettingTemplates/{groupSettingTemplate-id}/microsoft.graph.getMemberObjects": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groupSettingTemplates/{groupSettingTemplate-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groupSettingTemplates/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groupSettingTemplates/microsoft.graph.getAvailableExtensionProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groupSettingTemplates/microsoft.graph.getByIds": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
+    },
+    "/groupSettingTemplates/microsoft.graph.validateProperties": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Groups.yml"
     }
   }
 }

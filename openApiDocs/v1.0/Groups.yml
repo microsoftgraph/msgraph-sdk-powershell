@@ -33077,6 +33077,641 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /groupSettingTemplates:
+    get:
+      tags:
+        - groupSettingTemplates.groupSettingTemplate
+      summary: List groupSettingTemplates
+      description: Group setting templates represents a set of templates from which group settings may be created and used within a tenant. This operation retrieves the list of available groupSettingTemplates objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/groupsettingtemplate-list?view=graph-rest-1.0
+      operationId: groupSettingTemplates.groupSettingTemplate_ListGroupSettingTemplate
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - values
+                - values desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - values
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.groupSettingTemplateCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - groupSettingTemplates.groupSettingTemplate
+      summary: Add new entity to groupSettingTemplates
+      operationId: groupSettingTemplates.groupSettingTemplate_CreateGroupSettingTemplate
+      requestBody:
+        description: New entity
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.groupSettingTemplate'
+        required: true
+      responses:
+        '201':
+          description: Created entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupSettingTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groupSettingTemplates/{groupSettingTemplate-id}':
+    get:
+      tags:
+        - groupSettingTemplates.groupSettingTemplate
+      summary: Get a group setting template
+      description: 'A group setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the groupSettingTemplate object, including the available settings and their defaults.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/groupsettingtemplate-get?view=graph-rest-1.0
+      operationId: groupSettingTemplates.groupSettingTemplate_GetGroupSettingTemplate
+      parameters:
+        - name: groupSettingTemplate-id
+          in: path
+          description: The unique identifier of groupSettingTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupSettingTemplate
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - description
+                - displayName
+                - values
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupSettingTemplate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - groupSettingTemplates.groupSettingTemplate
+      summary: Update entity in groupSettingTemplates
+      operationId: groupSettingTemplates.groupSettingTemplate_UpdateGroupSettingTemplate
+      parameters:
+        - name: groupSettingTemplate-id
+          in: path
+          description: The unique identifier of groupSettingTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupSettingTemplate
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.groupSettingTemplate'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - groupSettingTemplates.groupSettingTemplate
+      summary: Delete entity from groupSettingTemplates
+      operationId: groupSettingTemplates.groupSettingTemplate_DeleteGroupSettingTemplate
+      parameters:
+        - name: groupSettingTemplate-id
+          in: path
+          description: The unique identifier of groupSettingTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupSettingTemplate
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/groupSettingTemplates/{groupSettingTemplate-id}/microsoft.graph.checkMemberGroups':
+    post:
+      tags:
+        - groupSettingTemplates.Actions
+      summary: Invoke action checkMemberGroups
+      operationId: groupSettingTemplates_checkMemberGroups
+      parameters:
+        - name: groupSettingTemplate-id
+          in: path
+          description: The unique identifier of groupSettingTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupSettingTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groupIds:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groupSettingTemplates/{groupSettingTemplate-id}/microsoft.graph.checkMemberObjects':
+    post:
+      tags:
+        - groupSettingTemplates.Actions
+      summary: Invoke action checkMemberObjects
+      operationId: groupSettingTemplates_checkMemberObjects
+      parameters:
+        - name: groupSettingTemplate-id
+          in: path
+          description: The unique identifier of groupSettingTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupSettingTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groupSettingTemplates/{groupSettingTemplate-id}/microsoft.graph.getMemberGroups':
+    post:
+      tags:
+        - groupSettingTemplates.Actions
+      summary: Invoke action getMemberGroups
+      operationId: groupSettingTemplates_getMemberGroups
+      parameters:
+        - name: groupSettingTemplate-id
+          in: path
+          description: The unique identifier of groupSettingTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupSettingTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groupSettingTemplates/{groupSettingTemplate-id}/microsoft.graph.getMemberObjects':
+    post:
+      tags:
+        - groupSettingTemplates.Actions
+      summary: Invoke action getMemberObjects
+      operationId: groupSettingTemplates_getMemberObjects
+      parameters:
+        - name: groupSettingTemplate-id
+          in: path
+          description: The unique identifier of groupSettingTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupSettingTemplate
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                securityEnabledOnly:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/groupSettingTemplates/{groupSettingTemplate-id}/microsoft.graph.restore':
+    post:
+      tags:
+        - groupSettingTemplates.Actions
+      summary: Invoke action restore
+      operationId: groupSettingTemplates_restore
+      parameters:
+        - name: groupSettingTemplate-id
+          in: path
+          description: The unique identifier of groupSettingTemplate
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: groupSettingTemplate
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /groupSettingTemplates/microsoft.graph.delta():
+    get:
+      tags:
+        - groupSettingTemplates.Functions
+      summary: Invoke function delta
+      operationId: groupSettingTemplates_delta
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                  '@odata.deltaLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /groupSettingTemplates/microsoft.graph.getAvailableExtensionProperties:
+    post:
+      tags:
+        - groupSettingTemplates.Actions
+      summary: Invoke action getAvailableExtensionProperties
+      operationId: groupSettingTemplates_getAvailableExtensionProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isSyncedFromOnPremises:
+                  type: boolean
+                  default: false
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of extensionProperty
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.extensionProperty'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /groupSettingTemplates/microsoft.graph.getByIds:
+    post:
+      tags:
+        - groupSettingTemplates.Actions
+      summary: Invoke action getByIds
+      operationId: groupSettingTemplates_getGraphBPreIds
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                types:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /groupSettingTemplates/microsoft.graph.validateProperties:
+    post:
+      tags:
+        - groupSettingTemplates.Actions
+      summary: Invoke action validateProperties
+      operationId: groupSettingTemplates_validateProperties
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entityType:
+                  type: string
+                  nullable: true
+                displayName:
+                  type: string
+                  nullable: true
+                mailNickname:
+                  type: string
+                  nullable: true
+                onBehalfOfUserId:
+                  pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                  type: string
+                  format: uuid
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.groupLifecyclePolicy:
@@ -35992,6 +36627,27 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.groupSettingTemplate:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: groupSettingTemplate
+          type: object
+          properties:
+            description:
+              type: string
+              description: Description of the template.
+              nullable: true
+            displayName:
+              type: string
+              description: 'Display name of the template. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.'
+              nullable: true
+            values:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.settingTemplateValue'
+              description: 'Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.'
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -40404,6 +41060,28 @@ components:
         - text
         - html
       type: string
+    microsoft.graph.settingTemplateValue:
+      title: settingTemplateValue
+      type: object
+      properties:
+        defaultValue:
+          type: string
+          description: Default value for the setting.
+          nullable: true
+        description:
+          type: string
+          description: Description of the setting.
+          nullable: true
+        name:
+          type: string
+          description: Name of the setting.
+          nullable: true
+        type:
+          type: string
+          description: Type of the setting.
+          nullable: true
+      additionalProperties:
+        type: object
     ReferenceCreate:
       type: object
       properties:
@@ -40675,6 +41353,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.groupSetting'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupSettingTemplateCollectionResponse:
+      title: Collection of groupSettingTemplate
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.groupSettingTemplate'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -47505,6 +48196,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.groupSettingCollectionResponse'
+    microsoft.graph.groupSettingTemplateCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.groupSettingTemplateCollectionResponse'
   parameters:
     top:
       name: $top

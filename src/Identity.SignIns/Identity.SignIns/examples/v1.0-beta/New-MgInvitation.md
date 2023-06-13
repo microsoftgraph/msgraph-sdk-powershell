@@ -3,8 +3,8 @@
 ```powershellImport-Module Microsoft.Graph.Identity.SignIns
 
 $params = @{
-	InvitedUserEmailAddress = "admin@fabrikam.com"
-	InviteRedirectUrl = "https://myapp.contoso.com"
+	invitedUserEmailAddress = "admin@fabrikam.com"
+	inviteRedirectUrl = "https://myapp.contoso.com"
 }
 
 New-MgInvitation -BodyParameter $params

@@ -359,3 +359,6 @@ MigrationBackup/
 
 #Custom Environment Files
 localenv.json
+
+#Wrong Examples report Folder
+examplesreport/

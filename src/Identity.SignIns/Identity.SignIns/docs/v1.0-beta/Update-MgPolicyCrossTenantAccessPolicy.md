@@ -287,8 +287,8 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicy1>: crossTenantAccessPolicy
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]`: inboundOutboundPolicyConfiguration
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[InboundAllowed <Boolean?>]`: Defines whether external users coming inbound are allowed.
-      - `[OutboundAllowed <Boolean?>]`: Defines whether internal users are allowed to go outbound.
+      - `[InboundAllowed <Boolean?>]`: 
+      - `[OutboundAllowed <Boolean?>]`: 
     - `[B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Applications <IMicrosoftGraphCrossTenantAccessPolicyTargetConfiguration>]`: crossTenantAccessPolicyTargetConfiguration
@@ -338,8 +338,8 @@ DEFAULT <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1>: crossTena
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]`: inboundOutboundPolicyConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[InboundAllowed <Boolean?>]`: Defines whether external users coming inbound are allowed.
-    - `[OutboundAllowed <Boolean?>]`: Defines whether internal users are allowed to go outbound.
+    - `[InboundAllowed <Boolean?>]`: 
+    - `[OutboundAllowed <Boolean?>]`: 
   - `[B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Applications <IMicrosoftGraphCrossTenantAccessPolicyTargetConfiguration>]`: crossTenantAccessPolicyTargetConfiguration
@@ -370,8 +370,8 @@ DEFAULT <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault1>: crossTena
 PARTNERS <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner1[]>: Defines partner-specific configurations for external Azure Active Directory organizations.
   - `[AutomaticUserConsentSettings <IMicrosoftGraphInboundOutboundPolicyConfiguration>]`: inboundOutboundPolicyConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[InboundAllowed <Boolean?>]`: Defines whether external users coming inbound are allowed.
-    - `[OutboundAllowed <Boolean?>]`: Defines whether internal users are allowed to go outbound.
+    - `[InboundAllowed <Boolean?>]`: 
+    - `[OutboundAllowed <Boolean?>]`: 
   - `[B2BCollaborationInbound <IMicrosoftGraphCrossTenantAccessPolicyB2BSetting>]`: crossTenantAccessPolicyB2BSetting
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Applications <IMicrosoftGraphCrossTenantAccessPolicyTargetConfiguration>]`: crossTenantAccessPolicyTargetConfiguration

@@ -48,7 +48,7 @@ New-MgGroup [-AcceptedSenders <IMicrosoftGraphDirectoryObject[]>] [-AccessType <
  [-RejectedSenders <IMicrosoftGraphDirectoryObject[]>] [-RenewedDateTime <DateTime>]
  [-ResourceBehaviorOptions <String[]>] [-ResourceProvisioningOptions <String[]>] [-SecurityEnabled]
  [-SecurityIdentifier <String>] [-ServiceProvisioningErrors <IMicrosoftGraphServiceProvisioningError[]>]
- [-Settings <IMicrosoftGraphDirectorySetting[]>] [-Sites <IMicrosoftGraphSite[]>]
+ [-Settings <IMicrosoftGraphDirectorySetting[]>] [-Sites <IMicrosoftGraphSite1[]>]
  [-Team <IMicrosoftGraphTeam1>] [-Theme <String>] [-Threads <IMicrosoftGraphConversationThread1[]>]
  [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]
  [-TransitiveMembers <IMicrosoftGraphDirectoryObject[]>] [-UnseenConversationsCount <Int32>]
@@ -1356,7 +1356,7 @@ Access the default site with /sites/root.
 To construct, please use Get-Help -Online and see NOTES section for SITES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSite[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSite1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -2546,7 +2546,7 @@ BODYPARAMETER <IMicrosoftGraphGroup1>: group
           - `[DisplayName <String>]`: The display name of the user.
           - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
           - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-        - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the chat. Nullable.
+        - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
             - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
@@ -2618,7 +2618,7 @@ BODYPARAMETER <IMicrosoftGraphGroup1>: group
             - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
             - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
           - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-          - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
+          - `[Replies <IMicrosoftGraphChatMessage1[]>]`: Replies for a specified message. Supports $expand for channel messages.
           - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
           - `[Subject <String>]`: The subject of the chat message, in plaintext.
           - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
@@ -2655,7 +2655,7 @@ BODYPARAMETER <IMicrosoftGraphGroup1>: group
           - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
         - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
+          - `[Message <IMicrosoftGraphChatMessage1>]`: chatMessage
         - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Configuration <IMicrosoftGraphTeamsTabConfiguration>]`: teamsTabConfiguration
@@ -2875,7 +2875,7 @@ BODYPARAMETER <IMicrosoftGraphGroup1>: group
       - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
       - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
       - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-      - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
+      - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -3987,7 +3987,7 @@ BODYPARAMETER <IMicrosoftGraphGroup1>: group
           - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Read-only.
           - `[Hostname <String>]`: The hostname for the site collection. Read-only.
           - `[Root <IMicrosoftGraphRoot>]`: root
-        - `[Sites <IMicrosoftGraphSite[]>]`: The collection of the sub-sites under this site.
+        - `[Sites <IMicrosoftGraphSite1[]>]`: The collection of the sub-sites under this site.
         - `[TermStore <IMicrosoftGraphTermStore1>]`: store
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -4080,7 +4080,7 @@ BODYPARAMETER <IMicrosoftGraphGroup1>: group
           - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
           - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
           - `[MembershipType <String>]`: channelMembershipType
-          - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+          - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
           - `[ModerationSettings <IMicrosoftGraphChannelModerationSettings>]`: channelModerationSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowNewMessageFromBots <Boolean?>]`: Indicates whether bots are allowed to post messages.
@@ -6267,7 +6267,7 @@ BODYPARAMETER <IMicrosoftGraphGroup1>: group
     - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
       - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
       - `[Value <String>]`: Value of the setting.
-  - `[Sites <IMicrosoftGraphSite[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
+  - `[Sites <IMicrosoftGraphSite1[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
   - `[Team <IMicrosoftGraphTeam1>]`: team
   - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
   - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
@@ -7541,7 +7541,7 @@ DRIVE <IMicrosoftGraphDrive1>: drive
         - `[DisplayName <String>]`: The display name of the user.
         - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
         - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-      - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the chat. Nullable.
+      - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
           - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
@@ -7613,7 +7613,7 @@ DRIVE <IMicrosoftGraphDrive1>: drive
           - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
           - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
         - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-        - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
+        - `[Replies <IMicrosoftGraphChatMessage1[]>]`: Replies for a specified message. Supports $expand for channel messages.
         - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
         - `[Subject <String>]`: The subject of the chat message, in plaintext.
         - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
@@ -7650,7 +7650,7 @@ DRIVE <IMicrosoftGraphDrive1>: drive
         - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
       - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
+        - `[Message <IMicrosoftGraphChatMessage1>]`: chatMessage
       - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Configuration <IMicrosoftGraphTeamsTabConfiguration>]`: teamsTabConfiguration
@@ -7870,7 +7870,7 @@ DRIVE <IMicrosoftGraphDrive1>: drive
     - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
     - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
     - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
+    - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -8982,7 +8982,7 @@ DRIVE <IMicrosoftGraphDrive1>: drive
         - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Read-only.
         - `[Hostname <String>]`: The hostname for the site collection. Read-only.
         - `[Root <IMicrosoftGraphRoot>]`: root
-      - `[Sites <IMicrosoftGraphSite[]>]`: The collection of the sub-sites under this site.
+      - `[Sites <IMicrosoftGraphSite1[]>]`: The collection of the sub-sites under this site.
       - `[TermStore <IMicrosoftGraphTermStore1>]`: store
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -9343,7 +9343,7 @@ DRIVE <IMicrosoftGraphDrive1>: drive
         - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
           - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
           - `[Value <String>]`: Value of the setting.
-      - `[Sites <IMicrosoftGraphSite[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
+      - `[Sites <IMicrosoftGraphSite1[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
       - `[Team <IMicrosoftGraphTeam1>]`: team
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -9357,7 +9357,7 @@ DRIVE <IMicrosoftGraphDrive1>: drive
           - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
           - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
           - `[MembershipType <String>]`: channelMembershipType
-          - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+          - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
           - `[ModerationSettings <IMicrosoftGraphChannelModerationSettings>]`: channelModerationSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowNewMessageFromBots <Boolean?>]`: Indicates whether bots are allowed to post messages.
@@ -12208,7 +12208,7 @@ DRIVES <IMicrosoftGraphDrive1[]>: The group's drives. Read-only.
         - `[DisplayName <String>]`: The display name of the user.
         - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
         - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-      - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the chat. Nullable.
+      - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
           - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
@@ -12280,7 +12280,7 @@ DRIVES <IMicrosoftGraphDrive1[]>: The group's drives. Read-only.
           - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
           - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
         - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-        - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
+        - `[Replies <IMicrosoftGraphChatMessage1[]>]`: Replies for a specified message. Supports $expand for channel messages.
         - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
         - `[Subject <String>]`: The subject of the chat message, in plaintext.
         - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
@@ -12317,7 +12317,7 @@ DRIVES <IMicrosoftGraphDrive1[]>: The group's drives. Read-only.
         - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
       - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
+        - `[Message <IMicrosoftGraphChatMessage1>]`: chatMessage
       - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Configuration <IMicrosoftGraphTeamsTabConfiguration>]`: teamsTabConfiguration
@@ -12537,7 +12537,7 @@ DRIVES <IMicrosoftGraphDrive1[]>: The group's drives. Read-only.
     - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
     - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
     - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
+    - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -13649,7 +13649,7 @@ DRIVES <IMicrosoftGraphDrive1[]>: The group's drives. Read-only.
         - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Read-only.
         - `[Hostname <String>]`: The hostname for the site collection. Read-only.
         - `[Root <IMicrosoftGraphRoot>]`: root
-      - `[Sites <IMicrosoftGraphSite[]>]`: The collection of the sub-sites under this site.
+      - `[Sites <IMicrosoftGraphSite1[]>]`: The collection of the sub-sites under this site.
       - `[TermStore <IMicrosoftGraphTermStore1>]`: store
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -14010,7 +14010,7 @@ DRIVES <IMicrosoftGraphDrive1[]>: The group's drives. Read-only.
         - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
           - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
           - `[Value <String>]`: Value of the setting.
-      - `[Sites <IMicrosoftGraphSite[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
+      - `[Sites <IMicrosoftGraphSite1[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
       - `[Team <IMicrosoftGraphTeam1>]`: team
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -14024,7 +14024,7 @@ DRIVES <IMicrosoftGraphDrive1[]>: The group's drives. Read-only.
           - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
           - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
           - `[MembershipType <String>]`: channelMembershipType
-          - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+          - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
           - `[ModerationSettings <IMicrosoftGraphChannelModerationSettings>]`: channelModerationSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowNewMessageFromBots <Boolean?>]`: Indicates whether bots are allowed to post messages.
@@ -16518,7 +16518,7 @@ SETTINGS <IMicrosoftGraphDirectorySetting[]>: Settings that can govern this grou
     - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
     - `[Value <String>]`: Value of the setting.
 
-SITES <IMicrosoftGraphSite[]>: The list of SharePoint sites in this group. Access the default site with /sites/root.
+SITES <IMicrosoftGraphSite1[]>: The list of SharePoint sites in this group. Access the default site with /sites/root.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -17381,7 +17381,7 @@ SITES <IMicrosoftGraphSite[]>: The list of SharePoint sites in this group. Acces
         - `[DisplayName <String>]`: The display name of the user.
         - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
         - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-      - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the chat. Nullable.
+      - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
           - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
@@ -17453,7 +17453,7 @@ SITES <IMicrosoftGraphSite[]>: The list of SharePoint sites in this group. Acces
           - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
           - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
         - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-        - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
+        - `[Replies <IMicrosoftGraphChatMessage1[]>]`: Replies for a specified message. Supports $expand for channel messages.
         - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
         - `[Subject <String>]`: The subject of the chat message, in plaintext.
         - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
@@ -17490,7 +17490,7 @@ SITES <IMicrosoftGraphSite[]>: The list of SharePoint sites in this group. Acces
         - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
       - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
+        - `[Message <IMicrosoftGraphChatMessage1>]`: chatMessage
       - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Configuration <IMicrosoftGraphTeamsTabConfiguration>]`: teamsTabConfiguration
@@ -18574,7 +18574,7 @@ SITES <IMicrosoftGraphSite[]>: The list of SharePoint sites in this group. Acces
     - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
     - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
     - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-    - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
+    - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
     - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[HireDate <DateTime?>]`: The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
     - `[Identities <IMicrosoftGraphObjectIdentity[]>]`: Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.
@@ -19094,7 +19094,7 @@ SITES <IMicrosoftGraphSite[]>: The list of SharePoint sites in this group. Acces
         - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
           - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
           - `[Value <String>]`: Value of the setting.
-      - `[Sites <IMicrosoftGraphSite[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
+      - `[Sites <IMicrosoftGraphSite1[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
       - `[Team <IMicrosoftGraphTeam1>]`: team
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -19108,7 +19108,7 @@ SITES <IMicrosoftGraphSite[]>: The list of SharePoint sites in this group. Acces
           - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
           - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
           - `[MembershipType <String>]`: channelMembershipType
-          - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+          - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
           - `[ModerationSettings <IMicrosoftGraphChannelModerationSettings>]`: channelModerationSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowNewMessageFromBots <Boolean?>]`: Indicates whether bots are allowed to post messages.
@@ -21178,7 +21178,7 @@ SITES <IMicrosoftGraphSite[]>: The list of SharePoint sites in this group. Acces
     - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Read-only.
     - `[Hostname <String>]`: The hostname for the site collection. Read-only.
     - `[Root <IMicrosoftGraphRoot>]`: root
-  - `[Sites <IMicrosoftGraphSite[]>]`: The collection of the sub-sites under this site.
+  - `[Sites <IMicrosoftGraphSite1[]>]`: The collection of the sub-sites under this site.
   - `[TermStore <IMicrosoftGraphTermStore1>]`: store
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -22060,7 +22060,7 @@ TEAM <IMicrosoftGraphTeam1>: team
             - `[DisplayName <String>]`: The display name of the user.
             - `[Roles <String[]>]`: The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.
             - `[VisibleHistoryStartDateTime <DateTime?>]`: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-          - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the chat. Nullable.
+          - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the chat. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Attachments <IMicrosoftGraphChatMessageAttachment[]>]`: References to attached objects like files, tabs, meetings etc.
               - `[Content <String>]`: The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.
@@ -22132,7 +22132,7 @@ TEAM <IMicrosoftGraphTeam1>: team
               - `[UserAction <String>]`: chatMessagePolicyViolationUserActionTypes
               - `[VerdictDetails <String>]`: chatMessagePolicyViolationVerdictDetailsTypes
             - `[Reactions <IMicrosoftGraphChatMessageReaction[]>]`: Reactions for this chat message (for example, Like).
-            - `[Replies <IMicrosoftGraphChatMessage[]>]`: Replies for a specified message. Supports $expand for channel messages.
+            - `[Replies <IMicrosoftGraphChatMessage1[]>]`: Replies for a specified message. Supports $expand for channel messages.
             - `[ReplyToId <String>]`: Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
             - `[Subject <String>]`: The subject of the chat message, in plaintext.
             - `[Summary <String>]`: Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.
@@ -22169,7 +22169,7 @@ TEAM <IMicrosoftGraphTeam1>: team
             - `[ResourceAppId <String>]`: ID of the Azure AD app that is hosting the resource. Read-only.
           - `[PinnedMessages <IMicrosoftGraphPinnedChatMessageInfo1[]>]`: A collection of all the pinned messages in the chat. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-            - `[Message <IMicrosoftGraphChatMessage>]`: chatMessage
+            - `[Message <IMicrosoftGraphChatMessage1>]`: chatMessage
           - `[Tabs <IMicrosoftGraphTeamsTab1[]>]`: A collection of all the tabs in the chat. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Configuration <IMicrosoftGraphTeamsTabConfiguration>]`: teamsTabConfiguration
@@ -22794,7 +22794,7 @@ TEAM <IMicrosoftGraphTeam1>: team
         - `[ExternalUserState <String>]`: For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).
         - `[ExternalUserStateChangeDateTime <String>]`: Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).
         - `[FaxNumber <String>]`: The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-        - `[FollowedSites <IMicrosoftGraphSite[]>]`: 
+        - `[FollowedSites <IMicrosoftGraphSite1[]>]`: 
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -23113,7 +23113,7 @@ TEAM <IMicrosoftGraphTeam1>: team
             - `[DataLocationCode <String>]`: The geographic region code for where this site collection resides. Read-only.
             - `[Hostname <String>]`: The hostname for the site collection. Read-only.
             - `[Root <IMicrosoftGraphRoot>]`: root
-          - `[Sites <IMicrosoftGraphSite[]>]`: The collection of the sub-sites under this site.
+          - `[Sites <IMicrosoftGraphSite1[]>]`: The collection of the sub-sites under this site.
           - `[TermStore <IMicrosoftGraphTermStore1>]`: store
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -23474,7 +23474,7 @@ TEAM <IMicrosoftGraphTeam1>: team
             - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
               - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
               - `[Value <String>]`: Value of the setting.
-          - `[Sites <IMicrosoftGraphSite[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
+          - `[Sites <IMicrosoftGraphSite1[]>]`: The list of SharePoint sites in this group. Access the default site with /sites/root.
           - `[Team <IMicrosoftGraphTeam1>]`: team
           - `[Theme <String>]`: Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.
           - `[Threads <IMicrosoftGraphConversationThread1[]>]`: The group's conversation threads. Nullable.
@@ -25602,7 +25602,7 @@ TEAM <IMicrosoftGraphTeam1>: team
     - `[IsFavoriteByDefault <Boolean?>]`: Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
     - `[Members <IMicrosoftGraphConversationMember[]>]`: A collection of membership records associated with the channel.
     - `[MembershipType <String>]`: channelMembershipType
-    - `[Messages <IMicrosoftGraphChatMessage[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
+    - `[Messages <IMicrosoftGraphChatMessage1[]>]`: A collection of all the messages in the channel. A navigation property. Nullable.
     - `[ModerationSettings <IMicrosoftGraphChannelModerationSettings>]`: channelModerationSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowNewMessageFromBots <Boolean?>]`: Indicates whether bots are allowed to post messages.
