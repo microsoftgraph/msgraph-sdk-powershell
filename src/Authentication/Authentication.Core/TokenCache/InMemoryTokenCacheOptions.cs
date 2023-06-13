@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
 {
-    public class InMemoryTokenCacheOptions : UnsafeTokenCacheOptions
+    internal class InMemoryTokenCacheOptions : UnsafeTokenCacheOptions
     {
         private readonly ReaderWriterLockSlim _sessionLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         internal ReadOnlyMemory<byte> TokenCache { get; private set; }
@@ -19,6 +19,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
         {
             TokenCache = token;
         }
+
+        protected override async Task<TokenCacheData> RefreshCacheAsync(TokenCacheRefreshArgs args, CancellationToken cancellationToken = default)
+        {
+            _sessionLock.EnterReadLock();
+            try
+            {
+                return await Task.FromResult(new TokenCacheData(TokenCache)).ConfigureAwait(false);
+            }
+            finally
+            {
+                _sessionLock.ExitReadLock();
+            }
+        }
+
         protected override async Task<ReadOnlyMemory<byte>> RefreshCacheAsync()
         {
             _sessionLock.EnterReadLock();

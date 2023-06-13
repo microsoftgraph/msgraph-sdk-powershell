@@ -119,4 +119,11 @@ Get-ChildItem -Path "$cmdletsSrc/bin/$Configuration/$netStandard/publish/" |
 Where-Object { -not $Deps.Contains($_.Name) -and $_.Extension -in $copyExtensions } |
 ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir -Recurse }
 
+# Update module manifest with nested assemblies.
+$RequiredAssemblies = @(
+  'Microsoft.Graph.Authentication.dll', 
+  'Microsoft.Graph.Authentication.Core.dll'
+)
+Update-ModuleManifest -Path (Join-Path $outDir "$ModulePrefix.$ModuleName.psd1") -NestedModules $RequiredAssemblies
+
 Write-Host -ForegroundColor Green '-------------Done-------------'

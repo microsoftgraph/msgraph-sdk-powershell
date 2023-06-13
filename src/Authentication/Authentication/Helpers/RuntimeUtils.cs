@@ -17,8 +17,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <returns><see cref="true"/> when PSEdition is core, else <see cref="false"/>.</returns>
         internal static bool IsPsCore()
         {
-            var psCoreVersion = new Version(6, 0, 0);
-            return GraphSession.Instance.AuthContext.PSHostVersion >= psCoreVersion;
+            var psCoreVersion = new Version(5, 0, 0);
+            return Environment.Version >= psCoreVersion;
         }
     }
 }

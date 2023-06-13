@@ -259,6 +259,11 @@ directive:
   - from: 'openapi-document'
     where: $.components.schemas.ReferenceUpdate..properties['@odata.id']
     transform: $['description'] = 'The entity reference URL of the resource. For example, https://graph.microsoft.com/v1.0/directoryObjects/{id}.'
+# Fix Base64 serialization.
+  - from: 'openapi-document'
+    where: $.components.schemas..properties.*
+    transform: >-
+        if ($.format === 'base64url') { $['format'] = 'byte' }
 # Mark consistency level parameter as required for /$count paths when header is present.
   - from: openapi-document
     where: $..paths.*[?(/(.*_GetCount)/gmi.exec(@.operationId))]..parameters[?(@.name === "ConsistencyLevel")]

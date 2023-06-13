@@ -5,6 +5,7 @@ using Azure.Core;
 using Azure.Core.Diagnostics;
 using Azure.Identity;
 using Azure.Identity.BrokeredAuthentication;
+using Microsoft.Graph.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Identity.Client;
 using Microsoft.Identity.Client.Broker;
@@ -215,16 +216,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         }
 
         /// <summary>
-        /// Gets a <see cref="IAuthenticationProvider"/> using the provided <see cref="IAuthContext"/>
+        /// Gets a <see cref="AzureIdentityAccessTokenProvider"/> using the provided <see cref="IAuthContext"/>
         /// </summary>
         /// <param name="authContext">The <see cref="IAuthContext"/> to get a token credential for.</param>
-        /// <returns>A <see cref="IAuthenticationProvider"/> based on provided <see cref="IAuthContext"/>.</returns>
-        public static async Task<IAuthenticationProvider> GetAuthenticationProviderAsync(IAuthContext authContext)
+        /// <returns>A <see cref="AzureIdentityAccessTokenProvider"/> based on provided <see cref="IAuthContext"/>.</returns>
+        public static async Task<AzureIdentityAccessTokenProvider> GetAuthenticationProviderAsync(IAuthContext authContext)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             var tokenCrdential = await GetTokenCredentialAsync(authContext, default).ConfigureAwait(false);
-            return new AzureIdentityAuthProvider(tokenCrdential, GetScopes(authContext));
+            return new AzureIdentityAccessTokenProvider(credential: tokenCrdential, scopes: GetScopes(authContext));
         }
 
         public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, CancellationToken cancellationToken)
@@ -431,7 +432,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         public static async Task<IAuthContext> LogoutAsync()
         {
             var authContext = GraphSession.Instance.AuthContext;
-            GraphSession.Instance.InMemoryTokenCache.ClearCache();
+            GraphSession.Instance.InMemoryTokenCache?.ClearCache();
             GraphSession.Instance.AuthContext = null;
             GraphSession.Instance.GraphHttpClient = null;
             await DeleteAuthRecordAsync().ConfigureAwait(false);
