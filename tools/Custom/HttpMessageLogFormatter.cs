@@ -34,13 +34,11 @@ namespace NamespacePrefixPlaceholder.PowerShell
             if (originalRequest.Content != null)
             {
                 // HttpClient doesn't rewind streams and we have to explicitly do so.
-                await originalRequest.Content.ReadAsStreamAsync().ContinueWith(t =>
-                {
-                    if (t.Result.CanSeek)
-                        t.Result.Seek(0, SeekOrigin.Begin);
-
-                    newRequest.Content = new StreamContent(t.Result);
-                }).ConfigureAwait(false);
+                var ms = new MemoryStream();
+                await originalRequest.Content.CopyToAsync(ms);
+                ms.Position = 0;
+                newRequest.Content = new StreamContent(ms);
+                originalRequest.Content.Headers?.ToList().ForEach(header => newRequest.Content.Headers.TryAddWithoutValidation(header.Key, header.Value));
             }
             return newRequest;
         }
