@@ -281,7 +281,7 @@ paths:
       tags:
         - print.printConnector
       summary: Delete printConnector
-      description: Delete (unregister) a **printConnector**.
+      description: Delete (unregister) a printConnector.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0
@@ -10856,7 +10856,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string
