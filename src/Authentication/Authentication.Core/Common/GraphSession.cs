@@ -32,11 +32,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public IAuthContext AuthContext { get; set; }
 
         /// <summary>
-        /// Gets or Sets <see cref="IAuthRecord"/>.
-        /// </summary>
-        public IAuthRecord AuthRecord { get; set; }
-
-        /// <summary>
         /// Gets or sets <see cref="IDataStore"/>.
         /// </summary>
         public IDataStore DataStore { get; set; }

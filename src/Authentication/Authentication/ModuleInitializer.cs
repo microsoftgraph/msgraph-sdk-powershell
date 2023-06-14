@@ -86,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         private static bool IsAssemblyMatching(AssemblyName assemblyName, Assembly requestingAssembly)
         {
             return requestingAssembly != null
-                ? requestingAssembly.FullName.StartsWith("Microsoft") && IsAssemblyPresent(assemblyName)
+                ? (requestingAssembly.FullName.StartsWith("Microsoft") || requestingAssembly.FullName.StartsWith("Azure.Identity")) && IsAssemblyPresent(assemblyName)
                 : IsAssemblyPresent(assemblyName);
         }
 
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         {
             return s_dependencies.Contains(assemblyName.FullName) || s_psEditionDependencies.Contains(assemblyName.FullName)
                 ? true
-                : !string.IsNullOrEmpty(s_dependencies.SingleOrDefault((x) => x.StartsWith(assemblyName.Name))) || !string.IsNullOrEmpty(s_psEditionDependencies.SingleOrDefault((x) => x.StartsWith(assemblyName.Name)));
+                : !string.IsNullOrEmpty(s_dependencies.SingleOrDefault((x) => x.StartsWith($"{assemblyName.Name},"))) || !string.IsNullOrEmpty(s_psEditionDependencies.SingleOrDefault((x) => x.StartsWith($"{assemblyName.Name},")));
         }
 
         /// <summary>

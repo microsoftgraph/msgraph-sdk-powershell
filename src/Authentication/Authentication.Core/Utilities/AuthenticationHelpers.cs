@@ -8,16 +8,13 @@ using Azure.Identity.BrokeredAuthentication;
 using Microsoft.Graph.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
 using Microsoft.Identity.Client;
-using Microsoft.Identity.Client.Broker;
 using Microsoft.Identity.Client.Extensions.Msal;
 using System;
 using System.Diagnostics.Tracing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -45,10 +42,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                         return await GetInteractiveBrowserCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
                     return await GetDeviceCodeCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
                 case AuthenticationType.AppOnly:
-                    if (authContext.TokenCredentialType == TokenCredentialType.ClientCertificate)
-                        return await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false);
-                    else
-                        return await GetClientSecretCredentialAsync(authContext).ConfigureAwait(false);
+                    return authContext.TokenCredentialType == TokenCredentialType.ClientCertificate
+                        ? await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false)
+                        : await GetClientSecretCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.ManagedIdentity:
                     return await GetManagedIdentityCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.EnvironmentVariable:
@@ -85,6 +81,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 && (string.IsNullOrEmpty(EnvironmentVariables.ClientSecret) && string.IsNullOrEmpty(EnvironmentVariables.ClientCertificatePath)));
         }
 
+        private static bool IsWamSupported()
+        {
+            return GraphSession.Instance.GraphOption.EnableWAMForMSGraph && SharedUtilities.IsWindowsPlatform();
+        }
+
         private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
         {
             if (authContext is null)
@@ -112,16 +113,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            InteractiveBrowserCredentialOptions interactiveOptions;
-            if (GraphSession.Instance.GraphOption.EnableWAMForMSGraph)
-            {
-                [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
-                IntPtr parentWindowHandle = GetForegroundWindow();
-                interactiveOptions = new InteractiveBrowserCredentialBrokerOptions(parentWindowHandle);
-            } else {
-                interactiveOptions = new InteractiveBrowserCredentialOptions();
-            }
-
+            var interactiveOptions = IsWamSupported() ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
             interactiveOptions.ClientId = authContext.ClientId;
             interactiveOptions.TenantId = authContext.TenantId ?? "common";
             interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
@@ -129,34 +121,21 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
             if (!File.Exists(Constants.AuthRecordPath))
             {
+                AuthenticationRecord authRecord;
                 var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
-                if (GraphSession.Instance.GraphOption.EnableWAMForMSGraph)
+                if (IsWamSupported())
                 {
-                    //authRecord = interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
-                    [DllImport("user32.dll")] static extern IntPtr GetForegroundWindow();
-                    IntPtr parentWindowHandle = GetForegroundWindow();
-                    var pca = PublicClientApplicationBuilder.Create(authContext.ClientId)
-                                    .WithBroker(new BrokerOptions(BrokerOptions.OperatingSystems.Windows))
-                                    .Build();
-
-                    AuthenticationResult authResult = await Task.Run<AuthenticationResult>(() => {
-                        return pca.AcquireTokenInteractive(authContext.Scopes)
-                                                .WithParentActivityOrWindow(parentWindowHandle)
-                                                .ExecuteAsync();
-                        });
-                    AuthRecord authRecord = new()
+                    authRecord = await Task.Run(() =>
                     {
-                        Username = authResult.Account.Username,
-                        Authority = authResult.Account.Environment,
-                        TenantId = authResult.TenantId,
-                        ClientId = authContext.ClientId
-                    };
+                        // Run the thread in MTA.
+                        return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                    });
                 }
                 else
                 {
-                    var authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
-                    await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
+                    authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
                 }
+                await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
                 return interactiveBrowserCredential;
             }
 
@@ -209,10 +188,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         private static TokenCachePersistenceOptions GetTokenCachePersistenceOptions(IAuthContext authContext)
         {
-            if (authContext.ContextScope == ContextScope.Process)
-                return GraphSession.Instance.InMemoryTokenCache.GetTokenCachePersistenceOptions();
-
-            return new TokenCachePersistenceOptions { Name = Constants.CacheName };
+            return authContext.ContextScope == ContextScope.Process
+                ? GraphSession.Instance.InMemoryTokenCache.GetTokenCachePersistenceOptions()
+                : new TokenCachePersistenceOptions { Name = Constants.CacheName };
         }
 
         /// <summary>
@@ -326,10 +304,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             string audience = authContext.TenantId ?? Constants.DefaultTenant;
-            if (GraphSession.Instance.Environment != null)
-                return $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}";
-
-            return $"{Constants.DefaultAzureADEndpoint}/{audience}";
+            return GraphSession.Instance.Environment != null
+                ? $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}"
+                : $"{Constants.DefaultAzureADEndpoint}/{audience}";
         }
 
         /// <summary>
@@ -337,6 +314,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// Priority is Name, ThumbPrint, then In-Memory Cert
         /// </summary>
         /// <param name="authContext">Current <see cref="IAuthContext"/> context</param>
+        /// <returns>A <see cref="X509Certificate2"/> based on provided <see cref="IAuthContext"/> context</returns>
         /// <returns>A <see cref="X509Certificate2"/> based on provided <see cref="IAuthContext"/> context</returns>
         private static X509Certificate2 GetCertificate(IAuthContext authContext)
         {
@@ -462,19 +440,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (File.Exists(Constants.AuthRecordPath))
                 File.Delete(Constants.AuthRecordPath);
             return Task.CompletedTask;
-        }
-
-        public class AuthRecord : IAuthRecord
-        {
-            public AuthRecord()
-            {
-            }
-            public string Authority { get; set; }
-            public string ClientId { get; set; }
-            public string HomeAccountId { get; set; }
-            public string TenantId { get; set; }
-            public string Username { get; set; }
-            public string Version { get; set; } = "1.0";
         }
     }
 }
