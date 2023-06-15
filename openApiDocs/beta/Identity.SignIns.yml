@@ -7845,11 +7845,11 @@ paths:
     get:
       tags:
         - identity.conditionalAccessRoot
-      summary: Get ipNamedLocation
-      description: Retrieve the properties and relationships of an ipNamedLocation object.
+      summary: Get namedLocation
+      description: Retrieve the properties and relationships of a namedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/namedlocation-get?view=graph-rest-1.0
       operationId: identity.conditionalAccess_GetNamedLocation
       parameters:
         - name: namedLocation-id
@@ -7900,11 +7900,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update countryNamedLocation
-      description: Update the properties of a countryNamedLocation object.
+      summary: Update ipNamedlocation
+      description: Update the properties of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -7935,11 +7935,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete namedLocation
-      description: Delete a namedLocation object.
+      summary: Delete ipNamedLocation
+      description: Delete an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -8575,11 +8575,11 @@ paths:
     get:
       tags:
         - identity.customAuthenticationExtension
-      summary: Get customAuthenticationExtension
-      description: Read the properties and relationships of a customAuthenticationExtension object.
+      summary: Get authenticationEventListener
+      description: Read the properties and relationships of an authenticationEventListener object. The **@odata.type** property in the response object indicates the type of the authenticationEventListener object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0
       operationId: identity_GetCustomAuthenticationExtension
       parameters:
         - name: customAuthenticationExtension-id
@@ -10505,11 +10505,11 @@ paths:
     get:
       tags:
         - identityProtection.riskyUser
-      summary: List riskyUsers
-      description: Retrieve the properties and relationships of a collection of **riskyUser** objects.
+      summary: Get riskyUser
+      description: Retrieve the properties and relationships of a **riskyUser** object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0
       operationId: identityProtection_ListRiskyUser
       parameters:
         - $ref: '#/components/parameters/top'
@@ -23276,7 +23276,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicy
       summary: List roleManagementPolicies
-      description: 'Get role management policies and their details. This API only applies to Azure AD roles. To retrieve policies that apply to Azure RBAC, use the Azure REST PIM API for role management policies.'
+      description: 'Get the details of the policies in PIM that can be applied to Azure AD roles or group membership or ownership. To retrieve policies that apply to Azure RBAC, use the Azure REST PIM API for role management policies.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicies?view=graph-rest-1.0
@@ -23384,11 +23384,8 @@ paths:
     get:
       tags:
         - policies.unifiedRoleManagementPolicy
-      summary: Get unifiedRoleManagementPolicy
-      description: 'Retrieve the details of a role management policy. To read a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.'
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-get?view=graph-rest-1.0
+      summary: Get roleManagementPolicies from policies
+      description: Represents the role management policies.
       operationId: policy_GetRoleManagementPolicy
       parameters:
         - name: unifiedRoleManagementPolicy-id
@@ -24043,7 +24040,7 @@ paths:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
       summary: List roleManagementPolicyAssignments
-      description: Get the details of all role management policy assignments including the policies and rules associated with the Azure AD roles.
+      description: Get the details of all role management policy assignments made in PIM for Azure AD roles and PIM for groups.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/policyroot-list-rolemanagementpolicyassignments?view=graph-rest-1.0
@@ -24140,11 +24137,8 @@ paths:
     get:
       tags:
         - policies.unifiedRoleManagementPolicyAssignment
-      summary: Get unifiedRoleManagementPolicyAssignment
-      description: Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-get?view=graph-rest-1.0
+      summary: Get roleManagementPolicyAssignments from policies
+      description: Represents the role management policy assignments.
       operationId: policy_GetRoleManagementPolicyAssignment
       parameters:
         - name: unifiedRoleManagementPolicyAssignment-id
@@ -33707,6 +33701,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -33741,7 +33736,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -35048,7 +35043,7 @@ components:
               description: The identifier of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
             scopeType:
               type: string
-              description: 'The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.'
+              description: 'The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.'
             effectiveRules:
               type: array
               items:
@@ -35084,14 +35079,14 @@ components:
               description: The id of the policy. Inherited from entity.
             roleDefinitionId:
               type: string
-              description: 'The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).'
+              description: 'For Azure AD roles policy, it''s the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it''s either member or owner. Supports $filter (eq).'
               nullable: true
             scopeId:
               type: string
               description: The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
             scopeType:
               type: string
-              description: 'The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.'
+              description: 'The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group. Required.'
             policy:
               $ref: '#/components/schemas/microsoft.graph.unifiedRoleManagementPolicy'
           additionalProperties:
@@ -35511,6 +35506,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isRooted:
               type: boolean
@@ -37869,6 +37865,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -39892,6 +39889,7 @@ components:
               nullable: true
             allowRecording:
               type: boolean
+              description: Indicates whether recording is enabled for the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
@@ -39899,6 +39897,7 @@ components:
               nullable: true
             allowTranscription:
               type: boolean
+              description: Indicates whether transcription is enabled for the meeting.
               nullable: true
             alternativeRecording:
               type: string
@@ -40824,11 +40823,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -59426,6 +59425,7 @@ components:
           items:
             type: string
             nullable: true
+          description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
       additionalProperties:
         type: object
     microsoft.graph.insightIdentity:
@@ -59821,18 +59821,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinition'
+          description: Defines attributes of the object.
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadataEntry'
+          description: Metadata for the given object.
         name:
           type: string
+          description: Name of the object. Must be unique within a directory definition. Not nullable.
           nullable: true
         supportedApis:
           type: array
           items:
             type: string
             nullable: true
+          description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
     microsoft.graph.workbookFilter:
@@ -60388,14 +60392,17 @@ components:
       properties:
         expression:
           type: string
+          description: Equivalent expression representation of this attributeMappingSource object.
           nullable: true
         name:
           type: string
+          description: 'Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.'
           nullable: true
         parameters:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
+          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
       additionalProperties:

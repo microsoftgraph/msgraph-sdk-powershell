@@ -2693,11 +2693,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -8175,11 +8175,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: "Update the role of a conversationMember in a \nteam.\nor channel."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.channel_UpdateMember
       parameters:
         - name: group-id
@@ -8453,11 +8453,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: group.team.channel_CreateMessage
       parameters:
         - name: group-id
@@ -14393,11 +14393,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: "Update the role of a conversationMember in a \nteam.\nor channel."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.primaryChannel_UpdateMember
       parameters:
         - name: group-id
@@ -14639,11 +14639,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: group.team.primaryChannel_CreateMessage
       parameters:
         - name: group-id
@@ -20906,6 +20906,148 @@ paths:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /teams:
+    get:
+      tags:
+        - teams.team
+      summary: List teams
+      description: List all teams in an organization.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teams-list?view=graph-rest-1.0
+      operationId: team_ListTeam
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - classification
+                - classification desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - discoverySettings
+                - discoverySettings desc
+                - displayName
+                - displayName desc
+                - funSettings
+                - funSettings desc
+                - guestSettings
+                - guestSettings desc
+                - internalId
+                - internalId desc
+                - isArchived
+                - isArchived desc
+                - isMembershipLimitedToOwners
+                - isMembershipLimitedToOwners desc
+                - memberSettings
+                - memberSettings desc
+                - messagingSettings
+                - messagingSettings desc
+                - specialization
+                - specialization desc
+                - summary
+                - summary desc
+                - tenantId
+                - tenantId desc
+                - visibility
+                - visibility desc
+                - webUrl
+                - webUrl desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - classification
+                - createdDateTime
+                - description
+                - discoverySettings
+                - displayName
+                - funSettings
+                - guestSettings
+                - internalId
+                - isArchived
+                - isMembershipLimitedToOwners
+                - memberSettings
+                - messagingSettings
+                - specialization
+                - summary
+                - tenantId
+                - visibility
+                - webUrl
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - owners
+                - permissionGrants
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - templateDefinition
+                - schedule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - allChannels
+                - channels
+                - group
+                - incomingChannels
+                - installedApps
+                - members
+                - operations
+                - owners
+                - permissionGrants
+                - photo
+                - primaryChannel
+                - tags
+                - template
+                - templateDefinition
+                - schedule
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.teamCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
     post:
       tags:
         - teams.team
@@ -20936,7 +21078,8 @@ paths:
     get:
       tags:
         - teams.team
-      summary: Get entity from teams by key
+      summary: Get team
+      description: Retrieve the properties and relationships of the specified team.
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/team-get?view=graph-rest-1.0
@@ -22013,11 +22156,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: "Update the role of a conversationMember in a \nteam.\nor channel."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id
@@ -22355,11 +22498,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: team.channel_CreateMessage
       parameters:
         - name: team-id
@@ -30256,11 +30399,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: "Update the role of a conversationMember in a \nteam.\nor channel."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.primaryChannel_UpdateMember
       parameters:
         - name: team-id
@@ -30558,11 +30701,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: team.primaryChannel_CreateMessage
       parameters:
         - name: team-id
@@ -39116,11 +39259,11 @@ paths:
     patch:
       tags:
         - teamwork.deletedTeam
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: "Update the role of a conversationMember in a \nteam.\nor channel."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_UpdateMember
       parameters:
         - name: deletedTeam-id
@@ -39458,11 +39601,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_CreateMessage
       parameters:
         - name: deletedTeam-id
@@ -46377,11 +46520,11 @@ paths:
     patch:
       tags:
         - teamwork.teamTemplate
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: "Update the role of a conversationMember in a \nteam.\nor channel."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: teamwork.teamTemplate.definition.teamDefinition.channel_UpdateMember
       parameters:
         - name: teamTemplate-id
@@ -46759,11 +46902,11 @@ paths:
     post:
       tags:
         - teamwork.teamTemplate
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: teamwork.teamTemplate.definition.teamDefinition.channel_CreateMessage
       parameters:
         - name: teamTemplate-id
@@ -55676,11 +55819,11 @@ paths:
     patch:
       tags:
         - teamwork.teamTemplate
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: "Update the role of a conversationMember in a \nteam.\nor channel."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_UpdateMember
       parameters:
         - name: teamTemplate-id
@@ -56018,11 +56161,11 @@ paths:
     post:
       tags:
         - teamwork.teamTemplate
-      summary: Send chatMessage in channel
-      description: Send a new chatMessage in the specified channel.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: teamwork.teamTemplate.definition.teamDefinition.primaryChannel_CreateMessage
       parameters:
         - name: teamTemplate-id
@@ -66163,11 +66306,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send chatMessage in a channel or a chat
-      description: Send a new chatMessage in the specified channel or a chat.
+      summary: Send message in a chat
+      description: Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
       operationId: user.chat_CreateMessage
       parameters:
         - name: user-id
@@ -71602,6 +71745,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -72038,6 +72182,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -72072,7 +72217,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -73714,11 +73859,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -78220,6 +78365,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isRooted:
               type: boolean
@@ -78367,6 +78513,7 @@ components:
               nullable: true
             allowRecording:
               type: boolean
+              description: Indicates whether recording is enabled for the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
@@ -78374,6 +78521,7 @@ components:
               nullable: true
             allowTranscription:
               type: boolean
+              description: Indicates whether transcription is enabled for the meeting.
               nullable: true
             alternativeRecording:
               type: string
@@ -79674,6 +79822,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamCollectionResponse:
+      title: Collection of team
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.team'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.deletedTeamCollectionResponse:
       title: Collection of deletedTeam
       type: object
@@ -79747,19 +79908,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.teamCollectionResponse:
-      title: Collection of team
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.team'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -95303,6 +95451,7 @@ components:
           items:
             type: string
             nullable: true
+          description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
       additionalProperties:
         type: object
     microsoft.graph.insightIdentity:
@@ -95671,18 +95820,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinition'
+          description: Defines attributes of the object.
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadataEntry'
+          description: Metadata for the given object.
         name:
           type: string
+          description: Name of the object. Must be unique within a directory definition. Not nullable.
           nullable: true
         supportedApis:
           type: array
           items:
             type: string
             nullable: true
+          description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
     microsoft.graph.workbookChartGridlinesFormat:
@@ -95863,14 +96016,17 @@ components:
       properties:
         expression:
           type: string
+          description: Equivalent expression representation of this attributeMappingSource object.
           nullable: true
         name:
           type: string
+          description: 'Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.'
           nullable: true
         parameters:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
+          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
       additionalProperties:
@@ -96185,6 +96341,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.teamworkTagMemberCollectionResponse'
+    microsoft.graph.teamCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.teamCollectionResponse'
     microsoft.graph.deletedTeamCollectionResponse:
       description: Retrieved collection
       content:
@@ -96221,12 +96383,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.workforceIntegrationCollectionResponse'
-    microsoft.graph.teamCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.teamCollectionResponse'
     microsoft.graph.associatedTeamInfoCollectionResponse:
       description: Retrieved collection
       content:

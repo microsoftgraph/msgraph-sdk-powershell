@@ -11905,10 +11905,7 @@ paths:
                 - uploadState
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
         - name: $expand
           in: query
@@ -11923,10 +11920,7 @@ paths:
                 - '*'
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
       responses:
         2XX:
@@ -12007,10 +12001,7 @@ paths:
                 - uploadState
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
         - name: $expand
           in: query
@@ -12025,10 +12016,7 @@ paths:
                 - '*'
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
       responses:
         2XX:
@@ -12523,515 +12511,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get deviceStatuses from deviceAppManagement
-      description: The list of installation states for this mobile app.
-      operationId: deviceAppManagement.mobileApp_ListDeviceStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - deviceId
-                - deviceId desc
-                - deviceName
-                - deviceName desc
-                - displayVersion
-                - displayVersion desc
-                - errorCode
-                - errorCode desc
-                - installState
-                - installState desc
-                - installStateDetail
-                - installStateDetail desc
-                - lastSyncDateTime
-                - lastSyncDateTime desc
-                - mobileAppInstallStatusValue
-                - mobileAppInstallStatusValue desc
-                - osDescription
-                - osDescription desc
-                - osVersion
-                - osVersion desc
-                - userName
-                - userName desc
-                - userPrincipalName
-                - userPrincipalName desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deviceId
-                - deviceName
-                - displayVersion
-                - errorCode
-                - installState
-                - installStateDetail
-                - lastSyncDateTime
-                - mobileAppInstallStatusValue
-                - osDescription
-                - osVersion
-                - userName
-                - userPrincipalName
-                - app
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - app
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.mobileAppInstallStatusCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Create new navigation property to deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApp_CreateDeviceStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get deviceStatuses from deviceAppManagement
-      description: The list of installation states for this mobile app.
-      operationId: deviceAppManagement.mobileApp_GetDeviceStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: mobileAppInstallStatus-id
-          in: path
-          description: The unique identifier of mobileAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileAppInstallStatus
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deviceId
-                - deviceName
-                - displayVersion
-                - errorCode
-                - installState
-                - installStateDetail
-                - lastSyncDateTime
-                - mobileAppInstallStatusValue
-                - osDescription
-                - osVersion
-                - userName
-                - userPrincipalName
-                - app
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - app
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Update the navigation property deviceStatuses in deviceAppManagement
-      operationId: deviceAppManagement.mobileApp_UpdateDeviceStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: mobileAppInstallStatus-id
-          in: path
-          description: The unique identifier of mobileAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileAppInstallStatus
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Delete navigation property deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApp_DeleteDeviceStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: mobileAppInstallStatus-id
-          in: path
-          description: The unique identifier of mobileAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileAppInstallStatus
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/{mobileAppInstallStatus-id}/app':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get app from deviceAppManagement
-      description: The navigation link to the mobile app.
-      operationId: deviceAppManagement.mobileApp.deviceStatus_GetApp
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: mobileAppInstallStatus-id
-          in: path
-          description: The unique identifier of mobileAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileAppInstallStatus
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdDateTime
-                - dependentAppCount
-                - description
-                - developer
-                - displayName
-                - informationUrl
-                - isAssigned
-                - isFeatured
-                - largeIcon
-                - lastModifiedDateTime
-                - notes
-                - owner
-                - privacyInformationUrl
-                - publisher
-                - publishingState
-                - roleScopeTagIds
-                - supersededAppCount
-                - supersedingAppCount
-                - uploadState
-                - assignments
-                - categories
-                - deviceStatuses
-                - installSummary
-                - relationships
-                - userStatuses
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - assignments
-                - categories
-                - deviceStatuses
-                - installSummary
-                - relationships
-                - userStatuses
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileApp'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/deviceStatuses/$count':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get the number of the resource
-      operationId: deviceAppManagement.mobileApp.deviceStatus_GetCount
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/installSummary':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get installSummary from deviceAppManagement
-      description: Mobile App Install Summary.
-      operationId: deviceAppManagement.mobileApp_GetInstallSummary
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - failedDeviceCount
-                - failedUserCount
-                - installedDeviceCount
-                - installedUserCount
-                - notApplicableDeviceCount
-                - notApplicableUserCount
-                - notInstalledDeviceCount
-                - notInstalledUserCount
-                - pendingInstallDeviceCount
-                - pendingInstallUserCount
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallSummary'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Update the navigation property installSummary in deviceAppManagement
-      operationId: deviceAppManagement.mobileApp_UpdateInstallSummary
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.mobileAppInstallSummary'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallSummary'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Delete navigation property installSummary for deviceAppManagement
-      operationId: deviceAppManagement.mobileApp_DeleteInstallSummary
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.assign':
     post:
       tags:
@@ -13067,65 +12546,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.getRelatedAppStates(userPrincipalName=''{userPrincipalName}'',deviceId=''{deviceId}'')':
-    get:
-      tags:
-        - deviceAppManagement.Functions
-      summary: Invoke function getRelatedAppStates
-      operationId: deviceAppManagement.mobileApp_getRelatedAppState
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userPrincipalName
-          in: path
-          description: 'Usage: userPrincipalName=''{userPrincipalName}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-        - name: deviceId
-          in: path
-          description: 'Usage: deviceId=''{deviceId}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.mobileAppRelationshipState'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   '/deviceAppManagement/mobileApps/{mobileApp-id}/microsoft.graph.managedMobileLobApp':
     get:
       tags:
@@ -13173,10 +12593,7 @@ paths:
                 - uploadState
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
         - name: $expand
           in: query
@@ -13191,10 +12608,7 @@ paths:
                 - '*'
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
       responses:
         2XX:
@@ -13252,10 +12666,7 @@ paths:
                 - uploadState
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
         - name: $expand
           in: query
@@ -13270,10 +12681,7 @@ paths:
                 - '*'
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
       responses:
         2XX:
@@ -13590,822 +12998,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get userStatuses from deviceAppManagement
-      description: The list of installation states for this mobile app.
-      operationId: deviceAppManagement.mobileApp_ListUserStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - failedDeviceCount
-                - failedDeviceCount desc
-                - installedDeviceCount
-                - installedDeviceCount desc
-                - notInstalledDeviceCount
-                - notInstalledDeviceCount desc
-                - userName
-                - userName desc
-                - userPrincipalName
-                - userPrincipalName desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - failedDeviceCount
-                - installedDeviceCount
-                - notInstalledDeviceCount
-                - userName
-                - userPrincipalName
-                - app
-                - deviceStatuses
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - app
-                - deviceStatuses
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.userAppInstallStatusCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Create new navigation property to userStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApp_CreateUserStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get userStatuses from deviceAppManagement
-      description: The list of installation states for this mobile app.
-      operationId: deviceAppManagement.mobileApp_GetUserStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userAppInstallStatus-id
-          in: path
-          description: The unique identifier of userAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userAppInstallStatus
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - failedDeviceCount
-                - installedDeviceCount
-                - notInstalledDeviceCount
-                - userName
-                - userPrincipalName
-                - app
-                - deviceStatuses
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - app
-                - deviceStatuses
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Update the navigation property userStatuses in deviceAppManagement
-      operationId: deviceAppManagement.mobileApp_UpdateUserStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userAppInstallStatus-id
-          in: path
-          description: The unique identifier of userAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userAppInstallStatus
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Delete navigation property userStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApp_DeleteUserStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userAppInstallStatus-id
-          in: path
-          description: The unique identifier of userAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userAppInstallStatus
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/app':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get app from deviceAppManagement
-      description: The navigation link to the mobile app.
-      operationId: deviceAppManagement.mobileApp.userStatus_GetApp
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userAppInstallStatus-id
-          in: path
-          description: The unique identifier of userAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userAppInstallStatus
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdDateTime
-                - dependentAppCount
-                - description
-                - developer
-                - displayName
-                - informationUrl
-                - isAssigned
-                - isFeatured
-                - largeIcon
-                - lastModifiedDateTime
-                - notes
-                - owner
-                - privacyInformationUrl
-                - publisher
-                - publishingState
-                - roleScopeTagIds
-                - supersededAppCount
-                - supersedingAppCount
-                - uploadState
-                - assignments
-                - categories
-                - deviceStatuses
-                - installSummary
-                - relationships
-                - userStatuses
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - assignments
-                - categories
-                - deviceStatuses
-                - installSummary
-                - relationships
-                - userStatuses
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileApp'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get deviceStatuses from deviceAppManagement
-      description: The install state of the app on devices.
-      operationId: deviceAppManagement.mobileApp.userStatus_ListDeviceStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userAppInstallStatus-id
-          in: path
-          description: The unique identifier of userAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userAppInstallStatus
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - deviceId
-                - deviceId desc
-                - deviceName
-                - deviceName desc
-                - displayVersion
-                - displayVersion desc
-                - errorCode
-                - errorCode desc
-                - installState
-                - installState desc
-                - installStateDetail
-                - installStateDetail desc
-                - lastSyncDateTime
-                - lastSyncDateTime desc
-                - mobileAppInstallStatusValue
-                - mobileAppInstallStatusValue desc
-                - osDescription
-                - osDescription desc
-                - osVersion
-                - osVersion desc
-                - userName
-                - userName desc
-                - userPrincipalName
-                - userPrincipalName desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deviceId
-                - deviceName
-                - displayVersion
-                - errorCode
-                - installState
-                - installStateDetail
-                - lastSyncDateTime
-                - mobileAppInstallStatusValue
-                - osDescription
-                - osVersion
-                - userName
-                - userPrincipalName
-                - app
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - app
-              type: string
-      responses:
-        2XX:
-          $ref: '#/components/responses/microsoft.graph.mobileAppInstallStatusCollectionResponse'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Create new navigation property to deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApp.userStatus_CreateDeviceStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userAppInstallStatus-id
-          in: path
-          description: The unique identifier of userAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userAppInstallStatus
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-        required: true
-      responses:
-        2XX:
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get deviceStatuses from deviceAppManagement
-      description: The install state of the app on devices.
-      operationId: deviceAppManagement.mobileApp.userStatus_GetDeviceStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userAppInstallStatus-id
-          in: path
-          description: The unique identifier of userAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userAppInstallStatus
-        - name: mobileAppInstallStatus-id
-          in: path
-          description: The unique identifier of mobileAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileAppInstallStatus
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deviceId
-                - deviceName
-                - displayVersion
-                - errorCode
-                - installState
-                - installStateDetail
-                - lastSyncDateTime
-                - mobileAppInstallStatusValue
-                - osDescription
-                - osVersion
-                - userName
-                - userPrincipalName
-                - app
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - app
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Update the navigation property deviceStatuses in deviceAppManagement
-      operationId: deviceAppManagement.mobileApp.userStatus_UpdateDeviceStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userAppInstallStatus-id
-          in: path
-          description: The unique identifier of userAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userAppInstallStatus
-        - name: mobileAppInstallStatus-id
-          in: path
-          description: The unique identifier of mobileAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileAppInstallStatus
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-        required: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Delete navigation property deviceStatuses for deviceAppManagement
-      operationId: deviceAppManagement.mobileApp.userStatus_DeleteDeviceStatus
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userAppInstallStatus-id
-          in: path
-          description: The unique identifier of userAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userAppInstallStatus
-        - name: mobileAppInstallStatus-id
-          in: path
-          description: The unique identifier of mobileAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileAppInstallStatus
-        - name: If-Match
-          in: header
-          description: ETag
-          style: simple
-          schema:
-            type: string
-      responses:
-        2XX:
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/{mobileAppInstallStatus-id}/app':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get app from deviceAppManagement
-      description: The navigation link to the mobile app.
-      operationId: deviceAppManagement.mobileApp.userStatus.deviceStatus_GetApp
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userAppInstallStatus-id
-          in: path
-          description: The unique identifier of userAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userAppInstallStatus
-        - name: mobileAppInstallStatus-id
-          in: path
-          description: The unique identifier of mobileAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileAppInstallStatus
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdDateTime
-                - dependentAppCount
-                - description
-                - developer
-                - displayName
-                - informationUrl
-                - isAssigned
-                - isFeatured
-                - largeIcon
-                - lastModifiedDateTime
-                - notes
-                - owner
-                - privacyInformationUrl
-                - publisher
-                - publishingState
-                - roleScopeTagIds
-                - supersededAppCount
-                - supersedingAppCount
-                - uploadState
-                - assignments
-                - categories
-                - deviceStatuses
-                - installSummary
-                - relationships
-                - userStatuses
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - assignments
-                - categories
-                - deviceStatuses
-                - installSummary
-                - relationships
-                - userStatuses
-              type: string
-      responses:
-        2XX:
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.mobileApp'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/{userAppInstallStatus-id}/deviceStatuses/$count':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get the number of the resource
-      operationId: deviceAppManagement.mobileApp.userStatus.deviceStatus_GetCount
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - name: userAppInstallStatus-id
-          in: path
-          description: The unique identifier of userAppInstallStatus
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: userAppInstallStatus
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
-  '/deviceAppManagement/mobileApps/{mobileApp-id}/userStatuses/$count':
-    get:
-      tags:
-        - deviceAppManagement.mobileApp
-      summary: Get the number of the resource
-      operationId: deviceAppManagement.mobileApp.userStatus_GetCount
-      parameters:
-        - name: mobileApp-id
-          in: path
-          description: The unique identifier of mobileApp
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: mobileApp
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-      responses:
-        2XX:
-          $ref: '#/components/responses/ODataCountResponse'
-        default:
-          $ref: '#/components/responses/error'
   /deviceAppManagement/mobileApps/$count:
     get:
       tags:
@@ -14420,177 +13012,6 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
-  '/deviceAppManagement/mobileApps/microsoft.graph.getMobileAppCount(status=''{status}'')':
-    get:
-      tags:
-        - deviceAppManagement.Functions
-      summary: Invoke function getMobileAppCount
-      operationId: deviceAppManagement.mobileApp_getMobileAppCount
-      parameters:
-        - name: status
-          in: path
-          description: 'Usage: status=''{status}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  value:
-                    type: integer
-                    format: int64
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/deviceAppManagement/mobileApps/microsoft.graph.getTopMobileApps(status=''{status}'',count={count})':
-    get:
-      tags:
-        - deviceAppManagement.Functions
-      summary: Invoke function getTopMobileApps
-      operationId: deviceAppManagement.mobileApp_getTopMobileApp
-      parameters:
-        - name: status
-          in: path
-          description: 'Usage: status=''{status}'''
-          required: true
-          style: simple
-          schema:
-            type: string
-            nullable: true
-        - name: count
-          in: path
-          description: 'Usage: count={count}'
-          required: true
-          style: simple
-          schema:
-            type: integer
-            format: int64
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - createdDateTime
-                - dependentAppCount
-                - description
-                - developer
-                - displayName
-                - informationUrl
-                - isAssigned
-                - isFeatured
-                - largeIcon
-                - lastModifiedDateTime
-                - notes
-                - owner
-                - privacyInformationUrl
-                - publisher
-                - publishingState
-                - roleScopeTagIds
-                - supersededAppCount
-                - supersedingAppCount
-                - uploadState
-                - assignments
-                - categories
-                - deviceStatuses
-                - installSummary
-                - relationships
-                - userStatuses
-              type: string
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - createdDateTime
-                - createdDateTime desc
-                - dependentAppCount
-                - dependentAppCount desc
-                - description
-                - description desc
-                - developer
-                - developer desc
-                - displayName
-                - displayName desc
-                - informationUrl
-                - informationUrl desc
-                - isAssigned
-                - isAssigned desc
-                - isFeatured
-                - isFeatured desc
-                - largeIcon
-                - largeIcon desc
-                - lastModifiedDateTime
-                - lastModifiedDateTime desc
-                - notes
-                - notes desc
-                - owner
-                - owner desc
-                - privacyInformationUrl
-                - privacyInformationUrl desc
-                - publisher
-                - publisher desc
-                - publishingState
-                - publishingState desc
-                - roleScopeTagIds
-                - roleScopeTagIds desc
-                - supersededAppCount
-                - supersededAppCount desc
-                - supersedingAppCount
-                - supersedingAppCount desc
-                - uploadState
-                - uploadState desc
-              type: string
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of mobileApp
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.mobileApp'
-                  '@odata.nextLink':
-                    type: string
-                    nullable: true
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
   /deviceAppManagement/mobileApps/microsoft.graph.hasPayloadLinks:
     post:
       tags:
@@ -14730,10 +13151,7 @@ paths:
                 - uploadState
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
         - name: $expand
           in: query
@@ -14748,10 +13166,7 @@ paths:
                 - '*'
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
       responses:
         2XX:
@@ -14870,10 +13285,7 @@ paths:
                 - uploadState
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
         - name: $expand
           in: query
@@ -14888,10 +13300,7 @@ paths:
                 - '*'
                 - assignments
                 - categories
-                - deviceStatuses
-                - installSummary
                 - relationships
-                - userStatuses
               type: string
       responses:
         2XX:
@@ -29982,25 +28391,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppCategory'
               description: The list of categories for this app.
               x-ms-navigationProperty: true
-            deviceStatuses:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-              description: The list of installation states for this mobile app.
-              x-ms-navigationProperty: true
-            installSummary:
-              $ref: '#/components/schemas/microsoft.graph.mobileAppInstallSummary'
             relationships:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
               description: List of relationships for this mobile app.
-              x-ms-navigationProperty: true
-            userStatuses:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
-              description: The list of installation states for this mobile app.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -30026,171 +28421,6 @@ components:
           additionalProperties:
             type: object
           description: A class containing the properties used for Group Assignment of a Mobile App.
-    microsoft.graph.mobileAppInstallStatus:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: mobileAppInstallStatus
-          type: object
-          properties:
-            deviceId:
-              type: string
-              description: Device ID
-              nullable: true
-            deviceName:
-              type: string
-              description: Device name
-              nullable: true
-            displayVersion:
-              type: string
-              description: Human readable version of the application
-              nullable: true
-            errorCode:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: The error code for install or uninstall failures.
-              format: int32
-            installState:
-              $ref: '#/components/schemas/microsoft.graph.resultantAppState'
-            installStateDetail:
-              $ref: '#/components/schemas/microsoft.graph.resultantAppStateDetail'
-            lastSyncDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Last sync date time
-              format: date-time
-            mobileAppInstallStatusValue:
-              $ref: '#/components/schemas/microsoft.graph.resultantAppState'
-            osDescription:
-              type: string
-              description: OS Description
-              nullable: true
-            osVersion:
-              type: string
-              description: OS Version
-              nullable: true
-            userName:
-              type: string
-              description: Device User Name
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: User Principal Name
-              nullable: true
-            app:
-              $ref: '#/components/schemas/microsoft.graph.mobileApp'
-          additionalProperties:
-            type: object
-          description: 'Contains properties for the installation state of a mobile app for a device. This will be deprecated starting May, 2023 (Intune Release 2305).'
-    microsoft.graph.mobileAppInstallSummary:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: mobileAppInstallSummary
-          type: object
-          properties:
-            failedDeviceCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Devices that have failed to install this app.
-              format: int32
-            failedUserCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Users that have 1 or more device that failed to install this app.
-              format: int32
-            installedDeviceCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Devices that have successfully installed this app.
-              format: int32
-            installedUserCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Users whose devices have all succeeded to install this app.
-              format: int32
-            notApplicableDeviceCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Devices that are not applicable for this app.
-              format: int32
-            notApplicableUserCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Users whose devices were all not applicable for this app.
-              format: int32
-            notInstalledDeviceCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Devices that does not have this app installed.
-              format: int32
-            notInstalledUserCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Users that have 1 or more devices that did not install this app.
-              format: int32
-            pendingInstallDeviceCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Devices that have been notified to install this app.
-              format: int32
-            pendingInstallUserCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.
-              format: int32
-          additionalProperties:
-            type: object
-          description: 'Contains properties for the installation summary of a mobile app. This will be deprecated starting May, 2023 (Intune Release 2305).'
-    microsoft.graph.mobileAppRelationshipState:
-      title: mobileAppRelationshipState
-      type: object
-      properties:
-        deviceId:
-          type: string
-          description: The corresponding device id.
-          nullable: true
-        errorCode:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The error code for install or uninstall failures of target app.
-          format: int32
-        installState:
-          $ref: '#/components/schemas/microsoft.graph.resultantAppState'
-        installStateDetail:
-          $ref: '#/components/schemas/microsoft.graph.resultantAppStateDetail'
-        sourceIds:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: The collection of source mobile app's ids.
-        targetDisplayName:
-          type: string
-          description: The related target app's display name.
-          nullable: true
-        targetId:
-          type: string
-          description: The related target app's id.
-          nullable: true
-        targetLastSyncDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: The last sync time of the target app.
-          format: date-time
-      additionalProperties:
-        type: object
-      description: 'Describes the installation status details of the child app in the context of UPN and device id. This will be deprecated starting May, 2023 (Intune Release 2305). '
     microsoft.graph.managedMobileLobApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.managedApp'
@@ -30272,49 +28502,6 @@ components:
           additionalProperties:
             type: object
           description: Describes a relationship between two mobile apps.
-    microsoft.graph.userAppInstallStatus:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: userAppInstallStatus
-          type: object
-          properties:
-            failedDeviceCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Failed Device Count.
-              format: int32
-            installedDeviceCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Installed Device Count.
-              format: int32
-            notInstalledDeviceCount:
-              maximum: 2147483647
-              minimum: -2147483648
-              type: integer
-              description: Not installed device count.
-              format: int32
-            userName:
-              type: string
-              description: User name.
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: User Principal Name.
-              nullable: true
-            app:
-              $ref: '#/components/schemas/microsoft.graph.mobileApp'
-            deviceStatuses:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-              description: The install state of the app on devices.
-              x-ms-navigationProperty: true
-          additionalProperties:
-            type: object
-          description: 'Contains properties for the installation status for a user. This will be deprecated starting May, 2023 (Intune Release 2305).'
     microsoft.graph.policySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32941,196 +31128,6 @@ components:
       additionalProperties:
         type: object
       description: Abstract class to contain properties used to assign a mobile app to a group.
-    microsoft.graph.resultantAppState:
-      title: resultantAppState
-      enum:
-        - notApplicable
-        - installed
-        - failed
-        - notInstalled
-        - uninstallFailed
-        - pendingInstall
-        - unknown
-      type: string
-      description: 'A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.'
-      x-ms-enum:
-        name: resultantAppState
-        modelAsString: false
-        values:
-          - value: notApplicable
-            description: The application is not applicable.
-            name: notApplicable
-          - value: installed
-            description: The application is installed with no errors.
-            name: installed
-          - value: failed
-            description: The application failed to install.
-            name: failed
-          - value: notInstalled
-            description: The application is not installed.
-            name: notInstalled
-          - value: uninstallFailed
-            description: The application failed to uninstall.
-            name: uninstallFailed
-          - value: pendingInstall
-            description: The installation of the application is in progress.
-            name: pendingInstall
-          - value: unknown
-            description: The status of the application is unknown.
-            name: unknown
-    microsoft.graph.resultantAppStateDetail:
-      title: resultantAppStateDetail
-      enum:
-        - processorArchitectureNotApplicable
-        - minimumDiskSpaceNotMet
-        - minimumOsVersionNotMet
-        - minimumPhysicalMemoryNotMet
-        - minimumLogicalProcessorCountNotMet
-        - minimumCpuSpeedNotMet
-        - platformNotApplicable
-        - fileSystemRequirementNotMet
-        - registryRequirementNotMet
-        - powerShellScriptRequirementNotMet
-        - supersedingAppsNotApplicable
-        - noAdditionalDetails
-        - dependencyFailedToInstall
-        - dependencyWithRequirementsNotMet
-        - dependencyPendingReboot
-        - dependencyWithAutoInstallDisabled
-        - supersededAppUninstallFailed
-        - supersededAppUninstallPendingReboot
-        - removingSupersededApps
-        - iosAppStoreUpdateFailedToInstall
-        - vppAppHasUpdateAvailable
-        - userRejectedUpdate
-        - uninstallPendingReboot
-        - supersedingAppsDetected
-        - supersededAppsDetected
-        - seeInstallErrorCode
-        - autoInstallDisabled
-        - managedAppNoLongerPresent
-        - userRejectedInstall
-        - userIsNotLoggedIntoAppStore
-        - untargetedSupersedingAppsDetected
-        - appRemovedBySupersedence
-        - seeUninstallErrorCode
-        - pendingReboot
-        - installingDependencies
-        - contentDownloaded
-      type: string
-      description: Enum indicating additional details regarding why an application has a particular install state.
-      x-ms-enum:
-        name: resultantAppStateDetail
-        modelAsString: false
-        values:
-          - value: processorArchitectureNotApplicable
-            description: Device architecture (e.g. x86/amd64) is not applicable for the application.
-            name: processorArchitectureNotApplicable
-          - value: minimumDiskSpaceNotMet
-            description: Available disk space on the target device is less than the configured minimum.
-            name: minimumDiskSpaceNotMet
-          - value: minimumOsVersionNotMet
-            description: OS version on the target device is less than the configured minimum.
-            name: minimumOsVersionNotMet
-          - value: minimumPhysicalMemoryNotMet
-            description: Amount of RAM on the target device is less than the configured minimum.
-            name: minimumPhysicalMemoryNotMet
-          - value: minimumLogicalProcessorCountNotMet
-            description: Count of logical processors on the target device is less than the configured minimum.
-            name: minimumLogicalProcessorCountNotMet
-          - value: minimumCpuSpeedNotMet
-            description: CPU speed on the target device is less than the configured minimum.
-            name: minimumCpuSpeedNotMet
-          - value: platformNotApplicable
-            description: Application is not applicable to this platform. (e.g. Android app targeted to IOS)
-            name: platformNotApplicable
-          - value: fileSystemRequirementNotMet
-            description: File system requirement rule is not met
-            name: fileSystemRequirementNotMet
-          - value: registryRequirementNotMet
-            description: Registry requirement rule is not met
-            name: registryRequirementNotMet
-          - value: powerShellScriptRequirementNotMet
-            description: PowerShell script requirement rule is not met
-            name: powerShellScriptRequirementNotMet
-          - value: supersedingAppsNotApplicable
-            description: 'All targeted, superseding apps are not applicable.'
-            name: supersedingAppsNotApplicable
-          - value: noAdditionalDetails
-            description: No additional details are available.
-            name: noAdditionalDetails
-          - value: dependencyFailedToInstall
-            description: One or more of the application's dependencies failed to install.
-            name: dependencyFailedToInstall
-          - value: dependencyWithRequirementsNotMet
-            description: One or more of the application's dependencies have requirements which are not met.
-            name: dependencyWithRequirementsNotMet
-          - value: dependencyPendingReboot
-            description: One or more of the application's dependencies require a device reboot to complete installation.
-            name: dependencyPendingReboot
-          - value: dependencyWithAutoInstallDisabled
-            description: One or more of the application's dependencies are configured to not automatically install.
-            name: dependencyWithAutoInstallDisabled
-          - value: supersededAppUninstallFailed
-            description: A superseded app failed to uninstall.
-            name: supersededAppUninstallFailed
-          - value: supersededAppUninstallPendingReboot
-            description: A superseded app requires a reboot to complete uninstall.
-            name: supersededAppUninstallPendingReboot
-          - value: removingSupersededApps
-            description: Superseded apps are being removed.
-            name: removingSupersededApps
-          - value: iosAppStoreUpdateFailedToInstall
-            description: The latest version of the app failed to update from an earlier version.
-            name: iosAppStoreUpdateFailedToInstall
-          - value: vppAppHasUpdateAvailable
-            description: An update is available.
-            name: vppAppHasUpdateAvailable
-          - value: userRejectedUpdate
-            description: The user rejected the app update.
-            name: userRejectedUpdate
-          - value: uninstallPendingReboot
-            description: 'To complete the removal of the app, the device must be rebooted.'
-            name: uninstallPendingReboot
-          - value: supersedingAppsDetected
-            description: Superseding applications are detected.
-            name: supersedingAppsDetected
-          - value: supersededAppsDetected
-            description: Superseded applications are detected.
-            name: supersededAppsDetected
-          - value: seeInstallErrorCode
-            description: Application failed to install. See error code property for more details.
-            name: seeInstallErrorCode
-          - value: autoInstallDisabled
-            description: Application is configured to not be automatically installed.
-            name: autoInstallDisabled
-          - value: managedAppNoLongerPresent
-            description: The app is managed but no longer installed.
-            name: managedAppNoLongerPresent
-          - value: userRejectedInstall
-            description: The user rejected the app install.
-            name: userRejectedInstall
-          - value: userIsNotLoggedIntoAppStore
-            description: The user must log into the App Store to install app.
-            name: userIsNotLoggedIntoAppStore
-          - value: untargetedSupersedingAppsDetected
-            description: 'App cannot be installed. An untargeted, superseding app was detected, which created a conflict.'
-            name: untargetedSupersedingAppsDetected
-          - value: appRemovedBySupersedence
-            description: App was removed in order to install a superseding app.
-            name: appRemovedBySupersedence
-          - value: seeUninstallErrorCode
-            description: Application failed to uninstall. See error code property for more details.
-            name: seeUninstallErrorCode
-          - value: pendingReboot
-            description: Device must be rebooted to complete installation of the application.
-            name: pendingReboot
-          - value: installingDependencies
-            description: One or more of the application's dependencies are installing.
-            name: installingDependencies
-          - value: contentDownloaded
-            description: Application content was downloaded to the device.
-            name: contentDownloaded
     microsoft.graph.managedApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.mobileApp'
@@ -33367,7 +31364,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
           nullable: true
       additionalProperties:
         type: object
@@ -35139,6 +33136,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -35173,7 +33171,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -37057,19 +35055,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.mobileAppInstallStatusCollectionResponse:
-      title: Collection of mobileAppInstallStatus
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatus'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.mobileAppRelationshipCollectionResponse:
       title: Collection of mobileAppRelationship
       type: object
@@ -37078,19 +35063,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.mobileAppRelationship'
-        '@odata.nextLink':
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.userAppInstallStatusCollectionResponse:
-      title: Collection of userAppInstallStatus
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.userAppInstallStatus'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -39829,6 +37801,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -41231,6 +39204,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isRooted:
               type: boolean
@@ -41378,6 +39352,7 @@ components:
               nullable: true
             allowRecording:
               type: boolean
+              description: Indicates whether recording is enabled for the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
@@ -41385,6 +39360,7 @@ components:
               nullable: true
             allowTranscription:
               type: boolean
+              description: Indicates whether transcription is enabled for the meeting.
               nullable: true
             alternativeRecording:
               type: string
@@ -41869,6 +39845,43 @@ components:
         - deviceConfiguration
         - deviceIntent
       type: string
+    microsoft.graph.resultantAppState:
+      title: resultantAppState
+      enum:
+        - notApplicable
+        - installed
+        - failed
+        - notInstalled
+        - uninstallFailed
+        - pendingInstall
+        - unknown
+      type: string
+      description: 'A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.'
+      x-ms-enum:
+        name: resultantAppState
+        modelAsString: false
+        values:
+          - value: notApplicable
+            description: The application is not applicable.
+            name: notApplicable
+          - value: installed
+            description: The application is installed with no errors.
+            name: installed
+          - value: failed
+            description: The application failed to install.
+            name: failed
+          - value: notInstalled
+            description: The application is not installed.
+            name: notInstalled
+          - value: uninstallFailed
+            description: The application failed to uninstall.
+            name: uninstallFailed
+          - value: pendingInstall
+            description: The installation of the application is in progress.
+            name: pendingInstall
+          - value: unknown
+            description: The status of the application is unknown.
+            name: unknown
     microsoft.graph.mobileAppIntent:
       title: mobileAppIntent
       enum:
@@ -42827,11 +40840,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -56371,6 +54384,7 @@ components:
           items:
             type: string
             nullable: true
+          description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
       additionalProperties:
         type: object
     microsoft.graph.insightIdentity:
@@ -56766,18 +54780,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinition'
+          description: Defines attributes of the object.
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadataEntry'
+          description: Metadata for the given object.
         name:
           type: string
+          description: Name of the object. Must be unique within a directory definition. Not nullable.
           nullable: true
         supportedApis:
           type: array
           items:
             type: string
             nullable: true
+          description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
     microsoft.graph.workbookFilter:
@@ -57333,14 +55351,17 @@ components:
       properties:
         expression:
           type: string
+          description: Equivalent expression representation of this attributeMappingSource object.
           nullable: true
         name:
           type: string
+          description: 'Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.'
           nullable: true
         parameters:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
+          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
       additionalProperties:
@@ -57751,24 +55772,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.mobileAppAssignmentCollectionResponse'
-    microsoft.graph.mobileAppInstallStatusCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.mobileAppInstallStatusCollectionResponse'
     microsoft.graph.mobileAppRelationshipCollectionResponse:
       description: Retrieved collection
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.mobileAppRelationshipCollectionResponse'
-    microsoft.graph.userAppInstallStatusCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.userAppInstallStatusCollectionResponse'
     microsoft.graph.managedMobileLobAppCollectionResponse:
       description: Retrieved collection
       content:

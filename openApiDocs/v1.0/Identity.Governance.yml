@@ -4005,8 +4005,11 @@ paths:
     get:
       tags:
         - identityGovernance.accessReviewSet
-      summary: Get decisions from identityGovernance
-      description: 'Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.'
+      summary: Get accessReviewInstanceDecisionItem
+      description: Read the properties and relationships of an accessReviewInstanceDecisionItem object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0
       operationId: identityGovernance.accessReview.definition.instance.stage_GetDecision
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -10449,6 +10452,10 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action reprocess
+      description: 'In Azure AD entitlement management, callers can automatically retry a user''s request for access to an access package. It is performed on an accessPackageAssignmentRequest object whose **requestState** is in a `DeliveryFailed` or `PartiallyDelivered` state.  You can only reprocess a request within 14 days from the time the original request was completed. For requests completed more than 14 days, you will need to ask the users to cancel the request(s) and make a new request in the MyAccess portal.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/accesspackageassignmentrequest-reprocess?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignmentRequest_reprocess
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -10988,6 +10995,10 @@ paths:
       tags:
         - identityGovernance.Actions
       summary: Invoke action reprocess
+      description: 'In Azure AD entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package. The **state** of the access package assignment must be `Delivered` for the administrator to reprocess the user''s assignment. Only admins with the Access Package Assignment Manager role, or higher, in Azure AD entitlement management can perform this action.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/accesspackageassignment-reprocess?view=graph-rest-1.0
       operationId: identityGovernance.entitlementManagement.assignment_reprocess
       parameters:
         - name: accessPackageAssignment-id
@@ -13543,11 +13554,11 @@ paths:
     get:
       tags:
         - identityGovernance.termsOfUseContainer
-      summary: List files (localized agreement files)
-      description: Retrieve all localized files related to an agreement.
+      summary: Get agreement
+      description: Retrieve the properties and relationships of an agreement object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0
       operationId: identityGovernance.termsGraphOPreUse_GetAgreement
       parameters:
         - name: agreement-id
@@ -32959,7 +32970,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -36202,7 +36213,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string

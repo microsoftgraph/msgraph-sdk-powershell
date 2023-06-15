@@ -5754,11 +5754,11 @@ paths:
     get:
       tags:
         - groups.site
-      summary: List operations on a list
-      description: Get a list of rich long-running operations associated with a list.
+      summary: Get metadata for a list
+      description: 'Returns the metadata for a [list][].'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/list-get?view=graph-rest-1.0
       operationId: group.site_GetList
       parameters:
         - name: group-id
@@ -69400,11 +69400,11 @@ paths:
     get:
       tags:
         - sites.list
-      summary: List operations on a list
-      description: Get a list of rich long-running operations associated with a list.
+      summary: Get metadata for a list
+      description: 'Returns the metadata for a [list][].'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/list-get?view=graph-rest-1.0
       operationId: site_GetList
       parameters:
         - name: site-id
@@ -118191,7 +118191,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -121668,7 +121668,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string

@@ -4924,10 +4924,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: The group's conversations.
+      description: Retrieve the properties and relationships of conversation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -4981,7 +4981,7 @@ paths:
       description: Delete conversation.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0
       operationId: group_DeleteConversation
       parameters:
         - name: group-id
@@ -5328,10 +5328,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.conversation.thread_reply
       parameters:
         - name: group-id
@@ -7405,10 +7405,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.conversation.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -7532,10 +7532,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.conversation.thread.post_reply
       parameters:
         - name: group-id
@@ -26991,6 +26991,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: group.team.channel.message_softDelete
       parameters:
         - name: group-id
@@ -27028,6 +27032,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: group.team.channel.message_undoSoftDelete
       parameters:
         - name: group-id
@@ -27065,6 +27073,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: group.team.channel.message.reply_softDelete
       parameters:
         - name: group-id
@@ -27110,6 +27122,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: group.team.channel.message.reply_undoSoftDelete
       parameters:
         - name: group-id
@@ -28099,6 +28115,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_softDelete
       parameters:
         - name: group-id
@@ -28128,6 +28148,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_undoSoftDelete
       parameters:
         - name: group-id
@@ -28157,6 +28181,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message.reply_softDelete
       parameters:
         - name: group-id
@@ -28194,6 +28222,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message.reply_undoSoftDelete
       parameters:
         - name: group-id
@@ -28818,11 +28850,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversationThread
-      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
+      summary: Get conversation thread
+      description: Get a thread object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -28917,11 +28949,11 @@ paths:
     delete:
       tags:
         - groups.conversationThread
-      summary: Delete conversationThread
+      summary: Delete conversation thread
       description: Delete conversationThread.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0
       operationId: group_DeleteThread
       parameters:
         - name: group-id
@@ -28957,10 +28989,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: "Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachment\nresource. "
+      description: "Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation \nin the request, or, you can specify just the thread without the parent conversation."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/post-post-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0
       operationId: group.thread_reply
       parameters:
         - name: group-id
@@ -30802,10 +30834,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.thread.post.inReplyTo_reply
       parameters:
         - name: group-id
@@ -30913,10 +30945,10 @@ paths:
       tags:
         - groups.Actions
       summary: Invoke action reply
-      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
+      description: 'Reply to a post and add a new post to the specified thread in a group conversation.  You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/post-reply?view=graph-rest-1.0
       operationId: group.thread.post_reply
       parameters:
         - name: group-id
@@ -40192,7 +40224,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string

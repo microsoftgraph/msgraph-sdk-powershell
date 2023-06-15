@@ -6951,6 +6951,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.chat.message_softDelete
       parameters:
         - name: user-id
@@ -6988,6 +6992,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.chat.message_undoSoftDelete
       parameters:
         - name: user-id
@@ -7025,6 +7033,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.chat.message.reply_softDelete
       parameters:
         - name: user-id
@@ -7070,6 +7082,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.chat.message.reply_undoSoftDelete
       parameters:
         - name: user-id
@@ -10410,6 +10426,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_softDelete
       parameters:
         - name: user-id
@@ -10455,6 +10475,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_undoSoftDelete
       parameters:
         - name: user-id
@@ -10500,6 +10524,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message.reply_softDelete
       parameters:
         - name: user-id
@@ -10553,6 +10581,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message.reply_undoSoftDelete
       parameters:
         - name: user-id
@@ -11134,6 +11166,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_softDelete
       parameters:
         - name: user-id
@@ -11171,6 +11207,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_undoSoftDelete
       parameters:
         - name: user-id
@@ -11208,6 +11248,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message.reply_softDelete
       parameters:
         - name: user-id
@@ -11253,6 +11297,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message.reply_undoSoftDelete
       parameters:
         - name: user-id
@@ -14420,6 +14468,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action revokeSignInSessions
+      description: 'Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user''s browser), by resetting the **signInSessionsValidFromDateTime** user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization''s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0
       operationId: user_revokeSignInSession
       parameters:
         - name: user-id
@@ -19144,7 +19196,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -21617,7 +21669,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string

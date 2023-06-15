@@ -9527,7 +9527,11 @@ paths:
     get:
       tags:
         - directory.attributeSet
-      summary: Get attributeSets from directory
+      summary: List attributeSets
+      description: Get a list of the attributeSet objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-1.0
       operationId: directory_ListAttributeSet
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9590,7 +9594,11 @@ paths:
     post:
       tags:
         - directory.attributeSet
-      summary: Create new navigation property to attributeSets for directory
+      summary: Create attributeSet
+      description: Create a new attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-post-attributesets?view=graph-rest-1.0
       operationId: directory_CreateAttributeSet
       requestBody:
         description: New navigation property
@@ -9613,7 +9621,11 @@ paths:
     get:
       tags:
         - directory.attributeSet
-      summary: Get attributeSets from directory
+      summary: Get attributeSet
+      description: Read the properties and relationships of an attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attributeset-get?view=graph-rest-1.0
       operationId: directory_GetAttributeSet
       parameters:
         - name: attributeSet-id
@@ -9663,7 +9675,11 @@ paths:
     patch:
       tags:
         - directory.attributeSet
-      summary: Update the navigation property attributeSets in directory
+      summary: Update attributeSet
+      description: Update the properties of an attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attributeset-update?view=graph-rest-1.0
       operationId: directory_UpdateAttributeSet
       parameters:
         - name: attributeSet-id
@@ -9735,7 +9751,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get customSecurityAttributeDefinitions from directory
+      summary: List customSecurityAttributeDefinitions
+      description: Get a list of the customSecurityAttributeDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-list-customsecurityattributedefinitions?view=graph-rest-1.0
       operationId: directory_ListCustomSecurityAttributeDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9818,7 +9838,11 @@ paths:
     post:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Create new navigation property to customSecurityAttributeDefinitions for directory
+      summary: Create customSecurityAttributeDefinition
+      description: Create a new customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-post-customsecurityattributedefinitions?view=graph-rest-1.0
       operationId: directory_CreateCustomSecurityAttributeDefinition
       requestBody:
         description: New navigation property
@@ -9841,7 +9865,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get customSecurityAttributeDefinitions from directory
+      summary: Get customSecurityAttributeDefinition
+      description: Read the properties and relationships of a customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-get?view=graph-rest-1.0
       operationId: directory_GetCustomSecurityAttributeDefinition
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9899,7 +9927,11 @@ paths:
     patch:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Update the navigation property customSecurityAttributeDefinitions in directory
+      summary: Update customSecurityAttributeDefinition
+      description: Update the properties of a customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-update?view=graph-rest-1.0
       operationId: directory_UpdateCustomSecurityAttributeDefinition
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9957,7 +9989,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get allowedValues from directory
+      summary: List allowedValues
+      description: Get a list of the allowedValue objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-list-allowedvalues?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_ListAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -10025,7 +10061,11 @@ paths:
     post:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Create new navigation property to allowedValues for directory
+      summary: Create allowedValue
+      description: Create a new allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-post-allowedvalues?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_CreateAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -10057,7 +10097,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get allowedValues from directory
+      summary: Get allowedValue
+      description: Read the properties and relationships of an allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/allowedvalue-get?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_GetAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -10114,7 +10158,11 @@ paths:
     patch:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Update the navigation property allowedValues in directory
+      summary: Update allowedValue
+      description: Update the properties of an allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/allowedvalue-update?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_UpdateAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -16801,8 +16849,28 @@ paths:
                 - bannerLogo
                 - bannerLogoRelativeUrl
                 - cdnList
+                - customAccountResetCredentialsUrl
+                - customCannotAccessYourAccountText
+                - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
+                - customForgotMyPasswordText
+                - customPrivacyAndCookiesText
+                - customPrivacyAndCookiesUrl
+                - customResetItNowText
+                - customTermsOfUseText
+                - customTermsOfUseUrl
+                - favicon
+                - faviconRelativeUrl
+                - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
+                - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
+                - squareLogoDark
+                - squareLogoDarkRelativeUrl
                 - squareLogoRelativeUrl
                 - usernameHintText
                 - localizations
@@ -17013,6 +17081,177 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/customCSS':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get customCSS for the navigation property branding from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update customCSS for the navigation property branding in organization
+      operationId: organization_SetBrandingCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/favicon':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get favicon for the navigation property branding from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update favicon for the navigation property branding in organization
+      operationId: organization_SetBrandingFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/headerLogo':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get headerLogo for the navigation property branding from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update headerLogo for the navigation property branding in organization
+      operationId: organization_SetBrandingHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/branding/localizations':
     get:
       tags:
@@ -17061,10 +17300,50 @@ paths:
                 - bannerLogoRelativeUrl desc
                 - cdnList
                 - cdnList desc
+                - customAccountResetCredentialsUrl
+                - customAccountResetCredentialsUrl desc
+                - customCannotAccessYourAccountText
+                - customCannotAccessYourAccountText desc
+                - customCannotAccessYourAccountUrl
+                - customCannotAccessYourAccountUrl desc
+                - customCSS
+                - customCSS desc
+                - customCSSRelativeUrl
+                - customCSSRelativeUrl desc
+                - customForgotMyPasswordText
+                - customForgotMyPasswordText desc
+                - customPrivacyAndCookiesText
+                - customPrivacyAndCookiesText desc
+                - customPrivacyAndCookiesUrl
+                - customPrivacyAndCookiesUrl desc
+                - customResetItNowText
+                - customResetItNowText desc
+                - customTermsOfUseText
+                - customTermsOfUseText desc
+                - customTermsOfUseUrl
+                - customTermsOfUseUrl desc
+                - favicon
+                - favicon desc
+                - faviconRelativeUrl
+                - faviconRelativeUrl desc
+                - headerBackgroundColor
+                - headerBackgroundColor desc
+                - headerLogo
+                - headerLogo desc
+                - headerLogoRelativeUrl
+                - headerLogoRelativeUrl desc
+                - loginPageLayoutConfiguration
+                - loginPageLayoutConfiguration desc
+                - loginPageTextVisibilitySettings
+                - loginPageTextVisibilitySettings desc
                 - signInPageText
                 - signInPageText desc
                 - squareLogo
                 - squareLogo desc
+                - squareLogoDark
+                - squareLogoDark desc
+                - squareLogoDarkRelativeUrl
+                - squareLogoDarkRelativeUrl desc
                 - squareLogoRelativeUrl
                 - squareLogoRelativeUrl desc
                 - usernameHintText
@@ -17087,8 +17366,28 @@ paths:
                 - bannerLogo
                 - bannerLogoRelativeUrl
                 - cdnList
+                - customAccountResetCredentialsUrl
+                - customCannotAccessYourAccountText
+                - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
+                - customForgotMyPasswordText
+                - customPrivacyAndCookiesText
+                - customPrivacyAndCookiesUrl
+                - customResetItNowText
+                - customTermsOfUseText
+                - customTermsOfUseUrl
+                - favicon
+                - faviconRelativeUrl
+                - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
+                - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
+                - squareLogoDark
+                - squareLogoDarkRelativeUrl
                 - squareLogoRelativeUrl
                 - usernameHintText
               type: string
@@ -17192,8 +17491,28 @@ paths:
                 - bannerLogo
                 - bannerLogoRelativeUrl
                 - cdnList
+                - customAccountResetCredentialsUrl
+                - customCannotAccessYourAccountText
+                - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
+                - customForgotMyPasswordText
+                - customPrivacyAndCookiesText
+                - customPrivacyAndCookiesUrl
+                - customResetItNowText
+                - customTermsOfUseText
+                - customTermsOfUseUrl
+                - favicon
+                - faviconRelativeUrl
+                - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
+                - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
+                - squareLogoDark
+                - squareLogoDarkRelativeUrl
                 - squareLogoRelativeUrl
                 - usernameHintText
               type: string
@@ -17450,6 +17769,225 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/customCSS':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get customCSS for the navigation property localizations from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update customCSS for the navigation property localizations in organization
+      operationId: organization.branding_SetLocalizationsCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/favicon':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get favicon for the navigation property localizations from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update favicon for the navigation property localizations in organization
+      operationId: organization.branding_SetLocalizationsFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/headerLogo':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get headerLogo for the navigation property localizations from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update headerLogo for the navigation property localizations in organization
+      operationId: organization.branding_SetLocalizationsHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/squareLogo':
     get:
       tags:
@@ -17494,6 +18032,79 @@ paths:
       summary: Update squareLogo for the navigation property localizations in organization
       description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization.branding_SetLocalizationsSquareLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/squareLogoDark':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get squareLogoDark for the navigation property localizations from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsSquareLogoDark
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update squareLogoDark for the navigation property localizations in organization
+      operationId: organization.branding_SetLocalizationsSquareLogoDark
       parameters:
         - name: organization-id
           in: path
@@ -17583,6 +18194,63 @@ paths:
       summary: Update squareLogo for the navigation property branding in organization
       description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization_SetBrandingSquareLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/squareLogoDark':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get squareLogoDark for the navigation property branding from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingSquareLogoDark
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update squareLogoDark for the navigation property branding in organization
+      operationId: organization_SetBrandingSquareLogoDark
       parameters:
         - name: organization-id
           in: path
@@ -19019,7 +19687,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -20283,11 +20951,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attributeSet'
+              description: Group of related custom security attribute definitions.
               x-ms-navigationProperty: true
             customSecurityAttributeDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
+              description: Schema of a custom security attributes (key-value pairs).
               x-ms-navigationProperty: true
             deletedItems:
               type: array
@@ -20512,11 +21182,13 @@ components:
           properties:
             description:
               type: string
+              description: Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
               nullable: true
             maxAttributesPerSet:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.'
               format: int32
               nullable: true
           additionalProperties:
@@ -20529,27 +21201,36 @@ components:
           properties:
             attributeSet:
               type: string
+              description: Name of the attribute set. Case insensitive.
             description:
               type: string
+              description: Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.
               nullable: true
             isCollection:
               type: boolean
+              description: 'Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.'
             isSearchable:
               type: boolean
+              description: Indicates whether custom security attribute values are indexed for searching on objects that are assigned attribute values. Cannot be changed later.
               nullable: true
             name:
               type: string
+              description: Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
             status:
               type: string
+              description: 'Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.'
             type:
               type: string
+              description: 'Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.'
             usePreDefinedValuesOnly:
               type: boolean
+              description: 'Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.'
               nullable: true
             allowedValues:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.allowedValue'
+              description: 'Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -20561,6 +21242,7 @@ components:
           properties:
             isActive:
               type: boolean
+              description: 'Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.'
               nullable: true
           additionalProperties:
             type: object
@@ -22077,7 +22759,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string
@@ -24334,6 +25016,61 @@ components:
                 type: string
                 nullable: true
               description: A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
+            customAccountResetCredentialsUrl:
+              type: string
+              nullable: true
+            customCannotAccessYourAccountText:
+              type: string
+              nullable: true
+            customCannotAccessYourAccountUrl:
+              type: string
+              nullable: true
+            customCSS:
+              type: string
+              format: base64url
+              nullable: true
+            customCSSRelativeUrl:
+              type: string
+              nullable: true
+            customForgotMyPasswordText:
+              type: string
+              nullable: true
+            customPrivacyAndCookiesText:
+              type: string
+              nullable: true
+            customPrivacyAndCookiesUrl:
+              type: string
+              nullable: true
+            customResetItNowText:
+              type: string
+              nullable: true
+            customTermsOfUseText:
+              type: string
+              nullable: true
+            customTermsOfUseUrl:
+              type: string
+              nullable: true
+            favicon:
+              type: string
+              format: base64url
+              nullable: true
+            faviconRelativeUrl:
+              type: string
+              nullable: true
+            headerBackgroundColor:
+              type: string
+              nullable: true
+            headerLogo:
+              type: string
+              format: base64url
+              nullable: true
+            headerLogoRelativeUrl:
+              type: string
+              nullable: true
+            loginPageLayoutConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.loginPageLayoutConfiguration'
+            loginPageTextVisibilitySettings:
+              $ref: '#/components/schemas/microsoft.graph.loginPageTextVisibilitySettings'
             signInPageText:
               type: string
               description: 'Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.'
@@ -24342,6 +25079,13 @@ components:
               type: string
               description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
               format: base64url
+              nullable: true
+            squareLogoDark:
+              type: string
+              format: base64url
+              nullable: true
+            squareLogoDarkRelativeUrl:
+              type: string
               nullable: true
             squareLogoRelativeUrl:
               type: string
@@ -24362,6 +25106,12 @@ components:
           minimum: -2147483648
           type: integer
           description: The number of units that are enabled for the active subscription of the service SKU.
+          format: int32
+          nullable: true
+        lockedOut:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
           format: int32
           nullable: true
         suspended:
@@ -28622,6 +29372,44 @@ components:
           description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
       additionalProperties:
         type: object
+    microsoft.graph.loginPageLayoutConfiguration:
+      title: loginPageLayoutConfiguration
+      type: object
+      properties:
+        isFooterShown:
+          type: boolean
+          nullable: true
+        isHeaderShown:
+          type: boolean
+          nullable: true
+        layoutTemplateType:
+          $ref: '#/components/schemas/microsoft.graph.layoutTemplateType'
+      additionalProperties:
+        type: object
+    microsoft.graph.loginPageTextVisibilitySettings:
+      title: loginPageTextVisibilitySettings
+      type: object
+      properties:
+        hideAccountResetCredentials:
+          type: boolean
+          nullable: true
+        hideCannotAccessYourAccount:
+          type: boolean
+          nullable: true
+        hideForgotMyPassword:
+          type: boolean
+          nullable: true
+        hidePrivacyAndCookies:
+          type: boolean
+          nullable: true
+        hideResetItNow:
+          type: boolean
+          nullable: true
+        hideTermsOfUse:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -31937,6 +32725,13 @@ components:
         - disabled
         - enabledForCount
         - enabledForPercentage
+        - unknownFutureValue
+      type: string
+    microsoft.graph.layoutTemplateType:
+      title: layoutTemplateType
+      enum:
+        - default
+        - verticalSplit
         - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.ErrorDetails:
