@@ -5,6 +5,9 @@
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
     <VersionPrefix>2.0.0</VersionPrefix>
     <VersionSuffix>rc4</VersionSuffix>
+    <AssemblyOriginatorKeyFile>D:\a\_work\1\s\tools\35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>true</DelaySign>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>

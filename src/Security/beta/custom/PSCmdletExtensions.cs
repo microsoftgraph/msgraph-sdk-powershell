@@ -16,6 +16,26 @@ namespace Microsoft.Graph.Beta.PowerShell
 
     internal static class PSCmdletExtensions
     {
+        private static readonly char[] PathSeparators = new char[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
+        
+        // Converts a string to its unescaped form. The method also replaces '+' with spaces.
+        internal static string UnescapeString(this PSCmdlet cmdlet, string value)
+        {
+            if (value == null)
+                return null;
+
+            try
+            {
+                var unescapedString = Uri.UnescapeDataString(value);
+                return unescapedString.Replace('+', ' ');
+            }
+            catch (UriFormatException ex)
+            {
+                cmdlet.ThrowTerminatingError(new ErrorRecord(ex, string.Empty, ErrorCategory.InvalidArgument, value));
+                return null;
+            }
+        }
+
         /// <summary>
         /// Gets a resolved or unresolved path from PSPath.
         /// </summary>
@@ -121,20 +141,24 @@ namespace Microsoft.Graph.Beta.PowerShell
         private static bool IsPathDirectory(string path)
         {
             if (path == null) throw new ArgumentNullException("path");
+            bool isDirectory = false;
             path = path.Trim();
 
             if (Directory.Exists(path))
-                return true;
+                isDirectory = true;
 
             if (File.Exists(path))
-                return false;
+                isDirectory = false;
 
             // If path has a trailing slash then it's a directory.
-            if (new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar }.Any(x => path.EndsWith(x.ToString())))
-                return true;
+            if (PathSeparators.Contains(path.Last()))
+                isDirectory = true;
 
-            // If path has an extension then its a file; directory otherwise.
-            return string.IsNullOrWhiteSpace(Path.GetExtension(path));
+            // If path has an extension then its a file.
+            if (Path.HasExtension(path))
+                isDirectory = false;
+
+            return isDirectory;
         }
 
         private static string GetFileName(HttpResponseMessage responseMessage)
