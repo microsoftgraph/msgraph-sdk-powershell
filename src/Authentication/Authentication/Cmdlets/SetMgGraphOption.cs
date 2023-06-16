@@ -22,15 +22,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            if (EnableLoginByWAM)
+            if (this.IsParameterBound(nameof(EnableLoginByWAM)))
             {
                 GraphSession.Instance.GraphOption.EnableWAMForMSGraph = EnableLoginByWAM;
-                WriteObject("[Preview] Signin by Web Account Manager (WAM) is enabled.");
-            }
-            else
-            {
-                GraphSession.Instance.GraphOption.EnableWAMForMSGraph = false;
-                WriteObject("[Preview] Signin by Web Account Manager (WAM) is disabled.");
+                var message = $"Signin by Web Account Manager (WAM) is {(EnableLoginByWAM ? "enabled" : "disabled")}.";
+                WriteObject(message);
             }
             File.WriteAllText(Constants.GraphOptionsFilePath, JsonConvert.SerializeObject(GraphSession.Instance.GraphOption, Formatting.Indented));
         }
