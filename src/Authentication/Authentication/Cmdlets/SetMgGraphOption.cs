@@ -22,9 +22,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-
-            bool currentSetting = GraphSession.Instance.GraphOption.EnableWAMForMSGraph;
-
             if (EnableLoginByWAM.IsPresent)
             {
                 GraphSession.Instance.GraphOption.EnableWAMForMSGraph = EnableLoginByWAM;
