@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     public class SetMgGraphOption : PSCmdlet
     {
         [Parameter]
-        public SwitchParameter EnableLoginByWAM { get; set; }
+        public Boolean EnableLoginByWAM { get; set; }
 
         protected override void BeginProcessing()
         {
@@ -22,14 +22,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            if (EnableLoginByWAM.IsPresent)
+            if (EnableLoginByWAM)
             {
                 GraphSession.Instance.GraphOption.EnableWAMForMSGraph = EnableLoginByWAM;
-                if (GraphSession.Instance.GraphOption.EnableWAMForMSGraph)
-                    WriteObject("[Preview] Signin by Web Account Manager (WAM) is enabled.");
-                else
-                    WriteObject("[Preview] Signin by Web Account Manager (WAM) is disabled.");
             }
+            else
+            {
+                GraphSession.Instance.GraphOption.EnableWAMForMSGraph = false;
+            }
+
+            if (GraphSession.Instance.GraphOption.EnableWAMForMSGraph == true)
+                WriteObject("[Preview] Signin by Web Account Manager (WAM) is enabled.");
+            else
+                WriteObject("[Preview] Signin by Web Account Manager (WAM) is disabled.");
             
             File.WriteAllText(Constants.GraphOptionsFilePath, JsonConvert.SerializeObject(GraphSession.Instance.GraphOption, Formatting.Indented));
         }
