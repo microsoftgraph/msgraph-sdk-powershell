@@ -10898,6 +10898,150 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getWindowsDriverUpdateAlertsPerPolicyPerDeviceReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getWindowsDriverUpdateAlertsPerPolicyPerDeviceReport
+      operationId: deviceManagement.report_getWindowsDriverUpdateAlertsPerPolicyPerDeviceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getWindowsDriverUpdateAlertSummaryReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getWindowsDriverUpdateAlertSummaryReport
+      operationId: deviceManagement.report_getWindowsDriverUpdateAlertSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/octet-stream:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport:
     post:
       tags:
@@ -12453,6 +12597,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-30T00:00:00.0000000+00:00'
+        date: '2023-03-16T00:00:00.0000000+00:00'
+        version: 2023-03/onPremisesConnectionId
+        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy-id}/microsoft.graph.assign':
     post:
@@ -12492,6 +12642,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-30T00:00:00.0000000+00:00'
+        date: '2023-03-16T00:00:00.0000000+00:00'
+        version: 2023-03/onPremisesConnectionId
+        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: action
   /deviceManagement/virtualEndpoint/provisioningPolicies/microsoft.graph.applyConfig:
     post:
@@ -12519,6 +12675,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-30T00:00:00.0000000+00:00'
+        date: '2023-03-16T00:00:00.0000000+00:00'
+        version: 2023-03/onPremisesConnectionId
+        description: 'The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.'
       x-ms-docs-operation-type: action
   /deviceManagement/virtualEndpoint/reports/microsoft.graph.getDailyAggregatedRemoteConnectionReports:
     post:
@@ -15438,6 +15600,7 @@ components:
         - sharedUseLicenseUsageReport
         - sharedUseLicenseUsageRealTimeReport
         - unknownFutureValue
+        - noLicenseAvailableConnectivityFailureReport
       type: string
     microsoft.graph.cloudPcUserSettingAssignment:
       allOf:
@@ -17070,6 +17233,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -17104,7 +17268,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -20568,6 +20732,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -22598,6 +22763,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isRooted:
               type: boolean
@@ -22745,6 +22911,7 @@ components:
               nullable: true
             allowRecording:
               type: boolean
+              description: Indicates whether recording is enabled for the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
@@ -22752,6 +22919,7 @@ components:
               nullable: true
             allowTranscription:
               type: boolean
+              description: Indicates whether transcription is enabled for the meeting.
               nullable: true
             alternativeRecording:
               type: string
@@ -23297,7 +23465,7 @@ components:
       properties:
         settingDefinitionId:
           type: string
-          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting.
           nullable: true
       additionalProperties:
         type: object
@@ -24423,11 +24591,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -41096,6 +41264,7 @@ components:
           items:
             type: string
             nullable: true
+          description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
       additionalProperties:
         type: object
     microsoft.graph.insightIdentity:
@@ -41491,18 +41660,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinition'
+          description: Defines attributes of the object.
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadataEntry'
+          description: Metadata for the given object.
         name:
           type: string
+          description: Name of the object. Must be unique within a directory definition. Not nullable.
           nullable: true
         supportedApis:
           type: array
           items:
             type: string
             nullable: true
+          description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
     microsoft.graph.workbookFilter:
@@ -42058,14 +42231,17 @@ components:
       properties:
         expression:
           type: string
+          description: Equivalent expression representation of this attributeMappingSource object.
           nullable: true
         name:
           type: string
+          description: 'Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.'
           nullable: true
         parameters:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
+          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
       additionalProperties:

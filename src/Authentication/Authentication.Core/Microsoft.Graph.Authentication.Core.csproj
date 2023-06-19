@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
   <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
     <TargetFrameworks>netstandard2.0;net6.0;net472</TargetFrameworks>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
     <VersionPrefix>2.0.0</VersionPrefix>
@@ -12,6 +13,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.9.0" />
+    <PackageReference Include="Azure.Identity.BrokeredAuthentication" Version="1.0.0-beta.3" />
     <PackageReference Include="Microsoft.Graph.Core" Version="3.0.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

@@ -352,31 +352,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.getOemWarranty()':
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getOemWarranty
-      operationId: deviceManagement.comanagedDevice_getOemWarranty
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: The unique identifier of managedDevice
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/deviceManagement/comanagedDevices/microsoft.graph.appDiagnostics(upn=''{upn}'')':
     get:
       tags:
@@ -953,31 +928,6 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
-  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getOemWarranty()':
-    get:
-      tags:
-        - deviceManagement.Functions
-      summary: Invoke function getOemWarranty
-      operationId: deviceManagement.managedDevice_getOemWarranty
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: The unique identifier of managedDevice
-          required: true
-          style: simple
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
-      responses:
-        2XX:
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/deviceManagement/managedDevices/microsoft.graph.appDiagnostics(upn=''{upn}'')':
     get:
       tags:
@@ -2782,31 +2732,6 @@ components:
       additionalProperties:
         type: object
       description: Device Compilance Policy Setting State for a given device.
-    microsoft.graph.oemWarranty:
-      title: oemWarranty
-      type: object
-      properties:
-        additionalWarranties:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.warrantyOffer'
-          description: List of additional warranty offers. This collection can contain a maximum of 100 elements.
-        baseWarranties:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.warrantyOffer'
-          description: List of base warranty offers. This collection can contain a maximum of 100 elements.
-        deviceConfigurationUrl:
-          type: string
-          description: Device configuration page URL
-          nullable: true
-        deviceWarrantyUrl:
-          type: string
-          description: Device warranty page URL
-          nullable: true
-      additionalProperties:
-        type: object
-      description: OEM Warranty information for a given device
     microsoft.graph.powerliftIncidentMetadata:
       title: powerliftIncidentMetadata
       type: object
@@ -3422,7 +3347,34 @@ components:
         - modelRegression
         - manufacturerRegression
         - operatingSystemVersionRegression
+        - unknownFutureValue
       type: string
+      description: 'Indicates type of summarization. Possible values are: None, Model, AllRegressions, ModelRegression, ManufacturerRegression, OperatingSystemVersionRegression.'
+      x-ms-enum:
+        name: userExperienceAnalyticsSummarizedBy
+        modelAsString: false
+        values:
+          - value: none
+            description: Indicates that the summarization is none.
+            name: none
+          - value: model
+            description: Indicates that the summarization is by model.
+            name: model
+          - value: allRegressions
+            description: Indicates that the summarization is by all regressions.
+            name: allRegressions
+          - value: modelRegression
+            description: Indicates that the summarization is by model regression.
+            name: modelRegression
+          - value: manufacturerRegression
+            description: Indicates that the summarization is by manufacturer regression.
+            name: manufacturerRegression
+          - value: operatingSystemVersionRegression
+            description: Indicates that the summarization is by operating system version regression.
+            name: operatingSystemVersionRegression
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.userExperienceAnalyticsDevicePerformance:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -3987,29 +3939,6 @@ components:
         - conflict
         - notAssigned
       type: string
-    microsoft.graph.warrantyOffer:
-      title: warrantyOffer
-      type: object
-      properties:
-        description:
-          type: string
-          description: Warranty offer description
-          nullable: true
-        endDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: Warranty offer end date
-          format: date-time
-        startDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: Warranty offer start date
-          format: date-time
-        type:
-          $ref: '#/components/schemas/microsoft.graph.warrantyType'
-      additionalProperties:
-        type: object
-      description: Models and Manufactures meatadata for managed devices in the account
     microsoft.graph.deviceType:
       title: deviceType
       enum:
@@ -4219,6 +4148,12 @@ components:
           type: string
           description: The date on which devices were remediated by the device health script.
           format: date
+        detectFailedDeviceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of devices for which the detection script found an issue.
+          format: int32
         noIssueDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
@@ -4428,16 +4363,16 @@ components:
         modelAsString: false
         values:
           - value: unknown
-            description: Enum member for unknown or default diskType
+            description: Enum member for unknown or default diskType.
             name: unknown
           - value: hdd
-            description: Enum member for HDD devices
+            description: Enum member for HDD devices.
             name: hdd
           - value: ssd
-            description: Enum member for SSD devices
+            description: Enum member for SSD devices.
             name: ssd
           - value: unknownFutureValue
-            description: Evolvable enum member
+            description: Evolvable enumeration sentinel value.Do not use.
             name: unknownFutureValue
     microsoft.graph.userExperienceAnalyticsHealthState:
       title: userExperienceAnalyticsHealthState
@@ -4452,8 +4387,20 @@ components:
         name: userExperienceAnalyticsHealthState
         modelAsString: false
         values:
+          - value: unknown
+            description: Indicates that the health state is unknown.
+            name: unknown
+          - value: insufficientData
+            description: Indicates that the health state is insufficient data.
+            name: insufficientData
+          - value: needsAttention
+            description: Indicates that the health state needs attention.
+            name: needsAttention
+          - value: meetingGoals
+            description: Indicates that the health state is meeting goals.
+            name: meetingGoals
           - value: unknownFutureValue
-            description: Evolvable enum member
+            description: Evolvable enumeration sentinel value. Do not use.
             name: unknownFutureValue
     microsoft.graph.cloudPcConnectivityEventResult:
       title: cloudPcConnectivityEventResult
@@ -4630,31 +4577,6 @@ components:
         - deviceConfiguration
         - deviceIntent
       type: string
-    microsoft.graph.warrantyType:
-      title: warrantyType
-      enum:
-        - unknown
-        - manufacturer
-        - contractual
-        - unknownFutureValue
-      type: string
-      description: Models and Manufactures meatadata for managed devices in the account
-      x-ms-enum:
-        name: warrantyType
-        modelAsString: false
-        values:
-          - value: unknown
-            description: Unknown warranty type
-            name: unknown
-          - value: manufacturer
-            description: Manufacturer warranty
-            name: manufacturer
-          - value: contractual
-            description: Contractual warranty
-            name: contractual
-          - value: unknownFutureValue
-            description: Unknown future value
-            name: unknownFutureValue
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object

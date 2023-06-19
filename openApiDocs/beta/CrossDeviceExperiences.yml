@@ -5349,6 +5349,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isRooted:
               type: boolean
@@ -5549,6 +5550,7 @@ components:
               nullable: true
             isMemberManagementRestricted:
               type: boolean
+              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.'
               nullable: true
             visibility:
               type: string
@@ -5638,6 +5640,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -6366,6 +6369,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -6400,7 +6404,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -10471,6 +10475,7 @@ components:
               nullable: true
             allowRecording:
               type: boolean
+              description: Indicates whether recording is enabled for the meeting.
               nullable: true
             allowTeamworkReactions:
               type: boolean
@@ -10478,6 +10483,7 @@ components:
               nullable: true
             allowTranscription:
               type: boolean
+              description: Indicates whether transcription is enabled for the meeting.
               nullable: true
             alternativeRecording:
               type: string
@@ -11045,11 +11051,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -27025,18 +27031,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinition'
+          description: Defines attributes of the object.
         metadata:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadataEntry'
+          description: Metadata for the given object.
         name:
           type: string
+          description: Name of the object. Must be unique within a directory definition. Not nullable.
           nullable: true
         supportedApis:
           type: array
           items:
             type: string
             nullable: true
+          description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
     microsoft.graph.printColorMode:
@@ -28284,6 +28294,7 @@ components:
           items:
             type: string
             nullable: true
+          description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
       additionalProperties:
         type: object
     microsoft.graph.insightIdentity:
@@ -29024,14 +29035,17 @@ components:
       properties:
         expression:
           type: string
+          description: Equivalent expression representation of this attributeMappingSource object.
           nullable: true
         name:
           type: string
+          description: 'Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.'
           nullable: true
         parameters:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
+          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
       additionalProperties:

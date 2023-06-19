@@ -34,13 +34,29 @@ namespace Microsoft.Graph.PowerShell.Authentication
             // Add shared dependencies.
             foreach (string filePath in Directory.EnumerateFiles(s_dependencyFolder, "*.dll"))
             {
-                s_dependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
+                try
+                {
+                    s_dependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
+                }
+                catch (BadImageFormatException)
+                {
+                    // Skip files without metadata.
+                    continue;
+                }
             }
 
             // Add the dependencies for the current PowerShell edition. Can be either Desktop (PS 5.1) or Core (PS 7+).
             foreach (string filePath in Directory.EnumerateFiles(s_psEditionDependencyFolder, "*.dll"))
             {
-                s_psEditionDependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
+                try
+                {
+                    s_psEditionDependencies.Add(AssemblyName.GetAssemblyName(filePath).FullName);
+                }
+                catch (BadImageFormatException)
+                {
+                    // Skip files without metadata.
+                    continue;
+                }
             }
         }
 
@@ -70,7 +86,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         private static bool IsAssemblyMatching(AssemblyName assemblyName, Assembly requestingAssembly)
         {
             return requestingAssembly != null
-                ? requestingAssembly.FullName.StartsWith("Microsoft") && IsAssemblyPresent(assemblyName)
+                ? (requestingAssembly.FullName.StartsWith("Microsoft") || requestingAssembly.FullName.StartsWith("Azure.Identity")) && IsAssemblyPresent(assemblyName)
                 : IsAssemblyPresent(assemblyName);
         }
 
@@ -82,10 +98,9 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <returns>True if assembly is present in dependencies folder; otherwise False.</returns>
         private static bool IsAssemblyPresent(AssemblyName assemblyName)
         {
-            if (s_dependencies.Contains(assemblyName.FullName) || s_psEditionDependencies.Contains(assemblyName.FullName))
-                return true;
-            else
-                return !string.IsNullOrEmpty(s_dependencies.SingleOrDefault((x) => x.StartsWith(assemblyName.Name))) || !string.IsNullOrEmpty(s_psEditionDependencies.SingleOrDefault((x) => x.StartsWith(assemblyName.Name)));
+            return s_dependencies.Contains(assemblyName.FullName) || s_psEditionDependencies.Contains(assemblyName.FullName)
+                ? true
+                : !string.IsNullOrEmpty(s_dependencies.SingleOrDefault((x) => x.StartsWith($"{assemblyName.Name},"))) || !string.IsNullOrEmpty(s_psEditionDependencies.SingleOrDefault((x) => x.StartsWith($"{assemblyName.Name},")));
         }
 
         /// <summary>
