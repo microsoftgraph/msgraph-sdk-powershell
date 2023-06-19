@@ -24,6 +24,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         internal const int MAX_NUMBER_OF_RETRY = 10;
         internal const int DEFAULT_RETRY_DELAY = 3;
         internal const int DEFAULT_MAX_RETRY = 3;
+        internal static readonly string GraphOptionsFilePath = Path.Combine(Core.Constants.GraphDirectoryPath, "mg.graphoptions.json");
 
         public static class HelpMessages
         {

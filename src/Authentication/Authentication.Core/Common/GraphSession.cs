@@ -52,6 +52,11 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public IRequestContext RequestContext { get; set; }
 
         /// <summary>
+        /// Stores the user's Graph options.
+        /// </summary>
+        public IGraphOption GraphOption { get; set; }
+
+        /// <summary>
         /// Represents a collection of Microsoft Graph PowerShell meta-info.
         /// </summary>
         public Hashtable[] MgCommandMetadata { get; set; }
