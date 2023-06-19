@@ -38,7 +38,22 @@ namespace NamespacePrefixPlaceholder.PowerShell
                 await originalRequest.Content.CopyToAsync(ms);
                 ms.Position = 0;
                 newRequest.Content = new StreamContent(ms);
-                originalRequest.Content.Headers?.ToList().ForEach(header => newRequest.Content.Headers.TryAddWithoutValidation(header.Key, header.Value));
+                // Attempt to copy request content headers with a single retry.
+                // In .NET Framework, HttpHeaders dictionary is not thread safe. See https://github.com/dotnet/runtime/issues/61798.
+                int retryCount = 0;
+                int maxRetryCount = 2;
+                while (retryCount < maxRetryCount)
+                {
+                    try
+                    {
+                        originalRequest.Content.Headers?.ToList().ForEach(header => newRequest.Content.Headers.TryAddWithoutValidation(header.Key, header.Value));
+                        retryCount = maxRetryCount;
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        retryCount++;
+                    }
+                }
             }
             return newRequest;
         }
