@@ -422,7 +422,7 @@ directive:
 
         // Format error details.
         let errorDetailsRegex = /(ErrorDetails\s*=\s*)(new.*ErrorDetails\(message\).*)/gmi
-        $ = $.replace(errorDetailsRegex, '$1this.GetErrorDetails((await response)?.Error, responseMessage)');
+        $ = $.replace(errorDetailsRegex, '$1await this.GetErrorDetailsAsync((await response)?.Error, responseMessage)');
 
         return $;
       }

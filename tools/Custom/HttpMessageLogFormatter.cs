@@ -89,6 +89,24 @@ namespace NamespacePrefixPlaceholder.PowerShell
             return stringBuilder.ToString();
         }
 
+        public static async Task<string> GetErrorLogAsync(HttpResponseMessage response)
+        {
+            if (response == null) return string.Empty;
+
+            string body = string.Empty;
+            try
+            {
+                body = (response.Content == null) ? string.Empty : FormatString(await response.Content.ReadAsStringAsync());
+            }
+            catch { }
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine($"Status:{((int)response.StatusCode)} ({response.StatusCode}){Environment.NewLine}");
+            stringBuilder.AppendLine($"Content:{Environment.NewLine}{body}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(response.Headers)}{Environment.NewLine}");
+            return stringBuilder.ToString();
+        }
+
         internal static string HeadersToString(HttpHeaders headers)
         {
             return HeadersToString(ConvertHttpHeadersToCollection(headers));

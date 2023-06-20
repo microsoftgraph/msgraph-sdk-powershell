@@ -106,15 +106,11 @@ namespace NamespacePrefixPlaceholder.PowerShell
             }
         }
 
-        internal static ErrorDetails GetErrorDetails(this PSCmdlet cmdlet, IMicrosoftGraphODataErrorsMainError odataError, HttpResponseMessage responseMessage)
+        internal static async Task<ErrorDetails> GetErrorDetailsAsync(this PSCmdlet cmdlet, IMicrosoftGraphODataErrorsMainError odataError, HttpResponseMessage response)
         {
             var serviceErrorDoc = "https://learn.microsoft.com/graph/errors";
             var recommendedAction = $"See service error codes: {serviceErrorDoc}";
-            var requestUri = $"{responseMessage.RequestMessage?.Method} {responseMessage.RequestMessage?.RequestUri}";
-            string date = odataError?.Innererror?.Date;
-            string requestId = odataError?.Innererror?.RequestId;
-            string clientRequestId = odataError?.Innererror?.ClientRequestId;
-            string errorDetailsMessage = $"{odataError?.Message}\n\n{requestUri}\nStatusCode: {responseMessage.StatusCode}\nErrorCode: {odataError?.Code}\nDate: {date}\nRequestId: {requestId}\nClientRequestId: {clientRequestId}\n\n{recommendedAction}";
+            var errorDetailsMessage = await HttpMessageLogFormatter.GetErrorLogAsync(response);
             return new ErrorDetails(errorDetailsMessage)
             {
                 RecommendedAction = recommendedAction
