@@ -51,7 +51,8 @@ Describe "Microsoft.Graph.Authentication module" {
                     "Invoke-MgRestMethod",
                     "Get-MgRequestContext",
                     "Set-MgRequestContext",
-                    "Set-MgGraphOption"
+                    "Set-MgGraphOption",
+                    "Get-MgGraphOption"
                 )
 
                 $PSModuleInfo.ExportedCommands.Keys | Should -BeIn $ExpectedCommands
