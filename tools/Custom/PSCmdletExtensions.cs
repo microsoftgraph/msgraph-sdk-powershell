@@ -105,13 +105,13 @@ namespace NamespacePrefixPlaceholder.PowerShell
                 cmdlet.WriteToStream(inputStream, fileProvider.Stream, downloadUrl, cancellationToken);
             }
         }
-
+        
         internal static async Task<ErrorDetails> GetErrorDetailsAsync(this PSCmdlet cmdlet, IMicrosoftGraphODataErrorsMainError odataError, HttpResponseMessage response)
         {
             var serviceErrorDoc = "https://learn.microsoft.com/graph/errors";
             var recommendedAction = $"See service error codes: {serviceErrorDoc}";
-            var errorDetailsMessage = await HttpMessageLogFormatter.GetErrorLogAsync(response);
-            return new ErrorDetails($"{odataError?.Message}{Environment.NewLine}{errorDetailsMessage}")
+            var errorDetailsMessage = await HttpMessageLogFormatter.GetErrorLogAsync(response, odataError);
+            return new ErrorDetails(errorDetailsMessage)
             {
                 RecommendedAction = recommendedAction
             };

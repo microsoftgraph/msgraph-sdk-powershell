@@ -4,6 +4,7 @@
 
 namespace NamespacePrefixPlaceholder.PowerShell
 {
+    using NamespacePrefixPlaceholder.PowerShell.Models;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
@@ -89,20 +90,15 @@ namespace NamespacePrefixPlaceholder.PowerShell
             return stringBuilder.ToString();
         }
 
-        public static async Task<string> GetErrorLogAsync(HttpResponseMessage response)
+        public static async Task<string> GetErrorLogAsync(HttpResponseMessage response, IMicrosoftGraphODataErrorsMainError odataError)
         {
             if (response == null) return string.Empty;
 
-            string body = string.Empty;
-            try
-            {
-                body = (response.Content == null) ? string.Empty : await response.Content.ReadAsStringAsync();
-            }
-            catch { }
-
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine($"Status:{((int)response.StatusCode)} ({response.StatusCode}){Environment.NewLine}");
-            stringBuilder.AppendLine($"Content:{Environment.NewLine}{body}{Environment.NewLine}");
+            stringBuilder.AppendLine($"{odataError?.Message}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Status: {((int)response.StatusCode)} ({response.StatusCode})");
+            stringBuilder.AppendLine($"ErrorCode: {odataError?.Code}");
+            stringBuilder.AppendLine($"Date: {odataError?.Innererror?.Date}{Environment.NewLine}");
             stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(response.Headers)}{Environment.NewLine}");
             return stringBuilder.ToString();
         }
