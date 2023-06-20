@@ -39,7 +39,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
                 ms.Position = 0;
                 newRequest.Content = new StreamContent(ms);
                 // Attempt to copy request content headers with a single retry.
-                // In .NET Framework, HttpHeaders dictionary is not thread safe. See https://github.com/dotnet/runtime/issues/61798.
+                // HttpHeaders dictionary is not thread-safe when targeting anything below .NET 7. For more information, see https://github.com/dotnet/runtime/issues/61798.
                 int retryCount = 0;
                 int maxRetryCount = 2;
                 while (retryCount < maxRetryCount)
