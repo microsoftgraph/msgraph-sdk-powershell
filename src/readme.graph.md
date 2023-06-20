@@ -246,7 +246,7 @@ directive:
                 }
             }
           }
-# Mark '@odata.id' as required properties for /$ref.
+# Add Microsoft Graph error properties to InnerError.
   - from: 'openapi-document'
     where: $.components.schemas['microsoft.graph.ODataErrors.InnerError']
     transform: >-
