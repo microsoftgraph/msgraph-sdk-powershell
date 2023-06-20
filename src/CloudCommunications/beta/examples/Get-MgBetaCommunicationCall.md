@@ -4,7 +4,7 @@
 
 Get-MgBetaCommunicationCall -CallId $callId
 ```
-This example shows how to use the Get-MgBetaBetaCommunicationCall Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Getting a group call
@@ -13,6 +13,6 @@ This example shows how to use the Get-MgBetaBetaCommunicationCall Cmdlet.
 
 Get-MgBetaCommunicationCall -CallId $callId
 ```
-This example shows how to use the Get-MgBetaBetaCommunicationCall Cmdlet.
+This example shows how to use the Get-MgBetaCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

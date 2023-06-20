@@ -50,7 +50,8 @@ Describe "Microsoft.Graph.Authentication module" {
                     "Find-MgGraphPermission",
                     "Invoke-MgRestMethod",
                     "Get-MgRequestContext",
-                    "Set-MgRequestContext"
+                    "Set-MgRequestContext",
+                    "Set-MgGraphOption"
                 )
 
                 $PSModuleInfo.ExportedCommands.Keys | Should -BeIn $ExpectedCommands

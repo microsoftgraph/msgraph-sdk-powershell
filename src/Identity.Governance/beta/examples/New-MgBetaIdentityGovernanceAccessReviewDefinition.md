@@ -40,7 +40,7 @@ $params = @{
 
 New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Create an access review on all teams with inactive guest users
@@ -99,7 +99,7 @@ $params = @{
 
 New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Create an access review of all users to an application
@@ -167,7 +167,7 @@ $params = @{
 
 New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Create an access review on a group with multiple stages
@@ -244,6 +244,6 @@ $params = @{
 
 New-MgBetaIdentityGovernanceAccessReviewDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
+This example shows how to use the New-MgBetaIdentityGovernanceAccessReviewDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

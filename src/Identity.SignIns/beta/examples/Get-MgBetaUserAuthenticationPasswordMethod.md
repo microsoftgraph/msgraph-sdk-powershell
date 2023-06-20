@@ -5,6 +5,6 @@
 # A UPN can also be used as -UserId.
 Get-MgBetaUserAuthenticationPasswordMethod -UserId $userId -PasswordAuthenticationMethodId $passwordAuthenticationMethodId
 ```
-This example shows how to use the Get-MgBetaBetaUserAuthenticationPasswordMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationPasswordMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

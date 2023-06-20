@@ -16,7 +16,7 @@ $params = @{
 
 Update-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaSecuritySecureScoreControlProfile Cmdlet.
+This example shows how to use the Update-MgBetaSecuritySecureScoreControlProfile Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Request with Prefer header
@@ -37,6 +37,6 @@ $params = @{
 
 Update-MgBetaSecuritySecureScoreControlProfile -SecureScoreControlProfileId $secureScoreControlProfileId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaSecuritySecureScoreControlProfile Cmdlet.
+This example shows how to use the Update-MgBetaSecuritySecureScoreControlProfile Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

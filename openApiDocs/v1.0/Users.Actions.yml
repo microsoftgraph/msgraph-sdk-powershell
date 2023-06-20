@@ -6951,6 +6951,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.chat.message_softDelete
       parameters:
         - name: user-id
@@ -6988,6 +6992,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.chat.message_undoSoftDelete
       parameters:
         - name: user-id
@@ -7025,6 +7033,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.chat.message.reply_softDelete
       parameters:
         - name: user-id
@@ -7070,6 +7082,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.chat.message.reply_undoSoftDelete
       parameters:
         - name: user-id
@@ -10410,6 +10426,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_softDelete
       parameters:
         - name: user-id
@@ -10455,6 +10475,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_undoSoftDelete
       parameters:
         - name: user-id
@@ -10500,6 +10524,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message.reply_softDelete
       parameters:
         - name: user-id
@@ -10553,6 +10581,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message.reply_undoSoftDelete
       parameters:
         - name: user-id
@@ -11134,6 +11166,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_softDelete
       parameters:
         - name: user-id
@@ -11171,6 +11207,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_undoSoftDelete
       parameters:
         - name: user-id
@@ -11208,6 +11248,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action softDelete
+      description: Delete a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message.reply_softDelete
       parameters:
         - name: user-id
@@ -11253,6 +11297,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action undoSoftDelete
+      description: Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message.reply_undoSoftDelete
       parameters:
         - name: user-id
@@ -14420,6 +14468,10 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action revokeSignInSessions
+      description: 'Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user''s browser), by resetting the **signInSessionsValidFromDateTime** user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization''s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0
       operationId: user_revokeSignInSession
       parameters:
         - name: user-id
@@ -16411,7 +16463,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
+              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -21617,7 +21669,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string
@@ -25322,6 +25374,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
+              description: 'List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             policyViolation:
@@ -25622,7 +25675,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
@@ -27600,6 +27653,7 @@ components:
         modifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the message was modified.
           format: date-time
         reaction:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'

@@ -12,7 +12,7 @@ $params = @{
 
 Update-MgBetaPolicyCrossTenantAccessPolicyPartner -CrossTenantAccessPolicyConfigurationPartnerTenantId $crossTenantAccessPolicyConfigurationPartnerTenantId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaPolicyCrossTenantAccessPolicyPartner Cmdlet.
+This example shows how to use the Update-MgBetaPolicyCrossTenantAccessPolicyPartner Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Configure automaticUserConsent settings
@@ -28,6 +28,6 @@ $params = @{
 
 Update-MgBetaPolicyCrossTenantAccessPolicyPartner -CrossTenantAccessPolicyConfigurationPartnerTenantId $crossTenantAccessPolicyConfigurationPartnerTenantId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaPolicyCrossTenantAccessPolicyPartner Cmdlet.
+This example shows how to use the Update-MgBetaPolicyCrossTenantAccessPolicyPartner Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

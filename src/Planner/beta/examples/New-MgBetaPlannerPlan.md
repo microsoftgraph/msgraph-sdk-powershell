@@ -11,6 +11,6 @@ $params = @{
 
 New-MgBetaPlannerPlan -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaPlannerPlan Cmdlet.
+This example shows how to use the New-MgBetaPlannerPlan Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

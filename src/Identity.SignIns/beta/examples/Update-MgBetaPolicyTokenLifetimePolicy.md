@@ -4,7 +4,7 @@
 
 $params = @{
 	definition = @(
-		"{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"5:30:00"}}"
+		'{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"5:30:00"}}'
 	)
 	displayName = "Contoso token lifetime policy"
 	isOrganizationDefault = $true
@@ -12,6 +12,6 @@ $params = @{
 
 Update-MgBetaPolicyTokenLifetimePolicy -TokenLifetimePolicyId $tokenLifetimePolicyId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaPolicyTokenLifetimePolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyTokenLifetimePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

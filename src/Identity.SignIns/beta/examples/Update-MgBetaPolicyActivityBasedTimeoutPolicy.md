@@ -12,6 +12,6 @@ $params = @{
 
 Update-MgBetaPolicyActivityBasedTimeoutPolicy -ActivityBasedTimeoutPolicyId $activityBasedTimeoutPolicyId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaPolicyActivityBasedTimeoutPolicy Cmdlet.
+This example shows how to use the Update-MgBetaPolicyActivityBasedTimeoutPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

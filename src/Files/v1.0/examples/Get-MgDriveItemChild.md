@@ -1,17 +1,18 @@
-### Example 1: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
+### Example 1: Code snippet
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Files
+
+Get-MgDriveItemChild -DriveId $driveId -DriveItemId $driveItemId
 ```
+This example shows how to use the Get-MgDriveItemChild Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
+### Example 2: Code snippet
 
-### Example 2: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
+```powershellImport-Module Microsoft.Graph.Files
 
-{{ Add output here }}
+Get-MgDriveItemChild -DriveId $driveId -DriveItemId $driveItemId
 ```
+This example shows how to use the Get-MgDriveItemChild Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}

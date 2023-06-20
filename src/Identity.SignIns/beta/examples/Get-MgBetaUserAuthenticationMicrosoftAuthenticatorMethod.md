@@ -2,8 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 
-Remove-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod -UserId $userId -MicrosoftAuthenticatorAuthenticationMethodId $microsoftAuthenticatorAuthenticationMethodId
+Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod -UserId $userId -MicrosoftAuthenticatorAuthenticationMethodId $microsoftAuthenticatorAuthenticationMethodId
 ```
-This example shows how to use the Get-MgBetaBetaUserAuthenticationMicrosoftAuthenticatorMethod Cmdlet.
+This example shows how to use the Get-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

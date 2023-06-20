@@ -2,12 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.DirectoryManagement
 
-$params = @{
-	displayName = "Greater Seattle District Technical Schools"
-}
-
-Update-MgBetaDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId -BodyParameter $params
+Get-MgBetaDirectoryAdministrativeUnit -AdministrativeUnitId $administrativeUnitId
 ```
-This example shows how to use the Get-MgBetaBetaDirectoryAdministrativeUnit Cmdlet.
+This example shows how to use the Get-MgBetaDirectoryAdministrativeUnit Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

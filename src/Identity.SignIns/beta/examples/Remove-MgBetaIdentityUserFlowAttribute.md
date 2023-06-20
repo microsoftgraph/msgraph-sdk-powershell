@@ -2,12 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 
-$params = @{
-	description = "Your new hobby"
-}
-
-Update-MgBetaIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId -BodyParameter $params
+Remove-MgBetaIdentityUserFlowAttribute -IdentityUserFlowAttributeId $identityUserFlowAttributeId
 ```
-This example shows how to use the Remove-MgBetaBetaIdentityUserFlowAttribute Cmdlet.
+This example shows how to use the Remove-MgBetaIdentityUserFlowAttribute Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

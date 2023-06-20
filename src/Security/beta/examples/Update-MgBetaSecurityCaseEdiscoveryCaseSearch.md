@@ -8,6 +8,6 @@ $params = @{
 
 Update-MgBetaSecurityCaseEdiscoveryCaseSearch -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaSecurityCaseEdiscoveryCaseSearch Cmdlet.
+This example shows how to use the Update-MgBetaSecurityCaseEdiscoveryCaseSearch Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

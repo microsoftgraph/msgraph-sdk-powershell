@@ -4,6 +4,6 @@
 
 Get-MgBetaSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation -EdiscoveryCaseId $ediscoveryCaseId -EdiscoverySearchId $ediscoverySearchId
 ```
-This example shows how to use the Get-MgBetaBetaSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseSearchLastEstimateStatisticsOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

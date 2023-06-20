@@ -4,7 +4,7 @@
 
 Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId
 ```
-This example shows how to use the Get-MgBetaBetaEducationClassAssignmentSubmission Cmdlet.
+This example shows how to use the Get-MgBetaEducationClassAssignmentSubmission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Get submission with $expand options
@@ -13,6 +13,6 @@ This example shows how to use the Get-MgBetaBetaEducationClassAssignmentSubmissi
 
 Get-MgBetaEducationClassAssignmentSubmission -EducationClassId $educationClassId -EducationAssignmentId $educationAssignmentId -EducationSubmissionId $educationSubmissionId -ExpandProperty "*"
 ```
-This example shows how to use the Get-MgBetaBetaEducationClassAssignmentSubmission Cmdlet.
+This example shows how to use the Get-MgBetaEducationClassAssignmentSubmission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

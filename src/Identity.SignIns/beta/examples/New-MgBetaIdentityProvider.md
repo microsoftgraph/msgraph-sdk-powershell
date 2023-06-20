@@ -12,7 +12,7 @@ $params = @{
 
 New-MgBetaIdentityProvider -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityProvider Cmdlet.
+This example shows how to use the New-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Retrieves Apple identity provider (only for Azure AD B2C)
@@ -30,6 +30,6 @@ $params = @{
 
 New-MgBetaIdentityProvider -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaIdentityProvider Cmdlet.
+This example shows how to use the New-MgBetaIdentityProvider Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

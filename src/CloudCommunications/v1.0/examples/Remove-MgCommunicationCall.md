@@ -1,17 +1,8 @@
-### Example 1: Getting a Peer-to-Peer call
+### Example 1: Code snippet
 
 ```powershellImport-Module Microsoft.Graph.CloudCommunications
 
-Get-MgCommunicationCall -CallId $callId
-```
-This example shows how to use the Remove-MgCommunicationCall Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
-
-### Example 2: Getting a group call
-
-```powershellImport-Module Microsoft.Graph.CloudCommunications
-
-Get-MgCommunicationCall -CallId $callId
+Remove-MgCommunicationCall -CallId $callId
 ```
 This example shows how to use the Remove-MgCommunicationCall Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).

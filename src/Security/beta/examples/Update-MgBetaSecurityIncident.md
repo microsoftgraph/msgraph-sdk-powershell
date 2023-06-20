@@ -12,6 +12,6 @@ $params = @{
 
 Update-MgBetaSecurityIncident -IncidentId $incidentId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaSecurityIncident Cmdlet.
+This example shows how to use the Update-MgBetaSecurityIncident Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

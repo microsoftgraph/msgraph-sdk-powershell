@@ -1,30 +1,33 @@
-### Example 1: Using the New-MgBetaSecurityTriggerRetentionEvent Cmdlet
-```powershell
-Import-Module Microsoft.Graph.Beta.Security
+### Example 1: Code snippet
+
+```powershellImport-Module Microsoft.Graph.Beta.Security
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.security.retentionEvent"
-	DisplayName = "String"
-	Description = "String"
-	EventQueries = @(
+	displayName = "String"
+	description = "String"
+	eventQuery = @(
 		@{
-			"@odata.type" = "microsoft.graph.security.eventQueries"
+			"@odata.type" = "microsoft.graph.security.eventQuery"
 		}
 	)
-	EventTriggerDateTime = [System.DateTime]::Parse("String (timestamp)")
-	CreatedBy = @{
+	eventTriggerDateTime = [System.DateTime]::Parse("String (timestamp)")
+	createdBy = @{
 		"@odata.type" = "microsoft.graph.identitySet"
 	}
-	EventPropagationResults = @(
+	eventPropagationResults = @(
 		@{
 			"@odata.type" = "microsoft.graph.security.eventPropagationResult"
 		}
 	)
-	EventStatus = @{
+	eventStatus = @{
 		"@odata.type" = "microsoft.graph.security.retentionEventStatus"
 	}
-	LastStatusUpdateDateTime = [System.DateTime]::Parse("String (timestamp)")
+	lastStatusUpdateDateTime = [System.DateTime]::Parse("String (timestamp)")
 }
+
 New-MgBetaSecurityTriggerRetentionEvent -BodyParameter $params
 ```
 This example shows how to use the New-MgBetaSecurityTriggerRetentionEvent Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+

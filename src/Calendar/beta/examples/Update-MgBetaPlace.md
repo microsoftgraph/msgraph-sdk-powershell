@@ -13,6 +13,6 @@ $params = @{
 
 Update-MgBetaPlace -PlaceId $placeId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaPlace Cmdlet.
+This example shows how to use the Update-MgBetaPlace Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

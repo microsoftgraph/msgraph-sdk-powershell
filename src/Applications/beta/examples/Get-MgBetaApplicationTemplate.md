@@ -4,6 +4,6 @@
 
 Get-MgBetaApplicationTemplate -ApplicationTemplateId $applicationTemplateId
 ```
-This example shows how to use the Get-MgBetaBetaApplicationTemplate Cmdlet.
+This example shows how to use the Get-MgBetaApplicationTemplate Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

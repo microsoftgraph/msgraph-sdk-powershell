@@ -2,6 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using System;
 using System.Net.Http;
 using System.Threading;
@@ -31,7 +32,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Handlers
         private static HttpRequestMessage SetHttpVersion(HttpRequestMessage request)
         {
             // Default to HTTP/2. The HTTP client will fall back to HTTP/1.1 as needed.
-            request.Version = new Version(2, 0);
+            if (RuntimeUtils.IsPsCore())
+                request.Version = new Version(2, 0);
             return request;
         }
     }

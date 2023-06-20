@@ -4,6 +4,6 @@
 
 Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef -AccessPackageId $accessPackageId -AccessPackageId1 $accessPackageId1
 ```
-This example shows how to use the Remove-MgBetaBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef Cmdlet.
+This example shows how to use the Remove-MgBetaEntitlementManagementAccessPackageIncompatibleAccessPackageByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

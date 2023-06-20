@@ -24,6 +24,6 @@ $params = @{
 
 New-MgBetaGroupThread -GroupId $groupId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaGroupThread Cmdlet.
+This example shows how to use the New-MgBetaGroupThread Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

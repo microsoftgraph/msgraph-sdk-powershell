@@ -4,6 +4,6 @@
 
 Remove-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod -UserId $userId -MicrosoftAuthenticatorAuthenticationMethodId $microsoftAuthenticatorAuthenticationMethodId
 ```
-This example shows how to use the Remove-MgBetaBetaUserAuthenticationMicrosoftAuthenticatorMethod Cmdlet.
+This example shows how to use the Remove-MgBetaUserAuthenticationMicrosoftAuthenticatorMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

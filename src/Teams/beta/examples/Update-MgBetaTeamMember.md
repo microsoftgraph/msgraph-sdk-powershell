@@ -11,6 +11,6 @@ $params = @{
 
 Update-MgBetaTeamMember -TeamId $teamId -ConversationMemberId $conversationMemberId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaTeamMember Cmdlet.
+This example shows how to use the Update-MgBetaTeamMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

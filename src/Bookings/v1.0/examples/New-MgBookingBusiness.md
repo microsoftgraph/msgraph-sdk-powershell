@@ -1,17 +1,25 @@
-### Example 1: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
+### Example 1: Code snippet
 
-{{ Add output here }}
+```powershellImport-Module Microsoft.Graph.Bookings
+
+$params = @{
+	displayName = "Fourth Coffee"
+	address = @{
+		postOfficeBox = "P.O. Box 123"
+		street = "4567 Main Street"
+		city = "Buffalo"
+		state = "NY"
+		countryOrRegion = "USA"
+		postalCode = "98052"
+	}
+	phone = "206-555-0100"
+	email = "manager@fourthcoffee.com"
+	webSiteUrl = "https://www.fourthcoffee.com"
+	defaultCurrencyIso = "USD"
+}
+
+New-MgBookingBusiness -BodyParameter $params
 ```
+This example shows how to use the New-MgBookingBusiness Cmdlet.
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}

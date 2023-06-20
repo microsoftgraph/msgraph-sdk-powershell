@@ -12,6 +12,6 @@ $params = @{
 
 New-MgBetaPolicyTokenIssuancePolicy -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaPolicyTokenIssuancePolicy Cmdlet.
+This example shows how to use the New-MgBetaPolicyTokenIssuancePolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

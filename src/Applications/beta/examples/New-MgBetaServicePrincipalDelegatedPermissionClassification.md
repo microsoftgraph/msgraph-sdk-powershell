@@ -10,6 +10,6 @@ $params = @{
 
 New-MgBetaServicePrincipalDelegatedPermissionClassification -ServicePrincipalId $servicePrincipalId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaServicePrincipalDelegatedPermissionClassification Cmdlet.
+This example shows how to use the New-MgBetaServicePrincipalDelegatedPermissionClassification Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

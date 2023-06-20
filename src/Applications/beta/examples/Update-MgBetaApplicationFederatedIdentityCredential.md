@@ -14,6 +14,6 @@ $params = @{
 
 Update-MgBetaApplicationFederatedIdentityCredential -ApplicationId $applicationId -FederatedIdentityCredentialId $federatedIdentityCredentialId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaApplicationFederatedIdentityCredential Cmdlet.
+This example shows how to use the Update-MgBetaApplicationFederatedIdentityCredential Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -4,7 +4,7 @@
 
 Get-MgBetaInformationProtectionThreatAssessmentRequest -ThreatAssessmentRequestId $threatAssessmentRequestId
 ```
-This example shows how to use the Get-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the Get-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Get the properties of an email file assessment request
@@ -13,7 +13,7 @@ This example shows how to use the Get-MgBetaBetaInformationProtectionThreatAsses
 
 Get-MgBetaInformationProtectionThreatAssessmentRequest -ThreatAssessmentRequestId $threatAssessmentRequestId
 ```
-This example shows how to use the Get-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the Get-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 3: Get the properties of a file assessment request
@@ -22,7 +22,7 @@ This example shows how to use the Get-MgBetaBetaInformationProtectionThreatAsses
 
 Get-MgBetaInformationProtectionThreatAssessmentRequest -ThreatAssessmentRequestId $threatAssessmentRequestId
 ```
-This example shows how to use the Get-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the Get-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 4: Get the properties of an url assessment request
@@ -31,7 +31,7 @@ This example shows how to use the Get-MgBetaBetaInformationProtectionThreatAsses
 
 Get-MgBetaInformationProtectionThreatAssessmentRequest -ThreatAssessmentRequestId $threatAssessmentRequestId
 ```
-This example shows how to use the Get-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the Get-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 5: Expand threat assessment results for a request
@@ -40,6 +40,6 @@ This example shows how to use the Get-MgBetaBetaInformationProtectionThreatAsses
 
 Get-MgBetaInformationProtectionThreatAssessmentRequest -ThreatAssessmentRequestId $threatAssessmentRequestId -ExpandProperty "results"
 ```
-This example shows how to use the Get-MgBetaBetaInformationProtectionThreatAssessmentRequest Cmdlet.
+This example shows how to use the Get-MgBetaInformationProtectionThreatAssessmentRequest Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

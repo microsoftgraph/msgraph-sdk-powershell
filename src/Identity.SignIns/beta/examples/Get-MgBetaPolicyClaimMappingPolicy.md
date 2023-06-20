@@ -2,12 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 
-$params = @{
-	displayName = "UpdateClaimsPolicy"
-}
-
-Update-MgBetaPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId -BodyParameter $params
+Get-MgBetaPolicyClaimMappingPolicy -ClaimsMappingPolicyId $claimsMappingPolicyId
 ```
-This example shows how to use the Get-MgBetaBetaPolicyClaimMappingPolicy Cmdlet.
+This example shows how to use the Get-MgBetaPolicyClaimMappingPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

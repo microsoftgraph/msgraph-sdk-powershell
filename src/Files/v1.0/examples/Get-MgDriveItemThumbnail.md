@@ -1,18 +1,22 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
+Import-Module Microsoft.Graph.Files
 
-{{ Add output here }}
+Get-MgDriveItemThumbnail -DriveId $driveId -DriveItemId $driveItemId
 ```
+This example shows how to use the Get-MgDriveItemThumbnail Cmdlet.
 
-{{ Add description here }}
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: {{ Add title here }}
+### Example 2: Code snippet
+
 ```powershell
-PS C:\> {{ Add code here }}
+Import-Module Microsoft.Graph.Files
 
-{{ Add output here }}
+Get-MgDriveItemThumbnail -DriveId $driveId -DriveItemId $driveItemId -Property "c300x400_crop"
 ```
+This example shows how to use the Get-MgDriveItemThumbnail Cmdlet.
 
-{{ Add description here }}
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -4,7 +4,7 @@
 
 Get-MgBetaServiceAnnouncementMessageAttachment -ServiceUpdateMessageId $serviceUpdateMessageId -ServiceAnnouncementAttachmentId $serviceAnnouncementAttachmentId
 ```
-This example shows how to use the Get-MgBetaBetaServiceAnnouncementMessageAttachment Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementMessageAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Return a file stream of an attachment content for a message
@@ -13,6 +13,6 @@ This example shows how to use the Get-MgBetaBetaServiceAnnouncementMessageAttach
 
 Get-MgBetaServiceAnnouncementMessageAttachmentContent -ServiceUpdateMessageId $serviceUpdateMessageId -ServiceAnnouncementAttachmentId $serviceAnnouncementAttachmentId
 ```
-This example shows how to use the Get-MgBetaBetaServiceAnnouncementMessageAttachment Cmdlet.
+This example shows how to use the Get-MgBetaServiceAnnouncementMessageAttachment Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

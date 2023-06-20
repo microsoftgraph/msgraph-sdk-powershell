@@ -2,14 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Sites
 
-$params = @{
-	roles = @(
-		"read"
-	)
-}
-
-Update-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId -BodyParameter $params
+Remove-MgBetaSitePermission -SiteId $siteId -PermissionId $permissionId
 ```
-This example shows how to use the Remove-MgBetaBetaSitePermission Cmdlet.
+This example shows how to use the Remove-MgBetaSitePermission Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

@@ -2,18 +2,9 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Mail
 
-$params = @{
-	subject = "subject-value"
-	body = @{
-		contentType = ""
-		content = "content-value"
-	}
-	inferenceClassification = "other"
-}
-
 # A UPN can also be used as -UserId.
-Update-MgBetaUserMessage -UserId $userId -MessageId $messageId -BodyParameter $params
+Get-MgBetaUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "singleValueExtendedProperties(`$filter=id eq 'String {66f5a359-4659-4830-9070-00047ec6ac6e} Name Color')"
 ```
-This example shows how to use the Get-MgBetaBetaUserMessage Cmdlet.
+This example shows how to use the Get-MgBetaUserMessage Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

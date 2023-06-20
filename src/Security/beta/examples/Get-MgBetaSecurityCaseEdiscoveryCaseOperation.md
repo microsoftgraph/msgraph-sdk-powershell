@@ -4,6 +4,6 @@
 
 Get-MgBetaSecurityCaseEdiscoveryCaseOperation -EdiscoveryCaseId $ediscoveryCaseId -CaseOperationId $caseOperationId
 ```
-This example shows how to use the Get-MgBetaBetaSecurityCaseEdiscoveryCaseOperation Cmdlet.
+This example shows how to use the Get-MgBetaSecurityCaseEdiscoveryCaseOperation Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

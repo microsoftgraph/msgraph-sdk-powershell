@@ -10308,6 +10308,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               x-ms-navigationProperty: true
+            synchronization:
+              $ref: '#/components/schemas/microsoft.graph.synchronization'
           additionalProperties:
             type: object
     microsoft.graph.orgContact:
@@ -10505,7 +10507,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
@@ -11211,6 +11213,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
               x-ms-navigationProperty: true
+            synchronization:
+              $ref: '#/components/schemas/microsoft.graph.synchronization'
           additionalProperties:
             type: object
     microsoft.graph.profilePhoto:
@@ -12502,7 +12506,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string
@@ -13752,7 +13756,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.'
+          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -14004,6 +14008,28 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
         - title: tokenLifetimePolicy
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.synchronization:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: synchronization
+          type: object
+          properties:
+            secrets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationSecretKeyStringValuePair'
+            jobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
+              x-ms-navigationProperty: true
+            templates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
+              x-ms-navigationProperty: true
           additionalProperties:
             type: object
     microsoft.graph.physicalOfficeAddress:
@@ -17773,7 +17799,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
+              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -17847,6 +17873,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
+              description: 'List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             policyViolation:
@@ -18390,6 +18417,66 @@ components:
         - high
         - unknownFutureValue
       type: string
+    microsoft.graph.synchronizationSecretKeyStringValuePair:
+      title: synchronizationSecretKeyStringValuePair
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationSecret'
+        value:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.synchronizationJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: synchronizationJob
+          type: object
+          properties:
+            schedule:
+              $ref: '#/components/schemas/microsoft.graph.synchronizationSchedule'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.synchronizationStatus'
+            synchronizationJobSettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+            templateId:
+              type: string
+              nullable: true
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
+          additionalProperties:
+            type: object
+    microsoft.graph.synchronizationTemplate:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: synchronizationTemplate
+          type: object
+          properties:
+            applicationId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              format: uuid
+            default:
+              type: boolean
+            description:
+              type: string
+              nullable: true
+            discoverable:
+              type: boolean
+            factoryTag:
+              type: string
+              nullable: true
+            metadata:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationMetadataEntry'
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
+          additionalProperties:
+            type: object
     microsoft.graph.phoneType:
       title: phoneType
       enum:
@@ -21183,6 +21270,7 @@ components:
         modifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the message was modified.
           format: date-time
         reaction:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
@@ -21576,6 +21664,156 @@ components:
           nullable: true
         restrictionType:
           $ref: '#/components/schemas/microsoft.graph.appCredentialRestrictionType'
+      additionalProperties:
+        type: object
+    microsoft.graph.synchronizationSecret:
+      title: synchronizationSecret
+      enum:
+        - None
+        - UserName
+        - Password
+        - SecretToken
+        - AppKey
+        - BaseAddress
+        - ClientIdentifier
+        - ClientSecret
+        - SingleSignOnType
+        - Sandbox
+        - Url
+        - Domain
+        - ConsumerKey
+        - ConsumerSecret
+        - TokenKey
+        - TokenExpiration
+        - Oauth2AccessToken
+        - Oauth2AccessTokenCreationTime
+        - Oauth2RefreshToken
+        - SyncAll
+        - InstanceName
+        - Oauth2ClientId
+        - Oauth2ClientSecret
+        - CompanyId
+        - UpdateKeyOnSoftDelete
+        - SynchronizationSchedule
+        - SystemOfRecord
+        - SandboxName
+        - EnforceDomain
+        - SyncNotificationSettings
+        - SkipOutOfScopeDeletions
+        - Oauth2AuthorizationCode
+        - Oauth2RedirectUri
+        - ApplicationTemplateIdentifier
+        - Oauth2TokenExchangeUri
+        - Oauth2AuthorizationUri
+        - AuthenticationType
+        - Server
+        - PerformInboundEntitlementGrants
+        - HardDeletesEnabled
+        - SyncAgentCompatibilityKey
+        - SyncAgentADContainer
+        - ValidateDomain
+        - TestReferences
+        - ConnectionString
+      type: string
+    microsoft.graph.synchronizationSchedule:
+      title: synchronizationSchedule
+      type: object
+      properties:
+        expiration:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        interval:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          format: duration
+        state:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationScheduleState'
+      additionalProperties:
+        type: object
+    microsoft.graph.synchronizationStatus:
+      title: synchronizationStatus
+      type: object
+      properties:
+        code:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationStatusCode'
+        countSuccessiveCompleteFailures:
+          type: integer
+          format: int64
+        escrowsPruned:
+          type: boolean
+        lastExecution:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationTaskExecution'
+        lastSuccessfulExecution:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationTaskExecution'
+        lastSuccessfulExecutionWithExports:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationTaskExecution'
+        progress:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.synchronizationProgress'
+        quarantine:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationQuarantine'
+        steadyStateFirstAchievedTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        steadyStateLastAchievedTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        synchronizedEntryCountByType:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.stringKeyLongValuePair'
+        troubleshootingUrl:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.keyValuePair:
+      title: keyValuePair
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name for this key-value pair
+        value:
+          type: string
+          description: Value for this key-value pair
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.synchronizationSchema:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: synchronizationSchema
+          type: object
+          properties:
+            synchronizationRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.synchronizationRule'
+            version:
+              type: string
+              nullable: true
+            directories:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryDefinition'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.synchronizationMetadataEntry:
+      title: synchronizationMetadataEntry
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationMetadata'
+        value:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.weekIndex:
@@ -22641,6 +22879,203 @@ components:
         - customPasswordAddition
         - unknownFutureValue
       type: string
+    microsoft.graph.synchronizationScheduleState:
+      title: synchronizationScheduleState
+      enum:
+        - Active
+        - Disabled
+        - Paused
+      type: string
+    microsoft.graph.synchronizationStatusCode:
+      title: synchronizationStatusCode
+      enum:
+        - NotConfigured
+        - NotRun
+        - Active
+        - Paused
+        - Quarantine
+      type: string
+    microsoft.graph.synchronizationTaskExecution:
+      title: synchronizationTaskExecution
+      type: object
+      properties:
+        activityIdentifier:
+          type: string
+          nullable: true
+        countEntitled:
+          type: integer
+          format: int64
+        countEntitledForProvisioning:
+          type: integer
+          format: int64
+        countEscrowed:
+          type: integer
+          format: int64
+        countEscrowedRaw:
+          type: integer
+          format: int64
+        countExported:
+          type: integer
+          format: int64
+        countExports:
+          type: integer
+          format: int64
+        countImported:
+          type: integer
+          format: int64
+        countImportedDeltas:
+          type: integer
+          format: int64
+        countImportedReferenceDeltas:
+          type: integer
+          format: int64
+        error:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationError'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationTaskExecutionResult'
+        timeBegan:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        timeEnded:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+      additionalProperties:
+        type: object
+    microsoft.graph.synchronizationProgress:
+      title: synchronizationProgress
+      type: object
+      properties:
+        completedUnits:
+          type: integer
+          format: int64
+        progressObservationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        totalUnits:
+          type: integer
+          format: int64
+        units:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.synchronizationQuarantine:
+      title: synchronizationQuarantine
+      type: object
+      properties:
+        currentBegan:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        error:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationError'
+        nextAttempt:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        reason:
+          $ref: '#/components/schemas/microsoft.graph.quarantineReason'
+        seriesBegan:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+        seriesCount:
+          type: integer
+          format: int64
+      additionalProperties:
+        type: object
+    microsoft.graph.stringKeyLongValuePair:
+      title: stringKeyLongValuePair
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        value:
+          type: integer
+          format: int64
+      additionalProperties:
+        type: object
+    microsoft.graph.synchronizationRule:
+      title: synchronizationRule
+      type: object
+      properties:
+        containerFilter:
+          $ref: '#/components/schemas/microsoft.graph.containerFilter'
+        editable:
+          type: boolean
+        groupFilter:
+          $ref: '#/components/schemas/microsoft.graph.groupFilter'
+        id:
+          type: string
+          nullable: true
+        metadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.stringKeyStringValuePair'
+        name:
+          type: string
+          nullable: true
+        objectMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.objectMapping'
+        priority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        sourceDirectoryName:
+          type: string
+          nullable: true
+        targetDirectoryName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.directoryDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryDefinition
+          type: object
+          properties:
+            discoverabilities:
+              $ref: '#/components/schemas/microsoft.graph.directoryDefinitionDiscoverabilities'
+            discoveryDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            objects:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.objectDefinition'
+            readOnly:
+              type: boolean
+            version:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.synchronizationMetadata:
+      title: synchronizationMetadata
+      enum:
+        - GalleryApplicationIdentifier
+        - GalleryApplicationKey
+        - IsOAuthEnabled
+        - IsSynchronizationAgentAssignmentRequired
+        - IsSynchronizationAgentRequired
+        - IsSynchronizationInPreview
+        - OAuthSettings
+        - SynchronizationLearnMoreIbizaFwLink
+        - ConfigurationFields
+      type: string
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -22955,6 +23390,134 @@ components:
           $ref: '#/components/schemas/microsoft.graph.scheduleEntityTheme'
       additionalProperties:
         type: object
+    microsoft.graph.synchronizationError:
+      title: synchronizationError
+      type: object
+      properties:
+        code:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+        tenantActionable:
+          type: boolean
+      additionalProperties:
+        type: object
+    microsoft.graph.synchronizationTaskExecutionResult:
+      title: synchronizationTaskExecutionResult
+      enum:
+        - Succeeded
+        - Failed
+        - EntryLevelErrors
+      type: string
+    microsoft.graph.quarantineReason:
+      title: quarantineReason
+      enum:
+        - EncounteredBaseEscrowThreshold
+        - EncounteredTotalEscrowThreshold
+        - EncounteredEscrowProportionThreshold
+        - EncounteredQuarantineException
+        - Unknown
+        - QuarantinedOnDemand
+        - TooManyDeletes
+        - IngestionInterrupted
+      type: string
+    microsoft.graph.containerFilter:
+      title: containerFilter
+      type: object
+      properties:
+        includedContainers:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.groupFilter:
+      title: groupFilter
+      type: object
+      properties:
+        includedGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.stringKeyStringValuePair:
+      title: stringKeyStringValuePair
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        value:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.objectMapping:
+      title: objectMapping
+      type: object
+      properties:
+        attributeMappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.attributeMapping'
+        enabled:
+          type: boolean
+        flowTypes:
+          $ref: '#/components/schemas/microsoft.graph.objectFlowTypes'
+        metadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.objectMappingMetadataEntry'
+        name:
+          type: string
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/microsoft.graph.filter'
+        sourceObjectName:
+          type: string
+          nullable: true
+        targetObjectName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.directoryDefinitionDiscoverabilities:
+      title: directoryDefinitionDiscoverabilities
+      enum:
+        - None
+        - AttributeNames
+        - AttributeDataTypes
+        - AttributeReadOnly
+        - ReferenceAttributes
+        - UnknownFutureValue
+      type: string
+    microsoft.graph.objectDefinition:
+      title: objectDefinition
+      type: object
+      properties:
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.attributeDefinition'
+        metadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadataEntry'
+        name:
+          type: string
+          nullable: true
+        supportedApis:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23186,6 +23749,117 @@ components:
         - darkYellow
         - unknownFutureValue
       type: string
+    microsoft.graph.attributeMapping:
+      title: attributeMapping
+      type: object
+      properties:
+        defaultValue:
+          type: string
+          nullable: true
+        exportMissingReferences:
+          type: boolean
+        flowBehavior:
+          $ref: '#/components/schemas/microsoft.graph.attributeFlowBehavior'
+        flowType:
+          $ref: '#/components/schemas/microsoft.graph.attributeFlowType'
+        matchingPriority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        source:
+          $ref: '#/components/schemas/microsoft.graph.attributeMappingSource'
+        targetAttributeName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.objectFlowTypes:
+      title: objectFlowTypes
+      enum:
+        - None
+        - Add
+        - Update
+        - Delete
+      type: string
+    microsoft.graph.objectMappingMetadataEntry:
+      title: objectMappingMetadataEntry
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/microsoft.graph.objectMappingMetadata'
+        value:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.filter:
+      title: filter
+      type: object
+      properties:
+        categoryFilterGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.filterGroup'
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.filterGroup'
+        inputFilterGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.filterGroup'
+      additionalProperties:
+        type: object
+    microsoft.graph.attributeDefinition:
+      title: attributeDefinition
+      type: object
+      properties:
+        anchor:
+          type: boolean
+        apiExpressions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.stringKeyStringValuePair'
+        caseExact:
+          type: boolean
+        defaultValue:
+          type: string
+          nullable: true
+        flowNullValues:
+          type: boolean
+        metadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadataEntry'
+        multivalued:
+          type: boolean
+        mutability:
+          $ref: '#/components/schemas/microsoft.graph.mutability'
+        name:
+          type: string
+          nullable: true
+        referencedObjects:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.referencedObject'
+        required:
+          type: boolean
+        type:
+          $ref: '#/components/schemas/microsoft.graph.attributeType'
+      additionalProperties:
+        type: object
+    microsoft.graph.objectDefinitionMetadataEntry:
+      title: objectDefinitionMetadataEntry
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadata'
+        value:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object
@@ -23350,6 +24024,115 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFont'
           additionalProperties:
             type: object
+    microsoft.graph.attributeFlowBehavior:
+      title: attributeFlowBehavior
+      enum:
+        - FlowWhenChanged
+        - FlowAlways
+      type: string
+    microsoft.graph.attributeFlowType:
+      title: attributeFlowType
+      enum:
+        - Always
+        - ObjectAddOnly
+        - MultiValueAddOnly
+        - ValueAddOnly
+        - AttributeAddOnly
+      type: string
+    microsoft.graph.attributeMappingSource:
+      title: attributeMappingSource
+      type: object
+      properties:
+        expression:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        parameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
+        type:
+          $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
+      additionalProperties:
+        type: object
+    microsoft.graph.objectMappingMetadata:
+      title: objectMappingMetadata
+      enum:
+        - EscrowBehavior
+        - DisableMonitoringForChanges
+        - OriginalJoiningProperty
+        - Disposition
+        - IsCustomerDefined
+        - ExcludeFromReporting
+        - Unsynchronized
+      type: string
+    microsoft.graph.filterGroup:
+      title: filterGroup
+      type: object
+      properties:
+        clauses:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.filterClause'
+        name:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.attributeDefinitionMetadataEntry:
+      title: attributeDefinitionMetadataEntry
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadata'
+        value:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.mutability:
+      title: mutability
+      enum:
+        - ReadWrite
+        - ReadOnly
+        - Immutable
+        - WriteOnly
+      type: string
+    microsoft.graph.referencedObject:
+      title: referencedObject
+      type: object
+      properties:
+        referencedObjectName:
+          type: string
+          nullable: true
+        referencedProperty:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.attributeType:
+      title: attributeType
+      enum:
+        - String
+        - Integer
+        - Reference
+        - Binary
+        - Boolean
+        - DateTime
+      type: string
+    microsoft.graph.objectDefinitionMetadata:
+      title: objectDefinitionMetadata
+      enum:
+        - PropertyNameAccountEnabled
+        - PropertyNameSoftDeleted
+        - IsSoftDeletionSupported
+        - IsSynchronizeAllSupported
+        - ConnectorDataStorageRequired
+        - Extensions
+        - BaseObjectName
+      type: string
     microsoft.graph.workbookChartAxisFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23414,6 +24197,51 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFill'
           additionalProperties:
             type: object
+    microsoft.graph.stringKeyAttributeMappingSourceValuePair:
+      title: stringKeyAttributeMappingSourceValuePair
+      type: object
+      properties:
+        key:
+          type: string
+          nullable: true
+        value:
+          $ref: '#/components/schemas/microsoft.graph.attributeMappingSource'
+      additionalProperties:
+        type: object
+    microsoft.graph.attributeMappingSourceType:
+      title: attributeMappingSourceType
+      enum:
+        - Attribute
+        - Constant
+        - Function
+      type: string
+    microsoft.graph.filterClause:
+      title: filterClause
+      type: object
+      properties:
+        operatorName:
+          type: string
+          nullable: true
+        sourceOperandName:
+          type: string
+          nullable: true
+        targetOperand:
+          $ref: '#/components/schemas/microsoft.graph.filterOperand'
+      additionalProperties:
+        type: object
+    microsoft.graph.attributeDefinitionMetadata:
+      title: attributeDefinitionMetadata
+      enum:
+        - BaseAttributeName
+        - ComplexObjectDefinition
+        - IsContainer
+        - IsCustomerDefined
+        - IsDomainQualified
+        - LinkPropertyNames
+        - LinkTypeName
+        - MaximumLength
+        - ReferencedProperty
+      type: string
     microsoft.graph.workbookChartGridlinesFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23434,6 +24262,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFont'
           additionalProperties:
             type: object
+    microsoft.graph.filterOperand:
+      title: filterOperand
+      type: object
+      properties:
+        values:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
   responses:
     microsoft.graph.userCollectionResponse:
       description: Retrieved collection

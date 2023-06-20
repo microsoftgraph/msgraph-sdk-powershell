@@ -18,6 +18,6 @@ $params = @{
 
 New-MgBetaSecurityCaseEdiscoveryCaseSearch -EdiscoveryCaseId $ediscoveryCaseId -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaSecurityCaseEdiscoveryCaseSearch Cmdlet.
+This example shows how to use the New-MgBetaSecurityCaseEdiscoveryCaseSearch Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

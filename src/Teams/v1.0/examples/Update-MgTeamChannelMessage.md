@@ -51,6 +51,8 @@ $params = @{
 	)
 	reactions = @(
 	)
+	messageHistory = @(
+	)
 }
 
 Update-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
@@ -121,6 +123,8 @@ $params = @{
 	)
 	reactions = @(
 	)
+	messageHistory = @(
+	)
 }
 
 Update-MgTeamChannelMessage -TeamId $teamId -ChannelId $channelId -ChatMessageId $chatMessageId -BodyParameter $params
@@ -157,7 +161,7 @@ $params = @{
 			id = "e8f78756199240b88448ae0fc6db112d"
 			contentType = "application/vnd.microsoft.card.hero"
 			contentUrl = $null
-			content = "{
+			content = '{
   "title": "*title*",
   "subtitle": "*subtitle*",
   "text": "Have you found yourself scratching your head trying to figure these questions out? Frustrated trying to access some of the goodies unique to the Microsoft Teams platform?  Well, fear not, Bot Builder SDK Extension for Teams in .NET and Node flavors is here!  Just head on over to Nuget or NPM to download our tasty helpers, sure to speed up your prep time so you can spend more time maximizing the flavor of the bots you're cooking up.Here???s a small sample of some recipes to whet your appetite.",
@@ -184,7 +188,7 @@ $params = @{
       "value": "http://google.com"
     }
   ]
-}"
+}'
 			name = $null
 			thumbnailUrl = $null
 		}
@@ -192,7 +196,7 @@ $params = @{
 			id = "638464e32834471ea202007da60a5ae6"
 			contentType = "application/vnd.microsoft.card.hero"
 			contentUrl = $null
-			content = "{
+			content = '{
   "title": "*title*",
   "subtitle": "*subtitle*",
   "text": "Have you found yourself scratching your head trying to figure these questions out? Frustrated trying to access some of the goodies unique to the Microsoft Teams platform?  Well, fear not, Bot Builder SDK Extension for Teams in .NET and Node flavors is here!  Just head on over to Nuget or NPM to download our tasty helpers, sure to speed up your prep time so you can spend more time maximizing the flavor of the bots you're cooking up.Here???s a small sample of some recipes to whet your appetite.",
@@ -212,7 +216,7 @@ $params = @{
       }
     }
   ]
-}"
+}'
 			name = $null
 			thumbnailUrl = $null
 		}
@@ -220,6 +224,8 @@ $params = @{
 	mentions = @(
 	)
 	reactions = @(
+	)
+	messageHistory = @(
 	)
 }
 
@@ -257,7 +263,7 @@ $params = @{
 			id = "e8f78756199240b88448ae0fc6db112d"
 			contentType = "application/vnd.microsoft.card.hero"
 			contentUrl = $null
-			content = "{
+			content = '{
   "title": "*title*",
   "subtitle": "*subtitle*",
   "text": "Have you found yourself scratching your head trying to figure these questions out? Frustrated trying to access some of the goodies unique to the Microsoft Teams platform?  Well, fear not, Bot Builder SDK Extension for Teams in .NET and Node flavors is here!  Just head on over to Nuget or NPM to download our tasty helpers, sure to speed up your prep time so you can spend more time maximizing the flavor of the bots you're cooking up.Here???s a small sample of some recipes to whet your appetite.",
@@ -284,7 +290,7 @@ $params = @{
       "value": "http://google.com"
     }
   ]
-}"
+}'
 			name = $null
 			thumbnailUrl = $null
 		}
@@ -292,7 +298,7 @@ $params = @{
 			id = "638464e32834471ea202007da60a5ae6"
 			contentType = "application/vnd.microsoft.card.hero"
 			contentUrl = $null
-			content = "{
+			content = '{
   "title": "*title*",
   "subtitle": "*subtitle*",
   "text": "Have you found yourself scratching your head trying to figure these questions out? Frustrated trying to access some of the goodies unique to the Microsoft Teams platform?  Well, fear not, Bot Builder SDK Extension for Teams in .NET and Node flavors is here!  Just head on over to Nuget or NPM to download our tasty helpers, sure to speed up your prep time so you can spend more time maximizing the flavor of the bots you're cooking up.Here???s a small sample of some recipes to whet your appetite.",
@@ -312,7 +318,7 @@ $params = @{
       }
     }
   ]
-}"
+}'
 			name = $null
 			thumbnailUrl = $null
 		}
@@ -421,6 +427,136 @@ $params = @{
 					id = "03a02232-d8f5-4970-a77e-6e8c76ce7a4e"
 					displayName = $null
 					userIdentityType = "aadUser"
+				}
+			}
+		}
+	)
+	messageHistory = @(
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:30.489Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "angry"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "f1b66449-b46d-49b0-9c3c-53c10a5c818e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:32.489Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "laugh"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "03a02232-d8f5-4970-a77e-6e8c76ce7a4e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T02:17:14.67Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "like"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "f1b66449-b46d-49b0-9c3c-53c10a5c818e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T02:34:40.3Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "like"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "4c9041b7-449a-40f7-8855-56da239b9fd1"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:25.489Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "like"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "03a02232-d8f5-4970-a77e-6e8c76ce7a4e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:31.489Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "heart"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "03a02232-d8f5-4970-a77e-6e8c76ce7a4e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:33.489Z")
+			actions = "reactionAdded"
+			reaction = @{
+				reactionType = "sad"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "03a02232-d8f5-4970-a77e-6e8c76ce7a4e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
+				}
+			}
+		}
+		@{
+			modifiedDateTime = [System.DateTime]::Parse("2018-10-21T08:10:34.489Z")
+			actions = "surprised"
+			reaction = @{
+				reactionType = "sad"
+				user = @{
+					application = $null
+					device = $null
+					user = @{
+						id = "03a02232-d8f5-4970-a77e-6e8c76ce7a4e"
+						displayName = $null
+						userIdentityType = "aadUser"
+					}
 				}
 			}
 		}

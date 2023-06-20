@@ -2,8 +2,8 @@
 
 ```powershellImport-Module Microsoft.Graph.Beta.Education
 
-Get-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
+Remove-MgBetaEducationClassAssignmentCategory -EducationClassId $educationClassId -EducationCategoryId $educationCategoryId
 ```
-This example shows how to use the Remove-MgBetaBetaEducationClassAssignmentCategory Cmdlet.
+This example shows how to use the Remove-MgBetaEducationClassAssignmentCategory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

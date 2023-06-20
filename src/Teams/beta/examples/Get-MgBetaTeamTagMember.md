@@ -4,6 +4,6 @@
 
 Get-MgBetaTeamTagMember -TeamId $teamId -TeamworkTagId $teamworkTagId -TeamworkTagMemberId $teamworkTagMemberId
 ```
-This example shows how to use the Get-MgBetaBetaTeamTagMember Cmdlet.
+This example shows how to use the Get-MgBetaTeamTagMember Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

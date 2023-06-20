@@ -8,6 +8,6 @@ $params = @{
 
 Remove-MgBetaServicePrincipalOwnerByRef -ServicePrincipalId $servicePrincipalId -DirectoryObjectId $directoryObjectId -BodyParameter $params
 ```
-This example shows how to use the Remove-MgBetaBetaServicePrincipalOwnerByRef Cmdlet.
+This example shows how to use the Remove-MgBetaServicePrincipalOwnerByRef Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

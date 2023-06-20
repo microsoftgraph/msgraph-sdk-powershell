@@ -2124,6 +2124,7 @@ paths:
                 - primaryAccountFullName
                 - primaryAccountUserName
                 - registrationDisabled
+                - requestRequiresNetworkTether
                 - setPrimarySetupAccountAsRegularUser
                 - skipPrimarySetupAccountCreation
                 - zoomDisabled
@@ -11138,6 +11139,9 @@ components:
             registrationDisabled:
               type: boolean
               description: Indicates if registration is disabled
+            requestRequiresNetworkTether:
+              type: boolean
+              description: Indicates if the device is network-tethered to run the command
             setPrimarySetupAccountAsRegularUser:
               type: boolean
               description: Indicates whether Setup Assistant will set the account as a regular user
@@ -12882,6 +12886,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.customAppScope'
+              description: Workload-specific scope object that represents the resources for which the principal has been granted access.
               x-ms-navigationProperty: true
             resourceNamespaces:
               type: array
@@ -13418,6 +13423,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStep'
+              description: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -13878,11 +13884,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object

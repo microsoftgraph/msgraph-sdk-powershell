@@ -9,6 +9,6 @@ $params = @{
 # A UPN can also be used as -UserId.
 Update-MgBetaUserOutlookMasterCategory -UserId $userId -OutlookCategoryId $outlookCategoryId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaUserOutlookMasterCategory Cmdlet.
+This example shows how to use the Update-MgBetaUserOutlookMasterCategory Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

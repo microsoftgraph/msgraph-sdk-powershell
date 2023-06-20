@@ -2670,6 +2670,8 @@ paths:
                 - metadata desc
                 - recordingInfo
                 - recordingInfo desc
+                - restrictedExperience
+                - restrictedExperience desc
               type: string
         - name: $select
           in: query
@@ -2688,6 +2690,7 @@ paths:
                 - mediaStreams
                 - metadata
                 - recordingInfo
+                - restrictedExperience
               type: string
         - name: $expand
           in: query
@@ -2785,6 +2788,7 @@ paths:
                 - mediaStreams
                 - metadata
                 - recordingInfo
+                - restrictedExperience
               type: string
         - name: $expand
           in: query
@@ -6306,6 +6310,8 @@ components:
               nullable: true
             recordingInfo:
               $ref: '#/components/schemas/microsoft.graph.recordingInfo'
+            restrictedExperience:
+              $ref: '#/components/schemas/microsoft.graph.onlineMeetingRestricted'
           additionalProperties:
             type: object
     microsoft.graph.startHoldMusicOperation:
@@ -6847,6 +6853,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         recordingStatus:
           $ref: '#/components/schemas/microsoft.graph.recordingStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.onlineMeetingRestricted:
+      title: onlineMeetingRestricted
+      type: object
+      properties:
+        contentSharingDisabled:
+          $ref: '#/components/schemas/microsoft.graph.onlineMeetingContentSharingDisabledReason'
+        videoDisabled:
+          $ref: '#/components/schemas/microsoft.graph.onlineMeetingVideoDisabledReason'
       additionalProperties:
         type: object
     microsoft.graph.teleconferenceDeviceMediaQuality:
@@ -7775,6 +7791,18 @@ components:
         - sendOnly
         - receiveOnly
         - sendReceive
+      type: string
+    microsoft.graph.onlineMeetingContentSharingDisabledReason:
+      title: onlineMeetingContentSharingDisabledReason
+      enum:
+        - watermarkProtection
+        - unknownFutureValue
+      type: string
+    microsoft.graph.onlineMeetingVideoDisabledReason:
+      title: onlineMeetingVideoDisabledReason
+      enum:
+        - watermarkProtection
+        - unknownFutureValue
       type: string
     ReferenceNumeric:
       enum:

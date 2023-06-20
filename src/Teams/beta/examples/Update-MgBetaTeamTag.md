@@ -8,6 +8,6 @@ $params = @{
 
 Update-MgBetaTeamTag -TeamId $teamId -TeamworkTagId $teamworkTagId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaTeamTag Cmdlet.
+This example shows how to use the Update-MgBetaTeamTag Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

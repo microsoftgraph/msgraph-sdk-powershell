@@ -11,6 +11,6 @@ $params = @{
 
 New-MgBetaPrintTaskDefinition -BodyParameter $params
 ```
-This example shows how to use the New-MgBetaBetaPrintTaskDefinition Cmdlet.
+This example shows how to use the New-MgBetaPrintTaskDefinition Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

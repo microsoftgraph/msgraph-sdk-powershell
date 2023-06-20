@@ -8,6 +8,6 @@ $params = @{
 
 Update-MgBetaUserAuthenticationEmailMethod -UserId $userId -EmailAuthenticationMethodId $emailAuthenticationMethodId -BodyParameter $params
 ```
-This example shows how to use the Update-MgBetaBetaUserAuthenticationEmailMethod Cmdlet.
+This example shows how to use the Update-MgBetaUserAuthenticationEmailMethod Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
