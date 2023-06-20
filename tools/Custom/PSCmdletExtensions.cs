@@ -111,7 +111,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
             var serviceErrorDoc = "https://learn.microsoft.com/graph/errors";
             var recommendedAction = $"See service error codes: {serviceErrorDoc}";
             var errorDetailsMessage = await HttpMessageLogFormatter.GetErrorLogAsync(response);
-            return new ErrorDetails(errorDetailsMessage)
+            return new ErrorDetails($"{odataError?.Message}{Environment.NewLine}{errorDetailsMessage}")
             {
                 RecommendedAction = recommendedAction
             };

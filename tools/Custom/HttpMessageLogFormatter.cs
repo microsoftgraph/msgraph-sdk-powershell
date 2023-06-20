@@ -96,7 +96,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
             string body = string.Empty;
             try
             {
-                body = (response.Content == null) ? string.Empty : FormatString(await response.Content.ReadAsStringAsync());
+                body = (response.Content == null) ? string.Empty : await response.Content.ReadAsStringAsync();
             }
             catch { }
 
