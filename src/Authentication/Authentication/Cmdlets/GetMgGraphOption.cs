@@ -19,8 +19,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            //File.WriteAllText(Constants.GraphOptionsFilePath, JsonConvert.SerializeObject(GraphSession.Instance.GraphOption, Formatting.Indented));
-            WriteObject(new PSObject(JObject.Parse(File.ReadAllText(Constants.GraphOptionsFilePath))));
+            WriteObject(GraphSession.Instance.GraphOption);
         }
 
         protected override void EndProcessing()
