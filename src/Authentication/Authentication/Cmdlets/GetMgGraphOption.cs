@@ -9,6 +9,7 @@ using System.Management.Automation;
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
     [Cmdlet(VerbsCommon.Get, "MgGraphOption", HelpUri = "")]
+    [OutputType(typeof(IGraphOption))]
     public class GetMgGraphOption : PSCmdlet
     {
         protected override void BeginProcessing()
