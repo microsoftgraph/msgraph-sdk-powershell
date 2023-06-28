@@ -2,18 +2,16 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Management.Automation;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    [Cmdlet(VerbsCommon.Set, "MgGraphOption", HelpUri = "")]
-    public class SetMgGraphOption : PSCmdlet
+    [Cmdlet(VerbsCommon.Get, "MgGraphOption", HelpUri = "")]
+    [OutputType(typeof(IGraphOption))]
+    public class GetMgGraphOption : PSCmdlet
     {
-        [Parameter]
-        public bool EnableLoginByWAM { get; set; }
-
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
@@ -22,12 +20,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
-            if (this.IsParameterBound(nameof(EnableLoginByWAM)))
-            {
-                GraphSession.Instance.GraphOption.EnableWAMForMSGraph = EnableLoginByWAM;
-                WriteDebug($"Signin by Web Account Manager (WAM) is {(EnableLoginByWAM ? "enabled" : "disabled")}.");
-            }
-            File.WriteAllText(Constants.GraphOptionsFilePath, JsonConvert.SerializeObject(GraphSession.Instance.GraphOption, Formatting.Indented));
+            WriteObject(GraphSession.Instance.GraphOption);
         }
 
         protected override void EndProcessing()
