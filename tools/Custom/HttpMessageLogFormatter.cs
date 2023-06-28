@@ -4,6 +4,7 @@
 
 namespace NamespacePrefixPlaceholder.PowerShell
 {
+    using NamespacePrefixPlaceholder.PowerShell.Models;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
@@ -63,9 +64,9 @@ namespace NamespacePrefixPlaceholder.PowerShell
 
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"============================ HTTP REQUEST ============================{Environment.NewLine}");
-            stringBuilder.AppendLine($"HTTP Method:{Environment.NewLine}{requestClone.Method.ToString()}{Environment.NewLine}");
-            stringBuilder.AppendLine($"Absolute Uri:{Environment.NewLine}{requestClone.RequestUri.ToString()}{Environment.NewLine}");
-            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(ConvertHttpHeadersToCollection(requestClone.Headers))}{Environment.NewLine}");
+            stringBuilder.AppendLine($"HTTP Method:{Environment.NewLine}{requestClone.Method}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Absolute Uri:{Environment.NewLine}{requestClone.RequestUri}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(requestClone.Headers)}{Environment.NewLine}");
             stringBuilder.AppendLine($"Body:{Environment.NewLine}{SanitizeBody(body)}{Environment.NewLine}");
             return stringBuilder.ToString();
         }
@@ -84,12 +85,30 @@ namespace NamespacePrefixPlaceholder.PowerShell
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"============================ HTTP RESPONSE ============================{Environment.NewLine}");
             stringBuilder.AppendLine($"Status Code:{Environment.NewLine}{response.StatusCode}{Environment.NewLine}");
-            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(ConvertHttpHeadersToCollection(response.Headers))}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(response.Headers)}{Environment.NewLine}");
             stringBuilder.AppendLine($"Body:{Environment.NewLine}{SanitizeBody(body)}{Environment.NewLine}");
             return stringBuilder.ToString();
         }
 
-        private static Regex regexPattern = new Regex("(\\s*\"access_token\"\\s*:\\s*)\"[^\"]+\"", RegexOptions.Compiled);
+        public static async Task<string> GetErrorLogAsync(HttpResponseMessage response, IMicrosoftGraphODataErrorsMainError odataError)
+        {
+            if (response == null) return string.Empty;
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine($"{odataError?.Message}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Status: {((int)response.StatusCode)} ({response.StatusCode})");
+            stringBuilder.AppendLine($"ErrorCode: {odataError?.Code}");
+            stringBuilder.AppendLine($"Date: {odataError?.Innererror?.Date}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(response.Headers)}{Environment.NewLine}");
+            return stringBuilder.ToString();
+        }
+
+        internal static string HeadersToString(HttpHeaders headers)
+        {
+            return HeadersToString(ConvertHttpHeadersToCollection(headers));
+        }
+
+        private static readonly Regex regexPattern = new Regex("(\\s*\"access_token\"\\s*:\\s*)\"[^\"]+\"", RegexOptions.Compiled);
         private static object SanitizeBody(string body)
         {
             IList<Regex> regexList = new List<Regex>();
@@ -110,7 +129,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
             return headers.ToDictionary(a => a.Key, a => a.Value);
         }
 
-        private static object HeadersToString(IDictionary<string, IEnumerable<string>> headers)
+        private static string HeadersToString(IDictionary<string, IEnumerable<string>> headers)
         {
             StringBuilder stringBuilder = headers.Aggregate(new StringBuilder(),
                 (sb, kvp) => sb.AppendLine(string.Format("{0,-30}: {1}", kvp.Key, String.Join(",", kvp.Value.ToArray()))));

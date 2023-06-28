@@ -246,6 +246,27 @@ directive:
                 }
             }
           }
+# Add Microsoft Graph error properties to InnerError.
+  - from: 'openapi-document'
+    where: $.components.schemas['microsoft.graph.ODataErrors.InnerError']
+    transform: >-
+      return {
+        "type": "object",
+        "properties": {
+            "date" : {
+                "type" : 'string'
+            },
+            "request-id" : {
+                "type" : 'string'
+            },
+            "client-request-id" : {
+                "type" : 'string'
+            }
+        },
+        "additionalProperties": {
+            "type" : "object"
+        }
+      }
 # Mark '@odata.id' as required properties for /$ref.
   - from: 'openapi-document'
     where: $.components.schemas.ReferenceCreate
@@ -399,6 +420,10 @@ directive:
           }
         }
 
+        // Format error details.
+        let errorDetailsRegex = /(ErrorDetails\s*=\s*)(new.*ErrorDetails\(message\).*)/gmi
+        $ = $.replace(errorDetailsRegex, '$1await this.GetErrorDetailsAsync((await response)?.Error, responseMessage)');
+
         return $;
       }
 
@@ -543,6 +568,21 @@ directive:
         // Remove Values from IAssociativeArray interface.
         let valuesRegex = /System\.Collections\.Generic\.IEnumerable<T>\s*Values\s*{\s*get;\s*}/gm
         $ = $.replace(valuesRegex, '');
+
+        return $;
+      }
+
+# Modify generated JsonObject class.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%2Fruntime%2FNodes%2FJsonObject.cs/gm))
+      {
+        return $;
+      } else {
+        // Make JsonObject's items dictionary case insensitive.
+        let dictionaryInitRegex = /(\s*=\s*new\s*Dictionary<string,\s*JsonNode>\()(\);)/gm
+        $ = $.replace(dictionaryInitRegex, '$1StringComparer.InvariantCultureIgnoreCase$2');
 
         return $;
       }
