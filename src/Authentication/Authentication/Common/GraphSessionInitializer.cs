@@ -29,6 +29,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         internal static GraphSession CreateInstance(IDataStore dataStore = null)
         {
             IGraphOption graphOptions = null;
+            // Try to create directory if it doesn't exist.
+            Directory.CreateDirectory(Core.Constants.GraphDirectoryPath);
             if (File.Exists(Constants.GraphOptionsFilePath))
             {
                 // Deserialize the JSON into the GraphOption instance
