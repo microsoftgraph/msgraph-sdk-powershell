@@ -163,7 +163,7 @@ Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT
 <!-- Shields -->
 
 [mg]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.svg?style=flat-square&label=Microsoft.Graph
-[mgbeta]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.svg?style=flat-square&label=Microsoft.Graph.Beta
+[mgbeta]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.Beta.svg?style=flat-square&label=Microsoft.Graph.Beta
 [mgnext]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.svg?include_prereleases&style=flat-square&label=Microsoft.Graph
 [mgbetanext]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.Beta.svg?include_prereleases&style=flat-square&label=Microsoft.Graph.Beta
 
