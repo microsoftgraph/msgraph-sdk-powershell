@@ -35,18 +35,26 @@ namespace NamespacePrefixPlaceholder.PowerShell
             if (originalRequest.Content != null)
             {
                 // HttpClient doesn't rewind streams and we have to explicitly do so.
-                await originalRequest.Content.ReadAsStreamAsync().ContinueWith(t =>
+                var ms = new MemoryStream();
+                await originalRequest.Content.CopyToAsync(ms);
+                ms.Position = 0;
+                newRequest.Content = new StreamContent(ms);
+                // Attempt to copy request content headers with a single retry.
+                // HttpHeaders dictionary is not thread-safe when targeting anything below .NET 7. For more information, see https://github.com/dotnet/runtime/issues/61798.
+                int retryCount = 0;
+                int maxRetryCount = 2;
+                while (retryCount < maxRetryCount)
                 {
-                    if (t.Result.CanSeek)
-                        t.Result.Seek(0, SeekOrigin.Begin);
-
-                    newRequest.Content = new StreamContent(t.Result);
-                }).ConfigureAwait(false);
-
-                // Copy content headers.
-                if (originalRequest.Content.Headers != null)
-                    foreach (var contentHeader in originalRequest.Content.Headers)
-                        newRequest.Content.Headers.TryAddWithoutValidation(contentHeader.Key, contentHeader.Value);
+                    try
+                    {
+                        originalRequest.Content.Headers?.ToList().ForEach(header => newRequest.Content.Headers.TryAddWithoutValidation(header.Key, header.Value));
+                        retryCount = maxRetryCount;
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        retryCount++;
+                    }
+                }
             }
             return newRequest;
         }
