@@ -1,4 +1,4 @@
-# Switch to beta profile. This loads cmdlets that call MS Graph beta endpoint.
+# Install Microsoft.Graph.Beta module. The following samples call the Microsoft Graph beta endpoint.
 
 # Create a new team.
 $TeamName = "2020 Interns"
