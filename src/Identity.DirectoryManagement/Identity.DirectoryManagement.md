@@ -17,6 +17,7 @@ require:
 
 ``` yaml
 directive:
+  - remove-path-by-operation: ^tenantRelationship\.managedTenant\.managementTemplateStepVersion\.deployment_changeDeploymentStatus$
 # Remove cmdlets.
   - where:
       verb: Get
