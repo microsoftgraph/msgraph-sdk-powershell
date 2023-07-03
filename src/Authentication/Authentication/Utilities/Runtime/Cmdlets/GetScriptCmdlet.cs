@@ -2,13 +2,12 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+using System.Linq;
+using System.Management.Automation;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Utilities.Runtime.Cmdlets
 {
-    using Microsoft.Graph.PowerShell.Authentication.Utilities.Runtime;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Management.Automation;
-
     [Cmdlet(VerbsCommon.Get, "ScriptCmdlet")]
     [OutputType(typeof(string[]))]
     [DoNotExport]
@@ -61,7 +60,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities.Runtime.Cmdlets
             catch (System.Exception ex)
             {
                 System.Console.WriteLine($"${ex.GetType().Name}/{ex.StackTrace}");
-                throw ex;
+                throw;
             }
         }
 

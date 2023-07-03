@@ -1,158 +1,297 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-namespace Microsoft.Graph.PowerShell.Authentication.Helpers
+using Azure.Core;
+using Azure.Core.Diagnostics;
+using Azure.Identity;
+using Azure.Identity.BrokeredAuthentication;
+using Microsoft.Graph.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Core.Extensions;
+using Microsoft.Identity.Client;
+using Microsoft.Identity.Client.Extensions.Msal;
+using System;
+using System.Diagnostics.Tracing;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 {
-    using Microsoft.Graph.Auth;
-    using Microsoft.Graph.PowerShell.Authentication.Core;
-    using Microsoft.Graph.PowerShell.Authentication.TokenCache;
-    using Microsoft.Identity.Client;
-
-    using System;
-    using System.Linq;
-    using System.Net;
-    using System.Net.Http.Headers;
-    using System.Security.Cryptography.X509Certificates;
-    using System.Threading;
-    using System.Threading.Tasks;
-
-    using AuthenticationException = System.Security.Authentication.AuthenticationException;
-
     /// <summary>
     /// Helper class for authentication.
     /// </summary>
     public static class AuthenticationHelpers
     {
-        static readonly ReaderWriterLockSlim _cacheLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
-
         /// <summary>
-        /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
+        /// Gets a <see cref="TokenCredential"/> using the provide <see cref="IAuthContext"/>.
         /// </summary>
-        /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
-        internal static void Logout(IAuthContext authContext)
-        {
-            try
-            {
-                _cacheLock.EnterWriteLock();
-                if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
-                {
-                    GraphSession.Instance.UserProvidedToken = null;
-                }
-                else
-                {
-                    TokenCacheStorage.DeleteToken(authContext);
-                }
-            }
-            finally
-            {
-                _cacheLock.ExitWriteLock();
-            }
-        }
-
-        /// <summary>
-        /// Gets an <see cref="IAuthenticationProvider"/> using the provide <see cref="IAuthContext"/>.
-        /// </summary>
-        /// <param name="authContext">The <see cref="IAuthContext"/> to get an auth provider for.</param>
-        /// <returns>A <see cref="IAuthenticationProvider"/> based on provided <see cref="IAuthContext"/>.</returns>
-        public static IAuthenticationProvider GetAuthProvider(IAuthContext authContext)
+        /// <param name="authContext">The <see cref="IAuthContext"/> to get a token credential for.</param>
+        /// <returns>A <see cref="TokenCredential"/> based on provided <see cref="IAuthContext"/>.</returns>
+        public static async Task<TokenCredential> GetTokenCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
         {
             if (authContext is null)
-            {
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            }
 
-            IAuthenticationProvider authProvider = null;
-            string authorityUrl = GetAuthorityUrl(authContext);
             switch (authContext.AuthType)
             {
                 case AuthenticationType.Delegated:
-                    {
-                        //Specify Default RedirectUri
-                        //https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/MSAL.NET-uses-web-browser
-                        IPublicClientApplication publicClientApp = PublicClientApplicationBuilder
-                            .Create(authContext.ClientId)
-                            .WithAuthority(authorityUrl)
-                            .WithClientCapabilities(new[] { "cp1" })
-                            .WithDefaultRedirectUri()
-                            .Build();
-                        ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
-                        switch (authContext.AuthProviderType)
-                        {
-                            case AuthProviderType.DeviceCodeProvider:
-                            case AuthProviderType.DeviceCodeProviderFallBack:
-                                authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes,
-                                     result =>
-                                    {
-                                        GraphSession.Instance.OutputWriter.WriteObject(result.Message);
-                                        return Task.CompletedTask;
-                                    });
-                                break;
-                            case AuthProviderType.InteractiveAuthenticationProvider:
-                                authProvider = new InteractiveAuthenticationProvider(publicClientApp, authContext.Scopes);
-                                break;
-                        }
-                        break;
-                    }
+                    if (authContext.TokenCredentialType == TokenCredentialType.InteractiveBrowser)
+                        return await GetInteractiveBrowserCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
+                    return await GetDeviceCodeCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
                 case AuthenticationType.AppOnly:
-                    {
-                        IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
-                            .Create(authContext.ClientId)
-                            .WithAuthority(authorityUrl)
-                            .WithCertificate(GetCertificate(authContext))
-                            .Build();
-
-                        ConfigureTokenCache(confidentialClientApp.AppTokenCache, authContext);
-                        string graphBaseUrl = GraphSession.Instance.Environment?.GraphEndpoint ?? "https://graph.microsoft.com";
-                        authProvider = new ClientCredentialProvider(confidentialClientApp, $"{graphBaseUrl}/.default");
-                        break;
-                    }
+                    return authContext.TokenCredentialType == TokenCredentialType.ClientCertificate
+                        ? await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false)
+                        : await GetClientSecretCredentialAsync(authContext).ConfigureAwait(false);
+                case AuthenticationType.ManagedIdentity:
+                    return await GetManagedIdentityCredentialAsync(authContext).ConfigureAwait(false);
+                case AuthenticationType.EnvironmentVariable:
+                    return await GetEnvironmentCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.UserProvidedAccessToken:
-                    authProvider = new DelegateAuthenticationProvider(requestMessage =>
-                    {
-                        requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer",
-                            new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken).Password);
-                        return Task.CompletedTask;
-                    });
-                    break;
+                    return new UserProvidedTokenCredential();
+                default:
+                    throw new NotSupportedException($"{authContext.AuthType} is not supported.");
             }
-            return authProvider;
+        }
+
+        private static async Task<TokenCredential> GetEnvironmentCredentialAsync(IAuthContext authContext)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            var tokenCredentialOptions = new TokenCredentialOptions
+            {
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext))
+            };
+
+            if (IsAuthFlowNotSupported())
+            {
+                throw new Exception(string.Format(CultureInfo.InvariantCulture, ErrorConstants.Message.AuthNotSupported, "Username and password"));
+            }
+
+            var environmentCredential = new EnvironmentCredential(tokenCredentialOptions);
+            return await Task.FromResult(environmentCredential).ConfigureAwait(false);
+        }
+
+        private static bool IsAuthFlowNotSupported()
+        {
+            return ((!string.IsNullOrEmpty(EnvironmentVariables.Username) && !string.IsNullOrEmpty(EnvironmentVariables.Password))
+                && (string.IsNullOrEmpty(EnvironmentVariables.ClientSecret) && string.IsNullOrEmpty(EnvironmentVariables.ClientCertificatePath)));
+        }
+
+        private static bool IsWamSupported()
+        {
+            return GraphSession.Instance.GraphOption.EnableWAMForMSGraph && SharedUtilities.IsWindowsPlatform();
+        }
+
+        private static async Task<TokenCredential> GetClientSecretCredentialAsync(IAuthContext authContext)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            var clientSecretCredentialOptions = new ClientSecretCredentialOptions
+            {
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
+                TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext)
+            };
+            var clientSecretCredential = new ClientSecretCredential(authContext.TenantId, authContext.ClientId, authContext.ClientSecret.ConvertToString(), clientSecretCredentialOptions);
+            return await Task.FromResult(clientSecretCredential).ConfigureAwait(false);
+        }
+
+        private static async Task<TokenCredential> GetManagedIdentityCredentialAsync(IAuthContext authContext)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            var userAccountId = authContext.ManagedIdentityId.StartsWith(Constants.DefaultMsiIdPrefix) ? null : authContext.ManagedIdentityId;
+            return await Task.FromResult(new ManagedIdentityCredential(userAccountId)).ConfigureAwait(false);
+        }
+
+        private static async Task<InteractiveBrowserCredential> GetInteractiveBrowserCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            var interactiveOptions = IsWamSupported() ? new InteractiveBrowserCredentialBrokerOptions(WindowHandleUtlities.GetConsoleOrTerminalWindow()) : new InteractiveBrowserCredentialOptions();
+            interactiveOptions.ClientId = authContext.ClientId;
+            interactiveOptions.TenantId = authContext.TenantId ?? "common";
+            interactiveOptions.AuthorityHost = new Uri(GetAuthorityUrl(authContext));
+            interactiveOptions.TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext);
+
+            if (!File.Exists(Constants.AuthRecordPath))
+            {
+                AuthenticationRecord authRecord;
+                var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
+                if (IsWamSupported())
+                {
+                    authRecord = await Task.Run(() =>
+                    {
+                        // Run the thread in MTA.
+                        return interactiveBrowserCredential.Authenticate(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                    });
+                }
+                else
+                {
+                    authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
+                }
+                await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
+                return interactiveBrowserCredential;
+            }
+
+            interactiveOptions.AuthenticationRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            return new InteractiveBrowserCredential(interactiveOptions);
+        }
+
+        private static async Task<DeviceCodeCredential> GetDeviceCodeCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            var deviceCodeOptions = new DeviceCodeCredentialOptions
+            {
+                ClientId = authContext.ClientId,
+                TenantId = authContext.TenantId,
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
+                TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext),
+                DeviceCodeCallback = (code, cancellation) =>
+                {
+                    GraphSession.Instance.OutputWriter.WriteObject(code.Message);
+                    return Task.CompletedTask;
+                }
+            };
+            if (!File.Exists(Constants.AuthRecordPath))
+            {
+                var deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
+                var authRecord = await deviceCodeCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
+                await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
+                return deviceCodeCredential;
+            }
+
+            deviceCodeOptions.AuthenticationRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+            return new DeviceCodeCredential(deviceCodeOptions);
+        }
+
+        private static async Task<ClientCertificateCredential> GetClientCertificateCredentialAsync(IAuthContext authContext)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            var clientCredentialOptions = new ClientCertificateCredentialOptions
+            {
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
+                TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext)
+            };
+            var clientCertificateCredential = new ClientCertificateCredential(authContext.TenantId, authContext.ClientId, GetCertificate(authContext), clientCredentialOptions);
+            return await Task.FromResult(clientCertificateCredential).ConfigureAwait(false);
+        }
+
+        private static TokenCachePersistenceOptions GetTokenCachePersistenceOptions(IAuthContext authContext)
+        {
+            return authContext.ContextScope == ContextScope.Process
+                ? GraphSession.Instance.InMemoryTokenCache.GetTokenCachePersistenceOptions()
+                : new TokenCachePersistenceOptions { Name = Constants.CacheName };
         }
 
         /// <summary>
-        /// Configures a token cache using the provide <see cref="IAuthContext"/>.
+        /// Gets a <see cref="AzureIdentityAccessTokenProvider"/> using the provided <see cref="IAuthContext"/>
         /// </summary>
-        /// <param name="tokenCache">MSAL's token cache to configure.</param>
-        /// <param name="authContext">The <see cref="IAuthContext"/> to get configure an token cache for.</param>
-        private static void ConfigureTokenCache(ITokenCache tokenCache, IAuthContext authContext)
+        /// <param name="authContext">The <see cref="IAuthContext"/> to get a token credential for.</param>
+        /// <returns>A <see cref="AzureIdentityAccessTokenProvider"/> based on provided <see cref="IAuthContext"/>.</returns>
+        public static async Task<AzureIdentityAccessTokenProvider> GetAuthenticationProviderAsync(IAuthContext authContext)
         {
-            tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) =>
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            var tokenCrdential = await GetTokenCredentialAsync(authContext, default).ConfigureAwait(false);
+            return new AzureIdentityAccessTokenProvider(credential: tokenCrdential, scopes: GetScopes(authContext));
+        }
+
+        public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, CancellationToken cancellationToken)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            IAuthContext signInAuthContext = null;
+            bool retrySignIn = true;
+            int retryCount = 0;
+            while (retrySignIn && retryCount <= Constants.MaxAuthRetry)
             {
                 try
                 {
-                    _cacheLock.EnterReadLock();
-                    args.TokenCache.DeserializeMsalV3(TokenCacheStorage.GetToken(authContext), shouldClearExistingCache: true);
+                    // Write MSAL logs to debug stream.
+                    using (AzureEventSourceListener listener = new AzureEventSourceListener(
+                        (args, message) => GraphSession.Instance.OutputWriter.WriteDebug($"{message}"),
+                        level: EventLevel.Informational))
+                    {
+                        signInAuthContext = await SignInAsync(authContext, cancellationToken).ConfigureAwait(false);
+                        retrySignIn = false;
+                    };
                 }
-                finally
+                catch (AuthenticationFailedException authEx)
                 {
-                    _cacheLock.ExitReadLock();
+                    if (authEx.InnerException is MsalCachePersistenceException)
+                    {
+                        // Can't securely persist token on disk. Retry with in-memory cache.
+                        authContext.ContextScope = ContextScope.Process;
+                        retrySignIn = true;
+                        retryCount++;
+                    }
+                    else if (authEx.InnerException is MsalClientException msalClientEx
+                        && string.Equals(msalClientEx?.ErrorCode, MsalError.LinuxXdgOpen, StringComparison.InvariantCultureIgnoreCase) ||
+                        (authEx.Message?.ToLower(CultureInfo.InvariantCulture)?.Contains("unable to open a web page") ?? false))
+                    {
+                        // Can't open browser. Retry with device code authentication.
+                        authContext.TokenCredentialType = TokenCredentialType.DeviceCode;
+                        retrySignIn = true;
+                        retryCount++;
+                    }
+                    else if (authEx.InnerException is MsalServiceException msalServiceEx
+                        && msalServiceEx.StatusCode == 400 && string.Equals(msalServiceEx.ErrorCode, "invalid_scope", StringComparison.InvariantCultureIgnoreCase)
+                        && string.IsNullOrWhiteSpace(authContext.TenantId)
+                        && authContext.TokenCredentialType == TokenCredentialType.DeviceCode)
+                    {
+                        // MSAL scope validation error. Ask customer to specify sign-in audience or tenant Id.
+                        throw new MsalClientException(msalServiceEx.ErrorCode, $"{msalServiceEx.Message}.\r\n{ErrorConstants.Message.InvalidScope}", msalServiceEx);
+                    }
+                    else
+                        throw;
                 }
-            });
+                catch (TaskCanceledException taskCanceledEx)
+                {
+                    throw new Exception(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.AuthenticationTimeout, Constants.MaxAuthenticationTimeOutInSeconds), taskCanceledEx);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return signInAuthContext;
+        }
 
-            tokenCache.SetAfterAccess((TokenCacheNotificationArgs args) =>
+        private static async Task<IAuthContext> SignInAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            var tokenCredential = await GetTokenCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
+            var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(GetScopes(authContext)), cancellationToken).ConfigureAwait(false);
+            JwtHelpers.DecodeJWT(token.Token, account: null, ref authContext);
+            return authContext;
+        }
+
+        private static string[] GetScopes(IAuthContext authContext)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            switch (authContext.AuthType)
             {
-                if (args.HasStateChanged)
-                {
-                    try
-                    {
-                        _cacheLock.EnterWriteLock();
-                        TokenCacheStorage.SetToken(authContext, args.TokenCache.SerializeMsalV3());
-                    }
-                    finally
-                    {
-                        _cacheLock.ExitWriteLock();
-                    }
-                }
-            });
+                case AuthenticationType.AppOnly:
+                case AuthenticationType.EnvironmentVariable:
+                    return new[] { $"{GraphSession.Instance.Environment?.GraphEndpoint ?? Constants.DefaultGraphEndpoint}/.default" };
+                case AuthenticationType.ManagedIdentity:
+                    return new[] { GraphSession.Instance.Environment.GraphEndpoint };
+                default:
+                    return authContext.Scopes;
+            }
         }
 
         /// <summary>
@@ -162,106 +301,145 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <returns></returns>
         private static string GetAuthorityUrl(IAuthContext authContext)
         {
-            string audience = authContext.TenantId ?? Constants.DefaulAdTenant;
-            string defaultInstance = Constants.DefaultAzureADEndpoint;
-            string authorityUrl = $"{defaultInstance}/{audience}";
-
-            if (GraphSession.Instance.Environment != null)
-            {
-                authorityUrl = $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}";
-            }
-
-            return authorityUrl;
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            string audience = authContext.TenantId ?? Constants.DefaultTenant;
+            return GraphSession.Instance.Environment != null
+                ? $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}"
+                : $"{Constants.DefaultAzureADEndpoint}/{audience}";
         }
 
         /// <summary>
         /// Gets a certificate based on the current context.
         /// Priority is Name, ThumbPrint, then In-Memory Cert
         /// </summary>
-        /// <param name="context">Current <see cref="IAuthContext"/> context</param>
+        /// <param name="authContext">Current <see cref="IAuthContext"/> context</param>
         /// <returns>A <see cref="X509Certificate2"/> based on provided <see cref="IAuthContext"/> context</returns>
-        private static X509Certificate2 GetCertificate(IAuthContext context)
+        /// <returns>A <see cref="X509Certificate2"/> based on provided <see cref="IAuthContext"/> context</returns>
+        private static X509Certificate2 GetCertificate(IAuthContext authContext)
         {
-            X509Certificate2 certificate;
-            if (!string.IsNullOrWhiteSpace(context.CertificateName))
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            if (!string.IsNullOrWhiteSpace(authContext.CertificateSubjectName))
             {
-                certificate = GetCertificateByName(context.CertificateName);
+                if (TryFindCertificateBySubjectName(authContext.CertificateSubjectName, StoreLocation.CurrentUser, out X509Certificate2 certificate) ||
+                    TryFindCertificateBySubjectName(authContext.CertificateSubjectName, StoreLocation.LocalMachine, out certificate))
+                    return certificate;
+                else
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, ErrorConstants.Message.CertificateNotFound,
+                        "subject name",
+                        authContext.CertificateSubjectName));
             }
-            else if (!string.IsNullOrWhiteSpace(context.CertificateThumbprint))
+            else if (!string.IsNullOrWhiteSpace(authContext.CertificateThumbprint))
             {
-                certificate = GetCertificateByThumbprint(context.CertificateThumbprint);
+                if (TryFindCertificateByThumbprint(authContext.CertificateThumbprint, StoreLocation.CurrentUser, out X509Certificate2 certificate) ||
+                    TryFindCertificateByThumbprint(authContext.CertificateThumbprint, StoreLocation.LocalMachine, out certificate))
+                    return certificate;
+                else
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, ErrorConstants.Message.CertificateNotFound,
+                        "thumbprint",
+                        authContext.CertificateThumbprint));
             }
             else
-            {
-                certificate = context.Certificate;
-            }
-
-            if (certificate == null)
-            {
-                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {context.CertificateThumbprint}, Name {context.CertificateName} or In-Memory could not be found");
-            }
-
-            return certificate;
+                return authContext.Certificate;
         }
 
         /// <summary>
-        /// Gets unexpired certificate of the specified certificate thumbprint for the current user in My store.
+        /// Gets unexpired certificate using the specified certificate store using the provided thumbprint.
         /// </summary>
-        /// <param name="certificateThumbprint">Subject name of the certificate to get.</param>
-        /// <returns></returns>
-        private static X509Certificate2 GetCertificateByThumbprint(string certificateThumbprint)
+        /// <param name="thumbprint">Thumbprint of the certificate to fetch.</param>
+        /// <param name="location">The certificate store location.</param>
+        /// <param name="certificate">Unexpired certificate.</param>
+        private static bool TryFindCertificateByThumbprint(string thumbprint, StoreLocation location, out X509Certificate2 certificate)
         {
-            X509Certificate2 xCertificate = null;
-
-            using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+            using (X509Store xStore = new X509Store(StoreName.My, location))
             {
                 xStore.Open(OpenFlags.ReadOnly);
 
                 // Get unexpired certificates with the specified name.
                 X509Certificate2Collection unexpiredCerts = xStore.Certificates
-                    .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
-                    .Find(X509FindType.FindByThumbprint, certificateThumbprint, false);
+                    .Find(X509FindType.FindByTimeValid, DateTime.Now, validOnly: false)
+                    .Find(X509FindType.FindByThumbprint, thumbprint, validOnly: false);
 
-                if (unexpiredCerts.Count < 1)
-                    throw new Exception($"{certificateThumbprint} certificate was not found or has expired.");
+                xStore.Close();
 
                 // Only return current cert.
-                xCertificate = unexpiredCerts
+                certificate = unexpiredCerts
                     .OfType<X509Certificate2>()
                     .OrderByDescending(c => c.NotBefore)
                     .FirstOrDefault();
+
+                return certificate != null;
             }
-            return xCertificate;
         }
 
         /// <summary>
-        /// Gets unexpired certificate of the specified certificate subject name for the current user in My store.
+        /// Gets unexpired certificate using the specified certificate store using the provided subject distinguished name.
         /// </summary>
-        /// <param name="certificateName">Subject name of the certificate to get.</param>
-        /// <returns></returns>
-        private static X509Certificate2 GetCertificateByName(string certificateName)
+        /// <param name="subjectName">Subject distinguished name of the certificate to fetch.</param>
+        /// <param name="location">The certificate store location.</param>
+        /// <param name="certificate">Unexpired certificate.</param>
+        private static bool TryFindCertificateBySubjectName(string subjectName, StoreLocation location, out X509Certificate2 certificate)
         {
-            X509Certificate2 xCertificate = null;
-
-            using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+            using (X509Store xStore = new X509Store(StoreName.My, location))
             {
                 xStore.Open(OpenFlags.ReadOnly);
 
                 // Get unexpired certificates with the specified name.
                 X509Certificate2Collection unexpiredCerts = xStore.Certificates
-                    .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
-                    .Find(X509FindType.FindBySubjectDistinguishedName, certificateName, false);
+                    .Find(X509FindType.FindByTimeValid, DateTime.Now, validOnly: false)
+                    .Find(X509FindType.FindBySubjectDistinguishedName, subjectName, validOnly: false);
 
-                if (unexpiredCerts.Count < 1)
-                    throw new Exception($"{certificateName} certificate was not found or has expired.");
+                xStore.Close();
 
                 // Only return current cert.
-                xCertificate = unexpiredCerts
+                certificate = unexpiredCerts
                     .OfType<X509Certificate2>()
                     .OrderByDescending(c => c.NotBefore)
                     .FirstOrDefault();
+
+                return certificate != null;
             }
-            return xCertificate;
+        }
+
+        /// <summary>
+        /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
+        /// </summary>
+        /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
+        public static async Task<IAuthContext> LogoutAsync()
+        {
+            var authContext = GraphSession.Instance.AuthContext;
+            GraphSession.Instance.InMemoryTokenCache?.ClearCache();
+            GraphSession.Instance.AuthContext = null;
+            GraphSession.Instance.GraphHttpClient = null;
+            await DeleteAuthRecordAsync().ConfigureAwait(false);
+            return authContext;
+        }
+
+        private static async Task<AuthenticationRecord> ReadAuthRecordAsync()
+        {
+            // Try to create directory if it doesn't exist.
+            Directory.CreateDirectory(Constants.GraphDirectoryPath);
+            if (!File.Exists(Constants.AuthRecordPath))
+                return null;
+            using (FileStream authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Open, FileAccess.Read))
+                return await AuthenticationRecord.DeserializeAsync(authRecordStream).ConfigureAwait(false);
+        }
+
+        public static async Task WriteAuthRecordAsync(AuthenticationRecord authRecord)
+        {
+            // Try to create directory if it doesn't exist.
+            Directory.CreateDirectory(Constants.GraphDirectoryPath);
+            using (FileStream authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Create, FileAccess.Write))
+                await authRecord.SerializeAsync(authRecordStream).ConfigureAwait(false);
+        }
+
+        public static Task DeleteAuthRecordAsync()
+        {
+            if (File.Exists(Constants.AuthRecordPath))
+                File.Delete(Constants.AuthRecordPath);
+            return Task.CompletedTask;
         }
     }
 }

@@ -11,7 +11,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
-      operationId: users_ListActivities
+      operationId: user_ListActivity
       parameters:
         - name: user-id
           in: path
@@ -105,16 +105,10 @@ paths:
                 - historyItems
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userActivityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -123,7 +117,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to activities for users
-      operationId: users_CreateActivities
+      operationId: user_CreateActivity
       parameters:
         - name: user-id
           in: path
@@ -141,7 +135,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -149,19 +143,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/activities/{userActivity-id}':
     get:
       tags:
         - users.userActivity
       summary: Get activities from users
-      operationId: users_GetActivities
+      operationId: user_GetActivity
       parameters:
         - name: user-id
           in: path
@@ -219,7 +207,7 @@ paths:
                 - historyItems
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -227,18 +215,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userActivity
       summary: Update the navigation property activities in users
-      operationId: users_UpdateActivities
+      operationId: user_UpdateActivity
       parameters:
         - name: user-id
           in: path
@@ -264,22 +246,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.userActivity'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userActivity'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.userActivity
-      summary: Delete navigation property activities for users
-      operationId: users_DeleteActivities
+      summary: Delete an activity
+      description: Delete an existing user activity for your app.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/projectrome-delete-activity?view=graph-rest-1.0
+      operationId: user_DeleteActivity
       parameters:
         - name: user-id
           in: path
@@ -304,23 +288,17 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/activities/{userActivity-id}/historyItems':
     get:
       tags:
         - users.userActivity
       summary: Get historyItems from users
-      operationId: users.activities_ListHistoryItems
+      operationId: user.activity_ListHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -407,16 +385,10 @@ paths:
                 - activity
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.activityHistoryItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -425,7 +397,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to historyItems for users
-      operationId: users.activities_CreateHistoryItems
+      operationId: user.activity_CreateHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -451,7 +423,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -459,19 +431,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}':
     get:
       tags:
         - users.userActivity
       summary: Get historyItems from users
-      operationId: users.activities_GetHistoryItems
+      operationId: user.activity_GetHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -532,7 +498,7 @@ paths:
                 - activity
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -540,18 +506,16 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userActivity
-      summary: Update the navigation property historyItems in users
-      operationId: users.activities_UpdateHistoryItems
+      summary: Delete a historyItem
+      description: Delete an existing history item for an existing user activity.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0
+      operationId: user.activity_UpdateHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -585,22 +549,20 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.userActivity
       summary: Delete navigation property historyItems for users
-      operationId: users.activities_DeleteHistoryItems
+      operationId: user.activity_DeleteHistoryItem
       parameters:
         - name: user-id
           in: path
@@ -633,23 +595,17 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity':
     get:
       tags:
         - users.userActivity
       summary: Get activity from users
-      operationId: users.activities.historyItems_GetActivity
+      operationId: user.activity.historyItem_GetActivity
       parameters:
         - name: user-id
           in: path
@@ -715,7 +671,7 @@ paths:
                 - historyItems
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -723,19 +679,65 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/activities/{userActivity-id}/historyItems/$count':
+    get:
+      tags:
+        - users.userActivity
+      summary: Get the number of the resource
+      operationId: user.activity.historyItem_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: userActivity-id
+          in: path
+          description: The unique identifier of userActivity
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: userActivity
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/activities/$count':
+    get:
+      tags:
+        - users.userActivity
+      summary: Get the number of the resource
+      operationId: user.activity_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices':
     get:
       tags:
         - users.device
       summary: Get devices from users
-      operationId: users_ListDevices
+      operationId: user_ListDevice
       parameters:
         - name: user-id
           in: path
@@ -913,16 +915,10 @@ paths:
                 - commands
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -931,7 +927,7 @@ paths:
       tags:
         - users.device
       summary: Create new navigation property to devices for users
-      operationId: users_CreateDevices
+      operationId: user_CreateDevice
       parameters:
         - name: user-id
           in: path
@@ -949,7 +945,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.device'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -957,19 +953,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.device'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}':
     get:
       tags:
         - users.device
       summary: Get devices from users
-      operationId: users_GetDevices
+      operationId: user_GetDevice
       parameters:
         - name: user-id
           in: path
@@ -1063,7 +1053,7 @@ paths:
                 - commands
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1071,18 +1061,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.device'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.device
       summary: Update the navigation property devices in users
-      operationId: users_UpdateDevices
+      operationId: user_UpdateDevice
       parameters:
         - name: user-id
           in: path
@@ -1108,22 +1092,20 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.device'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.device'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.device
       summary: Delete navigation property devices for users
-      operationId: users_DeleteDevices
+      operationId: user_DeleteDevice
       parameters:
         - name: user-id
           in: path
@@ -1148,16 +1130,10 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}/commands':
     get:
@@ -1165,7 +1141,7 @@ paths:
         - users.device
       summary: Get commands from users
       description: Set of commands sent to this device.
-      operationId: users.devices_ListCommands
+      operationId: user.device_ListCommand
       parameters:
         - name: user-id
           in: path
@@ -1252,16 +1228,10 @@ paths:
                 - responsepayload
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.commandCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1270,7 +1240,7 @@ paths:
       tags:
         - users.device
       summary: Create new navigation property to commands for users
-      operationId: users.devices_CreateCommands
+      operationId: user.device_CreateCommand
       parameters:
         - name: user-id
           in: path
@@ -1296,7 +1266,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.command'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1304,12 +1274,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.command'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}/commands/{command-id}':
     get:
@@ -1317,7 +1281,7 @@ paths:
         - users.device
       summary: Get commands from users
       description: Set of commands sent to this device.
-      operationId: users.devices_GetCommands
+      operationId: user.device_GetCommand
       parameters:
         - name: user-id
           in: path
@@ -1378,7 +1342,7 @@ paths:
                 - responsepayload
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1386,18 +1350,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.command'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.device
       summary: Update the navigation property commands in users
-      operationId: users.devices_UpdateCommands
+      operationId: user.device_UpdateCommand
       parameters:
         - name: user-id
           in: path
@@ -1431,22 +1389,20 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.command'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.command'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.device
       summary: Delete navigation property commands for users
-      operationId: users.devices_DeleteCommands
+      operationId: user.device_DeleteCommand
       parameters:
         - name: user-id
           in: path
@@ -1479,23 +1435,17 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}/commands/{command-id}/responsepayload':
     get:
       tags:
         - users.device
       summary: Get responsepayload from users
-      operationId: users.devices.commands_GetResponsepayload
+      operationId: user.device.command_GetResponsepayload
       parameters:
         - name: user-id
           in: path
@@ -1546,7 +1496,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1554,20 +1504,44 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.payloadResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/commands/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.command_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/extensions':
     get:
       tags:
         - users.device
       summary: Get extensions from users
       description: The collection of open extensions defined for the device. Read-only. Nullable.
-      operationId: users.devices_ListExtensions
+      operationId: user.device_ListExtension
       parameters:
         - name: user-id
           in: path
@@ -1628,16 +1602,10 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1646,7 +1614,7 @@ paths:
       tags:
         - users.device
       summary: Create new navigation property to extensions for users
-      operationId: users.devices_CreateExtensions
+      operationId: user.device_CreateExtension
       parameters:
         - name: user-id
           in: path
@@ -1672,7 +1640,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1680,12 +1648,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}/extensions/{extension-id}':
     get:
@@ -1693,7 +1655,7 @@ paths:
         - users.device
       summary: Get extensions from users
       description: The collection of open extensions defined for the device. Read-only. Nullable.
-      operationId: users.devices_GetExtensions
+      operationId: user.device_GetExtension
       parameters:
         - name: user-id
           in: path
@@ -1744,7 +1706,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1752,18 +1714,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.device
       summary: Update the navigation property extensions in users
-      operationId: users.devices_UpdateExtensions
+      operationId: user.device_UpdateExtension
       parameters:
         - name: user-id
           in: path
@@ -1797,22 +1753,20 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.extension'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.device
       summary: Delete navigation property extensions for users
-      operationId: users.devices_DeleteExtensions
+      operationId: user.device_DeleteExtension
       parameters:
         - name: user-id
           in: path
@@ -1845,24 +1799,51 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/extensions/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.extension_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/memberOf':
     get:
       tags:
         - users.device
       summary: Get memberOf from users
       description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-      operationId: users.devices_ListMemberGraphOPre
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-memberof?view=graph-rest-1.0
+      operationId: user.device_ListMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -1936,16 +1917,10 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -1956,7 +1931,7 @@ paths:
         - users.device
       summary: Get memberOf from users
       description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-      operationId: users.devices_GetMemberGraphOPre
+      operationId: user.device_GetMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -2018,7 +1993,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2026,19 +2001,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}/memberOf/{directoryObject-id}/microsoft.graph.administrativeUnit':
     get:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: users.devices_GetMemberGraphOPreAsAdministrativeUnit
+      operationId: user.device_GetMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -2100,7 +2069,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Result entities
           content:
             application/json:
@@ -2108,18 +2077,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/devices/{device-id}/memberOf/{directoryObject-id}/microsoft.graph.group':
     get:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: users.devices_GetMemberGraphOPreAsGroup
+      operationId: user.device_GetMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -2181,7 +2144,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Result entities
           content:
             application/json:
@@ -2189,18 +2152,52 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.group'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+  '/users/{user-id}/devices/{device-id}/memberOf/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.memberOf_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/memberOf/microsoft.graph.administrativeUnit':
     get:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: users.devices_ListMemberGraphOPreAsAdministrativeUnit
+      operationId: user.device_ListMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -2274,25 +2271,59 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.administrativeUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/devices/{device-id}/memberOf/microsoft.graph.administrativeUnit/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.ListMemberOf_GetCountAsAdministrativeUnit
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/memberOf/microsoft.graph.group':
     get:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: users.devices_ListMemberGraphOPreAsGroup
+      operationId: user.device_ListMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -2366,26 +2397,63 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.groupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/devices/{device-id}/memberOf/microsoft.graph.group/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.ListMemberOf_GetCountAsGroup
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/registeredOwners':
     get:
       tags:
         - users.device
       summary: Get registeredOwners from users
       description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
-      operationId: users.devices_ListRegisteredOwners
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
+      operationId: user.device_ListRegisteredOwner
       parameters:
         - name: user-id
           in: path
@@ -2459,16 +2527,10 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2477,8 +2539,12 @@ paths:
     delete:
       tags:
         - users.device
-      summary: Delete ref of navigation property registeredOwners for users
-      operationId: users.devices_DeleteRegisteredOwnersGraphBPreRef
+      summary: Delete registeredOwner
+      description: Remove a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-delete-registeredowners?view=graph-rest-1.0
+      operationId: user.device_DeleteRegisteredOwnerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2518,23 +2584,17 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/microsoft.graph.endpoint':
     get:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: users.devices_GetRegisteredOwnersAsEndpoint
+      operationId: user.device_GetRegisteredOwnerAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -2596,7 +2656,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Result entities
           content:
             application/json:
@@ -2604,18 +2664,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.endpoint'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/microsoft.graph.servicePrincipal':
     get:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: users.devices_GetRegisteredOwnersAsServicePrincipal
+      operationId: user.device_GetRegisteredOwnerAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -2677,7 +2731,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Result entities
           content:
             application/json:
@@ -2685,18 +2739,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/microsoft.graph.user':
     get:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: users.devices_GetRegisteredOwnersAsUser
+      operationId: user.device_GetRegisteredOwnerAsUser
       parameters:
         - name: user-id
           in: path
@@ -2758,7 +2806,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Result entities
           content:
             application/json:
@@ -2766,19 +2814,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+  '/users/{user-id}/devices/{device-id}/registeredOwners/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.registeredOwner_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/registeredOwners/$ref':
     get:
       tags:
         - users.device
       summary: Get ref of registeredOwners from users
       description: The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
-      operationId: users.devices_ListRegisteredOwnersGraphBPreRef
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-registeredowners?view=graph-rest-1.0
+      operationId: user.device_ListRegisteredOwnerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2827,16 +2912,10 @@ paths:
                 - deletedDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -2844,8 +2923,12 @@ paths:
     post:
       tags:
         - users.device
-      summary: Create new navigation property ref to registeredOwners for users
-      operationId: users.devices_CreateRegisteredOwnersGraphBPreRef
+      summary: Create registeredOwner
+      description: Add a user as a registered owner of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-post-registeredowners?view=graph-rest-1.0
+      operationId: user.device_CreateRegisteredOwnerGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -2866,23 +2949,17 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}/registeredOwners/microsoft.graph.endpoint':
     get:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: users.devices_ListRegisteredOwnersAsEndpoint
+      operationId: user.device_ListRegisteredOwnerAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -2956,25 +3033,59 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.endpointCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/devices/{device-id}/registeredOwners/microsoft.graph.endpoint/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.ListRegisteredOwner_GetCountAsEndpoint
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/registeredOwners/microsoft.graph.servicePrincipal':
     get:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: users.devices_ListRegisteredOwnersAsServicePrincipal
+      operationId: user.device_ListRegisteredOwnerAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -3048,25 +3159,59 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.servicePrincipalCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/devices/{device-id}/registeredOwners/microsoft.graph.servicePrincipal/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.ListRegisteredOwner_GetCountAsServicePrincipal
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/registeredOwners/microsoft.graph.user':
     get:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: users.devices_ListRegisteredOwnersAsUser
+      operationId: user.device_ListRegisteredOwnerAsUser
       parameters:
         - name: user-id
           in: path
@@ -3140,26 +3285,63 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/devices/{device-id}/registeredOwners/microsoft.graph.user/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.ListRegisteredOwner_GetCountAsUser
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/registeredUsers':
     get:
       tags:
         - users.device
       summary: Get registeredUsers from users
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      operationId: users.devices_ListRegisteredUsers
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
+      operationId: user.device_ListRegisteredUser
       parameters:
         - name: user-id
           in: path
@@ -3233,16 +3415,10 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3251,8 +3427,12 @@ paths:
     delete:
       tags:
         - users.device
-      summary: Delete ref of navigation property registeredUsers for users
-      operationId: users.devices_DeleteRegisteredUsersGraphBPreRef
+      summary: Delete registeredUser
+      description: Remove a user as a registered user of the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
+      operationId: user.device_DeleteRegisteredUserGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -3292,23 +3472,17 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/microsoft.graph.endpoint':
     get:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.endpoint
-      operationId: users.devices_GetRegisteredUsersAsEndpoint
+      operationId: user.device_GetRegisteredUserAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -3370,7 +3544,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Result entities
           content:
             application/json:
@@ -3378,18 +3552,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.endpoint'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/microsoft.graph.servicePrincipal':
     get:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
-      operationId: users.devices_GetRegisteredUsersAsServicePrincipal
+      operationId: user.device_GetRegisteredUserAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -3451,7 +3619,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Result entities
           content:
             application/json:
@@ -3459,18 +3627,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.servicePrincipal'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}/microsoft.graph.user':
     get:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.user
-      operationId: users.devices_GetRegisteredUsersAsUser
+      operationId: user.device_GetRegisteredUserAsUser
       parameters:
         - name: user-id
           in: path
@@ -3532,7 +3694,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Result entities
           content:
             application/json:
@@ -3540,19 +3702,56 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.user'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+  '/users/{user-id}/devices/{device-id}/registeredUsers/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.registeredUser_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/registeredUsers/$ref':
     get:
       tags:
         - users.device
       summary: Get ref of registeredUsers from users
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      operationId: users.devices_ListRegisteredUsersGraphBPreRef
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
+      operationId: user.device_ListRegisteredUserGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -3601,16 +3800,10 @@ paths:
                 - deletedDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3618,8 +3811,12 @@ paths:
     post:
       tags:
         - users.device
-      summary: Create new navigation property ref to registeredUsers for users
-      operationId: users.devices_CreateRegisteredUsersGraphBPreRef
+      summary: Create registeredUser
+      description: Add a registered user for the device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
+      operationId: user.device_CreateRegisteredUserGraphBPreRef
       parameters:
         - name: user-id
           in: path
@@ -3640,23 +3837,17 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/refPostBody'
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}/registeredUsers/microsoft.graph.endpoint':
     get:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection
-      operationId: users.devices_ListRegisteredUsersAsEndpoint
+      operationId: user.device_ListRegisteredUserAsEndpoint
       parameters:
         - name: user-id
           in: path
@@ -3730,25 +3921,59 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.endpointCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/devices/{device-id}/registeredUsers/microsoft.graph.endpoint/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.ListRegisteredUser_GetCountAsEndpoint
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/registeredUsers/microsoft.graph.servicePrincipal':
     get:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection
-      operationId: users.devices_ListRegisteredUsersAsServicePrincipal
+      operationId: user.device_ListRegisteredUserAsServicePrincipal
       parameters:
         - name: user-id
           in: path
@@ -3822,25 +4047,59 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.servicePrincipalCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/devices/{device-id}/registeredUsers/microsoft.graph.servicePrincipal/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.ListRegisteredUser_GetCountAsServicePrincipal
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/registeredUsers/microsoft.graph.user':
     get:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
-      operationId: users.devices_ListRegisteredUsersAsUser
+      operationId: user.device_ListRegisteredUserAsUser
       parameters:
         - name: user-id
           in: path
@@ -3914,26 +4173,63 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/devices/{device-id}/registeredUsers/microsoft.graph.user/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.ListRegisteredUser_GetCountAsUser
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/transitiveMemberOf':
     get:
       tags:
         - users.device
       summary: Get transitiveMemberOf from users
       description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-      operationId: users.devices_ListTransitiveMemberGraphOPre
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0
+      operationId: user.device_ListTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -4007,16 +4303,10 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4027,7 +4317,7 @@ paths:
         - users.device
       summary: Get transitiveMemberOf from users
       description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
-      operationId: users.devices_GetTransitiveMemberGraphOPre
+      operationId: user.device_GetTransitiveMemberGraphOPre
       parameters:
         - name: user-id
           in: path
@@ -4089,7 +4379,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4097,19 +4387,13 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.administrativeUnit':
     get:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.administrativeUnit
-      operationId: users.devices_GetTransitiveMemberGraphOPreAsAdministrativeUnit
+      operationId: user.device_GetTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -4171,7 +4455,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Result entities
           content:
             application/json:
@@ -4179,18 +4463,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
   '/users/{user-id}/devices/{device-id}/transitiveMemberOf/{directoryObject-id}/microsoft.graph.group':
     get:
       tags:
         - users.device
       summary: Get the item of type microsoft.graph.directoryObject as microsoft.graph.group
-      operationId: users.devices_GetTransitiveMemberGraphOPreAsGroup
+      operationId: user.device_GetTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -4252,7 +4530,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Result entities
           content:
             application/json:
@@ -4260,18 +4538,52 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.group'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
+  '/users/{user-id}/devices/{device-id}/transitiveMemberOf/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.transitiveMemberOf_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/transitiveMemberOf/microsoft.graph.administrativeUnit':
     get:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.administrativeUnit in the microsoft.graph.directoryObject collection
-      operationId: users.devices_ListTransitiveMemberGraphOPreAsAdministrativeUnit
+      operationId: user.device_ListTransitiveMemberGraphOPreAsAdministrativeUnit
       parameters:
         - name: user-id
           in: path
@@ -4345,25 +4657,59 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.administrativeUnitCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/devices/{device-id}/transitiveMemberOf/microsoft.graph.administrativeUnit/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.ListTransitiveMemberOf_GetCountAsAdministrativeUnit
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/transitiveMemberOf/microsoft.graph.group':
     get:
       tags:
         - users.device
       summary: Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
-      operationId: users.devices_ListTransitiveMemberGraphOPreAsGroup
+      operationId: user.device_ListTransitiveMemberGraphOPreAsGroup
       parameters:
         - name: user-id
           in: path
@@ -4437,26 +4783,63 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.groupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/users/{user-id}/devices/{device-id}/transitiveMemberOf/microsoft.graph.group/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.ListTransitiveMemberOf_GetCountAsGroup
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/devices/{device-id}/usageRights':
     get:
       tags:
         - users.device
-      summary: Get usageRights from users
-      description: Represents the usage rights a device has been granted.
-      operationId: users.devices_ListUsageRights
+      summary: List device usageRights
+      description: Retrieve a list of usageRight objects for a given device.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0
+      operationId: user.device_ListUsageRight
       parameters:
         - name: user-id
           in: path
@@ -4526,16 +4909,10 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.usageRightCollectionResponse'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4544,7 +4921,7 @@ paths:
       tags:
         - users.device
       summary: Create new navigation property to usageRights for users
-      operationId: users.devices_CreateUsageRights
+      operationId: user.device_CreateUsageRight
       parameters:
         - name: user-id
           in: path
@@ -4570,7 +4947,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.usageRight'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4578,12 +4955,6 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/devices/{device-id}/usageRights/{usageRight-id}':
     get:
@@ -4591,7 +4962,7 @@ paths:
         - users.device
       summary: Get usageRights from users
       description: Represents the usage rights a device has been granted.
-      operationId: users.devices_GetUsageRights
+      operationId: user.device_GetUsageRight
       parameters:
         - name: user-id
           in: path
@@ -4645,7 +5016,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4653,18 +5024,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.device
       summary: Update the navigation property usageRights in users
-      operationId: users.devices_UpdateUsageRights
+      operationId: user.device_UpdateUsageRight
       parameters:
         - name: user-id
           in: path
@@ -4698,22 +5063,20 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.usageRight'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.usageRight'
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.device
       summary: Delete navigation property usageRights for users
-      operationId: users.devices_DeleteUsageRights
+      operationId: user.device_DeleteUsageRight
       parameters:
         - name: user-id
           in: path
@@ -4746,17 +5109,63 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2023-03-20T00:00:00.0000000+00:00'
-        date: '2023-03-09T00:00:00.0000000+00:00'
-        version: 2023-03/Notification_Deprecation
-        description: 'The Graph Notification API is deprecated and will stop returning data on March 20, 2023.'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/usageRights/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device.usageRight_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: The unique identifier of device
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/users/{user-id}/devices/$count':
+    get:
+      tags:
+        - users.device
+      summary: Get the number of the resource
+      operationId: user.device_GetCount
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.userActivity:
@@ -4940,6 +5349,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isRooted:
               type: boolean
@@ -5140,6 +5550,7 @@ components:
               nullable: true
             isMemberManagementRestricted:
               type: boolean
+              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.'
               nullable: true
             visibility:
               type: string
@@ -5206,7 +5617,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
@@ -5229,6 +5640,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -5327,6 +5739,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -5667,7 +6080,7 @@ components:
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.'
+              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.'
               format: date-time
               nullable: true
             preferredTokenSigningKeyThumbprint:
@@ -5950,8 +6363,13 @@ components:
               items:
                 type: string
               description: 'Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).'
+            isLicenseReconciliationNeeded:
+              type: boolean
+              description: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
+              nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -5986,7 +6404,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -6080,6 +6498,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -6720,13 +7139,16 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time at which the error occurred.
           format: date-time
           nullable: true
         isResolved:
           type: boolean
+          description: Indicates whether the Error has been attended to.
           nullable: true
         serviceInstance:
           type: string
+          description: 'Qualified service instance (e.g., ''SharePoint/Dublin'') that published the service error information.'
           nullable: true
       additionalProperties:
         type: object
@@ -7687,7 +8109,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.'
+          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -7704,11 +8126,11 @@ components:
           nullable: true
         type:
           type: string
-          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert.'
+          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.'
           nullable: true
         usage:
           type: string
-          description: 'A string that describes the purpose for which the key can be used; for example, Verify.'
+          description: 'A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.'
           nullable: true
       additionalProperties:
         type: object
@@ -8008,7 +8430,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -8018,7 +8440,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -8881,7 +9303,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             mailboxType:
               type: string
@@ -8981,6 +9403,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStep'
+              description: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -10050,9 +10473,17 @@ components:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowRecording:
+              type: boolean
+              description: Indicates whether recording is enabled for the meeting.
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
+              description: Indicates whether transcription is enabled for the meeting.
               nullable: true
             alternativeRecording:
               type: string
@@ -10070,6 +10501,10 @@ components:
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            broadcastRecording:
+              type: string
+              format: base64url
+              nullable: true
             broadcastSettings:
               $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
             capabilities:
@@ -10156,6 +10591,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
             registration:
               $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
+            recordings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecording'
+              x-ms-navigationProperty: true
             transcripts:
               type: array
               items:
@@ -10438,6 +10878,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.deviceCollectionResponse:
       title: Collection of device
       type: object
@@ -10608,11 +11051,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -11756,6 +12199,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerSharedWithContainer'
+              description: List of containers the plan is shared with.
             title:
               type: string
               description: Required. Title of the plan.
@@ -12213,7 +12657,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
+              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -12315,33 +12759,42 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The assigned categories for the team template.
             description:
               type: string
+              description: A brief description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             displayName:
               type: string
+              description: The user defined name of the team template.
               nullable: true
             iconUrl:
               type: string
+              description: The icon url for the team template.
               nullable: true
             languageTag:
               type: string
+              description: Language the template is available in.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date time of when the team template was last modified.
               format: date-time
               nullable: true
             parentTemplateId:
               type: string
+              description: The templateId for the team template
               nullable: true
             publisherName:
               type: string
+              description: The organization which published the team template.
               nullable: true
             shortDescription:
               type: string
+              description: A short-description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             teamDefinition:
               $ref: '#/components/schemas/microsoft.graph.team'
@@ -12483,11 +12936,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -12638,7 +13091,7 @@ components:
             metadata:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.metadataEntry'
+                $ref: '#/components/schemas/microsoft.graph.synchronizationMetadataEntry'
               description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
@@ -15863,6 +16316,8 @@ components:
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
+            specifiedCompletionRequirements:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskCompletionRequirements'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -16814,6 +17269,23 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.callRecording:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callRecording
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.callTranscript:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16876,6 +17348,8 @@ components:
           type: boolean
           description: Indicates whether the credential preferences of the system are enabled.
           nullable: true
+        userPreferredMethodForSecondaryAuthentication:
+          $ref: '#/components/schemas/microsoft.graph.userDefaultAuthenticationMethodType'
       additionalProperties:
         type: object
     microsoft.graph.emailAuthenticationMethod:
@@ -19741,6 +20215,11 @@ components:
       title: keyCredentialConfiguration
       type: object
       properties:
+        certificateBasedApplicationConfigurationIds:
+          type: array
+          items:
+            type: string
+            nullable: true
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -19913,14 +20392,12 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.metadataEntry:
-      title: metadataEntry
+    microsoft.graph.synchronizationMetadataEntry:
+      title: synchronizationMetadataEntry
       type: object
       properties:
         key:
-          type: string
-          description: Name of the metadata property.
-          nullable: true
+          $ref: '#/components/schemas/microsoft.graph.synchronizationMetadata'
         value:
           type: string
           description: Value of the metadata property.
@@ -21939,6 +22416,13 @@ components:
           description: The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
       additionalProperties:
         type: object
+    microsoft.graph.plannerTaskCompletionRequirements:
+      title: plannerTaskCompletionRequirements
+      enum:
+        - none
+        - checklistCompletion
+        - unknownFutureValue
+      type: string
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -21973,6 +22457,8 @@ components:
           properties:
             checklist:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
+            completionRequirements:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskCompletionRequirementDetails'
             description:
               type: string
               description: Description of the task.
@@ -22487,7 +22973,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -22562,6 +23048,17 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.userDefaultAuthenticationMethodType:
+      title: userDefaultAuthenticationMethodType
+      enum:
+        - push
+        - oath
+        - voiceMobile
+        - voiceAlternateMobile
+        - voiceOffice
+        - sms
+        - unknownFutureValue
+      type: string
     microsoft.graph.attestationLevel:
       title: attestationLevel
       enum:
@@ -24174,6 +24671,7 @@ components:
       title: appKeyCredentialRestrictionType
       enum:
         - asymmetricKeyLifetime
+        - trustedCertificateAuthority
         - unknownFutureValue
       type: string
     microsoft.graph.appCredentialRestrictionType:
@@ -24405,6 +24903,19 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.synchronizationMetadata:
+      title: synchronizationMetadata
+      enum:
+        - galleryApplicationIdentifier
+        - galleryApplicationKey
+        - isOAuthEnabled
+        - IsSynchronizationAgentAssignmentRequired
+        - isSynchronizationAgentRequired
+        - isSynchronizationInPreview
+        - oAuthSettings
+        - synchronizationLearnMoreIbizaFwLink
+        - configurationFields
+      type: string
     microsoft.graph.printerCapabilities:
       title: printerCapabilities
       type: object
@@ -25545,6 +26056,14 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.plannerTaskCompletionRequirementDetails:
+      title: plannerTaskCompletionRequirementDetails
+      type: object
+      properties:
+        checklistRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerChecklistRequirement'
+      additionalProperties:
+        type: object
     microsoft.graph.plannerExternalReferences:
       title: plannerExternalReferences
       type: object
@@ -26476,7 +26995,7 @@ components:
         metadata:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.metadataEntry'
+            $ref: '#/components/schemas/microsoft.graph.objectMappingMetadataEntry'
           description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
         name:
           type: string
@@ -26512,18 +27031,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinition'
+          description: Defines attributes of the object.
         metadata:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.metadataEntry'
+            $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadataEntry'
+          description: Metadata for the given object.
         name:
           type: string
+          description: Name of the object. Must be unique within a directory definition. Not nullable.
           nullable: true
         supportedApis:
           type: array
           items:
             type: string
             nullable: true
+          description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
     microsoft.graph.printColorMode:
@@ -27762,6 +28285,18 @@ components:
         - deviceIntent
       type: string
       description: Authoring source of a policy
+    microsoft.graph.plannerChecklistRequirement:
+      title: plannerChecklistRequirement
+      type: object
+      properties:
+        requiredChecklistItemIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
+      additionalProperties:
+        type: object
     microsoft.graph.insightIdentity:
       title: insightIdentity
       type: object
@@ -28057,6 +28592,18 @@ components:
         - Update
         - Delete
       type: string
+    microsoft.graph.objectMappingMetadataEntry:
+      title: objectMappingMetadataEntry
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/microsoft.graph.objectMappingMetadata'
+        value:
+          type: string
+          description: Value of the metadata property.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.filter:
       title: filter
       type: object
@@ -28101,8 +28648,8 @@ components:
         metadata:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.metadataEntry'
-          description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
+            $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadataEntry'
+          description: Metadata for the given object.
         multivalued:
           type: boolean
           description: true if an attribute can have multiple values. Default is false.
@@ -28122,6 +28669,18 @@ components:
           description: 'true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeType'
+      additionalProperties:
+        type: object
+    microsoft.graph.objectDefinitionMetadataEntry:
+      title: objectDefinitionMetadataEntry
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadata'
+        value:
+          type: string
+          description: Value of the metadata property.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.printMargin:
@@ -28476,18 +29035,32 @@ components:
       properties:
         expression:
           type: string
+          description: Equivalent expression representation of this attributeMappingSource object.
           nullable: true
         name:
           type: string
+          description: 'Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.'
           nullable: true
         parameters:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
+          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
       additionalProperties:
         type: object
+    microsoft.graph.objectMappingMetadata:
+      title: objectMappingMetadata
+      enum:
+        - EscrowBehavior
+        - DisableMonitoringForChanges
+        - OriginalJoiningProperty
+        - Disposition
+        - IsCustomerDefined
+        - ExcludeFromReporting
+        - Unsynchronized
+      type: string
     microsoft.graph.filterGroup:
       title: filterGroup
       type: object
@@ -28500,6 +29073,18 @@ components:
         name:
           type: string
           description: Human-readable name of the filter group.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.attributeDefinitionMetadataEntry:
+      title: attributeDefinitionMetadataEntry
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadata'
+        value:
+          type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -28534,6 +29119,17 @@ components:
         - Binary
         - Boolean
         - DateTime
+      type: string
+    microsoft.graph.objectDefinitionMetadata:
+      title: objectDefinitionMetadata
+      enum:
+        - PropertyNameAccountEnabled
+        - PropertyNameSoftDeleted
+        - IsSoftDeletionSupported
+        - IsSynchronizeAllSupported
+        - ConnectorDataStorageRequired
+        - Extensions
+        - BaseObjectName
       type: string
     microsoft.graph.printTaskProcessingState:
       title: printTaskProcessingState
@@ -28643,6 +29239,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.filterOperand'
       additionalProperties:
         type: object
+    microsoft.graph.attributeDefinitionMetadata:
+      title: attributeDefinitionMetadata
+      enum:
+        - BaseAttributeName
+        - ComplexObjectDefinition
+        - IsContainer
+        - IsCustomerDefined
+        - IsDomainQualified
+        - LinkPropertyNames
+        - LinkTypeName
+        - MaximumLength
+        - ReferencedProperty
+      type: string
     microsoft.graph.workbookChartGridlinesFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28694,6 +29303,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.activityHistoryItemCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.deviceCollectionResponse:
       description: Retrieved collection
       content:

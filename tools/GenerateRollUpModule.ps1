@@ -1,9 +1,11 @@
 
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
+[CmdletBinding()]
 Param(
     [string] $RepositoryApiKey,
     [string] $RepositoryName = "PSGallery",
+    [string] $ArtifactsLocation = (Join-Path $PSScriptRoot "..\artifacts\"),
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [int] $ModulePreviewNumber = -1,
     [switch] $Pack,
@@ -30,7 +32,6 @@ $NuspecHelperPS1 = Join-Path $PSScriptRoot ".\NuspecHelper.ps1"
 $PublishModulePS1 = Join-Path $PSScriptRoot ".\PublishModule.ps1" -Resolve
 $ValidateUpdatedModuleVersionPS1 = Join-Path $PSScriptRoot ".\ValidateUpdatedModuleVersion.ps1" -Resolve
 $ModuleMetadataJson = Join-Path $PSScriptRoot "..\config\ModuleMetadata.json" -Resolve
-$ArtifactsLocation = Join-Path $PSScriptRoot "..\artifacts\"
 $GraphModuleLocation = Join-Path $PSScriptRoot "..\src\Graph\Graph"
 $RollUpModuleNuspec = Join-Path $GraphModuleLocation ".\$ModulePrefix"
 $RequiredGraphModules = @()

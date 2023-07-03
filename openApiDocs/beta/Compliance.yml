@@ -11,7 +11,7 @@ paths:
       tags:
         - compliance.compliance
       summary: Get compliance
-      operationId: compliance.compliance_GetCompliance
+      operationId: compliance_GetCompliance
       parameters:
         - name: $select
           in: query
@@ -39,7 +39,7 @@ paths:
                 - ediscovery
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -52,7 +52,7 @@ paths:
       tags:
         - compliance.compliance
       summary: Update compliance
-      operationId: compliance.compliance_UpdateCompliance
+      operationId: compliance_UpdateCompliance
       requestBody:
         description: New property values
         content:
@@ -61,8 +61,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.compliance'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.compliance'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -100,7 +104,7 @@ paths:
                 - cases
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -128,8 +132,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.ediscoveryroot'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.ediscoveryroot'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -152,7 +160,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -167,8 +175,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get cases from compliance
-      operationId: compliance.ediscovery_ListCases
+      summary: List cases
+      description: Retrieve a list of case objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-list?view=graph-rest-1.0
+      operationId: compliance.ediscovery_ListCase
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -256,7 +268,7 @@ paths:
                 - tags
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.caseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -273,8 +285,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to cases for compliance
-      operationId: compliance.ediscovery_CreateCases
+      summary: Create case
+      description: Create a new case object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-post?view=graph-rest-1.0
+      operationId: compliance.ediscovery_CreateCase
       requestBody:
         description: New navigation property
         content:
@@ -283,7 +299,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.case'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -302,8 +318,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get cases from compliance
-      operationId: compliance.ediscovery_GetCases
+      summary: Get case
+      description: Retrieve the properties and relationships of a case object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-get?view=graph-rest-1.0
+      operationId: compliance.ediscovery_GetCase
       parameters:
         - name: case-id
           in: path
@@ -363,7 +383,7 @@ paths:
                 - tags
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -381,8 +401,12 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property cases in compliance
-      operationId: compliance.ediscovery_UpdateCases
+      summary: Update case
+      description: Update the properties of a case object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-update?view=graph-rest-1.0
+      operationId: compliance.ediscovery_UpdateCase
       parameters:
         - name: case-id
           in: path
@@ -400,8 +424,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.case'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.case'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -414,8 +442,12 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property cases for compliance
-      operationId: compliance.ediscovery_DeleteCases
+      summary: Delete case
+      description: Delete a case object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-delete?view=graph-rest-1.0
+      operationId: compliance.ediscovery_DeleteCase
       parameters:
         - name: case-id
           in: path
@@ -432,7 +464,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -447,9 +479,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get custodians from compliance
-      description: Returns a list of case custodian objects for this case.  Nullable.
-      operationId: compliance.ediscovery.cases_ListCustodians
+      summary: List custodians
+      description: Get a list of the custodian objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-list-custodians?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_ListCustodian
       parameters:
         - name: case-id
           in: path
@@ -537,7 +572,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.custodianCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -554,8 +589,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to custodians for compliance
-      operationId: compliance.ediscovery.cases_CreateCustodians
+      summary: Create custodian
+      description: 'Create a new custodian object. After the custodian object is created, you will need to create the custodian''s userSource to reference their mailbox and OneDrive for Business site.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-post-custodians?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_CreateCustodian
       parameters:
         - name: case-id
           in: path
@@ -573,7 +612,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.custodian'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -592,9 +631,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get custodians from compliance
-      description: Returns a list of case custodian objects for this case.  Nullable.
-      operationId: compliance.ediscovery.cases_GetCustodians
+      summary: Get custodian
+      description: Read the properties and relationships of a custodian object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-get?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_GetCustodian
       parameters:
         - name: case-id
           in: path
@@ -654,7 +696,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -672,8 +714,12 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property custodians in compliance
-      operationId: compliance.ediscovery.cases_UpdateCustodians
+      summary: Update custodian
+      description: Update the properties of a custodian object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-update?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_UpdateCustodian
       parameters:
         - name: case-id
           in: path
@@ -699,8 +745,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.custodian'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.custodian'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -714,7 +764,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property custodians for compliance
-      operationId: compliance.ediscovery.cases_DeleteCustodians
+      operationId: compliance.ediscovery.case_DeleteCustodian
       parameters:
         - name: case-id
           in: path
@@ -739,8 +789,78 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
+      x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/lastIndexOperation':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get lastIndexOperation from compliance
+      operationId: compliance.ediscovery.case.custodian_GetLastIndexOperation
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: custodian-id
+          in: path
+          description: The unique identifier of custodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: custodian
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - action
+                - completedDateTime
+                - createdBy
+                - createdDateTime
+                - percentProgress
+                - resultInfo
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.caseIndexOperation'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -755,7 +875,11 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action activate
-      operationId: compliance.ediscovery.cases.custodians_activate
+      description: 'Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-activate?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_activate
       parameters:
         - name: case-id
           in: path
@@ -774,7 +898,7 @@ paths:
             type: string
           x-ms-docs-key-type: custodian
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -790,7 +914,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action applyHold
-      operationId: compliance.ediscovery.cases.custodians_applyHold
+      operationId: compliance.ediscovery.case.custodian_applyHold
       parameters:
         - name: case-id
           in: path
@@ -809,7 +933,7 @@ paths:
             type: string
           x-ms-docs-key-type: custodian
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -825,7 +949,11 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action release
-      operationId: compliance.ediscovery.cases.custodians_release
+      description: 'Release a custodian from a case. For details, see Release a custodian from a case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-release?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_release
       parameters:
         - name: case-id
           in: path
@@ -844,7 +972,7 @@ paths:
             type: string
           x-ms-docs-key-type: custodian
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -860,7 +988,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action removeHold
-      operationId: compliance.ediscovery.cases.custodians_removeHold
+      operationId: compliance.ediscovery.case.custodian_removeHold
       parameters:
         - name: case-id
           in: path
@@ -879,7 +1007,7 @@ paths:
             type: string
           x-ms-docs-key-type: custodian
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -895,7 +1023,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action updateIndex
-      operationId: compliance.ediscovery.cases.custodians_updateIndex
+      operationId: compliance.ediscovery.case.custodian_updateIndex
       parameters:
         - name: case-id
           in: path
@@ -914,7 +1042,7 @@ paths:
             type: string
           x-ms-docs-key-type: custodian
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -929,9 +1057,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get siteSources from compliance
-      description: Data source entity for SharePoint sites associated with the custodian.
-      operationId: compliance.ediscovery.cases.custodians_ListSiteSources
+      summary: List custodian siteSources
+      description: Get a list of siteSource objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-list-sitesources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_ListSiteSource
       parameters:
         - name: case-id
           in: path
@@ -1006,7 +1137,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.siteSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1023,8 +1154,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to siteSources for compliance
-      operationId: compliance.ediscovery.cases.custodians_CreateSiteSources
+      summary: Create custodian siteSource
+      description: Create a new custodian siteSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-post-sitesources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_CreateSiteSource
       parameters:
         - name: case-id
           in: path
@@ -1050,7 +1185,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1069,9 +1204,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get siteSources from compliance
-      description: Data source entity for SharePoint sites associated with the custodian.
-      operationId: compliance.ediscovery.cases.custodians_GetSiteSources
+      summary: Get siteSource
+      description: Read the properties and relationships of a siteSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-sitesource-get?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_GetSiteSource
       parameters:
         - name: case-id
           in: path
@@ -1128,7 +1266,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1147,7 +1285,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property siteSources in compliance
-      operationId: compliance.ediscovery.cases.custodians_UpdateSiteSources
+      operationId: compliance.ediscovery.case.custodian_UpdateSiteSource
       parameters:
         - name: case-id
           in: path
@@ -1181,8 +1319,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -1195,8 +1337,12 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property siteSources for compliance
-      operationId: compliance.ediscovery.cases.custodians_DeleteSiteSources
+      summary: Delete siteSource
+      description: Delete a siteSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-sitesource-delete?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_DeleteSiteSource
       parameters:
         - name: case-id
           in: path
@@ -1229,7 +1375,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1246,7 +1392,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get site from compliance
       description: The SharePoint site associated with the siteSource.
-      operationId: compliance.ediscovery.cases.custodians.siteSources_GetSite
+      operationId: compliance.ediscovery.case.custodian.siteSource_GetSite
       parameters:
         - name: case-id
           in: path
@@ -1346,7 +1492,7 @@ paths:
                 - onenote
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1361,13 +1507,52 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/siteSources/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.custodian.siteSource_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: custodian-id
+          in: path
+          description: The unique identifier of custodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: custodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/unifiedGroupSources':
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get unifiedGroupSources from compliance
-      description: Data source entity for groups associated with the custodian.
-      operationId: compliance.ediscovery.cases.custodians_ListUnifiedGroupSources
+      summary: List unifiedGroupSources
+      description: Get a list of the unifiedGroupSource objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-list-unifiedgroupsources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_ListUnifiedGroupSource
       parameters:
         - name: case-id
           in: path
@@ -1445,7 +1630,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.unifiedGroupSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1462,8 +1647,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to unifiedGroupSources for compliance
-      operationId: compliance.ediscovery.cases.custodians_CreateUnifiedGroupSources
+      summary: Create unifiedGroupSource
+      description: Create a new unifiedGroupSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-post-unifiedgroupsources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_CreateUnifiedGroupSource
       parameters:
         - name: case-id
           in: path
@@ -1489,7 +1678,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1508,9 +1697,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get unifiedGroupSources from compliance
-      description: Data source entity for groups associated with the custodian.
-      operationId: compliance.ediscovery.cases.custodians_GetUnifiedGroupSources
+      summary: Get unifiedGroupSource
+      description: Read the properties and relationships of a unifiedGroupSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-unifiedgroupsource-get?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_GetUnifiedGroupSource
       parameters:
         - name: case-id
           in: path
@@ -1568,7 +1760,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1587,7 +1779,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property unifiedGroupSources in compliance
-      operationId: compliance.ediscovery.cases.custodians_UpdateUnifiedGroupSources
+      operationId: compliance.ediscovery.case.custodian_UpdateUnifiedGroupSource
       parameters:
         - name: case-id
           in: path
@@ -1621,8 +1813,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -1635,8 +1831,12 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property unifiedGroupSources for compliance
-      operationId: compliance.ediscovery.cases.custodians_DeleteUnifiedGroupSources
+      summary: Delete unifiedGroupSource
+      description: Delete a unifiedGroupSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-unifiedgroupsource-delete?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_DeleteUnifiedGroupSource
       parameters:
         - name: case-id
           in: path
@@ -1669,7 +1869,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1686,7 +1886,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get group from compliance
       description: The group associated with the unifiedGroupSource.
-      operationId: compliance.ediscovery.cases.custodians.unifiedGroupSources_GetGroup
+      operationId: compliance.ediscovery.case.custodian.unifiedGroupSource_GetGroup
       parameters:
         - name: case-id
           in: path
@@ -1845,7 +2045,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1860,13 +2060,52 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/unifiedGroupSources/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.custodian.unifiedGroupSource_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: custodian-id
+          in: path
+          description: The unique identifier of custodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: custodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/userSources':
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get userSources from compliance
-      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-      operationId: compliance.ediscovery.cases.custodians_ListUserSources
+      summary: List custodian userSources
+      description: Get a list of the userSource objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-list-usersources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_ListUserSource
       parameters:
         - name: case-id
           in: path
@@ -1948,7 +2187,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.userSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1965,8 +2204,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to userSources for compliance
-      operationId: compliance.ediscovery.cases.custodians_CreateUserSources
+      summary: Create custodian userSource
+      description: Create a new custodian userSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-custodian-post-usersources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_CreateUserSource
       parameters:
         - name: case-id
           in: path
@@ -1992,7 +2235,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2011,9 +2254,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get userSources from compliance
-      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-      operationId: compliance.ediscovery.cases.custodians_GetUserSources
+      summary: Get userSource
+      description: Read the properties and relationships of a userSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-usersource-get?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_GetUserSource
       parameters:
         - name: case-id
           in: path
@@ -2071,7 +2317,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2090,7 +2336,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property userSources in compliance
-      operationId: compliance.ediscovery.cases.custodians_UpdateUserSources
+      operationId: compliance.ediscovery.case.custodian_UpdateUserSource
       parameters:
         - name: case-id
           in: path
@@ -2124,8 +2370,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -2138,8 +2388,12 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property userSources for compliance
-      operationId: compliance.ediscovery.cases.custodians_DeleteUserSources
+      summary: Delete userSource
+      description: Delete a userSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-usersource-delete?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.custodian_DeleteUserSource
       parameters:
         - name: case-id
           in: path
@@ -2172,7 +2426,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2183,12 +2437,76 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/userSources/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.custodian.userSource_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: custodian-id
+          in: path
+          description: The unique identifier of custodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: custodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
+  '/compliance/ediscovery/cases/{case-id}/custodians/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.custodian_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/custodians/microsoft.graph.ediscovery.applyHold':
     post:
       tags:
         - compliance.Actions
       summary: Invoke action applyHold
-      operationId: compliance.ediscovery.cases.custodians_applyHold
+      operationId: compliance.ediscovery.case.custodian_applyHold
       parameters:
         - name: case-id
           in: path
@@ -2214,7 +2532,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2230,7 +2548,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action removeHold
-      operationId: compliance.ediscovery.cases.custodians_removeHold
+      operationId: compliance.ediscovery.case.custodian_removeHold
       parameters:
         - name: case-id
           in: path
@@ -2256,7 +2574,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2271,9 +2589,9 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get legalHolds from compliance
-      description: Returns a list of case legalHold objects for this case.  Nullable.
-      operationId: compliance.ediscovery.cases_ListLegalHolds
+      summary: Get legalHold
+      description: Read the properties and relationships of a legalHold object.
+      operationId: compliance.ediscovery.case_ListLegalHold
       parameters:
         - name: case-id
           in: path
@@ -2362,7 +2680,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.legalHoldCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2380,7 +2698,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to legalHolds for compliance
-      operationId: compliance.ediscovery.cases_CreateLegalHolds
+      operationId: compliance.ediscovery.case_CreateLegalHold
       parameters:
         - name: case-id
           in: path
@@ -2398,7 +2716,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.legalHold'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2417,9 +2735,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get legalHolds from compliance
-      description: Returns a list of case legalHold objects for this case.  Nullable.
-      operationId: compliance.ediscovery.cases_GetLegalHolds
+      summary: Get legalHold
+      description: Read the properties and relationships of a legalHold object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-legalhold-get?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_GetLegalHold
       parameters:
         - name: case-id
           in: path
@@ -2478,7 +2799,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2496,8 +2817,12 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property legalHolds in compliance
-      operationId: compliance.ediscovery.cases_UpdateLegalHolds
+      summary: Update legalHold
+      description: Update the properties of a legalHold object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-legalhold-update?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_UpdateLegalHold
       parameters:
         - name: case-id
           in: path
@@ -2523,8 +2848,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.legalHold'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.legalHold'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -2537,8 +2866,12 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property legalHolds for compliance
-      operationId: compliance.ediscovery.cases_DeleteLegalHolds
+      summary: Delete legalHold
+      description: Delete a legalHold object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-legalhold-delete?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_DeleteLegalHold
       parameters:
         - name: case-id
           in: path
@@ -2563,7 +2896,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2578,9 +2911,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get siteSources from compliance
-      description: Data source entity for SharePoint sites associated with the legal hold.
-      operationId: compliance.ediscovery.cases.legalHolds_ListSiteSources
+      summary: List legalHold siteSources
+      description: Get the list of siteSource objecs associated with a legal hold.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-legalhold-list-sitesources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.legalHold_ListSiteSource
       parameters:
         - name: case-id
           in: path
@@ -2655,7 +2991,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.siteSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2672,8 +3008,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to siteSources for compliance
-      operationId: compliance.ediscovery.cases.legalHolds_CreateSiteSources
+      summary: Create legalHold siteSource
+      description: Adds a siteSource to a legalHold object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-legalhold-post-sitesources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.legalHold_CreateSiteSource
       parameters:
         - name: case-id
           in: path
@@ -2699,7 +3039,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2720,7 +3060,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get siteSources from compliance
       description: Data source entity for SharePoint sites associated with the legal hold.
-      operationId: compliance.ediscovery.cases.legalHolds_GetSiteSources
+      operationId: compliance.ediscovery.case.legalHold_GetSiteSource
       parameters:
         - name: case-id
           in: path
@@ -2777,7 +3117,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2796,7 +3136,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property siteSources in compliance
-      operationId: compliance.ediscovery.cases.legalHolds_UpdateSiteSources
+      operationId: compliance.ediscovery.case.legalHold_UpdateSiteSource
       parameters:
         - name: case-id
           in: path
@@ -2830,8 +3170,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSource'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -2845,7 +3189,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property siteSources for compliance
-      operationId: compliance.ediscovery.cases.legalHolds_DeleteSiteSources
+      operationId: compliance.ediscovery.case.legalHold_DeleteSiteSource
       parameters:
         - name: case-id
           in: path
@@ -2878,7 +3222,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2895,7 +3239,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get site from compliance
       description: The SharePoint site associated with the siteSource.
-      operationId: compliance.ediscovery.cases.legalHolds.siteSources_GetSite
+      operationId: compliance.ediscovery.case.legalHold.siteSource_GetSite
       parameters:
         - name: case-id
           in: path
@@ -2995,7 +3339,7 @@ paths:
                 - onenote
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3010,12 +3354,48 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/siteSources/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.legalHold.siteSource_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: legalHold-id
+          in: path
+          description: The unique identifier of legalHold
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: legalHold
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/unifiedGroupSources':
     get:
       tags:
         - compliance.ediscoveryroot
       summary: Get unifiedGroupSources from compliance
-      operationId: compliance.ediscovery.cases.legalHolds_ListUnifiedGroupSources
+      operationId: compliance.ediscovery.case.legalHold_ListUnifiedGroupSource
       parameters:
         - name: case-id
           in: path
@@ -3093,7 +3473,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.unifiedGroupSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3111,7 +3491,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to unifiedGroupSources for compliance
-      operationId: compliance.ediscovery.cases.legalHolds_CreateUnifiedGroupSources
+      operationId: compliance.ediscovery.case.legalHold_CreateUnifiedGroupSource
       parameters:
         - name: case-id
           in: path
@@ -3137,7 +3517,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3157,7 +3537,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get unifiedGroupSources from compliance
-      operationId: compliance.ediscovery.cases.legalHolds_GetUnifiedGroupSources
+      operationId: compliance.ediscovery.case.legalHold_GetUnifiedGroupSource
       parameters:
         - name: case-id
           in: path
@@ -3215,7 +3595,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3234,7 +3614,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property unifiedGroupSources in compliance
-      operationId: compliance.ediscovery.cases.legalHolds_UpdateUnifiedGroupSources
+      operationId: compliance.ediscovery.case.legalHold_UpdateUnifiedGroupSource
       parameters:
         - name: case-id
           in: path
@@ -3268,8 +3648,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.unifiedGroupSource'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -3283,7 +3667,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property unifiedGroupSources for compliance
-      operationId: compliance.ediscovery.cases.legalHolds_DeleteUnifiedGroupSources
+      operationId: compliance.ediscovery.case.legalHold_DeleteUnifiedGroupSource
       parameters:
         - name: case-id
           in: path
@@ -3316,7 +3700,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3333,7 +3717,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get group from compliance
       description: The group associated with the unifiedGroupSource.
-      operationId: compliance.ediscovery.cases.legalHolds.unifiedGroupSources_GetGroup
+      operationId: compliance.ediscovery.case.legalHold.unifiedGroupSource_GetGroup
       parameters:
         - name: case-id
           in: path
@@ -3492,7 +3876,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3507,13 +3891,52 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/unifiedGroupSources/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.legalHold.unifiedGroupSource_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: legalHold-id
+          in: path
+          description: The unique identifier of legalHold
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: legalHold
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/userSources':
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get userSources from compliance
-      description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
-      operationId: compliance.ediscovery.cases.legalHolds_ListUserSources
+      summary: List legalHold userSources
+      description: Get the list of userSource objects associated with a legal hold.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-legalhold-list-usersources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.legalHold_ListUserSource
       parameters:
         - name: case-id
           in: path
@@ -3595,7 +4018,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.userSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3612,8 +4035,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to userSources for compliance
-      operationId: compliance.ediscovery.cases.legalHolds_CreateUserSources
+      summary: Create legalHold userSource
+      description: Adds a userSource to a legalHold object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-legalhold-post-usersources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.legalHold_CreateUserSource
       parameters:
         - name: case-id
           in: path
@@ -3639,7 +4066,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3660,7 +4087,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get userSources from compliance
       description: Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
-      operationId: compliance.ediscovery.cases.legalHolds_GetUserSources
+      operationId: compliance.ediscovery.case.legalHold_GetUserSource
       parameters:
         - name: case-id
           in: path
@@ -3718,7 +4145,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3737,7 +4164,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property userSources in compliance
-      operationId: compliance.ediscovery.cases.legalHolds_UpdateUserSources
+      operationId: compliance.ediscovery.case.legalHold_UpdateUserSource
       parameters:
         - name: case-id
           in: path
@@ -3771,8 +4198,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -3786,7 +4217,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property userSources for compliance
-      operationId: compliance.ediscovery.cases.legalHolds_DeleteUserSources
+      operationId: compliance.ediscovery.case.legalHold_DeleteUserSource
       parameters:
         - name: case-id
           in: path
@@ -3819,7 +4250,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3830,12 +4261,80 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/legalHolds/{legalHold-id}/userSources/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.legalHold.userSource_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: legalHold-id
+          in: path
+          description: The unique identifier of legalHold
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: legalHold
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
+  '/compliance/ediscovery/cases/{case-id}/legalHolds/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.legalHold_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/microsoft.graph.ediscovery.close':
     post:
       tags:
         - compliance.Actions
       summary: Invoke action close
-      operationId: compliance.ediscovery.cases_close
+      description: 'Close an eDiscovery case. For details, see Close a case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-close?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_close
       parameters:
         - name: case-id
           in: path
@@ -3846,7 +4345,7 @@ paths:
             type: string
           x-ms-docs-key-type: case
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3862,7 +4361,11 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action reopen
-      operationId: compliance.ediscovery.cases_reopen
+      description: 'Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-reopen?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_reopen
       parameters:
         - name: case-id
           in: path
@@ -3873,7 +4376,7 @@ paths:
             type: string
           x-ms-docs-key-type: case
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3888,9 +4391,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get noncustodialDataSources from compliance
-      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-      operationId: compliance.ediscovery.cases_ListNoncustodialDataSources
+      summary: List noncustodialDataSources
+      description: Get a list of the noncustodialDataSource objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-list?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_ListNoncustodialDataSource
       parameters:
         - name: case-id
           in: path
@@ -3968,7 +4474,7 @@ paths:
                 - dataSource
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.noncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3985,8 +4491,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to noncustodialDataSources for compliance
-      operationId: compliance.ediscovery.cases_CreateNoncustodialDataSources
+      summary: Create noncustodialDataSource
+      description: Create a new noncustodialDataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-post?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_CreateNoncustodialDataSource
       parameters:
         - name: case-id
           in: path
@@ -4004,7 +4514,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.noncustodialDataSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4023,9 +4533,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get noncustodialDataSources from compliance
-      description: Returns a list of case noncustodialDataSource objects for this case.  Nullable.
-      operationId: compliance.ediscovery.cases_GetNoncustodialDataSources
+      summary: Get noncustodialDataSource
+      description: Read the properties and relationships of a noncustodialDataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-get?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_GetNoncustodialDataSource
       parameters:
         - name: case-id
           in: path
@@ -4079,7 +4592,7 @@ paths:
                 - dataSource
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4098,7 +4611,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property noncustodialDataSources in compliance
-      operationId: compliance.ediscovery.cases_UpdateNoncustodialDataSources
+      operationId: compliance.ediscovery.case_UpdateNoncustodialDataSource
       parameters:
         - name: case-id
           in: path
@@ -4124,8 +4637,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.noncustodialDataSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.noncustodialDataSource'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -4139,7 +4656,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property noncustodialDataSources for compliance
-      operationId: compliance.ediscovery.cases_DeleteNoncustodialDataSources
+      operationId: compliance.ediscovery.case_DeleteNoncustodialDataSource
       parameters:
         - name: case-id
           in: path
@@ -4164,7 +4681,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4181,7 +4698,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get dataSource from compliance
       description: User source or SharePoint site data source as non-custodial data source.
-      operationId: compliance.ediscovery.cases.noncustodialDataSources_GetDataSource
+      operationId: compliance.ediscovery.case.noncustodialDataSource_GetDataSource
       parameters:
         - name: case-id
           in: path
@@ -4228,7 +4745,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4247,7 +4764,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property dataSource in compliance
-      operationId: compliance.ediscovery.cases.noncustodialDataSources_UpdateDataSource
+      operationId: compliance.ediscovery.case.noncustodialDataSource_UpdateDataSource
       parameters:
         - name: case-id
           in: path
@@ -4273,8 +4790,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -4288,7 +4809,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property dataSource for compliance
-      operationId: compliance.ediscovery.cases.noncustodialDataSources_DeleteDataSource
+      operationId: compliance.ediscovery.case.noncustodialDataSource_DeleteDataSource
       parameters:
         - name: case-id
           in: path
@@ -4313,8 +4834,78 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
+      x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/lastIndexOperation':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get lastIndexOperation from compliance
+      operationId: compliance.ediscovery.case.noncustodialDataSource_GetLastIndexOperation
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: noncustodialDataSource-id
+          in: path
+          description: The unique identifier of noncustodialDataSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: noncustodialDataSource
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - action
+                - completedDateTime
+                - createdBy
+                - createdDateTime
+                - percentProgress
+                - resultInfo
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.caseIndexOperation'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -4329,7 +4920,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action applyHold
-      operationId: compliance.ediscovery.cases.noncustodialDataSources_applyHold
+      operationId: compliance.ediscovery.case.noncustodialDataSource_applyHold
       parameters:
         - name: case-id
           in: path
@@ -4348,7 +4939,7 @@ paths:
             type: string
           x-ms-docs-key-type: noncustodialDataSource
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4364,7 +4955,11 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action release
-      operationId: compliance.ediscovery.cases.noncustodialDataSources_release
+      description: Releases the non-custodial data source from the case.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-release?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.noncustodialDataSource_release
       parameters:
         - name: case-id
           in: path
@@ -4383,7 +4978,7 @@ paths:
             type: string
           x-ms-docs-key-type: noncustodialDataSource
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4399,7 +4994,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action removeHold
-      operationId: compliance.ediscovery.cases.noncustodialDataSources_removeHold
+      operationId: compliance.ediscovery.case.noncustodialDataSource_removeHold
       parameters:
         - name: case-id
           in: path
@@ -4418,7 +5013,7 @@ paths:
             type: string
           x-ms-docs-key-type: noncustodialDataSource
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4434,7 +5029,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action updateIndex
-      operationId: compliance.ediscovery.cases.noncustodialDataSources_updateIndex
+      operationId: compliance.ediscovery.case.noncustodialDataSource_updateIndex
       parameters:
         - name: case-id
           in: path
@@ -4453,7 +5048,7 @@ paths:
             type: string
           x-ms-docs-key-type: noncustodialDataSource
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4464,12 +5059,40 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
+  '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.noncustodialDataSource_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/microsoft.graph.ediscovery.applyHold':
     post:
       tags:
         - compliance.Actions
       summary: Invoke action applyHold
-      operationId: compliance.ediscovery.cases.noncustodialDataSources_applyHold
+      operationId: compliance.ediscovery.case.noncustodialDataSource_applyHold
       parameters:
         - name: case-id
           in: path
@@ -4495,7 +5118,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4511,7 +5134,7 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action removeHold
-      operationId: compliance.ediscovery.cases.noncustodialDataSources_removeHold
+      operationId: compliance.ediscovery.case.noncustodialDataSource_removeHold
       parameters:
         - name: case-id
           in: path
@@ -4537,7 +5160,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4554,7 +5177,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get operations from compliance
       description: Returns a list of case operation objects for this case. Nullable.
-      operationId: compliance.ediscovery.cases_ListOperations
+      operationId: compliance.ediscovery.case_ListOperation
       parameters:
         - name: case-id
           in: path
@@ -4628,7 +5251,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.caseOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4646,7 +5269,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to operations for compliance
-      operationId: compliance.ediscovery.cases_CreateOperations
+      operationId: compliance.ediscovery.case_CreateOperation
       parameters:
         - name: case-id
           in: path
@@ -4664,7 +5287,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.caseOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4685,7 +5308,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get operations from compliance
       description: Returns a list of case operation objects for this case. Nullable.
-      operationId: compliance.ediscovery.cases_GetOperations
+      operationId: compliance.ediscovery.case_GetOperation
       parameters:
         - name: case-id
           in: path
@@ -4735,7 +5358,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4754,7 +5377,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property operations in compliance
-      operationId: compliance.ediscovery.cases_UpdateOperations
+      operationId: compliance.ediscovery.case_UpdateOperation
       parameters:
         - name: case-id
           in: path
@@ -4780,8 +5403,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.caseOperation'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.caseOperation'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -4795,7 +5422,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property operations for compliance
-      operationId: compliance.ediscovery.cases_DeleteOperations
+      operationId: compliance.ediscovery.case_DeleteOperation
       parameters:
         - name: case-id
           in: path
@@ -4820,7 +5447,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4836,7 +5463,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Get the item of type microsoft.graph.ediscovery.caseOperation as microsoft.graph.ediscovery.caseExportOperation
-      operationId: compliance.ediscovery.cases_GetOperationsAsCaseExportOperation
+      operationId: compliance.ediscovery.case_GetOperationAsCaseExportOperation
       parameters:
         - name: case-id
           in: path
@@ -4886,7 +5513,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Result entities
           content:
             application/json:
@@ -4900,12 +5527,40 @@ paths:
         date: '2022-12-05T00:00:00.0000000+00:00'
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
+  '/compliance/ediscovery/cases/{case-id}/operations/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.operation_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/operations/microsoft.graph.ediscovery.caseExportOperation':
     get:
       tags:
         - compliance.ediscoveryroot
       summary: Get the items of type microsoft.graph.ediscovery.caseExportOperation in the microsoft.graph.ediscovery.caseOperation collection
-      operationId: compliance.ediscovery.cases_ListOperationsAsCaseExportOperation
+      operationId: compliance.ediscovery.case_ListOperationAsCaseExportOperation
       parameters:
         - name: case-id
           in: path
@@ -4979,7 +5634,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.caseExportOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4992,13 +5647,41 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/compliance/ediscovery/cases/{case-id}/operations/microsoft.graph.ediscovery.caseExportOperation/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.ListOperation_GetCountAsCaseExportOperation
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/reviewSets':
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get reviewSets from compliance
-      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
-      operationId: compliance.ediscovery.cases_ListReviewSets
+      summary: Get reviewSet
+      description: Retrieve the properties and relationships of a reviewSet object.
+      operationId: compliance.ediscovery.case_ListReviewSet
       parameters:
         - name: case-id
           in: path
@@ -5062,7 +5745,7 @@ paths:
                 - queries
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.reviewSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5079,8 +5762,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to reviewSets for compliance
-      operationId: compliance.ediscovery.cases_CreateReviewSets
+      summary: Create reviewSet
+      description: 'Create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-post-reviewsets?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_CreateReviewSet
       parameters:
         - name: case-id
           in: path
@@ -5098,7 +5785,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSet'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5117,9 +5804,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get reviewSets from compliance
-      description: Returns a list of reviewSet objects in the case. Read-only. Nullable.
-      operationId: compliance.ediscovery.cases_GetReviewSets
+      summary: Get reviewSet
+      description: Retrieve the properties and relationships of a reviewSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-reviewset-get?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_GetReviewSet
       parameters:
         - name: case-id
           in: path
@@ -5167,7 +5857,7 @@ paths:
                 - queries
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5186,7 +5876,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property reviewSets in compliance
-      operationId: compliance.ediscovery.cases_UpdateReviewSets
+      operationId: compliance.ediscovery.case_UpdateReviewSet
       parameters:
         - name: case-id
           in: path
@@ -5212,8 +5902,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSet'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSet'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -5227,7 +5921,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property reviewSets for compliance
-      operationId: compliance.ediscovery.cases_DeleteReviewSets
+      operationId: compliance.ediscovery.case_DeleteReviewSet
       parameters:
         - name: case-id
           in: path
@@ -5252,7 +5946,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5268,7 +5962,11 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action addToReviewSet
-      operationId: compliance.ediscovery.cases.reviewSets_addToReviewSet
+      description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a caseExportOperation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-reviewset-addtoreviewset?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.reviewSet_addToReviewSet
       parameters:
         - name: case-id
           in: path
@@ -5301,7 +5999,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5317,7 +6015,11 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action export
-      operationId: compliance.ediscovery.cases.reviewSets_export
+      description: 'Initiate an export from a **reviewSet**.  For details, see Export documents from a review set in Advanced eDiscovery.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-reviewset-export?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.reviewSet_export
       parameters:
         - name: case-id
           in: path
@@ -5362,7 +6064,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5377,8 +6079,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get queries from compliance
-      operationId: compliance.ediscovery.cases.reviewSets_ListQueries
+      summary: List reviewSetQueries
+      description: Retrieve a list of eDiscovery reviewSetQuery objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-list?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.reviewSet_ListQuery
       parameters:
         - name: case-id
           in: path
@@ -5457,7 +6163,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.reviewSetQueryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5474,8 +6180,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to queries for compliance
-      operationId: compliance.ediscovery.cases.reviewSets_CreateQueries
+      summary: Create reviewSetQuery
+      description: Create a new reviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-post?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.reviewSet_CreateQuery
       parameters:
         - name: case-id
           in: path
@@ -5501,7 +6211,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSetQuery'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5520,8 +6230,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get queries from compliance
-      operationId: compliance.ediscovery.cases.reviewSets_GetQueries
+      summary: Get reviewSetQuery
+      description: Retrieve the properties and relationships of an eDiscovery reviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-get?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.reviewSet_GetQuery
       parameters:
         - name: case-id
           in: path
@@ -5578,7 +6292,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5596,8 +6310,12 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property queries in compliance
-      operationId: compliance.ediscovery.cases.reviewSets_UpdateQueries
+      summary: Update reviewSetQuery
+      description: Update the properties of an eDiscovery reviewSetQuery.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-update?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.reviewSet_UpdateQuery
       parameters:
         - name: case-id
           in: path
@@ -5631,8 +6349,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSetQuery'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.reviewSetQuery'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -5645,8 +6367,12 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property queries for compliance
-      operationId: compliance.ediscovery.cases.reviewSets_DeleteQueries
+      summary: Delete reviewSetQuery
+      description: Delete a reviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-delete?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.reviewSet_DeleteQuery
       parameters:
         - name: case-id
           in: path
@@ -5679,7 +6405,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5695,7 +6421,11 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action applyTags
-      operationId: compliance.ediscovery.cases.reviewSets.queries_applyTags
+      description: Apply tags to documents that match the specified reviewSetQuery.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-reviewsetquery-applytags?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.reviewSet.query_applyTag
       parameters:
         - name: case-id
           in: path
@@ -5740,7 +6470,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5751,12 +6481,80 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: action
+  '/compliance/ediscovery/cases/{case-id}/reviewSets/{reviewSet-id}/queries/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.reviewSet.query_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: reviewSet-id
+          in: path
+          description: The unique identifier of reviewSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: reviewSet
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
+  '/compliance/ediscovery/cases/{case-id}/reviewSets/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.reviewSet_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/settings':
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get settings from compliance
-      operationId: compliance.ediscovery.cases_GetSettings
+      summary: Get caseSettings
+      description: Read the properties and relationships of an eDiscovery caseSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-casesettings-get?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_GetSetting
       parameters:
         - name: case-id
           in: path
@@ -5794,7 +6592,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5812,8 +6610,12 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property settings in compliance
-      operationId: compliance.ediscovery.cases_UpdateSettings
+      summary: Update caseSettings
+      description: Update the properties of a an eDiscovery caseSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-casesettings-update?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_UpdateSetting
       parameters:
         - name: case-id
           in: path
@@ -5831,8 +6633,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.caseSettings'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.caseSettings'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -5846,7 +6652,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property settings for compliance
-      operationId: compliance.ediscovery.cases_DeleteSettings
+      operationId: compliance.ediscovery.case_DeleteSetting
       parameters:
         - name: case-id
           in: path
@@ -5863,7 +6669,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5879,7 +6685,11 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action resetToDefault
-      operationId: compliance.ediscovery.cases.settings_resetToDefault
+      description: Reset a caseSettings object to the default values.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-casesettings-resettodefault?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.setting_resetToDefault
       parameters:
         - name: case-id
           in: path
@@ -5890,7 +6700,7 @@ paths:
             type: string
           x-ms-docs-key-type: case
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5905,9 +6715,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get sourceCollections from compliance
-      description: Returns a list of sourceCollection objects associated with this case.
-      operationId: compliance.ediscovery.cases_ListSourceCollections
+      summary: List sourceCollections
+      description: Get the list of sourceCollections from a case object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-list-sourcecollections?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_ListSourceCollection
       parameters:
         - name: case-id
           in: path
@@ -5994,7 +6807,7 @@ paths:
                 - noncustodialSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.sourceCollectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6011,8 +6824,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to sourceCollections for compliance
-      operationId: compliance.ediscovery.cases_CreateSourceCollections
+      summary: Create sourceCollection
+      description: Create a new sourceCollection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-post-sourcecollections?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_CreateSourceCollection
       parameters:
         - name: case-id
           in: path
@@ -6030,7 +6847,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.sourceCollection'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6051,7 +6868,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get sourceCollections from compliance
       description: Returns a list of sourceCollection objects associated with this case.
-      operationId: compliance.ediscovery.cases_GetSourceCollections
+      operationId: compliance.ediscovery.case_GetSourceCollection
       parameters:
         - name: case-id
           in: path
@@ -6112,7 +6929,7 @@ paths:
                 - noncustodialSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6130,8 +6947,12 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property sourceCollections in compliance
-      operationId: compliance.ediscovery.cases_UpdateSourceCollections
+      summary: Update sourceCollection
+      description: Update the properties of a sourceCollection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-update?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_UpdateSourceCollection
       parameters:
         - name: case-id
           in: path
@@ -6157,8 +6978,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.sourceCollection'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.sourceCollection'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -6171,8 +6996,12 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property sourceCollections for compliance
-      operationId: compliance.ediscovery.cases_DeleteSourceCollections
+      summary: Delete sourceCollection
+      description: Delete a sourceCollection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-delete?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_DeleteSourceCollection
       parameters:
         - name: case-id
           in: path
@@ -6197,7 +7026,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6212,9 +7041,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get additionalSources from compliance
-      description: Adds an additional source to the sourceCollection.
-      operationId: compliance.ediscovery.cases.sourceCollections_ListAdditionalSources
+      summary: List additionalSources
+      description: Get a list of additional dataSource objects associated with a source collection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-additionalsources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.sourceCollection_ListAdditionalSource
       parameters:
         - name: case-id
           in: path
@@ -6287,7 +7119,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6305,7 +7137,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Create new navigation property to additionalSources for compliance
-      operationId: compliance.ediscovery.cases.sourceCollections_CreateAdditionalSources
+      operationId: compliance.ediscovery.case.sourceCollection_CreateAdditionalSource
       parameters:
         - name: case-id
           in: path
@@ -6331,7 +7163,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6352,7 +7184,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get additionalSources from compliance
       description: Adds an additional source to the sourceCollection.
-      operationId: compliance.ediscovery.cases.sourceCollections_GetAdditionalSources
+      operationId: compliance.ediscovery.case.sourceCollection_GetAdditionalSource
       parameters:
         - name: case-id
           in: path
@@ -6407,7 +7239,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6426,7 +7258,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Update the navigation property additionalSources in compliance
-      operationId: compliance.ediscovery.cases.sourceCollections_UpdateAdditionalSources
+      operationId: compliance.ediscovery.case.sourceCollection_UpdateAdditionalSource
       parameters:
         - name: case-id
           in: path
@@ -6460,8 +7292,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSource'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -6475,7 +7311,7 @@ paths:
       tags:
         - compliance.ediscoveryroot
       summary: Delete navigation property additionalSources for compliance
-      operationId: compliance.ediscovery.cases.sourceCollections_DeleteAdditionalSources
+      operationId: compliance.ediscovery.case.sourceCollection_DeleteAdditionalSource
       parameters:
         - name: case-id
           in: path
@@ -6508,7 +7344,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6519,13 +7355,52 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/additionalSources/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.sourceCollection.additionalSource_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: sourceCollection-id
+          in: path
+          description: The unique identifier of sourceCollection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sourceCollection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/addToReviewSetOperation':
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get addToReviewSetOperation from compliance
-      description: Adds the results of the sourceCollection to the specified reviewSet.
-      operationId: compliance.ediscovery.cases.sourceCollections_GetAddToReviewSetOperation
+      summary: List addToReviewSetOperation
+      description: 'Get the last addToReviewSetOperation object associated with a source collection. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-addtoreviewsetoperation?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.sourceCollection_GetAddToReviewSetOperation
       parameters:
         - name: case-id
           in: path
@@ -6579,7 +7454,7 @@ paths:
                 - sourceCollection
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6598,9 +7473,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get custodianSources from compliance
-      description: Custodian sources that are included in the sourceCollection.
-      operationId: compliance.ediscovery.cases.sourceCollections_ListCustodianSources
+      summary: List custodianSources
+      description: Get the list of dataSource objects associated with a source collection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-custodiansources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.sourceCollection_ListCustodianSource
       parameters:
         - name: case-id
           in: path
@@ -6673,7 +7551,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6693,7 +7571,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get custodianSources from compliance
       description: Custodian sources that are included in the sourceCollection.
-      operationId: compliance.ediscovery.cases.sourceCollections_GetCustodianSources
+      operationId: compliance.ediscovery.case.sourceCollection_GetCustodianSource
       parameters:
         - name: case-id
           in: path
@@ -6748,7 +7626,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6763,13 +7641,52 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/custodianSources/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.sourceCollection.custodianSource_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: sourceCollection-id
+          in: path
+          description: The unique identifier of sourceCollection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sourceCollection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/lastEstimateStatisticsOperation':
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get lastEstimateStatisticsOperation from compliance
-      description: The last estimate operation associated with the sourceCollection.
-      operationId: compliance.ediscovery.cases.sourceCollections_GetLastEstimateStatisticsOperation
+      summary: List estimateStatisticsOperation
+      description: 'Get the last estimateStatisticsOperation object associated with a source collection. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-lastestimatestatisticsoperation?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.sourceCollection_GetLastEstimateStatisticsOperation
       parameters:
         - name: case-id
           in: path
@@ -6827,7 +7744,7 @@ paths:
                 - sourceCollection
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6847,7 +7764,11 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action estimateStatistics
-      operationId: compliance.ediscovery.cases.sourceCollections_estimateStatistics
+      description: 'Run an estimate of the number of emails and documents in the source collection. To learn more about source collections (also known as searches in eDiscovery), see Collect data for a case in Advanced eDiscovery.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-estimatestatistics?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.sourceCollection_estimateStatistics
       parameters:
         - name: case-id
           in: path
@@ -6866,7 +7787,7 @@ paths:
             type: string
           x-ms-docs-key-type: sourceCollection
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6882,7 +7803,11 @@ paths:
       tags:
         - compliance.Actions
       summary: Invoke action purgeData
-      operationId: compliance.ediscovery.cases.sourceCollections_purgeData
+      description: "Permanently delete Microsoft Teams messages contained in a sourceCollection. You can collect and purge the following categories of Teams content:\n- **Teams 1:1 chats** - Chat messages, posts, and attachments shared in a Teams conversation between two people. Teams 1:1 chats are also called *conversations*.\n- **Teams group chats** - Chat messages, posts, and attachments shared in a Teams conversation between three or more people. Also called *1:N* chats or *group conversations*.\n- **Teams channels** - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- **Private channels** - Message posts, replies, and attachments shared in a private Teams channel.\n- **Shared channels** - Message posts, replies, and attachments shared in a shared Teams channel. For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- Advanced eDiscovery workflow for content in Microsoft Teams "
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-purgedata?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.sourceCollection_purgeData
       parameters:
         - name: case-id
           in: path
@@ -6901,7 +7826,7 @@ paths:
             type: string
           x-ms-docs-key-type: sourceCollection
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6916,9 +7841,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get noncustodialSources from compliance
-      description: noncustodialDataSource sources that are included in the sourceCollection
-      operationId: compliance.ediscovery.cases.sourceCollections_ListNoncustodialSources
+      summary: List noncustodialSources
+      description: Get a list of noncustodialDataSource associated with a sourceCollection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-noncustodialsources?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.sourceCollection_ListNoncustodialSource
       parameters:
         - name: case-id
           in: path
@@ -7004,7 +7932,7 @@ paths:
                 - dataSource
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.noncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7024,7 +7952,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get noncustodialSources from compliance
       description: noncustodialDataSource sources that are included in the sourceCollection
-      operationId: compliance.ediscovery.cases.sourceCollections_GetNoncustodialSources
+      operationId: compliance.ediscovery.case.sourceCollection_GetNoncustodialSource
       parameters:
         - name: case-id
           in: path
@@ -7086,7 +8014,7 @@ paths:
                 - dataSource
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7101,13 +8029,80 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/noncustodialSources/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.sourceCollection.noncustodialSource_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: sourceCollection-id
+          in: path
+          description: The unique identifier of sourceCollection
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: sourceCollection
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
+  '/compliance/ediscovery/cases/{case-id}/sourceCollections/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.sourceCollection_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/tags':
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get tags from compliance
-      description: Returns a list of tag objects associated to this case.
-      operationId: compliance.ediscovery.cases_ListTags
+      summary: List tags
+      description: Retrieve a list of tag objects from an eDiscovery case.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_ListTag
       parameters:
         - name: case-id
           in: path
@@ -7179,7 +8174,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.tagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7196,8 +8191,12 @@ paths:
     post:
       tags:
         - compliance.ediscoveryroot
-      summary: Create new navigation property to tags for compliance
-      operationId: compliance.ediscovery.cases_CreateTags
+      summary: Create tag
+      description: Create a new tag for the specified case.  The tags are used in review sets while reviewing content.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_CreateTag
       parameters:
         - name: case-id
           in: path
@@ -7215,7 +8214,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.tag'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7234,9 +8233,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get tags from compliance
-      description: Returns a list of tag objects associated to this case.
-      operationId: compliance.ediscovery.cases_GetTags
+      summary: Get tag
+      description: Read the properties and relationships of a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-tag-get?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_GetTag
       parameters:
         - name: case-id
           in: path
@@ -7288,7 +8290,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7306,8 +8308,12 @@ paths:
     patch:
       tags:
         - compliance.ediscoveryroot
-      summary: Update the navigation property tags in compliance
-      operationId: compliance.ediscovery.cases_UpdateTags
+      summary: Update tag
+      description: Update the properties of a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-tag-update?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_UpdateTag
       parameters:
         - name: case-id
           in: path
@@ -7333,8 +8339,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.ediscovery.tag'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ediscovery.tag'
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -7347,8 +8357,12 @@ paths:
     delete:
       tags:
         - compliance.ediscoveryroot
-      summary: Delete navigation property tags for compliance
-      operationId: compliance.ediscovery.cases_DeleteTags
+      summary: Delete tag
+      description: Delete a tag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-tag-delete?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case_DeleteTag
       parameters:
         - name: case-id
           in: path
@@ -7373,7 +8387,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7388,9 +8402,12 @@ paths:
     get:
       tags:
         - compliance.ediscoveryroot
-      summary: Get childTags from compliance
-      description: Returns the tags that are a child of a tag.
-      operationId: compliance.ediscovery.cases.tags_ListChildTags
+      summary: List childTags
+      description: Get a list of child tag objects associated with a tag.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/ediscovery-tag-childtags?view=graph-rest-1.0
+      operationId: compliance.ediscovery.case.tag_ListChildTag
       parameters:
         - name: case-id
           in: path
@@ -7470,7 +8487,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.ediscovery.tagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7490,7 +8507,7 @@ paths:
         - compliance.ediscoveryroot
       summary: Get childTags from compliance
       description: Returns the tags that are a child of a tag.
-      operationId: compliance.ediscovery.cases.tags_GetChildTags
+      operationId: compliance.ediscovery.case.tag_GetChildTag
       parameters:
         - name: case-id
           in: path
@@ -7550,7 +8567,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7565,13 +8582,49 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/tags/{tag-id}/childTags/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.tag.childTag_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: tag-id
+          in: path
+          description: The unique identifier of tag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tag
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/tags/{tag-id}/parent':
     get:
       tags:
         - compliance.ediscoveryroot
       summary: Get parent from compliance
       description: Returns the parent tag of the specified tag.
-      operationId: compliance.ediscovery.cases.tags_GetParent
+      operationId: compliance.ediscovery.case.tag_GetParent
       parameters:
         - name: case-id
           in: path
@@ -7623,7 +8676,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7638,12 +8691,40 @@ paths:
         version: 2022-12/ediscoveryNamespace
         description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/tags/$count':
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case.tag_GetCount
+      parameters:
+        - name: case-id
+          in: path
+          description: The unique identifier of case
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
   '/compliance/ediscovery/cases/{case-id}/tags/microsoft.graph.ediscovery.asHierarchy()':
     get:
       tags:
         - compliance.Functions
       summary: Invoke function asHierarchy
-      operationId: compliance.ediscovery.cases.tags_asHierarchy
+      operationId: compliance.ediscovery.case.tag_asHierarchy
       parameters:
         - name: case-id
           in: path
@@ -7701,7 +8782,7 @@ paths:
                 - lastModifiedDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7730,6 +8811,26 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /compliance/ediscovery/cases/$count:
+    get:
+      tags:
+        - compliance.ediscoveryroot
+      summary: Get the number of the resource
+      operationId: compliance.ediscovery.case_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-02-01T00:00:00.0000000+00:00'
+        date: '2022-12-05T00:00:00.0000000+00:00'
+        version: 2022-12/ediscoveryNamespace
+        description: 'The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.'
 components:
   schemas:
     microsoft.graph.compliance:
@@ -7878,6 +8979,13 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.ediscovery.userSource'
               description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.ediscovery.caseIndexOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.ediscovery.caseOperation'
+        - title: caseIndexOperation
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.ediscovery.siteSource:
@@ -8035,7 +9143,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
@@ -8058,6 +9166,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -8156,6 +9265,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             theme:
               type: string
               description: 'Specifies a Microsoft 365 group''s color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.'
@@ -9598,13 +10708,16 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time at which the error occurred.
           format: date-time
           nullable: true
         isResolved:
           type: boolean
+          description: Indicates whether the Error has been attended to.
           nullable: true
         serviceInstance:
           type: string
+          description: 'Qualified service instance (e.g., ''SharePoint/Dublin'') that published the service error information.'
           nullable: true
       additionalProperties:
         type: object
@@ -10500,6 +11613,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.ediscovery.unifiedGroupSourceCollectionResponse:
       title: Collection of unifiedGroupSource
       type: object
@@ -10649,11 +11765,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -10664,13 +11780,6 @@ components:
         - Released
         - UnknownFutureValue
       type: string
-    microsoft.graph.ediscovery.caseIndexOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.ediscovery.caseOperation'
-        - title: caseIndexOperation
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.itemReference:
       title: itemReference
       type: object
@@ -10834,8 +11943,13 @@ components:
               items:
                 type: string
               description: 'Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).'
+            isLicenseReconciliationNeeded:
+              type: boolean
+              description: Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
+              nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -10870,7 +11984,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -10964,6 +12078,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.serviceProvisioningError'
+              description: 'Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).'
             showInAddressList:
               type: boolean
               description: Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -13152,6 +14267,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.plannerSharedWithContainer'
+              description: List of containers the plan is shared with.
             title:
               type: string
               description: Required. Title of the plan.
@@ -13416,7 +14532,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
+              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -13518,33 +14634,42 @@ components:
               items:
                 type: string
                 nullable: true
+              description: The assigned categories for the team template.
             description:
               type: string
+              description: A brief description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             displayName:
               type: string
+              description: The user defined name of the team template.
               nullable: true
             iconUrl:
               type: string
+              description: The icon url for the team template.
               nullable: true
             languageTag:
               type: string
+              description: Language the template is available in.
               nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The date time of when the team template was last modified.
               format: date-time
               nullable: true
             parentTemplateId:
               type: string
+              description: The templateId for the team template
               nullable: true
             publisherName:
               type: string
+              description: The organization which published the team template.
               nullable: true
             shortDescription:
               type: string
+              description: A short-description of the team template as it will appear to the users in Microsoft Teams.
               nullable: true
             teamDefinition:
               $ref: '#/components/schemas/microsoft.graph.team'
@@ -13686,7 +14811,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -13696,7 +14821,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -14215,7 +15340,7 @@ components:
             preferredTokenSigningKeyEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.'
+              description: 'Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.'
               format: date-time
               nullable: true
             preferredTokenSigningKeyThumbprint:
@@ -14960,7 +16085,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             mailboxType:
               type: string
@@ -15060,6 +16185,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStep'
+              description: Used to represent the decision associated with a single step in the approval process configured in approvalStage.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -16243,6 +17369,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
+              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
               nullable: true
             isRooted:
               type: boolean
@@ -16388,9 +17515,17 @@ components:
               type: boolean
               description: Specifies if participants are allowed to rename themselves in an instance of the meeting.
               nullable: true
+            allowRecording:
+              type: boolean
+              description: Indicates whether recording is enabled for the meeting.
+              nullable: true
             allowTeamworkReactions:
               type: boolean
               description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
+            allowTranscription:
+              type: boolean
+              description: Indicates whether transcription is enabled for the meeting.
               nullable: true
             alternativeRecording:
               type: string
@@ -16408,6 +17543,10 @@ components:
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            broadcastRecording:
+              type: string
+              format: base64url
+              nullable: true
             broadcastSettings:
               $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
             capabilities:
@@ -16494,6 +17633,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
             registration:
               $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
+            recordings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callRecording'
+              x-ms-navigationProperty: true
             transcripts:
               type: array
               items:
@@ -17857,11 +19001,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
           nullable: true
       additionalProperties:
         type: object
@@ -18434,6 +19578,8 @@ components:
               description: Number of external references that exist on the task.
               format: int32
               nullable: true
+            specifiedCompletionRequirements:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskCompletionRequirements'
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -19510,7 +20656,7 @@ components:
           nullable: true
         key:
           type: string
-          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.'
+          description: 'Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.'
           format: base64url
           nullable: true
         keyId:
@@ -19527,11 +20673,11 @@ components:
           nullable: true
         type:
           type: string
-          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert.'
+          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.'
           nullable: true
         usage:
           type: string
-          description: 'A string that describes the purpose for which the key can be used; for example, Verify.'
+          description: 'A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.'
           nullable: true
       additionalProperties:
         type: object
@@ -23416,6 +24562,23 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.callRecording:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callRecording
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.callTranscript:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23478,6 +24641,8 @@ components:
           type: boolean
           description: Indicates whether the credential preferences of the system are enabled.
           nullable: true
+        userPreferredMethodForSecondaryAuthentication:
+          $ref: '#/components/schemas/microsoft.graph.userDefaultAuthenticationMethodType'
       additionalProperties:
         type: object
     microsoft.graph.emailAuthenticationMethod:
@@ -24768,6 +25933,13 @@ components:
           description: The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
       additionalProperties:
         type: object
+    microsoft.graph.plannerTaskCompletionRequirements:
+      title: plannerTaskCompletionRequirements
+      enum:
+        - none
+        - checklistCompletion
+        - unknownFutureValue
+      type: string
     microsoft.graph.plannerAssignedToTaskBoardTaskFormat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.plannerDelta'
@@ -24802,6 +25974,8 @@ components:
           properties:
             checklist:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
+            completionRequirements:
+              $ref: '#/components/schemas/microsoft.graph.plannerTaskCompletionRequirementDetails'
             description:
               type: string
               description: Description of the task.
@@ -25630,7 +26804,7 @@ components:
             metadata:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.metadataEntry'
+                $ref: '#/components/schemas/microsoft.graph.synchronizationMetadataEntry'
               description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
             schema:
               $ref: '#/components/schemas/microsoft.graph.synchronizationSchema'
@@ -27699,7 +28873,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -27774,6 +28948,17 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.userDefaultAuthenticationMethodType:
+      title: userDefaultAuthenticationMethodType
+      enum:
+        - push
+        - oath
+        - voiceMobile
+        - voiceAlternateMobile
+        - voiceOffice
+        - sms
+        - unknownFutureValue
+      type: string
     microsoft.graph.attestationLevel:
       title: attestationLevel
       enum:
@@ -28169,6 +29354,14 @@ components:
     microsoft.graph.plannerChecklistItems:
       title: plannerChecklistItems
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerTaskCompletionRequirementDetails:
+      title: plannerTaskCompletionRequirementDetails
+      type: object
+      properties:
+        checklistRequirement:
+          $ref: '#/components/schemas/microsoft.graph.plannerChecklistRequirement'
       additionalProperties:
         type: object
     microsoft.graph.plannerExternalReferences:
@@ -28877,6 +30070,11 @@ components:
       title: keyCredentialConfiguration
       type: object
       properties:
+        certificateBasedApplicationConfigurationIds:
+          type: array
+          items:
+            type: string
+            nullable: true
         maxLifetime:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -29049,14 +30247,12 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
-    microsoft.graph.metadataEntry:
-      title: metadataEntry
+    microsoft.graph.synchronizationMetadataEntry:
+      title: synchronizationMetadataEntry
       type: object
       properties:
         key:
-          type: string
-          description: Name of the metadata property.
-          nullable: true
+          $ref: '#/components/schemas/microsoft.graph.synchronizationMetadata'
         value:
           type: string
           description: Value of the metadata property.
@@ -30120,6 +31316,18 @@ components:
         allowSort:
           type: boolean
           description: Represents the worksheet protection option of allowing using sort feature.
+      additionalProperties:
+        type: object
+    microsoft.graph.plannerChecklistRequirement:
+      title: plannerChecklistRequirement
+      type: object
+      properties:
+        requiredChecklistItemIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A collection of required plannerChecklistItems identifiers to complete the plannerTask.
       additionalProperties:
         type: object
     microsoft.graph.teamworkConversationIdentity:
@@ -31383,6 +32591,7 @@ components:
       title: appKeyCredentialRestrictionType
       enum:
         - asymmetricKeyLifetime
+        - trustedCertificateAuthority
         - unknownFutureValue
       type: string
     microsoft.graph.appCredentialRestrictionType:
@@ -31614,6 +32823,19 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.synchronizationMetadata:
+      title: synchronizationMetadata
+      enum:
+        - galleryApplicationIdentifier
+        - galleryApplicationKey
+        - isOAuthEnabled
+        - IsSynchronizationAgentAssignmentRequired
+        - isSynchronizationAgentRequired
+        - isSynchronizationInPreview
+        - oAuthSettings
+        - synchronizationLearnMoreIbizaFwLink
+        - configurationFields
+      type: string
     microsoft.graph.settingSourceType:
       title: settingSourceType
       enum:
@@ -32065,7 +33287,7 @@ components:
         metadata:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.metadataEntry'
+            $ref: '#/components/schemas/microsoft.graph.objectMappingMetadataEntry'
           description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
         name:
           type: string
@@ -32101,18 +33323,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attributeDefinition'
+          description: Defines attributes of the object.
         metadata:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.metadataEntry'
+            $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadataEntry'
+          description: Metadata for the given object.
         name:
           type: string
+          description: Name of the object. Must be unique within a directory definition. Not nullable.
           nullable: true
         supportedApis:
           type: array
           items:
             type: string
             nullable: true
+          description: The API that the provisioning service queries to retrieve data for synchronization.
       additionalProperties:
         type: object
     microsoft.graph.workbookChartAxisFormat:
@@ -32225,6 +33451,18 @@ components:
         - Update
         - Delete
       type: string
+    microsoft.graph.objectMappingMetadataEntry:
+      title: objectMappingMetadataEntry
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/microsoft.graph.objectMappingMetadata'
+        value:
+          type: string
+          description: Value of the metadata property.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.filter:
       title: filter
       type: object
@@ -32269,8 +33507,8 @@ components:
         metadata:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.metadataEntry'
-          description: 'Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.'
+            $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadataEntry'
+          description: Metadata for the given object.
         multivalued:
           type: boolean
           description: true if an attribute can have multiple values. Default is false.
@@ -32290,6 +33528,18 @@ components:
           description: 'true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeType'
+      additionalProperties:
+        type: object
+    microsoft.graph.objectDefinitionMetadataEntry:
+      title: objectDefinitionMetadataEntry
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/microsoft.graph.objectDefinitionMetadata'
+        value:
+          type: string
+          description: Value of the metadata property.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.workbookChartGridlinesFormat:
@@ -32333,18 +33583,32 @@ components:
       properties:
         expression:
           type: string
+          description: Equivalent expression representation of this attributeMappingSource object.
           nullable: true
         name:
           type: string
+          description: 'Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.'
           nullable: true
         parameters:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
+          description: 'If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
       additionalProperties:
         type: object
+    microsoft.graph.objectMappingMetadata:
+      title: objectMappingMetadata
+      enum:
+        - EscrowBehavior
+        - DisableMonitoringForChanges
+        - OriginalJoiningProperty
+        - Disposition
+        - IsCustomerDefined
+        - ExcludeFromReporting
+        - Unsynchronized
+      type: string
     microsoft.graph.filterGroup:
       title: filterGroup
       type: object
@@ -32357,6 +33621,18 @@ components:
         name:
           type: string
           description: Human-readable name of the filter group.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.attributeDefinitionMetadataEntry:
+      title: attributeDefinitionMetadataEntry
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/microsoft.graph.attributeDefinitionMetadata'
+        value:
+          type: string
+          description: Value of the metadata property.
           nullable: true
       additionalProperties:
         type: object
@@ -32391,6 +33667,17 @@ components:
         - Binary
         - Boolean
         - DateTime
+      type: string
+    microsoft.graph.objectDefinitionMetadata:
+      title: objectDefinitionMetadata
+      enum:
+        - PropertyNameAccountEnabled
+        - PropertyNameSoftDeleted
+        - IsSoftDeletionSupported
+        - IsSynchronizeAllSupported
+        - ConnectorDataStorageRequired
+        - Extensions
+        - BaseObjectName
       type: string
     microsoft.graph.stringKeyAttributeMappingSourceValuePair:
       title: stringKeyAttributeMappingSourceValuePair
@@ -32427,6 +33714,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.filterOperand'
       additionalProperties:
         type: object
+    microsoft.graph.attributeDefinitionMetadata:
+      title: attributeDefinitionMetadata
+      enum:
+        - BaseAttributeName
+        - ComplexObjectDefinition
+        - IsContainer
+        - IsCustomerDefined
+        - IsDomainQualified
+        - LinkPropertyNames
+        - LinkTypeName
+        - MaximumLength
+        - ReferencedProperty
+      type: string
     microsoft.graph.filterOperand:
       title: filterOperand
       type: object
@@ -32464,6 +33764,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ediscovery.siteSourceCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.ediscovery.unifiedGroupSourceCollectionResponse:
       description: Retrieved collection
       content:

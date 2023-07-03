@@ -4,7 +4,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
@@ -88,17 +87,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         internal static HashSet<string> ContentHeaders =>
             _contentHeaderSet ?? (_contentHeaderSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
             {
-                HttpKnownHeaderNames.Allow,
-                HttpKnownHeaderNames.ContentDisposition,
-                HttpKnownHeaderNames.ContentEncoding,
-                HttpKnownHeaderNames.ContentLanguage,
-                HttpKnownHeaderNames.ContentLength,
-                HttpKnownHeaderNames.ContentLocation,
-                HttpKnownHeaderNames.ContentMD5,
-                HttpKnownHeaderNames.ContentRange,
-                HttpKnownHeaderNames.ContentType,
-                HttpKnownHeaderNames.Expires,
-                HttpKnownHeaderNames.LastModified
+                Allow,
+                ContentDisposition,
+                ContentEncoding,
+                ContentLanguage,
+                ContentLength,
+                ContentLocation,
+                ContentMD5,
+                ContentRange,
+                ContentType,
+                Expires,
+                LastModified
             });
 
 

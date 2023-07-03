@@ -38,5 +38,4 @@ $environmentParameterBlock = {
 
 Register-ArgumentCompleter -CommandName Connect-MgGraph -ParameterName Scopes -ScriptBlock $scopesParameterBlock
 Register-ArgumentCompleter -CommandName Connect-MgGraph -ParameterName Environment -ScriptBlock $environmentParameterBlock
-
 Register-ArgumentCompleter -CommandName Get-MgEnvironment -ParameterName Name -ScriptBlock $environmentParameterBlock

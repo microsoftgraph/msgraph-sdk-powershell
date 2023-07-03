@@ -4,7 +4,10 @@
 Param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
-    [string] $OpenAPIFilesPath
+    [string] $OpenAPIFilesPath,
+
+    [Parameter(Mandatory = $false)]
+    [Switch] $SetNavigationPropertiesAsReadOnly
 )
 
 $prepositionReplacements = @{
@@ -13,7 +16,12 @@ $prepositionReplacements = @{
     At   = "GraphAPre"
     For  = "GraphFPre"
     Of   = "GraphOPre"
-    _v2   = "GraphVTwo"
+}
+
+$wordReplacements = @{
+    Deltum = "delta"
+    Quotum = "quota"
+    Statistic = "statistics"
 }
 $targetOperationIdRegex = [Regex]::new("([a-z*])($($prepositionReplacements.Keys -join "|"))([A-Z*]|$)", "Compiled")
 $stopwatch = [system.diagnostics.stopwatch]::StartNew()
@@ -22,17 +30,42 @@ Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
     $filePath = $_.FullName
     $modified = $false
     $updatedContent = Get-Content $filePath | ForEach-Object {
-        if ($_.contains("operationId:") -and ($targetOperationIdRegex.Match($_)).Success) {
+        if ($_.contains("operationId:")) {
             $operationId = $_
-            $prepositionReplacements.Keys | ForEach-Object {
-                # Replace prepositions with replacement word.
-                #e.g., 'applications_GetCreatedOnBehalfOfByRef' will be renamed to 'applications_GetCreatedOnBehalfGraphOPreGraphBPreRef'.
-                $operationId = ($operationId -creplace $_, $prepositionReplacements[$_])
-                $modified = $true
+            $wordReplacements.Keys | ForEach-Object {
+                if ($operationId.EndsWith($_, "CurrentCultureIgnoreCase")) {
+                    $operationId = ($operationId -replace $_, $wordReplacements[$_])
+                    $modified = $true
+                    Write-Debug "$_ -> $operationId".Trim()
+                }
             }
-            Write-Debug "$_ -> $operationId".Trim()
+
+            if (($targetOperationIdRegex.Match($_)).Success) {
+                $prepositionReplacements.Keys | ForEach-Object {
+                    # Replace prepositions with replacement word.
+                    #e.g., 'applications_GetCreatedOnBehalfOfByRef' will be renamed to 'applications_GetCreatedOnBehalfGraphOPreGraphBPreRef'.
+                    $operationId = ($operationId -creplace $_, $prepositionReplacements[$_])
+                    $modified = $true
+                    Write-Debug "$_ -> $operationId".Trim()
+                }
+            }
             return $operationId
         }
+
+        if ($SetNavigationPropertiesAsReadOnly.IsPresent -and $_.contains("x-ms-navigationProperty: true")) {
+            # Mark navigation properties as readOnly.
+            $navigationPropertyExtension = ($_ -replace "x-ms-navigationProperty", "readOnly")
+            $modified = $true
+            return $navigationPropertyExtension
+        }
+
+        if ($_ -match "'2\d\d':") {
+            # Replace '2\d\d' with '2xx' to avoid status code mismatch errors.
+            $newStatusCode = ($_ -replace $Matches[0], "2XX:")
+            $modified = $true
+            return $newStatusCode
+        }
+
         return $_
     }
     if ($modified) { $updatedContent | Out-File $filePath -Force }

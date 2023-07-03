@@ -24,8 +24,8 @@ function Start-Generator {
     )
 
     $GraphMapping = @{
-        "v1.0" = "examples\v1.0"
-        "beta" = "examples\v1.0-beta"
+        "v1.0" = "v1.0\examples"
+        "beta" = "beta\examples"
     }
     if ($GenerationMode -eq "auto") {
         $GraphMapping.Keys | ForEach-Object {
@@ -35,11 +35,11 @@ function Start-Generator {
     }
     else {
           
-        $ProfilePathMapping = "examples\v1.0"
+        $ProfilePathMapping = "v1.0\examples"
         if ($ProfilePath -eq "beta") {
-            $ProfilePathMapping = "examples\v1.0-beta"
+            $ProfilePathMapping = "beta\examples"
         }
-        $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$GraphModule\$ProfilePathMapping"
+        $ModulePath = Join-Path $PSScriptRoot "..\src\$GraphModule\$ProfilePathMapping"
         Get-ExternalDocsUrl -ManualExternalDocsUrl $ManualExternalDocsUrl -GenerationMode $GenerationMode -GraphProfilePath $ModulePath -Command $GraphCommand -GraphProfile $ProfilePath -Module $GraphModule
             
     }
@@ -49,7 +49,7 @@ function Get-FilesByProfile {
         [ValidateSet("beta", "v1.0")]
         [string] $GraphProfile = "v1.0",
         [ValidateNotNullOrEmpty()]
-        [string] $GraphProfilePath = "examples\v1.0",
+        [string] $GraphProfilePath = "v1.0\examples",
         [ValidateNotNullOrEmpty()]
         $ModulesToGenerate = @()
     )
@@ -57,7 +57,7 @@ function Get-FilesByProfile {
 
     $ModulesToGenerate | ForEach-Object {
         $ModuleName = $_
-        $ModulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$ModuleName\$GraphProfilePath"
+        $ModulePath = Join-Path $PSScriptRoot "..\src\$ModuleName\$GraphProfilePath"
         $OpenApiFile = Join-Path $PSScriptRoot "..\openApiDocs\v1.0\$ModuleName.yml"
         #test this path first before proceeding
         if (Test-Path $OpenApiFile) {
@@ -73,7 +73,7 @@ function Get-Files {
         [ValidateSet("beta", "v1.0")]
         [string] $GraphProfile = "v1.0",
         [ValidateNotNullOrEmpty()]
-        [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\Users\examples\v1.0"),
+        [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\v1.0\examples"),
         [ValidateNotNullOrEmpty()]
         [string] $Module = "Users",
         [Hashtable] $OpenApiContent 
@@ -95,12 +95,12 @@ function Get-Files {
                         $CommandValue = $V1CommandGetVariantList[$Command]
                     }
                         
-                    if ($CommandValue) {
-                        $CommandValueParams = $CommandValue.Split(",")
+                     if ($CommandValue) {
+                         $CommandValueParams = $CommandValue.Split(",")
                          $ApiPath = $CommandValueParams[0]
                          $Method = $CommandValueParams[1]
-                        Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $ApiPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method.Trim() -Module $Module
-                    }
+                         Get-ExternalDocsUrl -GraphProfile $GraphProfile -Url -UriPath $ApiPath -Command $Command -OpenApiContent $OpenApiContent -GraphProfilePath $GraphProfilePath -Method $Method.Trim() -Module $Module           
+                     }
 
             }
         }
@@ -126,9 +126,8 @@ function Get-ExternalDocsUrl {
         [string] $Command = "Get-MgUser",
         [Hashtable] $OpenApiContent,
         [System.Object] $Method = "GET",
-        [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\Users\examples\v1.0")
+        [string] $GraphProfilePath = (Join-Path $PSScriptRoot "..\src\Users\v1.0\examples")
     )
-
     if ($GenerationMode -eq "manual") {
 
         if (-not([string]::IsNullOrEmpty($ManualExternalDocsUrl))) {
@@ -234,8 +233,12 @@ function Start-WebScrapping {
     )  
     $ExampleFile = "$GraphProfilePath/$Command.md"
     $url = $ExternalDocUrl
-	
-    $Description = "This example shows how to use the $Command Cmdlet.`r`n`r`To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference)."
+    $DescriptionCommand = $Command
+	if($GraphProfile -eq "beta"){
+        $DescriptionCommand= $Command.Replace("-MgBeta", "-Mg")
+    }
+    
+    $Description = "This example shows how to use the $DescriptionCommand Cmdlet.`r`n`r`To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference)."
     $WebResponse = Invoke-WebRequest -Uri $url
     $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
     $ExampleList = New-Object -TypeName 'System.Collections.ArrayList';
@@ -278,7 +281,10 @@ function Update-ExampleFile {
         [ValidateNotNullOrEmpty()]
         [string] $ExternalDocUrl = "https://learn.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=powershell"
     ) 
-    
+    $CommandPattern = $Command
+    if($GraphProfile -eq "beta"){
+        $CommandPattern = $Command.Replace("-MgBeta", "-Mg")
+    }
     $Content = Get-Content -Path $ExampleFile
     $SearchText = "Example"
     $SearchTextForNewImports = "{{ Add description here }}"
@@ -306,16 +312,22 @@ function Update-ExampleFile {
     $WrongExamplesCount = 0;
     $SkippedExample = -1
     $ContainsRightExamples = $False
+
     #===========================Importing new examples into files ============================================#  
     if ($ReplaceEverything -and $ExampleCount -gt 0 -and $HeadCount -eq $ExampleCount) {
         Clear-Content $ExampleFile -Force
         for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
             $CodeValue = $ExampleList[$d].Trim()
-            if($CodeValue.Contains($Command)){
+            if($CodeValue.Contains($CommandPattern)){
             $TitleValue = "### " + $HeaderList[$d].Trim()
             $Code = "``````powershell`r$CodeValue`r`n``````"
 	
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
+            if($GraphProfile -eq "beta"){
+                #Replace examples to match the new beta naming convention
+                $TotalText = $TotalText.Replace("-Mg", "-MgBeta")
+                $TotalText = $TotalText.Replace("Microsoft.Graph", "Microsoft.Graph.Beta")
+            }
             Add-Content -Path $ExampleFile -Value $TotalText
             $ContainsRightExamples = $True
             }else{    
@@ -337,18 +349,28 @@ function Update-ExampleFile {
         }
         if($ContainsPatternToSearch){
             Clear-Content $ExampleFile -Force
+          
            for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
-            if($ExampleList[$d].Contains($Command)){
+            #We should only add the correct examples from external docs link
+            if($ExampleList[$d].Contains($CommandPattern)){
             $CodeValue = $ExampleList[$d].Trim()
             $TitleValue = "### " + $HeaderList[$d].Trim()
             $Code = "``````powershell`r$CodeValue`r`n``````"
-    
+           
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
-            Add-Content -Path $ExampleFile -Value $TotalText
-            }else{
-                $SkippedExample++ 
+            if($GraphProfile -eq "beta"){
+                #Replace examples to match the new beta naming convention
+                $TotalText = $TotalText.Replace("-Mg", "-MgBeta")
+                $TotalText = $TotalText.Replace("Microsoft.Graph", "Microsoft.Graph.Beta")
             }
+            Add-Content -Path $ExampleFile -Value $TotalText
+        }else{
+            $SkippedExample++
+            
         }
+
+        }
+
 
         }else{
             Clear-Content $ExampleFile -Force
@@ -388,6 +410,7 @@ function Update-ExampleFile {
     }
     #-----------------------------------------------------------------------------------------------------------------------------------------------------------------#
     if(($WrongExamplesCount -gt 0) -and -not($ContainsRightExamples)){
+        Clear-Content $ExampleFile -Force
         $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
         Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
         #Log api path api version and equivalent external doc url giving wron examples
@@ -465,6 +488,10 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 #2. Test for ensuring that a handwritten example is not tampered with
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/user-get?view=graph-rest-1.0" -GraphCommand "Get-MgUser" -GraphModule "Users" -Profile "v1.0" 
 
-#3. Test for updates from api reference
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-1.0" -GraphCommand "New-MgServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "v1.0"
-Write-Host -ForegroundColor Green "-------------Done-------------"
+#3. Test for v1.0 updates from api reference
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-v1.0" -GraphCommand "New-MgServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "v1.0"
+
+#4. Test for beta updates from api reference
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
+#Write-Host -ForegroundColor Green "-------------Done-------------"
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0" -GraphCommand "Get-MgBetaCommunicationCallAudioRoutingGroup" -GraphModule "CloudCommunications" -Profile "beta"

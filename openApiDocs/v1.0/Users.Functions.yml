@@ -11,7 +11,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function recent
-      operationId: users.activities_recent
+      description: 'Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a ''most recently used'' API. The service will query for the most recent historyItems, and then pull those related activities. Activities will be sorted according to the most recent **lastModified** on the **historyItem**. This means that activities without **historyItems** will not be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application''s activities, use the **nextLink** property to paginate.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/projectrome-get-recent-activities?view=graph-rest-1.0
+      operationId: user.activity_recent
       parameters:
         - name: user-id
           in: path
@@ -92,7 +96,7 @@ paths:
                 - visualElements desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -120,7 +124,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendar.calendarView.instances_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -295,7 +303,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -326,7 +334,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendar.calendarView_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -493,7 +505,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -524,7 +536,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendar.events.instances_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendar.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -699,7 +715,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -730,7 +746,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendar.events_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendar.event_delta
       parameters:
         - name: user-id
           in: path
@@ -897,7 +917,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -928,7 +948,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendar_allowedCalendarSharingRoles
+      operationId: user.calendar_allowedCalendarSharingRole
       parameters:
         - name: user-id
           in: path
@@ -951,7 +971,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -978,7 +998,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarGroups.calendars.calendarView.instances_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendarGroup.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -1169,7 +1193,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1200,7 +1224,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarGroups.calendars.calendarView_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendarGroup.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -1383,7 +1411,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1414,7 +1442,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarGroups.calendars.events.instances_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendarGroup.calendar.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -1605,7 +1637,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1636,7 +1668,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarGroups.calendars.events_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendarGroup.calendar.event_delta
       parameters:
         - name: user-id
           in: path
@@ -1819,7 +1855,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1850,7 +1886,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendarGroups.calendars_allowedCalendarSharingRoles
+      operationId: user.calendarGroup.calendar_allowedCalendarSharingRole
       parameters:
         - name: user-id
           in: path
@@ -1889,7 +1925,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -1916,7 +1952,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendars.calendarView.instances_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendar.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -2099,7 +2139,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2130,7 +2170,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendars.calendarView_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendar.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -2305,7 +2349,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2336,7 +2380,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendars.events.instances_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendar.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -2519,7 +2567,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2550,7 +2598,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendars.events_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendar.event_delta
       parameters:
         - name: user-id
           in: path
@@ -2725,7 +2777,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2756,7 +2808,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function allowedCalendarSharingRoles
-      operationId: users.calendars_allowedCalendarSharingRoles
+      operationId: user.calendar_allowedCalendarSharingRole
       parameters:
         - name: user-id
           in: path
@@ -2787,7 +2839,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -2814,7 +2866,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarView.instances_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendarView.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -2989,7 +3045,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3020,7 +3076,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.calendarView_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.calendarView_delta
       parameters:
         - name: user-id
           in: path
@@ -3187,7 +3247,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3218,7 +3278,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.chats.messages.replies_delta
+      operationId: user.chat.message.reply_delta
       parameters:
         - name: user-id
           in: path
@@ -3343,7 +3403,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3374,7 +3434,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.chats.messages_delta
+      operationId: user.chat.message_delta
       parameters:
         - name: user-id
           in: path
@@ -3491,7 +3551,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3522,7 +3582,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllMessages
-      operationId: users.chats_getAllMessages
+      operationId: user.chat_getAllMessage
       parameters:
         - name: user-id
           in: path
@@ -3631,7 +3691,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3659,7 +3719,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.contactFolders.childFolders.contacts_delta
+      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
+      operationId: user.contactFolder.childFolder.contact_delta
       parameters:
         - name: user-id
           in: path
@@ -3831,7 +3895,7 @@ paths:
                 - yomiSurname desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3862,7 +3926,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.contactFolders.childFolders_delta
+      description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
+      operationId: user.contactFolder.childFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -3921,7 +3989,7 @@ paths:
                 - parentFolderId desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -3952,7 +4020,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.contactFolders.contacts_delta
+      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
+      operationId: user.contactFolder.contact_delta
       parameters:
         - name: user-id
           in: path
@@ -4116,7 +4188,7 @@ paths:
                 - yomiSurname desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4147,7 +4219,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.contactFolders_delta
+      description: "Get a set of contact folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for contact folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contact folders. This allows you to maintain and synchronize \na local store of a user's contact folders without having to fetch all the contact folders of that mailbox from the server every time."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0
+      operationId: user.contactFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -4198,7 +4274,7 @@ paths:
                 - parentFolderId desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4229,7 +4305,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.contacts_delta
+      description: "Get a set of contacts that have been added, deleted, or updated in a specified folder. A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the contacts in \nthat folder. This allows you to maintain and synchronize a local store of a user's contacts without \nhaving to fetch the entire set of contacts from the server every time.  "
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
+      operationId: user.contact_delta
       parameters:
         - name: user-id
           in: path
@@ -4385,7 +4465,7 @@ paths:
                 - yomiSurname desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4416,7 +4496,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items.listItem_getActivitiesGraphBPreInterval
+      operationId: user.drive.item.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -4501,7 +4581,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4529,7 +4609,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items.listItem_getActivitiesGraphBPreInterval
+      operationId: user.drive.item.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -4638,7 +4718,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4666,7 +4746,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.drives.items_delta
+      operationId: user.drive.item_delta
       parameters:
         - name: user-id
           in: path
@@ -4832,7 +4912,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -4863,7 +4943,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.drives.items_delta
+      operationId: user.drive.item_delta
       parameters:
         - name: user-id
           in: path
@@ -5037,7 +5117,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5068,7 +5148,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items_getActivitiesGraphBPreInterval
+      operationId: user.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -5153,7 +5233,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5181,7 +5261,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.items_getActivitiesGraphBPreInterval
+      operationId: user.drive.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -5290,7 +5370,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5318,7 +5398,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
-      operationId: users.drives.items_search
+      operationId: user.drive.item_search
       parameters:
         - name: user-id
           in: path
@@ -5492,7 +5572,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5520,7 +5600,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function isPublished
-      operationId: users.drives.list.contentTypes_isPublished
+      operationId: user.drive.list.contentType_isPublished
       parameters:
         - name: user-id
           in: path
@@ -5547,7 +5627,7 @@ paths:
             type: string
           x-ms-docs-key-type: contentType
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5567,7 +5647,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getCompatibleHubContentTypes
-      operationId: users.drives.list.contentTypes_getCompatibleHubContentTypes
+      operationId: user.drive.list.contentType_getCompatibleHubContentType
       parameters:
         - name: user-id
           in: path
@@ -5663,7 +5743,7 @@ paths:
                 - sealed desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5691,7 +5771,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.list.items_getActivitiesGraphBPreInterval
+      operationId: user.drive.list.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -5776,7 +5856,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5804,7 +5884,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.list.items_getActivitiesGraphBPreInterval
+      operationId: user.drive.list.item_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -5913,7 +5993,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -5941,7 +6021,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function recent
-      operationId: users.drives_recent
+      operationId: user.drive_recent
       parameters:
         - name: user-id
           in: path
@@ -6099,7 +6179,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/recentResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6112,7 +6192,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
-      operationId: users.drives_search
+      operationId: user.drive_search
       parameters:
         - name: user-id
           in: path
@@ -6278,7 +6358,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/searchResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6291,7 +6371,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function sharedWithMe
-      operationId: users.drives_sharedGraphWPreMe
+      operationId: user.drive_sharedGraphWPreMe
       parameters:
         - name: user-id
           in: path
@@ -6449,7 +6529,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/sharedWithMeResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6462,7 +6542,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root.listItem_getActivitiesGraphBPreInterval
+      operationId: user.drive.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -6539,7 +6619,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6567,7 +6647,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root.listItem_getActivitiesGraphBPreInterval
+      operationId: user.drive.root.listItem_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -6668,7 +6748,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6696,7 +6776,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.drives.root_delta
+      operationId: user.drive.root_delta
       parameters:
         - name: user-id
           in: path
@@ -6854,7 +6934,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6885,7 +6965,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.drives.root_delta
+      operationId: user.drive.root_delta
       parameters:
         - name: user-id
           in: path
@@ -7051,7 +7131,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7082,7 +7162,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root_getActivitiesGraphBPreInterval
+      operationId: user.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -7159,7 +7239,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7187,7 +7267,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getActivitiesByInterval
-      operationId: users.drives.root_getActivitiesGraphBPreInterval
+      operationId: user.drive.root_getActivitiesGraphBPreInterval
       parameters:
         - name: user-id
           in: path
@@ -7288,7 +7368,7 @@ paths:
                 - startDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7316,7 +7396,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function search
-      operationId: users.drives.root_search
+      operationId: user.drive.root_search
       parameters:
         - name: user-id
           in: path
@@ -7482,7 +7562,7 @@ paths:
                 - webDavUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7510,7 +7590,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.events.instances_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.event.instance_delta
       parameters:
         - name: user-id
           in: path
@@ -7685,7 +7769,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7716,7 +7800,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.events_delta
+      description: 'Get a set of event resources that have been added, deleted, or updated in a **calendarView** (a range of events defined by start and end dates) of the user''s primary calendar. Typically, synchronizing events in a **calendarView** in a local store entails a round of multiple **delta** function calls. The initial call is a full synchronization, and every subsequent **delta** call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified **calendarView**, without having to fetch all the events of that calendar from the server every time.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+      operationId: user.event_delta
       parameters:
         - name: user-id
           in: path
@@ -7883,7 +7971,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7914,7 +8002,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.joinedTeams.channels.messages.replies_delta
+      operationId: user.joinedTeam.channel.message.reply_delta
       parameters:
         - name: user-id
           in: path
@@ -8047,7 +8135,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8078,7 +8166,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.joinedTeams.channels.messages_delta
+      operationId: user.joinedTeam.channel.message_delta
       parameters:
         - name: user-id
           in: path
@@ -8203,7 +8291,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8234,7 +8322,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function doesUserHaveAccess
-      operationId: users.joinedTeams.channels_doesUserHaveAccess
+      operationId: user.joinedTeam.channel_doesUserHaveAccess
       parameters:
         - name: user-id
           in: path
@@ -8285,7 +8373,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8305,7 +8393,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllMessages
-      operationId: users.joinedTeams.channels_getAllMessages
+      operationId: user.joinedTeam.channel_getAllMessage
       parameters:
         - name: user-id
           in: path
@@ -8422,7 +8510,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8450,7 +8538,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.joinedTeams.primaryChannel.messages.replies_delta
+      operationId: user.joinedTeam.primaryChannel.message.reply_delta
       parameters:
         - name: user-id
           in: path
@@ -8575,7 +8663,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8606,7 +8694,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.joinedTeams.primaryChannel.messages_delta
+      operationId: user.joinedTeam.primaryChannel.message_delta
       parameters:
         - name: user-id
           in: path
@@ -8723,7 +8811,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8754,7 +8842,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function doesUserHaveAccess
-      operationId: users.joinedTeams.primaryChannel_doesUserHaveAccess
+      operationId: user.joinedTeam.primaryChannel_doesUserHaveAccess
       parameters:
         - name: user-id
           in: path
@@ -8797,7 +8885,7 @@ paths:
             type: string
             nullable: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8817,7 +8905,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getAllMessages
-      operationId: users.joinedTeams_getAllMessages
+      operationId: user.joinedTeam_getAllMessage
       parameters:
         - name: user-id
           in: path
@@ -8926,7 +9014,7 @@ paths:
                 - webUrl desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -8954,7 +9042,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.mailFolders.childFolders.messages_delta
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A **delta** function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
+      operationId: user.mailFolder.childFolder.message_delta
       parameters:
         - name: user-id
           in: path
@@ -9105,7 +9197,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9136,7 +9228,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.mailFolders.childFolders_delta
+      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
+      operationId: user.mailFolder.childFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -9208,7 +9304,7 @@ paths:
                 - unreadItemCount desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9239,7 +9335,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.mailFolders.messages_delta
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A **delta** function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
+      operationId: user.mailFolder.message_delta
       parameters:
         - name: user-id
           in: path
@@ -9382,7 +9482,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9413,7 +9513,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.mailFolders_delta
+      description: "Get a set of mail folders that have been added, deleted, or removed from the user's mailbox. A **delta** function call for mail folders in a mailbox is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, \nyou can query for incremental changes in the mail folders. This allows you to maintain and synchronize \na local store of a user's mail folders without having to fetch all the mail folders of that mailbox from the server every time."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0
+      operationId: user.mailFolder_delta
       parameters:
         - name: user-id
           in: path
@@ -9477,7 +9581,7 @@ paths:
                 - unreadItemCount desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9508,7 +9612,11 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.messages_delta
+      description: "Get a set of messages that have been added, deleted, or updated in a specified folder. A **delta** function call for messages in a folder is similar to a GET request, except that by appropriately \napplying state tokens in one or more of these calls, you can [query for incremental changes in the messages in \nthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user's messages without \nhaving to fetch the entire set of messages from the server every time.  "
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
+      operationId: user.message_delta
       parameters:
         - name: user-id
           in: path
@@ -9643,7 +9751,7 @@ paths:
                 - webLink desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9674,7 +9782,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function exportDeviceAndAppManagementData
-      operationId: users_exportDeviceAndAppManagementData
+      operationId: user_exportDeviceAndAppManagementData
       parameters:
         - name: user-id
           in: path
@@ -9685,7 +9793,7 @@ paths:
             type: string
           x-ms-docs-key-type: user
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/exportDeviceAndAppManagementDataResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9695,7 +9803,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function exportDeviceAndAppManagementData
-      operationId: users_exportDeviceAndAppManagementData
+      operationId: user_exportDeviceAndAppManagementData
       parameters:
         - name: user-id
           in: path
@@ -9726,7 +9834,7 @@ paths:
             type: integer
             format: int32
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/exportDeviceAndAppManagementDataResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9737,7 +9845,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedAppDiagnosticStatuses
       description: Gets diagnostics validation status for a given user.
-      operationId: users_getManagedAppDiagnosticStatuses
+      operationId: user_getManagedAppDiagnosticStatus
       parameters:
         - name: user-id
           in: path
@@ -9753,7 +9861,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/getManagedAppDiagnosticStatusesResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9767,7 +9875,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedAppPolicies
       description: Gets app restrictions for a given user.
-      operationId: users_getManagedAppPolicies
+      operationId: user_getManagedAppPolicy
       parameters:
         - name: user-id
           in: path
@@ -9823,7 +9931,7 @@ paths:
                 - version desc
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/getManagedAppPoliciesResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9837,7 +9945,7 @@ paths:
         - users.Functions
       summary: Invoke function getManagedDevicesWithAppFailures
       description: Retrieves the list of devices with failed apps
-      operationId: users_getManagedDevicesGraphWPreAppFailures
+      operationId: user_getManagedDevicesGraphWPreAppFailure
       parameters:
         - name: user-id
           in: path
@@ -9853,7 +9961,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/getManagedDevicesWithAppFailuresResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9866,7 +9974,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function reminderView
-      operationId: users_reminderView
+      operationId: user_reminderView
       parameters:
         - name: user-id
           in: path
@@ -9897,7 +10005,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/reminderViewResponse'
         default:
           $ref: '#/components/responses/error'
@@ -9910,7 +10018,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.notebooks.sectionGroups.sections.pages_preview
+      operationId: user.onenote.notebook.sectionGroup.section.page_preview
       parameters:
         - name: user-id
           in: path
@@ -9953,7 +10061,7 @@ paths:
             type: string
           x-ms-docs-key-type: onenotePage
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -9967,7 +10075,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.notebooks.sections.pages_preview
+      operationId: user.onenote.notebook.section.page_preview
       parameters:
         - name: user-id
           in: path
@@ -10002,7 +10110,7 @@ paths:
             type: string
           x-ms-docs-key-type: onenotePage
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10016,7 +10124,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function getRecentNotebooks
-      operationId: users.onenote.notebooks_getRecentNotebooks
+      operationId: user.onenote.notebook_getRecentNotebook
       parameters:
         - name: user-id
           in: path
@@ -10040,7 +10148,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10067,7 +10175,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.pages_preview
+      operationId: user.onenote.page_preview
       parameters:
         - name: user-id
           in: path
@@ -10086,7 +10194,7 @@ paths:
             type: string
           x-ms-docs-key-type: onenotePage
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10100,7 +10208,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.sectionGroups.sections.pages_preview
+      operationId: user.onenote.sectionGroup.section.page_preview
       parameters:
         - name: user-id
           in: path
@@ -10135,7 +10243,7 @@ paths:
             type: string
           x-ms-docs-key-type: onenotePage
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10149,7 +10257,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function preview
-      operationId: users.onenote.sections.pages_preview
+      operationId: user.onenote.section.page_preview
       parameters:
         - name: user-id
           in: path
@@ -10176,7 +10284,7 @@ paths:
             type: string
           x-ms-docs-key-type: onenotePage
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10185,12 +10293,55 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/microsoft.graph.getVirtualAppointmentJoinWebUrl()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getVirtualAppointmentJoinWebUrl
+      operationId: user.onlineMeeting_getVirtualAppointmentJoinWebUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: The unique identifier of onlineMeeting
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/outlook/microsoft.graph.supportedLanguages()':
     get:
       tags:
         - users.Functions
       summary: Invoke function supportedLanguages
-      operationId: users.outlook_supportedLanguages
+      description: "Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by \ngetting the user's mailbox settings."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0
+      operationId: user.outlook_supportedLanguage
       parameters:
         - name: user-id
           in: path
@@ -10206,7 +10357,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10233,7 +10384,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedTimeZones
-      operationId: users.outlook_supportedTimeZones
+      operationId: user.outlook_supportedTimeZone
       parameters:
         - name: user-id
           in: path
@@ -10249,7 +10400,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10276,7 +10427,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedTimeZones
-      operationId: users.outlook_supportedTimeZones
+      operationId: user.outlook_supportedTimeZone
       parameters:
         - name: user-id
           in: path
@@ -10299,7 +10450,7 @@ paths:
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10326,7 +10477,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.todo.lists.tasks_delta
+      operationId: user.todo.list.task_delta
       parameters:
         - name: user-id
           in: path
@@ -10425,7 +10576,7 @@ paths:
                 - title desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10456,7 +10607,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users.todo.lists_delta
+      operationId: user.todo.list_delta
       parameters:
         - name: user-id
           in: path
@@ -10511,7 +10662,7 @@ paths:
                 - wellknownListName desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -10542,7 +10693,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function delta
-      operationId: users_delta
+      operationId: user_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -10846,7 +10997,7 @@ paths:
                 - skills desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -11162,6 +11313,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
+              description: 'List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             policyViolation:
@@ -12140,7 +12292,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -13077,6 +13229,7 @@ components:
         modifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the message was modified.
           format: date-time
         reaction:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
@@ -14492,7 +14645,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client attempted to sign into the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -14502,7 +14655,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user attempted to sign into the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -14985,7 +15138,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string
@@ -19391,7 +19544,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
+              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -19669,7 +19822,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
@@ -21393,7 +21546,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -21444,6 +21597,10 @@ components:
               description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            deviceCategory:
+              type: string
+              description: User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
+              nullable: true
             deviceId:
               type: string
               description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
@@ -21451,6 +21608,10 @@ components:
             deviceMetadata:
               type: string
               description: For internal use only. Set to null.
+              nullable: true
+            deviceOwnership:
+              type: string
+              description: 'Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.'
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -21462,6 +21623,10 @@ components:
             displayName:
               type: string
               description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              nullable: true
+            enrollmentProfileName:
+              type: string
+              description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
             isCompliant:
               type: boolean
@@ -21501,6 +21666,12 @@ components:
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
+              nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
               nullable: true
             systemLabels:
               type: array

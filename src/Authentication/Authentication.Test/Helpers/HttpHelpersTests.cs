@@ -1,18 +1,19 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+using Microsoft.Graph.PowerShell.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
+using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Xunit;
+
 namespace Microsoft.Graph.Authentication.Test.Helpers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Management.Automation;
-    using System.Net.Http;
-    using System.Threading.Tasks;
-    using Microsoft.Graph.Authentication.Core;
-    using Microsoft.Graph.PowerShell.Authentication;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using Xunit;
     public class HttpHelpersTests
     {
         [Fact]
@@ -40,14 +41,14 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         {
             GraphSession.Initialize(() => new GraphSession());
             TimeSpan timeSpan = TimeSpan.FromSeconds(10);
-            var authContext = new AuthContext
+            GraphSession.Instance.AuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.UserProvidedAccessToken,
                 ContextScope = ContextScope.Process
             };
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
+            GraphSession.Instance.RequestContext = new RequestContext { ClientTimeout = timeSpan };
 
-            HttpClient httpClient = HttpHelpers.GetGraphHttpClient(authProvider, new RequestContext { ClientTimeout = timeSpan });
+            HttpClient httpClient = HttpHelpers.GetGraphHttpClient();
 
             Assert.Equal(httpClient.Timeout, timeSpan);
 
@@ -63,7 +64,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             GraphSession.Instance.AuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.UserProvidedAccessToken,
-                ContextScope = ContextScope.Process,
+                ContextScope = ContextScope.Process
             };
             GraphSession.Instance.RequestContext = new RequestContext { ClientTimeout = timeSpan };
 
@@ -145,9 +146,10 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         }
 
         [Fact]
-        public void GetGraphHttpClientShouldReturnNewHttpClientSignOutThenSignIn()
+        public async Task GetGraphHttpClientShouldReturnNewHttpClientOnSignOutThenSignInAsync()
         {
             GraphSession.Initialize(() => new GraphSession());
+            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
             GraphSession.Instance.AuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.UserProvidedAccessToken,
@@ -159,13 +161,12 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 BaseAddress = new Uri("https://test.contoso.com/v1.0/")
             };
             GraphSession.Instance.GraphHttpClient = dummyClient;
-            GraphSession.Instance.RequestContext = new RequestContext();
             HttpClient httpClientAttempt1 = HttpHelpers.GetGraphHttpClient();
 
             // Mock sign out.
-            Authenticator.LogOut(GraphSession.Instance.AuthContext);
-            GraphSession.Instance.AuthContext = null;
-            GraphSession.Instance.GraphHttpClient = null;
+            await AuthenticationHelpers.LogoutAsync();
+            Assert.Null(GraphSession.Instance.AuthContext);
+            Assert.Null(GraphSession.Instance.GraphHttpClient);
 
             // Mock sign in.
             GraphSession.Initialize(() => new GraphSession());
@@ -174,6 +175,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 AuthType = AuthenticationType.UserProvidedAccessToken,
                 ContextScope = ContextScope.Process,
             };
+            GraphSession.Instance.RequestContext = new RequestContext();
             HttpClient httpClientAttempt2 = HttpHelpers.GetGraphHttpClient();
 
             Assert.NotNull(httpClientAttempt1);
@@ -192,7 +194,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         {
             GraphSession.Initialize(() => new GraphSession());
             GraphSession.Instance.RequestContext = new RequestContext();
-            var authContext = new AuthContext
+            GraphSession.Instance.AuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.UserProvidedAccessToken,
                 ContextScope = ContextScope.Process,
@@ -202,7 +204,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             var tasks = new List<Task<HttpClient>>();
             for (int i = 0; i < 100; i++)
             {
-                tasks.Add(Task.Factory.StartNew(() => HttpHelpers.GetGraphHttpClient(authContext)));
+                tasks.Add(Task.Factory.StartNew(() => HttpHelpers.GetGraphHttpClient()));
             }
             var exception = await Record.ExceptionAsync(() => Task.WhenAll(tasks));
             Assert.Null(exception);
@@ -210,6 +212,5 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             // reset static instance.
             GraphSession.Reset();
         }
-
     }
 }

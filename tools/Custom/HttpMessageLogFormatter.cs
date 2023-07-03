@@ -1,12 +1,14 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-namespace Microsoft.Graph.PowerShell
+namespace NamespacePrefixPlaceholder.PowerShell
 {
+    using NamespacePrefixPlaceholder.PowerShell.Models;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
     using System.Net.Http;
     using System.Net.Http.Headers;
@@ -17,22 +19,62 @@ namespace Microsoft.Graph.PowerShell
 
     public static class HttpMessageLogFormatter
     {
+        internal static async Task<HttpRequestMessage> CloneAsync(this HttpRequestMessage originalRequest)
+        {
+            var newRequest = new HttpRequestMessage(originalRequest.Method, originalRequest.RequestUri);
+
+            // Copy requestClone headers.
+            foreach (var header in originalRequest.Headers)
+                newRequest.Headers.TryAddWithoutValidation(header.Key, header.Value);
+
+            // Copy requestClone properties.
+            foreach (var property in originalRequest.Properties)
+                newRequest.Properties.Add(property);
+
+            // Set Content if previous requestClone had one.
+            if (originalRequest.Content != null)
+            {
+                // HttpClient doesn't rewind streams and we have to explicitly do so.
+                var ms = new MemoryStream();
+                await originalRequest.Content.CopyToAsync(ms);
+                ms.Position = 0;
+                newRequest.Content = new StreamContent(ms);
+                // Attempt to copy request content headers with a single retry.
+                // HttpHeaders dictionary is not thread-safe when targeting anything below .NET 7. For more information, see https://github.com/dotnet/runtime/issues/61798.
+                int retryCount = 0;
+                int maxRetryCount = 2;
+                while (retryCount < maxRetryCount)
+                {
+                    try
+                    {
+                        originalRequest.Content.Headers?.ToList().ForEach(header => newRequest.Content.Headers.TryAddWithoutValidation(header.Key, header.Value));
+                        retryCount = maxRetryCount;
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        retryCount++;
+                    }
+                }
+            }
+            return newRequest;
+        }
+
         public static async Task<string> GetHttpRequestLogAsync(HttpRequestMessage request)
         {
             if (request == null) return string.Empty;
-
+            var requestClone = await request.CloneAsync().ConfigureAwait(false);
             string body = string.Empty;
             try
             {
-                body = (request.Content == null) ? string.Empty : FormatString(await request.Content.ReadAsStringAsync());
+                body = (requestClone.Content == null) ? string.Empty : FormatString(await requestClone.Content.ReadAsStringAsync());
             }
             catch { }
 
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"============================ HTTP REQUEST ============================{Environment.NewLine}");
-            stringBuilder.AppendLine($"HTTP Method:{Environment.NewLine}{request.Method.ToString()}{Environment.NewLine}");
-            stringBuilder.AppendLine($"Absolute Uri:{Environment.NewLine}{request.RequestUri.ToString()}{Environment.NewLine}");
-            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(ConvertHttpHeadersToCollection(request.Headers))}{Environment.NewLine}");
+            stringBuilder.AppendLine($"HTTP Method:{Environment.NewLine}{requestClone.Method}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Absolute Uri:{Environment.NewLine}{requestClone.RequestUri}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(requestClone.Headers)}{Environment.NewLine}");
             stringBuilder.AppendLine($"Body:{Environment.NewLine}{SanitizeBody(body)}{Environment.NewLine}");
             return stringBuilder.ToString();
         }
@@ -51,12 +93,30 @@ namespace Microsoft.Graph.PowerShell
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"============================ HTTP RESPONSE ============================{Environment.NewLine}");
             stringBuilder.AppendLine($"Status Code:{Environment.NewLine}{response.StatusCode}{Environment.NewLine}");
-            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(ConvertHttpHeadersToCollection(response.Headers))}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(response.Headers)}{Environment.NewLine}");
             stringBuilder.AppendLine($"Body:{Environment.NewLine}{SanitizeBody(body)}{Environment.NewLine}");
             return stringBuilder.ToString();
         }
 
-        private static Regex regexPattern = new Regex("(\\s*\"access_token\"\\s*:\\s*)\"[^\"]+\"", RegexOptions.Compiled);
+        public static async Task<string> GetErrorLogAsync(HttpResponseMessage response, IMicrosoftGraphODataErrorsMainError odataError)
+        {
+            if (response == null) return string.Empty;
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine($"{odataError?.Message}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Status: {((int)response.StatusCode)} ({response.StatusCode})");
+            stringBuilder.AppendLine($"ErrorCode: {odataError?.Code}");
+            stringBuilder.AppendLine($"Date: {odataError?.Innererror?.Date}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(response.Headers)}{Environment.NewLine}");
+            return stringBuilder.ToString();
+        }
+
+        internal static string HeadersToString(HttpHeaders headers)
+        {
+            return HeadersToString(ConvertHttpHeadersToCollection(headers));
+        }
+
+        private static readonly Regex regexPattern = new Regex("(\\s*\"access_token\"\\s*:\\s*)\"[^\"]+\"", RegexOptions.Compiled);
         private static object SanitizeBody(string body)
         {
             IList<Regex> regexList = new List<Regex>();
@@ -77,7 +137,7 @@ namespace Microsoft.Graph.PowerShell
             return headers.ToDictionary(a => a.Key, a => a.Value);
         }
 
-        private static object HeadersToString(IDictionary<string, IEnumerable<string>> headers)
+        private static string HeadersToString(IDictionary<string, IEnumerable<string>> headers)
         {
             StringBuilder stringBuilder = headers.Aggregate(new StringBuilder(),
                 (sb, kvp) => sb.AppendLine(string.Format("{0,-30}: {1}", kvp.Key, String.Join(",", kvp.Value.ToArray()))));
@@ -108,9 +168,9 @@ namespace Microsoft.Graph.PowerShell
                 return content;
             }
 
-            if (content.Length > Authentication.Constants.MaxContentLength)
+            if (content.Length > Microsoft.Graph.PowerShell.Authentication.Constants.MaxContentLength)
             {
-                return content.Substring(0, Authentication.Constants.MaxContentLength) + "\r\nDATA TRUNCATED DUE TO SIZE\r\n";
+                return content.Substring(0, Microsoft.Graph.PowerShell.Authentication.Constants.MaxContentLength) + "\r\nDATA TRUNCATED DUE TO SIZE\r\n";
             }
 
             return content;

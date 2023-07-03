@@ -47,7 +47,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -69,8 +69,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.applePushNotificationCertificate'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.applePushNotificationCertificate'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -87,7 +91,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -98,7 +102,7 @@ paths:
         - deviceManagement.auditEvent
       summary: Get auditEvents from deviceManagement
       description: The Audit Events
-      operationId: deviceManagement_ListAuditEvents
+      operationId: deviceManagement_ListAuditEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -176,7 +180,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.auditEventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -188,7 +192,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Create new navigation property to auditEvents for deviceManagement
-      operationId: deviceManagement_CreateAuditEvents
+      operationId: deviceManagement_CreateAuditEvent
       requestBody:
         description: New navigation property
         content:
@@ -197,7 +201,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.auditEvent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -212,7 +216,7 @@ paths:
         - deviceManagement.auditEvent
       summary: Get auditEvents from deviceManagement
       description: The Audit Events
-      operationId: deviceManagement_GetAuditEvents
+      operationId: deviceManagement_GetAuditEvent
       parameters:
         - name: auditEvent-id
           in: path
@@ -258,7 +262,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -271,7 +275,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Update the navigation property auditEvents in deviceManagement
-      operationId: deviceManagement_UpdateAuditEvents
+      operationId: deviceManagement_UpdateAuditEvent
       parameters:
         - name: auditEvent-id
           in: path
@@ -289,8 +293,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.auditEvent'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.auditEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -298,7 +306,7 @@ paths:
       tags:
         - deviceManagement.auditEvent
       summary: Delete navigation property auditEvents for deviceManagement
-      operationId: deviceManagement_DeleteAuditEvents
+      operationId: deviceManagement_DeleteAuditEvent
       parameters:
         - name: auditEvent-id
           in: path
@@ -315,18 +323,32 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/auditEvents/$count:
+    get:
+      tags:
+        - deviceManagement.auditEvent
+      summary: Get the number of the resource
+      operationId: deviceManagement.auditEvent_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/complianceManagementPartners:
     get:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
       description: The list of Compliance Management Partners configured by the tenant.
-      operationId: deviceManagement_ListComplianceManagementPartners
+      operationId: deviceManagement_ListComplianceManagementPartner
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -398,7 +420,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.complianceManagementPartnerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -410,7 +432,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Create new navigation property to complianceManagementPartners for deviceManagement
-      operationId: deviceManagement_CreateComplianceManagementPartners
+      operationId: deviceManagement_CreateComplianceManagementPartner
       requestBody:
         description: New navigation property
         content:
@@ -419,7 +441,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -434,7 +456,7 @@ paths:
         - deviceManagement.complianceManagementPartner
       summary: Get complianceManagementPartners from deviceManagement
       description: The list of Compliance Management Partners configured by the tenant.
-      operationId: deviceManagement_GetComplianceManagementPartners
+      operationId: deviceManagement_GetComplianceManagementPartner
       parameters:
         - name: complianceManagementPartner-id
           in: path
@@ -478,7 +500,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -491,7 +513,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Update the navigation property complianceManagementPartners in deviceManagement
-      operationId: deviceManagement_UpdateComplianceManagementPartners
+      operationId: deviceManagement_UpdateComplianceManagementPartner
       parameters:
         - name: complianceManagementPartner-id
           in: path
@@ -509,8 +531,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.complianceManagementPartner'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -518,7 +544,7 @@ paths:
       tags:
         - deviceManagement.complianceManagementPartner
       summary: Delete navigation property complianceManagementPartners for deviceManagement
-      operationId: deviceManagement_DeleteComplianceManagementPartners
+      operationId: deviceManagement_DeleteComplianceManagementPartner
       parameters:
         - name: complianceManagementPartner-id
           in: path
@@ -535,18 +561,32 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/complianceManagementPartners/$count:
+    get:
+      tags:
+        - deviceManagement.complianceManagementPartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.complianceManagementPartner_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/deviceManagementPartners:
     get:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
       description: The list of Device Management Partners configured by the tenant.
-      operationId: deviceManagement_ListDeviceManagementPartners
+      operationId: deviceManagement_ListDeviceManagementPartner
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -618,7 +658,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceManagementPartnerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -630,7 +670,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Create new navigation property to deviceManagementPartners for deviceManagement
-      operationId: deviceManagement_CreateDeviceManagementPartners
+      operationId: deviceManagement_CreateDeviceManagementPartner
       requestBody:
         description: New navigation property
         content:
@@ -639,7 +679,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -654,7 +694,7 @@ paths:
         - deviceManagement.deviceManagementPartner
       summary: Get deviceManagementPartners from deviceManagement
       description: The list of Device Management Partners configured by the tenant.
-      operationId: deviceManagement_GetDeviceManagementPartners
+      operationId: deviceManagement_GetDeviceManagementPartner
       parameters:
         - name: deviceManagementPartner-id
           in: path
@@ -698,7 +738,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -711,7 +751,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Update the navigation property deviceManagementPartners in deviceManagement
-      operationId: deviceManagement_UpdateDeviceManagementPartners
+      operationId: deviceManagement_UpdateDeviceManagementPartner
       parameters:
         - name: deviceManagementPartner-id
           in: path
@@ -729,8 +769,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementPartner'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -738,7 +782,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementPartner
       summary: Delete navigation property deviceManagementPartners for deviceManagement
-      operationId: deviceManagement_DeleteDeviceManagementPartners
+      operationId: deviceManagement_DeleteDeviceManagementPartner
       parameters:
         - name: deviceManagementPartner-id
           in: path
@@ -755,18 +799,32 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/deviceManagementPartners/$count:
+    get:
+      tags:
+        - deviceManagement.deviceManagementPartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.deviceManagementPartner_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/exchangeConnectors:
     get:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
       description: The list of Exchange Connectors configured by the tenant.
-      operationId: deviceManagement_ListExchangeConnectors
+      operationId: deviceManagement_ListExchangeConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -838,7 +896,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceManagementExchangeConnectorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -850,7 +908,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Create new navigation property to exchangeConnectors for deviceManagement
-      operationId: deviceManagement_CreateExchangeConnectors
+      operationId: deviceManagement_CreateExchangeConnector
       requestBody:
         description: New navigation property
         content:
@@ -859,7 +917,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -874,7 +932,7 @@ paths:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Get exchangeConnectors from deviceManagement
       description: The list of Exchange Connectors configured by the tenant.
-      operationId: deviceManagement_GetExchangeConnectors
+      operationId: deviceManagement_GetExchangeConnector
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
@@ -918,7 +976,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -931,7 +989,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Update the navigation property exchangeConnectors in deviceManagement
-      operationId: deviceManagement_UpdateExchangeConnectors
+      operationId: deviceManagement_UpdateExchangeConnector
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
@@ -949,8 +1007,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeConnector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -958,7 +1020,7 @@ paths:
       tags:
         - deviceManagement.deviceManagementExchangeConnector
       summary: Delete navigation property exchangeConnectors for deviceManagement
-      operationId: deviceManagement_DeleteExchangeConnectors
+      operationId: deviceManagement_DeleteExchangeConnector
       parameters:
         - name: deviceManagementExchangeConnector-id
           in: path
@@ -975,18 +1037,32 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/exchangeConnectors/$count:
+    get:
+      tags:
+        - deviceManagement.deviceManagementExchangeConnector
+      summary: Get the number of the resource
+      operationId: deviceManagement.exchangeConnector_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/iosUpdateStatuses:
     get:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
       description: The IOS software update installation statuses for this account.
-      operationId: deviceManagement_ListIosUpdateStatuses
+      operationId: deviceManagement_ListIosUpdateStatus
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1064,7 +1140,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.iosUpdateDeviceStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1076,7 +1152,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Create new navigation property to iosUpdateStatuses for deviceManagement
-      operationId: deviceManagement_CreateIosUpdateStatuses
+      operationId: deviceManagement_CreateIosUpdateStatus
       requestBody:
         description: New navigation property
         content:
@@ -1085,7 +1161,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1100,7 +1176,7 @@ paths:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Get iosUpdateStatuses from deviceManagement
       description: The IOS software update installation statuses for this account.
-      operationId: deviceManagement_GetIosUpdateStatuses
+      operationId: deviceManagement_GetIosUpdateStatus
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
@@ -1146,7 +1222,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1159,7 +1235,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Update the navigation property iosUpdateStatuses in deviceManagement
-      operationId: deviceManagement_UpdateIosUpdateStatuses
+      operationId: deviceManagement_UpdateIosUpdateStatus
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
@@ -1177,8 +1253,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.iosUpdateDeviceStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1186,7 +1266,7 @@ paths:
       tags:
         - deviceManagement.iosUpdateDeviceStatus
       summary: Delete navigation property iosUpdateStatuses for deviceManagement
-      operationId: deviceManagement_DeleteIosUpdateStatuses
+      operationId: deviceManagement_DeleteIosUpdateStatus
       parameters:
         - name: iosUpdateDeviceStatus-id
           in: path
@@ -1203,18 +1283,32 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/iosUpdateStatuses/$count:
+    get:
+      tags:
+        - deviceManagement.iosUpdateDeviceStatus
+      summary: Get the number of the resource
+      operationId: deviceManagement.iosUpdateStatus_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/mobileThreatDefenseConnectors:
     get:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
       description: The list of Mobile threat Defense connectors configured by the tenant.
-      operationId: deviceManagement_ListMobileThreatDefenseConnectors
+      operationId: deviceManagement_ListMobileThreatDefenseConnector
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1304,7 +1398,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.mobileThreatDefenseConnectorCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1316,7 +1410,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Create new navigation property to mobileThreatDefenseConnectors for deviceManagement
-      operationId: deviceManagement_CreateMobileThreatDefenseConnectors
+      operationId: deviceManagement_CreateMobileThreatDefenseConnector
       requestBody:
         description: New navigation property
         content:
@@ -1325,7 +1419,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1340,7 +1434,7 @@ paths:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Get mobileThreatDefenseConnectors from deviceManagement
       description: The list of Mobile threat Defense connectors configured by the tenant.
-      operationId: deviceManagement_GetMobileThreatDefenseConnectors
+      operationId: deviceManagement_GetMobileThreatDefenseConnector
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
@@ -1390,7 +1484,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1403,7 +1497,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Update the navigation property mobileThreatDefenseConnectors in deviceManagement
-      operationId: deviceManagement_UpdateMobileThreatDefenseConnectors
+      operationId: deviceManagement_UpdateMobileThreatDefenseConnector
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
@@ -1421,8 +1515,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.mobileThreatDefenseConnector'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1430,7 +1528,7 @@ paths:
       tags:
         - deviceManagement.mobileThreatDefenseConnector
       summary: Delete navigation property mobileThreatDefenseConnectors for deviceManagement
-      operationId: deviceManagement_DeleteMobileThreatDefenseConnectors
+      operationId: deviceManagement_DeleteMobileThreatDefenseConnector
       parameters:
         - name: mobileThreatDefenseConnector-id
           in: path
@@ -1447,18 +1545,32 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/mobileThreatDefenseConnectors/$count:
+    get:
+      tags:
+        - deviceManagement.mobileThreatDefenseConnector
+      summary: Get the number of the resource
+      operationId: deviceManagement.mobileThreatDefenseConnector_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/remoteAssistancePartners:
     get:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
       description: The remote assist partners.
-      operationId: deviceManagement_ListRemoteAssistancePartners
+      operationId: deviceManagement_ListRemoteAssistancePartner
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1515,7 +1627,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.remoteAssistancePartnerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1527,7 +1639,7 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Create new navigation property to remoteAssistancePartners for deviceManagement
-      operationId: deviceManagement_CreateRemoteAssistancePartners
+      operationId: deviceManagement_CreateRemoteAssistancePartner
       requestBody:
         description: New navigation property
         content:
@@ -1536,7 +1648,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1551,7 +1663,7 @@ paths:
         - deviceManagement.remoteAssistancePartner
       summary: Get remoteAssistancePartners from deviceManagement
       description: The remote assist partners.
-      operationId: deviceManagement_GetRemoteAssistancePartners
+      operationId: deviceManagement_GetRemoteAssistancePartner
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -1590,7 +1702,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1603,7 +1715,7 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Update the navigation property remoteAssistancePartners in deviceManagement
-      operationId: deviceManagement_UpdateRemoteAssistancePartners
+      operationId: deviceManagement_UpdateRemoteAssistancePartner
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -1621,8 +1733,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1630,7 +1746,7 @@ paths:
       tags:
         - deviceManagement.remoteAssistancePartner
       summary: Delete navigation property remoteAssistancePartners for deviceManagement
-      operationId: deviceManagement_DeleteRemoteAssistancePartners
+      operationId: deviceManagement_DeleteRemoteAssistancePartner
       parameters:
         - name: remoteAssistancePartner-id
           in: path
@@ -1647,18 +1763,32 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/remoteAssistancePartners/$count:
+    get:
+      tags:
+        - deviceManagement.remoteAssistancePartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.remoteAssistancePartner_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/resourceOperations:
     get:
       tags:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
       description: The Resource Operations.
-      operationId: deviceManagement_ListResourceOperations
+      operationId: deviceManagement_ListResourceOperation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1712,7 +1842,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.resourceOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1724,7 +1854,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Create new navigation property to resourceOperations for deviceManagement
-      operationId: deviceManagement_CreateResourceOperations
+      operationId: deviceManagement_CreateResourceOperation
       requestBody:
         description: New navigation property
         content:
@@ -1733,7 +1863,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.resourceOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1748,7 +1878,7 @@ paths:
         - deviceManagement.resourceOperation
       summary: Get resourceOperations from deviceManagement
       description: The Resource Operations.
-      operationId: deviceManagement_GetResourceOperations
+      operationId: deviceManagement_GetResourceOperation
       parameters:
         - name: resourceOperation-id
           in: path
@@ -1786,7 +1916,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1799,7 +1929,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Update the navigation property resourceOperations in deviceManagement
-      operationId: deviceManagement_UpdateResourceOperations
+      operationId: deviceManagement_UpdateResourceOperation
       parameters:
         - name: resourceOperation-id
           in: path
@@ -1817,8 +1947,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.resourceOperation'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.resourceOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1826,7 +1960,7 @@ paths:
       tags:
         - deviceManagement.resourceOperation
       summary: Delete navigation property resourceOperations for deviceManagement
-      operationId: deviceManagement_DeleteResourceOperations
+      operationId: deviceManagement_DeleteResourceOperation
       parameters:
         - name: resourceOperation-id
           in: path
@@ -1843,18 +1977,32 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/resourceOperations/$count:
+    get:
+      tags:
+        - deviceManagement.resourceOperation
+      summary: Get the number of the resource
+      operationId: deviceManagement.resourceOperation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/roleAssignments:
     get:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
       description: The Role Assignments.
-      operationId: deviceManagement_ListRoleAssignments
+      operationId: deviceManagement_ListRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1913,7 +2061,7 @@ paths:
                 - roleDefinition
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.deviceAndAppManagementRoleAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1925,7 +2073,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Create new navigation property to roleAssignments for deviceManagement
-      operationId: deviceManagement_CreateRoleAssignments
+      operationId: deviceManagement_CreateRoleAssignment
       requestBody:
         description: New navigation property
         content:
@@ -1934,7 +2082,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1949,7 +2097,7 @@ paths:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get roleAssignments from deviceManagement
       description: The Role Assignments.
-      operationId: deviceManagement_GetRoleAssignments
+      operationId: deviceManagement_GetRoleAssignment
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -1990,7 +2138,7 @@ paths:
                 - roleDefinition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2003,7 +2151,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Update the navigation property roleAssignments in deviceManagement
-      operationId: deviceManagement_UpdateRoleAssignments
+      operationId: deviceManagement_UpdateRoleAssignment
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -2021,8 +2169,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementRoleAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2030,7 +2182,7 @@ paths:
       tags:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Delete navigation property roleAssignments for deviceManagement
-      operationId: deviceManagement_DeleteRoleAssignments
+      operationId: deviceManagement_DeleteRoleAssignment
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -2047,18 +2199,88 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment-id}/roleDefinition':
+    get:
+      tags:
+        - deviceManagement.deviceAndAppManagementRoleAssignment
+      summary: Get roleDefinition from deviceManagement
+      description: Role definition this assignment is part of.
+      operationId: deviceManagement.roleAssignment_GetRoleDefinition
+      parameters:
+        - name: deviceAndAppManagementRoleAssignment-id
+          in: path
+          description: The unique identifier of deviceAndAppManagementRoleAssignment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceAndAppManagementRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - rolePermissions
+                - roleAssignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleAssignments
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/roleAssignments/$count:
+    get:
+      tags:
+        - deviceManagement.deviceAndAppManagementRoleAssignment
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleAssignment_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/roleDefinitions:
     get:
       tags:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
       description: The Role Definitions.
-      operationId: deviceManagement_ListRoleDefinitions
+      operationId: deviceManagement_ListRoleDefinition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2117,7 +2339,7 @@ paths:
                 - roleAssignments
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.roleDefinitionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2129,7 +2351,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Create new navigation property to roleDefinitions for deviceManagement
-      operationId: deviceManagement_CreateRoleDefinitions
+      operationId: deviceManagement_CreateRoleDefinition
       requestBody:
         description: New navigation property
         content:
@@ -2138,7 +2360,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.roleDefinition'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2153,7 +2375,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleDefinitions from deviceManagement
       description: The Role Definitions.
-      operationId: deviceManagement_GetRoleDefinitions
+      operationId: deviceManagement_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2194,7 +2416,7 @@ paths:
                 - roleAssignments
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2207,7 +2429,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Update the navigation property roleDefinitions in deviceManagement
-      operationId: deviceManagement_UpdateRoleDefinitions
+      operationId: deviceManagement_UpdateRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2225,8 +2447,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.roleDefinition'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleDefinition'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2234,7 +2460,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Delete navigation property roleDefinitions for deviceManagement
-      operationId: deviceManagement_DeleteRoleDefinitions
+      operationId: deviceManagement_DeleteRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2251,7 +2477,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2262,7 +2488,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
       description: List of Role assignments for this role definition.
-      operationId: deviceManagement.roleDefinitions_ListRoleAssignments
+      operationId: deviceManagement.roleDefinition_ListRoleAssignment
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2326,7 +2552,7 @@ paths:
                 - roleDefinition
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.roleAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2338,7 +2564,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Create new navigation property to roleAssignments for deviceManagement
-      operationId: deviceManagement.roleDefinitions_CreateRoleAssignments
+      operationId: deviceManagement.roleDefinition_CreateRoleAssignment
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2356,7 +2582,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.roleAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2371,7 +2597,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleAssignments from deviceManagement
       description: List of Role assignments for this role definition.
-      operationId: deviceManagement.roleDefinitions_GetRoleAssignments
+      operationId: deviceManagement.roleDefinition_GetRoleAssignment
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2419,7 +2645,7 @@ paths:
                 - roleDefinition
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2432,7 +2658,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Update the navigation property roleAssignments in deviceManagement
-      operationId: deviceManagement.roleDefinitions_UpdateRoleAssignments
+      operationId: deviceManagement.roleDefinition_UpdateRoleAssignment
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2458,8 +2684,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.roleAssignment'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2467,7 +2697,7 @@ paths:
       tags:
         - deviceManagement.roleDefinition
       summary: Delete navigation property roleAssignments for deviceManagement
-      operationId: deviceManagement.roleDefinitions_DeleteRoleAssignments
+      operationId: deviceManagement.roleDefinition_DeleteRoleAssignment
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2492,7 +2722,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2503,7 +2733,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get roleDefinition from deviceManagement
       description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_GetRoleDefinition
+      operationId: deviceManagement.roleDefinition.roleAssignment_GetRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2552,7 +2782,7 @@ paths:
                 - roleAssignments
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2561,13 +2791,49 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/roleDefinitions/{roleDefinition-id}/roleAssignments/$count':
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleDefinition.roleAssignment_GetCount
+      parameters:
+        - name: roleDefinition-id
+          in: path
+          description: The unique identifier of roleDefinition
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: roleDefinition
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/roleDefinitions/$count:
+    get:
+      tags:
+        - deviceManagement.roleDefinition
+      summary: Get the number of the resource
+      operationId: deviceManagement.roleDefinition_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/telecomExpenseManagementPartners:
     get:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
       description: The telecom expense management partners.
-      operationId: deviceManagement_ListTelecomExpenseManagementPartners
+      operationId: deviceManagement_ListTelecomExpenseManagementPartner
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2627,7 +2893,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.telecomExpenseManagementPartnerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2639,7 +2905,7 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Create new navigation property to telecomExpenseManagementPartners for deviceManagement
-      operationId: deviceManagement_CreateTelecomExpenseManagementPartners
+      operationId: deviceManagement_CreateTelecomExpenseManagementPartner
       requestBody:
         description: New navigation property
         content:
@@ -2648,7 +2914,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2663,7 +2929,7 @@ paths:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Get telecomExpenseManagementPartners from deviceManagement
       description: The telecom expense management partners.
-      operationId: deviceManagement_GetTelecomExpenseManagementPartners
+      operationId: deviceManagement_GetTelecomExpenseManagementPartner
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
@@ -2703,7 +2969,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2716,7 +2982,7 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Update the navigation property telecomExpenseManagementPartners in deviceManagement
-      operationId: deviceManagement_UpdateTelecomExpenseManagementPartners
+      operationId: deviceManagement_UpdateTelecomExpenseManagementPartner
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
@@ -2734,8 +3000,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.telecomExpenseManagementPartner'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2743,7 +3013,7 @@ paths:
       tags:
         - deviceManagement.telecomExpenseManagementPartner
       summary: Delete navigation property telecomExpenseManagementPartners for deviceManagement
-      operationId: deviceManagement_DeleteTelecomExpenseManagementPartners
+      operationId: deviceManagement_DeleteTelecomExpenseManagementPartner
       parameters:
         - name: telecomExpenseManagementPartner-id
           in: path
@@ -2760,18 +3030,32 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/telecomExpenseManagementPartners/$count:
+    get:
+      tags:
+        - deviceManagement.telecomExpenseManagementPartner
+      summary: Get the number of the resource
+      operationId: deviceManagement.telecomExpenseManagementPartner_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /deviceManagement/termsAndConditions:
     get:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
       description: The terms and conditions associated with device management of the company.
-      operationId: deviceManagement_ListTermsAndConditions
+      operationId: deviceManagement_ListTermsAndCondition
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -2844,7 +3128,7 @@ paths:
                 - assignments
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.termsAndConditionsCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2856,7 +3140,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to termsAndConditions for deviceManagement
-      operationId: deviceManagement_CreateTermsAndConditions
+      operationId: deviceManagement_CreateTermsAndCondition
       requestBody:
         description: New navigation property
         content:
@@ -2865,7 +3149,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2880,7 +3164,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
       description: The terms and conditions associated with device management of the company.
-      operationId: deviceManagement_GetTermsAndConditions
+      operationId: deviceManagement_GetTermsAndCondition
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -2927,7 +3211,7 @@ paths:
                 - assignments
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2940,7 +3224,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property termsAndConditions in deviceManagement
-      operationId: deviceManagement_UpdateTermsAndConditions
+      operationId: deviceManagement_UpdateTermsAndCondition
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -2958,8 +3242,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditions'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2967,7 +3255,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property termsAndConditions for deviceManagement
-      operationId: deviceManagement_DeleteTermsAndConditions
+      operationId: deviceManagement_DeleteTermsAndCondition
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -2984,7 +3272,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2995,7 +3283,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
       description: The list of acceptance statuses for this T&C policy.
-      operationId: deviceManagement.termsAndConditions_ListAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_ListAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3062,7 +3350,7 @@ paths:
                 - termsAndConditions
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.termsAndConditionsAcceptanceStatusCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3074,7 +3362,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to acceptanceStatuses for deviceManagement
-      operationId: deviceManagement.termsAndConditions_CreateAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_CreateAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3092,7 +3380,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3107,7 +3395,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get acceptanceStatuses from deviceManagement
       description: The list of acceptance statuses for this T&C policy.
-      operationId: deviceManagement.termsAndConditions_GetAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_GetAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3156,7 +3444,7 @@ paths:
                 - termsAndConditions
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3169,7 +3457,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property acceptanceStatuses in deviceManagement
-      operationId: deviceManagement.termsAndConditions_UpdateAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_UpdateAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3195,8 +3483,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAcceptanceStatus'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3204,7 +3496,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property acceptanceStatuses for deviceManagement
-      operationId: deviceManagement.termsAndConditions_DeleteAcceptanceStatuses
+      operationId: deviceManagement.termsAndCondition_DeleteAcceptanceStatus
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3229,7 +3521,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3240,7 +3532,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get termsAndConditions from deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetTermsAndConditions
+      operationId: deviceManagement.termsAndCondition.acceptanceStatus_GetTermsAndCondition
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3295,7 +3587,7 @@ paths:
                 - assignments
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3304,13 +3596,35 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/acceptanceStatuses/$count':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get the number of the resource
+      operationId: deviceManagement.termsAndCondition.acceptanceStatus_GetCount
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: The unique identifier of termsAndConditions
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/deviceManagement/termsAndConditions/{termsAndConditions-id}/assignments':
     get:
       tags:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
       description: The list of assignments for this T&C policy.
-      operationId: deviceManagement.termsAndConditions_ListAssignments
+      operationId: deviceManagement.termsAndCondition_ListAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3366,7 +3680,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.termsAndConditionsAssignmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3378,7 +3692,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Create new navigation property to assignments for deviceManagement
-      operationId: deviceManagement.termsAndConditions_CreateAssignments
+      operationId: deviceManagement.termsAndCondition_CreateAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3396,7 +3710,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3411,7 +3725,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get assignments from deviceManagement
       description: The list of assignments for this T&C policy.
-      operationId: deviceManagement.termsAndConditions_GetAssignments
+      operationId: deviceManagement.termsAndCondition_GetAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3455,7 +3769,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3468,7 +3782,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Update the navigation property assignments in deviceManagement
-      operationId: deviceManagement.termsAndConditions_UpdateAssignments
+      operationId: deviceManagement.termsAndCondition_UpdateAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3494,8 +3808,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.termsAndConditionsAssignment'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3503,7 +3821,7 @@ paths:
       tags:
         - deviceManagement.termsAndConditions
       summary: Delete navigation property assignments for deviceManagement
-      operationId: deviceManagement.termsAndConditions_DeleteAssignments
+      operationId: deviceManagement.termsAndCondition_DeleteAssignment
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3528,11 +3846,47 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/deviceManagement/termsAndConditions/{termsAndConditions-id}/assignments/$count':
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get the number of the resource
+      operationId: deviceManagement.termsAndCondition.assignment_GetCount
+      parameters:
+        - name: termsAndConditions-id
+          in: path
+          description: The unique identifier of termsAndConditions
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: termsAndConditions
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /deviceManagement/termsAndConditions/$count:
+    get:
+      tags:
+        - deviceManagement.termsAndConditions
+      summary: Get the number of the resource
+      operationId: deviceManagement.termsAndCondition_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.applePushNotificationCertificate:
@@ -4438,6 +4792,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.complianceManagementPartnerCollectionResponse:
       title: Collection of complianceManagementPartner
       type: object
@@ -4712,6 +5069,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.auditEventCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.complianceManagementPartnerCollectionResponse:
       description: Retrieved collection
       content:

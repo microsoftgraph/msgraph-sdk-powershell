@@ -7,7 +7,7 @@
     <owners>Microsoft</owners>
     <licenseUrl>https://aka.ms/devservicesagreement</licenseUrl>
     <projectUrl>https://github.com/microsoftgraph/msgraph-sdk-powershell</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/master/documentation/images/graph_color256.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/main/docs/images/graph_color256.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Microsoft Graph PowerShell module</description>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>

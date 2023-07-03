@@ -2,13 +2,13 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System.Management.Automation;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    using System.Management.Automation;
-
-    [Cmdlet(VerbsCommon.Get, "MgContext", DefaultParameterSetName = Constants.UserParameterSet)]
+    [Cmdlet(VerbsCommon.Get, "MgContext", DefaultParameterSetName = Constants.UserParameterSet, HelpUri = "https://learn.microsoft.com/powershell/microsoftgraph/authentication-commands#using-get-mgcontext")]
     [OutputType(typeof(IAuthContext))]
-    public class GetMgContext: PSCmdlet
+    public class GetMgContext : PSCmdlet
     {
         protected override void BeginProcessing()
         {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             base.ProcessRecord();
             IAuthContext authConfig = GraphSession.Instance.AuthContext;
-            WriteObject(authConfig as IAuthContext);
+            WriteObject(authConfig);
         }
 
         protected override void EndProcessing()

@@ -1,10 +1,11 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-namespace Microsoft.Graph.PowerShell
+namespace NamespacePrefixPlaceholder.PowerShell
 {
     using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Common;
+    using NamespacePrefixPlaceholder.PowerShell.Models;
     using System;
     using System.Collections.ObjectModel;
     using System.IO;
@@ -17,6 +18,24 @@ namespace Microsoft.Graph.PowerShell
     internal static class PSCmdletExtensions
     {
         private static readonly char[] PathSeparators = new char[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
+        
+        // Converts a string to its unescaped form. The method also replaces '+' with spaces.
+        internal static string UnescapeString(this PSCmdlet cmdlet, string value)
+        {
+            if (value == null)
+                return null;
+
+            try
+            {
+                var unescapedString = Uri.UnescapeDataString(value);
+                return unescapedString.Replace('+', ' ');
+            }
+            catch (UriFormatException ex)
+            {
+                cmdlet.ThrowTerminatingError(new ErrorRecord(ex, string.Empty, ErrorCategory.InvalidArgument, value));
+                return null;
+            }
+        }
 
         /// <summary>
         /// Gets a resolved or unresolved path from PSPath.
@@ -85,6 +104,17 @@ namespace Microsoft.Graph.PowerShell
                 string downloadUrl = response?.RequestMessage?.RequestUri.ToString();
                 cmdlet.WriteToStream(inputStream, fileProvider.Stream, downloadUrl, cancellationToken);
             }
+        }
+        
+        internal static async Task<ErrorDetails> GetErrorDetailsAsync(this PSCmdlet cmdlet, IMicrosoftGraphODataErrorsMainError odataError, HttpResponseMessage response)
+        {
+            var serviceErrorDoc = "https://learn.microsoft.com/graph/errors";
+            var recommendedAction = $"See service error codes: {serviceErrorDoc}";
+            var errorDetailsMessage = await HttpMessageLogFormatter.GetErrorLogAsync(response, odataError);
+            return new ErrorDetails(errorDetailsMessage)
+            {
+                RecommendedAction = recommendedAction
+            };
         }
 
         /// <summary>

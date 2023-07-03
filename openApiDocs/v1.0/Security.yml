@@ -11,7 +11,7 @@ paths:
       tags:
         - security.security
       summary: Get security
-      operationId: security.security_GetSecurity
+      operationId: security_GetSecurity
       parameters:
         - name: $select
           in: query
@@ -56,7 +56,7 @@ paths:
                 - secureScores
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -69,7 +69,7 @@ paths:
       tags:
         - security.security
       summary: Update security
-      operationId: security.security_UpdateSecurity
+      operationId: security_UpdateSecurity
       requestBody:
         description: New property values
         content:
@@ -78,8 +78,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -87,8 +91,12 @@ paths:
     get:
       tags:
         - security.alert
-      summary: Get alerts from security
-      operationId: security_ListAlerts
+      summary: List alerts
+      description: Retrieve a list of alert objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/alert-list?view=graph-rest-1.0
+      operationId: security_ListAlert
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -250,7 +258,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.alertCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -262,7 +270,7 @@ paths:
       tags:
         - security.alert
       summary: Create new navigation property to alerts for security
-      operationId: security_CreateAlerts
+      operationId: security_CreateAlert
       requestBody:
         description: New navigation property
         content:
@@ -271,7 +279,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.alert'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -284,9 +292,12 @@ paths:
     get:
       tags:
         - security.alert
-      summary: Get alerts_v2 from security
-      description: A collection of alerts in Microsoft 365 Defender.
-      operationId: security_ListAlertsGraphVTwo
+      summary: List alerts_v2
+      description: 'Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-list-alerts_v2?view=graph-rest-1.0
+      operationId: security_ListAlerts_v2
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -415,7 +426,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.alertCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -427,7 +438,7 @@ paths:
       tags:
         - security.alert
       summary: Create new navigation property to alerts_v2 for security
-      operationId: security_CreateAlertsGraphVTwo
+      operationId: security_CreateAlerts_v2
       requestBody:
         description: New navigation property
         content:
@@ -436,7 +447,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.alert'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -449,9 +460,12 @@ paths:
     get:
       tags:
         - security.alert
-      summary: Get alerts_v2 from security
-      description: A collection of alerts in Microsoft 365 Defender.
-      operationId: security_GetAlertsGraphVTwo
+      summary: Get alert
+      description: Get the properties and relationships of an alert in an organization based on the specified alert **id** property.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-alert-get?view=graph-rest-1.0
+      operationId: security_GetAlerts_v2
       parameters:
         - name: alert-id
           in: path
@@ -514,7 +528,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -526,8 +540,12 @@ paths:
     patch:
       tags:
         - security.alert
-      summary: Update the navigation property alerts_v2 in security
-      operationId: security_UpdateAlertsGraphVTwo
+      summary: Update alert
+      description: Update the properties of an alert object in an organization based on the specified alert **id** property.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-alert-update?view=graph-rest-1.0
+      operationId: security_UpdateAlerts_v2
       parameters:
         - name: alert-id
           in: path
@@ -545,8 +563,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.alert'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.alert'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -554,7 +576,7 @@ paths:
       tags:
         - security.alert
       summary: Delete navigation property alerts_v2 for security
-      operationId: security_DeleteAlertsGraphVTwo
+      operationId: security_DeleteAlerts_v2
       parameters:
         - name: alert-id
           in: path
@@ -571,17 +593,35 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/alerts_v2/$count:
+    get:
+      tags:
+        - security.alert
+      summary: Get the number of the resource
+      operationId: security.alerts_v2_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/alerts/{alert-id}':
     get:
       tags:
         - security.alert
-      summary: Get alerts from security
-      operationId: security_GetAlerts
+      summary: Get alert
+      description: Retrieve the properties and relationships of an alert object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/alert-get?view=graph-rest-1.0
+      operationId: security_GetAlert
       parameters:
         - name: alert-id
           in: path
@@ -655,7 +695,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -667,8 +707,12 @@ paths:
     patch:
       tags:
         - security.alert
-      summary: Update the navigation property alerts in security
-      operationId: security_UpdateAlerts
+      summary: Update alert
+      description: Update an editable **alert** property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/alert-update?view=graph-rest-1.0
+      operationId: security_UpdateAlert
       parameters:
         - name: alert-id
           in: path
@@ -686,11 +730,29 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.alert'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.alert'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/alerts/$count:
+    get:
+      tags:
+        - security.alert
+      summary: Get the number of the resource
+      operationId: security.alert_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/attackSimulation:
     get:
       tags:
@@ -727,7 +789,7 @@ paths:
                 - simulations
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -749,8 +811,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -767,7 +833,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -776,9 +842,12 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get simulationAutomations from security
-      description: Represents simulation automation created to run on a tenant.
-      operationId: security.attackSimulation_ListSimulationAutomations
+      summary: List simulationAutomations
+      description: Get a list of attack simulation automations for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attacksimulationroot-list-simulationautomations?view=graph-rest-1.0
+      operationId: security.attackSimulation_ListSimulationAutomation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -852,7 +921,7 @@ paths:
                 - runs
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.simulationAutomationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -864,7 +933,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Create new navigation property to simulationAutomations for security
-      operationId: security.attackSimulation_CreateSimulationAutomations
+      operationId: security.attackSimulation_CreateSimulationAutomation
       requestBody:
         description: New navigation property
         content:
@@ -873,7 +942,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -886,9 +955,12 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get simulationAutomations from security
-      description: Represents simulation automation created to run on a tenant.
-      operationId: security.attackSimulation_GetSimulationAutomations
+      summary: Get simulationAutomation
+      description: Get an attack simulation automation for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/simulationautomation-get?view=graph-rest-1.0
+      operationId: security.attackSimulation_GetSimulationAutomation
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -934,7 +1006,7 @@ paths:
                 - runs
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -947,7 +1019,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update the navigation property simulationAutomations in security
-      operationId: security.attackSimulation_UpdateSimulationAutomations
+      operationId: security.attackSimulation_UpdateSimulationAutomation
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -965,8 +1037,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -974,7 +1050,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Delete navigation property simulationAutomations for security
-      operationId: security.attackSimulation_DeleteSimulationAutomations
+      operationId: security.attackSimulation_DeleteSimulationAutomation
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -991,7 +1067,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1000,9 +1076,12 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get runs from security
-      description: A collection of simulation automation runs.
-      operationId: security.attackSimulation.simulationAutomations_ListRuns
+      summary: List runs
+      description: Get a list of the attack simulation automation runs for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/simulationautomation-list-runs?view=graph-rest-1.0
+      operationId: security.attackSimulation.simulationAutomation_ListRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1067,7 +1146,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.simulationAutomationRunCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1079,7 +1158,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Create new navigation property to runs for security
-      operationId: security.attackSimulation.simulationAutomations_CreateRuns
+      operationId: security.attackSimulation.simulationAutomation_CreateRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1097,7 +1176,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1112,7 +1191,7 @@ paths:
         - security.attackSimulationRoot
       summary: Get runs from security
       description: A collection of simulation automation runs.
-      operationId: security.attackSimulation.simulationAutomations_GetRuns
+      operationId: security.attackSimulation.simulationAutomation_GetRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1159,7 +1238,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1172,7 +1251,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update the navigation property runs in security
-      operationId: security.attackSimulation.simulationAutomations_UpdateRuns
+      operationId: security.attackSimulation.simulationAutomation_UpdateRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1198,8 +1277,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1207,7 +1290,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Delete navigation property runs for security
-      operationId: security.attackSimulation.simulationAutomations_DeleteRuns
+      operationId: security.attackSimulation.simulationAutomation_DeleteRun
       parameters:
         - name: simulationAutomation-id
           in: path
@@ -1232,18 +1315,57 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/attackSimulation/simulationAutomations/{simulationAutomation-id}/runs/$count':
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get the number of the resource
+      operationId: security.attackSimulation.simulationAutomation.run_GetCount
+      parameters:
+        - name: simulationAutomation-id
+          in: path
+          description: The unique identifier of simulationAutomation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomation
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/attackSimulation/simulationAutomations/$count:
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get the number of the resource
+      operationId: security.attackSimulation.simulationAutomation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/attackSimulation/simulations:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get simulations from security
-      description: Represents an attack simulation training campaign in a tenant.
-      operationId: security.attackSimulation_ListSimulations
+      summary: List simulations
+      description: Get a list of attack simulation campaigns for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attacksimulationroot-list-simulations?view=graph-rest-1.0
+      operationId: security.attackSimulation_ListSimulation
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1333,7 +1455,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.simulationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1345,7 +1467,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Create new navigation property to simulations for security
-      operationId: security.attackSimulation_CreateSimulations
+      operationId: security.attackSimulation_CreateSimulation
       requestBody:
         description: New navigation property
         content:
@@ -1354,7 +1476,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1367,9 +1489,12 @@ paths:
     get:
       tags:
         - security.attackSimulationRoot
-      summary: Get simulations from security
-      description: Represents an attack simulation training campaign in a tenant.
-      operationId: security.attackSimulation_GetSimulations
+      summary: Get simulation
+      description: Get an attack simulation campaign for a tenant.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/simulation-get?view=graph-rest-1.0
+      operationId: security.attackSimulation_GetSimulation
       parameters:
         - name: simulation-id
           in: path
@@ -1419,7 +1544,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1432,7 +1557,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Update the navigation property simulations in security
-      operationId: security.attackSimulation_UpdateSimulations
+      operationId: security.attackSimulation_UpdateSimulation
       parameters:
         - name: simulation-id
           in: path
@@ -1450,8 +1575,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.simulation'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1459,7 +1588,7 @@ paths:
       tags:
         - security.attackSimulationRoot
       summary: Delete navigation property simulations for security
-      operationId: security.attackSimulation_DeleteSimulations
+      operationId: security.attackSimulation_DeleteSimulation
       parameters:
         - name: simulation-id
           in: path
@@ -1476,17 +1605,31 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/attackSimulation/simulations/$count:
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get the number of the resource
+      operationId: security.attackSimulation.simulation_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/cases:
     get:
       tags:
         - security.casesRoot
       summary: Get cases from security
-      operationId: security_GetCases
+      operationId: security_GetCase
       parameters:
         - name: $select
           in: query
@@ -1515,7 +1658,7 @@ paths:
                 - ediscoveryCases
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1528,7 +1671,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property cases in security
-      operationId: security_UpdateCases
+      operationId: security_UpdateCase
       requestBody:
         description: New navigation property values
         content:
@@ -1537,8 +1680,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.casesRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1546,7 +1693,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property cases for security
-      operationId: security_DeleteCases
+      operationId: security_DeleteCase
       parameters:
         - name: If-Match
           in: header
@@ -1555,7 +1702,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1564,8 +1711,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get ediscoveryCases from security
-      operationId: security.cases_ListEdiscoveryCases
+      summary: List ediscoveryCases
+      description: Get a list of the ediscoveryCase objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-casesroot-list-ediscoverycases?view=graph-rest-1.0
+      operationId: security.case_ListEdiscoveryCase
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -1651,7 +1802,7 @@ paths:
                 - tags
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryCaseCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1662,8 +1813,12 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to ediscoveryCases for security
-      operationId: security.cases_CreateEdiscoveryCases
+      summary: Create ediscoveryCase
+      description: Create a new ediscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-casesroot-post-ediscoverycases?view=graph-rest-1.0
+      operationId: security.case_CreateEdiscoveryCase
       requestBody:
         description: New navigation property
         content:
@@ -1672,7 +1827,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1685,8 +1840,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get ediscoveryCases from security
-      operationId: security.cases_GetEdiscoveryCases
+      summary: Get ediscoveryCase
+      description: Read the properties and relationships of an ediscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-get?view=graph-rest-1.0
+      operationId: security.case_GetEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -1744,7 +1903,7 @@ paths:
                 - tags
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -1756,8 +1915,12 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property ediscoveryCases in security
-      operationId: security.cases_UpdateEdiscoveryCases
+      summary: Update ediscoveryCase
+      description: Update the properties of an ediscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-update?view=graph-rest-1.0
+      operationId: security.case_UpdateEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -1775,16 +1938,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCase'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property ediscoveryCases for security
-      operationId: security.cases_DeleteEdiscoveryCases
+      summary: Delete ediscoveryCase
+      description: Delete an ediscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-casesroot-delete-ediscoverycases?view=graph-rest-1.0
+      operationId: security.case_DeleteEdiscoveryCase
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -1801,7 +1972,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -1810,9 +1981,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get custodians from security
-      description: Returns a list of case ediscoveryCustodian objects for this case.
-      operationId: security.cases.ediscoveryCases_ListCustodians
+      summary: List ediscoveryCustodian
+      description: Get a list of the custodian objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-custodians?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_ListCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -1897,7 +2071,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryCustodianCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -1908,8 +2082,12 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to custodians for security
-      operationId: security.cases.ediscoveryCases_CreateCustodians
+      summary: Create custodians
+      description: "Create a new ediscoveryCustodian object.\nAfter the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-custodians?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_CreateCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -1927,7 +2105,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -1940,9 +2118,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get custodians from security
-      description: Returns a list of case ediscoveryCustodian objects for this case.
-      operationId: security.cases.ediscoveryCases_GetCustodians
+      summary: Get ediscoveryCustodian
+      description: Read the properties and relationships of an ediscoveryCustodian object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-get?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_GetCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2001,7 +2182,7 @@ paths:
                 - userSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2014,7 +2195,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property custodians in security
-      operationId: security.cases.ediscoveryCases_UpdateCustodians
+      operationId: security.case.ediscoveryCase_UpdateCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2040,8 +2221,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCustodian'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2049,7 +2234,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property custodians for security
-      operationId: security.cases.ediscoveryCases_DeleteCustodians
+      operationId: security.case.ediscoveryCase_DeleteCustodian
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2074,7 +2259,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2083,9 +2268,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get lastIndexOperation from security
-      description: Operation entity that represents the latest indexing for the custodian.
-      operationId: security.cases.ediscoveryCases.custodians_GetLastIndexOperation
+      summary: List lastIndexOperation
+      description: Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-lastindexoperation?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_GetLastIndexOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2135,7 +2323,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2149,7 +2337,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action activate
-      operationId: security.cases.ediscoveryCases.custodians_activate
+      description: 'Activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an eDiscovery (Premium) case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-activate?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_activate
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2168,7 +2360,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2178,7 +2370,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyHold
-      operationId: security.cases.ediscoveryCases.custodians_applyHold
+      description: 'Start the process of applying hold on eDiscovery custodians. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-applyhold?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_applyHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2197,7 +2393,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2207,7 +2403,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action release
-      operationId: security.cases.ediscoveryCases.custodians_release
+      description: 'Release a custodian from a case. For details, see Release a custodian from a case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-release?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_release
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2226,7 +2426,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2236,7 +2436,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
-      operationId: security.cases.ediscoveryCases.custodians_removeHold
+      description: 'Start the process of removing hold from eDiscovery custodians. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-removehold?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_removeHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2255,7 +2459,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2265,7 +2469,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action updateIndex
-      operationId: security.cases.ediscoveryCases.custodians_updateIndex
+      description: Trigger an indexOperation to make a custodian and associated sources searchable.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-updateindex?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_updateIndex
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2284,7 +2492,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryCustodian
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2293,9 +2501,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get siteSources from security
-      description: Data source entity for SharePoint sites associated with the custodian.
-      operationId: security.cases.ediscoveryCases.custodians_ListSiteSources
+      summary: List siteSources
+      description: Get a list of the siteSource objects associated with an ediscoveryCustodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-sitesources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_ListSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2370,7 +2581,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.siteSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2381,8 +2592,12 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to siteSources for security
-      operationId: security.cases.ediscoveryCases.custodians_CreateSiteSources
+      summary: Create siteSource
+      description: Create a new siteSource object associated with an eDiscovery custodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-sitesources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_CreateSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2408,7 +2623,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2423,7 +2638,7 @@ paths:
         - security.casesRoot
       summary: Get siteSources from security
       description: Data source entity for SharePoint sites associated with the custodian.
-      operationId: security.cases.ediscoveryCases.custodians_GetSiteSources
+      operationId: security.case.ediscoveryCase.custodian_GetSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2480,7 +2695,7 @@ paths:
                 - site
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2493,7 +2708,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property siteSources in security
-      operationId: security.cases.ediscoveryCases.custodians_UpdateSiteSources
+      operationId: security.case.ediscoveryCase.custodian_UpdateSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2527,8 +2742,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.siteSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2536,7 +2755,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property siteSources for security
-      operationId: security.cases.ediscoveryCases.custodians_DeleteSiteSources
+      operationId: security.case.ediscoveryCase.custodian_DeleteSiteSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2569,7 +2788,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2580,7 +2799,7 @@ paths:
         - security.casesRoot
       summary: Get site from security
       description: The SharePoint site associated with the siteSource.
-      operationId: security.cases.ediscoveryCases.custodians.siteSources_GetSite
+      operationId: security.case.ediscoveryCase.custodian.siteSource_GetSite
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2677,7 +2896,7 @@ paths:
                 - onenote
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2686,13 +2905,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/siteSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian.siteSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCustodian-id
+          in: path
+          description: The unique identifier of ediscoveryCustodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCustodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/unifiedGroupSources':
     get:
       tags:
         - security.casesRoot
-      summary: Get unifiedGroupSources from security
-      description: Data source entity for groups associated with the custodian.
-      operationId: security.cases.ediscoveryCases.custodians_ListUnifiedGroupSources
+      summary: List unifiedGroupSources
+      description: Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-unifiedgroupsources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_ListUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2770,7 +3022,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.unifiedGroupSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -2781,8 +3033,12 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to unifiedGroupSources for security
-      operationId: security.cases.ediscoveryCases.custodians_CreateUnifiedGroupSources
+      summary: Create custodian unifiedGroupSource
+      description: Create a new unifiedGroupSource object associated with an eDiscovery custodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-unifiedgroupsources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_CreateUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2808,7 +3064,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -2823,7 +3079,7 @@ paths:
         - security.casesRoot
       summary: Get unifiedGroupSources from security
       description: Data source entity for groups associated with the custodian.
-      operationId: security.cases.ediscoveryCases.custodians_GetUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_GetUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2881,7 +3137,7 @@ paths:
                 - group
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -2894,7 +3150,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property unifiedGroupSources in security
-      operationId: security.cases.ediscoveryCases.custodians_UpdateUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_UpdateUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2928,8 +3184,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.unifiedGroupSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2937,7 +3197,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property unifiedGroupSources for security
-      operationId: security.cases.ediscoveryCases.custodians_DeleteUnifiedGroupSources
+      operationId: security.case.ediscoveryCase.custodian_DeleteUnifiedGroupSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -2970,7 +3230,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -2981,7 +3241,7 @@ paths:
         - security.casesRoot
       summary: Get group from security
       description: Represents a group.
-      operationId: security.cases.ediscoveryCases.custodians.unifiedGroupSources_GetGroup
+      operationId: security.case.ediscoveryCase.custodian.unifiedGroupSource_GetGroup
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3125,7 +3385,7 @@ paths:
                 - team
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3134,13 +3394,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/unifiedGroupSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian.unifiedGroupSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCustodian-id
+          in: path
+          description: The unique identifier of ediscoveryCustodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCustodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/userSources':
     get:
       tags:
         - security.casesRoot
-      summary: Get userSources from security
-      description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-      operationId: security.cases.ediscoveryCases.custodians_ListUserSources
+      summary: List userSources
+      description: Get a list of the userSource objects associated with an ediscoveryCustodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-usersources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_ListUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3222,7 +3515,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.userSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3233,8 +3526,12 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to userSources for security
-      operationId: security.cases.ediscoveryCases.custodians_CreateUserSources
+      summary: Create custodian userSource
+      description: Create a new userSource object associated with an eDiscovery custodian.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-usersources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.custodian_CreateUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3260,7 +3557,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.userSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3275,7 +3572,7 @@ paths:
         - security.casesRoot
       summary: Get userSources from security
       description: Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-      operationId: security.cases.ediscoveryCases.custodians_GetUserSources
+      operationId: security.case.ediscoveryCase.custodian_GetUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3333,7 +3630,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3346,7 +3643,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property userSources in security
-      operationId: security.cases.ediscoveryCases.custodians_UpdateUserSources
+      operationId: security.case.ediscoveryCase.custodian_UpdateUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3380,8 +3677,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.userSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.userSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3389,7 +3690,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property userSources for security
-      operationId: security.cases.ediscoveryCases.custodians_DeleteUserSources
+      operationId: security.case.ediscoveryCase.custodian_DeleteUserSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3422,17 +3723,69 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/{ediscoveryCustodian-id}/userSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian.userSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryCustodian-id
+          in: path
+          description: The unique identifier of ediscoveryCustodian
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCustodian
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.custodian_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/custodians/microsoft.graph.security.applyHold':
     post:
       tags:
         - security.Actions
       summary: Invoke action applyHold
-      operationId: security.cases.ediscoveryCases.custodians_applyHold
+      operationId: security.case.ediscoveryCase.custodian_applyHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3458,7 +3811,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3468,7 +3821,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
-      operationId: security.cases.ediscoveryCases.custodians_removeHold
+      operationId: security.case.ediscoveryCase.custodian_removeHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3494,7 +3847,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3504,7 +3857,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action close
-      operationId: security.cases.ediscoveryCases_close
+      description: 'Close an eDiscovery case. For details, see Close a case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-close?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_close
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3515,7 +3872,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryCase
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3525,7 +3882,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action reopen
-      operationId: security.cases.ediscoveryCases_reopen
+      description: 'Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-reopen?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_reopen
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3536,7 +3897,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryCase
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3547,7 +3908,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialDataSources from security
       description: Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
-      operationId: security.cases.ediscoveryCases_ListNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_ListNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3622,7 +3983,7 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryNoncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -3633,8 +3994,12 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to noncustodialDataSources for security
-      operationId: security.cases.ediscoveryCases_CreateNoncustodialDataSources
+      summary: Create nonCustodialDataSources
+      description: Create a new ediscoveryNoncustodialDataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-noncustodialdatasources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_CreateNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3652,7 +4017,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -3667,7 +4032,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialDataSources from security
       description: Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
-      operationId: security.cases.ediscoveryCases_GetNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_GetNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3720,7 +4085,7 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3733,7 +4098,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property noncustodialDataSources in security
-      operationId: security.cases.ediscoveryCases_UpdateNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_UpdateNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3759,8 +4124,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryNoncustodialDataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3768,7 +4137,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property noncustodialDataSources for security
-      operationId: security.cases.ediscoveryCases_DeleteNoncustodialDataSources
+      operationId: security.case.ediscoveryCase_DeleteNoncustodialDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3793,7 +4162,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3804,7 +4173,7 @@ paths:
         - security.casesRoot
       summary: Get dataSource from security
       description: User source or SharePoint site data source as non-custodial data source.
-      operationId: security.cases.ediscoveryCases.noncustodialDataSources_GetDataSource
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_GetDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3851,7 +4220,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3864,7 +4233,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property dataSource in security
-      operationId: security.cases.ediscoveryCases.noncustodialDataSources_UpdateDataSource
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_UpdateDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3890,8 +4259,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3899,7 +4272,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property dataSource for security
-      operationId: security.cases.ediscoveryCases.noncustodialDataSources_DeleteDataSource
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_DeleteDataSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3924,7 +4297,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -3935,7 +4308,7 @@ paths:
         - security.casesRoot
       summary: Get lastIndexOperation from security
       description: Operation entity that represents the latest indexing for the non-custodial data source.
-      operationId: security.cases.ediscoveryCases.noncustodialDataSources_GetLastIndexOperation
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_GetLastIndexOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -3985,7 +4358,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -3999,7 +4372,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyHold
-      operationId: security.cases.ediscoveryCases.noncustodialDataSources_applyHold
+      description: 'Start the process of applying hold on eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-applyhold?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_applyHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4018,7 +4395,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4028,7 +4405,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action release
-      operationId: security.cases.ediscoveryCases.noncustodialDataSources_release
+      description: Release the non-custodial data source from the case.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-release?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_release
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4047,7 +4428,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4057,7 +4438,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
-      operationId: security.cases.ediscoveryCases.noncustodialDataSources_removeHold
+      description: 'Start the process of removing hold from eDiscovery non-custodial data sources. After the operation is created, you can get the status by retrieving the `Location` parameter from the response headers. The location provides a URL that will return an eDiscoveryHoldOperation object.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-removehold?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_removeHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4076,7 +4461,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4086,7 +4471,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action updateIndex
-      operationId: security.cases.ediscoveryCases.noncustodialDataSources_updateIndex
+      description: Trigger an indexOperation to make a non-custodial data source and its associated data source searchable.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverynoncustodialdatasource-updateindex?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_updateIndex
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4105,17 +4494,39 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryNoncustodialDataSource
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/noncustodialDataSources/microsoft.graph.security.applyHold':
     post:
       tags:
         - security.Actions
       summary: Invoke action applyHold
-      operationId: security.cases.ediscoveryCases.noncustodialDataSources_applyHold
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_applyHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4141,7 +4552,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4151,7 +4562,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action removeHold
-      operationId: security.cases.ediscoveryCases.noncustodialDataSources_removeHold
+      operationId: security.case.ediscoveryCase.noncustodialDataSource_removeHold
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4177,7 +4588,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4186,9 +4597,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get operations from security
-      description: Returns a list of case caseOperation objects for this case.
-      operationId: security.cases.ediscoveryCases_ListOperations
+      summary: List caseOperations
+      description: Get a list of the caseOperation objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-operations?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_ListOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4262,7 +4676,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.caseOperationCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4274,7 +4688,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Create new navigation property to operations for security
-      operationId: security.cases.ediscoveryCases_CreateOperations
+      operationId: security.case.ediscoveryCase_CreateOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4292,7 +4706,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4305,9 +4719,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get operations from security
-      description: Returns a list of case caseOperation objects for this case.
-      operationId: security.cases.ediscoveryCases_GetOperations
+      summary: Get caseOperation
+      description: Read the properties and relationships of a caseOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-caseoperation-get?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_GetOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4357,7 +4774,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4370,7 +4787,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property operations in security
-      operationId: security.cases.ediscoveryCases_UpdateOperations
+      operationId: security.case.ediscoveryCase_UpdateOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4396,8 +4813,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.caseOperation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4405,7 +4826,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property operations for security
-      operationId: security.cases.ediscoveryCases_DeleteOperations
+      operationId: security.case.ediscoveryCase_DeleteOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4430,18 +4851,43 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/operations/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.operation_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets':
     get:
       tags:
         - security.casesRoot
-      summary: Get reviewSets from security
-      description: Returns a list of eDiscoveryReviewSet objects in the case.
-      operationId: security.cases.ediscoveryCases_ListReviewSets
+      summary: List reviewSets
+      description: Get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-reviewsets?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_ListReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4505,7 +4951,7 @@ paths:
                 - queries
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewSetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4516,8 +4962,12 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to reviewSets for security
-      operationId: security.cases.ediscoveryCases_CreateReviewSets
+      summary: Create reviewSets
+      description: Create a new ediscoveryReviewSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-reviewsets?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_CreateReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4535,7 +4985,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4548,9 +4998,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get reviewSets from security
-      description: Returns a list of eDiscoveryReviewSet objects in the case.
-      operationId: security.cases.ediscoveryCases_GetReviewSets
+      summary: Get ediscoveryReviewSet
+      description: Read the properties and relationships of an ediscoveryReviewSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-get?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_GetReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4598,7 +5051,7 @@ paths:
                 - queries
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4611,7 +5064,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property reviewSets in security
-      operationId: security.cases.ediscoveryCases_UpdateReviewSets
+      operationId: security.case.ediscoveryCase_UpdateReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4637,8 +5090,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSet'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4646,7 +5103,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property reviewSets for security
-      operationId: security.cases.ediscoveryCases_DeleteReviewSets
+      operationId: security.case.ediscoveryCase_DeleteReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4671,7 +5128,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4681,7 +5138,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action addToReviewSet
-      operationId: security.cases.ediscoveryCases.reviewSets_addToReviewSet
+      description: 'Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a Add to review set operation.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-addtoreviewset?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.reviewSet_addToReviewSet
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4714,7 +5175,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -4723,9 +5184,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get queries from security
-      description: Represents queries within the review set.
-      operationId: security.cases.ediscoveryCases.reviewSets_ListQueries
+      summary: List queries
+      description: Get the list of queries associated with an eDiscovery review set.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-list-queries?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.reviewSet_ListQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4807,7 +5271,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewSetQueryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -4818,8 +5282,12 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to queries for security
-      operationId: security.cases.ediscoveryCases.reviewSets_CreateQueries
+      summary: Create ediscoveryReviewSetQuery
+      description: Create a new ediscoveryReviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-post-queries?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.reviewSet_CreateQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4845,7 +5313,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -4858,9 +5326,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get queries from security
-      description: Represents queries within the review set.
-      operationId: security.cases.ediscoveryCases.reviewSets_GetQueries
+      summary: Get ediscoveryReviewSetQuery
+      description: Read the properties and relationships of an ediscoveryReviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-get?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.reviewSet_GetQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4918,7 +5389,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -4930,8 +5401,12 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property queries in security
-      operationId: security.cases.ediscoveryCases.reviewSets_UpdateQueries
+      summary: Update ediscoveryReviewSetQuery
+      description: Update the properties of an ediscoveryReviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-update?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.reviewSet_UpdateQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -4965,16 +5440,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewSetQuery'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property queries for security
-      operationId: security.cases.ediscoveryCases.reviewSets_DeleteQueries
+      summary: Delete ediscoveryReviewSetQuery
+      description: Delete an ediscoveryReviewSetQuery object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-delete-queries?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.reviewSet_DeleteQuery
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5007,7 +5490,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5017,7 +5500,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action applyTags
-      operationId: security.cases.ediscoveryCases.reviewSets.queries_applyTags
+      description: 'Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewsetquery-applytags?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.reviewSet.query_applyTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5062,18 +5549,73 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/{ediscoveryReviewSet-id}/queries/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.reviewSet.query_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryReviewSet-id
+          in: path
+          description: The unique identifier of ediscoveryReviewSet
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryReviewSet
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/reviewSets/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.reviewSet_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches':
     get:
       tags:
         - security.casesRoot
-      summary: Get searches from security
-      description: Returns a list of eDiscoverySearch objects associated with this case.
-      operationId: security.cases.ediscoveryCases_ListSearches
+      summary: List searches
+      description: Get the list of ediscoverySearch resources from an eDiscoveryCase object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-searches?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_ListSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5160,7 +5702,7 @@ paths:
                 - noncustodialSources
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoverySearchCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5171,8 +5713,12 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to searches for security
-      operationId: security.cases.ediscoveryCases_CreateSearches
+      summary: Create searches
+      description: Create a new ediscoverySearch object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-searches?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_CreateSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5190,7 +5736,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5203,9 +5749,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get searches from security
-      description: Returns a list of eDiscoverySearch objects associated with this case.
-      operationId: security.cases.ediscoveryCases_GetSearches
+      summary: Get ediscoverySearch
+      description: Read the properties and relationships of an ediscoverySearch object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-get?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_GetSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5266,7 +5815,7 @@ paths:
                 - noncustodialSources
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5278,8 +5827,12 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property searches in security
-      operationId: security.cases.ediscoveryCases_UpdateSearches
+      summary: Update ediscoverySearch
+      description: Update the properties of an ediscoverySearch object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-update?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_UpdateSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5305,16 +5858,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoverySearch'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property searches for security
-      operationId: security.cases.ediscoveryCases_DeleteSearches
+      summary: Delete ediscoverySearch
+      description: Delete an ediscoverySearch object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-delete-searches?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_DeleteSearch
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5339,7 +5900,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5348,9 +5909,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get additionalSources from security
-      description: Adds an additional source to the eDiscovery search.
-      operationId: security.cases.ediscoveryCases.searches_ListAdditionalSources
+      summary: List additionalSources
+      description: Get the list of additional sources associated with an eDiscovery search.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-list-additionalsources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_ListAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5423,7 +5987,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5434,8 +5998,12 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to additionalSources for security
-      operationId: security.cases.ediscoveryCases.searches_CreateAdditionalSources
+      summary: Add additional sources
+      description: Create a new additional source associated with an eDiscovery search.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-post-additionalsources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_CreateAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5461,7 +6029,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -5476,7 +6044,7 @@ paths:
         - security.casesRoot
       summary: Get additionalSources from security
       description: Adds an additional source to the eDiscovery search.
-      operationId: security.cases.ediscoveryCases.searches_GetAdditionalSources
+      operationId: security.case.ediscoveryCase.search_GetAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5531,7 +6099,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5544,7 +6112,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Update the navigation property additionalSources in security
-      operationId: security.cases.ediscoveryCases.searches_UpdateAdditionalSources
+      operationId: security.case.ediscoveryCase.search_UpdateAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5578,8 +6146,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.dataSource'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5587,7 +6159,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property additionalSources for security
-      operationId: security.cases.ediscoveryCases.searches_DeleteAdditionalSources
+      operationId: security.case.ediscoveryCase.search_DeleteAdditionalSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5620,18 +6192,48 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/additionalSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search.additionalSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/addToReviewSetOperation':
     get:
       tags:
         - security.casesRoot
       summary: Get addToReviewSetOperation from security
       description: Adds the results of the eDiscovery search to the specified reviewSet.
-      operationId: security.cases.ediscoveryCases.searches_GetAddToReviewSetOperation
+      operationId: security.case.ediscoveryCase.search_GetAddToReviewSetOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5685,7 +6287,7 @@ paths:
                 - search
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5698,9 +6300,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get custodianSources from security
-      description: Custodian sources that are included in the eDiscovery search.
-      operationId: security.cases.ediscoveryCases.searches_ListCustodianSources
+      summary: List custodianSources
+      description: Get the list of custodial data sources associated with an eDiscovery search.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-list-custodiansources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_ListCustodianSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5773,7 +6378,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.dataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -5787,7 +6392,7 @@ paths:
         - security.casesRoot
       summary: Get custodianSources from security
       description: Custodian sources that are included in the eDiscovery search.
-      operationId: security.cases.ediscoveryCases.searches_GetCustodianSources
+      operationId: security.case.ediscoveryCase.search_GetCustodianSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5842,7 +6447,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5851,13 +6456,92 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.casesRoot
+      summary: Remove custodianSources
+      description: Remove a dataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-delete-custodiansources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_DeleteCustodianSource
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - name: dataSource-id
+          in: path
+          description: The unique identifier of dataSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: dataSource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/custodianSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search.custodianSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/lastEstimateStatisticsOperation':
     get:
       tags:
         - security.casesRoot
-      summary: Get lastEstimateStatisticsOperation from security
-      description: The last estimate operation associated with the eDiscovery search.
-      operationId: security.cases.ediscoveryCases.searches_GetLastEstimateStatisticsOperation
+      summary: List lastEstimateStatisticsOperation
+      description: Get the last  ediscoveryEstimateOperation objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-list-lastestimatestatisticsoperation?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_GetLastEstimateStatisticsOperation
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5915,7 +6599,7 @@ paths:
                 - search
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -5929,7 +6613,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action estimateStatistics
-      operationId: security.cases.ediscoveryCases.searches_estimateStatistics
+      description: 'Run an estimate of the number of emails and documents in the eDiscovery search. To learn more about searches in eDiscovery, see Collect data for a case in eDiscovery (Premium).'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-estimatestatistics?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_estimateStatistics
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5948,7 +6636,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoverySearch
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -5958,7 +6646,7 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action purgeData
-      operationId: security.cases.ediscoveryCases.searches_purgeData
+      operationId: security.case.ediscoveryCase.search_purgeData
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -5991,7 +6679,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6002,7 +6690,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialSources from security
       description: noncustodialDataSource sources that are included in the eDiscovery search
-      operationId: security.cases.ediscoveryCases.searches_ListNoncustodialSources
+      operationId: security.case.ediscoveryCase.search_ListNoncustodialSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6085,7 +6773,7 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryNoncustodialDataSourceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6099,7 +6787,7 @@ paths:
         - security.casesRoot
       summary: Get noncustodialSources from security
       description: noncustodialDataSource sources that are included in the eDiscovery search
-      operationId: security.cases.ediscoveryCases.searches_GetNoncustodialSources
+      operationId: security.case.ediscoveryCase.search_GetNoncustodialSource
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6160,7 +6848,7 @@ paths:
                 - lastIndexOperation
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6169,13 +6857,114 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.casesRoot
+      summary: Remove noncustodialSources
+      description: Remove an ediscoveryNoncustodialDataSource object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverysearch-delete-noncustodialsources?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.search_DeleteNoncustodialSource
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - name: ediscoveryNoncustodialDataSource-id
+          in: path
+          description: The unique identifier of ediscoveryNoncustodialDataSource
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryNoncustodialDataSource
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/{ediscoverySearch-id}/noncustodialSources/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search.noncustodialSource_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoverySearch-id
+          in: path
+          description: The unique identifier of ediscoverySearch
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoverySearch
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/searches/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.search_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/settings':
     get:
       tags:
         - security.casesRoot
-      summary: Get settings from security
-      description: Returns a list of eDIscoverySettings objects in the case.
-      operationId: security.cases.ediscoveryCases_GetSettings
+      summary: Get ediscoveryCaseSettings
+      description: Read the properties and relationships of an ediscoveryCaseSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-get?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_GetSetting
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6213,7 +7002,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6225,8 +7014,12 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property settings in security
-      operationId: security.cases.ediscoveryCases_UpdateSettings
+      summary: Update ediscoveryCaseSettings
+      description: Update the properties of an ediscoveryCaseSettings object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-update?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_UpdateSetting
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6244,8 +7037,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryCaseSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6253,7 +7050,7 @@ paths:
       tags:
         - security.casesRoot
       summary: Delete navigation property settings for security
-      operationId: security.cases.ediscoveryCases_DeleteSettings
+      operationId: security.case.ediscoveryCase_DeleteSetting
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6270,7 +7067,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6280,7 +7077,11 @@ paths:
       tags:
         - security.Actions
       summary: Invoke action resetToDefault
-      operationId: security.cases.ediscoveryCases.settings_resetToDefault
+      description: Reset a caseSettings object to the default values.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-resettodefault?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase.setting_resetToDefault
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6291,7 +7092,7 @@ paths:
             type: string
           x-ms-docs-key-type: ediscoveryCase
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6300,9 +7101,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get tags from security
-      description: Returns a list of ediscoveryReviewTag objects associated to this case.
-      operationId: security.cases.ediscoveryCases_ListTags
+      summary: List tags
+      description: Get a list of eDiscoveryReviewTag objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-list-tags?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_ListTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6374,7 +7178,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewTagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6385,8 +7189,12 @@ paths:
     post:
       tags:
         - security.casesRoot
-      summary: Create new navigation property to tags for security
-      operationId: security.cases.ediscoveryCases_CreateTags
+      summary: Create tags
+      description: Create a new ediscoveryReviewTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-post-tags?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_CreateTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6404,7 +7212,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6417,9 +7225,12 @@ paths:
     get:
       tags:
         - security.casesRoot
-      summary: Get tags from security
-      description: Returns a list of ediscoveryReviewTag objects associated to this case.
-      operationId: security.cases.ediscoveryCases_GetTags
+      summary: Get ediscoveryReviewTag
+      description: Read the properties and relationships of an ediscoveryReviewTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewtag-get?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_GetTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6471,7 +7282,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6483,8 +7294,12 @@ paths:
     patch:
       tags:
         - security.casesRoot
-      summary: Update the navigation property tags in security
-      operationId: security.cases.ediscoveryCases_UpdateTags
+      summary: Update ediscoveryReviewTag
+      description: Update the properties of an ediscoveryReviewTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoveryreviewtag-update?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_UpdateTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6510,16 +7325,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.ediscoveryReviewTag'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - security.casesRoot
-      summary: Delete navigation property tags for security
-      operationId: security.cases.ediscoveryCases_DeleteTags
+      summary: Remove ediscoveryReviewTag
+      description: Remove an ediscoveryReviewTag object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-ediscoverycase-delete-tags?view=graph-rest-1.0
+      operationId: security.case.ediscoveryCase_DeleteTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6544,7 +7367,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -6555,7 +7378,7 @@ paths:
         - security.casesRoot
       summary: Get childTags from security
       description: Returns the tags that are a child of a tag.
-      operationId: security.cases.ediscoveryCases.tags_ListChildTags
+      operationId: security.case.ediscoveryCase.tag_ListChildTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6635,7 +7458,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.ediscoveryReviewTagCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6649,7 +7472,7 @@ paths:
         - security.casesRoot
       summary: Get childTags from security
       description: Returns the tags that are a child of a tag.
-      operationId: security.cases.ediscoveryCases.tags_GetChildTags
+      operationId: security.case.ediscoveryCase.tag_GetChildTag
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6709,7 +7532,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6718,13 +7541,43 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/{ediscoveryReviewTag-id}/childTags/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.tag.childTag_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - name: ediscoveryReviewTag-id
+          in: path
+          description: The unique identifier of ediscoveryReviewTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryReviewTag
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/{ediscoveryReviewTag-id}/parent':
     get:
       tags:
         - security.casesRoot
       summary: Get parent from security
       description: Returns the parent tag of the specified tag.
-      operationId: security.cases.ediscoveryCases.tags_GetParent
+      operationId: security.case.ediscoveryCase.tag_GetParent
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6776,7 +7629,7 @@ paths:
                 - parent
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -6785,12 +7638,34 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/$count':
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase.tag_GetCount
+      parameters:
+        - name: ediscoveryCase-id
+          in: path
+          description: The unique identifier of ediscoveryCase
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: ediscoveryCase
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/security/cases/ediscoveryCases/{ediscoveryCase-id}/tags/microsoft.graph.security.asHierarchy()':
     get:
       tags:
         - security.Functions
       summary: Invoke function asHierarchy
-      operationId: security.cases.ediscoveryCases.tags_asHierarchy
+      operationId: security.case.ediscoveryCase.tag_asHierarchy
       parameters:
         - name: ediscoveryCase-id
           in: path
@@ -6848,7 +7723,7 @@ paths:
                 - childSelectability desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -6871,13 +7746,30 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  /security/cases/ediscoveryCases/$count:
+    get:
+      tags:
+        - security.casesRoot
+      summary: Get the number of the resource
+      operationId: security.case.ediscoveryCase_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/incidents:
     get:
       tags:
         - security.incident
-      summary: Get incidents from security
-      description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
-      operationId: security_ListIncidents
+      summary: List incidents
+      description: 'Get a list of incident objects that Microsoft 365 Defender has created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**.  This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-list-incidents?view=graph-rest-1.0
+      operationId: security_ListIncident
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -6963,7 +7855,7 @@ paths:
                 - alerts
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.incidentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -6975,7 +7867,7 @@ paths:
       tags:
         - security.incident
       summary: Create new navigation property to incidents for security
-      operationId: security_CreateIncidents
+      operationId: security_CreateIncident
       requestBody:
         description: New navigation property
         content:
@@ -6984,7 +7876,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.incident'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -6997,9 +7889,12 @@ paths:
     get:
       tags:
         - security.incident
-      summary: Get incidents from security
-      description: 'A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.'
-      operationId: security_GetIncidents
+      summary: Get incident
+      description: 'Retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-incident-get?view=graph-rest-1.0
+      operationId: security_GetIncident
       parameters:
         - name: incident-id
           in: path
@@ -7049,7 +7944,7 @@ paths:
                 - alerts
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7061,8 +7956,12 @@ paths:
     patch:
       tags:
         - security.incident
-      summary: Update the navigation property incidents in security
-      operationId: security_UpdateIncidents
+      summary: Update incident
+      description: Update the properties of an incident object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-incident-update?view=graph-rest-1.0
+      operationId: security_UpdateIncident
       parameters:
         - name: incident-id
           in: path
@@ -7080,8 +7979,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.incident'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.incident'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7089,7 +7992,7 @@ paths:
       tags:
         - security.incident
       summary: Delete navigation property incidents for security
-      operationId: security_DeleteIncidents
+      operationId: security_DeleteIncident
       parameters:
         - name: incident-id
           in: path
@@ -7106,7 +8009,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7117,7 +8020,7 @@ paths:
         - security.incident
       summary: Get alerts from security
       description: The list of related alerts. Supports $expand.
-      operationId: security.incidents_ListAlerts
+      operationId: security.incident_ListAlert
       parameters:
         - name: incident-id
           in: path
@@ -7254,7 +8157,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.alertCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7268,7 +8171,7 @@ paths:
         - security.incident
       summary: Get alerts from security
       description: The list of related alerts. Supports $expand.
-      operationId: security.incidents_GetAlerts
+      operationId: security.incident_GetAlert
       parameters:
         - name: incident-id
           in: path
@@ -7339,7 +8242,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7348,6 +8251,42 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/security/incidents/{incident-id}/alerts/$count':
+    get:
+      tags:
+        - security.incident
+      summary: Get the number of the resource
+      operationId: security.incident.alert_GetCount
+      parameters:
+        - name: incident-id
+          in: path
+          description: The unique identifier of incident
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: incident
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /security/incidents/$count:
+    get:
+      tags:
+        - security.incident
+      summary: Get the number of the resource
+      operationId: security.incident_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/microsoft.graph.security.runHuntingQuery:
     post:
       tags:
@@ -7368,7 +8307,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -7381,8 +8320,12 @@ paths:
     get:
       tags:
         - security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from security
-      operationId: security_ListSecureScoreControlProfiles
+      summary: List secureScoreControlProfiles
+      description: Retrieve the properties and relationships of a secureScoreControlProfiles object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-list-securescorecontrolprofiles?view=graph-rest-1.0
+      operationId: security_ListSecureScoreControlProfile
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7484,7 +8427,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.secureScoreControlProfileCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7496,7 +8439,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Create new navigation property to secureScoreControlProfiles for security
-      operationId: security_CreateSecureScoreControlProfiles
+      operationId: security_CreateSecureScoreControlProfile
       requestBody:
         description: New navigation property
         content:
@@ -7505,7 +8448,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7518,8 +8461,12 @@ paths:
     get:
       tags:
         - security.secureScoreControlProfile
-      summary: Get secureScoreControlProfiles from security
-      operationId: security_GetSecureScoreControlProfiles
+      summary: Get secureScoreControlProfile
+      description: Retrieve the properties and relationships of an securescorecontrolprofile object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/securescorecontrolprofile-get?view=graph-rest-1.0
+      operationId: security_GetSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -7573,7 +8520,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7585,8 +8532,12 @@ paths:
     patch:
       tags:
         - security.secureScoreControlProfile
-      summary: Update the navigation property secureScoreControlProfiles in security
-      operationId: security_UpdateSecureScoreControlProfiles
+      summary: Update secureScoreControlProfile
+      description: 'Update an editable **secureScoreControlProfile** object within any integrated solution to change various properties, such as **assignedTo** or **tenantNote**.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/securescorecontrolprofile-update?view=graph-rest-1.0
+      operationId: security_UpdateSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -7604,8 +8555,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7613,7 +8568,7 @@ paths:
       tags:
         - security.secureScoreControlProfile
       summary: Delete navigation property secureScoreControlProfiles for security
-      operationId: security_DeleteSecureScoreControlProfiles
+      operationId: security_DeleteSecureScoreControlProfile
       parameters:
         - name: secureScoreControlProfile-id
           in: path
@@ -7630,17 +8585,35 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/secureScoreControlProfiles/$count:
+    get:
+      tags:
+        - security.secureScoreControlProfile
+      summary: Get the number of the resource
+      operationId: security.secureScoreControlProfile_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/secureScores:
     get:
       tags:
         - security.secureScore
-      summary: Get secureScores from security
-      operationId: security_ListSecureScores
+      summary: List secureScores
+      description: Retrieve a list of secureScore objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-list-securescores?view=graph-rest-1.0
+      operationId: security_ListSecureScore
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -7715,7 +8688,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.secureScoreCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -7727,7 +8700,7 @@ paths:
       tags:
         - security.secureScore
       summary: Create new navigation property to secureScores for security
-      operationId: security_CreateSecureScores
+      operationId: security_CreateSecureScore
       requestBody:
         description: New navigation property
         content:
@@ -7736,7 +8709,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScore'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -7749,8 +8722,12 @@ paths:
     get:
       tags:
         - security.secureScore
-      summary: Get secureScores from security
-      operationId: security_GetSecureScores
+      summary: Get secureScore
+      description: Retrieve the properties and relationships of a secureScore object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/securescore-get?view=graph-rest-1.0
+      operationId: security_GetSecureScore
       parameters:
         - name: secureScore-id
           in: path
@@ -7795,7 +8772,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7808,7 +8785,7 @@ paths:
       tags:
         - security.secureScore
       summary: Update the navigation property secureScores in security
-      operationId: security_UpdateSecureScores
+      operationId: security_UpdateSecureScore
       parameters:
         - name: secureScore-id
           in: path
@@ -7826,8 +8803,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.secureScore'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.secureScore'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7835,7 +8816,7 @@ paths:
       tags:
         - security.secureScore
       summary: Delete navigation property secureScores for security
-      operationId: security_DeleteSecureScores
+      operationId: security_DeleteSecureScore
       parameters:
         - name: secureScore-id
           in: path
@@ -7852,17 +8833,31 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/secureScores/$count:
+    get:
+      tags:
+        - security.secureScore
+      summary: Get the number of the resource
+      operationId: security.secureScore_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/triggers:
     get:
       tags:
         - security.triggersRoot
       summary: Get triggers from security
-      operationId: security_GetTriggers
+      operationId: security_GetTrigger
       parameters:
         - name: $select
           in: query
@@ -7891,7 +8886,7 @@ paths:
                 - retentionEvents
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -7904,7 +8899,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Update the navigation property triggers in security
-      operationId: security_UpdateTriggers
+      operationId: security_UpdateTrigger
       requestBody:
         description: New navigation property values
         content:
@@ -7913,8 +8908,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.triggersRoot'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.triggersRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -7922,7 +8921,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Delete navigation property triggers for security
-      operationId: security_DeleteTriggers
+      operationId: security_DeleteTrigger
       parameters:
         - name: If-Match
           in: header
@@ -7931,7 +8930,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -7940,8 +8939,12 @@ paths:
     get:
       tags:
         - security.triggersRoot
-      summary: Get retentionEvents from security
-      operationId: security.triggers_ListRetentionEvents
+      summary: List retentionEvents
+      description: Get a list of the retentionEvent objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionevent-list?view=graph-rest-1.0
+      operationId: security.trigger_ListRetentionEvent
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8021,7 +9024,7 @@ paths:
                 - retentionEventType
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.retentionEventCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8032,8 +9035,12 @@ paths:
     post:
       tags:
         - security.triggersRoot
-      summary: Create new navigation property to retentionEvents for security
-      operationId: security.triggers_CreateRetentionEvents
+      summary: Create retentionEvent
+      description: Create a new retentionEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionevent-post?view=graph-rest-1.0
+      operationId: security.trigger_CreateRetentionEvent
       requestBody:
         description: New navigation property
         content:
@@ -8042,7 +9049,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8055,8 +9062,12 @@ paths:
     get:
       tags:
         - security.triggersRoot
-      summary: Get retentionEvents from security
-      operationId: security.triggers_GetRetentionEvents
+      summary: Get retentionEvent
+      description: Read the properties and relationships of a retentionEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionevent-get?view=graph-rest-1.0
+      operationId: security.trigger_GetRetentionEvent
       parameters:
         - name: retentionEvent-id
           in: path
@@ -8104,7 +9115,7 @@ paths:
                 - retentionEventType
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8117,7 +9128,7 @@ paths:
       tags:
         - security.triggersRoot
       summary: Update the navigation property retentionEvents in security
-      operationId: security.triggers_UpdateRetentionEvents
+      operationId: security.trigger_UpdateRetentionEvent
       parameters:
         - name: retentionEvent-id
           in: path
@@ -8135,16 +9146,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - security.triggersRoot
-      summary: Delete navigation property retentionEvents for security
-      operationId: security.triggers_DeleteRetentionEvents
+      summary: Delete retentionEvent
+      description: Delete a retentionEvent object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentionevent-delete?view=graph-rest-1.0
+      operationId: security.trigger_DeleteRetentionEvent
       parameters:
         - name: retentionEvent-id
           in: path
@@ -8161,7 +9180,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -8172,7 +9191,7 @@ paths:
         - security.triggersRoot
       summary: Get retentionEventType from security
       description: Specifies the event that will start the retention period for labels that use this event type when an event is created.
-      operationId: security.triggers.retentionEvents_GetRetentionEventType
+      operationId: security.trigger.retentionEvent_GetRetentionEventType
       parameters:
         - name: retentionEvent-id
           in: path
@@ -8213,7 +9232,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8222,12 +9241,26 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/triggers/retentionEvents/$count:
+    get:
+      tags:
+        - security.triggersRoot
+      summary: Get the number of the resource
+      operationId: security.trigger.retentionEvent_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /security/triggerTypes:
     get:
       tags:
         - security.triggerTypesRoot
       summary: Get triggerTypes from security
-      operationId: security_GetTriggerTypes
+      operationId: security_GetTriggerType
       parameters:
         - name: $select
           in: query
@@ -8256,7 +9289,7 @@ paths:
                 - retentionEventTypes
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8269,7 +9302,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Update the navigation property triggerTypes in security
-      operationId: security_UpdateTriggerTypes
+      operationId: security_UpdateTriggerType
       requestBody:
         description: New navigation property values
         content:
@@ -8278,8 +9311,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.triggerTypesRoot'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.triggerTypesRoot'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -8287,7 +9324,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Delete navigation property triggerTypes for security
-      operationId: security_DeleteTriggerTypes
+      operationId: security_DeleteTriggerType
       parameters:
         - name: If-Match
           in: header
@@ -8296,7 +9333,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -8305,8 +9342,12 @@ paths:
     get:
       tags:
         - security.triggerTypesRoot
-      summary: Get retentionEventTypes from security
-      operationId: security.triggerTypes_ListRetentionEventTypes
+      summary: List retentionEventTypes
+      description: Get a list of the retentionEventType objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentioneventtype-list?view=graph-rest-1.0
+      operationId: security.triggerType_ListRetentionEventType
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -8369,7 +9410,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.security.retentionEventTypeCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -8380,8 +9421,12 @@ paths:
     post:
       tags:
         - security.triggerTypesRoot
-      summary: Create new navigation property to retentionEventTypes for security
-      operationId: security.triggerTypes_CreateRetentionEventTypes
+      summary: Create retentionEventType
+      description: Create a new retentionEventType object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentioneventtype-post?view=graph-rest-1.0
+      operationId: security.triggerType_CreateRetentionEventType
       requestBody:
         description: New navigation property
         content:
@@ -8390,7 +9435,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created navigation property.
           content:
             application/json:
@@ -8403,8 +9448,12 @@ paths:
     get:
       tags:
         - security.triggerTypesRoot
-      summary: Get retentionEventTypes from security
-      operationId: security.triggerTypes_GetRetentionEventTypes
+      summary: Get retentionEventType
+      description: Read the properties and relationships of a retentionEventType object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentioneventtype-get?view=graph-rest-1.0
+      operationId: security.triggerType_GetRetentionEventType
       parameters:
         - name: retentionEventType-id
           in: path
@@ -8445,7 +9494,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved navigation property
           content:
             application/json:
@@ -8458,7 +9507,7 @@ paths:
       tags:
         - security.triggerTypesRoot
       summary: Update the navigation property retentionEventTypes in security
-      operationId: security.triggerTypes_UpdateRetentionEventTypes
+      operationId: security.triggerType_UpdateRetentionEventType
       parameters:
         - name: retentionEventType-id
           in: path
@@ -8476,16 +9525,24 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.retentionEventType'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - security.triggerTypesRoot
-      summary: Delete navigation property retentionEventTypes for security
-      operationId: security.triggerTypes_DeleteRetentionEventTypes
+      summary: Delete retentionEventType
+      description: Delete a retentionEventType object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/security-retentioneventtype-delete?view=graph-rest-1.0
+      operationId: security.triggerType_DeleteRetentionEventType
       parameters:
         - name: retentionEventType-id
           in: path
@@ -8502,11 +9559,25 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/triggerTypes/retentionEventTypes/$count:
+    get:
+      tags:
+        - security.triggerTypesRoot
+      summary: Get the number of the resource
+      operationId: security.triggerType.retentionEventType_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
 components:
   schemas:
     microsoft.graph.security:
@@ -9286,7 +10357,7 @@ components:
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
+              description: 'Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
@@ -9956,7 +11027,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,'
+              description: 'List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,'
             tier:
               type: string
               nullable: true
@@ -10765,6 +11836,7 @@ components:
         - appGovernancePolicy
         - appGovernanceDetection
         - unknownFutureValue
+        - microsoftDefenderForCloud
       type: string
     microsoft.graph.security.alertDetermination:
       title: alertDetermination
@@ -10793,8 +11865,13 @@ components:
         createdDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: The time the evidence was created and added to the alert.
+          description: 'The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
+        detailedRoles:
+          type: array
+          items:
+            type: string
+            nullable: true
         remediationStatus:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceRemediationStatus'
         remediationStatusDetails:
@@ -10805,13 +11882,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.security.evidenceRole'
-          description: 'The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role ''Attacker''.'
+          description: 'One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.'
         tags:
           type: array
           items:
             type: string
             nullable: true
-          description: 'Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.'
+          description: 'Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.'
         verdict:
           $ref: '#/components/schemas/microsoft.graph.security.evidenceVerdict'
       additionalProperties:
@@ -10829,6 +11906,7 @@ components:
         - microsoftAppGovernance
         - dataLossPrevention
         - unknownFutureValue
+        - microsoftDefenderForCloud
       type: string
     microsoft.graph.security.alertSeverity:
       title: alertSeverity
@@ -12469,6 +13547,7 @@ components:
         - inProgress
         - redirected
         - unknownFutureValue
+        - awaitingAction
       type: string
     microsoft.graph.security.huntingRowResult:
       title: huntingRowResult
@@ -12651,6 +13730,9 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.simulationAutomationCollectionResponse:
       title: Collection of simulationAutomation
       type: object
@@ -13390,7 +14472,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -15502,7 +16584,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The roles for that user. This property only contains additional qualifiers when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is a guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property.'
+              description: 'The roles for that user. This property contains additional qualifiers only when relevant - for example, if the member has owner privileges, the roles property contains owner as one of the values. Similarly, if the member is an in-tenant guest, the roles property contains guest as one of the values. A basic member should not have any values specified in the roles property. An Out-of-tenant external member is assigned the owner role.'
             visibleHistoryStartDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -16671,7 +17753,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string
@@ -18927,6 +20009,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessageHistoryItem'
+              description: 'List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
             policyViolation:
@@ -21755,6 +22838,7 @@ components:
         modifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: The date and time when the message was modified.
           format: date-time
         reaction:
           $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
@@ -22671,7 +23755,7 @@ components:
               description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address of the user associated with this atttendance record.
+              description: Email address of the user associated with this attendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
@@ -22722,6 +23806,10 @@ components:
               description: 'The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
+            deviceCategory:
+              type: string
+              description: User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
+              nullable: true
             deviceId:
               type: string
               description: 'Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).'
@@ -22729,6 +23817,10 @@ components:
             deviceMetadata:
               type: string
               description: For internal use only. Set to null.
+              nullable: true
+            deviceOwnership:
+              type: string
+              description: 'Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.'
               nullable: true
             deviceVersion:
               maximum: 2147483647
@@ -22740,6 +23832,10 @@ components:
             displayName:
               type: string
               description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              nullable: true
+            enrollmentProfileName:
+              type: string
+              description: 'Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.'
               nullable: true
             isCompliant:
               type: boolean
@@ -22779,6 +23875,12 @@ components:
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
+              nullable: true
+            registrationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Date and time of when the device was registered. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
               nullable: true
             systemLabels:
               type: array
@@ -24069,6 +25171,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.security.alertCollectionResponse'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
     microsoft.graph.simulationAutomationCollectionResponse:
       description: Retrieved collection
       content:

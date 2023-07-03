@@ -11,7 +11,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Get entities from directoryObjects
-      operationId: directoryObjects.directoryObject_ListDirectoryObject
+      operationId: directoryObject_ListDirectoryObject
       parameters:
         - name: ConsistencyLevel
           in: header
@@ -69,7 +69,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
         default:
           $ref: '#/components/responses/error'
@@ -81,7 +81,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Add new entity to directoryObjects
-      operationId: directoryObjects.directoryObject_CreateDirectoryObject
+      operationId: directoryObject_CreateDirectoryObject
       requestBody:
         description: New entity
         content:
@@ -90,7 +90,7 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
         required: true
       responses:
-        '201':
+        2XX:
           description: Created entity
           content:
             application/json:
@@ -108,7 +108,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-get?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject_GetDirectoryObject
+      operationId: directoryObject_GetDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -144,7 +144,7 @@ paths:
                 - '*'
               type: string
       responses:
-        '200':
+        2XX:
           description: Retrieved entity
           content:
             application/json:
@@ -157,7 +157,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Update entity in directoryObjects
-      operationId: directoryObjects.directoryObject_UpdateDirectoryObject
+      operationId: directoryObject_UpdateDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -175,8 +175,12 @@ paths:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -188,7 +192,7 @@ paths:
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/directoryobject-delete?view=graph-rest-1.0
-      operationId: directoryObjects.directoryObject_DeleteDirectoryObject
+      operationId: directoryObject_DeleteDirectoryObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -205,7 +209,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -215,7 +219,11 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action checkMemberGroups
-      operationId: directoryObjects_checkMemberGroups
+      description: 'Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Azure AD. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+      operationId: directoryObject_checkMemberGroup
       parameters:
         - name: directoryObject-id
           in: path
@@ -240,7 +248,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -267,7 +275,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directoryObjects_checkMemberObjects
+      operationId: directoryObject_checkMemberObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -292,7 +300,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -319,7 +327,11 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getMemberGroups
-      operationId: directoryObjects_getMemberGroups
+      description: 'Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+      operationId: directoryObject_getMemberGroup
       parameters:
         - name: directoryObject-id
           in: path
@@ -344,7 +356,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -371,7 +383,11 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getMemberObjects
-      operationId: directoryObjects_getMemberObjects
+      description: 'Return all IDs for the groups, administrative units, and directory roles that a user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive. **Note:** Only users and role-enabled groups can be members of directory roles.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0
+      operationId: directoryObject_getMemberObject
       parameters:
         - name: directoryObject-id
           in: path
@@ -396,7 +412,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -423,7 +439,11 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action restore
-      operationId: directoryObjects_restore
+      description: 'Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This is not applicable to security groups, which are deleted permanently. A recently deleted item will remain available for up to 30 days. After 30 days, the item is permanently deleted.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0
+      operationId: directoryObject_restore
       parameters:
         - name: directoryObject-id
           in: path
@@ -434,7 +454,7 @@ paths:
             type: string
           x-ms-docs-key-type: directoryObject
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -443,12 +463,36 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /directoryObjects/$count:
+    get:
+      tags:
+        - directoryObjects.directoryObject
+      summary: Get the number of the resource
+      operationId: directoryObject_GetCount
+      parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          style: simple
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directoryObjects/microsoft.graph.delta():
     get:
       tags:
         - directoryObjects.Functions
       summary: Invoke function delta
-      operationId: directoryObjects_delta
+      operationId: directoryObject_delta
       parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
@@ -484,7 +528,7 @@ paths:
                 - deletedDateTime desc
               type: string
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -515,7 +559,11 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getAvailableExtensionProperties
-      operationId: directoryObjects_getAvailableExtensionProperties
+      description: "Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:\n+ user\n+ group\n+ administrativeUnit\n+ application\n+ device\n+ organization"
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0
+      operationId: directoryObject_getAvailableExtensionProperty
       requestBody:
         description: Action parameters
         content:
@@ -531,7 +579,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -559,7 +607,11 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getByIds
-      operationId: directoryObjects_getGraphBPreIds
+      description: 'Return the directory objects specified in a list of IDs. Some common uses for this function are to:'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0
+      operationId: directoryObject_getGraphBPreId
       requestBody:
         description: Action parameters
         content:
@@ -580,7 +632,7 @@ paths:
                 type: object
         required: true
       responses:
-        '200':
+        2XX:
           description: Success
           content:
             application/json:
@@ -608,7 +660,11 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action validateProperties
-      operationId: directoryObjects_validateProperties
+      description: "Validate that a Microsoft 365 group's display name or mail nickname complies with naming policies.  Clients can use this API to determine whether a display name or mail nickname is valid before trying to create a Microsoft 365 group. To validate the properties of an existing group, use the group: validateProperties function. The following policy validations are performed for the display name and mail nickname properties:\n1. Validate the prefix and suffix naming policy\n2. Validate the custom banned words policy\n3. Validate that the mail nickname is unique This API only returns the first validation failure that is encountered. If the properties fail multiple validations, only the first validation failure is returned. However, you can validate both the mail nickname and the display name and receive a collection of validation errors if you are only validating the prefix and suffix naming policy. To learn more about configuring naming policies, see Configure naming policy."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directoryobject-validateproperties?view=graph-rest-1.0
+      operationId: directoryObject_validateProperty
       requestBody:
         description: Action parameters
         content:
@@ -634,7 +690,7 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        2XX:
           description: Success
         default:
           $ref: '#/components/responses/error'
@@ -713,6 +769,9 @@ components:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
+    ODataCountResponse:
+      type: integer
+      format: int32
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -767,6 +826,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    ODataCountResponse:
+      description: The count of the resource
+      content:
+        text/plain:
+          schema:
+            $ref: '#/components/schemas/ODataCountResponse'
   parameters:
     top:
       name: $top

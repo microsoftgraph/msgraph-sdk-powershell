@@ -1,31 +1,21 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System;
+using System.Linq;
+using System.Management.Automation;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using NamespacePrefixPlaceholder.PowerShell.Runtime;
+using Microsoft.Graph.PowerShell.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
 
-using Microsoft.Graph.PowerShell.Runtime;
-
-namespace Microsoft.Graph.PowerShell
+namespace NamespacePrefixPlaceholder.PowerShell
 {
-    using Microsoft.Graph.PowerShell.Authentication;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Management.Automation;
-    using System.Management.Automation.Runspaces;
-
     public partial class Module
     {
-        /// <summary>
-        /// The selected Microsoft Graph profile.
-        /// </summary>
-        public string ProfileName { get; set; } = "v1.0";
         partial void BeforeCreatePipeline(System.Management.Automation.InvocationInfo invocationInfo, ref Runtime.HttpPipeline pipeline)
         {
             // Call Init to trigger any custom initialization needed after
@@ -94,7 +84,7 @@ namespace Microsoft.Graph.PowerShell
                 IAuthContext authContext = Microsoft.Graph.PowerShell.Authentication.GraphSession.Instance.AuthContext;
                 if (authContext != null)
                 {
-                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent($"[Authentication]: - AuthType: '{authContext.AuthType}', AuthProviderType: '{authContext.AuthProviderType}', ContextScope: '{authContext.ContextScope}', AppName: '{authContext.AppName}'."));
+                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent($"[Authentication]: - AuthType: '{authContext.AuthType}', TokenCredentialType: '{authContext.TokenCredentialType}', ContextScope: '{authContext.ContextScope}', AppName: '{authContext.AppName}'."));
                     var scopes = authContext.Scopes == null ? string.Empty : string.Join(", ", authContext.Scopes);
                     await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent($"[Authentication]: - Scopes: [{scopes}]."));
                 }
