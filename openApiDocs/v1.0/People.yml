@@ -122,8 +122,11 @@ paths:
     get:
       tags:
         - users.officeGraphInsights
-      summary: Get shared from users
-      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+      summary: List shared
+      description: 'Calculated insight that includes the list of documents shared with a user. This insight includes documents hosted on OneDrive/SharePoint in the user''s Microsoft 365 tenant that are shared with the user, and documents that are attached as files and sent to the user.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/insights-list-shared?view=graph-rest-1.0
       operationId: user.insight_ListShared
       parameters:
         - name: user-id
@@ -512,8 +515,11 @@ paths:
     get:
       tags:
         - users.officeGraphInsights
-      summary: Get trending from users
-      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
+      summary: List trending
+      description: Calculated insight that includes a list of documents trending around the user.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/insights-list-trending?view=graph-rest-1.0
       operationId: user.insight_ListTrending
       parameters:
         - name: user-id
@@ -1497,7 +1503,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string
@@ -1960,7 +1966,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

@@ -351,6 +351,8 @@ paths:
                 - endDateTime desc
                 - failureInfo
                 - failureInfo desc
+                - isTest
+                - isTest desc
                 - modalities
                 - modalities desc
                 - startDateTime
@@ -371,6 +373,7 @@ paths:
                 - caller
                 - endDateTime
                 - failureInfo
+                - isTest
                 - modalities
                 - startDateTime
                 - segments
@@ -467,6 +470,7 @@ paths:
                 - caller
                 - endDateTime
                 - failureInfo
+                - isTest
                 - modalities
                 - startDateTime
                 - segments
@@ -3068,10 +3072,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. '
+      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -5947,6 +5951,10 @@ components:
               format: date-time
             failureInfo:
               $ref: '#/components/schemas/microsoft.graph.callRecords.failureInfo'
+            isTest:
+              type: boolean
+              description: Specifies whether the session is a test.
+              nullable: true
             modalities:
               type: array
               items:
@@ -7624,6 +7632,12 @@ components:
           description: Average estimated bandwidth available between two endpoints in bits per second.
           format: int64
           nullable: true
+        averageFreezeDuration:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: Average duration of the received freezing time in the video stream.
+          format: duration
+          nullable: true
         averageJitter:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -7672,6 +7686,10 @@ components:
           description: 'UTC time when the stream ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
           format: date-time
           nullable: true
+        isAudioForwardErrorCorrectionUsed:
+          type: boolean
+          description: Indicates whether the forward error correction (FEC) was used at some point during the session. The default value is null.
+          nullable: true
         lowFrameRateRatio:
           type: number
           description: Fraction of the call where frame rate is less than 7.5 frames per second.
@@ -7719,6 +7737,12 @@ components:
           type: number
           description: Packet loss rate after FEC has been applied aggregated across all video streams and codecs.
           format: float
+          nullable: true
+        rmsFreezeDuration:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: Average duration of the received freezing time in the video stream represented in root mean square.
+          format: duration
           nullable: true
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -7880,7 +7904,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
