@@ -7,10 +7,10 @@
   Consume <a href="https://graph.microsoft.com">Microsoft Graph</a> resources directly from your PowerShell scripts
 </h4>
 
-<h3 align="center"><a href="https://learn.microsoft.com/powershell/microsoftgraph/overview">Documentation</a></h3>
+<h3 align="center"><a href="https://learn.microsoft.com/graph/overview">API Documentation</a> | <a href="https://learn.microsoft.com/powershell/microsoftgraph/overview">SDK Documentation</a></h3>
 
 <p align="center">
-The Microsoft Graph PowerShell module consists of a collection of PowerShell modules that contain commands for calling Microsoft Graph API. The module acts as an API wrapper for the Microsoft Graph APIs, exposing the entire API set for use in PowerShell.
+The Microsoft Graph PowerShell SDK is made up of a set of modules that enable you to interact with the Microsoft Graph API using PowerShell commands. The modules consist of commands that act as wrappers for the API, allowing you to access all the features and functionality of the API through PowerShell.
 </p>
 
 <p align="center">
@@ -44,7 +44,7 @@ Microsoft Graph PowerShell module is published on [PowerShell Gallery](https://w
 Install-Module Microsoft.Graph
 ```
 
-> Run `Install-Module` with AllowClobber and Force parameters if you run into command name conflicts when upgrading to older versions of the module:
+> Run `Install-Module` with `-AllowClobber` and `-Force` parameters if you run into command name conflicts when upgrading to older versions of the module. This may be the case when upgrading from v1.x to v2.x:
 >
 > ```powershell
 > Install-Module Microsoft.Graph -AllowClobber -Force
@@ -125,7 +125,7 @@ The following breaking changes have been introduced between `v1.x` and `v2.x`:
 - Changed beta namespace from `Microsoft.Graph.PowerShell.Models.<Entity>` to `Microsoft.Graph.Beta.PowerShell.Models.<Entity>`.
 - Changed `-AccessToken` type on `Connect-MgGraph` from `String` to `SecureString`.
 
-See [v2 upgrade guide](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/features/2.0/docs/upgrade-to-v2.md) for more details.
+See the [v2 upgrade guide](./docs/upgrade-to-v2.md) for more details.
 
 ## Troubleshooting
 
@@ -135,13 +135,15 @@ When working with various operations in the Graph, you may encounter an error su
 
 If permission-related errors occur and the signed-in user/app has been granted the appropriate permissions to perform the operation, you can explicitly fetch a new access token by running `Disconnect-MgGraph`, then `Connect-MgGraph`. This will trigger a refresh of the access token in your cache. Microsoft Authentication Library (MSAL) will only refresh access tokens in your cache if they have expired (usually an hour).
 
+See [Microsoft Graph API Permissions Reference](https://learn.microsoft.com/graph/permissions-reference) for more details.
+
 ### Common Errors
 
 See our [troubleshooting guide](https://learn.microsoft.com/powershell/microsoftgraph/troubleshooting) for a detailed view of how to troubleshoot common errors when using Microsoft Graph.
 
 ## Known Issues
 
-- Using `-Property {PropertyName}` parameter will not select the property as the output of the command. All commands return CLR objects, and customers should pipe the command outputs to `Format-Table` or `Select-Object` to return individual properties.
+- Using the `-Property {PropertyName}` parameter will not select the property as the output of the command. All commands return CLR objects, and customers should pipe the command outputs to `Format-Table` or `Select-Object` to return individual properties.
 
 - Customers upgrading from previous versions of the SDK may encounter auth prompts on every command call. If this happens, one can use the following steps to reset their token cache:
   - Use `Disconnect-MgGraph` to sign out of the current session.
