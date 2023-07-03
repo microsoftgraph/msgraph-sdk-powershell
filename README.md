@@ -122,6 +122,8 @@ The following breaking changes have been introduced between `v1.x` and `v2.x`:
 - Dropped profile support.
 - Dropped support for `-ForceRefresh` on `Connect-MgGraph`.
 - Renamed `beta` command names from `<Verb>-Mg<Noun>` to `<Verb>-MgBeta<Noun>`.
+- Renamed `DeviceManagement.Enrolment` module to `DeviceManagement.Enrollment`.
+- Moved directory role and entitlement management commands from `DeviceManagement.Enrollment` to `Identity.Governance` module.
 - Changed beta namespace from `Microsoft.Graph.PowerShell.Models.<Entity>` to `Microsoft.Graph.Beta.PowerShell.Models.<Entity>`.
 - Changed `-AccessToken` type on `Connect-MgGraph` from `String` to `SecureString`.
 

@@ -64,6 +64,14 @@ In v2, we've changed `-AccessToken` from `String` to `SecureString` type. This c
 
 We've dropped support for `-ForceRefresh` on `Connect-MgGraph` command. `-ForceRefresh` is no longer support by the auth token credentials used in v2. Customers should instead use `Disconnect-MgGraph` to sign out of current context then call `Connect-MgGraph` to get a new access token.
 
+### Renamed `DeviceManagement.Enrolment` module to `DeviceManagement.Enrollment`
+
+`DeviceManagement.Enrolment` module has been renamed to `DeviceManagement.Enrollment` to align with the API.
+
+### Directory Role and Entitlement Management Commands
+
+Directory role and entitlement management commands that were in `DeviceManagement.Enrollment` module have been moved to `Identity.Governance` to align with the [API reference](https://learn.microsoft.com/graph/api/resources/directoryrole?view=graph-rest-1.0).
+
 ## New Features and Improvements
 
 The following new features and improvements have been added to the module in v2.
