@@ -5,20 +5,6 @@ The Microsoft Graph PowerShell module supports two types of authentication:
 - Delegated Access
 - App-only Access
 
-## Web Account Manager (WAM)
-WAM is a Windows 10+ component that acts as an authentication broker allowing the users of an app benefit from integration with accounts known to Windows, such as the account already signed into an active Windows session.
-
-Microsoft Graph PowerShell module supports WAM in the following scenraio:
-
-- To enable WAM on supported devices
-```PowerShell
-Set-MgGraphOption -EnableLoginByWAM $true
-```
-
-- To disable WAM on supported devices
-```PowerShell
-Set-MgGraphOption -EnableLoginByWAM $false
-```
 ## Delegated Access
 
 Delegated access uses a public client to get an access token and consume Microsoft Graph resources on behalf of the signed-in user.
@@ -125,3 +111,21 @@ When using `-AccessToken`, we won't have access to the refresh token and the cli
 ### Access Token Scopes (scp) Claims
 
 Before using the provided `-AccessToken` to get Microsoft Graph resources, customers should ensure that the access token has the necessary scopes/ permissions needed to access/modify a resource.
+
+## Web Account Manager (WAM)
+
+WAM is a Windows 10+ component that acts as an authentication broker allowing the users of an app benefit from integration with accounts known to Windows, such as the account already signed into an active Windows session.
+
+Microsoft Graph PowerShell module supports WAM in the following scenario:
+
+- To enable WAM on supported devices
+
+```PowerShell
+Set-MgGraphOption -EnableLoginByWAM $true
+```
+
+- To disable WAM on supported devices
+
+```PowerShell
+Set-MgGraphOption -EnableLoginByWAM $false
+```
