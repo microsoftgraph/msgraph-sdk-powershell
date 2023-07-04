@@ -64,6 +64,14 @@ In v2, we've changed `-AccessToken` from `String` to `SecureString` type. This c
 
 We've dropped support for `-ForceRefresh` on `Connect-MgGraph` command. `-ForceRefresh` is no longer support by the auth token credentials used in v2. Customers should instead use `Disconnect-MgGraph` to sign out of current context then call `Connect-MgGraph` to get a new access token.
 
+### Renamed `DeviceManagement.Enrolment` module to `DeviceManagement.Enrollment`
+
+`DeviceManagement.Enrolment` module has been renamed to `DeviceManagement.Enrollment` to align with the API.
+
+### Directory Role and Entitlement Management Commands
+
+Directory role and entitlement management commands that were in `DeviceManagement.Enrollment` module have been moved to `Identity.Governance` to align with the [API reference](https://learn.microsoft.com/graph/api/resources/directoryrole?view=graph-rest-1.0).
+
 ## New Features and Improvements
 
 The following new features and improvements have been added to the module in v2.
@@ -124,9 +132,37 @@ Connect-MgGraph -EnvironmentVariable
 
 ### Service Modules
 
+#### Count Commands (`/$count`)
+
+We've added dedicated count commands in v2 for supported resources. In v2, you can now get a [count of users in your tenant](https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0&tabs=http#example-3-get-only-a-count-of-users) using:
+
+``` powershell
+$UsersCount = Get-MgUserCount -ConsistencyLevel Eventual
+```
+
+See [advanced query capabilities on Azure AD objects](https://learn.microsoft.com/graph/aad-advanced-queries) for more details.
+
+#### OData Cast Support
+
+V2 adds OData cast commands via `*-Mg*As<CAST-Type>` syntax when supported by the API. With OData cast support, customers can now access properties on specialized types rather than going through AdditionalProperties for supported APIs. For example, one can use `Get-MgGroupMemberAsUser` to [list group members that are users](https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-1.0&tabs=http):
+
+```powershell
+$Users = Get-MgGroupMemberAsUser -GroupId "GROUP_ID"
+```
+
+> In the example above, the cast type can also be `ServicePrincipal`, `Application`, `Device`, `Group`, and more as supported by the API.
+
+#### Improved Service Error Reporting
+
+We've updated how service errors are written to the error stream to help with debugging API related errors. In v2, when a service error occurs, the SDK will now write message, HTTP status code, error code, request-id, date, and other useful headers to the error stream.
+
+![image](https://github.com/microsoftgraph/msgraph-sdk-powershell/assets/7061532/45ab9783-12ee-4666-b6ee-c29bfbff6827)
+
+See [Microsoft Graph API error response](https://learn.microsoft.com/graph/errors) for more details.
+
 #### HTTP/2 support
 
-v2 adds [HTTP/2](https://httpwg.org/specs/rfc7540.html) support for supported API endpoints. The module will gracefully fallback to HTTP/1.1 when HTTP/2 is not supported by the API. HTTP/2 improves performance by adding support for; multiplexing, header compression, and server push.
+V2 adds [HTTP/2](https://httpwg.org/specs/rfc7540.html) support for supported API endpoints. The module will gracefully fallback to HTTP/1.1 when HTTP/2 is not supported by the API. HTTP/2 improves performance by adding support for; multiplexing, header compression, and server push.
 
 #### Success status code range support
 
