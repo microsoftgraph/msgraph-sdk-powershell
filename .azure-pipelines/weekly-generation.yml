@@ -35,7 +35,7 @@ parameters:
     type: boolean
 
 variables:
-  Branch: "WeeklyPreviewRefresh"
+  Branch: "WeeklyRefresh"
   BaseBranch: ${{ parameters.BaseBranch }}
   GenerationBranch: ${{ parameters.GenerationBranch }}
   BuildAgent: ${{ parameters.BuildAgent }}
@@ -46,7 +46,7 @@ trigger: none
 pr: none
 schedules:
   - cron: "0 12 * * TUE" # Run every Tuesday at noon UTC
-    displayName: "PS SDK Preview Weekly Refresh"
+    displayName: "PS SDK Weekly Refresh"
     branches:
       include:
         - features/2.0
@@ -105,11 +105,11 @@ jobs:
               ArtifactName: "drop"
               publishLocation: "Container"
           - task: NuGetCommand@2
-            displayName: Publish NuGet to preview feed
+            displayName: Publish NuGet to feed
             inputs:
               command: push
               packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-              publishVstsFeed: $(PROJECT_NAME)/$(PREVIEW_FEED_NAME)
+              publishVstsFeed: $(PROJECT_NAME)/$(FEED_NAME)
               allowPackageConflicts: true
       - template: ./generation-templates/generate-command-metadata.yml
       - template: ./common-templates/security-post-checks.yml
