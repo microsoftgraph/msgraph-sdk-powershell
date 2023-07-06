@@ -24,7 +24,7 @@ function Start-Generator {
     )
 
     $GraphMapping = @{
-        #"v1.0" = "v1.0\examples"
+        "v1.0" = "v1.0\examples"
         "beta" = "beta\examples"
     }
     if ($GenerationMode -eq "auto") {
