@@ -88,7 +88,7 @@ jobs:
 
   - template: ./common-templates/create-pr.yml
     parameters:
-      BaseBranch: "features/2.0"
+      BaseBranch: "dev"
       TargetBranch: $(ComputeBranch.WeeklyExamplesBranch)
       Title: "[v2] Examples Update"
       Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."
