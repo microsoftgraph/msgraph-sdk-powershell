@@ -55,12 +55,12 @@ jobs:
         git status
 
   - task: PowerShell@2
-    displayName: 'Update Examples From API reference - V2'
+    displayName: 'Import Examples From API reference - V2'
     continueOnError: false
     inputs:
       targetType: 'filePath'
       pwsh: true
-      filePath: tools\ExamplesGenerator.ps1
+      filePath: tools\ImportExamples.ps1
 
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Examples to be reviewed as artifact'
