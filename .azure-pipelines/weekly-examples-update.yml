@@ -8,7 +8,7 @@ schedules:
     displayName: 'PowerShellExamplesUpdateV2'
     branches:
       include:
-      - features/2.0
+      - dev
     always: true
 parameters:
 - name: PipelineTimeout
@@ -25,7 +25,7 @@ resources:
      type: github
      endpoint: microsoftgraph
      name: microsoftgraph/msgraph-sdk-powershell
-     ref: features/2.0
+     ref: dev
 
 jobs:
 - job: PowerShellExamplesUpdateV2
@@ -88,7 +88,7 @@ jobs:
 
   - template: ./common-templates/create-pr.yml
     parameters:
-      BaseBranch: "features/2.0"
+      BaseBranch: "dev"
       TargetBranch: $(ComputeBranch.WeeklyExamplesBranch)
       Title: "[v2] Examples Update"
       Body: "This pull request was automatically created by Azure Pipelines. **Important** Check for unexpected deletions or changes in this PR."

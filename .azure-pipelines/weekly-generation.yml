@@ -9,7 +9,7 @@ parameters:
     default: 1es-windows-ps-compute
   - name: BaseBranch
     displayName: Base Branch
-    default: features/2.0
+    default: dev
   - name: GenerationBranch
     displayName: Generation branch
     default: v2/generation
@@ -35,7 +35,7 @@ parameters:
     type: boolean
 
 variables:
-  Branch: "WeeklyRefresh"
+  Branch: "WeeklyApiRefresh"
   BaseBranch: ${{ parameters.BaseBranch }}
   GenerationBranch: ${{ parameters.GenerationBranch }}
   BuildAgent: ${{ parameters.BuildAgent }}
@@ -49,7 +49,7 @@ schedules:
     displayName: "PS SDK Weekly Refresh"
     branches:
       include:
-        - features/2.0
+        - dev
     always: true
 jobs:
   - job: RefreshOpenAPIDocuments
@@ -73,6 +73,9 @@ jobs:
     variables:
       WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
     steps:
+      - template: ./common-templates/checkout.yml
+        parameters:
+          TargetBranch: $(GenerationBranch) # Gives git local knowledge of the branch for merge.
       - template: ./common-templates/checkout.yml
         parameters:
           TargetBranch: $(WeeklyBranch)
