@@ -23476,7 +23476,7 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: place.ListPlace_GetCountAsRoom
+      operationId: place_GetCountAsRoom
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -76149,7 +76149,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

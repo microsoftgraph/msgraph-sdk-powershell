@@ -26,7 +26,7 @@ trigger:
   branches:
     include:
       - main
-      - features/2.0
+      - dev
 pr: none
 
 jobs:
@@ -69,11 +69,11 @@ jobs:
               publishLocation: "Container"
 
           - task: NuGetCommand@2
-            displayName: Publish NuGet to preview feed
+            displayName: Publish NuGet to feed
             inputs:
               command: push
               packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-              publishVstsFeed: $(PROJECT_NAME)/$(PREVIEW_FEED_NAME)
+              publishVstsFeed: $(PROJECT_NAME)/$(FEED_NAME)
               allowPackageConflicts: true
 
       - template: ./common-templates/security-post-checks.yml

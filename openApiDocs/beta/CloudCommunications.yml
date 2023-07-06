@@ -5512,11 +5512,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      summary: Get meetingRegistration
+      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetRegistration
       parameters:
         - name: onlineMeeting-id
@@ -6605,7 +6605,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get virtualAppointment from communications
+      summary: Get virtualAppointment (deprecated)
+      description: Read the properties and relationships of a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetVirtualAppointment
       parameters:
         - name: onlineMeeting-id
@@ -6664,7 +6668,11 @@ paths:
     patch:
       tags:
         - communications.onlineMeeting
-      summary: Update the navigation property virtualAppointment in communications
+      summary: Create virtualAppointment (deprecated)
+      description: Create a new virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
       operationId: communication.onlineMeeting_UpdateVirtualAppointment
       parameters:
         - name: onlineMeeting-id
@@ -6701,7 +6709,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete navigation property virtualAppointment for communications
+      summary: Delete virtualAppointment (deprecated)
+      description: Delete a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
       operationId: communication.onlineMeeting_DeleteVirtualAppointment
       parameters:
         - name: onlineMeeting-id
@@ -7429,6 +7441,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get onlineMeetings from users
+      description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
       operationId: user_GetOnlineMeeting
       parameters:
         - name: user-id
@@ -9465,11 +9478,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get externalMeetingRegistration
-      description: Get the externalMeetingRegistration details associated with an onlineMeeting.
+      summary: Get meetingRegistration
+      description: Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetRegistration
       parameters:
         - name: user-id
@@ -10758,7 +10771,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get virtualAppointment from users
+      summary: Get virtualAppointment (deprecated)
+      description: Read the properties and relationships of a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetVirtualAppointment
       parameters:
         - name: user-id
@@ -10825,7 +10842,11 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update the navigation property virtualAppointment in users
+      summary: Create virtualAppointment (deprecated)
+      description: Create a new virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0
       operationId: user.onlineMeeting_UpdateVirtualAppointment
       parameters:
         - name: user-id
@@ -10870,7 +10891,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete navigation property virtualAppointment for users
+      summary: Delete virtualAppointment (deprecated)
+      description: Delete a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
       operationId: user.onlineMeeting_DeleteVirtualAppointment
       parameters:
         - name: user-id
@@ -10933,11 +10958,11 @@ paths:
     get:
       tags:
         - users.presence
-      summary: Get presence
-      description: Get a user's presence information.
+      summary: 'presence: setStatusMessage'
+      description: Set a presence status message for a user. An optional expiration date and time can be supplied.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/presence-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0
       operationId: user_GetPresence
       parameters:
         - name: user-id
@@ -13816,7 +13841,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

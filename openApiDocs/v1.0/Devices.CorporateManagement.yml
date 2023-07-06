@@ -11,6 +11,10 @@ paths:
       tags:
         - deviceAppManagement.deviceAppManagement
       summary: Get deviceAppManagement
+      description: Read properties and relationships of the deviceAppManagement object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-unlock-deviceappmanagement-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetDeviceAppManagement
       parameters:
         - name: $select
@@ -83,6 +87,10 @@ paths:
       tags:
         - deviceAppManagement.deviceAppManagement
       summary: Update deviceAppManagement
+      description: Update the properties of a deviceAppManagement object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-deviceappmanagement-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateDeviceAppManagement
       requestBody:
         description: New property values
@@ -105,8 +113,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.androidManagedAppProtection
-      summary: Get androidManagedAppProtections from deviceAppManagement
-      description: Android managed app policies.
+      summary: List androidManagedAppProtections
+      description: List properties and relationships of the androidManagedAppProtection objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappprotection-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListAndroidManagedAppProtection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -292,7 +303,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.androidManagedAppProtection
-      summary: Create new navigation property to androidManagedAppProtections for deviceAppManagement
+      summary: Create androidManagedAppProtection
+      description: Create a new androidManagedAppProtection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappprotection-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateAndroidManagedAppProtection
       requestBody:
         description: New navigation property
@@ -315,8 +330,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.androidManagedAppProtection
-      summary: Get androidManagedAppProtections from deviceAppManagement
-      description: Android managed app policies.
+      summary: Get androidManagedAppProtection
+      description: Read properties and relationships of the androidManagedAppProtection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappprotection-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetAndroidManagedAppProtection
       parameters:
         - name: androidManagedAppProtection-id
@@ -411,7 +429,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.androidManagedAppProtection
-      summary: Update the navigation property androidManagedAppProtections in deviceAppManagement
+      summary: Update androidManagedAppProtection
+      description: Update the properties of a androidManagedAppProtection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappprotection-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateAndroidManagedAppProtection
       parameters:
         - name: androidManagedAppProtection-id
@@ -442,7 +464,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.androidManagedAppProtection
-      summary: Delete navigation property androidManagedAppProtections for deviceAppManagement
+      summary: Delete androidManagedAppProtection
+      description: Deletes a androidManagedAppProtection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappprotection-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteAndroidManagedAppProtection
       parameters:
         - name: androidManagedAppProtection-id
@@ -1109,8 +1135,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
-      summary: Get defaultManagedAppProtections from deviceAppManagement
-      description: Default managed app policies.
+      summary: List defaultManagedAppProtections
+      description: List properties and relationships of the defaultManagedAppProtection objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-defaultmanagedappprotection-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListDefaultManagedAppProtection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1297,7 +1326,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
-      summary: Create new navigation property to defaultManagedAppProtections for deviceAppManagement
+      summary: Create defaultManagedAppProtection
+      description: Create a new defaultManagedAppProtection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-defaultmanagedappprotection-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateDefaultManagedAppProtection
       requestBody:
         description: New navigation property
@@ -1320,8 +1353,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
-      summary: Get defaultManagedAppProtections from deviceAppManagement
-      description: Default managed app policies.
+      summary: Get defaultManagedAppProtection
+      description: Read properties and relationships of the defaultManagedAppProtection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-defaultmanagedappprotection-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetDefaultManagedAppProtection
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1415,7 +1451,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
-      summary: Update the navigation property defaultManagedAppProtections in deviceAppManagement
+      summary: Update defaultManagedAppProtection
+      description: Update the properties of a defaultManagedAppProtection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-defaultmanagedappprotection-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateDefaultManagedAppProtection
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1446,7 +1486,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.defaultManagedAppProtection
-      summary: Delete navigation property defaultManagedAppProtections for deviceAppManagement
+      summary: Delete defaultManagedAppProtection
+      description: Deletes a defaultManagedAppProtection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-defaultmanagedappprotection-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteDefaultManagedAppProtection
       parameters:
         - name: defaultManagedAppProtection-id
@@ -1858,8 +1902,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Get iosManagedAppProtections from deviceAppManagement
-      description: iOS managed app policies.
+      summary: List iosManagedAppProtections
+      description: List properties and relationships of the iosManagedAppProtection objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListIosManagedAppProtection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2036,7 +2083,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Create new navigation property to iosManagedAppProtections for deviceAppManagement
+      summary: Create iosManagedAppProtection
+      description: Create a new iosManagedAppProtection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateIosManagedAppProtection
       requestBody:
         description: New navigation property
@@ -2059,8 +2110,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Get iosManagedAppProtections from deviceAppManagement
-      description: iOS managed app policies.
+      summary: Get iosManagedAppProtection
+      description: Read properties and relationships of the iosManagedAppProtection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetIosManagedAppProtection
       parameters:
         - name: iosManagedAppProtection-id
@@ -2152,7 +2206,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Update the navigation property iosManagedAppProtections in deviceAppManagement
+      summary: Update iosManagedAppProtection
+      description: Update the properties of a iosManagedAppProtection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateIosManagedAppProtection
       parameters:
         - name: iosManagedAppProtection-id
@@ -2183,7 +2241,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Delete navigation property iosManagedAppProtections for deviceAppManagement
+      summary: Delete iosManagedAppProtection
+      description: Deletes a iosManagedAppProtection.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteIosManagedAppProtection
       parameters:
         - name: iosManagedAppProtection-id
@@ -2210,8 +2272,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Get apps from deviceAppManagement
-      description: List of apps to which the policy is deployed.
+      summary: List managedMobileApps
+      description: List properties and relationships of the managedMobileApp objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedmobileapp-list?view=graph-rest-1.0
       operationId: deviceAppManagement.iosManagedAppProtection_ListApp
       parameters:
         - name: iosManagedAppProtection-id
@@ -2282,7 +2347,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Create new navigation property to apps for deviceAppManagement
+      summary: Create managedMobileApp
+      description: Create a new managedMobileApp object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedmobileapp-create?view=graph-rest-1.0
       operationId: deviceAppManagement.iosManagedAppProtection_CreateApp
       parameters:
         - name: iosManagedAppProtection-id
@@ -2314,8 +2383,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Get apps from deviceAppManagement
-      description: List of apps to which the policy is deployed.
+      summary: Get managedMobileApp
+      description: Read properties and relationships of the managedMobileApp object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedmobileapp-get?view=graph-rest-1.0
       operationId: deviceAppManagement.iosManagedAppProtection_GetApp
       parameters:
         - name: iosManagedAppProtection-id
@@ -2373,7 +2445,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Update the navigation property apps in deviceAppManagement
+      summary: Update managedMobileApp
+      description: Update the properties of a managedMobileApp object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedmobileapp-update?view=graph-rest-1.0
       operationId: deviceAppManagement.iosManagedAppProtection_UpdateApp
       parameters:
         - name: iosManagedAppProtection-id
@@ -2412,7 +2488,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Delete navigation property apps for deviceAppManagement
+      summary: Delete managedMobileApp
+      description: Deletes a managedMobileApp.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedmobileapp-delete?view=graph-rest-1.0
       operationId: deviceAppManagement.iosManagedAppProtection_DeleteApp
       parameters:
         - name: iosManagedAppProtection-id
@@ -2724,8 +2804,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Get deploymentSummary from deviceAppManagement
-      description: Navigation property to deployment summary of the configuration.
+      summary: Get managedAppPolicyDeploymentSummary
+      description: Read properties and relationships of the managedAppPolicyDeploymentSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedapppolicydeploymentsummary-get?view=graph-rest-1.0
       operationId: deviceAppManagement.iosManagedAppProtection_GetDeploymentSummary
       parameters:
         - name: iosManagedAppProtection-id
@@ -2778,7 +2861,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.iosManagedAppProtection
-      summary: Update the navigation property deploymentSummary in deviceAppManagement
+      summary: Update managedAppPolicyDeploymentSummary
+      description: Update the properties of a managedAppPolicyDeploymentSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedapppolicydeploymentsummary-update?view=graph-rest-1.0
       operationId: deviceAppManagement.iosManagedAppProtection_UpdateDeploymentSummary
       parameters:
         - name: iosManagedAppProtection-id
@@ -2850,8 +2937,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: Get managedAppPolicies from deviceAppManagement
-      description: Managed app policies.
+      summary: List windowsInformationProtections
+      description: List properties and relationships of the windowsInformationProtection objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-windowsinformationprotection-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2946,8 +3036,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppPolicy
-      summary: Get managedAppPolicies from deviceAppManagement
-      description: Managed app policies.
+      summary: Get targetedManagedAppProtection
+      description: Read properties and relationships of the targetedManagedAppProtection object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-targetedmanagedappprotection-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppPolicy
       parameters:
         - name: managedAppPolicy-id
@@ -3059,6 +3152,10 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedappprotection-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppPolicy_targetApp
       parameters:
         - name: managedAppPolicy-id
@@ -3107,8 +3204,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Get managedAppRegistrations from deviceAppManagement
-      description: The managed app registrations.
+      summary: List managedAppRegistrations
+      description: List properties and relationships of the managedAppRegistration objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedappregistration-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppRegistration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3207,7 +3307,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Create new navigation property to managedAppRegistrations for deviceAppManagement
+      summary: Create androidManagedAppRegistration
+      description: Create a new androidManagedAppRegistration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateManagedAppRegistration
       requestBody:
         description: New navigation property
@@ -3230,8 +3334,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Get managedAppRegistrations from deviceAppManagement
-      description: The managed app registrations.
+      summary: Get iosManagedAppRegistration
+      description: Read properties and relationships of the iosManagedAppRegistration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-iosmanagedappregistration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppRegistration
       parameters:
         - name: managedAppRegistration-id
@@ -3605,6 +3712,10 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedappprotection-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration.appliedPolicy_targetApp
       parameters:
         - name: managedAppRegistration-id
@@ -3919,6 +4030,10 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedappprotection-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration.intendedPolicy_targetApp
       parameters:
         - name: managedAppRegistration-id
@@ -3983,8 +4098,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Get operations from deviceAppManagement
-      description: Zero or more long running operations triggered on the app registration.
+      summary: List managedAppOperations
+      description: List properties and relationships of the managedAppOperation objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedappoperation-list?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration_ListOperation
       parameters:
         - name: managedAppRegistration-id
@@ -4061,7 +4179,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Create new navigation property to operations for deviceAppManagement
+      summary: Create managedAppOperation
+      description: Create a new managedAppOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedappoperation-create?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration_CreateOperation
       parameters:
         - name: managedAppRegistration-id
@@ -4093,8 +4215,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Get operations from deviceAppManagement
-      description: Zero or more long running operations triggered on the app registration.
+      summary: Get managedAppOperation
+      description: Read properties and relationships of the managedAppOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedappoperation-get?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration_GetOperation
       parameters:
         - name: managedAppRegistration-id
@@ -4154,7 +4279,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Update the navigation property operations in deviceAppManagement
+      summary: Update managedAppOperation
+      description: Update the properties of a managedAppOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedappoperation-update?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration_UpdateOperation
       parameters:
         - name: managedAppRegistration-id
@@ -4193,7 +4322,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.managedAppRegistration
-      summary: Delete navigation property operations for deviceAppManagement
+      summary: Delete managedAppOperation
+      description: Deletes a managedAppOperation.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedappoperation-delete?view=graph-rest-1.0
       operationId: deviceAppManagement.managedAppRegistration_DeleteOperation
       parameters:
         - name: managedAppRegistration-id
@@ -4300,8 +4433,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppStatus
-      summary: Get managedAppStatuses from deviceAppManagement
-      description: The managed app statuses.
+      summary: List managedAppStatusRaws
+      description: List properties and relationships of the managedAppStatusRaw objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedappstatusraw-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedAppStatus
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4387,8 +4523,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedAppStatus
-      summary: Get managedAppStatuses from deviceAppManagement
-      description: The managed app statuses.
+      summary: Get managedAppStatusRaw
+      description: Read properties and relationships of the managedAppStatusRaw object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-managedappstatusraw-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedAppStatus
       parameters:
         - name: managedAppStatus-id
@@ -4510,8 +4649,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get managedEBooks from deviceAppManagement
-      description: The Managed eBook.
+      summary: List iosVppEBooks
+      description: List properties and relationships of the iosVppEBook objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-iosvppebook-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListManagedEBook
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4603,7 +4745,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Create new navigation property to managedEBooks for deviceAppManagement
+      summary: Create iosVppEBook
+      description: Create a new iosVppEBook object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-iosvppebook-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateManagedEBook
       requestBody:
         description: New navigation property
@@ -4626,8 +4772,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get managedEBooks from deviceAppManagement
-      description: The Managed eBook.
+      summary: Get iosVppEBook
+      description: Read properties and relationships of the iosVppEBook object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-iosvppebook-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetManagedEBook
       parameters:
         - name: managedEBook-id
@@ -4692,7 +4841,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Update the navigation property managedEBooks in deviceAppManagement
+      summary: Update iosVppEBook
+      description: Update the properties of a iosVppEBook object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-iosvppebook-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateManagedEBook
       parameters:
         - name: managedEBook-id
@@ -4723,7 +4876,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Delete navigation property managedEBooks for deviceAppManagement
+      summary: Delete iosVppEBook
+      description: Deletes a iosVppEBook.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-iosvppebook-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteManagedEBook
       parameters:
         - name: managedEBook-id
@@ -4750,8 +4907,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get assignments from deviceAppManagement
-      description: The list of assignments for this eBook.
+      summary: List iosVppEBookAssignments
+      description: List properties and relationships of the iosVppEBookAssignment objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-iosvppebookassignment-list?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_ListAssignment
       parameters:
         - name: managedEBook-id
@@ -4822,7 +4982,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Create new navigation property to assignments for deviceAppManagement
+      summary: Create managedEBookAssignment
+      description: Create a new managedEBookAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-managedebookassignment-create?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_CreateAssignment
       parameters:
         - name: managedEBook-id
@@ -4854,8 +5018,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get assignments from deviceAppManagement
-      description: The list of assignments for this eBook.
+      summary: Get iosVppEBookAssignment
+      description: Read properties and relationships of the iosVppEBookAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-iosvppebookassignment-get?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_GetAssignment
       parameters:
         - name: managedEBook-id
@@ -4913,7 +5080,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Update the navigation property assignments in deviceAppManagement
+      summary: Update iosVppEBookAssignment
+      description: Update the properties of a iosVppEBookAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-iosvppebookassignment-update?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_UpdateAssignment
       parameters:
         - name: managedEBook-id
@@ -4952,7 +5123,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Delete navigation property assignments for deviceAppManagement
+      summary: Delete managedEBookAssignment
+      description: Deletes a managedEBookAssignment.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-managedebookassignment-delete?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_DeleteAssignment
       parameters:
         - name: managedEBook-id
@@ -5009,8 +5184,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get deviceStates from deviceAppManagement
-      description: The list of installation states for this eBook.
+      summary: List deviceInstallStates
+      description: List properties and relationships of the deviceInstallState objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-deviceinstallstate-list?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_ListDeviceState
       parameters:
         - name: managedEBook-id
@@ -5099,7 +5277,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Create new navigation property to deviceStates for deviceAppManagement
+      summary: Create deviceInstallState
+      description: Create a new deviceInstallState object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-deviceinstallstate-create?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_CreateDeviceState
       parameters:
         - name: managedEBook-id
@@ -5131,8 +5313,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get deviceStates from deviceAppManagement
-      description: The list of installation states for this eBook.
+      summary: Get deviceInstallState
+      description: Read properties and relationships of the deviceInstallState object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-deviceinstallstate-get?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_GetDeviceState
       parameters:
         - name: managedEBook-id
@@ -5196,7 +5381,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Update the navigation property deviceStates in deviceAppManagement
+      summary: Update deviceInstallState
+      description: Update the properties of a deviceInstallState object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-deviceinstallstate-update?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_UpdateDeviceState
       parameters:
         - name: managedEBook-id
@@ -5235,7 +5424,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Delete navigation property deviceStates for deviceAppManagement
+      summary: Delete deviceInstallState
+      description: Deletes a deviceInstallState.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-deviceinstallstate-delete?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_DeleteDeviceState
       parameters:
         - name: managedEBook-id
@@ -5292,8 +5485,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get installSummary from deviceAppManagement
-      description: Mobile App Install Summary.
+      summary: Get eBookInstallSummary
+      description: Read properties and relationships of the eBookInstallSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-ebookinstallsummary-get?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_GetInstallSummary
       parameters:
         - name: managedEBook-id
@@ -5347,7 +5543,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Update the navigation property installSummary in deviceAppManagement
+      summary: Update eBookInstallSummary
+      description: Update the properties of a eBookInstallSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-ebookinstallsummary-update?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_UpdateInstallSummary
       parameters:
         - name: managedEBook-id
@@ -5406,6 +5606,10 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-managedebook-assign?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_assign
       parameters:
         - name: managedEBook-id
@@ -5440,8 +5644,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get userStateSummary from deviceAppManagement
-      description: The list of installation states for this eBook.
+      summary: List userInstallStateSummaries
+      description: List properties and relationships of the userInstallStateSummary objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-userinstallstatesummary-list?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_ListUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -5520,7 +5727,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Create new navigation property to userStateSummary for deviceAppManagement
+      summary: Create userInstallStateSummary
+      description: Create a new userInstallStateSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-userinstallstatesummary-create?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_CreateUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -5552,8 +5763,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Get userStateSummary from deviceAppManagement
-      description: The list of installation states for this eBook.
+      summary: Get userInstallStateSummary
+      description: Read properties and relationships of the userInstallStateSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-userinstallstatesummary-get?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_GetUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -5615,7 +5829,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Update the navigation property userStateSummary in deviceAppManagement
+      summary: Update userInstallStateSummary
+      description: Update the properties of a userInstallStateSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-userinstallstatesummary-update?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_UpdateUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -5654,7 +5872,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.managedEBook
-      summary: Delete navigation property userStateSummary for deviceAppManagement
+      summary: Delete userInstallStateSummary
+      description: Deletes a userInstallStateSummary.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-books-userinstallstatesummary-delete?view=graph-rest-1.0
       operationId: deviceAppManagement.managedEBook_DeleteUserStateSummary
       parameters:
         - name: managedEBook-id
@@ -6056,8 +6278,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
-      summary: Get mdmWindowsInformationProtectionPolicies from deviceAppManagement
-      description: Windows information protection for apps running on devices which are MDM enrolled.
+      summary: List mdmWindowsInformationProtectionPolicies
+      description: List properties and relationships of the mdmWindowsInformationProtectionPolicy objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-mdmwindowsinformationprotectionpolicy-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMdmWindowsInformationProtectionPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6201,7 +6426,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
-      summary: Create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
+      summary: Create mdmWindowsInformationProtectionPolicy
+      description: Create a new mdmWindowsInformationProtectionPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-mdmwindowsinformationprotectionpolicy-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateMdmWindowsInformationProtectionPolicy
       requestBody:
         description: New navigation property
@@ -6224,8 +6453,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
-      summary: Get mdmWindowsInformationProtectionPolicies from deviceAppManagement
-      description: Windows information protection for apps running on devices which are MDM enrolled.
+      summary: Get mdmWindowsInformationProtectionPolicy
+      description: Read properties and relationships of the mdmWindowsInformationProtectionPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-mdmwindowsinformationprotectionpolicy-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMdmWindowsInformationProtectionPolicy
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
@@ -6306,7 +6538,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
-      summary: Update the navigation property mdmWindowsInformationProtectionPolicies in deviceAppManagement
+      summary: Update mdmWindowsInformationProtectionPolicy
+      description: Update the properties of a mdmWindowsInformationProtectionPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-mdmwindowsinformationprotectionpolicy-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateMdmWindowsInformationProtectionPolicy
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
@@ -6337,7 +6573,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.mdmWindowsInformationProtectionPolicy
-      summary: Delete navigation property mdmWindowsInformationProtectionPolicies for deviceAppManagement
+      summary: Delete mdmWindowsInformationProtectionPolicy
+      description: Deletes a mdmWindowsInformationProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-mdmwindowsinformationprotectionpolicy-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteMdmWindowsInformationProtectionPolicy
       parameters:
         - name: mdmWindowsInformationProtectionPolicy-id
@@ -7169,6 +7409,9 @@ paths:
         - deviceAppManagement.Actions
       summary: Invoke action syncMicrosoftStoreForBusinessApps
       description: Syncs Intune account with Microsoft Store For Business
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-deviceappmanagement-syncmicrosoftstoreforbusinessapps?view=graph-rest-1.0
       operationId: deviceAppManagement_syncMicrosoftStoreGraphFPreBusinessApp
       responses:
         2XX:
@@ -7180,8 +7423,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileAppCategory
-      summary: Get mobileAppCategories from deviceAppManagement
-      description: The mobile app categories.
+      summary: List mobileAppCategories
+      description: List properties and relationships of the mobileAppCategory objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMobileAppCategory
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7244,7 +7490,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.mobileAppCategory
-      summary: Create new navigation property to mobileAppCategories for deviceAppManagement
+      summary: Create mobileAppCategory
+      description: Create a new mobileAppCategory object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateMobileAppCategory
       requestBody:
         description: New navigation property
@@ -7267,8 +7517,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileAppCategory
-      summary: Get mobileAppCategories from deviceAppManagement
-      description: The mobile app categories.
+      summary: Get mobileAppCategory
+      description: Read properties and relationships of the mobileAppCategory object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileAppCategory
       parameters:
         - name: mobileAppCategory-id
@@ -7318,7 +7571,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.mobileAppCategory
-      summary: Update the navigation property mobileAppCategories in deviceAppManagement
+      summary: Update mobileAppCategory
+      description: Update the properties of a mobileAppCategory object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateMobileAppCategory
       parameters:
         - name: mobileAppCategory-id
@@ -7349,7 +7606,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.mobileAppCategory
-      summary: Delete navigation property mobileAppCategories for deviceAppManagement
+      summary: Delete mobileAppCategory
+      description: Deletes a mobileAppCategory.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-mobileappcategory-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteMobileAppCategory
       parameters:
         - name: mobileAppCategory-id
@@ -7390,8 +7651,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get mobileAppConfigurations from deviceAppManagement
-      description: The Managed Device Mobile Application Configurations.
+      summary: List managedDeviceMobileAppConfigurations
+      description: List properties and relationships of the managedDeviceMobileAppConfiguration objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMobileAppConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7476,7 +7740,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Create new navigation property to mobileAppConfigurations for deviceAppManagement
+      summary: Create iosMobileAppConfiguration
+      description: Create a new iosMobileAppConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateMobileAppConfiguration
       requestBody:
         description: New navigation property
@@ -7499,8 +7767,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get mobileAppConfigurations from deviceAppManagement
-      description: The Managed Device Mobile Application Configurations.
+      summary: Get iosMobileAppConfiguration
+      description: Read properties and relationships of the iosMobileAppConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileAppConfiguration
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7564,7 +7835,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Update the navigation property mobileAppConfigurations in deviceAppManagement
+      summary: Update iosMobileAppConfiguration
+      description: Update the properties of a iosMobileAppConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateMobileAppConfiguration
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7595,7 +7870,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Delete navigation property mobileAppConfigurations for deviceAppManagement
+      summary: Delete iosMobileAppConfiguration
+      description: Deletes a iosMobileAppConfiguration.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteMobileAppConfiguration
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7622,8 +7901,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get assignments from deviceAppManagement
-      description: The list of group assignemenets for app configration.
+      summary: List managedDeviceMobileAppConfigurationAssignments
+      description: List properties and relationships of the managedDeviceMobileAppConfigurationAssignment objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationassignment-list?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_ListAssignment
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7691,7 +7973,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Create new navigation property to assignments for deviceAppManagement
+      summary: Create managedDeviceMobileAppConfigurationAssignment
+      description: Create a new managedDeviceMobileAppConfigurationAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationassignment-create?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_CreateAssignment
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7723,8 +8009,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get assignments from deviceAppManagement
-      description: The list of group assignemenets for app configration.
+      summary: Get managedDeviceMobileAppConfigurationAssignment
+      description: Read properties and relationships of the managedDeviceMobileAppConfigurationAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationassignment-get?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_GetAssignment
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7781,7 +8070,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Update the navigation property assignments in deviceAppManagement
+      summary: Update managedDeviceMobileAppConfigurationAssignment
+      description: Update the properties of a managedDeviceMobileAppConfigurationAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationassignment-update?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_UpdateAssignment
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7820,7 +8113,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Delete navigation property assignments for deviceAppManagement
+      summary: Delete managedDeviceMobileAppConfigurationAssignment
+      description: Deletes a managedDeviceMobileAppConfigurationAssignment.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationassignment-delete?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_DeleteAssignment
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7877,8 +8174,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get deviceStatuses from deviceAppManagement
-      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+      summary: List managedDeviceMobileAppConfigurationDeviceStatuses
+      description: List properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-list?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_ListDeviceStatus
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7964,7 +8264,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Create new navigation property to deviceStatuses for deviceAppManagement
+      summary: Create managedDeviceMobileAppConfigurationDeviceStatus
+      description: Create a new managedDeviceMobileAppConfigurationDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-create?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_CreateDeviceStatus
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -7996,8 +8300,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get deviceStatuses from deviceAppManagement
-      description: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+      summary: Get managedDeviceMobileAppConfigurationDeviceStatus
+      description: Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-get?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_GetDeviceStatus
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8060,7 +8367,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Update the navigation property deviceStatuses in deviceAppManagement
+      summary: Update managedDeviceMobileAppConfigurationDeviceStatus
+      description: Update the properties of a managedDeviceMobileAppConfigurationDeviceStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-update?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_UpdateDeviceStatus
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8099,7 +8410,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Delete navigation property deviceStatuses for deviceAppManagement
+      summary: Delete managedDeviceMobileAppConfigurationDeviceStatus
+      description: Deletes a managedDeviceMobileAppConfigurationDeviceStatus.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-delete?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_DeleteDeviceStatus
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8156,8 +8471,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get deviceStatusSummary from deviceAppManagement
-      description: App configuration device status summary.
+      summary: Get managedDeviceMobileAppConfigurationDeviceSummary
+      description: Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicesummary-get?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_GetDeviceStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8212,7 +8530,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Update the navigation property deviceStatusSummary in deviceAppManagement
+      summary: Update managedDeviceMobileAppConfigurationDeviceSummary
+      description: Update the properties of a managedDeviceMobileAppConfigurationDeviceSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicesummary-update?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_UpdateDeviceStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8271,6 +8593,10 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-assign?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_assign
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8305,8 +8631,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get userStatuses from deviceAppManagement
-      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
+      summary: List managedDeviceMobileAppConfigurationUserStatuses
+      description: List properties and relationships of the managedDeviceMobileAppConfigurationUserStatus objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationuserstatus-list?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_ListUserStatus
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8386,7 +8715,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Create new navigation property to userStatuses for deviceAppManagement
+      summary: Create managedDeviceMobileAppConfigurationUserStatus
+      description: Create a new managedDeviceMobileAppConfigurationUserStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationuserstatus-create?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_CreateUserStatus
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8418,8 +8751,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get userStatuses from deviceAppManagement
-      description: List of ManagedDeviceMobileAppConfigurationUserStatus.
+      summary: Get managedDeviceMobileAppConfigurationUserStatus
+      description: Read properties and relationships of the managedDeviceMobileAppConfigurationUserStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationuserstatus-get?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_GetUserStatus
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8480,7 +8816,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Update the navigation property userStatuses in deviceAppManagement
+      summary: Update managedDeviceMobileAppConfigurationUserStatus
+      description: Update the properties of a managedDeviceMobileAppConfigurationUserStatus object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationuserstatus-update?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_UpdateUserStatus
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8519,7 +8859,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Delete navigation property userStatuses for deviceAppManagement
+      summary: Delete managedDeviceMobileAppConfigurationUserStatus
+      description: Deletes a managedDeviceMobileAppConfigurationUserStatus.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationuserstatus-delete?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_DeleteUserStatus
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8576,8 +8920,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Get userStatusSummary from deviceAppManagement
-      description: App configuration user status summary.
+      summary: Get managedDeviceMobileAppConfigurationUserSummary
+      description: Read properties and relationships of the managedDeviceMobileAppConfigurationUserSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationusersummary-get?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_GetUserStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8632,7 +8979,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.managedDeviceMobileAppConfiguration
-      summary: Update the navigation property userStatusSummary in deviceAppManagement
+      summary: Update managedDeviceMobileAppConfigurationUserSummary
+      description: Update the properties of a managedDeviceMobileAppConfigurationUserSummary object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationusersummary-update?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileAppConfiguration_UpdateUserStatusSummary
       parameters:
         - name: managedDeviceMobileAppConfiguration-id
@@ -8704,8 +9055,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Get mobileApps from deviceAppManagement
-      description: The mobile apps.
+      summary: List windowsMobileMSIs
+      description: List properties and relationships of the windowsMobileMSI objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-windowsmobilemsi-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListMobileApp
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8805,7 +9159,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Create new navigation property to mobileApps for deviceAppManagement
+      summary: Create macOSOfficeSuiteApp
+      description: Create a new macOSOfficeSuiteApp object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-macosofficesuiteapp-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateMobileApp
       requestBody:
         description: New navigation property
@@ -8828,8 +9186,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Get mobileApps from deviceAppManagement
-      description: The mobile apps.
+      summary: Get windowsUniversalAppX
+      description: Read properties and relationships of the windowsUniversalAppX object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-windowsuniversalappx-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetMobileApp
       parameters:
         - name: mobileApp-id
@@ -8894,7 +9255,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Update the navigation property mobileApps in deviceAppManagement
+      summary: Update managedAndroidStoreApp
+      description: Update the properties of a managedAndroidStoreApp object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateMobileApp
       parameters:
         - name: mobileApp-id
@@ -8925,7 +9290,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Delete navigation property mobileApps for deviceAppManagement
+      summary: Delete windowsAppX
+      description: Deletes a windowsAppX.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-windowsappx-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteMobileApp
       parameters:
         - name: mobileApp-id
@@ -8952,8 +9321,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Get assignments from deviceAppManagement
-      description: The list of group assignments for this mobile app.
+      summary: List mobileAppAssignments
+      description: List properties and relationships of the mobileAppAssignment objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-mobileappassignment-list?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileApp_ListAssignment
       parameters:
         - name: mobileApp-id
@@ -9027,7 +9399,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Create new navigation property to assignments for deviceAppManagement
+      summary: Create mobileAppAssignment
+      description: Create a new mobileAppAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-mobileappassignment-create?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileApp_CreateAssignment
       parameters:
         - name: mobileApp-id
@@ -9059,8 +9435,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Get assignments from deviceAppManagement
-      description: The list of group assignments for this mobile app.
+      summary: Get mobileAppAssignment
+      description: Read properties and relationships of the mobileAppAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-mobileappassignment-get?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileApp_GetAssignment
       parameters:
         - name: mobileApp-id
@@ -9119,7 +9498,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Update the navigation property assignments in deviceAppManagement
+      summary: Update mobileAppAssignment
+      description: Update the properties of a mobileAppAssignment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-mobileappassignment-update?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileApp_UpdateAssignment
       parameters:
         - name: mobileApp-id
@@ -9158,7 +9541,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.mobileApp
-      summary: Delete navigation property assignments for deviceAppManagement
+      summary: Delete mobileAppAssignment
+      description: Deletes a mobileAppAssignment.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-mobileappassignment-delete?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileApp_DeleteAssignment
       parameters:
         - name: mobileApp-id
@@ -9371,6 +9758,10 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-apps-mobileapp-assign?view=graph-rest-1.0
       operationId: deviceAppManagement.mobileApp_assign
       parameters:
         - name: mobileApp-id
@@ -9650,7 +10041,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get the number of the resource
-      operationId: deviceAppManagement.ListMobileApp_GetCountAsManagedMobileLobApp
+      operationId: deviceAppManagement.MobileApp_GetCountAsManagedMobileLobApp
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9764,7 +10155,7 @@ paths:
       tags:
         - deviceAppManagement.mobileApp
       summary: Get the number of the resource
-      operationId: deviceAppManagement.ListMobileApp_GetCountAsMobileLobApp
+      operationId: deviceAppManagement.MobileApp_GetCountAsMobileLobApp
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9777,8 +10168,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
-      summary: Get targetedManagedAppConfigurations from deviceAppManagement
-      description: Targeted managed app configurations.
+      summary: List targetedManagedAppConfigurations
+      description: List properties and relationships of the targetedManagedAppConfiguration objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListTargetedManagedAppConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9865,7 +10259,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
-      summary: Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+      summary: Create targetedManagedAppConfiguration
+      description: Create a new targetedManagedAppConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateTargetedManagedAppConfiguration
       requestBody:
         description: New navigation property
@@ -9888,8 +10286,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
-      summary: Get targetedManagedAppConfigurations from deviceAppManagement
-      description: Targeted managed app configurations.
+      summary: Get targetedManagedAppConfiguration
+      description: Read properties and relationships of the targetedManagedAppConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetTargetedManagedAppConfiguration
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -9951,7 +10352,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
-      summary: Update the navigation property targetedManagedAppConfigurations in deviceAppManagement
+      summary: Update targetedManagedAppConfiguration
+      description: Update the properties of a targetedManagedAppConfiguration object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateTargetedManagedAppConfiguration
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -9982,7 +10387,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.targetedManagedAppConfiguration
-      summary: Delete navigation property targetedManagedAppConfigurations for deviceAppManagement
+      summary: Delete targetedManagedAppConfiguration
+      description: Deletes a targetedManagedAppConfiguration.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteTargetedManagedAppConfiguration
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -10636,6 +11045,10 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action assign
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-assign?view=graph-rest-1.0
       operationId: deviceAppManagement.targetedManagedAppConfiguration_assign
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -10671,6 +11084,10 @@ paths:
       tags:
         - deviceAppManagement.Actions
       summary: Invoke action targetApps
+      description: Not yet documented
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-targetapps?view=graph-rest-1.0
       operationId: deviceAppManagement.targetedManagedAppConfiguration_targetApp
       parameters:
         - name: targetedManagedAppConfiguration-id
@@ -10721,8 +11138,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.vppToken
-      summary: Get vppTokens from deviceAppManagement
-      description: List of Vpp tokens for this organization.
+      summary: List vppTokens
+      description: List properties and relationships of the vppToken objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListVppToken
       parameters:
         - $ref: '#/components/parameters/top'
@@ -10812,7 +11232,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.vppToken
-      summary: Create new navigation property to vppTokens for deviceAppManagement
+      summary: Create vppToken
+      description: Create a new vppToken object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateVppToken
       requestBody:
         description: New navigation property
@@ -10835,8 +11259,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.vppToken
-      summary: Get vppTokens from deviceAppManagement
-      description: List of Vpp tokens for this organization.
+      summary: Get vppToken
+      description: Read properties and relationships of the vppToken object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetVppToken
       parameters:
         - name: vppToken-id
@@ -10895,7 +11322,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.vppToken
-      summary: Update the navigation property vppTokens in deviceAppManagement
+      summary: Update vppToken
+      description: Update the properties of a vppToken object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateVppToken
       parameters:
         - name: vppToken-id
@@ -10926,7 +11357,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.vppToken
-      summary: Delete navigation property vppTokens for deviceAppManagement
+      summary: Delete vppToken
+      description: Deletes a vppToken.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteVppToken
       parameters:
         - name: vppToken-id
@@ -10955,6 +11390,9 @@ paths:
         - deviceAppManagement.Actions
       summary: Invoke action syncLicenses
       description: Syncs licenses associated with a specific appleVolumePurchaseProgramToken
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-vpptoken-synclicenses?view=graph-rest-1.0
       operationId: deviceAppManagement.vppToken_syncLicense
       parameters:
         - name: vppToken-id
@@ -10993,8 +11431,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
-      summary: Get windowsInformationProtectionPolicies from deviceAppManagement
-      description: Windows information protection for apps running on devices which are not MDM enrolled.
+      summary: List windowsInformationProtectionPolicies
+      description: List properties and relationships of the windowsInformationProtectionPolicy objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-windowsinformationprotectionpolicy-list?view=graph-rest-1.0
       operationId: deviceAppManagement_ListWindowsInformationProtectionPolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11174,7 +11615,11 @@ paths:
     post:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
-      summary: Create new navigation property to windowsInformationProtectionPolicies for deviceAppManagement
+      summary: Create windowsInformationProtectionPolicy
+      description: Create a new windowsInformationProtectionPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-windowsinformationprotectionpolicy-create?view=graph-rest-1.0
       operationId: deviceAppManagement_CreateWindowsInformationProtectionPolicy
       requestBody:
         description: New navigation property
@@ -11197,8 +11642,11 @@ paths:
     get:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
-      summary: Get windowsInformationProtectionPolicies from deviceAppManagement
-      description: Windows information protection for apps running on devices which are not MDM enrolled.
+      summary: Get windowsInformationProtectionPolicy
+      description: Read properties and relationships of the windowsInformationProtectionPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-windowsinformationprotectionpolicy-get?view=graph-rest-1.0
       operationId: deviceAppManagement_GetWindowsInformationProtectionPolicy
       parameters:
         - name: windowsInformationProtectionPolicy-id
@@ -11291,7 +11739,11 @@ paths:
     patch:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
-      summary: Update the navigation property windowsInformationProtectionPolicies in deviceAppManagement
+      summary: Update windowsInformationProtectionPolicy
+      description: Update the properties of a windowsInformationProtectionPolicy object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-windowsinformationprotectionpolicy-update?view=graph-rest-1.0
       operationId: deviceAppManagement_UpdateWindowsInformationProtectionPolicy
       parameters:
         - name: windowsInformationProtectionPolicy-id
@@ -11322,7 +11774,11 @@ paths:
     delete:
       tags:
         - deviceAppManagement.windowsInformationProtectionPolicy
-      summary: Delete navigation property windowsInformationProtectionPolicies for deviceAppManagement
+      summary: Delete windowsInformationProtectionPolicy
+      description: Deletes a windowsInformationProtectionPolicy.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-mam-windowsinformationprotectionpolicy-delete?view=graph-rest-1.0
       operationId: deviceAppManagement_DeleteWindowsInformationProtectionPolicy
       parameters:
         - name: windowsInformationProtectionPolicy-id
@@ -13075,8 +13531,11 @@ paths:
     get:
       tags:
         - users.managedDevice
-      summary: Get deviceCategory from users
-      description: Device category
+      summary: Get deviceCategory
+      description: Read properties and relationships of the deviceCategory object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-devicecategory-get?view=graph-rest-1.0
       operationId: user.managedDevice_GetDeviceCategory
       parameters:
         - name: user-id
@@ -13134,7 +13593,11 @@ paths:
     patch:
       tags:
         - users.managedDevice
-      summary: Update the navigation property deviceCategory in users
+      summary: Update deviceCategory
+      description: Update the properties of a deviceCategory object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-devicecategory-update?view=graph-rest-1.0
       operationId: user.managedDevice_UpdateDeviceCategory
       parameters:
         - name: user-id
@@ -13854,8 +14317,11 @@ paths:
     get:
       tags:
         - users.managedDevice
-      summary: Get users from users
-      description: The primary users associated with the managed device.
+      summary: List users
+      description: List properties and relationships of the user objects.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-devices-user-list?view=graph-rest-1.0
       operationId: user.managedDevice_ListUser
       parameters:
         - name: user-id
@@ -14021,6 +14487,8 @@ paths:
                 - mailboxSettings desc
                 - deviceEnrollmentLimit
                 - deviceEnrollmentLimit desc
+                - print
+                - print desc
                 - aboutMe
                 - aboutMe desc
                 - birthday
@@ -14118,6 +14586,7 @@ paths:
                 - userType
                 - mailboxSettings
                 - deviceEnrollmentLimit
+                - print
                 - aboutMe
                 - birthday
                 - hireDate
@@ -17171,7 +17640,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -17297,6 +17766,8 @@ components:
               type: integer
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
+            print:
+              $ref: '#/components/schemas/microsoft.graph.userPrint'
             aboutMe:
               type: string
               description: A freeform text entry field for the user to describe themselves. Returned only on $select.
@@ -17543,6 +18014,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+              description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
               x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
@@ -18793,6 +19265,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
+    microsoft.graph.userPrint:
+      title: userPrint
+      type: object
+      properties:
+        recentPrinterShares:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerShare'
+          x-ms-navigationProperty: true
+      additionalProperties:
+        type: object
     microsoft.graph.appRoleAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -19912,8 +20395,10 @@ components:
           properties:
             contributionToContentDiscoveryAsOrganizationDisabled:
               type: boolean
+              description: 'Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn''t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
             contributionToContentDiscoveryDisabled:
               type: boolean
+              description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
           additionalProperties:
@@ -20472,7 +20957,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
@@ -20595,6 +21080,38 @@ components:
           $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
       additionalProperties:
         type: object
+    microsoft.graph.printerShare:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.printerBase'
+        - title: printerShare
+          type: object
+          properties:
+            allowAllUsers:
+              type: boolean
+              description: 'If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the printer share was created. Read-only.
+              format: date-time
+            viewPoint:
+              $ref: '#/components/schemas/microsoft.graph.printerShareViewpoint'
+            allowedGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.group'
+              description: The groups whose users have access to print using the printer.
+              x-ms-navigationProperty: true
+            allowedUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.user'
+              description: The users who have access to print using the printer.
+              x-ms-navigationProperty: true
+            printer:
+              $ref: '#/components/schemas/microsoft.graph.printer'
+          additionalProperties:
+            type: object
     microsoft.graph.servicePlanInfo:
       title: servicePlanInfo
       type: object
@@ -22725,6 +23242,8 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -23554,6 +24073,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+              description: The offer requests for shifts in the schedule.
               x-ms-navigationProperty: true
             openShiftChangeRequests:
               type: array
@@ -23583,6 +24103,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeOffReasons:
               type: array
@@ -23594,6 +24115,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -23713,6 +24235,98 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.printerBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printerBase
+          type: object
+          properties:
+            capabilities:
+              $ref: '#/components/schemas/microsoft.graph.printerCapabilities'
+            defaults:
+              $ref: '#/components/schemas/microsoft.graph.printerDefaults'
+            displayName:
+              type: string
+              description: The name of the printer/printerShare.
+            isAcceptingJobs:
+              type: boolean
+              description: Whether the printer/printerShare is currently accepting new print jobs.
+              nullable: true
+            location:
+              $ref: '#/components/schemas/microsoft.graph.printerLocation'
+            manufacturer:
+              type: string
+              description: The manufacturer of the printer/printerShare.
+              nullable: true
+            model:
+              type: string
+              description: The model name of the printer/printerShare.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printerStatus'
+            jobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+              description: The list of jobs that are queued for printing by the printer/printerShare.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printerShareViewpoint:
+      title: printerShareViewpoint
+      type: object
+      properties:
+        lastUsedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Date and time when the printer was last used by the signed-in user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.printerBase'
+        - title: printer
+          type: object
+          properties:
+            hasPhysicalDevice:
+              type: boolean
+              description: True if the printer has a physical device for printing. Read-only.
+            isShared:
+              type: boolean
+              description: True if the printer is shared; false otherwise. Read-only.
+            lastSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
+              format: date-time
+              nullable: true
+            registeredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the printer was registered. Read-only.
+              format: date-time
+            connectors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printConnector'
+              description: The connectors that are associated with the printer.
+              x-ms-navigationProperty: true
+            shares:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printerShare'
+              description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
+              x-ms-navigationProperty: true
+            taskTriggers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+              description: A list of task triggers that are associated with the printer.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.calendarRoleType:
       title: calendarRoleType
       enum:
@@ -24668,6 +25282,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookComment'
+              description: Represents a collection of comments in a workbook.
               x-ms-navigationProperty: true
             functions:
               $ref: '#/components/schemas/microsoft.graph.workbookFunctions'
@@ -24935,7 +25550,7 @@ components:
       properties:
         format:
           type: string
-          description: 'For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.'
+          description: 'For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.'
           nullable: true
         formula:
           type: string
@@ -24943,7 +25558,7 @@ components:
           nullable: true
         outputType:
           type: string
-          description: 'The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.'
+          description: 'The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.'
           nullable: true
       additionalProperties:
         type: object
@@ -25002,11 +25617,11 @@ components:
       properties:
         formula:
           type: string
-          description: The formula used to compute the default value for this column.
+          description: The formula used to compute the default value for the column.
           nullable: true
         value:
           type: string
-          description: The direct value to use as the default value for this column.
+          description: The direct value to use as the default value for the column.
           nullable: true
       additionalProperties:
         type: object
@@ -25099,7 +25714,7 @@ components:
       properties:
         id:
           type: string
-          description: The id of the content type.
+          description: The ID of the content type.
           nullable: true
         name:
           type: string
@@ -25264,13 +25879,13 @@ components:
       properties:
         default:
           type: boolean
-          description: Whether this is the default Content Type
+          description: Indicates whether this is the default content type
           nullable: true
         position:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Specifies the position in which the Content Type appears in the selection UI.
+          description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
       additionalProperties:
@@ -26119,6 +26734,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -26149,6 +26774,8 @@ components:
         - title: teamsAppDefinition
           type: object
           properties:
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
@@ -26923,6 +27550,412 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printerCapabilities:
+      title: printerCapabilities
+      type: object
+      properties:
+        bottomMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported bottom margins(in microns) for the printer.
+        collation:
+          type: boolean
+          description: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+          nullable: true
+        colorModes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printColorMode'
+          description: The color modes supported by the printer. Valid values are described in the following table.
+        contentTypes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+        copiesPerJob:
+          $ref: '#/components/schemas/microsoft.graph.integerRange'
+        dpis:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: The list of print resolutions in DPI that are supported by the printer.
+        duplexModes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+          description: The list of duplex modes that are supported by the printer. Valid values are described in the following table.
+        feedOrientations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerFeedOrientation'
+          description: The list of feed orientations that are supported by the printer.
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: Finishing processes the printer supports for a printed document.
+        inputBins:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Supported input bins for the printer.
+        isColorPrintingSupported:
+          type: boolean
+          description: True if color printing is supported by the printer; false otherwise. Read-only.
+          nullable: true
+        isPageRangeSupported:
+          type: boolean
+          description: True if the printer supports printing by page ranges; false otherwise.
+          nullable: true
+        leftMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported left margins(in microns) for the printer.
+        mediaColors:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'The media (i.e., paper) colors supported by the printer.'
+        mediaSizes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+        mediaTypes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The media types supported by the printer.
+        multipageLayouts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+          description: The presentation directions supported by the printer. Supported values are described in the following table.
+        orientations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printOrientation'
+          description: The print orientations supported by the printer. Valid values are described in the following table.
+        outputBins:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The printer's supported output bins (trays).
+        pagesPerSheet:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: Supported number of Input Pages to impose upon a single Impression.
+        qualities:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printQuality'
+          description: The print qualities supported by the printer.
+        rightMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported right margins(in microns) for the printer.
+        scalings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printScaling'
+          description: Supported print scalings.
+        supportsFitPdfToPage:
+          type: boolean
+          description: True if the printer supports scaling PDF pages to match the print media size; false otherwise.
+          nullable: true
+        topMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported top margins(in microns) for the printer.
+      additionalProperties:
+        type: object
+    microsoft.graph.printerDefaults:
+      title: printerDefaults
+      type: object
+      properties:
+        colorMode:
+          $ref: '#/components/schemas/microsoft.graph.printColorMode'
+        contentType:
+          type: string
+          description: The default content (MIME) type to use when processing documents.
+          nullable: true
+        copiesPerJob:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default number of copies printed per job.
+          format: int32
+          nullable: true
+        dpi:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default resolution in DPI to use when printing the job.
+          format: int32
+          nullable: true
+        duplexMode:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: The default set of finishings to apply to print jobs. Valid values are described in the following table.
+        fitPdfToPage:
+          type: boolean
+          description: The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
+          nullable: true
+        inputBin:
+          type: string
+          nullable: true
+        mediaColor:
+          type: string
+          description: The default media (such as paper) color to print the document on.
+          nullable: true
+        mediaSize:
+          type: string
+          description: The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+          nullable: true
+        mediaType:
+          type: string
+          description: The default media (such as paper) type to print the document on.
+          nullable: true
+        multipageLayout:
+          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientation:
+          $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBin:
+          type: string
+          description: The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
+          nullable: true
+        pagesPerSheet:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default number of document pages to print on each sheet.
+          format: int32
+          nullable: true
+        quality:
+          $ref: '#/components/schemas/microsoft.graph.printQuality'
+        scaling:
+          $ref: '#/components/schemas/microsoft.graph.printScaling'
+      additionalProperties:
+        type: object
+    microsoft.graph.printerLocation:
+      title: printerLocation
+      type: object
+      properties:
+        altitudeInMeters:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The altitude, in meters, that the printer is located at.'
+          format: int32
+          nullable: true
+        building:
+          type: string
+          description: The building that the printer is located in.
+          nullable: true
+        city:
+          type: string
+          description: The city that the printer is located in.
+          nullable: true
+        countryOrRegion:
+          type: string
+          description: The country or region that the printer is located in.
+          nullable: true
+        floor:
+          type: string
+          description: The floor that the printer is located on. Only numerical values are supported right now.
+          nullable: true
+        floorDescription:
+          type: string
+          description: The description of the floor that the printer is located on.
+          nullable: true
+        latitude:
+          type: number
+          description: The latitude that the printer is located at.
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          description: The longitude that the printer is located at.
+          format: double
+          nullable: true
+        organization:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
+        postalCode:
+          type: string
+          description: The postal code that the printer is located in.
+          nullable: true
+        roomDescription:
+          type: string
+          description: The description of the room that the printer is located in.
+          nullable: true
+        roomName:
+          type: string
+          description: The room that the printer is located in. Only numerical values are supported right now.
+          nullable: true
+        site:
+          type: string
+          description: The site that the printer is located in.
+          nullable: true
+        stateOrProvince:
+          type: string
+          description: The state or province that the printer is located in.
+          nullable: true
+        streetAddress:
+          type: string
+          description: The street address where the printer is located.
+          nullable: true
+        subdivision:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The subdivision that the printer is located in. The elements should be in hierarchical order.
+        subunit:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printerStatus:
+      title: printerStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the printer's current processing state. Read-only.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerProcessingStateDetail'
+          description: The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printerProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.printJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printJob
+          type: object
+          properties:
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the job was created. Read-only.
+              format: date-time
+            isFetchable:
+              type: boolean
+              description: 'If true, document can be fetched by printer.'
+            redirectedFrom:
+              type: string
+              description: 'Contains the source job URL, if the job has been redirected from another printer.'
+              nullable: true
+            redirectedTo:
+              type: string
+              description: 'Contains the destination job URL, if the job has been redirected to another printer.'
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printJobStatus'
+            documents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printDocument'
+              x-ms-navigationProperty: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+              description: A list of printTasks that were triggered by this print job.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printConnector:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printConnector
+          type: object
+          properties:
+            appVersion:
+              type: string
+              description: The connector's version.
+            displayName:
+              type: string
+              description: The name of the connector.
+            fullyQualifiedDomainName:
+              type: string
+              description: The connector machine's hostname.
+            location:
+              $ref: '#/components/schemas/microsoft.graph.printerLocation'
+            operatingSystem:
+              type: string
+              description: The connector machine's operating system version.
+            registeredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the connector was registered.
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.printTaskTrigger:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTaskTrigger
+          type: object
+          properties:
+            event:
+              $ref: '#/components/schemas/microsoft.graph.printEvent'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
           additionalProperties:
             type: object
     microsoft.graph.attendeeType:
@@ -27742,18 +28775,18 @@ components:
       properties:
         identityProvider:
           type: string
-          description: For internal use only
+          description: For internal use only.
           nullable: true
         key:
           type: string
-          description: For internal use only
+          description: For internal use only.
           format: base64url
           nullable: true
         type:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: For internal use only
+          description: For internal use only.
           format: int32
           nullable: true
       additionalProperties:
@@ -27771,6 +28804,17 @@ components:
         - unknownFutureValue
         - emailUser
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -27779,6 +28823,14 @@ components:
         - sideloaded
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppPublishingState:
       title: teamsAppPublishingState
       enum:
@@ -28178,6 +29230,1118 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.printColorMode:
+      title: printColorMode
+      enum:
+        - blackAndWhite
+        - grayscale
+        - color
+        - auto
+        - unknownFutureValue
+      type: string
+    microsoft.graph.integerRange:
+      title: integerRange
+      type: object
+      properties:
+        end:
+          type: integer
+          description: The inclusive upper bound of the integer range.
+          format: int64
+          nullable: true
+        start:
+          type: integer
+          description: The inclusive lower bound of the integer range.
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printDuplexMode:
+      title: printDuplexMode
+      enum:
+        - flipOnLongEdge
+        - flipOnShortEdge
+        - oneSided
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printerFeedOrientation:
+      title: printerFeedOrientation
+      enum:
+        - longEdgeFirst
+        - shortEdgeFirst
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printFinishing:
+      title: printFinishing
+      enum:
+        - none
+        - staple
+        - punch
+        - cover
+        - bind
+        - saddleStitch
+        - stitchEdge
+        - stapleTopLeft
+        - stapleBottomLeft
+        - stapleTopRight
+        - stapleBottomRight
+        - stitchLeftEdge
+        - stitchTopEdge
+        - stitchRightEdge
+        - stitchBottomEdge
+        - stapleDualLeft
+        - stapleDualTop
+        - stapleDualRight
+        - stapleDualBottom
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printMultipageLayout:
+      title: printMultipageLayout
+      enum:
+        - clockwiseFromTopLeft
+        - counterclockwiseFromTopLeft
+        - counterclockwiseFromTopRight
+        - clockwiseFromTopRight
+        - counterclockwiseFromBottomLeft
+        - clockwiseFromBottomLeft
+        - counterclockwiseFromBottomRight
+        - clockwiseFromBottomRight
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printOrientation:
+      title: printOrientation
+      enum:
+        - portrait
+        - landscape
+        - reverseLandscape
+        - reversePortrait
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printQuality:
+      title: printQuality
+      enum:
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printScaling:
+      title: printScaling
+      enum:
+        - auto
+        - shrinkToFit
+        - fill
+        - fit
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printerProcessingStateDetail:
+      title: printerProcessingStateDetail
+      enum:
+        - paused
+        - mediaJam
+        - mediaNeeded
+        - mediaLow
+        - mediaEmpty
+        - coverOpen
+        - interlockOpen
+        - outputTrayMissing
+        - outputAreaFull
+        - markerSupplyLow
+        - markerSupplyEmpty
+        - inputTrayMissing
+        - outputAreaAlmostFull
+        - markerWasteAlmostFull
+        - markerWasteFull
+        - fuserOverTemp
+        - fuserUnderTemp
+        - other
+        - none
+        - movingToPaused
+        - shutdown
+        - connectingToDevice
+        - timedOut
+        - stopping
+        - stoppedPartially
+        - tonerLow
+        - tonerEmpty
+        - spoolAreaFull
+        - doorOpen
+        - opticalPhotoConductorNearEndOfLife
+        - opticalPhotoConductorLifeOver
+        - developerLow
+        - developerEmpty
+        - interpreterResourceUnavailable
+        - unknownFutureValue
+        - alertRemovalOfBinaryChangeEntry
+        - banderAdded
+        - banderAlmostEmpty
+        - banderAlmostFull
+        - banderAtLimit
+        - banderClosed
+        - banderConfigurationChange
+        - banderCoverClosed
+        - banderCoverOpen
+        - banderEmpty
+        - banderFull
+        - banderInterlockClosed
+        - banderInterlockOpen
+        - banderJam
+        - banderLifeAlmostOver
+        - banderLifeOver
+        - banderMemoryExhausted
+        - banderMissing
+        - banderMotorFailure
+        - banderNearLimit
+        - banderOffline
+        - banderOpened
+        - banderOverTemperature
+        - banderPowerSaver
+        - banderRecoverableFailure
+        - banderRecoverableStorage
+        - banderRemoved
+        - banderResourceAdded
+        - banderResourceRemoved
+        - banderThermistorFailure
+        - banderTimingFailure
+        - banderTurnedOff
+        - banderTurnedOn
+        - banderUnderTemperature
+        - banderUnrecoverableFailure
+        - banderUnrecoverableStorageError
+        - banderWarmingUp
+        - binderAdded
+        - binderAlmostEmpty
+        - binderAlmostFull
+        - binderAtLimit
+        - binderClosed
+        - binderConfigurationChange
+        - binderCoverClosed
+        - binderCoverOpen
+        - binderEmpty
+        - binderFull
+        - binderInterlockClosed
+        - binderInterlockOpen
+        - binderJam
+        - binderLifeAlmostOver
+        - binderLifeOver
+        - binderMemoryExhausted
+        - binderMissing
+        - binderMotorFailure
+        - binderNearLimit
+        - binderOffline
+        - binderOpened
+        - binderOverTemperature
+        - binderPowerSaver
+        - binderRecoverableFailure
+        - binderRecoverableStorage
+        - binderRemoved
+        - binderResourceAdded
+        - binderResourceRemoved
+        - binderThermistorFailure
+        - binderTimingFailure
+        - binderTurnedOff
+        - binderTurnedOn
+        - binderUnderTemperature
+        - binderUnrecoverableFailure
+        - binderUnrecoverableStorageError
+        - binderWarmingUp
+        - cameraFailure
+        - chamberCooling
+        - chamberFailure
+        - chamberHeating
+        - chamberTemperatureHigh
+        - chamberTemperatureLow
+        - cleanerLifeAlmostOver
+        - cleanerLifeOver
+        - configurationChange
+        - deactivated
+        - deleted
+        - dieCutterAdded
+        - dieCutterAlmostEmpty
+        - dieCutterAlmostFull
+        - dieCutterAtLimit
+        - dieCutterClosed
+        - dieCutterConfigurationChange
+        - dieCutterCoverClosed
+        - dieCutterCoverOpen
+        - dieCutterEmpty
+        - dieCutterFull
+        - dieCutterInterlockClosed
+        - dieCutterInterlockOpen
+        - dieCutterJam
+        - dieCutterLifeAlmostOver
+        - dieCutterLifeOver
+        - dieCutterMemoryExhausted
+        - dieCutterMissing
+        - dieCutterMotorFailure
+        - dieCutterNearLimit
+        - dieCutterOffline
+        - dieCutterOpened
+        - dieCutterOverTemperature
+        - dieCutterPowerSaver
+        - dieCutterRecoverableFailure
+        - dieCutterRecoverableStorage
+        - dieCutterRemoved
+        - dieCutterResourceAdded
+        - dieCutterResourceRemoved
+        - dieCutterThermistorFailure
+        - dieCutterTimingFailure
+        - dieCutterTurnedOff
+        - dieCutterTurnedOn
+        - dieCutterUnderTemperature
+        - dieCutterUnrecoverableFailure
+        - dieCutterUnrecoverableStorageError
+        - dieCutterWarmingUp
+        - extruderCooling
+        - extruderFailure
+        - extruderHeating
+        - extruderJam
+        - extruderTemperatureHigh
+        - extruderTemperatureLow
+        - fanFailure
+        - faxModemLifeAlmostOver
+        - faxModemLifeOver
+        - faxModemMissing
+        - faxModemTurnedOff
+        - faxModemTurnedOn
+        - folderAdded
+        - folderAlmostEmpty
+        - folderAlmostFull
+        - folderAtLimit
+        - folderClosed
+        - folderConfigurationChange
+        - folderCoverClosed
+        - folderCoverOpen
+        - folderEmpty
+        - folderFull
+        - folderInterlockClosed
+        - folderInterlockOpen
+        - folderJam
+        - folderLifeAlmostOver
+        - folderLifeOver
+        - folderMemoryExhausted
+        - folderMissing
+        - folderMotorFailure
+        - folderNearLimit
+        - folderOffline
+        - folderOpened
+        - folderOverTemperature
+        - folderPowerSaver
+        - folderRecoverableFailure
+        - folderRecoverableStorage
+        - folderRemoved
+        - folderResourceAdded
+        - folderResourceRemoved
+        - folderThermistorFailure
+        - folderTimingFailure
+        - folderTurnedOff
+        - folderTurnedOn
+        - folderUnderTemperature
+        - folderUnrecoverableFailure
+        - folderUnrecoverableStorageError
+        - folderWarmingUp
+        - hibernate
+        - holdNewJobs
+        - identifyPrinterRequested
+        - imprinterAdded
+        - imprinterAlmostEmpty
+        - imprinterAlmostFull
+        - imprinterAtLimit
+        - imprinterClosed
+        - imprinterConfigurationChange
+        - imprinterCoverClosed
+        - imprinterCoverOpen
+        - imprinterEmpty
+        - imprinterFull
+        - imprinterInterlockClosed
+        - imprinterInterlockOpen
+        - imprinterJam
+        - imprinterLifeAlmostOver
+        - imprinterLifeOver
+        - imprinterMemoryExhausted
+        - imprinterMissing
+        - imprinterMotorFailure
+        - imprinterNearLimit
+        - imprinterOffline
+        - imprinterOpened
+        - imprinterOverTemperature
+        - imprinterPowerSaver
+        - imprinterRecoverableFailure
+        - imprinterRecoverableStorage
+        - imprinterRemoved
+        - imprinterResourceAdded
+        - imprinterResourceRemoved
+        - imprinterThermistorFailure
+        - imprinterTimingFailure
+        - imprinterTurnedOff
+        - imprinterTurnedOn
+        - imprinterUnderTemperature
+        - imprinterUnrecoverableFailure
+        - imprinterUnrecoverableStorageError
+        - imprinterWarmingUp
+        - inputCannotFeedSizeSelected
+        - inputManualInputRequest
+        - inputMediaColorChange
+        - inputMediaFormPartsChange
+        - inputMediaSizeChange
+        - inputMediaTrayFailure
+        - inputMediaTrayFeedError
+        - inputMediaTrayJam
+        - inputMediaTypeChange
+        - inputMediaWeightChange
+        - inputPickRollerFailure
+        - inputPickRollerLifeOver
+        - inputPickRollerLifeWarn
+        - inputPickRollerMissing
+        - inputTrayElevationFailure
+        - inputTrayPositionFailure
+        - inserterAdded
+        - inserterAlmostEmpty
+        - inserterAlmostFull
+        - inserterAtLimit
+        - inserterClosed
+        - inserterConfigurationChange
+        - inserterCoverClosed
+        - inserterCoverOpen
+        - inserterEmpty
+        - inserterFull
+        - inserterInterlockClosed
+        - inserterInterlockOpen
+        - inserterJam
+        - inserterLifeAlmostOver
+        - inserterLifeOver
+        - inserterMemoryExhausted
+        - inserterMissing
+        - inserterMotorFailure
+        - inserterNearLimit
+        - inserterOffline
+        - inserterOpened
+        - inserterOverTemperature
+        - inserterPowerSaver
+        - inserterRecoverableFailure
+        - inserterRecoverableStorage
+        - inserterRemoved
+        - inserterResourceAdded
+        - inserterResourceRemoved
+        - inserterThermistorFailure
+        - inserterTimingFailure
+        - inserterTurnedOff
+        - inserterTurnedOn
+        - inserterUnderTemperature
+        - inserterUnrecoverableFailure
+        - inserterUnrecoverableStorageError
+        - inserterWarmingUp
+        - interlockClosed
+        - interpreterCartridgeAdded
+        - interpreterCartridgeDeleted
+        - interpreterComplexPageEncountered
+        - interpreterMemoryDecrease
+        - interpreterMemoryIncrease
+        - interpreterResourceAdded
+        - interpreterResourceDeleted
+        - lampAtEol
+        - lampFailure
+        - lampNearEol
+        - laserAtEol
+        - laserFailure
+        - laserNearEol
+        - makeEnvelopeAdded
+        - makeEnvelopeAlmostEmpty
+        - makeEnvelopeAlmostFull
+        - makeEnvelopeAtLimit
+        - makeEnvelopeClosed
+        - makeEnvelopeConfigurationChange
+        - makeEnvelopeCoverClosed
+        - makeEnvelopeCoverOpen
+        - makeEnvelopeEmpty
+        - makeEnvelopeFull
+        - makeEnvelopeInterlockClosed
+        - makeEnvelopeInterlockOpen
+        - makeEnvelopeJam
+        - makeEnvelopeLifeAlmostOver
+        - makeEnvelopeLifeOver
+        - makeEnvelopeMemoryExhausted
+        - makeEnvelopeMissing
+        - makeEnvelopeMotorFailure
+        - makeEnvelopeNearLimit
+        - makeEnvelopeOffline
+        - makeEnvelopeOpened
+        - makeEnvelopeOverTemperature
+        - makeEnvelopePowerSaver
+        - makeEnvelopeRecoverableFailure
+        - makeEnvelopeRecoverableStorage
+        - makeEnvelopeRemoved
+        - makeEnvelopeResourceAdded
+        - makeEnvelopeResourceRemoved
+        - makeEnvelopeThermistorFailure
+        - makeEnvelopeTimingFailure
+        - makeEnvelopeTurnedOff
+        - makeEnvelopeTurnedOn
+        - makeEnvelopeUnderTemperature
+        - makeEnvelopeUnrecoverableFailure
+        - makeEnvelopeUnrecoverableStorageError
+        - makeEnvelopeWarmingUp
+        - markerAdjustingPrintQuality
+        - markerCleanerMissing
+        - markerDeveloperAlmostEmpty
+        - markerDeveloperEmpty
+        - markerDeveloperMissing
+        - markerFuserMissing
+        - markerFuserThermistorFailure
+        - markerFuserTimingFailure
+        - markerInkAlmostEmpty
+        - markerInkEmpty
+        - markerInkMissing
+        - markerOpcMissing
+        - markerPrintRibbonAlmostEmpty
+        - markerPrintRibbonEmpty
+        - markerPrintRibbonMissing
+        - markerSupplyAlmostEmpty
+        - markerSupplyMissing
+        - markerTonerCartridgeMissing
+        - markerTonerMissing
+        - markerWasteInkReceptacleAlmostFull
+        - markerWasteInkReceptacleFull
+        - markerWasteInkReceptacleMissing
+        - markerWasteMissing
+        - markerWasteTonerReceptacleAlmostFull
+        - markerWasteTonerReceptacleFull
+        - markerWasteTonerReceptacleMissing
+        - materialEmpty
+        - materialLow
+        - materialNeeded
+        - mediaDrying
+        - mediaPathCannotDuplexMediaSelected
+        - mediaPathFailure
+        - mediaPathInputEmpty
+        - mediaPathInputFeedError
+        - mediaPathInputJam
+        - mediaPathInputRequest
+        - mediaPathJam
+        - mediaPathMediaTrayAlmostFull
+        - mediaPathMediaTrayFull
+        - mediaPathMediaTrayMissing
+        - mediaPathOutputFeedError
+        - mediaPathOutputFull
+        - mediaPathOutputJam
+        - mediaPathPickRollerFailure
+        - mediaPathPickRollerLifeOver
+        - mediaPathPickRollerLifeWarn
+        - mediaPathPickRollerMissing
+        - motorFailure
+        - outputMailboxSelectFailure
+        - outputMediaTrayFailure
+        - outputMediaTrayFeedError
+        - outputMediaTrayJam
+        - perforaterAdded
+        - perforaterAlmostEmpty
+        - perforaterAlmostFull
+        - perforaterAtLimit
+        - perforaterClosed
+        - perforaterConfigurationChange
+        - perforaterCoverClosed
+        - perforaterCoverOpen
+        - perforaterEmpty
+        - perforaterFull
+        - perforaterInterlockClosed
+        - perforaterInterlockOpen
+        - perforaterJam
+        - perforaterLifeAlmostOver
+        - perforaterLifeOver
+        - perforaterMemoryExhausted
+        - perforaterMissing
+        - perforaterMotorFailure
+        - perforaterNearLimit
+        - perforaterOffline
+        - perforaterOpened
+        - perforaterOverTemperature
+        - perforaterPowerSaver
+        - perforaterRecoverableFailure
+        - perforaterRecoverableStorage
+        - perforaterRemoved
+        - perforaterResourceAdded
+        - perforaterResourceRemoved
+        - perforaterThermistorFailure
+        - perforaterTimingFailure
+        - perforaterTurnedOff
+        - perforaterTurnedOn
+        - perforaterUnderTemperature
+        - perforaterUnrecoverableFailure
+        - perforaterUnrecoverableStorageError
+        - perforaterWarmingUp
+        - platformCooling
+        - platformFailure
+        - platformHeating
+        - platformTemperatureHigh
+        - platformTemperatureLow
+        - powerDown
+        - powerUp
+        - printerManualReset
+        - printerNmsReset
+        - printerReadyToPrint
+        - puncherAdded
+        - puncherAlmostEmpty
+        - puncherAlmostFull
+        - puncherAtLimit
+        - puncherClosed
+        - puncherConfigurationChange
+        - puncherCoverClosed
+        - puncherCoverOpen
+        - puncherEmpty
+        - puncherFull
+        - puncherInterlockClosed
+        - puncherInterlockOpen
+        - puncherJam
+        - puncherLifeAlmostOver
+        - puncherLifeOver
+        - puncherMemoryExhausted
+        - puncherMissing
+        - puncherMotorFailure
+        - puncherNearLimit
+        - puncherOffline
+        - puncherOpened
+        - puncherOverTemperature
+        - puncherPowerSaver
+        - puncherRecoverableFailure
+        - puncherRecoverableStorage
+        - puncherRemoved
+        - puncherResourceAdded
+        - puncherResourceRemoved
+        - puncherThermistorFailure
+        - puncherTimingFailure
+        - puncherTurnedOff
+        - puncherTurnedOn
+        - puncherUnderTemperature
+        - puncherUnrecoverableFailure
+        - puncherUnrecoverableStorageError
+        - puncherWarmingUp
+        - resuming
+        - scanMediaPathFailure
+        - scanMediaPathInputEmpty
+        - scanMediaPathInputFeedError
+        - scanMediaPathInputJam
+        - scanMediaPathInputRequest
+        - scanMediaPathJam
+        - scanMediaPathOutputFeedError
+        - scanMediaPathOutputFull
+        - scanMediaPathOutputJam
+        - scanMediaPathPickRollerFailure
+        - scanMediaPathPickRollerLifeOver
+        - scanMediaPathPickRollerLifeWarn
+        - scanMediaPathPickRollerMissing
+        - scanMediaPathTrayAlmostFull
+        - scanMediaPathTrayFull
+        - scanMediaPathTrayMissing
+        - scannerLightFailure
+        - scannerLightLifeAlmostOver
+        - scannerLightLifeOver
+        - scannerLightMissing
+        - scannerSensorFailure
+        - scannerSensorLifeAlmostOver
+        - scannerSensorLifeOver
+        - scannerSensorMissing
+        - separationCutterAdded
+        - separationCutterAlmostEmpty
+        - separationCutterAlmostFull
+        - separationCutterAtLimit
+        - separationCutterClosed
+        - separationCutterConfigurationChange
+        - separationCutterCoverClosed
+        - separationCutterCoverOpen
+        - separationCutterEmpty
+        - separationCutterFull
+        - separationCutterInterlockClosed
+        - separationCutterInterlockOpen
+        - separationCutterJam
+        - separationCutterLifeAlmostOver
+        - separationCutterLifeOver
+        - separationCutterMemoryExhausted
+        - separationCutterMissing
+        - separationCutterMotorFailure
+        - separationCutterNearLimit
+        - separationCutterOffline
+        - separationCutterOpened
+        - separationCutterOverTemperature
+        - separationCutterPowerSaver
+        - separationCutterRecoverableFailure
+        - separationCutterRecoverableStorage
+        - separationCutterRemoved
+        - separationCutterResourceAdded
+        - separationCutterResourceRemoved
+        - separationCutterThermistorFailure
+        - separationCutterTimingFailure
+        - separationCutterTurnedOff
+        - separationCutterTurnedOn
+        - separationCutterUnderTemperature
+        - separationCutterUnrecoverableFailure
+        - separationCutterUnrecoverableStorageError
+        - separationCutterWarmingUp
+        - sheetRotatorAdded
+        - sheetRotatorAlmostEmpty
+        - sheetRotatorAlmostFull
+        - sheetRotatorAtLimit
+        - sheetRotatorClosed
+        - sheetRotatorConfigurationChange
+        - sheetRotatorCoverClosed
+        - sheetRotatorCoverOpen
+        - sheetRotatorEmpty
+        - sheetRotatorFull
+        - sheetRotatorInterlockClosed
+        - sheetRotatorInterlockOpen
+        - sheetRotatorJam
+        - sheetRotatorLifeAlmostOver
+        - sheetRotatorLifeOver
+        - sheetRotatorMemoryExhausted
+        - sheetRotatorMissing
+        - sheetRotatorMotorFailure
+        - sheetRotatorNearLimit
+        - sheetRotatorOffline
+        - sheetRotatorOpened
+        - sheetRotatorOverTemperature
+        - sheetRotatorPowerSaver
+        - sheetRotatorRecoverableFailure
+        - sheetRotatorRecoverableStorage
+        - sheetRotatorRemoved
+        - sheetRotatorResourceAdded
+        - sheetRotatorResourceRemoved
+        - sheetRotatorThermistorFailure
+        - sheetRotatorTimingFailure
+        - sheetRotatorTurnedOff
+        - sheetRotatorTurnedOn
+        - sheetRotatorUnderTemperature
+        - sheetRotatorUnrecoverableFailure
+        - sheetRotatorUnrecoverableStorageError
+        - sheetRotatorWarmingUp
+        - slitterAdded
+        - slitterAlmostEmpty
+        - slitterAlmostFull
+        - slitterAtLimit
+        - slitterClosed
+        - slitterConfigurationChange
+        - slitterCoverClosed
+        - slitterCoverOpen
+        - slitterEmpty
+        - slitterFull
+        - slitterInterlockClosed
+        - slitterInterlockOpen
+        - slitterJam
+        - slitterLifeAlmostOver
+        - slitterLifeOver
+        - slitterMemoryExhausted
+        - slitterMissing
+        - slitterMotorFailure
+        - slitterNearLimit
+        - slitterOffline
+        - slitterOpened
+        - slitterOverTemperature
+        - slitterPowerSaver
+        - slitterRecoverableFailure
+        - slitterRecoverableStorage
+        - slitterRemoved
+        - slitterResourceAdded
+        - slitterResourceRemoved
+        - slitterThermistorFailure
+        - slitterTimingFailure
+        - slitterTurnedOff
+        - slitterTurnedOn
+        - slitterUnderTemperature
+        - slitterUnrecoverableFailure
+        - slitterUnrecoverableStorageError
+        - slitterWarmingUp
+        - stackerAdded
+        - stackerAlmostEmpty
+        - stackerAlmostFull
+        - stackerAtLimit
+        - stackerClosed
+        - stackerConfigurationChange
+        - stackerCoverClosed
+        - stackerCoverOpen
+        - stackerEmpty
+        - stackerFull
+        - stackerInterlockClosed
+        - stackerInterlockOpen
+        - stackerJam
+        - stackerLifeAlmostOver
+        - stackerLifeOver
+        - stackerMemoryExhausted
+        - stackerMissing
+        - stackerMotorFailure
+        - stackerNearLimit
+        - stackerOffline
+        - stackerOpened
+        - stackerOverTemperature
+        - stackerPowerSaver
+        - stackerRecoverableFailure
+        - stackerRecoverableStorage
+        - stackerRemoved
+        - stackerResourceAdded
+        - stackerResourceRemoved
+        - stackerThermistorFailure
+        - stackerTimingFailure
+        - stackerTurnedOff
+        - stackerTurnedOn
+        - stackerUnderTemperature
+        - stackerUnrecoverableFailure
+        - stackerUnrecoverableStorageError
+        - stackerWarmingUp
+        - standby
+        - staplerAdded
+        - staplerAlmostEmpty
+        - staplerAlmostFull
+        - staplerAtLimit
+        - staplerClosed
+        - staplerConfigurationChange
+        - staplerCoverClosed
+        - staplerCoverOpen
+        - staplerEmpty
+        - staplerFull
+        - staplerInterlockClosed
+        - staplerInterlockOpen
+        - staplerJam
+        - staplerLifeAlmostOver
+        - staplerLifeOver
+        - staplerMemoryExhausted
+        - staplerMissing
+        - staplerMotorFailure
+        - staplerNearLimit
+        - staplerOffline
+        - staplerOpened
+        - staplerOverTemperature
+        - staplerPowerSaver
+        - staplerRecoverableFailure
+        - staplerRecoverableStorage
+        - staplerRemoved
+        - staplerResourceAdded
+        - staplerResourceRemoved
+        - staplerThermistorFailure
+        - staplerTimingFailure
+        - staplerTurnedOff
+        - staplerTurnedOn
+        - staplerUnderTemperature
+        - staplerUnrecoverableFailure
+        - staplerUnrecoverableStorageError
+        - staplerWarmingUp
+        - stitcherAdded
+        - stitcherAlmostEmpty
+        - stitcherAlmostFull
+        - stitcherAtLimit
+        - stitcherClosed
+        - stitcherConfigurationChange
+        - stitcherCoverClosed
+        - stitcherCoverOpen
+        - stitcherEmpty
+        - stitcherFull
+        - stitcherInterlockClosed
+        - stitcherInterlockOpen
+        - stitcherJam
+        - stitcherLifeAlmostOver
+        - stitcherLifeOver
+        - stitcherMemoryExhausted
+        - stitcherMissing
+        - stitcherMotorFailure
+        - stitcherNearLimit
+        - stitcherOffline
+        - stitcherOpened
+        - stitcherOverTemperature
+        - stitcherPowerSaver
+        - stitcherRecoverableFailure
+        - stitcherRecoverableStorage
+        - stitcherRemoved
+        - stitcherResourceAdded
+        - stitcherResourceRemoved
+        - stitcherThermistorFailure
+        - stitcherTimingFailure
+        - stitcherTurnedOff
+        - stitcherTurnedOn
+        - stitcherUnderTemperature
+        - stitcherUnrecoverableFailure
+        - stitcherUnrecoverableStorageError
+        - stitcherWarmingUp
+        - subunitAdded
+        - subunitAlmostEmpty
+        - subunitAlmostFull
+        - subunitAtLimit
+        - subunitClosed
+        - subunitCoolingDown
+        - subunitEmpty
+        - subunitFull
+        - subunitLifeAlmostOver
+        - subunitLifeOver
+        - subunitMemoryExhausted
+        - subunitMissing
+        - subunitMotorFailure
+        - subunitNearLimit
+        - subunitOffline
+        - subunitOpened
+        - subunitOverTemperature
+        - subunitPowerSaver
+        - subunitRecoverableFailure
+        - subunitRecoverableStorage
+        - subunitRemoved
+        - subunitResourceAdded
+        - subunitResourceRemoved
+        - subunitThermistorFailure
+        - subunitTimingFailure
+        - subunitTurnedOff
+        - subunitTurnedOn
+        - subunitUnderTemperature
+        - subunitUnrecoverableFailure
+        - subunitUnrecoverableStorage
+        - subunitWarmingUp
+        - suspend
+        - testing
+        - trimmerAdded
+        - trimmerAlmostEmpty
+        - trimmerAlmostFull
+        - trimmerAtLimit
+        - trimmerClosed
+        - trimmerConfigurationChange
+        - trimmerCoverClosed
+        - trimmerCoverOpen
+        - trimmerEmpty
+        - trimmerFull
+        - trimmerInterlockClosed
+        - trimmerInterlockOpen
+        - trimmerJam
+        - trimmerLifeAlmostOver
+        - trimmerLifeOver
+        - trimmerMemoryExhausted
+        - trimmerMissing
+        - trimmerMotorFailure
+        - trimmerNearLimit
+        - trimmerOffline
+        - trimmerOpened
+        - trimmerOverTemperature
+        - trimmerPowerSaver
+        - trimmerRecoverableFailure
+        - trimmerRecoverableStorage
+        - trimmerRemoved
+        - trimmerResourceAdded
+        - trimmerResourceRemoved
+        - trimmerThermistorFailure
+        - trimmerTimingFailure
+        - trimmerTurnedOff
+        - trimmerTurnedOn
+        - trimmerUnderTemperature
+        - trimmerUnrecoverableFailure
+        - trimmerUnrecoverableStorageError
+        - trimmerWarmingUp
+        - unknown
+        - wrapperAdded
+        - wrapperAlmostEmpty
+        - wrapperAlmostFull
+        - wrapperAtLimit
+        - wrapperClosed
+        - wrapperConfigurationChange
+        - wrapperCoverClosed
+        - wrapperCoverOpen
+        - wrapperEmpty
+        - wrapperFull
+        - wrapperInterlockClosed
+        - wrapperInterlockOpen
+        - wrapperJam
+        - wrapperLifeAlmostOver
+        - wrapperLifeOver
+        - wrapperMemoryExhausted
+        - wrapperMissing
+        - wrapperMotorFailure
+        - wrapperNearLimit
+        - wrapperOffline
+        - wrapperOpened
+        - wrapperOverTemperature
+        - wrapperPowerSaver
+        - wrapperRecoverableFailure
+        - wrapperRecoverableStorage
+        - wrapperRemoved
+        - wrapperResourceAdded
+        - wrapperResourceRemoved
+        - wrapperThermistorFailure
+        - wrapperTimingFailure
+        - wrapperTurnedOff
+        - wrapperTurnedOn
+        - wrapperUnderTemperature
+        - wrapperUnrecoverableFailure
+        - wrapperUnrecoverableStorageError
+        - wrapperWarmingUp
+      type: string
+    microsoft.graph.printerProcessingState:
+      title: printerProcessingState
+      enum:
+        - unknown
+        - idle
+        - processing
+        - stopped
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printJobConfiguration:
+      title: printJobConfiguration
+      type: object
+      properties:
+        collate:
+          type: boolean
+          description: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+          nullable: true
+        colorMode:
+          $ref: '#/components/schemas/microsoft.graph.printColorMode'
+        copies:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of copies that should be printed. Read-only.
+          format: int32
+          nullable: true
+        dpi:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
+          format: int32
+          nullable: true
+        duplexMode:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+        feedOrientation:
+          $ref: '#/components/schemas/microsoft.graph.printerFeedOrientation'
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: Finishing processes to use when printing.
+        fitPdfToPage:
+          type: boolean
+          nullable: true
+        inputBin:
+          type: string
+          description: The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
+          nullable: true
+        margin:
+          $ref: '#/components/schemas/microsoft.graph.printMargin'
+        mediaSize:
+          type: string
+          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+          nullable: true
+        mediaType:
+          type: string
+          nullable: true
+        multipageLayout:
+          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientation:
+          $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBin:
+          type: string
+          nullable: true
+        pageRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.integerRange'
+        pagesPerSheet:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        quality:
+          $ref: '#/components/schemas/microsoft.graph.printQuality'
+        scaling:
+          $ref: '#/components/schemas/microsoft.graph.printScaling'
+      additionalProperties:
+        type: object
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printJobStatus:
+      title: printJobStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the print job's current processing state. Read-only.
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printJobStateDetail'
+          description: Additional details for print job state. Valid values are described in the following table. Read-only.
+        isAcquiredByPrinter:
+          type: boolean
+          description: True if the job was acknowledged by a printer; false otherwise. Read-only.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.printDocument:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printDocument
+          type: object
+          properties:
+            contentType:
+              type: string
+              description: The document's content (MIME) type. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: The document's name. Read-only.
+              nullable: true
+            size:
+              type: integer
+              description: The document's size in bytes. Read-only.
+              format: int64
+          additionalProperties:
+            type: object
+    microsoft.graph.printTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTask
+          type: object
+          properties:
+            parentUrl:
+              type: string
+              description: 'The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printTaskStatus'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+            trigger:
+              $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+          additionalProperties:
+            type: object
+    microsoft.graph.printEvent:
+      title: printEvent
+      enum:
+        - jobStarted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printTaskDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTaskDefinition
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.appIdentity'
+            displayName:
+              type: string
+              description: The name of the printTaskDefinition.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+              description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -28409,6 +30573,13 @@ components:
         - reuse
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -28484,6 +30655,98 @@ components:
           nullable: true
         theme:
           $ref: '#/components/schemas/microsoft.graph.scheduleEntityTheme'
+      additionalProperties:
+        type: object
+    microsoft.graph.printMargin:
+      title: printMargin
+      type: object
+      properties:
+        bottom:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the bottom edge.
+          format: int32
+          nullable: true
+        left:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the left edge.
+          format: int32
+          nullable: true
+        right:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the right edge.
+          format: int32
+          nullable: true
+        top:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the top edge.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printJobStateDetail:
+      title: printJobStateDetail
+      enum:
+        - uploadPending
+        - transforming
+        - completedSuccessfully
+        - completedWithWarnings
+        - completedWithErrors
+        - releaseWait
+        - interpreting
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printJobProcessingState:
+      title: printJobProcessingState
+      enum:
+        - unknown
+        - pending
+        - processing
+        - paused
+        - stopped
+        - completed
+        - canceled
+        - aborted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printTaskStatus:
+      title: printTaskStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the current processing state of the printTask.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printTaskProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.appIdentity:
+      title: appIdentity
+      type: object
+      properties:
+        appId:
+          type: string
+          description: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+          nullable: true
+        displayName:
+          type: string
+          description: Refers to the Application Name displayed in the Azure Portal.
+          nullable: true
+        servicePrincipalId:
+          type: string
+          description: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+          nullable: true
+        servicePrincipalName:
+          type: string
+          description: Refers to the Service Principal Name is the Application name in the tenant.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.workbookFilter:
@@ -28715,6 +30978,15 @@ components:
         - darkPurple
         - darkPink
         - darkYellow
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printTaskProcessingState:
+      title: printTaskProcessingState
+      enum:
+        - pending
+        - processing
+        - completed
+        - aborted
         - unknownFutureValue
       type: string
     microsoft.graph.workbookFilterCriteria:

@@ -106,7 +106,7 @@ namespace NamespacePrefixPlaceholder.PowerShell
             stringBuilder.AppendLine($"{odataError?.Message}{Environment.NewLine}");
             stringBuilder.AppendLine($"Status: {((int)response.StatusCode)} ({response.StatusCode})");
             stringBuilder.AppendLine($"ErrorCode: {odataError?.Code}");
-            stringBuilder.AppendLine($"Date: {odataError?.Innererror?.Date}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Date: {odataError?.InnerError?.Date}{Environment.NewLine}");
             stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(response.Headers)}{Environment.NewLine}");
             return stringBuilder.ToString();
         }

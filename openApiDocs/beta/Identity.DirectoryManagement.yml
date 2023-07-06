@@ -585,6 +585,40 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - administrativeUnits.directoryObject
+      summary: Create new navigation property to members for administrativeUnits
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
+      operationId: administrativeUnit_CreateMember
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: The unique identifier of administrativeUnit
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/administrativeUnits/{administrativeUnit-id}/members/{directoryObject-id}/$ref':
     delete:
       tags:
@@ -1119,8 +1153,7 @@ paths:
     post:
       tags:
         - administrativeUnits.directoryObject
-      summary: Add a member
-      description: 'Use this API to add a member (user, group, or device) to an administrative unit or to create a new group within an administrative unit. All group types can be created within an administrative unit. **Note:** Currently, it''s only possible to add one member at a time to an administrative unit.`'
+      summary: Create new navigation property ref to members for administrativeUnits
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
@@ -1225,7 +1258,7 @@ paths:
       tags:
         - administrativeUnits.directoryObject
       summary: Get the number of the resource
-      operationId: administrativeUnit.ListMember_GetCountAsApplication
+      operationId: administrativeUnit.Member_GetCountAsApplication
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -1335,7 +1368,7 @@ paths:
       tags:
         - administrativeUnits.directoryObject
       summary: Get the number of the resource
-      operationId: administrativeUnit.ListMember_GetCountAsDevice
+      operationId: administrativeUnit.Member_GetCountAsDevice
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -1445,7 +1478,7 @@ paths:
       tags:
         - administrativeUnits.directoryObject
       summary: Get the number of the resource
-      operationId: administrativeUnit.ListMember_GetCountAsGroup
+      operationId: administrativeUnit.Member_GetCountAsGroup
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -1555,7 +1588,7 @@ paths:
       tags:
         - administrativeUnits.directoryObject
       summary: Get the number of the resource
-      operationId: administrativeUnit.ListMember_GetCountAsOrgContact
+      operationId: administrativeUnit.Member_GetCountAsOrgContact
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -1665,7 +1698,7 @@ paths:
       tags:
         - administrativeUnits.directoryObject
       summary: Get the number of the resource
-      operationId: administrativeUnit.ListMember_GetCountAsServicePrincipal
+      operationId: administrativeUnit.Member_GetCountAsServicePrincipal
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -1775,7 +1808,7 @@ paths:
       tags:
         - administrativeUnits.directoryObject
       summary: Get the number of the resource
-      operationId: administrativeUnit.ListMember_GetCountAsUser
+      operationId: administrativeUnit.Member_GetCountAsUser
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -3248,7 +3281,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListDirectReport_GetCountAsOrgContact
+      operationId: contact.DirectReport_GetCountAsOrgContact
       parameters:
         - name: orgContact-id
           in: path
@@ -3358,7 +3391,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListDirectReport_GetCountAsUser
+      operationId: contact.DirectReport_GetCountAsUser
       parameters:
         - name: orgContact-id
           in: path
@@ -3840,7 +3873,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListMemberOf_GetCountAsAdministrativeUnit
+      operationId: contact.MemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: orgContact-id
           in: path
@@ -3950,7 +3983,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListMemberOf_GetCountAsGroup
+      operationId: contact.MemberOf_GetCountAsGroup
       parameters:
         - name: orgContact-id
           in: path
@@ -4639,7 +4672,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListTransitiveMemberOf_GetCountAsAdministrativeUnit
+      operationId: contact.TransitiveMemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: orgContact-id
           in: path
@@ -4749,7 +4782,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListTransitiveMemberOf_GetCountAsGroup
+      operationId: contact.TransitiveMemberOf_GetCountAsGroup
       parameters:
         - name: orgContact-id
           in: path
@@ -7254,7 +7287,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListMemberOf_GetCountAsAdministrativeUnit
+      operationId: device.MemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: device-id
           in: path
@@ -7364,7 +7397,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListMemberOf_GetCountAsGroup
+      operationId: device.MemberOf_GetCountAsGroup
       parameters:
         - name: device-id
           in: path
@@ -8165,7 +8198,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredOwner_GetCountAsEndpoint
+      operationId: device.RegisteredOwner_GetCountAsEndpoint
       parameters:
         - name: device-id
           in: path
@@ -8275,7 +8308,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredOwner_GetCountAsServicePrincipal
+      operationId: device.RegisteredOwner_GetCountAsServicePrincipal
       parameters:
         - name: device-id
           in: path
@@ -8385,7 +8418,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredOwner_GetCountAsUser
+      operationId: device.RegisteredOwner_GetCountAsUser
       parameters:
         - name: device-id
           in: path
@@ -8941,7 +8974,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredUser_GetCountAsEndpoint
+      operationId: device.RegisteredUser_GetCountAsEndpoint
       parameters:
         - name: device-id
           in: path
@@ -9051,7 +9084,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredUser_GetCountAsServicePrincipal
+      operationId: device.RegisteredUser_GetCountAsServicePrincipal
       parameters:
         - name: device-id
           in: path
@@ -9161,7 +9194,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredUser_GetCountAsUser
+      operationId: device.RegisteredUser_GetCountAsUser
       parameters:
         - name: device-id
           in: path
@@ -9589,7 +9622,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListTransitiveMemberOf_GetCountAsAdministrativeUnit
+      operationId: device.TransitiveMemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: device-id
           in: path
@@ -9699,7 +9732,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListTransitiveMemberOf_GetCountAsGroup
+      operationId: device.TransitiveMemberOf_GetCountAsGroup
       parameters:
         - name: device-id
           in: path
@@ -10357,6 +10390,7 @@ paths:
                 - onPremisesSynchronization
                 - outboundSharedUserProfiles
                 - sharedEmailDomains
+                - subscriptions
                 - featureRolloutPolicies
               type: string
         - name: $expand
@@ -10382,6 +10416,7 @@ paths:
                 - onPremisesSynchronization
                 - outboundSharedUserProfiles
                 - sharedEmailDomains
+                - subscriptions
                 - featureRolloutPolicies
               type: string
       responses:
@@ -10967,6 +11002,40 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.administrativeUnit
+      summary: Create new navigation property to members for directory
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
+      operationId: directory.administrativeUnit_CreateMember
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: The unique identifier of administrativeUnit
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/directory/administrativeUnits/{administrativeUnit-id}/members/{directoryObject-id}/$ref':
     delete:
       tags:
@@ -11501,8 +11570,7 @@ paths:
     post:
       tags:
         - directory.administrativeUnit
-      summary: Add a member
-      description: 'Use this API to add a member (user, group, or device) to an administrative unit or to create a new group within an administrative unit. All group types can be created within an administrative unit. **Note:** Currently, it''s only possible to add one member at a time to an administrative unit.`'
+      summary: Create new navigation property ref to members for directory
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
@@ -11607,7 +11675,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsApplication
+      operationId: directory.administrativeUnit.Member_GetCountAsApplication
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -11717,7 +11785,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsDevice
+      operationId: directory.administrativeUnit.Member_GetCountAsDevice
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -11827,7 +11895,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsGroup
+      operationId: directory.administrativeUnit.Member_GetCountAsGroup
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -11937,7 +12005,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsOrgContact
+      operationId: directory.administrativeUnit.Member_GetCountAsOrgContact
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -12047,7 +12115,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsServicePrincipal
+      operationId: directory.administrativeUnit.Member_GetCountAsServicePrincipal
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -12157,7 +12225,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsUser
+      operationId: directory.administrativeUnit.Member_GetCountAsUser
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -15048,7 +15116,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsAdministrativeUnit
+      operationId: directory.DeletedItem_GetCountAsAdministrativeUnit
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -15122,7 +15190,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsApplication
+      operationId: directory.DeletedItem_GetCountAsApplication
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -15263,7 +15331,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsDevice
+      operationId: directory.DeletedItem_GetCountAsDevice
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -15426,7 +15494,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsGroup
+      operationId: directory.DeletedItem_GetCountAsGroup
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -15500,7 +15568,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsServicePrincipal
+      operationId: directory.DeletedItem_GetCountAsServicePrincipal
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -15574,7 +15642,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsUser
+      operationId: directory.DeletedItem_GetCountAsUser
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -19179,6 +19247,242 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+  /directory/subscriptions:
+    get:
+      tags:
+        - directory.companySubscription
+      summary: Get subscriptions from directory
+      operationId: directory_ListSubscription
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - isTrial
+                - isTrial desc
+                - nextLifecycleDateTime
+                - nextLifecycleDateTime desc
+                - ocpSubscriptionId
+                - ocpSubscriptionId desc
+                - serviceStatus
+                - serviceStatus desc
+                - skuId
+                - skuId desc
+                - skuPartNumber
+                - skuPartNumber desc
+                - status
+                - status desc
+                - totalLicenses
+                - totalLicenses desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - isTrial
+                - nextLifecycleDateTime
+                - ocpSubscriptionId
+                - serviceStatus
+                - skuId
+                - skuPartNumber
+                - status
+                - totalLicenses
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.companySubscriptionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.companySubscription
+      summary: Create new navigation property to subscriptions for directory
+      operationId: directory_CreateSubscription
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.companySubscription'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.companySubscription'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/subscriptions/{companySubscription-id}':
+    get:
+      tags:
+        - directory.companySubscription
+      summary: Get subscriptions from directory
+      operationId: directory_GetSubscription
+      parameters:
+        - name: companySubscription-id
+          in: path
+          description: The unique identifier of companySubscription
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: companySubscription
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - isTrial
+                - nextLifecycleDateTime
+                - ocpSubscriptionId
+                - serviceStatus
+                - skuId
+                - skuPartNumber
+                - status
+                - totalLicenses
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.companySubscription'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.companySubscription
+      summary: Update the navigation property subscriptions in directory
+      operationId: directory_UpdateSubscription
+      parameters:
+        - name: companySubscription-id
+          in: path
+          description: The unique identifier of companySubscription
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: companySubscription
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.companySubscription'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.companySubscription'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.companySubscription
+      summary: Delete navigation property subscriptions for directory
+      operationId: directory_DeleteSubscription
+      parameters:
+        - name: companySubscription-id
+          in: path
+          description: The unique identifier of companySubscription
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: companySubscription
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/subscriptions/$count:
+    get:
+      tags:
+        - directory.companySubscription
+      summary: Get the number of the resource
+      operationId: directory.subscription_GetCount
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   /directoryRoles:
     get:
       tags:
@@ -20130,7 +20434,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsApplication
+      operationId: directoryRole.Member_GetCountAsApplication
       parameters:
         - name: directoryRole-id
           in: path
@@ -20240,7 +20544,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsDevice
+      operationId: directoryRole.Member_GetCountAsDevice
       parameters:
         - name: directoryRole-id
           in: path
@@ -20350,7 +20654,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsGroup
+      operationId: directoryRole.Member_GetCountAsGroup
       parameters:
         - name: directoryRole-id
           in: path
@@ -20460,7 +20764,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsOrgContact
+      operationId: directoryRole.Member_GetCountAsOrgContact
       parameters:
         - name: directoryRole-id
           in: path
@@ -20570,7 +20874,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsServicePrincipal
+      operationId: directoryRole.Member_GetCountAsServicePrincipal
       parameters:
         - name: directoryRole-id
           in: path
@@ -20680,7 +20984,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsUser
+      operationId: directoryRole.Member_GetCountAsUser
       parameters:
         - name: directoryRole-id
           in: path
@@ -24485,6 +24789,8 @@ paths:
                 - isMultipleDataLocationsForServicesEnabled desc
                 - marketingNotificationEmails
                 - marketingNotificationEmails desc
+                - onPremisesLastPasswordSyncDateTime
+                - onPremisesLastPasswordSyncDateTime desc
                 - onPremisesLastSyncDateTime
                 - onPremisesLastSyncDateTime desc
                 - onPremisesSyncEnabled
@@ -24539,6 +24845,7 @@ paths:
                 - displayName
                 - isMultipleDataLocationsForServicesEnabled
                 - marketingNotificationEmails
+                - onPremisesLastPasswordSyncDateTime
                 - onPremisesLastSyncDateTime
                 - onPremisesSyncEnabled
                 - partnerTenantType
@@ -24650,6 +24957,7 @@ paths:
                 - displayName
                 - isMultipleDataLocationsForServicesEnabled
                 - marketingNotificationEmails
+                - onPremisesLastPasswordSyncDateTime
                 - onPremisesLastSyncDateTime
                 - onPremisesSyncEnabled
                 - partnerTenantType
@@ -26802,9 +27110,9 @@ paths:
               enum:
                 - id
                 - microsoftApplicationDataAccess
-                - contactInsights
                 - profileCardProperties
                 - pronouns
+                - contactInsights
                 - itemInsights
                 - peopleInsights
               type: string
@@ -26820,9 +27128,9 @@ paths:
               enum:
                 - '*'
                 - microsoftApplicationDataAccess
-                - contactInsights
                 - profileCardProperties
                 - pronouns
+                - contactInsights
                 - itemInsights
                 - peopleInsights
               type: string
@@ -28320,6 +28628,393 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/tenantRelationships/managedTenants/managedTenantAlerts/{managedTenantAlert-id}/microsoft.graph.managedTenants.addUserInputLog':
+    post:
+      tags:
+        - tenantRelationships.Actions
+      summary: Invoke action addUserInputLog
+      operationId: tenantRelationship.managedTenant.managedTenantAlert_addUserInputLog
+      parameters:
+        - name: managedTenantAlert-id
+          in: path
+          description: The unique identifier of managedTenantAlert
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedTenantAlert
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                logInformation:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/tenantRelationships/managedTenants/managementActions/{managementAction-id}/microsoft.graph.managedTenants.apply':
+    post:
+      tags:
+        - tenantRelationships.Actions
+      summary: Invoke action apply
+      description: Applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multi-factor authentication for admins management action will create an Azure Active Directory conditional access policy that requires multi-factor authentication for all users that have been assigned an administrative directory role.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-managementaction-apply?view=graph-rest-1.0
+      operationId: tenantRelationship.managedTenant.managementAction_apply
+      parameters:
+        - name: managementAction-id
+          in: path
+          description: The unique identifier of managementAction
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementAction
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantId:
+                  type: string
+                  nullable: true
+                tenantGroupId:
+                  type: string
+                  nullable: true
+                managementTemplateId:
+                  type: string
+                  nullable: true
+                includeAllUsers:
+                  type: boolean
+                  default: false
+                  nullable: true
+                includeGroups:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                excludeGroups:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionDeploymentStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /tenantRelationships/managedTenants/managementActionTenantDeploymentStatuses/microsoft.graph.managedTenants.changeDeploymentStatus:
+    post:
+      tags:
+        - tenantRelationships.Actions
+      summary: Invoke action changeDeploymentStatus
+      operationId: tenantRelationship.managedTenant.managementActionTenantDeploymentStatus_changeDeploymentStatus
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantGroupId:
+                  type: string
+                  nullable: true
+                tenantId:
+                  type: string
+                  nullable: true
+                managementActionId:
+                  type: string
+                  nullable: true
+                managementTemplateId:
+                  type: string
+                  nullable: true
+                managementTemplateVersion:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                status:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionDeploymentStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/tenantRelationships/managedTenants/managementTemplateStepVersions/{managementTemplateStepVersion-id}/deployments/{managementTemplateStepDeployment-id}/microsoft.graph.managedTenants.changeDeploymentStatus':
+    post:
+      tags:
+        - tenantRelationships.Actions
+      summary: Invoke action changeDeploymentStatus
+      operationId: tenantRelationship.managedTenant.managementTemplateStepVersion.deployment_changeDeploymentStatus
+      parameters:
+        - name: managementTemplateStepVersion-id
+          in: path
+          description: The unique identifier of managementTemplateStepVersion
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateStepVersion
+        - name: managementTemplateStepDeployment-id
+          in: path
+          description: The unique identifier of managementTemplateStepDeployment
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managementTemplateStepDeployment
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantId:
+                  type: string
+                  nullable: true
+                managementTemplateStepId:
+                  type: string
+                  nullable: true
+                status:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /tenantRelationships/managedTenants/tenantGroups/microsoft.graph.managedTenants.tenantSearch:
+    post:
+      tags:
+        - tenantRelationships.Actions
+      summary: Invoke action tenantSearch
+      operationId: tenantRelationship.managedTenant.tenantGroup_tenantSearch
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of tenantGroup
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantGroup'
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  '/tenantRelationships/managedTenants/tenants/{tenant-id}/microsoft.graph.managedTenants.offboardTenant':
+    post:
+      tags:
+        - tenantRelationships.Actions
+      summary: Invoke action offboardTenant
+      description: 'Carries out the appropriate procedures to remove a managed tenant from the multi-tenant management platform. No relationships, such as commerce and delegate administrative privileges, will be impacted. The only change made by invoking this action is the tenant will be deprovisioned from the multi-tenant management platform.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-tenant-offboardtenant?view=graph-rest-1.0
+      operationId: tenantRelationship.managedTenant.tenant_offboardTenant
+      parameters:
+        - name: tenant-id
+          in: path
+          description: The unique identifier of tenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tenant
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/tenantRelationships/managedTenants/tenants/{tenant-id}/microsoft.graph.managedTenants.resetTenantOnboardingStatus':
+    post:
+      tags:
+        - tenantRelationships.Actions
+      summary: Invoke action resetTenantOnboardingStatus
+      description: Carries out the appropriate procedures to reset the onboarding status for the managed tenant that was removed from the multi-tenant management platform using the offboardTenant action. By invoking this action the platform will attempt to onboard the managed tenant for management.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-tenant-resettenantonboardingstatus?view=graph-rest-1.0
+      operationId: tenantRelationship.managedTenant.tenant_resetTenantOnboardingStatus
+      parameters:
+        - name: tenant-id
+          in: path
+          description: The unique identifier of tenant
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tenant
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenant'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/tenantRelationships/managedTenants/tenantTags/{tenantTag-id}/microsoft.graph.managedTenants.assignTag':
+    post:
+      tags:
+        - tenantRelationships.Actions
+      summary: Invoke action assignTag
+      description: Assign the tenant tag to the specified managed tenants.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-tenanttag-assigntag?view=graph-rest-1.0
+      operationId: tenantRelationship.managedTenant.tenantTag_assignTag
+      parameters:
+        - name: tenantTag-id
+          in: path
+          description: The unique identifier of tenantTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tenantTag
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/tenantRelationships/managedTenants/tenantTags/{tenantTag-id}/microsoft.graph.managedTenants.unassignTag':
+    post:
+      tags:
+        - tenantRelationships.Actions
+      summary: Invoke action unassignTag
+      description: Un-assigns the tenant tag from the specified managed tenants.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/managedtenants-tenanttag-unassigntag?view=graph-rest-1.0
+      operationId: tenantRelationship.managedTenant.tenantTag_unassignTag
+      parameters:
+        - name: tenantTag-id
+          in: path
+          description: The unique identifier of tenantTag
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: tenantTag
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tenantIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantTag'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/scopedRoleMemberOf':
     get:
       tags:
@@ -28604,7 +29299,7 @@ components:
               nullable: true
             isMemberManagementRestricted:
               type: boolean
-              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.'
+              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.'
               nullable: true
             visibility:
               type: string
@@ -28635,6 +29330,20 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: extension
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.directoryObject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryObject
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.application:
@@ -28905,7 +29614,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
+              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             isRooted:
               type: boolean
@@ -29093,7 +29802,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
+              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a group that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -29896,7 +30605,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
+              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -30202,6 +30911,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
               description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
               x-ms-navigationProperty: true
+            sponsors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
@@ -30390,6 +31104,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
+              description: The user's activities across devices. Read-only. Nullable.
               x-ms-navigationProperty: true
             devices:
               type: array
@@ -30400,6 +31115,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+              description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
               x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
@@ -30416,26 +31132,17 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.team'
               description: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
               x-ms-navigationProperty: true
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
             employeeExperience:
               $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
-          additionalProperties:
-            type: object
-    microsoft.graph.directoryObject:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: directoryObject
-          type: object
-          properties:
-            deletedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-              format: date-time
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.scopedRoleMembership:
@@ -30631,6 +31338,11 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedEmailDomain'
+              x-ms-navigationProperty: true
+            subscriptions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.companySubscription'
               x-ms-navigationProperty: true
             featureRolloutPolicies:
               type: array
@@ -30931,6 +31643,49 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.companySubscription:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: companySubscription
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            isTrial:
+              type: boolean
+              nullable: true
+            nextLifecycleDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            ocpSubscriptionId:
+              type: string
+              nullable: true
+            serviceStatus:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.servicePlanInfo'
+            skuId:
+              type: string
+              nullable: true
+            skuPartNumber:
+              type: string
+              nullable: true
+            status:
+              type: string
+              nullable: true
+            totalLicenses:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.directoryRole:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -31209,6 +31964,12 @@ components:
               items:
                 type: string
               description: Not nullable.
+            onPremisesLastPasswordSyncDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The last time a password sync request was received for the tenant.
+              format: date-time
+              nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -31240,10 +32001,12 @@ components:
               type: array
               items:
                 type: string
+              description: Not nullable.
             securityComplianceNotificationPhones:
               type: array
               items:
                 type: string
+              description: Not nullable.
             state:
               type: string
               description: State name of the address for the organization.
@@ -31315,8 +32078,6 @@ components:
           properties:
             microsoftApplicationDataAccess:
               $ref: '#/components/schemas/microsoft.graph.microsoftApplicationDataAccessSettings'
-            contactInsights:
-              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
             profileCardProperties:
               type: array
               items:
@@ -31325,6 +32086,8 @@ components:
               x-ms-navigationProperty: true
             pronouns:
               $ref: '#/components/schemas/microsoft.graph.pronounsSettings'
+            contactInsights:
+              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.insightsSettings'
             peopleInsights:
@@ -31463,6 +32226,247 @@ components:
                 nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.managedTenants.managedTenantAlert:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantAlert
+          type: object
+          properties:
+            alertData:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertData'
+            alertDataReferenceStrings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.alertDataReferenceString'
+            alertRuleDisplayName:
+              type: string
+              nullable: true
+            assignedToUserId:
+              type: string
+              nullable: true
+            correlationCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            correlationId:
+              type: string
+              nullable: true
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            message:
+              type: string
+              nullable: true
+            severity:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertSeverity'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertStatus'
+            tenantId:
+              type: string
+              nullable: true
+            title:
+              type: string
+              nullable: true
+            alertLogs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertLog'
+              x-ms-navigationProperty: true
+            alertRule:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+            apiNotifications:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantApiNotification'
+              x-ms-navigationProperty: true
+            emailNotifications:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantEmailNotification'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managementActionDeploymentStatus:
+      title: managementActionDeploymentStatus
+      type: object
+      properties:
+        managementActionId:
+          type: string
+          description: The identifier for the management action. Required. Read-only.
+        managementTemplateId:
+          type: string
+          description: The management template identifier that was used to generate the management action. Required. Read-only.
+        managementTemplateVersion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        status:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionStatus'
+        workloadActionDeploymentStatuses:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.workloadActionDeploymentStatus'
+          description: The collection of workload action deployment statues for the given management action. Optional.
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managementTemplateStepDeployment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managementTemplateStepDeployment
+          type: object
+          properties:
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            error:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.graphAPIErrorDetails'
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateDeploymentStatus'
+            tenantId:
+              type: string
+            templateStepVersion:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.tenantGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tenantGroup
+          type: object
+          properties:
+            allTenantsIncluded:
+              type: boolean
+              description: A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
+            displayName:
+              type: string
+              description: The display name for the tenant group. Optional. Read-only.
+              nullable: true
+            managementActions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementActionInfo'
+              description: The collection of management action associated with the tenant group. Optional. Read-only.
+            managementIntents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementIntentInfo'
+              description: The collection of management intents associated with the tenant group. Optional. Read-only.
+            tenantIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.tenant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tenant
+          type: object
+          properties:
+            contract:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantContract'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the tenant was created in the multi-tenant management platform. Optional. Read-only.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: The display name for the tenant. Required. Read-only.
+              nullable: true
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the tenant was last updated within the multi-tenant management platform. Optional. Read-only.
+              format: date-time
+              nullable: true
+            tenantId:
+              type: string
+              description: The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
+              nullable: true
+            tenantStatusInformation:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantStatusInformation'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.tenantTag:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tenantTag
+          type: object
+          properties:
+            createdByUserId:
+              type: string
+              description: The identifier for the account that created the tenant tag. Required. Read-only.
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the tenant tag was created. Required. Read-only.
+              format: date-time
+              nullable: true
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the tenant tag was deleted. Required. Read-only.
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: The description for the tenant tag. Optional. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name for the tenant tag. Required. Read-only.
+              nullable: true
+            lastActionByUserId:
+              type: string
+              description: The identifier for the account that lasted on the tenant tag. Optional. Read-only.
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time the last action was performed against the tenant tag. Optional. Read-only.
+              format: date-time
+              nullable: true
+            tenants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantInfo'
+              description: The collection of managed tenants associated with the tenant tag. Optional.
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -31548,6 +32552,7 @@ components:
       properties:
         removeUnverifiedEmailClaim:
           type: boolean
+          description: Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
           nullable: true
         requireClientServicePrincipal:
           type: boolean
@@ -32107,18 +33112,18 @@ components:
       properties:
         identityProvider:
           type: string
-          description: For internal use only
+          description: For internal use only.
           nullable: true
         key:
           type: string
-          description: For internal use only
+          description: For internal use only.
           format: base64url
           nullable: true
         type:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: For internal use only
+          description: For internal use only.
           format: int32
           nullable: true
       additionalProperties:
@@ -35344,40 +36349,50 @@ components:
           properties:
             activationUrl:
               type: string
+              description: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
             activitySourceHost:
               type: string
+              description: 'Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.'
             appActivityId:
               type: string
+              description: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
             appDisplayName:
               type: string
+              description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
               $ref: '#/components/schemas/microsoft.graph.Json'
             contentUrl:
               type: string
+              description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object expired on the server.
               format: date-time
               nullable: true
             fallbackUrl:
               type: string
+              description: 'Optional. URL used to launch the activity in a web-based app, if available.'
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
+              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             visualElements:
               $ref: '#/components/schemas/microsoft.graph.visualInfo'
@@ -35385,6 +36400,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+              description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -35821,11 +36837,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -36051,6 +37067,30 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.servicePlanInfo:
+      title: servicePlanInfo
+      type: object
+      properties:
+        appliesTo:
+          type: string
+          description: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
+          nullable: true
+        provisioningStatus:
+          type: string
+          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          nullable: true
+        servicePlanId:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          description: The unique identifier of the service plan.
+          format: uuid
+          nullable: true
+        servicePlanName:
+          type: string
+          description: The name of the service plan.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.settingTemplateValue:
       title: settingTemplateValue
       type: object
@@ -36524,27 +37564,434 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.servicePlanInfo:
-      title: servicePlanInfo
+    microsoft.graph.managedTenants.alertData:
+      title: alertData
       type: object
       properties:
-        appliesTo:
+        displayName:
           type: string
-          description: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
           nullable: true
-        provisioningStatus:
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.alertDataReferenceString:
+      title: alertDataReferenceString
+      type: object
+      properties:
+        displayName:
           type: string
-          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
-        servicePlanId:
-          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.alertSeverity:
+      title: alertSeverity
+      enum:
+        - unknown
+        - informational
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.alertStatus:
+      title: alertStatus
+      enum:
+        - unknown
+        - newAlert
+        - inProgress
+        - resolved
+        - dismissed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.managedTenantAlertLog:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantAlertLog
+          type: object
+          properties:
+            content:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertLogContent'
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            alert:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managedTenantAlertRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantAlertRule
+          type: object
+          properties:
+            alertDisplayName:
+              type: string
+              nullable: true
+            alertTTL:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastRunDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            notificationFinalDestinations:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.notificationDestination'
+            severity:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertSeverity'
+            targets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.notificationTarget'
+            tenantIds:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantInfo'
+            alerts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+              x-ms-navigationProperty: true
+            ruleDefinition:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRuleDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managedTenantApiNotification:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantApiNotification
+          type: object
+          properties:
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            isAcknowledged:
+              type: boolean
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            message:
+              type: string
+              nullable: true
+            title:
+              type: string
+              nullable: true
+            userId:
+              type: string
+              nullable: true
+            alert:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managedTenantEmailNotification:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantEmailNotification
+          type: object
+          properties:
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            emailAddresses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.email'
+            emailBody:
+              type: string
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            subject:
+              type: string
+              nullable: true
+            alert:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlert'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managementActionStatus:
+      title: managementActionStatus
+      enum:
+        - toAddress
+        - completed
+        - error
+        - timeOut
+        - inProgress
+        - planned
+        - resolvedBy3rdParty
+        - resolvedThroughAlternateMitigation
+        - riskAccepted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.workloadActionDeploymentStatus:
+      title: workloadActionDeploymentStatus
+      type: object
+      properties:
+        actionId:
           type: string
-          description: The unique identifier of the service plan.
-          format: uuid
+          description: The unique identifier for the workload action. Required. Read-only.
+        deployedPolicyId:
+          type: string
+          description: The identifier of any policy that was created by applying the workload action. Optional. Read-only.
           nullable: true
-        servicePlanName:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.genericError'
+        excludeGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+        includeAllUsers:
+          type: boolean
+        includeGroups:
+          type: array
+          items:
+            type: string
+            nullable: true
+        lastDeploymentDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: The name of the service plan.
+          description: The date and time the workload action was last deployed. Optional.
+          format: date-time
+          nullable: true
+        status:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.workloadActionStatus'
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.graphAPIErrorDetails:
+      title: graphAPIErrorDetails
+      type: object
+      properties:
+        code:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managementTemplateDeploymentStatus:
+      title: managementTemplateDeploymentStatus
+      enum:
+        - unknown
+        - inProgress
+        - completed
+        - failed
+        - ineligible
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.managementTemplateStepVersion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managementTemplateStepVersion
+          type: object
+          properties:
+            contentMarkdown:
+              type: string
+              nullable: true
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            name:
+              type: string
+              nullable: true
+            version:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            versionInformation:
+              type: string
+              nullable: true
+            acceptedFor:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
+            deployments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepDeployment'
+              x-ms-navigationProperty: true
+            templateStep:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managementActionInfo:
+      title: managementActionInfo
+      type: object
+      properties:
+        managementActionId:
+          type: string
+          description: The identifier for the management action. Required. Read-only.
+        managementTemplateId:
+          type: string
+          description: The identifier for the management template. Required. Read-only.
+        managementTemplateVersion:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managementIntentInfo:
+      title: managementIntentInfo
+      type: object
+      properties:
+        managementIntentDisplayName:
+          type: string
+          description: The display name for the management intent. Optional. Read-only.
+          nullable: true
+        managementIntentId:
+          type: string
+          description: The identifier for the management intent. Required. Read-only.
+        managementTemplates:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateDetailedInfo'
+          description: The collection of management template information associated with the management intent. Optional. Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.tenantContract:
+      title: tenantContract
+      type: object
+      properties:
+        contractType:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The type of relationship that exists between the managing entity and tenant. Optional. Read-only.
+          format: int32
+          nullable: true
+        defaultDomainName:
+          type: string
+          description: The default domain name for the tenant. Required. Read-only.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name for the tenant. Optional. Read-only.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.tenantStatusInformation:
+      title: tenantStatusInformation
+      type: object
+      properties:
+        delegatedPrivilegeStatus:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.delegatedPrivilegeStatus'
+        lastDelegatedPrivilegeRefreshDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time the delegated admin privileges status was updated. Optional. Read-only.
+          format: date-time
+          nullable: true
+        offboardedByUserId:
+          type: string
+          description: The identifier for the account that offboarded the managed tenant. Optional. Read-only.
+          nullable: true
+        offboardedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the managed tenant was offboarded. Optional. Read-only.
+          format: date-time
+          nullable: true
+        onboardedByUserId:
+          type: string
+          description: The identifier for the account that onboarded the managed tenant. Optional. Read-only.
+          nullable: true
+        onboardedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time when the managed tenant was onboarded. Optional. Read-only.
+          format: date-time
+          nullable: true
+        onboardingStatus:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantOnboardingStatus'
+        tenantOnboardingEligibilityReason:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.tenantOnboardingEligibilityReason'
+        workloadStatuses:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.workloadStatus'
+          description: The collection of workload statues for the managed tenant. Optional. Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.tenantInfo:
+      title: tenantInfo
+      type: object
+      properties:
+        tenantId:
+          type: string
+          description: The Azure Active Directory tenant identifier for the managed tenant. Optional.
           nullable: true
       additionalProperties:
         type: object
@@ -36939,6 +38386,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.sharedEmailDomain'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.companySubscriptionCollectionResponse:
+      title: Collection of companySubscription
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.companySubscription'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -39202,6 +40662,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+              description: The offer requests for shifts in the schedule.
               x-ms-navigationProperty: true
             openShiftChangeRequests:
               type: array
@@ -42082,15 +43543,15 @@ components:
               nullable: true
             fullScanOverdue:
               type: boolean
-              description: Full scan overdue or not?
+              description: 'When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.'
               nullable: true
             fullScanRequired:
               type: boolean
-              description: Full scan required or not?
+              description: 'When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.'
               nullable: true
             isVirtualMachine:
               type: boolean
-              description: Indicates whether the device is a virtual machine.
+              description: 'When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.'
               nullable: true
             lastFullScanDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -42120,29 +43581,29 @@ components:
               nullable: true
             malwareProtectionEnabled:
               type: boolean
-              description: Anti malware is enabled or not
+              description: When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.
               nullable: true
             networkInspectionSystemEnabled:
               type: boolean
-              description: Network inspection system enabled or not?
+              description: 'When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.'
               nullable: true
             productStatus:
               $ref: '#/components/schemas/microsoft.graph.windowsDefenderProductStatus'
             quickScanOverdue:
               type: boolean
-              description: Quick scan overdue or not?
+              description: 'When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.'
               nullable: true
             realTimeProtectionEnabled:
               type: boolean
-              description: Real time protection is enabled or not?
+              description: 'When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.'
               nullable: true
             rebootRequired:
               type: boolean
-              description: Reboot required or not?
+              description: 'When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.'
               nullable: true
             signatureUpdateOverdue:
               type: boolean
-              description: Signature out of date or not?
+              description: 'When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.'
               nullable: true
             signatureVersion:
               type: string
@@ -42150,7 +43611,7 @@ components:
               nullable: true
             tamperProtectionEnabled:
               type: boolean
-              description: Indicates whether the Windows Defender tamper protection feature is enabled.
+              description: 'When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.'
               nullable: true
             detectedMalwareState:
               type: array
@@ -44373,8 +45834,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValue'
+          description: Represents the content options of External Identities to be customized throughout the authentication flow for a tenant.
         attributeCollectionRelativeUrl:
           type: string
+          description: A relative URL for the content options of External Identities to be customized throughout the authentication flow for a tenant.
           nullable: true
       additionalProperties:
         type: object
@@ -44438,6 +45901,221 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.managedTenants.alertLogContent:
+      title: alertLogContent
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.notificationDestination:
+      title: notificationDestination
+      enum:
+        - none
+        - api
+        - email
+        - sms
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.notificationTarget:
+      title: notificationTarget
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managedTenantAlertRuleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managedTenantAlertRuleDefinition
+          type: object
+          properties:
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            definitionTemplate:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.alertRuleDefinitionTemplate'
+            displayName:
+              type: string
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            alertRules:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managedTenantAlertRule'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.email:
+      title: email
+      type: object
+      properties:
+        emailAddress:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.genericError:
+      title: genericError
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.workloadActionStatus:
+      title: workloadActionStatus
+      enum:
+        - toAddress
+        - completed
+        - error
+        - timeOut
+        - inProgress
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.managementTemplateStep:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managementTemplateStep
+          type: object
+          properties:
+            category:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementCategory'
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            portalLink:
+              $ref: '#/components/schemas/microsoft.graph.actionUrl'
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            acceptedVersion:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
+            managementTemplate:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
+            versions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStepVersion'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.managementTemplateDetailedInfo:
+      title: managementTemplateDetailedInfo
+      type: object
+      properties:
+        category:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.managementCategory'
+        displayName:
+          type: string
+          description: The display name for the management template. Required. Read-only.
+          nullable: true
+        managementTemplateId:
+          type: string
+          description: The unique identifier for the management template. Required. Read-only.
+        version:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.delegatedPrivilegeStatus:
+      title: delegatedPrivilegeStatus
+      enum:
+        - none
+        - delegatedAdminPrivileges
+        - unknownFutureValue
+        - granularDelegatedAdminPrivileges
+        - delegatedAndGranularDelegetedAdminPrivileges
+      type: string
+    microsoft.graph.managedTenants.tenantOnboardingStatus:
+      title: tenantOnboardingStatus
+      enum:
+        - ineligible
+        - inProcess
+        - active
+        - inactive
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.tenantOnboardingEligibilityReason:
+      title: tenantOnboardingEligibilityReason
+      enum:
+        - none
+        - contractType
+        - delegatedAdminPrivileges
+        - usersCount
+        - license
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.workloadStatus:
+      title: workloadStatus
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name for the workload. Required. Read-only.
+          nullable: true
+        offboardedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time the workload was offboarded. Optional. Read-only.
+          format: date-time
+          nullable: true
+        onboardedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The date and time the workload was onboarded. Optional. Read-only.
+          format: date-time
+          nullable: true
+        onboardingStatus:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.workloadOnboardingStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -44455,7 +46133,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
@@ -45734,7 +47412,7 @@ components:
       properties:
         format:
           type: string
-          description: 'For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.'
+          description: 'For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.'
           nullable: true
         formula:
           type: string
@@ -45742,7 +47420,7 @@ components:
           nullable: true
         outputType:
           type: string
-          description: 'The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.'
+          description: 'The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.'
           nullable: true
       additionalProperties:
         type: object
@@ -45801,11 +47479,11 @@ components:
       properties:
         formula:
           type: string
-          description: The formula used to compute the default value for this column.
+          description: The formula used to compute the default value for the column.
           nullable: true
         value:
           type: string
-          description: The direct value to use as the default value for this column.
+          description: The direct value to use as the default value for the column.
           nullable: true
       additionalProperties:
         type: object
@@ -45898,7 +47576,7 @@ components:
       properties:
         id:
           type: string
-          description: The id of the content type.
+          description: The ID of the content type.
           nullable: true
         name:
           type: string
@@ -46063,13 +47741,13 @@ components:
       properties:
         default:
           type: boolean
-          description: Whether this is the default Content Type
+          description: Indicates whether this is the default content type.
           nullable: true
         position:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Specifies the position in which the Content Type appears in the selection UI.
+          description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
       additionalProperties:
@@ -46602,21 +48280,25 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of guests in a channel.
           format: int32
           nullable: true
         hasMembersFromOtherTenants:
           type: boolean
+          description: Indicates whether external members are included on the channel.
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of owners in a channel.
           format: int32
           nullable: true
       additionalProperties:
@@ -47666,20 +49348,6 @@ components:
               description: 'The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.'
           additionalProperties:
             type: object
-    microsoft.graph.genericError:
-      title: genericError
-      type: object
-      properties:
-        code:
-          type: string
-          description: The error code.
-          nullable: true
-        message:
-          type: string
-          description: The error message.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.userIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -50048,6 +51716,104 @@ components:
       enum:
         - default
         - verticalSplit
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.alertRuleDefinitionTemplate:
+      title: alertRuleDefinitionTemplate
+      type: object
+      properties:
+        defaultSeverity:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.alertSeverity'
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managementCategory:
+      title: managementCategory
+      enum:
+        - custom
+        - devices
+        - identity
+        - data
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.managementTemplate:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managementTemplate
+          type: object
+          properties:
+            category:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementCategory'
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: The description for the management template. Optional. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name for the management template. Required. Read-only.
+              nullable: true
+            informationLinks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.actionUrl'
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            parameters:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.templateParameter'
+              description: The collection of parameters used by the management template. Optional. Read-only.
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            provider:
+              $ref: '#/components/schemas/microsoft.graph.managedTenants.managementProvider'
+            userImpact:
+              type: string
+              nullable: true
+            version:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            workloadActions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.workloadAction'
+              description: The collection of workload actions associated with the management template. Optional. Read-only.
+            managementTemplateCollections:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateCollection'
+              x-ms-navigationProperty: true
+            managementTemplateSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplateStep'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.managedTenants.workloadOnboardingStatus:
+      title: workloadOnboardingStatus
+      enum:
+        - notOnboarded
+        - onboarded
         - unknownFutureValue
       type: string
     microsoft.graph.ODataErrors.ErrorDetails:
@@ -53152,6 +54918,108 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.managedTenants.templateParameter:
+      title: templateParameter
+      type: object
+      properties:
+        description:
+          type: string
+          description: The description for the template parameter. Optional. Read-only.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name for the template parameter. Required. Read-only.
+          nullable: true
+        jsonAllowedValues:
+          type: string
+          description: The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
+          nullable: true
+        jsonDefaultValue:
+          type: string
+          description: The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
+          nullable: true
+        valueType:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.managementParameterValueType'
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managementProvider:
+      title: managementProvider
+      enum:
+        - microsoft
+        - community
+        - indirectProvider
+        - self
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.workloadAction:
+      title: workloadAction
+      type: object
+      properties:
+        actionId:
+          type: string
+          description: The unique identifier for the workload action. Required. Read-only.
+          nullable: true
+        category:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.workloadActionCategory'
+        description:
+          type: string
+          description: The description for the workload action. Optional. Read-only.
+          nullable: true
+        displayName:
+          type: string
+          description: The display name for the workload action. Optional. Read-only.
+          nullable: true
+        licenses:
+          type: array
+          items:
+            type: string
+            nullable: true
+        service:
+          type: string
+          description: The service associated with workload action. Optional. Read-only.
+          nullable: true
+        settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.managedTenants.setting'
+          description: The collection of settings associated with the workload action. Optional. Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.managedTenants.managementTemplateCollection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: managementTemplateCollection
+          type: object
+          properties:
+            createdByUserId:
+              type: string
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+              nullable: true
+            lastActionByUserId:
+              type: string
+              nullable: true
+            lastActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            managementTemplates:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.managedTenants.managementTemplate'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.synchronizationError:
       title: synchronizationError
       type: object
@@ -54967,6 +56835,46 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.managedTenants.managementParameterValueType:
+      title: managementParameterValueType
+      enum:
+        - string
+        - integer
+        - boolean
+        - guid
+        - stringCollection
+        - integerCollection
+        - booleanCollection
+        - guidCollection
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.workloadActionCategory:
+      title: workloadActionCategory
+      enum:
+        - automated
+        - manual
+        - unknownFutureValue
+      type: string
+    microsoft.graph.managedTenants.setting:
+      title: setting
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: The display name for the setting. Required. Read-only.
+        jsonValue:
+          type: string
+          description: The value for the setting serialized as string of JSON. Required. Read-only.
+        overwriteAllowed:
+          type: boolean
+          description: A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
+        settingId:
+          type: string
+          nullable: true
+        valueType:
+          $ref: '#/components/schemas/microsoft.graph.managedTenants.managementParameterValueType'
+      additionalProperties:
+        type: object
     microsoft.graph.attributeMapping:
       title: attributeMapping
       type: object
@@ -56106,6 +58014,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.sharedEmailDomainCollectionResponse'
+    microsoft.graph.companySubscriptionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.companySubscriptionCollectionResponse'
     microsoft.graph.directoryRoleCollectionResponse:
       description: Retrieved collection
       content:
