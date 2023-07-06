@@ -11,7 +11,7 @@ $params = @{
 			previewPriority = " !"
 			type = "Other"
 		}
-		"https%3A//developer%2Emicrosoft%2Ecom/en-us/graph/graph-explorer" = @{
+		"https%3A//developer%2Emicrosoft%2Ecom/graph/graph-explorer" = @{
 			"@odata.type" = "microsoft.graph.plannerExternalReference"
 			previewPriority = "  !!"
 		}
@@ -29,6 +29,9 @@ $params = @{
 		}
 		"a93c93c5-10a6-4167-9551-8bafa09967a7" = $null
 	}
+	description = "Updated task details properties:
+Updated checklist:Sub items
+Updated references:Related links"
 }
 
 Update-MgBetaPlannerTaskDetail -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="

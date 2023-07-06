@@ -1,19 +1,28 @@
 ### Example 1: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Mail
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
 
 $params = @{
-	subject = "Did you see last night's game?"
-	importance = "Low"
+	subject = "Annual review"
 	body = @{
 		contentType = "HTML"
-		content = "They were &lt;b&gt;awesome&lt;/b&gt;!"
+		content = "You should be proud!"
 	}
 	toRecipients = @(
 		@{
 			emailAddress = @{
-				address = "AdeleV@contoso.onmicrosoft.com"
+				address = "rufus@contoso.com"
 			}
+		}
+	)
+	extensions = @(
+		@{
+			"@odata.type" = "microsoft.graph.openTypeExtension"
+			extensionName = "Com.Contoso.Referral"
+			companyName = "Wingtip Toys"
+			expirationDate = "2015-12-30T11:00:00.000Z"
+			dealValue = 
 		}
 	)
 }
@@ -22,40 +31,26 @@ $params = @{
 New-MgBetaUserMessage -UserId $userId -BodyParameter $params
 ```
 This example shows how to use the New-MgBetaUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 ### Example 2: Code snippet
 
-```powershellImport-Module Microsoft.Graph.Beta.Mail
+```powershell
+Import-Module Microsoft.Graph.Beta.Mail
 
 $params = @{
-	subject = "9/8/2018: concert"
-	body = @{
-		contentType = "HTML"
-		content = "The group represents Washington."
-	}
-	toRecipients = @(
-		@{
-			emailAddress = @{
-				address = "AlexW@contoso.OnMicrosoft.com"
-			}
-		}
-	)
-	internetMessageHeaders = @(
-		@{
-			name = "x-custom-header-group-name"
-			value = "Washington"
-		}
-		@{
-			name = "x-custom-header-group-id"
-			value = "WA001"
-		}
-	)
+	"@odata.type" = "microsoft.graph.openTypeExtension"
+	extensionName = "Com.Contoso.Referral"
+	companyName = "Wingtip Toys"
+	dealValue = 
+	expirationDate = "2015-12-03T10:00:00.000Z"
 }
 
 # A UPN can also be used as -UserId.
-New-MgBetaUserMessage -UserId $userId -BodyParameter $params
+New-MgBetaUserMessageExtension -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
 This example shows how to use the New-MgBetaUserMessage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 

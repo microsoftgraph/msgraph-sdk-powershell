@@ -82,7 +82,7 @@ New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 This example shows how to use the New-MgBetaIdentityConditionalAccessPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 3: Use all conditions and controls
+### Example 3: Use all conditions/controls
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 
@@ -154,6 +154,14 @@ $params = @{
 				"d2136c9c-b049-47ae-b9cf-316e04ef7198"
 			)
 		}
+		deviceStates = @{
+			includeStates = @(
+				"All"
+			)
+			excludeStates = @(
+				"Compliant"
+			)
+		}
 	}
 	grantControls = @{
 		operator = "OR"
@@ -191,12 +199,12 @@ New-MgBetaIdentityConditionalAccessPolicy -BodyParameter $params
 This example shows how to use the New-MgBetaIdentityConditionalAccessPolicy Cmdlet.
 To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 4: Require MFA to Exchange Online from non-compliant devices
+### Example 4: Require MFA to Exchange Online from non-complaint devices
 
 ```powershellImport-Module Microsoft.Graph.Beta.Identity.SignIns
 
 $params = @{
-	displayName = "Require MFA to EXO from non-compliant devices."
+	displayName = "Require MFA to EXO from non-complaint devices."
 	state = "enabled"
 	conditions = @{
 		applications = @{
@@ -207,6 +215,14 @@ $params = @{
 		users = @{
 			includeGroups = @(
 				"ba8e7ded-8b0f-4836-ba06-8ff1ecc5c8ba"
+			)
+		}
+		devices = @{
+			includeDevices = @(
+				"All"
+			)
+			excludeDevices = @(
+				"Compliant"
 			)
 		}
 	}

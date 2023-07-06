@@ -1,17 +1,20 @@
-### Example 1: {{ Add title here }}
+### Example 1: Code snippet
+
 ```powershell
- PS C:\> {{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Mail
 
-{{ Add output here }}
+$params = @{
+	"@odata.type" = "microsoft.graph.openTypeExtension"
+	extensionName = "Com.Contoso.Referral"
+	companyName = "Wingtip Toys"
+	dealValue = 
+	expirationDate = "2015-12-03T10:00:00.000Z"
+}
+
+# A UPN can also be used as -UserId.
+New-MgBetaUserMessageExtension -UserId $userId -MessageId $messageId -BodyParameter $params
 ```
+This example shows how to use the New-MgBetaUserMessageExtension Cmdlet.
 
-{{ Add description here }}
+To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
-### Example 2: {{ Add title here }}
-```powershell
- PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}

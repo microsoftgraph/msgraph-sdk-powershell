@@ -6,9 +6,9 @@ $params = @{
 	"@odata.type" = "#microsoft.graph.security.retentionEvent"
 	displayName = "String"
 	description = "String"
-	eventQuery = @(
+	eventQueries = @(
 		@{
-			"@odata.type" = "microsoft.graph.security.eventQuery"
+			"@odata.type" = "microsoft.graph.security.eventQueries"
 		}
 	)
 	eventTriggerDateTime = [System.DateTime]::Parse("String (timestamp)")

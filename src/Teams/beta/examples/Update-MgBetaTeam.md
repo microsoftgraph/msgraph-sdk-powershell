@@ -3,6 +3,7 @@
 ```powershellImport-Module Microsoft.Graph.Beta.Teams
 
 $params = @{
+	isMembershipLimitedToOwners = $true
 	memberSettings = @{
 		allowCreateUpdateChannels = $true
 	}
@@ -13,6 +14,9 @@ $params = @{
 	funSettings = @{
 		allowGiphy = $true
 		giphyContentRating = "strict"
+	}
+	discoverySettings = @{
+		showInTeamsSearchAndSuggestions = $true
 	}
 }
 

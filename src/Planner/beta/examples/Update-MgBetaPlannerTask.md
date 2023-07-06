@@ -13,6 +13,15 @@ $params = @{
 		category3 = $true
 		category4 = $false
 	}
+	recurrence = @{
+		schedule = @{
+			pattern = @{
+				type = "daily"
+				interval = 3
+			}
+			patternStartDateTime = [System.DateTime]::Parse("2022-02-22T02:10:33Z")
+		}
+	}
 }
 
 Update-MgBetaPlannerTask -PlannerTaskId $plannerTaskId -BodyParameter $params-If-Match W/"JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
