@@ -252,6 +252,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - authorization
+                - authorization desc
                 - createdBy
                 - createdBy desc
                 - description
@@ -280,6 +282,7 @@ paths:
             items:
               enum:
                 - id
+                - authorization
                 - createdBy
                 - description
                 - displayName
@@ -382,6 +385,7 @@ paths:
             items:
               enum:
                 - id
+                - authorization
                 - createdBy
                 - description
                 - displayName
@@ -956,6 +960,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -968,6 +974,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -1067,6 +1074,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -1198,6 +1206,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: teamsAppInstallation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consentedPermissionSet:
+                  $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -1302,6 +1322,7 @@ paths:
             items:
               enum:
                 - id
+                - authorization
                 - createdBy
                 - description
                 - displayName
@@ -1588,11 +1609,11 @@ paths:
     get:
       tags:
         - chats.conversationMember
-      summary: Get conversationMember in a chat
-      description: Retrieve a conversationMember from a chat.
+      summary: Get conversationMember
+      description: Retrieve a conversationMember from a chat or channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
       operationId: chat_GetMember
       parameters:
         - name: chat-id
@@ -1946,11 +1967,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: chat_CreateMessage
       parameters:
         - name: chat-id
@@ -2757,11 +2778,11 @@ paths:
     post:
       tags:
         - chats.chatMessage
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: chat.message_CreateReply
       parameters:
         - name: chat-id
@@ -4793,6 +4814,13 @@ paths:
       summary: Invoke function getAllMessages
       operationId: chat_getAllMessage
       parameters:
+        - name: model
+          in: query
+          description: The payment model for the API
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -5960,11 +5988,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.channel_UpdateMember
       parameters:
         - name: group-id
@@ -6011,11 +6039,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: group.team.channel_DeleteMember
       parameters:
         - name: group-id
@@ -7088,11 +7116,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: group.team.channel.message_CreateReply
       parameters:
         - name: group-id
@@ -8677,7 +8705,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create new navigation property to tabs for groups
+      summary: Add tab to channel
+      description: "Adds (pins) a tab to the specified channel within a team. \nThe corresponding app must already be installed in the team."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
       operationId: group.team.channel_CreateTab
       parameters:
         - name: group-id
@@ -8717,8 +8749,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get tabs from groups
-      description: A collection of all the tabs in the channel. A navigation property.
+      summary: Get tab
+      description: 'Retrieve the properties and relationships of the specified tab in a channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
       operationId: group.team.channel_GetTab
       parameters:
         - name: group-id
@@ -8787,7 +8822,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property tabs in groups
+      summary: Update tab
+      description: "Update the properties of the specified tab.\nThis can be used to configure the content of the tab."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
       operationId: group.team.channel_UpdateTab
       parameters:
         - name: group-id
@@ -8834,7 +8873,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property tabs for groups
+      summary: Delete tab from channel
+      description: 'Removes (unpins) a tab from the specified channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
       operationId: group.team.channel_DeleteTab
       parameters:
         - name: group-id
@@ -9414,6 +9457,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -9426,6 +9471,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -9525,6 +9571,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -9727,6 +9774,7 @@ paths:
             items:
               enum:
                 - id
+                - authorization
                 - createdBy
                 - description
                 - displayName
@@ -10350,8 +10398,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get photo from groups
-      description: The profile photo for the team.
+      summary: Get profilePhoto
+      description: "Get the specified profilePhoto or its metadata (**profilePhoto** properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they are stored in Azure Active Directory. You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
       operationId: group.team_GetPhoto
       parameters:
         - name: group-id
@@ -10460,6 +10511,9 @@ paths:
       tags:
         - groups.team
       summary: Get media content for the navigation property photo from groups
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
       operationId: group.team_GetPhotoContent
       parameters:
         - name: group-id
@@ -10987,11 +11041,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: group.team.primaryChannel_UpdateMember
       parameters:
         - name: group-id
@@ -11030,11 +11084,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: group.team.primaryChannel_DeleteMember
       parameters:
         - name: group-id
@@ -11979,11 +12033,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: group.team.primaryChannel.message_CreateReply
       parameters:
         - name: group-id
@@ -13368,7 +13422,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create new navigation property to tabs for groups
+      summary: Add tab to channel
+      description: "Adds (pins) a tab to the specified channel within a team. \nThe corresponding app must already be installed in the team."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
       operationId: group.team.primaryChannel_CreateTab
       parameters:
         - name: group-id
@@ -13400,8 +13458,11 @@ paths:
     get:
       tags:
         - groups.team
-      summary: Get tabs from groups
-      description: A collection of all the tabs in the channel. A navigation property.
+      summary: Get tab
+      description: 'Retrieve the properties and relationships of the specified tab in a channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
       operationId: group.team.primaryChannel_GetTab
       parameters:
         - name: group-id
@@ -13462,7 +13523,11 @@ paths:
     patch:
       tags:
         - groups.team
-      summary: Update the navigation property tabs in groups
+      summary: Update tab
+      description: "Update the properties of the specified tab.\nThis can be used to configure the content of the tab."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
       operationId: group.team.primaryChannel_UpdateTab
       parameters:
         - name: group-id
@@ -13501,7 +13566,11 @@ paths:
     delete:
       tags:
         - groups.team
-      summary: Delete navigation property tabs for groups
+      summary: Delete tab from channel
+      description: 'Removes (unpins) a tab from the specified channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
       operationId: group.team.primaryChannel_DeleteTab
       parameters:
         - name: group-id
@@ -13873,7 +13942,11 @@ paths:
     post:
       tags:
         - groups.team
-      summary: Create new navigation property to offerShiftRequests for groups
+      summary: Create offerShiftRequest
+      description: Create an instance of an offerShiftRequest.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/offershiftrequest-post?view=graph-rest-1.0
       operationId: group.team.schedule_CreateOfferShiftRequest
       parameters:
         - name: group-id
@@ -18246,11 +18319,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.channel_UpdateMember
       parameters:
         - name: team-id
@@ -18297,11 +18370,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: team.channel_DeleteMember
       parameters:
         - name: team-id
@@ -19520,11 +19593,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: team.channel.message_CreateReply
       parameters:
         - name: team-id
@@ -21677,7 +21750,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Create new navigation property to tabs for teams
+      summary: Add tab to channel
+      description: "Adds (pins) a tab to the specified channel within a team. \nThe corresponding app must already be installed in the team."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
       operationId: team.channel_CreateTab
       parameters:
         - name: team-id
@@ -21717,8 +21794,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get tabs from teams
-      description: A collection of all the tabs in the channel. A navigation property.
+      summary: Get tab
+      description: 'Retrieve the properties and relationships of the specified tab in a channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
       operationId: team.channel_GetTab
       parameters:
         - name: team-id
@@ -21787,7 +21867,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update the navigation property tabs in teams
+      summary: Update tab
+      description: "Update the properties of the specified tab.\nThis can be used to configure the content of the tab."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
       operationId: team.channel_UpdateTab
       parameters:
         - name: team-id
@@ -21834,7 +21918,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Delete navigation property tabs for teams
+      summary: Delete tab from channel
+      description: 'Removes (unpins) a tab from the specified channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
       operationId: team.channel_DeleteTab
       parameters:
         - name: team-id
@@ -22011,6 +22099,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: team
+        - name: model
+          in: query
+          description: The payment model for the API
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -22551,6 +22646,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -22563,6 +22660,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -22662,6 +22760,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -22793,6 +22892,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: teamsAppInstallation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consentedPermissionSet:
+                  $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -22897,6 +23008,7 @@ paths:
             items:
               enum:
                 - id
+                - authorization
                 - createdBy
                 - description
                 - displayName
@@ -23768,8 +23880,11 @@ paths:
     get:
       tags:
         - teams.profilePhoto
-      summary: Get photo from teams
-      description: The profile photo for the team.
+      summary: Get profilePhoto
+      description: "Get the specified profilePhoto or its metadata (**profilePhoto** properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they are stored in Azure Active Directory. You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
       operationId: team_GetPhoto
       parameters:
         - name: team-id
@@ -23878,6 +23993,9 @@ paths:
       tags:
         - teams.profilePhoto
       summary: Get media content for the navigation property photo from teams
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
       operationId: team_GetPhotoContent
       parameters:
         - name: team-id
@@ -24405,11 +24523,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: team.primaryChannel_UpdateMember
       parameters:
         - name: team-id
@@ -24448,11 +24566,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: team.primaryChannel_DeleteMember
       parameters:
         - name: team-id
@@ -25519,11 +25637,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: team.primaryChannel.message_CreateReply
       parameters:
         - name: team-id
@@ -27412,7 +27530,11 @@ paths:
     post:
       tags:
         - teams.channel
-      summary: Create new navigation property to tabs for teams
+      summary: Add tab to channel
+      description: "Adds (pins) a tab to the specified channel within a team. \nThe corresponding app must already be installed in the team."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
       operationId: team.primaryChannel_CreateTab
       parameters:
         - name: team-id
@@ -27444,8 +27566,11 @@ paths:
     get:
       tags:
         - teams.channel
-      summary: Get tabs from teams
-      description: A collection of all the tabs in the channel. A navigation property.
+      summary: Get tab
+      description: 'Retrieve the properties and relationships of the specified tab in a channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
       operationId: team.primaryChannel_GetTab
       parameters:
         - name: team-id
@@ -27506,7 +27631,11 @@ paths:
     patch:
       tags:
         - teams.channel
-      summary: Update the navigation property tabs in teams
+      summary: Update tab
+      description: "Update the properties of the specified tab.\nThis can be used to configure the content of the tab."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
       operationId: team.primaryChannel_UpdateTab
       parameters:
         - name: team-id
@@ -27545,7 +27674,11 @@ paths:
     delete:
       tags:
         - teams.channel
-      summary: Delete navigation property tabs for teams
+      summary: Delete tab from channel
+      description: 'Removes (unpins) a tab from the specified channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
       operationId: team.primaryChannel_DeleteTab
       parameters:
         - name: team-id
@@ -27966,7 +28099,11 @@ paths:
     post:
       tags:
         - teams.schedule
-      summary: Create new navigation property to offerShiftRequests for teams
+      summary: Create offerShiftRequest
+      description: Create an instance of an offerShiftRequest.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/offershiftrequest-post?view=graph-rest-1.0
       operationId: team.schedule_CreateOfferShiftRequest
       parameters:
         - name: team-id
@@ -31154,6 +31291,13 @@ paths:
       summary: Invoke function getAllMessages
       operationId: team_getAllMessage
       parameters:
+        - name: model
+          in: query
+          description: The payment model for the API
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -32217,11 +32361,11 @@ paths:
     patch:
       tags:
         - teamwork.deletedTeam
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_UpdateMember
       parameters:
         - name: deletedTeam-id
@@ -32268,11 +32412,11 @@ paths:
     delete:
       tags:
         - teamwork.deletedTeam
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_DeleteMember
       parameters:
         - name: deletedTeam-id
@@ -33491,11 +33635,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel.message_CreateReply
       parameters:
         - name: deletedTeam-id
@@ -35648,7 +35792,11 @@ paths:
     post:
       tags:
         - teamwork.deletedTeam
-      summary: Create new navigation property to tabs for teamwork
+      summary: Add tab to channel
+      description: "Adds (pins) a tab to the specified channel within a team. \nThe corresponding app must already be installed in the team."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_CreateTab
       parameters:
         - name: deletedTeam-id
@@ -35688,8 +35836,11 @@ paths:
     get:
       tags:
         - teamwork.deletedTeam
-      summary: Get tabs from teamwork
-      description: A collection of all the tabs in the channel. A navigation property.
+      summary: Get tab
+      description: 'Retrieve the properties and relationships of the specified tab in a channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_GetTab
       parameters:
         - name: deletedTeam-id
@@ -35758,7 +35909,11 @@ paths:
     patch:
       tags:
         - teamwork.deletedTeam
-      summary: Update the navigation property tabs in teamwork
+      summary: Update tab
+      description: "Update the properties of the specified tab.\nThis can be used to configure the content of the tab."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_UpdateTab
       parameters:
         - name: deletedTeam-id
@@ -35805,7 +35960,11 @@ paths:
     delete:
       tags:
         - teamwork.deletedTeam
-      summary: Delete navigation property tabs for teamwork
+      summary: Delete tab from channel
+      description: 'Removes (unpins) a tab from the specified channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
       operationId: teamwork.deletedTeam.channel_DeleteTab
       parameters:
         - name: deletedTeam-id
@@ -35982,6 +36141,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: deletedTeam
+        - name: model
+          in: query
+          description: The payment model for the API
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -36125,6 +36291,13 @@ paths:
       summary: Invoke function getAllMessages
       operationId: teamwork.deletedTeam_getAllMessage
       parameters:
+        - name: model
+          in: query
+          description: The payment model for the API
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -36252,6 +36425,10 @@ paths:
       tags:
         - teamwork.Actions
       summary: Invoke action sendActivityNotificationToRecipients
+      description: "Send activity feed notifications to multiple users, in bulk.  For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/teamwork-sendactivitynotificationtorecipients?view=graph-rest-1.0
       operationId: teamwork_sendActivityNotificationToRecipient
       requestBody:
         description: Action parameters
@@ -36882,6 +37059,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -36894,6 +37073,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -37009,6 +37189,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -37243,6 +37424,7 @@ paths:
             items:
               enum:
                 - id
+                - authorization
                 - createdBy
                 - description
                 - displayName
@@ -37577,11 +37759,11 @@ paths:
     get:
       tags:
         - users.chat
-      summary: Get conversationMember in a chat
-      description: Retrieve a conversationMember from a chat.
+      summary: Get conversationMember
+      description: Retrieve a conversationMember from a chat or channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-get-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-get?view=graph-rest-1.0
       operationId: user.chat_GetMember
       parameters:
         - name: user-id
@@ -37919,11 +38101,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Send message in a chat
-      description: Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+      summary: Send chatMessage in a channel or a chat
+      description: Send a new chatMessage in the specified channel or a chat.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0
       operationId: user.chat_CreateMessage
       parameters:
         - name: user-id
@@ -38768,11 +38950,11 @@ paths:
     post:
       tags:
         - users.chat
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.chat.message_CreateReply
       parameters:
         - name: user-id
@@ -41804,11 +41986,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_UpdateMember
       parameters:
         - name: user-id
@@ -41863,11 +42045,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_DeleteMember
       parameters:
         - name: user-id
@@ -43068,11 +43250,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.joinedTeam.channel.message_CreateReply
       parameters:
         - name: user-id
@@ -44857,7 +45039,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create new navigation property to tabs for users
+      summary: Add tab to channel
+      description: "Adds (pins) a tab to the specified channel within a team. \nThe corresponding app must already be installed in the team."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_CreateTab
       parameters:
         - name: user-id
@@ -44905,8 +45091,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get tabs from users
-      description: A collection of all the tabs in the channel. A navigation property.
+      summary: Get tab
+      description: 'Retrieve the properties and relationships of the specified tab in a channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_GetTab
       parameters:
         - name: user-id
@@ -44983,7 +45172,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property tabs in users
+      summary: Update tab
+      description: "Update the properties of the specified tab.\nThis can be used to configure the content of the tab."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_UpdateTab
       parameters:
         - name: user-id
@@ -45038,7 +45231,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property tabs for users
+      summary: Delete tab from channel
+      description: 'Removes (unpins) a tab from the specified channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
       operationId: user.joinedTeam.channel_DeleteTab
       parameters:
         - name: user-id
@@ -45698,6 +45895,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -45710,6 +45909,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -45825,6 +46025,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
               type: string
@@ -46059,6 +46260,7 @@ paths:
             items:
               enum:
                 - id
+                - authorization
                 - createdBy
                 - description
                 - displayName
@@ -46786,8 +46988,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get photo from users
-      description: The profile photo for the team.
+      summary: Get profilePhoto
+      description: "Get the specified profilePhoto or its metadata (**profilePhoto** properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they are stored in Azure Active Directory. You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
       operationId: user.joinedTeam_GetPhoto
       parameters:
         - name: user-id
@@ -46920,6 +47125,9 @@ paths:
       tags:
         - users.team
       summary: Get media content for the navigation property photo from users
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/profilephoto-get?view=graph-rest-1.0
       operationId: user.joinedTeam_GetPhotoContent
       parameters:
         - name: user-id
@@ -47535,11 +47743,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update member in channel
-      description: Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Update conversationMember
+      description: Update the role of a conversationMember in a team or channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_UpdateMember
       parameters:
         - name: user-id
@@ -47586,11 +47794,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Remove member from channel
-      description: Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+      summary: Delete conversationMember
+      description: Delete a conversationMember from a channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_DeleteMember
       parameters:
         - name: user-id
@@ -48663,11 +48871,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Reply to a message in a channel
-      description: Create a new reply to a chatMessage in a specified channel.
+      summary: Send replies to a message in a channel
+      description: Send a new reply to a chatMessage in a specified channel.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel.message_CreateReply
       parameters:
         - name: user-id
@@ -50252,7 +50460,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create new navigation property to tabs for users
+      summary: Add tab to channel
+      description: "Adds (pins) a tab to the specified channel within a team. \nThe corresponding app must already be installed in the team."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-post-tabs?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_CreateTab
       parameters:
         - name: user-id
@@ -50292,8 +50504,11 @@ paths:
     get:
       tags:
         - users.team
-      summary: Get tabs from users
-      description: A collection of all the tabs in the channel. A navigation property.
+      summary: Get tab
+      description: 'Retrieve the properties and relationships of the specified tab in a channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-get-tabs?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_GetTab
       parameters:
         - name: user-id
@@ -50362,7 +50577,11 @@ paths:
     patch:
       tags:
         - users.team
-      summary: Update the navigation property tabs in users
+      summary: Update tab
+      description: "Update the properties of the specified tab.\nThis can be used to configure the content of the tab."
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-patch-tabs?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_UpdateTab
       parameters:
         - name: user-id
@@ -50409,7 +50628,11 @@ paths:
     delete:
       tags:
         - users.team
-      summary: Delete navigation property tabs for users
+      summary: Delete tab from channel
+      description: 'Removes (unpins) a tab from the specified channel within a team. '
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/channel-delete-tabs?view=graph-rest-1.0
       operationId: user.joinedTeam.primaryChannel_DeleteTab
       parameters:
         - name: user-id
@@ -50837,7 +51060,11 @@ paths:
     post:
       tags:
         - users.team
-      summary: Create new navigation property to offerShiftRequests for users
+      summary: Create offerShiftRequest
+      description: Create an instance of an offerShiftRequest.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/offershiftrequest-post?view=graph-rest-1.0
       operationId: user.joinedTeam.schedule_CreateOfferShiftRequest
       parameters:
         - name: user-id
@@ -54559,6 +54786,7 @@ paths:
       tags:
         - users.userTeamwork
       summary: Get teamwork from users
+      description: A container for Microsoft Teams features available for the user. Read-only. Nullable.
       operationId: user_GetTeamwork
       parameters:
         - name: user-id
@@ -55062,6 +55290,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - consentedPermissionSet
+                - consentedPermissionSet desc
               type: string
         - name: $select
           in: query
@@ -55074,6 +55304,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
                 - chat
@@ -55175,6 +55406,7 @@ paths:
             items:
               enum:
                 - id
+                - consentedPermissionSet
                 - teamsApp
                 - teamsAppDefinition
                 - chat
@@ -55460,6 +55692,7 @@ paths:
             items:
               enum:
                 - id
+                - authorization
                 - createdBy
                 - description
                 - displayName
@@ -55547,6 +55780,8 @@ components:
         - title: teamsAppDefinition
           type: object
           properties:
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
@@ -55663,12 +55898,24 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
               $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageInfo:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -56633,6 +56880,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+              description: The offer requests for shifts in the schedule.
               x-ms-navigationProperty: true
             openShiftChangeRequests:
               type: array
@@ -56662,6 +56910,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeOffReasons:
               type: array
@@ -56673,6 +56922,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -57057,6 +57307,14 @@ components:
         - sideloaded
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.identitySet:
       title: identitySet
       type: object
@@ -57114,6 +57372,17 @@ components:
           type: string
           description: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
           format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -58069,6 +58338,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookComment'
+              description: Represents a collection of comments in a workbook.
               x-ms-navigationProperty: true
             functions:
               $ref: '#/components/schemas/microsoft.graph.workbookFunctions'
@@ -59597,6 +59867,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
+      type: string
     microsoft.graph.publicErrorDetail:
       title: publicErrorDetail
       type: object
@@ -60026,6 +60303,8 @@ components:
               type: integer
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
+            print:
+              $ref: '#/components/schemas/microsoft.graph.userPrint'
             aboutMe:
               type: string
               description: A freeform text entry field for the user to describe themselves. Returned only on $select.
@@ -60272,6 +60551,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+              description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
               x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
@@ -60596,7 +60876,7 @@ components:
       properties:
         id:
           type: string
-          description: The id of the content type.
+          description: The ID of the content type.
           nullable: true
         name:
           type: string
@@ -61800,7 +62080,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
@@ -62073,6 +62353,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userPurpose'
         workingHours:
           $ref: '#/components/schemas/microsoft.graph.workingHours'
+      additionalProperties:
+        type: object
+    microsoft.graph.userPrint:
+      title: userPrint
+      type: object
+      properties:
+        recentPrinterShares:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerShare'
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.licenseDetails:
@@ -63136,8 +63427,10 @@ components:
           properties:
             contributionToContentDiscoveryAsOrganizationDisabled:
               type: boolean
+              description: 'Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn''t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
             contributionToContentDiscoveryDisabled:
               type: boolean
+              description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
           additionalProperties:
@@ -63903,7 +64196,7 @@ components:
       properties:
         format:
           type: string
-          description: 'For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.'
+          description: 'For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.'
           nullable: true
         formula:
           type: string
@@ -63911,7 +64204,7 @@ components:
           nullable: true
         outputType:
           type: string
-          description: 'The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.'
+          description: 'The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.'
           nullable: true
       additionalProperties:
         type: object
@@ -63970,11 +64263,11 @@ components:
       properties:
         formula:
           type: string
-          description: The formula used to compute the default value for this column.
+          description: The formula used to compute the default value for the column.
           nullable: true
         value:
           type: string
-          description: The direct value to use as the default value for this column.
+          description: The direct value to use as the default value for the column.
           nullable: true
       additionalProperties:
         type: object
@@ -64218,13 +64511,13 @@ components:
       properties:
         default:
           type: boolean
-          description: Whether this is the default Content Type
+          description: Indicates whether this is the default content type
           nullable: true
         position:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Specifies the position in which the Content Type appears in the selection UI.
+          description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
       additionalProperties:
@@ -64764,6 +65057,38 @@ components:
           $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
       additionalProperties:
         type: object
+    microsoft.graph.printerShare:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.printerBase'
+        - title: printerShare
+          type: object
+          properties:
+            allowAllUsers:
+              type: boolean
+              description: 'If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the printer share was created. Read-only.
+              format: date-time
+            viewPoint:
+              $ref: '#/components/schemas/microsoft.graph.printerShareViewpoint'
+            allowedGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.group'
+              description: The groups whose users have access to print using the printer.
+              x-ms-navigationProperty: true
+            allowedUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.user'
+              description: The users who have access to print using the printer.
+              x-ms-navigationProperty: true
+            printer:
+              $ref: '#/components/schemas/microsoft.graph.printer'
+          additionalProperties:
+            type: object
     microsoft.graph.servicePlanInfo:
       title: servicePlanInfo
       type: object
@@ -66837,6 +67162,98 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.printerBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printerBase
+          type: object
+          properties:
+            capabilities:
+              $ref: '#/components/schemas/microsoft.graph.printerCapabilities'
+            defaults:
+              $ref: '#/components/schemas/microsoft.graph.printerDefaults'
+            displayName:
+              type: string
+              description: The name of the printer/printerShare.
+            isAcceptingJobs:
+              type: boolean
+              description: Whether the printer/printerShare is currently accepting new print jobs.
+              nullable: true
+            location:
+              $ref: '#/components/schemas/microsoft.graph.printerLocation'
+            manufacturer:
+              type: string
+              description: The manufacturer of the printer/printerShare.
+              nullable: true
+            model:
+              type: string
+              description: The model name of the printer/printerShare.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printerStatus'
+            jobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+              description: The list of jobs that are queued for printing by the printer/printerShare.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printerShareViewpoint:
+      title: printerShareViewpoint
+      type: object
+      properties:
+        lastUsedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Date and time when the printer was last used by the signed-in user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.printerBase'
+        - title: printer
+          type: object
+          properties:
+            hasPhysicalDevice:
+              type: boolean
+              description: True if the printer has a physical device for printing. Read-only.
+            isShared:
+              type: boolean
+              description: True if the printer is shared; false otherwise. Read-only.
+            lastSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
+              format: date-time
+              nullable: true
+            registeredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the printer was registered. Read-only.
+              format: date-time
+            connectors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printConnector'
+              description: The connectors that are associated with the printer.
+              x-ms-navigationProperty: true
+            shares:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printerShare'
+              description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
+              x-ms-navigationProperty: true
+            taskTriggers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+              description: A list of task triggers that are associated with the printer.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.messageRuleActions:
       title: messageRuleActions
       type: object
@@ -67981,6 +68398,412 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.printerCapabilities:
+      title: printerCapabilities
+      type: object
+      properties:
+        bottomMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported bottom margins(in microns) for the printer.
+        collation:
+          type: boolean
+          description: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+          nullable: true
+        colorModes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printColorMode'
+          description: The color modes supported by the printer. Valid values are described in the following table.
+        contentTypes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+        copiesPerJob:
+          $ref: '#/components/schemas/microsoft.graph.integerRange'
+        dpis:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: The list of print resolutions in DPI that are supported by the printer.
+        duplexModes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+          description: The list of duplex modes that are supported by the printer. Valid values are described in the following table.
+        feedOrientations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerFeedOrientation'
+          description: The list of feed orientations that are supported by the printer.
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: Finishing processes the printer supports for a printed document.
+        inputBins:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Supported input bins for the printer.
+        isColorPrintingSupported:
+          type: boolean
+          description: True if color printing is supported by the printer; false otherwise. Read-only.
+          nullable: true
+        isPageRangeSupported:
+          type: boolean
+          description: True if the printer supports printing by page ranges; false otherwise.
+          nullable: true
+        leftMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported left margins(in microns) for the printer.
+        mediaColors:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'The media (i.e., paper) colors supported by the printer.'
+        mediaSizes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+        mediaTypes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The media types supported by the printer.
+        multipageLayouts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+          description: The presentation directions supported by the printer. Supported values are described in the following table.
+        orientations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printOrientation'
+          description: The print orientations supported by the printer. Valid values are described in the following table.
+        outputBins:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The printer's supported output bins (trays).
+        pagesPerSheet:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: Supported number of Input Pages to impose upon a single Impression.
+        qualities:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printQuality'
+          description: The print qualities supported by the printer.
+        rightMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported right margins(in microns) for the printer.
+        scalings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printScaling'
+          description: Supported print scalings.
+        supportsFitPdfToPage:
+          type: boolean
+          description: True if the printer supports scaling PDF pages to match the print media size; false otherwise.
+          nullable: true
+        topMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported top margins(in microns) for the printer.
+      additionalProperties:
+        type: object
+    microsoft.graph.printerDefaults:
+      title: printerDefaults
+      type: object
+      properties:
+        colorMode:
+          $ref: '#/components/schemas/microsoft.graph.printColorMode'
+        contentType:
+          type: string
+          description: The default content (MIME) type to use when processing documents.
+          nullable: true
+        copiesPerJob:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default number of copies printed per job.
+          format: int32
+          nullable: true
+        dpi:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default resolution in DPI to use when printing the job.
+          format: int32
+          nullable: true
+        duplexMode:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: The default set of finishings to apply to print jobs. Valid values are described in the following table.
+        fitPdfToPage:
+          type: boolean
+          description: The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
+          nullable: true
+        inputBin:
+          type: string
+          nullable: true
+        mediaColor:
+          type: string
+          description: The default media (such as paper) color to print the document on.
+          nullable: true
+        mediaSize:
+          type: string
+          description: The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+          nullable: true
+        mediaType:
+          type: string
+          description: The default media (such as paper) type to print the document on.
+          nullable: true
+        multipageLayout:
+          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientation:
+          $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBin:
+          type: string
+          description: The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
+          nullable: true
+        pagesPerSheet:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default number of document pages to print on each sheet.
+          format: int32
+          nullable: true
+        quality:
+          $ref: '#/components/schemas/microsoft.graph.printQuality'
+        scaling:
+          $ref: '#/components/schemas/microsoft.graph.printScaling'
+      additionalProperties:
+        type: object
+    microsoft.graph.printerLocation:
+      title: printerLocation
+      type: object
+      properties:
+        altitudeInMeters:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The altitude, in meters, that the printer is located at.'
+          format: int32
+          nullable: true
+        building:
+          type: string
+          description: The building that the printer is located in.
+          nullable: true
+        city:
+          type: string
+          description: The city that the printer is located in.
+          nullable: true
+        countryOrRegion:
+          type: string
+          description: The country or region that the printer is located in.
+          nullable: true
+        floor:
+          type: string
+          description: The floor that the printer is located on. Only numerical values are supported right now.
+          nullable: true
+        floorDescription:
+          type: string
+          description: The description of the floor that the printer is located on.
+          nullable: true
+        latitude:
+          type: number
+          description: The latitude that the printer is located at.
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          description: The longitude that the printer is located at.
+          format: double
+          nullable: true
+        organization:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
+        postalCode:
+          type: string
+          description: The postal code that the printer is located in.
+          nullable: true
+        roomDescription:
+          type: string
+          description: The description of the room that the printer is located in.
+          nullable: true
+        roomName:
+          type: string
+          description: The room that the printer is located in. Only numerical values are supported right now.
+          nullable: true
+        site:
+          type: string
+          description: The site that the printer is located in.
+          nullable: true
+        stateOrProvince:
+          type: string
+          description: The state or province that the printer is located in.
+          nullable: true
+        streetAddress:
+          type: string
+          description: The street address where the printer is located.
+          nullable: true
+        subdivision:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The subdivision that the printer is located in. The elements should be in hierarchical order.
+        subunit:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printerStatus:
+      title: printerStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the printer's current processing state. Read-only.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerProcessingStateDetail'
+          description: The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printerProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.printJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printJob
+          type: object
+          properties:
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the job was created. Read-only.
+              format: date-time
+            isFetchable:
+              type: boolean
+              description: 'If true, document can be fetched by printer.'
+            redirectedFrom:
+              type: string
+              description: 'Contains the source job URL, if the job has been redirected from another printer.'
+              nullable: true
+            redirectedTo:
+              type: string
+              description: 'Contains the destination job URL, if the job has been redirected to another printer.'
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printJobStatus'
+            documents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printDocument'
+              x-ms-navigationProperty: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+              description: A list of printTasks that were triggered by this print job.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printConnector:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printConnector
+          type: object
+          properties:
+            appVersion:
+              type: string
+              description: The connector's version.
+            displayName:
+              type: string
+              description: The name of the connector.
+            fullyQualifiedDomainName:
+              type: string
+              description: The connector machine's hostname.
+            location:
+              $ref: '#/components/schemas/microsoft.graph.printerLocation'
+            operatingSystem:
+              type: string
+              description: The connector machine's operating system version.
+            registeredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the connector was registered.
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.printTaskTrigger:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTaskTrigger
+          type: object
+          properties:
+            event:
+              $ref: '#/components/schemas/microsoft.graph.printEvent'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+          additionalProperties:
+            type: object
     microsoft.graph.messageActionFlag:
       title: messageActionFlag
       enum:
@@ -68108,18 +68931,18 @@ components:
       properties:
         identityProvider:
           type: string
-          description: For internal use only
+          description: For internal use only.
           nullable: true
         key:
           type: string
-          description: For internal use only
+          description: For internal use only.
           format: base64url
           nullable: true
         type:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: For internal use only
+          description: For internal use only.
           format: int32
           nullable: true
       additionalProperties:
@@ -68301,6 +69124,1118 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFill'
           additionalProperties:
             type: object
+    microsoft.graph.printColorMode:
+      title: printColorMode
+      enum:
+        - blackAndWhite
+        - grayscale
+        - color
+        - auto
+        - unknownFutureValue
+      type: string
+    microsoft.graph.integerRange:
+      title: integerRange
+      type: object
+      properties:
+        end:
+          type: integer
+          description: The inclusive upper bound of the integer range.
+          format: int64
+          nullable: true
+        start:
+          type: integer
+          description: The inclusive lower bound of the integer range.
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printDuplexMode:
+      title: printDuplexMode
+      enum:
+        - flipOnLongEdge
+        - flipOnShortEdge
+        - oneSided
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printerFeedOrientation:
+      title: printerFeedOrientation
+      enum:
+        - longEdgeFirst
+        - shortEdgeFirst
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printFinishing:
+      title: printFinishing
+      enum:
+        - none
+        - staple
+        - punch
+        - cover
+        - bind
+        - saddleStitch
+        - stitchEdge
+        - stapleTopLeft
+        - stapleBottomLeft
+        - stapleTopRight
+        - stapleBottomRight
+        - stitchLeftEdge
+        - stitchTopEdge
+        - stitchRightEdge
+        - stitchBottomEdge
+        - stapleDualLeft
+        - stapleDualTop
+        - stapleDualRight
+        - stapleDualBottom
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printMultipageLayout:
+      title: printMultipageLayout
+      enum:
+        - clockwiseFromTopLeft
+        - counterclockwiseFromTopLeft
+        - counterclockwiseFromTopRight
+        - clockwiseFromTopRight
+        - counterclockwiseFromBottomLeft
+        - clockwiseFromBottomLeft
+        - counterclockwiseFromBottomRight
+        - clockwiseFromBottomRight
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printOrientation:
+      title: printOrientation
+      enum:
+        - portrait
+        - landscape
+        - reverseLandscape
+        - reversePortrait
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printQuality:
+      title: printQuality
+      enum:
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printScaling:
+      title: printScaling
+      enum:
+        - auto
+        - shrinkToFit
+        - fill
+        - fit
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printerProcessingStateDetail:
+      title: printerProcessingStateDetail
+      enum:
+        - paused
+        - mediaJam
+        - mediaNeeded
+        - mediaLow
+        - mediaEmpty
+        - coverOpen
+        - interlockOpen
+        - outputTrayMissing
+        - outputAreaFull
+        - markerSupplyLow
+        - markerSupplyEmpty
+        - inputTrayMissing
+        - outputAreaAlmostFull
+        - markerWasteAlmostFull
+        - markerWasteFull
+        - fuserOverTemp
+        - fuserUnderTemp
+        - other
+        - none
+        - movingToPaused
+        - shutdown
+        - connectingToDevice
+        - timedOut
+        - stopping
+        - stoppedPartially
+        - tonerLow
+        - tonerEmpty
+        - spoolAreaFull
+        - doorOpen
+        - opticalPhotoConductorNearEndOfLife
+        - opticalPhotoConductorLifeOver
+        - developerLow
+        - developerEmpty
+        - interpreterResourceUnavailable
+        - unknownFutureValue
+        - alertRemovalOfBinaryChangeEntry
+        - banderAdded
+        - banderAlmostEmpty
+        - banderAlmostFull
+        - banderAtLimit
+        - banderClosed
+        - banderConfigurationChange
+        - banderCoverClosed
+        - banderCoverOpen
+        - banderEmpty
+        - banderFull
+        - banderInterlockClosed
+        - banderInterlockOpen
+        - banderJam
+        - banderLifeAlmostOver
+        - banderLifeOver
+        - banderMemoryExhausted
+        - banderMissing
+        - banderMotorFailure
+        - banderNearLimit
+        - banderOffline
+        - banderOpened
+        - banderOverTemperature
+        - banderPowerSaver
+        - banderRecoverableFailure
+        - banderRecoverableStorage
+        - banderRemoved
+        - banderResourceAdded
+        - banderResourceRemoved
+        - banderThermistorFailure
+        - banderTimingFailure
+        - banderTurnedOff
+        - banderTurnedOn
+        - banderUnderTemperature
+        - banderUnrecoverableFailure
+        - banderUnrecoverableStorageError
+        - banderWarmingUp
+        - binderAdded
+        - binderAlmostEmpty
+        - binderAlmostFull
+        - binderAtLimit
+        - binderClosed
+        - binderConfigurationChange
+        - binderCoverClosed
+        - binderCoverOpen
+        - binderEmpty
+        - binderFull
+        - binderInterlockClosed
+        - binderInterlockOpen
+        - binderJam
+        - binderLifeAlmostOver
+        - binderLifeOver
+        - binderMemoryExhausted
+        - binderMissing
+        - binderMotorFailure
+        - binderNearLimit
+        - binderOffline
+        - binderOpened
+        - binderOverTemperature
+        - binderPowerSaver
+        - binderRecoverableFailure
+        - binderRecoverableStorage
+        - binderRemoved
+        - binderResourceAdded
+        - binderResourceRemoved
+        - binderThermistorFailure
+        - binderTimingFailure
+        - binderTurnedOff
+        - binderTurnedOn
+        - binderUnderTemperature
+        - binderUnrecoverableFailure
+        - binderUnrecoverableStorageError
+        - binderWarmingUp
+        - cameraFailure
+        - chamberCooling
+        - chamberFailure
+        - chamberHeating
+        - chamberTemperatureHigh
+        - chamberTemperatureLow
+        - cleanerLifeAlmostOver
+        - cleanerLifeOver
+        - configurationChange
+        - deactivated
+        - deleted
+        - dieCutterAdded
+        - dieCutterAlmostEmpty
+        - dieCutterAlmostFull
+        - dieCutterAtLimit
+        - dieCutterClosed
+        - dieCutterConfigurationChange
+        - dieCutterCoverClosed
+        - dieCutterCoverOpen
+        - dieCutterEmpty
+        - dieCutterFull
+        - dieCutterInterlockClosed
+        - dieCutterInterlockOpen
+        - dieCutterJam
+        - dieCutterLifeAlmostOver
+        - dieCutterLifeOver
+        - dieCutterMemoryExhausted
+        - dieCutterMissing
+        - dieCutterMotorFailure
+        - dieCutterNearLimit
+        - dieCutterOffline
+        - dieCutterOpened
+        - dieCutterOverTemperature
+        - dieCutterPowerSaver
+        - dieCutterRecoverableFailure
+        - dieCutterRecoverableStorage
+        - dieCutterRemoved
+        - dieCutterResourceAdded
+        - dieCutterResourceRemoved
+        - dieCutterThermistorFailure
+        - dieCutterTimingFailure
+        - dieCutterTurnedOff
+        - dieCutterTurnedOn
+        - dieCutterUnderTemperature
+        - dieCutterUnrecoverableFailure
+        - dieCutterUnrecoverableStorageError
+        - dieCutterWarmingUp
+        - extruderCooling
+        - extruderFailure
+        - extruderHeating
+        - extruderJam
+        - extruderTemperatureHigh
+        - extruderTemperatureLow
+        - fanFailure
+        - faxModemLifeAlmostOver
+        - faxModemLifeOver
+        - faxModemMissing
+        - faxModemTurnedOff
+        - faxModemTurnedOn
+        - folderAdded
+        - folderAlmostEmpty
+        - folderAlmostFull
+        - folderAtLimit
+        - folderClosed
+        - folderConfigurationChange
+        - folderCoverClosed
+        - folderCoverOpen
+        - folderEmpty
+        - folderFull
+        - folderInterlockClosed
+        - folderInterlockOpen
+        - folderJam
+        - folderLifeAlmostOver
+        - folderLifeOver
+        - folderMemoryExhausted
+        - folderMissing
+        - folderMotorFailure
+        - folderNearLimit
+        - folderOffline
+        - folderOpened
+        - folderOverTemperature
+        - folderPowerSaver
+        - folderRecoverableFailure
+        - folderRecoverableStorage
+        - folderRemoved
+        - folderResourceAdded
+        - folderResourceRemoved
+        - folderThermistorFailure
+        - folderTimingFailure
+        - folderTurnedOff
+        - folderTurnedOn
+        - folderUnderTemperature
+        - folderUnrecoverableFailure
+        - folderUnrecoverableStorageError
+        - folderWarmingUp
+        - hibernate
+        - holdNewJobs
+        - identifyPrinterRequested
+        - imprinterAdded
+        - imprinterAlmostEmpty
+        - imprinterAlmostFull
+        - imprinterAtLimit
+        - imprinterClosed
+        - imprinterConfigurationChange
+        - imprinterCoverClosed
+        - imprinterCoverOpen
+        - imprinterEmpty
+        - imprinterFull
+        - imprinterInterlockClosed
+        - imprinterInterlockOpen
+        - imprinterJam
+        - imprinterLifeAlmostOver
+        - imprinterLifeOver
+        - imprinterMemoryExhausted
+        - imprinterMissing
+        - imprinterMotorFailure
+        - imprinterNearLimit
+        - imprinterOffline
+        - imprinterOpened
+        - imprinterOverTemperature
+        - imprinterPowerSaver
+        - imprinterRecoverableFailure
+        - imprinterRecoverableStorage
+        - imprinterRemoved
+        - imprinterResourceAdded
+        - imprinterResourceRemoved
+        - imprinterThermistorFailure
+        - imprinterTimingFailure
+        - imprinterTurnedOff
+        - imprinterTurnedOn
+        - imprinterUnderTemperature
+        - imprinterUnrecoverableFailure
+        - imprinterUnrecoverableStorageError
+        - imprinterWarmingUp
+        - inputCannotFeedSizeSelected
+        - inputManualInputRequest
+        - inputMediaColorChange
+        - inputMediaFormPartsChange
+        - inputMediaSizeChange
+        - inputMediaTrayFailure
+        - inputMediaTrayFeedError
+        - inputMediaTrayJam
+        - inputMediaTypeChange
+        - inputMediaWeightChange
+        - inputPickRollerFailure
+        - inputPickRollerLifeOver
+        - inputPickRollerLifeWarn
+        - inputPickRollerMissing
+        - inputTrayElevationFailure
+        - inputTrayPositionFailure
+        - inserterAdded
+        - inserterAlmostEmpty
+        - inserterAlmostFull
+        - inserterAtLimit
+        - inserterClosed
+        - inserterConfigurationChange
+        - inserterCoverClosed
+        - inserterCoverOpen
+        - inserterEmpty
+        - inserterFull
+        - inserterInterlockClosed
+        - inserterInterlockOpen
+        - inserterJam
+        - inserterLifeAlmostOver
+        - inserterLifeOver
+        - inserterMemoryExhausted
+        - inserterMissing
+        - inserterMotorFailure
+        - inserterNearLimit
+        - inserterOffline
+        - inserterOpened
+        - inserterOverTemperature
+        - inserterPowerSaver
+        - inserterRecoverableFailure
+        - inserterRecoverableStorage
+        - inserterRemoved
+        - inserterResourceAdded
+        - inserterResourceRemoved
+        - inserterThermistorFailure
+        - inserterTimingFailure
+        - inserterTurnedOff
+        - inserterTurnedOn
+        - inserterUnderTemperature
+        - inserterUnrecoverableFailure
+        - inserterUnrecoverableStorageError
+        - inserterWarmingUp
+        - interlockClosed
+        - interpreterCartridgeAdded
+        - interpreterCartridgeDeleted
+        - interpreterComplexPageEncountered
+        - interpreterMemoryDecrease
+        - interpreterMemoryIncrease
+        - interpreterResourceAdded
+        - interpreterResourceDeleted
+        - lampAtEol
+        - lampFailure
+        - lampNearEol
+        - laserAtEol
+        - laserFailure
+        - laserNearEol
+        - makeEnvelopeAdded
+        - makeEnvelopeAlmostEmpty
+        - makeEnvelopeAlmostFull
+        - makeEnvelopeAtLimit
+        - makeEnvelopeClosed
+        - makeEnvelopeConfigurationChange
+        - makeEnvelopeCoverClosed
+        - makeEnvelopeCoverOpen
+        - makeEnvelopeEmpty
+        - makeEnvelopeFull
+        - makeEnvelopeInterlockClosed
+        - makeEnvelopeInterlockOpen
+        - makeEnvelopeJam
+        - makeEnvelopeLifeAlmostOver
+        - makeEnvelopeLifeOver
+        - makeEnvelopeMemoryExhausted
+        - makeEnvelopeMissing
+        - makeEnvelopeMotorFailure
+        - makeEnvelopeNearLimit
+        - makeEnvelopeOffline
+        - makeEnvelopeOpened
+        - makeEnvelopeOverTemperature
+        - makeEnvelopePowerSaver
+        - makeEnvelopeRecoverableFailure
+        - makeEnvelopeRecoverableStorage
+        - makeEnvelopeRemoved
+        - makeEnvelopeResourceAdded
+        - makeEnvelopeResourceRemoved
+        - makeEnvelopeThermistorFailure
+        - makeEnvelopeTimingFailure
+        - makeEnvelopeTurnedOff
+        - makeEnvelopeTurnedOn
+        - makeEnvelopeUnderTemperature
+        - makeEnvelopeUnrecoverableFailure
+        - makeEnvelopeUnrecoverableStorageError
+        - makeEnvelopeWarmingUp
+        - markerAdjustingPrintQuality
+        - markerCleanerMissing
+        - markerDeveloperAlmostEmpty
+        - markerDeveloperEmpty
+        - markerDeveloperMissing
+        - markerFuserMissing
+        - markerFuserThermistorFailure
+        - markerFuserTimingFailure
+        - markerInkAlmostEmpty
+        - markerInkEmpty
+        - markerInkMissing
+        - markerOpcMissing
+        - markerPrintRibbonAlmostEmpty
+        - markerPrintRibbonEmpty
+        - markerPrintRibbonMissing
+        - markerSupplyAlmostEmpty
+        - markerSupplyMissing
+        - markerTonerCartridgeMissing
+        - markerTonerMissing
+        - markerWasteInkReceptacleAlmostFull
+        - markerWasteInkReceptacleFull
+        - markerWasteInkReceptacleMissing
+        - markerWasteMissing
+        - markerWasteTonerReceptacleAlmostFull
+        - markerWasteTonerReceptacleFull
+        - markerWasteTonerReceptacleMissing
+        - materialEmpty
+        - materialLow
+        - materialNeeded
+        - mediaDrying
+        - mediaPathCannotDuplexMediaSelected
+        - mediaPathFailure
+        - mediaPathInputEmpty
+        - mediaPathInputFeedError
+        - mediaPathInputJam
+        - mediaPathInputRequest
+        - mediaPathJam
+        - mediaPathMediaTrayAlmostFull
+        - mediaPathMediaTrayFull
+        - mediaPathMediaTrayMissing
+        - mediaPathOutputFeedError
+        - mediaPathOutputFull
+        - mediaPathOutputJam
+        - mediaPathPickRollerFailure
+        - mediaPathPickRollerLifeOver
+        - mediaPathPickRollerLifeWarn
+        - mediaPathPickRollerMissing
+        - motorFailure
+        - outputMailboxSelectFailure
+        - outputMediaTrayFailure
+        - outputMediaTrayFeedError
+        - outputMediaTrayJam
+        - perforaterAdded
+        - perforaterAlmostEmpty
+        - perforaterAlmostFull
+        - perforaterAtLimit
+        - perforaterClosed
+        - perforaterConfigurationChange
+        - perforaterCoverClosed
+        - perforaterCoverOpen
+        - perforaterEmpty
+        - perforaterFull
+        - perforaterInterlockClosed
+        - perforaterInterlockOpen
+        - perforaterJam
+        - perforaterLifeAlmostOver
+        - perforaterLifeOver
+        - perforaterMemoryExhausted
+        - perforaterMissing
+        - perforaterMotorFailure
+        - perforaterNearLimit
+        - perforaterOffline
+        - perforaterOpened
+        - perforaterOverTemperature
+        - perforaterPowerSaver
+        - perforaterRecoverableFailure
+        - perforaterRecoverableStorage
+        - perforaterRemoved
+        - perforaterResourceAdded
+        - perforaterResourceRemoved
+        - perforaterThermistorFailure
+        - perforaterTimingFailure
+        - perforaterTurnedOff
+        - perforaterTurnedOn
+        - perforaterUnderTemperature
+        - perforaterUnrecoverableFailure
+        - perforaterUnrecoverableStorageError
+        - perforaterWarmingUp
+        - platformCooling
+        - platformFailure
+        - platformHeating
+        - platformTemperatureHigh
+        - platformTemperatureLow
+        - powerDown
+        - powerUp
+        - printerManualReset
+        - printerNmsReset
+        - printerReadyToPrint
+        - puncherAdded
+        - puncherAlmostEmpty
+        - puncherAlmostFull
+        - puncherAtLimit
+        - puncherClosed
+        - puncherConfigurationChange
+        - puncherCoverClosed
+        - puncherCoverOpen
+        - puncherEmpty
+        - puncherFull
+        - puncherInterlockClosed
+        - puncherInterlockOpen
+        - puncherJam
+        - puncherLifeAlmostOver
+        - puncherLifeOver
+        - puncherMemoryExhausted
+        - puncherMissing
+        - puncherMotorFailure
+        - puncherNearLimit
+        - puncherOffline
+        - puncherOpened
+        - puncherOverTemperature
+        - puncherPowerSaver
+        - puncherRecoverableFailure
+        - puncherRecoverableStorage
+        - puncherRemoved
+        - puncherResourceAdded
+        - puncherResourceRemoved
+        - puncherThermistorFailure
+        - puncherTimingFailure
+        - puncherTurnedOff
+        - puncherTurnedOn
+        - puncherUnderTemperature
+        - puncherUnrecoverableFailure
+        - puncherUnrecoverableStorageError
+        - puncherWarmingUp
+        - resuming
+        - scanMediaPathFailure
+        - scanMediaPathInputEmpty
+        - scanMediaPathInputFeedError
+        - scanMediaPathInputJam
+        - scanMediaPathInputRequest
+        - scanMediaPathJam
+        - scanMediaPathOutputFeedError
+        - scanMediaPathOutputFull
+        - scanMediaPathOutputJam
+        - scanMediaPathPickRollerFailure
+        - scanMediaPathPickRollerLifeOver
+        - scanMediaPathPickRollerLifeWarn
+        - scanMediaPathPickRollerMissing
+        - scanMediaPathTrayAlmostFull
+        - scanMediaPathTrayFull
+        - scanMediaPathTrayMissing
+        - scannerLightFailure
+        - scannerLightLifeAlmostOver
+        - scannerLightLifeOver
+        - scannerLightMissing
+        - scannerSensorFailure
+        - scannerSensorLifeAlmostOver
+        - scannerSensorLifeOver
+        - scannerSensorMissing
+        - separationCutterAdded
+        - separationCutterAlmostEmpty
+        - separationCutterAlmostFull
+        - separationCutterAtLimit
+        - separationCutterClosed
+        - separationCutterConfigurationChange
+        - separationCutterCoverClosed
+        - separationCutterCoverOpen
+        - separationCutterEmpty
+        - separationCutterFull
+        - separationCutterInterlockClosed
+        - separationCutterInterlockOpen
+        - separationCutterJam
+        - separationCutterLifeAlmostOver
+        - separationCutterLifeOver
+        - separationCutterMemoryExhausted
+        - separationCutterMissing
+        - separationCutterMotorFailure
+        - separationCutterNearLimit
+        - separationCutterOffline
+        - separationCutterOpened
+        - separationCutterOverTemperature
+        - separationCutterPowerSaver
+        - separationCutterRecoverableFailure
+        - separationCutterRecoverableStorage
+        - separationCutterRemoved
+        - separationCutterResourceAdded
+        - separationCutterResourceRemoved
+        - separationCutterThermistorFailure
+        - separationCutterTimingFailure
+        - separationCutterTurnedOff
+        - separationCutterTurnedOn
+        - separationCutterUnderTemperature
+        - separationCutterUnrecoverableFailure
+        - separationCutterUnrecoverableStorageError
+        - separationCutterWarmingUp
+        - sheetRotatorAdded
+        - sheetRotatorAlmostEmpty
+        - sheetRotatorAlmostFull
+        - sheetRotatorAtLimit
+        - sheetRotatorClosed
+        - sheetRotatorConfigurationChange
+        - sheetRotatorCoverClosed
+        - sheetRotatorCoverOpen
+        - sheetRotatorEmpty
+        - sheetRotatorFull
+        - sheetRotatorInterlockClosed
+        - sheetRotatorInterlockOpen
+        - sheetRotatorJam
+        - sheetRotatorLifeAlmostOver
+        - sheetRotatorLifeOver
+        - sheetRotatorMemoryExhausted
+        - sheetRotatorMissing
+        - sheetRotatorMotorFailure
+        - sheetRotatorNearLimit
+        - sheetRotatorOffline
+        - sheetRotatorOpened
+        - sheetRotatorOverTemperature
+        - sheetRotatorPowerSaver
+        - sheetRotatorRecoverableFailure
+        - sheetRotatorRecoverableStorage
+        - sheetRotatorRemoved
+        - sheetRotatorResourceAdded
+        - sheetRotatorResourceRemoved
+        - sheetRotatorThermistorFailure
+        - sheetRotatorTimingFailure
+        - sheetRotatorTurnedOff
+        - sheetRotatorTurnedOn
+        - sheetRotatorUnderTemperature
+        - sheetRotatorUnrecoverableFailure
+        - sheetRotatorUnrecoverableStorageError
+        - sheetRotatorWarmingUp
+        - slitterAdded
+        - slitterAlmostEmpty
+        - slitterAlmostFull
+        - slitterAtLimit
+        - slitterClosed
+        - slitterConfigurationChange
+        - slitterCoverClosed
+        - slitterCoverOpen
+        - slitterEmpty
+        - slitterFull
+        - slitterInterlockClosed
+        - slitterInterlockOpen
+        - slitterJam
+        - slitterLifeAlmostOver
+        - slitterLifeOver
+        - slitterMemoryExhausted
+        - slitterMissing
+        - slitterMotorFailure
+        - slitterNearLimit
+        - slitterOffline
+        - slitterOpened
+        - slitterOverTemperature
+        - slitterPowerSaver
+        - slitterRecoverableFailure
+        - slitterRecoverableStorage
+        - slitterRemoved
+        - slitterResourceAdded
+        - slitterResourceRemoved
+        - slitterThermistorFailure
+        - slitterTimingFailure
+        - slitterTurnedOff
+        - slitterTurnedOn
+        - slitterUnderTemperature
+        - slitterUnrecoverableFailure
+        - slitterUnrecoverableStorageError
+        - slitterWarmingUp
+        - stackerAdded
+        - stackerAlmostEmpty
+        - stackerAlmostFull
+        - stackerAtLimit
+        - stackerClosed
+        - stackerConfigurationChange
+        - stackerCoverClosed
+        - stackerCoverOpen
+        - stackerEmpty
+        - stackerFull
+        - stackerInterlockClosed
+        - stackerInterlockOpen
+        - stackerJam
+        - stackerLifeAlmostOver
+        - stackerLifeOver
+        - stackerMemoryExhausted
+        - stackerMissing
+        - stackerMotorFailure
+        - stackerNearLimit
+        - stackerOffline
+        - stackerOpened
+        - stackerOverTemperature
+        - stackerPowerSaver
+        - stackerRecoverableFailure
+        - stackerRecoverableStorage
+        - stackerRemoved
+        - stackerResourceAdded
+        - stackerResourceRemoved
+        - stackerThermistorFailure
+        - stackerTimingFailure
+        - stackerTurnedOff
+        - stackerTurnedOn
+        - stackerUnderTemperature
+        - stackerUnrecoverableFailure
+        - stackerUnrecoverableStorageError
+        - stackerWarmingUp
+        - standby
+        - staplerAdded
+        - staplerAlmostEmpty
+        - staplerAlmostFull
+        - staplerAtLimit
+        - staplerClosed
+        - staplerConfigurationChange
+        - staplerCoverClosed
+        - staplerCoverOpen
+        - staplerEmpty
+        - staplerFull
+        - staplerInterlockClosed
+        - staplerInterlockOpen
+        - staplerJam
+        - staplerLifeAlmostOver
+        - staplerLifeOver
+        - staplerMemoryExhausted
+        - staplerMissing
+        - staplerMotorFailure
+        - staplerNearLimit
+        - staplerOffline
+        - staplerOpened
+        - staplerOverTemperature
+        - staplerPowerSaver
+        - staplerRecoverableFailure
+        - staplerRecoverableStorage
+        - staplerRemoved
+        - staplerResourceAdded
+        - staplerResourceRemoved
+        - staplerThermistorFailure
+        - staplerTimingFailure
+        - staplerTurnedOff
+        - staplerTurnedOn
+        - staplerUnderTemperature
+        - staplerUnrecoverableFailure
+        - staplerUnrecoverableStorageError
+        - staplerWarmingUp
+        - stitcherAdded
+        - stitcherAlmostEmpty
+        - stitcherAlmostFull
+        - stitcherAtLimit
+        - stitcherClosed
+        - stitcherConfigurationChange
+        - stitcherCoverClosed
+        - stitcherCoverOpen
+        - stitcherEmpty
+        - stitcherFull
+        - stitcherInterlockClosed
+        - stitcherInterlockOpen
+        - stitcherJam
+        - stitcherLifeAlmostOver
+        - stitcherLifeOver
+        - stitcherMemoryExhausted
+        - stitcherMissing
+        - stitcherMotorFailure
+        - stitcherNearLimit
+        - stitcherOffline
+        - stitcherOpened
+        - stitcherOverTemperature
+        - stitcherPowerSaver
+        - stitcherRecoverableFailure
+        - stitcherRecoverableStorage
+        - stitcherRemoved
+        - stitcherResourceAdded
+        - stitcherResourceRemoved
+        - stitcherThermistorFailure
+        - stitcherTimingFailure
+        - stitcherTurnedOff
+        - stitcherTurnedOn
+        - stitcherUnderTemperature
+        - stitcherUnrecoverableFailure
+        - stitcherUnrecoverableStorageError
+        - stitcherWarmingUp
+        - subunitAdded
+        - subunitAlmostEmpty
+        - subunitAlmostFull
+        - subunitAtLimit
+        - subunitClosed
+        - subunitCoolingDown
+        - subunitEmpty
+        - subunitFull
+        - subunitLifeAlmostOver
+        - subunitLifeOver
+        - subunitMemoryExhausted
+        - subunitMissing
+        - subunitMotorFailure
+        - subunitNearLimit
+        - subunitOffline
+        - subunitOpened
+        - subunitOverTemperature
+        - subunitPowerSaver
+        - subunitRecoverableFailure
+        - subunitRecoverableStorage
+        - subunitRemoved
+        - subunitResourceAdded
+        - subunitResourceRemoved
+        - subunitThermistorFailure
+        - subunitTimingFailure
+        - subunitTurnedOff
+        - subunitTurnedOn
+        - subunitUnderTemperature
+        - subunitUnrecoverableFailure
+        - subunitUnrecoverableStorage
+        - subunitWarmingUp
+        - suspend
+        - testing
+        - trimmerAdded
+        - trimmerAlmostEmpty
+        - trimmerAlmostFull
+        - trimmerAtLimit
+        - trimmerClosed
+        - trimmerConfigurationChange
+        - trimmerCoverClosed
+        - trimmerCoverOpen
+        - trimmerEmpty
+        - trimmerFull
+        - trimmerInterlockClosed
+        - trimmerInterlockOpen
+        - trimmerJam
+        - trimmerLifeAlmostOver
+        - trimmerLifeOver
+        - trimmerMemoryExhausted
+        - trimmerMissing
+        - trimmerMotorFailure
+        - trimmerNearLimit
+        - trimmerOffline
+        - trimmerOpened
+        - trimmerOverTemperature
+        - trimmerPowerSaver
+        - trimmerRecoverableFailure
+        - trimmerRecoverableStorage
+        - trimmerRemoved
+        - trimmerResourceAdded
+        - trimmerResourceRemoved
+        - trimmerThermistorFailure
+        - trimmerTimingFailure
+        - trimmerTurnedOff
+        - trimmerTurnedOn
+        - trimmerUnderTemperature
+        - trimmerUnrecoverableFailure
+        - trimmerUnrecoverableStorageError
+        - trimmerWarmingUp
+        - unknown
+        - wrapperAdded
+        - wrapperAlmostEmpty
+        - wrapperAlmostFull
+        - wrapperAtLimit
+        - wrapperClosed
+        - wrapperConfigurationChange
+        - wrapperCoverClosed
+        - wrapperCoverOpen
+        - wrapperEmpty
+        - wrapperFull
+        - wrapperInterlockClosed
+        - wrapperInterlockOpen
+        - wrapperJam
+        - wrapperLifeAlmostOver
+        - wrapperLifeOver
+        - wrapperMemoryExhausted
+        - wrapperMissing
+        - wrapperMotorFailure
+        - wrapperNearLimit
+        - wrapperOffline
+        - wrapperOpened
+        - wrapperOverTemperature
+        - wrapperPowerSaver
+        - wrapperRecoverableFailure
+        - wrapperRecoverableStorage
+        - wrapperRemoved
+        - wrapperResourceAdded
+        - wrapperResourceRemoved
+        - wrapperThermistorFailure
+        - wrapperTimingFailure
+        - wrapperTurnedOff
+        - wrapperTurnedOn
+        - wrapperUnderTemperature
+        - wrapperUnrecoverableFailure
+        - wrapperUnrecoverableStorageError
+        - wrapperWarmingUp
+      type: string
+    microsoft.graph.printerProcessingState:
+      title: printerProcessingState
+      enum:
+        - unknown
+        - idle
+        - processing
+        - stopped
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printJobConfiguration:
+      title: printJobConfiguration
+      type: object
+      properties:
+        collate:
+          type: boolean
+          description: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+          nullable: true
+        colorMode:
+          $ref: '#/components/schemas/microsoft.graph.printColorMode'
+        copies:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of copies that should be printed. Read-only.
+          format: int32
+          nullable: true
+        dpi:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
+          format: int32
+          nullable: true
+        duplexMode:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+        feedOrientation:
+          $ref: '#/components/schemas/microsoft.graph.printerFeedOrientation'
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: Finishing processes to use when printing.
+        fitPdfToPage:
+          type: boolean
+          nullable: true
+        inputBin:
+          type: string
+          description: The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
+          nullable: true
+        margin:
+          $ref: '#/components/schemas/microsoft.graph.printMargin'
+        mediaSize:
+          type: string
+          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+          nullable: true
+        mediaType:
+          type: string
+          nullable: true
+        multipageLayout:
+          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientation:
+          $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBin:
+          type: string
+          nullable: true
+        pageRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.integerRange'
+        pagesPerSheet:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        quality:
+          $ref: '#/components/schemas/microsoft.graph.printQuality'
+        scaling:
+          $ref: '#/components/schemas/microsoft.graph.printScaling'
+      additionalProperties:
+        type: object
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printJobStatus:
+      title: printJobStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the print job's current processing state. Read-only.
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printJobStateDetail'
+          description: Additional details for print job state. Valid values are described in the following table. Read-only.
+        isAcquiredByPrinter:
+          type: boolean
+          description: True if the job was acknowledged by a printer; false otherwise. Read-only.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.printDocument:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printDocument
+          type: object
+          properties:
+            contentType:
+              type: string
+              description: The document's content (MIME) type. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: The document's name. Read-only.
+              nullable: true
+            size:
+              type: integer
+              description: The document's size in bytes. Read-only.
+              format: int64
+          additionalProperties:
+            type: object
+    microsoft.graph.printTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTask
+          type: object
+          properties:
+            parentUrl:
+              type: string
+              description: 'The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printTaskStatus'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+            trigger:
+              $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+          additionalProperties:
+            type: object
+    microsoft.graph.printEvent:
+      title: printEvent
+      enum:
+        - jobStarted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printTaskDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTaskDefinition
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.appIdentity'
+            displayName:
+              type: string
+              description: The name of the printTaskDefinition.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+              description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.settingSourceType:
       title: settingSourceType
       enum:
@@ -68327,6 +70262,107 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFont'
           additionalProperties:
             type: object
+    microsoft.graph.printMargin:
+      title: printMargin
+      type: object
+      properties:
+        bottom:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the bottom edge.
+          format: int32
+          nullable: true
+        left:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the left edge.
+          format: int32
+          nullable: true
+        right:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the right edge.
+          format: int32
+          nullable: true
+        top:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the top edge.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printJobStateDetail:
+      title: printJobStateDetail
+      enum:
+        - uploadPending
+        - transforming
+        - completedSuccessfully
+        - completedWithWarnings
+        - completedWithErrors
+        - releaseWait
+        - interpreting
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printJobProcessingState:
+      title: printJobProcessingState
+      enum:
+        - unknown
+        - pending
+        - processing
+        - paused
+        - stopped
+        - completed
+        - canceled
+        - aborted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printTaskStatus:
+      title: printTaskStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the current processing state of the printTask.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printTaskProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.appIdentity:
+      title: appIdentity
+      type: object
+      properties:
+        appId:
+          type: string
+          description: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+          nullable: true
+        displayName:
+          type: string
+          description: Refers to the Application Name displayed in the Azure Portal.
+          nullable: true
+        servicePrincipalId:
+          type: string
+          description: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+          nullable: true
+        servicePrincipalName:
+          type: string
+          description: Refers to the Service Principal Name is the Application name in the tenant.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printTaskProcessingState:
+      title: printTaskProcessingState
+      enum:
+        - pending
+        - processing
+        - completed
+        - aborted
+        - unknownFutureValue
+      type: string
   responses:
     microsoft.graph.teamsAppCollectionResponse:
       description: Retrieved collection

@@ -2973,7 +2973,7 @@ components:
           nullable: true
         isCollapsed:
           type: boolean
-          description: Indicates whether the current result is collapsed when the collapseProperties property is used.
+          description: Indicates whether the current result is collapsed when the collapseProperties property in the searchRequest is used.
           nullable: true
         rank:
           maximum: 2147483647
@@ -3042,7 +3042,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

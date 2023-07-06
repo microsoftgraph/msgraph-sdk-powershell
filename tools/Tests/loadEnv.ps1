@@ -11,24 +11,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ----------------------------------------------------------------------------------
-$envFile = 'env.json'
-if ($TestMode -eq 'live') {
-    $envFile = 'localEnv.json'
-}
 
-if (Test-Path -Path (Join-Path $PSScriptRoot $envFile)) {
-    $envFilePath = Join-Path $PSScriptRoot $envFile
-} else {
-    $envFilePath = Join-Path $PSScriptRoot '..\$envFile'
+if ($TestMode -eq 'live' -or $TestMode -eq 'record') {
+    Connect-MgGraph -ClientId $env:testApp_clientId -TenantId $env:testApp_tenantId -CertificateThumbprint $env:testApp_certThumbprint
 }
-$env = @{}
-if (Test-Path -Path $envFilePath) {
-    # Load dummy auth configuration. This is used to run Pester tests.
-    $env = Get-Content (Join-Path $PSScriptRoot $envFile) | ConvertFrom-Json -AsHashTable
-    [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.AuthContext = New-Object Microsoft.Graph.PowerShell.Authentication.AuthContext -Property @{
-        ClientId = $env.ClientId
-        TenantId = $env.TenantId
-        AuthType = [Microsoft.Graph.PowerShell.Authentication.AuthenticationType]::UserProvidedAccessToken
-        TokenCredentialType = [Microsoft.Graph.PowerShell.Authentication.TokenCredentialType]::UserProvidedAccessToken
-    }
+else {
+    # Use dummy access token to run Pester tests.
+    # Provide the dummy access token to $env:testApp_dummyAccessToken in your environment variable.
+    Connect-MgGraph -AccessToken (ConvertTo-SecureString -String $env:testApp_dummyAccessToken -AsPlainText)
 }

@@ -8,7 +8,6 @@ BeforeAll {
     Import-Module $TestModulePath -Force
 
     Connect-MgGraph
-    Select-MgProfile beta
 }
 Describe 'Cmdlets Streams' {
     It 'Should Not Throw Exception when Debug Preference is Set'{

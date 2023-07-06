@@ -5,7 +5,9 @@
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
+using Newtonsoft.Json;
 using System;
+using System.IO;
 using System.Management.Automation;
 using RequestContext = Microsoft.Graph.PowerShell.Authentication.Models.RequestContext;
 
@@ -26,10 +28,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         /// <returns><see cref="GraphSession"/></returns>
         internal static GraphSession CreateInstance(IDataStore dataStore = null)
         {
+            IGraphOption graphOptions = null;
+            // Try to create directory if it doesn't exist.
+            Directory.CreateDirectory(Core.Constants.GraphDirectoryPath);
+            if (File.Exists(Constants.GraphOptionsFilePath))
+            {
+                // Deserialize the JSON into the GraphOption instance
+                graphOptions = JsonConvert.DeserializeObject<GraphOption>(File.ReadAllText(Constants.GraphOptionsFilePath));
+            }
+
             return new GraphSession
             {
                 DataStore = dataStore ?? new DiskDataStore(),
-                RequestContext = new RequestContext()
+                RequestContext = new RequestContext(),
+                GraphOption = graphOptions ?? new GraphOption()
             };
         }
         /// <summary>

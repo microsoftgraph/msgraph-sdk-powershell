@@ -7,10 +7,10 @@
   Consume <a href="https://graph.microsoft.com">Microsoft Graph</a> resources directly from your PowerShell scripts
 </h4>
 
-<h3 align="center"><a href="https://learn.microsoft.com/powershell/microsoftgraph/overview">Documentation</a></h3>
+<h3 align="center"><a href="https://learn.microsoft.com/graph/overview">API Documentation</a> | <a href="https://learn.microsoft.com/powershell/microsoftgraph/overview">SDK Documentation</a></h3>
 
 <p align="center">
-The Microsoft Graph PowerShell module consists of a collection of PowerShell modules that contain commands for calling Microsoft Graph API. The module acts as an API wrapper for the Microsoft Graph APIs, exposing the entire API set for use in PowerShell.
+The Microsoft Graph PowerShell SDK is made up of a set of modules that enable you to interact with the Microsoft Graph API using PowerShell commands. The modules consist of commands that act as wrappers for the API, allowing you to access all the features and functionality of the API through PowerShell.
 </p>
 
 <p align="center">
@@ -27,10 +27,10 @@ The Microsoft Graph PowerShell module consists of a collection of PowerShell mod
 ## Modules
 
 The table below contains links to our latest and preview versions of the Microsoft Graph module. The meta modules will install all the service modules as their dependencies.
-| Module                                  | Latest             | Preview                        |
-| --------------------------------------- | ------------------ | ------------------------------ |
-| [`Microsoft.Graph`][mggallery]          | [![mg]][mggallery] | [![mgnext]][mggallery]         |
-| [`Microsoft.Graph.Beta`][mggallerybeta] | -                  | [![mgbetaNext]][mggallerybeta] |
+| Module                                  | Latest                       | Preview                        |
+| --------------------------------------- | ---------------------------- | ------------------------------ |
+| [`Microsoft.Graph`][mggallery]          | [![mg]][mggallery]           | -                              |
+| [`Microsoft.Graph.Beta`][mggallerybeta] | [![mgbeta]][mggallerybeta]   | -                              |
 
 See [Microsoft Graph PowerShell modules](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/MS-Graph-PowerShell-Modules) for a list of all modules supported by this repository.
 
@@ -41,13 +41,13 @@ See [Microsoft Graph PowerShell modules](https://github.com/microsoftgraph/msgra
 Microsoft Graph PowerShell module is published on [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph). Installing is as simple as:
 
 ```powershell
-Install-Module Microsoft.Graph -AllowPrerelease
+Install-Module Microsoft.Graph
 ```
 
-> Run `Install-Module` with AllowClobber and Force parameters if you run into command name conflicts when upgrading to older versions of the module:
+> Run `Install-Module` with `-AllowClobber` and `-Force` parameters if you run into command name conflicts when upgrading to older versions of the module. This may be the case when upgrading from v1.x to v2.x:
 >
 > ```powershell
-> Install-Module Microsoft.Graph -AllowPrerelease -AllowClobber -Force
+> Install-Module Microsoft.Graph -AllowClobber -Force
 > ```
 
 See [Install the Microsoft Graph PowerShell Module](https://learn.microsoft.com/powershell/microsoftgraph/installation) guide for detailed installation instructions.
@@ -74,7 +74,7 @@ Get access to Microsoft Graph resources using the identity on an app and not on 
 Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateThumbprint "YOUR_CERT_THUMBPRINT"
 ```
 
-See [Authentication](./docs/authentication.md) for more information on usage of `Connect-MgGraph`.
+See [Authentication](./docs/authentication.md) for more information on the usage of `Connect-MgGraph`.
 
 ### 3. List users in your tenant
 
@@ -107,7 +107,7 @@ Disconnect-MgGraph
 Install `Microsoft.Graph.Beta` module to commands that call Microsoft Graph Beta API endpoint.
 
 ```powershell
-Install-Module Microsoft.Graph.Beta -AllowPrerelease
+Install-Module Microsoft.Graph.Beta
 # Consume Microsoft Graph beta resources.
 Connect-MgGraph
 $Users = Get-MgBetaUser
@@ -122,10 +122,12 @@ The following breaking changes have been introduced between `v1.x` and `v2.x`:
 - Dropped profile support.
 - Dropped support for `-ForceRefresh` on `Connect-MgGraph`.
 - Renamed `beta` command names from `<Verb>-Mg<Noun>` to `<Verb>-MgBeta<Noun>`.
+- Renamed `DeviceManagement.Enrolment` module to `DeviceManagement.Enrollment`.
+- Moved directory role and entitlement management commands from `DeviceManagement.Enrollment` to `Identity.Governance` module.
 - Changed beta namespace from `Microsoft.Graph.PowerShell.Models.<Entity>` to `Microsoft.Graph.Beta.PowerShell.Models.<Entity>`.
 - Changed `-AccessToken` type on `Connect-MgGraph` from `String` to `SecureString`.
 
-See [v2 upgrade guide](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/features/2.0/docs/upgrade-to-v2.md) for more details.
+See the [v2 upgrade guide](./docs/upgrade-to-v2.md) for more details.
 
 ## Troubleshooting
 
@@ -133,19 +135,21 @@ See [v2 upgrade guide](https://github.com/microsoftgraph/msgraph-sdk-powershell/
 
 When working with various operations in the Graph, you may encounter an error such as "Insufficient privileges to complete the operation." For example, this particular error can occur when using the `New-MgApplication` command if the appropriate permissions are not granted.
 
-If permission-related errors occur and the signed in user/app has been granted the appropriate permissions to perform the operation, you can explicitly fetch a new access token by running `Disconnect-MgGraph`, then `Connect-MgGraph`. This will trigger a refresh of the access token in your cache. Microsoft Authentication Library (MSAL) will only refresh access tokens in your cache if they have expired (usually an hour).
+If permission-related errors occur and the signed-in user/app has been granted the appropriate permissions to perform the operation, you can explicitly fetch a new access token by running `Disconnect-MgGraph`, then `Connect-MgGraph`. This will trigger a refresh of the access token in your cache. Microsoft Authentication Library (MSAL) will only refresh access tokens in your cache if they have expired (usually an hour).
+
+See [Microsoft Graph API Permissions Reference](https://learn.microsoft.com/graph/permissions-reference) for more details.
 
 ### Common Errors
 
-See our [troubleshooting guide](https://learn.microsoft.com/powershell/microsoftgraph/troubleshooting) for detailed view on how to troubleshoot common errors when using Microsoft Graph.
+See our [troubleshooting guide](https://learn.microsoft.com/powershell/microsoftgraph/troubleshooting) for a detailed view of how to troubleshoot common errors when using Microsoft Graph.
 
 ## Known Issues
 
-- Using `-Property {PropertyName}` parameter will not select the property as the output of the command. All commands return CLR objects, and customers should pipe the command outputs to `Format-Table` or `Select-Object` to return individual properties.
+- Using the `-Property {PropertyName}` parameter will not select the property as the output of the command. All commands return CLR objects, and customers should pipe the command outputs to `Format-Table` or `Select-Object` to return individual properties.
 
 - Customers upgrading from previous versions of the SDK may encounter auth prompts on every command call. If this happens, one can use the following steps to reset their token cache:
   - Use `Disconnect-MgGraph` to sign out of the current session.
-  - Run `Remove-Item "$env:USERPROFILE\.graph" -Recurse -Force` to delete your token cache.
+  - Run `Remove-Item "$env:USERPROFILE\.mg" -Recurse -Force` to delete your token cache.
   - Run `Connect-MgGraph` to reconstruct a clean token cache.
 
 ## Feedback
@@ -163,6 +167,7 @@ Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT
 <!-- Shields -->
 
 [mg]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.svg?style=flat-square&label=Microsoft.Graph
+[mgbeta]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.Beta.svg?style=flat-square&label=Microsoft.Graph.Beta
 [mgnext]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.svg?include_prereleases&style=flat-square&label=Microsoft.Graph
 [mgbetanext]: https://img.shields.io/powershellgallery/v/Microsoft.Graph.Beta.svg?include_prereleases&style=flat-square&label=Microsoft.Graph.Beta
 

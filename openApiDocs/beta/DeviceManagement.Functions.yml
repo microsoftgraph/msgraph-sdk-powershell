@@ -3235,55 +3235,55 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Total number of co-managed devices. Valid values -2147483648 to 2147483647
+          description: Total number of co-managed devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         devicesNotAutopilotRegistered:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
+          description: The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         devicesWithoutAutopilotProfileAssigned:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices not autopilot profile assigned. Valid values -2147483648 to 2147483647
+          description: The count of intune devices not autopilot profile assigned. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         devicesWithoutCloudIdentity:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of devices that are not cloud identity. Valid values -2147483648 to 2147483647
+          description: The count of devices that are not cloud identity. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         intuneDevices:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
+          description: The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         tenantAttachDevices:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Total count of tenant attach devices. Valid values -2147483648 to 2147483647
+          description: Total count of tenant attach devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         totalDevices:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The total count of devices. Valid values -2147483648 to 2147483647
+          description: The total count of devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         unsupportedOSversionDevices:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of Windows 10 devices that have unsupported OS versions. Valid values -2147483648 to 2147483647
+          description: The count of Windows 10 devices that have unsupported OS versions. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         windows10Devices:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of windows 10 devices. Valid values -2147483648 to 2147483647
+          description: The count of windows 10 devices. Read-only. Valid values -2147483648 to 2147483647
           format: int32
         windows10DevicesSummary:
           $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWindows10DevicesSummary'
@@ -3291,7 +3291,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of windows 10 devices that are Intune and Comanaged. Valid values -2147483648 to 2147483647
+          description: The count of windows 10 devices that are Intune and co-managed. Read-only. Valid values -2147483648 to 2147483647
           format: int32
       additionalProperties:
         type: object
@@ -4245,19 +4245,19 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices that are not autopilot registerd.
+          description: The count of intune devices that are not autopilot registerd. Read-only.
           format: int32
         devicesWithoutAutopilotProfileAssigned:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices not autopilot profile assigned.
+          description: The count of intune devices not autopilot profile assigned. Read-only.
           format: int32
         totalWindows10DevicesWithoutTenantAttached:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of windows 10 devices that are Intune and Comanaged.
+          description: The count of windows 10 devices that are Intune and co-managed. Read-only.
           format: int32
       additionalProperties:
         type: object
@@ -4270,7 +4270,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of devices that are not cloud identity.
+          description: The count of devices that are not cloud identity. Read-only.
           format: int32
       additionalProperties:
         type: object
@@ -4283,19 +4283,19 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Total number of  co-managed devices.
+          description: Total number of  co-managed devices. Read-only.
           format: int32
         intuneDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of intune devices that are not autopilot registerd.
+          description: The count of intune devices that are not autopilot registerd. Read-only.
           format: int32
         tenantAttachDeviceCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Total count of tenant attach devices.
+          description: Total count of tenant attach devices. Read-only.
           format: int32
       additionalProperties:
         type: object
@@ -4308,7 +4308,7 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The count of Windows 10 devices that have unsupported OS versions.
+          description: The count of Windows 10 devices that have unsupported OS versions. Read-only.
           format: int32
       additionalProperties:
         type: object
@@ -4663,7 +4663,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

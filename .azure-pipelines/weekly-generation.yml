@@ -9,7 +9,7 @@ parameters:
     default: 1es-windows-ps-compute
   - name: BaseBranch
     displayName: Base Branch
-    default: features/2.0
+    default: dev
   - name: GenerationBranch
     displayName: Generation branch
     default: v2/generation
@@ -35,7 +35,7 @@ parameters:
     type: boolean
 
 variables:
-  Branch: "WeeklyPreviewRefresh"
+  Branch: "WeeklyApiRefresh"
   BaseBranch: ${{ parameters.BaseBranch }}
   GenerationBranch: ${{ parameters.GenerationBranch }}
   BuildAgent: ${{ parameters.BuildAgent }}
@@ -46,10 +46,10 @@ trigger: none
 pr: none
 schedules:
   - cron: "0 12 * * TUE" # Run every Tuesday at noon UTC
-    displayName: "PS SDK Preview Weekly Refresh"
+    displayName: "PS SDK Weekly Refresh"
     branches:
       include:
-        - features/2.0
+        - dev
     always: true
 jobs:
   - job: RefreshOpenAPIDocuments
@@ -73,6 +73,9 @@ jobs:
     variables:
       WeeklyBranch: $[ dependencies.RefreshOpenAPIDocuments.outputs['ComputeBranch.WeeklyBranch'] ]
     steps:
+      - template: ./common-templates/checkout.yml
+        parameters:
+          TargetBranch: $(GenerationBranch) # Gives git local knowledge of the branch for merge.
       - template: ./common-templates/checkout.yml
         parameters:
           TargetBranch: $(WeeklyBranch)
@@ -105,11 +108,11 @@ jobs:
               ArtifactName: "drop"
               publishLocation: "Container"
           - task: NuGetCommand@2
-            displayName: Publish NuGet to preview feed
+            displayName: Publish NuGet to feed
             inputs:
               command: push
               packagesToPush: $(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg
-              publishVstsFeed: $(PROJECT_NAME)/$(PREVIEW_FEED_NAME)
+              publishVstsFeed: $(PROJECT_NAME)/$(FEED_NAME)
               allowPackageConflicts: true
       - template: ./generation-templates/generate-command-metadata.yml
       - template: ./common-templates/security-post-checks.yml

@@ -233,11 +233,10 @@ function Start-WebScrapping {
     )  
     $ExampleFile = "$GraphProfilePath/$Command.md"
     $url = $ExternalDocUrl
-    $DescriptionCommand = $Command
-	if($GraphProfile -eq "beta"){
-        $DescriptionCommand= $Command.Replace("-MgBeta", "-Mg")
+    if($GraphProfile -eq "beta"){
+        $url = $url.Replace("graph-rest-1.0","graph-rest-beta")
     }
-    
+    $DescriptionCommand = $Command  
     $Description = "This example shows how to use the $DescriptionCommand Cmdlet.`r`n`r`To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference)."
     $WebResponse = Invoke-WebRequest -Uri $url
     $HeaderList = New-Object -TypeName 'System.Collections.ArrayList';
@@ -264,7 +263,7 @@ function Start-WebScrapping {
         
     }
   
-    Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $ExampleList -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $ExternalDocUrl -UriPath $UriPath -Module $Module
+    Update-ExampleFile -GraphProfile $GraphProfile -HeaderList $HeaderList -ExampleList $ExampleList -ExampleFile $ExampleFile -Description $Description -Command $Command -ExternalDocUrl $url -UriPath $UriPath -Module $Module
 }
 
 function Update-ExampleFile {
@@ -282,9 +281,6 @@ function Update-ExampleFile {
         [string] $ExternalDocUrl = "https://learn.microsoft.com/en-us/graph/api/user-get?view=graph-rest-1.0&tabs=powershell"
     ) 
     $CommandPattern = $Command
-    if($GraphProfile -eq "beta"){
-        $CommandPattern = $Command.Replace("-MgBeta", "-Mg")
-    }
     $Content = Get-Content -Path $ExampleFile
     $SearchText = "Example"
     $SearchTextForNewImports = "{{ Add description here }}"
@@ -306,7 +302,6 @@ function Update-ExampleFile {
         $ReplaceEverything = $True
     }
 
-
     $HeadCount = $HeaderList.Count
     $ExampleCount = $ExampleList.Count
     $WrongExamplesCount = 0;
@@ -320,14 +315,8 @@ function Update-ExampleFile {
             $CodeValue = $ExampleList[$d].Trim()
             if($CodeValue.Contains($CommandPattern)){
             $TitleValue = "### " + $HeaderList[$d].Trim()
-            $Code = "``````powershell`r$CodeValue`r`n``````"
-	
+            $Code = "``````powershell`r$CodeValue`r`n``````"	
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
-            if($GraphProfile -eq "beta"){
-                #Replace examples to match the new beta naming convention
-                $TotalText = $TotalText.Replace("-Mg", "-MgBeta")
-                $TotalText = $TotalText.Replace("Microsoft.Graph", "Microsoft.Graph.Beta")
-            }
             Add-Content -Path $ExampleFile -Value $TotalText
             $ContainsRightExamples = $True
             }else{    
@@ -342,27 +331,23 @@ function Update-ExampleFile {
     $PatternToSearch = "Import-Module Microsoft.Graph.$Module"
     if(($Content | Select-String -pattern $SearchText) -and ($Content | Select-String -pattern "This example shows")){
         $ContainsPatternToSearch = $False
+        if($GraphProfile -eq "beta"){
+            $PatternToSearch = "Import-Module Microsoft.Graph.Beta.$Module"
+        }
         foreach($List in $ExampleList){
-           if($List.Contains($PatternToSearch)){
+           if($List.Contains($PatternToSearch) -and $List.Contains($CommandPattern)){
             $ContainsPatternToSearch = $True
            }
         }
         if($ContainsPatternToSearch){
-            Clear-Content $ExampleFile -Force
-          
+            Clear-Content $ExampleFile -Force    
            for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
             #We should only add the correct examples from external docs link
             if($ExampleList[$d].Contains($CommandPattern)){
             $CodeValue = $ExampleList[$d].Trim()
             $TitleValue = "### " + $HeaderList[$d].Trim()
-            $Code = "``````powershell`r$CodeValue`r`n``````"
-           
+            $Code = "``````powershell`r$CodeValue`r`n``````"       
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
-            if($GraphProfile -eq "beta"){
-                #Replace examples to match the new beta naming convention
-                $TotalText = $TotalText.Replace("-Mg", "-MgBeta")
-                $TotalText = $TotalText.Replace("Microsoft.Graph", "Microsoft.Graph.Beta")
-            }
             Add-Content -Path $ExampleFile -Value $TotalText
         }else{
             $SkippedExample++
@@ -373,10 +358,12 @@ function Update-ExampleFile {
 
 
         }else{
+            if(-not($Content | Select-String -pattern $CommandPattern)){
             Clear-Content $ExampleFile -Force
             #Replace everything with boiler plate code
             $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
             Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
+            }
         }
         
     }
@@ -494,4 +481,4 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
 #Write-Host -ForegroundColor Green "-------------Done-------------"
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0" -GraphCommand "Get-MgBetaCommunicationCallAudioRoutingGroup" -GraphModule "CloudCommunications" -Profile "beta"
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0" -GraphCommand "Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision" -GraphModule "Identity.Governance" -Profile "beta"

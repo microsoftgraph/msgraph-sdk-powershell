@@ -24,4 +24,8 @@ directive:
       verb: Update
       subject: ^DeviceManagementWindowAutopilotDeviceIdentity$
     remove: true
+  - where:
+      verb: Get
+      subject: ^DeviceManagementUserExperienceAnalyticNotAutopilotReadyDeviceCount$
+    remove: true
 ```

@@ -1,4 +1,4 @@
-### Example 1: Get a list of domaim objects
+### Example 1: Get a list of domain objects
 
 ```powershell
 Get-MgBetaDomain | Format-List

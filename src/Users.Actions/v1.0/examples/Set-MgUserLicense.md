@@ -95,7 +95,6 @@ This example updates the **EMSPREMIUM** license assigned to the user to add **AA
 ```powershell
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
-Select-MgProfile -Name Beta
 $mgUser = Get-MgUser -UserId '38955658-c844-4f59-9430-6519430ac89b'
 
 Set-MgUserLicense -UserId "82f51c98-7221-442f-8329-3faf9fe022f1" -AddLicenses $mgUser.AssignedLicenses -RemoveLicenses @()

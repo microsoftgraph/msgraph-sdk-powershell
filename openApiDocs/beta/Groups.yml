@@ -1744,6 +1744,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2345,6 +2361,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3132,6 +3164,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3733,6 +3781,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4270,6 +4334,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -5106,6 +5186,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -5707,6 +5803,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -6494,6 +6606,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -7095,6 +7223,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -7632,6 +7776,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -8585,6 +8745,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -9186,6 +9362,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -9973,6 +10165,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -10574,6 +10782,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -11111,6 +11335,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -11378,11 +11618,11 @@ paths:
     post:
       tags:
         - groups.conversation
-      summary: Create conversation
-      description: Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
+      summary: Create openTypeExtension
+      description: 'Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0
       operationId: group_CreateConversation
       parameters:
         - name: group-id
@@ -11415,10 +11655,10 @@ paths:
       tags:
         - groups.conversation
       summary: Get conversation
-      description: Get a conversation object.
+      description: Retrieve the properties and relationships of conversation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0
       operationId: group_GetConversation
       parameters:
         - name: group-id
@@ -21529,6 +21769,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -22130,6 +22386,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -22917,6 +23189,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -23518,6 +23806,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: event
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -24055,6 +24359,22 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - name: startDateTime
+          in: query
+          description: 'The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
+        - name: endDateTime
+          in: query
+          description: 'The end date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00'
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -25312,7 +25632,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMemberOf_GetCountAsAdministrativeUnit
+      operationId: group.MemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: group-id
           in: path
@@ -25422,7 +25742,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMemberOf_GetCountAsGroup
+      operationId: group.MemberOf_GetCountAsGroup
       parameters:
         - name: group-id
           in: path
@@ -26179,7 +26499,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMember_GetCountAsApplication
+      operationId: group.Member_GetCountAsApplication
       parameters:
         - name: group-id
           in: path
@@ -26289,7 +26609,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMember_GetCountAsDevice
+      operationId: group.Member_GetCountAsDevice
       parameters:
         - name: group-id
           in: path
@@ -26399,7 +26719,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMember_GetCountAsGroup
+      operationId: group.Member_GetCountAsGroup
       parameters:
         - name: group-id
           in: path
@@ -26509,7 +26829,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMember_GetCountAsOrgContact
+      operationId: group.Member_GetCountAsOrgContact
       parameters:
         - name: group-id
           in: path
@@ -26619,7 +26939,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMember_GetCountAsServicePrincipal
+      operationId: group.Member_GetCountAsServicePrincipal
       parameters:
         - name: group-id
           in: path
@@ -26729,7 +27049,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMember_GetCountAsUser
+      operationId: group.Member_GetCountAsUser
       parameters:
         - name: group-id
           in: path
@@ -27422,7 +27742,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMembersGraphWPreLicenseError_GetCountAsApplication
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsApplication
       parameters:
         - name: group-id
           in: path
@@ -27532,7 +27852,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMembersGraphWPreLicenseError_GetCountAsDevice
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsDevice
       parameters:
         - name: group-id
           in: path
@@ -27642,7 +27962,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMembersGraphWPreLicenseError_GetCountAsGroup
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsGroup
       parameters:
         - name: group-id
           in: path
@@ -27752,7 +28072,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMembersGraphWPreLicenseError_GetCountAsOrgContact
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsOrgContact
       parameters:
         - name: group-id
           in: path
@@ -27862,7 +28182,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMembersGraphWPreLicenseError_GetCountAsServicePrincipal
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsServicePrincipal
       parameters:
         - name: group-id
           in: path
@@ -27972,7 +28292,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListMembersGraphWPreLicenseError_GetCountAsUser
+      operationId: group.MembersGraphWPreLicenseError_GetCountAsUser
       parameters:
         - name: group-id
           in: path
@@ -30907,7 +31227,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListOwner_GetCountAsApplication
+      operationId: group.Owner_GetCountAsApplication
       parameters:
         - name: group-id
           in: path
@@ -31017,7 +31337,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListOwner_GetCountAsDevice
+      operationId: group.Owner_GetCountAsDevice
       parameters:
         - name: group-id
           in: path
@@ -31127,7 +31447,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListOwner_GetCountAsGroup
+      operationId: group.Owner_GetCountAsGroup
       parameters:
         - name: group-id
           in: path
@@ -31237,7 +31557,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListOwner_GetCountAsOrgContact
+      operationId: group.Owner_GetCountAsOrgContact
       parameters:
         - name: group-id
           in: path
@@ -31347,7 +31667,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListOwner_GetCountAsServicePrincipal
+      operationId: group.Owner_GetCountAsServicePrincipal
       parameters:
         - name: group-id
           in: path
@@ -31457,7 +31777,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListOwner_GetCountAsUser
+      operationId: group.Owner_GetCountAsUser
       parameters:
         - name: group-id
           in: path
@@ -39905,6 +40225,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
+        - name: model
+          in: query
+          description: The payment model for the API
+          style: form
+          explode: false
+          schema:
+            type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -42069,11 +42396,11 @@ paths:
     get:
       tags:
         - groups.conversationThread
-      summary: Get conversation thread
-      description: Get a thread object.
+      summary: Get conversationThread
+      description: "Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, \nyou can specify the thread without referencing the parent conversation. "
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0
       operationId: group_GetThread
       parameters:
         - name: group-id
@@ -45366,7 +45693,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListTransitiveMemberOf_GetCountAsAdministrativeUnit
+      operationId: group.TransitiveMemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: group-id
           in: path
@@ -45476,7 +45803,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListTransitiveMemberOf_GetCountAsGroup
+      operationId: group.TransitiveMemberOf_GetCountAsGroup
       parameters:
         - name: group-id
           in: path
@@ -46172,7 +46499,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListTransitiveMember_GetCountAsApplication
+      operationId: group.TransitiveMember_GetCountAsApplication
       parameters:
         - name: group-id
           in: path
@@ -46282,7 +46609,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListTransitiveMember_GetCountAsDevice
+      operationId: group.TransitiveMember_GetCountAsDevice
       parameters:
         - name: group-id
           in: path
@@ -46392,7 +46719,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListTransitiveMember_GetCountAsGroup
+      operationId: group.TransitiveMember_GetCountAsGroup
       parameters:
         - name: group-id
           in: path
@@ -46502,7 +46829,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListTransitiveMember_GetCountAsOrgContact
+      operationId: group.TransitiveMember_GetCountAsOrgContact
       parameters:
         - name: group-id
           in: path
@@ -46612,7 +46939,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListTransitiveMember_GetCountAsServicePrincipal
+      operationId: group.TransitiveMember_GetCountAsServicePrincipal
       parameters:
         - name: group-id
           in: path
@@ -46722,7 +47049,7 @@ paths:
       tags:
         - groups.directoryObject
       summary: Get the number of the resource
-      operationId: group.ListTransitiveMember_GetCountAsUser
+      operationId: group.TransitiveMember_GetCountAsUser
       parameters:
         - name: group-id
           in: path
@@ -47511,7 +47838,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
+              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a group that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -48812,7 +49139,7 @@ components:
               nullable: true
             isMemberManagementRestricted:
               type: boolean
-              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.'
+              description: 'true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don''t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.'
               nullable: true
             visibility:
               type: string
@@ -49106,7 +49433,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
+              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             isRooted:
               type: boolean
@@ -49729,7 +50056,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
+              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -50035,6 +50362,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
               description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
               x-ms-navigationProperty: true
+            sponsors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
@@ -50223,6 +50555,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
+              description: The user's activities across devices. Read-only. Nullable.
               x-ms-navigationProperty: true
             devices:
               type: array
@@ -50233,6 +50566,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+              description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
               x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
@@ -50248,6 +50582,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.team'
               description: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -53016,13 +53355,13 @@ components:
       properties:
         default:
           type: boolean
-          description: Whether this is the default Content Type
+          description: Indicates whether this is the default content type.
           nullable: true
         position:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Specifies the position in which the Content Type appears in the selection UI.
+          description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
       additionalProperties:
@@ -53143,7 +53482,7 @@ components:
       properties:
         id:
           type: string
-          description: The id of the content type.
+          description: The ID of the content type.
           nullable: true
         name:
           type: string
@@ -53289,6 +53628,7 @@ components:
       properties:
         removeUnverifiedEmailClaim:
           type: boolean
+          description: Removes the email claim from tokens sent to an application when the email address's domain cannot be verified.
           nullable: true
         requireClientServicePrincipal:
           type: boolean
@@ -53848,18 +54188,18 @@ components:
       properties:
         identityProvider:
           type: string
-          description: For internal use only
+          description: For internal use only.
           nullable: true
         key:
           type: string
-          description: For internal use only
+          description: For internal use only.
           format: base64url
           nullable: true
         type:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: For internal use only
+          description: For internal use only.
           format: int32
           nullable: true
       additionalProperties:
@@ -56226,40 +56566,50 @@ components:
           properties:
             activationUrl:
               type: string
+              description: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
             activitySourceHost:
               type: string
+              description: 'Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.'
             appActivityId:
               type: string
+              description: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
             appDisplayName:
               type: string
+              description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
               $ref: '#/components/schemas/microsoft.graph.Json'
             contentUrl:
               type: string
+              description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object expired on the server.
               format: date-time
               nullable: true
             fallbackUrl:
               type: string
+              description: 'Optional. URL used to launch the activity in a web-based app, if available.'
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
+              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             visualElements:
               $ref: '#/components/schemas/microsoft.graph.visualInfo'
@@ -56267,6 +56617,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+              description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -58511,6 +58862,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+              description: The offer requests for shifts in the schedule.
               x-ms-navigationProperty: true
             openShiftChangeRequests:
               type: array
@@ -59194,7 +59546,7 @@ components:
       properties:
         format:
           type: string
-          description: 'For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.'
+          description: 'For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.'
           nullable: true
         formula:
           type: string
@@ -59202,7 +59554,7 @@ components:
           nullable: true
         outputType:
           type: string
-          description: 'The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.'
+          description: 'The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.'
           nullable: true
       additionalProperties:
         type: object
@@ -59261,11 +59613,11 @@ components:
       properties:
         formula:
           type: string
-          description: The formula used to compute the default value for this column.
+          description: The formula used to compute the default value for the column.
           nullable: true
         value:
           type: string
-          description: The direct value to use as the default value for this column.
+          description: The direct value to use as the default value for the column.
           nullable: true
       additionalProperties:
         type: object
@@ -59853,11 +60205,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Contains the name of the field that a value is associated with.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Contains the corresponding value for the specified key.
           nullable: true
       additionalProperties:
         type: object
@@ -62576,15 +62928,15 @@ components:
               nullable: true
             fullScanOverdue:
               type: boolean
-              description: Full scan overdue or not?
+              description: 'When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.'
               nullable: true
             fullScanRequired:
               type: boolean
-              description: Full scan required or not?
+              description: 'When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.'
               nullable: true
             isVirtualMachine:
               type: boolean
-              description: Indicates whether the device is a virtual machine.
+              description: 'When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.'
               nullable: true
             lastFullScanDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -62614,29 +62966,29 @@ components:
               nullable: true
             malwareProtectionEnabled:
               type: boolean
-              description: Anti malware is enabled or not
+              description: When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.
               nullable: true
             networkInspectionSystemEnabled:
               type: boolean
-              description: Network inspection system enabled or not?
+              description: 'When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.'
               nullable: true
             productStatus:
               $ref: '#/components/schemas/microsoft.graph.windowsDefenderProductStatus'
             quickScanOverdue:
               type: boolean
-              description: Quick scan overdue or not?
+              description: 'When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.'
               nullable: true
             realTimeProtectionEnabled:
               type: boolean
-              description: Real time protection is enabled or not?
+              description: 'When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.'
               nullable: true
             rebootRequired:
               type: boolean
-              description: Reboot required or not?
+              description: 'When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.'
               nullable: true
             signatureUpdateOverdue:
               type: boolean
-              description: Signature out of date or not?
+              description: 'When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.'
               nullable: true
             signatureVersion:
               type: string
@@ -62644,7 +62996,7 @@ components:
               nullable: true
             tamperProtectionEnabled:
               type: boolean
-              description: Indicates whether the Windows Defender tamper protection feature is enabled.
+              description: 'When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.'
               nullable: true
             detectedMalwareState:
               type: array
@@ -65107,7 +65459,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
@@ -65226,21 +65578,25 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of guests in a channel.
           format: int32
           nullable: true
         hasMembersFromOtherTenants:
           type: boolean
+          description: Indicates whether external members are included on the channel.
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of owners in a channel.
           format: int32
           nullable: true
       additionalProperties:

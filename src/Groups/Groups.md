@@ -84,4 +84,9 @@ directive:
       subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$
     set:
       subject: $1Content
+  - where:
+      verb: Get
+      subject: ^(GroupSite)$
+    set:
+      subject: All$1
 ```

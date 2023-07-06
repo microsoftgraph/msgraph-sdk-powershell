@@ -24,6 +24,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         {
             GraphSession.Initialize(() => new GraphSession());
             GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
+            GraphSession.Instance.GraphOption = new GraphOption();
             mockAuthRecord = new MockAuthRecord("test");
             mockAuthRecord.SerializeToFile();
         }

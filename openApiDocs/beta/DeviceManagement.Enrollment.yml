@@ -6397,6 +6397,8 @@ paths:
                 - description desc
                 - isAuthenticationContextSettable
                 - isAuthenticationContextSettable desc
+                - isPrivileged
+                - isPrivileged desc
                 - name
                 - name desc
                 - resourceScopeId
@@ -6417,6 +6419,7 @@ paths:
                 - authenticationContextId
                 - description
                 - isAuthenticationContextSettable
+                - isPrivileged
                 - name
                 - resourceScopeId
                 - authenticationContext
@@ -6518,6 +6521,7 @@ paths:
                 - authenticationContextId
                 - description
                 - isAuthenticationContextSettable
+                - isPrivileged
                 - name
                 - resourceScopeId
                 - authenticationContext
@@ -7692,6 +7696,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -7773,6 +7778,8 @@ paths:
                 - isBuiltIn desc
                 - isEnabled
                 - isEnabled desc
+                - isPrivileged
+                - isPrivileged desc
                 - resourceScopes
                 - resourceScopes desc
                 - rolePermissions
@@ -7798,6 +7805,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -7887,6 +7895,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -8024,6 +8033,8 @@ paths:
                 - isBuiltIn desc
                 - isEnabled
                 - isEnabled desc
+                - isPrivileged
+                - isPrivileged desc
                 - resourceScopes
                 - resourceScopes desc
                 - rolePermissions
@@ -8049,6 +8060,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -8148,6 +8160,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -8612,6 +8625,8 @@ paths:
                 - description desc
                 - isAuthenticationContextSettable
                 - isAuthenticationContextSettable desc
+                - isPrivileged
+                - isPrivileged desc
                 - name
                 - name desc
                 - resourceScopeId
@@ -8632,6 +8647,7 @@ paths:
                 - authenticationContextId
                 - description
                 - isAuthenticationContextSettable
+                - isPrivileged
                 - name
                 - resourceScopeId
                 - authenticationContext
@@ -8733,6 +8749,7 @@ paths:
                 - authenticationContextId
                 - description
                 - isAuthenticationContextSettable
+                - isPrivileged
                 - name
                 - resourceScopeId
                 - authenticationContext
@@ -9907,6 +9924,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -9988,6 +10006,8 @@ paths:
                 - isBuiltIn desc
                 - isEnabled
                 - isEnabled desc
+                - isPrivileged
+                - isPrivileged desc
                 - resourceScopes
                 - resourceScopes desc
                 - rolePermissions
@@ -10013,6 +10033,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -10102,6 +10123,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -10239,6 +10261,8 @@ paths:
                 - isBuiltIn desc
                 - isEnabled
                 - isEnabled desc
+                - isPrivileged
+                - isPrivileged desc
                 - resourceScopes
                 - resourceScopes desc
                 - rolePermissions
@@ -10264,6 +10288,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -10363,6 +10388,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -11781,6 +11807,9 @@ components:
             isAuthenticationContextSettable:
               type: boolean
               nullable: true
+            isPrivileged:
+              type: boolean
+              nullable: true
             name:
               type: string
               description: 'Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).'
@@ -11943,6 +11972,9 @@ components:
             isEnabled:
               type: boolean
               description: Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
+              nullable: true
+            isPrivileged:
+              type: boolean
               nullable: true
             resourceScopes:
               type: array
@@ -13664,7 +13696,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

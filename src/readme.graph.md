@@ -246,6 +246,27 @@ directive:
                 }
             }
           }
+# Add Microsoft Graph error properties to InnerError.
+  - from: 'openapi-document'
+    where: $.components.schemas['microsoft.graph.ODataErrors.InnerError']
+    transform: >-
+      return {
+        "type": "object",
+        "properties": {
+            "date" : {
+                "type" : 'string'
+            },
+            "request-id" : {
+                "type" : 'string'
+            },
+            "client-request-id" : {
+                "type" : 'string'
+            }
+        },
+        "additionalProperties": {
+            "type" : "object"
+        }
+      }
 # Mark '@odata.id' as required properties for /$ref.
   - from: 'openapi-document'
     where: $.components.schemas.ReferenceCreate
@@ -259,6 +280,11 @@ directive:
   - from: 'openapi-document'
     where: $.components.schemas.ReferenceUpdate..properties['@odata.id']
     transform: $['description'] = 'The entity reference URL of the resource. For example, https://graph.microsoft.com/v1.0/directoryObjects/{id}.'
+# Fix Base64 serialization.
+  - from: 'openapi-document'
+    where: $.components.schemas..properties.*
+    transform: >-
+        if ($.format === 'base64url') { $['format'] = 'byte' }
 # Mark consistency level parameter as required for /$count paths when header is present.
   - from: openapi-document
     where: $..paths.*[?(/(.*_GetCount)/gmi.exec(@.operationId))]..parameters[?(@.name === "ConsistencyLevel")]
@@ -393,6 +419,10 @@ directive:
             $ = $.replace(shouldProcessMessageRegex, `$1${operationMatch[2]} ${operationMatch[3]}$2`);
           }
         }
+
+        // Format error details.
+        let errorDetailsRegex = /(ErrorDetails\s*=\s*)(new.*ErrorDetails\(message\).*)/gmi
+        $ = $.replace(errorDetailsRegex, '$1await this.GetErrorDetailsAsync((await response)?.Error, responseMessage)');
 
         return $;
       }
@@ -538,6 +568,21 @@ directive:
         // Remove Values from IAssociativeArray interface.
         let valuesRegex = /System\.Collections\.Generic\.IEnumerable<T>\s*Values\s*{\s*get;\s*}/gm
         $ = $.replace(valuesRegex, '');
+
+        return $;
+      }
+
+# Modify generated JsonObject class.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%2Fruntime%2FNodes%2FJsonObject.cs/gm))
+      {
+        return $;
+      } else {
+        // Make JsonObject's items dictionary case insensitive.
+        let dictionaryInitRegex = /(\s*=\s*new\s*Dictionary<string,\s*JsonNode>\()(\);)/gm
+        $ = $.replace(dictionaryInitRegex, '$1StringComparer.InvariantCultureIgnoreCase$2');
 
         return $;
       }
