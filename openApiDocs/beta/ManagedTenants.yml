@@ -1952,6 +1952,8 @@ paths:
                 - tenantDisplayName desc
                 - tenantId
                 - tenantId desc
+                - tenantLicenseType
+                - tenantLicenseType desc
                 - totalUserCount
                 - totalUserCount desc
               type: string
@@ -1976,6 +1978,7 @@ paths:
                 - ssprRegisteredUserCount
                 - tenantDisplayName
                 - tenantId
+                - tenantLicenseType
                 - totalUserCount
               type: string
         - name: $expand
@@ -2061,6 +2064,7 @@ paths:
                 - ssprRegisteredUserCount
                 - tenantDisplayName
                 - tenantId
+                - tenantLicenseType
                 - totalUserCount
               type: string
         - name: $expand
@@ -12680,6 +12684,9 @@ components:
             tenantId:
               type: string
               description: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+              nullable: true
+            tenantLicenseType:
+              type: string
               nullable: true
             totalUserCount:
               maximum: 2147483647

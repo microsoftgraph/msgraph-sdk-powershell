@@ -7900,11 +7900,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update countryNamedLocation
-      description: Update the properties of a countryNamedLocation object.
+      summary: Update ipNamedlocation
+      description: Update the properties of an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -8575,11 +8575,11 @@ paths:
     get:
       tags:
         - identity.customAuthenticationExtension
-      summary: Get authenticationEventListener
-      description: Read the properties and relationships of an authenticationEventListener object. The **@odata.type** property in the response object indicates the type of the authenticationEventListener object.
+      summary: Get customAuthenticationExtension
+      description: Read the properties and relationships of a customAuthenticationExtension object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0
       operationId: identity_GetCustomAuthenticationExtension
       parameters:
         - name: customAuthenticationExtension-id
@@ -9737,11 +9737,11 @@ paths:
     get:
       tags:
         - identityProtection.riskDetection
-      summary: List riskDetection
-      description: Retrieve the properties of a collection of **riskDetection** objects.
+      summary: Get riskDetection
+      description: Retrieve the properties of a **riskDetection** object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0
       operationId: identityProtection_GetRiskDetection
       parameters:
         - name: riskDetection-id
@@ -16185,7 +16185,7 @@ paths:
       description: Update an appManagementPolicy object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/appManagementPolicy-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-update?view=graph-rest-1.0
       operationId: policy_UpdateAppManagementPolicy
       parameters:
         - name: appManagementPolicy-id
@@ -16220,7 +16220,7 @@ paths:
       description: Delete an appManagementPolicy object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/appManagementPolicy-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-delete?view=graph-rest-1.0
       operationId: policy_DeleteAppManagementPolicy
       parameters:
         - name: appManagementPolicy-id
@@ -40036,6 +40036,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
+              description: 'Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.'
             attendeeReport:
               type: string
               description: The content stream of the attendee report of a Teams live event. Read-only.
@@ -49559,7 +49560,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printerDefaults'
             displayName:
               type: string
-              nullable: true
             isAcceptingJobs:
               type: boolean
               nullable: true
@@ -49738,11 +49738,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -55317,7 +55317,6 @@ components:
             isFetchable:
               type: boolean
               description: 'If true, document can be fetched by printer.'
-              nullable: true
             redirectedFrom:
               type: string
               description: 'Contains the source job URL, if the job has been redirected from another printer.'
@@ -55350,17 +55349,14 @@ components:
             appVersion:
               type: string
               description: The connector's version.
-              nullable: true
             deviceHealth:
               $ref: '#/components/schemas/microsoft.graph.deviceHealth'
             displayName:
               type: string
               description: The name of the connector.
-              nullable: true
             fullyQualifiedDomainName:
               type: string
               description: The connector machine's hostname.
-              nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
             name:
@@ -55369,7 +55365,6 @@ components:
             operatingSystem:
               type: string
               description: The connector machine's operating system version.
-              nullable: true
             registeredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -57809,6 +57804,7 @@ components:
         - grayscale
         - color
         - auto
+        - unknownFutureValue
       type: string
     microsoft.graph.integerRange:
       title: integerRange
@@ -57840,6 +57836,7 @@ components:
         - flipOnLongEdge
         - flipOnShortEdge
         - oneSided
+        - unknownFutureValue
       type: string
     microsoft.graph.printerFeedDirection:
       title: printerFeedDirection
@@ -57888,6 +57885,7 @@ components:
         - clockwiseFromBottomLeft
         - counterclockwiseFromBottomRight
         - clockwiseFromBottomRight
+        - unknownFutureValue
       type: string
     microsoft.graph.printOrientation:
       title: printOrientation
@@ -57896,6 +57894,7 @@ components:
         - landscape
         - reverseLandscape
         - reversePortrait
+        - unknownFutureValue
       type: string
     microsoft.graph.printQuality:
       title: printQuality
@@ -58919,10 +58918,10 @@ components:
       properties:
         acquiredByPrinter:
           type: boolean
+          nullable: true
         description:
           type: string
           description: A human-readable description of the print job's current processing state. Read-only.
-          nullable: true
         details:
           type: array
           items:
@@ -59763,6 +59762,7 @@ components:
         - completed
         - canceled
         - aborted
+        - unknownFutureValue
       type: string
     microsoft.graph.printerDocumentConfiguration:
       title: printerDocumentConfiguration

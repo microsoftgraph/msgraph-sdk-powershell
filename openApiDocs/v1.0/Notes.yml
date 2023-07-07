@@ -4063,7 +4063,7 @@ paths:
     get:
       tags:
         - groups.onenote
-      summary: List pages
+      summary: List onenotePages
       description: Retrieve a list of page objects.
       externalDocs:
         description: Find more info here
@@ -11957,7 +11957,7 @@ paths:
     get:
       tags:
         - sites.onenote
-      summary: List pages
+      summary: List onenotePages
       description: Retrieve a list of page objects.
       externalDocs:
         description: Find more info here
@@ -19850,7 +19850,7 @@ paths:
     get:
       tags:
         - users.onenote
-      summary: List pages
+      summary: List onenotePages
       description: Retrieve a list of page objects.
       externalDocs:
         description: Find more info here
