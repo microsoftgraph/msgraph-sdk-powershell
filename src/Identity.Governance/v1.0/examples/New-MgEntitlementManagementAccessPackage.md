@@ -1,18 +1,17 @@
-### Example 1: Code snippet
+### Example 1: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
 
-```powershellImport-Module Microsoft.Graph.Identity.Governance
-
-$params = @{
-	displayName = "sales reps"
-	description = "outside sales representatives"
-	isHidden = $false
-	catalog = @{
-		id = "66584aae-98bb-48cc-9458-7bee5d2a6577"
-	}
-}
-
-New-MgEntitlementManagementAccessPackage -BodyParameter $params
+{{ Add output here }}
 ```
-This example shows how to use the New-MgEntitlementManagementAccessPackage Cmdlet.
-To learn about permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
+{{ Add description here }}
+
+### Example 2: {{ Add title here }}
+```powershell
+ PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+```
+
+{{ Add description here }}
