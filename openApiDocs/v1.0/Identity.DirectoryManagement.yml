@@ -687,7 +687,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListDirectReport_GetCountAsOrgContact
+      operationId: contact.DirectReport_GetCountAsOrgContact
       parameters:
         - name: orgContact-id
           in: path
@@ -797,7 +797,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListDirectReport_GetCountAsUser
+      operationId: contact.DirectReport_GetCountAsUser
       parameters:
         - name: orgContact-id
           in: path
@@ -1279,7 +1279,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListMemberOf_GetCountAsAdministrativeUnit
+      operationId: contact.MemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: orgContact-id
           in: path
@@ -1389,7 +1389,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListMemberOf_GetCountAsGroup
+      operationId: contact.MemberOf_GetCountAsGroup
       parameters:
         - name: orgContact-id
           in: path
@@ -2066,7 +2066,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListTransitiveMemberOf_GetCountAsAdministrativeUnit
+      operationId: contact.TransitiveMemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: orgContact-id
           in: path
@@ -2176,7 +2176,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get the number of the resource
-      operationId: contact.ListTransitiveMemberOf_GetCountAsGroup
+      operationId: contact.TransitiveMemberOf_GetCountAsGroup
       parameters:
         - name: orgContact-id
           in: path
@@ -4150,7 +4150,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListMemberOf_GetCountAsAdministrativeUnit
+      operationId: device.MemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: device-id
           in: path
@@ -4260,7 +4260,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListMemberOf_GetCountAsGroup
+      operationId: device.MemberOf_GetCountAsGroup
       parameters:
         - name: device-id
           in: path
@@ -5132,7 +5132,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredOwner_GetCountAsAppRoleAssignment
+      operationId: device.RegisteredOwner_GetCountAsAppRoleAssignment
       parameters:
         - name: device-id
           in: path
@@ -5242,7 +5242,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredOwner_GetCountAsEndpoint
+      operationId: device.RegisteredOwner_GetCountAsEndpoint
       parameters:
         - name: device-id
           in: path
@@ -5352,7 +5352,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredOwner_GetCountAsServicePrincipal
+      operationId: device.RegisteredOwner_GetCountAsServicePrincipal
       parameters:
         - name: device-id
           in: path
@@ -5462,7 +5462,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredOwner_GetCountAsUser
+      operationId: device.RegisteredOwner_GetCountAsUser
       parameters:
         - name: device-id
           in: path
@@ -6085,7 +6085,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredUser_GetCountAsAppRoleAssignment
+      operationId: device.RegisteredUser_GetCountAsAppRoleAssignment
       parameters:
         - name: device-id
           in: path
@@ -6195,7 +6195,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredUser_GetCountAsEndpoint
+      operationId: device.RegisteredUser_GetCountAsEndpoint
       parameters:
         - name: device-id
           in: path
@@ -6305,7 +6305,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredUser_GetCountAsServicePrincipal
+      operationId: device.RegisteredUser_GetCountAsServicePrincipal
       parameters:
         - name: device-id
           in: path
@@ -6415,7 +6415,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListRegisteredUser_GetCountAsUser
+      operationId: device.RegisteredUser_GetCountAsUser
       parameters:
         - name: device-id
           in: path
@@ -6843,7 +6843,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListTransitiveMemberOf_GetCountAsAdministrativeUnit
+      operationId: device.TransitiveMemberOf_GetCountAsAdministrativeUnit
       parameters:
         - name: device-id
           in: path
@@ -6953,7 +6953,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get the number of the resource
-      operationId: device.ListTransitiveMemberOf_GetCountAsGroup
+      operationId: device.TransitiveMemberOf_GetCountAsGroup
       parameters:
         - name: device-id
           in: path
@@ -7929,6 +7929,40 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.administrativeUnit
+      summary: Create new navigation property to members for directory
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
+      operationId: directory.administrativeUnit_CreateMember
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: The unique identifier of administrativeUnit
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/directory/administrativeUnits/{administrativeUnit-id}/members/{directoryObject-id}/$ref':
     delete:
       tags:
@@ -8470,8 +8504,7 @@ paths:
     post:
       tags:
         - directory.administrativeUnit
-      summary: Add a member
-      description: 'Use this API to add a member (user, group, or device) to an administrative unit. Currently it''s only possible to add one member at a time to an administrative unit.'
+      summary: Create new navigation property ref to members for directory
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0
@@ -8576,7 +8609,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsApplication
+      operationId: directory.administrativeUnit.Member_GetCountAsApplication
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -8686,7 +8719,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsDevice
+      operationId: directory.administrativeUnit.Member_GetCountAsDevice
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -8796,7 +8829,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsGroup
+      operationId: directory.administrativeUnit.Member_GetCountAsGroup
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -8906,7 +8939,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsOrgContact
+      operationId: directory.administrativeUnit.Member_GetCountAsOrgContact
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -9016,7 +9049,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsServicePrincipal
+      operationId: directory.administrativeUnit.Member_GetCountAsServicePrincipal
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -9126,7 +9159,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get the number of the resource
-      operationId: directory.administrativeUnit.ListMember_GetCountAsUser
+      operationId: directory.administrativeUnit.Member_GetCountAsUser
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -9527,7 +9560,11 @@ paths:
     get:
       tags:
         - directory.attributeSet
-      summary: Get attributeSets from directory
+      summary: List attributeSets
+      description: Get a list of the attributeSet objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-list-attributesets?view=graph-rest-1.0
       operationId: directory_ListAttributeSet
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9590,7 +9627,11 @@ paths:
     post:
       tags:
         - directory.attributeSet
-      summary: Create new navigation property to attributeSets for directory
+      summary: Create attributeSet
+      description: Create a new attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-post-attributesets?view=graph-rest-1.0
       operationId: directory_CreateAttributeSet
       requestBody:
         description: New navigation property
@@ -9613,7 +9654,11 @@ paths:
     get:
       tags:
         - directory.attributeSet
-      summary: Get attributeSets from directory
+      summary: Get attributeSet
+      description: Read the properties and relationships of an attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attributeset-get?view=graph-rest-1.0
       operationId: directory_GetAttributeSet
       parameters:
         - name: attributeSet-id
@@ -9663,7 +9708,11 @@ paths:
     patch:
       tags:
         - directory.attributeSet
-      summary: Update the navigation property attributeSets in directory
+      summary: Update attributeSet
+      description: Update the properties of an attributeSet object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/attributeset-update?view=graph-rest-1.0
       operationId: directory_UpdateAttributeSet
       parameters:
         - name: attributeSet-id
@@ -9735,7 +9784,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get customSecurityAttributeDefinitions from directory
+      summary: List customSecurityAttributeDefinitions
+      description: Get a list of the customSecurityAttributeDefinition objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-list-customsecurityattributedefinitions?view=graph-rest-1.0
       operationId: directory_ListCustomSecurityAttributeDefinition
       parameters:
         - $ref: '#/components/parameters/top'
@@ -9818,7 +9871,11 @@ paths:
     post:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Create new navigation property to customSecurityAttributeDefinitions for directory
+      summary: Create customSecurityAttributeDefinition
+      description: Create a new customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/directory-post-customsecurityattributedefinitions?view=graph-rest-1.0
       operationId: directory_CreateCustomSecurityAttributeDefinition
       requestBody:
         description: New navigation property
@@ -9841,7 +9898,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get customSecurityAttributeDefinitions from directory
+      summary: Get customSecurityAttributeDefinition
+      description: Read the properties and relationships of a customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-get?view=graph-rest-1.0
       operationId: directory_GetCustomSecurityAttributeDefinition
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9899,7 +9960,11 @@ paths:
     patch:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Update the navigation property customSecurityAttributeDefinitions in directory
+      summary: Update customSecurityAttributeDefinition
+      description: Update the properties of a customSecurityAttributeDefinition object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-update?view=graph-rest-1.0
       operationId: directory_UpdateCustomSecurityAttributeDefinition
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -9957,7 +10022,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get allowedValues from directory
+      summary: List allowedValues
+      description: Get a list of the allowedValue objects and their properties.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-list-allowedvalues?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_ListAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -10025,7 +10094,11 @@ paths:
     post:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Create new navigation property to allowedValues for directory
+      summary: Create allowedValue
+      description: Create a new allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/customsecurityattributedefinition-post-allowedvalues?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_CreateAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -10057,7 +10130,11 @@ paths:
     get:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Get allowedValues from directory
+      summary: Get allowedValue
+      description: Read the properties and relationships of an allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/allowedvalue-get?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_GetAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -10114,7 +10191,11 @@ paths:
     patch:
       tags:
         - directory.customSecurityAttributeDefinition
-      summary: Update the navigation property allowedValues in directory
+      summary: Update allowedValue
+      description: Update the properties of an allowedValue object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/allowedvalue-update?view=graph-rest-1.0
       operationId: directory.customSecurityAttributeDefinition_UpdateAllowedValue
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -11041,7 +11122,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsAdministrativeUnit
+      operationId: directory.DeletedItem_GetCountAsAdministrativeUnit
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11115,7 +11196,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsApplication
+      operationId: directory.DeletedItem_GetCountAsApplication
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11256,7 +11337,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsDevice
+      operationId: directory.DeletedItem_GetCountAsDevice
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11431,7 +11512,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsGroup
+      operationId: directory.DeletedItem_GetCountAsGroup
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11505,7 +11586,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsServicePrincipal
+      operationId: directory.DeletedItem_GetCountAsServicePrincipal
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -11579,7 +11660,7 @@ paths:
       tags:
         - directory.directoryObject
       summary: Get the number of the resource
-      operationId: directory.ListDeletedItem_GetCountAsUser
+      operationId: directory.DeletedItem_GetCountAsUser
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -13042,7 +13123,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsApplication
+      operationId: directoryRole.Member_GetCountAsApplication
       parameters:
         - name: directoryRole-id
           in: path
@@ -13152,7 +13233,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsDevice
+      operationId: directoryRole.Member_GetCountAsDevice
       parameters:
         - name: directoryRole-id
           in: path
@@ -13262,7 +13343,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsGroup
+      operationId: directoryRole.Member_GetCountAsGroup
       parameters:
         - name: directoryRole-id
           in: path
@@ -13372,7 +13453,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsOrgContact
+      operationId: directoryRole.Member_GetCountAsOrgContact
       parameters:
         - name: directoryRole-id
           in: path
@@ -13482,7 +13563,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsServicePrincipal
+      operationId: directoryRole.Member_GetCountAsServicePrincipal
       parameters:
         - name: directoryRole-id
           in: path
@@ -13592,7 +13673,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get the number of the resource
-      operationId: directoryRole.ListMember_GetCountAsUser
+      operationId: directoryRole.Member_GetCountAsUser
       parameters:
         - name: directoryRole-id
           in: path
@@ -16625,10 +16706,10 @@ paths:
       tags:
         - organization.organization
       summary: Get organization
-      description: 'Get the properties and relationships of the currently authenticated organization. Since the **organization** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **organization** instance.'
+      description: Read properties and relationships of the organization object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/organization-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-organization-get?view=graph-rest-1.0
       operationId: organization_GetOrganization
       parameters:
         - name: organization-id
@@ -16801,8 +16882,28 @@ paths:
                 - bannerLogo
                 - bannerLogoRelativeUrl
                 - cdnList
+                - customAccountResetCredentialsUrl
+                - customCannotAccessYourAccountText
+                - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
+                - customForgotMyPasswordText
+                - customPrivacyAndCookiesText
+                - customPrivacyAndCookiesUrl
+                - customResetItNowText
+                - customTermsOfUseText
+                - customTermsOfUseUrl
+                - favicon
+                - faviconRelativeUrl
+                - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
+                - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
+                - squareLogoDark
+                - squareLogoDarkRelativeUrl
                 - squareLogoRelativeUrl
                 - usernameHintText
                 - localizations
@@ -17013,6 +17114,177 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/customCSS':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get customCSS for the navigation property branding from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update customCSS for the navigation property branding in organization
+      operationId: organization_SetBrandingCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/favicon':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get favicon for the navigation property branding from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update favicon for the navigation property branding in organization
+      operationId: organization_SetBrandingFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/headerLogo':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get headerLogo for the navigation property branding from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update headerLogo for the navigation property branding in organization
+      operationId: organization_SetBrandingHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/branding/localizations':
     get:
       tags:
@@ -17061,10 +17333,50 @@ paths:
                 - bannerLogoRelativeUrl desc
                 - cdnList
                 - cdnList desc
+                - customAccountResetCredentialsUrl
+                - customAccountResetCredentialsUrl desc
+                - customCannotAccessYourAccountText
+                - customCannotAccessYourAccountText desc
+                - customCannotAccessYourAccountUrl
+                - customCannotAccessYourAccountUrl desc
+                - customCSS
+                - customCSS desc
+                - customCSSRelativeUrl
+                - customCSSRelativeUrl desc
+                - customForgotMyPasswordText
+                - customForgotMyPasswordText desc
+                - customPrivacyAndCookiesText
+                - customPrivacyAndCookiesText desc
+                - customPrivacyAndCookiesUrl
+                - customPrivacyAndCookiesUrl desc
+                - customResetItNowText
+                - customResetItNowText desc
+                - customTermsOfUseText
+                - customTermsOfUseText desc
+                - customTermsOfUseUrl
+                - customTermsOfUseUrl desc
+                - favicon
+                - favicon desc
+                - faviconRelativeUrl
+                - faviconRelativeUrl desc
+                - headerBackgroundColor
+                - headerBackgroundColor desc
+                - headerLogo
+                - headerLogo desc
+                - headerLogoRelativeUrl
+                - headerLogoRelativeUrl desc
+                - loginPageLayoutConfiguration
+                - loginPageLayoutConfiguration desc
+                - loginPageTextVisibilitySettings
+                - loginPageTextVisibilitySettings desc
                 - signInPageText
                 - signInPageText desc
                 - squareLogo
                 - squareLogo desc
+                - squareLogoDark
+                - squareLogoDark desc
+                - squareLogoDarkRelativeUrl
+                - squareLogoDarkRelativeUrl desc
                 - squareLogoRelativeUrl
                 - squareLogoRelativeUrl desc
                 - usernameHintText
@@ -17087,8 +17399,28 @@ paths:
                 - bannerLogo
                 - bannerLogoRelativeUrl
                 - cdnList
+                - customAccountResetCredentialsUrl
+                - customCannotAccessYourAccountText
+                - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
+                - customForgotMyPasswordText
+                - customPrivacyAndCookiesText
+                - customPrivacyAndCookiesUrl
+                - customResetItNowText
+                - customTermsOfUseText
+                - customTermsOfUseUrl
+                - favicon
+                - faviconRelativeUrl
+                - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
+                - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
+                - squareLogoDark
+                - squareLogoDarkRelativeUrl
                 - squareLogoRelativeUrl
                 - usernameHintText
               type: string
@@ -17192,8 +17524,28 @@ paths:
                 - bannerLogo
                 - bannerLogoRelativeUrl
                 - cdnList
+                - customAccountResetCredentialsUrl
+                - customCannotAccessYourAccountText
+                - customCannotAccessYourAccountUrl
+                - customCSS
+                - customCSSRelativeUrl
+                - customForgotMyPasswordText
+                - customPrivacyAndCookiesText
+                - customPrivacyAndCookiesUrl
+                - customResetItNowText
+                - customTermsOfUseText
+                - customTermsOfUseUrl
+                - favicon
+                - faviconRelativeUrl
+                - headerBackgroundColor
+                - headerLogo
+                - headerLogoRelativeUrl
+                - loginPageLayoutConfiguration
+                - loginPageTextVisibilitySettings
                 - signInPageText
                 - squareLogo
+                - squareLogoDark
+                - squareLogoDarkRelativeUrl
                 - squareLogoRelativeUrl
                 - usernameHintText
               type: string
@@ -17450,6 +17802,225 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/customCSS':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get customCSS for the navigation property localizations from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update customCSS for the navigation property localizations in organization
+      operationId: organization.branding_SetLocalizationsCustomCSS
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/favicon':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get favicon for the navigation property localizations from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update favicon for the navigation property localizations in organization
+      operationId: organization.branding_SetLocalizationsFavicon
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/headerLogo':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get headerLogo for the navigation property localizations from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update headerLogo for the navigation property localizations in organization
+      operationId: organization.branding_SetLocalizationsHeaderLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/squareLogo':
     get:
       tags:
@@ -17494,6 +18065,79 @@ paths:
       summary: Update squareLogo for the navigation property localizations in organization
       description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization.branding_SetLocalizationsSquareLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/localizations/{organizationalBrandingLocalization-id}/squareLogoDark':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get squareLogoDark for the navigation property localizations from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0
+      operationId: organization.branding_GetLocalizationsSquareLogoDark
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: organizationalBrandingLocalization-id
+          in: path
+          description: The unique identifier of organizationalBrandingLocalization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organizationalBrandingLocalization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update squareLogoDark for the navigation property localizations in organization
+      operationId: organization.branding_SetLocalizationsSquareLogoDark
       parameters:
         - name: organization-id
           in: path
@@ -17583,6 +18227,63 @@ paths:
       summary: Update squareLogo for the navigation property branding in organization
       description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
       operationId: organization_SetBrandingSquareLogo
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/branding/squareLogoDark':
+    get:
+      tags:
+        - organization.organizationalBranding
+      summary: Get squareLogoDark for the navigation property branding from organization
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0
+      operationId: organization_GetBrandingSquareLogoDark
+      parameters:
+        - name: organization-id
+          in: path
+          description: The unique identifier of organization
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      responses:
+        2XX:
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - organization.organizationalBranding
+      summary: Update squareLogoDark for the navigation property branding in organization
+      operationId: organization_SetBrandingSquareLogoDark
       parameters:
         - name: organization-id
           in: path
@@ -18112,6 +18813,9 @@ paths:
         - organization.Actions
       summary: Invoke action setMobileDeviceManagementAuthority
       description: Set mobile device management authority
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-onboarding-organization-setmobiledevicemanagementauthority?view=graph-rest-1.0
       operationId: organization_setMobileDeviceManagementAuthority
       parameters:
         - name: organization-id
@@ -19019,7 +19723,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -19145,6 +19849,8 @@ components:
               type: integer
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
+            print:
+              $ref: '#/components/schemas/microsoft.graph.userPrint'
             aboutMe:
               type: string
               description: A freeform text entry field for the user to describe themselves. Returned only on $select.
@@ -19391,6 +20097,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+              description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
               x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
@@ -20283,11 +20990,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attributeSet'
+              description: Group of related custom security attribute definitions.
               x-ms-navigationProperty: true
             customSecurityAttributeDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
+              description: Schema of a custom security attributes (key-value pairs).
               x-ms-navigationProperty: true
             deletedItems:
               type: array
@@ -20512,11 +21221,13 @@ components:
           properties:
             description:
               type: string
+              description: Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
               nullable: true
             maxAttributesPerSet:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.'
               format: int32
               nullable: true
           additionalProperties:
@@ -20529,27 +21240,36 @@ components:
           properties:
             attributeSet:
               type: string
+              description: Name of the attribute set. Case insensitive.
             description:
               type: string
+              description: Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.
               nullable: true
             isCollection:
               type: boolean
+              description: 'Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.'
             isSearchable:
               type: boolean
+              description: Indicates whether custom security attribute values are indexed for searching on objects that are assigned attribute values. Cannot be changed later.
               nullable: true
             name:
               type: string
+              description: Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
             status:
               type: string
+              description: 'Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.'
             type:
               type: string
+              description: 'Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.'
             usePreDefinedValuesOnly:
               type: boolean
+              description: 'Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.'
               nullable: true
             allowedValues:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.allowedValue'
+              description: 'Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -20561,6 +21281,7 @@ components:
           properties:
             isActive:
               type: boolean
+              description: 'Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.'
               nullable: true
           additionalProperties:
             type: object
@@ -20852,10 +21573,12 @@ components:
               type: array
               items:
                 type: string
+              description: Not nullable.
             securityComplianceNotificationPhones:
               type: array
               items:
                 type: string
+              description: Not nullable.
             state:
               type: string
               description: State name of the address for the organization.
@@ -21327,6 +22050,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userPurpose'
         workingHours:
           $ref: '#/components/schemas/microsoft.graph.workingHours'
+      additionalProperties:
+        type: object
+    microsoft.graph.userPrint:
+      title: userPrint
+      type: object
+      properties:
+        recentPrinterShares:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerShare'
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.licenseDetails:
@@ -22077,7 +22811,7 @@ components:
               nullable: true
             isFavorite:
               type: boolean
-              description: true if the user has flagged this person as a favorite.
+              description: True if the user has flagged this person as a favorite.
               nullable: true
             jobTitle:
               type: string
@@ -22742,8 +23476,10 @@ components:
           properties:
             contributionToContentDiscoveryAsOrganizationDisabled:
               type: boolean
+              description: 'Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn''t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
             contributionToContentDiscoveryDisabled:
               type: boolean
+              description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
           additionalProperties:
@@ -23462,18 +24198,18 @@ components:
       properties:
         identityProvider:
           type: string
-          description: For internal use only
+          description: For internal use only.
           nullable: true
         key:
           type: string
-          description: For internal use only
+          description: For internal use only.
           format: base64url
           nullable: true
         type:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: For internal use only
+          description: For internal use only.
           format: int32
           nullable: true
       additionalProperties:
@@ -24334,6 +25070,61 @@ components:
                 type: string
                 nullable: true
               description: A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
+            customAccountResetCredentialsUrl:
+              type: string
+              nullable: true
+            customCannotAccessYourAccountText:
+              type: string
+              nullable: true
+            customCannotAccessYourAccountUrl:
+              type: string
+              nullable: true
+            customCSS:
+              type: string
+              format: base64url
+              nullable: true
+            customCSSRelativeUrl:
+              type: string
+              nullable: true
+            customForgotMyPasswordText:
+              type: string
+              nullable: true
+            customPrivacyAndCookiesText:
+              type: string
+              nullable: true
+            customPrivacyAndCookiesUrl:
+              type: string
+              nullable: true
+            customResetItNowText:
+              type: string
+              nullable: true
+            customTermsOfUseText:
+              type: string
+              nullable: true
+            customTermsOfUseUrl:
+              type: string
+              nullable: true
+            favicon:
+              type: string
+              format: base64url
+              nullable: true
+            faviconRelativeUrl:
+              type: string
+              nullable: true
+            headerBackgroundColor:
+              type: string
+              nullable: true
+            headerLogo:
+              type: string
+              format: base64url
+              nullable: true
+            headerLogoRelativeUrl:
+              type: string
+              nullable: true
+            loginPageLayoutConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.loginPageLayoutConfiguration'
+            loginPageTextVisibilitySettings:
+              $ref: '#/components/schemas/microsoft.graph.loginPageTextVisibilitySettings'
             signInPageText:
               type: string
               description: 'Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.'
@@ -24342,6 +25133,13 @@ components:
               type: string
               description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
               format: base64url
+              nullable: true
+            squareLogoDark:
+              type: string
+              format: base64url
+              nullable: true
+            squareLogoDarkRelativeUrl:
+              type: string
               nullable: true
             squareLogoRelativeUrl:
               type: string
@@ -24362,6 +25160,12 @@ components:
           minimum: -2147483648
           type: integer
           description: The number of units that are enabled for the active subscription of the service SKU.
+          format: int32
+          nullable: true
+        lockedOut:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
           format: int32
           nullable: true
         suspended:
@@ -24867,6 +25671,38 @@ components:
           $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
       additionalProperties:
         type: object
+    microsoft.graph.printerShare:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.printerBase'
+        - title: printerShare
+          type: object
+          properties:
+            allowAllUsers:
+              type: boolean
+              description: 'If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the printer share was created. Read-only.
+              format: date-time
+            viewPoint:
+              $ref: '#/components/schemas/microsoft.graph.printerShareViewpoint'
+            allowedGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.group'
+              description: The groups whose users have access to print using the printer.
+              x-ms-navigationProperty: true
+            allowedUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.user'
+              description: The users who have access to print using the printer.
+              x-ms-navigationProperty: true
+            printer:
+              $ref: '#/components/schemas/microsoft.graph.printer'
+          additionalProperties:
+            type: object
     microsoft.graph.onlineMeetingProviderType:
       title: onlineMeetingProviderType
       enum:
@@ -27654,6 +28490,8 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -28177,6 +29015,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+              description: The offer requests for shifts in the schedule.
               x-ms-navigationProperty: true
             openShiftChangeRequests:
               type: array
@@ -28206,6 +29045,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeOffReasons:
               type: array
@@ -28217,6 +29057,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -28622,6 +29463,44 @@ components:
           description: 'The subject key identifier of the certificate, calculated from the certificate value. Read-only.'
       additionalProperties:
         type: object
+    microsoft.graph.loginPageLayoutConfiguration:
+      title: loginPageLayoutConfiguration
+      type: object
+      properties:
+        isFooterShown:
+          type: boolean
+          nullable: true
+        isHeaderShown:
+          type: boolean
+          nullable: true
+        layoutTemplateType:
+          $ref: '#/components/schemas/microsoft.graph.layoutTemplateType'
+      additionalProperties:
+        type: object
+    microsoft.graph.loginPageTextVisibilitySettings:
+      title: loginPageTextVisibilitySettings
+      type: object
+      properties:
+        hideAccountResetCredentials:
+          type: boolean
+          nullable: true
+        hideCannotAccessYourAccount:
+          type: boolean
+          nullable: true
+        hideForgotMyPassword:
+          type: boolean
+          nullable: true
+        hidePrivacyAndCookies:
+          type: boolean
+          nullable: true
+        hideResetItNow:
+          type: boolean
+          nullable: true
+        hideTermsOfUse:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.ODataErrors.MainError:
       required:
         - code
@@ -28639,7 +29518,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
@@ -28678,6 +29557,98 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.printerBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printerBase
+          type: object
+          properties:
+            capabilities:
+              $ref: '#/components/schemas/microsoft.graph.printerCapabilities'
+            defaults:
+              $ref: '#/components/schemas/microsoft.graph.printerDefaults'
+            displayName:
+              type: string
+              description: The name of the printer/printerShare.
+            isAcceptingJobs:
+              type: boolean
+              description: Whether the printer/printerShare is currently accepting new print jobs.
+              nullable: true
+            location:
+              $ref: '#/components/schemas/microsoft.graph.printerLocation'
+            manufacturer:
+              type: string
+              description: The manufacturer of the printer/printerShare.
+              nullable: true
+            model:
+              type: string
+              description: The model name of the printer/printerShare.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printerStatus'
+            jobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+              description: The list of jobs that are queued for printing by the printer/printerShare.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printerShareViewpoint:
+      title: printerShareViewpoint
+      type: object
+      properties:
+        lastUsedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Date and time when the printer was last used by the signed-in user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.printerBase'
+        - title: printer
+          type: object
+          properties:
+            hasPhysicalDevice:
+              type: boolean
+              description: True if the printer has a physical device for printing. Read-only.
+            isShared:
+              type: boolean
+              description: True if the printer is shared; false otherwise. Read-only.
+            lastSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
+              format: date-time
+              nullable: true
+            registeredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the printer was registered. Read-only.
+              format: date-time
+            connectors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printConnector'
+              description: The connectors that are associated with the printer.
+              x-ms-navigationProperty: true
+            shares:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printerShare'
+              description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
+              x-ms-navigationProperty: true
+            taskTriggers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+              description: A list of task triggers that are associated with the printer.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.calendarRoleType:
       title: calendarRoleType
       enum:
@@ -29619,6 +30590,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookComment'
+              description: Represents a collection of comments in a workbook.
               x-ms-navigationProperty: true
             functions:
               $ref: '#/components/schemas/microsoft.graph.workbookFunctions'
@@ -29886,7 +30858,7 @@ components:
       properties:
         format:
           type: string
-          description: 'For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.'
+          description: 'For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.'
           nullable: true
         formula:
           type: string
@@ -29894,7 +30866,7 @@ components:
           nullable: true
         outputType:
           type: string
-          description: 'The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.'
+          description: 'The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.'
           nullable: true
       additionalProperties:
         type: object
@@ -29953,11 +30925,11 @@ components:
       properties:
         formula:
           type: string
-          description: The formula used to compute the default value for this column.
+          description: The formula used to compute the default value for the column.
           nullable: true
         value:
           type: string
-          description: The direct value to use as the default value for this column.
+          description: The direct value to use as the default value for the column.
           nullable: true
       additionalProperties:
         type: object
@@ -30050,7 +31022,7 @@ components:
       properties:
         id:
           type: string
-          description: The id of the content type.
+          description: The ID of the content type.
           nullable: true
         name:
           type: string
@@ -30215,13 +31187,13 @@ components:
       properties:
         default:
           type: boolean
-          description: Whether this is the default Content Type
+          description: Indicates whether this is the default content type
           nullable: true
         position:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Specifies the position in which the Content Type appears in the selection UI.
+          description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
       additionalProperties:
@@ -31124,6 +32096,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
           additionalProperties:
             type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -31154,6 +32136,8 @@ components:
         - title: teamsAppDefinition
           type: object
           properties:
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
@@ -31939,6 +32923,13 @@ components:
         - enabledForPercentage
         - unknownFutureValue
       type: string
+    microsoft.graph.layoutTemplateType:
+      title: layoutTemplateType
+      enum:
+        - default
+        - verticalSplit
+        - unknownFutureValue
+      type: string
     microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
@@ -31959,6 +32950,412 @@ components:
       additionalProperties:
         type: object
       description: The structure of this object is service-specific
+    microsoft.graph.printerCapabilities:
+      title: printerCapabilities
+      type: object
+      properties:
+        bottomMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported bottom margins(in microns) for the printer.
+        collation:
+          type: boolean
+          description: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+          nullable: true
+        colorModes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printColorMode'
+          description: The color modes supported by the printer. Valid values are described in the following table.
+        contentTypes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+        copiesPerJob:
+          $ref: '#/components/schemas/microsoft.graph.integerRange'
+        dpis:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: The list of print resolutions in DPI that are supported by the printer.
+        duplexModes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+          description: The list of duplex modes that are supported by the printer. Valid values are described in the following table.
+        feedOrientations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerFeedOrientation'
+          description: The list of feed orientations that are supported by the printer.
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: Finishing processes the printer supports for a printed document.
+        inputBins:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Supported input bins for the printer.
+        isColorPrintingSupported:
+          type: boolean
+          description: True if color printing is supported by the printer; false otherwise. Read-only.
+          nullable: true
+        isPageRangeSupported:
+          type: boolean
+          description: True if the printer supports printing by page ranges; false otherwise.
+          nullable: true
+        leftMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported left margins(in microns) for the printer.
+        mediaColors:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'The media (i.e., paper) colors supported by the printer.'
+        mediaSizes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+        mediaTypes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The media types supported by the printer.
+        multipageLayouts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+          description: The presentation directions supported by the printer. Supported values are described in the following table.
+        orientations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printOrientation'
+          description: The print orientations supported by the printer. Valid values are described in the following table.
+        outputBins:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The printer's supported output bins (trays).
+        pagesPerSheet:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: Supported number of Input Pages to impose upon a single Impression.
+        qualities:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printQuality'
+          description: The print qualities supported by the printer.
+        rightMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported right margins(in microns) for the printer.
+        scalings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printScaling'
+          description: Supported print scalings.
+        supportsFitPdfToPage:
+          type: boolean
+          description: True if the printer supports scaling PDF pages to match the print media size; false otherwise.
+          nullable: true
+        topMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported top margins(in microns) for the printer.
+      additionalProperties:
+        type: object
+    microsoft.graph.printerDefaults:
+      title: printerDefaults
+      type: object
+      properties:
+        colorMode:
+          $ref: '#/components/schemas/microsoft.graph.printColorMode'
+        contentType:
+          type: string
+          description: The default content (MIME) type to use when processing documents.
+          nullable: true
+        copiesPerJob:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default number of copies printed per job.
+          format: int32
+          nullable: true
+        dpi:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default resolution in DPI to use when printing the job.
+          format: int32
+          nullable: true
+        duplexMode:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: The default set of finishings to apply to print jobs. Valid values are described in the following table.
+        fitPdfToPage:
+          type: boolean
+          description: The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
+          nullable: true
+        inputBin:
+          type: string
+          nullable: true
+        mediaColor:
+          type: string
+          description: The default media (such as paper) color to print the document on.
+          nullable: true
+        mediaSize:
+          type: string
+          description: The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+          nullable: true
+        mediaType:
+          type: string
+          description: The default media (such as paper) type to print the document on.
+          nullable: true
+        multipageLayout:
+          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientation:
+          $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBin:
+          type: string
+          description: The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
+          nullable: true
+        pagesPerSheet:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default number of document pages to print on each sheet.
+          format: int32
+          nullable: true
+        quality:
+          $ref: '#/components/schemas/microsoft.graph.printQuality'
+        scaling:
+          $ref: '#/components/schemas/microsoft.graph.printScaling'
+      additionalProperties:
+        type: object
+    microsoft.graph.printerLocation:
+      title: printerLocation
+      type: object
+      properties:
+        altitudeInMeters:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The altitude, in meters, that the printer is located at.'
+          format: int32
+          nullable: true
+        building:
+          type: string
+          description: The building that the printer is located in.
+          nullable: true
+        city:
+          type: string
+          description: The city that the printer is located in.
+          nullable: true
+        countryOrRegion:
+          type: string
+          description: The country or region that the printer is located in.
+          nullable: true
+        floor:
+          type: string
+          description: The floor that the printer is located on. Only numerical values are supported right now.
+          nullable: true
+        floorDescription:
+          type: string
+          description: The description of the floor that the printer is located on.
+          nullable: true
+        latitude:
+          type: number
+          description: The latitude that the printer is located at.
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          description: The longitude that the printer is located at.
+          format: double
+          nullable: true
+        organization:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
+        postalCode:
+          type: string
+          description: The postal code that the printer is located in.
+          nullable: true
+        roomDescription:
+          type: string
+          description: The description of the room that the printer is located in.
+          nullable: true
+        roomName:
+          type: string
+          description: The room that the printer is located in. Only numerical values are supported right now.
+          nullable: true
+        site:
+          type: string
+          description: The site that the printer is located in.
+          nullable: true
+        stateOrProvince:
+          type: string
+          description: The state or province that the printer is located in.
+          nullable: true
+        streetAddress:
+          type: string
+          description: The street address where the printer is located.
+          nullable: true
+        subdivision:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The subdivision that the printer is located in. The elements should be in hierarchical order.
+        subunit:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printerStatus:
+      title: printerStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the printer's current processing state. Read-only.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerProcessingStateDetail'
+          description: The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printerProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.printJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printJob
+          type: object
+          properties:
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the job was created. Read-only.
+              format: date-time
+            isFetchable:
+              type: boolean
+              description: 'If true, document can be fetched by printer.'
+            redirectedFrom:
+              type: string
+              description: 'Contains the source job URL, if the job has been redirected from another printer.'
+              nullable: true
+            redirectedTo:
+              type: string
+              description: 'Contains the destination job URL, if the job has been redirected to another printer.'
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printJobStatus'
+            documents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printDocument'
+              x-ms-navigationProperty: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+              description: A list of printTasks that were triggered by this print job.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printConnector:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printConnector
+          type: object
+          properties:
+            appVersion:
+              type: string
+              description: The connector's version.
+            displayName:
+              type: string
+              description: The name of the connector.
+            fullyQualifiedDomainName:
+              type: string
+              description: The connector machine's hostname.
+            location:
+              $ref: '#/components/schemas/microsoft.graph.printerLocation'
+            operatingSystem:
+              type: string
+              description: The connector machine's operating system version.
+            registeredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the connector was registered.
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.printTaskTrigger:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTaskTrigger
+          type: object
+          properties:
+            event:
+              $ref: '#/components/schemas/microsoft.graph.printEvent'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+          additionalProperties:
+            type: object
     microsoft.graph.attendeeType:
       title: attendeeType
       enum:
@@ -32785,6 +34182,17 @@ components:
         - unknownFutureValue
         - emailUser
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:
@@ -32793,6 +34201,14 @@ components:
         - sideloaded
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppPublishingState:
       title: teamsAppPublishingState
       enum:
@@ -33330,6 +34746,1118 @@ components:
         - SynchronizationLearnMoreIbizaFwLink
         - ConfigurationFields
       type: string
+    microsoft.graph.printColorMode:
+      title: printColorMode
+      enum:
+        - blackAndWhite
+        - grayscale
+        - color
+        - auto
+        - unknownFutureValue
+      type: string
+    microsoft.graph.integerRange:
+      title: integerRange
+      type: object
+      properties:
+        end:
+          type: integer
+          description: The inclusive upper bound of the integer range.
+          format: int64
+          nullable: true
+        start:
+          type: integer
+          description: The inclusive lower bound of the integer range.
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printDuplexMode:
+      title: printDuplexMode
+      enum:
+        - flipOnLongEdge
+        - flipOnShortEdge
+        - oneSided
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printerFeedOrientation:
+      title: printerFeedOrientation
+      enum:
+        - longEdgeFirst
+        - shortEdgeFirst
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printFinishing:
+      title: printFinishing
+      enum:
+        - none
+        - staple
+        - punch
+        - cover
+        - bind
+        - saddleStitch
+        - stitchEdge
+        - stapleTopLeft
+        - stapleBottomLeft
+        - stapleTopRight
+        - stapleBottomRight
+        - stitchLeftEdge
+        - stitchTopEdge
+        - stitchRightEdge
+        - stitchBottomEdge
+        - stapleDualLeft
+        - stapleDualTop
+        - stapleDualRight
+        - stapleDualBottom
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printMultipageLayout:
+      title: printMultipageLayout
+      enum:
+        - clockwiseFromTopLeft
+        - counterclockwiseFromTopLeft
+        - counterclockwiseFromTopRight
+        - clockwiseFromTopRight
+        - counterclockwiseFromBottomLeft
+        - clockwiseFromBottomLeft
+        - counterclockwiseFromBottomRight
+        - clockwiseFromBottomRight
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printOrientation:
+      title: printOrientation
+      enum:
+        - portrait
+        - landscape
+        - reverseLandscape
+        - reversePortrait
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printQuality:
+      title: printQuality
+      enum:
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printScaling:
+      title: printScaling
+      enum:
+        - auto
+        - shrinkToFit
+        - fill
+        - fit
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printerProcessingStateDetail:
+      title: printerProcessingStateDetail
+      enum:
+        - paused
+        - mediaJam
+        - mediaNeeded
+        - mediaLow
+        - mediaEmpty
+        - coverOpen
+        - interlockOpen
+        - outputTrayMissing
+        - outputAreaFull
+        - markerSupplyLow
+        - markerSupplyEmpty
+        - inputTrayMissing
+        - outputAreaAlmostFull
+        - markerWasteAlmostFull
+        - markerWasteFull
+        - fuserOverTemp
+        - fuserUnderTemp
+        - other
+        - none
+        - movingToPaused
+        - shutdown
+        - connectingToDevice
+        - timedOut
+        - stopping
+        - stoppedPartially
+        - tonerLow
+        - tonerEmpty
+        - spoolAreaFull
+        - doorOpen
+        - opticalPhotoConductorNearEndOfLife
+        - opticalPhotoConductorLifeOver
+        - developerLow
+        - developerEmpty
+        - interpreterResourceUnavailable
+        - unknownFutureValue
+        - alertRemovalOfBinaryChangeEntry
+        - banderAdded
+        - banderAlmostEmpty
+        - banderAlmostFull
+        - banderAtLimit
+        - banderClosed
+        - banderConfigurationChange
+        - banderCoverClosed
+        - banderCoverOpen
+        - banderEmpty
+        - banderFull
+        - banderInterlockClosed
+        - banderInterlockOpen
+        - banderJam
+        - banderLifeAlmostOver
+        - banderLifeOver
+        - banderMemoryExhausted
+        - banderMissing
+        - banderMotorFailure
+        - banderNearLimit
+        - banderOffline
+        - banderOpened
+        - banderOverTemperature
+        - banderPowerSaver
+        - banderRecoverableFailure
+        - banderRecoverableStorage
+        - banderRemoved
+        - banderResourceAdded
+        - banderResourceRemoved
+        - banderThermistorFailure
+        - banderTimingFailure
+        - banderTurnedOff
+        - banderTurnedOn
+        - banderUnderTemperature
+        - banderUnrecoverableFailure
+        - banderUnrecoverableStorageError
+        - banderWarmingUp
+        - binderAdded
+        - binderAlmostEmpty
+        - binderAlmostFull
+        - binderAtLimit
+        - binderClosed
+        - binderConfigurationChange
+        - binderCoverClosed
+        - binderCoverOpen
+        - binderEmpty
+        - binderFull
+        - binderInterlockClosed
+        - binderInterlockOpen
+        - binderJam
+        - binderLifeAlmostOver
+        - binderLifeOver
+        - binderMemoryExhausted
+        - binderMissing
+        - binderMotorFailure
+        - binderNearLimit
+        - binderOffline
+        - binderOpened
+        - binderOverTemperature
+        - binderPowerSaver
+        - binderRecoverableFailure
+        - binderRecoverableStorage
+        - binderRemoved
+        - binderResourceAdded
+        - binderResourceRemoved
+        - binderThermistorFailure
+        - binderTimingFailure
+        - binderTurnedOff
+        - binderTurnedOn
+        - binderUnderTemperature
+        - binderUnrecoverableFailure
+        - binderUnrecoverableStorageError
+        - binderWarmingUp
+        - cameraFailure
+        - chamberCooling
+        - chamberFailure
+        - chamberHeating
+        - chamberTemperatureHigh
+        - chamberTemperatureLow
+        - cleanerLifeAlmostOver
+        - cleanerLifeOver
+        - configurationChange
+        - deactivated
+        - deleted
+        - dieCutterAdded
+        - dieCutterAlmostEmpty
+        - dieCutterAlmostFull
+        - dieCutterAtLimit
+        - dieCutterClosed
+        - dieCutterConfigurationChange
+        - dieCutterCoverClosed
+        - dieCutterCoverOpen
+        - dieCutterEmpty
+        - dieCutterFull
+        - dieCutterInterlockClosed
+        - dieCutterInterlockOpen
+        - dieCutterJam
+        - dieCutterLifeAlmostOver
+        - dieCutterLifeOver
+        - dieCutterMemoryExhausted
+        - dieCutterMissing
+        - dieCutterMotorFailure
+        - dieCutterNearLimit
+        - dieCutterOffline
+        - dieCutterOpened
+        - dieCutterOverTemperature
+        - dieCutterPowerSaver
+        - dieCutterRecoverableFailure
+        - dieCutterRecoverableStorage
+        - dieCutterRemoved
+        - dieCutterResourceAdded
+        - dieCutterResourceRemoved
+        - dieCutterThermistorFailure
+        - dieCutterTimingFailure
+        - dieCutterTurnedOff
+        - dieCutterTurnedOn
+        - dieCutterUnderTemperature
+        - dieCutterUnrecoverableFailure
+        - dieCutterUnrecoverableStorageError
+        - dieCutterWarmingUp
+        - extruderCooling
+        - extruderFailure
+        - extruderHeating
+        - extruderJam
+        - extruderTemperatureHigh
+        - extruderTemperatureLow
+        - fanFailure
+        - faxModemLifeAlmostOver
+        - faxModemLifeOver
+        - faxModemMissing
+        - faxModemTurnedOff
+        - faxModemTurnedOn
+        - folderAdded
+        - folderAlmostEmpty
+        - folderAlmostFull
+        - folderAtLimit
+        - folderClosed
+        - folderConfigurationChange
+        - folderCoverClosed
+        - folderCoverOpen
+        - folderEmpty
+        - folderFull
+        - folderInterlockClosed
+        - folderInterlockOpen
+        - folderJam
+        - folderLifeAlmostOver
+        - folderLifeOver
+        - folderMemoryExhausted
+        - folderMissing
+        - folderMotorFailure
+        - folderNearLimit
+        - folderOffline
+        - folderOpened
+        - folderOverTemperature
+        - folderPowerSaver
+        - folderRecoverableFailure
+        - folderRecoverableStorage
+        - folderRemoved
+        - folderResourceAdded
+        - folderResourceRemoved
+        - folderThermistorFailure
+        - folderTimingFailure
+        - folderTurnedOff
+        - folderTurnedOn
+        - folderUnderTemperature
+        - folderUnrecoverableFailure
+        - folderUnrecoverableStorageError
+        - folderWarmingUp
+        - hibernate
+        - holdNewJobs
+        - identifyPrinterRequested
+        - imprinterAdded
+        - imprinterAlmostEmpty
+        - imprinterAlmostFull
+        - imprinterAtLimit
+        - imprinterClosed
+        - imprinterConfigurationChange
+        - imprinterCoverClosed
+        - imprinterCoverOpen
+        - imprinterEmpty
+        - imprinterFull
+        - imprinterInterlockClosed
+        - imprinterInterlockOpen
+        - imprinterJam
+        - imprinterLifeAlmostOver
+        - imprinterLifeOver
+        - imprinterMemoryExhausted
+        - imprinterMissing
+        - imprinterMotorFailure
+        - imprinterNearLimit
+        - imprinterOffline
+        - imprinterOpened
+        - imprinterOverTemperature
+        - imprinterPowerSaver
+        - imprinterRecoverableFailure
+        - imprinterRecoverableStorage
+        - imprinterRemoved
+        - imprinterResourceAdded
+        - imprinterResourceRemoved
+        - imprinterThermistorFailure
+        - imprinterTimingFailure
+        - imprinterTurnedOff
+        - imprinterTurnedOn
+        - imprinterUnderTemperature
+        - imprinterUnrecoverableFailure
+        - imprinterUnrecoverableStorageError
+        - imprinterWarmingUp
+        - inputCannotFeedSizeSelected
+        - inputManualInputRequest
+        - inputMediaColorChange
+        - inputMediaFormPartsChange
+        - inputMediaSizeChange
+        - inputMediaTrayFailure
+        - inputMediaTrayFeedError
+        - inputMediaTrayJam
+        - inputMediaTypeChange
+        - inputMediaWeightChange
+        - inputPickRollerFailure
+        - inputPickRollerLifeOver
+        - inputPickRollerLifeWarn
+        - inputPickRollerMissing
+        - inputTrayElevationFailure
+        - inputTrayPositionFailure
+        - inserterAdded
+        - inserterAlmostEmpty
+        - inserterAlmostFull
+        - inserterAtLimit
+        - inserterClosed
+        - inserterConfigurationChange
+        - inserterCoverClosed
+        - inserterCoverOpen
+        - inserterEmpty
+        - inserterFull
+        - inserterInterlockClosed
+        - inserterInterlockOpen
+        - inserterJam
+        - inserterLifeAlmostOver
+        - inserterLifeOver
+        - inserterMemoryExhausted
+        - inserterMissing
+        - inserterMotorFailure
+        - inserterNearLimit
+        - inserterOffline
+        - inserterOpened
+        - inserterOverTemperature
+        - inserterPowerSaver
+        - inserterRecoverableFailure
+        - inserterRecoverableStorage
+        - inserterRemoved
+        - inserterResourceAdded
+        - inserterResourceRemoved
+        - inserterThermistorFailure
+        - inserterTimingFailure
+        - inserterTurnedOff
+        - inserterTurnedOn
+        - inserterUnderTemperature
+        - inserterUnrecoverableFailure
+        - inserterUnrecoverableStorageError
+        - inserterWarmingUp
+        - interlockClosed
+        - interpreterCartridgeAdded
+        - interpreterCartridgeDeleted
+        - interpreterComplexPageEncountered
+        - interpreterMemoryDecrease
+        - interpreterMemoryIncrease
+        - interpreterResourceAdded
+        - interpreterResourceDeleted
+        - lampAtEol
+        - lampFailure
+        - lampNearEol
+        - laserAtEol
+        - laserFailure
+        - laserNearEol
+        - makeEnvelopeAdded
+        - makeEnvelopeAlmostEmpty
+        - makeEnvelopeAlmostFull
+        - makeEnvelopeAtLimit
+        - makeEnvelopeClosed
+        - makeEnvelopeConfigurationChange
+        - makeEnvelopeCoverClosed
+        - makeEnvelopeCoverOpen
+        - makeEnvelopeEmpty
+        - makeEnvelopeFull
+        - makeEnvelopeInterlockClosed
+        - makeEnvelopeInterlockOpen
+        - makeEnvelopeJam
+        - makeEnvelopeLifeAlmostOver
+        - makeEnvelopeLifeOver
+        - makeEnvelopeMemoryExhausted
+        - makeEnvelopeMissing
+        - makeEnvelopeMotorFailure
+        - makeEnvelopeNearLimit
+        - makeEnvelopeOffline
+        - makeEnvelopeOpened
+        - makeEnvelopeOverTemperature
+        - makeEnvelopePowerSaver
+        - makeEnvelopeRecoverableFailure
+        - makeEnvelopeRecoverableStorage
+        - makeEnvelopeRemoved
+        - makeEnvelopeResourceAdded
+        - makeEnvelopeResourceRemoved
+        - makeEnvelopeThermistorFailure
+        - makeEnvelopeTimingFailure
+        - makeEnvelopeTurnedOff
+        - makeEnvelopeTurnedOn
+        - makeEnvelopeUnderTemperature
+        - makeEnvelopeUnrecoverableFailure
+        - makeEnvelopeUnrecoverableStorageError
+        - makeEnvelopeWarmingUp
+        - markerAdjustingPrintQuality
+        - markerCleanerMissing
+        - markerDeveloperAlmostEmpty
+        - markerDeveloperEmpty
+        - markerDeveloperMissing
+        - markerFuserMissing
+        - markerFuserThermistorFailure
+        - markerFuserTimingFailure
+        - markerInkAlmostEmpty
+        - markerInkEmpty
+        - markerInkMissing
+        - markerOpcMissing
+        - markerPrintRibbonAlmostEmpty
+        - markerPrintRibbonEmpty
+        - markerPrintRibbonMissing
+        - markerSupplyAlmostEmpty
+        - markerSupplyMissing
+        - markerTonerCartridgeMissing
+        - markerTonerMissing
+        - markerWasteInkReceptacleAlmostFull
+        - markerWasteInkReceptacleFull
+        - markerWasteInkReceptacleMissing
+        - markerWasteMissing
+        - markerWasteTonerReceptacleAlmostFull
+        - markerWasteTonerReceptacleFull
+        - markerWasteTonerReceptacleMissing
+        - materialEmpty
+        - materialLow
+        - materialNeeded
+        - mediaDrying
+        - mediaPathCannotDuplexMediaSelected
+        - mediaPathFailure
+        - mediaPathInputEmpty
+        - mediaPathInputFeedError
+        - mediaPathInputJam
+        - mediaPathInputRequest
+        - mediaPathJam
+        - mediaPathMediaTrayAlmostFull
+        - mediaPathMediaTrayFull
+        - mediaPathMediaTrayMissing
+        - mediaPathOutputFeedError
+        - mediaPathOutputFull
+        - mediaPathOutputJam
+        - mediaPathPickRollerFailure
+        - mediaPathPickRollerLifeOver
+        - mediaPathPickRollerLifeWarn
+        - mediaPathPickRollerMissing
+        - motorFailure
+        - outputMailboxSelectFailure
+        - outputMediaTrayFailure
+        - outputMediaTrayFeedError
+        - outputMediaTrayJam
+        - perforaterAdded
+        - perforaterAlmostEmpty
+        - perforaterAlmostFull
+        - perforaterAtLimit
+        - perforaterClosed
+        - perforaterConfigurationChange
+        - perforaterCoverClosed
+        - perforaterCoverOpen
+        - perforaterEmpty
+        - perforaterFull
+        - perforaterInterlockClosed
+        - perforaterInterlockOpen
+        - perforaterJam
+        - perforaterLifeAlmostOver
+        - perforaterLifeOver
+        - perforaterMemoryExhausted
+        - perforaterMissing
+        - perforaterMotorFailure
+        - perforaterNearLimit
+        - perforaterOffline
+        - perforaterOpened
+        - perforaterOverTemperature
+        - perforaterPowerSaver
+        - perforaterRecoverableFailure
+        - perforaterRecoverableStorage
+        - perforaterRemoved
+        - perforaterResourceAdded
+        - perforaterResourceRemoved
+        - perforaterThermistorFailure
+        - perforaterTimingFailure
+        - perforaterTurnedOff
+        - perforaterTurnedOn
+        - perforaterUnderTemperature
+        - perforaterUnrecoverableFailure
+        - perforaterUnrecoverableStorageError
+        - perforaterWarmingUp
+        - platformCooling
+        - platformFailure
+        - platformHeating
+        - platformTemperatureHigh
+        - platformTemperatureLow
+        - powerDown
+        - powerUp
+        - printerManualReset
+        - printerNmsReset
+        - printerReadyToPrint
+        - puncherAdded
+        - puncherAlmostEmpty
+        - puncherAlmostFull
+        - puncherAtLimit
+        - puncherClosed
+        - puncherConfigurationChange
+        - puncherCoverClosed
+        - puncherCoverOpen
+        - puncherEmpty
+        - puncherFull
+        - puncherInterlockClosed
+        - puncherInterlockOpen
+        - puncherJam
+        - puncherLifeAlmostOver
+        - puncherLifeOver
+        - puncherMemoryExhausted
+        - puncherMissing
+        - puncherMotorFailure
+        - puncherNearLimit
+        - puncherOffline
+        - puncherOpened
+        - puncherOverTemperature
+        - puncherPowerSaver
+        - puncherRecoverableFailure
+        - puncherRecoverableStorage
+        - puncherRemoved
+        - puncherResourceAdded
+        - puncherResourceRemoved
+        - puncherThermistorFailure
+        - puncherTimingFailure
+        - puncherTurnedOff
+        - puncherTurnedOn
+        - puncherUnderTemperature
+        - puncherUnrecoverableFailure
+        - puncherUnrecoverableStorageError
+        - puncherWarmingUp
+        - resuming
+        - scanMediaPathFailure
+        - scanMediaPathInputEmpty
+        - scanMediaPathInputFeedError
+        - scanMediaPathInputJam
+        - scanMediaPathInputRequest
+        - scanMediaPathJam
+        - scanMediaPathOutputFeedError
+        - scanMediaPathOutputFull
+        - scanMediaPathOutputJam
+        - scanMediaPathPickRollerFailure
+        - scanMediaPathPickRollerLifeOver
+        - scanMediaPathPickRollerLifeWarn
+        - scanMediaPathPickRollerMissing
+        - scanMediaPathTrayAlmostFull
+        - scanMediaPathTrayFull
+        - scanMediaPathTrayMissing
+        - scannerLightFailure
+        - scannerLightLifeAlmostOver
+        - scannerLightLifeOver
+        - scannerLightMissing
+        - scannerSensorFailure
+        - scannerSensorLifeAlmostOver
+        - scannerSensorLifeOver
+        - scannerSensorMissing
+        - separationCutterAdded
+        - separationCutterAlmostEmpty
+        - separationCutterAlmostFull
+        - separationCutterAtLimit
+        - separationCutterClosed
+        - separationCutterConfigurationChange
+        - separationCutterCoverClosed
+        - separationCutterCoverOpen
+        - separationCutterEmpty
+        - separationCutterFull
+        - separationCutterInterlockClosed
+        - separationCutterInterlockOpen
+        - separationCutterJam
+        - separationCutterLifeAlmostOver
+        - separationCutterLifeOver
+        - separationCutterMemoryExhausted
+        - separationCutterMissing
+        - separationCutterMotorFailure
+        - separationCutterNearLimit
+        - separationCutterOffline
+        - separationCutterOpened
+        - separationCutterOverTemperature
+        - separationCutterPowerSaver
+        - separationCutterRecoverableFailure
+        - separationCutterRecoverableStorage
+        - separationCutterRemoved
+        - separationCutterResourceAdded
+        - separationCutterResourceRemoved
+        - separationCutterThermistorFailure
+        - separationCutterTimingFailure
+        - separationCutterTurnedOff
+        - separationCutterTurnedOn
+        - separationCutterUnderTemperature
+        - separationCutterUnrecoverableFailure
+        - separationCutterUnrecoverableStorageError
+        - separationCutterWarmingUp
+        - sheetRotatorAdded
+        - sheetRotatorAlmostEmpty
+        - sheetRotatorAlmostFull
+        - sheetRotatorAtLimit
+        - sheetRotatorClosed
+        - sheetRotatorConfigurationChange
+        - sheetRotatorCoverClosed
+        - sheetRotatorCoverOpen
+        - sheetRotatorEmpty
+        - sheetRotatorFull
+        - sheetRotatorInterlockClosed
+        - sheetRotatorInterlockOpen
+        - sheetRotatorJam
+        - sheetRotatorLifeAlmostOver
+        - sheetRotatorLifeOver
+        - sheetRotatorMemoryExhausted
+        - sheetRotatorMissing
+        - sheetRotatorMotorFailure
+        - sheetRotatorNearLimit
+        - sheetRotatorOffline
+        - sheetRotatorOpened
+        - sheetRotatorOverTemperature
+        - sheetRotatorPowerSaver
+        - sheetRotatorRecoverableFailure
+        - sheetRotatorRecoverableStorage
+        - sheetRotatorRemoved
+        - sheetRotatorResourceAdded
+        - sheetRotatorResourceRemoved
+        - sheetRotatorThermistorFailure
+        - sheetRotatorTimingFailure
+        - sheetRotatorTurnedOff
+        - sheetRotatorTurnedOn
+        - sheetRotatorUnderTemperature
+        - sheetRotatorUnrecoverableFailure
+        - sheetRotatorUnrecoverableStorageError
+        - sheetRotatorWarmingUp
+        - slitterAdded
+        - slitterAlmostEmpty
+        - slitterAlmostFull
+        - slitterAtLimit
+        - slitterClosed
+        - slitterConfigurationChange
+        - slitterCoverClosed
+        - slitterCoverOpen
+        - slitterEmpty
+        - slitterFull
+        - slitterInterlockClosed
+        - slitterInterlockOpen
+        - slitterJam
+        - slitterLifeAlmostOver
+        - slitterLifeOver
+        - slitterMemoryExhausted
+        - slitterMissing
+        - slitterMotorFailure
+        - slitterNearLimit
+        - slitterOffline
+        - slitterOpened
+        - slitterOverTemperature
+        - slitterPowerSaver
+        - slitterRecoverableFailure
+        - slitterRecoverableStorage
+        - slitterRemoved
+        - slitterResourceAdded
+        - slitterResourceRemoved
+        - slitterThermistorFailure
+        - slitterTimingFailure
+        - slitterTurnedOff
+        - slitterTurnedOn
+        - slitterUnderTemperature
+        - slitterUnrecoverableFailure
+        - slitterUnrecoverableStorageError
+        - slitterWarmingUp
+        - stackerAdded
+        - stackerAlmostEmpty
+        - stackerAlmostFull
+        - stackerAtLimit
+        - stackerClosed
+        - stackerConfigurationChange
+        - stackerCoverClosed
+        - stackerCoverOpen
+        - stackerEmpty
+        - stackerFull
+        - stackerInterlockClosed
+        - stackerInterlockOpen
+        - stackerJam
+        - stackerLifeAlmostOver
+        - stackerLifeOver
+        - stackerMemoryExhausted
+        - stackerMissing
+        - stackerMotorFailure
+        - stackerNearLimit
+        - stackerOffline
+        - stackerOpened
+        - stackerOverTemperature
+        - stackerPowerSaver
+        - stackerRecoverableFailure
+        - stackerRecoverableStorage
+        - stackerRemoved
+        - stackerResourceAdded
+        - stackerResourceRemoved
+        - stackerThermistorFailure
+        - stackerTimingFailure
+        - stackerTurnedOff
+        - stackerTurnedOn
+        - stackerUnderTemperature
+        - stackerUnrecoverableFailure
+        - stackerUnrecoverableStorageError
+        - stackerWarmingUp
+        - standby
+        - staplerAdded
+        - staplerAlmostEmpty
+        - staplerAlmostFull
+        - staplerAtLimit
+        - staplerClosed
+        - staplerConfigurationChange
+        - staplerCoverClosed
+        - staplerCoverOpen
+        - staplerEmpty
+        - staplerFull
+        - staplerInterlockClosed
+        - staplerInterlockOpen
+        - staplerJam
+        - staplerLifeAlmostOver
+        - staplerLifeOver
+        - staplerMemoryExhausted
+        - staplerMissing
+        - staplerMotorFailure
+        - staplerNearLimit
+        - staplerOffline
+        - staplerOpened
+        - staplerOverTemperature
+        - staplerPowerSaver
+        - staplerRecoverableFailure
+        - staplerRecoverableStorage
+        - staplerRemoved
+        - staplerResourceAdded
+        - staplerResourceRemoved
+        - staplerThermistorFailure
+        - staplerTimingFailure
+        - staplerTurnedOff
+        - staplerTurnedOn
+        - staplerUnderTemperature
+        - staplerUnrecoverableFailure
+        - staplerUnrecoverableStorageError
+        - staplerWarmingUp
+        - stitcherAdded
+        - stitcherAlmostEmpty
+        - stitcherAlmostFull
+        - stitcherAtLimit
+        - stitcherClosed
+        - stitcherConfigurationChange
+        - stitcherCoverClosed
+        - stitcherCoverOpen
+        - stitcherEmpty
+        - stitcherFull
+        - stitcherInterlockClosed
+        - stitcherInterlockOpen
+        - stitcherJam
+        - stitcherLifeAlmostOver
+        - stitcherLifeOver
+        - stitcherMemoryExhausted
+        - stitcherMissing
+        - stitcherMotorFailure
+        - stitcherNearLimit
+        - stitcherOffline
+        - stitcherOpened
+        - stitcherOverTemperature
+        - stitcherPowerSaver
+        - stitcherRecoverableFailure
+        - stitcherRecoverableStorage
+        - stitcherRemoved
+        - stitcherResourceAdded
+        - stitcherResourceRemoved
+        - stitcherThermistorFailure
+        - stitcherTimingFailure
+        - stitcherTurnedOff
+        - stitcherTurnedOn
+        - stitcherUnderTemperature
+        - stitcherUnrecoverableFailure
+        - stitcherUnrecoverableStorageError
+        - stitcherWarmingUp
+        - subunitAdded
+        - subunitAlmostEmpty
+        - subunitAlmostFull
+        - subunitAtLimit
+        - subunitClosed
+        - subunitCoolingDown
+        - subunitEmpty
+        - subunitFull
+        - subunitLifeAlmostOver
+        - subunitLifeOver
+        - subunitMemoryExhausted
+        - subunitMissing
+        - subunitMotorFailure
+        - subunitNearLimit
+        - subunitOffline
+        - subunitOpened
+        - subunitOverTemperature
+        - subunitPowerSaver
+        - subunitRecoverableFailure
+        - subunitRecoverableStorage
+        - subunitRemoved
+        - subunitResourceAdded
+        - subunitResourceRemoved
+        - subunitThermistorFailure
+        - subunitTimingFailure
+        - subunitTurnedOff
+        - subunitTurnedOn
+        - subunitUnderTemperature
+        - subunitUnrecoverableFailure
+        - subunitUnrecoverableStorage
+        - subunitWarmingUp
+        - suspend
+        - testing
+        - trimmerAdded
+        - trimmerAlmostEmpty
+        - trimmerAlmostFull
+        - trimmerAtLimit
+        - trimmerClosed
+        - trimmerConfigurationChange
+        - trimmerCoverClosed
+        - trimmerCoverOpen
+        - trimmerEmpty
+        - trimmerFull
+        - trimmerInterlockClosed
+        - trimmerInterlockOpen
+        - trimmerJam
+        - trimmerLifeAlmostOver
+        - trimmerLifeOver
+        - trimmerMemoryExhausted
+        - trimmerMissing
+        - trimmerMotorFailure
+        - trimmerNearLimit
+        - trimmerOffline
+        - trimmerOpened
+        - trimmerOverTemperature
+        - trimmerPowerSaver
+        - trimmerRecoverableFailure
+        - trimmerRecoverableStorage
+        - trimmerRemoved
+        - trimmerResourceAdded
+        - trimmerResourceRemoved
+        - trimmerThermistorFailure
+        - trimmerTimingFailure
+        - trimmerTurnedOff
+        - trimmerTurnedOn
+        - trimmerUnderTemperature
+        - trimmerUnrecoverableFailure
+        - trimmerUnrecoverableStorageError
+        - trimmerWarmingUp
+        - unknown
+        - wrapperAdded
+        - wrapperAlmostEmpty
+        - wrapperAlmostFull
+        - wrapperAtLimit
+        - wrapperClosed
+        - wrapperConfigurationChange
+        - wrapperCoverClosed
+        - wrapperCoverOpen
+        - wrapperEmpty
+        - wrapperFull
+        - wrapperInterlockClosed
+        - wrapperInterlockOpen
+        - wrapperJam
+        - wrapperLifeAlmostOver
+        - wrapperLifeOver
+        - wrapperMemoryExhausted
+        - wrapperMissing
+        - wrapperMotorFailure
+        - wrapperNearLimit
+        - wrapperOffline
+        - wrapperOpened
+        - wrapperOverTemperature
+        - wrapperPowerSaver
+        - wrapperRecoverableFailure
+        - wrapperRecoverableStorage
+        - wrapperRemoved
+        - wrapperResourceAdded
+        - wrapperResourceRemoved
+        - wrapperThermistorFailure
+        - wrapperTimingFailure
+        - wrapperTurnedOff
+        - wrapperTurnedOn
+        - wrapperUnderTemperature
+        - wrapperUnrecoverableFailure
+        - wrapperUnrecoverableStorageError
+        - wrapperWarmingUp
+      type: string
+    microsoft.graph.printerProcessingState:
+      title: printerProcessingState
+      enum:
+        - unknown
+        - idle
+        - processing
+        - stopped
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printJobConfiguration:
+      title: printJobConfiguration
+      type: object
+      properties:
+        collate:
+          type: boolean
+          description: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+          nullable: true
+        colorMode:
+          $ref: '#/components/schemas/microsoft.graph.printColorMode'
+        copies:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of copies that should be printed. Read-only.
+          format: int32
+          nullable: true
+        dpi:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
+          format: int32
+          nullable: true
+        duplexMode:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+        feedOrientation:
+          $ref: '#/components/schemas/microsoft.graph.printerFeedOrientation'
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: Finishing processes to use when printing.
+        fitPdfToPage:
+          type: boolean
+          nullable: true
+        inputBin:
+          type: string
+          description: The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
+          nullable: true
+        margin:
+          $ref: '#/components/schemas/microsoft.graph.printMargin'
+        mediaSize:
+          type: string
+          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+          nullable: true
+        mediaType:
+          type: string
+          nullable: true
+        multipageLayout:
+          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientation:
+          $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBin:
+          type: string
+          nullable: true
+        pageRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.integerRange'
+        pagesPerSheet:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        quality:
+          $ref: '#/components/schemas/microsoft.graph.printQuality'
+        scaling:
+          $ref: '#/components/schemas/microsoft.graph.printScaling'
+      additionalProperties:
+        type: object
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printJobStatus:
+      title: printJobStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the print job's current processing state. Read-only.
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printJobStateDetail'
+          description: Additional details for print job state. Valid values are described in the following table. Read-only.
+        isAcquiredByPrinter:
+          type: boolean
+          description: True if the job was acknowledged by a printer; false otherwise. Read-only.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.printDocument:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printDocument
+          type: object
+          properties:
+            contentType:
+              type: string
+              description: The document's content (MIME) type. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: The document's name. Read-only.
+              nullable: true
+            size:
+              type: integer
+              description: The document's size in bytes. Read-only.
+              format: int64
+          additionalProperties:
+            type: object
+    microsoft.graph.printTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTask
+          type: object
+          properties:
+            parentUrl:
+              type: string
+              description: 'The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printTaskStatus'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+            trigger:
+              $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+          additionalProperties:
+            type: object
+    microsoft.graph.printEvent:
+      title: printEvent
+      enum:
+        - jobStarted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printTaskDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTaskDefinition
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.appIdentity'
+            displayName:
+              type: string
+              description: The name of the printTaskDefinition.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+              description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -33567,6 +36095,13 @@ components:
         - deviceConfiguration
         - deviceIntent
       type: string
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamworkConversationIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -33770,6 +36305,98 @@ components:
           items:
             type: string
             nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printMargin:
+      title: printMargin
+      type: object
+      properties:
+        bottom:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the bottom edge.
+          format: int32
+          nullable: true
+        left:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the left edge.
+          format: int32
+          nullable: true
+        right:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the right edge.
+          format: int32
+          nullable: true
+        top:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the top edge.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printJobStateDetail:
+      title: printJobStateDetail
+      enum:
+        - uploadPending
+        - transforming
+        - completedSuccessfully
+        - completedWithWarnings
+        - completedWithErrors
+        - releaseWait
+        - interpreting
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printJobProcessingState:
+      title: printJobProcessingState
+      enum:
+        - unknown
+        - pending
+        - processing
+        - paused
+        - stopped
+        - completed
+        - canceled
+        - aborted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printTaskStatus:
+      title: printTaskStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the current processing state of the printTask.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printTaskProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.appIdentity:
+      title: appIdentity
+      type: object
+      properties:
+        appId:
+          type: string
+          description: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+          nullable: true
+        displayName:
+          type: string
+          description: Refers to the Application Name displayed in the Azure Portal.
+          nullable: true
+        servicePrincipalId:
+          type: string
+          description: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+          nullable: true
+        servicePrincipalName:
+          type: string
+          description: Refers to the Service Principal Name is the Application name in the tenant.
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.workbookFilter:
@@ -34114,6 +36741,15 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.printTaskProcessingState:
+      title: printTaskProcessingState
+      enum:
+        - pending
+        - processing
+        - completed
+        - aborted
+        - unknownFutureValue
+      type: string
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object
