@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.SignIns
-Module Guid: 645be35f-7f41-4995-9184-75b64f655116
+Module Guid: 0d5baa15-2147-4ee4-ba17-efbe5a9d751d
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -196,7 +196,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocation](Get-MgBetaIdentityConditionalAccessNamedLocation.md)
-Retrieve the properties and relationships of a namedLocation object.
+Retrieve the properties and relationships of an ipNamedLocation object.
 
 ### [Get-MgBetaIdentityConditionalAccessNamedLocationCount](Get-MgBetaIdentityConditionalAccessNamedLocationCount.md)
 Get the number of the resource
@@ -217,8 +217,7 @@ Get the number of the resource
 Read the properties and relationships of a continuousAccessEvaluationPolicy object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtension](Get-MgBetaIdentityCustomAuthenticationExtension.md)
-Read the properties and relationships of an authenticationEventListener object.
-The **@odata.type** property in the response object indicates the type of the authenticationEventListener object.
+Read the properties and relationships of a customAuthenticationExtension object.
 
 ### [Get-MgBetaIdentityCustomAuthenticationExtensionCount](Get-MgBetaIdentityCustomAuthenticationExtensionCount.md)
 Get the number of the resource
@@ -468,6 +467,9 @@ This API returns up to 1,000 deleted objects owned by the user, sorted by ID, an
 ### [Get-MgBetaPolicyFeatureRolloutPolicyCount](Get-MgBetaPolicyFeatureRolloutPolicyCount.md)
 Get the number of the resource
 
+### [Get-MgBetaPolicyFederatedTokenValidationPolicy](Get-MgBetaPolicyFederatedTokenValidationPolicy.md)
+Get federatedTokenValidationPolicy from policies
+
 ### [Get-MgBetaPolicyHomeRealmDiscoveryPolicy](Get-MgBetaPolicyHomeRealmDiscoveryPolicy.md)
 Retrieve the properties and relationships of a homeRealmDiscoveryPolicy object.
 
@@ -607,7 +609,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaRiskDetection](Get-MgBetaRiskDetection.md)
-Retrieve the properties of a collection of **riskDetection** objects.
+Retrieve the properties of a **riskDetection** object.
 
 ### [Get-MgBetaRiskDetectionCount](Get-MgBetaRiskDetectionCount.md)
 Get the number of the resource
@@ -1327,6 +1329,9 @@ Delete a featureRolloutPolicy object.
 ### [Remove-MgBetaPolicyFeatureRolloutPolicyApplyToByRef](Remove-MgBetaPolicyFeatureRolloutPolicyApplyToByRef.md)
 Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
 
+### [Remove-MgBetaPolicyFederatedTokenValidationPolicy](Remove-MgBetaPolicyFederatedTokenValidationPolicy.md)
+Delete navigation property federatedTokenValidationPolicy for policies
+
 ### [Remove-MgBetaPolicyHomeRealmDiscoveryPolicy](Remove-MgBetaPolicyHomeRealmDiscoveryPolicy.md)
 Delete a homeRealmDiscoveryPolicy object.
 
@@ -1717,6 +1722,9 @@ Update the settings of the tenant-wide externalIdentitiesPolicy object that cont
 
 ### [Update-MgBetaPolicyFeatureRolloutPolicy](Update-MgBetaPolicyFeatureRolloutPolicy.md)
 Update the properties of featureRolloutPolicy object.
+
+### [Update-MgBetaPolicyFederatedTokenValidationPolicy](Update-MgBetaPolicyFederatedTokenValidationPolicy.md)
+Update the navigation property federatedTokenValidationPolicy in policies
 
 ### [Update-MgBetaPolicyHomeRealmDiscoveryPolicy](Update-MgBetaPolicyHomeRealmDiscoveryPolicy.md)
 Update the properties of a homeRealmDiscoveryPolicy object.

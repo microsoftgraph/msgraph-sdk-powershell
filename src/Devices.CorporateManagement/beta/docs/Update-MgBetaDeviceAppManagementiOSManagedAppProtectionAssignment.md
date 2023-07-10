@@ -250,7 +250,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-MgDeviceAppMgtIoManagedAppProtectionAssignment
+Update-BetaDeviceAppMgtIoManagedAppProtectionAssignment
 
 COMPLEX PARAMETER PROPERTIES
 

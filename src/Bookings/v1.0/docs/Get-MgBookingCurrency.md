@@ -40,17 +40,10 @@ Use the **id** property, which is the currency code, to specify the currency.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Bookings
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgBookingCurrency -BookingCurrencyId $bookingCurrencyId
 
 ## PARAMETERS
 

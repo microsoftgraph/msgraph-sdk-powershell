@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Identity.Governance
-Module Guid: 06923603-e041-41d0-a11a-06a09c3796cb
+Module Guid: 84596c77-7439-46a3-aba0-837640faf788
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -146,7 +146,9 @@ Get entity from businessFlowTemplates by key
 Get the number of the resource
 
 ### [Get-MgBetaEntitlementManagementAccessPackage](Get-MgBetaEntitlementManagementAccessPackage.md)
-Retrieve the properties and relationships of an accessPackage object.
+Retrieve an access package with a list of accessPackageResourceRoleScope objects.
+These objects represent the resource roles that an access package assigns to each subject.
+Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement](Get-MgBetaEntitlementManagementAccessPackageApplicablePolicyRequirement.md)
 In Azure AD entitlement management, this action retrieves a list of accessPackageAssignmentRequestRequirements objects that the currently signed-in user can use to create an accessPackageAssignmentRequest.
@@ -197,7 +199,7 @@ Get the number of the resource
 Retrieve the properties and relationships of an accessPackageCatalog object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
 
 ### [Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource](Get-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageResource.md)
 Retrieve a list of accessPackageResource objects in an accessPackageCatalog.
@@ -311,7 +313,7 @@ This API returns up to 1,000 deleted objects owned by the user, sorted by ID, an
 Retrieve the properties of an entitlementManagementSettings object.
 
 ### [Get-MgBetaEntitlementManagementSubject](Get-MgBetaEntitlementManagementSubject.md)
-Get subjects from identityGovernance
+Represents the subjects within entitlement management.
 
 ### [Get-MgBetaEntitlementManagementSubjectConnectedOrganization](Get-MgBetaEntitlementManagementSubjectConnectedOrganization.md)
 The connected organization of the subject.
@@ -903,13 +905,15 @@ Supports $expand.
 Schedule created by this request.
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlert](Get-MgBetaIdentityGovernanceRoleManagementAlert.md)
-Get alerts from identityGovernance
+Represents the alert entity.
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertConfiguration](Get-MgBetaIdentityGovernanceRoleManagementAlertConfiguration.md)
-Get alertConfigurations from identityGovernance
+The various configurations of an alert for Azure AD roles.
+The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertConfigurationAlertDefinition](Get-MgBetaIdentityGovernanceRoleManagementAlertConfigurationAlertDefinition.md)
-Get alertDefinition from identityGovernance
+The definition of the alert that contains its description, impact, and measures to mitigate or prevent it.
+Supports $expand.
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertConfigurationCount](Get-MgBetaIdentityGovernanceRoleManagementAlertConfigurationCount.md)
 Get the number of the resource
@@ -918,19 +922,20 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertDefinition](Get-MgBetaIdentityGovernanceRoleManagementAlertDefinition.md)
-Get alertDefinitions from identityGovernance
+Defines an alert, its impact, and measures to mitigate or prevent it.
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertDefinitionCount](Get-MgBetaIdentityGovernanceRoleManagementAlertDefinitionCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertIncident](Get-MgBetaIdentityGovernanceRoleManagementAlertIncident.md)
-Get alertIncidents from identityGovernance
+Read the properties and relationships of an alert incident.
+The alert incident can be one of the following types that are derived from the unifiedRoleManagementAlertIncident object:
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertIncidentCount](Get-MgBetaIdentityGovernanceRoleManagementAlertIncidentCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertOperation](Get-MgBetaIdentityGovernanceRoleManagementAlertOperation.md)
-Get operations from identityGovernance
+Represents operations on resources that take a long time to complete and can run in the background until completion.
 
 ### [Get-MgBetaIdentityGovernanceRoleManagementAlertOperationCount](Get-MgBetaIdentityGovernanceRoleManagementAlertOperationCount.md)
 Get the number of the resource
@@ -2996,7 +3001,7 @@ You can restore a deleted workflow and its associated objects within 30 days of 
 
 ### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension](Remove-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension.md)
 Delete a customTaskExtension object.
-Can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
+A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
 
 ### [Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItem](Remove-MgBetaIdentityGovernanceLifecycleWorkflowDeletedItem.md)
 Delete navigation property deletedItems for identityGovernance
@@ -3404,27 +3409,27 @@ It is performed on an accessPackageAssignmentRequest object whose **requestStatu
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowRunTaskProcessingResult.md)
 Resume a task processing result that's `inProgress`.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
-For more information read about Lifecycle Workflows extensibility approach.
+For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskProcessingResult.md)
 Resume a task processing result that's `inProgress`.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
-For more information read about Lifecycle Workflows extensibility approach.
+For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowTaskReportTaskProcessingResult.md)
 Resume a task processing result that's `inProgress`.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
-For more information read about Lifecycle Workflows extensibility approach.
+For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowTemplateTaskProcessingResult.md)
 Resume a task processing result that's `inProgress`.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
-For more information read about Lifecycle Workflows extensibility approach.
+For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Resume-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult](Resume-MgBetaIdentityGovernanceLifecycleWorkflowVersionTaskProcessingResult.md)
 Resume a task processing result that's `inProgress`.
 In the default case an Azure Logic Apps system-assigned managed identity calls this API.
-For more information read about Lifecycle Workflows extensibility approach.
+For more information, see: Lifecycle Workflows extensibility approach.
 
 ### [Select-MgBetaEntitlementManagementAccessPackage](Select-MgBetaEntitlementManagementAccessPackage.md)
 Select matching entitlement management accessPackage
@@ -3638,7 +3643,7 @@ Invoke action reprocess
 Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogAccessPackageCustomWorkflowExtension.md)
-Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+Update the properties of an accessPackageAssignmentWorkflowExtension object.
 
 ### [Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension](Update-MgBetaEntitlementManagementAccessPackageCatalogCustomAccessPackageWorkflowExtension.md)
 Update the properties of an existing customAccessPackageWorkflowExtension object.

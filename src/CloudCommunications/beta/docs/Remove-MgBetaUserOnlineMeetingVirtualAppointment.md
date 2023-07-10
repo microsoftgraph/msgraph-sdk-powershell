@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaUserOnlineMeetingVirtualAppointment
 
 ## SYNOPSIS
-Delete navigation property virtualAppointment for users
+Delete a virtualAppointment object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaUserOnlineMeetingVirtualAppointment -InputObject <ICloudCommunicati
 ```
 
 ## DESCRIPTION
-Delete navigation property virtualAppointment for users
+Delete a virtualAppointment object.
 
 ## EXAMPLES
 

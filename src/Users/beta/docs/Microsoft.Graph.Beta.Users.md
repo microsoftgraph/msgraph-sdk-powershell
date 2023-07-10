@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Users
-Module Guid: 312ae73b-c830-4f31-a4ce-e12279bb6306
+Module Guid: fdd02d0e-0c34-4607-a6ff-4eb622d63e12
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -17,6 +17,12 @@ This operation returns by default only a subset of the more commonly used proper
 These _default_ properties are noted in the Properties section.
 To get properties that are _not_ returned by default, do a GET operation for the user and specify the properties in a `$select` OData query option.
 Because the **user** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **user** instance.
+
+### [Get-MgBetaUserAppRoleAssignedResource](Get-MgBetaUserAppRoleAssignedResource.md)
+Get appRoleAssignedResources from users
+
+### [Get-MgBetaUserAppRoleAssignedResourceCount](Get-MgBetaUserAppRoleAssignedResourceCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaUserCount](Get-MgBetaUserCount.md)
 Get the number of the resource
@@ -64,11 +70,54 @@ Nullable.
 ### [Get-MgBetaUserExtensionCount](Get-MgBetaUserExtensionCount.md)
 Get the number of the resource
 
+### [Get-MgBetaUserInsight](Get-MgBetaUserInsight.md)
+Get insights from users
+
+### [Get-MgBetaUserInsightShared](Get-MgBetaUserInsightShared.md)
+Access this property from the derived type itemInsights.
+
+### [Get-MgBetaUserInsightSharedCount](Get-MgBetaUserInsightSharedCount.md)
+Get the number of the resource
+
+### [Get-MgBetaUserInsightSharedLastSharedMethod](Get-MgBetaUserInsightSharedLastSharedMethod.md)
+Get lastSharedMethod from users
+
+### [Get-MgBetaUserInsightSharedResource](Get-MgBetaUserInsightSharedResource.md)
+Used for navigating to the item that was shared.
+For file attachments, the type is fileAttachment.
+For linked attachments, the type is driveItem.
+
+### [Get-MgBetaUserInsightTrending](Get-MgBetaUserInsightTrending.md)
+Access this property from the derived type itemInsights.
+
+### [Get-MgBetaUserInsightTrendingCount](Get-MgBetaUserInsightTrendingCount.md)
+Get the number of the resource
+
+### [Get-MgBetaUserInsightTrendingResource](Get-MgBetaUserInsightTrendingResource.md)
+Used for navigating to the trending document.
+
+### [Get-MgBetaUserInsightUsed](Get-MgBetaUserInsightUsed.md)
+Access this property from the derived type itemInsights.
+
+### [Get-MgBetaUserInsightUsedCount](Get-MgBetaUserInsightUsedCount.md)
+Get the number of the resource
+
+### [Get-MgBetaUserInsightUsedResource](Get-MgBetaUserInsightUsedResource.md)
+Used for navigating to the item that was used.
+For file attachments, the type is fileAttachment.
+For linked attachments, the type is driveItem.
+
 ### [Get-MgBetaUserLicenseDetail](Get-MgBetaUserLicenseDetail.md)
 Get licenseDetails from users
 
 ### [Get-MgBetaUserLicenseDetailCount](Get-MgBetaUserLicenseDetailCount.md)
 Get the number of the resource
+
+### [Get-MgBetaUserMailboxSetting](Get-MgBetaUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale, and time zone.
+For more information, see User preferences for languages and regional formats.
+Returned only on $select.
 
 ### [Get-MgBetaUserManager](Get-MgBetaUserManager.md)
 Returns the user or organizational contact assigned as the user's manager.
@@ -279,6 +328,12 @@ Retrieve the properties of a user's regionalAndLanguageSettings.
 ### [Get-MgBetaUserSettingShiftPreference](Get-MgBetaUserSettingShiftPreference.md)
 Retrieve the properties and relationships of a shiftPreferences object by ID.
 
+### [Get-MgBetaUserSponsor](Get-MgBetaUserSponsor.md)
+Get sponsors from users
+
+### [Get-MgBetaUserSponsorCount](Get-MgBetaUserSponsorCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaUserTodoList](Get-MgBetaUserTodoList.md)
 Read the properties and relationships of a todoTaskList object.
 
@@ -372,6 +427,15 @@ To get properties that are not returned by default, do a GET operation and speci
 ### [New-MgBetaUserExtension](New-MgBetaUserExtension.md)
 Create new navigation property to extensions for users
 
+### [New-MgBetaUserInsightShared](New-MgBetaUserInsightShared.md)
+Create new navigation property to shared for users
+
+### [New-MgBetaUserInsightTrending](New-MgBetaUserInsightTrending.md)
+Create new navigation property to trending for users
+
+### [New-MgBetaUserInsightUsed](New-MgBetaUserInsightUsed.md)
+Create new navigation property to used for users
+
 ### [New-MgBetaUserNotification](New-MgBetaUserNotification.md)
 Create new navigation property to notifications for users
 
@@ -446,6 +510,18 @@ To learn more, see deletedItems.
 
 ### [Remove-MgBetaUserExtension](Remove-MgBetaUserExtension.md)
 Delete navigation property extensions for users
+
+### [Remove-MgBetaUserInsight](Remove-MgBetaUserInsight.md)
+Delete navigation property insights for users
+
+### [Remove-MgBetaUserInsightShared](Remove-MgBetaUserInsightShared.md)
+Delete navigation property shared for users
+
+### [Remove-MgBetaUserInsightTrending](Remove-MgBetaUserInsightTrending.md)
+Delete navigation property trending for users
+
+### [Remove-MgBetaUserInsightUsed](Remove-MgBetaUserInsightUsed.md)
+Delete navigation property used for users
 
 ### [Remove-MgBetaUserLicenseDetail](Remove-MgBetaUserLicenseDetail.md)
 Delete navigation property licenseDetails for users
@@ -551,8 +627,23 @@ Compare member and guest default permissions to see properties they can manage.
 ### [Update-MgBetaUserExtension](Update-MgBetaUserExtension.md)
 Update the navigation property extensions in users
 
+### [Update-MgBetaUserInsight](Update-MgBetaUserInsight.md)
+Update the navigation property insights in users
+
+### [Update-MgBetaUserInsightShared](Update-MgBetaUserInsightShared.md)
+Update the navigation property shared in users
+
+### [Update-MgBetaUserInsightTrending](Update-MgBetaUserInsightTrending.md)
+Update the navigation property trending in users
+
+### [Update-MgBetaUserInsightUsed](Update-MgBetaUserInsightUsed.md)
+Update the navigation property used in users
+
 ### [Update-MgBetaUserLicenseDetail](Update-MgBetaUserLicenseDetail.md)
 Update the navigation property licenseDetails in users
+
+### [Update-MgBetaUserMailboxSetting](Update-MgBetaUserMailboxSetting.md)
+Update property mailboxSettings value.
 
 ### [Update-MgBetaUserNotification](Update-MgBetaUserNotification.md)
 Update the navigation property notifications in users

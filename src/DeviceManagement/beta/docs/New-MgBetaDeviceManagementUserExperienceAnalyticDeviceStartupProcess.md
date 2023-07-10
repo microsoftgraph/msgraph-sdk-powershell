@@ -95,7 +95,9 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedDeviceId
-The user experience analytics device id.
+The Intune device id of the device.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -110,7 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessName
-User experience analytics device startup process name.
+The name of the process.
+Examples: outlook, excel.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -125,7 +130,10 @@ Accept wildcard characters: False
 ```
 
 ### -ProductName
-The user experience analytics device startup process product name.
+The product name of the process.
+Examples: Microsoft Outlook, Microsoft Excel.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -140,7 +148,10 @@ Accept wildcard characters: False
 ```
 
 ### -Publisher
-The User experience analytics device startup process publisher.
+The publisher of the process.
+Examples: Microsoft Corporation, Contoso Corp.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -155,7 +166,9 @@ Accept wildcard characters: False
 ```
 
 ### -StartupImpactInMS
-User experience analytics device startup process impact in milliseconds.
+The impact of startup process on device boot time in milliseconds.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.Int32
@@ -223,11 +236,11 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcess>`: The user experience analytics device startup process details.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ManagedDeviceId <String>]`: The user experience analytics device id.
-  - `[ProcessName <String>]`: User experience analytics device startup process name.
-  - `[ProductName <String>]`: The user experience analytics device startup process product name.
-  - `[Publisher <String>]`: The User experience analytics device startup process publisher.
-  - `[StartupImpactInMS <Int32?>]`: User experience analytics device startup process impact in milliseconds.
+  - `[ManagedDeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+  - `[ProcessName <String>]`: The name of the process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.
+  - `[ProductName <String>]`: The product name of the process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.
+  - `[Publisher <String>]`: The publisher of the process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.
+  - `[StartupImpactInMS <Int32?>]`: The impact of startup process on device boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
 
 ## RELATED LINKS
 

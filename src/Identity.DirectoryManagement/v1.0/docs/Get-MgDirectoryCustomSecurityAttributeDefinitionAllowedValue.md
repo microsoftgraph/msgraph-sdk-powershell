@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
 
 ## SYNOPSIS
-Get allowedValues from directory
+Read the properties and relationships of an allowedValue object.
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgDirectoryCustomSecurityAttributeDefinitionAllowedValue
 ```
 
 ## DESCRIPTION
-Get allowedValues from directory
+Read the properties and relationships of an allowedValue object.
 
 ## EXAMPLES
 

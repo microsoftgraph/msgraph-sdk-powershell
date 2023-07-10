@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Mail
-Module Guid: 50f142f8-46d7-45cc-b5fa-fe4ea0081f30
+Module Guid: feabb027-c433-4c0a-8cc5-c0247fb59244
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.mail
 Help Version: 1.0.0.0
 Locale: en-US
@@ -223,7 +223,7 @@ See the table in the Permissions section for the list of resources that support 
 Delete the specified messageRule object.
 
 ### [Remove-MgUserMessage](Remove-MgUserMessage.md)
-Delete a message in the specified user's mailbox, or delete a relationship of the message.
+Delete eventMessage.
 
 ### [Remove-MgUserMessageAttachment](Remove-MgUserMessageAttachment.md)
 Delete navigation property attachments for users

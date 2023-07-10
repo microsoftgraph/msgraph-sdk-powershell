@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 Delete a customTaskExtension object.
-Can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
+A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgBetaIdentityGovernanceLifecycleWorkflowCustomTaskExtension -InputObject
 
 ## DESCRIPTION
 Delete a customTaskExtension object.
-Can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
+A custom task extension  can only be deleted if it is not referenced in any task objects in a lifecycle workflow.
 
 ## EXAMPLES
 

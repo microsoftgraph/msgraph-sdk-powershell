@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Security
-Module Guid: 429f7b52-cb73-4efa-9dd6-af233abb5bc1
+Module Guid: b6f92c08-ded7-4809-be86-c282234a16a9
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -85,6 +85,36 @@ Get the number of the resource
 ### [Get-MgBetaSecurityAttackSimulationCount](Get-MgBetaSecurityAttackSimulationCount.md)
 Get the number of the resource
 
+### [Get-MgBetaSecurityAttackSimulationEndUserNotification](Get-MgBetaSecurityAttackSimulationEndUserNotification.md)
+Get endUserNotifications from security
+
+### [Get-MgBetaSecurityAttackSimulationEndUserNotificationCount](Get-MgBetaSecurityAttackSimulationEndUserNotificationCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityAttackSimulationEndUserNotificationDetail](Get-MgBetaSecurityAttackSimulationEndUserNotificationDetail.md)
+Get details from security
+
+### [Get-MgBetaSecurityAttackSimulationEndUserNotificationDetailCount](Get-MgBetaSecurityAttackSimulationEndUserNotificationDetailCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityAttackSimulationLandingPage](Get-MgBetaSecurityAttackSimulationLandingPage.md)
+Get landingPages from security
+
+### [Get-MgBetaSecurityAttackSimulationLandingPageCount](Get-MgBetaSecurityAttackSimulationLandingPageCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityAttackSimulationLandingPageDetail](Get-MgBetaSecurityAttackSimulationLandingPageDetail.md)
+Get details from security
+
+### [Get-MgBetaSecurityAttackSimulationLandingPageDetailCount](Get-MgBetaSecurityAttackSimulationLandingPageDetailCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityAttackSimulationLoginPage](Get-MgBetaSecurityAttackSimulationLoginPage.md)
+Get loginPages from security
+
+### [Get-MgBetaSecurityAttackSimulationLoginPageCount](Get-MgBetaSecurityAttackSimulationLoginPageCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaSecurityAttackSimulationOperation](Get-MgBetaSecurityAttackSimulationOperation.md)
 Get an attack simulation operation to track a long-running operation request for a tenant.
 
@@ -95,6 +125,18 @@ Get the number of the resource
 Represents an attack simulation training campaign payload in a tenant.
 
 ### [Get-MgBetaSecurityAttackSimulationPayloadCount](Get-MgBetaSecurityAttackSimulationPayloadCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityAttackSimulationTraining](Get-MgBetaSecurityAttackSimulationTraining.md)
+Get trainings from security
+
+### [Get-MgBetaSecurityAttackSimulationTrainingCount](Get-MgBetaSecurityAttackSimulationTrainingCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityAttackSimulationTrainingLanguageDetail](Get-MgBetaSecurityAttackSimulationTrainingLanguageDetail.md)
+Get languageDetails from security
+
+### [Get-MgBetaSecurityAttackSimulationTrainingLanguageDetailCount](Get-MgBetaSecurityAttackSimulationTrainingLanguageDetailCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaSecurityCase](Get-MgBetaSecurityCase.md)
@@ -322,17 +364,71 @@ Get the number of the resource
 ### [Get-MgBetaSecurityLabel](Get-MgBetaSecurityLabel.md)
 Get labels from security
 
+### [Get-MgBetaSecurityLabelAuthority](Get-MgBetaSecurityLabelAuthority.md)
+Read the properties and relationships of a authorityTemplate object.
+
+### [Get-MgBetaSecurityLabelAuthorityCount](Get-MgBetaSecurityLabelAuthorityCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityLabelCategory](Get-MgBetaSecurityLabelCategory.md)
+Read the properties and relationships of a categoryTemplate object.
+
+### [Get-MgBetaSecurityLabelCategoryCount](Get-MgBetaSecurityLabelCategoryCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityLabelCategorySubCategory](Get-MgBetaSecurityLabelCategorySubCategory.md)
+Read the properties and relationships of a subCategoryTemplate object.
+
+### [Get-MgBetaSecurityLabelCategorySubCategoryCount](Get-MgBetaSecurityLabelCategorySubCategoryCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityLabelCitation](Get-MgBetaSecurityLabelCitation.md)
+Read the properties and relationships of a citationTemplate object.
+
+### [Get-MgBetaSecurityLabelCitationCount](Get-MgBetaSecurityLabelCitationCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityLabelDepartment](Get-MgBetaSecurityLabelDepartment.md)
+Read the properties and relationships of a departmentTemplate object.
+
+### [Get-MgBetaSecurityLabelDepartmentCount](Get-MgBetaSecurityLabelDepartmentCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityLabelFilePlanReference](Get-MgBetaSecurityLabelFilePlanReference.md)
+Read the properties and relationships of a filePlanReferenceTemplate object.
+
+### [Get-MgBetaSecurityLabelFilePlanReferenceCount](Get-MgBetaSecurityLabelFilePlanReferenceCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaSecurityLabelRetentionEventType](Get-MgBetaSecurityLabelRetentionEventType.md)
-Get retentionEventType from security
+Represents the type associated with a retention event.
 
 ### [Get-MgBetaSecurityLabelRetentionLabel](Get-MgBetaSecurityLabelRetentionLabel.md)
-Get retentionLabels from security
+Represents how customers can manage their data, whether and for how long to retain or delete it.
 
 ### [Get-MgBetaSecurityLabelRetentionLabelCount](Get-MgBetaSecurityLabelRetentionLabelCount.md)
 Get the number of the resource
 
+### [Get-MgBetaSecurityLabelRetentionLabelDescriptor](Get-MgBetaSecurityLabelRetentionLabelDescriptor.md)
+Represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.
+
+### [Get-MgBetaSecurityLabelRetentionLabelDescriptorAuthorityTemplate](Get-MgBetaSecurityLabelRetentionLabelDescriptorAuthorityTemplate.md)
+Specifies the underlying authority that describes the type of content to be retained and its retention schedule.
+
+### [Get-MgBetaSecurityLabelRetentionLabelDescriptorCategoryTemplate](Get-MgBetaSecurityLabelRetentionLabelDescriptorCategoryTemplate.md)
+Specifies a group of similar types of content in a particular department.
+
+### [Get-MgBetaSecurityLabelRetentionLabelDescriptorCitationTemplate](Get-MgBetaSecurityLabelRetentionLabelDescriptorCitationTemplate.md)
+The specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
+
+### [Get-MgBetaSecurityLabelRetentionLabelDescriptorDepartmentTemplate](Get-MgBetaSecurityLabelRetentionLabelDescriptorDepartmentTemplate.md)
+Specifies the  department or business unit of an organization to which a label belongs.
+
+### [Get-MgBetaSecurityLabelRetentionLabelDescriptorFilePlanReferenceTemplate](Get-MgBetaSecurityLabelRetentionLabelDescriptorFilePlanReferenceTemplate.md)
+Specifies a unique alpha-numeric identifier for an organization’s retention schedule.
+
 ### [Get-MgBetaSecurityLabelRetentionLabelDispositionReviewStage](Get-MgBetaSecurityLabelRetentionLabelDispositionReviewStage.md)
-Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
+When action at the end of retention is chosen as 'dispositionReview', dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
 
 ### [Get-MgBetaSecurityLabelRetentionLabelDispositionReviewStageCount](Get-MgBetaSecurityLabelRetentionLabelDispositionReviewStageCount.md)
 Get the number of the resource
@@ -461,6 +557,12 @@ Get the number of the resource
 ### [Get-MgBetaSecurityThreatIntelligenceHostReputation](Get-MgBetaSecurityThreatIntelligenceHostReputation.md)
 Get the properties and relationships of a hostReputation object.
 
+### [Get-MgBetaSecurityThreatIntelligenceHostSubdomain](Get-MgBetaSecurityThreatIntelligenceHostSubdomain.md)
+The subdomains that are associated with this host.
+
+### [Get-MgBetaSecurityThreatIntelligenceHostSubdomainCount](Get-MgBetaSecurityThreatIntelligenceHostSubdomainCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaSecurityThreatIntelligenceHostTracker](Get-MgBetaSecurityThreatIntelligenceHostTracker.md)
 Read the properties and relationships of a hostTracker object.
 
@@ -504,6 +606,15 @@ The artifact related to this indicator.
 
 ### [Get-MgBetaSecurityThreatIntelligenceProfileIndicatorCount](Get-MgBetaSecurityThreatIntelligenceProfileIndicatorCount.md)
 Get the number of the resource
+
+### [Get-MgBetaSecurityThreatIntelligenceSubdomain](Get-MgBetaSecurityThreatIntelligenceSubdomain.md)
+Read the properties and relationships of a subdomain object.
+
+### [Get-MgBetaSecurityThreatIntelligenceSubdomainCount](Get-MgBetaSecurityThreatIntelligenceSubdomainCount.md)
+Get the number of the resource
+
+### [Get-MgBetaSecurityThreatIntelligenceSubdomainHost](Get-MgBetaSecurityThreatIntelligenceSubdomainHost.md)
+The host of the subdomain.
 
 ### [Get-MgBetaSecurityThreatIntelligenceVulnerability](Get-MgBetaSecurityThreatIntelligenceVulnerability.md)
 Read the properties and relationships of a vulnerability object.
@@ -583,6 +694,26 @@ Get userSecurityProfiles from security
 ### [Get-MgBetaSecurityUserSecurityProfileCount](Get-MgBetaSecurityUserSecurityProfileCount.md)
 Get the number of the resource
 
+### [Get-MgBetaUserSecurity](Get-MgBetaUserSecurity.md)
+Get security from users
+
+### [Get-MgBetaUserSecurityInformationProtection](Get-MgBetaUserSecurityInformationProtection.md)
+Get informationProtection from users
+
+### [Get-MgBetaUserSecurityInformationProtectionLabelPolicySetting](Get-MgBetaUserSecurityInformationProtectionLabelPolicySetting.md)
+Read the properties and relationships of an informationProtectionPolicySetting object.
+The settings exposed by this API should be used in applications to populate the **moreInfoUrl** property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
+
+### [Get-MgBetaUserSecurityInformationProtectionSensitivityLabel](Get-MgBetaUserSecurityInformationProtectionSensitivityLabel.md)
+Read the Microsoft Purview Information Protection labels for the user or organization.
+
+### [Get-MgBetaUserSecurityInformationProtectionSensitivityLabelCount](Get-MgBetaUserSecurityInformationProtectionSensitivityLabelCount.md)
+Get the number of the resource
+
+### [Get-MgBetaUserSecurityInformationProtectionSensitivityLabelParent](Get-MgBetaUserSecurityInformationProtectionSensitivityLabelParent.md)
+The parent label associated with a child label.
+Null if the label has no parent.
+
 ### [Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian](Initialize-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Activate a custodian that has been released from a case to make them part of the case again.
 For details, see Manage custodians in an eDiscovery (Premium) case.
@@ -620,11 +751,23 @@ Create new navigation property to simulationAutomations for security
 ### [New-MgBetaSecurityAttackSimulationAutomationRun](New-MgBetaSecurityAttackSimulationAutomationRun.md)
 Create new navigation property to runs for security
 
+### [New-MgBetaSecurityAttackSimulationEndUserNotification](New-MgBetaSecurityAttackSimulationEndUserNotification.md)
+Create new navigation property to endUserNotifications for security
+
+### [New-MgBetaSecurityAttackSimulationLandingPage](New-MgBetaSecurityAttackSimulationLandingPage.md)
+Create new navigation property to landingPages for security
+
+### [New-MgBetaSecurityAttackSimulationLoginPage](New-MgBetaSecurityAttackSimulationLoginPage.md)
+Create new navigation property to loginPages for security
+
 ### [New-MgBetaSecurityAttackSimulationOperation](New-MgBetaSecurityAttackSimulationOperation.md)
 Create new navigation property to operations for security
 
 ### [New-MgBetaSecurityAttackSimulationPayload](New-MgBetaSecurityAttackSimulationPayload.md)
 Create new navigation property to payloads for security
+
+### [New-MgBetaSecurityAttackSimulationTraining](New-MgBetaSecurityAttackSimulationTraining.md)
+Create new navigation property to trainings for security
 
 ### [New-MgBetaSecurityCaseEdiscoveryCase](New-MgBetaSecurityCaseEdiscoveryCase.md)
 Create a new ediscoveryCase object.
@@ -695,6 +838,24 @@ Create new navigation property to sensitivityLabels for security
 ### [New-MgBetaSecurityIPSecurityProfile](New-MgBetaSecurityIPSecurityProfile.md)
 Create new navigation property to ipSecurityProfiles for security
 
+### [New-MgBetaSecurityLabelAuthority](New-MgBetaSecurityLabelAuthority.md)
+Create a new authorityTemplate object.
+
+### [New-MgBetaSecurityLabelCategory](New-MgBetaSecurityLabelCategory.md)
+Create a new categoryTemplate object.
+
+### [New-MgBetaSecurityLabelCategorySubCategory](New-MgBetaSecurityLabelCategorySubCategory.md)
+Create a new subCategoryTemplate object.
+
+### [New-MgBetaSecurityLabelCitation](New-MgBetaSecurityLabelCitation.md)
+Create a new citationTemplate object.
+
+### [New-MgBetaSecurityLabelDepartment](New-MgBetaSecurityLabelDepartment.md)
+Create a new departmentTemplate object.
+
+### [New-MgBetaSecurityLabelFilePlanReference](New-MgBetaSecurityLabelFilePlanReference.md)
+Create a new filePlanReferenceTemplate object.
+
 ### [New-MgBetaSecurityLabelRetentionLabel](New-MgBetaSecurityLabelRetentionLabel.md)
 Create a new retentionLabel object.
 To create a disposition review stage, include the **actionAfterRetentionPeriod** property in the request body with one of the possible values specified.
@@ -744,6 +905,9 @@ Create new navigation property to passiveDnsRecords for security
 ### [New-MgBetaSecurityThreatIntelligenceProfileIndicator](New-MgBetaSecurityThreatIntelligenceProfileIndicator.md)
 Create new navigation property to intelligenceProfileIndicators for security
 
+### [New-MgBetaSecurityThreatIntelligenceSubdomain](New-MgBetaSecurityThreatIntelligenceSubdomain.md)
+Create new navigation property to subdomains for security
+
 ### [New-MgBetaSecurityThreatIntelligenceVulnerability](New-MgBetaSecurityThreatIntelligenceVulnerability.md)
 Create new navigation property to vulnerabilities for security
 
@@ -774,6 +938,9 @@ Create a new retentionEventType object.
 ### [New-MgBetaSecurityUserSecurityProfile](New-MgBetaSecurityUserSecurityProfile.md)
 Create new navigation property to userSecurityProfiles for security
 
+### [New-MgBetaUserSecurityInformationProtectionSensitivityLabel](New-MgBetaUserSecurityInformationProtectionSensitivityLabel.md)
+Create new navigation property to sensitivityLabels for users
+
 ### [Publish-MgBetaSecurityCaseEdiscoveryCaseCustodian](Publish-MgBetaSecurityCaseEdiscoveryCaseCustodian.md)
 Release a custodian from a case.
 For details, see Release a custodian from a case.
@@ -796,11 +963,23 @@ Delete navigation property simulationAutomations for security
 ### [Remove-MgBetaSecurityAttackSimulationAutomationRun](Remove-MgBetaSecurityAttackSimulationAutomationRun.md)
 Delete navigation property runs for security
 
+### [Remove-MgBetaSecurityAttackSimulationEndUserNotification](Remove-MgBetaSecurityAttackSimulationEndUserNotification.md)
+Delete navigation property endUserNotifications for security
+
+### [Remove-MgBetaSecurityAttackSimulationLandingPage](Remove-MgBetaSecurityAttackSimulationLandingPage.md)
+Delete navigation property landingPages for security
+
+### [Remove-MgBetaSecurityAttackSimulationLoginPage](Remove-MgBetaSecurityAttackSimulationLoginPage.md)
+Delete navigation property loginPages for security
+
 ### [Remove-MgBetaSecurityAttackSimulationOperation](Remove-MgBetaSecurityAttackSimulationOperation.md)
 Delete navigation property operations for security
 
 ### [Remove-MgBetaSecurityAttackSimulationPayload](Remove-MgBetaSecurityAttackSimulationPayload.md)
 Delete navigation property payloads for security
+
+### [Remove-MgBetaSecurityAttackSimulationTraining](Remove-MgBetaSecurityAttackSimulationTraining.md)
+Delete navigation property trainings for security
 
 ### [Remove-MgBetaSecurityCase](Remove-MgBetaSecurityCase.md)
 Delete navigation property cases for security
@@ -905,8 +1084,29 @@ Delete navigation property ipSecurityProfiles for security
 ### [Remove-MgBetaSecurityLabel](Remove-MgBetaSecurityLabel.md)
 Delete navigation property labels for security
 
+### [Remove-MgBetaSecurityLabelAuthority](Remove-MgBetaSecurityLabelAuthority.md)
+Delete a authorityTemplate object.
+
+### [Remove-MgBetaSecurityLabelCategory](Remove-MgBetaSecurityLabelCategory.md)
+Delete a categoryTemplate object.
+
+### [Remove-MgBetaSecurityLabelCategorySubCategory](Remove-MgBetaSecurityLabelCategorySubCategory.md)
+Delete a subCategoryTemplate object.
+
+### [Remove-MgBetaSecurityLabelCitation](Remove-MgBetaSecurityLabelCitation.md)
+Delete a citationTemplate object.
+
+### [Remove-MgBetaSecurityLabelDepartment](Remove-MgBetaSecurityLabelDepartment.md)
+Delete a departmentTemplate object.
+
+### [Remove-MgBetaSecurityLabelFilePlanReference](Remove-MgBetaSecurityLabelFilePlanReference.md)
+Delete a filePlanReferenceTemplate object.
+
 ### [Remove-MgBetaSecurityLabelRetentionLabel](Remove-MgBetaSecurityLabelRetentionLabel.md)
 Delete a retentionLabel object.
+
+### [Remove-MgBetaSecurityLabelRetentionLabelDescriptor](Remove-MgBetaSecurityLabelRetentionLabelDescriptor.md)
+Delete navigation property descriptors for security
 
 ### [Remove-MgBetaSecurityLabelRetentionLabelDispositionReviewStage](Remove-MgBetaSecurityLabelRetentionLabelDispositionReviewStage.md)
 Delete navigation property dispositionReviewStages for security
@@ -959,6 +1159,9 @@ Delete navigation property passiveDnsRecords for security
 ### [Remove-MgBetaSecurityThreatIntelligenceProfileIndicator](Remove-MgBetaSecurityThreatIntelligenceProfileIndicator.md)
 Delete navigation property intelligenceProfileIndicators for security
 
+### [Remove-MgBetaSecurityThreatIntelligenceSubdomain](Remove-MgBetaSecurityThreatIntelligenceSubdomain.md)
+Delete navigation property subdomains for security
+
 ### [Remove-MgBetaSecurityThreatIntelligenceVulnerability](Remove-MgBetaSecurityThreatIntelligenceVulnerability.md)
 Delete navigation property vulnerabilities for security
 
@@ -1003,6 +1206,21 @@ Delete a retentionEventType object.
 
 ### [Remove-MgBetaSecurityUserSecurityProfile](Remove-MgBetaSecurityUserSecurityProfile.md)
 Delete navigation property userSecurityProfiles for security
+
+### [Remove-MgBetaUserSecurity](Remove-MgBetaUserSecurity.md)
+Delete navigation property security for users
+
+### [Remove-MgBetaUserSecurityInformationProtection](Remove-MgBetaUserSecurityInformationProtection.md)
+Delete navigation property informationProtection for users
+
+### [Remove-MgBetaUserSecurityInformationProtectionLabelPolicySetting](Remove-MgBetaUserSecurityInformationProtectionLabelPolicySetting.md)
+Delete navigation property labelPolicySettings for users
+
+### [Remove-MgBetaUserSecurityInformationProtectionSensitivityLabel](Remove-MgBetaUserSecurityInformationProtectionSensitivityLabel.md)
+Delete navigation property sensitivityLabels for users
+
+### [Remove-MgBetaUserSecurityInformationProtectionSensitivityLabelParent](Remove-MgBetaUserSecurityInformationProtectionSensitivityLabelParent.md)
+Delete navigation property parent for users
 
 ### [Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault](Reset-MgBetaSecurityCaseEdiscoveryCaseSettingToDefault.md)
 Reset a caseSettings object to the default values.
@@ -1059,11 +1277,23 @@ Update the navigation property simulationAutomations in security
 ### [Update-MgBetaSecurityAttackSimulationAutomationRun](Update-MgBetaSecurityAttackSimulationAutomationRun.md)
 Update the navigation property runs in security
 
+### [Update-MgBetaSecurityAttackSimulationEndUserNotification](Update-MgBetaSecurityAttackSimulationEndUserNotification.md)
+Update the navigation property endUserNotifications in security
+
+### [Update-MgBetaSecurityAttackSimulationLandingPage](Update-MgBetaSecurityAttackSimulationLandingPage.md)
+Update the navigation property landingPages in security
+
+### [Update-MgBetaSecurityAttackSimulationLoginPage](Update-MgBetaSecurityAttackSimulationLoginPage.md)
+Update the navigation property loginPages in security
+
 ### [Update-MgBetaSecurityAttackSimulationOperation](Update-MgBetaSecurityAttackSimulationOperation.md)
 Update the navigation property operations in security
 
 ### [Update-MgBetaSecurityAttackSimulationPayload](Update-MgBetaSecurityAttackSimulationPayload.md)
 Update the navigation property payloads in security
+
+### [Update-MgBetaSecurityAttackSimulationTraining](Update-MgBetaSecurityAttackSimulationTraining.md)
+Update the navigation property trainings in security
 
 ### [Update-MgBetaSecurityCase](Update-MgBetaSecurityCase.md)
 Update the navigation property cases in security
@@ -1158,9 +1388,30 @@ Update the navigation property ipSecurityProfiles in security
 ### [Update-MgBetaSecurityLabel](Update-MgBetaSecurityLabel.md)
 Update the navigation property labels in security
 
+### [Update-MgBetaSecurityLabelAuthority](Update-MgBetaSecurityLabelAuthority.md)
+Update the navigation property authorities in security
+
+### [Update-MgBetaSecurityLabelCategory](Update-MgBetaSecurityLabelCategory.md)
+Update the navigation property categories in security
+
+### [Update-MgBetaSecurityLabelCategorySubCategory](Update-MgBetaSecurityLabelCategorySubCategory.md)
+Update the navigation property subCategories in security
+
+### [Update-MgBetaSecurityLabelCitation](Update-MgBetaSecurityLabelCitation.md)
+Update the navigation property citations in security
+
+### [Update-MgBetaSecurityLabelDepartment](Update-MgBetaSecurityLabelDepartment.md)
+Update the navigation property departments in security
+
+### [Update-MgBetaSecurityLabelFilePlanReference](Update-MgBetaSecurityLabelFilePlanReference.md)
+Update the navigation property filePlanReferences in security
+
 ### [Update-MgBetaSecurityLabelRetentionLabel](Update-MgBetaSecurityLabelRetentionLabel.md)
 Update the properties of a retentionLabel object.
 To update a disposition review stage, include the **actionAfterRetentionPeriod** property in the request body with one of the possible values specified.
+
+### [Update-MgBetaSecurityLabelRetentionLabelDescriptor](Update-MgBetaSecurityLabelRetentionLabelDescriptor.md)
+Update the navigation property descriptors in security
 
 ### [Update-MgBetaSecurityLabelRetentionLabelDispositionReviewStage](Update-MgBetaSecurityLabelRetentionLabelDispositionReviewStage.md)
 Update the navigation property dispositionReviewStages in security
@@ -1219,6 +1470,9 @@ Update the navigation property passiveDnsRecords in security
 ### [Update-MgBetaSecurityThreatIntelligenceProfileIndicator](Update-MgBetaSecurityThreatIntelligenceProfileIndicator.md)
 Update the navigation property intelligenceProfileIndicators in security
 
+### [Update-MgBetaSecurityThreatIntelligenceSubdomain](Update-MgBetaSecurityThreatIntelligenceSubdomain.md)
+Update the navigation property subdomains in security
+
 ### [Update-MgBetaSecurityThreatIntelligenceVulnerability](Update-MgBetaSecurityThreatIntelligenceVulnerability.md)
 Update the navigation property vulnerabilities in security
 
@@ -1260,4 +1514,19 @@ Update the navigation property retentionEventTypes in security
 
 ### [Update-MgBetaSecurityUserSecurityProfile](Update-MgBetaSecurityUserSecurityProfile.md)
 Update the navigation property userSecurityProfiles in security
+
+### [Update-MgBetaUserSecurity](Update-MgBetaUserSecurity.md)
+Update the navigation property security in users
+
+### [Update-MgBetaUserSecurityInformationProtection](Update-MgBetaUserSecurityInformationProtection.md)
+Update the navigation property informationProtection in users
+
+### [Update-MgBetaUserSecurityInformationProtectionLabelPolicySetting](Update-MgBetaUserSecurityInformationProtectionLabelPolicySetting.md)
+Update the navigation property labelPolicySettings in users
+
+### [Update-MgBetaUserSecurityInformationProtectionSensitivityLabel](Update-MgBetaUserSecurityInformationProtectionSensitivityLabel.md)
+Update the navigation property sensitivityLabels in users
+
+### [Update-MgBetaUserSecurityInformationProtectionSensitivityLabelParent](Update-MgBetaUserSecurityInformationProtectionSensitivityLabelParent.md)
+Update the navigation property parent in users
 

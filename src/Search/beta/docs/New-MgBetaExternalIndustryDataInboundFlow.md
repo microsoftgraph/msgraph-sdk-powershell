@@ -8,8 +8,8 @@ schema: 2.0.0
 # New-MgBetaExternalIndustryDataInboundFlow
 
 ## SYNOPSIS
-Create a new inboundFileFlow object.
-The following prerequisite resources are required when you create an **inboundFileFlow**:
+Create a new inboundFlow object.
+The following prerequisite resources are required when you create an **inboundFlow**:
 
 ## SYNTAX
 
@@ -28,8 +28,8 @@ New-MgBetaExternalIndustryDataInboundFlow -BodyParameter <IMicrosoftGraphIndustr
 ```
 
 ## DESCRIPTION
-Create a new inboundFileFlow object.
-The following prerequisite resources are required when you create an **inboundFileFlow**:
+Create a new inboundFlow object.
+The following prerequisite resources are required when you create an **inboundFlow**:
 
 ## EXAMPLES
 

@@ -899,11 +899,8 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Get deviceManagementReports
-      description: Read properties and relationships of the deviceManagementReports object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-get?view=graph-rest-1.0
+      summary: Get reports from deviceManagement
+      description: Reports singleton
       operationId: deviceManagement_GetReport
       parameters:
         - name: $select
@@ -945,11 +942,7 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Update deviceManagementReports
-      description: Update the properties of a deviceManagementReports object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementreports-update?view=graph-rest-1.0
+      summary: Update the navigation property reports in deviceManagement
       operationId: deviceManagement_UpdateReport
       requestBody:
         description: New navigation property values
@@ -990,11 +983,8 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: List deviceManagementExportJobs
-      description: List properties and relationships of the deviceManagementExportJob objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-list?view=graph-rest-1.0
+      summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report
       operationId: deviceManagement.report_ListExportJob
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1081,11 +1071,7 @@ paths:
     post:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Create deviceManagementExportJob
-      description: Create a new deviceManagementExportJob object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-create?view=graph-rest-1.0
+      summary: Create new navigation property to exportJobs for deviceManagement
       operationId: deviceManagement.report_CreateExportJob
       requestBody:
         description: New navigation property
@@ -1108,11 +1094,8 @@ paths:
     get:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Get deviceManagementExportJob
-      description: Read properties and relationships of the deviceManagementExportJob object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-get?view=graph-rest-1.0
+      summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report
       operationId: deviceManagement.report_GetExportJob
       parameters:
         - name: deviceManagementExportJob-id
@@ -1170,11 +1153,7 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Update deviceManagementExportJob
-      description: Update the properties of a deviceManagementExportJob object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-update?view=graph-rest-1.0
+      summary: Update the navigation property exportJobs in deviceManagement
       operationId: deviceManagement.report_UpdateExportJob
       parameters:
         - name: deviceManagementExportJob-id
@@ -1205,11 +1184,7 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceManagementReports
-      summary: Delete deviceManagementExportJob
-      description: Deletes a deviceManagementExportJob.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-reporting-devicemanagementexportjob-delete?view=graph-rest-1.0
+      summary: Delete navigation property exportJobs for deviceManagement
       operationId: deviceManagement.report_DeleteExportJob
       parameters:
         - name: deviceManagementExportJob-id
@@ -1250,11 +1225,7 @@ paths:
     get:
       tags:
         - reports.reportRoot
-      summary: Get reportRoot
-      description: Read properties and relationships of the reportRoot object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-deviceconfig-reportroot-get?view=graph-rest-1.0
+      summary: Get reports
       operationId: report.reportRoot_GetReportRoot
       parameters:
         - name: $select
@@ -1305,11 +1276,7 @@ paths:
     patch:
       tags:
         - reports.reportRoot
-      summary: Update reportRoot
-      description: Update the properties of a reportRoot object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-deviceconfig-reportroot-update?view=graph-rest-1.0
+      summary: Update reports
       operationId: report.reportRoot_UpdateReportRoot
       requestBody:
         description: New property values
@@ -1793,12 +1760,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - printerId
@@ -1815,9 +1796,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -1894,9 +1882,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -2021,12 +2016,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - userPrincipalName
@@ -2043,9 +2052,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -2122,9 +2138,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -5351,12 +5374,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - printerId
@@ -5373,9 +5410,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -5448,9 +5492,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - printerId
               type: string
@@ -5575,12 +5626,26 @@ paths:
               enum:
                 - id
                 - id desc
+                - blackAndWhitePageCount
+                - blackAndWhitePageCount desc
+                - colorPageCount
+                - colorPageCount desc
                 - completedBlackAndWhiteJobCount
                 - completedBlackAndWhiteJobCount desc
                 - completedColorJobCount
                 - completedColorJobCount desc
+                - completedJobCount
+                - completedJobCount desc
+                - doubleSidedSheetCount
+                - doubleSidedSheetCount desc
                 - incompleteJobCount
                 - incompleteJobCount desc
+                - mediaSheetCount
+                - mediaSheetCount desc
+                - pageCount
+                - pageCount desc
+                - singleSidedSheetCount
+                - singleSidedSheetCount desc
                 - usageDate
                 - usageDate desc
                 - userPrincipalName
@@ -5597,9 +5662,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -5672,9 +5744,16 @@ paths:
             items:
               enum:
                 - id
+                - blackAndWhitePageCount
+                - colorPageCount
                 - completedBlackAndWhiteJobCount
                 - completedColorJobCount
+                - completedJobCount
+                - doubleSidedSheetCount
                 - incompleteJobCount
+                - mediaSheetCount
+                - pageCount
+                - singleSidedSheetCount
                 - usageDate
                 - userPrincipalName
               type: string
@@ -6988,15 +7067,43 @@ components:
         - title: printUsage
           type: object
           properties:
+            blackAndWhitePageCount:
+              type: integer
+              format: int64
+              nullable: true
+            colorPageCount:
+              type: integer
+              format: int64
+              nullable: true
             completedBlackAndWhiteJobCount:
               type: integer
               format: int64
             completedColorJobCount:
               type: integer
               format: int64
+            completedJobCount:
+              type: integer
+              format: int64
+              nullable: true
+            doubleSidedSheetCount:
+              type: integer
+              format: int64
+              nullable: true
             incompleteJobCount:
               type: integer
               format: int64
+            mediaSheetCount:
+              type: integer
+              format: int64
+              nullable: true
+            pageCount:
+              type: integer
+              format: int64
+              nullable: true
+            singleSidedSheetCount:
+              type: integer
+              format: int64
+              nullable: true
             usageDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string

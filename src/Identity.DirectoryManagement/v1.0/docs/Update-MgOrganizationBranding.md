@@ -16,8 +16,17 @@ Update the properties of the default branding object specified by the organizati
 ```
 Update-MgOrganizationBranding -OrganizationId <String> [-AdditionalProperties <Hashtable>]
  [-BackgroundColor <String>] [-BackgroundImageInputFile <String>] [-BackgroundImageRelativeUrl <String>]
- [-BannerLogoInputFile <String>] [-BannerLogoRelativeUrl <String>] [-CdnList <String[]>] [-Id <String>]
- [-Localizations <IMicrosoftGraphOrganizationalBrandingLocalization[]>] [-SignInPageText <String>]
+ [-BannerLogoInputFile <String>] [-BannerLogoRelativeUrl <String>] [-CdnList <String[]>]
+ [-CustomAccountResetCredentialsUrl <String>] [-CustomCannotAccessYourAccountText <String>]
+ [-CustomCannotAccessYourAccountUrl <String>] [-CustomCssInputFile <String>] [-CustomCssRelativeUrl <String>]
+ [-CustomForgotMyPasswordText <String>] [-CustomPrivacyAndCookiesText <String>]
+ [-CustomPrivacyAndCookiesUrl <String>] [-CustomResetItNowText <String>] [-CustomTermsOfUseText <String>]
+ [-CustomTermsOfUseUrl <String>] [-FaviconInputFile <String>] [-FaviconRelativeUrl <String>]
+ [-HeaderBackgroundColor <String>] [-HeaderLogoInputFile <String>] [-HeaderLogoRelativeUrl <String>]
+ [-Id <String>] [-Localizations <IMicrosoftGraphOrganizationalBrandingLocalization[]>]
+ [-LoginPageLayoutConfiguration <IMicrosoftGraphLoginPageLayoutConfiguration>]
+ [-LoginPageTextVisibilitySettings <IMicrosoftGraphLoginPageTextVisibilitySettings>]
+ [-SignInPageText <String>] [-SquareLogoDarkInputFile <String>] [-SquareLogoDarkRelativeUrl <String>]
  [-SquareLogoInputFile <String>] [-SquareLogoRelativeUrl <String>] [-UsernameHintText <String>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
@@ -39,9 +48,19 @@ Update-MgOrganizationBranding -InputObject <IIdentityDirectoryManagementIdentity
 Update-MgOrganizationBranding -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-BackgroundColor <String>] [-BackgroundImageInputFile <String>]
  [-BackgroundImageRelativeUrl <String>] [-BannerLogoInputFile <String>] [-BannerLogoRelativeUrl <String>]
- [-CdnList <String[]>] [-Id <String>] [-Localizations <IMicrosoftGraphOrganizationalBrandingLocalization[]>]
- [-SignInPageText <String>] [-SquareLogoInputFile <String>] [-SquareLogoRelativeUrl <String>]
- [-UsernameHintText <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CdnList <String[]>] [-CustomAccountResetCredentialsUrl <String>]
+ [-CustomCannotAccessYourAccountText <String>] [-CustomCannotAccessYourAccountUrl <String>]
+ [-CustomCssInputFile <String>] [-CustomCssRelativeUrl <String>] [-CustomForgotMyPasswordText <String>]
+ [-CustomPrivacyAndCookiesText <String>] [-CustomPrivacyAndCookiesUrl <String>]
+ [-CustomResetItNowText <String>] [-CustomTermsOfUseText <String>] [-CustomTermsOfUseUrl <String>]
+ [-FaviconInputFile <String>] [-FaviconRelativeUrl <String>] [-HeaderBackgroundColor <String>]
+ [-HeaderLogoInputFile <String>] [-HeaderLogoRelativeUrl <String>] [-Id <String>]
+ [-Localizations <IMicrosoftGraphOrganizationalBrandingLocalization[]>]
+ [-LoginPageLayoutConfiguration <IMicrosoftGraphLoginPageLayoutConfiguration>]
+ [-LoginPageTextVisibilitySettings <IMicrosoftGraphLoginPageTextVisibilitySettings>]
+ [-SignInPageText <String>] [-SquareLogoDarkInputFile <String>] [-SquareLogoDarkRelativeUrl <String>]
+ [-SquareLogoInputFile <String>] [-SquareLogoRelativeUrl <String>] [-UsernameHintText <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -194,6 +213,246 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CustomAccountResetCredentialsUrl
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomCannotAccessYourAccountText
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomCannotAccessYourAccountUrl
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomCssInputFile
+Input File for CustomCss (.)
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomCssRelativeUrl
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomForgotMyPasswordText
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomPrivacyAndCookiesText
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomPrivacyAndCookiesUrl
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomResetItNowText
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomTermsOfUseText
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CustomTermsOfUseUrl
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FaviconInputFile
+Input File for Favicon (.)
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FaviconRelativeUrl
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HeaderBackgroundColor
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HeaderLogoInputFile
+Input File for HeaderLogo (.)
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HeaderLogoRelativeUrl
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 The unique idenfier for an entity.
 Read-only.
@@ -242,6 +501,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LoginPageLayoutConfiguration
+loginPageLayoutConfiguration
+To construct, see NOTES section for LOGINPAGELAYOUTCONFIGURATION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLoginPageLayoutConfiguration
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LoginPageTextVisibilitySettings
+loginPageTextVisibilitySettings
+To construct, see NOTES section for LOGINPAGETEXTVISIBILITYSETTINGS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLoginPageTextVisibilitySettings
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -OrganizationId
 The unique identifier of organization
 
@@ -261,6 +552,36 @@ Accept wildcard characters: False
 Text that appears at the bottom of the sign-in box.
 You can use this to communicate additional information, such as the phone number to your help desk or a legal statement.
 This text must be Unicode and not exceed 1024 characters.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SquareLogoDarkInputFile
+Input File for SquareLogoDark (.)
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SquareLogoDarkRelativeUrl
+.
 
 ```yaml
 Type: System.String
@@ -384,8 +705,39 @@ To create the parameters described below, construct a hash table containing the 
   - `[BannerLogo <Byte[]>]`: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
   - `[BannerLogoRelativeUrl <String>]`: A relative url for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
   - `[CdnList <String[]>]`: A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
+  - `[CustomAccountResetCredentialsUrl <String>]`: 
+  - `[CustomCannotAccessYourAccountText <String>]`: 
+  - `[CustomCannotAccessYourAccountUrl <String>]`: 
+  - `[CustomCss <Byte[]>]`: 
+  - `[CustomCssRelativeUrl <String>]`: 
+  - `[CustomForgotMyPasswordText <String>]`: 
+  - `[CustomPrivacyAndCookiesText <String>]`: 
+  - `[CustomPrivacyAndCookiesUrl <String>]`: 
+  - `[CustomResetItNowText <String>]`: 
+  - `[CustomTermsOfUseText <String>]`: 
+  - `[CustomTermsOfUseUrl <String>]`: 
+  - `[Favicon <Byte[]>]`: 
+  - `[FaviconRelativeUrl <String>]`: 
+  - `[HeaderBackgroundColor <String>]`: 
+  - `[HeaderLogo <Byte[]>]`: 
+  - `[HeaderLogoRelativeUrl <String>]`: 
+  - `[LoginPageLayoutConfiguration <IMicrosoftGraphLoginPageLayoutConfiguration>]`: loginPageLayoutConfiguration
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IsFooterShown <Boolean?>]`: 
+    - `[IsHeaderShown <Boolean?>]`: 
+    - `[LayoutTemplateType <String>]`: layoutTemplateType
+  - `[LoginPageTextVisibilitySettings <IMicrosoftGraphLoginPageTextVisibilitySettings>]`: loginPageTextVisibilitySettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[HideAccountResetCredentials <Boolean?>]`: 
+    - `[HideCannotAccessYourAccount <Boolean?>]`: 
+    - `[HideForgotMyPassword <Boolean?>]`: 
+    - `[HidePrivacyAndCookies <Boolean?>]`: 
+    - `[HideResetItNow <Boolean?>]`: 
+    - `[HideTermsOfUse <Boolean?>]`: 
   - `[SignInPageText <String>]`: Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
   - `[SquareLogo <Byte[]>]`: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+  - `[SquareLogoDark <Byte[]>]`: 
+  - `[SquareLogoDarkRelativeUrl <String>]`: 
   - `[SquareLogoRelativeUrl <String>]`: A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
   - `[UsernameHintText <String>]`: String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -396,8 +748,28 @@ To create the parameters described below, construct a hash table containing the 
     - `[BannerLogo <Byte[]>]`: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
     - `[BannerLogoRelativeUrl <String>]`: A relative url for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
     - `[CdnList <String[]>]`: A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
+    - `[CustomAccountResetCredentialsUrl <String>]`: 
+    - `[CustomCannotAccessYourAccountText <String>]`: 
+    - `[CustomCannotAccessYourAccountUrl <String>]`: 
+    - `[CustomCss <Byte[]>]`: 
+    - `[CustomCssRelativeUrl <String>]`: 
+    - `[CustomForgotMyPasswordText <String>]`: 
+    - `[CustomPrivacyAndCookiesText <String>]`: 
+    - `[CustomPrivacyAndCookiesUrl <String>]`: 
+    - `[CustomResetItNowText <String>]`: 
+    - `[CustomTermsOfUseText <String>]`: 
+    - `[CustomTermsOfUseUrl <String>]`: 
+    - `[Favicon <Byte[]>]`: 
+    - `[FaviconRelativeUrl <String>]`: 
+    - `[HeaderBackgroundColor <String>]`: 
+    - `[HeaderLogo <Byte[]>]`: 
+    - `[HeaderLogoRelativeUrl <String>]`: 
+    - `[LoginPageLayoutConfiguration <IMicrosoftGraphLoginPageLayoutConfiguration>]`: loginPageLayoutConfiguration
+    - `[LoginPageTextVisibilitySettings <IMicrosoftGraphLoginPageTextVisibilitySettings>]`: loginPageTextVisibilitySettings
     - `[SignInPageText <String>]`: Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
     - `[SquareLogo <Byte[]>]`: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+    - `[SquareLogoDark <Byte[]>]`: 
+    - `[SquareLogoDarkRelativeUrl <String>]`: 
     - `[SquareLogoRelativeUrl <String>]`: A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
     - `[UsernameHintText <String>]`: String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -432,11 +804,57 @@ To create the parameters described below, construct a hash table containing the 
   - `[BannerLogo <Byte[]>]`: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
   - `[BannerLogoRelativeUrl <String>]`: A relative url for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
   - `[CdnList <String[]>]`: A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
+  - `[CustomAccountResetCredentialsUrl <String>]`: 
+  - `[CustomCannotAccessYourAccountText <String>]`: 
+  - `[CustomCannotAccessYourAccountUrl <String>]`: 
+  - `[CustomCss <Byte[]>]`: 
+  - `[CustomCssRelativeUrl <String>]`: 
+  - `[CustomForgotMyPasswordText <String>]`: 
+  - `[CustomPrivacyAndCookiesText <String>]`: 
+  - `[CustomPrivacyAndCookiesUrl <String>]`: 
+  - `[CustomResetItNowText <String>]`: 
+  - `[CustomTermsOfUseText <String>]`: 
+  - `[CustomTermsOfUseUrl <String>]`: 
+  - `[Favicon <Byte[]>]`: 
+  - `[FaviconRelativeUrl <String>]`: 
+  - `[HeaderBackgroundColor <String>]`: 
+  - `[HeaderLogo <Byte[]>]`: 
+  - `[HeaderLogoRelativeUrl <String>]`: 
+  - `[LoginPageLayoutConfiguration <IMicrosoftGraphLoginPageLayoutConfiguration>]`: loginPageLayoutConfiguration
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IsFooterShown <Boolean?>]`: 
+    - `[IsHeaderShown <Boolean?>]`: 
+    - `[LayoutTemplateType <String>]`: layoutTemplateType
+  - `[LoginPageTextVisibilitySettings <IMicrosoftGraphLoginPageTextVisibilitySettings>]`: loginPageTextVisibilitySettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[HideAccountResetCredentials <Boolean?>]`: 
+    - `[HideCannotAccessYourAccount <Boolean?>]`: 
+    - `[HideForgotMyPassword <Boolean?>]`: 
+    - `[HidePrivacyAndCookies <Boolean?>]`: 
+    - `[HideResetItNow <Boolean?>]`: 
+    - `[HideTermsOfUse <Boolean?>]`: 
   - `[SignInPageText <String>]`: Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.
   - `[SquareLogo <Byte[]>]`: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+  - `[SquareLogoDark <Byte[]>]`: 
+  - `[SquareLogoDarkRelativeUrl <String>]`: 
   - `[SquareLogoRelativeUrl <String>]`: A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
   - `[UsernameHintText <String>]`: String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+
+`LOGINPAGELAYOUTCONFIGURATION <IMicrosoftGraphLoginPageLayoutConfiguration>`: loginPageLayoutConfiguration
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[IsFooterShown <Boolean?>]`: 
+  - `[IsHeaderShown <Boolean?>]`: 
+  - `[LayoutTemplateType <String>]`: layoutTemplateType
+
+`LOGINPAGETEXTVISIBILITYSETTINGS <IMicrosoftGraphLoginPageTextVisibilitySettings>`: loginPageTextVisibilitySettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[HideAccountResetCredentials <Boolean?>]`: 
+  - `[HideCannotAccessYourAccount <Boolean?>]`: 
+  - `[HideForgotMyPassword <Boolean?>]`: 
+  - `[HidePrivacyAndCookies <Boolean?>]`: 
+  - `[HideResetItNow <Boolean?>]`: 
+  - `[HideTermsOfUse <Boolean?>]`: 
 
 ## RELATED LINKS
 

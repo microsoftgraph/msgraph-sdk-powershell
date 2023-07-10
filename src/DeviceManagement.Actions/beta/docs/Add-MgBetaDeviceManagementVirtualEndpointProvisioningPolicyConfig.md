@@ -15,7 +15,7 @@ Invoke action applyConfig
 ### ApplyExpanded (Default)
 ```
 Add-MgBetaDeviceManagementVirtualEndpointProvisioningPolicyConfig [-AdditionalProperties <Hashtable>]
- [-CloudPcIds <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CloudPcIds <String[]>] [-PolicySettings <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Apply
@@ -107,6 +107,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PolicySettings
+cloudPcPolicySettingType
+
+```yaml
+Type: System.String
+Parameter Sets: ApplyExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -161,6 +176,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IPaths1131ZgkDevicemanagementVirtualendpointProvisioningpoliciesMicrosoftGraphApplyconfigPostRequestbodyContentApplicationJsonSchema>`: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CloudPcIds <String[]>]`: 
+  - `[PolicySettings <String>]`: cloudPcPolicySettingType
 
 ## RELATED LINKS
 

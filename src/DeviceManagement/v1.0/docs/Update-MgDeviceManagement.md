@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagement
 
 ## SYNOPSIS
-Update deviceManagement
+Update the properties of a deviceManagement object.
 
 ## SYNTAX
 
@@ -27,12 +27,14 @@ Update-MgDeviceManagement [-AdditionalProperties <Hashtable>]
  [-DeviceConfigurations <IMicrosoftGraphDeviceConfiguration[]>]
  [-DeviceEnrollmentConfigurations <IMicrosoftGraphDeviceEnrollmentConfiguration[]>]
  [-DeviceManagementPartners <IMicrosoftGraphDeviceManagementPartner[]>]
+ [-DeviceProtectionOverview <IMicrosoftGraphDeviceProtectionOverview>]
  [-ExchangeConnectors <IMicrosoftGraphDeviceManagementExchangeConnector[]>] [-Id <String>]
  [-ImportedWindowsAutopilotDeviceIdentities <IMicrosoftGraphImportedWindowsAutopilotDeviceIdentity[]>]
  [-IntuneAccountId <String>] [-IntuneBrand <IMicrosoftGraphIntuneBrand>]
  [-IosUpdateStatuses <IMicrosoftGraphIosUpdateDeviceStatus[]>]
  [-ManagedDeviceOverview <IMicrosoftGraphManagedDeviceOverview>]
  [-ManagedDevices <IMicrosoftGraphManagedDevice[]>]
+ [-MobileAppTroubleshootingEvents <IMicrosoftGraphMobileAppTroubleshootingEvent[]>]
  [-MobileThreatDefenseConnectors <IMicrosoftGraphMobileThreatDefenseConnector[]>]
  [-NotificationMessageTemplates <IMicrosoftGraphNotificationMessageTemplate[]>]
  [-RemoteAssistancePartners <IMicrosoftGraphRemoteAssistancePartner[]>]
@@ -45,10 +47,34 @@ Update-MgDeviceManagement [-AdditionalProperties <Hashtable>]
  [-TelecomExpenseManagementPartners <IMicrosoftGraphTelecomExpenseManagementPartner[]>]
  [-TermsAndConditions <IMicrosoftGraphTermsAndConditions[]>]
  [-TroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]
+ [-UserExperienceAnalyticsAppHealthApplicationPerformance <IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance[]>]
+ [-UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails[]>]
+ [-UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId[]>]
+ [-UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion[]>]
+ [-UserExperienceAnalyticsAppHealthDeviceModelPerformance <IMicrosoftGraphUserExperienceAnalyticsAppHealthDeviceModelPerformance[]>]
+ [-UserExperienceAnalyticsAppHealthDevicePerformance <IMicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformance[]>]
+ [-UserExperienceAnalyticsAppHealthDevicePerformanceDetails <IMicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformanceDetails[]>]
+ [-UserExperienceAnalyticsAppHealthOSVersionPerformance <IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance[]>]
+ [-UserExperienceAnalyticsAppHealthOverview <IMicrosoftGraphUserExperienceAnalyticsCategory>]
+ [-UserExperienceAnalyticsBaselines <IMicrosoftGraphUserExperienceAnalyticsBaseline[]>]
+ [-UserExperienceAnalyticsCategories <IMicrosoftGraphUserExperienceAnalyticsCategory[]>]
+ [-UserExperienceAnalyticsDevicePerformance <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance[]>]
+ [-UserExperienceAnalyticsDeviceScores <IMicrosoftGraphUserExperienceAnalyticsDeviceScores[]>]
+ [-UserExperienceAnalyticsDeviceStartupHistory <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory[]>]
+ [-UserExperienceAnalyticsDeviceStartupProcesses <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcess[]>]
+ [-UserExperienceAnalyticsMetricHistory <IMicrosoftGraphUserExperienceAnalyticsMetricHistory[]>]
+ [-UserExperienceAnalyticsModelScores <IMicrosoftGraphUserExperienceAnalyticsModelScores[]>]
+ [-UserExperienceAnalyticsOverview <IMicrosoftGraphUserExperienceAnalyticsOverview>]
+ [-UserExperienceAnalyticsScoreHistory <IMicrosoftGraphUserExperienceAnalyticsScoreHistory[]>]
+ [-UserExperienceAnalyticsSettings <IMicrosoftGraphUserExperienceAnalyticsSettings>]
+ [-UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric>]
+ [-UserExperienceAnalyticsWorkFromAnywhereMetrics <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric[]>]
+ [-UserExperienceAnalyticsWorkFromAnywhereModelPerformance <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereModelPerformance[]>]
  [-WindowsAutopilotDeviceIdentities <IMicrosoftGraphWindowsAutopilotDeviceIdentity[]>]
  [-WindowsInformationProtectionAppLearningSummaries <IMicrosoftGraphWindowsInformationProtectionAppLearningSummary[]>]
  [-WindowsInformationProtectionNetworkLearningSummaries <IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary[]>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WindowsMalwareInformation <IMicrosoftGraphWindowsMalwareInformation[]>]
+ [-WindowsMalwareOverview <IMicrosoftGraphWindowsMalwareOverview>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -58,7 +84,7 @@ Update-MgDeviceManagement -BodyParameter <IMicrosoftGraphDeviceManagement> [-Con
 ```
 
 ## DESCRIPTION
-Update deviceManagement
+Update the properties of a deviceManagement object.
 
 ## EXAMPLES
 
@@ -317,6 +343,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DeviceProtectionOverview
+Hardware information of a given device.
+To construct, see NOTES section for DEVICEPROTECTIONOVERVIEW properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceProtectionOverview
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ExchangeConnectors
 The list of Exchange Connectors configured by the tenant.
 To construct, see NOTES section for EXCHANGECONNECTORS properties and create a hash table.
@@ -434,6 +476,22 @@ To construct, see NOTES section for MANAGEDDEVICES properties and create a hash 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDevice[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MobileAppTroubleshootingEvents
+The collection property of MobileAppTroubleshootingEvent.
+To construct, see NOTES section for MOBILEAPPTROUBLESHOOTINGEVENTS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingEvent[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -651,6 +709,374 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -UserExperienceAnalyticsAppHealthApplicationPerformance
+User experience analytics appHealth Application Performance
+To construct, see NOTES section for USEREXPERIENCEANALYTICSAPPHEALTHAPPLICATIONPERFORMANCE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
+User experience analytics appHealth Application Performance by App Version details
+To construct, see NOTES section for USEREXPERIENCEANALYTICSAPPHEALTHAPPLICATIONPERFORMANCEBYAPPVERSIONDETAILS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
+User experience analytics appHealth Application Performance by App Version Device Id
+To construct, see NOTES section for USEREXPERIENCEANALYTICSAPPHEALTHAPPLICATIONPERFORMANCEBYAPPVERSIONDEVICEID properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
+User experience analytics appHealth Application Performance by OS Version
+To construct, see NOTES section for USEREXPERIENCEANALYTICSAPPHEALTHAPPLICATIONPERFORMANCEBYOSVERSION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsAppHealthDeviceModelPerformance
+User experience analytics appHealth Model Performance
+To construct, see NOTES section for USEREXPERIENCEANALYTICSAPPHEALTHDEVICEMODELPERFORMANCE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthDeviceModelPerformance[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsAppHealthDevicePerformance
+User experience analytics appHealth Device Performance
+To construct, see NOTES section for USEREXPERIENCEANALYTICSAPPHEALTHDEVICEPERFORMANCE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformance[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsAppHealthDevicePerformanceDetails
+User experience analytics device performance details
+To construct, see NOTES section for USEREXPERIENCEANALYTICSAPPHEALTHDEVICEPERFORMANCEDETAILS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformanceDetails[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsAppHealthOSVersionPerformance
+User experience analytics appHealth OS version Performance
+To construct, see NOTES section for USEREXPERIENCEANALYTICSAPPHEALTHOSVERSIONPERFORMANCE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsAppHealthOverview
+The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+To construct, see NOTES section for USEREXPERIENCEANALYTICSAPPHEALTHOVERVIEW properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsBaselines
+User experience analytics baselines
+To construct, see NOTES section for USEREXPERIENCEANALYTICSBASELINES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsBaseline[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsCategories
+User experience analytics categories
+To construct, see NOTES section for USEREXPERIENCEANALYTICSCATEGORIES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsCategory[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsDevicePerformance
+User experience analytics device performance
+To construct, see NOTES section for USEREXPERIENCEANALYTICSDEVICEPERFORMANCE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDevicePerformance[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsDeviceScores
+User experience analytics device scores
+To construct, see NOTES section for USEREXPERIENCEANALYTICSDEVICESCORES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceScores[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsDeviceStartupHistory
+User experience analytics device Startup History
+To construct, see NOTES section for USEREXPERIENCEANALYTICSDEVICESTARTUPHISTORY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsDeviceStartupProcesses
+User experience analytics device Startup Processes
+To construct, see NOTES section for USEREXPERIENCEANALYTICSDEVICESTARTUPPROCESSES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcess[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsMetricHistory
+User experience analytics metric history
+To construct, see NOTES section for USEREXPERIENCEANALYTICSMETRICHISTORY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetricHistory[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsModelScores
+User experience analytics model scores
+To construct, see NOTES section for USEREXPERIENCEANALYTICSMODELSCORES properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsModelScores[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsOverview
+The user experience analytics overview entity contains the overall score and the scores and insights of every metric of all categories.
+To construct, see NOTES section for USEREXPERIENCEANALYTICSOVERVIEW properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsOverview
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsScoreHistory
+User experience analytics device Startup Score History
+To construct, see NOTES section for USEREXPERIENCEANALYTICSSCOREHISTORY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsScoreHistory[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsSettings
+The user experience analytics insight is the recomendation to improve the user experience analytics score.
+To construct, see NOTES section for USEREXPERIENCEANALYTICSSETTINGS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsSettings
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+The user experience analytics hardware readiness entity contains account level information about hardware blockers for windows upgrade.
+To construct, see NOTES section for USEREXPERIENCEANALYTICSWORKFROMANYWHEREHARDWAREREADINESSMETRIC properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsWorkFromAnywhereMetrics
+User experience analytics work from anywhere metrics.
+To construct, see NOTES section for USEREXPERIENCEANALYTICSWORKFROMANYWHEREMETRICS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserExperienceAnalyticsWorkFromAnywhereModelPerformance
+The user experience analytics work from anywhere model performance
+To construct, see NOTES section for USEREXPERIENCEANALYTICSWORKFROMANYWHEREMODELPERFORMANCE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereModelPerformance[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -WindowsAutopilotDeviceIdentities
 The Windows autopilot device identities contained collection.
 To construct, see NOTES section for WINDOWSAUTOPILOTDEVICEIDENTITIES properties and create a hash table.
@@ -689,6 +1115,38 @@ To construct, see NOTES section for WINDOWSINFORMATIONPROTECTIONNETWORKLEARNINGS
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionNetworkLearningSummary[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WindowsMalwareInformation
+The list of affected malware in the tenant.
+To construct, see NOTES section for WINDOWSMALWAREINFORMATION properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsMalwareInformation[]
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WindowsMalwareOverview
+Windows device malware overview.
+To construct, see NOTES section for WINDOWSMALWAREOVERVIEW properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsMalwareOverview
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -954,10 +1412,20 @@ To create the parameters described below, construct a hash table containing the 
       - `[DeviceRegistrationState <DeviceRegistrationState?>]`: Device registration status.
       - `[ExchangeAccessState <DeviceManagementExchangeAccessState?>]`: Device Exchange Access State.
       - `[ExchangeAccessStateReason <DeviceManagementExchangeAccessStateReason?>]`: Device Exchange Access State Reason.
+      - `[LogCollectionRequests <IMicrosoftGraphDeviceLogCollectionResponse[]>]`: List of log collection requests
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[EnrolledByUser <String>]`: The User Principal Name (UPN) of the user that enrolled the device.
+        - `[ExpirationDateTimeUtc <DateTime?>]`: The DateTime of the expiration of the logs.
+        - `[InitiatedByUserPrincipalName <String>]`: The UPN for who initiated the request.
+        - `[ManagedDeviceId <String>]`: Indicates Intune device unique identifier.
+        - `[ReceivedDateTimeUtc <DateTime?>]`: The DateTime the request was received.
+        - `[RequestedDateTimeUtc <DateTime?>]`: The DateTime of the request.
+        - `[SizeInKb <Double?>]`: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        - `[Status <AppLogUploadState?>]`: AppLogUploadStatus
       - `[ManagedDeviceName <String>]`: Automatically generated name to identify a device. Can be overwritten to a user friendly name.
       - `[ManagedDeviceOwnerType <ManagedDeviceOwnerType?>]`: Owner type of device.
       - `[ManagementAgent <ManagementAgentType?>]`: managementAgentType
-      - `[Notes <String>]`: Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
+      - `[Notes <String>]`: Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.
       - `[PartnerReportedThreatState <ManagedDevicePartnerReportedHealthState?>]`: Available health states for the Device Health API
       - `[Users <IMicrosoftGraphUser[]>]`: The primary users associated with the managed device.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -1061,9 +1529,9 @@ To create the parameters described below, construct a hash table containing the 
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
               - `[AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
-                - `[IdentityProvider <String>]`: For internal use only
-                - `[Key <Byte[]>]`: For internal use only
-                - `[Type <Int32?>]`: For internal use only
+                - `[IdentityProvider <String>]`: For internal use only.
+                - `[Key <Byte[]>]`: For internal use only.
+                - `[Type <Int32?>]`: For internal use only.
               - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
               - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
               - `[DeviceCategory <String>]`: User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
@@ -1303,11 +1771,19 @@ To create the parameters described below, construct a hash table containing the 
           - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
           - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[ResourceSpecificPermissions <IMicrosoftGraphTeamsAppResourceSpecificPermission[]>]`: 
+                - `[PermissionType <String>]`: teamsAppResourceSpecificPermissionType
+                - `[PermissionValue <String>]`: 
             - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Authorization <IMicrosoftGraphTeamsAppAuthorization>]`: teamsAppAuthorization
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[RequiredPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
                 - `[Bot <IMicrosoftGraphTeamworkBot>]`: teamworkBot
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -1670,7 +2146,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
               - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Id <String>]`: The id of the content type.
+                - `[Id <String>]`: The ID of the content type.
                 - `[Name <String>]`: The name of the content type.
               - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
                 - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
@@ -1855,7 +2331,7 @@ To create the parameters described below, construct a hash table containing the 
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[CalculationMode <String>]`: Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
-              - `[Comments <IMicrosoftGraphWorkbookComment[]>]`: 
+              - `[Comments <IMicrosoftGraphWorkbookComment[]>]`: Represents a collection of comments in a workbook.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
                 - `[Content <String>]`: The content of comment.
                 - `[ContentType <String>]`: Indicates the type for the comment.
@@ -2100,9 +2576,9 @@ To create the parameters described below, construct a hash table containing the 
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Calculated <IMicrosoftGraphCalculatedColumn>]`: calculatedColumn
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Format <String>]`: For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
+                - `[Format <String>]`: For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
                 - `[Formula <String>]`: The formula used to compute the value for this column.
-                - `[OutputType <String>]`: The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
+                - `[OutputType <String>]`: The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
               - `[Choice <IMicrosoftGraphChoiceColumn>]`: choiceColumn
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[AllowTextEntry <Boolean?>]`: If true, allows custom values that aren't in the configured choices.
@@ -2120,8 +2596,8 @@ To create the parameters described below, construct a hash table containing the 
                 - `[Format <String>]`: Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
               - `[DefaultValue <IMicrosoftGraphDefaultColumnValue>]`: defaultColumnValue
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Formula <String>]`: The formula used to compute the default value for this column.
-                - `[Value <String>]`: The direct value to use as the default value for this column.
+                - `[Formula <String>]`: The formula used to compute the default value for the column.
+                - `[Value <String>]`: The direct value to use as the default value for the column.
               - `[Description <String>]`: The user-facing description of the column.
               - `[DisplayName <String>]`: The user-facing name of the column.
               - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
@@ -2255,8 +2731,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Name <String>]`: The name of the content type.
               - `[Order <IMicrosoftGraphContentTypeOrder>]`: contentTypeOrder
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Default <Boolean?>]`: Whether this is the default Content Type
-                - `[Position <Int32?>]`: Specifies the position in which the Content Type appears in the selection UI.
+                - `[Default <Boolean?>]`: Indicates whether this is the default content type
+                - `[Position <Int32?>]`: Specifies the position in which the content type appears in the selection UI.
               - `[ParentId <String>]`: The unique identifier of the content type.
               - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
               - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
@@ -2314,6 +2790,18 @@ To create the parameters described below, construct a hash table containing the 
           - `[Special <IMicrosoftGraphDriveItem[]>]`: Collection of common folders available in OneDrive. Read-only. Nullable.
           - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
         - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
+        - `[EmployeeExperience <IMicrosoftGraphEmployeeExperienceUser>]`: employeeExperienceUser
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+          - `[LearningCourseActivities <IMicrosoftGraphLearningCourseActivity[]>]`: 
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[CompletedDateTime <DateTime?>]`: Date and time when the assignment was completed. Optional.
+            - `[CompletionPercentage <Int32?>]`: The percentage completion value of the course activity. Optional.
+            - `[ExternalcourseActivityId <String>]`: A course activity ID generated by the provider. Optional.
+            - `[LearnerUserId <String>]`: The user ID of the learner to whom the activity is assigned. Required.
+            - `[LearningContentId <String>]`: The ID of the learning content created in Viva Learning. Required.
+            - `[LearningProviderId <String>]`: The registration ID of the provider. Required.
+            - `[Status <String>]`: courseStatus
         - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
         - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
@@ -2844,7 +3332,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
-            - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: 
+            - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: The offer requests for shifts in the schedule.
               - `[AssignedTo <String>]`: scheduleChangeRequestActor
               - `[ManagerActionMessage <String>]`: 
               - `[SenderMessage <String>]`: 
@@ -2904,7 +3392,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
               - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
               - `[UserId <String>]`: ID of the user assigned to the shift. Required.
-            - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: 
+            - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
               - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
               - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
               - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
@@ -2923,7 +3411,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[DisplayName <String>]`: The name of the timeOffReason. Required.
               - `[IconType <String>]`: timeOffReasonIconType
               - `[IsActive <Boolean?>]`: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
-            - `[TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>]`: 
+            - `[TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>]`: The time off requests in the schedule.
               - `[AssignedTo <String>]`: scheduleChangeRequestActor
               - `[ManagerActionMessage <String>]`: 
               - `[SenderMessage <String>]`: 
@@ -3162,7 +3650,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
         - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
         - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
-        - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
         - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
         - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -3199,7 +3687,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
         - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
-        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
+        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
           - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -3342,6 +3830,192 @@ To create the parameters described below, construct a hash table containing the 
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
           - `[Availability <String>]`: The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
+        - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
+            - `[Capabilities <IMicrosoftGraphPrinterCapabilities>]`: printerCapabilities
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[BottomMargins <Int32[]>]`: A list of supported bottom margins(in microns) for the printer.
+              - `[Collation <Boolean?>]`: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+              - `[ColorModes <String[]>]`: The color modes supported by the printer. Valid values are described in the following table.
+              - `[ContentTypes <String[]>]`: A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+              - `[CopiesPerJob <IMicrosoftGraphIntegerRange>]`: integerRange
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[End <Int64?>]`: The inclusive upper bound of the integer range.
+                - `[Start <Int64?>]`: The inclusive lower bound of the integer range.
+              - `[Dpis <Int32[]>]`: The list of print resolutions in DPI that are supported by the printer.
+              - `[DuplexModes <String[]>]`: The list of duplex modes that are supported by the printer. Valid values are described in the following table.
+              - `[FeedOrientations <String[]>]`: The list of feed orientations that are supported by the printer.
+              - `[Finishings <String[]>]`: Finishing processes the printer supports for a printed document.
+              - `[InputBins <String[]>]`: Supported input bins for the printer.
+              - `[IsColorPrintingSupported <Boolean?>]`: True if color printing is supported by the printer; false otherwise. Read-only.
+              - `[IsPageRangeSupported <Boolean?>]`: True if the printer supports printing by page ranges; false otherwise.
+              - `[LeftMargins <Int32[]>]`: A list of supported left margins(in microns) for the printer.
+              - `[MediaColors <String[]>]`: The media (i.e., paper) colors supported by the printer.
+              - `[MediaSizes <String[]>]`: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+              - `[MediaTypes <String[]>]`: The media types supported by the printer.
+              - `[MultipageLayouts <String[]>]`: The presentation directions supported by the printer. Supported values are described in the following table.
+              - `[Orientations <String[]>]`: The print orientations supported by the printer. Valid values are described in the following table.
+              - `[OutputBins <String[]>]`: The printer's supported output bins (trays).
+              - `[PagesPerSheet <Int32[]>]`: Supported number of Input Pages to impose upon a single Impression.
+              - `[Qualities <String[]>]`: The print qualities supported by the printer.
+              - `[RightMargins <Int32[]>]`: A list of supported right margins(in microns) for the printer.
+              - `[Scalings <String[]>]`: Supported print scalings.
+              - `[SupportsFitPdfToPage <Boolean?>]`: True if the printer supports scaling PDF pages to match the print media size; false otherwise.
+              - `[TopMargins <Int32[]>]`: A list of supported top margins(in microns) for the printer.
+            - `[Defaults <IMicrosoftGraphPrinterDefaults>]`: printerDefaults
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[ColorMode <String>]`: printColorMode
+              - `[ContentType <String>]`: The default content (MIME) type to use when processing documents.
+              - `[CopiesPerJob <Int32?>]`: The default number of copies printed per job.
+              - `[Dpi <Int32?>]`: The default resolution in DPI to use when printing the job.
+              - `[DuplexMode <String>]`: printDuplexMode
+              - `[Finishings <String[]>]`: The default set of finishings to apply to print jobs. Valid values are described in the following table.
+              - `[FitPdfToPage <Boolean?>]`: The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
+              - `[InputBin <String>]`: 
+              - `[MediaColor <String>]`: The default media (such as paper) color to print the document on.
+              - `[MediaSize <String>]`: The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+              - `[MediaType <String>]`: The default media (such as paper) type to print the document on.
+              - `[MultipageLayout <String>]`: printMultipageLayout
+              - `[Orientation <String>]`: printOrientation
+              - `[OutputBin <String>]`: The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
+              - `[PagesPerSheet <Int32?>]`: The default number of document pages to print on each sheet.
+              - `[Quality <String>]`: printQuality
+              - `[Scaling <String>]`: printScaling
+            - `[DisplayName <String>]`: The name of the printer/printerShare.
+            - `[IsAcceptingJobs <Boolean?>]`: Whether the printer/printerShare is currently accepting new print jobs.
+            - `[Jobs <IMicrosoftGraphPrintJob[]>]`: The list of jobs that are queued for printing by the printer/printerShare.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Configuration <IMicrosoftGraphPrintJobConfiguration>]`: printJobConfiguration
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Collate <Boolean?>]`: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+                - `[ColorMode <String>]`: printColorMode
+                - `[Copies <Int32?>]`: The number of copies that should be printed. Read-only.
+                - `[Dpi <Int32?>]`: The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
+                - `[DuplexMode <String>]`: printDuplexMode
+                - `[FeedOrientation <String>]`: printerFeedOrientation
+                - `[Finishings <String[]>]`: Finishing processes to use when printing.
+                - `[FitPdfToPage <Boolean?>]`: 
+                - `[InputBin <String>]`: The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
+                - `[Margin <IMicrosoftGraphPrintMargin>]`: printMargin
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Bottom <Int32?>]`: The margin in microns from the bottom edge.
+                  - `[Left <Int32?>]`: The margin in microns from the left edge.
+                  - `[Right <Int32?>]`: The margin in microns from the right edge.
+                  - `[Top <Int32?>]`: The margin in microns from the top edge.
+                - `[MediaSize <String>]`: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+                - `[MediaType <String>]`: 
+                - `[MultipageLayout <String>]`: printMultipageLayout
+                - `[Orientation <String>]`: printOrientation
+                - `[OutputBin <String>]`: 
+                - `[PageRanges <IMicrosoftGraphIntegerRange[]>]`: 
+                - `[PagesPerSheet <Int32?>]`: 
+                - `[Quality <String>]`: printQuality
+                - `[Scaling <String>]`: printScaling
+              - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+                - `[Id <String>]`: Unique identifier for the identity.
+                - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
+                - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
+              - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+              - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[ContentType <String>]`: The document's content (MIME) type. Read-only.
+                - `[DisplayName <String>]`: The document's name. Read-only.
+                - `[Size <Int64?>]`: The document's size in bytes. Read-only.
+              - `[IsFetchable <Boolean?>]`: If true, document can be fetched by printer.
+              - `[RedirectedFrom <String>]`: Contains the source job URL, if the job has been redirected from another printer.
+              - `[RedirectedTo <String>]`: Contains the destination job URL, if the job has been redirected to another printer.
+              - `[Status <IMicrosoftGraphPrintJobStatus>]`: printJobStatus
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Description <String>]`: A human-readable description of the print job's current processing state. Read-only.
+                - `[Details <String[]>]`: Additional details for print job state. Valid values are described in the following table. Read-only.
+                - `[IsAcquiredByPrinter <Boolean?>]`: True if the job was acknowledged by a printer; false otherwise. Read-only.
+                - `[State <String>]`: printJobProcessingState
+              - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of printTasks that were triggered by this print job.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                  - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+                    - `[DisplayName <String>]`: Refers to the Application Name displayed in the Azure Portal.
+                    - `[ServicePrincipalId <String>]`: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+                    - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
+                  - `[DisplayName <String>]`: The name of the printTaskDefinition.
+                  - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+                - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
+                - `[Status <IMicrosoftGraphPrintTaskStatus>]`: printTaskStatus
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
+                  - `[State <String>]`: printTaskProcessingState
+                - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                  - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+                  - `[Event <String>]`: printEvent
+            - `[Location <IMicrosoftGraphPrinterLocation>]`: printerLocation
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[AltitudeInMeters <Int32?>]`: The altitude, in meters, that the printer is located at.
+              - `[Building <String>]`: The building that the printer is located in.
+              - `[City <String>]`: The city that the printer is located in.
+              - `[CountryOrRegion <String>]`: The country or region that the printer is located in.
+              - `[Floor <String>]`: The floor that the printer is located on. Only numerical values are supported right now.
+              - `[FloorDescription <String>]`: The description of the floor that the printer is located on.
+              - `[Latitude <Double?>]`: The latitude that the printer is located at.
+              - `[Longitude <Double?>]`: The longitude that the printer is located at.
+              - `[Organization <String[]>]`: The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
+              - `[PostalCode <String>]`: The postal code that the printer is located in.
+              - `[RoomDescription <String>]`: The description of the room that the printer is located in.
+              - `[RoomName <String>]`: The room that the printer is located in. Only numerical values are supported right now.
+              - `[Site <String>]`: The site that the printer is located in.
+              - `[StateOrProvince <String>]`: The state or province that the printer is located in.
+              - `[StreetAddress <String>]`: The street address where the printer is located.
+              - `[Subdivision <String[]>]`: The subdivision that the printer is located in. The elements should be in hierarchical order.
+              - `[Subunit <String[]>]`: 
+            - `[Manufacturer <String>]`: The manufacturer of the printer/printerShare.
+            - `[Model <String>]`: The model name of the printer/printerShare.
+            - `[Status <IMicrosoftGraphPrinterStatus>]`: printerStatus
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Description <String>]`: A human-readable description of the printer's current processing state. Read-only.
+              - `[Details <String[]>]`: The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
+              - `[State <String>]`: printerProcessingState
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[AllowAllUsers <Boolean?>]`: If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
+            - `[AllowedGroups <IMicrosoftGraphGroup[]>]`: The groups whose users have access to print using the printer.
+            - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
+            - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
+            - `[Printer <IMicrosoftGraphPrinter>]`: printer
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Capabilities <IMicrosoftGraphPrinterCapabilities>]`: printerCapabilities
+              - `[Defaults <IMicrosoftGraphPrinterDefaults>]`: printerDefaults
+              - `[DisplayName <String>]`: The name of the printer/printerShare.
+              - `[IsAcceptingJobs <Boolean?>]`: Whether the printer/printerShare is currently accepting new print jobs.
+              - `[Jobs <IMicrosoftGraphPrintJob[]>]`: The list of jobs that are queued for printing by the printer/printerShare.
+              - `[Location <IMicrosoftGraphPrinterLocation>]`: printerLocation
+              - `[Manufacturer <String>]`: The manufacturer of the printer/printerShare.
+              - `[Model <String>]`: The model name of the printer/printerShare.
+              - `[Status <IMicrosoftGraphPrinterStatus>]`: printerStatus
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Connectors <IMicrosoftGraphPrintConnector[]>]`: The connectors that are associated with the printer.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[AppVersion <String>]`: The connector's version.
+                - `[DisplayName <String>]`: The name of the connector.
+                - `[FullyQualifiedDomainName <String>]`: The connector machine's hostname.
+                - `[Location <IMicrosoftGraphPrinterLocation>]`: printerLocation
+                - `[OperatingSystem <String>]`: The connector machine's operating system version.
+                - `[RegisteredDateTime <DateTime?>]`: The DateTimeOffset when the connector was registered.
+              - `[HasPhysicalDevice <Boolean?>]`: True if the printer has a physical device for printing. Read-only.
+              - `[IsShared <Boolean?>]`: True if the printer is shared; false otherwise. Read-only.
+              - `[LastSeenDateTime <DateTime?>]`: The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
+              - `[RegisteredDateTime <DateTime?>]`: The DateTimeOffset when the printer was registered. Read-only.
+              - `[Shares <IMicrosoftGraphPrinterShare[]>]`: The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
+              - `[TaskTriggers <IMicrosoftGraphPrintTaskTrigger[]>]`: A list of task triggers that are associated with the printer.
+            - `[ViewPoint <IMicrosoftGraphPrinterShareViewpoint>]`: printerShareViewpoint
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[LastUsedDateTime <DateTime?>]`: Date and time when the printer was last used by the signed-in user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]`: The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
           - `[CapabilityStatus <String>]`: For example, 'Enabled'.
           - `[ProvisioningStatus <String>]`: For example, 'Success'.
@@ -3359,8 +4033,8 @@ To create the parameters described below, construct a hash table containing the 
         - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-          - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: 
-          - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: 
+          - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+          - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
           - `[ShiftPreferences <IMicrosoftGraphShiftPreferences>]`: shiftPreferences
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -3392,6 +4066,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
+            - `[ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
             - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
             - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -3451,6 +4126,41 @@ To create the parameters described below, construct a hash table containing the 
         - `[UsageLocation <String>]`: A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
         - `[UserType <String>]`: A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+      - `[WindowsProtectionState <IMicrosoftGraphWindowsProtectionState>]`: Device protection status entity.
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[AntiMalwareVersion <String>]`: Current anti malware version
+        - `[DetectedMalwareState <IMicrosoftGraphWindowsDeviceMalwareState[]>]`: Device malware list
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+          - `[AdditionalInformationUrl <String>]`: Information URL to learn more about the malware
+          - `[Category <WindowsMalwareCategory?>]`: Malware category id
+          - `[DetectionCount <Int32?>]`: Number of times the malware is detected
+          - `[DisplayName <String>]`: Malware name
+          - `[ExecutionState <WindowsMalwareExecutionState?>]`: Malware execution status
+          - `[InitialDetectionDateTime <DateTime?>]`: Initial detection datetime of the malware
+          - `[LastStateChangeDateTime <DateTime?>]`: The last time this particular threat was changed
+          - `[Severity <WindowsMalwareSeverity?>]`: Malware severity
+          - `[State <WindowsMalwareState?>]`: Malware current status
+          - `[ThreatState <WindowsMalwareThreatState?>]`: Malware threat status
+        - `[DeviceState <WindowsDeviceHealthState?>]`: Computer endpoint protection state
+        - `[EngineVersion <String>]`: Current endpoint protection engine's version
+        - `[FullScanOverdue <Boolean?>]`: When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.
+        - `[FullScanRequired <Boolean?>]`: When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.
+        - `[IsVirtualMachine <Boolean?>]`: When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.
+        - `[LastFullScanDateTime <DateTime?>]`: Last quick scan datetime
+        - `[LastFullScanSignatureVersion <String>]`: Last full scan signature version
+        - `[LastQuickScanDateTime <DateTime?>]`: Last quick scan datetime
+        - `[LastQuickScanSignatureVersion <String>]`: Last quick scan signature version
+        - `[LastReportedDateTime <DateTime?>]`: Last device health status reported time
+        - `[MalwareProtectionEnabled <Boolean?>]`: When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.
+        - `[NetworkInspectionSystemEnabled <Boolean?>]`: When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.
+        - `[ProductStatus <WindowsDefenderProductStatus?>]`: Product Status of Windows Defender
+        - `[QuickScanOverdue <Boolean?>]`: When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.
+        - `[RealTimeProtectionEnabled <Boolean?>]`: When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.
+        - `[RebootRequired <Boolean?>]`: When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.
+        - `[SignatureUpdateOverdue <Boolean?>]`: When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.
+        - `[SignatureVersion <String>]`: Current malware definitions version
+        - `[TamperProtectionEnabled <Boolean?>]`: When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.
     - `[Platform <DetectedAppPlatformType?>]`: Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).
     - `[Publisher <String>]`: Indicates the publisher of the discovered application. For example: 'Microsoft'.  The default value is an empty string.
     - `[SizeInByte <Int64?>]`: Discovered application size in bytes. Read-only
@@ -3639,6 +4349,19 @@ To create the parameters described below, construct a hash table containing the 
     - `[SingleTenantAppId <String>]`: Partner Single tenant App id
     - `[WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime <DateTime?>]`: DateTime in UTC when PartnerDevices will be marked as NonCompliant
     - `[WhenPartnerDevicesWillBeRemovedDateTime <DateTime?>]`: DateTime in UTC when PartnerDevices will be removed
+  - `[DeviceProtectionOverview <IMicrosoftGraphDeviceProtectionOverview>]`: Hardware information of a given device.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[CleanDeviceCount <Int32?>]`: Indicates number of devices reporting as clean
+    - `[CriticalFailuresDeviceCount <Int32?>]`: Indicates number of devices with critical failures
+    - `[InactiveThreatAgentDeviceCount <Int32?>]`: Indicates number of devices with inactive threat agent
+    - `[PendingFullScanDeviceCount <Int32?>]`: Indicates number of devices pending full scan
+    - `[PendingManualStepsDeviceCount <Int32?>]`: Indicates number of devices with pending manual steps
+    - `[PendingOfflineScanDeviceCount <Int32?>]`: Indicates number of pending offline scan devices
+    - `[PendingQuickScanDeviceCount <Int32?>]`: Indicates the number of devices that have a pending full scan. Valid values -2147483648 to 2147483647
+    - `[PendingRestartDeviceCount <Int32?>]`: Indicates number of devices pending restart
+    - `[PendingSignatureUpdateDeviceCount <Int32?>]`: Indicates number of devices with an old signature
+    - `[TotalReportedDeviceCount <Int32?>]`: Total device count.
+    - `[UnknownStateThreatAgentDeviceCount <Int32?>]`: Indicates number of devices with threat agent state as unknown
   - `[ExchangeConnectors <IMicrosoftGraphDeviceManagementExchangeConnector[]>]`: The list of Exchange Connectors configured by the tenant.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[ConnectorServerName <String>]`: The name of the server hosting the Exchange Connector.
@@ -3729,6 +4452,14 @@ To create the parameters described below, construct a hash table containing the 
     - `[EnrolledDeviceCount <Int32?>]`: Total enrolled device count. Does not include PC devices managed via Intune PC Agent
     - `[MdmEnrolledCount <Int32?>]`: The number of devices enrolled in MDM
   - `[ManagedDevices <IMicrosoftGraphManagedDevice[]>]`: The list of managed devices.
+  - `[MobileAppTroubleshootingEvents <IMicrosoftGraphMobileAppTroubleshootingEvent[]>]`: The collection property of MobileAppTroubleshootingEvent.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AppLogCollectionRequests <IMicrosoftGraphAppLogCollectionRequest[]>]`: Indicates collection of App Log Upload Request.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
+      - `[CustomLogFolders <String[]>]`: List of log folders.
+      - `[ErrorMessage <String>]`: Indicates error message if any during the upload process.
+      - `[Status <AppLogUploadState?>]`: AppLogUploadStatus
   - `[MobileThreatDefenseConnectors <IMicrosoftGraphMobileThreatDefenseConnector[]>]`: The list of Mobile threat Defense connectors configured by the tenant.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AllowPartnerToCollectIosApplicationMetadata <Boolean?>]`: When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
@@ -3861,6 +4592,257 @@ To create the parameters described below, construct a hash table containing the 
     - `[Title <String>]`: Administrator-supplied title of the terms and conditions. This is shown to the user on prompts to accept the T&C policy.
     - `[Version <Int32?>]`: Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.
   - `[TroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for the tenant.
+  - `[UserExperienceAnalyticsAppHealthApplicationPerformance <IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance[]>]`: User experience analytics appHealth Application Performance
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[ActiveDeviceCount <Int32?>]`: The health score of the application. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[AppCrashCount <Int32?>]`: The number of crashes for the application. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[AppDisplayName <String>]`: The friendly name of the application. Possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.
+    - `[AppHangCount <Int32?>]`: The number of hangs for the application. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[AppHealthScore <Double?>]`: The health score of the application. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[AppName <String>]`: The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+    - `[AppPublisher <String>]`: The publisher of the application. Supports: $select, $OrderBy. Read-only.
+    - `[AppUsageDuration <Int32?>]`: The total usage time of the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails[]>]`: User experience analytics appHealth Application Performance by App Version details
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AppCrashCount <Int32?>]`: The number of crashes for the app. Valid values -2147483648 to 2147483647
+    - `[AppDisplayName <String>]`: The friendly name of the application.
+    - `[AppName <String>]`: The name of the application.
+    - `[AppPublisher <String>]`: The publisher of the application.
+    - `[AppVersion <String>]`: The version of the application.
+    - `[DeviceCountWithCrashes <Int32?>]`: The total number of devices that have reported one or more application crashes for this application and version. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[IsLatestUsedVersion <Boolean?>]`: When TRUE, indicates the version of application is the latest version for that application that is in use. When FALSE, indicates the version is not the latest version. FALSE by default. Supports: $select, $OrderBy.
+    - `[IsMostUsedVersion <Boolean?>]`: When TRUE, indicates the version of application is the most used version for that application. When FALSE, indicates the version is not the most used version. FALSE by default. Supports: $select, $OrderBy. Read-only.
+  - `[UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId[]>]`: User experience analytics appHealth Application Performance by App Version Device Id
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AppCrashCount <Int32?>]`: The number of crashes for the app. Valid values -2147483648 to 2147483647
+    - `[AppDisplayName <String>]`: The friendly name of the application.
+    - `[AppName <String>]`: The name of the application.
+    - `[AppPublisher <String>]`: The publisher of the application.
+    - `[AppVersion <String>]`: The version of the application.
+    - `[DeviceDisplayName <String>]`: The name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[DeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+    - `[ProcessedDateTime <DateTime?>]`: The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
+  - `[UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion[]>]`: User experience analytics appHealth Application Performance by OS Version
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[ActiveDeviceCount <Int32?>]`: The number of devices where the application has been active. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[AppCrashCount <Int32?>]`: The number of crashes for the application. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[AppDisplayName <String>]`: The friendly name of the application. Possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.
+    - `[AppName <String>]`: The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+    - `[AppPublisher <String>]`: The publisher of the application. Supports: $select, $OrderBy. Read-only.
+    - `[AppUsageDuration <Int32?>]`: The total usage time of the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[OSBuildNumber <String>]`: The OS build number of the application. Supports: $select, $OrderBy. Read-only.
+    - `[OSVersion <String>]`: The OS version of the application. Supports: $select, $OrderBy. Read-only.
+  - `[UserExperienceAnalyticsAppHealthDeviceModelPerformance <IMicrosoftGraphUserExperienceAnalyticsAppHealthDeviceModelPerformance[]>]`: User experience analytics appHealth Model Performance
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[ActiveDeviceCount <Int32?>]`: The number of active devices for the model. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[DeviceManufacturer <String>]`: The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[DeviceModel <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+    - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[ModelAppHealthScore <Double?>]`: The application health score of the device model. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[UserExperienceAnalyticsAppHealthDevicePerformance <IMicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformance[]>]`: User experience analytics appHealth Device Performance
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AppCrashCount <Int32?>]`: The number of application crashes for the device. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[AppHangCount <Int32?>]`: The number of application hangs for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[CrashedAppCount <Int32?>]`: The number of distinct application crashes for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[DeviceAppHealthScore <Double?>]`: The application health score of the device. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[DeviceDisplayName <String>]`: The name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[DeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+    - `[DeviceManufacturer <String>]`: The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[DeviceModel <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+    - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[ProcessedDateTime <DateTime?>]`: The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
+  - `[UserExperienceAnalyticsAppHealthDevicePerformanceDetails <IMicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformanceDetails[]>]`: User experience analytics device performance details
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AppDisplayName <String>]`: The friendly name of the application for which the event occurred. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+    - `[AppPublisher <String>]`: The publisher of the application. Supports: $select, $OrderBy. Read-only.
+    - `[AppVersion <String>]`: The version of the application. Possible values are: 1.0.0.1, 75.65.23.9. Supports: $select, $OrderBy. Read-only.
+    - `[DeviceDisplayName <String>]`: The name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[DeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+    - `[EventDateTime <DateTime?>]`: The time the event occurred. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
+    - `[EventType <String>]`: The type of the event. Supports: $select, $OrderBy. Read-only.
+  - `[UserExperienceAnalyticsAppHealthOSVersionPerformance <IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance[]>]`: User experience analytics appHealth OS version Performance
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[ActiveDeviceCount <Int32?>]`: The number of active devices for the OS version. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[OSBuildNumber <String>]`: The OS build number installed on the device. Supports: $select, $OrderBy. Read-only.
+    - `[OSVersion <String>]`: The OS version installed on the device. Supports: $select, $OrderBy. Read-only.
+    - `[OSVersionAppHealthScore <Double?>]`: The application health score of the OS version. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[UserExperienceAnalyticsAppHealthOverview <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the category. Read-only.
+      - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
+      - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
+      - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics metric.
+      - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
+    - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category. Read-only.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Unit <String>]`: The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.
+      - `[Value <Double?>]`: The value of the user experience analytics metric.
+  - `[UserExperienceAnalyticsBaselines <IMicrosoftGraphUserExperienceAnalyticsBaseline[]>]`: User experience analytics baselines
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AppHealthMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+    - `[BatteryHealthMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+    - `[BestPracticesMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+    - `[CreatedDateTime <DateTime?>]`: The date the custom baseline was created. The value cannot be modified and is automatically populated when the baseline is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
+    - `[DeviceBootPerformanceMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+    - `[DisplayName <String>]`: The name of the baseline.
+    - `[IsBuiltIn <Boolean?>]`: When TRUE, indicates the current baseline is the commercial median baseline. When FALSE, indicates it is a custom baseline. FALSE by default.
+    - `[RebootAnalyticsMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+    - `[ResourcePerformanceMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+    - `[WorkFromAnywhereMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+  - `[UserExperienceAnalyticsCategories <IMicrosoftGraphUserExperienceAnalyticsCategory[]>]`: User experience analytics categories
+  - `[UserExperienceAnalyticsDevicePerformance <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance[]>]`: User experience analytics device performance
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AverageBlueScreens <Double?>]`: Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
+    - `[AverageRestarts <Double?>]`: Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
+    - `[BlueScreenCount <Int32?>]`: Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
+    - `[BootScore <Int32?>]`: The user experience analytics device boot score.
+    - `[CoreBootTimeInMS <Int32?>]`: The user experience analytics device core boot time in milliseconds.
+    - `[CoreLoginTimeInMS <Int32?>]`: The user experience analytics device core login time in milliseconds.
+    - `[DeviceCount <Int64?>]`: User experience analytics summarized device count.
+    - `[DeviceName <String>]`: The user experience analytics device name.
+    - `[DiskType <DiskType?>]`: diskType
+    - `[GroupPolicyBootTimeInMS <Int32?>]`: The user experience analytics device group policy boot time in milliseconds.
+    - `[GroupPolicyLoginTimeInMS <Int32?>]`: The user experience analytics device group policy login time in milliseconds.
+    - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+    - `[LoginScore <Int32?>]`: The user experience analytics device login score.
+    - `[Manufacturer <String>]`: The user experience analytics device manufacturer.
+    - `[Model <String>]`: The user experience analytics device model.
+    - `[ModelStartupPerformanceScore <Double?>]`: The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[OperatingSystemVersion <String>]`: The user experience analytics device Operating System version.
+    - `[ResponsiveDesktopTimeInMS <Int32?>]`: The user experience analytics responsive desktop time in milliseconds.
+    - `[RestartCount <Int32?>]`: Number of Restarts in the last 30 days. Valid values 0 to 9999999
+    - `[StartupPerformanceScore <Double?>]`: The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[UserExperienceAnalyticsDeviceScores <IMicrosoftGraphUserExperienceAnalyticsDeviceScores[]>]`: User experience analytics device scores
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AppReliabilityScore <Double?>]`: Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[BatteryHealthScore <Double?>]`: Indicates a calulated score indicating the health of the device's battery. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[DeviceName <String>]`: The name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[EndpointAnalyticsScore <Double?>]`: Indicates a weighted average of the various scores. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+    - `[Manufacturer <String>]`: The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.
+    - `[Model <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[StartupPerformanceScore <Double?>]`: Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[WorkFromAnywhereScore <Double?>]`: Indicates a weighted score of the work from anywhere on a device level. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[UserExperienceAnalyticsDeviceStartupHistory <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory[]>]`: User experience analytics device Startup History
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[CoreBootTimeInMS <Int32?>]`: The device core boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+    - `[CoreLoginTimeInMS <Int32?>]`: The device core login time in milliseconds. Supports: $select, $OrderBy. Read-only.
+    - `[DeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+    - `[FeatureUpdateBootTimeInMS <Int32?>]`: The impact of device feature updates on boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+    - `[GroupPolicyBootTimeInMS <Int32?>]`: The impact of device group policy client on boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+    - `[GroupPolicyLoginTimeInMS <Int32?>]`: The impact of device group policy client on login time in milliseconds. Supports: $select, $OrderBy. Read-only.
+    - `[IsFeatureUpdate <Boolean?>]`: When TRUE, indicates the device boot record is associated with feature updates. When FALSE, indicates the device boot record is not associated with feature updates. Supports: $select, $OrderBy. Read-only.
+    - `[IsFirstLogin <Boolean?>]`: When TRUE, indicates the device login is the first login after a reboot. When FALSE, indicates the device login is not the first login after a reboot. Supports: $select, $OrderBy. Read-only.
+    - `[OperatingSystemVersion <String>]`: The user experience analytics device boot record's operating system version. Supports: $select, $OrderBy. Read-only.
+    - `[ResponsiveDesktopTimeInMS <Int32?>]`: The time for desktop to become responsive during login process in milliseconds. Supports: $select, $OrderBy. Read-only.
+    - `[RestartCategory <UserExperienceAnalyticsOperatingSystemRestartCategory?>]`: Operating System restart category.
+    - `[RestartFaultBucket <String>]`: OS restart fault bucket. The fault bucket is used to find additional information about a system crash. Supports: $select, $OrderBy. Read-only.
+    - `[RestartStopCode <String>]`: OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason. Supports: $select, $OrderBy. Read-only.
+    - `[StartTime <DateTime?>]`: The device boot start time. The value cannot be modified and is automatically populated when the device performs a reboot. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
+    - `[TotalBootTimeInMS <Int32?>]`: The device total boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+    - `[TotalLoginTimeInMS <Int32?>]`: The device total login time in milliseconds. Supports: $select, $OrderBy. Read-only.
+  - `[UserExperienceAnalyticsDeviceStartupProcesses <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcess[]>]`: User experience analytics device Startup Processes
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[ManagedDeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+    - `[ProcessName <String>]`: The name of the process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.
+    - `[ProductName <String>]`: The product name of the process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.
+    - `[Publisher <String>]`: The publisher of the process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.
+    - `[StartupImpactInMS <Int32?>]`: The impact of startup process on device boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+  - `[UserExperienceAnalyticsMetricHistory <IMicrosoftGraphUserExperienceAnalyticsMetricHistory[]>]`: User experience analytics metric history
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[DeviceId <String>]`: The Intune device id of the device.
+    - `[MetricDateTime <DateTime?>]`: The metric date time. The value cannot be modified and is automatically populated when the metric is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
+    - `[MetricType <String>]`: The user experience analytics metric type.
+  - `[UserExperienceAnalyticsModelScores <IMicrosoftGraphUserExperienceAnalyticsModelScores[]>]`: User experience analytics model scores
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AppReliabilityScore <Double?>]`: Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[BatteryHealthScore <Double?>]`: Indicates a calulated score indicating the health of the device's battery. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[EndpointAnalyticsScore <Double?>]`: Indicates a weighted average of the various scores. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+    - `[Manufacturer <String>]`: The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.
+    - `[Model <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[ModelDeviceCount <Int64?>]`: Indicates unique devices count of given model in a consolidated report. Supports: $select, $OrderBy. Read-only. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
+    - `[StartupPerformanceScore <Double?>]`: Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[WorkFromAnywhereScore <Double?>]`: Indicates a weighted score of the work from anywhere on a device level. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[UserExperienceAnalyticsOverview <IMicrosoftGraphUserExperienceAnalyticsOverview>]`: The user experience analytics overview entity contains the overall score and the scores and insights of every metric of all categories.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The user experience analytics insights. Read-only.
+  - `[UserExperienceAnalyticsScoreHistory <IMicrosoftGraphUserExperienceAnalyticsScoreHistory[]>]`: User experience analytics device Startup Score History
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[StartupDateTime <DateTime?>]`: The device startup date time. The value cannot be modified and is automatically populated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
+  - `[UserExperienceAnalyticsSettings <IMicrosoftGraphUserExperienceAnalyticsSettings>]`: The user experience analytics insight is the recomendation to improve the user experience analytics score.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[ConfigurationManagerDataConnectorConfigured <Boolean?>]`: When TRUE, indicates Tenant attach is configured properly and System Center Configuration Manager (SCCM) tenant attached devices will show up in endpoint analytics reporting. When FALSE, indicates Tenant attach is not configured. FALSE by default.
+  - `[UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric>]`: The user experience analytics hardware readiness entity contains account level information about hardware blockers for windows upgrade.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[OSCheckFailedPercentage <Double?>]`: The percentage of devices for which OS check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[Processor64BitCheckFailedPercentage <Double?>]`: The percentage of devices for which processor hardware 64-bit architecture check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[ProcessorCoreCountCheckFailedPercentage <Double?>]`: The percentage of devices for which processor hardware core count check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[ProcessorFamilyCheckFailedPercentage <Double?>]`: The percentage of devices for which processor hardware family check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[ProcessorSpeedCheckFailedPercentage <Double?>]`: The percentage of devices for which processor hardware speed check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[RamCheckFailedPercentage <Double?>]`: The percentage of devices for which RAM hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[SecureBootCheckFailedPercentage <Double?>]`: The percentage of devices for which secure boot hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[StorageCheckFailedPercentage <Double?>]`: The percentage of devices for which storage hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[TotalDeviceCount <Int32?>]`: The count of total devices in an organization. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[TpmCheckFailedPercentage <Double?>]`: The percentage of devices for which Trusted Platform Module (TPM) hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[UpgradeEligibleDeviceCount <Int32?>]`: The count of devices in an organization eligible for windows upgrade. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[UserExperienceAnalyticsWorkFromAnywhereMetrics <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric[]>]`: User experience analytics work from anywhere metrics.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[MetricDevices <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice[]>]`: The work from anywhere metric devices. Read-only.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AutoPilotProfileAssigned <Boolean?>]`: When TRUE, indicates the intune device's autopilot profile is assigned. When FALSE, indicates it's not Assigned. Supports: $select, $OrderBy. Read-only.
+      - `[AutoPilotRegistered <Boolean?>]`: When TRUE, indicates the intune device's autopilot is registered. When FALSE, indicates it's not registered. Supports: $select, $OrderBy. Read-only.
+      - `[AzureAdDeviceId <String>]`: The Azure Active Directory (Azure AD) device Id. Supports: $select, $OrderBy. Read-only.
+      - `[AzureAdJoinType <String>]`: The work from anywhere device's Azure Active Directory (Azure AD) join type. Supports: $select, $OrderBy. Read-only.
+      - `[AzureAdRegistered <Boolean?>]`: When TRUE, indicates the device's Azure Active Directory (Azure AD) is registered. When False, indicates it's not registered. Supports: $select, $OrderBy. Read-only.
+      - `[CloudIdentityScore <Double?>]`: Indicates per device cloud identity score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+      - `[CloudManagementScore <Double?>]`: Indicates per device cloud management score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+      - `[CloudProvisioningScore <Double?>]`: Indicates per device cloud provisioning score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+      - `[CompliancePolicySetToIntune <Boolean?>]`: When TRUE, indicates the device's compliance policy is set to intune. When FALSE, indicates it's not set to intune. Supports: $select, $OrderBy. Read-only.
+      - `[DeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+      - `[DeviceName <String>]`: The name of the device. Supports: $select, $OrderBy. Read-only.
+      - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+      - `[IsCloudManagedGatewayEnabled <Boolean?>]`: When TRUE, indicates the device's Cloud Management Gateway for Configuration Manager is enabled. When FALSE, indicates it's not enabled. Supports: $select, $OrderBy. Read-only.
+      - `[ManagedBy <String>]`: The management agent of the device. Supports: $select, $OrderBy. Read-only.
+      - `[Manufacturer <String>]`: The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
+      - `[Model <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+      - `[OSCheckFailed <Boolean?>]`: When TRUE, indicates OS check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+      - `[OSDescription <String>]`: The OS description of the device. Supports: $select, $OrderBy. Read-only.
+      - `[OSVersion <String>]`: The OS version of the device. Supports: $select, $OrderBy. Read-only.
+      - `[OtherWorkloadsSetToIntune <Boolean?>]`: When TRUE, indicates the device's other workloads is set to intune. When FALSE, indicates it's not set to intune. Supports: $select, $OrderBy. Read-only.
+      - `[Ownership <String>]`: Ownership of the device. Supports: $select, $OrderBy. Read-only.
+      - `[Processor64BitCheckFailed <Boolean?>]`: When TRUE, indicates processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+      - `[ProcessorCoreCountCheckFailed <Boolean?>]`: When TRUE, indicates processor hardware core count check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+      - `[ProcessorFamilyCheckFailed <Boolean?>]`: When TRUE, indicates processor hardware family check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+      - `[ProcessorSpeedCheckFailed <Boolean?>]`: When TRUE, indicates processor hardware speed check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+      - `[RamCheckFailed <Boolean?>]`: When TRUE, indicates RAM hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+      - `[SecureBootCheckFailed <Boolean?>]`: When TRUE, indicates secure boot hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+      - `[SerialNumber <String>]`: The serial number of the device. Supports: $select, $OrderBy. Read-only.
+      - `[StorageCheckFailed <Boolean?>]`: When TRUE, indicates storage hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+      - `[TenantAttached <Boolean?>]`: When TRUE, indicates the device is Tenant Attached. When FALSE, indicates it's not Tenant Attached. Supports: $select, $OrderBy. Read-only.
+      - `[TpmCheckFailed <Boolean?>]`: When TRUE, indicates Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+      - `[UpgradeEligibility <OperatingSystemUpgradeEligibility?>]`: Work From Anywhere windows device upgrade eligibility status.
+      - `[WindowsScore <Double?>]`: Indicates per device windows score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+      - `[WorkFromAnywhereScore <Double?>]`: Indicates work from anywhere per device overall score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[UserExperienceAnalyticsWorkFromAnywhereModelPerformance <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereModelPerformance[]>]`: The user experience analytics work from anywhere model performance
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[CloudIdentityScore <Double?>]`: The cloud identity score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[CloudManagementScore <Double?>]`: The cloud management score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[CloudProvisioningScore <Double?>]`: The cloud provisioning score of the device model.  Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+    - `[Manufacturer <String>]`: The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[Model <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[ModelDeviceCount <Int32?>]`: The devices count for the model. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+    - `[WindowsScore <Double?>]`: The window score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[WorkFromAnywhereScore <Double?>]`: The work from anywhere score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[WindowsAutopilotDeviceIdentities <IMicrosoftGraphWindowsAutopilotDeviceIdentity[]>]`: The Windows autopilot device identities contained collection.
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[AddressableUserName <String>]`: Addressable user name.
@@ -3888,6 +4870,56 @@ To create the parameters described below, construct a hash table containing the 
     - `[Id <String>]`: The unique idenfier for an entity. Read-only.
     - `[DeviceCount <Int32?>]`: Device Count
     - `[Url <String>]`: Website url
+  - `[WindowsMalwareInformation <IMicrosoftGraphWindowsMalwareInformation[]>]`: The list of affected malware in the tenant.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AdditionalInformationUrl <String>]`: Indicates an informational URL to learn more about the malware
+    - `[Category <WindowsMalwareCategory?>]`: Malware category id
+    - `[DeviceMalwareStates <IMicrosoftGraphMalwareStateForWindowsDevice[]>]`: List of devices affected by current malware with the malware state on each device
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[DetectionCount <Int32?>]`: Indicates the number of times the malware is detected
+      - `[DeviceName <String>]`: Indicates the name of the device being evaluated for malware state
+      - `[ExecutionState <WindowsMalwareExecutionState?>]`: Malware execution status
+      - `[InitialDetectionDateTime <DateTime?>]`: Initial detection datetime of the malware
+      - `[LastStateChangeDateTime <DateTime?>]`: The last time this particular threat was changed
+      - `[ThreatState <WindowsMalwareThreatState?>]`: Malware threat status
+    - `[DisplayName <String>]`: Indicates the name of the malware
+    - `[LastDetectionDateTime <DateTime?>]`: Indicates the last time the malware was detected in UTC
+    - `[Severity <WindowsMalwareSeverity?>]`: Malware severity
+  - `[WindowsMalwareOverview <IMicrosoftGraphWindowsMalwareOverview>]`: Windows device malware overview.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[MalwareCategorySummary <IMicrosoftGraphWindowsMalwareCategoryCount[]>]`: List of device counts per malware category
+      - `[ActiveMalwareDetectionCount <Int32?>]`: Count of active malware detections for this malware category. Valid values -2147483648 to 2147483647
+      - `[Category <WindowsMalwareCategory?>]`: Malware category id
+      - `[DeviceCount <Int32?>]`: Count of devices with malware detections for this malware category
+      - `[DistinctActiveMalwareCount <Int32?>]`: Count of distinct active malwares for this malware category. Valid values -2147483648 to 2147483647
+      - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the device count in UTC
+    - `[MalwareDetectedDeviceCount <Int32?>]`: Count of devices with malware detected in the last 30 days
+    - `[MalwareExecutionStateSummary <IMicrosoftGraphWindowsMalwareExecutionStateCount[]>]`: List of device counts per malware execution state
+      - `[DeviceCount <Int32?>]`: Count of devices with malware detections for this malware execution state
+      - `[ExecutionState <WindowsMalwareExecutionState?>]`: Malware execution status
+      - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the device count in UTC
+    - `[MalwareNameSummary <IMicrosoftGraphWindowsMalwareNameCount[]>]`: List of device counts per malware
+      - `[DeviceCount <Int32?>]`: Count of devices with malware dectected for this malware
+      - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the device count in UTC
+      - `[MalwareIdentifier <String>]`: The unique identifier. This is malware identifier
+      - `[Name <String>]`: Malware name
+    - `[MalwareSeveritySummary <IMicrosoftGraphWindowsMalwareSeverityCount[]>]`: List of active malware counts per malware severity
+      - `[DistinctMalwareCount <Int32?>]`: Count of distinct malwares for this malware State. Valid values -2147483648 to 2147483647
+      - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the WindowsMalwareSeverityCount in UTC
+      - `[MalwareDetectionCount <Int32?>]`: Count of threats detections for this malware severity. Valid values -2147483648 to 2147483647
+      - `[Severity <WindowsMalwareSeverity?>]`: Malware severity
+    - `[MalwareStateSummary <IMicrosoftGraphWindowsMalwareStateCount[]>]`: List of device counts per malware state
+      - `[DeviceCount <Int32?>]`: Count of devices with malware detections for this malware State
+      - `[DistinctMalwareCount <Int32?>]`: Count of distinct malwares for this malware State. Valid values -2147483648 to 2147483647
+      - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the device count in UTC
+      - `[MalwareDetectionCount <Int32?>]`: Count of total malware detections for this malware State. Valid values -2147483648 to 2147483647
+      - `[State <WindowsMalwareThreatState?>]`: Malware threat status
+    - `[OSVersionsSummary <IMicrosoftGraphOSVersionCount[]>]`: List of device counts with malware per windows OS version
+      - `[DeviceCount <Int32?>]`: Count of devices with malware for the OS version
+      - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the device count in UTC
+      - `[OSVersion <String>]`: OS version
+    - `[TotalDistinctMalwareCount <Int32?>]`: Count of all distinct malwares detected across all devices. Valid values -2147483648 to 2147483647
+    - `[TotalMalwareCount <Int32?>]`: Count of all malware detections across all devices. Valid values -2147483648 to 2147483647
 
 `COMPLIANCEMANAGEMENTPARTNERS <IMicrosoftGraphComplianceManagementPartner[]>`: The list of Compliance Management Partners configured by the tenant.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -4012,10 +5044,20 @@ To create the parameters described below, construct a hash table containing the 
     - `[DeviceRegistrationState <DeviceRegistrationState?>]`: Device registration status.
     - `[ExchangeAccessState <DeviceManagementExchangeAccessState?>]`: Device Exchange Access State.
     - `[ExchangeAccessStateReason <DeviceManagementExchangeAccessStateReason?>]`: Device Exchange Access State Reason.
+    - `[LogCollectionRequests <IMicrosoftGraphDeviceLogCollectionResponse[]>]`: List of log collection requests
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[EnrolledByUser <String>]`: The User Principal Name (UPN) of the user that enrolled the device.
+      - `[ExpirationDateTimeUtc <DateTime?>]`: The DateTime of the expiration of the logs.
+      - `[InitiatedByUserPrincipalName <String>]`: The UPN for who initiated the request.
+      - `[ManagedDeviceId <String>]`: Indicates Intune device unique identifier.
+      - `[ReceivedDateTimeUtc <DateTime?>]`: The DateTime the request was received.
+      - `[RequestedDateTimeUtc <DateTime?>]`: The DateTime of the request.
+      - `[SizeInKb <Double?>]`: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+      - `[Status <AppLogUploadState?>]`: AppLogUploadStatus
     - `[ManagedDeviceName <String>]`: Automatically generated name to identify a device. Can be overwritten to a user friendly name.
     - `[ManagedDeviceOwnerType <ManagedDeviceOwnerType?>]`: Owner type of device.
     - `[ManagementAgent <ManagementAgentType?>]`: managementAgentType
-    - `[Notes <String>]`: Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
+    - `[Notes <String>]`: Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.
     - `[PartnerReportedThreatState <ManagedDevicePartnerReportedHealthState?>]`: Available health states for the Device Health API
     - `[Users <IMicrosoftGraphUser[]>]`: The primary users associated with the managed device.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -4119,9 +5161,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
             - `[AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
-              - `[IdentityProvider <String>]`: For internal use only
-              - `[Key <Byte[]>]`: For internal use only
-              - `[Type <Int32?>]`: For internal use only
+              - `[IdentityProvider <String>]`: For internal use only.
+              - `[Key <Byte[]>]`: For internal use only.
+              - `[Type <Int32?>]`: For internal use only.
             - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
             - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             - `[DeviceCategory <String>]`: User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
@@ -4361,11 +5403,19 @@ To create the parameters described below, construct a hash table containing the 
         - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
         - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+          - `[ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[ResourceSpecificPermissions <IMicrosoftGraphTeamsAppResourceSpecificPermission[]>]`: 
+              - `[PermissionType <String>]`: teamsAppResourceSpecificPermissionType
+              - `[PermissionValue <String>]`: 
           - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Authorization <IMicrosoftGraphTeamsAppAuthorization>]`: teamsAppAuthorization
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[RequiredPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
               - `[Bot <IMicrosoftGraphTeamworkBot>]`: teamworkBot
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -4728,7 +5778,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
             - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Id <String>]`: The id of the content type.
+              - `[Id <String>]`: The ID of the content type.
               - `[Name <String>]`: The name of the content type.
             - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
               - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
@@ -4913,7 +5963,7 @@ To create the parameters described below, construct a hash table containing the 
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[CalculationMode <String>]`: Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
-            - `[Comments <IMicrosoftGraphWorkbookComment[]>]`: 
+            - `[Comments <IMicrosoftGraphWorkbookComment[]>]`: Represents a collection of comments in a workbook.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
               - `[Content <String>]`: The content of comment.
               - `[ContentType <String>]`: Indicates the type for the comment.
@@ -5158,9 +6208,9 @@ To create the parameters described below, construct a hash table containing the 
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Calculated <IMicrosoftGraphCalculatedColumn>]`: calculatedColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Format <String>]`: For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
+              - `[Format <String>]`: For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
               - `[Formula <String>]`: The formula used to compute the value for this column.
-              - `[OutputType <String>]`: The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
+              - `[OutputType <String>]`: The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
             - `[Choice <IMicrosoftGraphChoiceColumn>]`: choiceColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowTextEntry <Boolean?>]`: If true, allows custom values that aren't in the configured choices.
@@ -5178,8 +6228,8 @@ To create the parameters described below, construct a hash table containing the 
               - `[Format <String>]`: Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
             - `[DefaultValue <IMicrosoftGraphDefaultColumnValue>]`: defaultColumnValue
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Formula <String>]`: The formula used to compute the default value for this column.
-              - `[Value <String>]`: The direct value to use as the default value for this column.
+              - `[Formula <String>]`: The formula used to compute the default value for the column.
+              - `[Value <String>]`: The direct value to use as the default value for the column.
             - `[Description <String>]`: The user-facing description of the column.
             - `[DisplayName <String>]`: The user-facing name of the column.
             - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
@@ -5313,8 +6363,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Name <String>]`: The name of the content type.
             - `[Order <IMicrosoftGraphContentTypeOrder>]`: contentTypeOrder
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Default <Boolean?>]`: Whether this is the default Content Type
-              - `[Position <Int32?>]`: Specifies the position in which the Content Type appears in the selection UI.
+              - `[Default <Boolean?>]`: Indicates whether this is the default content type
+              - `[Position <Int32?>]`: Specifies the position in which the content type appears in the selection UI.
             - `[ParentId <String>]`: The unique identifier of the content type.
             - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
             - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
@@ -5372,6 +6422,18 @@ To create the parameters described below, construct a hash table containing the 
         - `[Special <IMicrosoftGraphDriveItem[]>]`: Collection of common folders available in OneDrive. Read-only. Nullable.
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
       - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
+      - `[EmployeeExperience <IMicrosoftGraphEmployeeExperienceUser>]`: employeeExperienceUser
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[LearningCourseActivities <IMicrosoftGraphLearningCourseActivity[]>]`: 
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+          - `[CompletedDateTime <DateTime?>]`: Date and time when the assignment was completed. Optional.
+          - `[CompletionPercentage <Int32?>]`: The percentage completion value of the course activity. Optional.
+          - `[ExternalcourseActivityId <String>]`: A course activity ID generated by the provider. Optional.
+          - `[LearnerUserId <String>]`: The user ID of the learner to whom the activity is assigned. Required.
+          - `[LearningContentId <String>]`: The ID of the learning content created in Viva Learning. Required.
+          - `[LearningProviderId <String>]`: The registration ID of the provider. Required.
+          - `[Status <String>]`: courseStatus
       - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
       - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
       - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
@@ -5902,7 +6964,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
-          - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: 
+          - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: The offer requests for shifts in the schedule.
             - `[AssignedTo <String>]`: scheduleChangeRequestActor
             - `[ManagerActionMessage <String>]`: 
             - `[SenderMessage <String>]`: 
@@ -5962,7 +7024,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
             - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
             - `[UserId <String>]`: ID of the user assigned to the shift. Required.
-          - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: 
+          - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
             - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
             - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
             - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
@@ -5981,7 +7043,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[DisplayName <String>]`: The name of the timeOffReason. Required.
             - `[IconType <String>]`: timeOffReasonIconType
             - `[IsActive <Boolean?>]`: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
-          - `[TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>]`: 
+          - `[TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>]`: The time off requests in the schedule.
             - `[AssignedTo <String>]`: scheduleChangeRequestActor
             - `[ManagerActionMessage <String>]`: 
             - `[SenderMessage <String>]`: 
@@ -6220,7 +7282,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
       - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
       - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
-      - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+      - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
       - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
       - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -6257,7 +7319,7 @@ To create the parameters described below, construct a hash table containing the 
       - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
       - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
       - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
-      - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
+      - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
         - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -6400,6 +7462,192 @@ To create the parameters described below, construct a hash table containing the 
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
         - `[Availability <String>]`: The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
+      - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
+          - `[Capabilities <IMicrosoftGraphPrinterCapabilities>]`: printerCapabilities
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[BottomMargins <Int32[]>]`: A list of supported bottom margins(in microns) for the printer.
+            - `[Collation <Boolean?>]`: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+            - `[ColorModes <String[]>]`: The color modes supported by the printer. Valid values are described in the following table.
+            - `[ContentTypes <String[]>]`: A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+            - `[CopiesPerJob <IMicrosoftGraphIntegerRange>]`: integerRange
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[End <Int64?>]`: The inclusive upper bound of the integer range.
+              - `[Start <Int64?>]`: The inclusive lower bound of the integer range.
+            - `[Dpis <Int32[]>]`: The list of print resolutions in DPI that are supported by the printer.
+            - `[DuplexModes <String[]>]`: The list of duplex modes that are supported by the printer. Valid values are described in the following table.
+            - `[FeedOrientations <String[]>]`: The list of feed orientations that are supported by the printer.
+            - `[Finishings <String[]>]`: Finishing processes the printer supports for a printed document.
+            - `[InputBins <String[]>]`: Supported input bins for the printer.
+            - `[IsColorPrintingSupported <Boolean?>]`: True if color printing is supported by the printer; false otherwise. Read-only.
+            - `[IsPageRangeSupported <Boolean?>]`: True if the printer supports printing by page ranges; false otherwise.
+            - `[LeftMargins <Int32[]>]`: A list of supported left margins(in microns) for the printer.
+            - `[MediaColors <String[]>]`: The media (i.e., paper) colors supported by the printer.
+            - `[MediaSizes <String[]>]`: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+            - `[MediaTypes <String[]>]`: The media types supported by the printer.
+            - `[MultipageLayouts <String[]>]`: The presentation directions supported by the printer. Supported values are described in the following table.
+            - `[Orientations <String[]>]`: The print orientations supported by the printer. Valid values are described in the following table.
+            - `[OutputBins <String[]>]`: The printer's supported output bins (trays).
+            - `[PagesPerSheet <Int32[]>]`: Supported number of Input Pages to impose upon a single Impression.
+            - `[Qualities <String[]>]`: The print qualities supported by the printer.
+            - `[RightMargins <Int32[]>]`: A list of supported right margins(in microns) for the printer.
+            - `[Scalings <String[]>]`: Supported print scalings.
+            - `[SupportsFitPdfToPage <Boolean?>]`: True if the printer supports scaling PDF pages to match the print media size; false otherwise.
+            - `[TopMargins <Int32[]>]`: A list of supported top margins(in microns) for the printer.
+          - `[Defaults <IMicrosoftGraphPrinterDefaults>]`: printerDefaults
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[ColorMode <String>]`: printColorMode
+            - `[ContentType <String>]`: The default content (MIME) type to use when processing documents.
+            - `[CopiesPerJob <Int32?>]`: The default number of copies printed per job.
+            - `[Dpi <Int32?>]`: The default resolution in DPI to use when printing the job.
+            - `[DuplexMode <String>]`: printDuplexMode
+            - `[Finishings <String[]>]`: The default set of finishings to apply to print jobs. Valid values are described in the following table.
+            - `[FitPdfToPage <Boolean?>]`: The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
+            - `[InputBin <String>]`: 
+            - `[MediaColor <String>]`: The default media (such as paper) color to print the document on.
+            - `[MediaSize <String>]`: The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+            - `[MediaType <String>]`: The default media (such as paper) type to print the document on.
+            - `[MultipageLayout <String>]`: printMultipageLayout
+            - `[Orientation <String>]`: printOrientation
+            - `[OutputBin <String>]`: The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
+            - `[PagesPerSheet <Int32?>]`: The default number of document pages to print on each sheet.
+            - `[Quality <String>]`: printQuality
+            - `[Scaling <String>]`: printScaling
+          - `[DisplayName <String>]`: The name of the printer/printerShare.
+          - `[IsAcceptingJobs <Boolean?>]`: Whether the printer/printerShare is currently accepting new print jobs.
+          - `[Jobs <IMicrosoftGraphPrintJob[]>]`: The list of jobs that are queued for printing by the printer/printerShare.
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[Configuration <IMicrosoftGraphPrintJobConfiguration>]`: printJobConfiguration
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Collate <Boolean?>]`: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+              - `[ColorMode <String>]`: printColorMode
+              - `[Copies <Int32?>]`: The number of copies that should be printed. Read-only.
+              - `[Dpi <Int32?>]`: The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
+              - `[DuplexMode <String>]`: printDuplexMode
+              - `[FeedOrientation <String>]`: printerFeedOrientation
+              - `[Finishings <String[]>]`: Finishing processes to use when printing.
+              - `[FitPdfToPage <Boolean?>]`: 
+              - `[InputBin <String>]`: The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
+              - `[Margin <IMicrosoftGraphPrintMargin>]`: printMargin
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Bottom <Int32?>]`: The margin in microns from the bottom edge.
+                - `[Left <Int32?>]`: The margin in microns from the left edge.
+                - `[Right <Int32?>]`: The margin in microns from the right edge.
+                - `[Top <Int32?>]`: The margin in microns from the top edge.
+              - `[MediaSize <String>]`: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+              - `[MediaType <String>]`: 
+              - `[MultipageLayout <String>]`: printMultipageLayout
+              - `[Orientation <String>]`: printOrientation
+              - `[OutputBin <String>]`: 
+              - `[PageRanges <IMicrosoftGraphIntegerRange[]>]`: 
+              - `[PagesPerSheet <Int32?>]`: 
+              - `[Quality <String>]`: printQuality
+              - `[Scaling <String>]`: printScaling
+            - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+              - `[Id <String>]`: Unique identifier for the identity.
+              - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
+              - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
+            - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+            - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[ContentType <String>]`: The document's content (MIME) type. Read-only.
+              - `[DisplayName <String>]`: The document's name. Read-only.
+              - `[Size <Int64?>]`: The document's size in bytes. Read-only.
+            - `[IsFetchable <Boolean?>]`: If true, document can be fetched by printer.
+            - `[RedirectedFrom <String>]`: Contains the source job URL, if the job has been redirected from another printer.
+            - `[RedirectedTo <String>]`: Contains the destination job URL, if the job has been redirected to another printer.
+            - `[Status <IMicrosoftGraphPrintJobStatus>]`: printJobStatus
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Description <String>]`: A human-readable description of the print job's current processing state. Read-only.
+              - `[Details <String[]>]`: Additional details for print job state. Valid values are described in the following table. Read-only.
+              - `[IsAcquiredByPrinter <Boolean?>]`: True if the job was acknowledged by a printer; false otherwise. Read-only.
+              - `[State <String>]`: printJobProcessingState
+            - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of printTasks that were triggered by this print job.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+                  - `[DisplayName <String>]`: Refers to the Application Name displayed in the Azure Portal.
+                  - `[ServicePrincipalId <String>]`: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+                  - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
+                - `[DisplayName <String>]`: The name of the printTaskDefinition.
+                - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+              - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
+              - `[Status <IMicrosoftGraphPrintTaskStatus>]`: printTaskStatus
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
+                - `[State <String>]`: printTaskProcessingState
+              - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+                - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+                - `[Event <String>]`: printEvent
+          - `[Location <IMicrosoftGraphPrinterLocation>]`: printerLocation
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[AltitudeInMeters <Int32?>]`: The altitude, in meters, that the printer is located at.
+            - `[Building <String>]`: The building that the printer is located in.
+            - `[City <String>]`: The city that the printer is located in.
+            - `[CountryOrRegion <String>]`: The country or region that the printer is located in.
+            - `[Floor <String>]`: The floor that the printer is located on. Only numerical values are supported right now.
+            - `[FloorDescription <String>]`: The description of the floor that the printer is located on.
+            - `[Latitude <Double?>]`: The latitude that the printer is located at.
+            - `[Longitude <Double?>]`: The longitude that the printer is located at.
+            - `[Organization <String[]>]`: The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
+            - `[PostalCode <String>]`: The postal code that the printer is located in.
+            - `[RoomDescription <String>]`: The description of the room that the printer is located in.
+            - `[RoomName <String>]`: The room that the printer is located in. Only numerical values are supported right now.
+            - `[Site <String>]`: The site that the printer is located in.
+            - `[StateOrProvince <String>]`: The state or province that the printer is located in.
+            - `[StreetAddress <String>]`: The street address where the printer is located.
+            - `[Subdivision <String[]>]`: The subdivision that the printer is located in. The elements should be in hierarchical order.
+            - `[Subunit <String[]>]`: 
+          - `[Manufacturer <String>]`: The manufacturer of the printer/printerShare.
+          - `[Model <String>]`: The model name of the printer/printerShare.
+          - `[Status <IMicrosoftGraphPrinterStatus>]`: printerStatus
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Description <String>]`: A human-readable description of the printer's current processing state. Read-only.
+            - `[Details <String[]>]`: The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
+            - `[State <String>]`: printerProcessingState
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+          - `[AllowAllUsers <Boolean?>]`: If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
+          - `[AllowedGroups <IMicrosoftGraphGroup[]>]`: The groups whose users have access to print using the printer.
+          - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
+          - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
+          - `[Printer <IMicrosoftGraphPrinter>]`: printer
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Capabilities <IMicrosoftGraphPrinterCapabilities>]`: printerCapabilities
+            - `[Defaults <IMicrosoftGraphPrinterDefaults>]`: printerDefaults
+            - `[DisplayName <String>]`: The name of the printer/printerShare.
+            - `[IsAcceptingJobs <Boolean?>]`: Whether the printer/printerShare is currently accepting new print jobs.
+            - `[Jobs <IMicrosoftGraphPrintJob[]>]`: The list of jobs that are queued for printing by the printer/printerShare.
+            - `[Location <IMicrosoftGraphPrinterLocation>]`: printerLocation
+            - `[Manufacturer <String>]`: The manufacturer of the printer/printerShare.
+            - `[Model <String>]`: The model name of the printer/printerShare.
+            - `[Status <IMicrosoftGraphPrinterStatus>]`: printerStatus
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[Connectors <IMicrosoftGraphPrintConnector[]>]`: The connectors that are associated with the printer.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[AppVersion <String>]`: The connector's version.
+              - `[DisplayName <String>]`: The name of the connector.
+              - `[FullyQualifiedDomainName <String>]`: The connector machine's hostname.
+              - `[Location <IMicrosoftGraphPrinterLocation>]`: printerLocation
+              - `[OperatingSystem <String>]`: The connector machine's operating system version.
+              - `[RegisteredDateTime <DateTime?>]`: The DateTimeOffset when the connector was registered.
+            - `[HasPhysicalDevice <Boolean?>]`: True if the printer has a physical device for printing. Read-only.
+            - `[IsShared <Boolean?>]`: True if the printer is shared; false otherwise. Read-only.
+            - `[LastSeenDateTime <DateTime?>]`: The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
+            - `[RegisteredDateTime <DateTime?>]`: The DateTimeOffset when the printer was registered. Read-only.
+            - `[Shares <IMicrosoftGraphPrinterShare[]>]`: The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
+            - `[TaskTriggers <IMicrosoftGraphPrintTaskTrigger[]>]`: A list of task triggers that are associated with the printer.
+          - `[ViewPoint <IMicrosoftGraphPrinterShareViewpoint>]`: printerShareViewpoint
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[LastUsedDateTime <DateTime?>]`: Date and time when the printer was last used by the signed-in user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
       - `[ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]`: The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
         - `[CapabilityStatus <String>]`: For example, 'Enabled'.
         - `[ProvisioningStatus <String>]`: For example, 'Success'.
@@ -6417,8 +7665,8 @@ To create the parameters described below, construct a hash table containing the 
       - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-        - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: 
-        - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: 
+        - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+        - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
         - `[ShiftPreferences <IMicrosoftGraphShiftPreferences>]`: shiftPreferences
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -6450,6 +7698,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
+          - `[ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
           - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
           - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -6509,6 +7758,41 @@ To create the parameters described below, construct a hash table containing the 
       - `[UsageLocation <String>]`: A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
       - `[UserType <String>]`: A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+    - `[WindowsProtectionState <IMicrosoftGraphWindowsProtectionState>]`: Device protection status entity.
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AntiMalwareVersion <String>]`: Current anti malware version
+      - `[DetectedMalwareState <IMicrosoftGraphWindowsDeviceMalwareState[]>]`: Device malware list
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[AdditionalInformationUrl <String>]`: Information URL to learn more about the malware
+        - `[Category <WindowsMalwareCategory?>]`: Malware category id
+        - `[DetectionCount <Int32?>]`: Number of times the malware is detected
+        - `[DisplayName <String>]`: Malware name
+        - `[ExecutionState <WindowsMalwareExecutionState?>]`: Malware execution status
+        - `[InitialDetectionDateTime <DateTime?>]`: Initial detection datetime of the malware
+        - `[LastStateChangeDateTime <DateTime?>]`: The last time this particular threat was changed
+        - `[Severity <WindowsMalwareSeverity?>]`: Malware severity
+        - `[State <WindowsMalwareState?>]`: Malware current status
+        - `[ThreatState <WindowsMalwareThreatState?>]`: Malware threat status
+      - `[DeviceState <WindowsDeviceHealthState?>]`: Computer endpoint protection state
+      - `[EngineVersion <String>]`: Current endpoint protection engine's version
+      - `[FullScanOverdue <Boolean?>]`: When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.
+      - `[FullScanRequired <Boolean?>]`: When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.
+      - `[IsVirtualMachine <Boolean?>]`: When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.
+      - `[LastFullScanDateTime <DateTime?>]`: Last quick scan datetime
+      - `[LastFullScanSignatureVersion <String>]`: Last full scan signature version
+      - `[LastQuickScanDateTime <DateTime?>]`: Last quick scan datetime
+      - `[LastQuickScanSignatureVersion <String>]`: Last quick scan signature version
+      - `[LastReportedDateTime <DateTime?>]`: Last device health status reported time
+      - `[MalwareProtectionEnabled <Boolean?>]`: When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.
+      - `[NetworkInspectionSystemEnabled <Boolean?>]`: When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.
+      - `[ProductStatus <WindowsDefenderProductStatus?>]`: Product Status of Windows Defender
+      - `[QuickScanOverdue <Boolean?>]`: When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.
+      - `[RealTimeProtectionEnabled <Boolean?>]`: When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.
+      - `[RebootRequired <Boolean?>]`: When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.
+      - `[SignatureUpdateOverdue <Boolean?>]`: When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.
+      - `[SignatureVersion <String>]`: Current malware definitions version
+      - `[TamperProtectionEnabled <Boolean?>]`: When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.
   - `[Platform <DetectedAppPlatformType?>]`: Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0).
   - `[Publisher <String>]`: Indicates the publisher of the discovered application. For example: 'Microsoft'.  The default value is an empty string.
   - `[SizeInByte <Int64?>]`: Discovered application size in bytes. Read-only
@@ -6723,6 +8007,20 @@ To create the parameters described below, construct a hash table containing the 
   - `[WhenPartnerDevicesWillBeMarkedAsNonCompliantDateTime <DateTime?>]`: DateTime in UTC when PartnerDevices will be marked as NonCompliant
   - `[WhenPartnerDevicesWillBeRemovedDateTime <DateTime?>]`: DateTime in UTC when PartnerDevices will be removed
 
+`DEVICEPROTECTIONOVERVIEW <IMicrosoftGraphDeviceProtectionOverview>`: Hardware information of a given device.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[CleanDeviceCount <Int32?>]`: Indicates number of devices reporting as clean
+  - `[CriticalFailuresDeviceCount <Int32?>]`: Indicates number of devices with critical failures
+  - `[InactiveThreatAgentDeviceCount <Int32?>]`: Indicates number of devices with inactive threat agent
+  - `[PendingFullScanDeviceCount <Int32?>]`: Indicates number of devices pending full scan
+  - `[PendingManualStepsDeviceCount <Int32?>]`: Indicates number of devices with pending manual steps
+  - `[PendingOfflineScanDeviceCount <Int32?>]`: Indicates number of pending offline scan devices
+  - `[PendingQuickScanDeviceCount <Int32?>]`: Indicates the number of devices that have a pending full scan. Valid values -2147483648 to 2147483647
+  - `[PendingRestartDeviceCount <Int32?>]`: Indicates number of devices pending restart
+  - `[PendingSignatureUpdateDeviceCount <Int32?>]`: Indicates number of devices with an old signature
+  - `[TotalReportedDeviceCount <Int32?>]`: Total device count.
+  - `[UnknownStateThreatAgentDeviceCount <Int32?>]`: Indicates number of devices with threat agent state as unknown
+
 `EXCHANGECONNECTORS <IMicrosoftGraphDeviceManagementExchangeConnector[]>`: The list of Exchange Connectors configured by the tenant.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[ConnectorServerName <String>]`: The name of the server hosting the Exchange Connector.
@@ -6913,10 +8211,20 @@ To create the parameters described below, construct a hash table containing the 
   - `[DeviceRegistrationState <DeviceRegistrationState?>]`: Device registration status.
   - `[ExchangeAccessState <DeviceManagementExchangeAccessState?>]`: Device Exchange Access State.
   - `[ExchangeAccessStateReason <DeviceManagementExchangeAccessStateReason?>]`: Device Exchange Access State Reason.
+  - `[LogCollectionRequests <IMicrosoftGraphDeviceLogCollectionResponse[]>]`: List of log collection requests
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[EnrolledByUser <String>]`: The User Principal Name (UPN) of the user that enrolled the device.
+    - `[ExpirationDateTimeUtc <DateTime?>]`: The DateTime of the expiration of the logs.
+    - `[InitiatedByUserPrincipalName <String>]`: The UPN for who initiated the request.
+    - `[ManagedDeviceId <String>]`: Indicates Intune device unique identifier.
+    - `[ReceivedDateTimeUtc <DateTime?>]`: The DateTime the request was received.
+    - `[RequestedDateTimeUtc <DateTime?>]`: The DateTime of the request.
+    - `[SizeInKb <Double?>]`: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[Status <AppLogUploadState?>]`: AppLogUploadStatus
   - `[ManagedDeviceName <String>]`: Automatically generated name to identify a device. Can be overwritten to a user friendly name.
   - `[ManagedDeviceOwnerType <ManagedDeviceOwnerType?>]`: Owner type of device.
   - `[ManagementAgent <ManagementAgentType?>]`: managementAgentType
-  - `[Notes <String>]`: Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
+  - `[Notes <String>]`: Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.
   - `[PartnerReportedThreatState <ManagedDevicePartnerReportedHealthState?>]`: Available health states for the Device Health API
   - `[Users <IMicrosoftGraphUser[]>]`: The primary users associated with the managed device.
     - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
@@ -7020,9 +8328,9 @@ To create the parameters described below, construct a hash table containing the 
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
           - `[AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
-            - `[IdentityProvider <String>]`: For internal use only
-            - `[Key <Byte[]>]`: For internal use only
-            - `[Type <Int32?>]`: For internal use only
+            - `[IdentityProvider <String>]`: For internal use only.
+            - `[Key <Byte[]>]`: For internal use only.
+            - `[Type <Int32?>]`: For internal use only.
           - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
           - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
           - `[DeviceCategory <String>]`: User-defined property set by Intune to automatically add devices to groups and simplify managing devices.
@@ -7262,11 +8570,19 @@ To create the parameters described below, construct a hash table containing the 
       - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
       - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: A collection of all the apps in the chat. Nullable.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[ResourceSpecificPermissions <IMicrosoftGraphTeamsAppResourceSpecificPermission[]>]`: 
+            - `[PermissionType <String>]`: teamsAppResourceSpecificPermissionType
+            - `[PermissionValue <String>]`: 
         - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: The unique idenfier for an entity. Read-only.
           - `[AppDefinitions <IMicrosoftGraphTeamsAppDefinition[]>]`: The details for each version of the app.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[Authorization <IMicrosoftGraphTeamsAppAuthorization>]`: teamsAppAuthorization
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[RequiredPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
             - `[Bot <IMicrosoftGraphTeamworkBot>]`: teamworkBot
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -7629,7 +8945,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
           - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Id <String>]`: The id of the content type.
+            - `[Id <String>]`: The ID of the content type.
             - `[Name <String>]`: The name of the content type.
           - `[DocumentSetVersions <IMicrosoftGraphDocumentSetVersion[]>]`: Version information for a document set version created by a user.
             - `[Fields <IMicrosoftGraphFieldValueSet>]`: fieldValueSet
@@ -7814,7 +9130,7 @@ To create the parameters described below, construct a hash table containing the 
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[CalculationMode <String>]`: Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.
-          - `[Comments <IMicrosoftGraphWorkbookComment[]>]`: 
+          - `[Comments <IMicrosoftGraphWorkbookComment[]>]`: Represents a collection of comments in a workbook.
             - `[Id <String>]`: The unique idenfier for an entity. Read-only.
             - `[Content <String>]`: The content of comment.
             - `[ContentType <String>]`: Indicates the type for the comment.
@@ -8059,9 +9375,9 @@ To create the parameters described below, construct a hash table containing the 
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Calculated <IMicrosoftGraphCalculatedColumn>]`: calculatedColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Format <String>]`: For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
+            - `[Format <String>]`: For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
             - `[Formula <String>]`: The formula used to compute the value for this column.
-            - `[OutputType <String>]`: The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
+            - `[OutputType <String>]`: The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
           - `[Choice <IMicrosoftGraphChoiceColumn>]`: choiceColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowTextEntry <Boolean?>]`: If true, allows custom values that aren't in the configured choices.
@@ -8079,8 +9395,8 @@ To create the parameters described below, construct a hash table containing the 
             - `[Format <String>]`: Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
           - `[DefaultValue <IMicrosoftGraphDefaultColumnValue>]`: defaultColumnValue
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Formula <String>]`: The formula used to compute the default value for this column.
-            - `[Value <String>]`: The direct value to use as the default value for this column.
+            - `[Formula <String>]`: The formula used to compute the default value for the column.
+            - `[Value <String>]`: The direct value to use as the default value for the column.
           - `[Description <String>]`: The user-facing description of the column.
           - `[DisplayName <String>]`: The user-facing name of the column.
           - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
@@ -8214,8 +9530,8 @@ To create the parameters described below, construct a hash table containing the 
           - `[Name <String>]`: The name of the content type.
           - `[Order <IMicrosoftGraphContentTypeOrder>]`: contentTypeOrder
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Default <Boolean?>]`: Whether this is the default Content Type
-            - `[Position <Int32?>]`: Specifies the position in which the Content Type appears in the selection UI.
+            - `[Default <Boolean?>]`: Indicates whether this is the default content type
+            - `[Position <Int32?>]`: Specifies the position in which the content type appears in the selection UI.
           - `[ParentId <String>]`: The unique identifier of the content type.
           - `[PropagateChanges <Boolean?>]`: If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.
           - `[ReadOnly <Boolean?>]`: If true, the content type can't be modified unless this value is first set to false.
@@ -8273,6 +9589,18 @@ To create the parameters described below, construct a hash table containing the 
       - `[Special <IMicrosoftGraphDriveItem[]>]`: Collection of common folders available in OneDrive. Read-only. Nullable.
       - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
     - `[Drives <IMicrosoftGraphDrive[]>]`: A collection of drives available for this user. Read-only.
+    - `[EmployeeExperience <IMicrosoftGraphEmployeeExperienceUser>]`: employeeExperienceUser
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[LearningCourseActivities <IMicrosoftGraphLearningCourseActivity[]>]`: 
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[CompletedDateTime <DateTime?>]`: Date and time when the assignment was completed. Optional.
+        - `[CompletionPercentage <Int32?>]`: The percentage completion value of the course activity. Optional.
+        - `[ExternalcourseActivityId <String>]`: A course activity ID generated by the provider. Optional.
+        - `[LearnerUserId <String>]`: The user ID of the learner to whom the activity is assigned. Required.
+        - `[LearningContentId <String>]`: The ID of the learning content created in Viva Learning. Required.
+        - `[LearningProviderId <String>]`: The registration ID of the provider. Required.
+        - `[Status <String>]`: courseStatus
     - `[EmployeeHireDate <DateTime?>]`: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
     - `[EmployeeId <String>]`: The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
     - `[EmployeeLeaveDateTime <DateTime?>]`: The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
@@ -8803,7 +10131,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
         - `[Enabled <Boolean?>]`: Indicates whether the schedule is enabled for the team. Required.
-        - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: 
+        - `[OfferShiftRequests <IMicrosoftGraphOfferShiftRequest[]>]`: The offer requests for shifts in the schedule.
           - `[AssignedTo <String>]`: scheduleChangeRequestActor
           - `[ManagerActionMessage <String>]`: 
           - `[SenderMessage <String>]`: 
@@ -8863,7 +10191,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[SchedulingGroupId <String>]`: ID of the scheduling group the shift is part of. Required.
           - `[SharedShift <IMicrosoftGraphShiftItem>]`: shiftItem
           - `[UserId <String>]`: ID of the user assigned to the shift. Required.
-        - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: 
+        - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: The swap requests for shifts in the schedule.
           - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
           - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
           - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
@@ -8882,7 +10210,7 @@ To create the parameters described below, construct a hash table containing the 
           - `[DisplayName <String>]`: The name of the timeOffReason. Required.
           - `[IconType <String>]`: timeOffReasonIconType
           - `[IsActive <Boolean?>]`: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
-        - `[TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>]`: 
+        - `[TimeOffRequests <IMicrosoftGraphTimeOffRequest[]>]`: The time off requests in the schedule.
           - `[AssignedTo <String>]`: scheduleChangeRequestActor
           - `[ManagerActionMessage <String>]`: 
           - `[SenderMessage <String>]`: 
@@ -9121,7 +10449,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
     - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
     - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
-    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+    - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
     - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
     - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant[]>]`: 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -9158,7 +10486,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[OnPremisesSyncEnabled <Boolean?>]`: true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
     - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
     - `[Onenote <IMicrosoftGraphOnenote>]`: onenote
-    - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
+    - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
       - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -9301,6 +10629,192 @@ To create the parameters described below, construct a hash table containing the 
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
       - `[Availability <String>]`: The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
+    - `[Print <IMicrosoftGraphUserPrint>]`: userPrint
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[RecentPrinterShares <IMicrosoftGraphPrinterShare[]>]`: 
+        - `[Capabilities <IMicrosoftGraphPrinterCapabilities>]`: printerCapabilities
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[BottomMargins <Int32[]>]`: A list of supported bottom margins(in microns) for the printer.
+          - `[Collation <Boolean?>]`: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+          - `[ColorModes <String[]>]`: The color modes supported by the printer. Valid values are described in the following table.
+          - `[ContentTypes <String[]>]`: A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+          - `[CopiesPerJob <IMicrosoftGraphIntegerRange>]`: integerRange
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[End <Int64?>]`: The inclusive upper bound of the integer range.
+            - `[Start <Int64?>]`: The inclusive lower bound of the integer range.
+          - `[Dpis <Int32[]>]`: The list of print resolutions in DPI that are supported by the printer.
+          - `[DuplexModes <String[]>]`: The list of duplex modes that are supported by the printer. Valid values are described in the following table.
+          - `[FeedOrientations <String[]>]`: The list of feed orientations that are supported by the printer.
+          - `[Finishings <String[]>]`: Finishing processes the printer supports for a printed document.
+          - `[InputBins <String[]>]`: Supported input bins for the printer.
+          - `[IsColorPrintingSupported <Boolean?>]`: True if color printing is supported by the printer; false otherwise. Read-only.
+          - `[IsPageRangeSupported <Boolean?>]`: True if the printer supports printing by page ranges; false otherwise.
+          - `[LeftMargins <Int32[]>]`: A list of supported left margins(in microns) for the printer.
+          - `[MediaColors <String[]>]`: The media (i.e., paper) colors supported by the printer.
+          - `[MediaSizes <String[]>]`: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+          - `[MediaTypes <String[]>]`: The media types supported by the printer.
+          - `[MultipageLayouts <String[]>]`: The presentation directions supported by the printer. Supported values are described in the following table.
+          - `[Orientations <String[]>]`: The print orientations supported by the printer. Valid values are described in the following table.
+          - `[OutputBins <String[]>]`: The printer's supported output bins (trays).
+          - `[PagesPerSheet <Int32[]>]`: Supported number of Input Pages to impose upon a single Impression.
+          - `[Qualities <String[]>]`: The print qualities supported by the printer.
+          - `[RightMargins <Int32[]>]`: A list of supported right margins(in microns) for the printer.
+          - `[Scalings <String[]>]`: Supported print scalings.
+          - `[SupportsFitPdfToPage <Boolean?>]`: True if the printer supports scaling PDF pages to match the print media size; false otherwise.
+          - `[TopMargins <Int32[]>]`: A list of supported top margins(in microns) for the printer.
+        - `[Defaults <IMicrosoftGraphPrinterDefaults>]`: printerDefaults
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[ColorMode <String>]`: printColorMode
+          - `[ContentType <String>]`: The default content (MIME) type to use when processing documents.
+          - `[CopiesPerJob <Int32?>]`: The default number of copies printed per job.
+          - `[Dpi <Int32?>]`: The default resolution in DPI to use when printing the job.
+          - `[DuplexMode <String>]`: printDuplexMode
+          - `[Finishings <String[]>]`: The default set of finishings to apply to print jobs. Valid values are described in the following table.
+          - `[FitPdfToPage <Boolean?>]`: The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
+          - `[InputBin <String>]`: 
+          - `[MediaColor <String>]`: The default media (such as paper) color to print the document on.
+          - `[MediaSize <String>]`: The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+          - `[MediaType <String>]`: The default media (such as paper) type to print the document on.
+          - `[MultipageLayout <String>]`: printMultipageLayout
+          - `[Orientation <String>]`: printOrientation
+          - `[OutputBin <String>]`: The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
+          - `[PagesPerSheet <Int32?>]`: The default number of document pages to print on each sheet.
+          - `[Quality <String>]`: printQuality
+          - `[Scaling <String>]`: printScaling
+        - `[DisplayName <String>]`: The name of the printer/printerShare.
+        - `[IsAcceptingJobs <Boolean?>]`: Whether the printer/printerShare is currently accepting new print jobs.
+        - `[Jobs <IMicrosoftGraphPrintJob[]>]`: The list of jobs that are queued for printing by the printer/printerShare.
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+          - `[Configuration <IMicrosoftGraphPrintJobConfiguration>]`: printJobConfiguration
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Collate <Boolean?>]`: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+            - `[ColorMode <String>]`: printColorMode
+            - `[Copies <Int32?>]`: The number of copies that should be printed. Read-only.
+            - `[Dpi <Int32?>]`: The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
+            - `[DuplexMode <String>]`: printDuplexMode
+            - `[FeedOrientation <String>]`: printerFeedOrientation
+            - `[Finishings <String[]>]`: Finishing processes to use when printing.
+            - `[FitPdfToPage <Boolean?>]`: 
+            - `[InputBin <String>]`: The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
+            - `[Margin <IMicrosoftGraphPrintMargin>]`: printMargin
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Bottom <Int32?>]`: The margin in microns from the bottom edge.
+              - `[Left <Int32?>]`: The margin in microns from the left edge.
+              - `[Right <Int32?>]`: The margin in microns from the right edge.
+              - `[Top <Int32?>]`: The margin in microns from the top edge.
+            - `[MediaSize <String>]`: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+            - `[MediaType <String>]`: 
+            - `[MultipageLayout <String>]`: printMultipageLayout
+            - `[Orientation <String>]`: printOrientation
+            - `[OutputBin <String>]`: 
+            - `[PageRanges <IMicrosoftGraphIntegerRange[]>]`: 
+            - `[PagesPerSheet <Int32?>]`: 
+            - `[Quality <String>]`: printQuality
+            - `[Scaling <String>]`: printScaling
+          - `[CreatedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[DisplayName <String>]`: The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+            - `[Id <String>]`: Unique identifier for the identity.
+            - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
+            - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
+          - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the job was created. Read-only.
+          - `[Documents <IMicrosoftGraphPrintDocument[]>]`: 
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[ContentType <String>]`: The document's content (MIME) type. Read-only.
+            - `[DisplayName <String>]`: The document's name. Read-only.
+            - `[Size <Int64?>]`: The document's size in bytes. Read-only.
+          - `[IsFetchable <Boolean?>]`: If true, document can be fetched by printer.
+          - `[RedirectedFrom <String>]`: Contains the source job URL, if the job has been redirected from another printer.
+          - `[RedirectedTo <String>]`: Contains the destination job URL, if the job has been redirected to another printer.
+          - `[Status <IMicrosoftGraphPrintJobStatus>]`: printJobStatus
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Description <String>]`: A human-readable description of the print job's current processing state. Read-only.
+            - `[Details <String[]>]`: Additional details for print job state. Valid values are described in the following table. Read-only.
+            - `[IsAcquiredByPrinter <Boolean?>]`: True if the job was acknowledged by a printer; false otherwise. Read-only.
+            - `[State <String>]`: printJobProcessingState
+          - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of printTasks that were triggered by this print job.
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[CreatedBy <IMicrosoftGraphAppIdentity>]`: appIdentity
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[AppId <String>]`: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+                - `[DisplayName <String>]`: Refers to the Application Name displayed in the Azure Portal.
+                - `[ServicePrincipalId <String>]`: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+                - `[ServicePrincipalName <String>]`: Refers to the Service Principal Name is the Application name in the tenant.
+              - `[DisplayName <String>]`: The name of the printTaskDefinition.
+              - `[Tasks <IMicrosoftGraphPrintTask[]>]`: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+            - `[ParentUrl <String>]`: The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
+            - `[Status <IMicrosoftGraphPrintTaskStatus>]`: printTaskStatus
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Description <String>]`: A human-readable description of the current processing state of the printTask.
+              - `[State <String>]`: printTaskProcessingState
+            - `[Trigger <IMicrosoftGraphPrintTaskTrigger>]`: printTaskTrigger
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+              - `[Definition <IMicrosoftGraphPrintTaskDefinition>]`: printTaskDefinition
+              - `[Event <String>]`: printEvent
+        - `[Location <IMicrosoftGraphPrinterLocation>]`: printerLocation
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[AltitudeInMeters <Int32?>]`: The altitude, in meters, that the printer is located at.
+          - `[Building <String>]`: The building that the printer is located in.
+          - `[City <String>]`: The city that the printer is located in.
+          - `[CountryOrRegion <String>]`: The country or region that the printer is located in.
+          - `[Floor <String>]`: The floor that the printer is located on. Only numerical values are supported right now.
+          - `[FloorDescription <String>]`: The description of the floor that the printer is located on.
+          - `[Latitude <Double?>]`: The latitude that the printer is located at.
+          - `[Longitude <Double?>]`: The longitude that the printer is located at.
+          - `[Organization <String[]>]`: The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
+          - `[PostalCode <String>]`: The postal code that the printer is located in.
+          - `[RoomDescription <String>]`: The description of the room that the printer is located in.
+          - `[RoomName <String>]`: The room that the printer is located in. Only numerical values are supported right now.
+          - `[Site <String>]`: The site that the printer is located in.
+          - `[StateOrProvince <String>]`: The state or province that the printer is located in.
+          - `[StreetAddress <String>]`: The street address where the printer is located.
+          - `[Subdivision <String[]>]`: The subdivision that the printer is located in. The elements should be in hierarchical order.
+          - `[Subunit <String[]>]`: 
+        - `[Manufacturer <String>]`: The manufacturer of the printer/printerShare.
+        - `[Model <String>]`: The model name of the printer/printerShare.
+        - `[Status <IMicrosoftGraphPrinterStatus>]`: printerStatus
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Description <String>]`: A human-readable description of the printer's current processing state. Read-only.
+          - `[Details <String[]>]`: The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
+          - `[State <String>]`: printerProcessingState
+        - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+        - `[AllowAllUsers <Boolean?>]`: If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
+        - `[AllowedGroups <IMicrosoftGraphGroup[]>]`: The groups whose users have access to print using the printer.
+        - `[AllowedUsers <IMicrosoftGraphUser[]>]`: The users who have access to print using the printer.
+        - `[CreatedDateTime <DateTime?>]`: The DateTimeOffset when the printer share was created. Read-only.
+        - `[Printer <IMicrosoftGraphPrinter>]`: printer
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Capabilities <IMicrosoftGraphPrinterCapabilities>]`: printerCapabilities
+          - `[Defaults <IMicrosoftGraphPrinterDefaults>]`: printerDefaults
+          - `[DisplayName <String>]`: The name of the printer/printerShare.
+          - `[IsAcceptingJobs <Boolean?>]`: Whether the printer/printerShare is currently accepting new print jobs.
+          - `[Jobs <IMicrosoftGraphPrintJob[]>]`: The list of jobs that are queued for printing by the printer/printerShare.
+          - `[Location <IMicrosoftGraphPrinterLocation>]`: printerLocation
+          - `[Manufacturer <String>]`: The manufacturer of the printer/printerShare.
+          - `[Model <String>]`: The model name of the printer/printerShare.
+          - `[Status <IMicrosoftGraphPrinterStatus>]`: printerStatus
+          - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+          - `[Connectors <IMicrosoftGraphPrintConnector[]>]`: The connectors that are associated with the printer.
+            - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+            - `[AppVersion <String>]`: The connector's version.
+            - `[DisplayName <String>]`: The name of the connector.
+            - `[FullyQualifiedDomainName <String>]`: The connector machine's hostname.
+            - `[Location <IMicrosoftGraphPrinterLocation>]`: printerLocation
+            - `[OperatingSystem <String>]`: The connector machine's operating system version.
+            - `[RegisteredDateTime <DateTime?>]`: The DateTimeOffset when the connector was registered.
+          - `[HasPhysicalDevice <Boolean?>]`: True if the printer has a physical device for printing. Read-only.
+          - `[IsShared <Boolean?>]`: True if the printer is shared; false otherwise. Read-only.
+          - `[LastSeenDateTime <DateTime?>]`: The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
+          - `[RegisteredDateTime <DateTime?>]`: The DateTimeOffset when the printer was registered. Read-only.
+          - `[Shares <IMicrosoftGraphPrinterShare[]>]`: The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
+          - `[TaskTriggers <IMicrosoftGraphPrintTaskTrigger[]>]`: A list of task triggers that are associated with the printer.
+        - `[ViewPoint <IMicrosoftGraphPrinterShareViewpoint>]`: printerShareViewpoint
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[LastUsedDateTime <DateTime?>]`: Date and time when the printer was last used by the signed-in user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[ProvisionedPlans <IMicrosoftGraphProvisionedPlan[]>]`: The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
       - `[CapabilityStatus <String>]`: For example, 'Enabled'.
       - `[ProvisioningStatus <String>]`: For example, 'Success'.
@@ -9318,8 +10832,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-      - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: 
-      - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: 
+      - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+      - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
       - `[ShiftPreferences <IMicrosoftGraphShiftPreferences>]`: shiftPreferences
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -9351,6 +10865,7 @@ To create the parameters described below, construct a hash table containing the 
         - `[TenantId <String>]`: The ID of the Azure Active Directory tenant.
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
       - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
+        - `[ConsentedPermissionSet <IMicrosoftGraphTeamsAppPermissionSet>]`: teamsAppPermissionSet
         - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
         - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
         - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -9410,6 +10925,50 @@ To create the parameters described below, construct a hash table containing the 
     - `[UsageLocation <String>]`: A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
     - `[UserType <String>]`: A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
+  - `[WindowsProtectionState <IMicrosoftGraphWindowsProtectionState>]`: Device protection status entity.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AntiMalwareVersion <String>]`: Current anti malware version
+    - `[DetectedMalwareState <IMicrosoftGraphWindowsDeviceMalwareState[]>]`: Device malware list
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[AdditionalInformationUrl <String>]`: Information URL to learn more about the malware
+      - `[Category <WindowsMalwareCategory?>]`: Malware category id
+      - `[DetectionCount <Int32?>]`: Number of times the malware is detected
+      - `[DisplayName <String>]`: Malware name
+      - `[ExecutionState <WindowsMalwareExecutionState?>]`: Malware execution status
+      - `[InitialDetectionDateTime <DateTime?>]`: Initial detection datetime of the malware
+      - `[LastStateChangeDateTime <DateTime?>]`: The last time this particular threat was changed
+      - `[Severity <WindowsMalwareSeverity?>]`: Malware severity
+      - `[State <WindowsMalwareState?>]`: Malware current status
+      - `[ThreatState <WindowsMalwareThreatState?>]`: Malware threat status
+    - `[DeviceState <WindowsDeviceHealthState?>]`: Computer endpoint protection state
+    - `[EngineVersion <String>]`: Current endpoint protection engine's version
+    - `[FullScanOverdue <Boolean?>]`: When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.
+    - `[FullScanRequired <Boolean?>]`: When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.
+    - `[IsVirtualMachine <Boolean?>]`: When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.
+    - `[LastFullScanDateTime <DateTime?>]`: Last quick scan datetime
+    - `[LastFullScanSignatureVersion <String>]`: Last full scan signature version
+    - `[LastQuickScanDateTime <DateTime?>]`: Last quick scan datetime
+    - `[LastQuickScanSignatureVersion <String>]`: Last quick scan signature version
+    - `[LastReportedDateTime <DateTime?>]`: Last device health status reported time
+    - `[MalwareProtectionEnabled <Boolean?>]`: When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.
+    - `[NetworkInspectionSystemEnabled <Boolean?>]`: When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.
+    - `[ProductStatus <WindowsDefenderProductStatus?>]`: Product Status of Windows Defender
+    - `[QuickScanOverdue <Boolean?>]`: When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.
+    - `[RealTimeProtectionEnabled <Boolean?>]`: When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.
+    - `[RebootRequired <Boolean?>]`: When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.
+    - `[SignatureUpdateOverdue <Boolean?>]`: When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.
+    - `[SignatureVersion <String>]`: Current malware definitions version
+    - `[TamperProtectionEnabled <Boolean?>]`: When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.
+
+`MOBILEAPPTROUBLESHOOTINGEVENTS <IMicrosoftGraphMobileAppTroubleshootingEvent[]>`: The collection property of MobileAppTroubleshootingEvent.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AppLogCollectionRequests <IMicrosoftGraphAppLogCollectionRequest[]>]`: Indicates collection of App Log Upload Request.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a completed state if not completed yet NULL will be returned.
+    - `[CustomLogFolders <String[]>]`: List of log folders.
+    - `[ErrorMessage <String>]`: Indicates error message if any during the upload process.
+    - `[Status <AppLogUploadState?>]`: AppLogUploadStatus
 
 `MOBILETHREATDEFENSECONNECTORS <IMicrosoftGraphMobileThreatDefenseConnector[]>`: The list of Mobile threat Defense connectors configured by the tenant.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
@@ -9572,6 +11131,305 @@ To create the parameters described below, construct a hash table containing the 
   - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
   - `[EventDateTime <DateTime?>]`: Time when the event occurred .
 
+`USEREXPERIENCEANALYTICSAPPHEALTHAPPLICATIONPERFORMANCE <IMicrosoftGraphUserExperienceAnalyticsAppHealthApplicationPerformance[]>`: User experience analytics appHealth Application Performance
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[ActiveDeviceCount <Int32?>]`: The health score of the application. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[AppCrashCount <Int32?>]`: The number of crashes for the application. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[AppDisplayName <String>]`: The friendly name of the application. Possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.
+  - `[AppHangCount <Int32?>]`: The number of hangs for the application. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[AppHealthScore <Double?>]`: The health score of the application. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[AppName <String>]`: The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+  - `[AppPublisher <String>]`: The publisher of the application. Supports: $select, $OrderBy. Read-only.
+  - `[AppUsageDuration <Int32?>]`: The total usage time of the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+
+`USEREXPERIENCEANALYTICSAPPHEALTHAPPLICATIONPERFORMANCEBYAPPVERSIONDETAILS <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails[]>`: User experience analytics appHealth Application Performance by App Version details
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AppCrashCount <Int32?>]`: The number of crashes for the app. Valid values -2147483648 to 2147483647
+  - `[AppDisplayName <String>]`: The friendly name of the application.
+  - `[AppName <String>]`: The name of the application.
+  - `[AppPublisher <String>]`: The publisher of the application.
+  - `[AppVersion <String>]`: The version of the application.
+  - `[DeviceCountWithCrashes <Int32?>]`: The total number of devices that have reported one or more application crashes for this application and version. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[IsLatestUsedVersion <Boolean?>]`: When TRUE, indicates the version of application is the latest version for that application that is in use. When FALSE, indicates the version is not the latest version. FALSE by default. Supports: $select, $OrderBy.
+  - `[IsMostUsedVersion <Boolean?>]`: When TRUE, indicates the version of application is the most used version for that application. When FALSE, indicates the version is not the most used version. FALSE by default. Supports: $select, $OrderBy. Read-only.
+
+`USEREXPERIENCEANALYTICSAPPHEALTHAPPLICATIONPERFORMANCEBYAPPVERSIONDEVICEID <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId[]>`: User experience analytics appHealth Application Performance by App Version Device Id
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AppCrashCount <Int32?>]`: The number of crashes for the app. Valid values -2147483648 to 2147483647
+  - `[AppDisplayName <String>]`: The friendly name of the application.
+  - `[AppName <String>]`: The name of the application.
+  - `[AppPublisher <String>]`: The publisher of the application.
+  - `[AppVersion <String>]`: The version of the application.
+  - `[DeviceDisplayName <String>]`: The name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[DeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+  - `[ProcessedDateTime <DateTime?>]`: The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
+
+`USEREXPERIENCEANALYTICSAPPHEALTHAPPLICATIONPERFORMANCEBYOSVERSION <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion[]>`: User experience analytics appHealth Application Performance by OS Version
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[ActiveDeviceCount <Int32?>]`: The number of devices where the application has been active. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[AppCrashCount <Int32?>]`: The number of crashes for the application. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[AppDisplayName <String>]`: The friendly name of the application. Possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.
+  - `[AppName <String>]`: The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+  - `[AppPublisher <String>]`: The publisher of the application. Supports: $select, $OrderBy. Read-only.
+  - `[AppUsageDuration <Int32?>]`: The total usage time of the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[OSBuildNumber <String>]`: The OS build number of the application. Supports: $select, $OrderBy. Read-only.
+  - `[OSVersion <String>]`: The OS version of the application. Supports: $select, $OrderBy. Read-only.
+
+`USEREXPERIENCEANALYTICSAPPHEALTHDEVICEMODELPERFORMANCE <IMicrosoftGraphUserExperienceAnalyticsAppHealthDeviceModelPerformance[]>`: User experience analytics appHealth Model Performance
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[ActiveDeviceCount <Int32?>]`: The number of active devices for the model. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[DeviceManufacturer <String>]`: The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[DeviceModel <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+  - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[ModelAppHealthScore <Double?>]`: The application health score of the device model. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+
+`USEREXPERIENCEANALYTICSAPPHEALTHDEVICEPERFORMANCE <IMicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformance[]>`: User experience analytics appHealth Device Performance
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AppCrashCount <Int32?>]`: The number of application crashes for the device. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[AppHangCount <Int32?>]`: The number of application hangs for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[CrashedAppCount <Int32?>]`: The number of distinct application crashes for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[DeviceAppHealthScore <Double?>]`: The application health score of the device. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[DeviceDisplayName <String>]`: The name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[DeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+  - `[DeviceManufacturer <String>]`: The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[DeviceModel <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+  - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[ProcessedDateTime <DateTime?>]`: The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
+
+`USEREXPERIENCEANALYTICSAPPHEALTHDEVICEPERFORMANCEDETAILS <IMicrosoftGraphUserExperienceAnalyticsAppHealthDevicePerformanceDetails[]>`: User experience analytics device performance details
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AppDisplayName <String>]`: The friendly name of the application for which the event occurred. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+  - `[AppPublisher <String>]`: The publisher of the application. Supports: $select, $OrderBy. Read-only.
+  - `[AppVersion <String>]`: The version of the application. Possible values are: 1.0.0.1, 75.65.23.9. Supports: $select, $OrderBy. Read-only.
+  - `[DeviceDisplayName <String>]`: The name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[DeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+  - `[EventDateTime <DateTime?>]`: The time the event occurred. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
+  - `[EventType <String>]`: The type of the event. Supports: $select, $OrderBy. Read-only.
+
+`USEREXPERIENCEANALYTICSAPPHEALTHOSVERSIONPERFORMANCE <IMicrosoftGraphUserExperienceAnalyticsAppHealthOSVersionPerformance[]>`: User experience analytics appHealth OS version Performance
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[ActiveDeviceCount <Int32?>]`: The number of active devices for the OS version. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[OSBuildNumber <String>]`: The OS build number installed on the device. Supports: $select, $OrderBy. Read-only.
+  - `[OSVersion <String>]`: The OS version installed on the device. Supports: $select, $OrderBy. Read-only.
+  - `[OSVersionAppHealthScore <Double?>]`: The application health score of the OS version. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+
+`USEREXPERIENCEANALYTICSAPPHEALTHOVERVIEW <IMicrosoftGraphUserExperienceAnalyticsCategory>`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the category. Read-only.
+    - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
+    - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
+    - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics metric.
+    - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
+  - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category. Read-only.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Unit <String>]`: The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.
+    - `[Value <Double?>]`: The value of the user experience analytics metric.
+
+`USEREXPERIENCEANALYTICSBASELINES <IMicrosoftGraphUserExperienceAnalyticsBaseline[]>`: User experience analytics baselines
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AppHealthMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the category. Read-only.
+      - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
+      - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
+      - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics metric.
+      - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
+    - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category. Read-only.
+      - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+      - `[Unit <String>]`: The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.
+      - `[Value <Double?>]`: The value of the user experience analytics metric.
+  - `[BatteryHealthMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+  - `[BestPracticesMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+  - `[CreatedDateTime <DateTime?>]`: The date the custom baseline was created. The value cannot be modified and is automatically populated when the baseline is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
+  - `[DeviceBootPerformanceMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+  - `[DisplayName <String>]`: The name of the baseline.
+  - `[IsBuiltIn <Boolean?>]`: When TRUE, indicates the current baseline is the commercial median baseline. When FALSE, indicates it is a custom baseline. FALSE by default.
+  - `[RebootAnalyticsMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+  - `[ResourcePerformanceMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+  - `[WorkFromAnywhereMetrics <IMicrosoftGraphUserExperienceAnalyticsCategory>]`: The user experience analytics category entity contains the scores and insights for the various metrics of a category.
+
+`USEREXPERIENCEANALYTICSCATEGORIES <IMicrosoftGraphUserExperienceAnalyticsCategory[]>`: User experience analytics categories
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The insights for the category. Read-only.
+    - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
+    - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
+    - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics metric.
+    - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
+  - `[MetricValues <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]`: The metric values for the user experience analytics category. Read-only.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[Unit <String>]`: The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.
+    - `[Value <Double?>]`: The value of the user experience analytics metric.
+
+`USEREXPERIENCEANALYTICSDEVICEPERFORMANCE <IMicrosoftGraphUserExperienceAnalyticsDevicePerformance[]>`: User experience analytics device performance
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AverageBlueScreens <Double?>]`: Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
+  - `[AverageRestarts <Double?>]`: Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
+  - `[BlueScreenCount <Int32?>]`: Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
+  - `[BootScore <Int32?>]`: The user experience analytics device boot score.
+  - `[CoreBootTimeInMS <Int32?>]`: The user experience analytics device core boot time in milliseconds.
+  - `[CoreLoginTimeInMS <Int32?>]`: The user experience analytics device core login time in milliseconds.
+  - `[DeviceCount <Int64?>]`: User experience analytics summarized device count.
+  - `[DeviceName <String>]`: The user experience analytics device name.
+  - `[DiskType <DiskType?>]`: diskType
+  - `[GroupPolicyBootTimeInMS <Int32?>]`: The user experience analytics device group policy boot time in milliseconds.
+  - `[GroupPolicyLoginTimeInMS <Int32?>]`: The user experience analytics device group policy login time in milliseconds.
+  - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+  - `[LoginScore <Int32?>]`: The user experience analytics device login score.
+  - `[Manufacturer <String>]`: The user experience analytics device manufacturer.
+  - `[Model <String>]`: The user experience analytics device model.
+  - `[ModelStartupPerformanceScore <Double?>]`: The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[OperatingSystemVersion <String>]`: The user experience analytics device Operating System version.
+  - `[ResponsiveDesktopTimeInMS <Int32?>]`: The user experience analytics responsive desktop time in milliseconds.
+  - `[RestartCount <Int32?>]`: Number of Restarts in the last 30 days. Valid values 0 to 9999999
+  - `[StartupPerformanceScore <Double?>]`: The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+
+`USEREXPERIENCEANALYTICSDEVICESCORES <IMicrosoftGraphUserExperienceAnalyticsDeviceScores[]>`: User experience analytics device scores
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AppReliabilityScore <Double?>]`: Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[BatteryHealthScore <Double?>]`: Indicates a calulated score indicating the health of the device's battery. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[DeviceName <String>]`: The name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[EndpointAnalyticsScore <Double?>]`: Indicates a weighted average of the various scores. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+  - `[Manufacturer <String>]`: The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.
+  - `[Model <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[StartupPerformanceScore <Double?>]`: Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[WorkFromAnywhereScore <Double?>]`: Indicates a weighted score of the work from anywhere on a device level. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+
+`USEREXPERIENCEANALYTICSDEVICESTARTUPHISTORY <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupHistory[]>`: User experience analytics device Startup History
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[CoreBootTimeInMS <Int32?>]`: The device core boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+  - `[CoreLoginTimeInMS <Int32?>]`: The device core login time in milliseconds. Supports: $select, $OrderBy. Read-only.
+  - `[DeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+  - `[FeatureUpdateBootTimeInMS <Int32?>]`: The impact of device feature updates on boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+  - `[GroupPolicyBootTimeInMS <Int32?>]`: The impact of device group policy client on boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+  - `[GroupPolicyLoginTimeInMS <Int32?>]`: The impact of device group policy client on login time in milliseconds. Supports: $select, $OrderBy. Read-only.
+  - `[IsFeatureUpdate <Boolean?>]`: When TRUE, indicates the device boot record is associated with feature updates. When FALSE, indicates the device boot record is not associated with feature updates. Supports: $select, $OrderBy. Read-only.
+  - `[IsFirstLogin <Boolean?>]`: When TRUE, indicates the device login is the first login after a reboot. When FALSE, indicates the device login is not the first login after a reboot. Supports: $select, $OrderBy. Read-only.
+  - `[OperatingSystemVersion <String>]`: The user experience analytics device boot record's operating system version. Supports: $select, $OrderBy. Read-only.
+  - `[ResponsiveDesktopTimeInMS <Int32?>]`: The time for desktop to become responsive during login process in milliseconds. Supports: $select, $OrderBy. Read-only.
+  - `[RestartCategory <UserExperienceAnalyticsOperatingSystemRestartCategory?>]`: Operating System restart category.
+  - `[RestartFaultBucket <String>]`: OS restart fault bucket. The fault bucket is used to find additional information about a system crash. Supports: $select, $OrderBy. Read-only.
+  - `[RestartStopCode <String>]`: OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason. Supports: $select, $OrderBy. Read-only.
+  - `[StartTime <DateTime?>]`: The device boot start time. The value cannot be modified and is automatically populated when the device performs a reboot. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
+  - `[TotalBootTimeInMS <Int32?>]`: The device total boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+  - `[TotalLoginTimeInMS <Int32?>]`: The device total login time in milliseconds. Supports: $select, $OrderBy. Read-only.
+
+`USEREXPERIENCEANALYTICSDEVICESTARTUPPROCESSES <IMicrosoftGraphUserExperienceAnalyticsDeviceStartupProcess[]>`: User experience analytics device Startup Processes
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[ManagedDeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+  - `[ProcessName <String>]`: The name of the process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.
+  - `[ProductName <String>]`: The product name of the process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.
+  - `[Publisher <String>]`: The publisher of the process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.
+  - `[StartupImpactInMS <Int32?>]`: The impact of startup process on device boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
+
+`USEREXPERIENCEANALYTICSMETRICHISTORY <IMicrosoftGraphUserExperienceAnalyticsMetricHistory[]>`: User experience analytics metric history
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[DeviceId <String>]`: The Intune device id of the device.
+  - `[MetricDateTime <DateTime?>]`: The metric date time. The value cannot be modified and is automatically populated when the metric is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
+  - `[MetricType <String>]`: The user experience analytics metric type.
+
+`USEREXPERIENCEANALYTICSMODELSCORES <IMicrosoftGraphUserExperienceAnalyticsModelScores[]>`: User experience analytics model scores
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AppReliabilityScore <Double?>]`: Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[BatteryHealthScore <Double?>]`: Indicates a calulated score indicating the health of the device's battery. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[EndpointAnalyticsScore <Double?>]`: Indicates a weighted average of the various scores. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+  - `[Manufacturer <String>]`: The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.
+  - `[Model <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[ModelDeviceCount <Int64?>]`: Indicates unique devices count of given model in a consolidated report. Supports: $select, $OrderBy. Read-only. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
+  - `[StartupPerformanceScore <Double?>]`: Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[WorkFromAnywhereScore <Double?>]`: Indicates a weighted score of the work from anywhere on a device level. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+
+`USEREXPERIENCEANALYTICSOVERVIEW <IMicrosoftGraphUserExperienceAnalyticsOverview>`: The user experience analytics overview entity contains the overall score and the scores and insights of every metric of all categories.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The user experience analytics insights. Read-only.
+    - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
+    - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
+    - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics metric.
+    - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
+
+`USEREXPERIENCEANALYTICSSCOREHISTORY <IMicrosoftGraphUserExperienceAnalyticsScoreHistory[]>`: User experience analytics device Startup Score History
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[StartupDateTime <DateTime?>]`: The device startup date time. The value cannot be modified and is automatically populated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
+
+`USEREXPERIENCEANALYTICSSETTINGS <IMicrosoftGraphUserExperienceAnalyticsSettings>`: The user experience analytics insight is the recomendation to improve the user experience analytics score.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[ConfigurationManagerDataConnectorConfigured <Boolean?>]`: When TRUE, indicates Tenant attach is configured properly and System Center Configuration Manager (SCCM) tenant attached devices will show up in endpoint analytics reporting. When FALSE, indicates Tenant attach is not configured. FALSE by default.
+
+`USEREXPERIENCEANALYTICSWORKFROMANYWHEREHARDWAREREADINESSMETRIC <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric>`: The user experience analytics hardware readiness entity contains account level information about hardware blockers for windows upgrade.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[OSCheckFailedPercentage <Double?>]`: The percentage of devices for which OS check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[Processor64BitCheckFailedPercentage <Double?>]`: The percentage of devices for which processor hardware 64-bit architecture check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[ProcessorCoreCountCheckFailedPercentage <Double?>]`: The percentage of devices for which processor hardware core count check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[ProcessorFamilyCheckFailedPercentage <Double?>]`: The percentage of devices for which processor hardware family check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[ProcessorSpeedCheckFailedPercentage <Double?>]`: The percentage of devices for which processor hardware speed check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[RamCheckFailedPercentage <Double?>]`: The percentage of devices for which RAM hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[SecureBootCheckFailedPercentage <Double?>]`: The percentage of devices for which secure boot hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[StorageCheckFailedPercentage <Double?>]`: The percentage of devices for which storage hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[TotalDeviceCount <Int32?>]`: The count of total devices in an organization. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[TpmCheckFailedPercentage <Double?>]`: The percentage of devices for which Trusted Platform Module (TPM) hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[UpgradeEligibleDeviceCount <Int32?>]`: The count of devices in an organization eligible for windows upgrade. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+
+`USEREXPERIENCEANALYTICSWORKFROMANYWHEREMETRICS <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereMetric[]>`: User experience analytics work from anywhere metrics.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[MetricDevices <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereDevice[]>]`: The work from anywhere metric devices. Read-only.
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[AutoPilotProfileAssigned <Boolean?>]`: When TRUE, indicates the intune device's autopilot profile is assigned. When FALSE, indicates it's not Assigned. Supports: $select, $OrderBy. Read-only.
+    - `[AutoPilotRegistered <Boolean?>]`: When TRUE, indicates the intune device's autopilot is registered. When FALSE, indicates it's not registered. Supports: $select, $OrderBy. Read-only.
+    - `[AzureAdDeviceId <String>]`: The Azure Active Directory (Azure AD) device Id. Supports: $select, $OrderBy. Read-only.
+    - `[AzureAdJoinType <String>]`: The work from anywhere device's Azure Active Directory (Azure AD) join type. Supports: $select, $OrderBy. Read-only.
+    - `[AzureAdRegistered <Boolean?>]`: When TRUE, indicates the device's Azure Active Directory (Azure AD) is registered. When False, indicates it's not registered. Supports: $select, $OrderBy. Read-only.
+    - `[CloudIdentityScore <Double?>]`: Indicates per device cloud identity score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[CloudManagementScore <Double?>]`: Indicates per device cloud management score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[CloudProvisioningScore <Double?>]`: Indicates per device cloud provisioning score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[CompliancePolicySetToIntune <Boolean?>]`: When TRUE, indicates the device's compliance policy is set to intune. When FALSE, indicates it's not set to intune. Supports: $select, $OrderBy. Read-only.
+    - `[DeviceId <String>]`: The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
+    - `[DeviceName <String>]`: The name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+    - `[IsCloudManagedGatewayEnabled <Boolean?>]`: When TRUE, indicates the device's Cloud Management Gateway for Configuration Manager is enabled. When FALSE, indicates it's not enabled. Supports: $select, $OrderBy. Read-only.
+    - `[ManagedBy <String>]`: The management agent of the device. Supports: $select, $OrderBy. Read-only.
+    - `[Manufacturer <String>]`: The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[Model <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+    - `[OSCheckFailed <Boolean?>]`: When TRUE, indicates OS check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+    - `[OSDescription <String>]`: The OS description of the device. Supports: $select, $OrderBy. Read-only.
+    - `[OSVersion <String>]`: The OS version of the device. Supports: $select, $OrderBy. Read-only.
+    - `[OtherWorkloadsSetToIntune <Boolean?>]`: When TRUE, indicates the device's other workloads is set to intune. When FALSE, indicates it's not set to intune. Supports: $select, $OrderBy. Read-only.
+    - `[Ownership <String>]`: Ownership of the device. Supports: $select, $OrderBy. Read-only.
+    - `[Processor64BitCheckFailed <Boolean?>]`: When TRUE, indicates processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+    - `[ProcessorCoreCountCheckFailed <Boolean?>]`: When TRUE, indicates processor hardware core count check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+    - `[ProcessorFamilyCheckFailed <Boolean?>]`: When TRUE, indicates processor hardware family check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+    - `[ProcessorSpeedCheckFailed <Boolean?>]`: When TRUE, indicates processor hardware speed check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+    - `[RamCheckFailed <Boolean?>]`: When TRUE, indicates RAM hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+    - `[SecureBootCheckFailed <Boolean?>]`: When TRUE, indicates secure boot hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+    - `[SerialNumber <String>]`: The serial number of the device. Supports: $select, $OrderBy. Read-only.
+    - `[StorageCheckFailed <Boolean?>]`: When TRUE, indicates storage hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+    - `[TenantAttached <Boolean?>]`: When TRUE, indicates the device is Tenant Attached. When FALSE, indicates it's not Tenant Attached. Supports: $select, $OrderBy. Read-only.
+    - `[TpmCheckFailed <Boolean?>]`: When TRUE, indicates Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
+    - `[UpgradeEligibility <OperatingSystemUpgradeEligibility?>]`: Work From Anywhere windows device upgrade eligibility status.
+    - `[WindowsScore <Double?>]`: Indicates per device windows score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+    - `[WorkFromAnywhereScore <Double?>]`: Indicates work from anywhere per device overall score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+
+`USEREXPERIENCEANALYTICSWORKFROMANYWHEREMODELPERFORMANCE <IMicrosoftGraphUserExperienceAnalyticsWorkFromAnywhereModelPerformance[]>`: The user experience analytics work from anywhere model performance
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[CloudIdentityScore <Double?>]`: The cloud identity score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[CloudManagementScore <Double?>]`: The cloud management score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[CloudProvisioningScore <Double?>]`: The cloud provisioning score of the device model.  Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
+  - `[Manufacturer <String>]`: The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[Model <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[ModelDeviceCount <Int32?>]`: The devices count for the model. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[WindowsScore <Double?>]`: The window score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[WorkFromAnywhereScore <Double?>]`: The work from anywhere score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+
 `WINDOWSAUTOPILOTDEVICEIDENTITIES <IMicrosoftGraphWindowsAutopilotDeviceIdentity[]>`: The Windows autopilot device identities contained collection.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AddressableUserName <String>]`: Addressable user name.
@@ -9601,6 +11459,58 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[DeviceCount <Int32?>]`: Device Count
   - `[Url <String>]`: Website url
+
+`WINDOWSMALWAREINFORMATION <IMicrosoftGraphWindowsMalwareInformation[]>`: The list of affected malware in the tenant.
+  - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+  - `[AdditionalInformationUrl <String>]`: Indicates an informational URL to learn more about the malware
+  - `[Category <WindowsMalwareCategory?>]`: Malware category id
+  - `[DeviceMalwareStates <IMicrosoftGraphMalwareStateForWindowsDevice[]>]`: List of devices affected by current malware with the malware state on each device
+    - `[Id <String>]`: The unique idenfier for an entity. Read-only.
+    - `[DetectionCount <Int32?>]`: Indicates the number of times the malware is detected
+    - `[DeviceName <String>]`: Indicates the name of the device being evaluated for malware state
+    - `[ExecutionState <WindowsMalwareExecutionState?>]`: Malware execution status
+    - `[InitialDetectionDateTime <DateTime?>]`: Initial detection datetime of the malware
+    - `[LastStateChangeDateTime <DateTime?>]`: The last time this particular threat was changed
+    - `[ThreatState <WindowsMalwareThreatState?>]`: Malware threat status
+  - `[DisplayName <String>]`: Indicates the name of the malware
+  - `[LastDetectionDateTime <DateTime?>]`: Indicates the last time the malware was detected in UTC
+  - `[Severity <WindowsMalwareSeverity?>]`: Malware severity
+
+`WINDOWSMALWAREOVERVIEW <IMicrosoftGraphWindowsMalwareOverview>`: Windows device malware overview.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[MalwareCategorySummary <IMicrosoftGraphWindowsMalwareCategoryCount[]>]`: List of device counts per malware category
+    - `[ActiveMalwareDetectionCount <Int32?>]`: Count of active malware detections for this malware category. Valid values -2147483648 to 2147483647
+    - `[Category <WindowsMalwareCategory?>]`: Malware category id
+    - `[DeviceCount <Int32?>]`: Count of devices with malware detections for this malware category
+    - `[DistinctActiveMalwareCount <Int32?>]`: Count of distinct active malwares for this malware category. Valid values -2147483648 to 2147483647
+    - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the device count in UTC
+  - `[MalwareDetectedDeviceCount <Int32?>]`: Count of devices with malware detected in the last 30 days
+  - `[MalwareExecutionStateSummary <IMicrosoftGraphWindowsMalwareExecutionStateCount[]>]`: List of device counts per malware execution state
+    - `[DeviceCount <Int32?>]`: Count of devices with malware detections for this malware execution state
+    - `[ExecutionState <WindowsMalwareExecutionState?>]`: Malware execution status
+    - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the device count in UTC
+  - `[MalwareNameSummary <IMicrosoftGraphWindowsMalwareNameCount[]>]`: List of device counts per malware
+    - `[DeviceCount <Int32?>]`: Count of devices with malware dectected for this malware
+    - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the device count in UTC
+    - `[MalwareIdentifier <String>]`: The unique identifier. This is malware identifier
+    - `[Name <String>]`: Malware name
+  - `[MalwareSeveritySummary <IMicrosoftGraphWindowsMalwareSeverityCount[]>]`: List of active malware counts per malware severity
+    - `[DistinctMalwareCount <Int32?>]`: Count of distinct malwares for this malware State. Valid values -2147483648 to 2147483647
+    - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the WindowsMalwareSeverityCount in UTC
+    - `[MalwareDetectionCount <Int32?>]`: Count of threats detections for this malware severity. Valid values -2147483648 to 2147483647
+    - `[Severity <WindowsMalwareSeverity?>]`: Malware severity
+  - `[MalwareStateSummary <IMicrosoftGraphWindowsMalwareStateCount[]>]`: List of device counts per malware state
+    - `[DeviceCount <Int32?>]`: Count of devices with malware detections for this malware State
+    - `[DistinctMalwareCount <Int32?>]`: Count of distinct malwares for this malware State. Valid values -2147483648 to 2147483647
+    - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the device count in UTC
+    - `[MalwareDetectionCount <Int32?>]`: Count of total malware detections for this malware State. Valid values -2147483648 to 2147483647
+    - `[State <WindowsMalwareThreatState?>]`: Malware threat status
+  - `[OSVersionsSummary <IMicrosoftGraphOSVersionCount[]>]`: List of device counts with malware per windows OS version
+    - `[DeviceCount <Int32?>]`: Count of devices with malware for the OS version
+    - `[LastUpdateDateTime <DateTime?>]`: The Timestamp of the last update for the device count in UTC
+    - `[OSVersion <String>]`: OS version
+  - `[TotalDistinctMalwareCount <Int32?>]`: Count of all distinct malwares detected across all devices. Valid values -2147483648 to 2147483647
+  - `[TotalMalwareCount <Int32?>]`: Count of all malware detections across all devices. Valid values -2147483648 to 2147483647
 
 ## RELATED LINKS
 

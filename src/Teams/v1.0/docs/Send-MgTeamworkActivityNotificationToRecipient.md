@@ -8,7 +8,8 @@ schema: 2.0.0
 # Send-MgTeamworkActivityNotificationToRecipient
 
 ## SYNOPSIS
-Invoke action sendActivityNotificationToRecipients
+Send activity feed notifications to multiple users, in bulk.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ## SYNTAX
 
@@ -29,7 +30,8 @@ Send-MgTeamworkActivityNotificationToRecipient
 ```
 
 ## DESCRIPTION
-Invoke action sendActivityNotificationToRecipients
+Send activity feed notifications to multiple users, in bulk.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ## EXAMPLES
 

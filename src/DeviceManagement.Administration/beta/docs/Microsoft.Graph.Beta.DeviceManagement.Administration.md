@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Administration
-Module Guid: 9ccd4073-5b48-4f10-bf1d-f02fa42b8a54
+Module Guid: e146bf1b-8a6c-4e85-b9aa-d583f98a8e38
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.administration
 Help Version: 1.0.0.0
 Locale: en-US
@@ -652,7 +652,7 @@ Create new navigation property to assignments for deviceManagement
 ### [New-MgBetaDeviceManagementVirtualEndpointReportExportJob](New-MgBetaDeviceManagementVirtualEndpointReportExportJob.md)
 Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report.
 Use the GET cloudPcExportJob operation to verify the **exportJobStatus** property of the **cloudPcExportJob** resource.
-When the property becomes `completed`, the report has finished downloading in the location specified by the **exportUrl** property.
+When the property result is `completed`, the report has finished downloading to the location specified by the **exportUrl** property.
 
 ### [New-MgBetaDeviceManagementVirtualEndpointServicePlan](New-MgBetaDeviceManagementVirtualEndpointServicePlan.md)
 Create new navigation property to servicePlans for deviceManagement

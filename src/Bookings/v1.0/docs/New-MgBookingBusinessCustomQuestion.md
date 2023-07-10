@@ -45,17 +45,18 @@ Create a new bookingCustomQuestion object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Bookings
 ```
 
-{{ Add output here }}
+$params = @{
+	"@odata.type" = "#microsoft.graph.bookingCustomQuestion"
+	displayName = "What is your age?"
+	answerInputType = "text"
+	answerOptions = @(
+	)
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+New-MgBookingBusinessCustomQuestion -BookingBusinessId $bookingBusinessId -BodyParameter $params
 
 ## PARAMETERS
 

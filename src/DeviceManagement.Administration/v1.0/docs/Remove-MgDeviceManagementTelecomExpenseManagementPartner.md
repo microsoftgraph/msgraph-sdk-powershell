@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementTelecomExpenseManagementPartner
 
 ## SYNOPSIS
-Delete navigation property telecomExpenseManagementPartners for deviceManagement
+Deletes a telecomExpenseManagementPartner.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgDeviceManagementTelecomExpenseManagementPartner
 ```
 
 ## DESCRIPTION
-Delete navigation property telecomExpenseManagementPartners for deviceManagement
+Deletes a telecomExpenseManagementPartner.
 
 ## EXAMPLES
 

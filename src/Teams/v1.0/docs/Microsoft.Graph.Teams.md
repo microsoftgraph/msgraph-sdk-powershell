@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: ee31b186-8097-484c-ae65-3270f442d5b2
+Module Guid: 67d682c1-6196-43f5-a831-b360fc223968
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -217,8 +217,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgGroupTeamChannelTab](Get-MgGroupTeamChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
+Retrieve the properties and relationships of the specified tab in a channel within a team.
 
 ### [Get-MgGroupTeamChannelTabCount](Get-MgGroupTeamChannelTabCount.md)
 Get the number of the resource
@@ -261,7 +260,10 @@ The async operations that ran or are running on this team.
 Get the number of the resource
 
 ### [Get-MgGroupTeamPhoto](Get-MgGroupTeamPhoto.md)
-The profile photo for the team.
+Get the specified profilePhoto or its metadata (**profilePhoto** properties).
+The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648.
+Photos can be any dimension if they are stored in Azure Active Directory.
+You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download.
 
 ### [Get-MgGroupTeamPhotoContent](Get-MgGroupTeamPhotoContent.md)
 Get media content for the navigation property photo from groups
@@ -319,8 +321,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgGroupTeamPrimaryChannelTab](Get-MgGroupTeamPrimaryChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
+Retrieve the properties and relationships of the specified tab in a channel within a team.
 
 ### [Get-MgGroupTeamPrimaryChannelTabCount](Get-MgGroupTeamPrimaryChannelTabCount.md)
 Get the number of the resource
@@ -474,8 +475,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgTeamChannelTab](Get-MgTeamChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
+Retrieve the properties and relationships of the specified tab in a channel within a team.
 
 ### [Get-MgTeamChannelTabCount](Get-MgTeamChannelTabCount.md)
 Get the number of the resource
@@ -521,7 +521,10 @@ The async operations that ran or are running on this team.
 Get the number of the resource
 
 ### [Get-MgTeamPhoto](Get-MgTeamPhoto.md)
-The profile photo for the team.
+Get the specified profilePhoto or its metadata (**profilePhoto** properties).
+The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648.
+Photos can be any dimension if they are stored in Azure Active Directory.
+You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download.
 
 ### [Get-MgTeamPhotoContent](Get-MgTeamPhotoContent.md)
 Get media content for the navigation property photo from teams
@@ -585,8 +588,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgTeamPrimaryChannelTab](Get-MgTeamPrimaryChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
+Retrieve the properties and relationships of the specified tab in a channel within a team.
 
 ### [Get-MgTeamPrimaryChannelTabCount](Get-MgTeamPrimaryChannelTabCount.md)
 Get the number of the resource
@@ -740,8 +742,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgTeamworkDeletedTeamChannelTab](Get-MgTeamworkDeletedTeamChannelTab.md)
-A collection of all the tabs in the channel.
-A navigation property.
+Retrieve the properties and relationships of the specified tab in a channel within a team.
 
 ### [Get-MgTeamworkDeletedTeamChannelTabCount](Get-MgTeamworkDeletedTeamChannelTabCount.md)
 Get the number of the resource
@@ -838,7 +839,9 @@ This cannot be changed after tab creation.
 Get the teams in Microsoft Teams that the user is a direct member of.
 
 ### [Get-MgUserTeamwork](Get-MgUserTeamwork.md)
-Get teamwork from users
+A container for Microsoft Teams features available for the user.
+Read-only.
+Nullable.
 
 ### [Get-MgUserTeamworkAssociatedTeam](Get-MgUserTeamworkAssociatedTeam.md)
 The list of associatedTeamInfo objects that a user is associated with.
@@ -954,7 +957,7 @@ This API can't create a new chat; you must use the list chats method to retrieve
 Create new navigation property to hostedContents for chats
 
 ### [New-MgChatMessageReply](New-MgChatMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgChatMessageReplyHostedContent](New-MgChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -975,16 +978,15 @@ If you're creating a private channel, you can add a maximum of 200 members.
 
 ### [New-MgGroupTeamChannelMember](New-MgGroupTeamChannelMember.md)
 Add a conversationMember to a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamChannelMessage](New-MgGroupTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgGroupTeamChannelMessageHostedContent](New-MgGroupTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamChannelMessageReply](New-MgGroupTeamChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamChannelMessageReplyHostedContent](New-MgGroupTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -993,7 +995,8 @@ Create new navigation property to hostedContents for groups
 Create new navigation property to sharedWithTeams for groups
 
 ### [New-MgGroupTeamChannelTab](New-MgGroupTeamChannelTab.md)
-Create new navigation property to tabs for groups
+Adds (pins) a tab to the specified channel within a team.
+\nThe corresponding app must already be installed in the team.
 
 ### [New-MgGroupTeamInstalledApp](New-MgGroupTeamInstalledApp.md)
 Install an app to the specified team.
@@ -1006,16 +1009,15 @@ Create new navigation property to operations for groups
 
 ### [New-MgGroupTeamPrimaryChannelMember](New-MgGroupTeamPrimaryChannelMember.md)
 Add a conversationMember to a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgGroupTeamPrimaryChannelMessage](New-MgGroupTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgGroupTeamPrimaryChannelMessageHostedContent](New-MgGroupTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for groups
 
 ### [New-MgGroupTeamPrimaryChannelMessageReply](New-MgGroupTeamPrimaryChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgGroupTeamPrimaryChannelMessageReplyHostedContent](New-MgGroupTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for groups
@@ -1024,10 +1026,11 @@ Create new navigation property to hostedContents for groups
 Create new navigation property to sharedWithTeams for groups
 
 ### [New-MgGroupTeamPrimaryChannelTab](New-MgGroupTeamPrimaryChannelTab.md)
-Create new navigation property to tabs for groups
+Adds (pins) a tab to the specified channel within a team.
+\nThe corresponding app must already be installed in the team.
 
 ### [New-MgGroupTeamScheduleOfferShiftRequest](New-MgGroupTeamScheduleOfferShiftRequest.md)
-Create new navigation property to offerShiftRequests for groups
+Create an instance of an offerShiftRequest.
 
 ### [New-MgGroupTeamScheduleOpenShift](New-MgGroupTeamScheduleOpenShift.md)
 Create an instance of an openShift object.
@@ -1077,16 +1080,15 @@ To remove the email address of a **channel**, use the removeEmail method.
 
 ### [New-MgTeamChannelMember](New-MgTeamChannelMember.md)
 Add a conversationMember to a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamChannelMessage](New-MgTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamChannelMessageHostedContent](New-MgTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamChannelMessageReply](New-MgTeamChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamChannelMessageReplyHostedContent](New-MgTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1095,7 +1097,8 @@ Create new navigation property to hostedContents for teams
 Create new navigation property to sharedWithTeams for teams
 
 ### [New-MgTeamChannelTab](New-MgTeamChannelTab.md)
-Create new navigation property to tabs for teams
+Adds (pins) a tab to the specified channel within a team.
+\nThe corresponding app must already be installed in the team.
 
 ### [New-MgTeamInstalledApp](New-MgTeamInstalledApp.md)
 Install an app to the specified team.
@@ -1114,16 +1117,15 @@ To remove the email address of a **channel**, use the removeEmail method.
 
 ### [New-MgTeamPrimaryChannelMember](New-MgTeamPrimaryChannelMember.md)
 Add a conversationMember to a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamPrimaryChannelMessage](New-MgTeamPrimaryChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamPrimaryChannelMessageHostedContent](New-MgTeamPrimaryChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teams
 
 ### [New-MgTeamPrimaryChannelMessageReply](New-MgTeamPrimaryChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamPrimaryChannelMessageReplyHostedContent](New-MgTeamPrimaryChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teams
@@ -1132,10 +1134,11 @@ Create new navigation property to hostedContents for teams
 Create new navigation property to sharedWithTeams for teams
 
 ### [New-MgTeamPrimaryChannelTab](New-MgTeamPrimaryChannelTab.md)
-Create new navigation property to tabs for teams
+Adds (pins) a tab to the specified channel within a team.
+\nThe corresponding app must already be installed in the team.
 
 ### [New-MgTeamScheduleOfferShiftRequest](New-MgTeamScheduleOfferShiftRequest.md)
-Create new navigation property to offerShiftRequests for teams
+Create an instance of an offerShiftRequest.
 
 ### [New-MgTeamScheduleOpenShift](New-MgTeamScheduleOpenShift.md)
 Create an instance of an openShift object.
@@ -1182,16 +1185,15 @@ To remove the email address of a **channel**, use the removeEmail method.
 
 ### [New-MgTeamworkDeletedTeamChannelMember](New-MgTeamworkDeletedTeamChannelMember.md)
 Add a conversationMember to a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [New-MgTeamworkDeletedTeamChannelMessage](New-MgTeamworkDeletedTeamChannelMessage.md)
-Send a new chatMessage in the specified channel.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageHostedContent](New-MgTeamworkDeletedTeamChannelMessageHostedContent.md)
 Create new navigation property to hostedContents for teamwork
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReply](New-MgTeamworkDeletedTeamChannelMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent](New-MgTeamworkDeletedTeamChannelMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for teamwork
@@ -1200,7 +1202,8 @@ Create new navigation property to hostedContents for teamwork
 Create new navigation property to sharedWithTeams for teamwork
 
 ### [New-MgTeamworkDeletedTeamChannelTab](New-MgTeamworkDeletedTeamChannelTab.md)
-Create new navigation property to tabs for teamwork
+Adds (pins) a tab to the specified channel within a team.
+\nThe corresponding app must already be installed in the team.
 
 ### [New-MgTeamworkWorkforceIntegration](New-MgTeamworkWorkforceIntegration.md)
 Create a new workforceIntegration object.\nYou can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
@@ -1222,7 +1225,7 @@ This API can't create a new chat; you must use the list chats method to retrieve
 Create new navigation property to hostedContents for users
 
 ### [New-MgUserChatMessageReply](New-MgUserChatMessageReply.md)
-Create a new reply to a chatMessage in a specified channel.
+Send a new reply to a chatMessage in a specified channel.
 
 ### [New-MgUserChatMessageReplyHostedContent](New-MgUserChatMessageReplyHostedContent.md)
 Create new navigation property to hostedContents for users
@@ -1279,7 +1282,6 @@ Delete the channel.
 
 ### [Remove-MgGroupTeamChannelMember](Remove-MgGroupTeamChannelMember.md)
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Remove-MgGroupTeamChannelMessage](Remove-MgGroupTeamChannelMessage.md)
 Delete navigation property messages for groups
@@ -1298,7 +1300,7 @@ Unshare a channel with a team by deleting the corresponding sharedWithChannelTea
 This operation is allowed only for channels with a **membershipType** value of `shared`.
 
 ### [Remove-MgGroupTeamChannelTab](Remove-MgGroupTeamChannelTab.md)
-Delete navigation property tabs for groups
+Removes (unpins) a tab from the specified channel within a team.
 
 ### [Remove-MgGroupTeamIncomingChannel](Remove-MgGroupTeamIncomingChannel.md)
 Remove an incoming channel (a **channel** shared with a **team**) from a team.
@@ -1320,7 +1322,6 @@ Delete navigation property primaryChannel for groups
 
 ### [Remove-MgGroupTeamPrimaryChannelMember](Remove-MgGroupTeamPrimaryChannelMember.md)
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Remove-MgGroupTeamPrimaryChannelMessage](Remove-MgGroupTeamPrimaryChannelMessage.md)
 Delete navigation property messages for groups
@@ -1339,7 +1340,7 @@ Unshare a channel with a team by deleting the corresponding sharedWithChannelTea
 This operation is allowed only for channels with a **membershipType** value of `shared`.
 
 ### [Remove-MgGroupTeamPrimaryChannelTab](Remove-MgGroupTeamPrimaryChannelTab.md)
-Delete navigation property tabs for groups
+Removes (unpins) a tab from the specified channel within a team.
 
 ### [Remove-MgGroupTeamSchedule](Remove-MgGroupTeamSchedule.md)
 Delete navigation property schedule for groups
@@ -1393,7 +1394,6 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### [Remove-MgTeamChannelMember](Remove-MgTeamChannelMember.md)
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Remove-MgTeamChannelMessageReplyHostedContent](Remove-MgTeamChannelMessageReplyHostedContent.md)
 Delete navigation property hostedContents for teams
@@ -1403,7 +1403,7 @@ Unshare a channel with a team by deleting the corresponding sharedWithChannelTea
 This operation is allowed only for channels with a **membershipType** value of `shared`.
 
 ### [Remove-MgTeamChannelTab](Remove-MgTeamChannelTab.md)
-Delete navigation property tabs for teams
+Removes (unpins) a tab from the specified channel within a team.
 
 ### [Remove-MgTeamIncomingChannel](Remove-MgTeamIncomingChannel.md)
 Remove an incoming channel (a **channel** shared with a **team**) from a team.
@@ -1429,7 +1429,6 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### [Remove-MgTeamPrimaryChannelMember](Remove-MgTeamPrimaryChannelMember.md)
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Remove-MgTeamPrimaryChannelMessageReplyHostedContent](Remove-MgTeamPrimaryChannelMessageReplyHostedContent.md)
 Delete navigation property hostedContents for teams
@@ -1439,7 +1438,7 @@ Unshare a channel with a team by deleting the corresponding sharedWithChannelTea
 This operation is allowed only for channels with a **membershipType** value of `shared`.
 
 ### [Remove-MgTeamPrimaryChannelTab](Remove-MgTeamPrimaryChannelTab.md)
-Delete navigation property tabs for teams
+Removes (unpins) a tab from the specified channel within a team.
 
 ### [Remove-MgTeamSchedule](Remove-MgTeamSchedule.md)
 Delete navigation property schedule for teams
@@ -1493,7 +1492,6 @@ You can remove an email address only if it was provisioned using the provisionEm
 
 ### [Remove-MgTeamworkDeletedTeamChannelMember](Remove-MgTeamworkDeletedTeamChannelMember.md)
 Delete a conversationMember from a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
 
 ### [Remove-MgTeamworkDeletedTeamChannelMessage](Remove-MgTeamworkDeletedTeamChannelMessage.md)
 Delete navigation property messages for teamwork
@@ -1512,7 +1510,7 @@ Unshare a channel with a team by deleting the corresponding sharedWithChannelTea
 This operation is allowed only for channels with a **membershipType** value of `shared`.
 
 ### [Remove-MgTeamworkDeletedTeamChannelTab](Remove-MgTeamworkDeletedTeamChannelTab.md)
-Delete navigation property tabs for teamwork
+Removes (unpins) a tab from the specified channel within a team.
 
 ### [Remove-MgTeamworkWorkforceIntegration](Remove-MgTeamworkWorkforceIntegration.md)
 Delete an instance of a workforceIntegration.
@@ -1565,7 +1563,8 @@ Send an activity feed notification in the scope of a team.
 For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ### [Send-MgTeamworkActivityNotificationToRecipient](Send-MgTeamworkActivityNotificationToRecipient.md)
-Invoke action sendActivityNotificationToRecipients
+Send activity feed notifications to multiple users, in bulk.
+For more details about sending notifications and the requirements for doing so, see\nsending Teams activity notifications.
 
 ### [Set-MgChatMessageHostedContent](Set-MgChatMessageHostedContent.md)
 Update media content for the navigation property hostedContents in chats
@@ -1706,8 +1705,7 @@ Update the properties of the specified tab in a chat.
 Update the properties of the specified channel.
 
 ### [Update-MgGroupTeamChannelMember](Update-MgGroupTeamChannelMember.md)
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+Update the role of a conversationMember in a team or channel.
 
 ### [Update-MgGroupTeamChannelMessage](Update-MgGroupTeamChannelMessage.md)
 Update a chatMessage object.
@@ -1730,7 +1728,7 @@ Update the navigation property hostedContents in groups
 Update the navigation property sharedWithTeams in groups
 
 ### [Update-MgGroupTeamChannelTab](Update-MgGroupTeamChannelTab.md)
-Update the navigation property tabs in groups
+Update the properties of the specified tab.\nThis can be used to configure the content of the tab.
 
 ### [Update-MgGroupTeamMember](Update-MgGroupTeamMember.md)
 Update the role of a conversationMember in a team.
@@ -1745,8 +1743,7 @@ Update the navigation property photo in groups
 Update the navigation property primaryChannel in groups
 
 ### [Update-MgGroupTeamPrimaryChannelMember](Update-MgGroupTeamPrimaryChannelMember.md)
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+Update the role of a conversationMember in a team or channel.
 
 ### [Update-MgGroupTeamPrimaryChannelMessage](Update-MgGroupTeamPrimaryChannelMessage.md)
 Update a chatMessage object.
@@ -1769,7 +1766,7 @@ Update the navigation property hostedContents in groups
 Update the navigation property sharedWithTeams in groups
 
 ### [Update-MgGroupTeamPrimaryChannelTab](Update-MgGroupTeamPrimaryChannelTab.md)
-Update the navigation property tabs in groups
+Update the properties of the specified tab.\nThis can be used to configure the content of the tab.
 
 ### [Update-MgGroupTeamScheduleOfferShiftRequest](Update-MgGroupTeamScheduleOfferShiftRequest.md)
 Update the navigation property offerShiftRequests in groups
@@ -1816,8 +1813,7 @@ Update the properties of the specified team.
 Update the properties of the specified channel.
 
 ### [Update-MgTeamChannelMember](Update-MgTeamChannelMember.md)
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+Update the role of a conversationMember in a team or channel.
 
 ### [Update-MgTeamChannelMessage](Update-MgTeamChannelMessage.md)
 Update a chatMessage object.
@@ -1837,7 +1833,7 @@ Update the navigation property hostedContents in teams
 Update the navigation property sharedWithTeams in teams
 
 ### [Update-MgTeamChannelTab](Update-MgTeamChannelTab.md)
-Update the navigation property tabs in teams
+Update the properties of the specified tab.\nThis can be used to configure the content of the tab.
 
 ### [Update-MgTeamInstalledApp](Update-MgTeamInstalledApp.md)
 Upgrade an app installation within a chat.
@@ -1855,8 +1851,7 @@ Update the navigation property photo in teams
 Update the navigation property primaryChannel in teams
 
 ### [Update-MgTeamPrimaryChannelMember](Update-MgTeamPrimaryChannelMember.md)
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+Update the role of a conversationMember in a team or channel.
 
 ### [Update-MgTeamPrimaryChannelMessage](Update-MgTeamPrimaryChannelMessage.md)
 Update a chatMessage object.
@@ -1876,7 +1871,7 @@ Update the navigation property hostedContents in teams
 Update the navigation property sharedWithTeams in teams
 
 ### [Update-MgTeamPrimaryChannelTab](Update-MgTeamPrimaryChannelTab.md)
-Update the navigation property tabs in teams
+Update the properties of the specified tab.\nThis can be used to configure the content of the tab.
 
 ### [Update-MgTeamScheduleOfferShiftRequest](Update-MgTeamScheduleOfferShiftRequest.md)
 Update the navigation property offerShiftRequests in teams
@@ -1926,8 +1921,7 @@ Update the navigation property deletedTeams in teamwork
 Update the navigation property channels in teamwork
 
 ### [Update-MgTeamworkDeletedTeamChannelMember](Update-MgTeamworkDeletedTeamChannelMember.md)
-Update the role of a conversationMember in a channel.
-This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+Update the role of a conversationMember in a team or channel.
 
 ### [Update-MgTeamworkDeletedTeamChannelMessage](Update-MgTeamworkDeletedTeamChannelMessage.md)
 Update a chatMessage object.
@@ -1950,7 +1944,7 @@ Update the navigation property hostedContents in teamwork
 Update the navigation property sharedWithTeams in teamwork
 
 ### [Update-MgTeamworkDeletedTeamChannelTab](Update-MgTeamworkDeletedTeamChannelTab.md)
-Update the navigation property tabs in teamwork
+Update the properties of the specified tab.\nThis can be used to configure the content of the tab.
 
 ### [Update-MgTeamworkWorkforceIntegration](Update-MgTeamworkWorkforceIntegration.md)
 Update the properties of a workforceIntegration object.

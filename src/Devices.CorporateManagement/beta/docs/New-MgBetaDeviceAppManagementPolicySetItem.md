@@ -308,7 +308,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-MgDeviceAppMgtPolicySetItem
+New-BetaDeviceAppMgtPolicySetItem
 
 COMPLEX PARAMETER PROPERTIES
 

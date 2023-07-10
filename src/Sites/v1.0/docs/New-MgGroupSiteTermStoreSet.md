@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupSiteTermStoreSet
 
 ## SYNOPSIS
-Create new navigation property to sets for groups
+Create a new set object.
 
 ## SYNTAX
 
@@ -77,7 +77,7 @@ New-MgGroupSiteTermStoreSet -InputObject <ISitesIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Create new navigation property to sets for groups
+Create a new set object.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Teams
-Module Guid: 6ef77a0c-c06b-4f44-a771-4d3abe822507
+Module Guid: ad2186e2-5daf-4023-ac91-b2050ec82f89
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -846,6 +846,12 @@ Generic representation of a team template definition for a team with a specific 
 ### [Get-MgBetaTeamwork](Get-MgBetaTeamwork.md)
 Get teamwork
 
+### [Get-MgBetaTeamworkDeletedChat](Get-MgBetaTeamworkDeletedChat.md)
+Get deletedChats from teamwork
+
+### [Get-MgBetaTeamworkDeletedChatCount](Get-MgBetaTeamworkDeletedChatCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaTeamworkDeletedTeam](Get-MgBetaTeamworkDeletedTeam.md)
 A collection of deleted teams.
 
@@ -1186,8 +1192,7 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgBetaChatMessage](New-MgBetaChatMessage.md)
-Send a new chatMessage in the specified chat.
-This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgBetaChatMessageHostedContent](New-MgBetaChatMessageHostedContent.md)
 Create new navigation property to hostedContents for chats
@@ -1275,7 +1280,7 @@ Create new navigation property to sharedWithTeams for groups
 Create new navigation property to tabs for groups
 
 ### [New-MgBetaGroupTeamScheduleOfferShiftRequest](New-MgBetaGroupTeamScheduleOfferShiftRequest.md)
-Create new navigation property to offerShiftRequests for groups
+Create an instance of an offerShiftRequest.
 
 ### [New-MgBetaGroupTeamScheduleOpenShift](New-MgBetaGroupTeamScheduleOpenShift.md)
 Create an instance of an openshift object.
@@ -1392,7 +1397,7 @@ Create new navigation property to sharedWithTeams for teams
 Create new navigation property to tabs for teams
 
 ### [New-MgBetaTeamScheduleOfferShiftRequest](New-MgBetaTeamScheduleOfferShiftRequest.md)
-Create new navigation property to offerShiftRequests for teams
+Create an instance of an offerShiftRequest.
 
 ### [New-MgBetaTeamScheduleOpenShift](New-MgBetaTeamScheduleOpenShift.md)
 Create an instance of an openshift object.
@@ -1427,6 +1432,9 @@ Create a standard tag for members in the team.
 
 ### [New-MgBetaTeamTagMember](New-MgBetaTeamTagMember.md)
 Create a new teamworkTagMember object in a team.
+
+### [New-MgBetaTeamworkDeletedChat](New-MgBetaTeamworkDeletedChat.md)
+Create new navigation property to deletedChats for teamwork
 
 ### [New-MgBetaTeamworkDeletedTeam](New-MgBetaTeamworkDeletedTeam.md)
 Create new navigation property to deletedTeams for teamwork
@@ -1487,8 +1495,7 @@ Install a teamsApp to the specified chat.
 Add a conversationMember to a chat.
 
 ### [New-MgBetaUserChatMessage](New-MgBetaUserChatMessage.md)
-Send a new chatMessage in the specified chat.
-This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
+Send a new chatMessage in the specified channel or a chat.
 
 ### [New-MgBetaUserChatMessageHostedContent](New-MgBetaUserChatMessageHostedContent.md)
 Create new navigation property to hostedContents for users
@@ -1794,6 +1801,9 @@ Delete a tag object permanently.
 ### [Remove-MgBetaTeamTagMember](Remove-MgBetaTeamTagMember.md)
 Delete a member from a standard tag in a team.
 
+### [Remove-MgBetaTeamworkDeletedChat](Remove-MgBetaTeamworkDeletedChat.md)
+Delete navigation property deletedChats for teamwork
+
 ### [Remove-MgBetaTeamworkDeletedTeam](Remove-MgBetaTeamworkDeletedTeam.md)
 Delete navigation property deletedTeams for teamwork
 
@@ -2072,6 +2082,9 @@ Undo soft deletion of a single chatMessage or a chat message reply in a channel 
 
 ### [Undo-MgBetaTeamPrimaryChannelMessageSoftDelete](Undo-MgBetaTeamPrimaryChannelMessageSoftDelete.md)
 Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+
+### [Undo-MgBetaTeamworkDeletedChatDelete](Undo-MgBetaTeamworkDeletedChatDelete.md)
+Invoke action undoDelete
 
 ### [Undo-MgBetaTeamworkDeletedTeamChannelMessageReplySoftDelete](Undo-MgBetaTeamworkDeletedTeamChannelMessageReplySoftDelete.md)
 Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
@@ -2373,6 +2386,9 @@ Update the navigation property members in teams
 
 ### [Update-MgBetaTeamwork](Update-MgBetaTeamwork.md)
 Update teamwork
+
+### [Update-MgBetaTeamworkDeletedChat](Update-MgBetaTeamworkDeletedChat.md)
+Update the navigation property deletedChats in teamwork
 
 ### [Update-MgBetaTeamworkDeletedTeam](Update-MgBetaTeamworkDeletedTeam.md)
 Update the navigation property deletedTeams in teamwork

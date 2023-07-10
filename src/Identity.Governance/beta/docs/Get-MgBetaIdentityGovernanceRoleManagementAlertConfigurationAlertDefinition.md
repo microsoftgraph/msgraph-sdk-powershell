@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernanceRoleManagementAlertConfigurationAlertDefinition
 
 ## SYNOPSIS
-Get alertDefinition from identityGovernance
+The definition of the alert that contains its description, impact, and measures to mitigate or prevent it.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,7 +28,8 @@ Get-MgBetaIdentityGovernanceRoleManagementAlertConfigurationAlertDefinition
 ```
 
 ## DESCRIPTION
-Get alertDefinition from identityGovernance
+The definition of the alert that contains its description, impact, and measures to mitigate or prevent it.
+Supports $expand.
 
 ## EXAMPLES
 

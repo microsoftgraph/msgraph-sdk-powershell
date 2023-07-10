@@ -712,9 +712,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Calculated <IMicrosoftGraphCalculatedColumn>]`: calculatedColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Format <String>]`: For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
+    - `[Format <String>]`: For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
     - `[Formula <String>]`: The formula used to compute the value for this column.
-    - `[OutputType <String>]`: The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
+    - `[OutputType <String>]`: The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
   - `[Choice <IMicrosoftGraphChoiceColumn>]`: choiceColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowTextEntry <Boolean?>]`: If true, allows custom values that aren't in the configured choices.
@@ -732,8 +732,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Format <String>]`: Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
   - `[DefaultValue <IMicrosoftGraphDefaultColumnValue>]`: defaultColumnValue
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Formula <String>]`: The formula used to compute the default value for this column.
-    - `[Value <String>]`: The direct value to use as the default value for this column.
+    - `[Formula <String>]`: The formula used to compute the default value for the column.
+    - `[Value <String>]`: The direct value to use as the default value for the column.
   - `[Description <String>]`: The user-facing description of the column.
   - `[DisplayName <String>]`: The user-facing name of the column.
   - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
@@ -772,7 +772,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
   - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The id of the content type.
+    - `[Id <String>]`: The ID of the content type.
     - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -842,9 +842,9 @@ To create the parameters described below, construct a hash table containing the 
 
 `CALCULATED <IMicrosoftGraphCalculatedColumn>`: calculatedColumn
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Format <String>]`: For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
+  - `[Format <String>]`: For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
   - `[Formula <String>]`: The formula used to compute the value for this column.
-  - `[OutputType <String>]`: The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
+  - `[OutputType <String>]`: The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
 
 `CHOICE <IMicrosoftGraphChoiceColumn>`: choiceColumn
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -863,8 +863,8 @@ To create the parameters described below, construct a hash table containing the 
 
 `DEFAULTVALUE <IMicrosoftGraphDefaultColumnValue>`: defaultColumnValue
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Formula <String>]`: The formula used to compute the default value for this column.
-  - `[Value <String>]`: The direct value to use as the default value for this column.
+  - `[Formula <String>]`: The formula used to compute the default value for the column.
+  - `[Value <String>]`: The direct value to use as the default value for the column.
 
 `HYPERLINKORPICTURE <IMicrosoftGraphHyperlinkOrPictureColumn>`: hyperlinkOrPictureColumn
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -924,9 +924,9 @@ To create the parameters described below, construct a hash table containing the 
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Calculated <IMicrosoftGraphCalculatedColumn>]`: calculatedColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Format <String>]`: For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
+    - `[Format <String>]`: For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
     - `[Formula <String>]`: The formula used to compute the value for this column.
-    - `[OutputType <String>]`: The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
+    - `[OutputType <String>]`: The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
   - `[Choice <IMicrosoftGraphChoiceColumn>]`: choiceColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowTextEntry <Boolean?>]`: If true, allows custom values that aren't in the configured choices.
@@ -944,8 +944,8 @@ To create the parameters described below, construct a hash table containing the 
     - `[Format <String>]`: Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
   - `[DefaultValue <IMicrosoftGraphDefaultColumnValue>]`: defaultColumnValue
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Formula <String>]`: The formula used to compute the default value for this column.
-    - `[Value <String>]`: The direct value to use as the default value for this column.
+    - `[Formula <String>]`: The formula used to compute the default value for the column.
+    - `[Value <String>]`: The direct value to use as the default value for the column.
   - `[Description <String>]`: The user-facing description of the column.
   - `[DisplayName <String>]`: The user-facing name of the column.
   - `[EnforceUniqueValues <Boolean?>]`: If true, no two list items may have the same value for this column.
@@ -984,7 +984,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
   - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: The id of the content type.
+    - `[Id <String>]`: The ID of the content type.
     - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1054,7 +1054,7 @@ To create the parameters described below, construct a hash table containing the 
 
 `SOURCECONTENTTYPE <IMicrosoftGraphContentTypeInfo>`: contentTypeInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: The id of the content type.
+  - `[Id <String>]`: The ID of the content type.
   - `[Name <String>]`: The name of the content type.
 
 `TERM <IMicrosoftGraphTermColumn>`: termColumn

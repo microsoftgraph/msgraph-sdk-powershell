@@ -535,7 +535,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-MgDeviceAppMgtMobileApp
+Update-BetaDeviceAppMgtMobileApp
 
 COMPLEX PARAMETER PROPERTIES
 

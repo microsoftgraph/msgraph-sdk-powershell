@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaUserActivityHistoryItem
 
 ## SYNOPSIS
-Get historyItems from users
+Optional.
+NavigationProperty/Containment; navigation property to the activity's historyItems.
 
 ## SYNTAX
 
@@ -32,7 +33,8 @@ Get-MgBetaUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
 ```
 
 ## DESCRIPTION
-Get historyItems from users
+Optional.
+NavigationProperty/Containment; navigation property to the activity's historyItems.
 
 ## EXAMPLES
 

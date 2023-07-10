@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSiteTermStoreSet
 
 ## SYNOPSIS
-Create new navigation property to sets for sites
+Create a new set object.
 
 ## SYNTAX
 
@@ -77,7 +77,7 @@ New-MgSiteTermStoreSet -InputObject <ISitesIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Create new navigation property to sets for sites
+Create a new set object.
 
 ## EXAMPLES
 

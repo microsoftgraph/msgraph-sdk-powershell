@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupTeamChannelTab
 
 ## SYNOPSIS
-Delete navigation property tabs for groups
+Removes (unpins) a tab from the specified channel within a team.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgGroupTeamChannelTab -InputObject <ITeamsIdentity> [-IfMatch <String>] [
 ```
 
 ## DESCRIPTION
-Delete navigation property tabs for groups
+Removes (unpins) a tab from the specified channel within a team.
 
 ## EXAMPLES
 

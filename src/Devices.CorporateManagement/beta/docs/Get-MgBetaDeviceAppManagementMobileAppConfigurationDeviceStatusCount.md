@@ -121,7 +121,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatusCount
+Get-BetaDeviceAppMgtMobileAppConfigurationDeviceStatusCount
 
 COMPLEX PARAMETER PROPERTIES
 

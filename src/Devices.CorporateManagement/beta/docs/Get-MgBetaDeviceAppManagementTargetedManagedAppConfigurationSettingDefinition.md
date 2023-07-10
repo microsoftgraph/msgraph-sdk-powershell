@@ -285,7 +285,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-MgDeviceAppMgtTargetedManagedAppConfigurationSettingDefinition
+Get-BetaDeviceAppMgtTargetedManagedAppConfigurationSettingDefinition
 
 COMPLEX PARAMETER PROPERTIES
 

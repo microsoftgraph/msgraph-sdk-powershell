@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Bookings
-Module Guid: 3afbfd2f-b5e2-4d13-b91c-685ab76a6c52
+Module Guid: e979d273-acdc-48d8-a18f-48959e7800c6
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -205,7 +205,7 @@ A field that represents the time-aligned metadata of the utterances in the trans
 Read-only.
 
 ### [Get-MgBetaVirtualEventSessionVirtualAppointment](Get-MgBetaVirtualEventSessionVirtualAppointment.md)
-Get virtualAppointment from solutions
+Read the properties and relationships of a virtualAppointment object.
 
 ### [Get-MgBetaVirtualEventWebinar](Get-MgBetaVirtualEventWebinar.md)
 Read the properties and relationships of a virtualEventWebinar object.
@@ -306,7 +306,7 @@ A field that represents the time-aligned metadata of the utterances in the trans
 Read-only.
 
 ### [Get-MgBetaVirtualEventWebinarSessionVirtualAppointment](Get-MgBetaVirtualEventWebinarSessionVirtualAppointment.md)
-Get virtualAppointment from solutions
+Read the properties and relationships of a virtualAppointment object.
 
 ### [New-MgBetaBookingBusiness](New-MgBetaBookingBusiness.md)
 Create a new Microsoft Bookings business in a tenant.
@@ -499,7 +499,7 @@ Delete navigation property registrants for solutions
 Delete navigation property transcripts for solutions
 
 ### [Remove-MgBetaVirtualEventSessionVirtualAppointment](Remove-MgBetaVirtualEventSessionVirtualAppointment.md)
-Delete navigation property virtualAppointment for solutions
+Delete a virtualAppointment object.
 
 ### [Remove-MgBetaVirtualEventWebinar](Remove-MgBetaVirtualEventWebinar.md)
 Delete navigation property webinars for solutions
@@ -538,7 +538,7 @@ Delete navigation property registrants for solutions
 Delete navigation property transcripts for solutions
 
 ### [Remove-MgBetaVirtualEventWebinarSessionVirtualAppointment](Remove-MgBetaVirtualEventWebinarSessionVirtualAppointment.md)
-Delete navigation property virtualAppointment for solutions
+Delete a virtualAppointment object.
 
 ### [Set-MgBetaVirtualEventSessionAlternativeRecording](Set-MgBetaVirtualEventSessionAlternativeRecording.md)
 The content stream of the alternative recording of a Microsoft Teams live event.
@@ -694,7 +694,7 @@ Update the navigation property registrants in solutions
 Update the navigation property transcripts in solutions
 
 ### [Update-MgBetaVirtualEventSessionVirtualAppointment](Update-MgBetaVirtualEventSessionVirtualAppointment.md)
-Update the navigation property virtualAppointment in solutions
+Update the properties of a virtualAppointment object.
 
 ### [Update-MgBetaVirtualEventWebinar](Update-MgBetaVirtualEventWebinar.md)
 Update the navigation property webinars in solutions
@@ -733,5 +733,5 @@ Update the navigation property registrants in solutions
 Update the navigation property transcripts in solutions
 
 ### [Update-MgBetaVirtualEventWebinarSessionVirtualAppointment](Update-MgBetaVirtualEventWebinarSessionVirtualAppointment.md)
-Update the navigation property virtualAppointment in solutions
+Update the properties of a virtualAppointment object.
 

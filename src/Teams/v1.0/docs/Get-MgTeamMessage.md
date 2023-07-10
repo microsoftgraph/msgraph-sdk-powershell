@@ -13,8 +13,8 @@ Invoke function getAllMessages
 ## SYNTAX
 
 ```
-Get-MgTeamMessage [-Count] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
+Get-MgTeamMessage [-Count] [-Filter <String>] [-Model <String>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,6 +55,21 @@ Accept wildcard characters: False
 
 ### -Filter
 Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Model
+The payment model for the API
 
 ```yaml
 Type: System.String

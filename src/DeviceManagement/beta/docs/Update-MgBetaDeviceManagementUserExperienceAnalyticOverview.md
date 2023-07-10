@@ -94,6 +94,7 @@ Accept wildcard characters: False
 
 ### -Insights
 The user experience analytics insights.
+Read-only.
 To construct, see NOTES section for INSIGHTS properties and create a hash table.
 
 ```yaml
@@ -162,16 +163,16 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsOverview>`: The user experience analytics overview entity contains the overall score and the scores and insights of every metric of all categories.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The user experience analytics insights.
+  - `[Insights <IMicrosoftGraphUserExperienceAnalyticsInsight[]>]`: The user experience analytics insights. Read-only.
     - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
     - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
-    - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
+    - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics metric.
     - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
 
-`INSIGHTS <IMicrosoftGraphUserExperienceAnalyticsInsight[]>`: The user experience analytics insights.
+`INSIGHTS <IMicrosoftGraphUserExperienceAnalyticsInsight[]>`: The user experience analytics insights. Read-only.
   - `[InsightId <String>]`: The unique identifier of the user experience analytics insight.
   - `[Severity <UserExperienceAnalyticsInsightSeverity?>]`: Indicates severity of insights. Possible values are: None, Informational, Warning, Error.
-  - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics insight.
+  - `[UserExperienceAnalyticsMetricId <String>]`: The unique identifier of the user experience analytics metric.
   - `[Values <IMicrosoftGraphUserExperienceAnalyticsInsightValue[]>]`: The value of the user experience analytics insight.
 
 ## RELATED LINKS

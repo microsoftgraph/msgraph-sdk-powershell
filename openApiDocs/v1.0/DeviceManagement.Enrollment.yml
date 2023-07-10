@@ -10,11 +10,8 @@ paths:
     get:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
-      summary: Get onPremisesConditionalAccessSettings
-      description: Read properties and relationships of the onPremisesConditionalAccessSettings object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-onpremisesconditionalaccesssettings-get?view=graph-rest-1.0
+      summary: Get conditionalAccessSettings from deviceManagement
+      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
       operationId: deviceManagement_GetConditionalAccessSetting
       parameters:
         - name: $select
@@ -58,11 +55,7 @@ paths:
     patch:
       tags:
         - deviceManagement.onPremisesConditionalAccessSettings
-      summary: Update onPremisesConditionalAccessSettings
-      description: Update the properties of a onPremisesConditionalAccessSettings object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-onpremisesconditionalaccesssettings-update?view=graph-rest-1.0
+      summary: Update the navigation property conditionalAccessSettings in deviceManagement
       operationId: deviceManagement_UpdateConditionalAccessSetting
       requestBody:
         description: New navigation property values
@@ -103,11 +96,8 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: List deviceEnrollmentWindowsHelloForBusinessConfigurations
-      description: List properties and relationships of the deviceEnrollmentWindowsHelloForBusinessConfiguration objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-list?view=graph-rest-1.0
+      summary: Get deviceEnrollmentConfigurations from deviceManagement
+      description: The list of device enrollment configurations
       operationId: deviceManagement_ListDeviceEnrollmentConfiguration
       parameters:
         - $ref: '#/components/parameters/top'
@@ -184,11 +174,7 @@ paths:
     post:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Create deviceEnrollmentLimitConfiguration
-      description: Create a new deviceEnrollmentLimitConfiguration object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-create?view=graph-rest-1.0
+      summary: Create new navigation property to deviceEnrollmentConfigurations for deviceManagement
       operationId: deviceManagement_CreateDeviceEnrollmentConfiguration
       requestBody:
         description: New navigation property
@@ -211,11 +197,8 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Get deviceEnrollmentConfiguration
-      description: Read properties and relationships of the deviceEnrollmentConfiguration object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-get?view=graph-rest-1.0
+      summary: Get deviceEnrollmentConfigurations from deviceManagement
+      description: The list of device enrollment configurations
       operationId: deviceManagement_GetDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -271,11 +254,7 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Update deviceEnrollmentWindowsHelloForBusinessConfiguration
-      description: Update the properties of a deviceEnrollmentWindowsHelloForBusinessConfiguration object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-update?view=graph-rest-1.0
+      summary: Update the navigation property deviceEnrollmentConfigurations in deviceManagement
       operationId: deviceManagement_UpdateDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -306,11 +285,7 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Delete deviceEnrollmentPlatformRestrictionsConfiguration
-      description: Deletes a deviceEnrollmentPlatformRestrictionsConfiguration.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-deviceenrollmentplatformrestrictionsconfiguration-delete?view=graph-rest-1.0
+      summary: Delete navigation property deviceEnrollmentConfigurations for deviceManagement
       operationId: deviceManagement_DeleteDeviceEnrollmentConfiguration
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -337,11 +312,8 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: List enrollmentConfigurationAssignments
-      description: List properties and relationships of the enrollmentConfigurationAssignment objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-enrollmentconfigurationassignment-list?view=graph-rest-1.0
+      summary: Get assignments from deviceManagement
+      description: The list of group assignments for the device configuration profile
       operationId: deviceManagement.deviceEnrollmentConfiguration_ListAssignment
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -409,11 +381,7 @@ paths:
     post:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Create enrollmentConfigurationAssignment
-      description: Create a new enrollmentConfigurationAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-enrollmentconfigurationassignment-create?view=graph-rest-1.0
+      summary: Create new navigation property to assignments for deviceManagement
       operationId: deviceManagement.deviceEnrollmentConfiguration_CreateAssignment
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -445,11 +413,8 @@ paths:
     get:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Get enrollmentConfigurationAssignment
-      description: Read properties and relationships of the enrollmentConfigurationAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-enrollmentconfigurationassignment-get?view=graph-rest-1.0
+      summary: Get assignments from deviceManagement
+      description: The list of group assignments for the device configuration profile
       operationId: deviceManagement.deviceEnrollmentConfiguration_GetAssignment
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -506,11 +471,7 @@ paths:
     patch:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Update enrollmentConfigurationAssignment
-      description: Update the properties of a enrollmentConfigurationAssignment object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-enrollmentconfigurationassignment-update?view=graph-rest-1.0
+      summary: Update the navigation property assignments in deviceManagement
       operationId: deviceManagement.deviceEnrollmentConfiguration_UpdateAssignment
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -549,11 +510,7 @@ paths:
     delete:
       tags:
         - deviceManagement.deviceEnrollmentConfiguration
-      summary: Delete enrollmentConfigurationAssignment
-      description: Deletes a enrollmentConfigurationAssignment.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-onboarding-enrollmentconfigurationassignment-delete?view=graph-rest-1.0
+      summary: Delete navigation property assignments for deviceManagement
       operationId: deviceManagement.deviceEnrollmentConfiguration_DeleteAssignment
       parameters:
         - name: deviceEnrollmentConfiguration-id
@@ -624,11 +581,8 @@ paths:
     get:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
-      summary: List importedWindowsAutopilotDeviceIdentities
-      description: List properties and relationships of the importedWindowsAutopilotDeviceIdentity objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-list?view=graph-rest-1.0
+      summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      description: Collection of imported Windows autopilot devices.
       operationId: deviceManagement_ListImportedWindowsAutopilotDeviceIdentity
       parameters:
         - $ref: '#/components/parameters/top'
@@ -706,11 +660,7 @@ paths:
     post:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
-      summary: Create importedWindowsAutopilotDeviceIdentity
-      description: Create a new importedWindowsAutopilotDeviceIdentity object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-create?view=graph-rest-1.0
+      summary: Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
       operationId: deviceManagement_CreateImportedWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property
@@ -733,11 +683,8 @@ paths:
     get:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
-      summary: Get importedWindowsAutopilotDeviceIdentity
-      description: Read properties and relationships of the importedWindowsAutopilotDeviceIdentity object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-get?view=graph-rest-1.0
+      summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      description: Collection of imported Windows autopilot devices.
       operationId: deviceManagement_GetImportedWindowsAutopilotDeviceIdentity
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
@@ -823,11 +770,7 @@ paths:
     delete:
       tags:
         - deviceManagement.importedWindowsAutopilotDeviceIdentity
-      summary: Delete importedWindowsAutopilotDeviceIdentity
-      description: Deletes a importedWindowsAutopilotDeviceIdentity.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-delete?view=graph-rest-1.0
+      summary: Delete navigation property importedWindowsAutopilotDeviceIdentities for deviceManagement
       operationId: deviceManagement_DeleteImportedWindowsAutopilotDeviceIdentity
       parameters:
         - name: importedWindowsAutopilotDeviceIdentity-id
@@ -868,11 +811,8 @@ paths:
     get:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
-      summary: List windowsAutopilotDeviceIdentities
-      description: List properties and relationships of the windowsAutopilotDeviceIdentity objects.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-list?view=graph-rest-1.0
+      summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      description: The Windows autopilot device identities contained collection.
       operationId: deviceManagement_ListWindowsAutopilotDeviceIdentity
       parameters:
         - $ref: '#/components/parameters/top'
@@ -977,11 +917,7 @@ paths:
     post:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
-      summary: Create windowsAutopilotDeviceIdentity
-      description: Create a new windowsAutopilotDeviceIdentity object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-create?view=graph-rest-1.0
+      summary: Create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
       operationId: deviceManagement_CreateWindowsAutopilotDeviceIdentity
       requestBody:
         description: New navigation property
@@ -1004,11 +940,8 @@ paths:
     get:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
-      summary: Get windowsAutopilotDeviceIdentity
-      description: Read properties and relationships of the windowsAutopilotDeviceIdentity object.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-get?view=graph-rest-1.0
+      summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      description: The Windows autopilot device identities contained collection.
       operationId: deviceManagement_GetWindowsAutopilotDeviceIdentity
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -1103,11 +1036,7 @@ paths:
     delete:
       tags:
         - deviceManagement.windowsAutopilotDeviceIdentity
-      summary: Delete windowsAutopilotDeviceIdentity
-      description: Deletes a windowsAutopilotDeviceIdentity.
-      externalDocs:
-        description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-delete?view=graph-rest-1.0
+      summary: Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
       operationId: deviceManagement_DeleteWindowsAutopilotDeviceIdentity
       parameters:
         - name: windowsAutopilotDeviceIdentity-id

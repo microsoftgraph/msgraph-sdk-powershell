@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-Module Guid: 6717cb82-9a88-4b6c-add7-536caf96625a
+Module Guid: a8cb2a08-5755-4cfd-af1b-e647a5960dbf
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.devices.corporatemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,7 +12,7 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Devices.CorporateManagement Cmdlets
 ### [Get-MgDeviceAppManagement](Get-MgDeviceAppManagement.md)
-Get deviceAppManagement
+Read properties and relationships of the deviceAppManagement object.
 
 ### [Get-MgDeviceAppManagementAndroidManagedAppProtection](Get-MgDeviceAppManagementAndroidManagedAppProtection.md)
 Android managed app policies.
@@ -311,8 +311,24 @@ Get the number of the resource
 ### [Get-MgUserManagedDeviceCount](Get-MgUserManagedDeviceCount.md)
 Get the number of the resource
 
+### [Get-MgUserManagedDeviceLogCollectionRequestCount](Get-MgUserManagedDeviceLogCollectionRequestCount.md)
+Get the number of the resource
+
+### [Get-MgUserManagedDeviceLogCollectionResponse](Get-MgUserManagedDeviceLogCollectionResponse.md)
+List of log collection requests
+
 ### [Get-MgUserManagedDeviceUser](Get-MgUserManagedDeviceUser.md)
 The primary users associated with the managed device.
+
+### [Get-MgUserManagedDeviceWindowsProtectionState](Get-MgUserManagedDeviceWindowsProtectionState.md)
+The device protection status.
+This property is read-only.
+
+### [Get-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState](Get-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
+Device malware list
+
+### [Get-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareStateCount](Get-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareStateCount.md)
+Get the number of the resource
 
 ### [Invoke-MgTargetDeviceAppManagementManagedAppPolicyApp](Invoke-MgTargetDeviceAppManagementManagedAppPolicyApp.md)
 Invoke action targetApps
@@ -451,6 +467,12 @@ Create new navigation property to deviceCompliancePolicyStates for users
 
 ### [New-MgUserManagedDeviceConfigurationState](New-MgUserManagedDeviceConfigurationState.md)
 Create new navigation property to deviceConfigurationStates for users
+
+### [New-MgUserManagedDeviceLogCollectionResponse](New-MgUserManagedDeviceLogCollectionResponse.md)
+Create new navigation property to logCollectionRequests for users
+
+### [New-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState](New-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
+Create new navigation property to detectedMalwareState for users
 
 ### [Remove-MgDeviceAppManagementAndroidManagedAppProtection](Remove-MgDeviceAppManagementAndroidManagedAppProtection.md)
 Delete navigation property androidManagedAppProtections for deviceAppManagement
@@ -602,6 +624,15 @@ Delete navigation property deviceCompliancePolicyStates for users
 ### [Remove-MgUserManagedDeviceConfigurationState](Remove-MgUserManagedDeviceConfigurationState.md)
 Delete navigation property deviceConfigurationStates for users
 
+### [Remove-MgUserManagedDeviceLogCollectionResponse](Remove-MgUserManagedDeviceLogCollectionResponse.md)
+Delete navigation property logCollectionRequests for users
+
+### [Remove-MgUserManagedDeviceWindowsProtectionState](Remove-MgUserManagedDeviceWindowsProtectionState.md)
+Delete navigation property windowsProtectionState for users
+
+### [Remove-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState](Remove-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
+Delete navigation property detectedMalwareState for users
+
 ### [Set-MgDeviceAppManagementManagedEBook](Set-MgDeviceAppManagementManagedEBook.md)
 Invoke action assign
 
@@ -621,7 +652,7 @@ Syncs Intune account with Microsoft Store For Business
 Syncs licenses associated with a specific appleVolumePurchaseProgramToken
 
 ### [Update-MgDeviceAppManagement](Update-MgDeviceAppManagement.md)
-Update deviceAppManagement
+Update the properties of a deviceAppManagement object.
 
 ### [Update-MgDeviceAppManagementAndroidManagedAppProtection](Update-MgDeviceAppManagementAndroidManagedAppProtection.md)
 Update the navigation property androidManagedAppProtections in deviceAppManagement
@@ -772,4 +803,13 @@ Update the navigation property deviceCompliancePolicyStates in users
 
 ### [Update-MgUserManagedDeviceConfigurationState](Update-MgUserManagedDeviceConfigurationState.md)
 Update the navigation property deviceConfigurationStates in users
+
+### [Update-MgUserManagedDeviceLogCollectionResponse](Update-MgUserManagedDeviceLogCollectionResponse.md)
+Update the navigation property logCollectionRequests in users
+
+### [Update-MgUserManagedDeviceWindowsProtectionState](Update-MgUserManagedDeviceWindowsProtectionState.md)
+Update the navigation property windowsProtectionState in users
+
+### [Update-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState](Update-MgUserManagedDeviceWindowsProtectionStateDetectedMalwareState.md)
+Update the navigation property detectedMalwareState in users
 

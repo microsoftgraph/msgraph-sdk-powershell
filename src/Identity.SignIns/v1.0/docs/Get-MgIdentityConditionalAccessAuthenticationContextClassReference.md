@@ -8,9 +8,7 @@ schema: 2.0.0
 # Get-MgIdentityConditionalAccessAuthenticationContextClassReference
 
 ## SYNOPSIS
-Read-only.
-Nullable.
-Returns a collection of the specified authentication context class references.
+Retrieve the properties and relationships of a authenticationContextClassReference object.
 
 ## SYNTAX
 
@@ -35,9 +33,7 @@ Get-MgIdentityConditionalAccessAuthenticationContextClassReference -InputObject 
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
-Returns a collection of the specified authentication context class references.
+Retrieve the properties and relationships of a authenticationContextClassReference object.
 
 ## EXAMPLES
 
@@ -46,7 +42,7 @@ Returns a collection of the specified authentication context class references.
 Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-Get-MgIdentityConditionalAccessAuthenticationContextClassReference
+Get-MgIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId
 
 ## PARAMETERS
 

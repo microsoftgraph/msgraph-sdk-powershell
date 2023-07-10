@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: fd65e6af-2080-496d-a5eb-54fcc07609cf
+Module Guid: 352d0fc7-dc0b-4020-939d-efe57985be76
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -96,7 +96,10 @@ This resource is wrapped with a possible pointer back to the assignment resource
 Get the number of the resource
 
 ### [Get-MgEducationClassAssignmentSubmissionSubmittedResource](Get-MgEducationClassAssignmentSubmissionSubmittedResource.md)
-Get submittedResources from education
+Retrieve a submitted resource.
+Only teachers, students, and applications with application permissions can perform this operation.
+Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission.
+Note that teachers can leave notes in some resources.
 
 ### [Get-MgEducationClassAssignmentSubmissionSubmittedResourceCount](Get-MgEducationClassAssignmentSubmissionSubmittedResourceCount.md)
 Get the number of the resource
@@ -208,7 +211,10 @@ This resource is wrapped with a possible pointer back to the assignment resource
 Get the number of the resource
 
 ### [Get-MgEducationMeAssignmentSubmissionSubmittedResource](Get-MgEducationMeAssignmentSubmissionSubmittedResource.md)
-Get submittedResources from education
+Retrieve a submitted resource.
+Only teachers, students, and applications with application permissions can perform this operation.
+Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission.
+Note that teachers can leave notes in some resources.
 
 ### [Get-MgEducationMeAssignmentSubmissionSubmittedResourceCount](Get-MgEducationMeAssignmentSubmissionSubmittedResourceCount.md)
 Get the number of the resource
@@ -352,7 +358,10 @@ This resource is wrapped with a possible pointer back to the assignment resource
 Get the number of the resource
 
 ### [Get-MgEducationUserAssignmentSubmissionSubmittedResource](Get-MgEducationUserAssignmentSubmissionSubmittedResource.md)
-Get submittedResources from education
+Retrieve a submitted resource.
+Only teachers, students, and applications with application permissions can perform this operation.
+Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission.
+Note that teachers can leave notes in some resources.
 
 ### [Get-MgEducationUserAssignmentSubmissionSubmittedResourceCount](Get-MgEducationUserAssignmentSubmissionSubmittedResourceCount.md)
 Get the number of the resource

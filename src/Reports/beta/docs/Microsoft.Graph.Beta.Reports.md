@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Reports
-Module Guid: 4000e22b-ab53-4fc0-bb40-39fd2f9fc528
+Module Guid: c28070ed-61f6-4c21-ad5e-165b7bb48cf2
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -24,6 +24,12 @@ For details about investigating Identity Protection risks, see How to investigat
 
 ### [Get-MgBetaAdminReportSetting](Get-MgBetaAdminReportSetting.md)
 Get the tenant-level settings for Microsoft 365 reports.
+
+### [Get-MgBetaAuditLogCustomSecurityAttributeAudit](Get-MgBetaAuditLogCustomSecurityAttributeAudit.md)
+Get customSecurityAttributeAudits from auditLogs
+
+### [Get-MgBetaAuditLogCustomSecurityAttributeAuditCount](Get-MgBetaAuditLogCustomSecurityAttributeAuditCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaAuditLogDirectoryAudit](Get-MgBetaAuditLogDirectoryAudit.md)
 Get a specific Azure Active Directory audit log item.
@@ -64,6 +70,12 @@ Get the number of the resource
 Entity representing a job to export a report
 
 ### [Get-MgBetaDeviceManagementReportExportJobCount](Get-MgBetaDeviceManagementReportExportJobCount.md)
+Get the number of the resource
+
+### [Get-MgBetaReportAppCredentialSignInActivity](Get-MgBetaReportAppCredentialSignInActivity.md)
+Get an appCredentialSignInActivity object that contains recent activity of an application credential.
+
+### [Get-MgBetaReportAppCredentialSignInActivityCount](Get-MgBetaReportAppCredentialSignInActivityCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaReportApplicationSignInDetailedSummary](Get-MgBetaReportApplicationSignInDetailedSummary.md)
@@ -314,6 +326,14 @@ Invoke function getAttackSimulationTrainingUserCoverage
 
 ### [Get-MgBetaReportSecurityAttackSimulationUserCoverage](Get-MgBetaReportSecurityAttackSimulationUserCoverage.md)
 Invoke function getAttackSimulationSimulationUserCoverage
+
+### [Get-MgBetaReportServicePrincipalSignInActivity](Get-MgBetaReportServicePrincipalSignInActivity.md)
+Get a servicePrincipalSignInActivity object that contains sign-in activity information for a service principal in an Azure Active Directory tenant.
+You can use a service principal as a client or resource.
+A service principal supports delegated or app-only authentication context.
+
+### [Get-MgBetaReportServicePrincipalSignInActivityCount](Get-MgBetaReportServicePrincipalSignInActivityCount.md)
+Get the number of the resource
 
 ### [Get-MgBetaReportSharePointActivityFileCount](Get-MgBetaReportSharePointActivityFileCount.md)
 Invoke function getSharePointActivityFileCounts

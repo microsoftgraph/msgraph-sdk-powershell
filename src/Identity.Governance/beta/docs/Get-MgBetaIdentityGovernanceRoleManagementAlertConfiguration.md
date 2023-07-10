@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernanceRoleManagementAlertConfiguration
 
 ## SYNOPSIS
-Get alertConfigurations from identityGovernance
+The various configurations of an alert for Azure AD roles.
+The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
 
 ## SYNTAX
 
@@ -45,7 +46,8 @@ Get-MgBetaIdentityGovernanceRoleManagementAlertConfiguration -InputObject <IIden
 ```
 
 ## DESCRIPTION
-Get alertConfigurations from identityGovernance
+The various configurations of an alert for Azure AD roles.
+The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
 
 ## EXAMPLES
 

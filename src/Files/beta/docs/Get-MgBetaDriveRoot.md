@@ -30,17 +30,10 @@ Retrieve the metadata for a driveItem in a drive by file system path or ID.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Files
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgBetaDriveRoot -DriveId $driveId
 
 ## PARAMETERS
 

@@ -95,6 +95,7 @@ Accept wildcard characters: False
 
 ### -Unit
 The unit of the user experience analytics metric.
+Examples: none, percentage, count, seconds, score.
 
 ```yaml
 Type: System.String
@@ -177,7 +178,7 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsMetric>`: The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[Unit <String>]`: The unit of the user experience analytics metric.
+  - `[Unit <String>]`: The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.
   - `[Value <Double?>]`: The value of the user experience analytics metric.
 
 ## RELATED LINKS

@@ -4072,11 +4072,11 @@ paths:
     patch:
       tags:
         - identity.conditionalAccessRoot
-      summary: Update ipNamedlocation
-      description: Update the properties of an ipNamedLocation object.
+      summary: Update countryNamedLocation
+      description: Update the properties of a countryNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0
       operationId: identity.conditionalAccess_UpdateNamedLocation
       parameters:
         - name: namedLocation-id
@@ -4107,11 +4107,11 @@ paths:
     delete:
       tags:
         - identity.conditionalAccessRoot
-      summary: Delete namedLocation
-      description: Delete a namedLocation object.
+      summary: Delete ipNamedLocation
+      description: Delete an ipNamedLocation object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0
       operationId: identity.conditionalAccess_DeleteNamedLocation
       parameters:
         - name: namedLocation-id
@@ -8357,6 +8357,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
         - name: $expand
           in: query
@@ -8415,6 +8416,7 @@ paths:
                 - joinedTeams
                 - teamwork
                 - todo
+                - employeeExperience
               type: string
       responses:
         2XX:
@@ -9837,7 +9839,7 @@ paths:
       description: Update an appManagementPolicy object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/appManagementPolicy-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-update?view=graph-rest-1.0
       operationId: policy_UpdateAppManagementPolicy
       parameters:
         - name: appManagementPolicy-id
@@ -9872,7 +9874,7 @@ paths:
       description: Delete an appManagementPolicy object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/appManagementPolicy-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/appmanagementpolicy-delete?view=graph-rest-1.0
       operationId: policy_DeleteAppManagementPolicy
       parameters:
         - name: appManagementPolicy-id
@@ -20501,6 +20503,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.mailboxSettings:
@@ -23391,7 +23395,7 @@ components:
           properties:
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -23427,7 +23431,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -23464,7 +23468,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             ethernetMacAddress:
@@ -23489,7 +23493,7 @@ components:
               readOnly: true
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -23507,13 +23511,13 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             managedDeviceName:
@@ -23547,7 +23551,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -23568,7 +23572,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             remoteAssistanceSessionErrorDetails:
@@ -23578,7 +23582,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -23603,7 +23607,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -23640,12 +23644,20 @@ components:
               x-ms-navigationProperty: true
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
+            logCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceLogCollectionResponse'
+              description: List of log collection requests
+              x-ms-navigationProperty: true
             users:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: The primary users associated with the managed device.
               x-ms-navigationProperty: true
+            windowsProtectionState:
+              $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
           description: Devices that are managed or pre-enrolled through Intune
@@ -24255,6 +24267,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -27459,6 +27484,149 @@ components:
           additionalProperties:
             type: object
           description: 'Device categories provides a way to organize your devices. Using device categories, company administrators can define their own categories that make sense to their company. These categories can then be applied to a device in the Intune Azure console or selected by a user during device enrollment. You can filter reports and create dynamic Azure Active Directory device groups based on device categories.'
+    microsoft.graph.deviceLogCollectionResponse:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceLogCollectionResponse
+          type: object
+          properties:
+            enrolledByUser:
+              type: string
+              description: The User Principal Name (UPN) of the user that enrolled the device.
+              nullable: true
+            expirationDateTimeUTC:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTime of the expiration of the logs.
+              format: date-time
+              nullable: true
+            initiatedByUserPrincipalName:
+              type: string
+              description: The UPN for who initiated the request.
+              nullable: true
+            managedDeviceId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: Indicates Intune device unique identifier.
+              format: uuid
+            receivedDateTimeUTC:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTime the request was received.
+              format: date-time
+              nullable: true
+            requestedDateTimeUTC:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTime of the request.
+              format: date-time
+              nullable: true
+            sizeInKB:
+              type: number
+              description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
+            status:
+              $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
+          additionalProperties:
+            type: object
+          description: Windows Log Collection request entity.
+    microsoft.graph.windowsProtectionState:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsProtectionState
+          type: object
+          properties:
+            antiMalwareVersion:
+              type: string
+              description: Current anti malware version
+              nullable: true
+            deviceState:
+              $ref: '#/components/schemas/microsoft.graph.windowsDeviceHealthState'
+            engineVersion:
+              type: string
+              description: Current endpoint protection engine's version
+              nullable: true
+            fullScanOverdue:
+              type: boolean
+              description: 'When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.'
+              nullable: true
+            fullScanRequired:
+              type: boolean
+              description: 'When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.'
+              nullable: true
+            isVirtualMachine:
+              type: boolean
+              description: 'When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.'
+              nullable: true
+            lastFullScanDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last quick scan datetime
+              format: date-time
+              nullable: true
+            lastFullScanSignatureVersion:
+              type: string
+              description: Last full scan signature version
+              nullable: true
+            lastQuickScanDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last quick scan datetime
+              format: date-time
+              nullable: true
+            lastQuickScanSignatureVersion:
+              type: string
+              description: Last quick scan signature version
+              nullable: true
+            lastReportedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last device health status reported time
+              format: date-time
+              nullable: true
+            malwareProtectionEnabled:
+              type: boolean
+              description: When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.
+              nullable: true
+            networkInspectionSystemEnabled:
+              type: boolean
+              description: 'When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.'
+              nullable: true
+            productStatus:
+              $ref: '#/components/schemas/microsoft.graph.windowsDefenderProductStatus'
+            quickScanOverdue:
+              type: boolean
+              description: 'When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.'
+              nullable: true
+            realTimeProtectionEnabled:
+              type: boolean
+              description: 'When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.'
+              nullable: true
+            rebootRequired:
+              type: boolean
+              description: 'When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.'
+              nullable: true
+            signatureUpdateOverdue:
+              type: boolean
+              description: 'When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.'
+              nullable: true
+            signatureVersion:
+              type: string
+              description: Current malware definitions version
+              nullable: true
+            tamperProtectionEnabled:
+              type: boolean
+              description: 'When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.'
+              nullable: true
+            detectedMalwareState:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsDeviceMalwareState'
+              description: Device malware list
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Device protection status entity.
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       type: object
@@ -29202,6 +29370,43 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
     microsoft.graph.externalAudienceScope:
@@ -31414,6 +31619,223 @@ components:
       additionalProperties:
         type: object
       description: Device Configuration Setting State for a given device.
+    microsoft.graph.appLogUploadState:
+      title: appLogUploadState
+      enum:
+        - pending
+        - completed
+        - failed
+        - unknownFutureValue
+      type: string
+      description: AppLogUploadStatus
+      x-ms-enum:
+        name: appLogUploadState
+        modelAsString: false
+        values:
+          - value: pending
+            description: Default. Indicates that request is waiting to be processed or under processing.
+            name: pending
+          - value: completed
+            description: Indicates that request is completed with file uploaded to Azure blob for download.
+            name: completed
+          - value: failed
+            description: Indicates that request is completed with file uploaded to Azure blob for download.
+            name: failed
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.windowsDeviceHealthState:
+      title: windowsDeviceHealthState
+      enum:
+        - clean
+        - fullScanPending
+        - rebootPending
+        - manualStepsPending
+        - offlineScanPending
+        - critical
+      type: string
+      description: Computer endpoint protection state
+      x-ms-enum:
+        name: windowsDeviceHealthState
+        modelAsString: false
+        values:
+          - value: clean
+            description: Computer is clean and no action is required
+            name: clean
+          - value: fullScanPending
+            description: Computer is in pending full scan state
+            name: fullScanPending
+          - value: rebootPending
+            description: Computer is in pending reboot state
+            name: rebootPending
+          - value: manualStepsPending
+            description: Computer is in pending manual steps state
+            name: manualStepsPending
+          - value: offlineScanPending
+            description: Computer is in pending offline scan state
+            name: offlineScanPending
+          - value: critical
+            description: Computer is in critical failure state
+            name: critical
+    microsoft.graph.windowsDefenderProductStatus:
+      title: windowsDefenderProductStatus
+      enum:
+        - noStatus
+        - serviceNotRunning
+        - serviceStartedWithoutMalwareProtection
+        - pendingFullScanDueToThreatAction
+        - pendingRebootDueToThreatAction
+        - pendingManualStepsDueToThreatAction
+        - avSignaturesOutOfDate
+        - asSignaturesOutOfDate
+        - noQuickScanHappenedForSpecifiedPeriod
+        - noFullScanHappenedForSpecifiedPeriod
+        - systemInitiatedScanInProgress
+        - systemInitiatedCleanInProgress
+        - samplesPendingSubmission
+        - productRunningInEvaluationMode
+        - productRunningInNonGenuineMode
+        - productExpired
+        - offlineScanRequired
+        - serviceShutdownAsPartOfSystemShutdown
+        - threatRemediationFailedCritically
+        - threatRemediationFailedNonCritically
+        - noStatusFlagsSet
+        - platformOutOfDate
+        - platformUpdateInProgress
+        - platformAboutToBeOutdated
+        - signatureOrPlatformEndOfLifeIsPastOrIsImpending
+        - windowsSModeSignaturesInUseOnNonWin10SInstall
+      type: string
+      description: Product Status of Windows Defender
+      x-ms-enum:
+        name: windowsDefenderProductStatus
+        modelAsString: false
+        values:
+          - value: noStatus
+            description: No status
+            name: noStatus
+          - value: serviceNotRunning
+            description: Service not running
+            name: serviceNotRunning
+          - value: serviceStartedWithoutMalwareProtection
+            description: Service started without any malware protection engine
+            name: serviceStartedWithoutMalwareProtection
+          - value: pendingFullScanDueToThreatAction
+            description: Pending full scan due to threat action
+            name: pendingFullScanDueToThreatAction
+          - value: pendingRebootDueToThreatAction
+            description: Pending reboot due to threat action
+            name: pendingRebootDueToThreatAction
+          - value: pendingManualStepsDueToThreatAction
+            description: 'Pending manual steps due to threat action '
+            name: pendingManualStepsDueToThreatAction
+          - value: avSignaturesOutOfDate
+            description: AV signatures out of date
+            name: avSignaturesOutOfDate
+          - value: asSignaturesOutOfDate
+            description: AS signatures out of date
+            name: asSignaturesOutOfDate
+          - value: noQuickScanHappenedForSpecifiedPeriod
+            description: No quick scan has happened for a specified period
+            name: noQuickScanHappenedForSpecifiedPeriod
+          - value: noFullScanHappenedForSpecifiedPeriod
+            description: No full scan has happened for a specified period
+            name: noFullScanHappenedForSpecifiedPeriod
+          - value: systemInitiatedScanInProgress
+            description: System initiated scan in progress
+            name: systemInitiatedScanInProgress
+          - value: systemInitiatedCleanInProgress
+            description: System initiated clean in progress
+            name: systemInitiatedCleanInProgress
+          - value: samplesPendingSubmission
+            description: There are samples pending submission
+            name: samplesPendingSubmission
+          - value: productRunningInEvaluationMode
+            description: Product running in evaluation mode
+            name: productRunningInEvaluationMode
+          - value: productRunningInNonGenuineMode
+            description: Product running in non-genuine Windows mode
+            name: productRunningInNonGenuineMode
+          - value: productExpired
+            description: Product expired
+            name: productExpired
+          - value: offlineScanRequired
+            description: Off-line scan required
+            name: offlineScanRequired
+          - value: serviceShutdownAsPartOfSystemShutdown
+            description: Service is shutting down as part of system shutdown
+            name: serviceShutdownAsPartOfSystemShutdown
+          - value: threatRemediationFailedCritically
+            description: Threat remediation failed critically
+            name: threatRemediationFailedCritically
+          - value: threatRemediationFailedNonCritically
+            description: Threat remediation failed non-critically
+            name: threatRemediationFailedNonCritically
+          - value: noStatusFlagsSet
+            description: No status flags set (well initialized state)
+            name: noStatusFlagsSet
+          - value: platformOutOfDate
+            description: Platform is out of date
+            name: platformOutOfDate
+          - value: platformUpdateInProgress
+            description: Platform update is in progress
+            name: platformUpdateInProgress
+          - value: platformAboutToBeOutdated
+            description: Platform is about to be outdated
+            name: platformAboutToBeOutdated
+          - value: signatureOrPlatformEndOfLifeIsPastOrIsImpending
+            description: Signature or platform end of life is past or is impending
+            name: signatureOrPlatformEndOfLifeIsPastOrIsImpending
+          - value: windowsSModeSignaturesInUseOnNonWin10SInstall
+            description: Windows SMode signatures still in use on non-Win10S install
+            name: windowsSModeSignaturesInUseOnNonWin10SInstall
+    microsoft.graph.windowsDeviceMalwareState:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsDeviceMalwareState
+          type: object
+          properties:
+            additionalInformationUrl:
+              type: string
+              description: Information URL to learn more about the malware
+              nullable: true
+            category:
+              $ref: '#/components/schemas/microsoft.graph.windowsMalwareCategory'
+            detectionCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of times the malware is detected
+              format: int32
+              nullable: true
+            displayName:
+              type: string
+              description: Malware name
+              nullable: true
+            executionState:
+              $ref: '#/components/schemas/microsoft.graph.windowsMalwareExecutionState'
+            initialDetectionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Initial detection datetime of the malware
+              format: date-time
+              nullable: true
+            lastStateChangeDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The last time this particular threat was changed
+              format: date-time
+              nullable: true
+            severity:
+              $ref: '#/components/schemas/microsoft.graph.windowsMalwareSeverity'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.windowsMalwareState'
+            threatState:
+              $ref: '#/components/schemas/microsoft.graph.windowsMalwareThreatState'
+          additionalProperties:
+            type: object
+          description: Malware detection entity.
     microsoft.graph.plannerPlanContainer:
       title: plannerPlanContainer
       type: object
@@ -32735,6 +33157,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.appKeyCredentialRestrictionType:
       title: appKeyCredentialRestrictionType
       enum:
@@ -33859,6 +34289,387 @@ components:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
       additionalProperties:
         type: object
+    microsoft.graph.windowsMalwareCategory:
+      title: windowsMalwareCategory
+      enum:
+        - invalid
+        - adware
+        - spyware
+        - passwordStealer
+        - trojanDownloader
+        - worm
+        - backdoor
+        - remoteAccessTrojan
+        - trojan
+        - emailFlooder
+        - keylogger
+        - dialer
+        - monitoringSoftware
+        - browserModifier
+        - cookie
+        - browserPlugin
+        - aolExploit
+        - nuker
+        - securityDisabler
+        - jokeProgram
+        - hostileActiveXControl
+        - softwareBundler
+        - stealthNotifier
+        - settingsModifier
+        - toolBar
+        - remoteControlSoftware
+        - trojanFtp
+        - potentialUnwantedSoftware
+        - icqExploit
+        - trojanTelnet
+        - exploit
+        - filesharingProgram
+        - malwareCreationTool
+        - remote_Control_Software
+        - tool
+        - trojanDenialOfService
+        - trojanDropper
+        - trojanMassMailer
+        - trojanMonitoringSoftware
+        - trojanProxyServer
+        - virus
+        - known
+        - unknown
+        - spp
+        - behavior
+        - vulnerability
+        - policy
+        - enterpriseUnwantedSoftware
+        - ransom
+        - hipsRule
+      type: string
+      description: Malware category id
+      x-ms-enum:
+        name: windowsMalwareCategory
+        modelAsString: false
+        values:
+          - value: invalid
+            description: Invalid
+            name: invalid
+          - value: adware
+            description: Adware
+            name: adware
+          - value: spyware
+            description: Spyware
+            name: spyware
+          - value: passwordStealer
+            description: Password stealer
+            name: passwordStealer
+          - value: trojanDownloader
+            description: Trojan downloader
+            name: trojanDownloader
+          - value: worm
+            description: Worm
+            name: worm
+          - value: backdoor
+            description: Backdoor
+            name: backdoor
+          - value: remoteAccessTrojan
+            description: Remote access Trojan
+            name: remoteAccessTrojan
+          - value: trojan
+            description: Trojan
+            name: trojan
+          - value: emailFlooder
+            description: Email flooder
+            name: emailFlooder
+          - value: keylogger
+            description: Keylogger
+            name: keylogger
+          - value: dialer
+            description: Dialer
+            name: dialer
+          - value: monitoringSoftware
+            description: Monitoring software
+            name: monitoringSoftware
+          - value: browserModifier
+            description: Browser modifier
+            name: browserModifier
+          - value: cookie
+            description: Cookie
+            name: cookie
+          - value: browserPlugin
+            description: Browser plugin
+            name: browserPlugin
+          - value: aolExploit
+            description: AOL exploit
+            name: aolExploit
+          - value: nuker
+            description: Nuker
+            name: nuker
+          - value: securityDisabler
+            description: Security disabler
+            name: securityDisabler
+          - value: jokeProgram
+            description: Joke program
+            name: jokeProgram
+          - value: hostileActiveXControl
+            description: Hostile ActiveX control
+            name: hostileActiveXControl
+          - value: softwareBundler
+            description: Software bundler
+            name: softwareBundler
+          - value: stealthNotifier
+            description: Stealth modifier
+            name: stealthNotifier
+          - value: settingsModifier
+            description: Settings modifier
+            name: settingsModifier
+          - value: toolBar
+            description: Toolbar
+            name: toolBar
+          - value: remoteControlSoftware
+            description: Remote control software
+            name: remoteControlSoftware
+          - value: trojanFtp
+            description: Trojan FTP
+            name: trojanFtp
+          - value: potentialUnwantedSoftware
+            description: Potential unwanted software
+            name: potentialUnwantedSoftware
+          - value: icqExploit
+            description: ICQ exploit
+            name: icqExploit
+          - value: trojanTelnet
+            description: Trojan telnet
+            name: trojanTelnet
+          - value: exploit
+            description: Exploit
+            name: exploit
+          - value: filesharingProgram
+            description: File sharing program
+            name: filesharingProgram
+          - value: malwareCreationTool
+            description: Malware creation tool
+            name: malwareCreationTool
+          - value: remote_Control_Software
+            description: Remote control software
+            name: remote_Control_Software
+          - value: tool
+            description: Tool
+            name: tool
+          - value: trojanDenialOfService
+            description: Trojan denial of service
+            name: trojanDenialOfService
+          - value: trojanDropper
+            description: Trojan dropper
+            name: trojanDropper
+          - value: trojanMassMailer
+            description: Trojan mass mailer
+            name: trojanMassMailer
+          - value: trojanMonitoringSoftware
+            description: Trojan monitoring software
+            name: trojanMonitoringSoftware
+          - value: trojanProxyServer
+            description: Trojan proxy server
+            name: trojanProxyServer
+          - value: virus
+            description: Virus
+            name: virus
+          - value: known
+            description: Known
+            name: known
+          - value: unknown
+            description: Unknown
+            name: unknown
+          - value: spp
+            description: SPP
+            name: spp
+          - value: behavior
+            description: Behavior
+            name: behavior
+          - value: vulnerability
+            description: Vulnerability
+            name: vulnerability
+          - value: policy
+            description: Policy
+            name: policy
+          - value: enterpriseUnwantedSoftware
+            description: Enterprise Unwanted Software
+            name: enterpriseUnwantedSoftware
+          - value: ransom
+            description: Ransom
+            name: ransom
+          - value: hipsRule
+            description: HIPS Rule
+            name: hipsRule
+    microsoft.graph.windowsMalwareExecutionState:
+      title: windowsMalwareExecutionState
+      enum:
+        - unknown
+        - blocked
+        - allowed
+        - running
+        - notRunning
+      type: string
+      description: Malware execution status
+      x-ms-enum:
+        name: windowsMalwareExecutionState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown
+            name: unknown
+          - value: blocked
+            description: Blocked
+            name: blocked
+          - value: allowed
+            description: Allowed
+            name: allowed
+          - value: running
+            description: Running
+            name: running
+          - value: notRunning
+            description: Not running
+            name: notRunning
+    microsoft.graph.windowsMalwareSeverity:
+      title: windowsMalwareSeverity
+      enum:
+        - unknown
+        - low
+        - moderate
+        - high
+        - severe
+      type: string
+      description: Malware severity
+      x-ms-enum:
+        name: windowsMalwareSeverity
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown
+            name: unknown
+          - value: low
+            description: Low
+            name: low
+          - value: moderate
+            description: Moderate
+            name: moderate
+          - value: high
+            description: High
+            name: high
+          - value: severe
+            description: Severe
+            name: severe
+    microsoft.graph.windowsMalwareState:
+      title: windowsMalwareState
+      enum:
+        - unknown
+        - detected
+        - cleaned
+        - quarantined
+        - removed
+        - allowed
+        - blocked
+        - cleanFailed
+        - quarantineFailed
+        - removeFailed
+        - allowFailed
+        - abandoned
+        - blockFailed
+      type: string
+      description: Malware current status
+      x-ms-enum:
+        name: windowsMalwareState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown
+            name: unknown
+          - value: detected
+            description: Detected
+            name: detected
+          - value: cleaned
+            description: Cleaned
+            name: cleaned
+          - value: quarantined
+            description: Quarantined
+            name: quarantined
+          - value: removed
+            description: Removed
+            name: removed
+          - value: allowed
+            description: Allowed
+            name: allowed
+          - value: blocked
+            description: Blocked
+            name: blocked
+          - value: cleanFailed
+            description: Clean failed
+            name: cleanFailed
+          - value: quarantineFailed
+            description: Quarantine failed
+            name: quarantineFailed
+          - value: removeFailed
+            description: Remove failed
+            name: removeFailed
+          - value: allowFailed
+            description: Allow failed
+            name: allowFailed
+          - value: abandoned
+            description: Abandoned
+            name: abandoned
+          - value: blockFailed
+            description: Block failed
+            name: blockFailed
+    microsoft.graph.windowsMalwareThreatState:
+      title: windowsMalwareThreatState
+      enum:
+        - active
+        - actionFailed
+        - manualStepsRequired
+        - fullScanRequired
+        - rebootRequired
+        - remediatedWithNonCriticalFailures
+        - quarantined
+        - removed
+        - cleaned
+        - allowed
+        - noStatusCleared
+      type: string
+      description: Malware threat status
+      x-ms-enum:
+        name: windowsMalwareThreatState
+        modelAsString: false
+        values:
+          - value: active
+            description: Active
+            name: active
+          - value: actionFailed
+            description: Action failed
+            name: actionFailed
+          - value: manualStepsRequired
+            description: Manual steps required
+            name: manualStepsRequired
+          - value: fullScanRequired
+            description: Full scan required
+            name: fullScanRequired
+          - value: rebootRequired
+            description: Reboot required
+            name: rebootRequired
+          - value: remediatedWithNonCriticalFailures
+            description: 'Remediated with non critical failures '
+            name: remediatedWithNonCriticalFailures
+          - value: quarantined
+            description: Quarantined
+            name: quarantined
+          - value: removed
+            description: Removed
+            name: removed
+          - value: cleaned
+            description: Cleaned
+            name: cleaned
+          - value: allowed
+            description: Allowed
+            name: allowed
+          - value: noStatusCleared
+            description: No status cleared
+            name: noStatusCleared
     microsoft.graph.plannerContainerType:
       title: plannerContainerType
       enum:

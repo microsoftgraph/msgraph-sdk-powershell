@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserOnenoteSectionPage
 
 ## SYNOPSIS
-Create new navigation property to pages for users
+Create a new page in the specified section.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgUserOnenoteSectionPage -InputObject <INotesIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Create new navigation property to pages for users
+Create a new page in the specified section.
 
 ## EXAMPLES
 

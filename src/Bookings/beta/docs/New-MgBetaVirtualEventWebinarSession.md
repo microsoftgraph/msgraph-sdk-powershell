@@ -241,7 +241,9 @@ Accept wildcard characters: False
 ```
 
 ### -AnonymizeIdentityForRoles
-.
+Specifies whose identity will be anonymized in the meeting.
+Possible values are: attendee.
+The attendee value cannot be removed through a PATCH operation once added.
 
 ```yaml
 Type: System.String[]

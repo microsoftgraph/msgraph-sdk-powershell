@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: d936ff93-9373-4f57-a629-c82b84e95a95
+Module Guid: c6ba8da9-644f-49ba-adda-5b76b87a185a
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -31,7 +31,11 @@ After the operation is created, you can get the status of the operation by retri
 The location provides a URL that will return a Add to review set operation.
 
 ### [Clear-MgSecurityCaseEdiscoveryCaseSearchData](Clear-MgSecurityCaseEdiscoveryCaseSearchData.md)
-Invoke action purgeData
+Delete Microsoft Teams messages contained in an eDiscovery search.
+You can collect and purge the following categories of Teams content:\n- **Teams 1:1 chats** - Chat messages, posts, and attachments shared in a Teams conversation between two people.
+Teams 1:1 chats are also called *conversations*.\n- **Teams group chats** - Chat messages, posts, and attachments shared in a Teams conversation between three or more people.
+Also called *1:N* chats or *group conversations*.\n- **Teams channels** - Chat messages, posts, replies, and attachments shared in a standard Teams channel.\n- **Private channels** - Message posts, replies, and attachments shared in a private Teams channel.\n- **Shared channels** - Message posts, replies, and attachments shared in a shared Teams channel.
+For more information about purging Teams messages, see:\n- eDiscovery solution series: Data spillage scenario - Search and purge\n- eDiscovery (Premium) workflow for content in Microsoft Teams
 
 ### [Close-MgSecurityCaseEdiscoveryCase](Close-MgSecurityCaseEdiscoveryCase.md)
 Close an eDiscovery case.
@@ -212,6 +216,129 @@ Get the number of the resource
 ### [Get-MgSecuritySecureScoreCount](Get-MgSecuritySecureScoreCount.md)
 Get the number of the resource
 
+### [Get-MgSecurityThreatIntelligence](Get-MgSecurityThreatIntelligence.md)
+Get threatIntelligence from security
+
+### [Get-MgSecurityThreatIntelligenceArticle](Get-MgSecurityThreatIntelligenceArticle.md)
+Read the properties and relationships of an article object.
+
+### [Get-MgSecurityThreatIntelligenceArticleCount](Get-MgSecurityThreatIntelligenceArticleCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceArticleIndicator](Get-MgSecurityThreatIntelligenceArticleIndicator.md)
+Read the properties and relationships of an articleIndicator object.
+
+### [Get-MgSecurityThreatIntelligenceArticleIndicatorArtifact](Get-MgSecurityThreatIntelligenceArticleIndicatorArtifact.md)
+The artifact related to this indicator.
+
+### [Get-MgSecurityThreatIntelligenceArticleIndicatorCount](Get-MgSecurityThreatIntelligenceArticleIndicatorCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceHost](Get-MgSecurityThreatIntelligenceHost.md)
+Read the properties and relationships of a host object.
+The host resource is the abstract base type that returns an implementation.
+A host can be of one of the following types:
+
+### [Get-MgSecurityThreatIntelligenceHostComponent](Get-MgSecurityThreatIntelligenceHostComponent.md)
+Read the properties and relationships of a hostComponent object.
+
+### [Get-MgSecurityThreatIntelligenceHostComponentCount](Get-MgSecurityThreatIntelligenceHostComponentCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceHostComponentHost](Get-MgSecurityThreatIntelligenceHostComponentHost.md)
+The host related to this component.
+This is a reverse navigation property.
+When navigating to components from a host, this should be assumed to be a return reference.
+
+### [Get-MgSecurityThreatIntelligenceHostCookie](Get-MgSecurityThreatIntelligenceHostCookie.md)
+Read the properties and relationships of a hostCookie object.
+
+### [Get-MgSecurityThreatIntelligenceHostCookieCount](Get-MgSecurityThreatIntelligenceHostCookieCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceHostCookieHost](Get-MgSecurityThreatIntelligenceHostCookieHost.md)
+Indicates that a cookie of this name and domain was found related to this host.
+
+### [Get-MgSecurityThreatIntelligenceHostCount](Get-MgSecurityThreatIntelligenceHostCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceHostPassiveDns](Get-MgSecurityThreatIntelligenceHostPassiveDns.md)
+Passive DNS retrieval about this host.
+
+### [Get-MgSecurityThreatIntelligenceHostPassiveDnsCount](Get-MgSecurityThreatIntelligenceHostPassiveDnsCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceHostPassiveDnsReverse](Get-MgSecurityThreatIntelligenceHostPassiveDnsReverse.md)
+Reverse passive DNS retrieval about this host.
+
+### [Get-MgSecurityThreatIntelligenceHostPassiveDnsReverseCount](Get-MgSecurityThreatIntelligenceHostPassiveDnsReverseCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceHostReputation](Get-MgSecurityThreatIntelligenceHostReputation.md)
+Get the properties and relationships of a hostReputation object.
+
+### [Get-MgSecurityThreatIntelligenceHostTracker](Get-MgSecurityThreatIntelligenceHostTracker.md)
+Read the properties and relationships of a hostTracker object.
+
+### [Get-MgSecurityThreatIntelligenceHostTrackerCount](Get-MgSecurityThreatIntelligenceHostTrackerCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceHostTrackerHost](Get-MgSecurityThreatIntelligenceHostTrackerHost.md)
+The host related to this hostTracker.
+When navigating to a hostTracker from a host, this should be assumed to be a return reference.
+
+### [Get-MgSecurityThreatIntelligenceIntelProfile](Get-MgSecurityThreatIntelligenceIntelProfile.md)
+Read the properties and relationships of a intelligenceProfile object.
+
+### [Get-MgSecurityThreatIntelligenceIntelProfileCount](Get-MgSecurityThreatIntelligenceIntelProfileCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceIntelProfileIndicator](Get-MgSecurityThreatIntelligenceIntelProfileIndicator.md)
+Includes an assemblage of high-fidelity network indicators of compromise.
+
+### [Get-MgSecurityThreatIntelligenceIntelProfileIndicatorCount](Get-MgSecurityThreatIntelligenceIntelProfileIndicatorCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligencePassiveDnsRecord](Get-MgSecurityThreatIntelligencePassiveDnsRecord.md)
+Read the properties and relationships of a passiveDnsRecord object.
+
+### [Get-MgSecurityThreatIntelligencePassiveDnsRecordArtifact](Get-MgSecurityThreatIntelligencePassiveDnsRecordArtifact.md)
+The artifact related to this passiveDnsRecord entry.
+
+### [Get-MgSecurityThreatIntelligencePassiveDnsRecordCount](Get-MgSecurityThreatIntelligencePassiveDnsRecordCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligencePassiveDnsRecordParentHost](Get-MgSecurityThreatIntelligencePassiveDnsRecordParentHost.md)
+The parent host related to this passiveDnsRecord entry.
+Generally, this is the value that you can search to discover this passiveDnsRecord value.
+
+### [Get-MgSecurityThreatIntelligenceProfileIndicator](Get-MgSecurityThreatIntelligenceProfileIndicator.md)
+Get intelligenceProfileIndicators from security
+
+### [Get-MgSecurityThreatIntelligenceProfileIndicatorArtifact](Get-MgSecurityThreatIntelligenceProfileIndicatorArtifact.md)
+The artifact related to this indicator.
+
+### [Get-MgSecurityThreatIntelligenceProfileIndicatorCount](Get-MgSecurityThreatIntelligenceProfileIndicatorCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceVulnerability](Get-MgSecurityThreatIntelligenceVulnerability.md)
+Read the properties and relationships of a vulnerability object.
+
+### [Get-MgSecurityThreatIntelligenceVulnerabilityArticle](Get-MgSecurityThreatIntelligenceVulnerabilityArticle.md)
+Articles related to this vulnerability.
+
+### [Get-MgSecurityThreatIntelligenceVulnerabilityArticleCount](Get-MgSecurityThreatIntelligenceVulnerabilityArticleCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceVulnerabilityComponent](Get-MgSecurityThreatIntelligenceVulnerabilityComponent.md)
+Read the properties and relationships of a vulnerabilityComponent object.
+
+### [Get-MgSecurityThreatIntelligenceVulnerabilityComponentCount](Get-MgSecurityThreatIntelligenceVulnerabilityComponentCount.md)
+Get the number of the resource
+
+### [Get-MgSecurityThreatIntelligenceVulnerabilityCount](Get-MgSecurityThreatIntelligenceVulnerabilityCount.md)
+Get the number of the resource
+
 ### [Get-MgSecurityTrigger](Get-MgSecurityTrigger.md)
 Get triggers from security
 
@@ -308,6 +435,39 @@ Create new navigation property to secureScores for security
 ### [New-MgSecuritySecureScoreControlProfile](New-MgSecuritySecureScoreControlProfile.md)
 Create new navigation property to secureScoreControlProfiles for security
 
+### [New-MgSecurityThreatIntelligenceArticle](New-MgSecurityThreatIntelligenceArticle.md)
+Create new navigation property to articles for security
+
+### [New-MgSecurityThreatIntelligenceArticleIndicator](New-MgSecurityThreatIntelligenceArticleIndicator.md)
+Create new navigation property to articleIndicators for security
+
+### [New-MgSecurityThreatIntelligenceHost](New-MgSecurityThreatIntelligenceHost.md)
+Create new navigation property to hosts for security
+
+### [New-MgSecurityThreatIntelligenceHostComponent](New-MgSecurityThreatIntelligenceHostComponent.md)
+Create new navigation property to hostComponents for security
+
+### [New-MgSecurityThreatIntelligenceHostCookie](New-MgSecurityThreatIntelligenceHostCookie.md)
+Create new navigation property to hostCookies for security
+
+### [New-MgSecurityThreatIntelligenceHostTracker](New-MgSecurityThreatIntelligenceHostTracker.md)
+Create new navigation property to hostTrackers for security
+
+### [New-MgSecurityThreatIntelligenceIntelProfile](New-MgSecurityThreatIntelligenceIntelProfile.md)
+Create new navigation property to intelProfiles for security
+
+### [New-MgSecurityThreatIntelligencePassiveDnsRecord](New-MgSecurityThreatIntelligencePassiveDnsRecord.md)
+Create new navigation property to passiveDnsRecords for security
+
+### [New-MgSecurityThreatIntelligenceProfileIndicator](New-MgSecurityThreatIntelligenceProfileIndicator.md)
+Create new navigation property to intelligenceProfileIndicators for security
+
+### [New-MgSecurityThreatIntelligenceVulnerability](New-MgSecurityThreatIntelligenceVulnerability.md)
+Create new navigation property to vulnerabilities for security
+
+### [New-MgSecurityThreatIntelligenceVulnerabilityComponent](New-MgSecurityThreatIntelligenceVulnerabilityComponent.md)
+Create new navigation property to components for security
+
 ### [New-MgSecurityTriggerRetentionEvent](New-MgSecurityTriggerRetentionEvent.md)
 Create a new retentionEvent object.
 
@@ -400,6 +560,45 @@ Delete navigation property secureScores for security
 ### [Remove-MgSecuritySecureScoreControlProfile](Remove-MgSecuritySecureScoreControlProfile.md)
 Delete navigation property secureScoreControlProfiles for security
 
+### [Remove-MgSecurityThreatIntelligence](Remove-MgSecurityThreatIntelligence.md)
+Delete navigation property threatIntelligence for security
+
+### [Remove-MgSecurityThreatIntelligenceArticle](Remove-MgSecurityThreatIntelligenceArticle.md)
+Delete navigation property articles for security
+
+### [Remove-MgSecurityThreatIntelligenceArticleIndicator](Remove-MgSecurityThreatIntelligenceArticleIndicator.md)
+Delete navigation property articleIndicators for security
+
+### [Remove-MgSecurityThreatIntelligenceHost](Remove-MgSecurityThreatIntelligenceHost.md)
+Delete navigation property hosts for security
+
+### [Remove-MgSecurityThreatIntelligenceHostComponent](Remove-MgSecurityThreatIntelligenceHostComponent.md)
+Delete navigation property hostComponents for security
+
+### [Remove-MgSecurityThreatIntelligenceHostCookie](Remove-MgSecurityThreatIntelligenceHostCookie.md)
+Delete navigation property hostCookies for security
+
+### [Remove-MgSecurityThreatIntelligenceHostReputation](Remove-MgSecurityThreatIntelligenceHostReputation.md)
+Delete navigation property reputation for security
+
+### [Remove-MgSecurityThreatIntelligenceHostTracker](Remove-MgSecurityThreatIntelligenceHostTracker.md)
+Delete navigation property hostTrackers for security
+
+### [Remove-MgSecurityThreatIntelligenceIntelProfile](Remove-MgSecurityThreatIntelligenceIntelProfile.md)
+Delete navigation property intelProfiles for security
+
+### [Remove-MgSecurityThreatIntelligencePassiveDnsRecord](Remove-MgSecurityThreatIntelligencePassiveDnsRecord.md)
+Delete navigation property passiveDnsRecords for security
+
+### [Remove-MgSecurityThreatIntelligenceProfileIndicator](Remove-MgSecurityThreatIntelligenceProfileIndicator.md)
+Delete navigation property intelligenceProfileIndicators for security
+
+### [Remove-MgSecurityThreatIntelligenceVulnerability](Remove-MgSecurityThreatIntelligenceVulnerability.md)
+Delete navigation property vulnerabilities for security
+
+### [Remove-MgSecurityThreatIntelligenceVulnerabilityComponent](Remove-MgSecurityThreatIntelligenceVulnerabilityComponent.md)
+Delete navigation property components for security
+
 ### [Remove-MgSecurityTrigger](Remove-MgSecurityTrigger.md)
 Delete navigation property triggers for security
 
@@ -487,6 +686,45 @@ Update the navigation property secureScores in security
 
 ### [Update-MgSecuritySecureScoreControlProfile](Update-MgSecuritySecureScoreControlProfile.md)
 Update an editable **secureScoreControlProfile** object within any integrated solution to change various properties, such as **assignedTo** or **tenantNote**.
+
+### [Update-MgSecurityThreatIntelligence](Update-MgSecurityThreatIntelligence.md)
+Update the navigation property threatIntelligence in security
+
+### [Update-MgSecurityThreatIntelligenceArticle](Update-MgSecurityThreatIntelligenceArticle.md)
+Update the navigation property articles in security
+
+### [Update-MgSecurityThreatIntelligenceArticleIndicator](Update-MgSecurityThreatIntelligenceArticleIndicator.md)
+Update the navigation property articleIndicators in security
+
+### [Update-MgSecurityThreatIntelligenceHost](Update-MgSecurityThreatIntelligenceHost.md)
+Update the navigation property hosts in security
+
+### [Update-MgSecurityThreatIntelligenceHostComponent](Update-MgSecurityThreatIntelligenceHostComponent.md)
+Update the navigation property hostComponents in security
+
+### [Update-MgSecurityThreatIntelligenceHostCookie](Update-MgSecurityThreatIntelligenceHostCookie.md)
+Update the navigation property hostCookies in security
+
+### [Update-MgSecurityThreatIntelligenceHostReputation](Update-MgSecurityThreatIntelligenceHostReputation.md)
+Update the navigation property reputation in security
+
+### [Update-MgSecurityThreatIntelligenceHostTracker](Update-MgSecurityThreatIntelligenceHostTracker.md)
+Update the navigation property hostTrackers in security
+
+### [Update-MgSecurityThreatIntelligenceIntelProfile](Update-MgSecurityThreatIntelligenceIntelProfile.md)
+Update the navigation property intelProfiles in security
+
+### [Update-MgSecurityThreatIntelligencePassiveDnsRecord](Update-MgSecurityThreatIntelligencePassiveDnsRecord.md)
+Update the navigation property passiveDnsRecords in security
+
+### [Update-MgSecurityThreatIntelligenceProfileIndicator](Update-MgSecurityThreatIntelligenceProfileIndicator.md)
+Update the navigation property intelligenceProfileIndicators in security
+
+### [Update-MgSecurityThreatIntelligenceVulnerability](Update-MgSecurityThreatIntelligenceVulnerability.md)
+Update the navigation property vulnerabilities in security
+
+### [Update-MgSecurityThreatIntelligenceVulnerabilityComponent](Update-MgSecurityThreatIntelligenceVulnerabilityComponent.md)
+Update the navigation property components in security
 
 ### [Update-MgSecurityTrigger](Update-MgSecurityTrigger.md)
 Update the navigation property triggers in security

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgTeamworkDeletedTeamChannelTab
 
 ## SYNOPSIS
-Delete navigation property tabs for teamwork
+Removes (unpins) a tab from the specified channel within a team.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgTeamworkDeletedTeamChannelTab -InputObject <ITeamsIdentity> [-IfMatch <
 ```
 
 ## DESCRIPTION
-Delete navigation property tabs for teamwork
+Removes (unpins) a tab from the specified channel within a team.
 
 ## EXAMPLES
 

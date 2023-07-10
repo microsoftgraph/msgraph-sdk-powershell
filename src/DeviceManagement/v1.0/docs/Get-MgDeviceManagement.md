@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagement
 
 ## SYNOPSIS
-Get deviceManagement
+Read properties and relationships of the deviceManagement object.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgDeviceManagement [-ExpandProperty <String[]>] [-Property <String[]>] [<Com
 ```
 
 ## DESCRIPTION
-Get deviceManagement
+Read properties and relationships of the deviceManagement object.
 
 ## EXAMPLES
 

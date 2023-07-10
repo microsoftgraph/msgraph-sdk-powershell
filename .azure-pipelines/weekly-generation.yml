@@ -75,9 +75,6 @@ jobs:
     steps:
       - template: ./common-templates/checkout.yml
         parameters:
-          TargetBranch: $(GenerationBranch) # Gives git local knowledge of the branch for merge.
-      - template: ./common-templates/checkout.yml
-        parameters:
           TargetBranch: $(WeeklyBranch)
       - template: ./common-templates/install-tools.yml
       - template: ./common-templates/security-pre-checks.yml

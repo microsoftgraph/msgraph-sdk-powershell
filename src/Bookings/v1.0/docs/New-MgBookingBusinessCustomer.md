@@ -43,17 +43,20 @@ Create a new bookingCustomer object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Bookings
 ```
 
-{{ Add output here }}
+$params = @{
+	"@odata.type" = "#microsoft.graph.bookingCustomer"
+	displayName = "Joni Sherman"
+	emailAddress = "jonis@relecloud.com"
+	addresses = @(
+	)
+	phones = @(
+	)
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+New-MgBookingBusinessCustomer -BookingBusinessId $bookingBusinessId -BodyParameter $params
 
 ## PARAMETERS
 

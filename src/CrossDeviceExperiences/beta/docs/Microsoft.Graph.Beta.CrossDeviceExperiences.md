@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CrossDeviceExperiences
-Module Guid: f0d5c48d-e5ae-4005-969e-f4786a0ee919
+Module Guid: 96e277b6-7676-4d39-ad83-136e1407e950
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.crossdeviceexperiences
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,13 +12,16 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Beta.CrossDeviceExperiences Cmdlets
 ### [Get-MgBetaUserActivity](Get-MgBetaUserActivity.md)
-Get activities from users
+The user's activities across devices.
+Read-only.
+Nullable.
 
 ### [Get-MgBetaUserActivityCount](Get-MgBetaUserActivityCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaUserActivityHistoryItem](Get-MgBetaUserActivityHistoryItem.md)
-Get historyItems from users
+Optional.
+NavigationProperty/Containment; navigation property to the activity's historyItems.
 
 ### [Get-MgBetaUserActivityHistoryItemActivity](Get-MgBetaUserActivityHistoryItemActivity.md)
 Get activity from users

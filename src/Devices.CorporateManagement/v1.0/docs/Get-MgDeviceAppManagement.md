@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppManagement
 
 ## SYNOPSIS
-Get deviceAppManagement
+Read properties and relationships of the deviceAppManagement object.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgDeviceAppManagement [-ExpandProperty <String[]>] [-Property <String[]>] [<
 ```
 
 ## DESCRIPTION
-Get deviceAppManagement
+Read properties and relationships of the deviceAppManagement object.
 
 ## EXAMPLES
 
@@ -80,7 +80,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-MgDeviceAppMgt
+Get-DeviceAppMgt
 
 ## RELATED LINKS
 

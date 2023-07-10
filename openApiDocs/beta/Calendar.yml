@@ -23388,6 +23388,58 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.room'
         default:
           $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.roomList':
+    get:
+      tags:
+        - places.place
+      summary: Get the item of type microsoft.graph.place as microsoft.graph.roomList
+      operationId: place_GetPlaceAsRoomList
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - address
+                - displayName
+                - geoCoordinates
+                - phone
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roomList'
+        default:
+          $ref: '#/components/responses/error'
   /places/$count:
     get:
       tags:
@@ -23477,6 +23529,89 @@ paths:
         - places.place
       summary: Get the number of the resource
       operationId: place_GetCountAsRoom
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /places/microsoft.graph.roomList:
+    get:
+      tags:
+        - places.place
+      summary: Get the items of type microsoft.graph.roomList in the microsoft.graph.place collection
+      operationId: place_ListPlaceAsRoomList
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - address
+                - address desc
+                - displayName
+                - displayName desc
+                - geoCoordinates
+                - geoCoordinates desc
+                - phone
+                - phone desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - address
+                - displayName
+                - geoCoordinates
+                - phone
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.roomListCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /places/microsoft.graph.roomList/$count:
+    get:
+      tags:
+        - places.place
+      summary: Get the number of the resource
+      operationId: place_GetCountAsRoomList
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -75505,6 +75640,28 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.roomList:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.place'
+        - title: roomList
+          type: object
+          properties:
+            emailAddress:
+              type: string
+              description: The email address of the room list.
+              nullable: true
+            rooms:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.room'
+              x-ms-navigationProperty: true
+            workspaces:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.workspace'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.calendarGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -75880,6 +76037,57 @@ components:
         - standard
         - reserved
       type: string
+    microsoft.graph.workspace:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.place'
+        - title: workspace
+          type: object
+          properties:
+            building:
+              type: string
+              description: Specifies the building name or building number that the workspace is in.
+              nullable: true
+            capacity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Specifies the capacity of the workspace.
+              format: int32
+              nullable: true
+            emailAddress:
+              type: string
+              description: Email address of the workspace.
+              nullable: true
+            floorLabel:
+              type: string
+              description: 'Specifies a descriptive label for the floor, for example, P.'
+              nullable: true
+            floorNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Specifies the floor number that the workspace is on.
+              format: int32
+              nullable: true
+            isWheelChairAccessible:
+              type: boolean
+              description: Specifies whether the workspace is wheelchair accessible.
+              nullable: true
+            label:
+              type: string
+              description: 'Specifies a descriptive label for the workspace, for example, a number or name.'
+              nullable: true
+            nickname:
+              type: string
+              description: 'Specifies a nickname for the workspace, for example, ''quiet workspace''.'
+            tags:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: 'Specifies additional features of the workspace, for example, details like the type of view or furniture type.'
+          additionalProperties:
+            type: object
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -75952,6 +76160,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.room'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.roomListCollectionResponse:
+      title: Collection of roomList
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.roomList'
         '@odata.nextLink':
           type: string
           nullable: true
@@ -76274,6 +76495,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.roomCollectionResponse'
+    microsoft.graph.roomListCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.roomListCollectionResponse'
     microsoft.graph.calendarGroupCollectionResponse:
       description: Retrieved collection
       content:

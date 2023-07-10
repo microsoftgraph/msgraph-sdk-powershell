@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernanceRoleManagementAlertOperation
 
 ## SYNOPSIS
-Get operations from identityGovernance
+Represents operations on resources that take a long time to complete and can run in the background until completion.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaIdentityGovernanceRoleManagementAlertOperation -InputObject <IIdentity
 ```
 
 ## DESCRIPTION
-Get operations from identityGovernance
+Represents operations on resources that take a long time to complete and can run in the background until completion.
 
 ## EXAMPLES
 

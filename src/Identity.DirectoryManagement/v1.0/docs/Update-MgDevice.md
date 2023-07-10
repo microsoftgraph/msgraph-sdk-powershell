@@ -724,9 +724,9 @@ To create the parameters described below, construct a hash table containing the 
 
 
 `ALTERNATIVESECURITYIDS <IMicrosoftGraphAlternativeSecurityId[]>`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
-  - `[IdentityProvider <String>]`: For internal use only
-  - `[Key <Byte[]>]`: For internal use only
-  - `[Type <Int32?>]`: For internal use only
+  - `[IdentityProvider <String>]`: For internal use only.
+  - `[Key <Byte[]>]`: For internal use only.
+  - `[Type <Int32?>]`: For internal use only.
 
 `BODYPARAMETER <IMicrosoftGraphDevice>`: device
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -734,9 +734,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
   - `[AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
-    - `[IdentityProvider <String>]`: For internal use only
-    - `[Key <Byte[]>]`: For internal use only
-    - `[Type <Int32?>]`: For internal use only
+    - `[IdentityProvider <String>]`: For internal use only.
+    - `[Key <Byte[]>]`: For internal use only.
+    - `[Type <Int32?>]`: For internal use only.
   - `[ApproximateLastSignInDateTime <DateTime?>]`: The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
   - `[ComplianceExpirationDateTime <DateTime?>]`: The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[DeviceCategory <String>]`: User-defined property set by Intune to automatically add devices to groups and simplify managing devices.

@@ -48,14 +48,15 @@ Update the properties of an authenticationContextClassReference object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Identity.SignIns
-$params = @{
-	Value = @(
-	)
-}
-Update-MgBetaIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId -BodyParameter $params
 ```
 
+$params = @{
+	displayName = "Contoso medium"
+	description = "Medium protection level defined for Contoso policy"
+	isAvailable = $true
+}
 
+Update-MgBetaIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId -BodyParameter $params
 
 ## PARAMETERS
 

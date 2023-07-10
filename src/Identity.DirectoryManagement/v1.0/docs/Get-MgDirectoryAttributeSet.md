@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryAttributeSet
 
 ## SYNOPSIS
-Get attributeSets from directory
+Read the properties and relationships of an attributeSet object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDirectoryAttributeSet -InputObject <IIdentityDirectoryManagementIdentity> 
 ```
 
 ## DESCRIPTION
-Get attributeSets from directory
+Read the properties and relationships of an attributeSet object.
 
 ## EXAMPLES
 

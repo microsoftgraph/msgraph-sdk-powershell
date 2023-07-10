@@ -465,6 +465,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DiagnosticsDisabled <Boolean?>]`: Indicates if diagnostics setup pane is disabled
     - `[DisplayToneSetupDisabled <Boolean?>]`: Indicates if displaytone setup screen is disabled
     - `[EnabledSkipKeys <String[]>]`: enabledSkipKeys contains all the enabled skip keys as strings
+    - `[EnrollmentTimeAzureAdGroupIds <String[]>]`: EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile
     - `[IsDefault <Boolean?>]`: Indicates if this is the default profile
     - `[IsMandatory <Boolean?>]`: Indicates if the profile is mandatory
     - `[LocationDisabled <Boolean?>]`: Indicates if Location service setup pane is disabled
@@ -525,6 +526,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[DiagnosticsDisabled <Boolean?>]`: Indicates if diagnostics setup pane is disabled
     - `[DisplayToneSetupDisabled <Boolean?>]`: Indicates if displaytone setup screen is disabled
     - `[EnabledSkipKeys <String[]>]`: enabledSkipKeys contains all the enabled skip keys as strings
+    - `[EnrollmentTimeAzureAdGroupIds <String[]>]`: EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile
     - `[IsDefault <Boolean?>]`: Indicates if this is the default profile
     - `[IsMandatory <Boolean?>]`: Indicates if the profile is mandatory
     - `[LocationDisabled <Boolean?>]`: Indicates if Location service setup pane is disabled
@@ -549,6 +551,7 @@ To create the parameters described below, construct a hash table containing the 
     - `[AdminAccountFullName <String>]`: Indicates what the full name for the admin account is
     - `[AdminAccountPassword <String>]`: Indicates what the password for the admin account is
     - `[AdminAccountUserName <String>]`: Indicates what the user name for the admin account is
+    - `[AutoAdvanceSetupEnabled <Boolean?>]`: Indicates if Setup Assistant will automatically advance through its screen
     - `[AutoUnlockWithWatchDisabled <Boolean?>]`: Indicates if UnlockWithWatch screen is disabled
     - `[ChooseYourLockScreenDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
     - `[DontAutoPopulatePrimaryAccountInfo <Boolean?>]`: Indicates whether Setup Assistant will auto populate the primary account information
@@ -606,6 +609,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DiagnosticsDisabled <Boolean?>]`: Indicates if diagnostics setup pane is disabled
   - `[DisplayToneSetupDisabled <Boolean?>]`: Indicates if displaytone setup screen is disabled
   - `[EnabledSkipKeys <String[]>]`: enabledSkipKeys contains all the enabled skip keys as strings
+  - `[EnrollmentTimeAzureAdGroupIds <String[]>]`: EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile
   - `[IsDefault <Boolean?>]`: Indicates if this is the default profile
   - `[IsMandatory <Boolean?>]`: Indicates if the profile is mandatory
   - `[LocationDisabled <Boolean?>]`: Indicates if Location service setup pane is disabled
@@ -667,6 +671,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[DiagnosticsDisabled <Boolean?>]`: Indicates if diagnostics setup pane is disabled
   - `[DisplayToneSetupDisabled <Boolean?>]`: Indicates if displaytone setup screen is disabled
   - `[EnabledSkipKeys <String[]>]`: enabledSkipKeys contains all the enabled skip keys as strings
+  - `[EnrollmentTimeAzureAdGroupIds <String[]>]`: EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile
   - `[IsDefault <Boolean?>]`: Indicates if this is the default profile
   - `[IsMandatory <Boolean?>]`: Indicates if the profile is mandatory
   - `[LocationDisabled <Boolean?>]`: Indicates if Location service setup pane is disabled
@@ -691,6 +696,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[AdminAccountFullName <String>]`: Indicates what the full name for the admin account is
   - `[AdminAccountPassword <String>]`: Indicates what the password for the admin account is
   - `[AdminAccountUserName <String>]`: Indicates what the user name for the admin account is
+  - `[AutoAdvanceSetupEnabled <Boolean?>]`: Indicates if Setup Assistant will automatically advance through its screen
   - `[AutoUnlockWithWatchDisabled <Boolean?>]`: Indicates if UnlockWithWatch screen is disabled
   - `[ChooseYourLockScreenDisabled <Boolean?>]`: Indicates if iCloud Documents and Desktop screen is disabled
   - `[DontAutoPopulatePrimaryAccountInfo <Boolean?>]`: Indicates whether Setup Assistant will auto populate the primary account information

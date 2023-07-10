@@ -176,6 +176,9 @@ Accept wildcard characters: False
 
 ### -DeviceCountWithCrashes
 The total number of devices that have reported one or more application crashes for this application and version.
+Valid values 0 to 2147483647.
+Supports: $select, $OrderBy.
+Read-only.
 Valid values -2147483648 to 2147483647
 
 ```yaml
@@ -223,7 +226,10 @@ Accept wildcard characters: False
 ```
 
 ### -IsLatestUsedVersion
-Is the version of application the latest version for that app that is in use.
+When TRUE, indicates the version of application is the latest version for that application that is in use.
+When FALSE, indicates the version is not the latest version.
+FALSE by default.
+Supports: $select, $OrderBy.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -238,7 +244,11 @@ Accept wildcard characters: False
 ```
 
 ### -IsMostUsedVersion
-Is the version of application the most used version for that app.
+When TRUE, indicates the version of application is the most used version for that application.
+When FALSE, indicates the version is not the most used version.
+FALSE by default.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -328,16 +338,21 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppName <String>]`: The name of the application.
   - `[AppPublisher <String>]`: The publisher of the application.
   - `[AppVersion <String>]`: The version of the application.
-  - `[DeviceCountWithCrashes <Int32?>]`: The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647
-  - `[IsLatestUsedVersion <Boolean?>]`: Is the version of application the latest version for that app that is in use.
-  - `[IsMostUsedVersion <Boolean?>]`: Is the version of application the most used version for that app.
+  - `[DeviceCountWithCrashes <Int32?>]`: The total number of devices that have reported one or more application crashes for this application and version. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[IsLatestUsedVersion <Boolean?>]`: When TRUE, indicates the version of application is the latest version for that application that is in use. When FALSE, indicates the version is not the latest version. FALSE by default. Supports: $select, $OrderBy.
+  - `[IsMostUsedVersion <Boolean?>]`: When TRUE, indicates the version of application is the most used version for that application. When FALSE, indicates the version is not the most used version. FALSE by default. Supports: $select, $OrderBy. Read-only.
 
 `INPUTOBJECT <IDeviceManagementIdentity>`: Identity Parameter
   - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: The unique identifier of advancedThreatProtectionOnboardingDeviceSettingState
+  - `[AlertRecordId <String>]`: The unique identifier of alertRecord
+  - `[AlertRuleId <String>]`: The unique identifier of alertRule
   - `[AndroidForWorkAppConfigurationSchemaId <String>]`: The unique identifier of androidForWorkAppConfigurationSchema
   - `[AndroidManagedStoreAppConfigurationSchemaId <String>]`: The unique identifier of androidManagedStoreAppConfigurationSchema
   - `[AppLogCollectionRequestId <String>]`: The unique identifier of appLogCollectionRequest
   - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: The unique identifier of assignmentFilterEvaluationStatusDetails
+  - `[BrowserSharedCookieId <String>]`: The unique identifier of browserSharedCookie
+  - `[BrowserSiteId <String>]`: The unique identifier of browserSite
+  - `[BrowserSiteListId <String>]`: The unique identifier of browserSiteList
   - `[DataSharingConsentId <String>]`: The unique identifier of dataSharingConsent
   - `[DetectedAppId <String>]`: The unique identifier of detectedApp
   - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The unique identifier of deviceAndAppManagementAssignmentFilter
@@ -465,8 +480,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsInformationProtectionAppLearningSummaryId <String>]`: The unique identifier of windowsInformationProtectionAppLearningSummary
   - `[WindowsInformationProtectionNetworkLearningSummaryId <String>]`: The unique identifier of windowsInformationProtectionNetworkLearningSummary
   - `[WindowsMalwareInformationId <String>]`: The unique identifier of windowsMalwareInformation
-  - `[WindowsQualityUpdateProfileAssignmentId <String>]`: The unique identifier of windowsQualityUpdateProfileAssignment
-  - `[WindowsQualityUpdateProfileId <String>]`: The unique identifier of windowsQualityUpdateProfile
 
 ## RELATED LINKS
 

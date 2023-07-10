@@ -283,7 +283,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-MgDeviceAppMgtWindowInformationProtectionWipeAction
+Update-BetaDeviceAppMgtWindowInformationProtectionWipeAction
 
 COMPLEX PARAMETER PROPERTIES
 

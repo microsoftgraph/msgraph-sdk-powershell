@@ -360,7 +360,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-MgDeviceAppMgtManagedEBook
+New-BetaDeviceAppMgtManagedEBook
 
 COMPLEX PARAMETER PROPERTIES
 

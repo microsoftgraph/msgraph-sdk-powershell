@@ -80,7 +80,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-MgDeviceAppMgt
+Get-BetaDeviceAppMgt
 
 ## RELATED LINKS
 

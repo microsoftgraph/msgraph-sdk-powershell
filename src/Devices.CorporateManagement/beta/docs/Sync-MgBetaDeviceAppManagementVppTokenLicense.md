@@ -121,7 +121,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Sync-MgDeviceAppMgtVppTokenLicense
+Sync-BetaDeviceAppMgtVppTokenLicense
 
 COMPLEX PARAMETER PROPERTIES
 

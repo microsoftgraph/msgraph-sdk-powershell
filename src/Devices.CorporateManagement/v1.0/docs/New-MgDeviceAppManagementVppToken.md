@@ -309,7 +309,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-MgDeviceAppMgtVppToken
+New-DeviceAppMgtVppToken
 
 COMPLEX PARAMETER PROPERTIES
 

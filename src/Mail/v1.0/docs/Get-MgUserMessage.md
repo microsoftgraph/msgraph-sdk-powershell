@@ -46,23 +46,7 @@ Import-Module Microsoft.Graph.Mail
 ```
 
 # A UPN can also be used as -UserId.
-Get-MgUserMessageExtension -UserId $userId -MessageId $messageId -ExtensionId $extensionId
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Mail
-```
-
-# A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "extensions(`$filter=id eq 'Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')"
-
-### -------------------------- EXAMPLE 3 --------------------------
-```powershell
-Import-Module Microsoft.Graph.Mail
-```
-
-# A UPN can also be used as -UserId.
-Get-MgUserMessage -UserId $userId -Filter "Extensions/any(f:f/id eq 'Com.Contoso.Referral')" -ExpandProperty "Extensions(`$filter=id eq 'Com.Contoso.Referral')"
+Get-MgUserMessage -UserId $userId -MessageId $messageId -ExpandProperty "singleValueExtendedProperties(`$filter=id eq 'String {66f5a359-4659-4830-9070-00047ec6ac6e} Name Color')"
 
 ## PARAMETERS
 

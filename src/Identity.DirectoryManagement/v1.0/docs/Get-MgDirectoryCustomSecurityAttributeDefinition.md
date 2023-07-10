@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDirectoryCustomSecurityAttributeDefinition
 
 ## SYNOPSIS
-Get customSecurityAttributeDefinitions from directory
+Read the properties and relationships of a customSecurityAttributeDefinition object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDirectoryCustomSecurityAttributeDefinition -InputObject <IIdentityDirector
 ```
 
 ## DESCRIPTION
-Get customSecurityAttributeDefinitions from directory
+Read the properties and relationships of a customSecurityAttributeDefinition object.
 
 ## EXAMPLES
 

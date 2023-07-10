@@ -5,6 +5,7 @@ namespace Microsoft.Graph.PowerShell
 {
     using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Common;
+    using Microsoft.Graph.PowerShell.Models;
     using System;
     using System.Collections.ObjectModel;
     using System.IO;
@@ -103,6 +104,17 @@ namespace Microsoft.Graph.PowerShell
                 string downloadUrl = response?.RequestMessage?.RequestUri.ToString();
                 cmdlet.WriteToStream(inputStream, fileProvider.Stream, downloadUrl, cancellationToken);
             }
+        }
+        
+        internal static async Task<ErrorDetails> GetErrorDetailsAsync(this PSCmdlet cmdlet, IMicrosoftGraphODataErrorsMainError odataError, HttpResponseMessage response)
+        {
+            var serviceErrorDoc = "https://learn.microsoft.com/graph/errors";
+            var recommendedAction = $"See service error codes: {serviceErrorDoc}";
+            var errorDetailsMessage = await HttpMessageLogFormatter.GetErrorLogAsync(response, odataError);
+            return new ErrorDetails(errorDetailsMessage)
+            {
+                RecommendedAction = recommendedAction
+            };
         }
 
         /// <summary>

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files
-Module Guid: fa554c0e-0e97-439c-8b46-4d2ce929e823
+Module Guid: 75deb586-e5ab-47f1-a0ff-20ae80d1fa01
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -1654,6 +1654,12 @@ Check out a **driveItem** resource to prevent others from editing the document, 
 ### [Invoke-MgCheckoutDriveRoot](Invoke-MgCheckoutDriveRoot.md)
 Check out a **driveItem** resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.
 
+### [Invoke-MgExtractDriveItemSensitivityLabel](Invoke-MgExtractDriveItemSensitivityLabel.md)
+Invoke action extractSensitivityLabels
+
+### [Invoke-MgExtractDriveRootSensitivityLabel](Invoke-MgExtractDriveRootSensitivityLabel.md)
+Invoke action extractSensitivityLabels
+
 ### [Invoke-MgFollowDriveItem](Invoke-MgFollowDriveItem.md)
 Follow a driveItem.
 
@@ -2505,6 +2511,9 @@ The content stream, if the item represents a file.
 ### [Set-MgDriveItemListItemDriveItemContent](Set-MgDriveItemListItemDriveItemContent.md)
 The content stream, if the item represents a file.
 
+### [Set-MgDriveItemSensitivityLabel](Set-MgDriveItemSensitivityLabel.md)
+Invoke action assignSensitivityLabel
+
 ### [Set-MgDriveItemVersionContent](Set-MgDriveItemVersionContent.md)
 The content stream for this version of the item.
 
@@ -2519,6 +2528,9 @@ The content stream, if the item represents a file.
 
 ### [Set-MgDriveRootListItemDriveItemContent](Set-MgDriveRootListItemDriveItemContent.md)
 The content stream, if the item represents a file.
+
+### [Set-MgDriveRootSensitivityLabel](Set-MgDriveRootSensitivityLabel.md)
+Invoke action assignSensitivityLabel
 
 ### [Set-MgDriveRootVersionContent](Set-MgDriveRootVersionContent.md)
 The content stream for this version of the item.
@@ -2701,7 +2713,7 @@ Update the navigation property columns in drives
 Update the navigation property contentTypes in drives
 
 ### [Update-MgDriveListContentTypeColumn](Update-MgDriveListContentTypeColumn.md)
-Update the navigation property columns in drives
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgDriveListContentTypeColumnLink](Update-MgDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in drives
@@ -2867,7 +2879,7 @@ Update the navigation property columns in groups
 Update the navigation property contentTypes in groups
 
 ### [Update-MgGroupDriveListContentTypeColumn](Update-MgGroupDriveListContentTypeColumn.md)
-Update the navigation property columns in groups
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgGroupDriveListContentTypeColumnLink](Update-MgGroupDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in groups
@@ -2976,7 +2988,7 @@ Update the navigation property columns in shares
 Update the navigation property contentTypes in shares
 
 ### [Update-MgShareListContentTypeColumn](Update-MgShareListContentTypeColumn.md)
-Update the navigation property columns in shares
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgShareListContentTypeColumnLink](Update-MgShareListContentTypeColumnLink.md)
 Update the navigation property columnLinks in shares
@@ -3096,7 +3108,7 @@ Update the navigation property columns in users
 Update the navigation property contentTypes in users
 
 ### [Update-MgUserDriveListContentTypeColumn](Update-MgUserDriveListContentTypeColumn.md)
-Update the navigation property columns in users
+Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
 
 ### [Update-MgUserDriveListContentTypeColumnLink](Update-MgUserDriveListContentTypeColumnLink.md)
 Update the navigation property columnLinks in users

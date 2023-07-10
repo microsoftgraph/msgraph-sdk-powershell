@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgUserSetting
 
 ## SYNOPSIS
-Update the navigation property settings in users
+Update the properties of the userSettings object.
+\nUsers in the same organization can have different settings based on their preference or on the organization policies.
+\nTo get the user current settings, see current user settings.
 
 ## SYNTAX
 
@@ -41,7 +43,9 @@ Update-MgUserSetting -InputObject <IUsersIdentity> [-AdditionalProperties <Hasht
 ```
 
 ## DESCRIPTION
-Update the navigation property settings in users
+Update the properties of the userSettings object.
+\nUsers in the same organization can have different settings based on their preference or on the organization policies.
+\nTo get the user current settings, see current user settings.
 
 ## EXAMPLES
 
@@ -93,7 +97,10 @@ Accept wildcard characters: False
 ```
 
 ### -ContributionToContentDiscoveryAsOrganizationDisabled
-.
+Reflects the organization level setting controlling delegate access to the trending API.
+When set to true, the organization doesn't have access to Office Delve.
+The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization.
+This setting is read-only and can only be changed by administrators in the SharePoint admin center.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -108,7 +115,10 @@ Accept wildcard characters: False
 ```
 
 ### -ContributionToContentDiscoveryDisabled
-.
+When set to true, the delegate access to the user's trending API is disabled.
+When set to true, documents in the user's Office Delve are disabled.
+When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected.
+Users can control this setting in Office Delve.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -241,8 +251,8 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphUserSettings>`: userSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
-  - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: 
-  - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: 
+  - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+  - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
   - `[ShiftPreferences <IMicrosoftGraphShiftPreferences>]`: shiftPreferences
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet

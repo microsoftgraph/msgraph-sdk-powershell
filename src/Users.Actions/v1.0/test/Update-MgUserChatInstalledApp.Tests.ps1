@@ -15,7 +15,15 @@ if(($null -eq $TestName) -or ($TestName -contains 'Update-MgUserChatInstalledApp
 }
 
 Describe 'Update-MgUserChatInstalledApp' {
+    It 'UpgradeExpanded' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
     It 'Upgrade' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'UpgradeViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 

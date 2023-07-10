@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaEntitlementManagementSubject
 
 ## SYNOPSIS
-Get subjects from identityGovernance
+Represents the subjects within entitlement management.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaEntitlementManagementSubject -InputObject <IIdentityGovernanceIdentity
 ```
 
 ## DESCRIPTION
-Get subjects from identityGovernance
+Represents the subjects within entitlement management.
 
 ## EXAMPLES
 

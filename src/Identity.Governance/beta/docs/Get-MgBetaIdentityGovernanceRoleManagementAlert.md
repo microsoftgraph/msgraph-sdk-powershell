@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernanceRoleManagementAlert
 
 ## SYNOPSIS
-Get alerts from identityGovernance
+Represents the alert entity.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgBetaIdentityGovernanceRoleManagementAlert -InputObject <IIdentityGovernanc
 ```
 
 ## DESCRIPTION
-Get alerts from identityGovernance
+Represents the alert entity.
 
 ## EXAMPLES
 

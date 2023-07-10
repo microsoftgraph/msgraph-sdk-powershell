@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Planner
-Module Guid: b8fc9bd5-e2d9-40b0-bfad-aeefd65ae3f3
+Module Guid: 7f5324df-7522-4bd4-a670-f5564794e015
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.planner
 Help Version: 1.0.0.0
 Locale: en-US

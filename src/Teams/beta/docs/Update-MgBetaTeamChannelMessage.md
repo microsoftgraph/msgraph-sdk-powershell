@@ -231,7 +231,7 @@ $params = @{
 			id = "e8f78756199240b88448ae0fc6db112d"
 			contentType = "application/vnd.microsoft.card.hero"
 			contentUrl = $null
-			content = "{
+			content = '{
   "title": "*title*",
   "subtitle": "*subtitle*",
   "text": "Have you found yourself scratching your head trying to figure these questions out? Frustrated trying to access some of the goodies unique to the Microsoft Teams platform?  Well, fear not, Bot Builder SDK Extension for Teams in .NET and Node flavors is here!  Just head on over to Nuget or NPM to download our tasty helpers, sure to speed up your prep time so you can spend more time maximizing the flavor of the bots you're cooking up.Here???s a small sample of some recipes to whet your appetite.",
@@ -258,7 +258,7 @@ $params = @{
       "value": "http://google.com"
     }
   ]
-}"
+}'
 			name = $null
 			thumbnailUrl = $null
 		}
@@ -266,7 +266,7 @@ $params = @{
 			id = "638464e32834471ea202007da60a5ae6"
 			contentType = "application/vnd.microsoft.card.hero"
 			contentUrl = $null
-			content = "{
+			content = '{
   "title": "*title*",
   "subtitle": "*subtitle*",
   "text": "Have you found yourself scratching your head trying to figure these questions out? Frustrated trying to access some of the goodies unique to the Microsoft Teams platform?  Well, fear not, Bot Builder SDK Extension for Teams in .NET and Node flavors is here!  Just head on over to Nuget or NPM to download our tasty helpers, sure to speed up your prep time so you can spend more time maximizing the flavor of the bots you're cooking up.Here???s a small sample of some recipes to whet your appetite.",
@@ -286,7 +286,7 @@ $params = @{
       }
     }
   ]
-}"
+}'
 			name = $null
 			thumbnailUrl = $null
 		}
@@ -331,7 +331,7 @@ $params = @{
 			id = "e8f78756199240b88448ae0fc6db112d"
 			contentType = "application/vnd.microsoft.card.hero"
 			contentUrl = $null
-			content = "{
+			content = '{
   "title": "*title*",
   "subtitle": "*subtitle*",
   "text": "Have you found yourself scratching your head trying to figure these questions out? Frustrated trying to access some of the goodies unique to the Microsoft Teams platform?  Well, fear not, Bot Builder SDK Extension for Teams in .NET and Node flavors is here!  Just head on over to Nuget or NPM to download our tasty helpers, sure to speed up your prep time so you can spend more time maximizing the flavor of the bots you're cooking up.Here???s a small sample of some recipes to whet your appetite.",
@@ -358,7 +358,7 @@ $params = @{
       "value": "http://google.com"
     }
   ]
-}"
+}'
 			name = $null
 			thumbnailUrl = $null
 		}
@@ -366,7 +366,7 @@ $params = @{
 			id = "638464e32834471ea202007da60a5ae6"
 			contentType = "application/vnd.microsoft.card.hero"
 			contentUrl = $null
-			content = "{
+			content = '{
   "title": "*title*",
   "subtitle": "*subtitle*",
   "text": "Have you found yourself scratching your head trying to figure these questions out? Frustrated trying to access some of the goodies unique to the Microsoft Teams platform?  Well, fear not, Bot Builder SDK Extension for Teams in .NET and Node flavors is here!  Just head on over to Nuget or NPM to download our tasty helpers, sure to speed up your prep time so you can spend more time maximizing the flavor of the bots you're cooking up.Here???s a small sample of some recipes to whet your appetite.",
@@ -386,7 +386,7 @@ $params = @{
       }
     }
   ]
-}"
+}'
 			name = $null
 			thumbnailUrl = $null
 		}
@@ -1315,6 +1315,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[ChatMessageId <String>]`: The unique identifier of chatMessage
   - `[ChatMessageId1 <String>]`: The unique identifier of chatMessage
   - `[ConversationMemberId <String>]`: The unique identifier of conversationMember
+  - `[DeletedChatId <String>]`: The unique identifier of deletedChat
   - `[DeletedTeamId <String>]`: The unique identifier of deletedTeam
   - `[GroupId <String>]`: The unique identifier of group
   - `[OfferShiftRequestId <String>]`: The unique identifier of offerShiftRequest

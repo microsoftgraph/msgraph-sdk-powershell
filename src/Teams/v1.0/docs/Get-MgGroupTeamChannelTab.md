@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgGroupTeamChannelTab
 
 ## SYNOPSIS
-A collection of all the tabs in the channel.
-A navigation property.
+Retrieve the properties and relationships of the specified tab in a channel within a team.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgGroupTeamChannelTab -InputObject <ITeamsIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-A collection of all the tabs in the channel.
-A navigation property.
+Retrieve the properties and relationships of the specified tab in a channel within a team.
 
 ## EXAMPLES
 

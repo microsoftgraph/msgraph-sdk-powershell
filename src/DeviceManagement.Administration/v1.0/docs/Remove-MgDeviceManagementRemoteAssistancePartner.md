@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceManagementRemoteAssistancePartner
 
 ## SYNOPSIS
-Delete navigation property remoteAssistancePartners for deviceManagement
+Deletes a remoteAssistancePartner.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgDeviceManagementRemoteAssistancePartner -InputObject <IDeviceManagement
 ```
 
 ## DESCRIPTION
-Delete navigation property remoteAssistancePartners for deviceManagement
+Deletes a remoteAssistancePartner.
 
 ## EXAMPLES
 

@@ -15,7 +15,15 @@ if(($null -eq $TestName) -or ($TestName -contains 'Add-MgBetaDeviceManagementVir
 }
 
 Describe 'Add-MgBetaDeviceManagementVirtualEndpointProvisioningPolicy' {
+    It 'ApplyExpanded' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
     It 'Apply' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
+
+    It 'ApplyViaIdentityExpanded' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
 

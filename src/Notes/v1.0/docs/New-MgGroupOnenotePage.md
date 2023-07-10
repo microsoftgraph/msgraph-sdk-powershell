@@ -8,7 +8,10 @@ schema: 2.0.0
 # New-MgGroupOnenotePage
 
 ## SYNOPSIS
-Create new navigation property to pages for groups
+Create a new OneNote page in the default section of the default notebook.
+To create a page in a different section in the default notebook, you can use the `sectionName` query parameter.
+Example: `../onenote/pages?sectionName=My%20section` The `POST /onenote/pages` operation is used only to create pages in the current user's default notebook.
+If you're targeting other notebooks, you can create pages in a specified section.
 
 ## SYNTAX
 
@@ -43,7 +46,10 @@ New-MgGroupOnenotePage -InputObject <INotesIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Create new navigation property to pages for groups
+Create a new OneNote page in the default section of the default notebook.
+To create a page in a different section in the default notebook, you can use the `sectionName` query parameter.
+Example: `../onenote/pages?sectionName=My%20section` The `POST /onenote/pages` operation is used only to create pages in the current user's default notebook.
+If you're targeting other notebooks, you can create pages in a specified section.
 
 ## EXAMPLES
 

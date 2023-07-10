@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyAuthorizationPolicy
 
 ## SYNOPSIS
-The policy that controls Azure AD authorization settings.
+Retrieve the properties of an authorizationPolicy object.
 
 ## SYNTAX
 
@@ -17,7 +17,7 @@ Get-MgPolicyAuthorizationPolicy [-ExpandProperty <String[]>] [-Property <String[
 ```
 
 ## DESCRIPTION
-The policy that controls Azure AD authorization settings.
+Retrieve the properties of an authorizationPolicy object.
 
 ## EXAMPLES
 

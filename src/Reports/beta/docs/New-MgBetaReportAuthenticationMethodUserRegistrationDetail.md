@@ -17,7 +17,9 @@ Create new navigation property to userRegistrationDetails for reports
 New-MgBetaReportAuthenticationMethodUserRegistrationDetail [-AdditionalProperties <Hashtable>]
  [-DefaultMfaMethod <String>] [-Id <String>] [-IsAdmin] [-IsMfaCapable] [-IsMfaRegistered]
  [-IsPasswordlessCapable] [-IsSsprCapable] [-IsSsprEnabled] [-IsSsprRegistered]
- [-LastUpdatedDateTime <DateTime>] [-MethodsRegistered <String[]>] [-UserDisplayName <String>]
+ [-IsSystemPreferredAuthenticationMethodEnabled] [-LastUpdatedDateTime <DateTime>]
+ [-MethodsRegistered <String[]>] [-SystemPreferredAuthenticationMethods <String[]>]
+ [-UserDisplayName <String>] [-UserPreferredMethodForSecondaryAuthentication <String>]
  [-UserPrincipalName <String>] [-UserType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -226,6 +228,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -IsSystemPreferredAuthenticationMethodEnabled
+Indicates whether system preferred authentication method is enabled.
+If enabled, the system dynamically determines the most secure authentication method among the methods registered by the user.
+Supports $filter (eq).
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LastUpdatedDateTime
 The date and time (UTC) when the record was last updated.
 The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
@@ -259,9 +278,41 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SystemPreferredAuthenticationMethods
+Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication.
+Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
+Supports $filter (any with eq).
+
+```yaml
+Type: System.String[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserDisplayName
 The user display name, such as Adele Vance.
 Supports $filter (eq, startsWith) and $orderBy.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserPreferredMethodForSecondaryAuthentication
+userDefaultAuthenticationMethod
 
 ```yaml
 Type: System.String
@@ -368,9 +419,12 @@ To create the parameters described below, construct a hash table containing the 
   - `[IsSsprCapable <Boolean?>]`: Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
   - `[IsSsprEnabled <Boolean?>]`: Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
   - `[IsSsprRegistered <Boolean?>]`: Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
+  - `[IsSystemPreferredAuthenticationMethodEnabled <Boolean?>]`: Indicates whether system preferred authentication method is enabled. If enabled, the system dynamically determines the most secure authentication method among the methods registered by the user. Supports $filter (eq).
   - `[LastUpdatedDateTime <DateTime?>]`: The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[MethodsRegistered <String[]>]`: Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
+  - `[SystemPreferredAuthenticationMethods <String[]>]`: Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
   - `[UserDisplayName <String>]`: The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+  - `[UserPreferredMethodForSecondaryAuthentication <String>]`: userDefaultAuthenticationMethod
   - `[UserPrincipalName <String>]`: The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
   - `[UserType <String>]`: signInUserType
 

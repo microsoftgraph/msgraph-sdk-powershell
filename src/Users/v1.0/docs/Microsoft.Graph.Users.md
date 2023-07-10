@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: a3106483-f6a0-4191-aade-1bf30351681a
+Module Guid: f090e174-fc04-4ec5-8ffe-b41c0102ee1b
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -67,6 +67,11 @@ Read-only.
 
 ### [Get-MgUserLicenseDetailCount](Get-MgUserLicenseDetailCount.md)
 Get the number of the resource
+
+### [Get-MgUserMailboxSetting](Get-MgUserMailboxSetting.md)
+Settings for the primary mailbox of the signed-in user.
+You can get or update settings for sending automatic replies to incoming messages, locale and time zone.
+Returned only on $select.
 
 ### [Get-MgUserManager](Get-MgUserManager.md)
 Returns the user or organizational contact assigned as the user's manager.
@@ -164,8 +169,10 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgUserPhoto](Get-MgUserPhoto.md)
-The user's profile photo.
-Read-only.
+Get the specified profilePhoto or its metadata (**profilePhoto** properties).
+The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,\n360x360, 432x432, 504x504, and 648x648.
+Photos can be any dimension if they are stored in Azure Active Directory.
+You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.\nIf the size you request is not available, you can still get a smaller size that the user has uploaded and made available.\nFor example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download.
 
 ### [Get-MgUserPhotoContent](Get-MgUserPhotoContent.md)
 Get media content for the navigation property photo from users
@@ -201,7 +208,7 @@ Get the number of the resource
 Get the number of the resource
 
 ### [Get-MgUserSetting](Get-MgUserSetting.md)
-Get settings from users
+Read the user and organization userSettings object.\nTo learn how to update the properties of the userSettings object, see update user settings.
 
 ### [Get-MgUserSettingShiftPreference](Get-MgUserSettingShiftPreference.md)
 Retrieve the properties and relationships of a shiftPreferences object by ID.
@@ -394,6 +401,9 @@ Update the navigation property extensions in users
 ### [Update-MgUserLicenseDetail](Update-MgUserLicenseDetail.md)
 Update the navigation property licenseDetails in users
 
+### [Update-MgUserMailboxSetting](Update-MgUserMailboxSetting.md)
+Update property mailboxSettings value.
+
 ### [Update-MgUserOutlookMasterCategory](Update-MgUserOutlookMasterCategory.md)
 Update the writable property, **color**, of the specified outlookCategory object.
 You cannot modify the **displayName** property \nonce you have created the category.
@@ -402,7 +412,9 @@ You cannot modify the **displayName** property \nonce you have created the categ
 Update the navigation property photo in users
 
 ### [Update-MgUserSetting](Update-MgUserSetting.md)
-Update the navigation property settings in users
+Update the properties of the userSettings object.
+\nUsers in the same organization can have different settings based on their preference or on the organization policies.
+\nTo get the user current settings, see current user settings.
 
 ### [Update-MgUserSettingShiftPreference](Update-MgUserSettingShiftPreference.md)
 Update the properties and relationships of a shiftPreferences object.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Test-MgBetaUserCloudPcBulkResize
 
 ## SYNOPSIS
-Invoke action validateBulkResize
+Validate that a set of cloudPC devices meet the requirements to be bulk resized.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Test-MgBetaUserCloudPcBulkResize -InputObject <IUsersActionsIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Invoke action validateBulkResize
+Validate that a set of cloudPC devices meet the requirements to be bulk resized.
 
 ## EXAMPLES
 

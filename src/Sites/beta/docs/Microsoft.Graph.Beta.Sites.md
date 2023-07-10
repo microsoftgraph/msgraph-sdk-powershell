@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.Sites
-Module Guid: 7c8a8898-d407-46e4-974d-09db29e4c1b0
+Module Guid: 68220875-5566-491f-bb6a-cbca1d3150e8
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.sites
 Help Version: 1.0.0.0
 Locale: en-US
@@ -99,6 +99,12 @@ For Copy operations, you follow an asynchronous calling pattern:  First call the
 ### [Copy-MgBetaSiteOnenoteSectionToSectionGroup](Copy-MgBetaSiteOnenoteSectionToSectionGroup.md)
 Copies a section to a specific section group.
 For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+
+### [Get-MgBetaAdminSharepoint](Get-MgBetaAdminSharepoint.md)
+Get sharepoint from admin
+
+### [Get-MgBetaAdminSharepointSetting](Get-MgBetaAdminSharepointSetting.md)
+Get the tenant-level settings for SharePoint and OneDrive.
 
 ### [Get-MgBetaGroupSite](Get-MgBetaGroupSite.md)
 The list of SharePoint sites in this group.
@@ -1308,6 +1314,12 @@ Get the number of the resource
 Retrieve the properties and relationships of a notebook object by using its URL path.
 The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 
+### [Get-MgBetaSiteOperation](Get-MgBetaSiteOperation.md)
+Read the properties of a richLongRunningOperation object.
+
+### [Get-MgBetaSiteOperationCount](Get-MgBetaSiteOperationCount.md)
+Get the number of the resource
+
 ### [Get-MgBetaSitePage](Get-MgBetaSitePage.md)
 Returns the metadata for a [sitePage][] in the site pages [list][] in a [site][].
 
@@ -2044,6 +2056,9 @@ Create new navigation property to operations for sites
 ### [New-MgBetaSiteListSubscription](New-MgBetaSiteListSubscription.md)
 Create new navigation property to subscriptions for sites
 
+### [New-MgBetaSiteOperation](New-MgBetaSiteOperation.md)
+Create new navigation property to operations for sites
+
 ### [New-MgBetaSitePage](New-MgBetaSitePage.md)
 Create a new [sitePage][] in the site pages [list][] in a [site][].
 
@@ -2148,6 +2163,12 @@ Publishes a [contentType][] present in a content type hub site.
 
 ### [Publish-MgBetaSitePage](Publish-MgBetaSitePage.md)
 Invoke action publish
+
+### [Remove-MgBetaAdminSharepoint](Remove-MgBetaAdminSharepoint.md)
+Delete navigation property sharepoint for admin
+
+### [Remove-MgBetaAdminSharepointSetting](Remove-MgBetaAdminSharepointSetting.md)
+Delete navigation property settings for admin
 
 ### [Remove-MgBetaGroupSiteAnalytic](Remove-MgBetaGroupSiteAnalytic.md)
 Delete navigation property analytics for groups
@@ -2461,6 +2482,9 @@ Delete navigation property operations for sites
 ### [Remove-MgBetaSiteListSubscription](Remove-MgBetaSiteListSubscription.md)
 Delete navigation property subscriptions for sites
 
+### [Remove-MgBetaSiteOperation](Remove-MgBetaSiteOperation.md)
+Delete navigation property operations for sites
+
 ### [Remove-MgBetaSitePage](Remove-MgBetaSitePage.md)
 Delete navigation property pages for sites
 
@@ -2652,6 +2676,12 @@ Unpublish a [contentType][] from a content type hub site.
 
 ### [Unpublish-MgBetaSiteListContentType](Unpublish-MgBetaSiteListContentType.md)
 Unpublish a [contentType][] from a content type hub site.
+
+### [Update-MgBetaAdminSharepoint](Update-MgBetaAdminSharepoint.md)
+Update the navigation property sharepoint in admin
+
+### [Update-MgBetaAdminSharepointSetting](Update-MgBetaAdminSharepointSetting.md)
+Update one or more tenant-level settings for SharePoint and OneDrive.
 
 ### [Update-MgBetaGroupSite](Update-MgBetaGroupSite.md)
 Update the navigation property sites in groups
@@ -3021,6 +3051,9 @@ Invoke action onenotePatchContent
 
 ### [Update-MgBetaSiteOnenoteSectionPageContent](Update-MgBetaSiteOnenoteSectionPageContent.md)
 Invoke action onenotePatchContent
+
+### [Update-MgBetaSiteOperation](Update-MgBetaSiteOperation.md)
+Update the navigation property operations in sites
 
 ### [Update-MgBetaSitePage](Update-MgBetaSitePage.md)
 Update the properties of a sitePage object.

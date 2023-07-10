@@ -38,33 +38,33 @@ Create a new retentionEvent object.
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
 Import-Module Microsoft.Graph.Beta.Security
+```
+
 $params = @{
 	"@odata.type" = "#microsoft.graph.security.retentionEvent"
-	DisplayName = "String"
-	Description = "String"
-	EventQueries = @(
+	displayName = "String"
+	description = "String"
+	eventQuery = @(
 		@{
-			"@odata.type" = "microsoft.graph.security.eventQueries"
+			"@odata.type" = "microsoft.graph.security.eventQuery"
 		}
 	)
-	EventTriggerDateTime = [System.DateTime]::Parse("String (timestamp)")
-	CreatedBy = @{
+	eventTriggerDateTime = [System.DateTime]::Parse("String (timestamp)")
+	createdBy = @{
 		"@odata.type" = "microsoft.graph.identitySet"
 	}
-	EventPropagationResults = @(
+	eventPropagationResults = @(
 		@{
 			"@odata.type" = "microsoft.graph.security.eventPropagationResult"
 		}
 	)
-	EventStatus = @{
+	eventStatus = @{
 		"@odata.type" = "microsoft.graph.security.retentionEventStatus"
 	}
-	LastStatusUpdateDateTime = [System.DateTime]::Parse("String (timestamp)")
+	lastStatusUpdateDateTime = [System.DateTime]::Parse("String (timestamp)")
 }
+
 New-MgBetaSecurityTriggerRetentionEvent -BodyParameter $params
-```
-
-
 
 ## PARAMETERS
 

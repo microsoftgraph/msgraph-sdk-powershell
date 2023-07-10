@@ -64,7 +64,11 @@ Accept wildcard characters: False
 ```
 
 ### -AppReliabilityScore
-The user experience analytics model app reliability score.
+Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications.
+Valid values range from 0-100.
+Value -1 means associated score is unavailable.
+A higher score indicates a healthier device.
+Read-only.
 Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 ```yaml
@@ -80,7 +84,11 @@ Accept wildcard characters: False
 ```
 
 ### -BatteryHealthScore
-The user experience analytics model battery health score.
+Indicates a calulated score indicating the health of the device's battery.
+Valid values range from 0-100.
+Value -1 means associated score is unavailable.
+A higher score indicates a healthier device.
+Read-only.
 Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 ```yaml
@@ -112,7 +120,11 @@ Accept wildcard characters: False
 ```
 
 ### -EndpointAnalyticsScore
-The user experience analytics model score.
+Indicates a weighted average of the various scores.
+Valid values range from 0-100.
+Value -1 means associated score is unavailable.
+A higher score indicates a healthier device.
+Read-only.
 Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 ```yaml
@@ -159,7 +171,10 @@ Accept wildcard characters: False
 ```
 
 ### -Manufacturer
-A unique identifier of the user experience analytics model scores: device manufacturer.
+The manufacturer name of the device.
+Examples: Microsoft Corporation, HP, Lenovo.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -174,7 +189,9 @@ Accept wildcard characters: False
 ```
 
 ### -Model
-A unique identifier of the user experience analytics model scores: device model.
+The model name of the device.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -189,7 +206,9 @@ Accept wildcard characters: False
 ```
 
 ### -ModelDeviceCount
-The user experience analytics model device count.
+Indicates unique devices count of given model in a consolidated report.
+Supports: $select, $OrderBy.
+Read-only.
 Valid values -9.22337203685478E+18 to 9.22337203685478E+18
 
 ```yaml
@@ -205,7 +224,11 @@ Accept wildcard characters: False
 ```
 
 ### -StartupPerformanceScore
-The user experience analytics model startup performance score.
+Indicates a weighted average of boot score and logon score used for measuring startup performance.
+Valid values range from 0-100.
+Value -1 means associated score is unavailable.
+A higher score indicates a healthier device.
+Read-only.
 Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 ```yaml
@@ -221,7 +244,11 @@ Accept wildcard characters: False
 ```
 
 ### -WorkFromAnywhereScore
-The user experience analytics model work from anywhere score.
+Indicates a weighted score of the work from anywhere on a device level.
+Valid values range from 0-100.
+Value -1 means associated score is unavailable.
+A higher score indicates a healthier device.
+Read-only.
 Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 ```yaml
@@ -290,15 +317,15 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsModelScores>`: The user experience analytics model scores entity consolidates the various Endpoint Analytics scores.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[AppReliabilityScore <Double?>]`: The user experience analytics model app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-  - `[BatteryHealthScore <Double?>]`: The user experience analytics model battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-  - `[EndpointAnalyticsScore <Double?>]`: The user experience analytics model score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[AppReliabilityScore <Double?>]`: Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[BatteryHealthScore <Double?>]`: Indicates a calulated score indicating the health of the device's battery. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[EndpointAnalyticsScore <Double?>]`: Indicates a weighted average of the various scores. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
   - `[HealthStatus <UserExperienceAnalyticsHealthState?>]`: userExperienceAnalyticsHealthState
-  - `[Manufacturer <String>]`: A unique identifier of the user experience analytics model scores: device manufacturer.
-  - `[Model <String>]`: A unique identifier of the user experience analytics model scores: device model.
-  - `[ModelDeviceCount <Int64?>]`: The user experience analytics model device count. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
-  - `[StartupPerformanceScore <Double?>]`: The user experience analytics model startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-  - `[WorkFromAnywhereScore <Double?>]`: The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[Manufacturer <String>]`: The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.
+  - `[Model <String>]`: The model name of the device. Supports: $select, $OrderBy. Read-only.
+  - `[ModelDeviceCount <Int64?>]`: Indicates unique devices count of given model in a consolidated report. Supports: $select, $OrderBy. Read-only. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
+  - `[StartupPerformanceScore <Double?>]`: Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[WorkFromAnywhereScore <Double?>]`: Indicates a weighted score of the work from anywhere on a device level. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 ## RELATED LINKS
 

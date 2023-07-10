@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupTeamPrimaryChannelTab
 
 ## SYNOPSIS
-Delete navigation property tabs for groups
+Removes (unpins) a tab from the specified channel within a team.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgGroupTeamPrimaryChannelTab -InputObject <ITeamsIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-Delete navigation property tabs for groups
+Removes (unpins) a tab from the specified channel within a team.
 
 ## EXAMPLES
 

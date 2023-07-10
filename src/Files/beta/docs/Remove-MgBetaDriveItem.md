@@ -31,17 +31,10 @@ Delete a DriveItem by using its ID or path.\nNote that deleting items using this
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Beta.Files
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Remove-MgBetaDriveItem -DriveId $driveId -DriveItemId $driveItemId
 
 ## PARAMETERS
 

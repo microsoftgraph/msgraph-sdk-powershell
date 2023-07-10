@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgIdentityConditionalAccessAuthenticationContextClassReference
 
 ## SYNOPSIS
-Update the navigation property authenticationContextClassReferences in identity
+Create an authenticationContextClassReference object, if the ID has not been used.
+If ID has been used, this call updates the authenticationContextClassReference object.
 
 ## SYNTAX
 
@@ -40,23 +41,23 @@ Update-MgIdentityConditionalAccessAuthenticationContextClassReference -InputObje
 ```
 
 ## DESCRIPTION
-Update the navigation property authenticationContextClassReferences in identity
+Create an authenticationContextClassReference object, if the ID has not been used.
+If ID has been used, this call updates the authenticationContextClassReference object.
 
 ## EXAMPLES
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Identity.SignIns
 ```
 
-{{ Add output here }}
+$params = @{
+	displayName = "Contoso medium"
+	description = "Medium protection level defined for Contoso policy"
+	isAvailable = $true
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Update-MgIdentityConditionalAccessAuthenticationContextClassReference -AuthenticationContextClassReferenceId $authenticationContextClassReferenceId -BodyParameter $params
 
 ## PARAMETERS
 

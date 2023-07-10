@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupTeamScheduleOfferShiftRequest
 
 ## SYNOPSIS
-Create new navigation property to offerShiftRequests for groups
+Create an instance of an offerShiftRequest.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgGroupTeamScheduleOfferShiftRequest -InputObject <ITeamsIdentity> [-Additio
 ```
 
 ## DESCRIPTION
-Create new navigation property to offerShiftRequests for groups
+Create an instance of an offerShiftRequest.
 
 ## EXAMPLES
 

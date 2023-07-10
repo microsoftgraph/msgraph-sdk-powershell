@@ -46,17 +46,10 @@ If a user deletes one, it is recreated when written to again.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Files
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgDriveSpecial -DriveId $driveId -DriveItemId $driveItemId
 
 ## PARAMETERS
 

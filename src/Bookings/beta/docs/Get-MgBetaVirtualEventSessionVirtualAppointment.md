@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaVirtualEventSessionVirtualAppointment
 
 ## SYNOPSIS
-Get virtualAppointment from solutions
+Read the properties and relationships of a virtualAppointment object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaVirtualEventSessionVirtualAppointment -InputObject <IBookingsIdentity>
 ```
 
 ## DESCRIPTION
-Get virtualAppointment from solutions
+Read the properties and relationships of a virtualAppointment object.
 
 ## EXAMPLES
 

@@ -96,7 +96,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Sync-MgDeviceAppMgtVppTokenLicenseCount
+Sync-BetaDeviceAppMgtVppTokenLicenseCount
 
 ## RELATED LINKS
 

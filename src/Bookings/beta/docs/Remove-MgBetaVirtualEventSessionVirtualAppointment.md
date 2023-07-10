@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgBetaVirtualEventSessionVirtualAppointment
 
 ## SYNOPSIS
-Delete navigation property virtualAppointment for solutions
+Delete a virtualAppointment object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgBetaVirtualEventSessionVirtualAppointment -InputObject <IBookingsIdenti
 ```
 
 ## DESCRIPTION
-Delete navigation property virtualAppointment for solutions
+Delete a virtualAppointment object.
 
 ## EXAMPLES
 

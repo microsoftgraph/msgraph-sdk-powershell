@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaUserOnlineMeetingVirtualAppointment
 
 ## SYNOPSIS
-Get virtualAppointment from users
+Read the properties and relationships of a virtualAppointment object.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgBetaUserOnlineMeetingVirtualAppointment -InputObject <ICloudCommunications
 ```
 
 ## DESCRIPTION
-Get virtualAppointment from users
+Read the properties and relationships of a virtualAppointment object.
 
 ## EXAMPLES
 

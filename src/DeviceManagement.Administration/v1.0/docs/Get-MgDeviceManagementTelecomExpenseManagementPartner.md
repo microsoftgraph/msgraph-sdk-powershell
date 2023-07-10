@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementTelecomExpenseManagementPartner
 
 ## SYNOPSIS
-The telecom expense management partners.
+Read properties and relationships of the telecomExpenseManagementPartner object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementTelecomExpenseManagementPartner -InputObject <IDeviceManag
 ```
 
 ## DESCRIPTION
-The telecom expense management partners.
+Read properties and relationships of the telecomExpenseManagementPartner object.
 
 ## EXAMPLES
 

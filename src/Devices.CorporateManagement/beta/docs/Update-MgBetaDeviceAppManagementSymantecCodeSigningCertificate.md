@@ -275,7 +275,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-MgDeviceAppMgtSymantecCodeSigningCertificate
+Update-BetaDeviceAppMgtSymantecCodeSigningCertificate
 
 COMPLEX PARAMETER PROPERTIES
 

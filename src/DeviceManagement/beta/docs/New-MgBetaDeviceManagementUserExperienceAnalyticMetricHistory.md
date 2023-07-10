@@ -79,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceId
-The user experience analytics device id.
+The Intune device id of the device.
 
 ```yaml
 Type: System.String
@@ -110,7 +110,11 @@ Accept wildcard characters: False
 ```
 
 ### -MetricDateTime
-The user experience analytics metric date time.
+The metric date time.
+The value cannot be modified and is automatically populated when the metric is created.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
+Returned by default.
 
 ```yaml
 Type: System.DateTime
@@ -193,8 +197,8 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsMetricHistory>`: The user experience analytics metric history.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[DeviceId <String>]`: The user experience analytics device id.
-  - `[MetricDateTime <DateTime?>]`: The user experience analytics metric date time.
+  - `[DeviceId <String>]`: The Intune device id of the device.
+  - `[MetricDateTime <DateTime?>]`: The metric date time. The value cannot be modified and is automatically populated when the metric is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
   - `[MetricType <String>]`: The user experience analytics metric type.
 
 ## RELATED LINKS

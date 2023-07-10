@@ -8,7 +8,7 @@ schema: 2.0.0
 # Test-MgBetaDeviceManagementVirtualEndpointCloudPcBulkResize
 
 ## SYNOPSIS
-Invoke action validateBulkResize
+Validate that a set of cloudPC devices meet the requirements to be bulk resized.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Test-MgBetaDeviceManagementVirtualEndpointCloudPcBulkResize
 ```
 
 ## DESCRIPTION
-Invoke action validateBulkResize
+Validate that a set of cloudPC devices meet the requirements to be bulk resized.
 
 ## EXAMPLES
 

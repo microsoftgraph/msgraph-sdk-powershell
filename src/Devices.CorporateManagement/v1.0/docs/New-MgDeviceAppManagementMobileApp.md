@@ -82,6 +82,9 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 An abstract class containing the base properties for Intune mobile apps.
+Note: Listing mobile apps with `$expand=assignments` has been deprecated.
+Instead get the list of apps without the `$expand` query on `assignments`.
+Then, perform the expansion on individual applications.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
@@ -370,7 +373,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-MgDeviceAppMgtMobileApp
+New-DeviceAppMgtMobileApp
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -385,7 +388,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
-`BODYPARAMETER <IMicrosoftGraphMobileApp>`: An abstract class containing the base properties for Intune mobile apps.
+`BODYPARAMETER <IMicrosoftGraphMobileApp>`: An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique idenfier for an entity. Read-only.
   - `[Assignments <IMicrosoftGraphMobileAppAssignment[]>]`: The list of group assignments for this mobile app.

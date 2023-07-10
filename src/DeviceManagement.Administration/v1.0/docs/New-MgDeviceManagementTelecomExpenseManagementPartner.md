@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementTelecomExpenseManagementPartner
 
 ## SYNOPSIS
-Create new navigation property to telecomExpenseManagementPartners for deviceManagement
+Create a new telecomExpenseManagementPartner object.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementTelecomExpenseManagementPartner
 ```
 
 ## DESCRIPTION
-Create new navigation property to telecomExpenseManagementPartners for deviceManagement
+Create a new telecomExpenseManagementPartner object.
 
 ## EXAMPLES
 

@@ -32,17 +32,10 @@ It may also be the unique ID of a SharePoint list item.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Files
 ```
 
-{{ Add output here }}
-
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Get-MgDriveRoot -DriveId $driveId
 
 ## PARAMETERS
 

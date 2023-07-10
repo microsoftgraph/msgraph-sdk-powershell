@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Enrollment
-Module Guid: b8e07e4e-a1e3-40cf-8ec1-f67691a27f3a
+Module Guid: 45f78c5e-f7aa-435c-b8bb-cae4e3e165e4
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.enrollment
 Help Version: 1.0.0.0
 Locale: en-US
@@ -97,9 +97,6 @@ Get the number of the resource
 Collection of imported Windows autopilot devices.
 
 ### [Get-MgBetaDeviceManagementImportedWindowsAutopilotDeviceIdentityCount](Get-MgBetaDeviceManagementImportedWindowsAutopilotDeviceIdentityCount.md)
-Get the number of the resource
-
-### [Get-MgBetaDeviceManagementUserExperienceAnalyticNotAutopilotReadyDeviceCount](Get-MgBetaDeviceManagementUserExperienceAnalyticNotAutopilotReadyDeviceCount.md)
 Get the number of the resource
 
 ### [Get-MgBetaDeviceManagementWindowsAutopilotDeploymentProfile](Get-MgBetaDeviceManagementWindowsAutopilotDeploymentProfile.md)

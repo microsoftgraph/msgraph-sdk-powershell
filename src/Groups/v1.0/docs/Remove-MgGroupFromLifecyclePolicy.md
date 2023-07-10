@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupFromLifecyclePolicy
 
 ## SYNOPSIS
-Invoke action removeGroup
+Removes a group from a lifecycle policy.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Remove-MgGroupFromLifecyclePolicy -InputObject <IGroupsIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Invoke action removeGroup
+Removes a group from a lifecycle policy.
 
 ## EXAMPLES
 

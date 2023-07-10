@@ -42,17 +42,27 @@ You can include other information such as business address, web site address, an
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Bookings
 ```
 
-{{ Add output here }}
+$params = @{
+	displayName = "Fourth Coffee"
+	address = @{
+		postOfficeBox = "P.O.
+Box 123"
+		street = "4567 Main Street"
+		city = "Buffalo"
+		state = "NY"
+		countryOrRegion = "USA"
+		postalCode = "98052"
+	}
+	phone = "206-555-0100"
+	email = "manager@fourthcoffee.com"
+	webSiteUrl = "https://www.fourthcoffee.com"
+	defaultCurrencyIso = "USD"
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+New-MgBookingBusiness -BodyParameter $params
 
 ## PARAMETERS
 

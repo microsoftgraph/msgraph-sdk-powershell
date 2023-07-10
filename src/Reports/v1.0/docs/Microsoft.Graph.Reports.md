@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: fa774892-6ef5-4490-8cb4-8fe18b02cca0
+Module Guid: 44287006-cf3b-49cf-88c1-481fde99d1bf
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -38,6 +38,15 @@ Reports singleton
 Entity representing a job to export a report
 
 ### [Get-MgDeviceManagementReportExportJobCount](Get-MgDeviceManagementReportExportJobCount.md)
+Get the number of the resource
+
+### [Get-MgReportAuthenticationMethod](Get-MgReportAuthenticationMethod.md)
+Get authenticationMethods from reports
+
+### [Get-MgReportAuthenticationMethodUserRegistrationDetail](Get-MgReportAuthenticationMethodUserRegistrationDetail.md)
+Get userRegistrationDetails from reports
+
+### [Get-MgReportAuthenticationMethodUserRegistrationDetailCount](Get-MgReportAuthenticationMethodUserRegistrationDetailCount.md)
 Get the number of the resource
 
 ### [Get-MgReportDailyPrintUsageByPrinter](Get-MgReportDailyPrintUsageByPrinter.md)
@@ -324,9 +333,21 @@ Invoke function getYammerGroupsActivityDetail
 ### [Get-MgReportYammerGroupActivityGroupCount](Get-MgReportYammerGroupActivityGroupCount.md)
 Invoke function getYammerGroupsActivityGroupCounts
 
+### [Invoke-MgGraphReportAuthenticationMethod](Invoke-MgGraphReportAuthenticationMethod.md)
+Invoke function usersRegisteredByFeature
+
+### [New-MgReportAuthenticationMethodUserRegistrationDetail](New-MgReportAuthenticationMethodUserRegistrationDetail.md)
+Create new navigation property to userRegistrationDetails for reports
+
 ### [Remove-MgDeviceManagementReport](Remove-MgDeviceManagementReport.md)
 Delete navigation property reports for deviceManagement
 
+### [Remove-MgReportAuthenticationMethodUserRegistrationDetail](Remove-MgReportAuthenticationMethodUserRegistrationDetail.md)
+Delete navigation property userRegistrationDetails for reports
+
 ### [Update-MgDeviceManagementReport](Update-MgDeviceManagementReport.md)
 Update the navigation property reports in deviceManagement
+
+### [Update-MgReportAuthenticationMethodUserRegistrationDetail](Update-MgReportAuthenticationMethodUserRegistrationDetail.md)
+Update the navigation property userRegistrationDetails in reports
 

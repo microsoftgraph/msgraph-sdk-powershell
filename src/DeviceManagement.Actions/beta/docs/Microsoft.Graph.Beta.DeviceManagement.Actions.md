@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.DeviceManagement.Actions
-Module Guid: 81f5e4fe-80e0-4a39-9a97-b4e5f97fcb38
+Module Guid: 0c74a634-7c58-4bf9-a3d5-ae2a8a05a208
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -138,6 +138,9 @@ Invoke action getAppsInstallSummaryReport
 
 ### [Get-MgBetaDeviceManagementReportAppStatusOverviewReport](Get-MgBetaDeviceManagementReportAppStatusOverviewReport.md)
 Invoke action getAppStatusOverviewReport
+
+### [Get-MgBetaDeviceManagementReportAutopilotDeploymentStatus](Get-MgBetaDeviceManagementReportAutopilotDeploymentStatus.md)
+Invoke action getAutopilotDeploymentStatus
 
 ### [Get-MgBetaDeviceManagementReportCachedReport](Get-MgBetaDeviceManagementReportCachedReport.md)
 Invoke action getCachedReport
@@ -381,7 +384,9 @@ Set the review status of multiple Cloud PC devices with a single request that in
 Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
 
 ### [Invoke-MgBetaBulkDeviceManagementVirtualEndpointCloudPcResize](Invoke-MgBetaBulkDeviceManagementVirtualEndpointCloudPcResize.md)
-Invoke action bulkResize
+Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation.
+If any devices cannot be resized, those devices will indicate 'resize failed'.
+The remaining devices will be `provisioned` for the resize process.
 
 ### [Invoke-MgBetaBulkReprovisionDeviceManagementComanagedDeviceCloudPc](Invoke-MgBetaBulkReprovisionDeviceManagementComanagedDeviceCloudPc.md)
 Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
@@ -942,7 +947,7 @@ Invoke action validateFilter
 Invoke action validateComplianceScript
 
 ### [Test-MgBetaDeviceManagementVirtualEndpointCloudPcBulkResize](Test-MgBetaDeviceManagementVirtualEndpointCloudPcBulkResize.md)
-Invoke action validateBulkResize
+Validate that a set of cloudPC devices meet the requirements to be bulk resized.
 
 ### [Update-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment](Update-MgBetaDeviceManagementDepOnboardingSettingEnrollmentProfileDeviceProfileAssignment.md)
 Invoke action updateDeviceProfileAssignment

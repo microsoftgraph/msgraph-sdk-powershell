@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Beta.CloudCommunications
-Module Guid: bdcc041b-93ac-42e7-8e67-2657d6b6a30a
+Module Guid: f03a5a85-6132-4737-9578-8444831fb36c
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.beta.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -154,7 +154,7 @@ A field that represents the time-aligned metadata of the utterances in the trans
 Read-only.
 
 ### [Get-MgBetaCommunicationOnlineMeetingVirtualAppointment](Get-MgBetaCommunicationOnlineMeetingVirtualAppointment.md)
-Get virtualAppointment from communications
+Read the properties and relationships of a virtualAppointment object.
 
 ### [Get-MgBetaCommunicationOnlineMeetingVirtualAppointmentJoinWebUrl](Get-MgBetaCommunicationOnlineMeetingVirtualAppointmentJoinWebUrl.md)
 Invoke function getVirtualAppointmentJoinWebUrl
@@ -169,7 +169,7 @@ Get the presence information for multiple users.
 Get the number of the resource
 
 ### [Get-MgBetaUserOnlineMeeting](Get-MgBetaUserOnlineMeeting.md)
-Get onlineMeetings from users
+Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
 
 ### [Get-MgBetaUserOnlineMeetingAlternativeRecording](Get-MgBetaUserOnlineMeetingAlternativeRecording.md)
 The content stream of the alternative recording of a Microsoft Teams live event.
@@ -241,7 +241,7 @@ A field that represents the time-aligned metadata of the utterances in the trans
 Read-only.
 
 ### [Get-MgBetaUserOnlineMeetingVirtualAppointment](Get-MgBetaUserOnlineMeetingVirtualAppointment.md)
-Get virtualAppointment from users
+Read the properties and relationships of a virtualAppointment object.
 
 ### [Get-MgBetaUserPresence](Get-MgBetaUserPresence.md)
 Get a user's presence information.
@@ -259,8 +259,11 @@ Create an onlineMeeting object with a custom specified external ID.
 If the external ID already exists, this API will return the onlineMeeting object with that external ID.
 
 ### [Invoke-MgBetaInviteCommunicationCallParticipant](Invoke-MgBetaInviteCommunicationCallParticipant.md)
-Invite participants to the active call.
-For more information about how to handle operations, see commsOperation.
+Delete a specific participant in a call.
+In some situations, it is appropriate for an application to remove a participant from an active call.
+This action can be done before or after the participant answers the call.
+When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification.
+When an invited participant is removed, any outstanding add participant request is canceled.
 
 ### [Invoke-MgBetaKeepCommunicationCallAlive](Invoke-MgBetaKeepCommunicationCallAlive.md)
 Make a request to this API every 15 to 45 minutes to ensure that an ongoing call remains active.
@@ -449,7 +452,7 @@ Delete navigation property registrants for communications
 Delete navigation property transcripts for communications
 
 ### [Remove-MgBetaCommunicationOnlineMeetingVirtualAppointment](Remove-MgBetaCommunicationOnlineMeetingVirtualAppointment.md)
-Delete navigation property virtualAppointment for communications
+Delete a virtualAppointment object.
 
 ### [Remove-MgBetaCommunicationPresence](Remove-MgBetaCommunicationPresence.md)
 Delete navigation property presences for communications
@@ -479,7 +482,7 @@ Delete navigation property registrants for users
 Delete navigation property transcripts for users
 
 ### [Remove-MgBetaUserOnlineMeetingVirtualAppointment](Remove-MgBetaUserOnlineMeetingVirtualAppointment.md)
-Delete navigation property virtualAppointment for users
+Delete a virtualAppointment object.
 
 ### [Remove-MgBetaUserPresence](Remove-MgBetaUserPresence.md)
 Delete navigation property presence for users
@@ -611,7 +614,7 @@ Update the navigation property registrants in communications
 Update the navigation property transcripts in communications
 
 ### [Update-MgBetaCommunicationOnlineMeetingVirtualAppointment](Update-MgBetaCommunicationOnlineMeetingVirtualAppointment.md)
-Update the navigation property virtualAppointment in communications
+Update the properties of a virtualAppointment object.
 
 ### [Update-MgBetaCommunicationPresence](Update-MgBetaCommunicationPresence.md)
 Update the navigation property presences in communications
@@ -642,7 +645,7 @@ Update the navigation property registrants in users
 Update the navigation property transcripts in users
 
 ### [Update-MgBetaUserOnlineMeetingVirtualAppointment](Update-MgBetaUserOnlineMeetingVirtualAppointment.md)
-Update the navigation property virtualAppointment in users
+Update the properties of a virtualAppointment object.
 
 ### [Update-MgBetaUserPresence](Update-MgBetaUserPresence.md)
 Update the navigation property presence in users

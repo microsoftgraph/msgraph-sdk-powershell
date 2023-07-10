@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceManagementRemoteAssistancePartner
 
 ## SYNOPSIS
-Create new navigation property to remoteAssistancePartners for deviceManagement
+Create a new remoteAssistancePartner object.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ New-MgDeviceManagementRemoteAssistancePartner -BodyParameter <IMicrosoftGraphRem
 ```
 
 ## DESCRIPTION
-Create new navigation property to remoteAssistancePartners for deviceManagement
+Create a new remoteAssistancePartner object.
 
 ## EXAMPLES
 

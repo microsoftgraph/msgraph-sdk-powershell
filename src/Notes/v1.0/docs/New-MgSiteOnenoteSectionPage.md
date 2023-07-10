@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSiteOnenoteSectionPage
 
 ## SYNOPSIS
-Create new navigation property to pages for sites
+Create a new page in the specified section.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgSiteOnenoteSectionPage -InputObject <INotesIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Create new navigation property to pages for sites
+Create a new page in the specified section.
 
 ## EXAMPLES
 

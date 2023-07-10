@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgBetaUserActivity
 
 ## SYNOPSIS
-Get activities from users
+The user's activities across devices.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -32,7 +34,9 @@ Get-MgBetaUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Get activities from users
+The user's activities across devices.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

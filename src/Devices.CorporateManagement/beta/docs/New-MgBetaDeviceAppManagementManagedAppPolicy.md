@@ -230,7 +230,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-New-MgDeviceAppMgtManagedAppPolicy
+New-BetaDeviceAppMgtManagedAppPolicy
 
 COMPLEX PARAMETER PROPERTIES
 

@@ -19,8 +19,8 @@ Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  [-LastRefreshedDateTime <DateTime>] [-MfaAndSsprCapableUserCount <Int32>]
  [-MfaConditionalAccessPolicyState <String>] [-MfaExcludedUserCount <Int32>] [-MfaRegisteredUserCount <Int32>]
  [-SecurityDefaultsEnabled] [-SsprEnabledUserCount <Int32>] [-SsprRegisteredUserCount <Int32>]
- [-TenantDisplayName <String>] [-TenantId <String>] [-TotalUserCount <Int32>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TenantDisplayName <String>] [-TenantId <String>] [-TenantLicenseType <String>] [-TotalUserCount <Int32>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -46,8 +46,8 @@ Update-MgBetaTenantRelationshipManagedTenantCredentialUserRegistrationSummary
  [-LastRefreshedDateTime <DateTime>] [-MfaAndSsprCapableUserCount <Int32>]
  [-MfaConditionalAccessPolicyState <String>] [-MfaExcludedUserCount <Int32>] [-MfaRegisteredUserCount <Int32>]
  [-SecurityDefaultsEnabled] [-SsprEnabledUserCount <Int32>] [-SsprRegisteredUserCount <Int32>]
- [-TenantDisplayName <String>] [-TenantId <String>] [-TotalUserCount <Int32>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-TenantDisplayName <String>] [-TenantId <String>] [-TenantLicenseType <String>] [-TotalUserCount <Int32>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -319,6 +319,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -TenantLicenseType
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TotalUserCount
 The total number of users in the given managed tenant.
 Optional.
@@ -402,6 +417,7 @@ To create the parameters described below, construct a hash table containing the 
   - `[SsprRegisteredUserCount <Int32?>]`: The number of users registered for self service password reset. Optional. Read-only.
   - `[TenantDisplayName <String>]`: The display name for the managed tenant. Required. Read-only.
   - `[TenantId <String>]`: The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
+  - `[TenantLicenseType <String>]`: 
   - `[TotalUserCount <Int32?>]`: The total number of users in the given managed tenant. Optional. Read-only.
 
 `INPUTOBJECT <IManagedTenantsIdentity>`: Identity Parameter

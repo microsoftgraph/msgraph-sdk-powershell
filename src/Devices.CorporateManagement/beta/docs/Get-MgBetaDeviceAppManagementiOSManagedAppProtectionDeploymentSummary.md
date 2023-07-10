@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Get-MgDeviceAppMgtIoManagedAppProtectionDeploymentSummary
+Get-BetaDeviceAppMgtIoManagedAppProtectionDeploymentSummary
 
 COMPLEX PARAMETER PROPERTIES
 

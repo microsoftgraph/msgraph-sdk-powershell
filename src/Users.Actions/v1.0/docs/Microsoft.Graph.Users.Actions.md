@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: 966e3b4f-0a35-4c99-a805-0bd6a3076492
+Module Guid: bbb3c9e8-627c-4570-98de-514b3df7e30f
 Download Help Link: https://learn.microsoft.com/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -199,6 +199,12 @@ Dismiss a reminder that has been triggered for an event in a user calendar.
 
 ### [Invoke-MgDownUserManagedDeviceShut](Invoke-MgDownUserManagedDeviceShut.md)
 Shut down device
+
+### [Invoke-MgExtractUserDriveItemSensitivityLabel](Invoke-MgExtractUserDriveItemSensitivityLabel.md)
+Invoke action extractSensitivityLabels
+
+### [Invoke-MgExtractUserDriveRootSensitivityLabel](Invoke-MgExtractUserDriveRootSensitivityLabel.md)
+Invoke action extractSensitivityLabels
 
 ### [Invoke-MgFollowUserDriveItem](Invoke-MgFollowUserDriveItem.md)
 Follow a driveItem.
@@ -490,6 +496,9 @@ When using MIME format:\n- Provide the applicable Internet message headers and t
 Send the draft message in a subsequent operation.
 Alternatively, reply-all to a message in a single action.
 
+### [New-MgUserManagedDeviceLogCollectionResponseDownloadUrl](New-MgUserManagedDeviceLogCollectionResponseDownloadUrl.md)
+Invoke action createDownloadUrl
+
 ### [New-MgUserManagedDeviceWindowsDefenderUpdateSignature](New-MgUserManagedDeviceWindowsDefenderUpdateSignature.md)
 Invoke action windowsDefenderUpdateSignatures
 
@@ -640,6 +649,12 @@ Alternatively, send a new message in a single operation.
 ### [Send-MgUserTeamworkActivityNotification](Send-MgUserTeamworkActivityNotification.md)
 Send an activity feed notification to a user.
 For more details about sending notifications and the requirements for doing so, see sending Teams activity notifications.
+
+### [Set-MgUserDriveItemSensitivityLabel](Set-MgUserDriveItemSensitivityLabel.md)
+Invoke action assignSensitivityLabel
+
+### [Set-MgUserDriveRootSensitivityLabel](Set-MgUserDriveRootSensitivityLabel.md)
+Invoke action assignSensitivityLabel
 
 ### [Set-MgUserLicense](Set-MgUserLicense.md)
 Add or remove subscriptions for the user.

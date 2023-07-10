@@ -57,17 +57,21 @@ Update the properties of a bookingBusiness object.
 
 ### -------------------------- EXAMPLE 1 --------------------------
 ```powershell
-{{ Add code here }}
+Import-Module Microsoft.Graph.Bookings
 ```
 
-{{ Add output here }}
+$params = @{
+	email = "admin@fabrikam.com"
+	schedulingPolicy = @{
+		timeSlotInterval = "PT60M"
+		minimumLeadTime = "P1D"
+		maximumAdvance = "P30D"
+		sendConfirmationsToOwner = $true
+		allowStaffSelection = $true
+	}
+}
 
-### -------------------------- EXAMPLE 2 --------------------------
-```powershell
-{{ Add code here }}
-```
-
-{{ Add output here }}
+Update-MgBookingBusiness -BookingBusinessId $bookingBusinessId -BodyParameter $params
 
 ## PARAMETERS
 

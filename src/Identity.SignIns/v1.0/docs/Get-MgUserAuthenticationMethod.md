@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserAuthenticationMethod
 
 ## SYNOPSIS
-Represents all authentication methods registered to a user.
+Retrieve the properties and relationships of an authenticationMethod object.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserAuthenticationMethod -InputObject <IIdentitySignInsIdentity> [-ExpandP
 ```
 
 ## DESCRIPTION
-Represents all authentication methods registered to a user.
+Retrieve the properties and relationships of an authenticationMethod object.
 
 ## EXAMPLES
 

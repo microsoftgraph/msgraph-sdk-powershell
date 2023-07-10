@@ -68,7 +68,10 @@ Update the navigation property userExperienceAnalyticsAppHealthApplicationPerfor
 ## PARAMETERS
 
 ### -ActiveDeviceCount
-The number of devices where the app has been active.
+The number of devices where the application has been active.
+Valid values 0 to 2147483647.
+Supports: $select, $OrderBy.
+Read-only.
 Valid values -2147483648 to 2147483647
 
 ```yaml
@@ -99,7 +102,10 @@ Accept wildcard characters: False
 ```
 
 ### -AppCrashCount
-The number of crashes for the app.
+The number of crashes for the application.
+Valid values 0 to 2147483647.
+Supports: $select, $OrderBy.
+Read-only.
 Valid values -2147483648 to 2147483647
 
 ```yaml
@@ -116,6 +122,9 @@ Accept wildcard characters: False
 
 ### -AppDisplayName
 The friendly name of the application.
+Possible values are: Outlook, Excel.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -131,6 +140,9 @@ Accept wildcard characters: False
 
 ### -AppName
 The name of the application.
+Possible values are: outlook.exe, excel.exe.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -146,6 +158,8 @@ Accept wildcard characters: False
 
 ### -AppPublisher
 The publisher of the application.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -161,6 +175,9 @@ Accept wildcard characters: False
 
 ### -AppUsageDuration
 The total usage time of the application in minutes.
+Valid values 0 to 2147483647.
+Supports: $select, $OrderBy.
+Read-only.
 Valid values -2147483648 to 2147483647
 
 ```yaml
@@ -224,7 +241,10 @@ Accept wildcard characters: False
 ```
 
 ### -MeanTimeToFailureInMinutes
-The mean time to failure for the app in minutes.
+The mean time to failure for the application in minutes.
+Valid values 0 to 2147483647.
+Supports: $select, $OrderBy.
+Read-only.
 Valid values -2147483648 to 2147483647
 
 ```yaml
@@ -240,7 +260,9 @@ Accept wildcard characters: False
 ```
 
 ### -OSBuildNumber
-The os build number of the application.
+The OS build number of the application.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -255,7 +277,9 @@ Accept wildcard characters: False
 ```
 
 ### -OSVersion
-The os version of the application.
+The OS version of the application.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -340,22 +364,27 @@ To create the parameters described below, construct a hash table containing the 
 `BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>`: The user experience analytics application performance entity contains app performance details by OS version.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: The unique identifier for an entity. Read-only.
-  - `[ActiveDeviceCount <Int32?>]`: The number of devices where the app has been active. Valid values -2147483648 to 2147483647
-  - `[AppCrashCount <Int32?>]`: The number of crashes for the app. Valid values -2147483648 to 2147483647
-  - `[AppDisplayName <String>]`: The friendly name of the application.
-  - `[AppName <String>]`: The name of the application.
-  - `[AppPublisher <String>]`: The publisher of the application.
-  - `[AppUsageDuration <Int32?>]`: The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
-  - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
-  - `[OSBuildNumber <String>]`: The os build number of the application.
-  - `[OSVersion <String>]`: The os version of the application.
+  - `[ActiveDeviceCount <Int32?>]`: The number of devices where the application has been active. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[AppCrashCount <Int32?>]`: The number of crashes for the application. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[AppDisplayName <String>]`: The friendly name of the application. Possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.
+  - `[AppName <String>]`: The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
+  - `[AppPublisher <String>]`: The publisher of the application. Supports: $select, $OrderBy. Read-only.
+  - `[AppUsageDuration <Int32?>]`: The total usage time of the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[MeanTimeToFailureInMinutes <Int32?>]`: The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[OSBuildNumber <String>]`: The OS build number of the application. Supports: $select, $OrderBy. Read-only.
+  - `[OSVersion <String>]`: The OS version of the application. Supports: $select, $OrderBy. Read-only.
 
 `INPUTOBJECT <IDeviceManagementIdentity>`: Identity Parameter
   - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: The unique identifier of advancedThreatProtectionOnboardingDeviceSettingState
+  - `[AlertRecordId <String>]`: The unique identifier of alertRecord
+  - `[AlertRuleId <String>]`: The unique identifier of alertRule
   - `[AndroidForWorkAppConfigurationSchemaId <String>]`: The unique identifier of androidForWorkAppConfigurationSchema
   - `[AndroidManagedStoreAppConfigurationSchemaId <String>]`: The unique identifier of androidManagedStoreAppConfigurationSchema
   - `[AppLogCollectionRequestId <String>]`: The unique identifier of appLogCollectionRequest
   - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: The unique identifier of assignmentFilterEvaluationStatusDetails
+  - `[BrowserSharedCookieId <String>]`: The unique identifier of browserSharedCookie
+  - `[BrowserSiteId <String>]`: The unique identifier of browserSite
+  - `[BrowserSiteListId <String>]`: The unique identifier of browserSiteList
   - `[DataSharingConsentId <String>]`: The unique identifier of dataSharingConsent
   - `[DetectedAppId <String>]`: The unique identifier of detectedApp
   - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The unique identifier of deviceAndAppManagementAssignmentFilter
@@ -483,8 +512,6 @@ To create the parameters described below, construct a hash table containing the 
   - `[WindowsInformationProtectionAppLearningSummaryId <String>]`: The unique identifier of windowsInformationProtectionAppLearningSummary
   - `[WindowsInformationProtectionNetworkLearningSummaryId <String>]`: The unique identifier of windowsInformationProtectionNetworkLearningSummary
   - `[WindowsMalwareInformationId <String>]`: The unique identifier of windowsMalwareInformation
-  - `[WindowsQualityUpdateProfileAssignmentId <String>]`: The unique identifier of windowsQualityUpdateProfileAssignment
-  - `[WindowsQualityUpdateProfileId <String>]`: The unique identifier of windowsQualityUpdateProfile
 
 ## RELATED LINKS
 

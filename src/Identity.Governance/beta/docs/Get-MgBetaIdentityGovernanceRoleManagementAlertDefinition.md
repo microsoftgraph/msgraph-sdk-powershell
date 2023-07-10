@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgBetaIdentityGovernanceRoleManagementAlertDefinition
 
 ## SYNOPSIS
-Get alertDefinitions from identityGovernance
+Defines an alert, its impact, and measures to mitigate or prevent it.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Get-MgBetaIdentityGovernanceRoleManagementAlertDefinition -InputObject <IIdentit
 ```
 
 ## DESCRIPTION
-Get alertDefinitions from identityGovernance
+Defines an alert, its impact, and measures to mitigate or prevent it.
 
 ## EXAMPLES
 

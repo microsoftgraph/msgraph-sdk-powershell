@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementTelecomExpenseManagementPartner
 
 ## SYNOPSIS
-Update the navigation property telecomExpenseManagementPartners in deviceManagement
+Update the properties of a telecomExpenseManagementPartner object.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgDeviceManagementTelecomExpenseManagementPartner
 ```
 
 ## DESCRIPTION
-Update the navigation property telecomExpenseManagementPartners in deviceManagement
+Update the properties of a telecomExpenseManagementPartner object.
 
 ## EXAMPLES
 

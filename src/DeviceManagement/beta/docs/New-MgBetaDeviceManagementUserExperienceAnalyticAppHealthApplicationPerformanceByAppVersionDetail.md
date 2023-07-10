@@ -157,6 +157,9 @@ Accept wildcard characters: False
 
 ### -DeviceCountWithCrashes
 The total number of devices that have reported one or more application crashes for this application and version.
+Valid values 0 to 2147483647.
+Supports: $select, $OrderBy.
+Read-only.
 Valid values -2147483648 to 2147483647
 
 ```yaml
@@ -188,7 +191,10 @@ Accept wildcard characters: False
 ```
 
 ### -IsLatestUsedVersion
-Is the version of application the latest version for that app that is in use.
+When TRUE, indicates the version of application is the latest version for that application that is in use.
+When FALSE, indicates the version is not the latest version.
+FALSE by default.
+Supports: $select, $OrderBy.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -203,7 +209,11 @@ Accept wildcard characters: False
 ```
 
 ### -IsMostUsedVersion
-Is the version of application the most used version for that app.
+When TRUE, indicates the version of application is the most used version for that application.
+When FALSE, indicates the version is not the most used version.
+FALSE by default.
+Supports: $select, $OrderBy.
+Read-only.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -276,9 +286,9 @@ To create the parameters described below, construct a hash table containing the 
   - `[AppName <String>]`: The name of the application.
   - `[AppPublisher <String>]`: The publisher of the application.
   - `[AppVersion <String>]`: The version of the application.
-  - `[DeviceCountWithCrashes <Int32?>]`: The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647
-  - `[IsLatestUsedVersion <Boolean?>]`: Is the version of application the latest version for that app that is in use.
-  - `[IsMostUsedVersion <Boolean?>]`: Is the version of application the most used version for that app.
+  - `[DeviceCountWithCrashes <Int32?>]`: The total number of devices that have reported one or more application crashes for this application and version. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
+  - `[IsLatestUsedVersion <Boolean?>]`: When TRUE, indicates the version of application is the latest version for that application that is in use. When FALSE, indicates the version is not the latest version. FALSE by default. Supports: $select, $OrderBy.
+  - `[IsMostUsedVersion <Boolean?>]`: When TRUE, indicates the version of application is the most used version for that application. When FALSE, indicates the version is not the most used version. FALSE by default. Supports: $select, $OrderBy. Read-only.
 
 ## RELATED LINKS
 

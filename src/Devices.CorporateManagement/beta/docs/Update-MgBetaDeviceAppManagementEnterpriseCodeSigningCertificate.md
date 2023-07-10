@@ -332,7 +332,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-Update-MgDeviceAppMgtEnterpriseCodeSigningCertificate
+Update-BetaDeviceAppMgtEnterpriseCodeSigningCertificate
 
 COMPLEX PARAMETER PROPERTIES
 

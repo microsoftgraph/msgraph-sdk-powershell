@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgBetaVirtualEventWebinarSessionVirtualAppointment
 
 ## SYNOPSIS
-Update the navigation property virtualAppointment in solutions
+Update the properties of a virtualAppointment object.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgBetaVirtualEventWebinarSessionVirtualAppointment -InputObject <IBooking
 ```
 
 ## DESCRIPTION
-Update the navigation property virtualAppointment in solutions
+Update the properties of a virtualAppointment object.
 
 ## EXAMPLES
 
