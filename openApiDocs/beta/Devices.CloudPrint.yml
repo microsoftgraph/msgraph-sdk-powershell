@@ -1854,6 +1854,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The cancelPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the cancel API instead of this.'
       x-ms-docs-operation-type: action
   '/print/printers/{printer-id}/jobs/{printJob-id}/microsoft.graph.redirect':
     post:
@@ -1891,7 +1897,6 @@ paths:
               properties:
                 destinationPrinterId:
                   type: string
-                  nullable: true
                 configuration:
                   $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
               additionalProperties:
@@ -1972,6 +1977,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printJobStatus'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The startPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the start API instead of this.'
       x-ms-docs-operation-type: action
   '/print/printers/{printer-id}/jobs/{printJob-id}/tasks':
     get:
@@ -2473,6 +2484,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printerCapabilities'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The getCapabilities API is deprecated and will stop returning data on July 31, 2023. Please use the capabilities property instead of this.'
       x-ms-docs-operation-type: function
   '/print/printers/{printer-id}/microsoft.graph.resetDefaults':
     post:
@@ -2494,6 +2511,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The resetDefaults API is deprecated and will stop returning data on July 31, 2023. Please use the restoreFactoryDefaults API instead of this.'
       x-ms-docs-operation-type: action
   '/print/printers/{printer-id}/microsoft.graph.restoreFactoryDefaults':
     post:
@@ -2588,6 +2611,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printerShare'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printers/{printer-id}/shares':
     get:
@@ -3291,6 +3320,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.printerShareCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3316,6 +3351,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printerShare'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}':
     get:
@@ -3385,6 +3426,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printerShare'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -3416,6 +3463,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printerShare'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -3442,6 +3495,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/allowedGroups':
     get:
@@ -3721,6 +3780,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.groupCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3770,6 +3835,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/allowedGroups/$count':
     get:
@@ -3793,6 +3864,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
   '/print/printerShares/{printerShare-id}/allowedGroups/$ref':
     get:
       tags:
@@ -3939,6 +4016,12 @@ paths:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -3968,6 +4051,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/allowedUsers':
     get:
@@ -4418,6 +4507,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4467,6 +4562,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/allowedUsers/{user-id}/mailboxSettings':
     get:
@@ -4534,6 +4635,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
     patch:
       tags:
         - print.printerShare
@@ -4572,6 +4679,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
   '/print/printerShares/{printerShare-id}/allowedUsers/$count':
     get:
       tags:
@@ -4594,6 +4707,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
   '/print/printerShares/{printerShare-id}/allowedUsers/$ref':
     get:
       tags:
@@ -4802,6 +4921,12 @@ paths:
           $ref: '#/components/responses/StringCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4831,6 +4956,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/jobs':
     get:
@@ -4931,6 +5062,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.printJobCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4965,6 +5102,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printJob'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}':
     get:
@@ -5037,6 +5180,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printJob'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5076,6 +5225,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printJob'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5110,6 +5265,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/documents':
     get:
@@ -5199,6 +5360,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.printDocumentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5241,6 +5408,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printDocument'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/documents/{printDocument-id}':
     get:
@@ -5312,6 +5485,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printDocument'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -5359,6 +5538,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printDocument'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -5401,6 +5586,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/documents/{printDocument-id}/$value':
     get:
@@ -5443,6 +5634,12 @@ paths:
                 format: binary
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
     put:
       tags:
@@ -5487,6 +5684,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/documents/{printDocument-id}/microsoft.graph.createUploadSession':
     post:
@@ -5544,6 +5747,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.uploadSession'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: action
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/documents/$count':
     get:
@@ -5575,6 +5784,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.abort':
     post:
       tags:
@@ -5620,6 +5835,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: action
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.cancel':
     post:
@@ -5653,6 +5874,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: action
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.cancelPrintJob':
     post:
@@ -5682,6 +5909,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: action
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.redirect':
     post:
@@ -5719,7 +5952,6 @@ paths:
               properties:
                 destinationPrinterId:
                   type: string
-                  nullable: true
                 configuration:
                   $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
               additionalProperties:
@@ -5734,6 +5966,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printJob'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: action
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.start':
     post:
@@ -5767,6 +6005,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printJobStatus'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: action
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.startPrintJob':
     post:
@@ -5800,6 +6044,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printJobStatus'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: action
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/tasks':
     get:
@@ -5882,6 +6132,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.printTaskCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -5924,6 +6180,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/tasks/{printTask-id}':
     get:
@@ -5996,6 +6258,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -6043,6 +6311,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printTask'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -6085,6 +6359,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/tasks/{printTask-id}/definition':
     get:
@@ -6155,6 +6435,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/tasks/{printTask-id}/trigger':
     get:
@@ -6224,6 +6510,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/print/printerShares/{printerShare-id}/jobs/{printJob-id}/tasks/$count':
     get:
@@ -6255,6 +6547,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
   '/print/printerShares/{printerShare-id}/jobs/$count':
     get:
       tags:
@@ -6277,6 +6575,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
   '/print/printerShares/{printerShare-id}/printer':
     get:
       tags:
@@ -6350,6 +6654,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printer'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
       x-ms-docs-operation-type: operation
   /print/printerShares/$count:
     get:
@@ -6365,6 +6675,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.'
   /print/services:
     get:
       tags:
@@ -6601,6 +6917,8 @@ paths:
                 - id desc
                 - displayName
                 - displayName desc
+                - name
+                - name desc
                 - uri
                 - uri desc
               type: string
@@ -6616,6 +6934,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - name
                 - uri
               type: string
         - name: $expand
@@ -6709,6 +7028,7 @@ paths:
               enum:
                 - id
                 - displayName
+                - name
                 - uri
               type: string
         - name: $expand
@@ -9351,6 +9671,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The cancelPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the cancel API instead of this.'
       x-ms-docs-operation-type: action
   '/print/shares/{printerShare-id}/jobs/{printJob-id}/microsoft.graph.redirect':
     post:
@@ -9388,7 +9714,6 @@ paths:
               properties:
                 destinationPrinterId:
                   type: string
-                  nullable: true
                 configuration:
                   $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
               additionalProperties:
@@ -9469,6 +9794,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printJobStatus'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The startPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the start API instead of this.'
       x-ms-docs-operation-type: action
   '/print/shares/{printerShare-id}/jobs/{printJob-id}/tasks':
     get:
@@ -10724,17 +11055,14 @@ components:
             appVersion:
               type: string
               description: The connector's version.
-              nullable: true
             deviceHealth:
               $ref: '#/components/schemas/microsoft.graph.deviceHealth'
             displayName:
               type: string
               description: The name of the connector.
-              nullable: true
             fullyQualifiedDomainName:
               type: string
               description: The connector machine's hostname.
-              nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
             name:
@@ -10743,7 +11071,6 @@ components:
             operatingSystem:
               type: string
               description: The connector machine's operating system version.
-              nullable: true
             registeredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -10852,7 +11179,6 @@ components:
             isFetchable:
               type: boolean
               description: 'If true, document can be fetched by printer.'
-              nullable: true
             redirectedFrom:
               type: string
               description: 'Contains the source job URL, if the job has been redirected from another printer.'
@@ -11028,10 +11354,10 @@ components:
       properties:
         acquiredByPrinter:
           type: boolean
+          nullable: true
         description:
           type: string
           description: A human-readable description of the print job's current processing state. Read-only.
-          nullable: true
         details:
           type: array
           items:
@@ -11409,6 +11735,9 @@ components:
               type: string
               description: A human-readable display name for the endpoint.
               nullable: true
+            name:
+              type: string
+              nullable: true
             uri:
               type: string
               description: The URI that can be used to access the service.
@@ -11563,7 +11892,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printerDefaults'
             displayName:
               type: string
-              nullable: true
             isAcceptingJobs:
               type: boolean
               nullable: true
@@ -11678,6 +12006,7 @@ components:
         - grayscale
         - color
         - auto
+        - unknownFutureValue
       type: string
     microsoft.graph.printDuplexMode:
       title: printDuplexMode
@@ -11685,6 +12014,7 @@ components:
         - flipOnLongEdge
         - flipOnShortEdge
         - oneSided
+        - unknownFutureValue
       type: string
     microsoft.graph.printerFeedOrientation:
       title: printerFeedOrientation
@@ -11761,6 +12091,7 @@ components:
         - clockwiseFromBottomLeft
         - counterclockwiseFromBottomRight
         - clockwiseFromBottomRight
+        - unknownFutureValue
       type: string
     microsoft.graph.printOrientation:
       title: printOrientation
@@ -11769,6 +12100,7 @@ components:
         - landscape
         - reverseLandscape
         - reversePortrait
+        - unknownFutureValue
       type: string
     microsoft.graph.integerRange:
       title: integerRange
@@ -11835,6 +12167,7 @@ components:
         - completed
         - canceled
         - aborted
+        - unknownFutureValue
       type: string
     microsoft.graph.printTaskStatus:
       title: printTaskStatus
@@ -17133,6 +17466,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
+              description: 'Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.'
             attendeeReport:
               type: string
               description: The content stream of the attendee report of a Teams live event. Read-only.
@@ -28031,11 +28365,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object

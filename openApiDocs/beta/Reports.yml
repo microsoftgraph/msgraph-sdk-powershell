@@ -4396,6 +4396,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsageByPrinter navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4421,6 +4427,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsageByPrinter navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/reports/dailyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}':
     get:
@@ -4482,6 +4494,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsageByPrinter navigation property instead of this.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4513,6 +4531,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsageByPrinter navigation property instead of this.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4539,6 +4563,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsageByPrinter navigation property instead of this.'
       x-ms-docs-operation-type: operation
   /reports/dailyPrintUsageSummariesByPrinter/$count:
     get:
@@ -4554,6 +4584,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsageByPrinter navigation property instead of this.'
   /reports/dailyPrintUsageSummariesByUser:
     get:
       tags:
@@ -4644,6 +4680,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -4669,6 +4711,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/reports/dailyPrintUsageSummariesByUser/{printUsageByUser-id}':
     get:
@@ -4730,6 +4778,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -4761,6 +4815,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -4787,6 +4847,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this.'
       x-ms-docs-operation-type: operation
   /reports/dailyPrintUsageSummariesByUser/$count:
     get:
@@ -4802,6 +4868,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this.'
   /reports/microsoft.graph.deviceConfigurationDeviceActivity():
     get:
       tags:
@@ -5690,7 +5762,6 @@ paths:
           style: simple
           schema:
             type: string
-            nullable: true
         - name: startDateTime
           in: path
           description: 'Usage: startDateTime={startDateTime}'
@@ -7439,7 +7510,6 @@ paths:
           style: simple
           schema:
             type: string
-            nullable: true
         - name: startDateTime
           in: path
           description: 'Usage: startDateTime={startDateTime}'
@@ -9057,7 +9127,6 @@ paths:
           style: simple
           schema:
             type: string
-            nullable: true
         - name: startDateTime
           in: path
           description: 'Usage: startDateTime={startDateTime}'
@@ -10299,6 +10368,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10324,6 +10399,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/reports/monthlyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}':
     get:
@@ -10385,6 +10466,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10416,6 +10503,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10442,6 +10535,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this.'
       x-ms-docs-operation-type: operation
   /reports/monthlyPrintUsageSummariesByPrinter/$count:
     get:
@@ -10457,6 +10556,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this.'
   /reports/monthlyPrintUsageSummariesByUser:
     get:
       tags:
@@ -10547,6 +10652,12 @@ paths:
           $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByUser navigation property instead of this.'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
@@ -10572,6 +10683,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByUser navigation property instead of this.'
       x-ms-docs-operation-type: operation
   '/reports/monthlyPrintUsageSummariesByUser/{printUsageByUser-id}':
     get:
@@ -10633,6 +10750,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByUser navigation property instead of this.'
       x-ms-docs-operation-type: operation
     patch:
       tags:
@@ -10664,6 +10787,12 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByUser navigation property instead of this.'
       x-ms-docs-operation-type: operation
     delete:
       tags:
@@ -10690,6 +10819,12 @@ paths:
           description: Success
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByUser navigation property instead of this.'
       x-ms-docs-operation-type: operation
   /reports/monthlyPrintUsageSummariesByUser/$count:
     get:
@@ -10705,6 +10840,12 @@ paths:
           $ref: '#/components/responses/ODataCountResponse'
         default:
           $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2023-07-31T00:00:00.0000000+00:00'
+        date: '2023-06-13T00:00:00.0000000+00:00'
+        version: 2023-06/Tasks_And_Plans
+        description: 'The monthlyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByUser navigation property instead of this.'
   /reports/security:
     get:
       tags:
@@ -12302,7 +12443,6 @@ components:
           properties:
             printerId:
               type: string
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.printUsageByUser:
@@ -12314,7 +12454,6 @@ components:
             userPrincipalName:
               type: string
               description: The UPN of the user represented by these statistics.
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.report:
@@ -13195,11 +13334,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -13520,6 +13659,7 @@ components:
         - saml20
         - deviceCode
         - unknownFutureValue
+        - authenticationTransfer
       type: string
     microsoft.graph.authenticationRequirementPolicy:
       title: authenticationRequirementPolicy
@@ -14086,6 +14226,7 @@ components:
         - completed
         - canceled
         - aborted
+        - unknownFutureValue
       type: string
     microsoft.graph.migrationStatus:
       title: migrationStatus
@@ -14631,6 +14772,7 @@ components:
         - ssprCapable
         - passwordlessCapable
         - mfaCapable
+        - unknownFutureValue
       type: string
     microsoft.graph.trainingStatus:
       title: trainingStatus

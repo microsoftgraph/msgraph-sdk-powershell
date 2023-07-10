@@ -1990,6 +1990,7 @@ paths:
                 - diagnosticsDisabled
                 - displayToneSetupDisabled
                 - enabledSkipKeys
+                - enrollmentTimeAzureAdGroupIds
                 - isDefault
                 - isMandatory
                 - locationDisabled
@@ -2095,6 +2096,7 @@ paths:
                 - diagnosticsDisabled
                 - displayToneSetupDisabled
                 - enabledSkipKeys
+                - enrollmentTimeAzureAdGroupIds
                 - isDefault
                 - isMandatory
                 - locationDisabled
@@ -2112,6 +2114,7 @@ paths:
                 - adminAccountFullName
                 - adminAccountPassword
                 - adminAccountUserName
+                - autoAdvanceSetupEnabled
                 - autoUnlockWithWatchDisabled
                 - chooseYourLockScreenDisabled
                 - dontAutoPopulatePrimaryAccountInfo
@@ -11127,6 +11130,9 @@ components:
               type: string
               description: Indicates what the user name for the admin account is
               nullable: true
+            autoAdvanceSetupEnabled:
+              type: boolean
+              description: Indicates if Setup Assistant will automatically advance through its screen
             autoUnlockWithWatchDisabled:
               type: boolean
               description: Indicates if UnlockWithWatch screen is disabled
@@ -12356,6 +12362,13 @@ components:
                 type: string
                 nullable: true
               description: enabledSkipKeys contains all the enabled skip keys as strings
+            enrollmentTimeAzureAdGroupIds:
+              type: array
+              items:
+                pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                type: string
+                format: uuid
+              description: EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile
             isDefault:
               type: boolean
               description: Indicates if this is the default profile

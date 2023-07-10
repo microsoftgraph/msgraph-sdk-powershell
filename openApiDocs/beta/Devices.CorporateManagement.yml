@@ -281,6 +281,8 @@ paths:
                 - appActionIfDevicePasscodeComplexityLessThanLow desc
                 - appActionIfDevicePasscodeComplexityLessThanMedium
                 - appActionIfDevicePasscodeComplexityLessThanMedium desc
+                - appActionIfSamsungKnoxAttestationRequired
+                - appActionIfSamsungKnoxAttestationRequired desc
                 - approvedKeyboards
                 - approvedKeyboards desc
                 - biometricAuthenticationBlocked
@@ -417,6 +419,7 @@ paths:
                 - appActionIfDevicePasscodeComplexityLessThanHigh
                 - appActionIfDevicePasscodeComplexityLessThanLow
                 - appActionIfDevicePasscodeComplexityLessThanMedium
+                - appActionIfSamsungKnoxAttestationRequired
                 - approvedKeyboards
                 - biometricAuthenticationBlocked
                 - blockAfterCompanyPortalUpdateDeferralInDays
@@ -589,6 +592,7 @@ paths:
                 - appActionIfDevicePasscodeComplexityLessThanHigh
                 - appActionIfDevicePasscodeComplexityLessThanLow
                 - appActionIfDevicePasscodeComplexityLessThanMedium
+                - appActionIfSamsungKnoxAttestationRequired
                 - approvedKeyboards
                 - biometricAuthenticationBlocked
                 - blockAfterCompanyPortalUpdateDeferralInDays
@@ -26871,6 +26875,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
             appActionIfDevicePasscodeComplexityLessThanMedium:
               $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
+            appActionIfSamsungKnoxAttestationRequired:
+              $ref: '#/components/schemas/microsoft.graph.managedAppRemediationAction'
             approvedKeyboards:
               type: array
               items:
@@ -28755,26 +28761,26 @@ components:
               nullable: true
             categoryId:
               type: string
-              description: Specify category in which the setting is under. Support $filters.
+              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
               nullable: true
             description:
               type: string
-              description: Description of the setting.
+              description: Description of the item
               nullable: true
             displayName:
               type: string
-              description: 'Name of the setting. For example: Allow Toast.'
+              description: Display name of the item
               nullable: true
             helpText:
               type: string
-              description: Help text of the setting. Give more details of the setting.
+              description: Help text of the item
               nullable: true
             infoUrls:
               type: array
               items:
                 type: string
                 nullable: true
-              description: List of links more info for the setting can be found at.
+              description: List of links more info for the setting can be found at
             keywords:
               type: array
               items:
@@ -28798,7 +28804,7 @@ components:
               description: List of referred setting information.
             rootDefinitionId:
               type: string
-              description: Root setting definition id if the setting is a child setting.
+              description: Root setting definition if the setting is a child setting.
               nullable: true
             settingUsage:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
@@ -39398,6 +39404,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
+              description: 'Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.'
             attendeeReport:
               type: string
               description: The content stream of the attendee report of a Teams live event. Read-only.
@@ -45488,7 +45495,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printerDefaults'
             displayName:
               type: string
-              nullable: true
             isAcceptingJobs:
               type: boolean
               nullable: true
@@ -45818,11 +45824,11 @@ components:
       properties:
         key:
           type: string
-          description: Contains the name of the field that a value is associated with.
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -50480,7 +50486,6 @@ components:
             isFetchable:
               type: boolean
               description: 'If true, document can be fetched by printer.'
-              nullable: true
             redirectedFrom:
               type: string
               description: 'Contains the source job URL, if the job has been redirected from another printer.'
@@ -50513,17 +50518,14 @@ components:
             appVersion:
               type: string
               description: The connector's version.
-              nullable: true
             deviceHealth:
               $ref: '#/components/schemas/microsoft.graph.deviceHealth'
             displayName:
               type: string
               description: The name of the connector.
-              nullable: true
             fullyQualifiedDomainName:
               type: string
               description: The connector machine's hostname.
-              nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
             name:
@@ -50532,7 +50534,6 @@ components:
             operatingSystem:
               type: string
               description: The connector machine's operating system version.
-              nullable: true
             registeredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -52627,6 +52628,7 @@ components:
         - grayscale
         - color
         - auto
+        - unknownFutureValue
       type: string
     microsoft.graph.integerRange:
       title: integerRange
@@ -52658,6 +52660,7 @@ components:
         - flipOnLongEdge
         - flipOnShortEdge
         - oneSided
+        - unknownFutureValue
       type: string
     microsoft.graph.printerFeedDirection:
       title: printerFeedDirection
@@ -52706,6 +52709,7 @@ components:
         - clockwiseFromBottomLeft
         - counterclockwiseFromBottomRight
         - clockwiseFromBottomRight
+        - unknownFutureValue
       type: string
     microsoft.graph.printOrientation:
       title: printOrientation
@@ -52714,6 +52718,7 @@ components:
         - landscape
         - reverseLandscape
         - reversePortrait
+        - unknownFutureValue
       type: string
     microsoft.graph.printQuality:
       title: printQuality
@@ -53737,10 +53742,10 @@ components:
       properties:
         acquiredByPrinter:
           type: boolean
+          nullable: true
         description:
           type: string
           description: A human-readable description of the print job's current processing state. Read-only.
-          nullable: true
         details:
           type: array
           items:
@@ -54585,6 +54590,7 @@ components:
         - completed
         - canceled
         - aborted
+        - unknownFutureValue
       type: string
     microsoft.graph.printerDocumentConfiguration:
       title: printerDocumentConfiguration
