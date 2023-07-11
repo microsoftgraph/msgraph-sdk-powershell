@@ -3392,10 +3392,10 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      description: 'Invite participants to the active call. For more information about how to handle operations, see commsOperation.'
+      description: 'Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0
       operationId: communication.call.participant_invite
       parameters:
         - name: call-id
@@ -6605,7 +6605,11 @@ paths:
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get virtualAppointment from communications
+      summary: Get virtualAppointment (deprecated)
+      description: Read the properties and relationships of a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
       operationId: communication.onlineMeeting_GetVirtualAppointment
       parameters:
         - name: onlineMeeting-id
@@ -6664,7 +6668,11 @@ paths:
     patch:
       tags:
         - communications.onlineMeeting
-      summary: Update the navigation property virtualAppointment in communications
+      summary: Update virtualAppointment (deprecated)
+      description: Update the properties of a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
       operationId: communication.onlineMeeting_UpdateVirtualAppointment
       parameters:
         - name: onlineMeeting-id
@@ -6701,7 +6709,11 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete navigation property virtualAppointment for communications
+      summary: Delete virtualAppointment (deprecated)
+      description: Delete a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
       operationId: communication.onlineMeeting_DeleteVirtualAppointment
       parameters:
         - name: onlineMeeting-id
@@ -7429,6 +7441,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Get onlineMeetings from users
+      description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
       operationId: user_GetOnlineMeeting
       parameters:
         - name: user-id
@@ -10758,7 +10771,11 @@ paths:
     get:
       tags:
         - users.onlineMeeting
-      summary: Get virtualAppointment from users
+      summary: Get virtualAppointment (deprecated)
+      description: Read the properties and relationships of a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
       operationId: user.onlineMeeting_GetVirtualAppointment
       parameters:
         - name: user-id
@@ -10825,7 +10842,11 @@ paths:
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update the navigation property virtualAppointment in users
+      summary: Update virtualAppointment (deprecated)
+      description: Update the properties of a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
       operationId: user.onlineMeeting_UpdateVirtualAppointment
       parameters:
         - name: user-id
@@ -10870,7 +10891,11 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete navigation property virtualAppointment for users
+      summary: Delete virtualAppointment (deprecated)
+      description: Delete a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
       operationId: user.onlineMeeting_DeleteVirtualAppointment
       parameters:
         - name: user-id
@@ -11890,6 +11915,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
+              description: 'Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.'
             attendeeReport:
               type: string
               description: The content stream of the attendee report of a Teams live event. Read-only.
@@ -13816,7 +13842,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

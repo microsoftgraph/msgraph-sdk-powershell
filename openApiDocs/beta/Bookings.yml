@@ -11,7 +11,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: List bookingBusinesses
-      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the **id** and **displayName** of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its **id** in a GET operation. You can also query for Bookings businesses by specifying a string in a `query` parameter to do substring matching among the businesses of a tenant. See an example below.'
+      description: 'Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the **id** and **displayName** of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its **id** in a GET operation. You can also query for Bookings businesses by specifying a string in a `query` parameter to do substring matching among the businesses of a tenant. For details, see Example 2.'
       externalDocs:
         description: Find more info here
         url: https://docs.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0
@@ -8847,7 +8847,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualAppointment from solutions
+      summary: Get virtualAppointment (deprecated)
+      description: Read the properties and relationships of a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_GetVirtualAppointment
       parameters:
         - name: virtualEvent-id
@@ -8914,7 +8918,11 @@ paths:
     patch:
       tags:
         - solutions.virtualEventsRoot
-      summary: Update the navigation property virtualAppointment in solutions
+      summary: Update virtualAppointment (deprecated)
+      description: Update the properties of a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_UpdateVirtualAppointment
       parameters:
         - name: virtualEvent-id
@@ -8959,7 +8967,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete navigation property virtualAppointment for solutions
+      summary: Delete virtualAppointment (deprecated)
+      description: Delete a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.event.session_DeleteVirtualAppointment
       parameters:
         - name: virtualEvent-id
@@ -13116,7 +13128,11 @@ paths:
     get:
       tags:
         - solutions.virtualEventsRoot
-      summary: Get virtualAppointment from solutions
+      summary: Get virtualAppointment (deprecated)
+      description: Read the properties and relationships of a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_GetVirtualAppointment
       parameters:
         - name: virtualEventWebinar-id
@@ -13183,7 +13199,11 @@ paths:
     patch:
       tags:
         - solutions.virtualEventsRoot
-      summary: Update the navigation property virtualAppointment in solutions
+      summary: Update virtualAppointment (deprecated)
+      description: Update the properties of a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-update?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_UpdateVirtualAppointment
       parameters:
         - name: virtualEventWebinar-id
@@ -13228,7 +13248,11 @@ paths:
     delete:
       tags:
         - solutions.virtualEventsRoot
-      summary: Delete navigation property virtualAppointment for solutions
+      summary: Delete virtualAppointment (deprecated)
+      description: Delete a virtualAppointment object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0
       operationId: solution.virtualEvent.webinar.session_DeleteVirtualAppointment
       parameters:
         - name: virtualEventWebinar-id
@@ -14963,6 +14987,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
+              description: 'Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.'
             attendeeReport:
               type: string
               description: The content stream of the attendee report of a Teams live event. Read-only.
@@ -15978,7 +16003,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

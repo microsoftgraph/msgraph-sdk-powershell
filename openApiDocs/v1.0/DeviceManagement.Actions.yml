@@ -316,6 +316,45 @@ paths:
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
+  '/deviceManagement/managedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/microsoft.graph.createDownloadUrl':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createDownloadUrl
+      operationId: deviceManagement.managedDevice.logCollectionRequest_createDownloadUrl
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: deviceLogCollectionResponse-id
+          in: path
+          description: The unique identifier of deviceLogCollectionResponse
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceLogCollectionResponse
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
     post:
       tags:
@@ -784,6 +823,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent-id}/appLogCollectionRequests/{appLogCollectionRequest-id}/microsoft.graph.createDownloadUrl':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createDownloadUrl
+      operationId: deviceManagement.mobileAppTroubleshootingEvent.appLogCollectionRequest_createDownloadUrl
+      parameters:
+        - name: mobileAppTroubleshootingEvent-id
+          in: path
+          description: The unique identifier of mobileAppTroubleshootingEvent
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: mobileAppTroubleshootingEvent
+        - name: appLogCollectionRequest-id
+          in: path
+          description: The unique identifier of appLogCollectionRequest
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: appLogCollectionRequest
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appLogCollectionDownloadDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate-id}/microsoft.graph.sendTestMessage':
     post:
       tags:
@@ -812,6 +884,9 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
       description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-beginonboarding?view=graph-rest-1.0
       operationId: deviceManagement.remoteAssistancePartner_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
@@ -834,6 +909,9 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action disconnect
       description: A request to remove the active TeamViewer connector
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-disconnect?view=graph-rest-1.0
       operationId: deviceManagement.remoteAssistancePartner_disconnect
       parameters:
         - name: remoteAssistancePartner-id
@@ -2376,6 +2454,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.appLogCollectionDownloadDetails:
+      title: appLogCollectionDownloadDetails
+      type: object
+      properties:
+        appLogDecryptionAlgorithm:
+          $ref: '#/components/schemas/microsoft.graph.appLogDecryptionAlgorithm'
+        decryptionKey:
+          type: string
+          description: Decryption key that used to decrypt the log.
+          nullable: true
+        downloadUrl:
+          type: string
+          description: Download SAS (Shared Access Signature) Url for completed app log request.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -2450,6 +2544,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.appLogDecryptionAlgorithm:
+      title: appLogDecryptionAlgorithm
+      enum:
+        - aes256
+        - unknownFutureValue
+      type: string
+      x-ms-enum:
+        name: appLogDecryptionAlgorithm
+        modelAsString: false
+        values:
+          - value: aes256
+            description: decrypting using Aes256.
+            name: aes256
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
     microsoft.graph.ODataErrors.ODataError:
       required:
         - error
@@ -2541,7 +2651,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

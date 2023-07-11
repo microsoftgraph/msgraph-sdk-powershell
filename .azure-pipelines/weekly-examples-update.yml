@@ -8,7 +8,7 @@ schedules:
     displayName: 'PowerShellExamplesUpdateV2'
     branches:
       include:
-      - features/2.0
+      - dev
     always: true
 parameters:
 - name: PipelineTimeout
@@ -25,7 +25,7 @@ resources:
      type: github
      endpoint: microsoftgraph
      name: microsoftgraph/msgraph-sdk-powershell
-     ref: features/2.0
+     ref: dev
 
 jobs:
 - job: PowerShellExamplesUpdateV2

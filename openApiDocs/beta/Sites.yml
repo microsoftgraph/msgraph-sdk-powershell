@@ -6,6 +6,207 @@ servers:
   - url: https://graph.microsoft.com/beta/
     description: Core
 paths:
+  /admin/sharepoint:
+    get:
+      tags:
+        - admin.sharepoint
+      summary: Get sharepoint from admin
+      operationId: admin_GetSharepoint
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - settings
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - settings
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharepoint'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.sharepoint
+      summary: Update the navigation property sharepoint in admin
+      operationId: admin_UpdateSharepoint
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharepoint'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharepoint'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.sharepoint
+      summary: Delete navigation property sharepoint for admin
+      operationId: admin_DeleteSharepoint
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /admin/sharepoint/settings:
+    get:
+      tags:
+        - admin.sharepoint
+      summary: Get settings
+      description: Get the tenant-level settings for SharePoint and OneDrive.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharepointsettings-get?view=graph-rest-1.0
+      operationId: admin.sharepoint_GetSetting
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - allowedDomainGuidsForSyncApp
+                - availableManagedPathsForSiteCreation
+                - deletedUserPersonalSiteRetentionPeriodInDays
+                - excludedFileExtensionsForSyncApp
+                - idleSessionSignOut
+                - imageTaggingOption
+                - isCommentingOnSitePagesEnabled
+                - isFileActivityNotificationEnabled
+                - isLegacyAuthProtocolsEnabled
+                - isLoopEnabled
+                - isMacSyncAppEnabled
+                - isRequireAcceptingUserToMatchInvitedUserEnabled
+                - isResharingByExternalUsersEnabled
+                - isSharePointMobileNotificationEnabled
+                - isSharePointNewsfeedEnabled
+                - isSiteCreationEnabled
+                - isSiteCreationUIEnabled
+                - isSitePagesCreationEnabled
+                - isSitesStorageLimitAutomatic
+                - isSyncButtonHiddenOnPersonalSite
+                - isUnmanagedSyncAppForTenantRestricted
+                - personalSiteDefaultStorageLimitInMB
+                - sharingAllowedDomainList
+                - sharingBlockedDomainList
+                - sharingCapability
+                - sharingDomainRestrictionMode
+                - siteCreationDefaultManagedPath
+                - siteCreationDefaultStorageLimitInMB
+                - tenantDefaultTimezone
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharepointSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - admin.sharepoint
+      summary: Update settings
+      description: Update one or more tenant-level settings for SharePoint and OneDrive.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/sharepointsettings-update?view=graph-rest-1.0
+      operationId: admin.sharepoint_UpdateSetting
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.sharepointSettings'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.sharepointSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - admin.sharepoint
+      summary: Delete navigation property settings for admin
+      operationId: admin.sharepoint_DeleteSetting
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/groups/{group-id}/sites':
     get:
       tags:
@@ -4206,6 +4407,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -4252,6 +4454,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -4283,6 +4486,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -4329,6 +4533,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -8241,6 +8446,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -8287,6 +8493,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -8318,6 +8525,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -8364,6 +8572,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -11941,6 +12150,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -11987,6 +12197,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -12018,6 +12229,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -12064,6 +12276,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -13715,6 +13928,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -13761,6 +13975,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -13792,6 +14007,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -13838,6 +14054,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -15209,6 +15426,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -15255,6 +15473,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -15286,6 +15505,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -15332,6 +15552,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -16237,6 +16458,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -16283,6 +16505,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -16314,6 +16537,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -16360,6 +16584,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -28912,6 +29137,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -28958,6 +29184,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -28989,6 +29216,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -29035,6 +29263,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -29310,6 +29539,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -29356,6 +29586,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -29387,6 +29618,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -29433,6 +29665,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -59062,6 +59295,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -59108,6 +59342,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -59139,6 +59374,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -59185,6 +59421,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -60676,6 +60913,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -60722,6 +60960,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -60753,6 +60992,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -60799,6 +61039,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -62075,6 +62316,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -62121,6 +62363,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -62152,6 +62395,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -62198,6 +62442,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -63526,6 +63771,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -63572,6 +63818,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -63603,6 +63850,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -63649,6 +63897,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -66383,6 +66632,299 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/sites/{site-id}/operations':
+    get:
+      tags:
+        - sites.richLongRunningOperation
+      summary: List operations
+      description: Get the list of richLongRunningOperations associated with a site.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0
+      operationId: site_ListOperation
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastActionDateTime
+                - lastActionDateTime desc
+                - resourceLocation
+                - resourceLocation desc
+                - status
+                - status desc
+                - statusDetail
+                - statusDetail desc
+                - error
+                - error desc
+                - percentageComplete
+                - percentageComplete desc
+                - resourceId
+                - resourceId desc
+                - type
+                - type desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastActionDateTime
+                - resourceLocation
+                - status
+                - statusDetail
+                - error
+                - percentageComplete
+                - resourceId
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.richLongRunningOperationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - sites.richLongRunningOperation
+      summary: Create new navigation property to operations for sites
+      operationId: site_CreateOperation
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
+        required: true
+      responses:
+        2XX:
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/operations/{richLongRunningOperation-id}':
+    get:
+      tags:
+        - sites.richLongRunningOperation
+      summary: Get richLongRunningOperation
+      description: Read the properties of a richLongRunningOperation object.
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-1.0
+      operationId: site_GetOperation
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: richLongRunningOperation-id
+          in: path
+          description: The unique identifier of richLongRunningOperation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: richLongRunningOperation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - lastActionDateTime
+                - resourceLocation
+                - status
+                - statusDetail
+                - error
+                - percentageComplete
+                - resourceId
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - sites.richLongRunningOperation
+      summary: Update the navigation property operations in sites
+      operationId: site_UpdateOperation
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: richLongRunningOperation-id
+          in: path
+          description: The unique identifier of richLongRunningOperation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: richLongRunningOperation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
+        required: true
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - sites.richLongRunningOperation
+      summary: Delete navigation property operations for sites
+      operationId: site_DeleteOperation
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: richLongRunningOperation-id
+          in: path
+          description: The unique identifier of richLongRunningOperation
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: richLongRunningOperation
+        - name: If-Match
+          in: header
+          description: ETag
+          style: simple
+          schema:
+            type: string
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/sites/{site-id}/operations/$count':
+    get:
+      tags:
+        - sites.richLongRunningOperation
+      summary: Get the number of the resource
+      operationId: site.operation_GetCount
+      parameters:
+        - name: site-id
+          in: path
+          description: The unique identifier of site
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
   '/sites/{site-id}/pages':
     get:
       tags:
@@ -68602,6 +69144,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -68648,6 +69191,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -68679,6 +69223,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -68725,6 +69270,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -68976,6 +69522,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -69022,6 +69569,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -69053,6 +69601,7 @@ paths:
                 - ownedObjects
                 - registeredDevices
                 - scopedRoleMemberOf
+                - sponsors
                 - transitiveMemberOf
                 - transitiveReports
                 - calendar
@@ -69099,6 +69648,7 @@ paths:
                 - authentication
                 - chats
                 - joinedTeams
+                - permissionGrants
                 - teamwork
                 - todo
                 - employeeExperience
@@ -88676,6 +89226,149 @@ paths:
           $ref: '#/components/responses/error'
 components:
   schemas:
+    microsoft.graph.sharepoint:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sharepoint
+          type: object
+          properties:
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.sharepointSettings'
+          additionalProperties:
+            type: object
+    microsoft.graph.sharepointSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sharepointSettings
+          type: object
+          properties:
+            allowedDomainGuidsForSyncApp:
+              type: array
+              items:
+                pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                type: string
+                format: uuid
+                nullable: true
+              description: Collection of trusted domain GUIDs for the OneDrive sync app.
+            availableManagedPathsForSiteCreation:
+              type: array
+              items:
+                type: string
+              description: Collection of managed paths available for site creation. Read-only.
+            deletedUserPersonalSiteRetentionPeriodInDays:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The number of days for preserving a deleted user's OneDrive.
+              format: int32
+              nullable: true
+            excludedFileExtensionsForSyncApp:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Collection of file extensions not uploaded by the OneDrive sync app.
+            idleSessionSignOut:
+              $ref: '#/components/schemas/microsoft.graph.idleSessionSignOut'
+            imageTaggingOption:
+              $ref: '#/components/schemas/microsoft.graph.imageTaggingChoice'
+            isCommentingOnSitePagesEnabled:
+              type: boolean
+              description: Indicates whether comments are allowed on modern site pages in SharePoint.
+              nullable: true
+            isFileActivityNotificationEnabled:
+              type: boolean
+              description: Indicates whether push notifications are enabled for OneDrive events.
+              nullable: true
+            isLegacyAuthProtocolsEnabled:
+              type: boolean
+              description: Indicates whether legacy authentication protocols are enabled for the tenant.
+              nullable: true
+            isLoopEnabled:
+              type: boolean
+              description: Indicates whetherif Fluid Framework is allowed on SharePoint sites.
+              nullable: true
+            isMacSyncAppEnabled:
+              type: boolean
+              description: Indicates whether files can be synced using the OneDrive sync app for Mac.
+              nullable: true
+            isRequireAcceptingUserToMatchInvitedUserEnabled:
+              type: boolean
+              description: Indicates whether guests must sign in using the same account to which sharing invitations are sent.
+              nullable: true
+            isResharingByExternalUsersEnabled:
+              type: boolean
+              description: 'Indicates whether guests are allowed to reshare files, folders, and sites they don''t own.'
+              nullable: true
+            isSharePointMobileNotificationEnabled:
+              type: boolean
+              description: Indicates whether mobile push notifications are enabled for SharePoint.
+              nullable: true
+            isSharePointNewsfeedEnabled:
+              type: boolean
+              description: Indicates whether the newsfeed is allowed on the modern site pages in SharePoint.
+              nullable: true
+            isSiteCreationEnabled:
+              type: boolean
+              description: Indicates whether users are allowed to create sites.
+              nullable: true
+            isSiteCreationUIEnabled:
+              type: boolean
+              description: Indicates whether the UI commands for creating sites are shown.
+              nullable: true
+            isSitePagesCreationEnabled:
+              type: boolean
+              description: Indicates whether creating new modern pages is allowed on SharePoint sites.
+              nullable: true
+            isSitesStorageLimitAutomatic:
+              type: boolean
+              description: Indicates whether site storage space is automatically managed or if specific storage limits are set per site.
+              nullable: true
+            isSyncButtonHiddenOnPersonalSite:
+              type: boolean
+              description: Indicates whether the sync button in OneDrive is hidden.
+              nullable: true
+            isUnmanagedSyncAppForTenantRestricted:
+              type: boolean
+              description: Indicates whether users are allowed to sync files only on PCs joined to specific domains.
+              nullable: true
+            personalSiteDefaultStorageLimitInMB:
+              type: integer
+              description: The default OneDrive storage limit for all new and existing users who are assigned a qualifying license. Measured in megabytes (MB).
+              format: int64
+              nullable: true
+            sharingAllowedDomainList:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Collection of email domains that are allowed for sharing outside the organization.
+            sharingBlockedDomainList:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Collection of email domains that are blocked for sharing outside the organization.
+            sharingCapability:
+              $ref: '#/components/schemas/microsoft.graph.sharingCapabilities'
+            sharingDomainRestrictionMode:
+              $ref: '#/components/schemas/microsoft.graph.sharingDomainRestrictionMode'
+            siteCreationDefaultManagedPath:
+              type: string
+              description: The value of the team site managed path. This is the path under which new team sites will be created.
+            siteCreationDefaultStorageLimitInMB:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The default storage quota for a new site upon creation. Measured in megabytes (MB).
+              format: int32
+              nullable: true
+            tenantDefaultTimezone:
+              type: string
+              description: 'The default timezone of a tenant for newly created sites. For a list of possible values, see SPRegionalSettings.TimeZones property.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.site:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -89287,7 +89980,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
+              description: 'true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             isResourceAccount:
               type: boolean
@@ -89593,6 +90286,11 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
               description: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
               x-ms-navigationProperty: true
+            sponsors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              x-ms-navigationProperty: true
             transitiveMemberOf:
               type: array
               items:
@@ -89781,6 +90479,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userActivity'
+              description: The user's activities across devices. Read-only. Nullable.
               x-ms-navigationProperty: true
             devices:
               type: array
@@ -89791,6 +90490,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+              description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
               x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
@@ -89806,6 +90506,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.team'
               description: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+              x-ms-navigationProperty: true
+            permissionGrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               x-ms-navigationProperty: true
             teamwork:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
@@ -91418,6 +92123,60 @@ components:
         - '-INF'
         - INF
         - NaN
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for an entity. Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.idleSessionSignOut:
+      title: idleSessionSignOut
+      type: object
+      properties:
+        isEnabled:
+          type: boolean
+          description: Indicates whether the idle session sign-out policy is enabled.
+          nullable: true
+        signOutAfterInSeconds:
+          type: integer
+          description: Number of seconds of inactivity after which a user is signed out.
+          format: int64
+          nullable: true
+        warnAfterInSeconds:
+          type: integer
+          description: Number of seconds of inactivity after which a user is notified that they'll be signed out.
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.imageTaggingChoice:
+      title: imageTaggingChoice
+      enum:
+        - disabled
+        - basic
+        - enhanced
+        - unknownFutureValue
+      type: string
+    microsoft.graph.sharingCapabilities:
+      title: sharingCapabilities
+      enum:
+        - disabled
+        - externalUserSharingOnly
+        - externalUserAndGuestSharing
+        - existingExternalUserSharingOnly
+        - unknownFutureValue
+      type: string
+    microsoft.graph.sharingDomainRestrictionMode:
+      title: sharingDomainRestrictionMode
+      enum:
+        - none
+        - allowList
+        - blockList
+        - unknownFutureValue
+      type: string
     microsoft.graph.deleted:
       title: deleted
       type: object
@@ -91495,15 +92254,6 @@ components:
           nullable: true
         root:
           $ref: '#/components/schemas/microsoft.graph.root'
-      additionalProperties:
-        type: object
-    microsoft.graph.entity:
-      title: entity
-      type: object
-      properties:
-        id:
-          type: string
-          description: The unique identifier for an entity. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.itemActionStat:
@@ -92151,7 +92901,7 @@ components:
       properties:
         format:
           type: string
-          description: 'For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.'
+          description: 'For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.'
           nullable: true
         formula:
           type: string
@@ -92159,7 +92909,7 @@ components:
           nullable: true
         outputType:
           type: string
-          description: 'The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.'
+          description: 'The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.'
           nullable: true
       additionalProperties:
         type: object
@@ -92218,11 +92968,11 @@ components:
       properties:
         formula:
           type: string
-          description: The formula used to compute the default value for this column.
+          description: The formula used to compute the default value for the column.
           nullable: true
         value:
           type: string
-          description: The direct value to use as the default value for this column.
+          description: The direct value to use as the default value for the column.
           nullable: true
       additionalProperties:
         type: object
@@ -92315,7 +93065,7 @@ components:
       properties:
         id:
           type: string
-          description: The id of the content type.
+          description: The ID of the content type.
           nullable: true
         name:
           type: string
@@ -92480,13 +93230,13 @@ components:
       properties:
         default:
           type: boolean
-          description: Whether this is the default Content Type
+          description: Indicates whether this is the default content type.
           nullable: true
         position:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Specifies the position in which the Content Type appears in the selection UI.
+          description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
       additionalProperties:
@@ -93903,7 +94653,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
+              description: 'Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a group that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
@@ -95669,40 +96419,50 @@ components:
           properties:
             activationUrl:
               type: string
+              description: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
             activitySourceHost:
               type: string
+              description: 'Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.'
             appActivityId:
               type: string
+              description: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
             appDisplayName:
               type: string
+              description: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
               nullable: true
             contentInfo:
               $ref: '#/components/schemas/microsoft.graph.Json'
             contentUrl:
               type: string
+              description: 'Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was created on the server.
               format: date-time
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object expired on the server.
               format: date-time
               nullable: true
             fallbackUrl:
               type: string
+              description: 'Optional. URL used to launch the activity in a web-based app, if available.'
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Set by the server. DateTime in UTC when the object was modified on the server.
               format: date-time
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.status'
             userTimezone:
               type: string
+              description: Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
               nullable: true
             visualElements:
               $ref: '#/components/schemas/microsoft.graph.visualInfo'
@@ -95710,6 +96470,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+              description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -95797,7 +96558,7 @@ components:
               nullable: true
             isManagementRestricted:
               type: boolean
-              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.'
+              description: 'true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that''s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.'
               nullable: true
             isRooted:
               type: boolean
@@ -95964,6 +96725,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeetingRole'
+              description: 'Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.'
             attendeeReport:
               type: string
               description: The content stream of the attendee report of a Teams live event. Read-only.
@@ -96376,6 +97138,34 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamTemplateDefinition'
             schedule:
               $ref: '#/components/schemas/microsoft.graph.schedule'
+          additionalProperties:
+            type: object
+    microsoft.graph.resourceSpecificPermissionGrant:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: resourceSpecificPermissionGrant
+          type: object
+          properties:
+            clientAppId:
+              type: string
+              description: ID of the service principal of the Azure AD app that has been granted access. Read-only.
+              nullable: true
+            clientId:
+              type: string
+              description: ID of the Azure AD app that has been granted access. Read-only.
+              nullable: true
+            permission:
+              type: string
+              description: The name of the resource-specific permission. Read-only.
+              nullable: true
+            permissionType:
+              type: string
+              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
+              nullable: true
+            resourceAppId:
+              type: string
+              description: ID of the Azure AD app that is hosting the resource. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -97161,11 +97951,11 @@ components:
       properties:
         key:
           type: string
-          description: 'Contains the name of the field that a value is associated with. When a sign in or domain hint is included in the sign-in request, corresponding fields are included as key-value pairs. Possible keys: Login hint present, Domain hint present.'
+          description: Key.
           nullable: true
         value:
           type: string
-          description: Contains the corresponding value for the specified key. The value is true if a sign in hint was included in the sign-in request; otherwise false. The value is true if a domain hint was included in the sign-in request; otherwise false.
+          description: Value.
           nullable: true
       additionalProperties:
         type: object
@@ -97371,6 +98161,15 @@ components:
         - OneDriveForBusiness
         - OnPremOneDriveForBusiness
       type: string
+    microsoft.graph.ODataErrors.ODataError:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
     microsoft.graph.siteCollectionResponse:
       title: Collection of site
       type: object
@@ -97382,15 +98181,6 @@ components:
         '@odata.nextLink':
           type: string
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.ODataErrors.ODataError:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
     microsoft.graph.itemActivityStatCollectionResponse:
@@ -99337,34 +100127,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.MembershipRuleProcessingStatusDetails'
       additionalProperties:
         type: object
-    microsoft.graph.resourceSpecificPermissionGrant:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: resourceSpecificPermissionGrant
-          type: object
-          properties:
-            clientAppId:
-              type: string
-              description: ID of the service principal of the Azure AD app that has been granted access. Read-only.
-              nullable: true
-            clientId:
-              type: string
-              description: ID of the Azure AD app that has been granted access. Read-only.
-              nullable: true
-            permission:
-              type: string
-              description: The name of the resource-specific permission. Read-only.
-              nullable: true
-            permissionType:
-              type: string
-              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
-              nullable: true
-            resourceAppId:
-              type: string
-              description: ID of the Azure AD app that is hosting the resource. Read-only.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.directorySetting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -101724,15 +102486,15 @@ components:
               nullable: true
             fullScanOverdue:
               type: boolean
-              description: Full scan overdue or not?
+              description: 'When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.'
               nullable: true
             fullScanRequired:
               type: boolean
-              description: Full scan required or not?
+              description: 'When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.'
               nullable: true
             isVirtualMachine:
               type: boolean
-              description: Indicates whether the device is a virtual machine.
+              description: 'When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.'
               nullable: true
             lastFullScanDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -101762,29 +102524,29 @@ components:
               nullable: true
             malwareProtectionEnabled:
               type: boolean
-              description: Anti malware is enabled or not
+              description: When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.
               nullable: true
             networkInspectionSystemEnabled:
               type: boolean
-              description: Network inspection system enabled or not?
+              description: 'When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.'
               nullable: true
             productStatus:
               $ref: '#/components/schemas/microsoft.graph.windowsDefenderProductStatus'
             quickScanOverdue:
               type: boolean
-              description: Quick scan overdue or not?
+              description: 'When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.'
               nullable: true
             realTimeProtectionEnabled:
               type: boolean
-              description: Real time protection is enabled or not?
+              description: 'When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.'
               nullable: true
             rebootRequired:
               type: boolean
-              description: Reboot required or not?
+              description: 'When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.'
               nullable: true
             signatureUpdateOverdue:
               type: boolean
-              description: Signature out of date or not?
+              description: 'When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.'
               nullable: true
             signatureVersion:
               type: string
@@ -101792,7 +102554,7 @@ components:
               nullable: true
             tamperProtectionEnabled:
               type: boolean
-              description: Indicates whether the Windows Defender tamper protection feature is enabled.
+              description: 'When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.'
               nullable: true
             detectedMalwareState:
               type: array
@@ -102934,18 +103696,18 @@ components:
       properties:
         identityProvider:
           type: string
-          description: For internal use only
+          description: For internal use only.
           nullable: true
         key:
           type: string
-          description: For internal use only
+          description: For internal use only.
           format: base64url
           nullable: true
         type:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: For internal use only
+          description: For internal use only.
           format: int32
           nullable: true
       additionalProperties:
@@ -104220,6 +104982,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+              description: The offer requests for shifts in the schedule.
               x-ms-navigationProperty: true
             openShiftChangeRequests:
               type: array
@@ -104721,7 +105484,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
@@ -104923,7 +105686,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.printerDefaults'
             displayName:
               type: string
-              nullable: true
             isAcceptingJobs:
               type: boolean
               nullable: true
@@ -108281,21 +109043,25 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of guests in a channel.
           format: int32
           nullable: true
         hasMembersFromOtherTenants:
           type: boolean
+          description: Indicates whether external members are included on the channel.
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of members in a channel.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of owners in a channel.
           format: int32
           nullable: true
       additionalProperties:
@@ -109500,7 +110266,6 @@ components:
             isFetchable:
               type: boolean
               description: 'If true, document can be fetched by printer.'
-              nullable: true
             redirectedFrom:
               type: string
               description: 'Contains the source job URL, if the job has been redirected from another printer.'
@@ -109533,17 +110298,14 @@ components:
             appVersion:
               type: string
               description: The connector's version.
-              nullable: true
             deviceHealth:
               $ref: '#/components/schemas/microsoft.graph.deviceHealth'
             displayName:
               type: string
               description: The name of the connector.
-              nullable: true
             fullyQualifiedDomainName:
               type: string
               description: The connector machine's hostname.
-              nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.printerLocation'
             name:
@@ -109552,7 +110314,6 @@ components:
             operatingSystem:
               type: string
               description: The connector machine's operating system version.
-              nullable: true
             registeredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -111421,6 +112182,7 @@ components:
         - grayscale
         - color
         - auto
+        - unknownFutureValue
       type: string
     microsoft.graph.integerRange:
       title: integerRange
@@ -111452,6 +112214,7 @@ components:
         - flipOnLongEdge
         - flipOnShortEdge
         - oneSided
+        - unknownFutureValue
       type: string
     microsoft.graph.printerFeedDirection:
       title: printerFeedDirection
@@ -111500,6 +112263,7 @@ components:
         - clockwiseFromBottomLeft
         - counterclockwiseFromBottomRight
         - clockwiseFromBottomRight
+        - unknownFutureValue
       type: string
     microsoft.graph.printOrientation:
       title: printOrientation
@@ -111508,6 +112272,7 @@ components:
         - landscape
         - reverseLandscape
         - reversePortrait
+        - unknownFutureValue
       type: string
     microsoft.graph.printQuality:
       title: printQuality
@@ -112531,10 +113296,10 @@ components:
       properties:
         acquiredByPrinter:
           type: boolean
+          nullable: true
         description:
           type: string
           description: A human-readable description of the print job's current processing state. Read-only.
-          nullable: true
         details:
           type: array
           items:
@@ -113141,6 +113906,7 @@ components:
         - completed
         - canceled
         - aborted
+        - unknownFutureValue
       type: string
     microsoft.graph.printerDocumentConfiguration:
       title: printerDocumentConfiguration
@@ -113746,18 +114512,18 @@ components:
       additionalProperties:
         type: object
   responses:
-    microsoft.graph.siteCollectionResponse:
-      description: Retrieved collection
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/microsoft.graph.siteCollectionResponse'
     error:
       description: error
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.siteCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.siteCollectionResponse'
     microsoft.graph.itemActivityStatCollectionResponse:
       description: Retrieved collection
       content:
