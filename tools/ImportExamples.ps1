@@ -24,7 +24,7 @@ function Start-Generator {
     )
 
     $GraphMapping = @{
-        "v1.0" = "v1.0\examples"
+       # "v1.0" = "v1.0\examples"
         "beta" = "beta\examples"
     }
     if ($GenerationMode -eq "auto") {
@@ -370,6 +370,7 @@ function Update-ExampleFile {
         
     }
     $CheckIfFileEmpty = Test-FileEmpty $ExampleFile
+    Write-Host $ExampleFile
     if($CheckIfFileEmpty){
         Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile
     }
@@ -440,7 +441,7 @@ function Retain-ExistingCorrectExamples {
   
         $CorrectMaintainableHeaderCount = 1;
         $LineCounter = 0;
-        
+        if($Content.Count -gt 0){
         foreach($Line in $Content){
            
             if($Line.StartsWith("$CommandPattern ")){
@@ -455,6 +456,7 @@ function Retain-ExistingCorrectExamples {
             }
 
         }
+    }
   
 }       
 $JsonContent = Get-Content -Path $MetaDataJsonFile
