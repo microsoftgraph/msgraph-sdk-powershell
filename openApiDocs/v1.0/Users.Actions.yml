@@ -6876,6 +6876,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: teamsAppInstallation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consentedPermissionSet:
+                  $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -7469,6 +7481,61 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.assignSensitivityLabel':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action assignSensitivityLabel
+      operationId: user.drive.item_assignSensitivityLabel
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sensitivityLabelId:
+                  type: string
+                  nullable: true
+                assignmentMethod:
+                  $ref: '#/components/schemas/microsoft.graph.sensitivityLabelAssignmentMethod'
+                justificationText:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.checkin':
     post:
       tags:
@@ -7756,6 +7823,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.uploadSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/drives/{drive-id}/items/{driveItem-id}/microsoft.graph.extractSensitivityLabels':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action extractSensitivityLabels
+      operationId: user.drive.item_extractSensitivityLabel
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: driveItem-id
+          in: path
+          description: The unique identifier of driveItem
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: driveItem
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extractSensitivityLabelsResult'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -8814,6 +8922,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/drives/{drive-id}/root/microsoft.graph.assignSensitivityLabel':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action assignSensitivityLabel
+      operationId: user.drive.root_assignSensitivityLabel
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sensitivityLabelId:
+                  type: string
+                  nullable: true
+                assignmentMethod:
+                  $ref: '#/components/schemas/microsoft.graph.sensitivityLabelAssignmentMethod'
+                justificationText:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        2XX:
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/drives/{drive-id}/root/microsoft.graph.checkin':
     post:
       tags:
@@ -9061,6 +9216,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.uploadSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/drives/{drive-id}/root/microsoft.graph.extractSensitivityLabels':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action extractSensitivityLabels
+      operationId: user.drive.root_extractSensitivityLabel
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: drive-id
+          in: path
+          description: The unique identifier of drive
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extractSensitivityLabelsResult'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -10795,6 +10983,18 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: teamsAppInstallation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                consentedPermissionSet:
+                  $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+              additionalProperties:
+                type: object
+        required: true
       responses:
         2XX:
           description: Success
@@ -12926,6 +13126,53 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/managedDevices/{managedDevice-id}/logCollectionRequests/{deviceLogCollectionResponse-id}/microsoft.graph.createDownloadUrl':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action createDownloadUrl
+      operationId: user.managedDevice.logCollectionRequest_createDownloadUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: The unique identifier of user
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: managedDevice-id
+          in: path
+          description: The unique identifier of managedDevice
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+        - name: deviceLogCollectionResponse-id
+          in: path
+          description: The unique identifier of deviceLogCollectionResponse
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceLogCollectionResponse
+      responses:
+        2XX:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  value:
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -16448,6 +16695,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppPermissionSet:
+      title: teamsAppPermissionSet
+      type: object
+      properties:
+        resourceSpecificPermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermission'
+      additionalProperties:
+        type: object
     microsoft.graph.conversationMember:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16535,6 +16792,14 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabelAssignmentMethod:
+      title: sensitivityLabelAssignmentMethod
+      enum:
+        - standard
+        - privileged
+        - auto
+        - unknownFutureValue
+      type: string
     microsoft.graph.itemReference:
       title: itemReference
       type: object
@@ -16739,6 +17004,17 @@ components:
           type: string
           description: The name of the item (filename and extension). Read-write.
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.extractSensitivityLabelsResult:
+      title: extractSensitivityLabelsResult
+      type: object
+      properties:
+        labels:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.sensitivityLabelAssignment'
+          description: List of sensitivity labels assigned to a file.
       additionalProperties:
         type: object
     microsoft.graph.driveRecipient:
@@ -17470,6 +17746,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.timeZoneBase'
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppResourceSpecificPermission:
+      title: teamsAppResourceSpecificPermission
+      type: object
+      properties:
+        permissionType:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppResourceSpecificPermissionType'
+        permissionValue:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -18110,6 +18397,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookComment'
+              description: Represents a collection of comments in a workbook.
               x-ms-navigationProperty: true
             functions:
               $ref: '#/components/schemas/microsoft.graph.workbookFunctions'
@@ -18355,6 +18643,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.sensitivityLabelAssignment:
+      title: sensitivityLabelAssignment
+      type: object
+      properties:
+        assignmentMethod:
+          $ref: '#/components/schemas/microsoft.graph.sensitivityLabelAssignmentMethod'
+        sensitivityLabelId:
+          type: string
+          description: The unique identifier for the sensitivity label assigned to the file.
+        tenantId:
+          type: string
+          description: The unique identifier for the tenant that hosts the file when this label is applied.
+      additionalProperties:
+        type: object
     microsoft.graph.documentSet:
       title: documentSet
       type: object
@@ -18415,13 +18717,13 @@ components:
       properties:
         default:
           type: boolean
-          description: Whether this is the default Content Type
+          description: Indicates whether this is the default content type
           nullable: true
         position:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: Specifies the position in which the Content Type appears in the selection UI.
+          description: Specifies the position in which the content type appears in the selection UI.
           format: int32
           nullable: true
       additionalProperties:
@@ -19196,7 +19498,7 @@ components:
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.'
               nullable: true
             officeLocation:
               type: string
@@ -19322,6 +19624,8 @@ components:
               type: integer
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
+            print:
+              $ref: '#/components/schemas/microsoft.graph.userPrint'
             aboutMe:
               type: string
               description: A freeform text entry field for the user to describe themselves. Returned only on $select.
@@ -19568,6 +19872,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+              description: 'Information about a meeting, including the URL used to join a meeting, the attendees'' list, and the description.'
               x-ms-navigationProperty: true
             presence:
               $ref: '#/components/schemas/microsoft.graph.presence'
@@ -19587,6 +19892,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.userTeamwork'
             todo:
               $ref: '#/components/schemas/microsoft.graph.todo'
+            employeeExperience:
+              $ref: '#/components/schemas/microsoft.graph.employeeExperienceUser'
           additionalProperties:
             type: object
     microsoft.graph.meetingTimeSuggestionsResult:
@@ -19707,6 +20014,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppResourceSpecificPermissionType:
+      title: teamsAppResourceSpecificPermissionType
+      enum:
+        - delegated
+        - application
+        - unknownFutureValue
+      type: string
     microsoft.graph.publicErrorDetail:
       title: publicErrorDetail
       type: object
@@ -20046,7 +20360,7 @@ components:
       properties:
         id:
           type: string
-          description: The id of the content type.
+          description: The ID of the content type.
           nullable: true
         name:
           type: string
@@ -20174,7 +20488,7 @@ components:
       properties:
         format:
           type: string
-          description: 'For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.'
+          description: 'For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.'
           nullable: true
         formula:
           type: string
@@ -20182,7 +20496,7 @@ components:
           nullable: true
         outputType:
           type: string
-          description: 'The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.'
+          description: 'The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.'
           nullable: true
       additionalProperties:
         type: object
@@ -20241,11 +20555,11 @@ components:
       properties:
         formula:
           type: string
-          description: The formula used to compute the default value for this column.
+          description: The formula used to compute the default value for the column.
           nullable: true
         value:
           type: string
-          description: The direct value to use as the default value for this column.
+          description: The direct value to use as the default value for the column.
           nullable: true
       additionalProperties:
         type: object
@@ -20763,7 +21077,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
@@ -21050,6 +21364,17 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userPurpose'
         workingHours:
           $ref: '#/components/schemas/microsoft.graph.workingHours'
+      additionalProperties:
+        type: object
+    microsoft.graph.userPrint:
+      title: userPrint
+      type: object
+      properties:
+        recentPrinterShares:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerShare'
+          x-ms-navigationProperty: true
       additionalProperties:
         type: object
     microsoft.graph.appRoleAssignment:
@@ -21928,7 +22253,7 @@ components:
           properties:
             activationLockBypassCode:
               type: string
-              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             androidSecurityPatchLevel:
@@ -21964,7 +22289,7 @@ components:
               readOnly: true
             deviceCategoryDisplayName:
               type: string
-              description: Device category display name. This property is read-only.
+              description: Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             deviceEnrollmentType:
@@ -22001,7 +22326,7 @@ components:
             enrolledDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Enrollment time of the device. This property is read-only.
+              description: Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             ethernetMacAddress:
@@ -22026,7 +22351,7 @@ components:
               readOnly: true
             iccid:
               type: string
-              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             imei:
@@ -22044,13 +22369,13 @@ components:
               readOnly: true
             jailBroken:
               type: string
-              description: whether the device is jail broken or rooted. This property is read-only.
+              description: Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
               nullable: true
               readOnly: true
             lastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time that the device last completed a successful sync with Intune. This property is read-only.
+              description: The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
               format: date-time
               readOnly: true
             managedDeviceName:
@@ -22084,7 +22409,7 @@ components:
               readOnly: true
             notes:
               type: string
-              description: 'Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.'
+              description: 'Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.'
               nullable: true
             operatingSystem:
               type: string
@@ -22105,7 +22430,7 @@ components:
               readOnly: true
             physicalMemoryInBytes:
               type: integer
-              description: 'Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.'
+              description: 'Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.'
               format: int64
               readOnly: true
             remoteAssistanceSessionErrorDetails:
@@ -22115,7 +22440,7 @@ components:
               readOnly: true
             remoteAssistanceSessionUrl:
               type: string
-              description: Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+              description: 'Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.'
               nullable: true
               readOnly: true
             requireUserEnrollmentApproval:
@@ -22140,7 +22465,7 @@ components:
               readOnly: true
             udid:
               type: string
-              description: 'Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
+              description: 'Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.'
               nullable: true
               readOnly: true
             userDisplayName:
@@ -22177,12 +22502,20 @@ components:
               x-ms-navigationProperty: true
             deviceCategory:
               $ref: '#/components/schemas/microsoft.graph.deviceCategory'
+            logCollectionRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceLogCollectionResponse'
+              description: List of log collection requests
+              x-ms-navigationProperty: true
             users:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.user'
               description: The primary users associated with the managed device.
               x-ms-navigationProperty: true
+            windowsProtectionState:
+              $ref: '#/components/schemas/microsoft.graph.windowsProtectionState'
           additionalProperties:
             type: object
           description: Devices that are managed or pre-enrolled through Intune
@@ -22334,8 +22667,10 @@ components:
           properties:
             contributionToContentDiscoveryAsOrganizationDisabled:
               type: boolean
+              description: 'Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn''t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
             contributionToContentDiscoveryDisabled:
               type: boolean
+              description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
           additionalProperties:
@@ -22762,6 +23097,19 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
               description: The task lists in the users mailbox.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.employeeExperienceUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: employeeExperienceUser
+          type: object
+          properties:
+            learningCourseActivities:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.learningCourseActivity'
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
@@ -23385,6 +23733,38 @@ components:
         - others
         - unknownFutureValue
       type: string
+    microsoft.graph.printerShare:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.printerBase'
+        - title: printerShare
+          type: object
+          properties:
+            allowAllUsers:
+              type: boolean
+              description: 'If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the printer share was created. Read-only.
+              format: date-time
+            viewPoint:
+              $ref: '#/components/schemas/microsoft.graph.printerShareViewpoint'
+            allowedGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.group'
+              description: The groups whose users have access to print using the printer.
+              x-ms-navigationProperty: true
+            allowedUsers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.user'
+              description: The users who have access to print using the printer.
+              x-ms-navigationProperty: true
+            printer:
+              $ref: '#/components/schemas/microsoft.graph.printer'
+          additionalProperties:
+            type: object
     microsoft.graph.servicePlanInfo:
       title: servicePlanInfo
       type: object
@@ -24451,6 +24831,149 @@ components:
           additionalProperties:
             type: object
           description: 'Device categories provides a way to organize your devices. Using device categories, company administrators can define their own categories that make sense to their company. These categories can then be applied to a device in the Intune Azure console or selected by a user during device enrollment. You can filter reports and create dynamic Azure Active Directory device groups based on device categories.'
+    microsoft.graph.deviceLogCollectionResponse:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceLogCollectionResponse
+          type: object
+          properties:
+            enrolledByUser:
+              type: string
+              description: The User Principal Name (UPN) of the user that enrolled the device.
+              nullable: true
+            expirationDateTimeUTC:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTime of the expiration of the logs.
+              format: date-time
+              nullable: true
+            initiatedByUserPrincipalName:
+              type: string
+              description: The UPN for who initiated the request.
+              nullable: true
+            managedDeviceId:
+              pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+              type: string
+              description: Indicates Intune device unique identifier.
+              format: uuid
+            receivedDateTimeUTC:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTime the request was received.
+              format: date-time
+              nullable: true
+            requestedDateTimeUTC:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTime of the request.
+              format: date-time
+              nullable: true
+            sizeInKB:
+              type: number
+              description: The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
+            status:
+              $ref: '#/components/schemas/microsoft.graph.appLogUploadState'
+          additionalProperties:
+            type: object
+          description: Windows Log Collection request entity.
+    microsoft.graph.windowsProtectionState:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsProtectionState
+          type: object
+          properties:
+            antiMalwareVersion:
+              type: string
+              description: Current anti malware version
+              nullable: true
+            deviceState:
+              $ref: '#/components/schemas/microsoft.graph.windowsDeviceHealthState'
+            engineVersion:
+              type: string
+              description: Current endpoint protection engine's version
+              nullable: true
+            fullScanOverdue:
+              type: boolean
+              description: 'When TRUE indicates full scan is overdue, when FALSE indicates full scan is not overdue. Defaults to setting on client device.'
+              nullable: true
+            fullScanRequired:
+              type: boolean
+              description: 'When TRUE indicates full scan is required, when FALSE indicates full scan is not required. Defaults to setting on client device.'
+              nullable: true
+            isVirtualMachine:
+              type: boolean
+              description: 'When TRUE indicates the device is a virtual machine, when FALSE indicates the device is not a virtual machine. Defaults to setting on client device.'
+              nullable: true
+            lastFullScanDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last quick scan datetime
+              format: date-time
+              nullable: true
+            lastFullScanSignatureVersion:
+              type: string
+              description: Last full scan signature version
+              nullable: true
+            lastQuickScanDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last quick scan datetime
+              format: date-time
+              nullable: true
+            lastQuickScanSignatureVersion:
+              type: string
+              description: Last quick scan signature version
+              nullable: true
+            lastReportedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last device health status reported time
+              format: date-time
+              nullable: true
+            malwareProtectionEnabled:
+              type: boolean
+              description: When TRUE indicates anti malware is enabled when FALSE indicates anti malware is not enabled.
+              nullable: true
+            networkInspectionSystemEnabled:
+              type: boolean
+              description: 'When TRUE indicates network inspection system enabled, when FALSE indicates network inspection system is not enabled. Defaults to setting on client device.'
+              nullable: true
+            productStatus:
+              $ref: '#/components/schemas/microsoft.graph.windowsDefenderProductStatus'
+            quickScanOverdue:
+              type: boolean
+              description: 'When TRUE indicates quick scan is overdue, when FALSE indicates quick scan is not overdue. Defaults to setting on client device.'
+              nullable: true
+            realTimeProtectionEnabled:
+              type: boolean
+              description: 'When TRUE indicates real time protection is enabled, when FALSE indicates real time protection is not enabled. Defaults to setting on client device.'
+              nullable: true
+            rebootRequired:
+              type: boolean
+              description: 'When TRUE indicates reboot is required, when FALSE indicates when TRUE indicates reboot is not required. Defaults to setting on client device.'
+              nullable: true
+            signatureUpdateOverdue:
+              type: boolean
+              description: 'When TRUE indicates signature is out of date, when FALSE indicates signature is not out of date. Defaults to setting on client device.'
+              nullable: true
+            signatureVersion:
+              type: string
+              description: Current malware definitions version
+              nullable: true
+            tamperProtectionEnabled:
+              type: boolean
+              description: 'When TRUE indicates the Windows Defender tamper protection feature is enabled, when FALSE indicates the Windows Defender tamper protection feature is not enabled. Defaults to setting on client device.'
+              nullable: true
+            detectedMalwareState:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.windowsDeviceMalwareState'
+              description: Device malware list
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+          description: Device protection status entity.
     microsoft.graph.mobileAppIdentifier:
       title: mobileAppIdentifier
       type: object
@@ -25277,6 +25800,8 @@ components:
         - title: teamsAppInstallation
           type: object
           properties:
+            consentedPermissionSet:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
             teamsAppDefinition:
@@ -26074,6 +26599,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+              description: The offer requests for shifts in the schedule.
               x-ms-navigationProperty: true
             openShiftChangeRequests:
               type: array
@@ -26103,6 +26629,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+              description: The swap requests for shifts in the schedule.
               x-ms-navigationProperty: true
             timeOffReasons:
               type: array
@@ -26114,6 +26641,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+              description: The time off requests in the schedule.
               x-ms-navigationProperty: true
             timesOff:
               type: array
@@ -26170,6 +26698,43 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
               description: The tasks in this task list. Read-only. Nullable.
               x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.learningCourseActivity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: learningCourseActivity
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when the assignment was completed. Optional.
+              format: date-time
+              nullable: true
+            completionPercentage:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The percentage completion value of the course activity. Optional.
+              format: int32
+              nullable: true
+            externalcourseActivityId:
+              type: string
+              description: A course activity ID generated by the provider. Optional.
+              nullable: true
+            learnerUserId:
+              type: string
+              description: The user ID of the learner to whom the activity is assigned. Required.
+            learningContentId:
+              type: string
+              description: The ID of the learning content created in Viva Learning. Required.
+            learningProviderId:
+              type: string
+              description: The registration ID of the provider. Required.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.courseStatus'
           additionalProperties:
             type: object
     microsoft.graph.attendeeAvailability:
@@ -26571,6 +27136,98 @@ components:
         - alwaysEnabled
         - scheduled
       type: string
+    microsoft.graph.printerBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printerBase
+          type: object
+          properties:
+            capabilities:
+              $ref: '#/components/schemas/microsoft.graph.printerCapabilities'
+            defaults:
+              $ref: '#/components/schemas/microsoft.graph.printerDefaults'
+            displayName:
+              type: string
+              description: The name of the printer/printerShare.
+            isAcceptingJobs:
+              type: boolean
+              description: Whether the printer/printerShare is currently accepting new print jobs.
+              nullable: true
+            location:
+              $ref: '#/components/schemas/microsoft.graph.printerLocation'
+            manufacturer:
+              type: string
+              description: The manufacturer of the printer/printerShare.
+              nullable: true
+            model:
+              type: string
+              description: The model name of the printer/printerShare.
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printerStatus'
+            jobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printJob'
+              description: The list of jobs that are queued for printing by the printer/printerShare.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printerShareViewpoint:
+      title: printerShareViewpoint
+      type: object
+      properties:
+        lastUsedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Date and time when the printer was last used by the signed-in user. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.printerBase'
+        - title: printer
+          type: object
+          properties:
+            hasPhysicalDevice:
+              type: boolean
+              description: True if the printer has a physical device for printing. Read-only.
+            isShared:
+              type: boolean
+              description: True if the printer is shared; false otherwise. Read-only.
+            lastSeenDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
+              format: date-time
+              nullable: true
+            registeredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the printer was registered. Read-only.
+              format: date-time
+            connectors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printConnector'
+              description: The connectors that are associated with the printer.
+              x-ms-navigationProperty: true
+            shares:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printerShare'
+              description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
+              x-ms-navigationProperty: true
+            taskTriggers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+              description: A list of task triggers that are associated with the printer.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.calendarRoleType:
       title: calendarRoleType
       enum:
@@ -26943,6 +27600,223 @@ components:
       additionalProperties:
         type: object
       description: Device Configuration Setting State for a given device.
+    microsoft.graph.appLogUploadState:
+      title: appLogUploadState
+      enum:
+        - pending
+        - completed
+        - failed
+        - unknownFutureValue
+      type: string
+      description: AppLogUploadStatus
+      x-ms-enum:
+        name: appLogUploadState
+        modelAsString: false
+        values:
+          - value: pending
+            description: Default. Indicates that request is waiting to be processed or under processing.
+            name: pending
+          - value: completed
+            description: Indicates that request is completed with file uploaded to Azure blob for download.
+            name: completed
+          - value: failed
+            description: Indicates that request is completed with file uploaded to Azure blob for download.
+            name: failed
+          - value: unknownFutureValue
+            description: Evolvable enumeration sentinel value. Do not use.
+            name: unknownFutureValue
+    microsoft.graph.windowsDeviceHealthState:
+      title: windowsDeviceHealthState
+      enum:
+        - clean
+        - fullScanPending
+        - rebootPending
+        - manualStepsPending
+        - offlineScanPending
+        - critical
+      type: string
+      description: Computer endpoint protection state
+      x-ms-enum:
+        name: windowsDeviceHealthState
+        modelAsString: false
+        values:
+          - value: clean
+            description: Computer is clean and no action is required
+            name: clean
+          - value: fullScanPending
+            description: Computer is in pending full scan state
+            name: fullScanPending
+          - value: rebootPending
+            description: Computer is in pending reboot state
+            name: rebootPending
+          - value: manualStepsPending
+            description: Computer is in pending manual steps state
+            name: manualStepsPending
+          - value: offlineScanPending
+            description: Computer is in pending offline scan state
+            name: offlineScanPending
+          - value: critical
+            description: Computer is in critical failure state
+            name: critical
+    microsoft.graph.windowsDefenderProductStatus:
+      title: windowsDefenderProductStatus
+      enum:
+        - noStatus
+        - serviceNotRunning
+        - serviceStartedWithoutMalwareProtection
+        - pendingFullScanDueToThreatAction
+        - pendingRebootDueToThreatAction
+        - pendingManualStepsDueToThreatAction
+        - avSignaturesOutOfDate
+        - asSignaturesOutOfDate
+        - noQuickScanHappenedForSpecifiedPeriod
+        - noFullScanHappenedForSpecifiedPeriod
+        - systemInitiatedScanInProgress
+        - systemInitiatedCleanInProgress
+        - samplesPendingSubmission
+        - productRunningInEvaluationMode
+        - productRunningInNonGenuineMode
+        - productExpired
+        - offlineScanRequired
+        - serviceShutdownAsPartOfSystemShutdown
+        - threatRemediationFailedCritically
+        - threatRemediationFailedNonCritically
+        - noStatusFlagsSet
+        - platformOutOfDate
+        - platformUpdateInProgress
+        - platformAboutToBeOutdated
+        - signatureOrPlatformEndOfLifeIsPastOrIsImpending
+        - windowsSModeSignaturesInUseOnNonWin10SInstall
+      type: string
+      description: Product Status of Windows Defender
+      x-ms-enum:
+        name: windowsDefenderProductStatus
+        modelAsString: false
+        values:
+          - value: noStatus
+            description: No status
+            name: noStatus
+          - value: serviceNotRunning
+            description: Service not running
+            name: serviceNotRunning
+          - value: serviceStartedWithoutMalwareProtection
+            description: Service started without any malware protection engine
+            name: serviceStartedWithoutMalwareProtection
+          - value: pendingFullScanDueToThreatAction
+            description: Pending full scan due to threat action
+            name: pendingFullScanDueToThreatAction
+          - value: pendingRebootDueToThreatAction
+            description: Pending reboot due to threat action
+            name: pendingRebootDueToThreatAction
+          - value: pendingManualStepsDueToThreatAction
+            description: 'Pending manual steps due to threat action '
+            name: pendingManualStepsDueToThreatAction
+          - value: avSignaturesOutOfDate
+            description: AV signatures out of date
+            name: avSignaturesOutOfDate
+          - value: asSignaturesOutOfDate
+            description: AS signatures out of date
+            name: asSignaturesOutOfDate
+          - value: noQuickScanHappenedForSpecifiedPeriod
+            description: No quick scan has happened for a specified period
+            name: noQuickScanHappenedForSpecifiedPeriod
+          - value: noFullScanHappenedForSpecifiedPeriod
+            description: No full scan has happened for a specified period
+            name: noFullScanHappenedForSpecifiedPeriod
+          - value: systemInitiatedScanInProgress
+            description: System initiated scan in progress
+            name: systemInitiatedScanInProgress
+          - value: systemInitiatedCleanInProgress
+            description: System initiated clean in progress
+            name: systemInitiatedCleanInProgress
+          - value: samplesPendingSubmission
+            description: There are samples pending submission
+            name: samplesPendingSubmission
+          - value: productRunningInEvaluationMode
+            description: Product running in evaluation mode
+            name: productRunningInEvaluationMode
+          - value: productRunningInNonGenuineMode
+            description: Product running in non-genuine Windows mode
+            name: productRunningInNonGenuineMode
+          - value: productExpired
+            description: Product expired
+            name: productExpired
+          - value: offlineScanRequired
+            description: Off-line scan required
+            name: offlineScanRequired
+          - value: serviceShutdownAsPartOfSystemShutdown
+            description: Service is shutting down as part of system shutdown
+            name: serviceShutdownAsPartOfSystemShutdown
+          - value: threatRemediationFailedCritically
+            description: Threat remediation failed critically
+            name: threatRemediationFailedCritically
+          - value: threatRemediationFailedNonCritically
+            description: Threat remediation failed non-critically
+            name: threatRemediationFailedNonCritically
+          - value: noStatusFlagsSet
+            description: No status flags set (well initialized state)
+            name: noStatusFlagsSet
+          - value: platformOutOfDate
+            description: Platform is out of date
+            name: platformOutOfDate
+          - value: platformUpdateInProgress
+            description: Platform update is in progress
+            name: platformUpdateInProgress
+          - value: platformAboutToBeOutdated
+            description: Platform is about to be outdated
+            name: platformAboutToBeOutdated
+          - value: signatureOrPlatformEndOfLifeIsPastOrIsImpending
+            description: Signature or platform end of life is past or is impending
+            name: signatureOrPlatformEndOfLifeIsPastOrIsImpending
+          - value: windowsSModeSignaturesInUseOnNonWin10SInstall
+            description: Windows SMode signatures still in use on non-Win10S install
+            name: windowsSModeSignaturesInUseOnNonWin10SInstall
+    microsoft.graph.windowsDeviceMalwareState:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsDeviceMalwareState
+          type: object
+          properties:
+            additionalInformationUrl:
+              type: string
+              description: Information URL to learn more about the malware
+              nullable: true
+            category:
+              $ref: '#/components/schemas/microsoft.graph.windowsMalwareCategory'
+            detectionCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of times the malware is detected
+              format: int32
+              nullable: true
+            displayName:
+              type: string
+              description: Malware name
+              nullable: true
+            executionState:
+              $ref: '#/components/schemas/microsoft.graph.windowsMalwareExecutionState'
+            initialDetectionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Initial detection datetime of the malware
+              format: date-time
+              nullable: true
+            lastStateChangeDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The last time this particular threat was changed
+              format: date-time
+              nullable: true
+            severity:
+              $ref: '#/components/schemas/microsoft.graph.windowsMalwareSeverity'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.windowsMalwareState'
+            threatState:
+              $ref: '#/components/schemas/microsoft.graph.windowsMalwareThreatState'
+          additionalProperties:
+            type: object
+          description: Malware detection entity.
     microsoft.graph.plannerPlanContainer:
       title: plannerPlanContainer
       type: object
@@ -27515,6 +28389,8 @@ components:
         - title: teamsAppDefinition
           type: object
           properties:
+            authorization:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppAuthorization'
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             description:
@@ -28283,6 +29159,14 @@ components:
               x-ms-navigationProperty: true
           additionalProperties:
             type: object
+    microsoft.graph.courseStatus:
+      title: courseStatus
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
     microsoft.graph.workbookFilterCriteria:
       title: workbookFilterCriteria
       type: object
@@ -28462,6 +29346,412 @@ components:
         - siteCollection
         - unknownFutureValue
       type: string
+    microsoft.graph.printerCapabilities:
+      title: printerCapabilities
+      type: object
+      properties:
+        bottomMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported bottom margins(in microns) for the printer.
+        collation:
+          type: boolean
+          description: True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.
+          nullable: true
+        colorModes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printColorMode'
+          description: The color modes supported by the printer. Valid values are described in the following table.
+        contentTypes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
+        copiesPerJob:
+          $ref: '#/components/schemas/microsoft.graph.integerRange'
+        dpis:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: The list of print resolutions in DPI that are supported by the printer.
+        duplexModes:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+          description: The list of duplex modes that are supported by the printer. Valid values are described in the following table.
+        feedOrientations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerFeedOrientation'
+          description: The list of feed orientations that are supported by the printer.
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: Finishing processes the printer supports for a printed document.
+        inputBins:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Supported input bins for the printer.
+        isColorPrintingSupported:
+          type: boolean
+          description: True if color printing is supported by the printer; false otherwise. Read-only.
+          nullable: true
+        isPageRangeSupported:
+          type: boolean
+          description: True if the printer supports printing by page ranges; false otherwise.
+          nullable: true
+        leftMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported left margins(in microns) for the printer.
+        mediaColors:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'The media (i.e., paper) colors supported by the printer.'
+        mediaSizes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
+        mediaTypes:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The media types supported by the printer.
+        multipageLayouts:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+          description: The presentation directions supported by the printer. Supported values are described in the following table.
+        orientations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printOrientation'
+          description: The print orientations supported by the printer. Valid values are described in the following table.
+        outputBins:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The printer's supported output bins (trays).
+        pagesPerSheet:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: Supported number of Input Pages to impose upon a single Impression.
+        qualities:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printQuality'
+          description: The print qualities supported by the printer.
+        rightMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported right margins(in microns) for the printer.
+        scalings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printScaling'
+          description: Supported print scalings.
+        supportsFitPdfToPage:
+          type: boolean
+          description: True if the printer supports scaling PDF pages to match the print media size; false otherwise.
+          nullable: true
+        topMargins:
+          type: array
+          items:
+            maximum: 2147483647
+            minimum: -2147483648
+            type: integer
+            format: int32
+            nullable: true
+          description: A list of supported top margins(in microns) for the printer.
+      additionalProperties:
+        type: object
+    microsoft.graph.printerDefaults:
+      title: printerDefaults
+      type: object
+      properties:
+        colorMode:
+          $ref: '#/components/schemas/microsoft.graph.printColorMode'
+        contentType:
+          type: string
+          description: The default content (MIME) type to use when processing documents.
+          nullable: true
+        copiesPerJob:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default number of copies printed per job.
+          format: int32
+          nullable: true
+        dpi:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default resolution in DPI to use when printing the job.
+          format: int32
+          nullable: true
+        duplexMode:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: The default set of finishings to apply to print jobs. Valid values are described in the following table.
+        fitPdfToPage:
+          type: boolean
+          description: The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
+          nullable: true
+        inputBin:
+          type: string
+          nullable: true
+        mediaColor:
+          type: string
+          description: The default media (such as paper) color to print the document on.
+          nullable: true
+        mediaSize:
+          type: string
+          description: The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+          nullable: true
+        mediaType:
+          type: string
+          description: The default media (such as paper) type to print the document on.
+          nullable: true
+        multipageLayout:
+          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientation:
+          $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBin:
+          type: string
+          description: The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
+          nullable: true
+        pagesPerSheet:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The default number of document pages to print on each sheet.
+          format: int32
+          nullable: true
+        quality:
+          $ref: '#/components/schemas/microsoft.graph.printQuality'
+        scaling:
+          $ref: '#/components/schemas/microsoft.graph.printScaling'
+      additionalProperties:
+        type: object
+    microsoft.graph.printerLocation:
+      title: printerLocation
+      type: object
+      properties:
+        altitudeInMeters:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The altitude, in meters, that the printer is located at.'
+          format: int32
+          nullable: true
+        building:
+          type: string
+          description: The building that the printer is located in.
+          nullable: true
+        city:
+          type: string
+          description: The city that the printer is located in.
+          nullable: true
+        countryOrRegion:
+          type: string
+          description: The country or region that the printer is located in.
+          nullable: true
+        floor:
+          type: string
+          description: The floor that the printer is located on. Only numerical values are supported right now.
+          nullable: true
+        floorDescription:
+          type: string
+          description: The description of the floor that the printer is located on.
+          nullable: true
+        latitude:
+          type: number
+          description: The latitude that the printer is located at.
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          description: The longitude that the printer is located at.
+          format: double
+          nullable: true
+        organization:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
+        postalCode:
+          type: string
+          description: The postal code that the printer is located in.
+          nullable: true
+        roomDescription:
+          type: string
+          description: The description of the room that the printer is located in.
+          nullable: true
+        roomName:
+          type: string
+          description: The room that the printer is located in. Only numerical values are supported right now.
+          nullable: true
+        site:
+          type: string
+          description: The site that the printer is located in.
+          nullable: true
+        stateOrProvince:
+          type: string
+          description: The state or province that the printer is located in.
+          nullable: true
+        streetAddress:
+          type: string
+          description: The street address where the printer is located.
+          nullable: true
+        subdivision:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The subdivision that the printer is located in. The elements should be in hierarchical order.
+        subunit:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printerStatus:
+      title: printerStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the printer's current processing state. Read-only.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerProcessingStateDetail'
+          description: The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printerProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.printJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printJob
+          type: object
+          properties:
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.printJobConfiguration'
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.userIdentity'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the job was created. Read-only.
+              format: date-time
+            isFetchable:
+              type: boolean
+              description: 'If true, document can be fetched by printer.'
+            redirectedFrom:
+              type: string
+              description: 'Contains the source job URL, if the job has been redirected from another printer.'
+              nullable: true
+            redirectedTo:
+              type: string
+              description: 'Contains the destination job URL, if the job has been redirected to another printer.'
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printJobStatus'
+            documents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printDocument'
+              x-ms-navigationProperty: true
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+              description: A list of printTasks that were triggered by this print job.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printConnector:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printConnector
+          type: object
+          properties:
+            appVersion:
+              type: string
+              description: The connector's version.
+            displayName:
+              type: string
+              description: The name of the connector.
+            fullyQualifiedDomainName:
+              type: string
+              description: The connector machine's hostname.
+            location:
+              $ref: '#/components/schemas/microsoft.graph.printerLocation'
+            operatingSystem:
+              type: string
+              description: The connector machine's operating system version.
+            registeredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The DateTimeOffset when the connector was registered.
+              format: date-time
+          additionalProperties:
+            type: object
+    microsoft.graph.printTaskTrigger:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTaskTrigger
+          type: object
+          properties:
+            event:
+              $ref: '#/components/schemas/microsoft.graph.printEvent'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+          additionalProperties:
+            type: object
     microsoft.graph.weekIndex:
       title: weekIndex
       enum:
@@ -28504,6 +29794,387 @@ components:
           $ref: '#/components/schemas/microsoft.graph.settingSourceType'
       additionalProperties:
         type: object
+    microsoft.graph.windowsMalwareCategory:
+      title: windowsMalwareCategory
+      enum:
+        - invalid
+        - adware
+        - spyware
+        - passwordStealer
+        - trojanDownloader
+        - worm
+        - backdoor
+        - remoteAccessTrojan
+        - trojan
+        - emailFlooder
+        - keylogger
+        - dialer
+        - monitoringSoftware
+        - browserModifier
+        - cookie
+        - browserPlugin
+        - aolExploit
+        - nuker
+        - securityDisabler
+        - jokeProgram
+        - hostileActiveXControl
+        - softwareBundler
+        - stealthNotifier
+        - settingsModifier
+        - toolBar
+        - remoteControlSoftware
+        - trojanFtp
+        - potentialUnwantedSoftware
+        - icqExploit
+        - trojanTelnet
+        - exploit
+        - filesharingProgram
+        - malwareCreationTool
+        - remote_Control_Software
+        - tool
+        - trojanDenialOfService
+        - trojanDropper
+        - trojanMassMailer
+        - trojanMonitoringSoftware
+        - trojanProxyServer
+        - virus
+        - known
+        - unknown
+        - spp
+        - behavior
+        - vulnerability
+        - policy
+        - enterpriseUnwantedSoftware
+        - ransom
+        - hipsRule
+      type: string
+      description: Malware category id
+      x-ms-enum:
+        name: windowsMalwareCategory
+        modelAsString: false
+        values:
+          - value: invalid
+            description: Invalid
+            name: invalid
+          - value: adware
+            description: Adware
+            name: adware
+          - value: spyware
+            description: Spyware
+            name: spyware
+          - value: passwordStealer
+            description: Password stealer
+            name: passwordStealer
+          - value: trojanDownloader
+            description: Trojan downloader
+            name: trojanDownloader
+          - value: worm
+            description: Worm
+            name: worm
+          - value: backdoor
+            description: Backdoor
+            name: backdoor
+          - value: remoteAccessTrojan
+            description: Remote access Trojan
+            name: remoteAccessTrojan
+          - value: trojan
+            description: Trojan
+            name: trojan
+          - value: emailFlooder
+            description: Email flooder
+            name: emailFlooder
+          - value: keylogger
+            description: Keylogger
+            name: keylogger
+          - value: dialer
+            description: Dialer
+            name: dialer
+          - value: monitoringSoftware
+            description: Monitoring software
+            name: monitoringSoftware
+          - value: browserModifier
+            description: Browser modifier
+            name: browserModifier
+          - value: cookie
+            description: Cookie
+            name: cookie
+          - value: browserPlugin
+            description: Browser plugin
+            name: browserPlugin
+          - value: aolExploit
+            description: AOL exploit
+            name: aolExploit
+          - value: nuker
+            description: Nuker
+            name: nuker
+          - value: securityDisabler
+            description: Security disabler
+            name: securityDisabler
+          - value: jokeProgram
+            description: Joke program
+            name: jokeProgram
+          - value: hostileActiveXControl
+            description: Hostile ActiveX control
+            name: hostileActiveXControl
+          - value: softwareBundler
+            description: Software bundler
+            name: softwareBundler
+          - value: stealthNotifier
+            description: Stealth modifier
+            name: stealthNotifier
+          - value: settingsModifier
+            description: Settings modifier
+            name: settingsModifier
+          - value: toolBar
+            description: Toolbar
+            name: toolBar
+          - value: remoteControlSoftware
+            description: Remote control software
+            name: remoteControlSoftware
+          - value: trojanFtp
+            description: Trojan FTP
+            name: trojanFtp
+          - value: potentialUnwantedSoftware
+            description: Potential unwanted software
+            name: potentialUnwantedSoftware
+          - value: icqExploit
+            description: ICQ exploit
+            name: icqExploit
+          - value: trojanTelnet
+            description: Trojan telnet
+            name: trojanTelnet
+          - value: exploit
+            description: Exploit
+            name: exploit
+          - value: filesharingProgram
+            description: File sharing program
+            name: filesharingProgram
+          - value: malwareCreationTool
+            description: Malware creation tool
+            name: malwareCreationTool
+          - value: remote_Control_Software
+            description: Remote control software
+            name: remote_Control_Software
+          - value: tool
+            description: Tool
+            name: tool
+          - value: trojanDenialOfService
+            description: Trojan denial of service
+            name: trojanDenialOfService
+          - value: trojanDropper
+            description: Trojan dropper
+            name: trojanDropper
+          - value: trojanMassMailer
+            description: Trojan mass mailer
+            name: trojanMassMailer
+          - value: trojanMonitoringSoftware
+            description: Trojan monitoring software
+            name: trojanMonitoringSoftware
+          - value: trojanProxyServer
+            description: Trojan proxy server
+            name: trojanProxyServer
+          - value: virus
+            description: Virus
+            name: virus
+          - value: known
+            description: Known
+            name: known
+          - value: unknown
+            description: Unknown
+            name: unknown
+          - value: spp
+            description: SPP
+            name: spp
+          - value: behavior
+            description: Behavior
+            name: behavior
+          - value: vulnerability
+            description: Vulnerability
+            name: vulnerability
+          - value: policy
+            description: Policy
+            name: policy
+          - value: enterpriseUnwantedSoftware
+            description: Enterprise Unwanted Software
+            name: enterpriseUnwantedSoftware
+          - value: ransom
+            description: Ransom
+            name: ransom
+          - value: hipsRule
+            description: HIPS Rule
+            name: hipsRule
+    microsoft.graph.windowsMalwareExecutionState:
+      title: windowsMalwareExecutionState
+      enum:
+        - unknown
+        - blocked
+        - allowed
+        - running
+        - notRunning
+      type: string
+      description: Malware execution status
+      x-ms-enum:
+        name: windowsMalwareExecutionState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown
+            name: unknown
+          - value: blocked
+            description: Blocked
+            name: blocked
+          - value: allowed
+            description: Allowed
+            name: allowed
+          - value: running
+            description: Running
+            name: running
+          - value: notRunning
+            description: Not running
+            name: notRunning
+    microsoft.graph.windowsMalwareSeverity:
+      title: windowsMalwareSeverity
+      enum:
+        - unknown
+        - low
+        - moderate
+        - high
+        - severe
+      type: string
+      description: Malware severity
+      x-ms-enum:
+        name: windowsMalwareSeverity
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown
+            name: unknown
+          - value: low
+            description: Low
+            name: low
+          - value: moderate
+            description: Moderate
+            name: moderate
+          - value: high
+            description: High
+            name: high
+          - value: severe
+            description: Severe
+            name: severe
+    microsoft.graph.windowsMalwareState:
+      title: windowsMalwareState
+      enum:
+        - unknown
+        - detected
+        - cleaned
+        - quarantined
+        - removed
+        - allowed
+        - blocked
+        - cleanFailed
+        - quarantineFailed
+        - removeFailed
+        - allowFailed
+        - abandoned
+        - blockFailed
+      type: string
+      description: Malware current status
+      x-ms-enum:
+        name: windowsMalwareState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown
+            name: unknown
+          - value: detected
+            description: Detected
+            name: detected
+          - value: cleaned
+            description: Cleaned
+            name: cleaned
+          - value: quarantined
+            description: Quarantined
+            name: quarantined
+          - value: removed
+            description: Removed
+            name: removed
+          - value: allowed
+            description: Allowed
+            name: allowed
+          - value: blocked
+            description: Blocked
+            name: blocked
+          - value: cleanFailed
+            description: Clean failed
+            name: cleanFailed
+          - value: quarantineFailed
+            description: Quarantine failed
+            name: quarantineFailed
+          - value: removeFailed
+            description: Remove failed
+            name: removeFailed
+          - value: allowFailed
+            description: Allow failed
+            name: allowFailed
+          - value: abandoned
+            description: Abandoned
+            name: abandoned
+          - value: blockFailed
+            description: Block failed
+            name: blockFailed
+    microsoft.graph.windowsMalwareThreatState:
+      title: windowsMalwareThreatState
+      enum:
+        - active
+        - actionFailed
+        - manualStepsRequired
+        - fullScanRequired
+        - rebootRequired
+        - remediatedWithNonCriticalFailures
+        - quarantined
+        - removed
+        - cleaned
+        - allowed
+        - noStatusCleared
+      type: string
+      description: Malware threat status
+      x-ms-enum:
+        name: windowsMalwareThreatState
+        modelAsString: false
+        values:
+          - value: active
+            description: Active
+            name: active
+          - value: actionFailed
+            description: Action failed
+            name: actionFailed
+          - value: manualStepsRequired
+            description: Manual steps required
+            name: manualStepsRequired
+          - value: fullScanRequired
+            description: Full scan required
+            name: fullScanRequired
+          - value: rebootRequired
+            description: Reboot required
+            name: rebootRequired
+          - value: remediatedWithNonCriticalFailures
+            description: 'Remediated with non critical failures '
+            name: remediatedWithNonCriticalFailures
+          - value: quarantined
+            description: Quarantined
+            name: quarantined
+          - value: removed
+            description: Removed
+            name: removed
+          - value: cleaned
+            description: Cleaned
+            name: cleaned
+          - value: allowed
+            description: Allowed
+            name: allowed
+          - value: noStatusCleared
+            description: No status cleared
+            name: noStatusCleared
     microsoft.graph.plannerContainerType:
       title: plannerContainerType
       enum:
@@ -28679,18 +30350,18 @@ components:
       properties:
         identityProvider:
           type: string
-          description: For internal use only
+          description: For internal use only.
           nullable: true
         key:
           type: string
-          description: For internal use only
+          description: For internal use only.
           format: base64url
           nullable: true
         type:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: For internal use only
+          description: For internal use only.
           format: int32
           nullable: true
       additionalProperties:
@@ -28703,6 +30374,14 @@ components:
         - sideloaded
         - unknownFutureValue
       type: string
+    microsoft.graph.teamsAppAuthorization:
+      title: teamsAppAuthorization
+      type: object
+      properties:
+        requiredPermissionSet:
+          $ref: '#/components/schemas/microsoft.graph.teamsAppPermissionSet'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppPublishingState:
       title: teamsAppPublishingState
       enum:
@@ -29166,6 +30845,1118 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFill'
           additionalProperties:
             type: object
+    microsoft.graph.printColorMode:
+      title: printColorMode
+      enum:
+        - blackAndWhite
+        - grayscale
+        - color
+        - auto
+        - unknownFutureValue
+      type: string
+    microsoft.graph.integerRange:
+      title: integerRange
+      type: object
+      properties:
+        end:
+          type: integer
+          description: The inclusive upper bound of the integer range.
+          format: int64
+          nullable: true
+        start:
+          type: integer
+          description: The inclusive lower bound of the integer range.
+          format: int64
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printDuplexMode:
+      title: printDuplexMode
+      enum:
+        - flipOnLongEdge
+        - flipOnShortEdge
+        - oneSided
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printerFeedOrientation:
+      title: printerFeedOrientation
+      enum:
+        - longEdgeFirst
+        - shortEdgeFirst
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printFinishing:
+      title: printFinishing
+      enum:
+        - none
+        - staple
+        - punch
+        - cover
+        - bind
+        - saddleStitch
+        - stitchEdge
+        - stapleTopLeft
+        - stapleBottomLeft
+        - stapleTopRight
+        - stapleBottomRight
+        - stitchLeftEdge
+        - stitchTopEdge
+        - stitchRightEdge
+        - stitchBottomEdge
+        - stapleDualLeft
+        - stapleDualTop
+        - stapleDualRight
+        - stapleDualBottom
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printMultipageLayout:
+      title: printMultipageLayout
+      enum:
+        - clockwiseFromTopLeft
+        - counterclockwiseFromTopLeft
+        - counterclockwiseFromTopRight
+        - clockwiseFromTopRight
+        - counterclockwiseFromBottomLeft
+        - clockwiseFromBottomLeft
+        - counterclockwiseFromBottomRight
+        - clockwiseFromBottomRight
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printOrientation:
+      title: printOrientation
+      enum:
+        - portrait
+        - landscape
+        - reverseLandscape
+        - reversePortrait
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printQuality:
+      title: printQuality
+      enum:
+        - low
+        - medium
+        - high
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printScaling:
+      title: printScaling
+      enum:
+        - auto
+        - shrinkToFit
+        - fill
+        - fit
+        - none
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printerProcessingStateDetail:
+      title: printerProcessingStateDetail
+      enum:
+        - paused
+        - mediaJam
+        - mediaNeeded
+        - mediaLow
+        - mediaEmpty
+        - coverOpen
+        - interlockOpen
+        - outputTrayMissing
+        - outputAreaFull
+        - markerSupplyLow
+        - markerSupplyEmpty
+        - inputTrayMissing
+        - outputAreaAlmostFull
+        - markerWasteAlmostFull
+        - markerWasteFull
+        - fuserOverTemp
+        - fuserUnderTemp
+        - other
+        - none
+        - movingToPaused
+        - shutdown
+        - connectingToDevice
+        - timedOut
+        - stopping
+        - stoppedPartially
+        - tonerLow
+        - tonerEmpty
+        - spoolAreaFull
+        - doorOpen
+        - opticalPhotoConductorNearEndOfLife
+        - opticalPhotoConductorLifeOver
+        - developerLow
+        - developerEmpty
+        - interpreterResourceUnavailable
+        - unknownFutureValue
+        - alertRemovalOfBinaryChangeEntry
+        - banderAdded
+        - banderAlmostEmpty
+        - banderAlmostFull
+        - banderAtLimit
+        - banderClosed
+        - banderConfigurationChange
+        - banderCoverClosed
+        - banderCoverOpen
+        - banderEmpty
+        - banderFull
+        - banderInterlockClosed
+        - banderInterlockOpen
+        - banderJam
+        - banderLifeAlmostOver
+        - banderLifeOver
+        - banderMemoryExhausted
+        - banderMissing
+        - banderMotorFailure
+        - banderNearLimit
+        - banderOffline
+        - banderOpened
+        - banderOverTemperature
+        - banderPowerSaver
+        - banderRecoverableFailure
+        - banderRecoverableStorage
+        - banderRemoved
+        - banderResourceAdded
+        - banderResourceRemoved
+        - banderThermistorFailure
+        - banderTimingFailure
+        - banderTurnedOff
+        - banderTurnedOn
+        - banderUnderTemperature
+        - banderUnrecoverableFailure
+        - banderUnrecoverableStorageError
+        - banderWarmingUp
+        - binderAdded
+        - binderAlmostEmpty
+        - binderAlmostFull
+        - binderAtLimit
+        - binderClosed
+        - binderConfigurationChange
+        - binderCoverClosed
+        - binderCoverOpen
+        - binderEmpty
+        - binderFull
+        - binderInterlockClosed
+        - binderInterlockOpen
+        - binderJam
+        - binderLifeAlmostOver
+        - binderLifeOver
+        - binderMemoryExhausted
+        - binderMissing
+        - binderMotorFailure
+        - binderNearLimit
+        - binderOffline
+        - binderOpened
+        - binderOverTemperature
+        - binderPowerSaver
+        - binderRecoverableFailure
+        - binderRecoverableStorage
+        - binderRemoved
+        - binderResourceAdded
+        - binderResourceRemoved
+        - binderThermistorFailure
+        - binderTimingFailure
+        - binderTurnedOff
+        - binderTurnedOn
+        - binderUnderTemperature
+        - binderUnrecoverableFailure
+        - binderUnrecoverableStorageError
+        - binderWarmingUp
+        - cameraFailure
+        - chamberCooling
+        - chamberFailure
+        - chamberHeating
+        - chamberTemperatureHigh
+        - chamberTemperatureLow
+        - cleanerLifeAlmostOver
+        - cleanerLifeOver
+        - configurationChange
+        - deactivated
+        - deleted
+        - dieCutterAdded
+        - dieCutterAlmostEmpty
+        - dieCutterAlmostFull
+        - dieCutterAtLimit
+        - dieCutterClosed
+        - dieCutterConfigurationChange
+        - dieCutterCoverClosed
+        - dieCutterCoverOpen
+        - dieCutterEmpty
+        - dieCutterFull
+        - dieCutterInterlockClosed
+        - dieCutterInterlockOpen
+        - dieCutterJam
+        - dieCutterLifeAlmostOver
+        - dieCutterLifeOver
+        - dieCutterMemoryExhausted
+        - dieCutterMissing
+        - dieCutterMotorFailure
+        - dieCutterNearLimit
+        - dieCutterOffline
+        - dieCutterOpened
+        - dieCutterOverTemperature
+        - dieCutterPowerSaver
+        - dieCutterRecoverableFailure
+        - dieCutterRecoverableStorage
+        - dieCutterRemoved
+        - dieCutterResourceAdded
+        - dieCutterResourceRemoved
+        - dieCutterThermistorFailure
+        - dieCutterTimingFailure
+        - dieCutterTurnedOff
+        - dieCutterTurnedOn
+        - dieCutterUnderTemperature
+        - dieCutterUnrecoverableFailure
+        - dieCutterUnrecoverableStorageError
+        - dieCutterWarmingUp
+        - extruderCooling
+        - extruderFailure
+        - extruderHeating
+        - extruderJam
+        - extruderTemperatureHigh
+        - extruderTemperatureLow
+        - fanFailure
+        - faxModemLifeAlmostOver
+        - faxModemLifeOver
+        - faxModemMissing
+        - faxModemTurnedOff
+        - faxModemTurnedOn
+        - folderAdded
+        - folderAlmostEmpty
+        - folderAlmostFull
+        - folderAtLimit
+        - folderClosed
+        - folderConfigurationChange
+        - folderCoverClosed
+        - folderCoverOpen
+        - folderEmpty
+        - folderFull
+        - folderInterlockClosed
+        - folderInterlockOpen
+        - folderJam
+        - folderLifeAlmostOver
+        - folderLifeOver
+        - folderMemoryExhausted
+        - folderMissing
+        - folderMotorFailure
+        - folderNearLimit
+        - folderOffline
+        - folderOpened
+        - folderOverTemperature
+        - folderPowerSaver
+        - folderRecoverableFailure
+        - folderRecoverableStorage
+        - folderRemoved
+        - folderResourceAdded
+        - folderResourceRemoved
+        - folderThermistorFailure
+        - folderTimingFailure
+        - folderTurnedOff
+        - folderTurnedOn
+        - folderUnderTemperature
+        - folderUnrecoverableFailure
+        - folderUnrecoverableStorageError
+        - folderWarmingUp
+        - hibernate
+        - holdNewJobs
+        - identifyPrinterRequested
+        - imprinterAdded
+        - imprinterAlmostEmpty
+        - imprinterAlmostFull
+        - imprinterAtLimit
+        - imprinterClosed
+        - imprinterConfigurationChange
+        - imprinterCoverClosed
+        - imprinterCoverOpen
+        - imprinterEmpty
+        - imprinterFull
+        - imprinterInterlockClosed
+        - imprinterInterlockOpen
+        - imprinterJam
+        - imprinterLifeAlmostOver
+        - imprinterLifeOver
+        - imprinterMemoryExhausted
+        - imprinterMissing
+        - imprinterMotorFailure
+        - imprinterNearLimit
+        - imprinterOffline
+        - imprinterOpened
+        - imprinterOverTemperature
+        - imprinterPowerSaver
+        - imprinterRecoverableFailure
+        - imprinterRecoverableStorage
+        - imprinterRemoved
+        - imprinterResourceAdded
+        - imprinterResourceRemoved
+        - imprinterThermistorFailure
+        - imprinterTimingFailure
+        - imprinterTurnedOff
+        - imprinterTurnedOn
+        - imprinterUnderTemperature
+        - imprinterUnrecoverableFailure
+        - imprinterUnrecoverableStorageError
+        - imprinterWarmingUp
+        - inputCannotFeedSizeSelected
+        - inputManualInputRequest
+        - inputMediaColorChange
+        - inputMediaFormPartsChange
+        - inputMediaSizeChange
+        - inputMediaTrayFailure
+        - inputMediaTrayFeedError
+        - inputMediaTrayJam
+        - inputMediaTypeChange
+        - inputMediaWeightChange
+        - inputPickRollerFailure
+        - inputPickRollerLifeOver
+        - inputPickRollerLifeWarn
+        - inputPickRollerMissing
+        - inputTrayElevationFailure
+        - inputTrayPositionFailure
+        - inserterAdded
+        - inserterAlmostEmpty
+        - inserterAlmostFull
+        - inserterAtLimit
+        - inserterClosed
+        - inserterConfigurationChange
+        - inserterCoverClosed
+        - inserterCoverOpen
+        - inserterEmpty
+        - inserterFull
+        - inserterInterlockClosed
+        - inserterInterlockOpen
+        - inserterJam
+        - inserterLifeAlmostOver
+        - inserterLifeOver
+        - inserterMemoryExhausted
+        - inserterMissing
+        - inserterMotorFailure
+        - inserterNearLimit
+        - inserterOffline
+        - inserterOpened
+        - inserterOverTemperature
+        - inserterPowerSaver
+        - inserterRecoverableFailure
+        - inserterRecoverableStorage
+        - inserterRemoved
+        - inserterResourceAdded
+        - inserterResourceRemoved
+        - inserterThermistorFailure
+        - inserterTimingFailure
+        - inserterTurnedOff
+        - inserterTurnedOn
+        - inserterUnderTemperature
+        - inserterUnrecoverableFailure
+        - inserterUnrecoverableStorageError
+        - inserterWarmingUp
+        - interlockClosed
+        - interpreterCartridgeAdded
+        - interpreterCartridgeDeleted
+        - interpreterComplexPageEncountered
+        - interpreterMemoryDecrease
+        - interpreterMemoryIncrease
+        - interpreterResourceAdded
+        - interpreterResourceDeleted
+        - lampAtEol
+        - lampFailure
+        - lampNearEol
+        - laserAtEol
+        - laserFailure
+        - laserNearEol
+        - makeEnvelopeAdded
+        - makeEnvelopeAlmostEmpty
+        - makeEnvelopeAlmostFull
+        - makeEnvelopeAtLimit
+        - makeEnvelopeClosed
+        - makeEnvelopeConfigurationChange
+        - makeEnvelopeCoverClosed
+        - makeEnvelopeCoverOpen
+        - makeEnvelopeEmpty
+        - makeEnvelopeFull
+        - makeEnvelopeInterlockClosed
+        - makeEnvelopeInterlockOpen
+        - makeEnvelopeJam
+        - makeEnvelopeLifeAlmostOver
+        - makeEnvelopeLifeOver
+        - makeEnvelopeMemoryExhausted
+        - makeEnvelopeMissing
+        - makeEnvelopeMotorFailure
+        - makeEnvelopeNearLimit
+        - makeEnvelopeOffline
+        - makeEnvelopeOpened
+        - makeEnvelopeOverTemperature
+        - makeEnvelopePowerSaver
+        - makeEnvelopeRecoverableFailure
+        - makeEnvelopeRecoverableStorage
+        - makeEnvelopeRemoved
+        - makeEnvelopeResourceAdded
+        - makeEnvelopeResourceRemoved
+        - makeEnvelopeThermistorFailure
+        - makeEnvelopeTimingFailure
+        - makeEnvelopeTurnedOff
+        - makeEnvelopeTurnedOn
+        - makeEnvelopeUnderTemperature
+        - makeEnvelopeUnrecoverableFailure
+        - makeEnvelopeUnrecoverableStorageError
+        - makeEnvelopeWarmingUp
+        - markerAdjustingPrintQuality
+        - markerCleanerMissing
+        - markerDeveloperAlmostEmpty
+        - markerDeveloperEmpty
+        - markerDeveloperMissing
+        - markerFuserMissing
+        - markerFuserThermistorFailure
+        - markerFuserTimingFailure
+        - markerInkAlmostEmpty
+        - markerInkEmpty
+        - markerInkMissing
+        - markerOpcMissing
+        - markerPrintRibbonAlmostEmpty
+        - markerPrintRibbonEmpty
+        - markerPrintRibbonMissing
+        - markerSupplyAlmostEmpty
+        - markerSupplyMissing
+        - markerTonerCartridgeMissing
+        - markerTonerMissing
+        - markerWasteInkReceptacleAlmostFull
+        - markerWasteInkReceptacleFull
+        - markerWasteInkReceptacleMissing
+        - markerWasteMissing
+        - markerWasteTonerReceptacleAlmostFull
+        - markerWasteTonerReceptacleFull
+        - markerWasteTonerReceptacleMissing
+        - materialEmpty
+        - materialLow
+        - materialNeeded
+        - mediaDrying
+        - mediaPathCannotDuplexMediaSelected
+        - mediaPathFailure
+        - mediaPathInputEmpty
+        - mediaPathInputFeedError
+        - mediaPathInputJam
+        - mediaPathInputRequest
+        - mediaPathJam
+        - mediaPathMediaTrayAlmostFull
+        - mediaPathMediaTrayFull
+        - mediaPathMediaTrayMissing
+        - mediaPathOutputFeedError
+        - mediaPathOutputFull
+        - mediaPathOutputJam
+        - mediaPathPickRollerFailure
+        - mediaPathPickRollerLifeOver
+        - mediaPathPickRollerLifeWarn
+        - mediaPathPickRollerMissing
+        - motorFailure
+        - outputMailboxSelectFailure
+        - outputMediaTrayFailure
+        - outputMediaTrayFeedError
+        - outputMediaTrayJam
+        - perforaterAdded
+        - perforaterAlmostEmpty
+        - perforaterAlmostFull
+        - perforaterAtLimit
+        - perforaterClosed
+        - perforaterConfigurationChange
+        - perforaterCoverClosed
+        - perforaterCoverOpen
+        - perforaterEmpty
+        - perforaterFull
+        - perforaterInterlockClosed
+        - perforaterInterlockOpen
+        - perforaterJam
+        - perforaterLifeAlmostOver
+        - perforaterLifeOver
+        - perforaterMemoryExhausted
+        - perforaterMissing
+        - perforaterMotorFailure
+        - perforaterNearLimit
+        - perforaterOffline
+        - perforaterOpened
+        - perforaterOverTemperature
+        - perforaterPowerSaver
+        - perforaterRecoverableFailure
+        - perforaterRecoverableStorage
+        - perforaterRemoved
+        - perforaterResourceAdded
+        - perforaterResourceRemoved
+        - perforaterThermistorFailure
+        - perforaterTimingFailure
+        - perforaterTurnedOff
+        - perforaterTurnedOn
+        - perforaterUnderTemperature
+        - perforaterUnrecoverableFailure
+        - perforaterUnrecoverableStorageError
+        - perforaterWarmingUp
+        - platformCooling
+        - platformFailure
+        - platformHeating
+        - platformTemperatureHigh
+        - platformTemperatureLow
+        - powerDown
+        - powerUp
+        - printerManualReset
+        - printerNmsReset
+        - printerReadyToPrint
+        - puncherAdded
+        - puncherAlmostEmpty
+        - puncherAlmostFull
+        - puncherAtLimit
+        - puncherClosed
+        - puncherConfigurationChange
+        - puncherCoverClosed
+        - puncherCoverOpen
+        - puncherEmpty
+        - puncherFull
+        - puncherInterlockClosed
+        - puncherInterlockOpen
+        - puncherJam
+        - puncherLifeAlmostOver
+        - puncherLifeOver
+        - puncherMemoryExhausted
+        - puncherMissing
+        - puncherMotorFailure
+        - puncherNearLimit
+        - puncherOffline
+        - puncherOpened
+        - puncherOverTemperature
+        - puncherPowerSaver
+        - puncherRecoverableFailure
+        - puncherRecoverableStorage
+        - puncherRemoved
+        - puncherResourceAdded
+        - puncherResourceRemoved
+        - puncherThermistorFailure
+        - puncherTimingFailure
+        - puncherTurnedOff
+        - puncherTurnedOn
+        - puncherUnderTemperature
+        - puncherUnrecoverableFailure
+        - puncherUnrecoverableStorageError
+        - puncherWarmingUp
+        - resuming
+        - scanMediaPathFailure
+        - scanMediaPathInputEmpty
+        - scanMediaPathInputFeedError
+        - scanMediaPathInputJam
+        - scanMediaPathInputRequest
+        - scanMediaPathJam
+        - scanMediaPathOutputFeedError
+        - scanMediaPathOutputFull
+        - scanMediaPathOutputJam
+        - scanMediaPathPickRollerFailure
+        - scanMediaPathPickRollerLifeOver
+        - scanMediaPathPickRollerLifeWarn
+        - scanMediaPathPickRollerMissing
+        - scanMediaPathTrayAlmostFull
+        - scanMediaPathTrayFull
+        - scanMediaPathTrayMissing
+        - scannerLightFailure
+        - scannerLightLifeAlmostOver
+        - scannerLightLifeOver
+        - scannerLightMissing
+        - scannerSensorFailure
+        - scannerSensorLifeAlmostOver
+        - scannerSensorLifeOver
+        - scannerSensorMissing
+        - separationCutterAdded
+        - separationCutterAlmostEmpty
+        - separationCutterAlmostFull
+        - separationCutterAtLimit
+        - separationCutterClosed
+        - separationCutterConfigurationChange
+        - separationCutterCoverClosed
+        - separationCutterCoverOpen
+        - separationCutterEmpty
+        - separationCutterFull
+        - separationCutterInterlockClosed
+        - separationCutterInterlockOpen
+        - separationCutterJam
+        - separationCutterLifeAlmostOver
+        - separationCutterLifeOver
+        - separationCutterMemoryExhausted
+        - separationCutterMissing
+        - separationCutterMotorFailure
+        - separationCutterNearLimit
+        - separationCutterOffline
+        - separationCutterOpened
+        - separationCutterOverTemperature
+        - separationCutterPowerSaver
+        - separationCutterRecoverableFailure
+        - separationCutterRecoverableStorage
+        - separationCutterRemoved
+        - separationCutterResourceAdded
+        - separationCutterResourceRemoved
+        - separationCutterThermistorFailure
+        - separationCutterTimingFailure
+        - separationCutterTurnedOff
+        - separationCutterTurnedOn
+        - separationCutterUnderTemperature
+        - separationCutterUnrecoverableFailure
+        - separationCutterUnrecoverableStorageError
+        - separationCutterWarmingUp
+        - sheetRotatorAdded
+        - sheetRotatorAlmostEmpty
+        - sheetRotatorAlmostFull
+        - sheetRotatorAtLimit
+        - sheetRotatorClosed
+        - sheetRotatorConfigurationChange
+        - sheetRotatorCoverClosed
+        - sheetRotatorCoverOpen
+        - sheetRotatorEmpty
+        - sheetRotatorFull
+        - sheetRotatorInterlockClosed
+        - sheetRotatorInterlockOpen
+        - sheetRotatorJam
+        - sheetRotatorLifeAlmostOver
+        - sheetRotatorLifeOver
+        - sheetRotatorMemoryExhausted
+        - sheetRotatorMissing
+        - sheetRotatorMotorFailure
+        - sheetRotatorNearLimit
+        - sheetRotatorOffline
+        - sheetRotatorOpened
+        - sheetRotatorOverTemperature
+        - sheetRotatorPowerSaver
+        - sheetRotatorRecoverableFailure
+        - sheetRotatorRecoverableStorage
+        - sheetRotatorRemoved
+        - sheetRotatorResourceAdded
+        - sheetRotatorResourceRemoved
+        - sheetRotatorThermistorFailure
+        - sheetRotatorTimingFailure
+        - sheetRotatorTurnedOff
+        - sheetRotatorTurnedOn
+        - sheetRotatorUnderTemperature
+        - sheetRotatorUnrecoverableFailure
+        - sheetRotatorUnrecoverableStorageError
+        - sheetRotatorWarmingUp
+        - slitterAdded
+        - slitterAlmostEmpty
+        - slitterAlmostFull
+        - slitterAtLimit
+        - slitterClosed
+        - slitterConfigurationChange
+        - slitterCoverClosed
+        - slitterCoverOpen
+        - slitterEmpty
+        - slitterFull
+        - slitterInterlockClosed
+        - slitterInterlockOpen
+        - slitterJam
+        - slitterLifeAlmostOver
+        - slitterLifeOver
+        - slitterMemoryExhausted
+        - slitterMissing
+        - slitterMotorFailure
+        - slitterNearLimit
+        - slitterOffline
+        - slitterOpened
+        - slitterOverTemperature
+        - slitterPowerSaver
+        - slitterRecoverableFailure
+        - slitterRecoverableStorage
+        - slitterRemoved
+        - slitterResourceAdded
+        - slitterResourceRemoved
+        - slitterThermistorFailure
+        - slitterTimingFailure
+        - slitterTurnedOff
+        - slitterTurnedOn
+        - slitterUnderTemperature
+        - slitterUnrecoverableFailure
+        - slitterUnrecoverableStorageError
+        - slitterWarmingUp
+        - stackerAdded
+        - stackerAlmostEmpty
+        - stackerAlmostFull
+        - stackerAtLimit
+        - stackerClosed
+        - stackerConfigurationChange
+        - stackerCoverClosed
+        - stackerCoverOpen
+        - stackerEmpty
+        - stackerFull
+        - stackerInterlockClosed
+        - stackerInterlockOpen
+        - stackerJam
+        - stackerLifeAlmostOver
+        - stackerLifeOver
+        - stackerMemoryExhausted
+        - stackerMissing
+        - stackerMotorFailure
+        - stackerNearLimit
+        - stackerOffline
+        - stackerOpened
+        - stackerOverTemperature
+        - stackerPowerSaver
+        - stackerRecoverableFailure
+        - stackerRecoverableStorage
+        - stackerRemoved
+        - stackerResourceAdded
+        - stackerResourceRemoved
+        - stackerThermistorFailure
+        - stackerTimingFailure
+        - stackerTurnedOff
+        - stackerTurnedOn
+        - stackerUnderTemperature
+        - stackerUnrecoverableFailure
+        - stackerUnrecoverableStorageError
+        - stackerWarmingUp
+        - standby
+        - staplerAdded
+        - staplerAlmostEmpty
+        - staplerAlmostFull
+        - staplerAtLimit
+        - staplerClosed
+        - staplerConfigurationChange
+        - staplerCoverClosed
+        - staplerCoverOpen
+        - staplerEmpty
+        - staplerFull
+        - staplerInterlockClosed
+        - staplerInterlockOpen
+        - staplerJam
+        - staplerLifeAlmostOver
+        - staplerLifeOver
+        - staplerMemoryExhausted
+        - staplerMissing
+        - staplerMotorFailure
+        - staplerNearLimit
+        - staplerOffline
+        - staplerOpened
+        - staplerOverTemperature
+        - staplerPowerSaver
+        - staplerRecoverableFailure
+        - staplerRecoverableStorage
+        - staplerRemoved
+        - staplerResourceAdded
+        - staplerResourceRemoved
+        - staplerThermistorFailure
+        - staplerTimingFailure
+        - staplerTurnedOff
+        - staplerTurnedOn
+        - staplerUnderTemperature
+        - staplerUnrecoverableFailure
+        - staplerUnrecoverableStorageError
+        - staplerWarmingUp
+        - stitcherAdded
+        - stitcherAlmostEmpty
+        - stitcherAlmostFull
+        - stitcherAtLimit
+        - stitcherClosed
+        - stitcherConfigurationChange
+        - stitcherCoverClosed
+        - stitcherCoverOpen
+        - stitcherEmpty
+        - stitcherFull
+        - stitcherInterlockClosed
+        - stitcherInterlockOpen
+        - stitcherJam
+        - stitcherLifeAlmostOver
+        - stitcherLifeOver
+        - stitcherMemoryExhausted
+        - stitcherMissing
+        - stitcherMotorFailure
+        - stitcherNearLimit
+        - stitcherOffline
+        - stitcherOpened
+        - stitcherOverTemperature
+        - stitcherPowerSaver
+        - stitcherRecoverableFailure
+        - stitcherRecoverableStorage
+        - stitcherRemoved
+        - stitcherResourceAdded
+        - stitcherResourceRemoved
+        - stitcherThermistorFailure
+        - stitcherTimingFailure
+        - stitcherTurnedOff
+        - stitcherTurnedOn
+        - stitcherUnderTemperature
+        - stitcherUnrecoverableFailure
+        - stitcherUnrecoverableStorageError
+        - stitcherWarmingUp
+        - subunitAdded
+        - subunitAlmostEmpty
+        - subunitAlmostFull
+        - subunitAtLimit
+        - subunitClosed
+        - subunitCoolingDown
+        - subunitEmpty
+        - subunitFull
+        - subunitLifeAlmostOver
+        - subunitLifeOver
+        - subunitMemoryExhausted
+        - subunitMissing
+        - subunitMotorFailure
+        - subunitNearLimit
+        - subunitOffline
+        - subunitOpened
+        - subunitOverTemperature
+        - subunitPowerSaver
+        - subunitRecoverableFailure
+        - subunitRecoverableStorage
+        - subunitRemoved
+        - subunitResourceAdded
+        - subunitResourceRemoved
+        - subunitThermistorFailure
+        - subunitTimingFailure
+        - subunitTurnedOff
+        - subunitTurnedOn
+        - subunitUnderTemperature
+        - subunitUnrecoverableFailure
+        - subunitUnrecoverableStorage
+        - subunitWarmingUp
+        - suspend
+        - testing
+        - trimmerAdded
+        - trimmerAlmostEmpty
+        - trimmerAlmostFull
+        - trimmerAtLimit
+        - trimmerClosed
+        - trimmerConfigurationChange
+        - trimmerCoverClosed
+        - trimmerCoverOpen
+        - trimmerEmpty
+        - trimmerFull
+        - trimmerInterlockClosed
+        - trimmerInterlockOpen
+        - trimmerJam
+        - trimmerLifeAlmostOver
+        - trimmerLifeOver
+        - trimmerMemoryExhausted
+        - trimmerMissing
+        - trimmerMotorFailure
+        - trimmerNearLimit
+        - trimmerOffline
+        - trimmerOpened
+        - trimmerOverTemperature
+        - trimmerPowerSaver
+        - trimmerRecoverableFailure
+        - trimmerRecoverableStorage
+        - trimmerRemoved
+        - trimmerResourceAdded
+        - trimmerResourceRemoved
+        - trimmerThermistorFailure
+        - trimmerTimingFailure
+        - trimmerTurnedOff
+        - trimmerTurnedOn
+        - trimmerUnderTemperature
+        - trimmerUnrecoverableFailure
+        - trimmerUnrecoverableStorageError
+        - trimmerWarmingUp
+        - unknown
+        - wrapperAdded
+        - wrapperAlmostEmpty
+        - wrapperAlmostFull
+        - wrapperAtLimit
+        - wrapperClosed
+        - wrapperConfigurationChange
+        - wrapperCoverClosed
+        - wrapperCoverOpen
+        - wrapperEmpty
+        - wrapperFull
+        - wrapperInterlockClosed
+        - wrapperInterlockOpen
+        - wrapperJam
+        - wrapperLifeAlmostOver
+        - wrapperLifeOver
+        - wrapperMemoryExhausted
+        - wrapperMissing
+        - wrapperMotorFailure
+        - wrapperNearLimit
+        - wrapperOffline
+        - wrapperOpened
+        - wrapperOverTemperature
+        - wrapperPowerSaver
+        - wrapperRecoverableFailure
+        - wrapperRecoverableStorage
+        - wrapperRemoved
+        - wrapperResourceAdded
+        - wrapperResourceRemoved
+        - wrapperThermistorFailure
+        - wrapperTimingFailure
+        - wrapperTurnedOff
+        - wrapperTurnedOn
+        - wrapperUnderTemperature
+        - wrapperUnrecoverableFailure
+        - wrapperUnrecoverableStorageError
+        - wrapperWarmingUp
+      type: string
+    microsoft.graph.printerProcessingState:
+      title: printerProcessingState
+      enum:
+        - unknown
+        - idle
+        - processing
+        - stopped
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printJobConfiguration:
+      title: printJobConfiguration
+      type: object
+      properties:
+        collate:
+          type: boolean
+          description: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
+          nullable: true
+        colorMode:
+          $ref: '#/components/schemas/microsoft.graph.printColorMode'
+        copies:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of copies that should be printed. Read-only.
+          format: int32
+          nullable: true
+        dpi:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.'
+          format: int32
+          nullable: true
+        duplexMode:
+          $ref: '#/components/schemas/microsoft.graph.printDuplexMode'
+        feedOrientation:
+          $ref: '#/components/schemas/microsoft.graph.printerFeedOrientation'
+        finishings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printFinishing'
+          description: Finishing processes to use when printing.
+        fitPdfToPage:
+          type: boolean
+          nullable: true
+        inputBin:
+          type: string
+          description: The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
+          nullable: true
+        margin:
+          $ref: '#/components/schemas/microsoft.graph.printMargin'
+        mediaSize:
+          type: string
+          description: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
+          nullable: true
+        mediaType:
+          type: string
+          nullable: true
+        multipageLayout:
+          $ref: '#/components/schemas/microsoft.graph.printMultipageLayout'
+        orientation:
+          $ref: '#/components/schemas/microsoft.graph.printOrientation'
+        outputBin:
+          type: string
+          nullable: true
+        pageRanges:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.integerRange'
+        pagesPerSheet:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        quality:
+          $ref: '#/components/schemas/microsoft.graph.printQuality'
+        scaling:
+          $ref: '#/components/schemas/microsoft.graph.printScaling'
+      additionalProperties:
+        type: object
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printJobStatus:
+      title: printJobStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the print job's current processing state. Read-only.
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printJobStateDetail'
+          description: Additional details for print job state. Valid values are described in the following table. Read-only.
+        isAcquiredByPrinter:
+          type: boolean
+          description: True if the job was acknowledged by a printer; false otherwise. Read-only.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.printDocument:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printDocument
+          type: object
+          properties:
+            contentType:
+              type: string
+              description: The document's content (MIME) type. Read-only.
+              nullable: true
+            displayName:
+              type: string
+              description: The document's name. Read-only.
+              nullable: true
+            size:
+              type: integer
+              description: The document's size in bytes. Read-only.
+              format: int64
+          additionalProperties:
+            type: object
+    microsoft.graph.printTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTask
+          type: object
+          properties:
+            parentUrl:
+              type: string
+              description: 'The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.printTaskStatus'
+            definition:
+              $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+            trigger:
+              $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+          additionalProperties:
+            type: object
+    microsoft.graph.printEvent:
+      title: printEvent
+      enum:
+        - jobStarted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printTaskDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printTaskDefinition
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.appIdentity'
+            displayName:
+              type: string
+              description: The name of the printTaskDefinition.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printTask'
+              description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.settingSourceType:
       title: settingSourceType
       enum:
@@ -29269,6 +32060,98 @@ components:
               $ref: '#/components/schemas/microsoft.graph.workbookChartFont'
           additionalProperties:
             type: object
+    microsoft.graph.printMargin:
+      title: printMargin
+      type: object
+      properties:
+        bottom:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the bottom edge.
+          format: int32
+          nullable: true
+        left:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the left edge.
+          format: int32
+          nullable: true
+        right:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the right edge.
+          format: int32
+          nullable: true
+        top:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The margin in microns from the top edge.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.printJobStateDetail:
+      title: printJobStateDetail
+      enum:
+        - uploadPending
+        - transforming
+        - completedSuccessfully
+        - completedWithWarnings
+        - completedWithErrors
+        - releaseWait
+        - interpreting
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printJobProcessingState:
+      title: printJobProcessingState
+      enum:
+        - unknown
+        - pending
+        - processing
+        - paused
+        - stopped
+        - completed
+        - canceled
+        - aborted
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printTaskStatus:
+      title: printTaskStatus
+      type: object
+      properties:
+        description:
+          type: string
+          description: A human-readable description of the current processing state of the printTask.
+        state:
+          $ref: '#/components/schemas/microsoft.graph.printTaskProcessingState'
+      additionalProperties:
+        type: object
+    microsoft.graph.appIdentity:
+      title: appIdentity
+      type: object
+      properties:
+        appId:
+          type: string
+          description: Refers to the Unique GUID representing Application Id in the Azure Active Directory.
+          nullable: true
+        displayName:
+          type: string
+          description: Refers to the Application Name displayed in the Azure Portal.
+          nullable: true
+        servicePrincipalId:
+          type: string
+          description: Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
+          nullable: true
+        servicePrincipalName:
+          type: string
+          description: Refers to the Service Principal Name is the Application name in the tenant.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamworkConversationIdentityType:
       title: teamworkConversationIdentityType
       enum:
@@ -29292,6 +32175,15 @@ components:
         - darkPurple
         - darkPink
         - darkYellow
+        - unknownFutureValue
+      type: string
+    microsoft.graph.printTaskProcessingState:
+      title: printTaskProcessingState
+      enum:
+        - pending
+        - processing
+        - completed
+        - aborted
         - unknownFutureValue
       type: string
   responses:

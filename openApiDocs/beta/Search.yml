@@ -2256,11 +2256,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create industryDataConnector
-      description: Create a new industryDataConnector object.
+      summary: Create azureDataLakeConnector
+      description: Create a new azureDataLakeConnector object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0
       operationId: external.industryData_CreateDataConnector
       requestBody:
         description: New navigation property
@@ -2338,11 +2338,11 @@ paths:
     patch:
       tags:
         - external.industryDataRoot
-      summary: Update industryDataConnector
-      description: Update the properties of an industryDataConnector object.
+      summary: Update azureDataLakeConnector
+      description: Update the properties of an azureDataLakeConnector object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0
       operationId: external.industryData_UpdateDataConnector
       parameters:
         - name: industryDataConnector-id
@@ -2576,11 +2576,11 @@ paths:
     post:
       tags:
         - external.industryDataRoot
-      summary: Create inboundFileFlow
-      description: 'Create a new inboundFileFlow object. The following prerequisite resources are required when you create an **inboundFileFlow**:'
+      summary: Create inboundFlow
+      description: 'Create a new inboundFlow object. The following prerequisite resources are required when you create an **inboundFlow**:'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0
       operationId: external.industryData_CreateInboundFlow
       requestBody:
         description: New navigation property
@@ -2603,11 +2603,11 @@ paths:
     get:
       tags:
         - external.industryDataRoot
-      summary: Get inboundFlow
-      description: Read the properties and relationships of an inboundFlow object.
+      summary: Get inboundFileFlow
+      description: Read the properties and relationships of an inboundFileFlow object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0
       operationId: external.industryData_GetInboundFlow
       parameters:
         - name: inboundFlow-id
@@ -7262,7 +7262,7 @@ components:
           nullable: true
         isCollapsed:
           type: boolean
-          description: Indicates whether the current result is collapses when the collapseProperties property is used.
+          description: Indicates whether the current result is collapses when the collapseProperties property in the searchRequest is used.
           nullable: true
         rank:
           maximum: 2147483647
@@ -7345,7 +7345,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

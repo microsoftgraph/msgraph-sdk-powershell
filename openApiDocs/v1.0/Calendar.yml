@@ -66,8 +66,11 @@ paths:
     get:
       tags:
         - groups.calendar
-      summary: Get calendarPermission
-      description: Get the specified permissions object of a user or group calendar that has been shared.
+      summary: List calendarPermissions
+      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
       operationId: group.calendar_ListCalendarPermission
       parameters:
         - name: group-id
@@ -8931,6 +8934,58 @@ paths:
                 $ref: '#/components/schemas/microsoft.graph.room'
         default:
           $ref: '#/components/responses/error'
+  '/places/{place-id}/microsoft.graph.roomList':
+    get:
+      tags:
+        - places.place
+      summary: Get the item of type microsoft.graph.place as microsoft.graph.roomList
+      operationId: place_GetPlaceAsRoomList
+      parameters:
+        - name: place-id
+          in: path
+          description: The unique identifier of place
+          required: true
+          style: simple
+          schema:
+            type: string
+          x-ms-docs-key-type: place
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - address
+                - displayName
+                - geoCoordinates
+                - phone
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          description: Result entities
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roomList'
+        default:
+          $ref: '#/components/responses/error'
   /places/$count:
     get:
       tags:
@@ -9019,7 +9074,90 @@ paths:
       tags:
         - places.place
       summary: Get the number of the resource
-      operationId: place.ListPlace_GetCountAsRoom
+      operationId: place_GetCountAsRoom
+      parameters:
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+      responses:
+        2XX:
+          $ref: '#/components/responses/ODataCountResponse'
+        default:
+          $ref: '#/components/responses/error'
+  /places/microsoft.graph.roomList:
+    get:
+      tags:
+        - places.place
+      summary: Get the items of type microsoft.graph.roomList in the microsoft.graph.place collection
+      operationId: place_ListPlaceAsRoomList
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - address
+                - address desc
+                - displayName
+                - displayName desc
+                - geoCoordinates
+                - geoCoordinates desc
+                - phone
+                - phone desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - address
+                - displayName
+                - geoCoordinates
+                - phone
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.roomListCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+  /places/microsoft.graph.roomList/$count:
+    get:
+      tags:
+        - places.place
+      summary: Get the number of the resource
+      operationId: place_GetCountAsRoomList
       parameters:
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -9126,8 +9264,11 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: Get calendarPermission
-      description: Get the specified permissions object of a user or group calendar that has been shared.
+      summary: List calendarPermissions
+      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
       operationId: user.calendar_ListCalendarPermission
       parameters:
         - name: user-id
@@ -14199,8 +14340,11 @@ paths:
     get:
       tags:
         - users.calendarGroup
-      summary: Get calendarPermission
-      description: Get the specified permissions object of a user or group calendar that has been shared.
+      summary: List calendarPermissions
+      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
       operationId: user.calendarGroup.calendar_ListCalendarPermission
       parameters:
         - name: user-id
@@ -20152,8 +20296,11 @@ paths:
     get:
       tags:
         - users.calendar
-      summary: Get calendarPermission
-      description: Get the specified permissions object of a user or group calendar that has been shared.
+      summary: List calendarPermissions
+      description: 'Get a collection of calendarPermission resources that describe the identity and roles of users with whom the specified calendar has been shared or delegated. Here, the calendar can be a user calendar or group calendar.'
+      externalDocs:
+        description: Find more info here
+        url: https://docs.microsoft.com/graph/api/calendar-list-calendarpermissions?view=graph-rest-1.0
       operationId: user.calendar_ListCalendarPermission
       parameters:
         - name: user-id
@@ -27559,11 +27706,11 @@ paths:
     post:
       tags:
         - users.event
-      summary: Create Event
-      description: "Create an event in the user's default calendar or specified calendar. By default, the **allowNewTimeProposals** property is set to true when an event is created, which means invitees can propose a different date/time for the event. See Propose new meeting times for more information on how to propose a time, and how to receive and accept a new time proposal. You can specify the time zone for each of the start and end times of the event as part of their values, because the \n**start** and **end** properties are of dateTimeTimeZone type. First find the supported time zones to make sure you set only time zones that have been configured for the user's mailbox server.  When an event is sent, the server sends invitations to all the attendees. **Setting the location in an event** An Exchange administrator can set up a mailbox and an email address for a resource such as a meeting room, or equipment \nlike a projector. Users can then invite the resource as an attendee to a meeting. On behalf of the resource, the server accepts or rejects \nthe meeting request based on the free/busy schedule of the resource. \nIf the server accepts a meeting for the resource, it creates an event for the meeting in the resource's calendar. If the meeting is rescheduled, \nthe server automatically updates the event in the resource's calendar. Another advantage of setting up a mailbox for a resource is to control scheduling of the resource, for example, only executives\nor their delegates can book a private meeting room. If you're organizing an event that involves a meeting location: Additionally, if the meeting location has been set up as a resource, or if the event involves some equipment that has been set up as a resource:"
+      summary: Create single-value extended property
+      description: "Create one or more single-value extended properties in a new or existing instance of a resource. The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to use\nopen extensions or extended properties, and how to specify extended properties."
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/user-post-events?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/singlevaluelegacyextendedproperty-post-singlevalueextendedproperties?view=graph-rest-1.0
       operationId: user_CreateEvent
       parameters:
         - name: user-id
@@ -29934,6 +30081,23 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.roomList:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.place'
+        - title: roomList
+          type: object
+          properties:
+            emailAddress:
+              type: string
+              description: The email address of the room list.
+              nullable: true
+            rooms:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.room'
+              x-ms-navigationProperty: true
+          additionalProperties:
+            type: object
     microsoft.graph.calendarGroup:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30382,6 +30546,19 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.roomListCollectionResponse:
+      title: Collection of roomList
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.roomList'
+        '@odata.nextLink':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.calendarGroupCollectionResponse:
       title: Collection of calendarGroup
       type: object
@@ -30572,7 +30749,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
@@ -30697,6 +30874,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.roomCollectionResponse'
+    microsoft.graph.roomListCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.roomListCollectionResponse'
     microsoft.graph.calendarGroupCollectionResponse:
       description: Retrieved collection
       content:

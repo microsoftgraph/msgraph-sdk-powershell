@@ -4263,11 +4263,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete operationalInsightsConnection
-      description: Delete an operationalInsightsConnection object.
+      summary: Delete resourceConnection
+      description: Delete a resourceConnection object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/windowsupdates-resourceconnection-delete?view=graph-rest-1.0
       operationId: admin.window.update_DeleteResourceConnection
       parameters:
         - name: resourceConnection-id
@@ -4479,11 +4479,11 @@ paths:
     delete:
       tags:
         - admin.adminWindows
-      summary: Delete updatableAssetGroup
-      description: 'Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.'
+      summary: Delete azureADDevice
+      description: 'Delete an azureADDevice object. When an Azure AD device is deleted, it is unregistered from the deployment service and automatically unenrolled from management by the service for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.'
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/windowsupdates-azureaddevice-delete?view=graph-rest-1.0
       operationId: admin.window.update_DeleteUpdatableAsset
       parameters:
         - name: updatableAsset-id
@@ -6648,11 +6648,11 @@ paths:
     patch:
       tags:
         - admin.adminWindows
-      summary: Update contentApproval
-      description: Update the properties of a contentApproval object.
+      summary: Update complianceChange
+      description: Update the properties of a complianceChange object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-1.0
       operationId: admin.window.update.updatePolicy_UpdateComplianceChange
       parameters:
         - name: updatePolicy-id
@@ -7794,7 +7794,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

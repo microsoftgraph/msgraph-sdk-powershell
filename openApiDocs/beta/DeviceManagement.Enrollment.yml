@@ -1990,6 +1990,7 @@ paths:
                 - diagnosticsDisabled
                 - displayToneSetupDisabled
                 - enabledSkipKeys
+                - enrollmentTimeAzureAdGroupIds
                 - isDefault
                 - isMandatory
                 - locationDisabled
@@ -2095,6 +2096,7 @@ paths:
                 - diagnosticsDisabled
                 - displayToneSetupDisabled
                 - enabledSkipKeys
+                - enrollmentTimeAzureAdGroupIds
                 - isDefault
                 - isMandatory
                 - locationDisabled
@@ -2112,6 +2114,7 @@ paths:
                 - adminAccountFullName
                 - adminAccountPassword
                 - adminAccountUserName
+                - autoAdvanceSetupEnabled
                 - autoUnlockWithWatchDisabled
                 - chooseYourLockScreenDisabled
                 - dontAutoPopulatePrimaryAccountInfo
@@ -6397,6 +6400,8 @@ paths:
                 - description desc
                 - isAuthenticationContextSettable
                 - isAuthenticationContextSettable desc
+                - isPrivileged
+                - isPrivileged desc
                 - name
                 - name desc
                 - resourceScopeId
@@ -6417,6 +6422,7 @@ paths:
                 - authenticationContextId
                 - description
                 - isAuthenticationContextSettable
+                - isPrivileged
                 - name
                 - resourceScopeId
                 - authenticationContext
@@ -6518,6 +6524,7 @@ paths:
                 - authenticationContextId
                 - description
                 - isAuthenticationContextSettable
+                - isPrivileged
                 - name
                 - resourceScopeId
                 - authenticationContext
@@ -7692,6 +7699,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -7773,6 +7781,8 @@ paths:
                 - isBuiltIn desc
                 - isEnabled
                 - isEnabled desc
+                - isPrivileged
+                - isPrivileged desc
                 - resourceScopes
                 - resourceScopes desc
                 - rolePermissions
@@ -7798,6 +7808,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -7887,6 +7898,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -8024,6 +8036,8 @@ paths:
                 - isBuiltIn desc
                 - isEnabled
                 - isEnabled desc
+                - isPrivileged
+                - isPrivileged desc
                 - resourceScopes
                 - resourceScopes desc
                 - rolePermissions
@@ -8049,6 +8063,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -8148,6 +8163,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -8612,6 +8628,8 @@ paths:
                 - description desc
                 - isAuthenticationContextSettable
                 - isAuthenticationContextSettable desc
+                - isPrivileged
+                - isPrivileged desc
                 - name
                 - name desc
                 - resourceScopeId
@@ -8632,6 +8650,7 @@ paths:
                 - authenticationContextId
                 - description
                 - isAuthenticationContextSettable
+                - isPrivileged
                 - name
                 - resourceScopeId
                 - authenticationContext
@@ -8733,6 +8752,7 @@ paths:
                 - authenticationContextId
                 - description
                 - isAuthenticationContextSettable
+                - isPrivileged
                 - name
                 - resourceScopeId
                 - authenticationContext
@@ -9907,6 +9927,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -9988,6 +10009,8 @@ paths:
                 - isBuiltIn desc
                 - isEnabled
                 - isEnabled desc
+                - isPrivileged
+                - isPrivileged desc
                 - resourceScopes
                 - resourceScopes desc
                 - rolePermissions
@@ -10013,6 +10036,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -10102,6 +10126,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -10239,6 +10264,8 @@ paths:
                 - isBuiltIn desc
                 - isEnabled
                 - isEnabled desc
+                - isPrivileged
+                - isPrivileged desc
                 - resourceScopes
                 - resourceScopes desc
                 - rolePermissions
@@ -10264,6 +10291,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -10363,6 +10391,7 @@ paths:
                 - displayName
                 - isBuiltIn
                 - isEnabled
+                - isPrivileged
                 - resourceScopes
                 - rolePermissions
                 - templateId
@@ -11101,6 +11130,9 @@ components:
               type: string
               description: Indicates what the user name for the admin account is
               nullable: true
+            autoAdvanceSetupEnabled:
+              type: boolean
+              description: Indicates if Setup Assistant will automatically advance through its screen
             autoUnlockWithWatchDisabled:
               type: boolean
               description: Indicates if UnlockWithWatch screen is disabled
@@ -11781,6 +11813,9 @@ components:
             isAuthenticationContextSettable:
               type: boolean
               nullable: true
+            isPrivileged:
+              type: boolean
+              nullable: true
             name:
               type: string
               description: 'Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).'
@@ -11943,6 +11978,9 @@ components:
             isEnabled:
               type: boolean
               description: Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
+              nullable: true
+            isPrivileged:
+              type: boolean
               nullable: true
             resourceScopes:
               type: array
@@ -12324,6 +12362,13 @@ components:
                 type: string
                 nullable: true
               description: enabledSkipKeys contains all the enabled skip keys as strings
+            enrollmentTimeAzureAdGroupIds:
+              type: array
+              items:
+                pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                type: string
+                format: uuid
+              description: EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile
             isDefault:
               type: boolean
               description: Indicates if this is the default profile
@@ -13664,7 +13709,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object

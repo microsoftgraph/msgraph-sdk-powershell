@@ -1880,10 +1880,10 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects.
+      description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.childFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -1918,8 +1918,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3535,10 +3533,10 @@ paths:
       tags:
         - users.mailFolder
       summary: List attachments
-      description: Retrieve a list of attachment objects.
+      description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.mailFolder.message_ListAttachment
       parameters:
         - name: user-id
@@ -3565,8 +3563,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -4475,7 +4471,7 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/eventmessage-get?view=graph-rest-1.0
       operationId: user_GetMessage
       parameters:
         - name: user-id
@@ -4619,11 +4615,11 @@ paths:
     delete:
       tags:
         - users.message
-      summary: Delete message
-      description: 'Delete a message in the specified user''s mailbox, or delete a relationship of the message.'
+      summary: Delete eventMessage
+      description: Delete eventMessage.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/message-delete?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0
       operationId: user_DeleteMessage
       parameters:
         - name: user-id
@@ -4732,10 +4728,10 @@ paths:
       tags:
         - users.message
       summary: List attachments
-      description: Retrieve a list of attachment objects.
+      description: Retrieve a list of attachment objects attached to a message.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0
       operationId: user.message_ListAttachment
       parameters:
         - name: user-id
@@ -4754,8 +4750,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: message
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -6133,7 +6127,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
-        innererror:
+        innerError:
           $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
