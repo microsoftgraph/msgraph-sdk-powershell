@@ -1076,7 +1076,7 @@ paths:
       description: Read properties and relationships of the deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-androidforwork-devicemanagement-get?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/intune-raimportcerts-devicemanagement-get?view=graph-rest-1.0
       operationId: deviceManagement_GetDeviceManagement
       parameters:
         - name: $select
@@ -1239,7 +1239,7 @@ paths:
       description: Update the properties of a deviceManagement object.
       externalDocs:
         description: Find more info here
-        url: https://docs.microsoft.com/graph/api/intune-androidforwork-devicemanagement-update?view=graph-rest-1.0
+        url: https://docs.microsoft.com/graph/api/intune-remoteassistance-devicemanagement-update?view=graph-rest-1.0
       operationId: deviceManagement_UpdateDeviceManagement
       requestBody:
         description: New property values
