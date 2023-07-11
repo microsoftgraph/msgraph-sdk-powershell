@@ -313,7 +313,7 @@ function Update-ExampleFile {
         Clear-Content $ExampleFile -Force
         for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
             $CodeValue = $ExampleList[$d].Trim()
-            if($CodeValue.Contains($CommandPattern)){
+            if($CodeValue-match "\b$CommandPattern\b"){
             $TitleValue = "### " + $HeaderList[$d].Trim()
             $Code = "``````powershell`r$CodeValue`r`n``````"	
             $TotalText = "$TitleValue`r`n`n$Code`r`n$Description`r`n"
@@ -329,11 +329,11 @@ function Update-ExampleFile {
     #The code below updates existing examples
     #------------------------------------------------------------#
     $PatternToSearch = "Import-Module Microsoft.Graph.$Module"
+    if($GraphProfile -eq "beta"){
+        $PatternToSearch = "Import-Module Microsoft.Graph.Beta.$Module"
+    }
     if(($Content | Select-String -pattern $SearchText) -and ($Content | Select-String -pattern "This example shows")){
         $ContainsPatternToSearch = $False
-        if($GraphProfile -eq "beta"){
-            $PatternToSearch = "Import-Module Microsoft.Graph.Beta.$Module"
-        }
         foreach($List in $ExampleList){
            if($List.Contains($PatternToSearch) -and $List.Contains($CommandPattern)){
             $ContainsPatternToSearch = $True
@@ -343,7 +343,7 @@ function Update-ExampleFile {
             Clear-Content $ExampleFile -Force    
            for ($d = 0; $d -lt $HeaderList.Count; $d++) { 
             #We should only add the correct examples from external docs link
-            if($ExampleList[$d].Contains($CommandPattern)){
+            if($ExampleList[$d] -match "\b$CommandPattern\b"){
             $CodeValue = $ExampleList[$d].Trim()
             $TitleValue = "### " + $HeaderList[$d].Trim()
             $Code = "``````powershell`r$CodeValue`r`n``````"       
@@ -358,15 +358,22 @@ function Update-ExampleFile {
 
 
         }else{
-            if(-not($Content | Select-String -pattern $CommandPattern)){
             Clear-Content $ExampleFile -Force
+            if($Content | Select-String -pattern $CommandPattern){
+                Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile
+            }else{
             #Replace everything with boiler plate code
-            $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
-            Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
+                $DefaultBoilerPlate = "### Example 1: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n### Example 2: {{ Add title here }}`r`n``````powershell`r`n PS C:\> {{ Add code here }}`r`n`n{{ Add output here }}`r`n```````n`n{{ Add description here }}`r`n`n"
+                Add-Content -Path $ExampleFile -Value $DefaultBoilerPlate.Trim()
             }
         }
         
     }
+    $CheckIfFileEmpty = Test-FileEmpty $ExampleFile
+    if($CheckIfFileEmpty){
+        Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile
+    }
+    #----------------------------------------------------------------------------------------------#
     #The code below corrects the numbering of the example headers/title if there is a situation where
     #some examples are wrong(which are left out) and some are right
     #-----------------------------------------------------------------------------------------------#
@@ -418,6 +425,36 @@ function Update-ExampleFile {
             "$Command, $ExternalDocUrl, $GraphProfile, $UriPath" | Out-File -FilePath "$FolderForExamplesToBeReviewed\$ExamplesToBeReviewed" -Append -Encoding ASCII
         }
     }
+  
+}
+function Test-FileEmpty {
+
+    Param ([Parameter(Mandatory = $true)][string]$File)
+  
+    if ((Test-Path -LiteralPath $file) -and !((Get-Content -LiteralPath $file -Raw) -match '\S')) {return $true} else {return $false}
+  
+}
+function Retain-ExistingCorrectExamples {
+
+    Param ([Parameter(Mandatory = $true)][object]$Content,[Parameter(Mandatory = $true)][string]$File)
+  
+        $CorrectMaintainableHeaderCount = 1;
+        $LineCounter = 0;
+        
+        foreach($Line in $Content){
+           
+            if($Line.StartsWith("$CommandPattern ")){
+                $LineCounter++
+                $Header =  $Content[$LineCounter-1]
+                if(($Null -eq $Header) -or ($Header -eq "")){
+                    $Header = "### Example " + $CorrectMaintainableHeaderCount + ": Code snippet"
+                }
+                $MaintainedCorrectExample = "$Header`r`n`n``````powershell`r`n$PatternToSearch`r`n`n$Line`r`n```````r`n$Description`r`n"
+                $CorrectMaintainableHeaderCount++
+                Add-Content -Path $File -Value $MaintainedCorrectExample
+            }
+
+        }
   
 }       
 $JsonContent = Get-Content -Path $MetaDataJsonFile
@@ -480,5 +517,3 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
-#Write-Host -ForegroundColor Green "-------------Done-------------"
-#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0" -GraphCommand "Get-MgBetaIdentityGovernanceAccessReviewDefinitionInstanceDecision" -GraphModule "Identity.Governance" -Profile "beta"
