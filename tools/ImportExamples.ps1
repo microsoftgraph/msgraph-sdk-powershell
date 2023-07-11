@@ -370,9 +370,10 @@ function Update-ExampleFile {
         
     }
     $CheckIfFileEmpty = Test-FileEmpty $ExampleFile
-    Write-Host $ExampleFile
     if($CheckIfFileEmpty){
-        Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile
+        if($Content){
+            Retain-ExistingCorrectExamples -Content $Content -File $ExampleFile
+        }
     }
     #----------------------------------------------------------------------------------------------#
     #The code below corrects the numbering of the example headers/title if there is a situation where
@@ -438,26 +439,29 @@ function Test-FileEmpty {
 function Retain-ExistingCorrectExamples {
 
     Param ([Parameter(Mandatory = $true)][object]$Content,[Parameter(Mandatory = $true)][string]$File)
-  
         $CorrectMaintainableHeaderCount = 1;
         $LineCounter = 0;
-        if($Content.Count -gt 0){
+        $Header = $null
         foreach($Line in $Content){
-           
+            
             if($Line.StartsWith("$CommandPattern ")){
-                $LineCounter++
-                $Header =  $Content[$LineCounter-1]
-                if(($Null -eq $Header) -or ($Header -eq "")){
-                    $Header = "### Example " + $CorrectMaintainableHeaderCount + ": Code snippet"
-                }
-                $MaintainedCorrectExample = "$Header`r`n`n``````powershell`r`n$PatternToSearch`r`n`n$Line`r`n```````r`n$Description`r`n"
                 $CorrectMaintainableHeaderCount++
-                Add-Content -Path $File -Value $MaintainedCorrectExample
+                break
             }
-
+            $LineCounter++
         }
-    }
-  
+
+        for($j = 0; $j -lt $LineCounter+1; $j++){
+            $Val = $Content[$j]
+            $Header+= "$Val`r`n"
+        }
+        if(($Null -eq $Header) -or ($Header -eq "")){
+            $Header = "### Example " + $CorrectMaintainableHeaderCount + ": Code snippet"
+        }
+            
+        $MaintainedCorrectExample = "$Header`r`n```````r`n$Description`r`n"
+        $CorrectMaintainableHeaderCount++
+        Add-Content -Path $File -Value $MaintainedCorrectExample        
 }       
 $JsonContent = Get-Content -Path $MetaDataJsonFile
 $DeserializedContent = $JsonContent | ConvertFrom-Json
@@ -499,7 +503,7 @@ if ($ModulesToGenerate.Count -eq 0) {
     [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
     $ModulesToGenerate = $ModuleMapping.Keys
 }
-Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
+#Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #Comment the above and uncomment the below start command, if you manually want to manually pass ExternalDocs url.
 #This is for scenarios where the correponding external docs url to the uri path gotten from Find-MgGraph command, is missing on the openapi.yml file for a particular module.
@@ -519,3 +523,4 @@ Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
+Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0" -GraphCommand "Update-MgBetaUserSettingShiftPreference" -GraphModule "Users" -Profile "beta"
