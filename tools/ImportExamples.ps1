@@ -24,7 +24,7 @@ function Start-Generator {
     )
 
     $GraphMapping = @{
-       # "v1.0" = "v1.0\examples"
+        "v1.0" = "v1.0\examples"
         "beta" = "beta\examples"
     }
     if ($GenerationMode -eq "auto") {
@@ -503,7 +503,7 @@ if ($ModulesToGenerate.Count -eq 0) {
     [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
     $ModulesToGenerate = $ModuleMapping.Keys
 }
-#Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
+Start-Generator -ModulesToGenerate $ModulesToGenerate -GenerationMode "auto"
 
 #Comment the above and uncomment the below start command, if you manually want to manually pass ExternalDocs url.
 #This is for scenarios where the correponding external docs url to the uri path gotten from Find-MgGraph command, is missing on the openapi.yml file for a particular module.
@@ -523,4 +523,4 @@ if ($ModulesToGenerate.Count -eq 0) {
 
 #4. Test for beta updates from api reference
 #Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/serviceprincipal-post-approleassignedto?view=graph-rest-beta" -GraphCommand "New-MgBetaServicePrincipalAppRoleAssignedTo" -GraphModule "Applications" -Profile "beta"
-Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0" -GraphCommand "Update-MgBetaUserSettingShiftPreference" -GraphModule "Users" -Profile "beta"
+#Start-Generator -GenerationMode "manual" -ManualExternalDocsUrl "https://docs.microsoft.com/graph/api/meetingattendancereport-list?view=graph-rest-1.0" -GraphCommand "Update-MgBetaUserSettingShiftPreference" -GraphModule "Users" -Profile "beta"
