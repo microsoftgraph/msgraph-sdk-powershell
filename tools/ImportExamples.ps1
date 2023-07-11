@@ -459,7 +459,7 @@ function Retain-ExistingCorrectExamples {
             $Header = "### Example " + $CorrectMaintainableHeaderCount + ": Code snippet"
         }
             
-        $MaintainedCorrectExample = "$Header`r`n```````r`n$Description`r`n"
+        $MaintainedCorrectExample = "$Header```````n$Description`r`n"
         $CorrectMaintainableHeaderCount++
         Add-Content -Path $File -Value $MaintainedCorrectExample        
 }       
